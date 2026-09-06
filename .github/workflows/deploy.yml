@@ -29,8 +29,12 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Build Quartz
         run: npx quartz build
-      - name: Ensure CNAME in public
-        run: echo "atlas.kwantklubben.com" > public/CNAME
+      - name: Copy Standalone Visualizer and CNAME
+        run: |
+          echo "atlas.kwantklubben.com" > public/CNAME
+          cp content/visualizer.html public/visualizer.html
+          mkdir -p public/visualizer
+          cp content/visualizer.html public/visualizer/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
