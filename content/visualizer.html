@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KwantKlubben — The Map of Quantitative Finance</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(16, 24, 40, 0.85);
+      --border: rgba(255, 255, 255, 0.1);
+      --border-bright: rgba(255, 255, 255, 0.25);
+      --text: #f0f4fc;
+      --text-muted: #8b9bb4;
+      --accent: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.25);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+
+    #graph-container {
+      flex: 1;
+      height: 100%;
+      position: relative;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+    svg:active { cursor: grabbing; }
+
+    /* Controls Overlay */
+    .top-bar {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      padding: 10px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .filter-select {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+    }
+    .filter-select:hover { border-color: var(--border-bright); }
+
+    /* Side Panel */
+    #side-panel {
+      width: 420px;
+      height: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border-left: 1px solid var(--border);
+      padding: 24px;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 20;
+      box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+    }
+    #side-panel.open { transform: translateX(0); }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .close-btn:hover { color: var(--text); }
+
+    .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .panel-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .meta-ratings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .meta-item { font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+    .meta-value { font-size: 14px; font-weight: 700; color: #fff; margin-top: 2px; }
+
+    .section-block {
+      margin-bottom: 20px;
+    }
+    .section-heading {
+      font-size: 12px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .section-content {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
+    .code-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #7dd3fc;
+      display: inline-block;
+      margin: 2px 2px 2px 0;
+    }
+
+    /* Links & Tooltips */
+    .links line {
+      stroke: rgba(255, 255, 255, 0.15);
+      stroke-width: 1.5;
+      transition: stroke 0.2s;
+    }
+    .links line.highlight {
+      stroke: var(--accent);
+      stroke-width: 3;
+      stroke-opacity: 0.8;
+    }
+
+    .nodes circle {
+      stroke-width: 2.5;
+      cursor: pointer;
+      transition: transform 0.2s, stroke-width 0.2s;
+    }
+    .nodes circle:hover {
+      stroke-width: 4;
+    }
+
+    .node-label {
+      font-size: 11px;
+      font-family: var(--font-sans);
+      fill: #e2e8f0;
+      pointer-events: none;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+      font-weight: 500;
+    }
+
+    /* Legend */
+    .legend {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      pointer-events: none;
+    }
+    .legend-item { display: flex; align-items: center; gap: 8px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+
+  <div id="graph-container">
+    <div class="top-bar">
+      <div class="brand-title">
+        <span class="brand-dot"></span>
+        <span>KwantKlubben Quant Map</span>
+      </div>
+      <select id="view-filter" class="filter-select">
+        <option value="all">View: All Disciplines & Bridges</option>
+        <option value="cs_physics">Highlight: CS & Engineering Physics Track</option>
+        <option value="business">Highlight: Business & Finance Track</option>
+        <option value="econ_ds">Highlight: Econ & Data Science Track</option>
+      </select>
+    </div>
+
+    <div class="legend">
+      <div style="font-weight:600; margin-bottom: 2px; color: var(--text-muted); font-size: 11px; text-transform:uppercase;">6 Core Pillars</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#ec4899"></span> Derivatives & Volatility</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span> Stat Arb & Quant Trading</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span> Microstructure & Execution</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> Portfolio Optimization & Risk</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#8b5cf6"></span> Quantitative Macro & CTA</div>
+      <div class="legend-item"><span class="legend-dot" style="background:#06b6d4"></span> Machine Learning in Quant</div>
+    </div>
+
+    <svg id="network-svg"></svg>
+  </div>
+
+  <!-- Side Detail Drawer -->
+  <div id="side-panel">
+    <button class="close-btn" id="close-panel">&times;</button>
+    <div id="panel-content">
+      <div class="badge" id="node-pillar-badge">Pillar</div>
+      <h2 class="panel-title" id="node-title">Click a Node</h2>
+      
+      <div class="meta-ratings">
+        <div>
+          <div class="meta-item">Math</div>
+          <div class="meta-value" id="val-math">-</div>
+        </div>
+        <div>
+          <div class="meta-item">Coding</div>
+          <div class="meta-value" id="val-code">-</div>
+        </div>
+        <div>
+          <div class="meta-item">Intuition</div>
+          <div class="meta-value" id="val-intuition">-</div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">Financial Thesis & Mental Model</div>
+        <div class="section-content" id="node-intuition-text">-</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">Hard Skills: Mathematics</div>
+        <div class="section-content" id="node-math-text">-</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">Hard Skills: Programming & Systems</div>
+        <div class="section-content" id="node-code-text">-</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">Cross-Domain Intersections</div>
+        <div class="section-content" id="node-bridges-text">-</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">Industry Career Roles</div>
+        <div class="section-content" id="node-roles-text">-</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">KwantKlubben Repo Sandbox</div>
+        <div class="section-content" id="node-repo-text">-</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      nodes: [
+        // 1. Derivatives & Volatility
+        { id: "bsm", name: "Black-Scholes & No-Arbitrage", pillar: "Derivatives & Vol", color: "#ec4899", math: "5/5", code: "3/5", intuition: "4/5",
+          tracks: ["cs_physics"],
+          summary: "Continuous-time pricing via risk-neutral replication and martingales.",
+          math_req: "Itô Lemma, SDEs, Feynman-Kac PDE, Girsanov Theorem, Change of Numeraire.",
+          code_req: "Python (scipy, numpy), C++ pricing engines, Monte Carlo path generators.",
+          bridges: "Connects to Portfolio Tail Risk (using options to reshape return distributions and truncate left-tail CVaR).",
+          roles: "Derivatives Quant Researcher (Sell-side banks), Structured Products Quant.",
+          repo: "data/sources/yahoo.py (options chains), research/PRIMER-options-hedging.md"
+        },
+        { id: "greeks", name: "The Greeks & Dynamic Hedging", pillar: "Derivatives & Vol", color: "#ec4899", math: "4/5", code: "3/5", intuition: "5/5",
+          tracks: ["cs_physics"],
+          summary: "Managing sensitivity exposures (Delta, Gamma, Vega, Theta) and discrete rebalancing error.",
+          math_req: "Partial derivatives, Taylor series expansions of portfolio PnL, stochastic calculus.",
+          code_req: "Vectorized Greeks calculation, discrete rebalancing simulators.",
+          bridges: "Directly bridges to Market Microstructure: discrete hedging introduces turnover slippage and bid-ask crossing costs.",
+          roles: "Volatility Trader (Optiver, Citadel Securities, IMC, Flow Traders).",
+          repo: "backtest/costs.py, research/PRIMER-options-hedging.md"
+        },
+        { id: "vol_surface", name: "Implied Volatility Surfaces & Smile", pillar: "Derivatives & Vol", color: "#ec4899", math: "5/5", code: "4/5", intuition: "4/5",
+          tracks: ["cs_physics"],
+          summary: "Dupire local volatility, Heston stochastic vol, and SABR modeling to capture crash phobia.",
+          math_req: "Non-linear optimization, calibration of partial differential equations, Fourier transforms.",
+          code_req: "C++/CUDA surface solvers, Levenberg-Marquardt optimizer in Python.",
+          bridges: "Connects to Stat Arb: dispersion trading across constituent implied vols vs index vol.",
+          roles: "Exotics Quant, Volatility Desk Quantitative Strategist.",
+          repo: "research/PRIMER-options-hedging.md"
+        },
+
+        // 2. Stat Arb & Quantitative Trading
+        { id: "pairs", name: "Pairs Trading & Cointegration", pillar: "Stat Arb & Trading", color: "#3b82f6", math: "4/5", code: "4/5", intuition: "4/5",
+          tracks: ["cs_physics", "econ_ds"],
+          summary: "Exploiting stationary spreads between economically tied assets via Ornstein-Uhlenbeck processes.",
+          math_req: "Engle-Granger cointegration, Augmented Dickey-Fuller test, Johansen test, OU parameter estimation.",
+          code_req: "Vectorized time-series analysis in Pandas/Polars, fast rolling regressions.",
+          bridges: "Requires Microstructure friction awareness: high-turnover pairs bleed cash without limit-order spread capture.",
+          roles: "Statistical Arbitrage Quantitative Researcher (Millennium, Point72, WorldQuant).",
+          repo: "backtest/engine.py, data/get_close_panel, strategies/_template"
+        },
+        { id: "momentum", name: "Cross-Sectional Factor Momentum", pillar: "Stat Arb & Trading", color: "#3b82f6", math: "3/5", code: "4/5", intuition: "4/5",
+          tracks: ["business", "econ_ds"],
+          summary: "Systematic ranking of relative strength (12-1 month lookback) with volatility normalization.",
+          math_req: "Cross-sectional ranking, z-score transformations, factor covariance attribution.",
+          code_req: "Broad panel manipulation, matrix weight calculation, rebalancing turnover logic.",
+          bridges: "Connects to Portfolio Optimization: raw momentum requires industry neutralization and risk constraints.",
+          roles: "Equity Quant Researcher, Factor Portfolio Manager (AQR, Two Sigma).",
+          repo: "backtest/engine.py, backtest/universe.py, backtest/metrics.py"
+        },
+        { id: "multifactor", name: "Fundamental Multi-Factor Models", pillar: "Stat Arb & Trading", color: "#3b82f6", math: "3/5", code: "4/5", intuition: "5/5",
+          tracks: ["business", "econ_ds"],
+          summary: "Combining Value, Quality, Size, and Momentum anomalies into unified alpha vectors.",
+          math_req: "Fama-MacBeth regressions, multiple linear regression, residual variance extraction.",
+          code_req: "SQL/DuckDB ingestion of balance sheets and earnings disclosures, point-in-time joins.",
+          bridges: "Connects to Machine Learning: replacing linear factor combinations with non-linear tree ensembles.",
+          roles: "Fundamental Quant Analyst, Asset Management Quant (BlackRock, Dimensional).",
+          repo: "data/sources/quartr.py, data/sources/french.py, honesty/test_honesty.py"
+        },
+
+        // 3. Market Microstructure & Execution
+        { id: "lob", name: "Limit Order Book (LOB) Dynamics", pillar: "Microstructure & Exec", color: "#f59e0b", math: "3/5", code: "5/5", intuition: "5/5",
+          tracks: ["cs_physics"],
+          summary: "Tick-by-tick order placement, queue cancellation, and Order Flow Imbalance (OFI).",
+          math_req: "Hawkes point processes, queueing theory, discrete event probability.",
+          code_req: "C++20/Rust, cache-friendly data structures, zero-allocation circular ring buffers.",
+          bridges: "Supplies the ground-truth micro-level features for Deep Learning and RL execution models.",
+          roles: "HFT Quantitative Trader, Core Systems Engineer (HRT, Jane Street, Jump Trading).",
+          repo: "backtest/costs.py, docs/DATA_SOURCES.md"
+        },
+        { id: "bidask", name: "Bid-Ask Spread & Adverse Selection", pillar: "Microstructure & Exec", color: "#f59e0b", math: "3/5", code: "4/5", intuition: "5/5",
+          tracks: ["cs_physics", "business"],
+          summary: "Glosten-Milgrom and Roll models explaining why passive quotes face toxicity and the winner's curse.",
+          math_req: "Information asymmetry economics, conditional probability, Kyle's Lambda.",
+          code_req: "Intraday tick cleaning, effective spread vs quoted spread estimation.",
+          bridges: "The universal penalty constraint across all high-turnover Stat Arb and Trend strategies.",
+          roles: "Execution Researcher, Electronic Market Maker (Flow Traders, Citadel Securities).",
+          repo: "backtest/costs.py, honesty/test_honesty.py"
+        },
+        { id: "optexec", name: "Optimal Execution (Almgren-Chriss)", pillar: "Microstructure & Exec", color: "#f59e0b", math: "4/5", code: "4/5", intuition: "4/5",
+          tracks: ["cs_physics", "econ_ds"],
+          summary: "Trading off market impact penalty against price volatility risk during large block liquidation.",
+          math_req: "Calculus of variations, quadratic programming, non-linear market impact laws.",
+          code_req: "TWAP, VWAP, POV scheduling engines; real-time execution algorithms.",
+          bridges: "Connects to Portfolio Optimization: execution cost models dictate the realistic capacity of alpha strategies.",
+          roles: "Algorithmic Execution Quant, Quantitative Trading Solutions Architect.",
+          repo: "backtest/costs.py, backtest/engine.py"
+        },
+
+        // 4. Portfolio Optimization & Risk
+        { id: "mpt", name: "Markowitz & Covariance Shrinkage", pillar: "Portfolio & Risk", color: "#10b981", math: "4/5", code: "3/5", intuition: "5/5",
+          tracks: ["econ_ds", "business"],
+          summary: "Why sample covariance inversion maximizes estimation error, and how Ledoit-Wolf shrinkage restores stability.",
+          math_req: "Convex optimization, Quadratic programming, Random Matrix Theory (Marchenko-Pastur).",
+          code_req: "cvxpy, scipy.optimize, eigenvalue clipping routines.",
+          bridges: "The mathematical backbone allocating weights generated by Stat Arb, Factor, and Macro strategies.",
+          roles: "Portfolio Construction Analyst, Quantitative Allocation Lead.",
+          repo: "backtest/engine.py, backtest/metrics.py"
+        },
+        { id: "tailrisk", name: "Tail Risk, VaR, CVaR & EVT", pillar: "Portfolio & Risk", color: "#10b981", math: "4/5", code: "3/5", intuition: "5/5",
+          tracks: ["business", "cs_physics"],
+          summary: "Measuring catastrophic downside risk beyond Gaussian variance using Generalized Pareto distributions.",
+          math_req: "Extreme Value Theory, Copulas (Clayton, Gumbel) for tail correlation, Cornish-Fisher expansion.",
+          code_req: "Historical Monte Carlo simulation, bootstrap resamplers.",
+          bridges: "Directly mitigated by Derivatives overlays (buying out-of-the-money puts).",
+          roles: "Quantitative Risk Manager, Head of Financial Risk (PIMCO, BlackRock).",
+          repo: "honesty/test_honesty.py (bootstrap_dd_p95), backtest/metrics.py"
+        },
+        { id: "honesty", name: "The Honesty Battery & DSR", pillar: "Portfolio & Risk", color: "#10b981", math: "4/5", code: "4/5", intuition: "5/5",
+          tracks: ["econ_ds", "cs_physics", "business"],
+          summary: "Marcos Lopez de Prado's Deflated Sharpe Ratio (DSR), Probabilistic Sharpe Ratio (PSR), and MinTRL.",
+          math_req: "Extreme value theory of Gaussian maxima, permutation testing, multiple-hypothesis adjustments.",
+          code_req: "Synthetic test suites, permutation resamplers, trial tracking.",
+          bridges: "The gatekeeper for the entire KwantKlubben ecosystem: no strategy is published without passing honesty checks.",
+          roles: "Lead Quantitative Auditor, Methodological Research Lead.",
+          repo: "honesty/test_honesty.py, honesty/__init__.py"
+        },
+
+        // 5. Quantitative Macro & CTA
+        { id: "cta", name: "Time-Series Momentum & CTAs", pillar: "Quant Macro & CTA", color: "#8b5cf6", math: "3/5", code: "3/5", intuition: "5/5",
+          tracks: ["business", "econ_ds"],
+          summary: "Absolute trend-following across commodities, bonds, FX, and equity indices providing crisis alpha.",
+          math_req: "Autoregressive processes, volatility-scaled position sizing, geometric compounding.",
+          code_req: "Multi-asset futures roll calendar processing, backtesting continuous futures contracts.",
+          bridges: "Provides portfolio-level downside hedge during equity market crashes.",
+          roles: "CTA Systematic Trader, Managed Futures Portfolio Manager (Man AHL, Winton).",
+          repo: "data/sources/stooq.py, backtest/engine.py"
+        },
+        { id: "yieldcurve", name: "Yield Curve Term Structure (PCA)", pillar: "Quant Macro & CTA", color: "#8b5cf6", math: "4/5", code: "3/5", intuition: "4/5",
+          tracks: ["econ_ds", "cs_physics"],
+          summary: "Nelson-Siegel parametric fitting and PCA decomposing curves into Level, Slope, and Curvature.",
+          math_req: "Principal Component Analysis, bond duration/convexity, affine term structure models (Vasicek, CIR).",
+          code_req: "FRED API scraping, yield curve interpolation splines.",
+          bridges: "Yield curve inversions serve as top-down regime switches for equity factor models.",
+          roles: "Fixed Income Quantitative Strategist, Rates Researcher.",
+          repo: "data/sources/fred.py (get_macro)"
+        },
+
+        // 6. Machine Learning in Quant
+        { id: "finml", name: "Financial ML Pitfalls & Purged CV", pillar: "Machine Learning", color: "#06b6d4", math: "4/5", code: "4/5", intuition: "5/5",
+          tracks: ["econ_ds", "cs_physics"],
+          summary: "Overcoming low SNR and non-stationarity using Purged and Embargoed K-Fold cross-validation.",
+          math_req: "Fractional differentiation (stationarity with memory), information theory, triple-barrier labeling.",
+          code_req: "Custom Scikit-Learn splitters, purged group time-series validation.",
+          bridges: "Essential foundation preventing fake alpha claims across all predictive models.",
+          roles: "Machine Learning Quantitative Researcher, AI Alpha Lead.",
+          repo: "backtest/splits.py, honesty/test_honesty.py"
+        },
+        { id: "nlp", name: "Financial NLP & Transcripts (Quartr)", pillar: "Machine Learning", color: "#06b6d4", math: "3/5", code: "4/5", intuition: "4/5",
+          tracks: ["business", "econ_ds"],
+          summary: "Extracting sentiment, guidance revisions, and tonal changes from earnings call transcripts.",
+          math_req: "Cosine similarity in embedding space, token probability distributions, attention mechanisms.",
+          code_req: "Hugging Face transformers, LLM prompt engineering, local embeddings, JSON pipelines.",
+          bridges: "Powers event-driven factor models like Post-Earnings Announcement Drift (PEAD).",
+          roles: "Alternative Data Quantitative Analyst, NLP Researcher.",
+          repo: "data/sources/quartr.py, data/raw/"
+        }
+      ],
+      links: [
+        // Intra-pillar & Inter-pillar bridges
+        { source: "bsm", target: "greeks" },
+        { source: "bsm", target: "vol_surface" },
+        { source: "greeks", target: "tailrisk" },
+        { source: "greeks", target: "bidask" },
+        { source: "pairs", target: "bidask" },
+        { source: "pairs", target: "mpt" },
+        { source: "momentum", target: "multifactor" },
+        { source: "momentum", target: "mpt" },
+        { source: "multifactor", target: "finml" },
+        { source: "multifactor", target: "nlp" },
+        { source: "lob", target: "bidask" },
+        { source: "lob", target: "optexec" },
+        { source: "optexec", target: "momentum" },
+        { source: "mpt", target: "tailrisk" },
+        { source: "mpt", target: "honesty" },
+        { source: "tailrisk", target: "honesty" },
+        { source: "cta", target: "yieldcurve" },
+        { source: "cta", target: "tailrisk" },
+        { source: "yieldcurve", target: "multifactor" },
+        { source: "finml", target: "honesty" },
+        { source: "nlp", target: "multifactor" },
+        { source: "vol_surface", target: "tailrisk" }
+      ]
+    };
+
+    // D3 Graph Render
+    const svg = d3.select("#network-svg");
+    const container = document.getElementById("graph-container");
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    const g = svg.append("g");
+
+    // Zoom setup
+    const zoom = d3.zoom()
+      .scaleExtent([0.3, 3])
+      .on("zoom", (event) => g.attr("transform", event.transform));
+    svg.call(zoom);
+
+    // Force Simulation
+    const simulation = d3.forceSimulation(data.nodes)
+      .force("link", d3.forceLink(data.links).id(d => d.id).distance(120))
+      .force("charge", d3.forceManyBody().strength(-400))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("collision", d3.forceCollide().radius(45));
+
+    // Links
+    const link = g.append("g")
+      .attr("class", "links")
+      .selectAll("line")
+      .data(data.links)
+      .enter().append("line");
+
+    // Nodes
+    const node = g.append("g")
+      .attr("class", "nodes")
+      .selectAll("g")
+      .data(data.nodes)
+      .enter().append("g")
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+    node.append("circle")
+      .attr("r", 14)
+      .attr("fill", d => d.color)
+      .attr("stroke", "#ffffff")
+      .attr("stroke-opacity", 0.4)
+      .on("click", (event, d) => openPanel(d));
+
+    node.append("text")
+      .attr("class", "node-label")
+      .attr("dx", 18)
+      .attr("dy", 4)
+      .text(d => d.name);
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    // Panel controls
+    const panel = document.getElementById("side-panel");
+    const closeBtn = document.getElementById("close-panel");
+
+    function openPanel(d) {
+      document.getElementById("node-pillar-badge").textContent = d.pillar;
+      document.getElementById("node-pillar-badge").style.backgroundColor = d.color + "33";
+      document.getElementById("node-pillar-badge").style.color = d.color;
+      document.getElementById("node-title").textContent = d.name;
+      document.getElementById("val-math").textContent = d.math;
+      document.getElementById("val-code").textContent = d.code;
+      document.getElementById("val-intuition").textContent = d.intuition;
+      document.getElementById("node-intuition-text").textContent = d.summary;
+      document.getElementById("node-math-text").textContent = d.math_req;
+      document.getElementById("node-code-text").textContent = d.code_req;
+      document.getElementById("node-bridges-text").textContent = d.bridges;
+      document.getElementById("node-roles-text").textContent = d.roles;
+      
+      const repoContainer = document.getElementById("node-repo-text");
+      repoContainer.innerHTML = d.repo.split(", ").map(f => `<span class="code-tag">${f}</span>`).join(" ");
+
+      panel.classList.add("open");
+
+      // Highlight links connected to this node
+      link.classed("highlight", l => l.source.id === d.id || l.target.id === d.id);
+    }
+
+    closeBtn.addEventListener("click", () => {
+      panel.classList.remove("open");
+      link.classed("highlight", false);
+    });
+
+    // Filter by student track
+    document.getElementById("view-filter").addEventListener("change", (e) => {
+      const track = e.target.value;
+      if (track === "all") {
+        node.style("opacity", 1);
+        link.style("opacity", 1);
+      } else {
+        node.style("opacity", d => d.tracks.includes(track) ? 1 : 0.15);
+        link.style("opacity", 0.08);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      simulation.force("center", d3.forceCenter(w / 2, h / 2));
+      simulation.alpha(0.3).restart();
+    });
+  </script>
+</body>
+</html>
