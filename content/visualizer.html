@@ -239,9 +239,15 @@
       </div>
       <select id="view-filter" class="filter-select">
         <option value="all">View: All Disciplines & Bridges</option>
-        <option value="cs_physics">Highlight: CS & Engineering Physics Track</option>
-        <option value="business">Highlight: Business & Finance Track</option>
-        <option value="econ_ds">Highlight: Econ & Data Science Track</option>
+        <option value="pillar:Derivatives & Vol">Pillar: Derivatives & Volatility</option>
+        <option value="pillar:Stat Arb & Trading">Pillar: Stat Arb & Trading</option>
+        <option value="pillar:Microstructure & Exec">Pillar: Microstructure & Execution</option>
+        <option value="pillar:Portfolio & Risk">Pillar: Portfolio & Risk</option>
+        <option value="pillar:Quant Macro & CTA">Pillar: Quant Macro & CTA</option>
+        <option value="pillar:Machine Learning">Pillar: Machine Learning in Quant</option>
+        <option value="math_high">Filter: High Math Rigor (4-5★)</option>
+        <option value="code_high">Filter: High Systems / Code (4-5★)</option>
+        <option value="intuition_high">Filter: High Market Intuition (5★)</option>
       </select>
     </div>
 
@@ -317,7 +323,6 @@
       nodes: [
         // 1. Derivatives & Volatility
         { id: "bsm", name: "Black-Scholes & No-Arbitrage", pillar: "Derivatives & Vol", color: "#ec4899", math: "5/5", code: "3/5", intuition: "4/5",
-          tracks: ["cs_physics"],
           summary: "Continuous-time pricing via risk-neutral replication and martingales.",
           math_req: "Itô Lemma, SDEs, Feynman-Kac PDE, Girsanov Theorem, Change of Numeraire.",
           code_req: "Python (scipy, numpy), C++ pricing engines, Monte Carlo path generators.",
@@ -326,7 +331,6 @@
           repo: "data/sources/yahoo.py (options chains), research/PRIMER-options-hedging.md"
         },
         { id: "greeks", name: "The Greeks & Dynamic Hedging", pillar: "Derivatives & Vol", color: "#ec4899", math: "4/5", code: "3/5", intuition: "5/5",
-          tracks: ["cs_physics"],
           summary: "Managing sensitivity exposures (Delta, Gamma, Vega, Theta) and discrete rebalancing error.",
           math_req: "Partial derivatives, Taylor series expansions of portfolio PnL, stochastic calculus.",
           code_req: "Vectorized Greeks calculation, discrete rebalancing simulators.",
@@ -335,7 +339,6 @@
           repo: "backtest/costs.py, research/PRIMER-options-hedging.md"
         },
         { id: "vol_surface", name: "Implied Volatility Surfaces & Smile", pillar: "Derivatives & Vol", color: "#ec4899", math: "5/5", code: "4/5", intuition: "4/5",
-          tracks: ["cs_physics"],
           summary: "Dupire local volatility, Heston stochastic vol, and SABR modeling to capture crash phobia.",
           math_req: "Non-linear optimization, calibration of partial differential equations, Fourier transforms.",
           code_req: "C++/CUDA surface solvers, Levenberg-Marquardt optimizer in Python.",
@@ -346,7 +349,6 @@
 
         // 2. Stat Arb & Quantitative Trading
         { id: "pairs", name: "Pairs Trading & Cointegration", pillar: "Stat Arb & Trading", color: "#3b82f6", math: "4/5", code: "4/5", intuition: "4/5",
-          tracks: ["cs_physics", "econ_ds"],
           summary: "Exploiting stationary spreads between economically tied assets via Ornstein-Uhlenbeck processes.",
           math_req: "Engle-Granger cointegration, Augmented Dickey-Fuller test, Johansen test, OU parameter estimation.",
           code_req: "Vectorized time-series analysis in Pandas/Polars, fast rolling regressions.",
@@ -355,7 +357,6 @@
           repo: "backtest/engine.py, data/get_close_panel, strategies/_template"
         },
         { id: "momentum", name: "Cross-Sectional Factor Momentum", pillar: "Stat Arb & Trading", color: "#3b82f6", math: "3/5", code: "4/5", intuition: "4/5",
-          tracks: ["business", "econ_ds"],
           summary: "Systematic ranking of relative strength (12-1 month lookback) with volatility normalization.",
           math_req: "Cross-sectional ranking, z-score transformations, factor covariance attribution.",
           code_req: "Broad panel manipulation, matrix weight calculation, rebalancing turnover logic.",
@@ -364,7 +365,6 @@
           repo: "backtest/engine.py, backtest/universe.py, backtest/metrics.py"
         },
         { id: "multifactor", name: "Fundamental Multi-Factor Models", pillar: "Stat Arb & Trading", color: "#3b82f6", math: "3/5", code: "4/5", intuition: "5/5",
-          tracks: ["business", "econ_ds"],
           summary: "Combining Value, Quality, Size, and Momentum anomalies into unified alpha vectors.",
           math_req: "Fama-MacBeth regressions, multiple linear regression, residual variance extraction.",
           code_req: "SQL/DuckDB ingestion of balance sheets and earnings disclosures, point-in-time joins.",
@@ -375,7 +375,6 @@
 
         // 3. Market Microstructure & Execution
         { id: "lob", name: "Limit Order Book (LOB) Dynamics", pillar: "Microstructure & Exec", color: "#f59e0b", math: "3/5", code: "5/5", intuition: "5/5",
-          tracks: ["cs_physics"],
           summary: "Tick-by-tick order placement, queue cancellation, and Order Flow Imbalance (OFI).",
           math_req: "Hawkes point processes, queueing theory, discrete event probability.",
           code_req: "C++20/Rust, cache-friendly data structures, zero-allocation circular ring buffers.",
@@ -384,7 +383,6 @@
           repo: "backtest/costs.py, docs/DATA_SOURCES.md"
         },
         { id: "bidask", name: "Bid-Ask Spread & Adverse Selection", pillar: "Microstructure & Exec", color: "#f59e0b", math: "3/5", code: "4/5", intuition: "5/5",
-          tracks: ["cs_physics", "business"],
           summary: "Glosten-Milgrom and Roll models explaining why passive quotes face toxicity and the winner's curse.",
           math_req: "Information asymmetry economics, conditional probability, Kyle's Lambda.",
           code_req: "Intraday tick cleaning, effective spread vs quoted spread estimation.",
@@ -393,7 +391,6 @@
           repo: "backtest/costs.py, honesty/test_honesty.py"
         },
         { id: "optexec", name: "Optimal Execution (Almgren-Chriss)", pillar: "Microstructure & Exec", color: "#f59e0b", math: "4/5", code: "4/5", intuition: "4/5",
-          tracks: ["cs_physics", "econ_ds"],
           summary: "Trading off market impact penalty against price volatility risk during large block liquidation.",
           math_req: "Calculus of variations, quadratic programming, non-linear market impact laws.",
           code_req: "TWAP, VWAP, POV scheduling engines; real-time execution algorithms.",
@@ -404,7 +401,6 @@
 
         // 4. Portfolio Optimization & Risk
         { id: "mpt", name: "Markowitz & Covariance Shrinkage", pillar: "Portfolio & Risk", color: "#10b981", math: "4/5", code: "3/5", intuition: "5/5",
-          tracks: ["econ_ds", "business"],
           summary: "Why sample covariance inversion maximizes estimation error, and how Ledoit-Wolf shrinkage restores stability.",
           math_req: "Convex optimization, Quadratic programming, Random Matrix Theory (Marchenko-Pastur).",
           code_req: "cvxpy, scipy.optimize, eigenvalue clipping routines.",
@@ -413,7 +409,6 @@
           repo: "backtest/engine.py, backtest/metrics.py"
         },
         { id: "tailrisk", name: "Tail Risk, VaR, CVaR & EVT", pillar: "Portfolio & Risk", color: "#10b981", math: "4/5", code: "3/5", intuition: "5/5",
-          tracks: ["business", "cs_physics"],
           summary: "Measuring catastrophic downside risk beyond Gaussian variance using Generalized Pareto distributions.",
           math_req: "Extreme Value Theory, Copulas (Clayton, Gumbel) for tail correlation, Cornish-Fisher expansion.",
           code_req: "Historical Monte Carlo simulation, bootstrap resamplers.",
@@ -422,7 +417,6 @@
           repo: "honesty/test_honesty.py (bootstrap_dd_p95), backtest/metrics.py"
         },
         { id: "honesty", name: "The Honesty Battery & DSR", pillar: "Portfolio & Risk", color: "#10b981", math: "4/5", code: "4/5", intuition: "5/5",
-          tracks: ["econ_ds", "cs_physics", "business"],
           summary: "Marcos Lopez de Prado's Deflated Sharpe Ratio (DSR), Probabilistic Sharpe Ratio (PSR), and MinTRL.",
           math_req: "Extreme value theory of Gaussian maxima, permutation testing, multiple-hypothesis adjustments.",
           code_req: "Synthetic test suites, permutation resamplers, trial tracking.",
@@ -433,7 +427,6 @@
 
         // 5. Quantitative Macro & CTA
         { id: "cta", name: "Time-Series Momentum & CTAs", pillar: "Quant Macro & CTA", color: "#8b5cf6", math: "3/5", code: "3/5", intuition: "5/5",
-          tracks: ["business", "econ_ds"],
           summary: "Absolute trend-following across commodities, bonds, FX, and equity indices providing crisis alpha.",
           math_req: "Autoregressive processes, volatility-scaled position sizing, geometric compounding.",
           code_req: "Multi-asset futures roll calendar processing, backtesting continuous futures contracts.",
@@ -442,7 +435,6 @@
           repo: "data/sources/stooq.py, backtest/engine.py"
         },
         { id: "yieldcurve", name: "Yield Curve Term Structure (PCA)", pillar: "Quant Macro & CTA", color: "#8b5cf6", math: "4/5", code: "3/5", intuition: "4/5",
-          tracks: ["econ_ds", "cs_physics"],
           summary: "Nelson-Siegel parametric fitting and PCA decomposing curves into Level, Slope, and Curvature.",
           math_req: "Principal Component Analysis, bond duration/convexity, affine term structure models (Vasicek, CIR).",
           code_req: "FRED API scraping, yield curve interpolation splines.",
@@ -453,7 +445,6 @@
 
         // 6. Machine Learning in Quant
         { id: "finml", name: "Financial ML Pitfalls & Purged CV", pillar: "Machine Learning", color: "#06b6d4", math: "4/5", code: "4/5", intuition: "5/5",
-          tracks: ["econ_ds", "cs_physics"],
           summary: "Overcoming low SNR and non-stationarity using Purged and Embargoed K-Fold cross-validation.",
           math_req: "Fractional differentiation (stationarity with memory), information theory, triple-barrier labeling.",
           code_req: "Custom Scikit-Learn splitters, purged group time-series validation.",
@@ -462,7 +453,6 @@
           repo: "backtest/splits.py, honesty/test_honesty.py"
         },
         { id: "nlp", name: "Financial NLP & Transcripts (Quartr)", pillar: "Machine Learning", color: "#06b6d4", math: "3/5", code: "4/5", intuition: "4/5",
-          tracks: ["business", "econ_ds"],
           summary: "Extracting sentiment, guidance revisions, and tonal changes from earnings call transcripts.",
           math_req: "Cosine similarity in embedding space, token probability distributions, attention mechanisms.",
           code_req: "Hugging Face transformers, LLM prompt engineering, local embeddings, JSON pipelines.",
@@ -609,14 +599,24 @@
       link.classed("highlight", false);
     });
 
-    // Filter by student track
+    // Filter by pillar or hard skill intensity
     document.getElementById("view-filter").addEventListener("change", (e) => {
-      const track = e.target.value;
-      if (track === "all") {
+      const val = e.target.value;
+      if (val === "all") {
         node.style("opacity", 1);
         link.style("opacity", 1);
-      } else {
-        node.style("opacity", d => d.tracks.includes(track) ? 1 : 0.15);
+      } else if (val.startsWith("pillar:")) {
+        const p = val.replace("pillar:", "");
+        node.style("opacity", d => d.pillar === p ? 1 : 0.15);
+        link.style("opacity", l => (l.source.pillar === p && l.target.pillar === p) ? 1 : 0.05);
+      } else if (val === "math_high") {
+        node.style("opacity", d => (d.math === "4/5" || d.math === "5/5") ? 1 : 0.15);
+        link.style("opacity", 0.08);
+      } else if (val === "code_high") {
+        node.style("opacity", d => (d.code === "4/5" || d.code === "5/5") ? 1 : 0.15);
+        link.style("opacity", 0.08);
+      } else if (val === "intuition_high") {
+        node.style("opacity", d => d.intuition === "5/5" ? 1 : 0.15);
         link.style("opacity", 0.08);
       }
     });

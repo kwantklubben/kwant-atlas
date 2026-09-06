@@ -35,21 +35,14 @@ Explore the deep technical architecture, required hard skills, and KwantKlubben 
 
 ---
 
-## 🧭 Entry Tracks by Student Major
+## 🕸️ How the Disciplines Connect
 
-Where should you begin based on your academic background?
+Quantitative finance is often mistakenly thought of as isolated silos. In reality, the most resilient edges and real-world institutional strategies exist at the **intersection of these pillars**:
 
-- 💻 **[[tracks/cs-and-engineering-physics|Track A: Computer Science & Engineering Physics]]**  
-  *Strength:* Advanced coding, differential equations, stochastics, simulation.  
-  *Bridge:* Market microstructure, non-stationarity, transaction frictions, and avoiding overfitting on noise.
-
-- 📈 **[[tracks/business-and-finance|Track B: Business & Corporate Finance]]**  
-  *Strength:* Valuation, accounting statements, business models, macro thesis.  
-  *Bridge:* Vectorized Python, the `target_weights()` contract, backtest bias avoidance, and statistical validation.
-
-- 📊 **[[tracks/economics-and-data-science|Track C: Economics & Data Science]]**  
-  *Strength:* Econometrics, regression analysis, predictive modeling.  
-  *Bridge:* Cross-sectional factor ranking, turnover constraints, and Lopez de Prado's Deflated Sharpe Ratio (DSR).
+- **Options Overlays & Tail Risk:** How continuous-time derivatives pricing ([[pillars/01-derivatives-volatility/the-greeks-and-hedging|The Greeks]]) allows managers to reshape non-linear payoff profiles and directly truncate left-tail drawdown in [[pillars/04-portfolio-risk/tail-risk-var-cvar-evt|CVaR (Expected Shortfall)]].
+- **Microstructure Frictions vs. Statistical Arbitrage:** Why theoretical alpha discovered in [[pillars/02-stat-arb-trading/pairs-trading-and-cointegration|Pairs Trading & Cointegration]] quickly bleeds into live losses unless penalized by [[pillars/03-market-microstructure/bid-ask-spread-and-adverse-selection|Bid-Ask Spread & Adverse Selection]] and modeled via [[pillars/03-market-microstructure/optimal-execution-almgren-chriss|Almgren-Chriss Optimal Execution]].
+- **Macro Regimes & Factor Timing:** How macroeconomic yield curve shifts and [[pillars/05-quant-macro-cta/yield-curve-term-structure|Term Structure PCA]] dictate top-down regime switching for bottom-up [[pillars/02-stat-arb-trading/fundamental-multi-factor-models|Multi-Factor Models]].
+- **Machine Learning & Multiple Testing Defense:** Why non-linear feature ranking in [[pillars/06-machine-learning-quant/tree-based-factor-ranking|Tree-Based Factor Models]] must be rigorously defended against overfitting using [[pillars/06-machine-learning-quant/financial-ml-pitfalls-purged-cv|Purged & Embargoed Cross-Validation]] and [[pillars/04-portfolio-risk/the-honesty-battery-and-dsr|The Deflated Sharpe Ratio (DSR)]].
 
 ---
 
