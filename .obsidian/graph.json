@@ -11,45 +11,59 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:pillars/01-derivatives-volatility",
+      "query": "path:pillars/01-valuation-accounting",
       "color": {
         "a": 1,
         "rgb": 15485081
       }
     },
     {
-      "query": "path:pillars/02-stat-arb-trading",
+      "query": "path:pillars/02-linear-algebra",
       "color": {
         "a": 1,
         "rgb": 3899894
       }
     },
     {
-      "query": "path:pillars/03-market-microstructure",
+      "query": "path:pillars/03-calculus-analysis",
       "color": {
         "a": 1,
         "rgb": 16096779
       }
     },
     {
-      "query": "path:pillars/04-portfolio-risk",
+      "query": "path:pillars/04-probability-stochastics",
       "color": {
         "a": 1,
         "rgb": 1096065
       }
     },
     {
-      "query": "path:pillars/05-quant-macro-cta",
+      "query": "path:pillars/05-statistics-econometrics",
       "color": {
         "a": 1,
         "rgb": 9133302
       }
     },
     {
-      "query": "path:pillars/06-machine-learning-quant",
+      "query": "path:pillars/06-portfolio-asset-pricing",
       "color": {
         "a": 1,
         "rgb": 440020
+      }
+    },
+    {
+      "query": "path:pillars/07-derivatives-volatility",
+      "color": {
+        "a": 1,
+        "rgb": 15758362
+      }
+    },
+    {
+      "query": "path:pillars/08-complexity-microstructure-tailrisk",
+      "color": {
+        "a": 1,
+        "rgb": 12774187
       }
     }
   ]
