@@ -32,9 +32,10 @@ jobs:
       - name: Copy Standalone Visualizer and CNAME
         run: |
           echo "atlas.kwantklubben.com" > public/CNAME
-          cp content/visualizer.html public/visualizer.html
+          rm -f public/visualizer
           mkdir -p public/visualizer
           cp content/visualizer.html public/visualizer/index.html
+          cp content/visualizer.html public/visualizer.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
