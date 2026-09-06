@@ -1,569 +1,379 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kwant Atlas — First-Principles Knowledge Map</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kwant Atlas: The First-Principles Graph of Quantitative Finance</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #090d16;
-      --card-bg: rgba(16, 24, 40, 0.90);
-      --border: rgba(255, 255, 255, 0.12);
-      --border-bright: rgba(255, 255, 255, 0.28);
-      --text: #f0f4fc;
-      --text-muted: #8b9bb4;
-      --accent: #C2EB2B;
-      --font-sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
+      background-color: #0C1016;
+      color: #E2E8F0;
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
       overflow: hidden;
       width: 100vw;
       height: 100vh;
-      display: flex;
     }
-
-    #graph-container {
-      flex: 1;
-      height: 100%;
-      position: relative;
-    }
-
-    svg {
-      width: 100%;
-      height: 100%;
-      cursor: grab;
-    }
-    svg:active { cursor: grabbing; }
-
-    /* Controls Overlay */
-    .top-bar {
+    #header {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 10;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      background: var(--card-bg);
-      backdrop-filter: blur(14px);
-      padding: 10px 18px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      top: 1.25rem;
+      left: 1.5rem;
+      z-index: 20;
+      pointer-events: auto;
     }
-
-    .brand-title {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand h1 {
+      font-size: 1.25rem;
       font-weight: 700;
-      font-size: 15px;
       letter-spacing: -0.02em;
+      color: #FFFFFF;
+    }
+    .brand h1 span {
+      color: #C2EB2B;
+    }
+    .tagline {
+      font-size: 0.8rem;
+      color: #94A3B8;
+      font-family: 'Space Mono', monospace;
+      margin-top: 0.2rem;
+    }
+    .home-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      font-family: 'Space Mono', monospace;
+      color: #C2EB2B;
+      text-decoration: none;
+      border: 1px solid rgba(194, 235, 43, 0.3);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+    .home-link:hover {
+      background-color: rgba(194, 235, 43, 0.15);
+      border-color: #C2EB2B;
+    }
+    #controls {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      z-index: 20;
+      background: rgba(30, 37, 48, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      width: 240px;
+    }
+    .control-title {
+      font-weight: 600;
+      color: #C2EB2B;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .filter-btn-group {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .filter-btn {
+      flex: 1;
+      background: #0C1016;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #94A3B8;
+      padding: 0.3rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-family: 'Space Mono', monospace;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .filter-btn.active {
+      background: #C2EB2B;
+      color: #0C1016;
+      font-weight: 700;
+      border-color: #C2EB2B;
+    }
+    #side-drawer {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      width: 380px;
+      max-height: 480px;
+      overflow-y: auto;
+      background: rgba(30, 37, 48, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(194, 235, 43, 0.3);
+      border-radius: 8px;
+      padding: 1.25rem;
+      z-index: 30;
+      display: none;
+    }
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+    .drawer-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .drawer-cluster {
+      font-size: 0.7rem;
+      font-family: 'Space Mono', monospace;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      background: #0C1016;
+      color: #C2EB2B;
+      border: 1px solid #C2EB2B;
+    }
+    .drawer-meta {
+      display: flex;
+      gap: 0.75rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: #94A3B8;
+      margin: 0.5rem 0 0.8rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .drawer-section {
+      margin-bottom: 0.8rem;
+    }
+    .drawer-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #C2EB2B;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-family: 'Space Mono', monospace;
+    }
+    .drawer-desc {
+      font-size: 0.8rem;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+    .drawer-failure {
+      background: rgba(239, 68, 68, 0.12);
+      border-left: 3px solid #EF4444;
+      padding: 0.5rem 0.6rem;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.78rem;
+      color: #FCA5A5;
+      line-height: 1.35;
+    }
+    .drawer-action {
+      margin-top: 1rem;
+    }
+    .open-doc-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #C2EB2B;
+      color: #0C1016;
+      font-weight: 700;
+      padding: 0.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: background 0.2s;
+    }
+    .open-doc-btn:hover {
+      background: #D5F25A;
+    }
+    #legend {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: rgba(30, 37, 48, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.7rem;
+      font-family: 'Space Mono', monospace;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      z-index: 20;
+    }
+    .legend-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
+      color: #94A3B8;
     }
-    .brand-dot {
+    .legend-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
     }
-
-    .filter-select {
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 13px;
-      outline: none;
-      cursor: pointer;
-    }
-    .filter-select:hover { border-color: var(--border-bright); }
-
-    /* Side Panel */
-    #side-panel {
-      width: 440px;
-      height: 100%;
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      border-left: 1px solid var(--border);
-      padding: 24px;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 20;
-      box-shadow: -10px 0 40px rgba(0,0,0,0.6);
-    }
-    #side-panel.open { transform: translateX(0); }
-
-    .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 22px;
-      cursor: pointer;
-    }
-    .close-btn:hover { color: var(--text); }
-
-    .badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-bottom: 12px;
-    }
-
-    .panel-title {
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 14px;
-    }
-
-    .meta-ratings {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 20px;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      text-align: center;
-    }
-    .meta-item { font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
-    .meta-value { font-size: 14px; font-weight: 700; color: #fff; margin-top: 2px; }
-
-    .section-block {
-      margin-bottom: 20px;
-    }
-    .section-heading {
-      font-size: 12px;
-      font-family: var(--font-mono);
-      text-transform: uppercase;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      margin-bottom: 6px;
-    }
-    .section-content {
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: #cbd5e1;
-    }
-
-    .failure-block {
-      background: rgba(244, 63, 94, 0.1);
-      border-left: 3px solid #f43f5e;
-      padding: 10px 12px;
-      border-radius: 0 6px 6px 0;
-      margin-top: 6px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #fca5a5;
-    }
-
-    .code-tag {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #7dd3fc;
-      display: inline-block;
-      margin: 2px 2px 2px 0;
-    }
-
-    /* Links & Tooltips */
-    .links line {
-      stroke: rgba(255, 255, 255, 0.14);
-      stroke-width: 1.5;
-      transition: stroke 0.2s;
-    }
-    .links line.highlight {
-      stroke: var(--accent);
-      stroke-width: 3;
-      stroke-opacity: 0.9;
-    }
-
-    .nodes circle {
-      stroke-width: 2.5;
-      cursor: pointer;
-      transition: transform 0.2s, stroke-width 0.2s;
-    }
-    .nodes circle:hover {
-      stroke-width: 4;
-    }
-
-    .node-label {
-      font-size: 11px;
-      font-family: var(--font-sans);
-      fill: #e2e8f0;
-      pointer-events: none;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.95);
-      font-weight: 500;
-    }
-
-    /* Legend */
-    .legend {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      background: var(--card-bg);
-      backdrop-filter: blur(14px);
-      padding: 12px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      font-size: 11px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px 14px;
-      pointer-events: none;
-    }
-    .legend-item { display: flex; align-items: center; gap: 8px; }
-    .legend-dot { width: 9px; height: 9px; border-radius: 50%; }
   </style>
 </head>
 <body>
 
-  <div id="graph-container">
-    <div class="top-bar">
-      <div class="brand-title">
-        <span class="brand-dot"></span>
-        <span>Kwant Atlas — 8 Foundational Pillars</span>
-      </div>
-      <select id="view-filter" class="filter-select">
-        <option value="all">View: All 8 Pillars & Bridges</option>
-        <option value="pillar:01-Valuation">1. Valuation & Accounting</option>
-        <option value="pillar:02-LinearAlgebra">2. Linear Algebra (Optimizer)</option>
-        <option value="pillar:03-Calculus">3. Calculus & Analysis (Engine)</option>
-        <option value="pillar:04-Probability">4. Probability & Stochastics (Randomness)</option>
-        <option value="pillar:05-Statistics">5. Statistics & Econometrics (Predictors)</option>
-        <option value="pillar:06-Portfolio">6. Portfolio Theory & Risk (Allocators)</option>
-        <option value="pillar:07-Derivatives">7. Derivatives & Volatility (Asymmetric)</option>
-        <option value="pillar:08-Complexity">8. Complexity & Microstructure (Tail Risk)</option>
-        <option value="math_high">Filter: High Math Rigor (★★★★★)</option>
-        <option value="code_high">Filter: High Systems / Code (★★★★+)</option>
-      </select>
+  <div id="header">
+    <div class="brand">
+      <h1>KWANT <span>ATLAS</span></h1>
     </div>
-
-    <div class="legend">
-      <div class="legend-item"><span class="legend-dot" style="background:#ec4899"></span> 1. Valuation & Acc.</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span> 2. Linear Algebra</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span> 3. Calculus & Analysis</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 4. Probability & Stoch.</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#8b5cf6"></span> 5. Econometrics</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#06b6d4"></span> 6. Portfolio & Risk</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 7. Derivatives & Vol</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#84cc16"></span> 8. Microstructure & Tails</div>
-    </div>
-
-    <svg id="network-svg"></svg>
+    <div class="tagline">The 8 Disciplines of Quantitative Finance</div>
+    <a href="/" class="home-link">← Return to Knowledge Portal</a>
   </div>
 
-  <!-- Side Detail Drawer -->
-  <div id="side-panel">
-    <button class="close-btn" id="close-panel">&times;</button>
-    <div id="panel-content">
-      <div class="badge" id="node-pillar-badge">Pillar</div>
-      <h2 class="panel-title" id="node-title">Select a Node</h2>
-      
-      <div class="meta-ratings">
-        <div>
-          <div class="meta-item">Math</div>
-          <div class="meta-value" id="val-math">-</div>
-        </div>
-        <div>
-          <div class="meta-item">Coding</div>
-          <div class="meta-value" id="val-code">-</div>
-        </div>
-        <div>
-          <div class="meta-item">Intuition</div>
-          <div class="meta-value" id="val-intuition">-</div>
-        </div>
-      </div>
-
-      <div class="section-block">
-        <div class="section-heading">First-Principles Theory & Intuition</div>
-        <div class="section-content" id="node-intuition-text">-</div>
-      </div>
-
-      <div class="section-block">
-        <div class="section-heading">Why Strategies Fail in Practice (Diagnostic)</div>
-        <div class="failure-block" id="node-failure-text">-</div>
-      </div>
-
-      <div class="section-block">
-        <div class="section-heading">Core Mathematics & Formulations</div>
-        <div class="section-content" id="node-math-text">-</div>
-      </div>
-
-      <div class="section-block">
-        <div class="section-heading">Canonical Library Texts</div>
-        <div class="section-content" id="node-library-text">-</div>
-      </div>
-
-      <div class="section-block">
-        <div class="section-heading">Inter-Pillar Bridges</div>
-        <div class="section-content" id="node-bridges-text">-</div>
-      </div>
-
-      <div class="section-block">
-        <div class="section-heading">KwantKlubben Repo Sandbox</div>
-        <div class="section-content" id="node-repo-text">-</div>
-      </div>
+  <div id="controls">
+    <div class="control-title">Skill Emphasis Filter</div>
+    <div class="filter-btn-group">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="math">MATH</button>
+      <button class="filter-btn" data-filter="code">CODE</button>
+      <button class="filter-btn" data-filter="intuition">INTUITION</button>
     </div>
   </div>
+
+  <div id="side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title" id="d-title">Node Title</div>
+      <div class="drawer-cluster" id="d-cluster">Pillar</div>
+    </div>
+    <div class="drawer-meta">
+      <div>MATH: <span id="d-math">3</span>/3</div>
+      <div>CODE: <span id="d-code">2</span>/3</div>
+      <div>INTUITION: <span id="d-int">3</span>/3</div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-label">First-Principles Failure Mode</div>
+      <div class="drawer-failure" id="d-failure">Failure mode description</div>
+    </div>
+    <div class="drawer-action">
+      <a href="#" class="open-doc-btn" id="d-link" target="_self">Study Note & Ground Truth →</a>
+    </div>
+  </div>
+
+  <div id="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#E2E8F0"></div>Foundations Toolbox</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#C2EB2B"></div>1. Quant Research</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#00F0FF"></div>2. Algorithmic & HFT</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FF0055"></div>3. Derivative Pricing</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FFB800"></div>4. Quantitative Risk</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9D00FF"></div>5. Portfolio Optimization</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#00FF88"></div>6. Market Making</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#FF8800"></div>7. ML & AltData</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#708090"></div>8. Quant Development</div>
+  </div>
+
+  <svg id="canvas" width="100%" height="100%"></svg>
 
   <script>
     const data = {
-      nodes: [
-        // 1. Valuation & Accounting
-        { id: "tvm_dcf", name: "TVM & DCF Mechanics", pillar: "01-Valuation", color: "#ec4899", math: "2/5", code: "2/5", intuition: "5/5",
-          summary: "Intrinsic valuation via discounted future free cash flows (FCFF) discounted at WACC.",
-          failure: "Terminal Value Sensitivity: 70-85% of valuation sits in TV. A 50 bps error in WACC or 25 bps shift in perpetual growth shifts valuation by 30%.",
-          math_req: "PV = CF / (1+r)^t; Gordon Growth: P = D1 / (r - g); WACC formula.",
-          library: "Principles of Corporate Finance (Brealey & Myers); Damodaran on Valuation.",
-          bridges: "Feeds Value factor weights in Portfolio Asset Pricing.",
-          repo: "data/sources/quartr.py, strategies/_template"
-        },
-        { id: "accounting_hygiene", name: "Three-Statement Linkages", pillar: "01-Valuation", color: "#ec4899", math: "2/5", code: "3/5", intuition: "5/5",
-          summary: "Reconciling Net Income, Operating Cash Flow (CFO), and Balance Sheet Retained Earnings.",
-          failure: "Sloan Accrual Trap: High net income driven by rising Accounts Receivable rather than cash flows signals impending write-downs and crashes.",
-          math_req: "CFO = Net Income + D&A - ΔNWC; Balance Sheet identity A = L + E.",
-          library: "McKinsey Valuation; Financial Statement Analysis.",
-          bridges: "Feeds Quality & Accruals factors in Multi-Factor Models.",
-          repo: "data/sources/quartr.py, data/raw/"
-        },
-
-        // 2. Linear Algebra
-        { id: "spectral_theory", name: "Spectral Theory & Eigenvalues", pillar: "02-LinearAlgebra", color: "#3b82f6", math: "4/5", code: "4/5", intuition: "4/5",
-          summary: "Orthogonal decomposition of symmetric matrices into real eigenvalues and orthogonal eigenvectors.",
-          failure: "Ill-conditioned Matrix Inversion: Large condition numbers kappa(A) = smax / smin cause numerical explosions when inverting covariance matrices.",
-          math_req: "A v = lambda v; A = Q Lambda Q^T; Tr(A) = sum(lambda); det(A) = prod(lambda).",
-          library: "Gilbert Strang (Calculus / Linear Algebra); ESL (Hastie et al. Ch 14).",
-          bridges: "The algebraic foundation for Markowitz covariance inversion and PCA.",
-          repo: "backtest/engine.py, honesty/test_honesty.py"
-        },
-        { id: "pca_factor", name: "PCA Factor Extraction & Yield Curves", pillar: "02-LinearAlgebra", color: "#3b82f6", math: "4/5", code: "4/5", intuition: "5/5",
-          summary: "Rotating high-dimensional correlated returns into orthogonal principal components.",
-          failure: "Spurious Factor Retention: Retaining noisy eigenvalues exceeding the Marchenko-Pastur bulk leads to out-of-sample overfit.",
-          math_req: "max w^T Sigma w s.t. w^T w = 1 => Sigma w = lambda w; Litterman-Scheinkman yield decomposition (Level, Slope, Curvature).",
-          library: "Ruey Tsay (Analysis of Financial Time Series, Ch 9).",
-          bridges: "Connects directly to Term Structure Interest Rate Models and Statistical Arbitrage.",
-          repo: "data/sources/fred.py, backtest/universe.py"
-        },
-
-        // 3. Calculus & Real Analysis
-        { id: "taylor_greeks", name: "Taylor Expansions (Basis of Greeks)", pillar: "03-Calculus", color: "#f59e0b", math: "5/5", code: "3/5", intuition: "4/5",
-          summary: "Multivariable Taylor series expansions expressing portfolio PnL as a sum of partial derivatives.",
-          failure: "Jump Discontinuity Disaster: Taylor expansions assume smooth paths. When market gaps 5-sigma overnight, higher-order Speed/Vanna wipe out delta-gamma hedged books.",
-          math_req: "Delta V = Theta dt + Delta dS + 0.5 Gamma (dS)^2 + Vanna dS dsigma + 0.5 Volga (dsigma)^2.",
-          library: "Calculus (Strang); Shreve II (Ch 4).",
-          bridges: "The exact mathematical derivation engine of Option Greeks and Black-Scholes PDE.",
-          repo: "research/PRIMER-options-hedging.md, backtest/costs.py"
-        },
-        { id: "kkt_opt", name: "Constrained Optimization & KKT", pillar: "03-Calculus", color: "#f59e0b", math: "5/5", code: "4/5", intuition: "4/5",
-          summary: "Karush-Kuhn-Tucker conditions for convex optimization subject to inequality risk constraints.",
-          failure: "Non-convex Optimization Traps: Calibrating stochastic volatility surfaces on non-convex objectives traps solvers in spurious local minima.",
-          math_req: "Stationarity, Primal/Dual Feasibility, Complementary Slackness: lambda_i f_i(x) = 0.",
-          library: "Stephen Boyd (Convex Optimization); Glasserman (Monte Carlo Ch 4).",
-          bridges: "Enforces portfolio leverage bounds, turnover limits, and sector constraints.",
-          repo: "backtest/engine.py"
-        },
-
-        // 4. Probability & Stochastic Processes
-        { id: "ito_calculus", name: "Brownian Motion & Itô's Lemma", pillar: "04-Probability", color: "#10b981", math: "5/5", code: "3/5", intuition: "5/5",
-          summary: "Continuous-time stochastic calculus for processes with non-zero quadratic variation (dW)^2 = dt.",
-          failure: "Gaussian Myopia: Assuming quadratic variation is continuous [X, X]_t = t when real market paths exhibit Poisson jump processes.",
-          math_req: "df = (df/dt + mu df/dx + 0.5 sigma^2 df/dx^2) dt + sigma df/dx dW; [W, W]_t = t.",
-          library: "Steven Shreve (Stochastic Calculus for Finance II, Ch 3 & 4); Tomas Björk (Ch 4 & 5).",
-          bridges: "The engine that transforms geometric Brownian motion into option pricing PDEs.",
-          repo: "research/PRIMER-options-hedging.md"
-        },
-        { id: "girsanov_measure", name: "P vs Q Measures & Girsanov", pillar: "04-Probability", color: "#10b981", math: "5/5", code: "3/5", intuition: "5/5",
-          summary: "Changing probability measures via Radon-Nikodym derivative to eliminate drift mu and price under risk-neutral Q.",
-          failure: "Confusing P and Q: Trying to predict real-world direction using risk-neutral implied options probabilities.",
-          math_req: "dQ/dP = Z_t; W_t^Q = W_t^P + theta t; market price of risk theta = (mu - r) / sigma.",
-          library: "Shreve II (Ch 5); Tomas Björk (Arbitrage Theory in Continuous Time, Ch 10).",
-          bridges: "Connects stochastic processes to risk-neutral derivatives pricing.",
-          repo: "research/PRIMER-options-hedging.md"
-        },
-
-        // 5. Statistics & Econometrics
-        { id: "cointegration", name: "Cointegration & Pairs Trading", pillar: "05-Statistics", color: "#8b5cf6", math: "4/5", code: "4/5", intuition: "4/5",
-          summary: "Engle-Granger cointegration testing for stationary linear combinations S_t = Y_t - beta X_t ~ I(0).",
-          failure: "Spurious Regression Trap: Regressing independent I(1) random walks yields false R^2 > 0.95 and high t-stats on pure noise.",
-          math_req: "Augmented Dickey-Fuller test; Ornstein-Uhlenbeck: dS_t = theta (mu - S_t)dt + sigma dW_t; Half-life tau = ln(2)/theta.",
-          library: "Ruey Tsay (Analysis of Financial Time Series, Ch 8); Joel Hasbrouck (Ch 4).",
-          bridges: "Forms the mathematical backbone of Statistical Arbitrage and Mean-Reversion.",
-          repo: "data/get_close_panel, backtest/engine.py"
-        },
-        { id: "garch_vol", name: "ARCH/GARCH Volatility Clustering", pillar: "05-Statistics", color: "#8b5cf6", math: "4/5", code: "4/5", intuition: "5/5",
-          summary: "Bollerslev's GARCH(1,1) and Nelson's EGARCH modeling persistent volatility regimes and asymmetric leverage effects.",
-          failure: "Constant Volatility Delusion: Assuming historical variance is constant when financial shocks have a half-life of months (alpha + beta ~ 0.99).",
-          math_req: "sigma_t^2 = omega + alpha a_{t-1}^2 + beta sigma_{t-1}^2; Long-run variance = omega / (1 - alpha - beta).",
-          library: "Ruey Tsay (Ch 3); John C. Hull (Ch 23).",
-          bridges: "Feeds dynamic covariance matrices for Portfolio Risk and Option Pricing.",
-          repo: "backtest/metrics.py, honesty/test_honesty.py"
-        },
-
-        // 6. Portfolio Theory & Asset Pricing
-        { id: "mpt_shrinkage", name: "Markowitz & Covariance Shrinkage", pillar: "06-Portfolio", color: "#06b6d4", math: "4/5", code: "4/5", intuition: "5/5",
-          summary: "Efficient frontier portfolio construction regularized by Ledoit-Wolf analytical shrinkage.",
-          failure: "Michaud Error Maximizer: Unconstrained mean-variance optimization places the biggest bets on assets with the largest estimation errors.",
-          math_req: "w* = lambda Sigma^-1 mu; Sigma_shrunk = delta F + (1 - delta) S.",
-          library: "Ledoit & Wolf (2004); Shreve I; Ruey Tsay (Ch 9).",
-          bridges: "The core capital allocation engine for all quantitative alpha streams.",
-          repo: "backtest/engine.py, backtest/universe.py"
-        },
-        { id: "honesty_dsr", name: "The Honesty Battery & DSR", pillar: "06-Portfolio", color: "#06b6d4", math: "4/5", code: "4/5", intuition: "5/5",
-          summary: "Deflated Sharpe Ratio (DSR) adjusting performance for multiple-testing trials, non-normality, and MinTRL.",
-          failure: "Multiple Testing Illusion: Testing 1,000 backtests guarantees an apparent Sharpe > 2.5 by pure chance without true predictive skill.",
-          math_req: "PSR adjusted for skewness/kurtosis; DSR expected max Sharpe = sqrt(V) * ((1-gamma)Z^-1(1-1/N) + gamma Z^-1(1-1/Ne)).",
-          library: "Marcos Lopez de Prado (Advances in Financial Machine Learning, Ch 14 & 16).",
-          bridges: "The gatekeeper for the entire KwantKlubben ecosystem.",
-          repo: "honesty/test_honesty.py, honesty/__init__.py"
-        },
-
-        // 7. Derivatives & Volatility
-        { id: "black_scholes_pde", name: "Black-Scholes PDE & Feynman-Kac", pillar: "07-Derivatives", color: "#f43f5e", math: "5/5", code: "4/5", intuition: "4/5",
-          summary: "Continuous-time no-arbitrage PDE connecting parabolic differential equations to discounted risk-neutral expectations.",
-          failure: "Short Gamma Bleed: Selling OTM options for theta decay leads to catastrophic liquidation when sudden tail jumps occur.",
-          math_req: "dV/dt + rS dV/dS + 0.5 sigma^2 S^2 d^2V/dS^2 - rV = 0; C = S N(d1) - K e^-rt N(d2).",
-          library: "John C. Hull (Ch 13-15); Tomas Björk (Ch 7 & 8); Paul Glasserman (Ch 3).",
-          bridges: "Directly bridges to Portfolio Risk Management (using options as asymmetric tail overlays).",
-          repo: "research/PRIMER-options-hedging.md, data/sources/yahoo.py"
-        },
-        { id: "vol_surface_skew", name: "Implied Vol Surfaces & Skew", pillar: "07-Derivatives", color: "#f43f5e", math: "5/5", code: "4/5", intuition: "5/5",
-          summary: "Dupire local volatility PDEs, Heston stochastic volatility SDEs, and the Volatility Risk Premium (VRP).",
-          failure: "Constant Volatility Fallacy: Hedging options books without accounting for volatility skew (vanna/volga) causes hedging leakage during sell-offs.",
-          math_req: "Dupire equation; Heston coupled SDEs: dv_t = kappa(theta - v_t)dt + xi sqrt(v_t) dW_t^v; Corr(dW^S, dW^v) = rho < 0.",
-          library: "John C. Hull (Ch 26); Damiano Brigo & Fabio Mercurio (Interest Rate Models).",
-          bridges: "Feeds Volatility Risk Premium (VRP) factor harvesting in Multi-Factor Portfolios.",
-          repo: "research/PRIMER-options-hedging.md"
-        },
-
-        // 8. Complexity, Microstructure & Tail Risk
-        { id: "lob_microstructure", name: "Limit Order Books & Adverse Selection", pillar: "08-Complexity", color: "#84cc16", math: "4/5", code: "5/5", intuition: "5/5",
-          summary: "Continuous double auction dynamics, Roll spread decomposition, and Glosten-Milgrom adverse selection.",
-          failure: "The Winner's Curse: Limit orders get filled disproportionately when informed traders sweep the book with toxic order flow.",
-          math_req: "Roll effective spread S = 2 sqrt(-Cov(dp_t, dp_{t-1})); Kyle's Lambda dp = lambda * Q; OFI dynamics.",
-          library: "Joel Hasbrouck (Empirical Market Microstructure); Foucault, Pagano & Röell (Market Liquidity).",
-          bridges: "The universal friction constraint that penalizes turnover across all Stat Arb strategies.",
-          repo: "backtest/costs.py, docs/DATA_SOURCES.md"
-        },
-        { id: "almgren_chriss", name: "Almgren-Chriss Optimal Execution", pillar: "08-Complexity", color: "#84cc16", math: "4/5", code: "4/5", intuition: "4/5",
-          summary: "Optimal liquidation trajectories balancing temporary market impact against price volatility risk.",
-          failure: "Linear Execution Fallacy: Assuming market impact scales linearly with volume. In reality, impact obeys a square-root law I ~ Y sigma sqrt(Q/V).",
-          math_req: "min E[Cost] + lambda Var[Cost]; Hyperbolic execution trajectory: x_j = sinh(kappa(T-t)) / sinh(kappa T) * X0.",
-          library: "Almgren & Chriss (2000); Hasbrouck (Ch 6).",
-          bridges: "Determines realistic strategy capacity for institutional factor and momentum portfolios.",
-          repo: "backtest/costs.py, backtest/engine.py"
-        },
-        { id: "ergodicity_tails", name: "Ergodicity & Fat-Tailed Ruin", pillar: "08-Complexity", color: "#84cc16", math: "5/5", code: "3/5", intuition: "5/5",
-          summary: "Peters-Gell-Mann ergodicity breaking: why ensemble expected values differ from individual time-average wealth growth.",
-          failure: "Expected Value Ruin: Optimizing for expected value in a non-ergodic game drives time-average wealth to zero with probability 1.",
-          math_req: "Time average g = E[ln(1 + f R)]; Kelly criterion: f* = (p*b - q)/b; Power-law tail P(X > x) ~ x^-alpha.",
-          library: "Ole Peters (The Ergodicity Problem in Economics); Benoit Mandelbrot (The Fractality of Financial Markets).",
-          bridges: "The foundational risk constraint governing capital sizing and avoiding bankruptcy.",
-          repo: "honesty/test_honesty.py, backtest/metrics.py"
-        }
-      ],
-      links: [
-        // Cross-pillar interconnections
-        { source: "tvm_dcf", target: "accounting_hygiene" },
-        { source: "tvm_dcf", target: "mpt_shrinkage" },
-        { source: "accounting_hygiene", target: "pca_factor" },
-        { source: "spectral_theory", target: "pca_factor" },
-        { source: "spectral_theory", target: "mpt_shrinkage" },
-        { source: "taylor_greeks", target: "black_scholes_pde" },
-        { source: "taylor_greeks", target: "kkt_opt" },
-        { source: "kkt_opt", target: "mpt_shrinkage" },
-        { source: "ito_calculus", target: "girsanov_measure" },
-        { source: "ito_calculus", target: "black_scholes_pde" },
-        { source: "girsanov_measure", target: "black_scholes_pde" },
-        { source: "cointegration", target: "lob_microstructure" },
-        { source: "cointegration", target: "pca_factor" },
-        { source: "garch_vol", target: "mpt_shrinkage" },
-        { source: "garch_vol", target: "vol_surface_skew" },
-        { source: "mpt_shrinkage", target: "honesty_dsr" },
-        { source: "mpt_shrinkage", target: "almgren_chriss" },
-        { source: "black_scholes_pde", target: "vol_surface_skew" },
-        { source: "black_scholes_pde", target: "ergodicity_tails" },
-        { source: "vol_surface_skew", target: "ergodicity_tails" },
-        { source: "lob_microstructure", target: "almgren_chriss" },
-        { source: "almgren_chriss", target: "ergodicity_tails" },
-        { source: "ergodicity_tails", target: "honesty_dsr" }
-      ]
+      nodes: [{"id": "F-LA", "title": "Linear Algebra & Matrices", "group": "foundations", "path": "/foundations/linear-algebra-and-matrices", "math": 3, "code": 2, "intuition": 2, "failure": "Singular covariance matrices, negative eigenvalues in optimizers."}, {"id": "F-CALC", "title": "Calculus & Optimization (KKT)", "group": "foundations", "path": "/foundations/multivariable-calculus-and-optimization", "math": 3, "code": 2, "intuition": 3, "failure": "Non-convex constraint trapping, ill-conditioned Hessian curvature."}, {"id": "F-PROB", "title": "Probability & Measure Theory", "group": "foundations", "path": "/foundations/probability-and-measure-theory", "math": 3, "code": 1, "intuition": 3, "failure": "Filtration leakage (lookahead bias), measure equivalence violations."}, {"id": "F-ITO", "title": "Stochastic Calculus & It\u00f4", "group": "foundations", "path": "/foundations/stochastic-calculus-and-ito", "math": 3, "code": 2, "intuition": 3, "failure": "Continuous path assumptions failing during overnight price gaps."}, {"id": "F-ECON", "title": "Econometrics & Time Series", "group": "foundations", "path": "/foundations/econometrics-and-time-series", "math": 3, "code": 2, "intuition": 2, "failure": "Spurious regression on unit-root prices, cointegration breakdown."}, {"id": "F-ERG", "title": "Ergodicity & Stat Mechanics", "group": "foundations", "path": "/foundations/ergodicity-and-statistical-mechanics", "math": 2, "code": 1, "intuition": 3, "failure": "Confusing ensemble averages with single-path multiplicative compounding (ruin)."}, {"id": "P1-HUB", "title": "1. Quant Research (Alpha Gen)", "group": "p1", "path": "/pillars/01-quantitative-research/", "math": 3, "code": 3, "intuition": 3, "failure": "Data snooping, alpha decay, backtest overfitting."}, {"id": "P1-STAT", "title": "StatArb & Pairs Trading", "group": "p1", "path": "/pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading", "math": 2, "code": 2, "intuition": 2, "failure": "Structural break in spread, spread divergence into liquidation."}, {"id": "P1-MOM", "title": "Cross-Sectional & Time-Series Momentum", "group": "p1", "path": "/pillars/01-quantitative-research/cross-sectional-and-time-series-momentum", "math": 2, "code": 2, "intuition": 3, "failure": "Momentum crash during violent market rebounds; whipsaws in choppy markets."}, {"id": "P1-FAC", "title": "Fundamental Multi-Factor Models", "group": "p1", "path": "/pillars/01-quantitative-research/fundamental-multi-factor-models", "math": 2, "code": 2, "intuition": 2, "failure": "Factor crowding, multi-fund correlated unwind liquidations."}, {"id": "P1-KAL", "title": "Signal Processing & Kalman Filter", "group": "p1", "path": "/pillars/01-quantitative-research/signal-processing-and-kalman-filtering", "math": 3, "code": 3, "intuition": 2, "failure": "Lagging state estimates, error covariance singularity."}, {"id": "P1-FEAT", "title": "Feature Engineering & Labeling", "group": "p1", "path": "/pillars/01-quantitative-research/feature-engineering-and-labeling", "math": 2, "code": 2, "intuition": 3, "failure": "Fixed-time horizon horizon blindness, concurrent event leakage."}, {"id": "P1-DSR", "title": "Backtesting Hygiene & Deflated Sharpe", "group": "p1", "path": "/pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe", "math": 3, "code": 2, "intuition": 3, "failure": "Selection bias, multiple testing illusion, lucky random backtests."}, {"id": "P2-HUB", "title": "2. Algorithmic Trading & HFT", "group": "p2", "path": "/pillars/02-algorithmic-hft/", "math": 2, "code": 3, "intuition": 3, "failure": "Adverse selection, stale cancels swept by latency snipers."}, {"id": "P2-MIC", "title": "Market Microstructure & Orders", "group": "p2", "path": "/pillars/02-algorithmic-hft/market-microstructure-and-order-types", "math": 1, "code": 2, "intuition": 3, "failure": "Iceberg detection, crossing spreads in swept books."}, {"id": "P2-LAT", "title": "Low-Latency Systems Architecture", "group": "p2", "path": "/pillars/02-algorithmic-hft/low-latency-systems-architecture", "math": 1, "code": 3, "intuition": 2, "failure": "Kernel interrupts, context switches, cacheline false sharing."}, {"id": "P2-QUE", "title": "Queue Position & Fill Probability", "group": "p2", "path": "/pillars/02-algorithmic-hft/queue-position-and-fill-probability", "math": 2, "code": 2, "intuition": 3, "failure": "Standing queue delusion; filled only when market crashes against you."}, {"id": "P2-EXE", "title": "Execution: VWAP, TWAP, & POV", "group": "p2", "path": "/pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov", "math": 2, "code": 2, "intuition": 2, "failure": "Volume smile distortion on news days, deterministic sniping."}, {"id": "P2-ALM", "title": "Optimal Execution (Almgren-Chriss)", "group": "p2", "path": "/pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss", "math": 3, "code": 2, "intuition": 2, "failure": "Static volatility assumption, square-root impact breakdown."}, {"id": "P2-FPG", "title": "Hardware Acceleration & FPGA", "group": "p2", "path": "/pillars/02-algorithmic-hft/hardware-acceleration-and-fpga", "math": 1, "code": 3, "intuition": 2, "failure": "Silicon state machine deadlock, inflexible unpatchable logic."}, {"id": "P3-HUB", "title": "3. Derivative Pricing & Structuring", "group": "p3", "path": "/pillars/03-derivative-pricing/", "math": 3, "code": 2, "intuition": 3, "failure": "Model risk, unhedged jump risks, surface arbitrage."}, {"id": "P3-BIN", "title": "No-Arbitrage & Binomial Trees", "group": "p3", "path": "/pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees", "math": 2, "code": 2, "intuition": 3, "failure": "American dividend exercise miscalculation, negative probabilities."}, {"id": "P3-BSM", "title": "Black-Scholes & Feynman-Kac", "group": "p3", "path": "/pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac", "math": 3, "code": 2, "intuition": 3, "failure": "Constant volatility assumption, friction-free replication myth."}, {"id": "P3-GRK", "title": "The Greeks & Dynamic Hedging", "group": "p3", "path": "/pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging", "math": 3, "code": 2, "intuition": 2, "failure": "Discrete hedging gamma bleed, pin risk at expiration."}, {"id": "P3-SUR", "title": "Implied Volatility Surfaces & Smiles", "group": "p3", "path": "/pillars/03-derivative-pricing/implied-volatility-surface-and-smiles", "math": 3, "code": 2, "intuition": 2, "failure": "Calendar arbitrage in splines, local vol forward smile flattening."}, {"id": "P3-HES", "title": "Stochastic Vol: Heston & SABR", "group": "p3", "path": "/pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr", "math": 3, "code": 3, "intuition": 2, "failure": "Feller condition violation, negative variance simulation crash."}, {"id": "P3-RAT", "title": "Interest Rate & Term Structure", "group": "p3", "path": "/pillars/03-derivative-pricing/interest-rate-and-term-structure-models", "math": 3, "code": 2, "intuition": 2, "failure": "Single-factor yield curve correlation, negative rate crash."}, {"id": "P4-HUB", "title": "4. Quantitative Risk Management", "group": "p4", "path": "/pillars/04-quantitative-risk/", "math": 3, "code": 2, "intuition": 3, "failure": "Thin-tail blindness, margin spirals, correlation convergence to 1."}, {"id": "P4-VAR", "title": "Value at Risk & Expected Shortfall", "group": "p4", "path": "/pillars/04-quantitative-risk/var-and-expected-shortfall", "math": 2, "code": 2, "intuition": 3, "failure": "Subadditivity violation of VaR, extreme tail loss blindness."}, {"id": "P4-PAR", "title": "Parametric, Hist & Monte Carlo VaR", "group": "p4", "path": "/pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var", "math": 2, "code": 2, "intuition": 2, "failure": "Non-linear Greeks truncation error, clustered Kupiec breaches."}, {"id": "P4-EVT", "title": "Extreme Value Theory & Fat Tails", "group": "p4", "path": "/pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails", "math": 3, "code": 2, "intuition": 3, "failure": "Threshold bias in POT, assuming i.i.d. extreme shock arrivals."}, {"id": "P4-STR", "title": "Stress Testing & Scenario Analysis", "group": "p4", "path": "/pillars/04-quantitative-risk/stress-testing-and-scenario-analysis", "math": 2, "code": 2, "intuition": 3, "failure": "Correlation breakdown in panics, plausible scenario omission."}, {"id": "P4-MER", "title": "Credit Risk & Merton Model", "group": "p4", "path": "/pillars/04-quantitative-risk/credit-risk-and-the-merton-model", "math": 3, "code": 2, "intuition": 2, "failure": "Zero short-term default spread flaw, complex debt subordination."}, {"id": "P4-LIQ", "title": "Liquidity Risk & Margin Spirals", "group": "p4", "path": "/pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals", "math": 2, "code": 2, "intuition": 3, "failure": "Unilateral haircut hikes, market impact liquidation feedback."}, {"id": "P5-HUB", "title": "5. Portfolio Construction & Optimization", "group": "p5", "path": "/pillars/05-portfolio-optimization/", "math": 3, "code": 2, "intuition": 3, "failure": "Error maximization, extreme unhedged weights, turnover drag."}, {"id": "P5-MPT", "title": "Mean-Variance Frontiers (Markowitz)", "group": "p5", "path": "/pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance", "math": 3, "code": 2, "intuition": 3, "failure": "Estimation error maximizer; extreme weights from tiny return changes."}, {"id": "P5-SHR", "title": "Covariance Shrinkage & RMT Denoising", "group": "p5", "path": "/pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising", "math": 3, "code": 2, "intuition": 2, "failure": "Over-shrinkage destroying true sector clustering; N > T noise band."}, {"id": "P5-BL", "title": "Black-Litterman Bayesian Allocation", "group": "p5", "path": "/pillars/05-portfolio-optimization/black-litterman-asset-allocation", "math": 3, "code": 2, "intuition": 3, "failure": "Over-confident view matrices degenerating into raw Markowitz."}, {"id": "P5-RP", "title": "Risk Parity & ERC", "group": "p5", "path": "/pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution", "math": 2, "code": 2, "intuition": 3, "failure": "Leveraged bond drawdown in rising-rate/inflationary shocks."}, {"id": "P5-HRP", "title": "Hierarchical Risk Parity (HRP)", "group": "p5", "path": "/pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering", "math": 2, "code": 3, "intuition": 3, "failure": "Sensitivity to tree linkage metric, agnostic to alpha signals."}, {"id": "P5-TC", "title": "Transaction Costs & Turnover Constraints", "group": "p5", "path": "/pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints", "math": 2, "code": 2, "intuition": 2, "failure": "Assuming linear cost; burning all alpha on rebalance impact."}, {"id": "P6-HUB", "title": "6. Market Making & Liquidity Provision", "group": "p6", "path": "/pillars/06-market-making/", "math": 3, "code": 3, "intuition": 3, "failure": "Adverse selection bleed, toxic sweep runaway, inventory limit breach."}, {"id": "P6-LOB", "title": "LOB Mechanics & Level 3 Data", "group": "p6", "path": "/pillars/06-market-making/limit-order-book-mechanics-and-l3", "math": 2, "code": 3, "intuition": 2, "failure": "UDP packet drops desynchronizing book, phantom spoofing orders."}, {"id": "P6-AS", "title": "The Avellaneda-Stoikov Model", "group": "p6", "path": "/pillars/06-market-making/the-avellaneda-stoikov-model", "math": 3, "code": 2, "intuition": 3, "failure": "Terminal horizon inventory dump shock, liquidity density collapse."}, {"id": "P6-ADV", "title": "Adverse Selection & Glosten-Milgrom", "group": "p6", "path": "/pillars/06-market-making/adverse-selection-and-glosten-milgrom", "math": 2, "code": 2, "intuition": 3, "failure": "Quoting tight in high-information assets, toxic flow runaway."}, {"id": "P6-ROL", "title": "Spread Decomposition & Roll Model", "group": "p6", "path": "/pillars/06-market-making/spread-decomposition-and-roll-model", "math": 2, "code": 2, "intuition": 2, "failure": "Positive autocovariance breakdown in strong trending regimes."}, {"id": "P6-SKEW", "title": "Inventory Management & Quote Skewing", "group": "p6", "path": "/pillars/06-market-making/inventory-management-and-quote-skewing", "math": 2, "code": 2, "intuition": 2, "failure": "Adverse selection while aggressively skewing, overnight gap risk."}, {"id": "P6-VPIN", "title": "Toxic Order Flow & VPIN", "group": "p6", "path": "/pillars/06-market-making/toxic-order-flow-and-vpin", "math": 3, "code": 2, "intuition": 3, "failure": "Self-fulfilling liquidity panic as all makers pull quotes simultaneously."}, {"id": "P7-HUB", "title": "7. Machine Learning & Alternative Data", "group": "p7", "path": "/pillars/07-machine-learning-altdata/", "math": 2, "code": 3, "intuition": 3, "failure": "Memorizing noise, regime shift failure, lookahead data leakage."}, {"id": "P7-PIT", "title": "Financial ML Pitfalls & Low SNR", "group": "p7", "path": "/pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr", "math": 2, "code": 2, "intuition": 3, "failure": "Random K-fold CV leakage, test-set overfitting, survivorship bias."}, {"id": "P7-TREE", "title": "Tree-Based Ranking & Purged CV", "group": "p7", "path": "/pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv", "math": 2, "code": 2, "intuition": 2, "failure": "MDI importance distortion on high-cardinality noise, collinear cancels."}, {"id": "P7-NLP", "title": "Financial NLP & Transcripts", "group": "p7", "path": "/pillars/07-machine-learning-altdata/financial-nlp-and-earnings-transcripts", "math": 2, "code": 2, "intuition": 2, "failure": "Executive boilerplate tone gaming, static dictionary decay."}, {"id": "P7-ALT", "title": "Alternative Data Pipelines", "group": "p7", "path": "/pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation", "math": 1, "code": 3, "intuition": 2, "failure": "Point-in-time timestamp violation, vendor panel attrition."}, {"id": "P7-HMM", "title": "Regime Classification (HMM & GMM)", "group": "p7", "path": "/pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm", "math": 3, "code": 2, "intuition": 2, "failure": "State label swapping on retraining, delayed transition detection."}, {"id": "P7-SEQ", "title": "Deep Learning for Sequential Data", "group": "p7", "path": "/pillars/07-machine-learning-altdata/deep-learning-for-sequential-data", "math": 2, "code": 3, "intuition": 2, "failure": "Massive parameter overfitting on small sample size, high inference latency."}, {"id": "P8-HUB", "title": "8. Quantitative Development", "group": "p8", "path": "/pillars/08-quantitative-development/", "math": 1, "code": 3, "intuition": 3, "failure": "Race conditions, memory leaks, unhandled exchange drop copies."}, {"id": "P8-CPP", "title": "High-Performance C++ for Trading", "group": "p8", "path": "/pillars/08-quantitative-development/high-performance-cpp-for-trading", "math": 1, "code": 3, "intuition": 2, "failure": "Dynamic heap allocation in tick callback, branch misprediction stalls."}, {"id": "P8-KDB", "title": "Tick Databases & kdb+/q", "group": "p8", "path": "/pillars/08-quantitative-development/tick-level-databases-and-timeseries", "math": 1, "code": 3, "intuition": 2, "failure": "Unsorted timestamps degrading as-of join from O(N) to O(N^2)."}, {"id": "P8-EVT", "title": "Event-Driven Backtesting Engines", "group": "p8", "path": "/pillars/08-quantitative-development/event-driven-backtesting-engines", "math": 1, "code": 3, "intuition": 3, "failure": "Zero-latency fill fantasy, infinite liquidity at bar close."}, {"id": "P8-FIX", "title": "FIX Protocol & Exchange Connectivity", "group": "p8", "path": "/pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity", "math": 1, "code": 3, "intuition": 2, "failure": "Sequence desync lockouts, TCP Nagle buffering delaying packets 40ms."}, {"id": "P8-CON", "title": "Concurrency & Lockless Programming", "group": "p8", "path": "/pillars/08-quantitative-development/concurrency-and-lockless-programming", "math": 2, "code": 3, "intuition": 2, "failure": "Missing memory fences on ARM, ABA problem in lock-free CAS queues."}, {"id": "P8-RSK", "title": "Production Risk Guards & Kill Switches", "group": "p8", "path": "/pillars/08-quantitative-development/production-risk-guards-and-kill-switches", "math": 1, "code": 3, "intuition": 3, "failure": "Missing Cancel-on-Disconnect (COD), in-flight socket order race during kill."}],
+      links: [{"source": "P1-HUB", "target": "P1-STAT", "type": "pillar"}, {"source": "P1-HUB", "target": "P1-MOM", "type": "pillar"}, {"source": "P1-HUB", "target": "P1-FAC", "type": "pillar"}, {"source": "P1-HUB", "target": "P1-KAL", "type": "pillar"}, {"source": "P1-HUB", "target": "P1-FEAT", "type": "pillar"}, {"source": "P1-HUB", "target": "P1-DSR", "type": "pillar"}, {"source": "P2-HUB", "target": "P2-MIC", "type": "pillar"}, {"source": "P2-HUB", "target": "P2-LAT", "type": "pillar"}, {"source": "P2-HUB", "target": "P2-QUE", "type": "pillar"}, {"source": "P2-HUB", "target": "P2-EXE", "type": "pillar"}, {"source": "P2-HUB", "target": "P2-ALM", "type": "pillar"}, {"source": "P2-HUB", "target": "P2-FPG", "type": "pillar"}, {"source": "P3-HUB", "target": "P3-BIN", "type": "pillar"}, {"source": "P3-HUB", "target": "P3-BSM", "type": "pillar"}, {"source": "P3-HUB", "target": "P3-GRK", "type": "pillar"}, {"source": "P3-HUB", "target": "P3-SUR", "type": "pillar"}, {"source": "P3-HUB", "target": "P3-HES", "type": "pillar"}, {"source": "P3-HUB", "target": "P3-RAT", "type": "pillar"}, {"source": "P4-HUB", "target": "P4-VAR", "type": "pillar"}, {"source": "P4-HUB", "target": "P4-PAR", "type": "pillar"}, {"source": "P4-HUB", "target": "P4-EVT", "type": "pillar"}, {"source": "P4-HUB", "target": "P4-STR", "type": "pillar"}, {"source": "P4-HUB", "target": "P4-MER", "type": "pillar"}, {"source": "P4-HUB", "target": "P4-LIQ", "type": "pillar"}, {"source": "P5-HUB", "target": "P5-MPT", "type": "pillar"}, {"source": "P5-HUB", "target": "P5-SHR", "type": "pillar"}, {"source": "P5-HUB", "target": "P5-BL", "type": "pillar"}, {"source": "P5-HUB", "target": "P5-RP", "type": "pillar"}, {"source": "P5-HUB", "target": "P5-HRP", "type": "pillar"}, {"source": "P5-HUB", "target": "P5-TC", "type": "pillar"}, {"source": "P6-HUB", "target": "P6-LOB", "type": "pillar"}, {"source": "P6-HUB", "target": "P6-AS", "type": "pillar"}, {"source": "P6-HUB", "target": "P6-ADV", "type": "pillar"}, {"source": "P6-HUB", "target": "P6-ROL", "type": "pillar"}, {"source": "P6-HUB", "target": "P6-SKEW", "type": "pillar"}, {"source": "P6-HUB", "target": "P6-VPIN", "type": "pillar"}, {"source": "P7-HUB", "target": "P7-PIT", "type": "pillar"}, {"source": "P7-HUB", "target": "P7-TREE", "type": "pillar"}, {"source": "P7-HUB", "target": "P7-NLP", "type": "pillar"}, {"source": "P7-HUB", "target": "P7-ALT", "type": "pillar"}, {"source": "P7-HUB", "target": "P7-HMM", "type": "pillar"}, {"source": "P7-HUB", "target": "P7-SEQ", "type": "pillar"}, {"source": "P8-HUB", "target": "P8-CPP", "type": "pillar"}, {"source": "P8-HUB", "target": "P8-KDB", "type": "pillar"}, {"source": "P8-HUB", "target": "P8-EVT", "type": "pillar"}, {"source": "P8-HUB", "target": "P8-FIX", "type": "pillar"}, {"source": "P8-HUB", "target": "P8-CON", "type": "pillar"}, {"source": "P8-HUB", "target": "P8-RSK", "type": "pillar"}, {"source": "F-ECON", "target": "P1-HUB", "type": "foundation"}, {"source": "F-LA", "target": "P1-HUB", "type": "foundation"}, {"source": "F-PROB", "target": "P2-HUB", "type": "foundation"}, {"source": "F-ITO", "target": "P3-HUB", "type": "foundation"}, {"source": "F-CALC", "target": "P3-HUB", "type": "foundation"}, {"source": "F-PROB", "target": "P4-HUB", "type": "foundation"}, {"source": "F-ERG", "target": "P4-HUB", "type": "foundation"}, {"source": "F-LA", "target": "P5-HUB", "type": "foundation"}, {"source": "F-CALC", "target": "P5-HUB", "type": "foundation"}, {"source": "F-PROB", "target": "P6-HUB", "type": "foundation"}, {"source": "F-ITO", "target": "P6-HUB", "type": "foundation"}, {"source": "F-ECON", "target": "P7-HUB", "type": "foundation"}, {"source": "F-CALC", "target": "P7-HUB", "type": "foundation"}, {"source": "P1-HUB", "target": "P5-HUB", "type": "inter"}, {"source": "P1-HUB", "target": "P7-HUB", "type": "inter"}, {"source": "P2-HUB", "target": "P6-HUB", "type": "inter"}, {"source": "P2-HUB", "target": "P8-HUB", "type": "inter"}, {"source": "P3-HUB", "target": "P4-HUB", "type": "inter"}, {"source": "P6-HUB", "target": "P8-HUB", "type": "inter"}, {"source": "P4-HUB", "target": "P5-HUB", "type": "inter"}, {"source": "P1-STAT", "target": "F-ECON", "type": "foundation"}, {"source": "P3-BSM", "target": "F-ITO", "type": "foundation"}, {"source": "P5-MPT", "target": "F-LA", "type": "foundation"}, {"source": "P6-AS", "target": "P2-ALM", "type": "inter"}, {"source": "P8-CPP", "target": "P2-LAT", "type": "inter"}, {"source": "P6-ADV", "target": "P1-STAT", "type": "inter"}]
     };
 
-    // D3 Graph Render
-    const svg = d3.select("#network-svg");
-    const container = document.getElementById("graph-container");
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    const colors = {
+      "foundations": "#E2E8F0",
+      "p1": "#C2EB2B",
+      "p2": "#00F0FF",
+      "p3": "#FF0055",
+      "p4": "#FFB800",
+      "p5": "#9D00FF",
+      "p6": "#00FF88",
+      "p7": "#FF8800",
+      "p8": "#708090"
+    };
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    const svg = d3.select("#canvas")
+      .attr("width", width)
+      .attr("height", height);
 
     const g = svg.append("g");
 
     // Zoom setup
     const zoom = d3.zoom()
-      .scaleExtent([0.3, 3])
-      .on("zoom", (event) => g.attr("transform", event.transform));
+      .scaleExtent([0.3, 4])
+      .on("zoom", (event) => {
+        g.attr("transform", event.transform);
+      });
     svg.call(zoom);
 
-    // Force Simulation
+    // Force simulation
     const simulation = d3.forceSimulation(data.nodes)
-      .force("link", d3.forceLink(data.links).id(d => d.id).distance(110))
-      .force("charge", d3.forceManyBody().strength(-450))
+      .force("link", d3.forceLink(data.links).id(d => d.id).distance(d => {
+        if (d.type === "pillar") return 65;
+        if (d.type === "foundation") return 110;
+        return 90;
+      }).strength(0.6))
+      .force("charge", d3.forceManyBody().strength(d => d.id.endsWith("-HUB") ? -450 : -140))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collision", d3.forceCollide().radius(48));
+      .force("collision", d3.forceCollide().radius(d => d.id.endsWith("-HUB") ? 32 : 18));
 
     // Links
     const link = g.append("g")
-      .attr("class", "links")
       .selectAll("line")
       .data(data.links)
-      .enter().append("line");
+      .enter()
+      .append("line")
+      .attr("stroke", d => {
+        if (d.type === "foundation") return "rgba(226, 232, 240, 0.25)";
+        if (d.type === "inter") return "rgba(194, 235, 43, 0.4)";
+        return "rgba(255, 255, 255, 0.15)";
+      })
+      .attr("stroke-dasharray", d => d.type === "foundation" ? "4 4" : "0")
+      .attr("stroke-width", d => d.type === "inter" ? 1.5 : 1);
 
     // Nodes
     const node = g.append("g")
-      .attr("class", "nodes")
-      .selectAll("g")
+      .selectAll(".node")
       .data(data.nodes)
-      .enter().append("g")
+      .enter()
+      .append("g")
+      .attr("class", "node")
       .call(d3.drag()
         .on("start", dragstarted)
         .on("drag", dragged)
-        .on("end", dragended));
+        .on("end", dragended))
+      .on("click", (event, d) => {
+        showDetails(d);
+      });
 
     node.append("circle")
-      .attr("r", 15)
-      .attr("fill", d => d.color)
-      .attr("stroke", "#ffffff")
-      .attr("stroke-opacity", 0.4)
-      .on("click", (event, d) => openPanel(d));
+      .attr("r", d => d.id.endsWith("-HUB") ? 14 : 7)
+      .attr("fill", d => colors[d.group] || "#FFFFFF")
+      .attr("stroke", "#0C1016")
+      .attr("stroke-width", 2)
+      .style("cursor", "pointer")
+      .style("filter", d => d.id.endsWith("-HUB") ? `drop-shadow(0px 0px 8px ${colors[d.group]})` : "none");
 
     node.append("text")
-      .attr("class", "node-label")
-      .attr("dx", 20)
-      .attr("dy", 4)
-      .text(d => d.name);
+      .text(d => d.title)
+      .attr("x", 10)
+      .attr("y", 4)
+      .attr("fill", "#CBD5E1")
+      .attr("font-size", d => d.id.endsWith("-HUB") ? "11px" : "9px")
+      .attr("font-weight", d => d.id.endsWith("-HUB") ? "700" : "400")
+      .attr("font-family", "'Space Grotesk', sans-serif")
+      .style("pointer-events", "none");
 
     simulation.on("tick", () => {
       link
@@ -572,7 +382,8 @@
         .attr("x2", d => d.target.x)
         .attr("y2", d => d.target.y);
 
-      node.attr("transform", d => `translate(${d.x},${d.y})`);
+      node
+        .attr("transform", d => `translate(${d.x},${d.y})`);
     });
 
     function dragstarted(event, d) {
@@ -592,62 +403,35 @@
       d.fy = null;
     }
 
-    // Panel controls
-    const panel = document.getElementById("side-panel");
-    const closeBtn = document.getElementById("close-panel");
-
-    function openPanel(d) {
-      document.getElementById("node-pillar-badge").textContent = d.pillar;
-      document.getElementById("node-pillar-badge").style.backgroundColor = d.color + "33";
-      document.getElementById("node-pillar-badge").style.color = d.color;
-      document.getElementById("node-title").textContent = d.name;
-      document.getElementById("val-math").textContent = d.math;
-      document.getElementById("val-code").textContent = d.code;
-      document.getElementById("val-intuition").textContent = d.intuition;
-      document.getElementById("node-intuition-text").textContent = d.summary;
-      document.getElementById("node-failure-text").textContent = d.failure;
-      document.getElementById("node-math-text").textContent = d.math_req;
-      document.getElementById("node-library-text").textContent = d.library;
-      document.getElementById("node-bridges-text").textContent = d.bridges;
-      
-      const repoContainer = document.getElementById("node-repo-text");
-      repoContainer.innerHTML = d.repo.split(", ").map(f => `<span class="code-tag">${f}</span>`).join(" ");
-
-      panel.classList.add("open");
-
-      // Highlight links connected to this node
-      link.classed("highlight", l => l.source.id === d.id || l.target.id === d.id);
+    function showDetails(d) {
+      const drawer = document.getElementById("side-drawer");
+      drawer.style.display = "block";
+      document.getElementById("d-title").innerText = d.title;
+      document.getElementById("d-cluster").innerText = d.group.toUpperCase();
+      document.getElementById("d-cluster").style.color = colors[d.group] || "#C2EB2B";
+      document.getElementById("d-cluster").style.borderColor = colors[d.group] || "#C2EB2B";
+      document.getElementById("d-math").innerText = d.math;
+      document.getElementById("d-code").innerText = d.code;
+      document.getElementById("d-int").innerText = d.intuition;
+      document.getElementById("d-failure").innerText = d.failure || "No explicit failure mode logged.";
+      document.getElementById("d-link").href = d.path;
     }
 
-    closeBtn.addEventListener("click", () => {
-      panel.classList.remove("open");
-      link.classed("highlight", false);
-    });
+    // Filter logic
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.getAttribute("data-filter");
 
-    // Filter controls
-    document.getElementById("view-filter").addEventListener("change", (e) => {
-      const val = e.target.value;
-      if (val === "all") {
-        node.style("opacity", 1);
-        link.style("opacity", 1);
-      } else if (val.startsWith("pillar:")) {
-        const p = val.replace("pillar:", "");
-        node.style("opacity", d => d.pillar === p ? 1 : 0.15);
-        link.style("opacity", l => (l.source.pillar === p && l.target.pillar === p) ? 1 : 0.05);
-      } else if (val === "math_high") {
-        node.style("opacity", d => (d.math === "5/5") ? 1 : 0.15);
-        link.style("opacity", 0.08);
-      } else if (val === "code_high") {
-        node.style("opacity", d => (d.code === "4/5" || d.code === "5/5") ? 1 : 0.15);
-        link.style("opacity", 0.08);
-      }
-    });
-
-    window.addEventListener("resize", () => {
-      const w = container.clientWidth;
-      const h = container.clientHeight;
-      simulation.force("center", d3.forceCenter(w / 2, h / 2));
-      simulation.alpha(0.3).restart();
+        node.transition().duration(250).style("opacity", d => {
+          if (filter === "all") return 1.0;
+          if (filter === "math" && d.math >= 3) return 1.0;
+          if (filter === "code" && d.code >= 3) return 1.0;
+          if (filter === "intuition" && d.intuition >= 3) return 1.0;
+          return 0.2;
+        });
+      });
     });
   </script>
 </body>

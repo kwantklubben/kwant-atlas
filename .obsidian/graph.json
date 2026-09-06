@@ -11,59 +11,66 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:pillars/01-valuation-accounting",
+      "query": "path:foundations",
       "color": {
         "a": 1,
-        "rgb": 15485081
+        "rgb": 14869216
       }
     },
     {
-      "query": "path:pillars/02-linear-algebra",
-      "color": {
-        "a": 1,
-        "rgb": 3899894
-      }
-    },
-    {
-      "query": "path:pillars/03-calculus-analysis",
-      "color": {
-        "a": 1,
-        "rgb": 16096779
-      }
-    },
-    {
-      "query": "path:pillars/04-probability-stochastics",
-      "color": {
-        "a": 1,
-        "rgb": 1096065
-      }
-    },
-    {
-      "query": "path:pillars/05-statistics-econometrics",
-      "color": {
-        "a": 1,
-        "rgb": 9133302
-      }
-    },
-    {
-      "query": "path:pillars/06-portfolio-asset-pricing",
-      "color": {
-        "a": 1,
-        "rgb": 440020
-      }
-    },
-    {
-      "query": "path:pillars/07-derivatives-volatility",
-      "color": {
-        "a": 1,
-        "rgb": 15758362
-      }
-    },
-    {
-      "query": "path:pillars/08-complexity-microstructure-tailrisk",
+      "query": "path:pillars/01-quantitative-research",
       "color": {
         "a": 1,
         "rgb": 12774187
+      }
+    },
+    {
+      "query": "path:pillars/02-algorithmic-hft",
+      "color": {
+        "a": 1,
+        "rgb": 61695
+      }
+    },
+    {
+      "query": "path:pillars/03-derivative-pricing",
+      "color": {
+        "a": 1,
+        "rgb": 16711765
+      }
+    },
+    {
+      "query": "path:pillars/04-quantitative-risk",
+      "color": {
+        "a": 1,
+        "rgb": 16758784
+      }
+    },
+    {
+      "query": "path:pillars/05-portfolio-optimization",
+      "color": {
+        "a": 1,
+        "rgb": 10289407
+      }
+    },
+    {
+      "query": "path:pillars/06-market-making",
+      "color": {
+        "a": 1,
+        "rgb": 65416
+      }
+    },
+    {
+      "query": "path:pillars/07-machine-learning-altdata",
+      "color": {
+        "a": 1,
+        "rgb": 16746496
+      }
+    },
+    {
+      "query": "path:pillars/08-quantitative-development",
+      "color": {
+        "a": 1,
+        "rgb": 7372944
       }
     }
   ]
