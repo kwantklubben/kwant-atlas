@@ -4,6 +4,11 @@
 > Before pasting: tell the agent where the delivered paid sources are (a local path or Google Drive location).
 > This block is self-contained — the agent re-reads all context from the handoff files on disk.
 
+> ⚠️ KNOWN DEBT TO ADDRESS TOMORROW (Pillar 8 free sources):
+> In `~/kwant-atlas-sources/free/pillar8/`, ~11 of the 23 HTML files are DEAD captures
+> (404 pages, JS-shells, or nav-only) and need re-fetching with the browser/web_extract
+> tools — see `07-PILLAR8-FREE-SOURCES-DEBT.md`. The other pillars' free sources are clean PDFs.
+
 ---
 
 ```markdown
