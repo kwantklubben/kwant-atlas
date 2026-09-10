@@ -46,9 +46,18 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
    12. **[Copulas & Dependence](content/pillars/04-quantitative-risk/copulas-and-dependence/index.md)** — Sklar's theorem, Gaussian/`t`/Archimedean copulas, tail dependence, and why the Gaussian copula's zero tail dependence missed 2008.
    13. **[Systemic Risk & Aggregation](content/pillars/04-quantitative-risk/systemic-risk-and-aggregation/index.md)** — Network contagion, CoVaR/MES/SRISK stability measures, and the (im)possibility of aggregating the risk types into one number.
 
-5. **[Portfolio Construction and Optimization](content/pillars/05-portfolio-optimization/index.md)**  
-   *Applying mathematical frameworks to allocate capital across assets, maximizing risk-adjusted return under real friction.*  
-   Core: Modern Portfolio Theory (Markowitz Mean-Variance, Error Maximizer Paradox), Covariance Shrinkage & RMT Denoising (Ledoit-Wolf, Marchenko-Pastur), Black-Litterman Bayesian Allocation, Risk Parity & Equal Risk Contribution (ERC), Hierarchical Risk Parity (HRP), and Transaction Costs & Turnover Constraints.
+5. **[Portfolio Construction and Optimization](content/pillars/05-portfolio-optimization/index.md)**  \
+   *Applying mathematical frameworks to allocate capital across assets, maximizing risk-adjusted return under real friction.*  \
+   **Structure:** organised as **9 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
+   1. **[Modern Portfolio Theory & Mean-Variance](content/pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index.md)** — The Markowitz quadratic program, efficient frontier and tangency portfolio, and why raw MVO is the "estimation-error maximizer."
+   2. **[Covariance Shrinkage & RMT Denoising](content/pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index.md)** — Taming the $N>T$ curse: Ledoit-Wolf analytical shrinkage and Marchenko-Pastur random-matrix filtering of the sample covariance.
+   3. **[Black-Litterman Bayesian Allocation](content/pillars/05-portfolio-optimization/black-litterman/index.md)** — Reverse optimization for equilibrium implied returns, blending quantitative views with market priors via the master allocation formula.
+   4. **[Risk Parity & Equal Risk Contribution (ERC)](content/pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index.md)** — Allocating by marginal risk contribution rather than predicted returns, and why 60/40 is secretly 90/10 equity risk.
+   5. **[Hierarchical Risk Parity (HRP)](content/pillars/05-portfolio-optimization/hierarchical-risk-parity/index.md)** — Correlation-distance clustering, quasi-diagonalization, and matrix-inversion-free allocation via recursive bisection.
+   6. **[Robust Portfolio Optimization](content/pillars/05-portfolio-optimization/robust-optimization/index.md)** — Uncertainty sets, robust formulations, and resampling to make allocation decisions resilient to estimation error.
+   7. **[Kelly Criterion & Bet Sizing](content/pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/index.md)** — Optimal-growth position sizing, fractional Kelly, and ruin probability under non-ergodic multiplicative growth.
+   8. **[Constraints & Transaction Costs](content/pillars/05-portfolio-optimization/constraints-and-transaction-costs/index.md)** — Weight/leverage caps, quadratic market impact, turnover penalties, and sparse rebalancing frontiers.
+   9. **[Multi-Asset & Factor Allocation](content/pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/index.md)** — Cross-asset risk premia, factor-based allocation, carry and styles, and portfolio construction across asset universes.
 
 6. **[Market Making and Liquidity Provision](content/pillars/06-market-making/index.md)**  
    *Designing automated models that quote continuous two-sided liquidity, profiting from the spread while managing inventory and adverse selection.*  
