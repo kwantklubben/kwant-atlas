@@ -110,12 +110,12 @@ Measuring, bounding, and mitigating financial exposure to guarantee firm surviva
 
 ### 5. [[pillars/05-portfolio-optimization/index|Portfolio Construction and Optimization]]
 Applying mathematical frameworks to allocate capital across assets, maximizing risk-adjusted return under real friction.
-- **[[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory & Mean-Variance Frontiers]]**: Markowitz quadratic programs, the tangency portfolio, and the "estimation error maximizer" paradox.
-- **[[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]]**: The curse of dimensionality ($N > T$), Ledoit-Wolf analytical shrinkage, and Marchenko-Pastur eigenvalue filtering.
-- **[[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman Bayesian Asset Allocation]]**: Reverse optimization for equilibrium implied returns, blending quant views with market priors.
-- **[[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & Equal Risk Contribution (ERC)]]**: Marginal risk contribution, why 60/40 is 90% equity risk, and leverage in risk-balanced portfolios.
-- **[[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity (HRP)]]**: Correlation distance metrics, tree graph clustering, and matrix-inversion-free allocation.
-- **[[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover Constraints]]**: Penalizing quadratic market impact, L1/L2 regularization, and sparse rebalancing frontiers.
+- **[[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean-Variance Frontiers]]**: Markowitz quadratic programs, the tangency portfolio, and the "estimation error maximizer" paradox.
+- **[[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]]**: The curse of dimensionality ($N > T$), Ledoit-Wolf analytical shrinkage, and Marchenko-Pastur eigenvalue filtering.
+- **[[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman Bayesian Asset Allocation]]**: Reverse optimization for equilibrium implied returns, blending quant views with market priors.
+- **[[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & Equal Risk Contribution (ERC)]]**: Marginal risk contribution, why 60/40 is 90% equity risk, and leverage in risk-balanced portfolios.
+- **[[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]]**: Correlation distance metrics, tree graph clustering, and matrix-inversion-free allocation.
+- **[[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover Constraints]]**: Penalizing quadratic market impact, L1/L2 regularization, and sparse rebalancing frontiers.
 
 ---
 

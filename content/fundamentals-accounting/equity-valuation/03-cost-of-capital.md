@@ -128,5 +128,5 @@ Both Damodaran checks reproduce exactly ($21.30\%$ / $15.60\%$ / $9.94\%$). The 
 
 - Back: [[fundamentals-accounting/equity-valuation/02-cash-flow-forecasting|02 · Cash-Flow Forecasting]] · [[fundamentals-accounting/equity-valuation/index|Index Hub]]
 - Forward: [[fundamentals-accounting/equity-valuation/04-terminal-value-and-ev-to-equity|04 · Terminal Value & EV→Equity]]
-- Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (beta = OLS slope) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory]] (CAPM's origin)
+- Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (beta = OLS slope) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory]] (CAPM's origin)
 - Risk: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (default spreads → cost of debt)
