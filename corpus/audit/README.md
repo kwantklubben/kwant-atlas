@@ -81,9 +81,14 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 | 13 | pillars/06 (last 2) + pillars/07 (1st 2) | dealer-banks-and-otc, liquidity-risk-and-asset-pricing, financial-ml-pitfalls-and-low-snr, purged-cross-validation-and-backtest-hygiene | ✅ done, fixes committed |
 | 14 | pillars/07-machine-learning-altdata (next 4) | regime-classification-hmm-and-gmm, tree-and-boosting-methods, financial-nlp-and-transcripts, alternative-data-pipelines-and-evaluation | ✅ done, fixes committed |
 | 15 | pillars/07 (last 3) + pillars/08 (1st) | deep-learning-for-sequences, reinforcement-learning-for-trading, ml-for-portfolio, high-performance-cpp-for-trading | ✅ done, fixes committed |
-| 16 | pillars/08 (next 4) | concurrency-and-lockless-programming, python-quant-stack, event-driven-backtesting-engines, fix-protocol-and-exchange-connectivity | ✅ done, fixes committed |
-| 17 | pillars/08 (last 4) | low-latency-linux-and-networking, data-infrastructure-and-reproducibility, tick-level-databases-and-timeseries, production-trading-systems | running |
-| 18 | mop-up | production-risk-guards-and-kill-switches.md (flat page), area hubs, glossary/diagnostics spot-check | queued |
+| 17 | pillars/08 (last 4) | low-latency-linux-and-networking, data-infrastructure-and-reproducibility, tick-level-databases-and-timeseries, production-trading-systems | ✅ done, fixes committed |
+
+**ALL 97 TOPIC-FOLDERS AUDITED AND FIXED** (waves 1–17). Every pillar is complete:
+foundations (9), fundamentals-accounting (8), pillars 01–08 (70). ~500 findings fixed, each verified
+against the page's own code/print or the verified corpus before applying.
+
+The `production-risk-guards-and-kill-switches.md` and other superseded flat notes are retired to
+`_legacy/` (see the legacy-note section below).
 
 **Pillar 7 (9 folders) is now fully audited and fixed.**
 
