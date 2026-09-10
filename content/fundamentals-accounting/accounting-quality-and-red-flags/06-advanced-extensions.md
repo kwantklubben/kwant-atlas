@@ -43,7 +43,7 @@ TATA &= \frac{NI_t - CFO_t}{TA_t} && \text{Total Accruals to Total Assets — th
 
 $$M = -4.84 + 0.920\,DSRI + 0.528\,GMI + 0.404\,AQI + 0.892\,SGI + 0.115\,DEPI - 0.172\,SGAI + 4.679\,TATA - 0.327\,LVGI.$$
 
-Scoring rule: $M > -1.78$ → **likely manipulator**; $M \le -1.78$ → not flagged. The two **largest coefficients** are $TATA$ ($+4.679$) and $DSRI$ ($+0.920$) — i.e. the model is, at its core, **accruals plus receivables growth**, with six contextual amplifiers around them. $SGAI$ is the only *negative* coefficient: falling SG&A-per-sales is treated as suspicious (a sign that costs were deferred or revenue inflated), which is counter-intuitive until you remember Beneish estimated it on *actual* enforcement cases.
+Scoring rule: $M > -1.78$ → **likely manipulator**; $M \le -1.78$ → not flagged. The two **largest coefficients** are $TATA$ ($+4.679$) and $DSRI$ ($+0.920$) — i.e. the model is, at its core, **accruals plus receivables growth**, with six contextual amplifiers around them. $SGAI$ and $LVGI$ are the two *negative* coefficients; $SGAI$'s sign is the counter-intuitive one: falling SG&A-per-sales is treated as suspicious (a sign that costs were deferred or revenue inflated), which is counter-intuitive until you remember Beneish estimated it on *actual* enforcement cases.
 
 **The earnings-quality proxy map (Dechow, Ge & Schrand 2010) — match the proxy to the question:**
 

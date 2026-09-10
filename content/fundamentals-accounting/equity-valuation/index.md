@@ -42,7 +42,7 @@ $$\text{FCFE}=N\!I-(\text{CapEx}-\text{Dep})-\Delta\text{NWC}+(\text{New Debt}-\
 | **WACC** | $K_c=k_e\dfrac{E}{D+E}+k_d(1-t)\dfrac{D}{D+E}$ | TI: $15.60\%$ · Ill. 2.1: $9.94\%$ |
 | Stable firm value | $V_0=\dfrac{\text{FCFF}_1}{K_c-g_n}$ | TI: $\dfrac{212.2}{0.156-0.05}=2002$ |
 | Stable equity value | $V_0^{\text{eq}}=\dfrac{\text{FCFE}_1}{k_e-g_n}$ | — |
-| **Gordon terminal value** | $\text{TV}_n=\dfrac{\text{CF}_{n+1}}{r-g_n}$ | 2-stage toy: $\text{TV}{=}2154.3$, PV${=}1337.7$ |
+| **Gordon terminal value** | $\text{TV}_n=\dfrac{\text{CF}_{n+1}}{r-g_n}$ | 2-stage toy: $\text{TV}{=}1777.3$, PV${=}1103.6$ |
 | Stable-growth reinvestment | $\text{RR}=\dfrac{g_n}{\text{ROC}}$ | TI: $5\%/9.20\%=54.34\%$ |
 | **EV → equity → per share** | $E = V_{\text{op}}+\text{Cash}-\text{Debt}$; per share $=E/\#\text{shares}$ | TI: $1560/24.62=63.36$ |
 | PE from fundamentals (stable) | $\text{PE}=\dfrac{\text{Payout}\,(1+g_n)}{k_e-g_n}$ | payout $.4,g{=}5\%,k_e{=}10\%\Rightarrow 8.4$ |

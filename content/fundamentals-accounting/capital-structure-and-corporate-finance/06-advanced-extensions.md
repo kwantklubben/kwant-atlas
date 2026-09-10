@@ -92,7 +92,6 @@ Optimal D* = 1000 -> V_L,max = 1150 (marginal tax shield = marginal distress cos
 ```
 
 ```python
-print()
 print("== Agency cost of free cash flow (Jensen 1986) ==")
 fcf, wacc, g = 100.0, 0.10, 0.03
 print(f"FCF={fcf:.0f}; ROIC={g*100:.0f}% < WACC {wacc*100:.0f}% -> reinvesting "

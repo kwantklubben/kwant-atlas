@@ -38,7 +38,7 @@ $$\boxed{\;\text{Assets} = \text{Liabilities} + \text{Shareholders' equity}\;}\q
 $$\text{Net income} = \text{Revenues}-\text{Expenses}$$
 $$\text{Gross margin} = \text{Net revenue}-\text{COGS},\quad \text{EBIT} = \text{Gross margin}-\text{Operating expenses},\quad \text{Net income} = \text{EBIT}-\text{Interest}-\text{Tax}$$
 
-**The Cash Flow Statement — a flow over the period** (Penman eq. 2.3; Dell: CFO \$2,436m, CFI \$−1,414m, CFF \$−812m, Δcash \$200m):
+**The Cash Flow Statement — a flow over the period** (Penman eq. 2.3; Dell: CFO \$2,436m, CFI \$−1,414m, CFF \$−812m, Δcash \$200m after a \$10m FX effect, i.e. CFO+CFI+CFF = \$210m before that line):
 
 $$\text{CFO}+\text{CFI}+\text{CFF}=\text{Change in cash}$$
 

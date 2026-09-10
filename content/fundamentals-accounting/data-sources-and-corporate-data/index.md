@@ -32,7 +32,7 @@ $$\text{value} = \big(\underbrace{\text{concept}}_{\text{e.g. us-gaap:Revenues}}
 
 Drop the fourth component and you have a look-ahead leak. The usable-at time is the report's *filing* date, not its *period* end:
 
-$$t_{\text{usable}} = t_{\text{filed}} = t_{\text{period-end}} + \text{lag}, \qquad \text{lag} \in \{0,\ 1,\ 45,\ 90,\ 365\}\ \text{days (by source)}.$$
+$$t_{\text{usable}} = t_{\text{filed}} = t_{\text{period-end}} + \text{lag}, \qquad \text{lag} \in \{0,\ 1,\ 30,\ 45,\ 365\}\ \text{days (by source)}.$$
 
 **The source lookup table** (the hub deliverable). "PIT" = point-in-time / as-originally-reported capable.
 
@@ -65,7 +65,7 @@ Runs on the **standard library only**. It turns the lookup table above into a ma
 SOURCES = {
     # name                    type          $/yr    point-in-time  publication lag (days)
     "EDGAR companyfacts":     {"type": "regulator",  "cost": 0,     "pit": True,  "lag": 1},
-    "XBRL taxonomies":        {"type": "standard",   "cost": 0,     "pit": True,  "lag": 0},
+    "XBRL taxonomies":        {"type": "standard",   "cost": 0,     "pit": False, "lag": 0},
     "Ken French Data Library":{"type": "academic",   "cost": 0,     "pit": False, "lag": 30},
     "Sharadar SF1/SEP":       {"type": "commercial", "cost": 500,   "pit": True,  "lag": 1},
     "Nasdaq Data Link":       {"type": "platform",   "cost": 0,     "pit": True,  "lag": 1},
@@ -96,17 +96,17 @@ print(f"\nstaleness buckets observed (days): "
 ```
 ```
 13 sources audited: 8 free / 5 paid
-point-in-time capable      : 9/13
+point-in-time capable      : 8/13
 full paid stack, all bought: $66,500/yr
 
 free AND point-in-time (the zero-cost honest stack):
   - EDGAR companyfacts
-  - XBRL taxonomies
   - Nasdaq Data Link
   - OpenInsider
   - WhaleWisdom
 
 free but NOT point-in-time (never backtest on these alone):
+  - XBRL taxonomies
   - Ken French Data Library
   - Yahoo quoteSummary
   - Damodaran NYU sets

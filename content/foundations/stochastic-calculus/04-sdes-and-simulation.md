@@ -54,7 +54,7 @@ Because there is no closed-form transition, CIR simulation uses **exact noncentr
 
 ### 3. Computational Implementation — exact vs Euler, and the Feller cliff
 
-Stdlib block that (a) confirms GBM exact-MC mean converges to $S_0e^{\mu T}$; (b) shows Euler–Maruyama's coarse-$\Delta t$ drift vs the exact-transition value; (c) draws the Vasicek exact transition and checks the stationary variance; (d) shows Euler-CIR *can* go negative while Milstein stays nonnegative.
+Stdlib block that (a) confirms GBM exact-MC mean converges to $S_0e^{\mu T}$; (b) shows Euler–Maruyama's coarse-$\Delta t$ drift vs the exact-transition value; (c) draws the Vasicek exact transition and checks the stationary variance; (d) contrasts the Euler and Milstein CIR steps (with the Feller condition here satisfied, both stay positive — the negative-crossing case needs $2\kappa\theta<\sigma^2$).
 
 ```python
 import math, random
@@ -93,7 +93,7 @@ def milstein_cir(n):
     r = r0
     for _ in range(n):
         dw = random.gauss(0, math.sqrt(T/n))
-        r += alpha*(b-r)*(T/n) + s*math.sqrt(max(r,0.0))*dw + 0.25*s*s*dtl*(dw*dw - dtl)
+        r += alpha*(b-r)*(T/n) + s*math.sqrt(max(r,0.0))*dw + 0.25*s*s*(T/n)*(dw*dw - T/n)
     return r
 print("Feller: 2*alpha*b = %.3f   ,   sigma^2 = %.3f" % (2*alpha*b, s*s))
 print("CIR Euler    r(T)=%.4f     CIR Milstein r(T)=%.4f" % (euler_cir(40), milstein_cir(40)))

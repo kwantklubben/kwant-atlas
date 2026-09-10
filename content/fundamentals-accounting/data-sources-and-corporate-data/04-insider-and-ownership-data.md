@@ -20,7 +20,7 @@ Corporate filings fall into two kinds: what the **company** says about itself (1
 Three datasets, three questions:
 
 - **Form 4 — insider transactions.** Filed within **2 business days** of a transaction by officers, directors, and >10% holders. The most timely, least aggregated dataset in this folder. Aggregators like **OpenInsider** make it screenable (cluster buys, open-market purchases vs. routine grants).
-- **Schedule 13-D / 13-G — beneficial ownership.** Filed when a holder crosses **5%**; 13-D within 5 business days (activist-flavoured), 13-G annually.
+- **Schedule 13-D / 13-G — beneficial ownership.** Filed when a holder crosses **5%**; **Schedule 13D** within 5 business days (activist-flavoured); **Schedule 13G** (passive/qualified-institutional) within 5 business days for passive filers (or 45 days after quarter-end for Qualified Institutional Investors), with all 13G amendments due quarterly (SEC 2024 amendments).
 - **Form 13-F — institutional holdings.** Every institutional manager with >$100M AUM reports its long positions **within 45 days of quarter end**. Aggregators like **WhaleWisdom** turn the quarterly deluge into ownership percentages and fund-level views.
 
 The single most important fact about this family is a **timing** fact: each has a legally mandated filing lag, and the lag is data. A "13-F ownership" number is never today's — it is at best 45 days old, and often 4.5 months old by the time the next one lands.
@@ -34,8 +34,8 @@ The single most important fact about this family is a **timing** fact: each has 
 | Form | Who files | Trigger | Deadline | Typical staleness |
 |---|---|---|---|---|
 | **Form 4** | officers, directors, >10% holders | any transaction | **2 business days** | days |
-| **13-D** | any holder crossing 5% | crossing 5% | 5 business days (10 for passive-ish) | days–weeks |
-| **13-G** | passive >5% holder | eligible for short-form | 45 days after quarter end | up to ~4.5 months |
+| **13-D** | any holder crossing 5% | crossing 5% | 5 business days | days–weeks |
+| **13-G** | passive/qualified-institutional >5% holder | eligible for short-form | 5 business days (passive) / 45 days after quarter end (QII); quarterly amendments | up to ~1 quarter |
 | **13-F** | institutional manager >$100M AUM | quarter end | **45 days** after quarter end | **45–135 days** |
 | **DEF 14A** (proxy) | the company | annual meeting | varies | months |
 

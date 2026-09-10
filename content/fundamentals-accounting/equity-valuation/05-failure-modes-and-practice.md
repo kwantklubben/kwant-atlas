@@ -103,7 +103,7 @@ base per-share = 11.29
   pay 80% of intrinsic -> buy below 9.03
   pay 67% of intrinsic -> buy below 7.52
 ```
-Read the numbers: a **$2$-point margin** swing moves the value $\pm 26\%$ ($8.33\to 14.24$ across the whole grid), and a **$1$-point move in $g$** moves the single-stage value $10$–$18\%$ (e.g. $2002\to2210$). One wrong discount rate moves equity $+16.4\%$. **No spreadsheet can out-precision its assumptions** — which is why the practitioner's answer is a *range plus a margin of safety*, not a point estimate.
+Read the numbers: a **$2$-point margin** swing ($18\%\to22\%$) moves the value **$+28.5\%$ to $+33.0\%$** depending on the reinvestment rate (e.g. $12.47\to16.02$ at $rr{=}0.40$), a **$0.40\to0.60$ reinvestment-rate** swing at fixed $20\%$ margin spans $\pm26\%$ ($8.33\to14.24$), and a **$1$-point move in $g$** moves the single-stage value $10$–$18\%$ (e.g. $2002\to2210$). One wrong discount rate moves equity $+16.4\%$. **No spreadsheet can out-precision its assumptions** — which is why the practitioner's answer is a *range plus a margin of safety*, not a point estimate.
 
 ---
 

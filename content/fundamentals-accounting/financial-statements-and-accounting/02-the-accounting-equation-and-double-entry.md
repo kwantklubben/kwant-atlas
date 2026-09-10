@@ -103,7 +103,7 @@ Total credits = 40,200
 Assets 15,800  ==  Liab 5,000 + Equity 10,800  ->  True
 ```
 
-Note *why* debits and credits each total \$37,200: the business recorded every transaction twice, and the grand total of all postings is necessarily symmetric. A balanced ledger is *guaranteed* here because the engine rejects any unbalanced transaction up front — that assertion is exactly the discipline a human bookkeeper (or an auditor) applies by hand.
+Note *why* debits and credits each total \$40,200: the business recorded every transaction twice, and the grand total of all postings is necessarily symmetric. A balanced ledger is *guaranteed* here because the engine rejects any unbalanced transaction up front — that assertion is exactly the discipline a human bookkeeper (or an auditor) applies by hand.
 
 ---
 

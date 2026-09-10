@@ -90,7 +90,7 @@ int_0^T W dW  = -0.3005    vs   0.5W(T)^2-0.5T = -0.3026
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Applying the classical chain rule.** $\int_0^T W\,dW=\tfrac12W(T)^2$ is *wrong*; the correct Itô value subtracts $\tfrac12T$. Any result that doesn't subtract the quadratic-variation term is an $O(T)$ error.
-2. **Using backward vs forward increments.** The Itô integral uses *forward*/left-endpoint increments $\Delta(t_j)(W(t_{j+1})-W(t_j))$, which makes it a martingale. Using the *backward* increment would yield the Stratonovich integral (no martingale property, different answers). Is Your $\Delta$ predictable (adapted) — if it looks into the future, the integral is ill-defined and arbitrage appears.
+2. **Using backward vs forward increments.** The Itô integral uses *forward*/left-endpoint increments $\Delta(t_j)(W(t_{j+1})-W(t_j))$, which makes it a martingale. Using the *backward* increment would yield the Stratonovich integral (no martingale property, different answers). Is your $\Delta$ predictable (adapted) — if it looks into the future, the integral is ill-defined and arbitrage appears.
 3. **Ignoring integrability** $\mathbb E\int\Delta^2du<\infty$. Without it the $L^2$ extension and isometry fail; in extreme cases the integral isn't even a martingale (local-martingale). This is the technical gate for Girsanov's integrability condition in [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05]].
 4. **Reading $dX^2=\Delta^2dt$ as optional.** It is derived from QV, not assumed; skipping $f_{xx}$ (e.g. pretending the function is affine in $W$ on a curved payoff) drops the single term that drives all hedging P&L.
 

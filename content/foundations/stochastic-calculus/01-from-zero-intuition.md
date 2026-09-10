@@ -7,7 +7,7 @@ tags:
   - brownian-motion
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
+**Basic Prerequisites:** Elementary probability only (a random variable, expectation, the normal distribution) — **no measure theory required at this entry point**; the measure-theoretic machinery is developed from [[foundations/stochastic-calculus/02-brownian-motion-and-martingales|02]] onward.
 
 ---
 

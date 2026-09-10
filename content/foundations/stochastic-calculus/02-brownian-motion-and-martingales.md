@@ -87,7 +87,7 @@ E[e^{sig W - .5 sig^2 t}] = 0.9997  (theory 1.0)
 1. **"Zero drift" ≠ "stays put."** A martingale can have enormous variance — BM, discounted asset prices, everything fair-but-volatile. The martingale property says only that the *conditional mean* of the future is the present, never that the path is flat. Treating "martingale" as "predictable at the level" misreads the definition.
 2. **Uncorrelated ≠ independent (outside Gaussian).** Only for *jointly normal* processes does zero covariance imply independence (Shreve II §2.2, Example). Many intuitions that "work" for BM fail for general processes; the independence cutoff is the Gaussian assumption, not a general fact.
 3. **$\mathbb E\tau_m=\infty$ surprises everyone.** First-passage is almost-sure but mean-infinite; naive simulation (finite horizon) massively understates hitting probabilities, and pricing barrier options from a short simulation is biased. This underlies the continuity-correction and Brownian-interpolation literature (Glasserman Ch 6).
-4. **Mismatched variance in simulation.** Gerascope the step variance: drawing $\Delta W\sim N(0,dt)$ from $N(0,\Delta t)$ over a *different* grid quietly violates $\operatorname{Var}=t-s$ and breaks every downstream QV/martingale check.
+4. **Mismatched variance in simulation.** Mis-scale the step variance: drawing $\Delta W\sim N(0,dt)$ from $N(0,\Delta t)$ over a *different* grid quietly violates $\operatorname{Var}=t-s$ and breaks every downstream QV/martingale check.
 
 ---
 

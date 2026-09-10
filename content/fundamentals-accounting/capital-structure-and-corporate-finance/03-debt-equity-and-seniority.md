@@ -18,7 +18,9 @@ Financing instruments are **ranked claims on the same future cash flows**, and t
 
 The ladder, from *most* to *least* protected (this is the user's own seniority ordering, standard across every capital market):
 
-$$\underbrace{\text{senior debt}}_{\text{paid first}} < \underbrace{\text{junior debt}} < \underbrace{\text{mezzanine}} < \underbrace{\text{convertible}} < \underbrace{\text{common equity}}_{\text{residual, paid last}}.$$
+$$\underbrace{\text{senior debt}}_{\text{paid first}} \prec \underbrace{\text{junior debt}} \prec \underbrace{\text{mezzanine}} \prec \underbrace{\text{convertible}} \prec \underbrace{\text{common equity}}_{\text{residual, paid last}}$$
+
+(where $\prec$ reads "is paid *before*" — i.e. leftmost is most senior).
 
 Every rung is paid only after all rungs *above* it are fully satisfied, in operating cash flow and in liquidation. **Common equity sits at the bottom of the ladder** — it is the residual claim, the "paid last" rung of [[fundamentals-accounting/capital-structure-and-corporate-finance/01-from-zero-intuition|01]]. Everything senior to it is, in effect, a claim *against* equity's share.
 
@@ -82,7 +84,7 @@ scenario   seni  juni  mezz  conv  comm   equity=residual
     100    100.0    0.0    0.0    0.0    0.0   equity gets 0.0
 ```
 
-Read the ladder: **senior debt is repaid in full in every scenario** (it is protected), junior/mezzanine get hit as assets fall, and **common equity gets *nothing* once liquidation drops below $700** — the sum of all senior claims. That is what "equity is the residual, riskiest claim" means numerically.
+Read the ladder: **senior debt is repaid in full whenever assets cover it ($A\ge300$)** and is the *last* claim to absorb losses, junior/mezzanine get hit as assets fall, and **common equity gets *nothing* once liquidation drops below $700** — the sum of all senior claims. That is what "equity is the residual, riskiest claim" means numerically.
 
 ---
 

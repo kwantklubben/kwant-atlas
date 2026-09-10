@@ -134,7 +134,7 @@ Hedge portfolio: long lowest-accrual decile, short highest-accrual decile
   year 2: 1.6% - (-3.2%) =  4.8%  (t=3.15)
   year 3: 0.7% - (-2.2%) =  2.9%  (t=1.64, not significant)
 ```
-The recovered coefficients ($0.765$, $0.857$) match Sloan's pooled estimates (0.765, 0.855) to the third decimal — the estimator and the DGP agree, which is the point of the exercise.
+The recovered coefficients ($0.765$, $0.857$) match Sloan's pooled estimates (0.765, 0.855) to the second decimal (0.857 vs 0.855, within sampling noise) — the estimator and the DGP agree, which is the point of the exercise.
 
 ---
 

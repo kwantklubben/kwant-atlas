@@ -32,7 +32,7 @@ $$V_j = (S_j + D_j) = \frac{X_j}{\rho_k} \quad\Longleftrightarrow\quad \frac{X_j
 
 Equivalently, the **average cost of capital is completely independent of capital structure** and equal to the pure-equity capitalization rate.
 
-*Proof sketch (arbitrage).* Take two firms in the same class with the same $X$. Firm 1 all-equity ($V_1$), firm 2 with debt $D_2$ ($V_2$). Suppose $V_2 > V_1$. An investor holding a fraction $\alpha$ of firm 2 earns $\alpha(X - rD_2)$. Sell it, borrow $\alpha D_2$ personally, and buy $\alpha(V_2/V_1)$ worth of firm 1 — recreating the same leverage on personal account. The new return is $\alpha\frac{V_2}{V_1}X - \alpha rD_2 > \alpha(X - rD_2)$, i.e. **more income for identical risk**, so investors dump firm 2's shares, forcing $V_2 \to V_1$. Conversely, if $V_2 < V_1$, the reverse arbitrage forces $V_2 \uparrow$. Hence $V_1 = V_2$ in equilibrium.
+*Proof sketch (arbitrage).* Take two firms in the same class with the same $X$. Firm 1 all-equity ($V_1$), firm 2 with debt $D_2$ ($V_2$). Suppose $V_2 > V_1$. An investor holding a fraction $\alpha$ of firm 2 earns $\alpha(X - rD_2)$. Sell it, borrow $\alpha D_2$ personally, and buy a **fraction** $\alpha V_2/V_1$ of firm 1 — recreating the same leverage on personal account. The new return is $\alpha\frac{V_2}{V_1}X - \alpha rD_2 > \alpha(X - rD_2)$, i.e. **more income for identical risk**, so investors dump firm 2's shares, forcing $V_2 \to V_1$. Conversely, if $V_2 < V_1$, the reverse arbitrage forces $V_2 \uparrow$. Hence $V_1 = V_2$ in equilibrium.
 
 **Proposition II.** The expected yield on the stock of a levered firm is a linear function of leverage:
 

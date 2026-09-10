@@ -46,7 +46,7 @@ This folder is the **hub**. It (a) gives the fast **key-results lookup table** b
 | **Value of tax shield** | [[fundamentals-accounting/capital-structure-and-corporate-finance/02-modigliani-miller|02]] | $V_L = V_U + \tau D$ — debt adds $\tau D$ of value under a corporate tax | **$+1{,}200$** |
 | **WACC (with tax)** | [[fundamentals-accounting/capital-structure-and-corporate-finance/02-modigliani-miller|02]] | $WACC = \rho(1 - \tau \tfrac{D}{V})$ — falls with leverage | **$8.54\%$** |
 | **Leverage effect on ROE** | [[fundamentals-accounting/capital-structure-and-corporate-finance/01-from-zero-intuition|01]] | Leverage *amplifies* shareholder return — up *and* down | good 52% / bad 4% |
-| **Seniority ladder** | [[fundamentals-accounting/capital-structure-and-corporate-finance/03-debt-equity-and-seniority|03]] | senior < junior < mezzanine < convertible < equity (residual) | equity = **0** at liq. 650 |
+| **Seniority ladder** | [[fundamentals-accounting/capital-structure-and-corporate-finance/03-debt-equity-and-seniority|03]] | senior ≺ junior ≺ mezzanine ≺ convertible ≺ equity (leftmost paid first, residual last) | equity = **0** at liq. 650 |
 | **Dilution transfer** | [[fundamentals-accounting/capital-structure-and-corporate-finance/04-dilution-and-buybacks|04]] | issue below intrinsic $V/n$ transfers wealth old → new | **40** |
 | **Buyback EPS** | [[fundamentals-accounting/capital-structure-and-corporate-finance/04-dilution-and-buybacks|04]] | $EPS = \tfrac{NI}{sh}$; retiring shares accretes EPS mechanically | 1.40 → **1.556** |
 | **Pecking order** | [[fundamentals-accounting/capital-structure-and-corporate-finance/06-advanced-extensions|06]] | internal > debt > equity (Myers–Majluf 1984) | refuse NPV 8 |

@@ -39,7 +39,7 @@ Any strategy that replaces $\mathcal{D}(t)$ with $\mathcal{D}(t_{\text{now}})$ h
 
 $$\text{gap} = \frac{x_r - x_f}{x_f}, \qquad\text{and the sign of the gap is not random:}$$
 
-restatements cluster on the *downside* (write-offs, revenue reversals), so a database that keeps only $x_r$ systematically understates the good news available at the time and *overstates* the quality of firms that later turned out to have problems.
+restatements cluster on the *downside* (write-offs, revenue reversals), so a backtest built only on restated $x_r$ overstates how bad things looked in real time and, symmetrically, overstates how predictable the trouble was.
 
 **API / coverage arithmetic.** Pulling a universe of $N$ firms one request at a time at the SEC's advised ceiling $r = 10$ req/s costs at least $N / r$ seconds:
 
@@ -58,7 +58,7 @@ The bulk/frames route collapses that to a handful of downloads — the practical
 from statistics import mean
 
 # 1) SURVIVORSHIP: run a screen on today's live universe only.
-returns = {"A": 0.12, "B": 0.08, "C": -0.15, "D": -1.00, "E": 0.20}  # D,E delisted
+returns = {"A": 0.12, "B": 0.08, "C": -0.15, "D": -1.00, "E": 0.20}  # D delisted; E survives
 survivors = {k: v for k, v in returns.items() if v > -1.0}
 print("1) SURVIVORSHIP BIAS")
 print(f"   live-universe mean return (survivors) : {mean(survivors.values())*100:+.2f}%")

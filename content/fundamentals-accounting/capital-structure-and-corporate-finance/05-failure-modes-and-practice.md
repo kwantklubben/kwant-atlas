@@ -57,7 +57,7 @@ Runs on the standard library. First simulates the leverage death spiral as a gen
 print("== Leverage death spiral: distress -> fire-sale -> higher cost of capital ==")
 A, D = 2000.0, 1200.0          # assets, debt (equity starts 800)
 rd, ebit_roa, fire_sale = 0.06, 0.05, 0.55
-A -= 900.0                     # shock: assets 2000 -> 1100, equity ~0
+A -= 900.0                     # shock: assets 2000 -> 1100, equity = 1100 - 1200 = -100
 print(f"Shock: assets 2000 -> {A:.0f}, debt {D:.0f}, equity ~ {A-D:.0f}")
 for step in range(1, 8):
     ebit, interest = A*ebit_roa, rd*D
@@ -88,7 +88,6 @@ step 7: ebit=   0.0 < int= 360.0 -> fire-sell  654.5 assets at 55cents/$; A=   0
 ```
 
 ```python
-print()
 print("== Agency cost of free cash flow (Jensen 1986): reinvest below WACC destroys value ==")
 fcf, wacc = 100.0, 0.10
 g = 0.03                       # only weak projects available (ROIC 3% < WACC 10%)
