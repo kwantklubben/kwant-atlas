@@ -44,7 +44,7 @@ You start filling once outflow passes $x$, and you finish once it passes $x+L$. 
 | Outflow composition | $\xi = D + C^{\text{ahead}}$ (trades $+$ cancels ahead) | cancels lift $P(\text{fill})$ from $0.0091$ to $0.8989$ at $pc{=}0.10$ |
 | Cancel-ahead probability (uniform cancels) | $\mathbb{P}(\text{cancel ahead}) = x/Q$ | position 25 / depth 200 → $0.125$ |
 | Fill time, pure trades | $\text{time to fill}\sim\text{NegBin}(x,p)$; mean $= x/\mu$ | $q{=}10,p{=}0.05 \Rightarrow$ mean $200$ ticks |
-| Fill probability within $T$ (pure trades) | $P(\text{Bin}(T,p)\ge x)$ | $x{=}10,T{=}300$: closed $0.9350$, MC $0.9325$ |
+| Fill probability within $T$ (pure trades) | $P(\text{Bin}(T,p)\ge x)$ | $x{=}10,T{=}300$: closed $0.9350$, MC $0.9336$ |
 | Mean-field queue position | $\dfrac{dx}{dt} = -(\mu + \theta x)$, $x(t)=\big(x_0+\tfrac{\mu}{\theta}\big)e^{-\theta t}-\tfrac{\mu}{\theta}$ | crossing $t^\star = 9.116$ s ($x_0{=}50$) |
 | Cancel-only crossing | $x(t)=x_0 e^{-\theta t}$ (never reaches 0 in finite mean) | halving time $34.66$ s |
 | Mid-move-up probability (CS&T) | $\mathbb{P}(\sigma_{\text{ask}}<\sigma_{\text{bid}})$ for two indep. birth–death queues | $(10,5)$: exact $0.2322$, MC $0.2324$ |
@@ -72,18 +72,20 @@ def p_fill_mc(q, p, T, n=40000):
     for _ in range(n):
         c = 0
         for _ in range(T):
-            if random.random() < p and (c := c+1) >= q:
-                break
+            if random.random() < p:
+                c += 1
+                if c >= q:
+                    break
         hit += (c >= q)
-    return hit/n
+    return hit / n
 
 p, T = 0.05, 300
 for q in (5, 10, 25):
     print(f"x={q:3d}: closed={p_fill_closed(q,p,T):.4f}  MC={p_fill_mc(q,p,T):.4f}  mean_wait={q/p:.0f}")
 ```
 ```
-x=  5: closed=0.9993  MC=0.9993  mean_wait=100
-x= 10: closed=0.9350  MC=0.9325  mean_wait=200
+x=  5: closed=0.9993  MC=0.9991  mean_wait=100
+x= 10: closed=0.9350  MC=0.9336  mean_wait=200
 x= 25: closed=0.0093  MC=0.0088  mean_wait=500
 ```
 

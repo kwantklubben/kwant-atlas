@@ -23,7 +23,16 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 2. **[Algorithmic and High-Frequency Trading (HFT)](content/pillars/02-algorithmic-hft/index.md)**  
    *Designing automated execution systems operating across the millisecond to nanosecond frontier.*  
-   Core: Market Microstructure (Order Types, Maker-Taker), Low-Latency Systems Architecture (Kernel Bypass, Solarflare Onload, CPU Pinning), Queue Position & Fill Probability, Execution Algos (VWAP, TWAP, POV), Optimal Execution (Almgren-Chriss), and Hardware Acceleration (FPGA).
+   **Structure:** organised as **9 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code:
+   1. **[Market Microstructure & Order Types](content/pillars/02-algorithmic-hft/market-microstructure-and-order-types/index.md)** — The market's plumbing: limit vs market orders, hidden and iceberg orders, pegged orders, auctions vs continuous trading, and maker-taker fee structures.
+   2. **[Optimal Execution & Almgren-Chriss](content/pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index.md)** — Permanent vs temporary market impact, execution risk aversion, and optimal liquidation trajectories.
+   3. **[Execution Algorithms: VWAP, TWAP & POV](content/pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/index.md)** — Institutional order slicing, intraday volume curves, implementation shortfall, and benchmark tracking.
+   4. **[Queue Position & Fill Probability](content/pillars/02-algorithmic-hft/queue-position-and-fill-probability/index.md)** — Matching-engine priority (FIFO vs pro-rata), queue-reactive and fill-probability models, and adverse selection at queue heads.
+   5. **[Smart Order Routing & Fragmentation](content/pillars/02-algorithmic-hft/smart-order-routing-and-fragmentation/index.md)** — Cross-venue fragmentation, NBBO and locked/crossed markets, SOR logic, fee/venue selection, and order fragmentation.
+   6. **[Execution Backtesting & Simulation](content/pillars/02-algorithmic-hft/execution-backtesting-and-simulation/index.md)** — Transaction-cost analysis, impact and fill models, and realistic execution simulators that avoid the zero-fill fantasy.
+   7. **[Colocation & Clock Synchronization](content/pillars/02-algorithmic-hft/colocation-and-clock-synchronization/index.md)** — Proximity hosting, fibre vs microwave links, PTP/NTP time sync, and nanosecond timestamp accuracy.
+   8. **[Hardware Acceleration & FPGA](content/pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/index.md)** — Silicon tick-to-trade, wire-speed network parsing, FPGA vs CPU vs GPU, and hardware-level trade validation.
+   9. **[Low-Latency Systems Architecture](content/pillars/02-algorithmic-hft/low-latency-systems-architecture/index.md)** — Kernel-bypass networking (Solarflare Onload, DPDK), CPU isolation, NUMA affinity, and zero-allocation pipelines.
 
 3. **[Derivative Pricing and Structuring](content/pillars/03-derivative-pricing/index.md)**  
    *The traditional sell-side quant domain: valuing non-linear contracts and engineering self-financing hedges.*  
