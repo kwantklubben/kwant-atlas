@@ -136,4 +136,4 @@ Read the table:
 
 - Back: [[pillars/06-market-making/market-impact-and-depth/02-the-kyle-model|02 · The Kyle Model]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]
 - Forward: [[pillars/06-market-making/market-impact-and-depth/04-the-square-root-law|04 · The Square-Root Law]] · [[pillars/06-market-making/market-impact-and-depth/index|Index Hub]]
-- Pillar 2: [[pillars/02-execution/almgren-chriss/index|Almgren–Chriss Optimal Execution]] (the scheduling problem built on this decomposition) · [[pillars/06-market-making/limit-order-book-mechanics-and-l3/index|Limit Order Book Mechanics]] (resilience measured in the book)
+- Pillar 2: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss Optimal Execution]] (the scheduling problem built on this decomposition) · [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]] (resilience measured in the book)

@@ -113,4 +113,4 @@ Read the numbers as a toxicity screen: at $\pi=0.10$ a single buy barely moves t
 
 - Back: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/01-from-zero-intuition|01 · From Zero]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Index Hub]]
 - Forward: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/03-the-glosten-milgrom-model|03 · The GM Model]] (the full quoting solver)
-- Sibling: [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Order Flow & OFI]]
+- Sibling: [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/limit-order-book-mechanics|Order Flow & OFI]]

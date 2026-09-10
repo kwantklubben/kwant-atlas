@@ -126,4 +126,4 @@ That is the entire policy content of the maker-taker literature in one table: **
 - Back: [[pillars/06-market-making/market-maker-economics-and-rebates/02-market-maker-pnl|02 · Market-Maker P&L]]
 - Forward: [[pillars/06-market-making/market-maker-economics-and-rebates/04-competition-and-the-race-to-zero|04 · Competition & the Race to Zero]] — what happens to the residual when neutrality *does* hold.
 - Regulation: [[pillars/06-market-making/market-maker-economics-and-rebates/06-advanced-extensions|06 · Advanced Extensions]] (access-fee caps, tick-size rules, PFOF)
-- Mechanics: [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics & L3]]
+- Mechanics: [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics & L3]]

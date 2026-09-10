@@ -9,7 +9,7 @@ tags:
   - gatheral
 ---
 
-**Basic Prerequisites:** [[pillars/06-market-making/market-impact-and-depth/03-temporary-vs-permanent-impact|03 · Temporary vs Permanent]] and [[pillars/06-market-making/limit-order-book-mechanics-and-l3/index|Limit Order Book Mechanics]] (book shape).
+**Basic Prerequisites:** [[pillars/06-market-making/market-impact-and-depth/03-temporary-vs-permanent-impact|03 · Temporary vs Permanent]] and [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]] (book shape).
 
 ---
 
@@ -149,6 +149,6 @@ The regression recovers the square-root exponent **0.5054** on the diffusive boo
 
 ### 6. Connected Graph Bridges
 
-- Back: [[pillars/06-market-making/market-impact-and-depth/03-temporary-vs-permanent-impact|03 · Temporary vs Permanent]] · [[pillars/06-market-making/limit-order-book-mechanics-and-l3/index|Limit Order Book Mechanics]]
+- Back: [[pillars/06-market-making/market-impact-and-depth/03-temporary-vs-permanent-impact|03 · Temporary vs Permanent]] · [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]]
 - Forward: [[pillars/06-market-making/market-impact-and-depth/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/06-market-making/market-impact-and-depth/06-advanced-extensions|06 · Advanced Extensions]] · [[pillars/06-market-making/market-impact-and-depth/index|Index Hub]]
-- Cross-pillar: [[pillars/02-execution/almgren-chriss/index|Almgren–Chriss (Pillar 2)]] (the scheduler consumes this cost function) · [[pillars/06-market-making/liquidity-risk-and-asset-pricing/index|Liquidity Risk & Asset Pricing]] (Amihud is a square-root-flavoured proxy)
+- Cross-pillar: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss (Pillar 2)]] (the scheduler consumes this cost function) · [[pillars/06-market-making/liquidity-risk-and-asset-pricing/index|Liquidity Risk & Asset Pricing]] (Amihud is a square-root-flavoured proxy)

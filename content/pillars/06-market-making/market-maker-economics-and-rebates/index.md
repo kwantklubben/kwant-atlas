@@ -113,7 +113,7 @@ Hub signposts — the full analysis lives in [[pillars/06-market-making/market-m
 ### 6. Connected Graph Bridges
 
 - Prerequisite models: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda-Stoikov & Optimal Quoting]]
-- Sibling topics: [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics & L3]]
+- Sibling topics: [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics & L3]]
 - Sub-pages (in-folder): 01 From Zero · 02 Market-Maker P&L · 03 Maker-Taker Fees & Rebates · 04 Competition & the Race to Zero · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

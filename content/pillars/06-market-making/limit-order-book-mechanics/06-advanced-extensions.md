@@ -48,7 +48,7 @@ I^a_t=\begin{cases} -q^a_t, & a_t>a_{t-1}\\ q^a_t-q^a_{t-1}, & a_t=a_{t-1}\\ q^a
 
 $$\text{OFI}_t=I^b_t-I^a_t,\qquad \Delta m_t=\beta\,\text{OFI}_t+\varepsilon_t ,$$
 
-with the slope **inversely proportional to depth** — the deeper the book, the smaller the price move per unit of imbalance. Cont et al. document an almost perfect linear fit empirically; OFI is the pillar's core micro-price signal ([[pillars/06-market-making/limit-order-book-mechanics-and-l3|LOB Mechanics & L3 Data]]). The size-weighted touch, the **microprice**
+with the slope **inversely proportional to depth** — the deeper the book, the smaller the price move per unit of imbalance. Cont et al. document an almost perfect linear fit empirically; OFI is the pillar's core micro-price signal ([[pillars/06-market-making/limit-order-book-mechanics|LOB Mechanics & L3 Data]]). The size-weighted touch, the **microprice**
 
 $$m^{\text{micro}}_t=\frac{q^b_t a_t+q^a_t b_t}{q^b_t+q^a_t},$$
 
@@ -164,7 +164,7 @@ Two results, both load-bearing. **First:** a book assembled entirely from coin f
 1. **The null model is not the model.** ZI reproduces the *spread* and a rough OFI slope, but it cannot price *information*: it has no informed traders, so it cannot generate the permanent impact or the toxicity that dominate real market-maker P&L. Using ZI dynamics as a trading model confuses a mechanical baseline for a forecast.
 2. **Markov assumption vs long memory.** The queueing models assume the state is Markov in the queue sizes. Real order flow is self-exciting (Hawkes) with long-memory clustering, so intensities estimated in one regime under-predict activity in the next. The branching ratio $n$ approaching 1 is a warning, not a constant.
 3. **OFI is not stationary under manipulation.** The OFI impact law is stable *on average* but is a function of the *book* — and the book is gameable. Spoofing layers inflate "depth", suppressing measured $\beta$; cancellation bursts in the moment of impact distort the OFI input. The law holds cleanly only on executed, non-spoofed flow.
-4. **Parameters drift faster than you can calibrate.** Deposit/cancel/impact rates shift with volatility regime, tick size, and venue rules. A queue-reactive or OFI model calibrated on a calm month is *mis-specified*, not merely stale, in a crisis — the exact failure of the Avellaneda–Stoikov family too ([[pillars/06-market-making/the-avellaneda-stoikov-model|The Avellaneda–Stoikov Model]]).
+4. **Parameters drift faster than you can calibrate.** Deposit/cancel/impact rates shift with volatility regime, tick size, and venue rules. A queue-reactive or OFI model calibrated on a calm month is *mis-specified*, not merely stale, in a crisis — the exact failure of the Avellaneda–Stoikov family too ([[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|The Avellaneda–Stoikov Model]]).
 5. **Grid/discretisation artefacts.** Every result above lives on a tick grid $\delta\mathbb{Z}$. Tick-size changes, sub-penny venues, and hidden liquidity break the "one queue per price" abstraction, and the book becomes a *hidden* queueing system that no model in this page observes directly.
 
 ---
@@ -185,6 +185,6 @@ Two results, both load-bearing. **First:** a book assembled entirely from coin f
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/06-market-making/limit-order-book-mechanics/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/06-market-making/limit-order-book-mechanics/index|Index Hub]]
-- Forward topic-folder pages: [[pillars/06-market-making/the-avellaneda-stoikov-model|The Avellaneda–Stoikov Model]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]
-- Related data page: [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics & L3 Data]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]]
+- Forward topic-folder pages: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|The Avellaneda–Stoikov Model]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]
+- Related data page: [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics & L3 Data]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]]
 - Base: [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]

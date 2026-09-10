@@ -149,4 +149,4 @@ The numerically-solved indifference prices match eqs. (2.6)–(2.7) to machine p
 
 - Back: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/03-the-avellaneda-stoikov-model|03 · The AS Model]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Index Hub]]
-- Theory: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics]]
+- Theory: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics]]

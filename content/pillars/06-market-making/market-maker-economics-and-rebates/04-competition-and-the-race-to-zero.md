@@ -110,7 +110,7 @@ minimum viable tick tau_min = 2*(lambda - r) = 0.0080
 2. **Ignoring that $N$ is endogenous to $e$.** $N^\star=eQ/C$ holds $e$ fixed; but new entrants *lower* $e$, which *lowers* $N^\star$ — a fixed point, not a one-shot count. In practice competition and compression run together until either the cost floor or the tick floor is hit.
 3. **Treating fixed costs as sunk.** $C$ includes market-data and connectivity fees that *scale with message rate*, not with volume — so a maker whose quote-to-trade ratio rises (more cancels per fill) faces rising $C$ even at constant $Q$, squeezing $N^\star$ directly. This is a real modern pressure: proliferation of quoting raises costs faster than fills.
 4. **Fee-tier cliffs.** Rebate tiers are step functions of monthly volume, so $e(N)$ is *discontinuous*: losing one tier can turn a profitable desk into a losing one without any change in $Q$ or $\lambda$.
-5. **Latency races are not the same race.** A faster maker does not compete on *price*; he competes on *position in the queue at a given price* — picking off stale quotes. That is an arms race with a different zero (queue-position value), and conflating it with the price race understates the tech-cost component of $C$ (see [[pillars/06-market-making/limit-order-book-mechanics-and-l3|LOB Mechanics]]).
+5. **Latency races are not the same race.** A faster maker does not compete on *price*; he competes on *position in the queue at a given price* — picking off stale quotes. That is an arms race with a different zero (queue-position value), and conflating it with the price race understates the tech-cost component of $C$ (see [[pillars/06-market-making/limit-order-book-mechanics|LOB Mechanics]]).
 
 ---
 

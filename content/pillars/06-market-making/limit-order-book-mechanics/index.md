@@ -43,7 +43,7 @@ Three ideas the whole folder rests on:
 | Queue position | $Q_0=\sum_{i\,\text{at }p}\mathbf{1}\{t_i<t_0\}\,q_i$ (size ahead of a new order) | $300$ |
 | Market-order VWAP | $\bar p(Q)=\dfrac{1}{Q}\sum_k q_k p_k$ over the swept levels | $100.002$ at $Q=250$ |
 | Effective half-spread | $\text{Se}=d\,(p-m)$, $d=+1$ buy $/-1$ sell | $\text{Se}=0.013$ at $Q=1000$ |
-| Order Flow Imbalance | $\text{OFI}_t=I^b_t-I^a_t$ (see [[pillars/06-market-making/limit-order-book-mechanics-and-l3\|03 page]]) | $\text{OFI}=-50$ |
+| Order Flow Imbalance | $\text{OFI}_t=I^b_t-I^a_t$ (see [[pillars/06-market-making/limit-order-book-mechanics\|03 page]]) | $\text{OFI}=-50$ |
 | Microprice | $m^{\text{micro}}_t=\dfrac{q^b_t\,a_t+q^a_t\,b_t}{q^b_t+q^a_t}$ (size-weighted touch) | falls between $b_t,a_t$ |
 | Toxic-fill EV | $\mathbb{E}[\pi]=h-\pi J$ (half-spread $h$, adverse move $J$, informed share $\pi$) | break-even $\pi^\*=h/J=0.20$ |
 | Expected wait to fill | $\mathbb{E}[T]\approx (Q_0+s)/\mu$ ($\mu$ = lots/s executed at the touch) | $10.5$ s at $Q_0=1000$ |
@@ -115,7 +115,7 @@ Hub signposts — each failure mode is dissected on [[pillars/06-market-making/l
 1. **Queue-position risk** — you can be *right* about the price and still lose, because a passive order that never reaches the front captures nothing while paying the option value it wrote to everyone else.
 2. **Adverse selection at the touch** — passive fills are not random: they are concentrated exactly when the market is about to move against you. Expected P&L per fill is $h-\pi J$, which goes negative past a break-even informed share.
 3. **Latency & state desync** — the book you see is a stale copy of the venue's book; a slower participant trades at yesterday's state.
-4. **Fragility of the state representation** — the L3 book is reconstructed from a message stream; dropped, reordered, or mis-signed events silently corrupt it (see [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics & L3 Data]]).
+4. **Fragility of the state representation** — the L3 book is reconstructed from a message stream; dropped, reordered, or mis-signed events silently corrupt it (see [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics & L3 Data]]).
 
 ---
 
@@ -132,7 +132,7 @@ Hub signposts — each failure mode is dissected on [[pillars/06-market-making/l
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (queueing limits)
-- Sibling data page: [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics & L3 Data]] (L3 feed reconstruction, OFI in production)
+- Sibling data page: [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics & L3 Data]] (L3 feed reconstruction, OFI in production)
 - Sub-pages (in-folder): 01 From Zero · 02 Limit vs Market Orders · 03 The Limit Order Book · 04 Matching & Priority · 05 Failure Modes · 06 Advanced Extensions
 - Cross-pillar base: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]]
 
@@ -140,4 +140,4 @@ Hub signposts — each failure mode is dissected on [[pillars/06-market-making/l
 - **Absolute beginner:** [[pillars/06-market-making/limit-order-book-mechanics/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Mechanics + code (undergrad/job-seeking):** [[pillars/06-market-making/limit-order-book-mechanics/02-limit-vs-market-orders|02 · Limit vs Market Orders]] → [[pillars/06-market-making/limit-order-book-mechanics/03-the-limit-order-book|03 · The Limit Order Book]] → [[pillars/06-market-making/limit-order-book-mechanics/04-matching-and-priority|04 · Matching & Priority]].
 - **Robustness (practitioner/graduate):** [[pillars/06-market-making/limit-order-book-mechanics/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/06-market-making/limit-order-book-mechanics/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/06-market-making/the-avellaneda-stoikov-model|The Avellaneda–Stoikov Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]
+- Forward links: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|The Avellaneda–Stoikov Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]

@@ -133,4 +133,4 @@ tick-size lever on the maker's edge floor e_min = tau/2 + r and residual R_tau:
 
 - Back: [[pillars/06-market-making/market-maker-economics-and-rebates/05-failure-modes-and-practice|05 · Failure Modes & Practice]]
 - Hub: [[pillars/06-market-making/market-maker-economics-and-rebates/index|Index Hub]]
-- Cross-pillar / sibling: [[pillars/06-market-making/limit-order-book-mechanics-and-l3|LOB Mechanics & L3]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]]
+- Cross-pillar / sibling: [[pillars/06-market-making/limit-order-book-mechanics|LOB Mechanics & L3]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]]

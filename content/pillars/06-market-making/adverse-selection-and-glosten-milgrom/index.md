@@ -133,7 +133,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/06-marke
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/bayesian-statistics/index|Bayesian Statistics]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
-- Sibling topic (in-pillar): [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov Optimal Quoting]] · [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics]]
+- Sibling topic (in-pillar): [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov Optimal Quoting]] · [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics]]
 - Sub-pages (in-folder): 01 From Zero · 02 Informed vs Uninformed · 03 The GM Model · 04 Spread Decomposition · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

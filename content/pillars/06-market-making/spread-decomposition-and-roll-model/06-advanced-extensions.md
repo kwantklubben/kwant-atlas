@@ -137,6 +137,6 @@ The permanent (random-walk) innovation variance $0.000088$ matches $\gamma_0+2\g
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/06-market-making/spread-decomposition-and-roll-model/04-spread-decomposition|04 · Spread Decomposition]] · [[pillars/06-market-making/spread-decomposition-and-roll-model/05-failure-modes-and-practice|05 · Failure Modes]]
-- Forward topic pages: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] (structural $\lambda$) · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] (signing, PIN) · [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics & L3 Data]] (trade/quote data)
+- Forward topic pages: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] (structural $\lambda$) · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] (signing, PIN) · [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics & L3 Data]] (trade/quote data)
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (MA/VAR, Wold, cointegration) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (martingales)
 - Cross-pillar: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]] (price impact in execution cost)

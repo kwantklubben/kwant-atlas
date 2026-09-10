@@ -7,7 +7,7 @@ tags:
   - kyles-lambda
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] (Bayesian Updating) and [[pillars/06-market-making/limit-order-book-mechanics-and-l3|LOB Mechanics]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] (Bayesian Updating) and [[pillars/06-market-making/limit-order-book-mechanics|LOB Mechanics]].
 
 ---
 

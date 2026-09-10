@@ -128,6 +128,6 @@ Read the last line: the price change equals $\lambda$ times the *net* signed flo
 
 ### 6. Connected Graph Bridges
 
-- Base: [[pillars/06-market-making/limit-order-book-mechanics-and-l3/index|Limit Order Book Mechanics]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
+- Base: [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Sibling: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]] (the informational reason the spread exists) · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] (the permanent/transitory split)
 - Continue: [[pillars/06-market-making/market-impact-and-depth/02-the-kyle-model|02 · The Kyle Model]] · [[pillars/06-market-making/market-impact-and-depth/index|Index Hub]]

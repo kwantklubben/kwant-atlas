@@ -105,4 +105,4 @@ Two solid numbers from the run: quoting the **mid** costs the dealer $0.301$ per
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/bayesian-statistics/index|Bayesian Statistics]]
 - Continue: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/02-informed-vs-uninformed|02 · Informed vs Uninformed]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Index Hub]]
-- Sibling: [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow]]
+- Sibling: [[pillars/06-market-making/limit-order-book-mechanics|Limit Order Book Mechanics]] · [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow]]

@@ -21,7 +21,7 @@ This folder is the **market-impact & depth** topic-folder for Pillar 6. It is a 
 
 > **The one-sentence essence.** "Depth is the amount of order flow needed to move the price by one unit; **Kyle's $\lambda$** is that unit impact, so market depth is $1/\lambda$ — and every impact model is a statement about how $\lambda$ behaves as a function of size, time and liquidity."
 
-**Scope note.** Pillar 2 covers *optimal execution* (how to schedule a trade given an impact model). This folder is the **microstructure/impact-model view**: what *causes* the price to move and how to *measure* it. The two meet at [[pillars/02-execution/almgren-chriss/index|Almgren–Chriss]].
+**Scope note.** Pillar 2 covers *optimal execution* (how to schedule a trade given an impact model). This folder is the **microstructure/impact-model view**: what *causes* the price to move and how to *measure* it. The two meet at [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss]].
 
 *Primary verified sources:* Hasbrouck, *Empirical Market Microstructure* (Ch 7, Kyle; Ch 8, generalized Roll; Ch 9, multivariate; §9.9, impact proxies) — the deep-read verification reports `hasbrouck_ch6-10.md` / `hasbrouck_ch1-5.md` in the corpus — cross-checked against the primary papers (Kyle 1985; Almgren & Chriss 2000; Almgren et al. 2005; Bouchaud, Farmer & Lillo 2009; Gatheral 2010, 2013; Cont, Kukanov & Stoikov 2014).
 
@@ -138,9 +138,9 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/06-marke
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[pillars/06-market-making/limit-order-book-mechanics-and-l3/index|Limit Order Book Mechanics]]
+- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]]
 - Sibling topics (in-pillar): [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]] (the sequential-trade counterpart to Kyle) · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov Optimal Quoting]]
-- Cross-pillar: [[pillars/02-execution/almgren-chriss/index|Almgren–Chriss Optimal Execution (Pillar 2)]] (the scheduling side of the same model) · [[pillars/06-market-making/liquidity-risk-and-asset-pricing/index|Liquidity Risk & Asset Pricing]] (Amihud is the impact proxy that gets priced)
+- Cross-pillar: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss Optimal Execution (Pillar 2)]] (the scheduling side of the same model) · [[pillars/06-market-making/liquidity-risk-and-asset-pricing/index|Liquidity Risk & Asset Pricing]] (Amihud is the impact proxy that gets priced)
 - Sub-pages (in-folder): 01 From Zero · 02 The Kyle Model · 03 Temporary vs Permanent · 04 The Square-Root Law · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
