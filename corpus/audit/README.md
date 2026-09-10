@@ -138,9 +138,30 @@ the escaped `[[slug\|Alias]]` form used inside markdown tables.
 
 ## How to re-run
 
+- **Code (fences):** run `python3 corpus/audit/tools/fencecheck_strict.py` from the repo root.
+  It parses fences **line-based**, executes each python block in a subprocess with a **90 s timeout**
+  (so a spinning or network-blocked block cannot hang the pass; a timeout is re-checkable manually at
+  a longer budget), shares a namespace with earlier blocks on the same page, and byte-compares stdout
+  to the **immediately following** fence. Prints `pages=N python_blocks=N skipped=N problems=N` and
+  writes `/tmp/fence_problems.json`. Two pages are in its `SKIP` set by design: the EDGAR network stub
+  (labelled "not executed here") and `python-quant-stack/05` blk 0 (correct as a file, not under a
+  piped `-c` harness).
 
-- **Code:** extract each ```python block, run with `python3 -c`, diff against the following output fence
-  (use a temp *file* for blocks with multiprocessing).
+  **Do not** use a regex pair like ` ```python\n(.*?)```\n```\n(.*?)``` ` — it is non-greedy, so when a
+  fence is *missing* it silently matches a LATER fence and reports a stale "mismatch" instead of the
+  real "no fence" defect. Two further traps, both hit in practice: (a) feeding earlier blocks in as
+  source lets their prints pollute the captured stdout — suppress them; (b) a clean run of the same
+  page under a *different* libm can differ in the last digit when the code is ill-conditioned
+  (κ≈10⁷ amplifies 1 ulp) — classify those as machine-dependent, don't "fix" them.
+
+- **Benchmarks are not defects.** Pages whose fence header reads `ms`/`µs`/`ns/op`/`x` document
+  timings that cannot be byte-stable. Check the ratio/ordering/claim instead.
+
 - **Links:** resolve every `[[target]]` against the set of existing `content/**/<name>.md` and
-  `<dir>/index.md`; ignore numeric/math literals and inline-code spans (false positives).
+  `<dir>/index.md`; strip both the plain `|alias` and the escaped `\|alias` (used inside tables)
+  before matching. Ignore numeric/math literals and inline-code spans — `x[[1.0, 0.0, -1.0]]` (numpy
+  fancy indexing) parses as a wikilink and is a false positive.
+
 - **Build:** `npx quartz build` (fails loudly on a bad YAML title — no backslashes in `title:`).
+  `_legacy/` is excluded via `quartz.config.ts` `ignorePatterns: ["**/_legacy/**"]`; a bare `_legacy`
+  is a no-op because globby matches full paths.
