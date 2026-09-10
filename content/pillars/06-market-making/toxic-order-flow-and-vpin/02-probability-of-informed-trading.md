@@ -83,7 +83,7 @@ Simulated 20000 days (alpha=0.3, mu=10.0, eps=2.0):
   informed fraction = 0.4309   (theory PIN = 0.4286)
 ```
 
-The simulated informed fraction (0.4281) converges to the formula (0.4286) — PIN really is the informed share of the flow. And note the *pattern*: heavier informed activity ($\mu{=}30$) pushes PIN from 0.43 to 0.69 (more toxic), while zero informed traders ($\alpha{=}0$) pins PIN at exactly 0.
+The simulated informed fraction (0.4309) converges to the formula (0.4286) — PIN really is the informed share of the flow. And note the *pattern*: heavier informed activity ($\mu{=}30$) pushes PIN from 0.43 to 0.69 (more toxic), while zero informed traders ($\alpha{=}0$) pins PIN at exactly 0.
 
 ---
 

@@ -25,9 +25,9 @@ This folder is the **toxic-order-flow-and-VPIN** topic-folder for Pillar 6 (Mark
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Notation (Hasbrouck Ch 6; EKOH 1997):** $\alpha$ = probability an information event occurs on a given day; $\mu$ = Poisson arrival rate of *informed* traders (on an event day); $\epsilon$ = Poisson arrival rate of *uninformed* traders on each side.
+**Notation (Hasbrouck Ch 6; EKOP 1997):** $\alpha$ = probability an information event occurs on a given day; $\mu$ = Poisson arrival rate of *informed* traders (on an event day); $\epsilon$ = Poisson arrival rate of *uninformed* traders on each side.
 
-#### PIN — the probability of informed trading (EKOH 1997; Hasbrouck eq. 6.4)
+#### PIN — the probability of informed trading (EKOP 1997; Hasbrouck eq. 6.4)
 
 Over a sample, informed orders arrive at total rate $\alpha\mu$; uninformed at rate $2\epsilon$ (one Poisson stream of intensity $\epsilon$ per side). **PIN is the informed fraction of the flow**:
 

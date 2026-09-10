@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of toxic order flow and VPIN with **no prior knowledge needed**. The objective is one idea: **order flow is "toxic" when the side you are trading against knows something you do not — and that toxicity is recognizable in real time from the *one-sidedness* of the flow, not from its speed or its price moves.**
+This page builds the *why* of toxic order flow and **VPIN** (*volume-synchronized probability of informed trading* — expanded below) with **no prior knowledge needed**. The objective is one idea: **order flow is "toxic" when the side you are trading against knows something you do not — and that toxicity is recognizable in real time from the *one-sidedness* of the flow, not from its speed or its price moves.**
 
 Start with the dumbest question: *what makes a market maker afraid?* A market maker profits by capturing the spread from liquidity traders — people who trade because they must (rebalance, cash needs, hedging), not because they know the future. Against such traders, a half-spread is a toll the maker reliably collects. But sometimes the counterparty is **informed**: they trade because they know the price is about to move, and they always trade *toward* that knowledge. Every fill against such a trader is a guaranteed loss. The maker's survival question is: **how much of the incoming flow is informed?**
 

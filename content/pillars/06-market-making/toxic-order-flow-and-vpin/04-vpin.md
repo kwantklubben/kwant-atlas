@@ -19,7 +19,7 @@ PIN is a *daily, trade-count* measure. In high-frequency markets that is too coa
 - It works in **volume time** — equal-sized volume buckets, not daily bars — so each measurement contains a comparable amount of trading (and information).
 - It measures **imbalance**, $|V^S-V^B|$, which is the observable that reveals the informed fraction.
 
-The practical objective: take a raw trade tape (timestamps, prices, volumes), sign every unit of volume as buy or sell, pack it into volume buckets, and compute a **rolling VPIN** that rises when the flow turns one-sided and toxic — an early-warning gauge for a maker (and the metric ELO claim spiked before the May 6, 2010 flash crash).
+The practical objective: take a raw trade tape (timestamps, prices, volumes), sign every unit of volume as buy or sell, pack it into volume buckets, and compute a **rolling VPIN** that rises when the flow turns one-sided and toxic — an early-warning gauge for a maker (and the metric ELO claimed it spiked before the May 6, 2010 flash crash).
 
 The only hard sub-problem is **signing** volume as buy or sell, because the tape does not tell you who initiated. VPIN's signature answer is **bulk-volume classification (BVC)**: within a bar, classify the *whole* bar's volume probabilistically from the price change, instead of classifying each trade by a tick rule.
 
