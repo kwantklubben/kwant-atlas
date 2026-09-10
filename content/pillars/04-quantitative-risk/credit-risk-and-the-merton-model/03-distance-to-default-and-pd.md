@@ -1,0 +1,129 @@
+---
+title: "03 — Distance to Default & Default Probability"
+tags:
+  - pillar-quantitative-risk
+  - credit-risk-and-the-merton-model
+  - distance-to-default
+  - default-probability
+  - kmv
+---
+
+**Basic Prerequisites:** [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/02-the-merton-structural-model|02 · The Merton Structural Model]].
+
+---
+
+### 1. Intuition & Practical Objective
+
+Once you have inverted equity into firm value and asset volatility, default probability is one step away — but the step contains the field's most important distinction. **Distance to default** (DD) is the number of asset-volatility standard deviations between today's firm value and the default point:
+
+$$\mathrm{DD}=\frac{\ln(V/D)+(\mu-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.$$
+
+It answers the practitioner's question directly: *how far is this firm from the wall, measured in the units in which the firm actually moves?* Two firms with the same leverage are not equally risky — the one with the more volatile assets is closer to default in the only metric that matters.
+
+The subtlety: **which drift $\mu$?** Use the risk-neutral drift $r$ and $\mathrm{PD}=N(-\mathrm{DD})$ is the *risk-neutral* default probability $N(-d_2)$ — the right object for **pricing** (CDS, bonds, CVA). Use the physical (expected) return $\mu$ and you get the *real-world* PD — the right object for **risk management and capital**. These differ, and the risk-neutral PD is systematically higher. Getting this distinction wrong is the most common conceptual error in credit risk.
+
+> **Why DD is the right coordinate.** $N(-\mathrm{DD})$ is monotone in DD, and DD separates the *two* things that matter — leverage ($\ln(V/D)$) and business risk ($\sigma_V$) — while normalising by the horizon. KMV's empirical EDF mapping is built entirely on DD.
+
+---
+
+### 2. Mathematical Ground Truth & Derivations
+
+#### 2.1 Real-world vs risk-neutral default probability
+
+Under the physical measure the firm value has drift $\mu$; under the risk-neutral measure it has drift $r$. The probability the firm defaults is $\mathbb{P}(V_T<D)$ in each world, and both are $N(-\text{DD})$ with the appropriate drift:
+
+$$\mathrm{DD}^{\text{RN}}=\frac{\ln(V/D)+(r-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}=d_2,\qquad
+\mathrm{DD}^{\mathbb{P}}=\frac{\ln(V/D)+(\mu-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.$$
+
+So $\mathbb{Q}(\text{default})=N(-d_2)$ **exactly**, while the real-world $\mathrm{PD}=N(-\mathrm{DD}^{\mathbb{P}})$. Because risky assets have a risk premium, $\mu>r$, hence $\mathrm{DD}^{\mathbb{P}}>\mathrm{DD}^{\text{RN}}$ and
+$$\underbrace{N(-d_2)}_{\text{risk-neutral}} \;>\; \underbrace{N(-\mathrm{DD}^{\mathbb{P}})}_{\text{real-world}}\quad\text{for a risk-averse market.}$$
+(Hull §24.5: risk-neutral PDs exceed historical PDs; the gap is the risk premium. The real-world PD is the one to compare with S&P/Moody's historical default tables.)
+
+#### 2.2 The KMV default point (Crosbie–Bohn empirical refinement)
+
+Plain Merton sets the barrier at *total* debt $D$. Moody's KMV found empirically that firms default when assets fall below
+$$D^{*}=\text{short-term debt}+\tfrac12\,\text{long-term debt},$$
+because long-term debt does not come due immediately. Substituting $D^{*}$ for $D$ in $\ln(V/D)$ raises DD for long-dated-debt-heavy firms and is the practical form used by EDF vendors. (Bluhm §1.2.3 refers to this as the calibrated *default point* of the asset-value model.)
+
+#### 2.3 From PD to credit spread (Merton eq. 14)
+
+The spread is not $N(-d_2)$ scaled — it is the *risky yield minus $r$* obtained from the debt value:
+$$R(t)-r=-\frac1t\ln\Big\{\Phi[h_2]+\tfrac1d\Phi[h_1]\Big\},\qquad d=D e^{-rt}/V,\quad R(t)=-\frac1t\ln\!\frac{F}{D}.$$
+For a firm at the money (large $\sigma_V$, high leverage) this is the price of the put the shareholders hold; for a safe firm it collapses to a fraction of a basis point — which is exactly where the model fails empirically (page 05).
+
+#### 2.4 The DD → PD map in practice
+
+Three mappings coexist: (i) the Gaussian $N(-\mathrm{DD})$; (ii) KMV's **empirical** EDF map, which maps DD to an *observed* historical default rate (fatter-tailed than Gaussian); and (iii) rating-agency cumulative default tables. All three are monotone in DD; only (i) is the model's own output.
+
+---
+
+### 3. Computational Implementation — DD, both PDs, and the credit spread
+
+Continuing the worked firm from page 02 ($E_0=100$, $\sigma_E=0.40$, $D=350$, $T=1$, $r=5\%$). Stdlib only.
+
+```python
+import math
+
+def N(x): return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
+
+def solve_merton(E0, sigE, D, T, r, tol=1e-14, itmax=5000):
+    V, sigV = E0 + D * math.exp(-r * T), sigE * (E0 / (E0 + D * math.exp(-r * T)))
+    for _ in range(itmax):
+        d1 = (math.log(V / D) + (r + 0.5 * sigV**2) * T) / (sigV * math.sqrt(T))
+        d2 = d1 - sigV * math.sqrt(T)
+        Vn = (E0 + D * math.exp(-r * T) * N(d2)) / N(d1)
+        sv = sigE * E0 / (V * N(d1))
+        if abs(Vn - V) < tol and abs(sv - sigV) < tol:
+            V, sigV = Vn, sv; break
+        V, sigV = Vn, sv
+    d1 = (math.log(V / D) + (r + 0.5 * sigV**2) * T) / (sigV * math.sqrt(T))
+    return V, sigV, d1, d1 - sigV * math.sqrt(T)
+
+E0, sigE, D, T, r = 100.0, 0.40, 350.0, 1.0, 0.05
+V, sigV, d1, d2 = solve_merton(E0, sigE, D, T, r)
+print(f"V0 = {V:.4f}   sigmaV = {sigV:.4f}   d2 = {d2:.4f}")
+print(f"DD (risk-neutral, mu=r) = {d2:.4f}")
+print(f"PD = N(-d2)             = {N(-d2):.6f}  ({N(-d2)*1e4:.1f} bp)")
+for mu in (0.05, 0.10, 0.15):
+    DD = (math.log(V / D) + (mu - 0.5 * sigV**2) * T) / (sigV * math.sqrt(T))
+    print(f"  DD(real-world, mu={mu:.0%}) = {DD:.4f} -> PD = {N(-DD):.6f}")
+F = D * math.exp(-r * T) * N(d2) + V * N(-d1)
+R = -math.log(F / D) / T
+print(f"debt F = {F:.4f}   risky yield R = {R:.6f}   credit spread = {(R - r)*1e4:.2f} bp")
+```
+```
+V0 = 432.9067   sigmaV = 0.0926   d2 = 2.7900
+DD (risk-neutral, mu=r) = 2.7900
+PD = N(-d2)             = 0.002635  (26.4 bp)
+  DD(real-world, mu=5%) = 2.7900 -> PD = 0.002635
+  DD(real-world, mu=10%) = 3.3301 -> PD = 0.000434
+  DD(real-world, mu=15%) = 3.8702 -> PD = 0.000054
+debt F = 332.9067   risky yield R = 0.050071   credit spread = 0.71 bp
+```
+Three verified takeaways: (1) the risk-neutral PD is $26.4$ bp; (2) a realistic risk premium ($\mu=10\%$) *lowers* the real-world PD to $4.3$ bp — six times smaller; (3) the model's own credit spread is $0.71$ bp, which no market would ever quote for this firm. (2) and (3) are the seeds of page 05.
+
+---
+
+### 4. Failure Modes & First-Principles Breakdowns
+
+1. **Risk-neutral ≠ real-world PD.** Quoting $N(-d_2)$ as "the probability of default" for risk purposes is wrong by a factor of several here. Pricing uses $\mathbb{Q}$; capital and limits use $\mathbb{P}$ (Hull §24.5).
+2. **The Gaussian PD is too thin-tailed.** $N(-\mathrm{DD})$ underestimates tail default rates; KMV re-maps DD onto *empirical* EDFs for this reason. The $N(-d_2)$ from a lognormal firm value is a *model* probability, not a robust frequency (see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]]).
+3. **DD is only as good as the inversion.** DD inherits every error from the $(V,\sigma_V)$ solve. In practice $\sigma_V$ is estimated with large noise, and DD is highly sensitive to it (page 05 quantifies a $\sim9\%$ PD move per $1\%$ move in $\sigma_E$).
+4. **The default point is a judgement call.** $D$, or $D^{*}=\text{ST}+\tfrac12\text{LT}$, or a barrier — the DD level shifts with the choice, and it is calibrated, not derived.
+
+---
+
+### 5. Canonical Literature & Study References
+
+- **Hull**, *Options, Futures, and Other Derivatives* — §24.5 (real-world vs risk-neutral PDs), §24.6 eq. (24.4) with $\mathbb{Q}(\text{default})=N(-d_2)$, Example 24.3. *Verification report in the corpus.*
+- **Merton (1974)** — eq. (14) (risk premium as a function of $d$ and $\sigma_V^2$) and eq. (18) ($P_\tau<0$, spread rises with asset volatility). *Primary source.*
+- **Bluhm, Overbeck & Wagner** — *Introduction to Credit Risk Modeling*, §1.2.3 (asset-value model, default point calibration, reference to Crosbie). *Corpus digest available.*
+- **Gupton, Finger & Bhatia** — *CreditMetrics™ Technical Document* (1997): the transition-matrix analogue (PD read off the default column) as the discrete alternative to DD.
+
+---
+
+### 6. Connected Graph Bridges
+
+- Back: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/02-the-merton-structural-model|02 · Structural Model]]
+- Forward: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/04-reduced-form-and-cds|04 · Reduced-Form & CDS]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Index Hub]]
+- Sibling: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (the quantile of the credit loss distribution DD feeds)
