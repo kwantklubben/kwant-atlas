@@ -77,8 +77,9 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 | 9 | pillars/05-portfolio-optimization (1st 4) | modern-portfolio-theory-and-mean-variance, covariance-shrinkage-and-denoising, black-litterman, risk-parity-and-equal-risk-contribution | ✅ done, fixes committed |
 | 10 | pillars/05-portfolio-optimization (2nd 4) | hierarchical-risk-parity, robust-optimization, constraints-and-transaction-costs, kelly-criterion-and-bet-sizing | ✅ done, fixes committed |
 | 11 | pillars/06-market-making (1st 4) | adverse-selection-and-glosten-milgrom, spread-decomposition-and-roll-model, avellaneda-stoikov-and-optimal-quoting, inventory-management-and-quote-skewing | ✅ done, fixes committed |
-| 12 | pillars/06-market-making (2nd 4) | limit-order-book-mechanics, toxic-order-flow-and-vpin, market-impact-and-depth, market-maker-economics-and-rebates | running |
-| 13+ | pillars 06-08 (~51 folders) | — | queued |
+| 12 | pillars/06-market-making (2nd 4) | limit-order-book-mechanics, toxic-order-flow-and-vpin, market-impact-and-depth, market-maker-economics-and-rebates | ✅ done, fixes committed |
+| 13 | pillars/06 (last 2) + pillars/07 (1st 2) | dealer-banks-and-otc, liquidity-risk-and-asset-pricing, financial-ml-pitfalls-and-low-snr, purged-cross-validation-and-backtest-hygiene | running |
+| 14+ | pillars 07-08 (~47 folders) | — | queued |
 
 **Pillar 5 (9 folders) is now fully audited and fixed** — 55/55 code blocks byte-exact.
 
