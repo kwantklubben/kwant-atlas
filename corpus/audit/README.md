@@ -54,7 +54,24 @@ listed as recommendations.
 4. **Foundations folders have no `05-failure-modes-and-practice` page** (pure-math areas) —
    acceptable, but a one-line "numerical gotchas" blurb would help a debugging reader.
 
+## Per-topic (one-agent-per-folder) audit — the deep pass
+
+The perspective pass above sampled by theme. A **second, deeper pass assigns one dedicated
+agent to EACH of the 97 topic-folders** (whole folder: spelling + math + code + coherence for
+its 7 files). Reports land in `corpus/audit/topics/<area>__<folder>.md`.
+
+This caught real errors the perspective pass missed — e.g. a wrong Marchenko–Pastur density
+normalization, an ARMA(1,1) variance sign error, a swapped θ-method table, a hierarchical-
+shrinkage direction inversion. Progress is tracked below as waves complete.
+
+| Wave | Area | Folders | Status |
+| :--- | :--- | :--- | :--- |
+| 1 | foundations (8 folders) | bayesian, calculus, econometrics, ergodicity, linear-algebra, numerical-methods, probability, statistics | ✅ done, fixes committed |
+| 2 | foundations/stochastic-calculus + fundamentals-accounting (8) | — | running |
+| 3-10 | pillars 01-08 (90 folders) | — | queued |
+
 ## How to re-run
+
 
 - **Code:** extract each ```python block, run with `python3 -c`, diff against the following output fence
   (use a temp *file* for blocks with multiprocessing).
