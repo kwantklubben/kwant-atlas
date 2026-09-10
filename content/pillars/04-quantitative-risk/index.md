@@ -10,6 +10,8 @@ tags:
   - index-hub
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # Quantitative Risk Management
 
 > "Risk management is not about predicting when the storm will arrive; it is about engineering a balance sheet that survives when the 100-year storm hits on three consecutive days."

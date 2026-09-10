@@ -9,6 +9,8 @@ tags:
   - index-hub
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # Machine Learning and Alternative Data
 
 > "Finance is not computer vision or natural language processing. In finance, the Signal-to-Noise ratio is minuscule, the underlying data-generating process is non-stationary, and the system actively adapts to exploit and destroy your model the moment you deploy it."

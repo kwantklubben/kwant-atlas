@@ -7,6 +7,8 @@ tags:
   - first-principles
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # First-Principles Toolbox & Foundations
 
 > "If you cannot derive it from first principles, you cannot debug it when real markets break your assumptions."

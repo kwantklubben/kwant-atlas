@@ -7,6 +7,8 @@ tags:
   - order-book
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # Market Making and Liquidity Provision
 
 > "A market maker does not bet on direction; a market maker sells umbrellas in the rain and sunscreen in the sun, charging a toll on every transaction while desperately managing inventory before the hurricane hits."

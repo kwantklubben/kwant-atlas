@@ -7,6 +7,8 @@ tags:
   - microstructure
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # Algorithmic and High-Frequency Trading (HFT)
 
 > "In the latency race, speed is not merely an optimization; it is a structural boundary that changes whether you capture the spread or become adverse selection for a faster predator."

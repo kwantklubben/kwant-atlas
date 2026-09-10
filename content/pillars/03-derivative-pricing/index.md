@@ -10,6 +10,8 @@ tags:
   - calibration
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # Derivative Pricing and Structuring
 
 > "In derivative pricing, we do not forecast where the market will go. We calculate the unique mathematical price that prevents risk-free arbitrage under continuous dynamic replication."

@@ -9,6 +9,8 @@ tags:
   - index-hub
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # Portfolio Construction and Optimization
 
 > "Portfolio optimization is not about finding the mathematical maximum on historical data; it is about constructing a resilient allocation that does not blow up when the future covariance matrix diverges from the past."

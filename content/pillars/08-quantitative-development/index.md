@@ -7,6 +7,8 @@ tags:
   - trading-systems
 ---
 
+> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
+
 # Quantitative Development (Quant Engineering)
 
 > "A brilliant mathematical model written by a quant researcher is merely an academic hypothesis. Quantitative Developers transform that hypothesis into production code that executes reliably in microseconds with zero memory leaks, zero race conditions, and zero tolerance for failure."
