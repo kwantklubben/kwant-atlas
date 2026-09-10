@@ -102,10 +102,10 @@ for name, w in [("best single (A)", [1,0,0]), ("equal-weight", w_eq),
 ```
 inverse-var weights : [0.545 0.297 0.158]
 GR(OLS) weights     : [0.388 0.466 0.146]
-best single (A)     oos IC=+0.1637  ann.Sharpe=+2.64
-equal-weight        oos IC=+0.2253  ann.Sharpe=+3.71
-inverse-var         oos IC=+0.2321  ann.Sharpe=+3.70
-GR-ols              oos IC=+0.2144  ann.Sharpe=+3.38
+best single (A)  oos IC=+0.1637  ann.Sharpe=+2.64
+equal-weight     oos IC=+0.2253  ann.Sharpe=+3.71
+inverse-var      oos IC=+0.2321  ann.Sharpe=+3.70
+GR-ols           oos IC=+0.2144  ann.Sharpe=+3.38
 ```
 
 **What the numbers teach.**
