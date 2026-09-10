@@ -98,7 +98,7 @@ n_fact = K*(K+1)//2 + N                 # factor cov (KxK sym) + N specific vars
 print(f"\nCovariance entries: full pairwise={n_full},  factor model={n_fact}"
       f"  (factor structure ~{n_full/n_fact:.0f}x smaller)")
 ```
-```text
+```
 Barra-style WLS cross-sectional factor returns (one period):
   factor 0: true=+1.200%  estimated=+1.156%
   factor 1: true=+0.800%  estimated=+0.725%

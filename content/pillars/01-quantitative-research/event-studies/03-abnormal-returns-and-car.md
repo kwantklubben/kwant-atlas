@@ -77,23 +77,23 @@ print(f"s(AR_t) (estimation window) = {math.sqrt(s2)*100:.3f}%")
 ```
 ```
 day  :    AR_t    cumulative CAR(-5..t)
- -5 :  +0.288%     +0.288%
- -4 :  +0.247%     +0.534%
- -3 :  +0.406%     +0.941%
- -2 :  -0.190%     +0.751%
- -1 :  +0.447%     +1.198%
- +0 :  +1.454%     +2.651%
- +1 :  +0.472%     +3.123%
- +2 :  +0.015%     +3.138%
- +3 :  -0.008%     +3.130%
- +4 :  -0.549%     +2.581%
- +5 :  -0.366%     +2.215%
-CAR(-1,+1) = +2.372%    t = +4.62
-CAR(0,+1)  = +1.925%    t = +4.59
-s(AR_t) (estimation window) = 0.297%
+ -5 :  +0.127%     +0.127%
+ -4 :  +0.442%     +0.569%
+ -3 :  +0.143%     +0.712%
+ -2 :  +0.207%     +0.919%
+ -1 :  -0.043%     +0.876%
+ +0 :  +1.482%     +2.358%
+ +1 :  +0.491%     +2.849%
+ +2 :  -0.239%     +2.610%
+ +3 :  -0.243%     +2.367%
+ +4 :  +0.161%     +2.528%
+ +5 :  -0.681%     +1.847%
+CAR(-1,+1) = +1.930%    t = +3.54
+CAR(0,+1)  = +1.973%    t = +4.43
+s(AR_t) (estimation window) = 0.315%
 ```
 
-**Reading the output.** The day-0 mean abnormal return ($+1.45\%$) stands out against the pre-event noise (individual daily $AR_t$ wander within $\pm0.5\%$). The cumulative CAR steps up on day 0 and stays elevated. With 40 firms, the CAR's t-statistic is a decisive $+4.62$ — the same +3% signal that was statistically invisible for *one* firm in [[pillars/01-quantitative-research/event-studies/02-event-study-methodology|02]] is now highly significant, purely from cross-sectional aggregation cancelling noise.
+**Reading the output.** The day-0 mean abnormal return ($+1.48\%$) stands out against the pre-event noise (individual daily $AR_t$ wander within $\pm0.5\%$). The cumulative CAR steps up on day 0 and stays elevated. With 40 firms, the CAR's t-statistic is a decisive $+3.54$ — the same +1.5% signal that was statistically invisible for *one* firm in [[pillars/01-quantitative-research/event-studies/02-event-study-methodology|02]] is now significant, purely from cross-sectional aggregation cancelling noise.
 
 ---
 

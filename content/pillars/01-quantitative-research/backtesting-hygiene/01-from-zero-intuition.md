@@ -71,7 +71,7 @@ for N, F in ((10, 20), (1000, 20), (1000, 1000)):
     print(f"N={N:4d} trials, {F:4d} flips each: best win-rate = {best_coin(N,F):.3f}")
 
 # --- Experiment B: best of N zero-skill strategies, annualized Sharpe ---
-def mc_best_sharpe(N, T=756, ann=252.0, reps=400):
+def mc_best_sharpe(N, T=756, ann=252.0, reps=100):
     tot = 0.0
     for _ in range(reps):
         best = -1e9
@@ -94,12 +94,12 @@ N=1000 trials,   20 flips each: best win-rate = 0.850
 N=1000 trials, 1000 flips each: best win-rate = 0.552
 
 N     MC best SR (ann)   E[max]/sigma * sqrt(ann/T)
-   1      0.020             0.000
-  10      0.885             0.909
- 100      1.453             1.461
-1000      1.889             1.879
+   1      0.018             0.000
+  10      0.892             0.909
+ 100      1.482             1.461
+1000      1.882             1.879
 ```
-Two messages. **A:** with 1,000 searches on short samples, the best of pure coin flips "wins" 85% of the time — the "strategy" is a coin (with 1,000 flips each, the law of large numbers dilutes the fluke back toward 0.5, but real backtests are *short* relative to their search space, so the short-sample regime is the realistic one). **B:** with **zero skill** and only 3 years of daily data, the best of 1,000 strategies still shows an **annualized Sharpe $\approx1.9$** — and the exact order-statistic formula predicts it (1.879 vs 1.889). There is no signal; the Sharpe is the *height of a maximum*.
+Two messages. **A:** with 1,000 searches on short samples, the best of pure coin flips "wins" 85% of the time — the "strategy" is a coin (with 1,000 flips each, the law of large numbers dilutes the fluke back toward 0.5, but real backtests are *short* relative to their search space, so the short-sample regime is the realistic one). **B:** with **zero skill** and only 3 years of daily data, the best of 1,000 strategies still shows an **annualized Sharpe $\approx1.9$** — and the exact order-statistic formula predicts it (1.879 vs 1.882). There is no signal; the Sharpe is the *height of a maximum*.
 
 ---
 

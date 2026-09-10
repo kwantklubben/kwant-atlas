@@ -90,7 +90,7 @@ HML = avg([R[('S','H')],R[('B','H')]]) - avg([R[('S','L')],R[('B','L')]])
 print(f"SMB = small avg - big avg  = {SMB*100:+.3f}%")
 print(f"HML = high B/M - low B/M   = {HML*100:+.3f}%")
 ```
-```text
+```
 SMB = small avg - big avg  = +0.935%
 HML = high B/M - low B/M   = +3.448%
 ```

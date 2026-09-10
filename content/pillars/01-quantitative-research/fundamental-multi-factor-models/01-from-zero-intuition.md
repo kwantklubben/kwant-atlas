@@ -65,7 +65,7 @@ hml = (avg(hi) - avg(lo))*100                    # long high-B/M, short low-B/M
 print(f"High-B/M half avg ret = {avg(hi)*100:.2f}%   Low-B/M half avg ret = {avg(lo)*100:.2f}%")
 print(f"HML (value spread)    = {hml:+.2f}%   <- cheap beats expensive, on average")
 ```
-```text
+```
 High-B/M half avg ret = 13.63%   Low-B/M half avg ret = 11.00%
 HML (value spread)    = +2.63%   <- cheap beats expensive, on average
 ```

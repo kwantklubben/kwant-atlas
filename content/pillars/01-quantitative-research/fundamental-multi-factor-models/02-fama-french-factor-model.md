@@ -88,7 +88,7 @@ print(f"  beta_SMB = {s_hat:+.4f}   (true {bs})")
 print(f"  beta_HML = {h_hat:+.4f}   (true {bh})")
 print(f"  R-squared= {r2:.3f}")
 ```
-```text
+```
   alpha    = +3.261%/yr   (true +3.000%/yr)
   beta_MKT = +1.2090   (true 1.2)
   beta_SMB = +0.5847   (true 0.6)

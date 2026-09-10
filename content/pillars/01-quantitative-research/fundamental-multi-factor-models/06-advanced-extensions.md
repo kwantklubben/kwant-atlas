@@ -101,7 +101,7 @@ for i in range(k):
     print(f"  asset {i}: PC1={l1:+.3f}  PC2={l2:+.3f}")
 print(f"\nCommunality (asset 4) = PC1^2+PC2^2 = {l1s[4]**2+l2s[4]**2:.3f} of variance 1 (Tsay eq. 9.17)")
 ```
-```text
+```
 Eigenvalues of correlation matrix (trace = 5 assets):
   lambda_1 = 3.085   cum prop = 0.617
   lambda_2 = 1.472   cum prop = 0.912

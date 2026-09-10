@@ -64,9 +64,12 @@ $$\mathbb{E}[z_t]=\mu,\qquad \operatorname{Var}[z_t]=\frac{\sigma^2}{2\theta}.$$
 
 $$z_{t+1}=m(1-e^{-\theta\Delta t})+e^{-\theta\Delta t}z_t+\eta_{t+1},\qquad \eta\sim N\!\Big(0,\ \tfrac{\sigma^2}{2\theta}(1-e^{-2\theta\Delta t})\Big).$$
 
-So the 1-lag OLS regression $z_{t+1}=a+b\,z_t+\eta_{t+1}$ identifies
+So a 1-lag OLS identifies the persistence directly, but **which coefficient depends on which regression you run**:
 
-$$b=e^{-\theta\Delta t}\;\Longrightarrow\;\boxed{\ \theta=-\frac{\ln(1+b_{\text{Euler}})}{\Delta t}\ }\quad\text{(Euler approx)},\qquad \mu=\frac{a}{1-b}.$$
+- **Level regression** $z_{t+1}=a+\varphi\,z_t+\eta_{t+1}$: the slope is the AR(1) persistence $\varphi=e^{-\theta\Delta t}$, so $\;\boxed{\ \theta=-\dfrac{\ln\varphi}{\Delta t}\ }$.
+- **Δ (change) regression** $\Delta z_{t+1}=c+\beta\,z_t+\eta_{t+1}$ with $\Delta z_{t+1}=z_{t+1}-z_t$: the slope is $\beta=e^{-\theta\Delta t}-1$, so $\;\theta=-\dfrac{\ln(1+\beta)}{\Delta t}$.
+
+The two are algebraically identical ($\varphi=1+\beta$); for small $\theta\Delta t$ the Euler approximation $\theta\approx(1-\varphi)/\Delta t=-\beta/\Delta t$ holds to first order. The mean level is $\mu=\dfrac{a}{1-\varphi}$ (level form).
 
 **Half-life.** The expected time to close half the gap to equilibrium is
 
@@ -151,7 +154,7 @@ All three stages recover the truth: $\hat\beta=0.9955$ (true $1.0$), an ADF $t=-
 2. **Low power in short windows.** The test has weak power against slowly mean-reverting alternatives: a pair with a half-life of 6 months looks like a random walk in a 250-day sample. Cointegration *fails to be rejected* is not evidence of a tradeable pair.
 3. **Deterministic-specification sensitivity.** Whether you include a constant or a trend changes both $\hat\beta$ and the critical values (Tsay §8.6.1 lists five cases). Choosing the spec after seeing the result is data snooping.
 4. **OLS $\beta$ is biased in finite samples and not necessarily the fastest-reverting combination.** Engle–Granger OLS minimises the residual variance of *one* leg; it is super-consistent but can be inefficient. Johansen (Ch 6) or a symmetric (total-least-squares) estimator can recover the true vector better.
-5. **Half-life estimated on the wrong scale.** Euler discretisation (`theta=-b/dt`) and the exact AR(1) form differ at large $\theta\Delta t$; at daily frequency with $\theta\le 0.2$ the difference is negligible, but be consistent about $\Delta t$ (252 vs 365).
+5. **Half-life estimated on the wrong scale or the wrong regression.** Mixing the level regression ($\theta=-\ln\varphi/\Delta t$) with the change regression ($\theta=-\ln(1+\beta)/\Delta t$), or using the Euler shortcut $\theta\approx-\beta/\Delta t$, introduces error at large $\theta\Delta t$; at daily frequency with $\theta\le 0.2$ the difference is negligible, but be consistent about which regression you fit and about $\Delta t$ (252 vs 365).
 
 ---
 

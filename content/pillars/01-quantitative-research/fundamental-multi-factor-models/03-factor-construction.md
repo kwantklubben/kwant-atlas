@@ -101,7 +101,7 @@ for g in ('S','B'):
 print(f"\nSMB = small avg - big avg  = {SMB*100:+.3f}%")
 print(f"HML = high B/M - low B/M   = {HML*100:+.3f}%")
 ```
-```text
+```
 Six value-weighted portfolios (monthly ret):
   S-L: -0.014%
   S-M: +0.878%

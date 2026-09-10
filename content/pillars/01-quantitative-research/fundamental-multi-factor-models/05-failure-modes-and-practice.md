@@ -89,7 +89,7 @@ print("Model B (+near-dup HML2):  HML beta=%+.4f  se=%.4f  t=%+.2f" % (cB[2], sB
 print(f"corr(HML, HML2) = {statistics.correlation(hml, hml2):.3f}")
 print(f"beta_HML se: {sA[2]:.4f} (clean) -> {sB[2]:.4f} (collinear) = {sB[2]/sA[2]:.1f}x wider")
 ```
-```text
+```
 Model A (MKT, HML):        HML beta=+0.4864  se=0.0314  t=+15.48
 Model B (+near-dup HML2):  HML beta=+0.4570  se=0.0460  t=+9.93
 corr(HML, HML2) = 0.731
