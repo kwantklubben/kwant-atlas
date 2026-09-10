@@ -50,6 +50,8 @@ Any model claiming an out-of-sample $R^2 > 10\%$ on daily asset returns is mathe
 
 ### 3. Computational Implementation
 
+
+> **Requires `sklearn`** (`pip install sklearn`) — this block is not stdlib-only, unlike most of the Atlas. Left in place as a superseded *original note*; the topic-folder above is the maintained version.
 ```python
 import numpy as np
 

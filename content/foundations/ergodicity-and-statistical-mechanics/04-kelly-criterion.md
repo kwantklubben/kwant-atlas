@@ -159,6 +159,7 @@ g_inf(f*) = 0.115556  (= S^2/2 + r = 0.115556)
 simulated growth over 1000 bets:
   c=0.5 f=0.030  sim=0.001355  theory=0.001350  ruined=0.000
   c=1.0 f=0.060  sim=0.001810  theory=0.001801  ruined=0.000
+  c=1.5 f=0.090  sim=0.001362  theory=0.001348  ruined=0.019
   c=2.0 f=0.120  sim=0.000001  theory=-0.000017  ruined=0.107
   c=3.0 f=0.180  sim=-0.005521  theory=-0.005549  ruined=0.562
 ```

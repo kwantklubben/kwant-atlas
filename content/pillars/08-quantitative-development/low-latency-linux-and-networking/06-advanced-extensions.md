@@ -72,6 +72,7 @@ print("-> coarse bins bias the tail estimate more than the median; "
 true   p50=1.50 p99=3.39 p99.9=4.44 us
 hist bucket   100 ns: est p50=1.45 p99=3.35 p99.9=4.45 us  (p99.9 error +11 ns)
 hist bucket  1000 ns: est p50=1.50 p99=3.50 p99.9=4.50 us  (p99.9 error +61 ns)
+-> coarse bins bias the tail estimate more than the median; size bins to the percentile you actually quote.
 ```
 The median estimate is nearly unchanged across a 10× change in bin width (1.45 vs 1.50 µs), but the **p99.9 error grows ~6× (11 ns → 61 ns)**. So a coarse histogram flatters the median while corrupting the exact number that decides races — the practical reason to pick your histogram bin width *after* you know which percentile you quote, and to batch enough samples to keep the tail bins populated.
 

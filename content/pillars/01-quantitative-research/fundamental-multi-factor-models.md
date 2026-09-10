@@ -45,6 +45,8 @@ where $\Omega \in \mathbb{R}^{K \times K}$ is the factor covariance matrix ($K \
 
 ### 3. Computational Implementation
 
+
+> **Requires `statsmodels`** (`pip install statsmodels`) — this block is not stdlib-only, unlike most of the Atlas. Left in place as a superseded *original note*; the topic-folder above is the maintained version.
 ```python
 import numpy as np
 import statsmodels.api as sm

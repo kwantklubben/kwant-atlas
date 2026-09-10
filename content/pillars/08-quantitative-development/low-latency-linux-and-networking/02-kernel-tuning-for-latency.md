@@ -80,8 +80,9 @@ print("NUMA: local DRAM ~80 ns, remote socket +40-80 ns per access")
 4 KB : 4 page-table levels, walk latency ~16 ns, TLB covers        4 KB/entry
 2 MB : 3 page-table levels, walk latency ~12 ns, TLB covers    2,048 KB/entry
 1 GB : 2 page-table levels, walk latency ~8 ns, TLB covers 1,048,576 KB/entry
-4 KB : 16,384 pages, TLB miss  99.6%, walk 16ns -> effective addr-latency  19.9 ns (vs 4.0ns base)
-2 MB : 32 pages, TLB miss   0.0%, walk 12ns -> effective addr-latency   4.0 ns (vs 4.0ns base)
+4 KB : 16,384 pages, TLB miss  99.6%, walk 16 ns -> effective addr-latency  19.9 ns (vs 4.0 ns base)
+2 MB : 32 pages, TLB miss   0.0%, walk 12 ns -> effective addr-latency   4.0 ns (vs 4.0 ns base)
+NUMA: local DRAM ~80 ns, remote socket +40-80 ns per access
 ```
 The lesson: with 4 KB pages a 64 MB working set is *essentially* 100% TLB-missing (~20 ns/access); with 2 MB hugepages it is 100% TLB-resident (~4 ns). Because this cost is paid on **every** packet-touching access, it compounds directly into the receive-path tail — the *same* mechanism that makes pinning and NUMA-locality matter.
 

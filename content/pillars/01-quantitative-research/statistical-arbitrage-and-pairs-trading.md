@@ -52,6 +52,8 @@ $$Z_t = \frac{z_t - \text{EMA}(z_t)}{\text{StdDev}(z_t)}$$
 
 ### 3. Computational Implementation
 
+
+> **Requires `statsmodels`** (`pip install statsmodels`) — this block is not stdlib-only, unlike most of the Atlas. Left in place as a superseded *original note*; the topic-folder above is the maintained version.
 ```python
 import numpy as np
 import statsmodels.api as sm

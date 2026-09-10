@@ -44,6 +44,8 @@ with $m$ the number of free parameters. For a 1-D GMM, $m=3K-1$ ($K{-}1$ weights
 
 **Experiment 1 — label switching.** Same data, two EM runs with the two Gaussians initialized at swapped ends. Identical log-likelihood, swapped labels.
 
+> **Run the three blocks in order.** Experiment 1 defines the shared setup reused below — `sim`, `gauss`, `em_gmm`, and the simulated series `r` with its true regime states `st`. Experiments 2 and 3 reuse that setup; running a later block on its own raises `NameError` until Experiment 1 has been executed in the same session.
+
 ```python
 import math, random
 
@@ -110,6 +112,7 @@ K=4:  LL=2378.42  BIC=-4683.31  sd=[0.022936690735549912, 0.01801187161807279]
 **Experiment 3 — look-ahead in regime labels.** Using the *true* HMM parameters, compare the online **filtered** posterior vs the full-sample **smoothed** posterior. Smoothed looks dramatically better — because it peeks at the future.
 
 ```python
+# continues from Experiment 1 (defines sim, gauss, em_gmm, r, st) — run that block first
 def hmm_filter(y,mu,sd,pi,A):
     T=len(y); K=len(mu); gam=[]
     alpha=[pi[k]*gauss(y[0],mu[k],sd[k]) for k in range(K)]; z=sum(alpha)

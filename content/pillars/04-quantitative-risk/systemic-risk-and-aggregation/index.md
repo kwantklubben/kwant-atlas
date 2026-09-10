@@ -55,6 +55,12 @@ import math
 def phi(x):  return math.exp(-0.5*x*x)/math.sqrt(2.0*math.pi)
 def Phi(x):  return 0.5*(1.0 + math.erf(x/math.sqrt(2.0)))
 
+def Phinv(p):                                # inverse standard-normal CDF (Newton; cf. 04)
+    x = 0.0
+    for _ in range(60):
+        x -= (Phi(x) - p)/phi(x)
+    return x
+
 def ES_normal(mu, sigma, alpha):            # ES of a normal loss
     return mu + sigma*phi(Phinv(alpha))/(1.0 - alpha)     # Phinv = Newton, see 04
 
