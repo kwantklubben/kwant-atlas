@@ -36,7 +36,7 @@ The practical objective: know what each extension actually fixes, what it costs 
 
 Add a compound Poisson jump to the spot (Merton), keeping Heston variance — the **SVJ** model:
 
-$$dS=\mu S\,dt+\sqrt v\,S\,dZ_1+(e^{\alpha+\delta}-1)S\,dq,\qquad dv=-\lambda(v-\bar v)dt+\eta\sqrt v\,dZ_2,$$
+$$dS=\mu S\,dt+\sqrt v\,S\,dZ_1+(e^{\alpha+\delta Z}-1)S\,dq,\quad Z\sim N(0,1),\qquad dv=-\lambda(v-\bar v)dt+\eta\sqrt v\,dZ_2,$$
 
 with log-jump size $\sim\mathcal N(\alpha,\delta^2)$. The characteristic function **factorises** (Gatheral ch 5):
 
@@ -44,7 +44,7 @@ $$\varphi_T(u)=e^{C(u,T)\bar v+D(u,T)v_0}\,e^{\psi(u)T},\qquad \psi(u)=-\lambda_
 
 so the Heston $C,D$ are untouched and the jump part is a separate, cheap term. Two facts decide how to fit it:
 
-- **The short-dated variance skew is exactly additive:** $\partial_k\sigma_{BS}^2|_0\to\rho\eta/2-2\mu_J$ with compensator $\mu_J=\lambda_J\mathbb E[J-1]$. Fit Heston on the long end (which it handles well) and the jump parameters on the short end (which it does not).
+- **The short-dated variance skew is exactly additive:** $\partial_k\sigma_{BS}^2|_0\to\rho\eta/2-2\mu_J$ with compensator $\mu_J=\lambda_J\mathbb E[J]$ (Gatheral 7.8). Fit Heston on the long end (which it handles well) and the jump parameters on the short end (which it does not).
 - **Jumps *in volatility* (SVJJ, Matytsin) do not help the short-dated skew at all.** Because the short skew depends only on the jump *compensator*, identical in SVJ and SVJJ (after the jump an ATM option is out-of-the-money with zero time value whatever the vol does). Vol-jumps do reduce the vol-of-vol needed for *longer*-dated skew — at the cost of three more parameters and a harder fit. Gatheral's verdict: **SVJ beats SVJJ** on real SPX data (Table 5.5: $v_0=0.0158,\bar v=0.0439,\eta=0.3038,\rho=-0.6974,\lambda=0.5394,\lambda_J=0.1308,\delta=0.0967,\alpha=-0.1151$ reproduces the surface where Heston cannot).
 - **Drawback:** after a price jump, volatility stays fixed (jumps and vol are uncorrelated), inconsistent with the observation that implied vols jump when spot jumps. And jumps destroy the static-hedging/completeness arguments that make diffusive models tractable: with uncertain jump size there is **no replicating hedge** — options stop being redundant (Gatheral §5.1).
 - **Reading (Bergomi ch 10):** a Lévy/jump component is best understood not as a dynamics but as an embedded **stress-test reserve policy** — extra theta, a cost-of-capital levy ($\lambda=\beta\mu$), or a minimum return on stress-limit usage. "Using a diffusive process for pricing does not mean we assume securities behave as diffusions."

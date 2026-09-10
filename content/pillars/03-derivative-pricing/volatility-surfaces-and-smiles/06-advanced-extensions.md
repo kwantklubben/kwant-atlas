@@ -36,15 +36,15 @@ The practical objective: know how to compute an SV price fast (Fourier), how cal
 $$dS_t=\sqrt{v_t}\,S_t\,dZ_1,\qquad dv_t=-\lambda(v_t-\bar v)\,dt+\eta\sqrt{v_t}\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt.$$
 The variance is a **CIR/square-root** process (a special affine jump-diffusion; Duffie–Pan–Singleton 2000). Its PDE is (1.3) with $\alpha=-\lambda(v-\bar v),\beta=1$; the European price is $C=K[e^xP_1-P_0]$ with $P_j$ the pseudo-probabilities (Gatheral eq 2.5–2.6).
 
-**The characteristic function** (Gatheral eq 2.12–2.15): with $x=\ln(F_T/K)$, $\tau=T-t$,
+**The characteristic function** (Gatheral eq 2.12–2.15): with $x=\ln(S_T/F_T)$ (forward-relative), $\tau=T-t$,
 $$D(u,\tau)=\frac{r_-\big(1-e^{-d\tau}\big)}{1-g\,e^{-d\tau}},\qquad C(u,\tau)=\lambda\!\left\{r_-\tau-\frac{2}{\eta^2}\log\frac{1-g\,e^{-d\tau}}{1-g}\right\},$$
 $$r_\pm=\frac{\beta\pm d}{\eta^2},\quad d=\sqrt{\beta^2-4\alpha\gamma},\quad g=\frac{r_-}{r_+},\quad \alpha=-\tfrac{u^2}{2}-\tfrac{iu}{2}+iju,\ \ \beta=\lambda-\rho\eta j-\rho\eta iu,\ \ \gamma=\tfrac{\eta^2}{2},$$
 $$\varphi_T(u)=\mathbb{E}\!\left[e^{iux}\right]=\exp\!\big(C(u,\tau)\,\bar v+D(u,\tau)\,v_0\big).$$
 **Pricing by Fourier** (Lewis 2000; Gatheral eq 5.6, zero rates/dividends):
 $$\boxed{\;C(S,K,T)=S-\frac{\sqrt{SK}}{\pi}\int_0^\infty\frac{du}{u^2+\tfrac14}\,\mathrm{Re}\!\left[e^{-iuk}\varphi_T\!\left(u-\tfrac i2\right)\right],\qquad k=\log\frac KS\;}$$
-The integrand decays fast; a few thousand points suffice. The equivalent **Heston (1993) two-probability** form is $C=K[e^xP_1-P_0]$ with $P_j=\tfrac12+\tfrac1\pi\int_0^\infty\mathrm{Re}[e^{-iuk}\varphi(u-i\delta_j)/(iu)]du$. Both use the same $\varphi$ and must agree — the cross-check used below.
+The integrand decays fast; a few thousand points suffice. The equivalent **Heston (1993) two-probability** form is $C=K[e^xP_1-P_0]$ with $P_j=\tfrac12+\tfrac1\pi\int_0^\infty\mathrm{Re}[e^{-iuk}\varphi(u-i\delta_j)/(iu)]du$. Both use the same $\varphi$ and must agree in principle (the code below validates the Lewis integrator against the BS closed form and checks $\varphi(0)=\varphi(-i)=1$).
 
-**Consistency checks on any $\varphi$:** $\varphi(0)=1$ (normalization) and $\varphi(-i)=\mathbb{E}[e^{x}]=1$ (the martingale condition $F_T=\mathbb{E}[S_T]$).
+**Consistency checks on any $\varphi$:** $\varphi(0)=1$ (normalization) and $\varphi(-i)=\mathbb{E}[e^{x}]=1$ (the martingale condition $F_T=\mathbb{E}[S_T]$, which holds in the forward-relative convention $x=\ln(S_T/F_T)$ used here and in the code below).
 
 #### 2.2 SABR (Hagan et al. 2002; Gatheral §7.2)
 

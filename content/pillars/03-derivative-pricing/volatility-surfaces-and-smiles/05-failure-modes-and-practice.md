@@ -42,7 +42,7 @@ In the $(y,T)$ coordinates used for interpolation, the conditions become simply:
 
 The local-vol forward skew is (Bergomi eq 2.91/2.92)
 $$\mathcal S_\theta(\tau)=\mathcal S_{\tau+\theta}-\frac{\tau}{\theta}\!\left(\frac1\theta\int_\tau^{\tau+\theta}\mathcal S_t\,dt-\mathcal S_{\tau+\theta}\right),\qquad \mathcal S_\theta(\tau)\propto\left(\frac{\theta}{\tau}\right)^{\gamma}\mathcal S_\theta.$$
-For a *decreasing* skew term structure the bracket is negative, so $\mathcal S_\theta(\tau)<\mathcal S_{\tau+\theta}$: **every future skew is weaker than today's, and dies out like $(\theta/\tau)^\gamma$.** A forward-start option (cliquet) is an option on precisely this forward skew, so LV underprices it. And because LV also *cannot* lock the forward vol-of-vol (it changes with recalibration), the exotic's P&L is large and unpredictable.
+For a *decreasing* skew term structure the bracket is **positive** (the running average exceeds the endpoint), so the leading minus makes $\mathcal S_\theta(\tau)<\mathcal S_{\tau+\theta}$: **every future skew is weaker than today's, and dies out like $(\theta/\tau)^\gamma$.** A forward-start option (cliquet) is an option on precisely this forward skew, so LV underprices it. And because LV also *cannot* lock the forward vol-of-vol (it changes with recalibration), the exotic's P&L is large and unpredictable.
 
 The vol-of-vol mismatch is equally structural: LV implies $\mathrm{vol}(\hat\sigma_{F_TT})=\big(\mathcal S_T+\frac1T\int_0^T\mathcal S_t\,dt\big)\frac{\hat\sigma_{F_00}}{\hat\sigma_{F_TT}}\to2\mathcal S_T$ as $T\to0$ (Bergomi eq 2.83–2.85), while a *time-homogeneous* SV model has time-independent vol-of-vol — they cannot agree (Bergomi §2.5).
 

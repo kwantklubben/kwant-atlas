@@ -39,6 +39,8 @@ Real curves move by level/slope/curvature (~3 PCA factors). The structural fix i
 
 $$Cpl=P\tau\Big[(F-K)N(d)+\sigma_N\sqrt T\,\phi(d)\Big],\qquad d=\frac{F-K}{\sigma_N\sqrt T},$$
 
+(here $\tau\equiv1$ is the year fraction, so the demo block drops it; the `P·τ` multiplier is the accrual factor for general tenors.)
+
 well-defined for any $F,K$. The **shifted lognormal** model (BM Ch10.1) is the intermediate: $F_j=X_j+\alpha$, so $\ln(F_j-\alpha)$ stays finite by shifting the origin.
 
 **The HJM explosion (Shreve Ch34).** With $\sigma(t,T)=\sigma f(t,T)$, the accumulated vol $\sigma^*=\sigma\int_t^T f\,ds$ makes the HJM drift $\alpha=\sigma f\,\sigma^*\sim f^2$. The deterministic toy $f'=f^2$, $f(0)=c$, blows up at $t=1/c$; HJM prove the stochastic analogue does too. **Market models avoid this by modelling *simple* rates**, whose drift is bounded by $\gamma^2F^2$ (Shreve Ch34 Remark 34.4).
@@ -84,13 +86,16 @@ Failure 1: lognormal instantaneous-forward explosion (Shreve Ch34)
     f(10.0yr) =    10.00%
     f(18.0yr) =    50.00%
     f(19.9yr) =  1000.00%
+
 Failure 2: negative/zero rates break lognormal Black
   Bachelier caplet F=0.5% K=0% = 0.010620  (well-defined)
   Black at K=0%: log(K) undefined -> blows up
   Black at K=0.4% (F,K>0)  = 0.000990  (fine)
+
 Failure 3: one-factor => perfect correlation (BM Ch4)
   1-factor Vasicek: corr(f(t,T1),f(t,T2))=1.0  (only parallel shifts)
   2-factor G2++:    corr<1 -> fits swaption/correlation products
+
 Failure 4: HW calibration needs 3 numerical derivatives (Shreve Ch30 Rem 30.1)
   f(t)=0 vs g(t)=sin(1000t)/100: |f-g|<=1/100 but |f'-g'|=10 -> unstable fit
 ```

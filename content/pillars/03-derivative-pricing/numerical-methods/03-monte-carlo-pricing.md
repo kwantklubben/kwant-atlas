@@ -16,7 +16,7 @@ tags:
 
 Monte Carlo prices an option by *manufacturing the risk-neutral expectation one path at a time*. Draw a path of $S$ under $\mathbb{Q}$, evaluate the discounted payoff, repeat $n$ times, average. Its justification is the strong law; its error is the central limit theorem:
 
-$$\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i)\ \xrightarrow{\text{a.s.}}\ \alpha,\qquad \hat\alpha_n-\alpha\ \approx\ \mathcal N\!\Big(0,\frac{\sigma_f}{\sqrt n}\Big).$$
+$$\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i)\ \xrightarrow{\text{a.s.}}\ \alpha,\qquad \hat\alpha_n-\alpha\ \approx\ \mathcal N\!\Big(0,\frac{\sigma_f^2}{n}\Big).$$
 
 The practical objectives are three: (i) build the estimator and always attach a standard error; (ii) sample paths *exactly* when possible — for GBM the transition is lognormal so the simulation is exact, with **zero** discretisation bias; (iii) recognise the two structural costs — the $O(n^{-1/2})$ rate (four times the work per halving) and the fact that a payoff average is a *path functional* whose sampling requires care (Brownian bridge, monitoring dates).
 
@@ -59,7 +59,7 @@ Two properties matter: (i) the conditional variance depends **only on the interv
 $$\mathrm{MSE}=\underbrace{\text{bias}^2}_{O(\delta^{2\beta})}+\underbrace{\text{variance}}_{O(1/n)},\qquad
 \mathrm{RMSE}=O\!\big(s^{-\beta/(2\beta+\eta)}\big),$$
 
-where $s$ is the work budget; unbiased simulation ($\beta\to\infty$) recovers $s^{-1/2}$, and the discretisation-aware case is page 06's $s^{-\beta/(2\beta+1)}$.
+where $s$ is the work budget; unbiased simulation ($\beta\to\infty$) recovers $s^{-1/2}$, and the discretisation-aware case is page 04's (§2 efficiency rule) $s^{-\beta/(2\beta+1)}$.
 
 ---
 

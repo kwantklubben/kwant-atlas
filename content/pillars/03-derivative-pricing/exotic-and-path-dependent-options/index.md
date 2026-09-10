@@ -30,7 +30,7 @@ All formulas below are transcribed from Haug (2006) and cross-checked against Sh
 
 | Family | Key formula | Verified check |
 |---|---|---|
-| **Barrier** (Reiner–Rubinstein $A\dots F$) | $A{-}C{+}F$ (down-and-out call), combination table §5.1 | $c_{do}(H{=}95,\sigma{=}.25)=6.7924$; $c_{ui}(H{=}105)=8.4482$ |
+| **Barrier** (Reiner–Rubinstein $A\dots F$) | $A{-}C{+}F$ (down-and-out call), combination table §2.1 (barriers & digitals) | $c_{do}(H{=}95,\sigma{=}.25)=6.7924$; $c_{ui}(H{=}105)=8.4482$ |
 | **In–out parity** | $c_{di}+c_{do}=c_{\text{vanilla}}$ (rebate $K{=}0$) | $3.3368+4.5126=7.8494$ ✓ |
 | **Discrete-barrier correction** (Broadie–Glasserman–Kou) | $H_D=H\,e^{\pm\beta\sigma\sqrt{\Delta t}}$, $\beta=0.5826$ | $H_D{=}94.027\Rightarrow$ price $5.9831\approx$ MC $6.0473$ |
 | **Cash-or-nothing** | $c=K e^{-rT}N(d)$, $p=K e^{-rT}N(-d)$ | put $=2.6710$ |
@@ -40,7 +40,7 @@ All formulas below are transcribed from Haug (2006) and cross-checked against Sh
 | **Arithmetic Asian** (Turnbull–Wakeman) | moment-match $M_1,M_2\to$ BSM form | no closed form; MC $=1.9812$ |
 | **Put-on-call compound** (4.29) | bivariate-normal combo + critical $I$ | $=21.1964$, $I{=}538.3165$ |
 | **Simple chooser** (4.26) | $c(S,X,T_2)+e^{(b-r)(T_2-t_1)}p(S,Xe^{-b(T_2-t_1)},t_1)$ | $=6.1071$ |
-| **Complex chooser** (4.27) | 4-term bivariate-normal combo, critical $I$ | $=6.0507$ (book 6.0508), $I{=}51.1156$ |
+| **Complex chooser** (4.27) | 4-term bivariate-normal combo, critical $I$ | $=6.0508$, $I{=}51.1158$ (Haug 4.27) |
 | **Margrabe exchange** (5.7) | $Q_1S_1e^{(b_1-r)T}N(d_1)-Q_2S_2e^{(b_2-r)T}N(d_2)$ | $=1.5260$ |
 | **Quanto** (5.39) | $E_p\big[S^*e^{(r_f-r-q-\rho\sigma_S\sigma_E)T}N(d_1)-X^*e^{-rT}N(d_2)\big]$ | call $=5.3280$ |
 | **Foreign-equity struck domestic** (5.35) | $\sigma_{ES}=\sqrt{\sigma_S^2+\sigma_E^2+2\rho\sigma_E\sigma_S}$ | call $=8.3056$ |

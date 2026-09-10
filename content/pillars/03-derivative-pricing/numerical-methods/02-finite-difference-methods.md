@@ -16,7 +16,7 @@ tags:
 
 A finite-difference solver is a *machine for transporting a payoff backwards in time*. Replace the option's smooth value surface $V(t,S)$ by its values on a grid of nodes, replace the derivatives by divided differences, and the PDE becomes an algebraic recursion — one **linear solve per time step**. The practical objective is to know which of the three one-parameter schemes (explicit, implicit, Crank–Nicolson) to use, what each costs, and exactly when each is invalid.
 
-The $O(k)$ parameter is $\theta\in[0,1]$ (weight on the **new** time level):
+The $O(k)$ parameter is $\theta\in[0,1]$ (weight on the **old** time level; the new level carries $1-\theta$):
 
 $$\frac{U^{n+1}-U^n}{k}=(1-\theta)\mathcal L U^{n+1}+\theta\,\mathcal L U^{n},\qquad \mathcal L U_j=\sigma_j\frac{U_{j+1}-2U_j+U_{j-1}}{h^2}+\mu_j\frac{U_{j+1}-U_{j-1}}{2h}+b_jU_j .$$
 
@@ -136,7 +136,7 @@ for name, th in (("explicit",1.0), ("implicit",0.0), ("Crank-Nic.",0.5)):
     for M in (50, 100, 200):
         errs.append(abs(pde_call(S,X,T,r,sig,M,4000,400.0,th) - exact))
     print(f"{name:<14}{errs[0]:>12.2e}{errs[1]:>12.2e}{errs[2]:>12.2e}")
-# observed convergence order: refine h and k together (M=nt=50,100,200)
+# observed convergence order: refine h and k together (M=nt=100,200,400)
 for name, th in (("implicit",0.0), ("Crank-Nic.",0.5)):
     e1 = abs(pde_call(S,X,T,r,sig,100,4000,400.0,th) - exact)
     e2 = abs(pde_call(S,X,T,r,sig,200,8000,400.0,th) - exact)

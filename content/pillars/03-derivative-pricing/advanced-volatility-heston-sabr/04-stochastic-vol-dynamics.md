@@ -80,7 +80,7 @@ $$\text{Type I }(\gamma>1):\ \mathcal S_T\propto\frac1T,\ R_\infty=1;\qquad \tex
 
 Heston ($\mu$ exponential) is **Type I**, $R_T\to1$; local volatility gives $R_T\to(2-\gamma)/(1-\gamma)$ (e.g. $3$ for $\gamma=\tfrac12$) — i.e. LV and SV start at the same $R_0=2$ and go in **opposite directions**. The data say Type II ($\gamma\approx\tfrac12$, $R_\infty\approx1.5$), so **neither** pure LV nor Heston is right, and the two-factor model is built to be Type II over a practical range:
 
-$$\mathcal S_T=\frac{\omega}{2}\sum_iw_i\rho_{iS}\frac{k_iT-1-e^{-k_iT}}{(k_iT)^2},\qquad R_T=\frac{\sum_iw_i\rho_{iS}(1-e^{-k_iT})/(k_iT)}{\sum_iw_i\rho_{iS}(k_iT-(1-e^{-k_iT}))/(k_iT)^2}\ \text{(9.16a,b)}.$$
+$$\mathcal S_T=\frac{\omega}{2}\sum_iw_i\rho_{iS}\frac{k_iT-1+e^{-k_iT}}{(k_iT)^2},\qquad R_T=\frac{\sum_iw_i\rho_{iS}(1-e^{-k_iT})/(k_iT)}{\sum_iw_i\rho_{iS}(k_iT-(1-e^{-k_iT}))/(k_iT)^2}\ \text{(9.16a,b)}.$$
 
 **Pricing consequence (Bergomi §9):** for a long spot/vol cross-gamma book, *local volatility* is the conservative (higher-$R$) choice; for a short cross-gamma book, *SV* is. Same smile, opposite prices — that is the whole point of this chapter.
 

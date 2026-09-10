@@ -82,8 +82,8 @@ print(f"closed-form BSM put            = {bsm_put(S,X,T,r,sig):.4f}")
 ```
 ```
 vanilla  put (terminal only)   = 4.4295
-closed-form BSM put            = 4.4197
 lookback put (path-dependent)  = 8.7952
+closed-form BSM put            = 4.4197
 ```
 The vanilla MC lands on the BSM closed form (terminal-only: the closed form *is* the answer), while the lookback put on the *same* paths is more than twice as valuable — it pays off on every path whose **running minimum** (not just endpoint) dipped below $X$. Same terminal draws, radically different prices: that is path-dependence.
 
@@ -93,7 +93,7 @@ The vanilla MC lands on the BSM closed form (terminal-only: the closed form *is*
 
 1. **The "terminal distribution is enough" trap.** For an exotic you cannot compress the path to $S_T$; you need the joint law of $(\text{path statistic}, S_T)$. This is the single biggest conceptual error.
 2. **Wrong drift under $\mathbb{Q}$.** Simulate with the cost-of-carry $b$ (e.g. $r-q$ for an index) in $d\log S=(b-\tfrac12\sigma^2)dt+\sigma dW$, and discount at $r$. Using $r$ as the drift when $b\neq r$ (dividend-paying underlying) biases every running-min/max statistic.
-3. **Monitoring specification is part of the contract.** Continuous vs discrete monitoring changes the price (see [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/06-advanced-extensions|06 · Advanced Extensions]]); a barrier checked daily is cheaper than one checked continuously. Ignoring this is a first-principles mis-specification.
+3. **Monitoring specification is part of the contract.** Continuous vs discrete monitoring changes the price (see [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/06-advanced-extensions|06 · Advanced Extensions]]); for a **knock-in** a barrier checked daily is cheaper than one checked continuously; for a **knock-out** the daily check is *more* expensive, because the grid misses touches the continuous monitor would catch. Ignoring this is a first-principles mis-specification.
 
 ---
 

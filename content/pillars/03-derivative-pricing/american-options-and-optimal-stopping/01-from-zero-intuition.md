@@ -42,7 +42,7 @@ At every node you simply compare **continuation** with **intrinsic**. Exercise w
 
 $$v_1(8)=\tfrac45\big[\tfrac12\cdot0+\tfrac12\cdot1\big]=0.40,\qquad v_1(2)=\max\big\{\tfrac45\big[\tfrac12\cdot1+\tfrac12\cdot4\big],\,3\big\}=\max\{2,\,3\}=3.$$
 
-At the down node $S=2$ the intrinsic $3$ **beats** the continuation $2$ — that is early exercise, visible in a one-line computation. At the root, $v_0(4)=\max\{\tfrac45[\tfrac12(0.40)+\tfrac12(3)],\,1\}=\max\{1.36,1\}=1.36$. **The freedom to stop at $t=1$ raised the value from $1$ — the European root value is what the same recursion gives *without* the max.** The overhang $1.36-1.0$ is the early-exercise premium.
+At the down node $S=2$ the intrinsic $3$ **beats** the continuation $2$ — that is early exercise, visible in a one-line computation. At the root, $v_0(4)=\max\{\tfrac45[\tfrac12(0.40)+\tfrac12(3)],\,1\}=\max\{1.36,1\}=1.36$. **The freedom to stop at $t=1$ raised the value from the European value $0.96$ (the same recursion without the max), while the *intrinsic* at the root is $1$.** The overhang $1.36-0.96=0.40$ is the early-exercise premium.
 
 **Continuous-time version.** Replace the recursion by the optimal-stopping value (Shreve II §8.1)
 

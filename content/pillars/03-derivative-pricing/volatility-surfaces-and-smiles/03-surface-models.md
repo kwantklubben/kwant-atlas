@@ -62,7 +62,7 @@ A variance swap pays realized variance; its fair strike is replicated by a **log
 $$\hat\sigma_{VS,T}=\hat\sigma_T\qquad\text{(log-contract and VS implied vols coincide)}$$
 (Bergomi eq 5.13/5.14). The practical evaluation is a **weighted integral of the smile** (Gatheral/Chriss–Morokoff; Bergomi eq 4.21/5.17):
 $$\boxed{\;\hat\sigma_{VS,T}^2=\int_{-\infty}^{\infty}\frac{dy}{\sqrt{2\pi}}e^{-y^2/2}\,\sigma_{BS}^2\!\big(K(y),T\big),\qquad y(K)=\frac{\ln(K/F_T)}{\sigma_{KT}\sqrt T}-\frac{\sigma_{KT}\sqrt T}{2}\;}$$
-For a **flat** smile this is *exactly* $\sigma_0^2$; for a skewed/convex smile the VS vol exceeds the ATM vol — a **skew/convexity premium**. Only in non-diffusive (jump/Lévy) models does $\hat\sigma_{VS,T}\ne\hat\sigma_T$; the gap measures implied short-return skewness, $\hat\sigma_{VS,T}^2-\hat\sigma_T^2\simeq-\tfrac13\lambda J^3$ (Bergomi eq 5.28/5.29).
+For a **flat** smile this is *exactly* $\sigma_0^2$; for a skewed/convex smile the VS vol exceeds the ATM vol — a **skew/convexity premium**. Only in non-diffusive (jump/Lévy) models does $\hat\sigma_{VS,T}\ne\hat\sigma_T$; the gap measures implied short-return skewness, $\hat\sigma_{VS,T}^2-\hat\sigma_T^2\simeq-\tfrac13\lambda\langle J^3\rangle$ (Bergomi eq 5.28/5.29).
 
 **Forward variance** is the tradable state variable:
 $$\xi_t^T=\frac{d}{dT}\big[(T-t)\hat\sigma_{VS,T}^2(t)\big],\qquad d\xi_t^T=\lambda_t^T\,dW_t^T\quad(\text{driftless}),$$

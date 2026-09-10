@@ -39,7 +39,7 @@ Pricing a $T$-payoff $X$:
 
 $$\Pi_t(X)=B(t)\mathbb{E}^{\mathbb{Q}}\!\left[\frac{X}{B(T)}\right]=P(t,T)\,\mathbb{E}^{\mathbb{Q}^T}\left[X\right].$$
 
-The **Girsanov kernel between two numeraires is their volatility difference**: for numeraires $S_0,S_1$ the kernel is $\varphi^1_0(t)=\sigma_1(t)-\sigma_0(t)$ (Björk eq. 26.20). Crucially, a forward LIBOR $L(t;T,S)$ and the instantaneous forward $f(t,T)$ are both $\mathbb{Q}^T$-martingales (Björk Lemma 26.10; BM Prop 2.5.1).
+The **Girsanov kernel between two numeraires is their volatility difference**: for numeraires $S_0,S_1$ the kernel is $\varphi^1_0(t)=\sigma_1(t)-\sigma_0(t)$ (Björk eq. 26.20). Crucially, the instantaneous forward $f(t,T)$ is a $\mathbb{Q}^T$-martingale, and the forward LIBOR $L(t;T,S)$ is a $\mathbb{Q}^S$-martingale (numeraire $P(t,S)$) — different maturity indices (Björk Lemma 26.10; BM Prop 2.5.1).
 
 **Forward vs futures (Björk Ch29 correction):** forward price $f(t;T,Y)=\mathbb{E}^{\mathbb{Q}^T}[Y]$; futures price $F(t;T,Y)=\mathbb{E}^{\mathbb{Q}}[Y]$; they are equal *iff* the short rate is deterministic.
 
@@ -67,7 +67,7 @@ $$dF_k(t)=\sigma_k(t)F_k(t)\,dZ_k(t)\quad\text{under }\mathbb{Q}^{T_k}.$$
 
 The **caplet** is then priced *exactly* by Black's formula (BM Prop 6.4.1; Björk Def 27.2):
 
-$$Cpl_i(t)=P(t,T_i)\,\tau_i\Big[F_i(t)N(d_1)-K N(d_2)\Big],\quad d_1=\frac{\ln(F_i/K)+\tfrac12 v_i^2(t,T_i)}{v_i\sqrt{T_i-t}},\quad v_i^2=\int_t^{T_{i-1}}\sigma_i^2(s)ds.$$
+$$Cpl_i(t)=P(t,T_i)\,\tau_i\Big[F_i(t)N(d_1)-K N(d_2)\Big],\quad d_1=\frac{\ln(F_i/K)+\tfrac12 v_i^2}{v_i},\quad v_i^2=\int_t^{T_{i-1}}\sigma_i^2(s)\,ds\ \text{(vol accumulated to the reset }T_{i-1}\text{)}.$$
 
 Under a *single* common measure (e.g. terminal/spot-LIBOR $\mathbb{Q}^d$), the rates carry **drift terms** summing over other rates (BM Prop 6.3.3):
 

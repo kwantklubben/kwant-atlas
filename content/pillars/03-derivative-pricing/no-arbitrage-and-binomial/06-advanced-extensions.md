@@ -44,7 +44,7 @@ Verified the only way an American value can be: (i) $v(x)\ge(5-x)^+$ everywhere;
 
 #### 2.2 The random walk underneath (Shreve Ch 8)
 
-Under $\widetilde{\mathbb P}$, $\log_2 S_k=S_0+\!M_k$ with $M$ a symmetric $\pm1$ walk. First-passage moments come from the exponential martingale: for $0<\alpha<1$,
+Under $\widetilde{\mathbb P}$, $\log_2 S_k=\log_2 S_0+M_k$ (equivalently $S_k=S_0\,2^{M_k}$) with $M$ a symmetric $\pm1$ walk. First-passage moments come from the exponential martingale: for $0<\alpha<1$,
 
 $$\mathbb E[\alpha^{\tau_1}]=\frac{1-\sqrt{1-\alpha^2}}{\alpha}\qquad\Longrightarrow\qquad \mathbb E[\alpha^{\tau_m}]=\left(\frac{1-\sqrt{1-\alpha^2}}{\alpha}\right)^{m}.$$
 

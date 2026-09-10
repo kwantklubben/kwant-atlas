@@ -87,7 +87,7 @@ Local vol from a smooth smile vs from the same smile + bid/ask noise:
   noisy v_loc over full grid: min=0.0167  max=43406990.52   (true level ~0.024-0.048)
   points with negative/absurd v_loc (of 19): 1
 ```
-A *0.4-vol-point* wiggle in the smile blows one reconstructed local variance up to **$4.3\\times10^7$** — six orders of magnitude above the true level — and swings the butterfly denominator to near zero. This is why desks never invert raw quotes: they first fit a **smooth, arbitrage-free parametric surface** (SVI, a parametric LV, a calibrated SV model) and only then invert, and they clip/smooth the result. The instability is structural, not a code bug.
+A *0.4-vol-point* wiggle in the smile blows one reconstructed local variance up to **$4.3\\times10^7$** — about nine orders of magnitude above the true level ($\sim0.03$) — and swings the butterfly denominator to near zero. This is why desks never invert raw quotes: they first fit a **smooth, arbitrage-free parametric surface** (SVI, a parametric LV, a calibrated SV model) and only then invert, and they clip/smooth the result. The instability is structural, not a code bug.
 
 ---
 

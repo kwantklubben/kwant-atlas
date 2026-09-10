@@ -47,12 +47,12 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 | **SABR ATM skew** | $\partial_k\sigma_{BS}\big|_{k=0}=\dfrac{\rho\nu}{2}$ | $-0.137364=(\rho\nu/2)\cdot0.988991$ |
 | **SABR ATM curvature** | $C_0=\frac{(2-3\rho^2)\nu^2}{6\sigma_0}$ (Bergomi–Guyon 8.39b) | $0.057605$; Hagan FD gives $0.056971$ = $\times0.988991$ |
 | Bergomi–Guyon identity (8.40) | $\nu^2=3\sigma_0C_0+6S_0^2$ | $0.150311=\nu^2$ exactly |
-| **Heston as one-factor FV model** (6.3/6.4) | $\xi_t^T=\bar v+e^{-\lambda(T-t)}(v_t-\bar v)$, $\hat\sigma_T^2(t)=\bar v+\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}(v_t-\bar v)$ | T=0.05/0.25/1 (10.000 yr) $\Rightarrow$ $\hat\sigma_T=13.410/14.170/15.946\%$ |
+| **Heston as one-factor FV model** (6.3/6.4) | $\xi_t^T=\bar v+e^{-\lambda(T-t)}(v_t-\bar v)$, $\hat\sigma_T^2(t)=\bar v+\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}(v_t-\bar v)$ | T=0.05/0.25/1.000 yr $\Rightarrow$ $\hat\sigma_T=13.410/14.170/15.946\%$ |
 | **Heston ATMF skew, flat VS curve** (6.20) | $S_T=\dfrac{\rho\eta}{2\sqrt{\bar v}}\dfrac{\lambda T+e^{-\lambda T}-1}{(\lambda T)^2}$ | short limit $\to\frac{\rho\eta}{4\sqrt{\bar v}}=-0.369105$; $T{=}0.01$ gives $-0.367480$ |
-| Vol-of-vol term structure (6.9) | $\mathrm{vol}(\hat\sigma_T)\propto\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}$ | vs power law (7.40): ratio $0.65$ ($3$m) … $0.50$ ($5$y) |
+| Vol-of-vol term structure (6.9) | $\mathrm{vol}(\hat\sigma_T)\propto\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}$ | vs power law (7.40): Heston/power-law ratio $0.763$ ($3$m) … $0.587$ ($5$y) |
 | Two-factor vol-of-vol (7.39) | $\nu_T(t)=\nu\alpha_\theta\sqrt{\sum_{ij}w_iw_j\rho_{ij}I(k_i(T-t))I(k_j(T-t))}$, $I(x)=\frac{1-e^{-x}}{x}$ | Set II reproduces benchmark (7.40) to $\lesssim5\%$ over $0.25$–$5$y |
 | Digital price ↔ skew (ch 8) | $D(K,T)=-\frac{\partial C_{BS}}{\partial K}-\frac{\partial C_{BS}}{\partial\sigma}\frac{\partial\sigma_{BS}}{\partial K}$ | $1$y ATM digital, $25\%$ vol, $3$ pts/$10\%$ skew: $0.1188$ = **$11.9\%$ of notional** |
-| Jump additivity at $\tau\to0$ (7.3) | $\partial_k\sigma^2_{BS}\big|_{k=0}\to\rho\,b(\sigma)-2\mu_J$ | additive; slopes with $\mu_J$ |
+| Jump additivity at $\tau\to0$ (7.3) | $\partial_k\sigma^2_{BS}\big|_{k=0}\to\rho\,b(\sigma)-2\mu_J$, $\mu_J=\lambda_J\mathbb E[J]$ | additive; slopes with $\mu_J$ |
 | Rough benchmark (7.40) | $\nu_T(t)=\sigma_0\big(\frac{\tau_0}{T-t}\big)^\alpha$, $\alpha\approx0.4$ | power-law vol-of-vol term structure |
 
 > **Critical caveat (flagged in the corpus).** Gatheral's printed ATM term-structure formula (3.18) is built from the *unconditional* expected-variance path, so its literal $T\to0$ limit is $\bar v$ (the long-run mean), **not** the current variance $v_0$. The physical limit is $v_0$: our characteristic-function pricer gives $\sigma_{BS}\big|_{ATM}\to\sqrt{v_0}=13.191\%$ as $T\to0$, while the literal (3.18) value at $T{=}0.001$ is $0.0354$ ($=\bar v$). §02 and §04 quantify the gap.

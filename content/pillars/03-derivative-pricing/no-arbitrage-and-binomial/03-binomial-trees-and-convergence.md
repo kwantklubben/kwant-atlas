@@ -44,7 +44,7 @@ Because the terminal distribution is binomial, a European claim has a *finite su
 
 $$V_0=e^{-rT}\sum_{i=0}^{n}\binom{n}{i}p^{i}(1-p)^{n-i}\max\!\big(Su^{i}d^{\,n-i}-X,\,0\big).$$
 
-Only nodes with $Su^id^{\,n-i}>X$ contribute, so one starts the sum at the smallest integer $i>X/(Su^{-n})$ — the standard speed-up from $O(n^2)$ backward induction to $O(n)$ for European claims (Haug eq. 7.3–7.4).
+Only nodes with $Su^id^{\,n-i}>X$ contribute, so one starts the sum at the smallest integer $i$ with $Su^{i}d^{\,n-i}>X$, i.e. $i>\big(\ln(X/S)-n\ln d\big)/\ln(u/d)$ — the standard speed-up from $O(n^2)$ backward induction to $O(n)$ for European claims (Haug eq. 7.3–7.4).
 
 #### 2.3 American backward induction (Haug 7.9–7.11; Hull §13.5)
 

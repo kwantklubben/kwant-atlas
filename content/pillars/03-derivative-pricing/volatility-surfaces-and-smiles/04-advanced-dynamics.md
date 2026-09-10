@@ -63,7 +63,7 @@ The **jump compensator drives the short-expiry skew; the expected jump size driv
 $$dS_t=\sigma_tS_t^{\beta}dZ_1,\qquad d\sigma_t=\chi\sigma_t\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt$$
 (Hagan et al. 2002) has no mean reversion, so it is a short-expiration tool, but it has an exact $\tau\to0$ smile formula that factorizes: $\sigma_{BS}(k)=\sigma_0\frac{y}{f(y)}\big(1+\tfrac14\rho\chi\sigma_0+\frac{2-3\rho^2}{24}\chi^2\tau+\cdots\big)$ with $y=-\chi k/\sigma_0$ (Gatheral eq 7.7). It implies $\partial_k\sigma_{BS}|_{k=0}=\rho/2$ — the special case of (7.6) — and the **Medvedev–Scaillet** small-time expansion (Gatheral eq 7.4–7.6) reproduces it, proving $\partial_k I|_{k=0}\to\rho b(\sigma)/(2\sigma)$.
 
-**Long expirations (Fouque–Papanicolaou–Sircar):** for log-OU volatility the skew $\partial_x\sigma_{BS}\approx \rho\xi/(\lambda T)$ (Gatheral eq 7.10), matching Heston for large $\lambda T$. The **natural interpolation** between the two limits is Bergomi eq 7.11, which Lewis's small-$\eta$ expansion proves *exact* to $O(\eta)$ (Gatheral §7.6, eq 7.11–7.12). **Extreme strikes:** Lee's moment formula, $\beta^*=g(q^*)$, $g(x)=2-4(\sqrt{x^2+x}-x)$ — model-independent (Gatheral §7.7).
+**Long expirations (Fouque–Papanicolaou–Sircar):** for log-OU volatility the skew $\partial_x\sigma_{BS}\approx \rho\xi/(\lambda T)$ (Gatheral eq 7.10), matching Heston for large $\lambda T$. The **natural interpolation** between the two limits is Gatheral eq 7.11 (not Bergomi's), which Lewis's small-$\eta$ expansion proves *exact* to $O(\eta)$ (Gatheral §7.6, eq 7.11–7.12). **Extreme strikes:** Lee's moment formula, $\beta^*=g(q^*)$, $g(x)=2-4(\sqrt{x^2+x}-x)$ — model-independent (Gatheral §7.7).
 
 ---
 

@@ -18,7 +18,7 @@ tags:
 The closed forms run out of road exactly where the contracts get real: **discrete monitoring**, **arithmetic averages**, **American early exercise**, and **multi-asset payoffs**. The objective of this page: the *practical* Monte Carlo toolkit that carries path-dependent pricing when there is no closed form. Three moves:
 
 1. **Exact path construction.** Simulate GBM *exactly* on the grid — the lognormal transition $S_{t_{i+1}}=S_{t_i}\exp((b-\tfrac12\sigma^2)\Delta t+\sigma\sqrt{\Delta t}Z)$ has **no discretization error** (Glasserman §3.2). The only bias is the discrete *monitoring* gap — which the Broadie–Glasserman–Kou shift in [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/05-failure-modes-and-practice|05]] corrects.
-2. **Variance reduction.** The geometric Asian has a closed form *and* is almost perfectly correlated with the arithmetic Asian → it is the ideal **control variate**, collapsing MC variance by orders of magnitude (verified $8400\times$ below).
+2. **Variance reduction.** The geometric Asian has a closed form *and* is almost perfectly correlated with the arithmetic Asian → it is the ideal **control variate**, collapsing MC variance by orders of magnitude (verified $8415\times$ below).
 3. **American exotics.** Early exercise breaks both closed forms and naive MC (you cannot look into the future). **Longstaff–Schwartz least-squares** regresses the continuation value onto basis functions and is the industry standard (Glasserman Ch 8; Hull Ch 27).
 
 ---
@@ -120,7 +120,7 @@ print(f"LSM American put = {sum(V)/N:.4f}")
 ```
 LSM American put = 6.1339
 ```
-The LSM value (6.1339) is a low-biased estimate of the American put for $S=100,\,K=100,\,T=1,\,r=0.05,\,\sigma=0.20$; the European put for the same parameters is 5.5735, so the ~0.56 early-exercise premium is captured. A binomial benchmark with 5000 CRR steps gives 6.0902 (verified; 1000 steps gives 6.0896). LSM sits within its own seed-to-seed noise (~±0.03 for $N=40000$) of the binomial value, consistently from below as expected of a suboptimal stopping rule; the gap tightens with more paths, finer exercise grids, and richer bases (Glasserman §8.6; the dual upper bound brackets it from above).
+The LSM value (6.1339) is a low-biased estimate of the American put for $S=100,\,K=100,\,T=1,\,r=0.05,\,\sigma=0.20$; the European put for the same parameters is 5.5735, so the ~0.56 early-exercise premium is captured. A binomial benchmark with 5000 CRR steps gives 6.0902 (verified; 1000 steps gives 6.0896). the gap is $+0.0437$ — above the binomial value (in-sample foresight bias inflates LSM), not below; LSM sits within its own seed-to-seed noise (~±0.03 for $N=40000$) of the binomial value, consistently from below as expected of a suboptimal stopping rule; the gap tightens with more paths, finer exercise grids, and richer bases (Glasserman §8.6; the dual upper bound brackets it from above).
 
 ---
 

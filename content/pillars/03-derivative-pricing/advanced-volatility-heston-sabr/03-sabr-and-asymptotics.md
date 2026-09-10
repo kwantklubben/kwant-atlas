@@ -62,7 +62,7 @@ with $z=k/(\sigma_{BS}\sqrt\tau)$ the normalised log-strike. Substituting $z$ an
 
 $$\boxed{\;\frac{\partial I}{\partial k}\Big|_{k=0}\to\frac{\rho\,b(\sigma)}{2\sigma}\;}$$
 
-which **proves** the short-dated skew is a direct read-off of the instantaneous spot/vol covariance and does *not* depend on the drift $a(\sigma)$ or on time. For SABR ($b(\sigma)=\nu\sigma$) this gives $\rho\nu/2$ — the same number as §2.1. For Heston, $\eta\beta(v)=\eta$ gives $\rho\eta/(2\sqrt v)=\rho\eta/(4\sigma_{BS})$, i.e. Bergomi's (6.18b), and the *variance* skew $\partial_k\sigma_{BS}^2|_{k=0}\to\rho\eta/2$ (Gatheral 7.3) — the number verified numerically in §04.
+which **proves** the short-dated skew is a direct read-off of the instantaneous spot/vol covariance and does *not* depend on the drift $a(\sigma)$ or on time. For SABR ($b(\sigma)=\nu\sigma$) this gives $\rho\nu/2$ — the same number as §2.1. For Heston, $\eta\beta(v)=\eta$ gives $\rho\eta/(2\sqrt v)=\rho\eta/(4\sqrt v)$ (i.e. $\rho\eta/(4\sigma_{BS})$ with $v=\sigma_{BS}^2$), i.e. Bergomi's (6.18b), and the *variance* skew $\partial_k\sigma_{BS}^2|_{k=0}\to\rho\eta/2$ (Gatheral 7.3) — the number verified numerically in §04.
 
 Two structural consequences:
 
@@ -73,7 +73,7 @@ Two structural consequences:
 
 With jumps the leading skew correction is additive at $\tau=0$ (Gatheral 7.3, corollaries):
 
-$$\frac{\partial v_{BS}}{\partial k}\Big|_{k=0}\to\rho\,b(\sigma)-2\mu_J,\qquad \mu_J=\lambda_J\mathbb E[J-1],$$
+$$\frac{\partial v_{BS}}{\partial k}\Big|_{k=0}\to\rho\,b(\sigma)-2\mu_J,\qquad \mu_J=\lambda_J\mathbb E[J]=\lambda_J\!\int_{-1}^{\infty}\!x f(x)\,dx\ \text{(Gatheral 7.8)},$$
 
 so the **jump compensator $-2\mu_J$ and the SV term $\rho b(\sigma)$ contribute exactly additively** to the short-dated ATM variance skew. This is the quantitative basis for "fit Heston to the long end, then add jumps for the short end" (Gatheral ch 5).
 

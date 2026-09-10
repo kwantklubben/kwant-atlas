@@ -37,7 +37,7 @@ This folder is the hub: it gives the fast **scheme and error lookup** below and 
 | Finite differences | BSM PDE on $(S,t)$ grid | $h$ (space), $k$ (time) | explicit/implicit $O(k)+O(h^2)$; CN $O(k^2)+O(h^2)$ | explicit: CFL bound on $k$ |
 | Monte Carlo | $\mathbb{Q}$-expectation over paths | paths $n$ | $O(n^{-1/2})$, **dimension-free** | none; but $n$ must be large |
 
-**Lookup 2 — the finite-difference schemes** (Duffy eqs. 6.17–6.19). Writing the one-factor parabolic operator as $\mathcal{L}u$ and $\theta$ as the weight on the **new** time level,
+**Lookup 2 — the finite-difference schemes** (Duffy eqs. 6.17–6.19). Writing the one-factor parabolic operator as $\mathcal{L}u$ and $\theta$ as the weight on the **old** time level (the new level carries $1-\theta$),
 
 $$\frac{U^{n+1}-U^n}{k} \;=\; (1-\theta)\,\mathcal{L}U^{n+1} + \theta\,\mathcal{L}U^{n}, \qquad \theta\in[0,1].$$
 
@@ -59,7 +59,7 @@ The **triangle** that governs everything (Definitions 8.1/8.3/8.4 + Theorem 8.1)
 
 **Lookup 3 — the Monte Carlo estimator** (Glasserman eqs. 1.1–1.8, 1.39, 3.20).
 
-$$\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i),\qquad \hat\alpha_n-\alpha\approx\mathcal N\!\left(0,\frac{\sigma_f}{\sqrt n}\right),\qquad
+$$\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i),\qquad \hat\alpha_n-\alpha\approx\mathcal N\!\left(0,\frac{\sigma_f^2}{n}\right),\qquad
 V(0)=e^{-rT}\,\mathbb{E}^{\mathbb{Q}}[h(S_T)].$$
 
 Error **$O(n^{-1/2})$ in every dimension** — versus the trapezoidal rule's $O(n^{-2})$ in one dimension and $O(n^{-2/d})$ in $d$, which is the entire reason Monte Carlo exists for exotics. Halving the error costs $4\times$ the paths; one extra decimal costs $100\times$.

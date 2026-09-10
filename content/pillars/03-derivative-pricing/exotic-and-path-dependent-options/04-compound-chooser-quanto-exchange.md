@@ -21,7 +21,7 @@ These exotics extend BSM along two new axes:
 - **Time** — **compound** (option on an option) and **chooser** (call-or-put later) add a *decision date* $t_1$ before the underlying's expiry.
 - **A second asset / currency** — **exchange (Margrabe)**, **spread (Kirk)**, **quanto** and **foreign-equity** options trade one asset against another or translate across currencies.
 
-The practical objective: the **bivariate normal CDF $M(a,b;\rho)$** is the new mathematical primitive (chooser/compound are four-term combinations; two-asset options carry the correlation $\rho$ explicitly). Every closed form here is "BSM in one or two dimensions, with a critical price level $I$ (or a correlation-adjusted volatility) solved for." Verified anchors: compound put-on-call $=21.1964$, simple chooser $=6.1071$, complex chooser $=6.0507$, Margrabe $=1.5260$, quanto $=5.3280$, foreign-equity $=8.3056$, Kirk spread $=2.1670$.
+The practical objective: the **bivariate normal CDF $M(a,b;\rho)$** is the new mathematical primitive (chooser/compound are four-term combinations; two-asset options carry the correlation $\rho$ explicitly). Every closed form here is "BSM in one or two dimensions, with a critical price level $I$ (or a correlation-adjusted volatility) solved for." Verified anchors: compound put-on-call $=21.1964$, simple chooser $=6.1071$, complex chooser $=6.0507$, Margrabe $=1.5260$, quanto $=5.3280$, foreign-equity $=8.3056$, Kirk spread $=2.1670$, complex chooser $I=51.1158,\ w=6.0508$ (Haug 4.27).
 
 ---
 
@@ -152,7 +152,7 @@ Kirk spread call = 2.1670  (Haug 2.1670)
 
 1. **Correlation is the hidden input.** Margrabe, quanto and spread all carry $\rho$; the closed forms *look* like BSM but the effective volatility is correlation-dependent ($\sigma_1^2+\sigma_2^2-2\rho\sigma_1\sigma_2$). A wrong $\rho$ misprices the whole contract — and correlations are notoriously unstable (see [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]).
 2. **Quanto adjustment sign.** The drift shift is $-\rho\sigma_S\sigma_E$ in the quanto (domestic payoff at fixed FX); confuse it with the foreign-equity case ($+\rho$ in the combined vol) and you flip the sign of the entire covariance correction.
-3. **Critical-level root finding.** Compound and complex choosers need $I$ solved from a BSM equality; a sloppy root finder (or using the wrong side of the equation) invalidates every bivariate term. The $I$ here is verified ($538.3165$, $51.1156$) — but re-solve it, don't hardcode.
+3. **Critical-level root finding.** Compound and complex choosers need $I$ solved from a BSM equality; a sloppy root finder (or using the wrong side of the equation) invalidates every bivariate term. The $I$ here is verified ($538.3165$, $51.1158$) — but re-solve it, don't hardcode.
 4. **$M(a,b;\rho)$ is the real cost.** These closed forms hide a bivariate-normal evaluation; a naive/incorrect bivariate routine silently corrupts all four terms. Use the integral form or Genz, and validate against a known anchor before production.
 
 ---

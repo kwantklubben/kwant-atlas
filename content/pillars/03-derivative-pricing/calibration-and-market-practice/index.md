@@ -37,7 +37,7 @@ The three disagree. In **01 · From Zero** a single-parameter fit shows the pric
 **Regularization.** Non-uniqueness and instability force a penalty. A ridge term $+\\lambda\\lVert \\theta-\\theta_0\\rVert^2$ (or $+\\lambda\\lVert\\theta\\rVert^2$) keeps parameters near a prior and stabilizes the inverse problem (see **02 · The Calibration Problem**, **04 · Stochastic Vol**). It is the price you pay for trading off fit (bias) against stability (variance) — the standard bias–variance decomposition.
 
 **Why calibration is hard — the three structural obstacles:**
-1. **Non-identifiability** — different parameters give the *same* smile (SABR's $\\beta$/$\\rho$ ridge; the $\\kappa$/$\\xi$ collinearity of Heston). The smile pins the *combination*, not the parameters.
+1. **Non-identifiability** — different parameters give the *same* smile (SABR's $\\beta$/$\\rho$ ridge; the $\\kappa$/$\\eta$ collinearity of Heston). The smile pins the *combination*, not the parameters.
 2. **Ill-posedness** — the local-vol inversion (Dupire/Gatheral) differentiates noisy data, so tiny bid/ask noise explodes into huge local-vol spikes (**03 · Local Vol**, **05 · Failure Modes**).
 3. **Overfitting** — a rich parametric surface fits today's quotes perfectly and is useless tomorrow (or even mid-curve).
 

@@ -107,7 +107,7 @@ The degree-6 polynomial cuts the in-sample RMSE by $5\\times$ (0.0082 → 0.0017
 
 1. **Overfitting the smile.** A parameterization with enough knobs can drive today's residuals to zero while being worthless (or dangerous) elsewhere — the degree-6 extrapolation above is the pathology. The market does not quote far wings densely, so those are where overfit surfaces misbehave most.
 2. **Objective mismatch.** Fitting price-RMSE instead of vol-RMSE silently biases the fit toward ATM and away from the wings; relative-price error blows up on cheap OTM options. State the objective explicitly (see [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]] table).
-3. **Ill-conditioned normal equations.** With collinear parameters the Gram matrix $X^\\top X$ is near-singular; tiny quote noise swings the solution hugely. Ridge ($+\\lambda I$) is the first-principles fix (used directly in **04 · Stochastic Vol** for the $\\kappa/\\xi$ ridge).
+3. **Ill-conditioned normal equations.** With collinear parameters the Gram matrix $X^\\top X$ is near-singular; tiny quote noise swings the solution hugely. Ridge ($+\\lambda I$) is the first-principles fix (used directly in **04 · Stochastic Vol** for the $\\kappa/\\eta$ ridge).
 4. **Forgetting that a fit is static.** A parameter set that fits today is not a model of tomorrow. The bias–variance knob you set now determines how much the calibration drifts when the market moves — see [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]].
 
 ---

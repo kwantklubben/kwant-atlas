@@ -57,7 +57,7 @@ $$\boxed{\ \min\!\Big(V(t_i,S_j)-\text{intrinsic}(S_j),\ \ \mathcal LV(t_i,S_j)\
 
 or equivalently the complementarity system
 
-$$V\ge g,\qquad \mathcal LV\le 0,\qquad (V-g)\cdot(\mathcal LV)=0.$$
+$$V\ge g,\qquad \mathcal LV\ge 0,\qquad (V-g)\cdot(\mathcal LV)=0.$$
 
 Discretise $\mathcal L$ (implicit Euler / Crank–Nicolson) and you get, at each time step, an algebraically messy linear system $AV\ge b$, $V\ge g$, with complementarity $(V-g)^{\!\top}(AV-b)=0$ — solved by **PSOR** (projected SOR) or by a **penalty method** (Duffy Ch 27–29). This is precisely the "1-factor American" row of the numerical-methods scheme table — the implementation detail lives in [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|Numerical Methods · FDM]]; this page owns the *formulation*.
 

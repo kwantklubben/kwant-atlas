@@ -265,6 +265,7 @@ u = adi_2d(20, 20, 60, step=True)
 print(f"    P-R ADI nx=20 nt=60 (same coarse steps): centre={u:.6f}   (unconditionally stable)")
 ```
 ```
+
 2-D heat, u0 = sin(pi x) sin(pi y), t = 0.1 (exact centre value = 0.138911):
   ADI  nx= 20 nt=  40: 0.139462
   ADI  nx= 40 nt= 160: 0.139051
@@ -342,6 +343,7 @@ print(f"  plain Halton  (      {NPTS}): value = {plain_halton:.4f}   error = {pl
 print(f"  variance reduction from QMC = {(rmse(mc_vals)/rmse(qmc_vals))**2:.1f}x")
 ```
 ```
+
 8-D geometric Asian, exact closed form = 6.1377
   plain MC      (15 x 2000): mean = 6.1762   RMSE = 0.1692
   shifted Halton(15 x 2000): mean = 6.1416   RMSE = 0.0302
@@ -349,7 +351,7 @@ print(f"  variance reduction from QMC = {(rmse(mc_vals)/rmse(qmc_vals))**2:.1f}x
   variance reduction from QMC = 31.4x
 ```
 
-At 2,000 points in 8 dimensions, low-discrepancy points cut the RMSE from $0.1692$ to $0.0302$ — a $31.4\times$ variance reduction, three times more than the antithetic device of page 04 achieved at forty times the path count. Note also the honest counter-example in the same output: the *unrandomised* Halton value $6.0202$ is off by $-0.1174$, about four times the randomised RMSE. That is the **plateau / false-convergence** trap of Glasserman §5.5 — never use unrandomised QMC without skipping a burn-in and checking stability across $n$.
+At 2,000 points in 8 dimensions, low-discrepancy points cut the RMSE from $0.1692$ to $0.0302$ — a $31.4\times$ variance reduction, roughly seven times the antithetic device of page 04 ($31.4/4.41$) and obtained at about a twentieth of the path count. Note also the honest counter-example in the same output: the *unrandomised* Halton value $6.0202$ is off by $-0.1174$, about four times the randomised RMSE. That is the **plateau / false-convergence** trap of Glasserman §5.5 — never use unrandomised QMC without skipping a burn-in and checking stability across $n$.
 
 ---
 

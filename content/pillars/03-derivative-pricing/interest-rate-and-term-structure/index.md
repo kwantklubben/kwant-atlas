@@ -42,11 +42,11 @@ This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: 
 | **CIR** $dr=a(b-r)dt+\sigma\sqrt r\,dW$ | $P=Ae^{-Br}$, $h=\sqrt{a^2+2\sigma^2}$, $B=\frac{2(e^{h\tau}-1)}{(h+a)(e^{h\tau}-1)+2h}$ | $a{=}.2,b{=}.05,\sigma{=}.05,r{=}.04: P(0,5)=0.804696$ |
 | **Hull–White** $dr=[\theta(t)-ar]dt+\sigma dW$ | $\theta(t)=\partial_T f^{M}(0,t)+a f^{M}(0,t)+\frac{\sigma^2}{2a}(1-e^{-2at})$ | flat 4%: $\theta(0)=.0040,\ \theta(5)=.0047$ |
 | HJM drift (Q) | $\alpha(t,T)=\sigma(t,T)\int_t^T\sigma(t,s)ds$ | $\sigma$ free, $\alpha$ fixed |
-| Caplet = Black | $Cpl=P(0,T_i)\tau[F N(d_1)-K N(d_2)]$, $d_1=\frac{\ln(F/K)+\frac12 v^2 T}{v\sqrt T}$ | $F{=}K{=}4\%,\ v{=}.2,\ T{=}1,\ \tau{=}.5: 0.001637$ |
+| Caplet = Black | $Cpl=P(0,T_i)\tau[F N(d_1)-K N(d_2)]$, $d_1=\frac{\ln(F/K)+\frac12 v^2 T}{v\sqrt T}$ | $F{=}4.0403\%,\ K{=}4\%,\ v{=}.2,\ T{=}1,\ \tau{=}.5: 0.001637$ |
 | Black swaption | $PS=C_{\alpha,\beta}(0)[R(0)N(d_1)-K N(d_2)]$ | 5y-into-5y ATM $v{=}.15$: 0.023902 |
 | Swap rate | $R_{\alpha,\beta}(t)=\frac{P(t,T_\alpha)-P(t,T_\beta)}{C_{\alpha,\beta}(t)}$, $C_{\alpha,\beta}(t)=\sum\tau_i P(t,T_i)$ | flat 4% 5y semi: 4.0403% |
 
-> **Critical numeraire facts (BM Ch2; Björk Ch26; Shreve Ch33).** A numeraire is any strictly positive asset; *price/numeraire is a martingale* under that numeraire's measure, and the risk-neutral price is invariant under change of numeraire. The forward measure $\mathbb{Q}^{T}$ (numeraire $P(t,T)$) makes $L(t;T,S)$ and $f(t,T)$ martingales; the swap (annuity) measure $\mathbb{Q}^{\alpha,\beta}$ makes $R_{\alpha,\beta}$ a martingale. **Forward price $=\mathbb{E}^{\mathbb{Q}^T}[Y]$; futures price $=\mathbb{E}^{\mathbb{Q}}[Y]$; they coincide iff $r$ is deterministic** (Björk Ch29 correction).
+> **Critical numeraire facts (BM Ch2; Björk Ch26; Shreve Ch33).** A numeraire is any strictly positive asset; *price/numeraire is a martingale* under that numeraire's measure, and the risk-neutral price is invariant under change of numeraire. The forward measure $\mathbb{Q}^{T}$ (numeraire $P(t,T)$) makes the instantaneous forward $f(t,T)$ a martingale, while the forward **LIBOR** $L(t;T,S)$ is a martingale under $\mathbb{Q}^{S}$ (numeraire $P(t,S)$) — the two maturity indices differ (Björk Lem. 26.10; BM Prop 2.5.1). The swap (annuity) measure $\mathbb{Q}^{\alpha,\beta}$ makes $R_{\alpha,\beta}$ a martingale. **Forward price $=\mathbb{E}^{\mathbb{Q}^T}[Y]$; futures price $=\mathbb{E}^{\mathbb{Q}}[Y]$; they coincide iff $r$ is deterministic** (Björk Ch29 correction).
 
 ---
 

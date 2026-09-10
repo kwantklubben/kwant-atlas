@@ -34,7 +34,7 @@ The three failures, in one line each:
 
 **The two error terms, made precise.**
 
-*Approximation error.* BAW and BS-1993 replace the true boundary by an analytic surrogate; their error is $O(\cdot)$ small for short maturity and grows with $T$ (the surrogate boundary drifts from the true curve as $T$ increases).
+*Approximation error.* BAW and BS-1993 replace the true boundary by an analytic surrogate; their error is small for short maturity (numerically $O(10^{-3})$ on the verified cases) and grows with $T$ (the surrogate boundary drifts from the true curve as $T$ increases).
 
 *Discretisation error of exercise.* Replacing continuous exercise by $m$ dates removes value. Writing $V_m$ for the Bermudan value with $m$ exercise dates, $V_m\uparrow V^{\text{Am}}$ as $m\to\infty$ (Björk §21.4, the discrete Snell envelope converges to the continuous one). The gap is a *lower bound on what a real contract loses*.
 

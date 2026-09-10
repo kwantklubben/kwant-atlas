@@ -21,7 +21,7 @@ $$dS_t=\mu_tS_t\,dt+\sigma_L(S_t,t)S_t\,dW_t$$
 that reproduces *exactly* those prices. So the surface is not just a quote convention: it uniquely determines a one-factor diffusion (Gatheral §1; Bergomi ch 2). Two complementary constructions of the same object:
 
 - **The local vol from the surface** (Dupire's formula): a closed-form expression built from derivatives of call prices.
-- **The surface from the local vol** (gyöngy/averaging): the BS implied variance is a *gamma-weighted average* of local variance along the paths.
+- **The surface from the local vol** (Gyöngy's theorem / averaging): the BS implied variance is a *gamma-weighted average* of local variance along the paths.
 
 The practical objective: understand that local volatility is a **one-factor, complete, exactly-calibratable** model — the simplest honest way to make a diffusion match the smile — and that its fatal flaw is not the fit but the **dynamics** (next pages).
 
@@ -122,7 +122,7 @@ The two constructions agree to six decimals at every strike — the numerical pr
 1. **Local vol is an "effective theory", not instantaneous variance.** $\sigma_L^2(K,T)=\mathbb{E}[v_T|S_T=K]$ is a *conditional average*; Dumas–Fleming–Whaley showed constant local vols are inconsistent with observed surface dynamics. The function has "no physical significance" (Bergomi ch 2) — it is a by-product of a Markov representation in $(t,S)$, meant to be **recalibrated daily**.
 2. **Differentiation amplifies noise.** Both Dupire forms take second derivatives of a surface you only observe sparsely; finite differences of raw market prices explode. Work in $w(y,T)$ with a smooth arbitrage-free interpolant (SVI, §03), not on raw quotes.
 3. **Butterfly/calendar violations produce negative local variance.** $\partial_K^2C<0$ (butterfly) or $\partial_Tw<0$ (calendar) make $\sigma_L^2$ negative or undefined — the formula is telling you the surface is impossible, not that the math failed.
-4. **One-factor completeness is a straightjacket.** Local vol makes all implied vols perfectly correlated with the spot and with each other; the whole future surface is dictated by today's smile. Fitting today's prices perfectly says *nothing* about path-dependent exotics — that is the failure mode quantified in [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/04-advanced-dynamics|04 · Advanced Dynamics]] and [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes]].
+4. **One-factor completeness is a straitjacket.** Local vol makes all implied vols perfectly correlated with the spot and with each other; the whole future surface is dictated by today's smile. Fitting today's prices perfectly says *nothing* about path-dependent exotics — that is the failure mode quantified in [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/04-advanced-dynamics|04 · Advanced Dynamics]] and [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes]].
 
 ---
 

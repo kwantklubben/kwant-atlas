@@ -58,7 +58,7 @@ The reason this is a *separate topic* and not a preface is that the four instrum
 | **Parity, generalized** (Haug 1.18) | $c-p=Se^{(b-r)T}-Xe^{-rT}$ | $b{=}r\Rightarrow c-p=S-Xe^{-rT}=0.12091$ |
 | **Lower bounds** (Hull 11.4/11.5) | $c\ge\max(S_0-Xe^{-rT},0),\quad p\ge\max(Xe^{-rT}-S_0,0)$ | $c\ge0.12091,\;p\ge0.00000$ |
 | **Upper bounds** (Hull 11.1–11.3) | $c\le S_0,\qquad p\le Xe^{-rT}$ | $c\le100,\;p\le99.8791$ |
-| **American call ≡ European call** (no dividends) (Hull 11.5; Shreve §7) | $C=c$ | Shreve tree: European put $0.9600$ vs American $1.3600$ |
+| **American call ≡ European call** (no dividends) (Hull 11.5; Shreve §7) | $C=c$ | — *(put counter-example: Shreve tree European put $0.9600$ vs American $1.3600$)* |
 | **American parity bounds** (Hull 11.7) | $S_0-K\le C-P\le S_0-Xe^{-rT}$ | — |
 | **Futures-option parity** (Hull 18.1) | $c+Xe^{-rT}=p+Fe^{-rT}$ | Black-76 parity at $b=0$ |
 | **Black-76 (futures) call** (Haug 1.5) | $e^{-rT}[FN(d_1)-XN(d_2)]$ | $F{=}X{=}19,\,r{=}.10,\,\sigma{=}.28\Rightarrow c=1.70105$ (Haug) |

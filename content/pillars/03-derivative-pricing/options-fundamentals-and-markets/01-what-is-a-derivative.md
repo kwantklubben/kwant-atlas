@@ -21,7 +21,7 @@ Start from the dumbest possible question. A stock has a price because it is a cl
 **The three shapes, in words:**
 
 1. **Forward / futures — a *symmetric* promise.** Both sides are obliged to trade at $K$. Long receives $S_T-K$, short receives $K-S_T$. One wins exactly what the other loses. It costs nothing to enter, because an at-market forward has zero expected value *and* zero initial cash flow.
-2. **Option — an *asymmetric* right.** The buyer *may* trade at $K$; the seller *must* if asked. Because the buyer's downside is truncated at (premium), and the seller bears the tail, the buyer pays an **up-front premium**. This asymmetry is the entire reason option pricing is hard and forward pricing is easy.
+2. **Option — an *asymmetric* right.** The buyer *may* trade at $K$; the seller *must* if asked. Because the buyer's downside is truncated at the premium paid, and the seller bears the tail, the buyer pays an **up-front premium**. This asymmetry is the entire reason option pricing is hard and forward pricing is easy.
 3. **Swap — a *strip* of forwards.** Two parties exchange a fixed cash flow for a floating one, period after period. Nothing new is needed to value it; it is just many forwards glued together.
 
 > **The one-sentence essence.** "A derivative is a contract; its price is the cost of the cheapest portfolio of traded assets that pays exactly the same thing — and because that cost does not depend on anyone's forecast, the derivative trades at it."
