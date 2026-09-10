@@ -2,9 +2,11 @@
 title: "Pillar 4: Quantitative Risk Management"
 tags:
   - pillar-quant-risk
+  - quantitative-risk-management
   - risk-management
   - var
   - tail-risk
+  - index-hub
 ---
 
 # Quantitative Risk Management
@@ -13,16 +15,34 @@ tags:
 
 Quantitative Risk Management is the science of measuring, bounding, and mitigating financial exposure across market, credit, liquidity, and operational domains. Far from a passive compliance exercise, risk modeling provides the boundary conditions that dictate how much leverage a fund can deploy, whether a trading desk can survive a liquidity spiral, and how to allocate risk budgets across competing alpha strategies.
 
+This pillar is organised into **eleven topic folders**, each a self-contained hub with six sub-pages. Follow them in the order below — each assumes the vocabulary of the ones before it.
+
 ---
 
 ### Core Risk Topics
 
-1. **[[pillars/04-quantitative-risk/var-and-expected-shortfall|Value at Risk & Expected Shortfall (CVaR)]]**: Coherent risk measure axioms, the subadditivity flaw of VaR, and Cornish-Fisher non-normal expansions.
-2. **[[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical, & Monte Carlo VaR]]**: Variance-covariance methods, filtered historical simulation (FHS), full-revaluation Monte Carlo, and Kupiec backtest batteries.
-3. **[[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]]**: Breakdown of normality, Peaks-Over-Threshold (POT), Generalized Pareto Distributions (GPD), and the Hill tail index.
-4. **[[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Reverse Stress Testing]]**: Historical crisis replay (1987, 1998, 2008, 2020), macroeconomic factor shocks, and capital exhaustion scenarios.
-5. **[[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model]]**: Equity as a call option on firm assets, distance-to-default, credit default swaps (CDS), and reduced-form default intensity.
-6. **[[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals]]**: Bid-ask spread hair-cuts, market depth exhaustion, and the Brunnermeier-Pedersen funding liquidity spiral.
+1. **[[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall (CVaR)]]**: Coherent risk measure axioms, the subadditivity flaw of VaR, Cornish-Fisher non-normal expansions, and why ES prices what sits behind the tail door.
+2. **[[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]**: Variance-covariance methods, filtered historical simulation (FHS), full-revaluation Monte Carlo, and the Kupiec/Christoffersen backtest batteries.
+3. **[[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]]**: Breakdown of normality, stylized facts of fat tails, Peaks-Over-Threshold (POT), Generalized Pareto Distributions (GPD), and the Hill tail index.
+4. **[[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Structural Model]]**: Equity as a call option on firm assets, distance-to-default and PD, reduced-form default intensity, and CDS pricing.
+5. **[[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]**: Historical crisis replay (1987, 1998, 2008, 2020), macroeconomic factor shocks, scenario construction, and reverse stress testing to capital exhaustion.
+6. **[[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]]**: Market vs funding liquidity, liquidation cost and liquidity-adjusted VaR (L-VaR), margin calls, and the Brunnermeier-Pedersen funding spiral.
+7. **[[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Counterparty Risk & xVA]]**: EE/EPE/PFE exposure, CVA/DVA, collateral, netting and SA-CCR, and the funding/capital extensions (FVA, MVA, KVA).
+8. **[[pillars/04-quantitative-risk/model-risk-and-validation/index|Model Risk & Validation]]**: Sources of model risk, effective challenge, validation and backtesting statistics, model-risk governance, and uncertainty quantification (BMA, KL, robust bounds).
+9. **[[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation]]**: Capital and RWA arithmetic, the three-pillar architecture, the market-risk FRTB regime (SA vs IMA), credit/operational capital, and the liquidity, leverage and output-floor backstops.
+10. **[[pillars/04-quantitative-risk/operational-risk/index|Operational Risk]]**: Loss-event taxonomy, frequency-severity modelling, the aggregate-loss / Loss Distribution Approach (LDA), and Basel operational-risk capital (AMA, SMA).
+11. **[[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Risk-Factor Sensitivities]]**: The map from positions to P&L — delta, gamma, vega, rho, DV01 and key-rate duration, factor exposures, and delta-normal vs delta-gamma VaR.
+
+---
+
+### Reading Path (Zero to Risk-Governed)
+
+A guided route through the eleven folders, in four stages.
+
+- **Start (from nothing → first risk numbers):** [[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Risk-Factor Sensitivities]] → [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] → [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]. Begin with the sensitivity vector — the atomic vocabulary of risk (how value moves when a factor moves) — then the two canonical risk measures and the three methods that compute them. With these three you can produce and backtest a defensible VaR/ES number.
+- **Core tail & crisis machinery:** [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] → [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]. Here the distributional assumption breaks: EVT prices the extreme quantiles a normal model erases, and stress testing answers "what breaks the firm" when the tail probability is unknowable from any distribution.
+- **Credit & counterparty layer:** [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]] → [[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Counterparty Risk & xVA]] → [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]]. The move from market risk to default risk: Merton's structural model gives PD and distance-to-default, xVA prices that credit risk into a bilateral derivative, and liquidity is the third cost that rises exactly when you need it.
+- **Governance & regulation layer:** [[pillars/04-quantitative-risk/model-risk-and-validation/index|Model Risk & Validation]] → [[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation]] → [[pillars/04-quantitative-risk/operational-risk/index|Operational Risk]]. The institutional capstone: what to do when the model is wrong, how regulators convert risk into a capital ratio (RWA, FRTB, buffers), and the residual bucket — the losses from people, processes and systems that no traded factor explains.
 
 ---
 
@@ -44,3 +64,16 @@ graph TD
     classDef risk fill:#1E2530,stroke:#C2EB2B,stroke-width:2px,color:#FFFFFF;
     class P,M,V,S,L,A,OK,D risk;
 ```
+
+---
+
+### Original Notes
+
+The legacy flat overview notes for a subset of these topics, retained from before the folder-per-topic reorganisation. They remain the same subject matter written as a single page; the topic-folder hubs above supersede them as the structured study route.
+
+- [[pillars/04-quantitative-risk/var-and-expected-shortfall|Value at Risk & Expected Shortfall (original note)]]
+- [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical & Monte Carlo VaR (original note)]]
+- [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails (original note)]]
+- [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model (original note)]]
+- [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Reverse Stress Testing (original note)]]
+- [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals (original note)]]
