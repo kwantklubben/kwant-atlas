@@ -116,7 +116,7 @@ print(f"  survivorship bias                = {(survivor_mean-all_firm_mean)*100:
   survivorship bias                = +2.95% / yr
 ```
 
-Read both. **Backfill** lifts the measured IC from $+0.4509$ to $+0.6069$ — a $+0.1561$ inflation — and the gap is more than **50% larger in the old half** ($+0.2313$ vs $+0.1561$ overall), exactly where a long backtest finds its "evidence." **Survivorship** adds **+2.95%/yr** of phantom return: the true universe earned $+6.43\%$ but today's survivors earned $+9.38\%$, so a backtest on the survivor universe manufactures almost half again the true return out of nothing. Both biases are pure bookkeeping errors — and both flatter the strategy at precisely the moments you would have gotten killed live.
+Read both. **Backfill** lifts the measured IC from $+0.4509$ to $+0.6069$ — a $+0.1561$ inflation — and the gap is nearly **50% larger in the old half** ($+0.2313$ vs $+0.1561$ overall), exactly where a long backtest finds its "evidence." **Survivorship** adds **+2.95%/yr** of phantom return: the true universe earned $+6.43\%$ but today's survivors earned $+9.38\%$, so a backtest on the survivor universe manufactures almost half again the true return out of nothing. Both biases are pure bookkeeping errors — and both flatter the strategy at precisely the moments you would have gotten killed live.
 
 ---
 

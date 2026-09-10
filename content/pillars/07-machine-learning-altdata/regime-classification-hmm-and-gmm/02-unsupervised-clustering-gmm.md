@@ -103,7 +103,7 @@ last-20 iters change = 0.00e+00
 recovered low-vol vol=0.00794 vs true 0.00800; high-vol vol=0.02686 vs true 0.02800
 ```
 
-The EM run recovers both regime volatilities to within $1.5\%$ of the truth ($0.00794$ vs $0.008$, $0.02686$ vs $0.028$) and the weights ($0.780$ calm / $0.220$ stress) match the simulated regime occupancy — the mixture has *learned the two regimes from unlabeled returns*. The log-likelihood climbs $1740.73\to2968.43$ monotonically and flatlines (last-20 change $0$) at convergence — the EM guarantee, verified in numbers. **The responsibilities $\gamma_t(k)$ are your soft regime labels**, ready to feed a regime-conditional model ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/06-advanced-extensions|06]]).
+The EM run recovers both regime volatilities to within a few percent of the truth ($0.00794$ vs $0.008$ — 0.75\% low; $0.02686$ vs $0.028$ — 4.1\% high) and the weights ($0.780$ calm / $0.220$ stress) match the simulated regime occupancy — the mixture has *learned the two regimes from unlabeled returns*. The log-likelihood climbs $1740.73\to2968.43$ monotonically and flatlines (last-20 change $0$) at convergence — the EM guarantee, verified in numbers. **The responsibilities $\gamma_t(k)$ are your soft regime labels**, ready to feed a regime-conditional model ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/06-advanced-extensions|06]]).
 
 ---
 

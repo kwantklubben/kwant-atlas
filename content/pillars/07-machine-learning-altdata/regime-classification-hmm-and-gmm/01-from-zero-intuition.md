@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Start with the dumbest question: *why is "the regime" not just in the data?* Because the same return number can come from two very different worlds — a $+0.5\%$ day is routine in a calm bull, but almost impossible to distinguish from the noise of a panic where volatility is $3\times$ higher. The regime is **not observed**: you only see the noisy return (or a vector of features), and you must *infer* which world produced it.
+Start with the dumbest question: *why is "the regime" not just in the data?* Because the same return number can come from two very different worlds — a $+0.5\%$ day is routine in a calm bull, but almost impossible to distinguish from the noise of a panic where volatility is $3.5\times$ higher. The regime is **not observed**: you only see the noisy return (or a vector of features), and you must *infer* which world produced it.
 
 That inference is a classification problem, and there are exactly two ways to set it up:
 

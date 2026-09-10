@@ -38,7 +38,7 @@ All numbers in the check column were **re-executed and reproduced exactly** from
 | Cost-complexity prune (ESL 9.16) | $C_\alpha(T)=\sum_m N_m Q_m(T)+\alpha\lvert T\rvert$ | — |
 | Bagging (ESL 8.51–8.52) | $\hat f_{\text{bag}}(x)=\tfrac1B\sum_{b=1}^B \hat f^{*b}(x)$ | single-tree MSE $1.5539\to$ bagged $1.0888$ |
 | RF variance (ESL 15.1) | $\mathrm{Var}_{\text{avg}}=\rho\sigma^2+\dfrac{1-\rho}{B}\sigma^2$ | 8-feature panel: $B{=}100,\ \rho{=}0.657$ |
-| Boosting stagewise form (ESL 10.28) | $F_M(x)=\sum_{m=1}^M \nu\,h_m(x),\quad h_m \text{ fits } r_{im}=-\big[\partial L/\partial F\big]_{F_{m-1}}$ | 400 stumps: single $0.9888\to0.6733$ |
+| Boosting stagewise form (ESL 10.28) | $F_M(x)=\sum_{m=1}^M \nu\,h_m(x),\quad h_m \text{ fits } r_{im}=-\big[\partial L/\partial F\big]_{F_{m-1}}$ | 400 depth-2 trees: single $0.9888\to0.6733$ |
 | AdaBoost weight (ESL 10.1) | $G(x)=\operatorname{sign}\!\big(\sum_m\alpha_mG_m(x)\big),\ \alpha_m=\log\frac{1-\mathrm{err}_m}{\mathrm{err}_m}$ | — |
 | XGBoost 2nd-order objective | $\mathcal L^{(t)}\!\approx\!\sum_i\big[g_if_t(x_i)+\tfrac12 h_if_t^2(x_i)\big]+\Omega(f_t),\ \Omega=\gamma\lvert T\rvert+\tfrac12\lambda\sum_jw_j^2$ | — |
 | XGBoost optimal leaf weight | $w_j^{*}=-\,\dfrac{G_j}{H_j+\lambda}$ | — |

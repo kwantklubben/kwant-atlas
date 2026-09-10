@@ -20,7 +20,7 @@ Start with the dumbest question: *if a dataset predicts returns, why doesn't its
 Three "aha"s:
 
 1. **Primary, not derived.** Alt-data is *primary information* — it has not yet made it into fundamentals, prices, or analyst commentary (AFML §2.2.4). The tankers moved before the earnings; the parking lots emptied before guidance. Derived analytics (a vendor's "sentiment score") are convenient, but they are priced, opaque, and you are not the sole buyer.
-2. **Latency is not a detail — it is the product.** A signal with a 1-week half-life is worthless if you can only trade it after 5 days (61% of it is already gone, and the rest is arbitraged). A signal with a 1-year half-life barely notices a week of delay. The *same* information content is a great dataset or a useless one depending on the clock.
+2. **Latency is not a detail — it is the product.** A signal with a 1-week half-life is badly eroded if you can only trade it after 5 days (39% of it is already gone, and the rest is arbitraged). A signal with a 1-year half-life barely notices a week of delay. The *same* information content is a great dataset or a useless one depending on the clock.
 3. **Decay is measurable, and therefore plannable.** You do not have to guess how fast an edge dies: fit $\text{IC}(t)\approx\text{IC}_0 e^{-\lambda t}$ to overlapping-horizon ICs, read off the half-life $t_{1/2}=\ln 2/\lambda$, and decide whether your pipeline is fast enough to capture it.
 
 ---

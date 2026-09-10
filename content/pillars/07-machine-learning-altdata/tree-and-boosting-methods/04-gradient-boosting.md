@@ -134,14 +134,14 @@ M      nu=0.10 train/test      nu=0.05 train/test
 single depth-2 tree (no boosting) test MSE = 0.9888
 ```
 
-Three lessons in one table. **(i) Boosting builds a strong learner from weak ones:** a single depth-2 tree scores $0.9888$ test MSE; 400 boosted stumps-of-depth-2 reach $0.6733$ — a 32% improvement from the *same* base learner, purely by additive correction. **(ii) Shrinkage matters:** at small $M$ the faster rate $\nu=0.10$ wins, but the gap compresses as $M$ grows — the classic "small $\nu$ + many trees" trade-off. **(iii) The train/test gap widens with $M$:** at $M=400,\nu=0.10$ train is $0.3291$ while test is $0.6733$ — boosting is now fitting noise, and $M$ must be chosen by validation (early stopping), not maximised.
+Three lessons in one table. **(i) Boosting builds a strong learner from weak ones:** a single depth-2 tree scores $0.9888$ test MSE; 400 boosted depth-2 trees reach $0.6733$ — a 32% improvement from the *same* base learner, purely by additive correction. **(ii) Shrinkage matters:** at small $M$ the faster rate $\nu=0.10$ wins, but the gap compresses as $M$ grows — the classic "small $\nu$ + many trees" trade-off. **(iii) The train/test gap widens with $M$:** at $M=400,\nu=0.10$ train is $0.3291$ while test is $0.6733$ — boosting is now fitting noise, and $M$ must be chosen by validation (early stopping), not maximised.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Boosting overfits in low SNR — and finance is the extreme case.** Unlike bagging, boosting reduces bias by chasing residuals, which eventually means chasing noise. AFML's verdict: *"in financial applications bagging is generally preferable to boosting"* because overfitting (not underfitting) is the dominant risk. If you boost, regularise aggressively ($\nu\le0.05$, shallow depth, subsample rows/columns, early stopping).
-2. **Depth is an interaction dial.** A depth-$J$ tree captures interactions of order $J-1$ (ESL 10.28); stumps ($J=2$) are purely additive. Too-deep base trees reintroduce variance and defeat the ensemble.
+2. **Depth is an interaction dial.** A tree of $J$ terminal nodes captures interactions of order $J-1$ (ESL §10.11); stumps ($J=2$ terminal nodes, depth 1) are purely additive. Too-deep base trees reintroduce variance and defeat the ensemble.
 3. **Learning rate is not a free lunch.** Small $\nu$ needs large $M$ and compute; large $\nu$ overfits. There is no escaping a validated search ([[pillars/07-machine-learning-altdata/tree-and-boosting-methods/05-failure-modes-and-practice|05 · Failure Modes]]).
 4. **Subsampling is a variance reducer you should always use.** Stochastic gradient boosting (ESL 10.12.2) draws a random row/column fraction per iteration; it decorrelates trees exactly as RF feature-subsetting does.
 5. **Target leakage via categoricals.** Naive target encoding leaks the label; CatBoost's ordered boosting exists to fix precisely this — a real trap when factors have many categories.

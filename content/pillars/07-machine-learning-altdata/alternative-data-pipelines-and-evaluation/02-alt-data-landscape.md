@@ -108,7 +108,7 @@ What IC does a single alpha need for IR = 1.0 at each breadth?
   breadth 252 (daily  ): required IC = 0.0630
 ```
 
-Read the two middle blocks together. With **independent** alphas, ten $IC{=}0.03$ signals combine to $\text{IC}=0.0949$ and $\text{IR}=1.506$ — the $\sqrt{n}$ compounding, real diversification. With **correlated** alphas ($\rho=0.7$), adding signals barely helps: $\text{IR}$ rises from $0.482$ ($n{=}2$) to only $0.564$ ($n{=}25$) — it hits the $\text{IC}/\sqrt{\rho}$ wall. **The marginal value of an alt-data dataset is its correlation to what you already trade, not its standalone IC.**
+Read the two middle blocks together. With **independent** alphas, ten $IC{=}0.03$ signals combine to $\text{IC}=0.0949$ and $\text{IR}=1.506$ — the $\sqrt{n}$ compounding, real diversification. With **correlated** alphas ($\rho=0.7$), adding signals barely helps: $\text{IR}$ rises from $0.517$ ($n{=}2$) to only $0.564$ ($n{=}25$) — it hits the $\text{IC}/\sqrt{\rho}$ wall. **The marginal value of an alt-data dataset is its correlation to what you already trade, not its standalone IC.**
 
 ---
 
