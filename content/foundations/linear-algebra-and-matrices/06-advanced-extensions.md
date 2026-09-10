@@ -129,6 +129,12 @@ Marchenko-Pastur (N=200,T=400,c=0.50): support [0.0858,2.9142]
   WITH 1 planted factor: max eig=126.9064  -> clears the MP edge 2.9142 (signal);
   eig1/total variance = 0.719
 ```
+*(The last digits of $\kappa_2$ and the residual are $\sim$1-ulp `libm`-dependent: the SVD here is a
+from-scratch Jacobi iteration whose rotations call `math.atan2/cos/sin`, and at $\kappa\approx10^7$
+a 1-ulp difference in those amplifies into the printed last digit. The *pattern* — $\kappa$ growing
+$\sim10^{1.8n}$ and the residual tracking it — is the invariant that reproduces everywhere; on your
+own libm you may see e.g. $1.306\times10^7$ / $1.4\times10^{-7}$ for the $n{=}8$ row.)*
+
 Two clean verdicts. **Ill-conditioning is real and silent:** $H_8$ has $\kappa\approx1.3\times10^7$, and even with an *exact* right-hand side the solved vector is off by $\sim10^{-7}$ purely from arithmetic rounding — a direct, measured violation of the perturbation bound's prediction. **RMT works as a signal detector:** a pure-noise $200\times400$ covariance keeps all 200 eigenvalues inside the Marchenko–Pastur band, while a single planted factor pushes one eigenvalue to $127$ — orders of magnitude above the edge $\approx2.9$. Anything inside the band is indistinguishable from noise; anything above it is signal.
 
 ---
