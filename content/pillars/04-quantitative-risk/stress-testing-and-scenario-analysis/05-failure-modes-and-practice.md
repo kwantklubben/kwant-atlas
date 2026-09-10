@@ -16,7 +16,7 @@ tags:
 
 Stress testing is a *tool*, not a truth machine — and it has distinct, first-principles failure modes that were on full display in 2008. This page names them precisely so a practitioner knows *which* part of the output to distrust and *how* the failures show up in money terms. The objective is not cynicism; it is knowing exactly where stress testing is a judgment call so the residual risk is not silently assumed away.
 
-The four failures, in one line each:
+The five failures, in one line each:
 
 1. **Scenario selection bias** — the result is decided by which scenarios you *chose*; two defensible scenario sets reach opposite conclusions, and firms are structurally biased toward milder scenarios (BIS 2009).
 2. **No probability** — a scenario carries no likelihood, so it cannot be ranked, aggregated, or backtested like VaR exceptions; it answers "can this kill us," never "how likely is it."

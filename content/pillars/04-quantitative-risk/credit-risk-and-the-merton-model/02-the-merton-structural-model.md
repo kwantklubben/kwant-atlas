@@ -34,8 +34,8 @@ for the two unknowns $(V_0,\sigma_V)$. Everything downstream — distance to def
 #### 2.1 The equity PDE (Merton 1974, eqs. 10–11)
 
 Let $f(V,t)$ be equity value and $F(V,t)$ the debt value, $V=f+F$. The firm's asset dynamics give, for any claim on the firm's assets under the risk-free measure,
-$$F_t+\tfrac12\sigma_V^2V^2F_{VV}+rVF_V-rF=0 .$$
-Substituting $f=V-F$ and using $F_{VV}=f_{VV}$, $F_V=1-f_V$ (Merton eq. 15), the equity value satisfies the **same BSM PDE**,
+$$\tfrac12\sigma_V^2V^2F_{VV}+rVF_V-rF-F_t=0 .$$
+Substituting $f=V-F$ and using $F_{VV}=-f_{VV}$, $F_V=1-f_V$ (Merton eq. 15), the equity value satisfies the **same BSM PDE**,
 $$\tfrac12\sigma_V^2V^2 f_{VV}+rVf_V-rf-f_t=0,$$
 with terminal condition $f(V,0)=\max(0,V-B)$ and boundary conditions $f(0,t)=0$, $f(V,t)\le V$. This is precisely the BSM PDE for a European call on $V$ struck at $B$ — so the solution is (Merton eq. 12)
 $$\boxed{\,E=f(V,t)=V\,N(d_1)-B e^{-rt}N(d_2)\,},\qquad
@@ -55,7 +55,7 @@ The striking content: *for a given maturity, the credit spread depends on only t
 #### 2.3 Comparative statics (Merton eq. 15)
 
 With $F[V,t,B,\sigma_V^2,r]$ shown in full:
-$$F_V=1-f_V>0,\quad F_B=-f_B>0,\quad F_t=-f_t<0,\quad F_{\sigma_V^2}=-f_{\sigma_V^2}<0,\quad F_r=-t\,F<0 .$$
+$$F_V=1-f_V>0,\quad F_B=-f_B>0,\quad F_t=-f_t<0,\quad F_{\sigma_V^2}=-f_{\sigma_V^2}<0,\quad F_r=-t\,D e^{-rt}N(d_2)<0 .$$
 Translation: debt value rises with firm value and promised payment; **falls with time to maturity, firm volatility, and the riskless rate.** Since equity is a call and the call is homogeneous of degree one and convex in $(V,B)$, default-free debt-plus-equity is concave in $V$ — the origin of the equity skew.
 
 #### 2.4 The two-equation inversion (Hull eqs. 24.3–24.4)

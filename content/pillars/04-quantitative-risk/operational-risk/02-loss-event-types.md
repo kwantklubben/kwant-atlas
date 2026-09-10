@@ -102,7 +102,7 @@ Damage to physical assets              5       170,008     3.7%    2.5%
 TOTAL 135 events, EUR 6,831,350
 ```
 
-The lesson is printed in the last two columns: **execution/delivery supplies 42% of the *frequency* but only 14% of the *value***, while clients-products & external-fraud supply 52% of the *value* from a quarter of the events. Fitting one pooled severity law would smear the tail drivers across the noise — the taxonomy exists to stop you doing that.
+The lesson is printed in the last two columns: **execution/delivery supplies 42% of the *frequency* but only 14% of the *value***, while clients-products & external-fraud supply 65.8% of the *value* (38.9%+26.9%) from about a third of the events (36.3%). Fitting one pooled severity law would smear the tail drivers across the noise — the taxonomy exists to stop you doing that.
 
 ---
 
@@ -118,7 +118,7 @@ The lesson is printed in the last two columns: **execution/delivery supplies 42%
 ### 5. Canonical Literature & Study References
 
 - **BCBS, *Basel II*** (2006), Annex 8 (business-line mapping) and Annex 9 (detailed loss-event classification) — *the taxonomy itself; all event types above transcribed and verified against this source.*
-- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424), §5–§6 — minimum standards for loss-data identification, collection and treatment (10-year window, de-minimis thresholds, data-quality criteria).
+- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424), §5–§6 — minimum standards for loss-data identification, collection and treatment (10-year window, de minimis thresholds, data-quality criteria).
 - **Hull, *Risk Management and Financial Institutions*** (5th ed., 2018), op-risk chapter — readable mapping of event types to real-world cases.
 
 ---

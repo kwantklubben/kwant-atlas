@@ -30,7 +30,7 @@ Three "aha"s:
 
 2. **Everything about a firm's credit quality lives in two unobservable numbers: asset value $V$ and asset volatility $\sigma_V$.** Equity's *price* and *volatility* are observable and are functions of $(V,\sigma_V)$, so in principle we can invert them. That inversion is the whole empirical content — and the whole fragility — of the model.
 
-3. **A credit spread is put premium.** Since $V=E+F$ and $F=\min(V,D)=D-K$ plus a put (put–call parity), a risky bond is a riskless bond *minus a put* on the firm's assets. The bondholders are effectively short a put written to the shareholders. The credit spread is what it costs to be short that put.
+3. **A credit spread is put premium.** Since $V=E+F$ and $F=\min(V,D)=D-\max(D-V,0)$, a risky bond is a riskless bond *minus a put* on the firm's assets (put–call parity). The bondholders are effectively short a put written to the shareholders. The credit spread is what it costs to be short that put.
 
 ---
 

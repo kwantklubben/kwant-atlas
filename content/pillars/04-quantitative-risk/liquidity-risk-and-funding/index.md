@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] and [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
+**Basic Prerequisites:** [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] and [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]. *(these are the folder-level prerequisites; page `01` states its own, smaller, entry requirements. The **[VaR & ES]** prerequisite is needed from page `03` onward, the **[Parametric/Historical/MC VaR]** one only where the pages price a liquidation horizon.)*
 
 ---
 
@@ -31,11 +31,11 @@ This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Quick-Reference Lookup (job #1).** Notation: $V$ position value; $S=(a-b)/m$ relative quoted spread; $\sigma_S$ spread volatility; $z_\alpha=\Phi^{-1}(\alpha)$; $Q$ shares to liquidate; $D$ market depth (shares to move price by 1 currency unit); $N$ equity; $m$ margin/haircut; $\lambda$ price-impact coefficient (Kyle/Foucault).
+**Quick-Reference Lookup (job #1).** Notation: $V$ position value; $S=a-b$ absolute quoted spread, $s=(a-b)/m$ relative spread (Foucault eq. 2.1); $\sigma_s$ spread volatility; $z_\alpha=\Phi^{-1}(\alpha)$; $Q$ shares to liquidate; $D$ market depth (shares to move price by 1 currency unit); $N$ equity; $m$ margin/haircut; $\lambda$ price-impact coefficient (Kyle/Foucault).
 
 | Quantity | Formula | Verified check (§3) |
 |---|---|---|
-| **Relative spread** | $S=\dfrac{a-b}{m},\quad m=\dfrac{a+b}{2}$ | Foucault eq. (2.1) |
+| **Quoted spread** (absolute / relative) | $S=a-b,\quad s=\dfrac{a-b}{m},\quad m=\dfrac{a+b}{2}$ | Foucault eq. (2.1) |
 | **Price impact (linear)** | $\Delta p=\lambda q,\qquad 1/\lambda=D$ = depth | Foucault eq. (2.8); Hasbrouck Ch 7 |
 | **Impact half-move (VWAP)** | $\text{LC}_{\text{impact}}=\dfrac{Q^2}{2D}=\dfrac{\lambda Q^2}{2}$ | $Q{=}10^5,D{=}2{\times}10^5\Rightarrow \$25{,}000$ |
 | **Exogenous spread cost** | $\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right)$ | $V{=}10^7,S{=}20\text{bp}\Rightarrow\$15{,}816$ |

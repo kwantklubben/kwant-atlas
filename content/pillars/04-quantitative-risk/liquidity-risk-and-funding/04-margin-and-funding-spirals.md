@@ -38,7 +38,7 @@ Both terms in $\dfrac{N'}{m'}=\dfrac{N-\text{loss}}{m+\beta\Delta\text{Vol}}$ mo
 $$m=z_\alpha\,\sigma_{\text{MPOR}},\qquad \sigma_{\text{MPOR}}=\sigma\sqrt{\Delta t_{\text{MPOR}}},$$
 so $m$ rises with $\sigma$ and with the *lengthening liquidation delay* $\Delta t_{\text{MPOR}}$ of the collateral — and that delay is exactly *market* illiquidity. **This is the coupling that makes the two liquidities one system:** market illiquidity lengthens MPOR, MPOR raises the haircut, the haircut forces sales, the sales worsen market illiquidity.
 
-**2.3 Loss spiral as an amplification factor.** If forced sales of size $S$ move the price by $\kappa S$ (linear impact, $\kappa=1/(D\cdot m)$-like), and a fraction $L=P/N$ of the resulting equity loss is re-deleveraged, the *total* liquidation is the geometric series
+**2.3 Loss spiral as an amplification factor.** If forced sales of size $S$ move the price by $\kappa S$ (linear impact, $\kappa=\text{impact coefficient}/ADV$), and a fraction $L=P/N$ of the resulting equity loss is re-deleveraged, the *total* liquidation is the geometric series
 $$S_{\text{total}}=S_0\sum_{k\ge0}(L\kappa)^k=\frac{S_0}{1-L\kappa},\qquad L\kappa<1.$$
 The **amplification factor is $1/(1-L\kappa)$**. It is benign at $L\kappa=0.1$ ($\times1.1$) and explosive as $L\kappa\to1$: at $L\kappa=0.5$ the initial \$10M sale becomes \$20M; at $L\kappa\ge1$ the series **diverges** — deleveraging cannot keep up with the price impact it creates. This is the formal statement of "the spiral has no fixed point."
 
@@ -98,9 +98,9 @@ total forced liquidation = $37.29M on a $50M book = 74.6% of initial position
 equity: $8.50M -> $5.37M (survived=True)
 ```
 
-Read it carefully. A **3% price shock** (\$1.5M of loss on a \$10M equity base) triggers the sale of **74.6% of a \$50M book** — a \$37.3M liquidation — not because the fund's view changed, but because the haircut walked from 20% to 60% while the equity base eroded. The first round alone dumps \$14.5M (29% of the book) and moves the price a further **3.6%**, nearly re-creating the initial shock out of the fund's own selling. This is the margin spiral doing the damage: the loss spiral alone would have left the fund at \$8.5M equity and 4.85× leverage — alive and unforced.
+Read it carefully. A **3% price shock** (\$1.5M of loss on a \$10M equity base) triggers the sale of **74.6% of a \$50M book** — a \$37.3M liquidation — not because the fund's view changed, but because the haircut walked from 20% to 60% while the equity base eroded. The first round alone dumps \$14.5M (29% of the book) and moves the price a further **3.6%**, nearly re-creating the initial shock out of the fund's own selling. This is the margin spiral doing the damage: with zero impact and a constant haircut the loss spiral alone would still force a \$6.0M sale (the 3% shock pushes leverage to 5.71× past the 5× limit), settling at \$42.5M position / \$8.5M equity / 5.0× — a single forced sale, not a cascade.
 
-**A lever to pull.** The three parameters that decide convergence are leverage $L$, haircut sensitivity $\text{d}m/\text{d}\,\text{Vol}$, and $\kappa$ (impact). Setting `impact_coef=0` recovers the pure loss spiral; raising `haircut_step` to 0.15 makes the process run away (equity → 0 within three rounds). The **explosive boundary** is exactly §2.3's $L\kappa\to1$.
+**A lever to pull.** The three parameters that decide convergence are leverage $L$, haircut sensitivity $\text{d}m/\text{d}\,\text{Vol}$, and $\kappa$ (impact). Setting `impact_coef=0` recovers the pure loss spiral; raising `haircut_step` to 0.15 collapses the book from \$48.5M to \$8.1M in three rounds while equity stabilises near \$4.8M (the `m_cap=0.60` bounds the spiral; pick parameters past the explosive boundary to get a true divergence). The **explosive boundary** is exactly §2.3's $L\kappa\to1$.
 
 ---
 

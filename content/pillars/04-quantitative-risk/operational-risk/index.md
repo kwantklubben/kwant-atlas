@@ -35,7 +35,7 @@ This folder is the operational-risk topic-folder for the Kwant-Atlas build. It i
 | **Variance of aggregate** | $\text{Var}(S)=\lambda\,\mathbb{E}[X^2]$ | — |
 | **MGF of aggregate** | $M_S(t)=\exp\!\big[\lambda\,(M_X(t)-1)\big]$ | — |
 | **Operational VaR (LDA)** | $\text{VaR}_\alpha=F_S^{-1}(\alpha)$ | MC $99.9\%$: $1{,}354{,}928$ |
-| **Unexpected loss** | $\text{UL}_\alpha=\text{VaR}_\alpha-\mathbb{E}[S]$ | $1{,}354{,}928-605{,}521=749{,}407$ |
+| **Unexpected loss** | $\text{UL}_\alpha=\text{VaR}_\alpha-\mathbb{E}[S]$ | $1{,}354{,}928-605{,}521.30=749{,}406$ |
 | **Lognormal severity** | $X\sim\text{Lognormal}(\mu,\sigma)$; $\mathbb{E}[X]=e^{\mu+\sigma^2/2}$ | $e^{10+0.32}=30{,}333.3$ |
 | **Basel II AMA capital** | capital $=\text{EL}+\text{UL}$ at 99.9%, one-year | AMA ¶667 |
 | **SMA capital** | $\text{ORC}=\text{BIC}\cdot\text{ILM}$; $\text{RWA}=12.5\cdot\text{ORC}$ | BIC $=1.32$, ILM $=0.898$, ORC $=1.185$ bn |

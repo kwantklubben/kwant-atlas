@@ -29,7 +29,7 @@ Three ideas carry the page:
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**2.1 Exogenous liquidation cost (spread).** Selling realises the half-spread plus a *worsening of the spread itself* in the tail. With relative spread $S$ and spread volatility $\sigma_S$, the $\alpha$-confidence liquidation cost on value $V$ is
+**2.1 Exogenous liquidation cost (spread).** Selling realises the half-spread plus a *worsening of the spread itself* in the tail. With relative spread $s$ and spread volatility $\sigma_s$, the $\alpha$-confidence liquidation cost on value $V$ is
 $$\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right).$$
 The first term is the mechanical cost of crossing a normal quarter-spread; the second prices the realistic possibility that **when you are forced to sell, the spread is wider than usual** — the cost and the tail are correlated. This is the pillar's established L-VaR form (see [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|the flat liquidity note]] for the same formula in $\sum_i P_iQ_i$ form).
 
@@ -57,16 +57,16 @@ import math
 
 z = 2.3263478740408408          # Phi^-1(0.99)
 V, sig_d = 10_000_000.0, 0.02
-S, sig_S = 0.0020, 0.0005       # relative spread 20bp; spread volatility 5bp
+s, sig_s = 0.0020, 0.0005       # relative spread 20bp; spread volatility 5bp
 Q, D     = 100_000, 200_000.0   # shares to sell; depth (shares per $1 of price move)
 
 VaR_1d   = z * sig_d * V
-LC_exog  = 0.5 * V * (S + z * sig_S)
+LC_exog  = 0.5 * V * (s + z * sig_s)
 impact_full = Q / D
 LC_imp   = Q * impact_full / 2          # VWAP shortfall = half the full move
 
 print(f"1-day 99% VaR       = z*sigma*V          = ${VaR_1d:,.0f}")
-print(f"exogenous spread LC = 0.5*V*(S+z*sig_S)  = ${LC_exog:,.0f}  ({LC_exog/V*1e4:.2f} bp of V)")
+print(f"exogenous spread LC = 0.5*V*(s+z*sig_s)  = ${LC_exog:,.0f}  ({LC_exog/V*1e4:.2f} bp of V)")
 print(f"L-VaR (exogenous)   = VaR + LC           = ${VaR_1d+LC_exog:,.0f}   (+{(LC_exog)/VaR_1d*100:.2f}% over VaR)")
 print(f"impact full move    = Q/D = ${impact_full:.2f};  impact cost = Q*(Q/D)/2 = ${LC_imp:,.0f} ({LC_imp/V*1e4:.2f} bp)")
 LV = VaR_1d + LC_exog + LC_imp
@@ -80,7 +80,7 @@ for T in (1, 2, 5, 10):
 ```
 ```
 1-day 99% VaR       = z*sigma*V          = $465,270
-exogenous spread LC = 0.5*V*(S+z*sig_S)  = $15,816  (15.82 bp of V)
+exogenous spread LC = 0.5*V*(s+z*sig_s)  = $15,816  (15.82 bp of V)
 L-VaR (exogenous)   = VaR + LC           = $481,085   (+3.40% over VaR)
 impact full move    = Q/D = $0.50;  impact cost = Q*(Q/D)/2 = $25,000 (25.00 bp)
 L-VaR (all-in, 1-day) = $506,085   (+8.77% over plain VaR)
@@ -93,14 +93,14 @@ horizon scaling (Basel 10-day convention; i.i.d. sqrt):
   T=10d: VaR=$   1,471,312  +LC_exog+impact=$   1,512,127
 ```
 
-Interpretation: the impact cost (\$25,000, 25 bp) *exceeds* the exogenous spread cost (15.8 bp) even for a \$5M order in a \$200M-ADV name — and it grows as $Q^2$, so a \$50M order carries **100×** the per-unit impact drag. The horizon row shows the other multiplier: mis-specifying the horizon (1 day instead of 10) understates the market-risk term by $\sqrt{10}\approx3.16$.
+Interpretation: the impact cost (\$25,000, 25 bp) *exceeds* the exogenous spread cost (15.8 bp) even for this ~\$10M order — and total cost grows as $Q^2$, so a 5× larger order carries 5× the per-unit impact drag and ~25× the total impact cost. The horizon row shows the other multiplier: mis-specifying the horizon (1 day instead of 10) understates the market-risk term by $\sqrt{10}\approx3.16$.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Ignoring the horizon, then compounding it.** Two separate errors live here: using a 1-day VaR for a position that takes 10 days to unwind (understates market risk by $\sqrt{10}$), *and* omitting the liquidation cost entirely. The two do not cancel; they add.
-2. **Assuming the spread is constant.** $\text{LC}_{\text{exog}}=\tfrac12V(S+z_\alpha\sigma_S)$ prices the *correlation* between "I am forced to sell" and "the spread is wide." Setting $\sigma_S=0$ removes exactly the part that mattered in 2008.
+2. **Assuming the spread is constant.** $\text{LC}_{\text{exog}}=\tfrac12V(s+z_\alpha\sigma_s)$ prices the *correlation* between "I am forced to sell" and "the spread is wide." Setting $\sigma_s=0$ removes exactly the part that mattered in 2008.
 3. **Linear impact at explosive sizes.** $\text{LC}_{\text{impact}}=\lambda Q^2/2$ understates for very large orders only if real impact is *super*-linear (it is not — it is sub-linear, square-root), so the quadratic model **overstates** for very large $Q$ and can be *conservative*; but the linear slope $\lambda$ is itself underestimated in calm periods, so the two errors run in opposite directions. Calibrate $\lambda$ from stress-period data, not calm data.
 4. **Level, not path, thinking.** L-VaR prices the cost of *a* liquidation but treats the liquidation as one-shot. Patient execution (Almgren–Chriss optimal schedules) trades impact against timing risk; the realised cost can be above *or* below the static L-VaR depending on the path. See [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]].
 5. **Non-coherence sneaks back in.** Adding a size-dependent cost $Q^2/2D$ (convex in $Q$) makes L-VaR *super*-additive in positions — the opposite of the subadditivity failure of plain VaR, and a reminder that "liquidity-adjusted" changes the aggregation properties that risk governance relies on.

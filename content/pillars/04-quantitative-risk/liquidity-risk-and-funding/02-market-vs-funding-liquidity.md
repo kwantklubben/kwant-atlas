@@ -90,7 +90,7 @@ daily vol    4%  -> VaR-margin m=z*sig =  9.30%  -> max leverage 1/m =  10.75x
 daily vol    8%  -> VaR-margin m=z*sig = 18.61%  -> max leverage 1/m =   5.37x
 ```
 
-Two observations. **First**, the Amihud ratio separates cap tiers by *four orders of magnitude* — market liquidity is not a single number but an asset-specific attribute that varies violently across the universe. **Second**, because $m=z_\alpha\sigma$, an eightfold rise in volatility (1%→8%) cuts the permitted leverage **eightfold** (43×→5.4×). Funding liquidity is a strictly decreasing function of the same volatility that thins market liquidity. That is the mechanism the spiral builds on.
+Two observations. **First**, the Amihud ratio separates cap tiers by roughly *three orders of magnitude* (the printed range spans ~1600×) — market liquidity is not a single number but an asset-specific attribute that varies violently across the universe. **Second**, because $m=z_\alpha\sigma$, an eightfold rise in volatility (1%→8%) cuts the permitted leverage **eightfold** (43×→5.4×). Funding liquidity is a strictly decreasing function of the same volatility that thins market liquidity. That is the mechanism the spiral builds on.
 
 ---
 

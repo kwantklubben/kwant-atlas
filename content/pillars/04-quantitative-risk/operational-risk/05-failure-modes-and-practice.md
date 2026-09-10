@@ -33,7 +33,7 @@ The estimator of $\text{VaR}_{0.999}$ from $T$ years of data uses the $\lceil0.9
 
 $$\text{Var}\big(\widehat{\text{VaR}}_{0.999}\big)\;\propto\;\frac{\big(f_S^{-1}\text{-slope}\big)}{T}\approx\frac{\big(q_{0.999}\big)^2}{\xi^2\,T}\ \ \text{(heavy tail)},$$
 
-because near the $99.9\%$ quantile the density is $f_S(q_{0.999})\sim \xi/q_{0.999}$ for a power tail $1-F_S(s)\sim s^{-\xi}$. Compared to a light tail, the *relative* standard error of the VaR estimator is inflated by roughly $1/\xi$ — a factor ~3 at $\xi{=}1.5$. That is the first principle: **the fatter the tail, the less precisely any sample pins the quantile**, and the more of your data lives where the answer lives least.
+because near the $99.9\%$ quantile the density is $f_S(q_{0.999})\sim \xi/q_{0.999}$ for a power tail $1-F_S(s)\sim s^{-\xi}$. Compared to a light tail, the *relative* standard error of the VaR estimator is inflated by roughly a factor $1/\xi+1$ relative to a light tail — about $1.7\times$ at $\xi{=}1.5$ in the relative-error sense (the simulated ratio is much larger because the tail density, not just the index, enters). That is the first principle: **the fatter the tail, the less precisely any sample pins the quantile**, and the more of your data lives where the answer lives least.
 
 #### 2.2 Why Poisson independence breaks in stress
 
@@ -96,13 +96,13 @@ def hill_alpha(data, k):
     o = sorted(data); xk = o[-k-1]
     return k/sum(math.log(o[-i-1]/xk) for i in range(k))
 rng2 = random.Random(11)
-print("Hill tail-exponent of Pareto (true alpha=0.5):")
+print("Hill tail-exponent of Pareto (true xi=0.5):")
 for n in (40, 200, 5000):
     d = [10.0*rng2.random()**(-1.0/0.5) for _ in range(n)]
     print(f"  n={n:5d} k={n//10:5d}  hat_alpha={hill_alpha(d, n//10):.3f}")
 ```
 ```
-Hill tail-exponent of Pareto (true alpha=0.5):
+Hill tail-exponent of Pareto (true xi=0.5):
   n=   40 k=    4  hat_alpha=0.488
   n=  200 k=   20  hat_alpha=0.522
   n= 5000 k=  500  hat_alpha=0.550
@@ -117,7 +117,7 @@ Even with 5,000 observations the Hill estimate is 0.550 against a true 0.5 (and 
 1. **Data scarcity / tail misestimation (dominant).** The parameter with the most leverage on capital is the least estimable. Mitigate with: external loss databases, scenario analysis, Bayesian pooling (Shevchenko 2011), and *capital buffers around the estimator* rather than point estimates.
 2. **Tail dependence of rare events.** Independence (Poisson) is precisely wrong in stress: clustered arrivals add a $\text{Var}(N)(\mathbb{E}[X])^2$ term LDA omits. Mitigate with negative-binomial/contagion frequency models and stress overlay.
 3. **Severity-family & $k$-selection risk.** A lognormal-vs-Pareto choice changes 99.9% capital by ~5.8×; a Hill $k$ choice shifts the index. Any submission should report the capital *range* over defensible families and $k$ — never one number.
-4. **Incentive-corrupted data.** Since capital falls when reported losses fall, under-reporting is economically attractive. Independent, audited loss capture (Basel SMA data standards) and de-minimis thresholds are the guard — the model is only as honest as the data pipeline feeding it.
+4. **Incentive-corrupted data.** Since capital falls when reported losses fall, under-reporting is economically attractive. Independent, audited loss capture (Basel SMA data standards) and de minimis thresholds are the guard — the model is only as honest as the data pipeline feeding it.
 
 ---
 

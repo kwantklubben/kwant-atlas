@@ -36,7 +36,7 @@ The ladder, intuitively:
 
 $$\Delta V_{ij}=\beta_1\Delta F_1^{(i)}+\beta_2\Delta F_2^{(j)}+\beta_{12}\,\Delta F_1^{(i)}\Delta F_2^{(j)}+\dots$$
 
-The interaction/cross term $\beta_{12}$ is why a matrix beats one-at-a-time sensitivity: the cell that matters most is often the *diagonal* where both factors move badly together — exactly the correlation-breakdown corner.
+The $\beta_{12}$ cross term captures statistical interaction; the worked example below uses $\beta_{12}=0$, so its dominating cell is the *joint-occurrence* corner where both factors move badly together — exactly the correlation-breakdown the matrix exists to expose (the example demonstrates simultaneity, not curvature).
 
 **Historical scenario = empirical joint draw.** A historical scenario replays the realized vector $\Delta F^{(\text{crisis})}$ from a specific date range. It is not a random draw from the unconditional return distribution; it is the *joint realization* of that period, so it automatically carries the realized correlations (which during a crisis → 1). Formally it is a single point in factor space, picked from history rather than constructed.
 
