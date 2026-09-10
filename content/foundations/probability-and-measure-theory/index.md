@@ -118,7 +118,7 @@ Hub signposts — the folder's failure analysis lives on the sub-pages. In one l
 ### 5. Canonical Literature & Study References
 
 - **Shreve, Steven E.**: *Stochastic Calculus for Finance II* — Ch 1 (General Probability Theory: $\sigma$-algebras, measure, expectation via the standard machine, Radon–Nikodym Thm 1.6.1), Ch 2 (Information & Conditioning: conditional expectation Def 2.3.1 & properties, Independence Lemma 2.3.4), Ch 3 (Brownian motion, martingale Thm 3.3.4, exponential martingale 3.6.1). *Primary, math-verified in the corpus.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* — Ch 1 (§1.1–1.5: probability spaces, coin-toss), §2 (conditional expectation, martingales), Ch 9 (Radon–Nikodym, state price density, Ex 9.1), Ch 11 (General Random Variables: law, density, bivariate normal), Ch 12 (semi-continuous, market price of risk, CMG). *Math-verified.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* — Ch 1 (§1.2–1.5: probability spaces, coin-toss), §2 (conditional expectation, martingales), Ch 9 (Radon–Nikodym, state price density, Ex 9.1), Ch 11 (General Random Variables: law, density, bivariate normal), Ch 12 (semi-continuous, market price of risk, CMG). *Math-verified.*
 - **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* — Ch 1 (risk-neutral measure via Radon–Nikodym, cornerstone eq. 1.39, MC estimator & CLT), Ch 2 (inverse transform, Box–Muller, normal vectors). *Verified.*
 - **Casella & Berger**: *Statistical Inference* — Ch 4 (random variables, distributions, moments), Ch 7 (point estimation, sufficiency) — the classical distributional/decision-theory companion (PDF in the corpus).
 

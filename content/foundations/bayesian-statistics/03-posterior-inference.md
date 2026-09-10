@@ -146,7 +146,7 @@ Normal predictive (n=12, xbar=0.85, s2=0.040):
   mu posterior (flat prior) N(0.8500, 0.003333)
 ```
 
-Three lessons in the numbers. (i) **The three point estimates differ** — mean $0.5833$, median $0.5881$, mode $0.6000$ — because $\mathrm{Beta}(7,5)$ is mildly left-skewed; the mode (MAP) is not the mean, and using one for the other is a modeling choice. (ii) **The Bayesian interval is far shorter** than the Wald interval on the same $5/8$ data ($[0.31,0.83]$ vs $[0.29,0.96]$) because the prior and the exact beta shape keep the estimate off the unit boundary, where the Wald approximation breaks. They are answering different questions, but the frequentist one is also simply less efficient this small. (iii) **The predictive interval is wider than the interval for the mean** ($[0.39,1.31]$ vs a posterior for $\mu$ of width $\pm0.06$) — the honest spread of *one more observation*.
+Three lessons in the numbers. (i) **The three point estimates differ** — mean $0.5833$, median $0.5881$, mode $0.6000$ — because $\mathrm{Beta}(7,5)$ is mildly left-skewed; the mode (MAP) is not the mean, and using one for the other is a modeling choice. (ii) **The Bayesian interval is far shorter** than the Wald interval on the same $5/8$ data ($[0.31,0.83]$ vs $[0.29,0.96]$) because the prior and the exact beta shape keep the estimate off the unit boundary, where the Wald approximation breaks. They are answering different questions, but the frequentist one is also simply less efficient this small. (iii) **The predictive interval is wider than the interval for the mean** ($[0.39,1.31]$ vs a 1-sd posterior sd for $\mu$ of $\approx0.058$ (a 95% interval would be $\pm0.127$)) — the honest spread of *one more observation*.
 
 ---
 

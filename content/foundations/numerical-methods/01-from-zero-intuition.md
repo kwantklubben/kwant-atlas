@@ -60,7 +60,7 @@ A large $\kappa$ means the answer is *inherently* sensitive; no algorithm can be
 
 $$E(h)\;\approx\;C_1h^p+\frac{C_2\epsilon}{h^m}\quad\Longrightarrow\quad h^*\sim \epsilon^{1/(p+m)},\qquad E(h^*)\sim\epsilon^{\,p/(p+m)}.$$
 
-For the first centred difference ($p=1$ for the truncation of the slope estimate scaled, $m=1$) this gives $h^*\sim\sqrt{\epsilon}\sim10^{-8}$; for the second difference Conte & de Boor quote $h\approx0.0033$ — the empirical optimum.
+For the centred difference ($p=2$ truncation, $m=1$ round-off) this gives $h^*\sim\epsilon^{1/3}\approx6\times10^{-6}$, matching the §3 experiment (floor near $h\approx10^{-5}$); a *one-sided* (first-order, $p=1$) difference would give the larger step $h^*\sim\sqrt{\epsilon}\sim10^{-8}$. For the second difference Conte & de Boor quote $h\approx0.0033$ — the empirical optimum.
 
 ---
 

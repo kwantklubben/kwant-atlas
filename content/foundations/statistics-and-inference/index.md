@@ -36,7 +36,7 @@ This page is a *hub*: it (a) gives the **fast estimator/test lookup** below (job
 
 | Quantity | Formula | Reference | Verified check |
 |---|---|---|---|
-| **MSE decomposition** | \(\mathbb E_\theta(W-\theta)^2=\mathrm{Var}_\theta W+(\mathrm{Bias}_\theta W)^2\), bias \(=\mathbb E_\theta W-\theta\) | Eq 7.3.1 | MSE(S²)=3.579 vs MSE(σ̂²_MLE)=3.055, n=10 (matches theory 2σ⁴/(n−1)=3.556, (2n−1)σ⁴/n²=3.040) |
+| **MSE decomposition** | \(\mathbb E_\theta(W-\theta)^2=\mathrm{Var}_\theta W+(\mathrm{Bias}_\theta W)^2\), bias \(=\mathbb E_\theta W-\theta\) | Eq 7.3.1 | MSE(S²)=3.546 vs MSE(σ̂²_MLE)=3.037, n=10 (matches theory 2σ⁴/(n−1)=3.556, (2n−1)σ⁴/n²=3.040) |
 | MLE (exponential rate) | \(\hat\lambda=1/\bar X\) | §7.2.2 | \(\mathrm{Var}(\hat\lambda)=0.03172\) vs CRLB \(\lambda^2/n=0.03125\) |
 | MLE (normal) | \(\hat\mu=\bar X,\ \hat\sigma^2=\frac1n\sum(X_i-\bar X)^2\) | §7.2.2 | biased; smaller MSE than \(S^2\) |
 | Method of moments | equate \(\mathbb E_\theta[X^k]\) to \(\frac1n\sum X_i^k\), solve | §7.2.1 | shifted-exp shift \(\hat d=3.0011\) (true 3.0) |
@@ -138,7 +138,7 @@ Hub signposts — the folder's failure-mode analysis lives on the sub-pages. In 
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
-- Sibling foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (stationarity & MLE for GARCH) · [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (time vs ensemble averages) · [[foundations/numerical-methods|Numerical Methods]] (Monte Carlo uses LLN/CLT)
+- Sibling foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (stationarity & MLE for GARCH) · [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (time vs ensemble averages) · [[foundations/numerical-methods/index|Numerical Methods]] (Monte Carlo uses LLN/CLT)
 - Sub-pages (in-folder): 01 From Zero · 02 Point Estimation · 03 The CLT & Sampling · 04 Confidence Intervals & Testing · 05 Bias–Variance & Validation · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

@@ -36,7 +36,7 @@ This page is a *hub*: it (a) gives the **fast model-form and key-test lookup** b
 | White noise | $r_t=\mu+a_t$ | $\rho_\ell=0\ \forall\ell\ge1$; Ljung–Box rejects | Ljung–Box $Q(10)=18.14$ vs $\chi^2_{10,0.95}=18.31$ on noise |
 | AR(1) | $x_t=\phi_0+\phi_1 x_{t-1}+a_t$ | stationary $\lvert\phi_1\rvert<1$; mean $\phi_0/(1-\phi_1)$; var $\sigma_a^2/(1-\phi_1^2)$; $\rho_\ell=\phi_1^\ell$ | ADF on $\phi_1{=}0.7$ AR(1): $-19.1$ (rejects) |
 | AR(2) | $x_t=\phi_1x_{t-1}+\phi_2x_{t-2}+a_t$ | $\rho_\ell=\phi_1\rho_{\ell-1}+\phi_2\rho_{\ell-2}$; **PACF cuts at lag 2**; complex roots $\Rightarrow$ damped sine | YW fit $(\hat\phi_1,\hat\phi_2)=(1.213,-0.605)$ vs $(1.2,-0.6)$ |
-| MA(1) | $x_t=a_t+\theta_1a_{t-1}$ | always stationary; $\rho_1=-\theta_1/(1+\theta_1^2)$, $\rho_\ell{=}0\ \ell>1$; invertible $\lvert\theta_1\rvert<1$ | — |
+| MA(1) | $x_t=a_t+\theta_1a_{t-1}$ | always stationary; $\rho_1=+\theta_1/(1+\theta_1^2)$, $\rho_\ell{=}0\ \ell>1$; invertible $\lvert\theta_1\rvert<1$ | — |
 | ARMA(1,1) | $x_t=\phi x_{t-1}+a_t+\theta a_{t-1}$ | st. $\lvert\phi\rvert<1$, inv. $\lvert\theta\rvert<1$; $\rho_1=\frac{(1+\theta\phi)(\phi+\theta)}{1+2\theta\phi+\theta^2}$; decay **starts at lag 2** | $\rho_1$ theory $0.6619$ vs sample $0.6611$ |
 | ARIMA(p,1,q) | $(1-B)x_t$ is stationary ARMA | unit root removed by differencing | — |
 | Random walk | $p_t=p_0+\sum a_i$ | var grows linearly; forecast $\hat p_h(\ell)=p_h$ | ADF on RW: $-0.64$ (cannot reject) |

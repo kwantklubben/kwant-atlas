@@ -32,7 +32,7 @@ $$\hat\alpha_n=\frac1n\sum_{i=1}^n f(U_i),\qquad
 
 with $\sigma_f^2=\int(f(x)-\alpha)^2dx$ estimated by $s_f=\sqrt{\frac{1}{n-1}\sum_i(f(U_i)-\hat\alpha_n)^2}$. The $95\%$ interval is $\hat\alpha_n\pm1.96\,s_f/\sqrt n$.
 
-**The rate — and why it matters.** The error is $O(n^{-1/2})$ **independent of dimension $d$**. Contrast the trapezoidal rule: $O(n^{-2})$ in 1-D but $O(n^{-2/d})$ in $d$ dimensions. For $d=10$, one extra digit costs Monte Carlo $100\times$ more work — and the trapezoid $10^{10}\times$ more. This is the entire raison d'être of Monte Carlo:
+**The rate — and why it matters.** The error is $O(n^{-1/2})$ **independent of dimension $d$**. Contrast the trapezoidal rule: $O(n^{-2})$ in 1-D but $O(n^{-2/d})$ in $d$ dimensions. For $d=10$, one extra digit costs Monte Carlo $100\times$ more work — and the trapezoid only $10^{5}\times$ more. This is the entire raison d'être of Monte Carlo:
 
 | Dimension $d$ | Trapezoid error $O(n^{-2/d})$ | Monte Carlo error $O(n^{-1/2})$ |
 |---|---|---|

@@ -16,7 +16,7 @@ tags:
 
 A vector is a *point in space with a meaning attached*: a vector of $N$ returns is one point in $\mathbb{R}^N$, and a matrix is a linear rule that maps vectors to vectors. The practical objective of this page is three precise, non-negotiable ideas the rest of the Atlas leans on: **linear independence** (do my $N$ asset returns genuinely span $N$ directions, or are some just combinations of others?), **basis / dimension** (how many independent risk sources are really there?), and **orthogonality** (which directions carry *uncorrelated* risk). These three words — *independent, spanning, orthogonal* — are the entire grammar of factor models and PCA.
 
-A financial statement of the same idea (Tsay §8–9): if three assets are driven by two macro factors, then their returns lie on a 2-dimensional plane inside $\mathbb{R}^3$ — *linearly dependent*. The **rank** of the matrix of their returns tells you the true number of independent risk drivers. Rank-deficiency is not a mathematical curiosity; it is the *N>T* and *collinear-collateral* problem.
+A financial statement of the same idea (Tsay §8–9): if three assets are driven by two macro factors, then their returns lie on a 2-dimensional plane inside $\mathbb{R}^3$ — *linearly dependent*. The **rank** of the matrix of their returns tells you the true number of independent risk drivers. Rank-deficiency is not a mathematical curiosity; it is the *N>T* problem and the collinearity/collateral problem (highly correlated assets, and the same names posted as collateral).
 
 ---
 

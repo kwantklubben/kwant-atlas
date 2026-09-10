@@ -36,7 +36,7 @@ This folder is the topic-folder for that toolbox. This page is the **hub**: it (
 
 **Quick-Reference Lookup (job #1).** Definitions and conjugate results transcribed from Casella & Berger Ch 7 (§7.2.3 Bayes estimators, Def 7.2.2 conjugacy) and Tsay Ch 12 (§12.3 Bayesian inference; §12.4 Metropolis–Hastings; §12.8 FFBS), cross-checked against Gelman et al. (BDA3) and ESL Ch 3/§8.3. The "verified check" column was **re-executed and reproduced exactly** by the scripts in §3 and on the sub-pages.
 
-**Notation:** $x=(x_1,\dots,x_n)$ data; $\theta$ parameter; $\pi(\theta)$ prior; $f(x\mid\theta)$ likelihood; $p(\theta\mid x)$ posterior; $m(x)=\int f(x\mid\theta)\pi(\theta)\,d\theta$ marginal likelihood/evidence; $a,b$ Beta shape params; $\tau^2,\sigma^2$ prior/observation variances; $\mu$ noise, $\tau$ signal (hierarchical).
+**Notation:** $x=(x_1,\dots,x_n)$ data; $\theta$ parameter; $\pi(\theta)$ prior; $f(x\mid\theta)$ likelihood; $p(\theta\mid x)$ posterior; $m(x)=\int f(x\mid\theta)\pi(\theta)\,d\theta$ marginal likelihood/evidence; $a,b$ Beta shape params; $\tau^2,\sigma^2$ between-/within-group variances; $\sigma^2$ is the noise variance, $\tau^2$ the signal/heterogeneity variance (hierarchical).
 
 | Object | Formula | Where | Verified check |
 |---|---|---|---|

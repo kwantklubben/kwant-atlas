@@ -42,7 +42,7 @@ $$X\mid Y=y \sim N\!\Big(\rho\tfrac{\sigma_1}{\sigma_2}\,y,\ (1-\rho^2)\sigma_1^
 This is the **best linear/unbiased square-error estimator** of $X$ from $Y$ (Shreve I §11, verified p-129/130).
 
 #### 2.4 $L^2$ projection & the regression function (Shreve II Def 2.3.1; ESL Ch 2)
-$\mathbb E[X\mid\mathcal G]$ is the orthogonal projection of $X$ onto the subspace of $\mathcal G$-measurable square-integrable variables: the residual $X-\mathbb E[X\mid\mathcal G]$ is orthogonal to every $\mathcal G$-measurable $V$, $\mathbb E[(X-\mathbb E[X\mid\mathcal G])\cdot V]=0$. This is precisely why the optimal predictor in the mean-square sense is the conditional expectation $f(x)=\mathbb E[Y\mid X=x]$ (ESL eq. 2.13), and why the regression MSE decomposes as $\mathbb E[\mathrm{Var}(Y\mid X)]$ plus irreducible noise.
+$\mathbb E[X\mid\mathcal G]$ is the orthogonal projection of $X$ onto the subspace of $\mathcal G$-measurable square-integrable variables: the residual $X-\mathbb E[X\mid\mathcal G]$ is orthogonal to every $\mathcal G$-measurable $V$, $\mathbb E[(X-\mathbb E[X\mid\mathcal G])\cdot V]=0$. This is precisely why the optimal predictor in the mean-square sense is the conditional expectation $f(x)=\mathbb E[Y\mid X=x]$ (ESL eq. 2.13), and why the regression MSE decomposes as $\mathbb E[\mathrm{Var}(Y\mid X)] + \mathrm{Var}(\mathbb E[Y\mid X])$ — the first term *is* the irreducible noise, the second the reducible part explained by $X$ (ESL eq. 2.46).
 
 ---
 
@@ -87,7 +87,7 @@ MSE of E[Y|X] predictor=2.5698 vs MSE of E[Y]=4.0117
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"$\mathbb E[X\mid\{S_t=100\}]$" is undefined by the schoolbook ratio.** $\mathbb P(A\cap B)/\mathbb P(B)$ divides by zero for a zero-probability conditioning event; only partial averaging over the whole $\sigma$-algebra survives (Shreve II §2.5; Shreve I §9.5 existence via Radon–Nikodym).
+1. **"$\mathbb E[X\mid\{S_t=100\}]$" is undefined by the schoolbook ratio.** $\mathbb P(A\cap B)/\mathbb P(B)$ divides by zero for a zero-probability conditioning event; only partial averaging over the whole $\sigma$-algebra survives (Shreve II §2.3; Shreve I §9.5 existence via Radon–Nikodym).
 2. **Treating conditional expectation as a number, not a random variable.** $\mathbb E[X\mid\mathcal F_t]$ is a function of the path (measurable w.r.t. $\mathcal F_t$), so it varies across atoms. Writing it as a scalar loses the information-dependence that makes it a martingale's engine.
 3. **Believing "best linear" = "best."** $\rho(\sigma_1/\sigma_2)Y$ is the best *among* linear (and normal) estimators; for non-normal, non-linear dependencies a different function of $Y$ can beat it. Optimality requires the full conditional expectation (ESL eq. 2.13).
 4. **Tower property misdirection.** $\mathbb E[\mathbb E[X\mid\mathcal G]\mid\mathcal H]$ requires $\mathcal H\subseteq\mathcal G$; conditioning in the wrong order or on a finer $\sigma$-algebra first quietly breaks backward induction.

@@ -44,7 +44,7 @@ This page is the hub: it gives the fast **formula and growth-law lookup** below,
 | **Ergodic iff** | $\langle x(t)\rangle=\overline{x}$ a.s. | additive game: both $=0.005$ |
 | Geometric growth rate | $g=\lim_{N\to\infty}\frac1N\ln(W_N/W_0)$ | coin $1.5/0.6$: $g=-0.052680$ |
 | **Time average of compounding** | $g=\mathbb{E}[\ln(1+R)]=\overline{\ln(1+R)}$ | ensemble mean $\ne$ time avg |
-| Volatility drag | $g\approx\mathbb{E}[R]-\tfrac12\mathrm{Var}(R)$ | $0.11-0.01125=0.098750$ |
+| Net growth rate (post-drag) | $g\approx\mathbb{E}[R]-\tfrac12\mathrm{Var}(R)$ | $0.11-0.01125=0.098750$ (drag $=\tfrac12\mathrm{Var}(R)=0.01125$) |
 | Continuous growth | $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ | at $f^\*=2.2\overline2$: $0.115556$ |
 | **Kelly, even money** | $f^\*=p-q$ | $p=0.53\Rightarrow0.06$ |
 | **Kelly, win $b$** | $f^\*=\dfrac{bp-q}{b}$ | — |
@@ -111,7 +111,7 @@ exponent a = 2g/Var           = 2.0800
 P(ever <= 0.50): sim=0.2323  theory x^a=0.2365
 ```
 
-The ensemble mean ($131.5$) and the typical outcome ($0.005$) are **four orders of magnitude apart** — that gap is non-ergodicity, and it is what §3(a) of every sub-page quantifies.
+The ensemble mean ($131.5$) and the typical outcome ($0.005$) are **four orders of magnitude apart** — that gap is non-ergodicity, and it is what the §3 experiment of each relevant sub-page quantifies.
 
 ---
 

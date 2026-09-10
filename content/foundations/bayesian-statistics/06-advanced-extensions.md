@@ -38,7 +38,7 @@ $$\mathbb E[\theta_j\mid y,\mu,\tau^2]=(1-B_j)\,\bar y_j+B_j\,\mu,\qquad
 \boxed{\,B_j=\frac{\sigma^2/n_j}{\sigma^2/n_j+\tau^2}=\frac{\sigma^2}{\sigma^2+n_j\tau^2}\,}.$$
 
 - **$B_j$ is the shrinkage factor** — the fraction of the way from the raw group mean pulled to the population mean. It is the *ratio of within-group noise to total variance* — a reliability weight.
-- Small $n_j$ or large $\tau^2$ (real between-group spread) $\Rightarrow$ little shrinkage; large $n_j$ or small $\tau^2$ $\Rightarrow$ strong pooling.
+- Small $n_j$ or small $\tau^2$ $\Rightarrow$ **strong pooling** ($B_j\to1$, the group mean is pulled onto $\mu$); large $n_j$ or large $\tau^2$ (genuine between-group spread) $\Rightarrow$ **little shrinkage** ($B_j\to0$, the group mean is trusted).
 - This is exactly **James–Stein**: the Bayes estimator dominates the separate per-group estimator in aggregate mean-squared error.
 
 **Full conditionals (the Gibbs steps).** With the priors above, all updates are conjugate (this is why MCMC, §05, is the right tool):

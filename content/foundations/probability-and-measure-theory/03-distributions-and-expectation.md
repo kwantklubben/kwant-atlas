@@ -60,10 +60,11 @@ Xv=[random.gauss(0,1) for _ in range(M)]
 Zv=[1 if random.random()<0.5 else -1 for _ in range(M)]
 Yv=[x*z for x,z in zip(Xv,Zv)]
 cov=sum(x*y for x,y in zip(Xv,Yv))/M
-cond=sum(1 for x,y in zip(Xv,Yv) if x>0 and y>0)/M
-pX=sum(1 for x in Xv if x>0)/M; pY=sum(1 for y in Yv if y>0)/M
+# dependence lives in the MAGNITUDES: |Y|=|X| exactly, so |X|>1 iff |Y|>1.
+mag=sum(1 for x,y in zip(Xv,Yv) if abs(x)>1 and abs(y)>1)/M
+pA=sum(1 for x in Xv if abs(x)>1)/M; pB=sum(1 for y in Yv if abs(y)>1)/M
 print("uncorrelated: Cov(X,Y)=%.4f (theory 0)" % cov)
-print("independent? P(X>0,Y>0)=%.4f vs P(X>0)P(Y>0)=%.4f" % (cond,pX*pY))
+print("dependent?  P(|X|>1,|Y|>1)=%.4f vs P(|X|>1)P(|Y|>1)=%.4f" % (mag,pA*pB))
 # expectation of a function / standard machine: E[X^2]=1
 print("E[X^2]=%.4f (theory 1.0)" % (sum(x*x for x in Xv)/M))
 ```
@@ -71,7 +72,7 @@ print("E[X^2]=%.4f (theory 1.0)" % (sum(x*x for x in Xv)/M))
 inverse-transform Exp(2): E[X]=1.9995 (theory 2.0)
   P(X>2)=0.3681  theory e^{-1}=0.3679
 uncorrelated: Cov(X,Y)=-0.0044 (theory 0)
-independent? P(X>0,Y>0)=0.2490 vs P(X>0)P(Y>0)=0.2498
+dependent?  P(|X|>1,|Y|>1)=0.3166 vs P(|X|>1)P(|Y|>1)=0.1003
 E[X^2]=0.9976 (theory 1.0)
 ```
 

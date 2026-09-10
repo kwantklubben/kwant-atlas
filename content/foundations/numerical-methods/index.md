@@ -43,7 +43,7 @@ This page is the hub: it gives the fast **error-order and cost lookup** below an
 | Deterministic quadrature | an integral | nodes $n$ | trapezoid $O(n^{-2})$ in 1-D, $O(n^{-2/d})$ in $d$ | exact but cursed by dimension |
 | Root / optimisation iteration | a zero / an extremum | iterations | bisection linear; Newton **quadratic**; GD linear rate $(\kappa-1)/(\kappa+1)$ | one linear solve per Newton step |
 
-The single most important comparison in all of computational finance: **Monte Carlo is $O(n^{-1/2})$ in *every* dimension, whereas deterministic quadrature is $O(n^{-2/d})$.** For $d\ge4$ the sampling route wins outright (Glasserman §1.1).
+The single most important comparison in all of computational finance: **Monte Carlo is $O(n^{-1/2})$ in *every* dimension, whereas deterministic quadrature is $O(n^{-2/d})$.** For $d>4$ the sampling route wins outright (Glasserman §1.1).
 
 **Lookup 2 — the finite-difference schemes.** Writing the one-factor parabolic operator as $\mathcal L u$ and the $\theta$-method weight on the new time level (Duffy eqs. 6.17–6.19, 7.4):
 
@@ -51,8 +51,8 @@ $$\frac{U^{n+1}-U^n}{k} = \theta\,\mathcal L U^{n+1} + (1-\theta)\,\mathcal L U^
 
 | Scheme | $\theta$ | Time order | Stability (heat / BS) | Solve per step |
 |---|---|---|---|---|
-| Explicit Euler | $1$ | $O(k)$ | **conditional**: $\lambda = ak/h^2 \le \tfrac12$ | none (matrix-free) |
-| Implicit Euler | $0$ | $O(k)$ | **unconditional** | tridiagonal LU |
+| Explicit Euler | $0$ | $O(k)$ | **conditional**: $\lambda = ak/h^2 \le \tfrac12$ | none (matrix-free) |
+| Implicit Euler | $1$ | $O(k)$ | **unconditional** | tridiagonal LU |
 | Crank–Nicolson | $\tfrac12$ | $O(k^2)$ | **unconditional**, but $\rho<0$ ⇒ ringing | tridiagonal LU |
 | Extrapolated implicit Euler | — | $O(k^2)$ | unconditional, **no ringing** ($2U_{k/2}-U_k$) | 2 LU solves |
 | Rannacher (2 implicit steps then CN) | mixed | $O(k^2)$ | unconditional, ringing suppressed | tridiagonal LU |
@@ -149,7 +149,7 @@ print(f"(3) Newton root of x^3-2 = {x:.10f}  exact={2.0**(1/3):.10f}  err={abs(x
 
 Hub signposts — the full first-principles analysis lives on the sub-pages. In one line each:
 
-1. **Stability is a property of the discretisation, not the formula.** The explicit heat scheme is *correct* and *useless* outside $\lambda\le\tfrac12$: the same code that returns $0.371$ at $\lambda=0.5$ returns $2.8\times10^{2}$ at $\lambda=0.597$ (page 02).
+1. **Stability is a property of the discretisation, not the formula.** The explicit heat scheme is *correct* and *useless* outside $\lambda\le\tfrac12$: the same code that returns $0.371$ at $\lambda=0.5$ returns $\approx-2.7\times10^{2}$ at $\lambda=0.597$ (page 02; sign is chaotic near blow-up).
 2. **Second-order accuracy is not the same as "well-behaved".** Crank–Nicolson is unconditionally stable, yet $\rho(\xi)$ goes *negative* at high frequencies, producing spurious oscillations near kinks/strikes (Duffy Ch 33).
 3. **Monte Carlo's $n^{-1/2}$ does not distinguish bias from variance.** Discretising an SDE adds an $O(h^\beta)$ *bias* on top of the sampling error; the fix is a better scheme or MSE balancing, not more paths (Glasserman §1.1.3, 6.3.3).
 4. **Conditioning, not the algorithm, sets the achievable digits.** At $\kappa(A)=4\times10^{6}$, a $10^{-6}$ perturbation to the right-hand side moves the solution by $71\%$ — no factorisation can recover what the conditioning destroyed (page 05).
