@@ -165,4 +165,4 @@ The procedure recovers the simulated rank exactly: the first trace statistic ($1
 - Back: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Index Hub]]
 - Sibling: [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] (dynamic hedge ratio) · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (factor choice for residuals)
 - Foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] (for the OU first-passage solution)
-- Cross-pillar: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]
+- Cross-pillar: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]

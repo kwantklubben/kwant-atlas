@@ -8,7 +8,7 @@ tags:
   - mcmc
 ---
 
-**Basic Prerequisites:** [[pillars/01-quantitative-research/regime-detection/04-hmm|04 · Hidden Markov Models]] and [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance]] (or [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity]]).
+**Basic Prerequisites:** [[pillars/01-quantitative-research/regime-detection/04-hmm|04 · Hidden Markov Models]] and [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance]] (or [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]).
 
 ---
 
@@ -118,6 +118,6 @@ On this synthetic path the regime-aware rule **raises the Sharpe by ~70%** ($0.6
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/01-quantitative-research/regime-detection/04-hmm|04 · HMM]] · [[pillars/01-quantitative-research/regime-detection/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/regime-detection/index|Index Hub]]
-- Portfolio: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity (vol targeting)]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman (views meet regime estimates)]]
+- Portfolio: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity (vol targeting)]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman (views meet regime estimates)]]
 - Risk: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Tail Risk (VaR/ES)]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] (regimes as scenarios)
 - Bayesian/MCMC base: [[foundations/bayesian-statistics/index|Bayesian Statistics]] · ML cross-link: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification: HMM & GMM]]

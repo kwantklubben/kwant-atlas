@@ -54,7 +54,7 @@ The **component volatility** of factor $k$ is therefore $b_k(\Sigma_f b)_k/\sigm
 
 **Marginal contribution to risk (MCTR).** For a general covariance matrix, the position-level analogue is
 $$\text{MCTR}_i=\frac{(\Sigma w)_i}{\sigma_p},\qquad \text{Contribution}_i=w_i\,\text{MCTR}_i,\qquad \sum_i w_i\text{MCTR}_i=\sigma_p .$$
-This is the number used to charge a desk for its marginal use of firm risk, and it is the linear-algebra core of risk-budgeted portfolio construction ([[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Risk Constraints]]).
+This is the number used to charge a desk for its marginal use of firm risk, and it is the linear-algebra core of risk-budgeted portfolio construction ([[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Risk Constraints]]).
 
 ---
 
@@ -145,4 +145,4 @@ Euler (component-volatility) allocation:
 - Back: [[pillars/04-quantitative-risk/risk-factor-sensitivities/02-delta-gamma-vega|02 · Delta, Gamma, Vega]] · [[pillars/04-quantitative-risk/risk-factor-sensitivities/03-rates-and-key-rate-duration|03 · Rates & Key-Rate Duration]]
 - Continue: [[pillars/04-quantitative-risk/risk-factor-sensitivities/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Index Hub]]
 - Sibling: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/02-parametric-var|Parametric (Variance–Covariance) VaR]] (this decomposition, turned into a quantile) · [[pillars/04-quantitative-risk/var-and-expected-shortfall/03-coherent-risk-measures|Coherent Risk Measures (why VaR does not allocate well)]]
-- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Risk Constraints & Mean–Variance]] · [[foundations/linear-algebra-and-matrices/05-svd-pca-and-regression|SVD, PCA & Regression]]
+- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Risk Constraints & Mean–Variance]] · [[foundations/linear-algebra-and-matrices/05-svd-pca-and-regression|SVD, PCA & Regression]]

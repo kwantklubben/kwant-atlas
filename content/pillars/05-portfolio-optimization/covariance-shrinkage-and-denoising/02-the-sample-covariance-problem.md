@@ -121,4 +121,4 @@ condition number of the sample covariance, T=500 held fixed:
 
 - Back: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/01-from-zero-intuition|01 · From Zero]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/03-linear-shrinkage|03 · Linear Shrinkage]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/04-random-matrix-theory-denoising|04 · RMT Denoising]]
-- Base: [[foundations/probability-and-statistics/index|Probability & Statistics]] (Wishart law)
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Statistics]] (Wishart law)

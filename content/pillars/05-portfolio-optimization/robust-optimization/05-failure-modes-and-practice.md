@@ -138,4 +138,4 @@ The scoreboard, read honestly:
 - Back: [[pillars/05-portfolio-optimization/robust-optimization/04-constraints-and-resampling|04 · Constraints & Resampling]] · [[pillars/05-portfolio-optimization/robust-optimization/03-robust-formulations|03 · Robust Formulations]]
 - Diagnose the inputs: [[pillars/05-portfolio-optimization/robust-optimization/02-the-estimation-error-problem|02 · The Estimation-Error Problem]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]]
 - Forward: [[pillars/05-portfolio-optimization/robust-optimization/06-advanced-extensions|06 · Advanced Extensions]] · [[pillars/05-portfolio-optimization/robust-optimization/index|Index Hub]]
-- Practice sibling: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]] · [[foundations/statistics-and-inference/05-bias-variance-and-validation|Bias–Variance & Validation]]
+- Practice sibling: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]] · [[foundations/statistics-and-inference/05-bias-variance-and-validation|Bias–Variance & Validation]]

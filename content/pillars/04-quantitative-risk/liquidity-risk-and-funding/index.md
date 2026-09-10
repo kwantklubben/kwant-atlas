@@ -124,7 +124,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]]
 - Sub-pages (in-folder): 01 From Zero · 02 Market vs Funding · 03 Liquidation Cost & L-VaR · 04 Margin & Funding Spirals · 05 Failure Modes · 06 Advanced Extensions
 - Sibling topics: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]]
-- Execution bridge: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]] · [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover Constraints]]
+- Execution bridge: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover Constraints]]
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/04-quantitative-risk/liquidity-risk-and-funding/01-from-zero-intuition|01 · From Zero]] — no prior quant-finance needed.

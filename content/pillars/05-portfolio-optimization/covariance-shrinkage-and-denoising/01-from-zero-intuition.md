@@ -115,6 +115,6 @@ Read those four numbers together. The optimizer reports a variance of $0.0216$ �
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory & Mean–Variance]]
+- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance]]
 - Continue: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/02-the-sample-covariance-problem|02 · The Sample-Covariance Problem]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Index Hub]]
-- Related: [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman]] (the same "shrink toward a prior" idea applied to *means*)
+- Related: [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] (the same "shrink toward a prior" idea applied to *means*)

@@ -115,7 +115,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 1. **MVO is an "estimation-error maximizer."** Because $w \propto \Sigma^{-1}(\mu-r_f\mathbf{1})$, small errors in $\mu$ (the hardest inputs to estimate) are amplified by $\Sigma^{-1}$; Best & Grauer (1991) show a **0.08%** mean change can drive the most-sensitive asset out of a 100-asset portfolio.
 2. **Covariance inversion instability.** Near-collinear assets make $\Sigma$ ill-conditioned ($\kappa(\Sigma)=\lambda_{\max}/\lambda_{\min}$ large); $\Sigma^{-1}$ then explodes tiny eigenvalue noise into extreme long/short weights.
-3. **Unconstrained solutions are not investable.** The frontier assumes shorting is free; real long-only and turnover constraints push optimal weights to corner solutions — the bridge into [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Constraints]] and [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints/index|Transaction Costs]].
+3. **Unconstrained solutions are not investable.** The frontier assumes shorting is free; real long-only and turnover constraints push optimal weights to corner solutions — the bridge into [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Constraints]] and [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]].
 
 ---
 
@@ -133,10 +133,10 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 - Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/calculus-and-optimization/index|Calculus & KKT Optimization]]
 - Sub-pages (in-folder): 01 From Zero · 02 Efficient Frontier · 03 Tangency & CAPM · 04 Min-Variance & Constraints · 05 Failure Modes · 06 Advanced Extensions
-- Sibling topics: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity]] · [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]]
+- Sibling topics: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/02-the-efficient-frontier|02 · Efficient Frontier]] → [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/03-tangency-and-capm|03 · Tangency & CAPM]] → [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Min-Variance & Constraints]].
 - **Robustness (practitioner/graduate):** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman Bayesian Allocation]]
+- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman Bayesian Allocation]]

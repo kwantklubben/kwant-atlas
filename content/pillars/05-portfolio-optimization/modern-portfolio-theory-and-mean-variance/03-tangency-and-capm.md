@@ -27,7 +27,7 @@ $$\boxed{\;w_{\text{tan}}=\frac{\Sigma^{-1}(\mu-r_f\mathbf{1})}{\mathbf{1}^T\Sig
 (Merton eq. 44), valid whenever $r_f<\mu_{\text{mv}}=A/C$ (the tangency portfolio is then efficient; if $r_f\ge A/C$ the tangency lies on the *inefficient* branch and no finite tangency exists in the equilibrium sense — Merton §IV).
 
 **Sharpe and the CML.** Let $\mu_t=w_{\text{tan}}^T\mu$ and $\sigma_t^2=w_{\text{tan}}^T\Sigma w_{\text{tan}}$. Two identities hold exactly:
-$$\text{SR}_{\max}^2=\frac{(\mu_t-r_f)^2}{\sigma_t^2}=C r_f^2-2A r_f+B\qquad\text{and}\qquad \mu_t-r_f=\frac{A-r_f C}{C\,\sigma_t\text{-scaled}}.$$
+$$\text{SR}_{\max}^2=\frac{(\mu_t-r_f)^2}{\sigma_t^2}=C r_f^2-2A r_f+B\qquad\text{and}\qquad \mu_t-r_f=\text{SR}_{\max}\,\sigma_t=\sqrt{C r_f^2-2A r_f+B}\;\sigma_t.$$
 So the **Capital Market Line** is $\mu=r_f+\text{SR}_{\max}\,\sigma$, and *every* optimal portfolio is a blend of cash and $w_{\text{tan}}$: $w=\theta w_{\text{tan}}+(1-\theta)\mathbf{0}_{\text{cash}}$, with $\theta$ determined by risk aversion. This is Tobin's separation theorem: **all investors hold the same risky fund, only the cash/risky mix differs.**
 
 **Security Market Line / CAPM (Sharpe 1964; Merton §V, eq. 45–47).** Under the equilibrium that the market portfolio is the tangency portfolio, each asset prices according to its covariance with the market:
@@ -120,4 +120,4 @@ Read the output: the theoretical Sharpe identity $(C r_f^2-2A r_f+B)=0.085121$ r
 
 - Back: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/02-the-efficient-frontier|02 · Efficient Frontier]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Min-Variance & Constraints]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Failure Modes]]
-- Sibling: [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]] (reverse-optimizes means so the tangency = market weights) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity]]
+- Sibling: [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]] (reverse-optimizes means so the tangency = market weights) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]

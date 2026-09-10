@@ -143,4 +143,4 @@ Every top-5 pair is **within sector A** — the screen correctly identifies the 
 - Back: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/02-cointegration-and-the-spread|02 · Cointegration & the Spread]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/04-trading-rules-and-backtest|04 · Trading Rules & Backtest]]
 - Sibling: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (factor definitions that drive the residual) · [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] (time-varying $\beta$)
-- Portfolio: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]
+- Portfolio: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]

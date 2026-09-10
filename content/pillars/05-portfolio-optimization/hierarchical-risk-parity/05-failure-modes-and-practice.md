@@ -9,7 +9,7 @@ tags:
   - n-greater-than-t
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/hierarchical-risk-parity/04-recursive-bisection|04 · Recursive Bisection]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/hierarchical-risk-parity/04-recursive-bisection|04 · Recursive Bisection]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 
 ---
 
@@ -186,7 +186,7 @@ EXP B  30 bootstrap windows (T=250, N=60)
 4. **Linkage and window are unvalidated hyperparameters.** With graded correlations, single vs complete linkage flips the root split (§03). Report the linkage, justify it (cophenetic correlation), and stress-test the weights across linkages.
 5. **Non-stationarity ages the tree.** Correlations regime-shift (2008, 2020, 2022); a tree built on the pre-shift window misplaces assets after it. HRP reduces but does not remove this — use EWMA/regime-aware windows.
 6. **No expected returns ⟹ structurally incomplete.** HRP is a pure risk allocator. Its heavy bond loading (§04: 74.9%) is a risk statement, not a forecast; it will underperform if the risk-adjusted premium sits elsewhere. Layer a return view (Black–Litterman) rather than distorting the risk model.
-7. **Turnover from tree churn.** Rebuilding the tree each rebalance can reshuffle weights and generate turnover that erodes the very out-of-sample edge HRP claims. Constrain turnover and/or smooth weights (→ [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]).
+7. **Turnover from tree churn.** Rebuilding the tree each rebalance can reshuffle weights and generate turnover that erodes the very out-of-sample edge HRP claims. Constrain turnover and/or smooth weights (→ [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]).
 8. **Evaluation discipline.** As with any allocator, rank models by *realized, out-of-sample* risk (or Sharpe), never by in-sample $w^\top S w$ — that is exactly the trap that made MVO look perfect in §02.
 
 ---
@@ -205,4 +205,4 @@ EXP B  30 bootstrap windows (T=250, N=60)
 
 - Back: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/04-recursive-bisection|04 · Recursive Bisection]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/06-advanced-extensions|06 · Advanced Extensions]]
-- Related: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Related: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]

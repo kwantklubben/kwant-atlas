@@ -133,4 +133,4 @@ Two fingerprints of quadratic convergence: in the root-finding log the error seq
 
 - Base: [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] · [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]]
 - Continue: [[foundations/numerical-methods/05-numerical-linear-algebra|05 · Numerical Linear Algebra]] (the linear solve inside every Newton step) · [[foundations/numerical-methods/index|Index Hub]]
-- Forward links: [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|Pricing · Failure Modes]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory]] (the canonical constrained optimisation)
+- Forward links: [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|Pricing · Failure Modes]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory]] (the canonical constrained optimisation)

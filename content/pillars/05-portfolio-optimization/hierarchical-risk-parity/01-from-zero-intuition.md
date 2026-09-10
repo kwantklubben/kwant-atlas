@@ -151,4 +151,4 @@ Read it: the tree's first (top) split is $\{C\}$ versus $\{A,B\}$. The $\{A,B\}$
 
 - Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP Index Hub]]
 - Continue: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/02-why-quadratic-optimizers-fail|02 · Why Quadratic Optimizers Fail]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/03-hierarchical-clustering|03 · Hierarchical Clustering]]
-- Context: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]] (what HRP is often *mistaken* for) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean–Variance & Error Maximization]]
+- Context: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] (what HRP is often *mistaken* for) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & Error Maximization]]

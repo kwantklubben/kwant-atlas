@@ -121,4 +121,4 @@ print("Notice how Gaussian Parametric CVaR drastically underestimates fat-tailed
 
 - Foundational Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Bridges to: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory]]
-- Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Risk Constraints]]
+- Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Risk Constraints]]

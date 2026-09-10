@@ -132,4 +132,4 @@ print(f"Half-Life:    {metrics['half_life_bars']:.1f} bars")
 
 - Foundational Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
 - Bridges to: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection]]
-- Bridges to: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]]
+- Bridges to: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]

@@ -175,6 +175,6 @@ Two verified findings:
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/05-portfolio-optimization/robust-optimization/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/robust-optimization/03-robust-formulations|03 · Robust Formulations]]
-- Method siblings: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Bayesian Allocation]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering/index|HRP]]
+- Method siblings: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Bayesian Allocation]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP]]
 - Foundations: [[foundations/bayesian-statistics/04-bayesian-and-regularization|Bayesian & Regularization]] · [[foundations/linear-algebra-and-matrices/04-eigenvalues-and-covariance|Eigenvalues & Covariance]]
 - Hub: [[pillars/05-portfolio-optimization/robust-optimization/index|Index Hub]]

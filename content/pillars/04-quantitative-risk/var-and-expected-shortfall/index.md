@@ -128,7 +128,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/01-from-zero-intuition|01 · From Zero]]
 - Sub-pages (in-folder): 01 From Zero · 02 VaR Definition & Flaws · 03 Coherent Risk Measures · 04 Expected Shortfall · 05 Failure Modes · 06 Advanced Extensions
 - Sibling topics: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical & Monte Carlo VaR]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]]
-- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Risk Constraints & Mean–Variance]]
+- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Risk Constraints & Mean–Variance]]
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/04-quantitative-risk/var-and-expected-shortfall/01-from-zero-intuition|01 · From Zero]] — no prior quant-finance needed.

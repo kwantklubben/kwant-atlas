@@ -129,7 +129,7 @@ Read the row labelled **inverse-vol** and the row labelled **ERC**: same two-dec
 
 Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
-1. **Garbage-in, garbage-out risk allocation.** ERC is a pure function of $\Sigma$; a poorly-estimated covariance (short window, $N$ close to $T$, no shrinkage/denoising) quietly hands the risk budget to the wrong assets — the connector to [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]].
+1. **Garbage-in, garbage-out risk allocation.** ERC is a pure function of $\Sigma$; a poorly-estimated covariance (short window, $N$ close to $T$, no shrinkage/denoising) quietly hands the risk budget to the wrong assets — the connector to [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 2. **Correlation-regime flips.** ERC is built on a *point estimate* of $\rho$; a stock–bond correlation that was $-0.2$ and becomes $+0.5$ (2022) invalidates every budget computed from the old $\Sigma$.
 3. **The leverage trap.** A prudent risk-balanced portfolio has far more bond risk-budget than dollar-budget; targeting 60/40 *returns* forces 2–3× leverage on the bond leg, which is exactly what blows up when rates rise and both legs fall together.
 
@@ -149,10 +149,10 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 - Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/calculus-and-optimization/index|Calculus & Convex Optimization]] · [[foundations/statistics-and-inference/index|Statistics]]
 - Sub-pages (in-folder): 01 From Zero · 02 Risk Contributions · 03 Equal Risk Contribution · 04 Risk Budgeting · 05 Failure Modes · 06 Advanced Extensions
-- Sibling topics: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance & Markowitz]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]]
+- Sibling topics: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Markowitz]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/02-risk-contributions|02 · Risk Contributions]] → [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/03-equal-risk-contribution|03 · Equal Risk Contribution]] → [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/04-risk-budgeting|04 · Risk Budgeting]].
 - **Robustness (practitioner/graduate):** [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT]] · [[pillars/04-quantitative-risk/index|Quantitative Risk (VaR)]]
+- Forward links: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/04-quantitative-risk/index|Quantitative Risk (VaR)]]

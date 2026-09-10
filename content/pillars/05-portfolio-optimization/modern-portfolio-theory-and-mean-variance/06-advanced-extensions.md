@@ -17,7 +17,7 @@ tags:
 
 Page 05 established *why* raw MVO is an estimation-error maximizer. This page is the **launchpad for the fixes** — the concrete ways the industry makes the optimizer stop amplifying noise. The single most transferable idea is **shrinkage**: pull the noisy sample inputs toward a simpler, better-conditioned target, trading a little bias for a large cut in variance. The objective is to (a) show shrinkage working (condition number down, weights vastly more stable), and (b) map the four families of fixes — **shrinkage/denoising of $\Sigma$**, **regularization/robust optimization**, **resampling (Michaud)**, and **Bayesian blending (Black–Litterman)** — each a sibling topic you can follow from here.
 
-> **The mental model.** $\Sigma$'s eigenvalues are the leverage knobs: the *smallest* eigenvalues drive $\Sigma^{-1}$ (hence the weights) hardest, and they're exactly the ones most contaminated by sampling noise. Shrinkage pulls those tiny eigenvalues up toward the bulk, which is precisely the same operation as "denoising" — see the RMT material in [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]].
+> **The mental model.** $\Sigma$'s eigenvalues are the leverage knobs: the *smallest* eigenvalues drive $\Sigma^{-1}$ (hence the weights) hardest, and they're exactly the ones most contaminated by sampling noise. Shrinkage pulls those tiny eigenvalues up toward the bulk, which is precisely the same operation as "denoising" — see the RMT material in [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 
 ---
 
@@ -33,7 +33,7 @@ which stays a tractable second-order-cone program (SOCP). The robust optimum del
 
 **Resampling (Michaud 1998).** Simulate many draws of $(\hat\mu,\hat\Sigma)$ from the sampling distribution, re-optimize each, and **average the resulting weights** to build a "resampled frontier." The average is far more stable than the single optimum because extreme weights cancel across draws.
 
-**Black–Litterman (1992).** Reverse-optimize from the market-cap weights to recover *equilibrium implied returns* $\Pi=\gamma\,\Sigma\,w_{\text{mkt}}$, then blend a set of investor views into the posterior $\mu^{\text{BL}}$ with a Bayesian precision-weighted formula — yielding diversified, non-extreme weights without the optimizer's knife-edge ([[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]]).
+**Black–Litterman (1992).** Reverse-optimize from the market-cap weights to recover *equilibrium implied returns* $\Pi=\gamma\,\Sigma\,w_{\text{mkt}}$, then blend a set of investor views into the posterior $\mu^{\text{BL}}$ with a Bayesian precision-weighted formula — yielding diversified, non-extreme weights without the optimizer's knife-edge ([[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]]).
 
 ---
 
@@ -99,7 +99,7 @@ The mechanism, in numbers: at $\delta{=}0$ (raw sample) the condition number is 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Shrinkage bias is real.** $\hat\Sigma(\delta)$ is biased toward $F$; if $F$ is a poor model (e.g. ignoring genuine factor structure), $\delta$ too large throws away real signal. Ledoit–Wolf's *data-driven* $\delta^\*$ is the guardrail; hand-picking $\delta$ is guesswork.
-2. **Denoising ≠ true structure.** Lifting small eigenvalues removes sampling noise but can also remove genuine low-risk strategies; RMT thresholds (Marchenko–Pastur) trade off keeping vs. discarding those directions ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT]]).
+2. **Denoising ≠ true structure.** Lifting small eigenvalues removes sampling noise but can also remove genuine low-risk strategies; RMT thresholds (Marchenko–Pastur) trade off keeping vs. discarding those directions ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]]).
 3. **Robust/resampling are not free.** Worst-case optimization can be too conservative (gives up alpha), and resampling averages away the very extreme weights that index-type strategies might want; both are *judgment calls* about the uncertainty set / sampling model, not objective facts.
 4. **Everything still needs a model of $\mu$.** Black–Litterman fixes *weight instability* by feeding equilibrium-imposed means, but the views and their confidence are inputs; garbage views in, garbage posterior out.
 5. **Out-of-sample humility (DeMiguel et al. 2009).** Across datasets, sophisticated optimizers routinely fail to beat naive $1/N$. No shrinkage intensity redeems a portfolio if the signal in $\mu$ isn't there. Robustness is a risk-management tool, not a return generator.
@@ -111,7 +111,7 @@ The mechanism, in numbers: at $\delta{=}0$ (raw sample) the condition number is 
 - **Ledoit, Olivier & Wolf, Michael**: *Improved Estimation of the Covariance Matrix of Stock Returns with an Application to Portfolio Selection*, Journal of Empirical Finance 10(5) (2004) — analytical shrinkage to a single-index/diagonal target; the workhorse estimator.
 - **Goldfarb, Donald & Iyengar, Garud**: *Robust Portfolio Selection Problems*, Mathematics of Operations Research 28(1) (2003) — worst-case SOCP MVO against uncertainty sets.
 - **Michaud, Richard O.**: *Efficient Asset Management*, 1st ed. OUP 1998 / 2nd ed. 2008 — resampling the frontier.
-- **Black, Fischer & Litterman, Robert**: *Global Portfolio Optimization*, Financial Analysts Journal 48(5) (1992) — equilibrium reverse-optimization + views ([[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]]).
+- **Black, Fischer & Litterman, Robert**: *Global Portfolio Optimization*, Financial Analysts Journal 48(5) (1992) — equilibrium reverse-optimization + views ([[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]]).
 - **DeMiguel, Garlappi & Uppal**: *Optimal Versus Naive Diversification*, RFS 22(5) (2009) — the $1/N$ out-of-sample benchmark.
 - **Kan & Zhou**: *Optimal Portfolio Choice with Parameter Uncertainty*, JFQA 42(3) (2007) — the three-fund / moment-shrinkage answer.
 
@@ -120,5 +120,5 @@ The mechanism, in numbers: at $\delta{=}0$ (raw sample) the condition number is 
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Index Hub]]
-- Forward topic-folder pages: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman Bayesian Allocation]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity]]
+- Forward topic-folder pages: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman Bayesian Allocation]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]]
 - Base: [[foundations/statistics-and-inference/index|Statistics]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra (regularization)]] · [[pillars/04-quantitative-risk/index|Quantitative Risk]]

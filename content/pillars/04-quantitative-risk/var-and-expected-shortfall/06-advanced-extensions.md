@@ -119,4 +119,4 @@ The Euler contributions sum to the portfolio ES to machine precision (diff $1.4\
 - Back: [[pillars/04-quantitative-risk/var-and-expected-shortfall/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Index Hub]]
 - Base: [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (Euler's theorem) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|VaR Estimation Methods]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]
-- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Risk Constraints]]
+- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Risk Constraints]]

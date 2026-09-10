@@ -158,4 +158,4 @@ Three facts are visible in the output. (i) **Precisions add**: $10.250 = 0.250 +
 - Back: [[foundations/bayesian-statistics/01-from-zero-intuition|01 · From Zero]] · [[foundations/bayesian-statistics/index|Index Hub]]
 - Continue: [[foundations/bayesian-statistics/03-posterior-inference|03 · Posterior Inference]] (what to *do* with the posterior) · [[foundations/bayesian-statistics/04-bayesian-and-regularization|04 · Bayesian & Regularization]] (the Gaussian prior *is* ridge)
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional distributions, densities) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (precision matrices, Gaussian conditionals)
-- Forward: [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman Allocation]] (a normal–normal update on expected returns)
+- Forward: [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Allocation]] (a normal–normal update on expected returns)

@@ -117,5 +117,5 @@ Read the last two lines: if the assets were independent, Kelly would put $1.25$ 
 
 - Back: [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/index|Index Hub]]
 - Tangency identity: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/03-tangency-and-capm|03 · Tangency & CAPM]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|MPT Index]]
-- Covariance fix: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]]
+- Covariance fix: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]]
 - Foundations: [[foundations/ergodicity-and-statistical-mechanics/06-advanced-extensions|06 · Advanced Extensions (foundations)]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]

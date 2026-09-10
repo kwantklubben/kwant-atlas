@@ -105,7 +105,7 @@ Read it twice: **at a perfectly ordinary near-collinear covariance ($\kappa{=}16
 2. **Small-eigenvalue explosion.** As soon as two assets are near-duplicates ($\rho\to1$), $\Sigma^{-1}$ has a huge eigenvalue and the weights become garbage — the structural root of "why not just optimize over 500 correlated names."
 3. **Means > covariances, always.** Chopra–Ziemba's ~10–11× factor means that pouring effort into a better $\Sigma$ while feeding naive sample *means* still leaves you dominated by mean noise. Priorities: fix $\mu$ (Black–Litterman, shrinkage) before polishing $\Sigma$.
 4. **The "portrait of the frontier is stable" illusion.** The *frontier curve* is stable under input noise (Best–Grauer: return/SD barely move) while the *corresponding weights* are not. An investor who plots the frontier and trusts the point on it is trusting a knife-edge. Resampling (Michaud) is one fix.
-5. **Constraint leak / nonpositive reality.** Once you add $w\ge0$, turnover caps, and impact costs, the raw optimizer's extreme weights are partially tamed but the *signal* is also lost — the transfer-coefficient idea behind [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]].
+5. **Constraint leak / nonpositive reality.** Once you add $w\ge0$, turnover caps, and impact costs, the raw optimizer's extreme weights are partially tamed but the *signal* is also lost — the transfer-coefficient idea behind [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]].
 
 ---
 
@@ -123,4 +123,4 @@ Read it twice: **at a perfectly ordinary near-collinear covariance ($\kappa{=}16
 
 - Back: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Min-Variance & Constraints]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling fixes: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|HRP]]
+- Sibling fixes: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP]]

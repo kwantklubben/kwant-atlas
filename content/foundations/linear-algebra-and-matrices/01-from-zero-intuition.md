@@ -102,5 +102,5 @@ Repeatedly "stretching and re-normalizing" a vector converges to the direction t
 ### 6. Connected Graph Bridges
 
 - Continue: [[foundations/linear-algebra-and-matrices/02-vectors-spaces-and-matrices|02 · Vectors, Spaces & Matrices]] · [[foundations/linear-algebra-and-matrices/04-eigenvalues-and-covariance|04 · Eigenvalues & Covariance]] · [[foundations/linear-algebra-and-matrices/index|Index Hub]]
-- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory]] (risk as $w'\Sigma w$) · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & Denoising]]
+- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory]] (risk as $w'\Sigma w$) · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & Denoising]]
 - Base: [[foundations/linear-algebra-and-matrices/index|Index Hub]] (self-contained entry to the toolbox)

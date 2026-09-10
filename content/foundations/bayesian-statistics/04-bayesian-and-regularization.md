@@ -42,7 +42,7 @@ The closed form is the **ridge normal equation**
 
 $$\hat\beta_{\text{ridge}}=\big(X^{\!\top}X+\lambda I\big)^{-1}X^{\!\top}y .$$
 
-A diffuse prior ($\tau^2\to\infty$, $\lambda\to0$) recovers OLS; a tight prior shrinks coefficients toward 0. Additivity of $+\lambda I$ to $X^{\!\top}X$ is precisely the additive-precision result of [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|02]] applied to the whole coefficient vector — and it is also why ridge fixes the singular $X^{\!\top}X$ that makes OLS ill-posed (the ridge page of [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]] uses the same move on $\hat\Sigma$).
+A diffuse prior ($\tau^2\to\infty$, $\lambda\to0$) recovers OLS; a tight prior shrinks coefficients toward 0. Additivity of $+\lambda I$ to $X^{\!\top}X$ is precisely the additive-precision result of [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|02]] applied to the whole coefficient vector — and it is also why ridge fixes the singular $X^{\!\top}X$ that makes OLS ill-posed (the ridge page of [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]] uses the same move on $\hat\Sigma$).
 
 **Laplace prior $\Rightarrow$ lasso $L_1$.** With $\beta_j\overset{iid}{\sim}\mathrm{Lap}(0,b)$, $p(\beta_j)\propto e^{-|\beta_j|/b}$, so
 
@@ -155,4 +155,4 @@ Read the three coefficient vectors together. **OLS** spreads small non-zero nois
 - Back: [[foundations/bayesian-statistics/03-posterior-inference|03 · Posterior Inference]] · [[foundations/bayesian-statistics/index|Index Hub]]
 - Continue: [[foundations/bayesian-statistics/05-mcmc|05 · MCMC]] (sampling the posterior when the prior is non-conjugate) · [[foundations/bayesian-statistics/06-advanced-extensions|06 · Advanced Extensions]] (hierarchical shrinkage)
 - Base: [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (penalized optimization, convexity) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (ridge normal equation, regularizing singular $X^{\!\top}X$)
-- Forward: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]] (the same prior logic on a covariance matrix) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|MPT & the Error-Maximizer Paradox]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]] (why regularization is non-negotiable at low SNR)
+- Forward: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]] (the same prior logic on a covariance matrix) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|MPT & the Error-Maximizer Paradox]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]] (why regularization is non-negotiable at low SNR)

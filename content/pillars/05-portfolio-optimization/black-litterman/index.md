@@ -113,11 +113,11 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 - Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Efficient Frontier]] · [[foundations/bayesian-statistics/index|Bayesian Statistics]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Sibling topic (this folder's "bad input" it fixes): [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]]
-- Cost/rebalancing bridge: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]
+- Cost/rebalancing bridge: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]
 - Sub-pages (in-folder): 01 From Zero · 02 Reverse Optimization · 03 The Black-Litterman Formula · 04 Views & Confidence · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/05-portfolio-optimization/black-litterman/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/05-portfolio-optimization/black-litterman/02-reverse-optimization|02 · Reverse Optimization]] → [[pillars/05-portfolio-optimization/black-litterman/03-the-black-litterman-formula|03 · The BL Formula]] → [[pillars/05-portfolio-optimization/black-litterman/04-views-and-confidence|04 · Views & Confidence]].
 - **Robustness (practitioner/graduate):** [[pillars/05-portfolio-optimization/black-litterman/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/05-portfolio-optimization/black-litterman/06-advanced-extensions|06 · Advanced Extensions]].
-- Flat-format sibling (leave as-is): [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman Bayesian Allocation (flat)]].
+- Flat-format sibling (leave as-is): [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman Bayesian Allocation (flat)]].

@@ -9,7 +9,7 @@ tags:
   - weight-caps
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/robust-optimization/03-robust-formulations|03 · Robust Formulations]] and [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/robust-optimization/03-robust-formulations|03 · Robust Formulations]] and [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]].
 
 ---
 
@@ -35,7 +35,7 @@ $$\max_{w}\ \hat\mu^\top w-\tfrac\delta2 w^\top\hat\Sigma w
 
 With $w_{\min}=0$ it is **long-only** (no short sales); with a common $w_{\max}$ it caps concentration. This is a convex QP solved by active-set/interior-point methods — every real optimizer since Markowitz uses some version.
 
-**Turnover constraint.** To control trading cost, add $\lVert w-w_{\text{prev}}\rVert_1\le\tau$ (an $\ell_1$ ball) — convex, and itself a robustness statement about the *path*, not just the endpoint (see [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]).
+**Turnover constraint.** To control trading cost, add $\lVert w-w_{\text{prev}}\rVert_1\le\tau$ (an $\ell_1$ ball) — convex, and itself a robustness statement about the *path*, not just the endpoint (see [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]).
 
 **Why constraints help (first principles).** Unconstrained MVO's optimum is $w^\star=\frac1\delta\hat\Sigma^{-1}\hat\mu$. The problem is that this point sits *outside* any sane region of portfolio space, in the short-saturated tail where estimation error dominates. Clipping the feasible set to the simplex/box removes exactly those directions. The cost is real — Clarke, de Silva & Thorley (2002) quantify it as a **transfer coefficient** $\mathrm{TC}<1$ that discounts achievable information ratio ($\mathrm{IR}\approx\mathrm{IC}\times\sqrt{\text{breadth}}\times\mathrm{TC}$) — but the benefit (survival) usually dominates.
 
@@ -133,5 +133,5 @@ Two verified, and deliberately honest, results:
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/05-portfolio-optimization/robust-optimization/03-robust-formulations|03 · Robust Formulations]]
-- Method siblings: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] (a constraint-free stabilizer) · [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering/index|HRP]] (inversion-free)
+- Method siblings: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] (a constraint-free stabilizer) · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP]] (inversion-free)
 - Forward: [[pillars/05-portfolio-optimization/robust-optimization/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/05-portfolio-optimization/robust-optimization/index|Index Hub]]

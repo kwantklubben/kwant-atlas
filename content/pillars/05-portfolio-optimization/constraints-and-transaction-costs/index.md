@@ -142,7 +142,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 - Sibling topics: [[pillars/05-portfolio-optimization/robust-optimization/index|Robust Optimization]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP]]
 - Execution (Pillar 2): [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution (Almgren–Chriss)]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|VWAP / TWAP / POV]]
 - Market making (Pillar 6): [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda–Stoikov]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]]
-- Legacy flat page (superseded by this folder): [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover Constraints]]
+- Legacy flat page (superseded by this folder): [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover Constraints]]
 - Sub-pages (in-folder): 01 From Zero · 02 Weight Constraints · 03 Transaction-Cost Models · 04 Turnover & Multi-Period · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

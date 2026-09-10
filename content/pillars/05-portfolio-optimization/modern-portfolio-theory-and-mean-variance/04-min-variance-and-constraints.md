@@ -101,7 +101,7 @@ Read the table: from $R^*=0.08$ to $0.10$ the constraint never binds (min-var is
 1. **Corner solutions are the rule, not the exception.** A $w\ge0$ optimizer coupled with a high $R^\*$ pushes weights to the simplex boundary; the naive habit of reading $[0,0,1]$ as "the model wants one asset" misses that it's an artifact of the constraint plus the target, not a forecast.
 2. **Long-only ≠ no leverage.** Even all-positive weights can still concentrate 100% in a single low-diversifying name — long-only is a *sign* constraint, not a *diversification* constraint. Adding caps ($w_i\le c$) is what actually compels spread.
 3. **The min-var portfolio is myopic:** it ignores returns entirely, so a genuinely informative $\mu$ is wasted, and in crises all correlations rise, degrading its diversification (the correlation-breakdown failure of [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|01 · From Zero]]).
-4. **"More constraints" is not monotone good.** Every additional constraint shrinks the feasible set, raising achievable variance at a given return and pushing weights into corners — the cost of realism is measurable, and sophisticated solvers (SOCP/QP with caps, turnover, impact) are how practitioners manage it ([[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]]).
+4. **"More constraints" is not monotone good.** Every additional constraint shrinks the feasible set, raising achievable variance at a given return and pushing weights into corners — the cost of realism is measurable, and sophisticated solvers (SOCP/QP with caps, turnover, impact) are how practitioners manage it ([[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]).
 
 ---
 
@@ -117,5 +117,5 @@ Read the table: from $R^*=0.08$ to $0.10$ the constraint never binds (min-var is
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/03-tangency-and-capm|03 · Tangency & CAPM]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Index Hub]]
-- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]
-- Sibling: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]]
+- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]
+- Sibling: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]]

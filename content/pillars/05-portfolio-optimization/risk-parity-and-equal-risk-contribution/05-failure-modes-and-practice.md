@@ -26,7 +26,7 @@ ERC is a beautiful *static* object built on one input: the covariance matrix $\S
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Failure-mechanism 1 — estimation.** ERC weight $w_i\propto\beta_i^{-1}$ depends on $\Sigma$ through the whole matrix, not just the diagonals. The sample covariance $\widehat\Sigma$ estimated on $T$ returns of $N$ assets is noisy when $T$ is short of ~$10\times N$; small-eigenvalue and off-diagonal errors get re-distributed into *different* "equal" risk shares than the truth implies. Consequence (quantified below): a book solved on a wrong $\rho_{12}$ has *nominal* equal budgets but realized contributions of 32/32/18/18 instead of 25/25/25/25. Mitigations: [Ledoit–Wolf shrinkage] and RMT denoising of $\Sigma$ *before* building the risk budget — [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]].
+**Failure-mechanism 1 — estimation.** ERC weight $w_i\propto\beta_i^{-1}$ depends on $\Sigma$ through the whole matrix, not just the diagonals. The sample covariance $\widehat\Sigma$ estimated on $T$ returns of $N$ assets is noisy when $T$ is short of ~$10\times N$; small-eigenvalue and off-diagonal errors get re-distributed into *different* "equal" risk shares than the truth implies. Consequence (quantified below): a book solved on a wrong $\rho_{12}$ has *nominal* equal budgets but realized contributions of 32/32/18/18 instead of 25/25/25/25. Mitigations: [Ledoit–Wolf shrinkage] and RMT denoising of $\Sigma$ *before* building the risk budget — [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 
 **Failure-mechanism 2 — leverage.** A risk-balanced portfolio is intentionally *low-volatility* in capital terms (the low-risk leg carries most of the *risk* share but little of the *capital* share). To match a conventional 60/40 volatility or return, one must lever the whole book:
 
@@ -100,7 +100,7 @@ est-Sigma  ERC w   = ['0.430', '0.215', '0.203', '0.152']
 est-book realized risk shares on TRUE Sigma = ['32.1', '32.1', '17.9', '17.9']
 ```
 
-The portfolio *thinks* it holds equal 25% risk slices. Marked to reality, assets 1 & 2 (whose true 0.8 correlation was underestimated as 0) actually carry **32.1% each** — 64% of the book's risk in the correlated pair. Same ERC label, different animal: **garbage covariance in, misallocated risk budgets out** — the direct bridge to [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]].
+The portfolio *thinks* it holds equal 25% risk slices. Marked to reality, assets 1 & 2 (whose true 0.8 correlation was underestimated as 0) actually carry **32.1% each** — 64% of the book's risk in the correlated pair. Same ERC label, different animal: **garbage covariance in, misallocated risk budgets out** — the direct bridge to [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 
 ---
 
@@ -110,7 +110,7 @@ The portfolio *thinks* it holds equal 25% risk slices. Marked to reality, assets
 2. **Leverage is priced, and can be cut off.** Financing spreads and margin calls make $L$ a random variable; forced de-leveraging in a crisis is precisely when the risk-parity thesis fails (Asness et al. 2012 App. B show even LIBOR-financed parity outperforms, but the mechanism is real).
 3. **Correlation regimes are structural, not noise.** One $\Sigma$ cannot hedge a correlation that flips sign; stress-test budgets under *shifted* (not just re-sampled) correlation blocks — the steeper cousin of the failure below.
 4. **Inverse-vol is not ERC off-constant-correlation.** Marketing-as-"risk parity" often ships the naive inverse-vol rule; off-equal-correlation it demonstrably concentrates risk (page 03). Verify with a contribution audit, not the weight sheet.
-5. **Concentration & turnover under volatility drift.** As correlation/volatility change, the ERC weights drift; monthly-rebalanced parity books eat turnover (Maillard et al. 2010 measure it). Compare against [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]].
+5. **Concentration & turnover under volatility drift.** As correlation/volatility change, the ERC weights drift; monthly-rebalanced parity books eat turnover (Maillard et al. 2010 measure it). Compare against [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]].
 
 ---
 
@@ -128,4 +128,4 @@ The portfolio *thinks* it holds equal 25% risk slices. Marked to reality, assets
 
 - Back: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/04-risk-budgeting|04 · Risk Budgeting]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/06-advanced-extensions|06 · Advanced Extensions]]
-- Bridges: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]] · [[pillars/04-quantitative-risk/index|Quantitative Risk (VaR)]]
+- Bridges: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]] · [[pillars/04-quantitative-risk/index|Quantitative Risk (VaR)]]

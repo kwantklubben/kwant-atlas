@@ -129,4 +129,4 @@ cond: C_sample=277.20  C_denoised=43.63  C_true=35.57
 - Back: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/02-the-sample-covariance-problem|02 · The Sample-Covariance Problem]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/03-linear-shrinkage|03 · Linear Shrinkage]]
 - Forward: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/06-advanced-extensions|06 · Nonlinear Shrinkage & Factor Covariance]]
 - Hub: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Index Hub]]
-- Related: [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity]] (uses correlation structure/denoising differently — clustering instead of eigen-clipping)
+- Related: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]] (uses correlation structure/denoising differently — clustering instead of eigen-clipping)

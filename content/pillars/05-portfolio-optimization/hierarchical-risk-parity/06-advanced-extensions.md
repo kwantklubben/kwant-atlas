@@ -8,7 +8,7 @@ tags:
   - clustering-extensions
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/hierarchical-risk-parity/04-recursive-bisection|04 · Recursive Bisection]] and [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/hierarchical-risk-parity/04-recursive-bisection|04 · Recursive Bisection]] and [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]].
 
 ---
 
@@ -211,5 +211,5 @@ Read it:
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Index Hub]]
-- Sibling topics: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]] (HERC's inner solver) · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]] (the denoised input) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean–Variance]] (NCO's inner objective) · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman]] (views for NCO's $\mu$)
+- Sibling topics: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] (HERC's inner solver) · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] (the denoised input) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance]] (NCO's inner objective) · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] (views for NCO's $\mu$)
 - Cross-pillar: [[pillars/07-machine-learning-altdata/index|Machine Learning & Alt-Data]] · [[pillars/01-quantitative-research/index|Quantitative Research]]

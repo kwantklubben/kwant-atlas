@@ -89,7 +89,7 @@ Read the rows: even at *zero* correlation, two assets of volatility 0.30 blend t
 
 - **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1):77–91 (1952) — the founding E-V rule and the diversification math this page walks through.
 - **Elton, Gruber, Brown & Goetzmann**: *Modern Portfolio Theory and Investment Analysis*, Wiley — the textbook treatment of the two-asset and multi-asset cases.
-- **Hastie, Tibshirani & Friedman (ESL)**, Ch 3–4 — the same $\Sigma$, ridge-type shrinkage intuition that shows up again in covariance estimation ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]]).
+- **Hastie, Tibshirani & Friedman (ESL)**, Ch 3–4 — the same $\Sigma$, ridge-type shrinkage intuition that shows up again in covariance estimation ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]]).
 
 ---
 

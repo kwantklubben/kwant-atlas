@@ -100,4 +100,4 @@ print("VWAP Schedule (100k shares over 13 buckets):\n", schedule)
 ### 6. Connected Graph Bridges
 
 - Bridges to: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution (Almgren-Chriss)]]
-- Bridges to: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]]
+- Bridges to: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]

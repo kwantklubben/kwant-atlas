@@ -162,4 +162,4 @@ Note the conditioning number in dollars and cents: with $\kappa=4\times10^{6}$, 
 
 - Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]] · [[foundations/numerical-methods/04-numerical-optimization|04 · Optimization]]
 - Continue: [[foundations/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]] · [[foundations/numerical-methods/index|Index Hub]]
-- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & Denoising]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (PSD repair, SVD)
+- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & Denoising]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (PSD repair, SVD)

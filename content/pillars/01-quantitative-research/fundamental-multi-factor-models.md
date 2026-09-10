@@ -110,5 +110,5 @@ print(f"R-squared:    {res['r_squared']:.3f}")
 ### 6. Connected Graph Bridges
 
 - Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]
-- Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Optimization]]
+- Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Optimization]]
 - Bridges to: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking]]

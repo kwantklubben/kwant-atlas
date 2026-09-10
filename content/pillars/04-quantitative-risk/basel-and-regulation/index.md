@@ -112,7 +112,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 - Foundational base: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]]
 - Sub-pages (in-folder): 01 From Zero · 02 Capital & RWA · 03 Market Risk & FRTB · 04 Credit & Operational Risk · 05 Failure Modes · 06 Advanced Extensions
 - Sibling topics: [[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Counterparty Risk & xVA]] (the CVA capital charge) · [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]] (source of the LCR/NSFR) · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]] (Pillar 2)
-- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Risk Constraints & Mean–Variance]] (capital as a constraint)
+- Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Risk Constraints & Mean–Variance]] (capital as a constraint)
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/04-quantitative-risk/basel-and-regulation/01-from-zero-intuition|01 · From Zero]] — why banks are regulated and what "capital" actually means.

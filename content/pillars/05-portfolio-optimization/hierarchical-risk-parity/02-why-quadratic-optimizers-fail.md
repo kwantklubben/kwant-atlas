@@ -8,7 +8,7 @@ tags:
   - error-maximization
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory & Mean–Variance]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 
 ---
 
@@ -150,7 +150,7 @@ The mechanism is visible in the numbers: MVO's weight vector is dominated by dir
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **You cannot optimize what you cannot estimate.** The minimum-variance solution is $O(\lambda_i^{-2})$ sensitive to the smallest eigenvalues, which are the least reliable. More data or better estimation (shrinkage/denoising, factor models) helps; ignoring the problem does not. → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]].
+1. **You cannot optimize what you cannot estimate.** The minimum-variance solution is $O(\lambda_i^{-2})$ sensitive to the smallest eigenvalues, which are the least reliable. More data or better estimation (shrinkage/denoising, factor models) helps; ignoring the problem does not. → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 2. **Reported risk is not realized risk.** Because $\hat w^\top\hat\Sigma\hat w$ is fit on the same $\hat\Sigma$, it is biased low. The $220\times$ gap above is the *definition* of overfitting, not evidence of a coding error. Always evaluate walk-forward.
 3. **Means are worse than covariances.** Chopra–Ziemba (1993): expected-return errors dominate covariance errors by an order of magnitude. HRP sidesteps this by using *no* forecasts — which is a strength for pure risk allocation and a *limitation* when you have genuine alpha.
 4. **Instability is not cured by constraints alone.** Long-only and weight caps clip the symptom; the misaligned estimate remains and the *ranking* it induces still pushes risk toward noise. Constraints bound the damage; they do not fix the model.
@@ -173,4 +173,4 @@ The mechanism is visible in the numbers: MVO's weight vector is dominated by dir
 
 - Back: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/01-from-zero-intuition|01 · From Zero]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Index Hub]]
 - Continue: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/03-hierarchical-clustering|03 · Hierarchical Clustering]]
-- Related: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean–Variance & Error Maximization]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman]] (adds views without inverting a noisy $\hat\Sigma$ naively) · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]]
+- Related: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & Error Maximization]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] (adds views without inverting a noisy $\hat\Sigma$ naively) · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]]

@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (spectral decomposition, condition number, Wishart matrices) and [[foundations/probability-and-statistics/index|Probability & Statistics]] (sample covariance, quadratic forms).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (spectral decomposition, condition number, Wishart matrices) and [[foundations/probability-and-measure-theory/index|Probability & Statistics]] (sample covariance, quadratic forms).
 
 ---
 
@@ -113,12 +113,12 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/probability-and-statistics/index|Probability & Statistics]]
-- Sibling topic: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory & Mean–Variance]] (the optimizer that consumes $\hat\Sigma$)
+- Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/probability-and-measure-theory/index|Probability & Statistics]]
+- Sibling topic: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance]] (the optimizer that consumes $\hat\Sigma$)
 - Sub-pages (in-folder): 01 From Zero · 02 The Sample-Covariance Problem · 03 Linear Shrinkage · 04 RMT Denoising · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/01-from-zero-intuition|01 · From Zero]] — why a "good" matrix can be a bad risk model.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/02-the-sample-covariance-problem|02 · The Sample-Covariance Problem]] → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/03-linear-shrinkage|03 · Linear Shrinkage]] → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/04-random-matrix-theory-denoising|04 · RMT Denoising]].
 - **Robustness (practitioner/graduate):** [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity]]
+- Forward links: [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]]

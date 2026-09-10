@@ -43,7 +43,7 @@ Multiplying by the budget $\sum_i w_i=1$ normalizes. **Well-posedness:** Maillar
 
 **Closed form — two assets.** Let $w_1=w$, $w_2=1-w$. The ERC condition $w_1^2\sigma_1^2=(1-w)^2\sigma_2^2$ gives the unique solution in $[0,1]$:
 
-$$\boxed{\;w_1=\frac{\sigma_2^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}},\qquad w_2=\frac{\sigma_1^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}}\;}$$
+$$\boxed{\;w_1=\frac{\sigma_1^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}}=\frac{\sigma_2}{\sigma_1+\sigma_2},\qquad w_2=\frac{\sigma_2^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}}=\frac{\sigma_1}{\sigma_1+\sigma_2}\;}$$
 *— and it does not depend on the correlation $\rho$ at all.*
 
 **Closed form — constant correlation ($\rho_{ij}=\rho$).** With $\Sigma_{ij}=\rho\sigma_i\sigma_j$ ($i\ne j$) the ERC condition reduces to $w_i\sigma_i=w_j\sigma_j$, giving
@@ -125,8 +125,8 @@ The bottom two rows are the entire argument for "ERC over naive risk parity": th
 
 1. **"Inverse volatility" is not always ERC.** It is ERC *iff* the correlation matrix is constant (all $\rho_{ij}$ equal). With real covariance structure, inverse-vol concentrates risk exactly where ERC would not — the worked example above proves it numerically.
 2. **ERC is long-only by construction.** Relaxing the short constraint destroys uniqueness: multiple weight vectors can satisfy $w_i(\Sigma w)_i=\text{const}$ when shorting is allowed (Maillard §3.3). The solver above implicitly forces $w>0$; a short-allowed copy of the problem is a different animal.
-3. **The solution is a function of $\Sigma$, full stop.** ERC takes no expected-return input — its robustness to return estimation is real, but it inherits *every* error in $\Sigma$. A covariance estimated on too-short a window, or un-denoised, quietly mismeasures "risk balance." (See [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/05-failure-modes-and-practice|05 · Failure Modes]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT]].)
-4. **Convex ≠ cheap for huge $N$.** CCD is $O(N^2)$ per sweep and excellent for the $N\!\sim\!10$-100 asset-class case; at security-level $N\!>\!1000$ the same machinery is heavier, which is part of HRP's appeal ([[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity]]).
+3. **The solution is a function of $\Sigma$, full stop.** ERC takes no expected-return input — its robustness to return estimation is real, but it inherits *every* error in $\Sigma$. A covariance estimated on too-short a window, or un-denoised, quietly mismeasures "risk balance." (See [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/05-failure-modes-and-practice|05 · Failure Modes]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]].)
+4. **Convex ≠ cheap for huge $N$.** CCD is $O(N^2)$ per sweep and excellent for the $N\!\sim\!10$-100 asset-class case; at security-level $N\!>\!1000$ the same machinery is heavier, which is part of HRP's appeal ([[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]]).
 
 ---
 

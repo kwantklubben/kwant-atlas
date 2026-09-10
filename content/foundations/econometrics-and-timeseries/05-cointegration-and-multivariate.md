@@ -130,4 +130,4 @@ The Engle–Granger procedure recovers the true hedge ratio $\beta\approx2$ and 
 
 - Back: [[foundations/econometrics-and-timeseries/03-forecasting-and-unit-roots|03 · Forecasting & Unit Roots]] · [[foundations/econometrics-and-timeseries/index|Index Hub]]
 - Forward: [[foundations/econometrics-and-timeseries/06-advanced-extensions|06 · Advanced Extensions]] (multivariate vol, state-space)
-- Applied: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]]
+- Applied: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]]

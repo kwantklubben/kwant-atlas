@@ -120,7 +120,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 - Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Efficient Frontier]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Sibling inputs it consumes: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] (Bayesian robustness on $\mu$)
-- Cost/rebalancing bridge: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]
+- Cost/rebalancing bridge: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]
 - Sub-pages (in-folder): 01 From Zero · 02 The Estimation-Error Problem · 03 Robust Formulations · 04 Constraints & Resampling · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

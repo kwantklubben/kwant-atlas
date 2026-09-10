@@ -139,4 +139,4 @@ Read the three lines at the bottom together: the **same 8 flips** produce a post
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional probability, Bayes' rule)
 - Continue: [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|02 · Bayes' Theorem & Priors]] · [[foundations/bayesian-statistics/03-posterior-inference|03 · Posterior Inference]] · [[foundations/bayesian-statistics/index|Index Hub]]
-- Forward (applications): [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman Allocation]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]]
+- Forward (applications): [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Allocation]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]]

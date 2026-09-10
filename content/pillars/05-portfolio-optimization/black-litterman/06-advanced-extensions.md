@@ -115,5 +115,5 @@ prior precision=500.00  view precision=1000.00 -> posterior var0 = 0.000667 (pri
 ### 6. Connected Graph Bridges
 
 - Base: [[pillars/05-portfolio-optimization/black-litterman/03-the-black-litterman-formula|03 · The BL Posterior]] · [[pillars/05-portfolio-optimization/black-litterman/05-failure-modes-and-practice|05 · Failure Modes]] · [[foundations/bayesian-statistics/03-posterior-inference|Posterior Inference]]
-- Sibling/practice: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|Constraints]]
+- Sibling/practice: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|Constraints]]
 - Back: [[pillars/05-portfolio-optimization/black-litterman/index|Index Hub]]

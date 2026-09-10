@@ -122,4 +122,4 @@ Read it: the mean $RV$ ($1.4396\text{e-}04$) nails the true daily variance ($1.4
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (long memory, ARFIMA) · [[foundations/statistics-and-inference/index|Statistics & Inference]] (OLS)
 - Prior: [[pillars/01-quantitative-research/garch-and-volatility-modeling/03-asymmetric-models|03 · Asymmetric Models]] · Hub: [[pillars/01-quantitative-research/garch-and-volatility-modeling/index|Index]]
 - Continue: [[pillars/01-quantitative-research/garch-and-volatility-modeling/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/garch-and-volatility-modeling/06-advanced-extensions|06 · Advanced Extensions]]
-- Applied: [[pillars/02-algorithmic-hft/index|Algorithmic & HFT]] (microstructure noise) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity]] (RV-based vol targeting)
+- Applied: [[pillars/02-algorithmic-hft/index|Algorithmic & HFT]] (microstructure noise) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] (RV-based vol targeting)

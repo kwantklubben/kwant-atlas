@@ -129,4 +129,4 @@ for step in spiral:
 
 - Foundational Base: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]]
 - Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]
-- Bridges to: [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs]]
+- Bridges to: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]

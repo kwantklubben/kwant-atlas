@@ -8,7 +8,7 @@ tags:
   - erc-comparison
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/hierarchical-risk-parity/03-hierarchical-clustering|03 · Hierarchical Clustering]] and [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/hierarchical-risk-parity/03-hierarchical-clustering|03 · Hierarchical Clustering]] and [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]].
 
 ---
 
@@ -41,7 +41,7 @@ be the *inverse-variance* (naive risk-parity) weights and portfolio variance of 
 
 $$\alpha_0=\frac{V_1}{V_0+V_1},\qquad \alpha_1=1-\alpha_0=\frac{V_0}{V_0+V_1},\qquad W_0=W\alpha_0,\;\;W_1=W\alpha_1 .$$
 
-The **riskier** half ($V$ larger) gets the **smaller** fraction — inverse variance, exactly the two-asset ERC solution when $\rho_{12}=0$ (see [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]], where $w_1\propto\sigma_1^{-1}$ for independent assets).
+The **riskier** half ($V$ larger) gets the **smaller** fraction — inverse variance, exactly the two-asset ERC solution when $\rho_{12}=0$ (see [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]], where $w_1\propto\sigma_1^{-1}$ for independent assets).
 
 **Final weights.** Recurse to singletons; the weight of asset $i$ is the product of the $\alpha$'s on its root-to-leaf path:
 
@@ -166,7 +166,7 @@ HRP lands between the unconstrained optimum and ERC, and beats $1/N$ by a wide m
 2. **Naive-RP within clusters is not risk parity.** Using $V_{\mathcal C}=\tilde w^\top\Sigma_{\mathcal C}\tilde w$ means the *cluster* risk is that of an inverse-variance portfolio, which ignores intra-cluster correlations. A cluster of two $0.95$-correlated assets is treated as more diversified than it is. HERC ([[pillars/05-portfolio-optimization/hierarchical-risk-parity/06-advanced-extensions|06]]) fixes this by using ERC within clusters.
 3. **HRP still needs a trustworthy diagonal.** Although it avoids the inverse, its split factors read $\operatorname{diag}(\Sigma_{\mathcal C})$ directly; a bad variance estimate for one asset skews every split it participates in. Denoise/shrink first.
 4. **No return information.** Like all risk-based allocators, HRP is silent on expected returns. Its beautiful $74.9\%$ bond allocation is a *risk* statement; if bonds are expected to lose to inflation it is the wrong portfolio. Layer views via Black–Litterman rather than "fixing" HRP.
-5. **Transaction costs scale with tree instability.** The tree is rebuilt from rolling windows; if the tree reshuffles, weights reshuffle and turnover spikes. Sweep window length and smooth the tree (→ [[pillars/05-portfolio-optimization/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover]]).
+5. **Transaction costs scale with tree instability.** The tree is rebuilt from rolling windows; if the tree reshuffles, weights reshuffle and turnover spikes. Sweep window length and smooth the tree (→ [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]).
 
 ---
 
@@ -183,4 +183,4 @@ HRP lands between the unconstrained optimum and ERC, and beats $1/N$ by a wide m
 
 - Back: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/03-hierarchical-clustering|03 · Hierarchical Clustering]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Index Hub]]
 - Continue: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/06-advanced-extensions|06 · Advanced Extensions]]
-- Related: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity & ERC]] (the allocator HRP is *not*) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean–Variance & GMV]] · [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman]] (adding views)
+- Related: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] (the allocator HRP is *not*) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & GMV]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] (adding views)
