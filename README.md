@@ -31,7 +31,7 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 4. **[Quantitative Risk Management](content/pillars/04-quantitative-risk/index.md)**  
    *Measuring, bounding, and mitigating financial exposure to guarantee firm survival across extreme market volatility.*  
-   **Structure:** organised as **11 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
+   **Structure:** organised as **13 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
    1. **[Value at Risk & Expected Shortfall](content/pillars/04-quantitative-risk/var-and-expected-shortfall/index.md)** — The canonical downside risk measures; why VaR fails subadditivity and Expected Shortfall (CVaR) is the coherent alternative.
    2. **[Parametric, Historical & Monte Carlo VaR](content/pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index.md)** — The three estimation engines behind a VaR number, their distributional assumptions, and backtesting (Kupiec).
    3. **[Extreme Value Theory & Fat Tails](content/pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index.md)** — Modelling tail risk with POT/GEV when Gaussian assumptions understate rare-event losses.
@@ -43,6 +43,8 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
    9. **[Basel & Regulation](content/pillars/04-quantitative-risk/basel-and-regulation/index.md)** — Capital-adequacy frameworks (Basel I–III) and how internal models are permitted and gamed.
    10. **[Operational Risk](content/pillars/04-quantitative-risk/operational-risk/index.md)** — Loss-distribution approaches for fat-tailed operational losses and the advanced-measurement pitfalls.
    11. **[Risk-Factor Sensitivities](content/pillars/04-quantitative-risk/risk-factor-sensitivities/index.md)** — Greeks, key-rate durations, and factor-exposure shocks for marking books to risk-factor moves.
+   12. **[Copulas & Dependence](content/pillars/04-quantitative-risk/copulas-and-dependence/index.md)** — Sklar's theorem, Gaussian/`t`/Archimedean copulas, tail dependence, and why the Gaussian copula's zero tail dependence missed 2008.
+   13. **[Systemic Risk & Aggregation](content/pillars/04-quantitative-risk/systemic-risk-and-aggregation/index.md)** — Network contagion, CoVaR/MES/SRISK stability measures, and the (im)possibility of aggregating the risk types into one number.
 
 5. **[Portfolio Construction and Optimization](content/pillars/05-portfolio-optimization/index.md)**  
    *Applying mathematical frameworks to allocate capital across assets, maximizing risk-adjusted return under real friction.*  
