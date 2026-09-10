@@ -110,6 +110,17 @@ and are **not** errors — the checker flags them; a human must classify. The ru
 only a defect if the code is deterministic. If the page's fence header says "ms"/"ns/op"/"x", it's
 a benchmark.
 
+## Legacy-note retirement (duplicate slugs)
+
+19 superseded flat notes were retired to `<pillar>/_legacy/` (never deleted): 10 shared a slug with a
+topic-folder (ambiguous link resolution), 9 more duplicated a folder under a different stem. Their
+inbound wikilinks (308 across 193 files) were repointed to the canonical folder hubs first — including
+the escaped `[[slug\|Alias]]` form used inside markdown tables.
+
+`_legacy` is now excluded from the published site via `quartz.config.ts` `ignorePatterns`
+(`**/_legacy/**` — globby matches full paths, so a bare `_legacy` is a no-op). Build: 749 → 693 files,
+0 archived pages emitted (65 were previously live).
+
 ## How to re-run
 
 
