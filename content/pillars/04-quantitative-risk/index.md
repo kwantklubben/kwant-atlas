@@ -1,6 +1,7 @@
 ---
 title: "Pillar 4: Quantitative Risk Management"
 tags:
+  - pillar-quantitative-risk
   - pillar-quant-risk
   - quantitative-risk-management
   - risk-management

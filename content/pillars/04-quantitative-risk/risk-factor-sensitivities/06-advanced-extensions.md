@@ -63,7 +63,7 @@ with the skewness sign flipped because VaR is a quantile of the **loss** $L=-\De
 | **VaR / ES limit** | currency, one-day or ten-day | the aggregate | the whole |
 | Stress limit | currency, per scenario | non-linearity beyond the model | the tail the model cannot see |
 
-**The escalation rule that makes limits real:** limits are *hard* at the desk level (breach $=$ mandatory reduction next session) and *soft* at the division level (breach $=$ notification and a remediation plan). Without a stated action, a limit is a report. This is where the sensitivity machinery connects to policy — see [[pillars/04-quantitative-risk/basel-and-regulation|Basel & Regulation]] for the same structure at regulatory scale (the FRTB sensitivities-based method prescribes **delta, vega and curvature** buckets, which is this page's mathematics written into capital law).
+**The escalation rule that makes limits real:** limits are *hard* at the desk level (breach $=$ mandatory reduction next session) and *soft* at the division level (breach $=$ notification and a remediation plan). Without a stated action, a limit is a report. This is where the sensitivity machinery connects to policy — see [[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation]] for the same structure at regulatory scale (the FRTB sensitivities-based method prescribes **delta, vega and curvature** buckets, which is this page's mathematics written into capital law).
 
 ---
 
@@ -150,7 +150,7 @@ VaR 1d 99%  163.1099    200.0    81.55  ok
 3. **The chi-square limit is visible in the moments.** For a gamma-dominated position ($a\to0$) the formulas give skewness $2\sqrt2$ and excess kurtosis $12$; here $a=75.3$ dwarfs $b=2.17$, so the deviations are small ($\gamma_1=\pm0.173$) — *but the sign is the sign of the position*.
 4. **Delta-normal alone would have passed this book.** The dashboard's delta utilisation is $59.77\%$ — comfortable — while the **gamma limit is in breach at $109.44\%$**. A limit system that watches only delta (or only VaR) reports this book as fine. The gamma and vega columns are not decoration; they are the limits that bind.
 
-> **The FRTB echo.** The sensitivities-based method in Basel's Fundamental Review of the Trading Book requires exactly these three buckets — **delta, vega, curvature** — risk-weighted and aggregated per risk class. The regulatory capital regime is this page's mathematics, with the aggregation rules fixed by law. See [[pillars/04-quantitative-risk/basel-and-regulation|Basel & Regulation]].
+> **The FRTB echo.** The sensitivities-based method in Basel's Fundamental Review of the Trading Book requires exactly these three buckets — **delta, vega, curvature** — risk-weighted and aggregated per risk class. The regulatory capital regime is this page's mathematics, with the aggregation rules fixed by law. See [[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation]].
 
 ---
 
@@ -181,5 +181,5 @@ VaR 1d 99%  163.1099    200.0    81.55  ok
 
 - Back: [[pillars/04-quantitative-risk/risk-factor-sensitivities/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Index Hub]]
 - Sibling: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/06-advanced-extensions|06 · VaR Extensions (delta–gamma & backtesting)]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/04-expected-shortfall|Expected Shortfall (the coherent measure FRTB substitutes for VaR)]]
-- Forward: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/basel-and-regulation|Basel & Regulation (FRTB SBM: delta, vega, curvature)]]
+- Forward: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation (FRTB SBM: delta, vega, curvature)]]
 - Base: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|Pillar 3 · The Greeks]] · [[foundations/numerical-methods/index|Numerical Methods]]

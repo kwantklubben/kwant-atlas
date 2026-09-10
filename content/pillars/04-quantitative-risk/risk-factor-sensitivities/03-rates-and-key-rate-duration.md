@@ -152,4 +152,4 @@ parallel +200bp: actual=-24.135169  dur-only=-26.183108  dur+conv=-23.996433
 - Back: [[pillars/04-quantitative-risk/risk-factor-sensitivities/01-from-zero-intuition|01 · From Zero]] · [[pillars/04-quantitative-risk/risk-factor-sensitivities/02-delta-gamma-vega|02 · Delta, Gamma, Vega]]
 - Continue: [[pillars/04-quantitative-risk/risk-factor-sensitivities/04-factor-exposures|04 · Factor Exposures]] · [[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/03-scenario-construction|Scenario Construction (twist & bowing shocks)]]
-- Regulatory application: [[pillars/04-quantitative-risk/basel-and-regulation|Basel & Regulation — FRTB sensitivities-based method]]
+- Regulatory application: [[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation — FRTB sensitivities-based method]]
