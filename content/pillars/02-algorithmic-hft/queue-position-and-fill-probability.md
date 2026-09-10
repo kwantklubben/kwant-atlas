@@ -113,4 +113,4 @@ print(f"Fill Probability (Pos 50): {p_fill_pos50:.2%}")
 
 - Foundational Base: [[foundations/probability-and-measure-theory/index|Probability Theory]]
 - Bridges to: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection]]
-- Bridges to: [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda-Stoikov Model]]
+- Bridges to: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda-Stoikov Model]]

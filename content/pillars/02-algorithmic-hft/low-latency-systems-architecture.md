@@ -135,4 +135,4 @@ int main() {
 
 - Bridges to: [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]]
 - Bridges to: [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA]]
-- Bridges to: [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Market Making Engine]]
+- Bridges to: [[pillars/06-market-making/limit-order-book-mechanics/index|Market Making Engine]]

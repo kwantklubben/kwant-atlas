@@ -113,5 +113,5 @@ print(f"  Risk-Averse:  {x_averse[50]:.0f} (Liquidated rapidly to reduce vol exp
 ### 6. Connected Graph Bridges
 
 - Foundational Base: [[foundations/calculus-and-optimization/index|Optimization & KKT]]
-- Bridges to: [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda-Stoikov Model]]
+- Bridges to: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda-Stoikov Model]]
 - Bridges to: [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk]]

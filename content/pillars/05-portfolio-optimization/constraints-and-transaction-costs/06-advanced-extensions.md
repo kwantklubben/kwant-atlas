@@ -166,7 +166,7 @@ Two verified readings:
 - **Boyd, Busseti, Diamond, Kahn, Koh, Nystrup & Speth (2017)**, *Multi-Period Trading via Convex Optimization*, FnT in Optimization 3(1):1–72 — multi-period convex formulations, SOCP reformulations and scaling.
 - **Almgren & Chriss (2000/01)**, Journal of Risk 3(2):5–39 — permanent/temporary impact, the trading frontier, and the order-level counterpart of §2.4. *Cross-pillar: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Pillar 2]] owns this work.*
 - **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 7 (Kyle $\lambda$) and Ch 8 (generalized Roll: $\text{spread}=2(c+\lambda)$) — the structural origin of the $c$ and $\lambda$ coefficients.
-- **Avellaneda & Stoikov (2008)**, *High-Frequency Trading in a Limit Order Book*, Quantitative Finance 8(3):217–224 — the market-maker's inventory-aware quoting problem, the *supply-side* mirror of the portfolio's cost. *Cross-pillar: [[pillars/06-market-making/the-avellaneda-stoikov-model|Pillar 6]].*
+- **Avellaneda & Stoikov (2008)**, *High-Frequency Trading in a Limit Order Book*, Quantitative Finance 8(3):217–224 — the market-maker's inventory-aware quoting problem, the *supply-side* mirror of the portfolio's cost. *Cross-pillar: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Pillar 6]].*
 
 ---
 
@@ -174,7 +174,7 @@ Two verified readings:
 
 - Back: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/04-turnover-and-multi-period|04 · Turnover & the Multi-Period Trade-Off]]
 - Execution bridge: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution (Almgren–Chriss)]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|VWAP / TWAP / POV]] · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]]
-- Market-making bridge (the cost side of the trade): [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda–Stoikov]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]
+- Market-making bridge (the cost side of the trade): [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] · [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]
 - Siblings: [[pillars/05-portfolio-optimization/robust-optimization/06-advanced-extensions|Robust Optimization · 06]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]]
 - Foundations: [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/numerical-methods/index|Numerical Methods]]
 - Hub: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Index Hub]]

@@ -185,7 +185,7 @@ Four verified readings:
 
 - Back: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/02-weight-constraints|02 · Weight Constraints]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/01-from-zero-intuition|01 · From Zero]]
 - Execution bridge: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution (Almgren–Chriss)]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|VWAP / TWAP / POV]]
-- Microstructure source: [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit-Order-Book Mechanics & L3]]
+- Microstructure source: [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/limit-order-book-mechanics/index|Limit-Order-Book Mechanics & L3]]
 - Continue: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/04-turnover-and-multi-period|04 · Turnover & the Multi-Period Trade-Off]]
 - Foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
 - Hub: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Index Hub]]

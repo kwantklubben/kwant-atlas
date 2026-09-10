@@ -98,5 +98,5 @@ print(f"Micro-Price: {micro:.4f} (Skewed heavily toward Ask due to Bid pressure)
 ### 6. Connected Graph Bridges
 
 - Foundational Base: [[foundations/probability-and-measure-theory/index|Probability Theory]]
-- Bridges to: [[pillars/06-market-making/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics]]
+- Bridges to: [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]]
 - Bridges to: [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position]]
