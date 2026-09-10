@@ -1,12 +1,12 @@
 # Foundations (Mathematics Toolbox) — Acquisition Titles
 
-Legend: `1.` = HAVE (already owned) · `2.` = FREE, downloaded in `free/foundations/` · `3.` = PAID or free-not-obtained (`[manual]` = [Free]-tagged work with no file yet).
+Legend: `1.` = HAVE (owned or acquired; `→ refs/<file>` = verified PDF downloaded this pass, see `refs/MANIFEST.json` / `refs/MANIFEST.md`) · `2.` = FREE, downloaded in `free/foundations/` · `3.` = PAID or free-not-obtained (`[manual]` = [Free]-tagged work with no file yet; licensed ones may need an authenticated SDU EZproxy session).
 
 ## linear-algebra-and-matrices
 1. *Internal* — **Linear Algebra & Matrix Decompositions foundation note** (thin Atlas node; index, not textbook).
-2. **Sheldon Axler — *Linear Algebra Done Right*** (4th ed., 2023, Springer) — proof-first, eigenvalues-first; spectral theorem/PSD/SVD. `[Free]`.
+1. **Sheldon Axler — *Linear Algebra Done Right*** (4th ed., 2023, Springer) — proof-first, eigenvalues-first; spectral theorem/PSD/SVD. `[Free]`. — DL: refs/02_Axler_2023_linear_algebra_done_right.pdf
 3. **Gilbert Strang — *Introduction to Linear Algebra*** (5th ed., 2016, Wellesley-Cambridge Press).
-3. **Stephen Boyd & Lieven Vandenberghe — *Introduction to Applied Linear Algebra*** (2018, Cambridge University Press).
+1. **Stephen Boyd & Lieven Vandenberghe — *Introduction to Applied Linear Algebra*** (2018, Cambridge University Press). — DL: refs/04_Boyd_2018_applied_linear_algebra.pdf
 3. **Roger A. Horn & Charles R. Johnson — *Matrix Analysis*** (2nd ed., 2013, Cambridge University Press).
 3. **Zhidong Bai & Jack W. Silverstein — *Spectral Analysis of Large Dimensional Random Matrices*** (2nd ed., 2010, Springer).
 
@@ -19,7 +19,7 @@ Legend: `1.` = HAVE (already owned) · `2.` = FREE, downloaded in `free/foundati
 3. **Terence Tao — *Analysis I & Analysis II*** (3rd ed., Springer).
 
 ## optimization-and-convex-analysis
-2. **Stephen Boyd & Lieven Vandenberghe — *Convex Optimization*** (2004, Cambridge University Press) — convex-analysis canon; duality/KKT. `[Free]`.
+1. **Stephen Boyd & Lieven Vandenberghe — *Convex Optimization*** (2004, Cambridge University Press) — convex-analysis canon; duality/KKT. `[Free]`. — DL: refs/13_Boyd_2004_convex_optimization.pdf
 3. **Jorge Nocedal & Stephen J. Wright — *Numerical Optimization*** (2nd ed., 2006, Springer).
 3. **Dimitris Bertsimas & John N. Tsitsiklis — *Introduction to Linear Optimization*** (1997, Athena Scientific).
 3. **R. Tyrrell Rockafellar — *Convex Analysis*** (1970; Princeton Landmarks reprint 1997).
@@ -27,7 +27,7 @@ Legend: `1.` = HAVE (already owned) · `2.` = FREE, downloaded in `free/foundati
 3. **Aharon Ben-Tal & Arkadi Nemirovski — *Lectures on Modern Convex Optimization*** (2001, SIAM).
 
 ## probability-and-measure-theory
-2. **Rick Durrett — *Probability: Theory and Examples*** (5th ed., 2019, Cambridge University Press) — measure theory, LLN/CLT, martingales. `[Free]`.
+1. **Rick Durrett — *Probability: Theory and Examples*** (5th ed., 2019, Cambridge University Press) — measure theory, LLN/CLT, martingales. `[Free]`. — DL: refs/19_Durrett_2019_probability_theory_examples.pdf
 3. **Joseph K. Blitzstein & Jessica Hwang — *Introduction to Probability*** (2nd ed., 2019, CRC Press).
 3. **Sheldon Ross — *A First Course in Probability*** (10th ed., Pearson).
 3. **Patrick Billingsley — *Probability and Measure*** (Anniversary ed., 2012, Wiley).
@@ -45,10 +45,10 @@ Legend: `1.` = HAVE (already owned) · `2.` = FREE, downloaded in `free/foundati
 3. **Ioannis Karatzas & Steven E. Shreve — *Brownian Motion and Stochastic Calculus*** (2nd ed., 1991, Springer).
 
 ## statistics-and-inference
-1. **Trevor Hastie, Robert Tibshirani & Jerome Friedman — *The Elements of Statistical Learning*** (2nd ed., 2009, Springer).
+1. **Trevor Hastie, Robert Tibshirani & Jerome Friedman — *The Elements of Statistical Learning*** (2nd ed., 2009, Springer). — DL: refs/33_Hastie_2009_elements_statistical_learning.pdf
 3. **George Casella & Roger L. Berger — *Statistical Inference*** (2nd ed., 2002, Duxbury/Cengage).
 3. **Bradley Efron & Trevor Hastie — *Computer Age Statistical Inference*** (2016, Cambridge University Press).
-3. **Larry Wasserman — *All of Statistics*** (2004, Springer).
+1. **Larry Wasserman — *All of Statistics*** (2004, Springer). — DL: refs/36_Wasserman_2004_all_of_statistics.pdf
 3. **John A. Rice — *Mathematical Statistics and Data Analysis*** (3rd ed., 2006, Duxbury/Cengage).
 3. **Erich L. Lehmann & George Casella — *Theory of Point Estimation*** (2nd ed., 1998, Springer).
 3. **Larry Wasserman — *All of Nonparametric Statistics*** (2006, Springer).
@@ -57,7 +57,7 @@ Legend: `1.` = HAVE (already owned) · `2.` = FREE, downloaded in `free/foundati
 1. **Ruey S. Tsay — *Analysis of Financial Time Series*** (3rd ed., 2010, Wiley).
 3. **James D. Hamilton — *Time Series Analysis*** (1994, Princeton University Press).
 3. **Jeffrey M. Wooldridge — *Introductory Econometrics: A Modern Approach*** (7th ed., 2019, Cengage).
-3. **Joshua D. Angrist & Jörn-Steffen Pischke — *Mostly Harmless Econometrics*** (2009, Princeton University Press).
+1. **Joshua D. Angrist & Jörn-Steffen Pischke — *Mostly Harmless Econometrics*** (2009, Princeton University Press). — DL: refs/43_Angrist_2009_mostly_harmless_econometrics.pdf
 3. **Fumio Hayashi — *Econometrics*** (2000, Princeton University Press).
 3. **Peter J. Brockwell & Richard A. Davis — *Introduction to Time Series and Forecasting*** (3rd ed., 2016, Springer).
 3. **William H. Greene — *Econometric Analysis*** (8th ed., 2018, Pearson).
@@ -72,22 +72,22 @@ Legend: `1.` = HAVE (already owned) · `2.` = FREE, downloaded in `free/foundati
 3. **Michael T. Heath — *Scientific Computing: An Introductory Survey*** (2nd ed., 2018, SIAM).
 
 ## information-theory
-2. **David J. C. MacKay — *Information Theory, Inference, and Learning Algorithms*** (2003, Cambridge University Press) — info theory + Bayesian inference + learning. `[Free]`.
-2. **Claude E. Shannon — "A Mathematical Theory of Communication"** (*Bell System Technical Journal*, 27(3–4), 1948) — founding paper of information theory. `[Free]`.
+1. **David J. C. MacKay — *Information Theory, Inference, and Learning Algorithms*** (2003, Cambridge University Press) — info theory + Bayesian inference + learning. `[Free]`. — DL: refs/54_MacKay_2003_information_theory_inference.pdf
+1. **Claude E. Shannon — "A Mathematical Theory of Communication"** (*Bell System Technical Journal*, 27(3–4), 1948) — founding paper of information theory. `[Free]`. — DL: refs/55_Shannon_1948_mathematical_theory_communication.pdf
 3. **Thomas M. Cover & Joy A. Thomas — *Elements of Information Theory*** (2nd ed., 2006, Wiley).
 3. **Robert B. Ash — *Information Theory*** (Dover).
 3. **Imre Csiszár & János Körner — *Information Theory: Coding Theorems for Discrete Memoryless Systems*** (2nd ed., 2011, Cambridge University Press).
 
 ## bayesian-statistics
 3. **Andrew Gelman, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari & Donald B. Rubin — *Bayesian Data Analysis*** (3rd ed., 2013, CRC Press).
-3. **Richard McElreath — *Statistical Rethinking*** (2nd ed., 2020, CRC Press).
+3. **Richard McElreath — *Statistical Rethinking*** — DL: refs/60_McElreath_2020_statistical_rethinking.pdf [PARTIAL: 1st ed., requested 2nd ed. not free] (2nd ed., 2020, CRC Press).
 3. **Peter D. Hoff — *A First Course in Bayesian Statistical Methods*** (2009, Springer).
 3. **Christian P. Robert — *The Bayesian Choice*** (2nd ed., 2001, Springer).
 3. **James O. Berger — *Statistical Decision Theory and Bayesian Analysis*** (2nd ed., 1985, Springer).
 3. **Christian P. Robert & George Casella — *Monte Carlo Statistical Methods*** (2nd ed., 2004, Springer).
 
 ## discrete-math-and-combinatorics
-2. **Eric Lehman, F. Thomson Leighton & Albert R. Meyer — *Mathematics for Computer Science*** (MIT 6.042 course notes) — rigorous free discrete-math on-ramp. `[Free]`.
+1. **Eric Lehman, F. Thomson Leighton & Albert R. Meyer — *Mathematics for Computer Science*** (MIT 6.042 course notes) — rigorous free discrete-math on-ramp. `[Free]`. — DL: refs/65_Lehman_2015_mathematics_for_computer_science.pdf
 3. **Ronald L. Graham, Donald E. Knuth & Oren Patashnik — *Concrete Mathematics*** (2nd ed., 1994, Addison-Wesley).
 3. **Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest & Clifford Stein — *Introduction to Algorithms*** (CLRS; 4th ed., 2022, MIT Press).
 3. **Kenneth H. Rosen — *Discrete Mathematics and Its Applications*** (8th ed., 2019, McGraw-Hill).

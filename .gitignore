@@ -10,3 +10,8 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+
+# Acquired source files (copyrighted books/PDFs/EPUBs) - keep OUT of public repo.
+# Reference by title/chapter in content; actual files live in club's private Google Drive.
+corpus/titles/refs/
+corpus/titles/scripts/
