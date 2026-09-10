@@ -143,7 +143,7 @@ class Guard:
 g = Guard(qty_cap=5_000, notional_cap=100_000.0, loss_cap=25_000.0, rate=4.0, burst=4.0)
 scenario = [  # (t, px, qty, mid, realized pnl)
     (0.00, 150.00, 200, 150.05,      0.0),
-    (0.10, 150.00, 200, 150.05,      0.0),   # 3rd order in 0.1s -> bucket empties
+    (0.10, 150.00, 200, 150.05,      0.0),   # orders at t=0 and t=0.1 -> bucket nearly drained
     (0.10, 150.00, 200, 150.05,      0.0),
     (0.50, 150.00, 9000, 150.05,     0.0),   # fat finger
     (1.00, 160.00, 200, 150.05,      0.0),   # price collar

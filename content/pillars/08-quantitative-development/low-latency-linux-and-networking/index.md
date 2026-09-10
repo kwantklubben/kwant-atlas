@@ -49,11 +49,11 @@ $$R_{\max}=\frac{R_{\text{link}}}{8B}\ \text{pkt/s} \;\Rightarrow\; 14.88\ (10\t
 
 A NIC beyond this ceiling is idle — **for latency-sensitive small-message traffic the wire, not the NIC, is the bottleneck.**
 
-**Per-core processing capacity.** A core at frequency $f$ spends $c$ ns per packet:
+**Per-core processing capacity.** A core at frequency $f$ spends $c$ *cycles* per packet:
 
 $$\Theta_{\text{core}}=\frac{f}{c}\ \text{pkt/s}.$$
 
-Kernel path $c\approx2600$ ns $\Rightarrow$ ~1.15 M pkt/s; bypass $c\approx160$ ns $\Rightarrow$ ~18.8 M pkt/s. Sustaining 10GbE line rate (14.88 M pkt/s) therefore needs **~12.9 cores on the kernel path vs ~0.79 of one core bypassed** (verified in [[pillars/08-quantitative-development/low-latency-linux-and-networking/03-kernel-bypass-and-nics|03 · Kernel Bypass & NICs]]).
+Kernel path $c\approx2600$ cycles (=~870 ns at 3 GHz) $\Rightarrow$ ~1.15 M pkt/s; bypass $c\approx160$ cycles (=~53 ns) $\Rightarrow$ ~18.8 M pkt/s. Sustaining 10GbE line rate (14.88 M pkt/s) therefore needs **~12.9 cores on the kernel path vs ~0.79 of one core bypassed** (verified in [[pillars/08-quantitative-development/low-latency-linux-and-networking/03-kernel-bypass-and-nics|03 · Kernel Bypass & NICs]]).
 
 **Jitter decomposition (the folder's organising idea).** Total latency is a sum of independent stage random variables, $T=\sum_i X_i$, so
 

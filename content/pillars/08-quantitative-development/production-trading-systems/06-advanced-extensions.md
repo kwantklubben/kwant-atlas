@@ -83,7 +83,7 @@ Stdlib only, deterministic. The script computes single-runtime availability and 
 
 ```python
 # --- high availability: redundancy, common cause, and failover time (stdlib only) ---
-mtbf_h, mttr_h = 720.0, 0.25          # hours between failures, hours to repair/provoke
+mtbf_h, mttr_h = 720.0, 0.25          # hours between failures, hours to repair/reprovision
 A = mtbf_h / (mtbf_h + mttr_h)
 down_h = (1.0 - A) * 8760.0
 print(f"Single runtime: A = {A:.8f}  ({A*100:.5f}%)")

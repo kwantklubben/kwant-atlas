@@ -48,13 +48,13 @@ This folder is the topic-hub for **production trading systems** in Kwant-Atlas. 
 | Book | Per-name position | $\lvert q_i\rvert \le \bar q_i$ | — |
 | P&L | Daily loss cap | $L_{\text{day}} = E_{\text{open}} - E_t \ge L_{\max} \Rightarrow$ halt | $14{,}500$ vs cap $25{,}000$ ($58.0\%$) |
 | P&L | Drawdown halt | $1 - E_t/E_{\text{peak}} \ge d_{\max}$ | $0.0350$ vs $0.0500$ ($70.0\%$ of budget) |
-| Rate | Token bucket | $b_t=\min\!\big(B,\;b_{t-1}+R\,\Delta t\big)$, spend $1$/order | 3rd order in $0.1$s empties a $B{=}4,R{=}4$ bucket |
+| Rate | Token bucket | $b_t=\min\!\big(B,\;b_{t-1}+R\,\Delta t\big)$, spend $1$/order | four orders back-to-back drain a $B{=}4$ bucket (refill $R{=}4$/s) |
 | Reconcile | Position break | $b_i=q_i^{\text{int}}-q_i^{\text{ext}}$, break iff $\lvert b_i\rvert>\epsilon$ | TSLA $+50$ = REAL BREAK; AAPL $+200$ = TIMING |
 | Reconcile | Cash residual | $r=C^{\text{ext}}-\big(C^{\text{int}}_{-1}-\sum_i P_iq_i-\text{fees}+\text{fin}\big)$ | $r=+0.00 \Rightarrow$ MATCHED |
 | Availability | Single runtime | $A=\dfrac{\text{MTBF}}{\text{MTBF}+\text{MTTR}}$ | $\text{MTBF}{=}720\text{h},\text{MTTR}{=}0.25\text{h}\Rightarrow A{=}0.99965290$ |
 | Availability | $N$ replicas (independent) | $A_N=1-(1-A)^N$ | $N{=}2 \Rightarrow$ downtime $3799.44$ ms/yr |
 | Availability | Common-cause floor | $(1-A)\big(f+(1-f)(1-A)\big)$ | $f{=}50\% \Rightarrow 1.521$ h/yr (redundancy cannot fix this) |
-| Incident | Cost drag | $\text{drag}=\text{turnover}\times\text{cost (bps)}/10^4$ | $100\times \times 6\text{bps} = 6.00\%$/yr |
+| Incident | Cost drag | $\text{drag}=\text{turnover}\times\text{cost (bps)}/10^4$ | $100\times 6\text{bps} = 6.00\%$/yr |
 | Deploy | Canary exposure | $\sum_k w_k h_k$ (weight $\times$ hours) | ramp $1/5/25\%$ then abort: loss $\$7{,}750$ vs $\$100{,}000$ |
 
 > **Critical caveat.** These thresholds are *conventions*, not physics. The correct $G_{\max}$ depends on your capital, your liquidation horizon, and the venue's margin rules; the correct heartbeat $\tau$ trades detection latency against false failovers. The durable results are the **structural** ones: a limit must exist per layer (order, book, P&L, rate, wire), and redundancy without common-cause analysis is a story you tell yourself.

@@ -30,8 +30,8 @@ This page makes the discipline concrete. Two things must both hold:
 
 **Floating-point reduction is order-dependent.** A double keeps ~16 significant digits. Summing a list in different orders can give different answers because intermediate roundings differ. The canonical absorption example:
 $$s = 10^{16} + 1 - 10^{16}.$$
-In forward order, $(10^{16}+1)=10^{16}$ (the $1$ is absorbed, since the ulp of $10^{16}$ is $2$), then $10^{16}-10^{16}=0$. In a reordered grouping, the $1$ survives:
-$$\underbrace{((10^{16}+1)-10^{16})}_{\text{absorbed}\to0}+1 = 1 \quad\text{vs}\quad \underbrace{(10^{16}-10^{16})}_{0}+1 = 1 - \dots$$
+In forward order, $10^{16}+1 = 10^{16}$ (the $1$ is absorbed, since the ulp of $10^{16}$ is $2$), then $10^{16}-10^{16}=0$ — the result is $0$. Regrouping the *same* three terms so the $1$ is added last lets it survive:
+$$\underbrace{(10^{16}+1)-10^{16}}_{\text{absorbed}\ \to\ 0} = 0 \quad\text{vs}\quad \underbrace{(10^{16}-10^{16})}_{0}+1 = 1$$
 More precisely, *any* summation $\sum_i x_i$ computed in two different orders can differ by the magnitude of the absorbed low-order terms. A parallel framework that reorders a reduction (map-reduce, GPU block reductions) can therefore change a result. **The fix is not "more precision" but *pinning the order*** — the same aggregation sequence, recorded and reused.
 
 **Reproducibility = frozen inputs.** Formally, output $O$ is a function of the input triple $(D,C,E)$. The reproducible set is the set of *equivalent reruns*:

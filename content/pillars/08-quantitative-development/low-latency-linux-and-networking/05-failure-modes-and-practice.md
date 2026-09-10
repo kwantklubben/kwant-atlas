@@ -39,9 +39,9 @@ $$E_t=\alpha\,x_t+(1-\alpha)\,E_{t-1},$$
 
 and alarms when $E_t$ deviates more than $k$ "EWMA sigma" from baseline:
 
-$$|E_t-\mu_0|>k\,\frac{\sigma_0}{\sqrt{\alpha/(2-\alpha)}}.$$
+$$|E_t-\mu_0|>k\,\sigma_0\sqrt{\frac{\alpha}{2-\alpha}}.$$
 
-Here $\mu_0,\sigma_0$ are the baseline mean/std; the denominator is the steady-state EWMA standard deviation. Tuned well, it alarms *quickly after* a real drift while staying quiet in the clean regime — the §3 model detects a 4.48→~12 µs p99 drift within one monitoring interval with zero false alarms on the clean prefix.
+Here $\mu_0,\sigma_0$ are the baseline mean/std, and $\sigma_0\sqrt{\alpha/(2-\alpha)}$ is the steady-state EWMA standard deviation (so the test compares the EWMA statistic against a multiple of *its own* volatility). Tuned well, it alarms *quickly after* a real drift while staying quiet in the clean regime — the §3 model detects a 4.48→~12 µs p99 drift within one monitoring interval with zero false alarms on the clean prefix.
 
 **Measurement error is a first-order term.** Every latency number is measured, and measurement adds its own bias: timer overhead $\epsilon$ inflates a single-shot estimate to $\hat t=\mu+\epsilon$; a histogram with bin width $b$ cannot resolve below $b$; an asymmetric PTP/NTP path biases the clock by $\tfrac12(d_f-d_r)$ ([[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/04-clock-synchronization|04 · Clock Synchronization]]). If you do not audit the instrument, you are tuning against noise.
 
@@ -64,8 +64,8 @@ for i in range(10000):                                   # one p99 sample per in
 baseline = samples[:1000]
 mu0 = sum(baseline)/len(baseline)
 s0 = math.sqrt(sum((x-mu0)**2 for x in baseline)/len(baseline))
-alpha, k = 0.2, 3.0
-ewma_sigma = s0/math.sqrt(alpha/(2-alpha))              # steady-state EWMA std
+alpha, k = 0.2, 5.0
+ewma_sigma = s0*math.sqrt(alpha/(2-alpha))              # steady-state EWMA std
 ewma = mu0; fired = None
 for i, s in enumerate(samples):
     ewma = alpha*s + (1-alpha)*ewma

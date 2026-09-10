@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/08-quantitative-development/tick-level-databases-and-timeseries|Tick-Level Databases & kdb+/q]] (single-page overview) and [[pillars/08-quantitative-development/high-performance-cpp-for-trading/03-memory-and-cache|High-Performance C++ · Memory & Cache]] (why layout beats arithmetic). Working knowledge of SQL and Python. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
+**Basic Prerequisites:** [[pillars/08-quantitative-development/high-performance-cpp-for-trading/03-memory-and-cache|High-Performance C++ · Memory & Cache]] (why layout beats arithmetic). Working knowledge of SQL and Python. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 
@@ -119,7 +119,7 @@ Hub signposts — the folder's fault analysis lives in [[pillars/08-quantitative
 
 1. **Look-ahead in storage** — a store that keeps only the *latest* value of each field makes every historical query leak the future; the same-bar close turned Sharpe $0.04$ into $20.4$ in the seeded experiment.
 2. **Schema drift** — feeds add and drop fields; a fixed-width record assumption silently mis-decodes after each change (5 breaking changes in 24 months in the model).
-3. **Storage cost** — naive row storage is $\sim\!7.6\times$ larger and $252\times$ more expensive to scan per query; at 5 years the raw store reaches 15 TB versus 2.4 TB compressed.
+3. **Storage cost** — naive row storage is $\sim\!7.6\times$ larger (and $6\times$ more I/O per scan), while date-partition pruning — a separate axis — cuts scanned data $252\times$; at 5 years the raw store reaches $15.12$ TB versus $1.98$ TB compressed.
 
 ---
 

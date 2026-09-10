@@ -29,15 +29,15 @@ The NIC is a stage you **configure**, not just read. **RSS** (receive-side scali
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Per-core capacity.** A core at frequency $f$ (≈3 GHz) spends $c$ ns per packet:
+**Per-core capacity.** A core at frequency $f$ (≈3 GHz) spends $c$ *cycles* per packet:
 
 $$\Theta_{\text{core}}=\frac{f}{c}\ \text{pkt/s}.$$
 
-Kernel path $c\approx2600$ ns ⇒ ~1.15 M pkt/s; bypass $c\approx160$ ns ⇒ ~18.75 M pkt/s. Sustaining 10GbE line rate (14.88 M pkt/s, 84 B min frames) needs
+Kernel path $c\approx2600$ cycles (≈870 ns) ⇒ ~1.15 M pkt/s; bypass $c\approx160$ cycles (≈53 ns) ⇒ ~18.75 M pkt/s. Sustaining 10GbE line rate (14.88 M pkt/s, 84 B min frames) needs
 
 $$n_{\text{cores}}=\frac{R}{\Theta_{\text{core}}} = \frac{14.88\times10^6}{f/c}.$$
 
-That is **~12.9 cores on the kernel path vs ~0.79 of one core bypassed** — the whole business case in one division. (A misconfigured bypass — polling core on the wrong NUMA node, $c\approx380$ ns — still needs ~1.9 cores; NUMA matters even bypassed.)
+That is **~12.9 cores on the kernel path vs ~0.79 of one core bypassed** — the whole business case in one division. (A misconfigured bypass — polling core on the wrong NUMA node, $c\approx380$ cycles — still needs ~1.9 cores; NUMA matters even bypassed.)
 
 **Why busy-polling is stable and interrupts are not.** With interrupts, processing cost grows with rate and the system has a positive-feedback failure mode (interrupt *livelock*): higher rate ⇒ more interrupts ⇒ less real work ⇒ queues grow (Little's law) ⇒ more delay. Busy-polling makes cost **constant per packet**, so latency stays flat until the core saturates — a hard ceiling instead of a soft cliff. The §3 model shows the jitter gap directly: interrupt-driven p99 ~33 µs, busy-poll p99 ~1.6 µs.
 

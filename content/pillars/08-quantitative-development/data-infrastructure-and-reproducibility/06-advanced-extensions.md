@@ -23,7 +23,7 @@ Three extensions of the discipline:
 2. **Config management** — parameters (seed, universe, cost model, `z_max` threshold) are themselves inputs to $f(D,C,E)$; they must be versioned alongside data and code, not edited in place in a notebook cell.
 3. **Experiment tracking** — every run records its full $(D,C,E,\text{config})$ plus the output hash. With that record, any result is *auditable*: you can re-run it, and you can answer "which runs used data version v2?".
 
-> **The one-line job:** *make the research and production environments *identical by construction* — so that the pipeline that found the edge is the same pipeline that trades it.*
+> **The one-line job:** *make the research and production environments identical by construction — so that the pipeline that found the edge is the same pipeline that trades it.*
 
 ---
 
