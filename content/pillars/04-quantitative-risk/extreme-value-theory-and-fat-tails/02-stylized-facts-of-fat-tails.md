@@ -30,7 +30,7 @@ The four facts that matter for this pillar:
 **Heavy tails as power laws.** A distribution is in the Fréchet domain of attraction (tail index $\alpha=1/\xi$) iff its survival function is regularly varying (de Haan Thm 1.2.1; Gnedenko 1943):
 $$1-F(x)=x^{-\alpha}L(x),\qquad x\to\infty,$$
 where $L$ is *slowly varying* ($L(tx)/L(t)\to 1$). For a Student-t with $\nu$ dof, $\alpha=\nu$ exactly, and (McNeil & Frey 2000, eq. 12):
-$$1-F_\nu(x)\sim \frac{1}{B(1/2,\nu/2)\sqrt{\nu}}\,x^{-\nu},\qquad x\to\infty.$$
+$$1-F_\nu(x)\sim \frac{\nu^{\nu/2-1}}{B(1/2,\nu/2)}\,x^{-\nu}\qquad\Big(=\frac{\Gamma((\nu+1)/2)\,\nu^{\nu/2-1}}{\sqrt{\pi}\,\Gamma(\nu/2)}\,x^{-\nu}\Big),\qquad x\to\infty.$$
 Consequences: the $m$-th moment exists only if $m<\alpha$. For $\alpha=3$ the 4th moment (kurtosis) does **not exist**; for $\alpha=2$ even the variance doesn't.
 
 **Kurtosis and the mean-excess function.** The classic diagnostics:

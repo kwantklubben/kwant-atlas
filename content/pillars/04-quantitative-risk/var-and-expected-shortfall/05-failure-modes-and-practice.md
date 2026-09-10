@@ -25,7 +25,7 @@ The three failures, in one line each:
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Tail blindness (exact).** VaR is the $\alpha$-quantile. Changing the loss in *any* outcome already beyond $\mathrm{VaR}_\alpha$ leaves VaR **exactly unchanged**, because the quantile depends only on the *ordering* up to rank $\alpha$, not on the values past it. Concretely, with a $300$-observation sample the $99\%$ VaR is the $297$th sorted loss: the $298$th, $299$th, $300$th (the truly catastrophic days) do not enter. ES *does* enter them:
+**Tail blindness (exact).** VaR is the $\alpha$-quantile. Changing the loss in *any* outcome already beyond $\mathrm{VaR}_\alpha$ leaves VaR **exactly unchanged**, because the quantile depends only on the *ordering* up to rank $\alpha$, not on the values past it. Concretely, with a $300$-observation sample the $99\%$ VaR is the $298$th order statistic (index $297$ in a 0-based sort) sorted loss: the $298$th, $299$th, $300$th (the truly catastrophic days) do not enter. ES *does* enter them:
 $$\frac{\partial\,\mathrm{ES}_\alpha}{\partial(\text{worst loss})}=\frac{1}{k},\qquad k=\lceil (1-\alpha)\,n\rceil.$$
 So a single worst-day escalation from $-3$ to $-15$ moves a $99\%$ ES (over $3$ tail points) by $(15-3)/3=4$, and moves VaR by $0$. **That asymmetry is the definition of tail blindness.**
 

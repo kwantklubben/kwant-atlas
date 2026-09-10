@@ -33,11 +33,11 @@ so recent history reflects *current* market volatility while keeping the empiric
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**The empirical CDF and its quantile.** Let $\{L_1,\dots,L_n\}$ be the $n$ hypothetical portfolio *losses* (or, equivalently, rank the P&L). The empirical distribution functions assigns mass $1/n$ to each observation; the HS VaR at confidence $\alpha$ is the empirical $\alpha$-quantile. Rank the losses ascending: $L_{(1)}\le\cdots\le L_{(n)}$ ($L_{(n)}$ = worst). Then
+**The empirical CDF and its quantile.** Let $\{L_1,\dots,L_n\}$ be the $n$ hypothetical portfolio *losses* (or, equivalently, rank the P&L). The empirical distribution function assigns mass $1/n$ to each observation; the HS VaR at confidence $\alpha$ is the empirical $\alpha$-quantile. Rank the losses ascending: $L_{(1)}\le\cdots\le L_{(n)}$ ($L_{(n)}$ = worst). Then
 
 $$\widehat{\text{VaR}}_\alpha^{(HS)}=L_{(\lceil n(1-\alpha)\rceil)}$$
 
-— e.g. $n=500,\ \alpha=0.99 \Rightarrow$ rank $\lceil 500\cdot0.01\rceil=5$, the 5th-worst loss. (Hull's 501-day/5th-worst convention and RankMetrics variants differ by interpolation convention; that is immaterial vs the method's real limits.)
+— e.g. $n=500,\ \alpha=0.99 \Rightarrow$ rank $\lceil 500\cdot0.01\rceil=5$, the 5th-worst loss. (Hull's 501-day/5th-worst convention and RiskMetrics variants differ by interpolation convention; that is immaterial vs the method's real limits.)
 
 **Why it carries the tail correctly.** Because HS uses *realized* daily moves, a 1997 crash and a fat-tailed equity skew *are* in the sample, so the quantile reflects them — no Gaussian assumption. This is exactly what delta-normal VaR sacrifices.
 
@@ -54,7 +54,7 @@ with $p=1-\alpha$. The density $f(x_p)^2$ in the denominator **magnifies the noi
 
 ### 3. Computational Implementation — HS vs FHS on the shared portfolio, stdlib only
 
-We generate 500 days of factor-history, replay it through the $40k/60k$ portfolio (this is the `3,218.55` hub figure), then apply a volatility filter to show FHS moves the VaR with regime.
+We generate 500 days of factor-history, replay it through the $40k/60k$ portfolio (this is the `3,289.54` hub figure), then apply a volatility filter to show FHS moves the VaR with regime.
 
 ```python
 import math, random
@@ -68,7 +68,7 @@ for _ in range(n):
     r1,r2 = sd[0]*z, sd[1]*(rho*z+math.sqrt(1-rho*rho)*random.gauss(0,1))
     scen.append(r1*pos[0]+r2*pos[1])
 
-k = math.ceil(n*(1-0.99))                # 5th worst P&L (ascending)
+k = int(round(n*(1-0.99)))              # 5th worst P&L (round: 500*0.01 floats to 5.000000000000001)
 VaR_hs = -sorted(scen)[k-1]              # P&L worst -> loss positive
 print(f"HS: {n} scenarios, 99% VaR = {VaR_hs:,.2f}  (rank {k} worst)")
 
@@ -81,12 +81,12 @@ print(f"\nEWMA factor-1 next-day vol after the spike = {math.sqrt(ewma[-1]):.4f}
 print(f"  (above the plain sample vol {sd[0]:.4f} -> FHS would scale recent shocks up)")
 ```
 ```
-HS: 500 scenarios, 99% VaR = 3,218.55  (rank 6 worst)
+HS: 500 scenarios, 99% VaR = 3,289.54  (rank 5 worst)
 
 EWMA factor-1 next-day vol after the spike = 0.0136
   (above the plain sample vol 0.0120 -> FHS would scale recent shocks up)
 ```
-The exact `3,218.55` reproduces the hub historical-simulation column. The EWMA recursion shows the mechanism behind FHS: when today's conditional vol (say ~0.024) exceeds the calm historical average (0.012), filtered HS *up-weights* the biggest recent moves so VaR bends toward the current regime — while plain equal-weight HS keeps saying "the last 500 days looked like this," which is precisely the ghost/window problem.
+The exact `3,289.54` reproduces the hub historical-simulation column (5th-worst of 500, i.e. $k=\lceil500\cdot0.01\rceil=5$). The EWMA recursion shows the mechanism behind FHS: when today's conditional vol (say ~0.024) exceeds the calm historical average (0.012), filtered HS *up-weights* the biggest recent moves so VaR bends toward the current regime — while plain equal-weight HS keeps saying "the last 500 days looked like this," which is precisely the ghost/window problem.
 
 ---
 

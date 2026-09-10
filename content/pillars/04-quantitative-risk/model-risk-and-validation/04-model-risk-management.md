@@ -94,6 +94,7 @@ for name, mat, cx, use, valid in inventory:
 print(f"{'AGGREGATE':18s} {'':>10s} {'':>11s} {'':>4s} {'':>10s}  {agg:.3f}")
 ```
 ```
+
 model              materiality  complexity  use  validation   score
 VaR engine                1.0           3    3        0.9  0.900
 Credit scoring            0.8           2    3        0.6  1.920

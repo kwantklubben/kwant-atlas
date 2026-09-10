@@ -36,7 +36,7 @@ All three compute *the same number* (the P&L quantile); they disagree because th
 |---|---|---|---|---|
 | **Parametric (delta-normal)** | $\text{VaR}_\alpha = z_\alpha\,\sigma_p\sqrt{h} = z_\alpha\sqrt{w^T\Sigma w}\,\sqrt h$ | $O(N^2)$ cov, $O(N)$ eval | P&L normal, linear (delta) in factors | `3,396.15` |
 | **Delta–gamma** (parametric extension) | Cornish–Fisher on the quadratic $\Delta V\approx\delta^T\Delta S+\tfrac12\Delta S^T\Gamma\Delta S$ | $O(N^2)$ | quadratic P&L in normal factors | see 06 |
-| **Historical simulation** | $-\hat{F}^{-1}(1-\alpha)$ = $k$-th worst of $n$ scenarios, $k=\lceil n(1-\alpha)\rceil$ | $O(n)$ per eval | past repeats; i.i.d. window | `3,218.55` |
+| **Historical simulation** | $-\hat{F}^{-1}(1-\alpha)$ = $k$-th worst of $n$ scenarios, $k=\lceil n(1-\alpha)\rceil$ | $O(n)$ per eval | past repeats; i.i.d. window | `3,289.54` |
 | **Monte Carlo (full revaluation)** | quantile of simulated loss $\{L_i\}_{i=1}^{m}$ | $O(m\cdot \text{cost revalue})$ | factor model correct; enough paths | `3,405.97` |
 
 > **The three agree here on purpose.** When returns are genuinely normal, parametric, historical, and MC VaR all estimate the same normal quantile and land within sampling noise of each other ($\approx 3{,}300$–$3{,}400$). The *entire* reason to study the differences is the failure modes in [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05 · Failure Modes]], where fat tails make them diverge by factors.
@@ -66,14 +66,14 @@ var = sum(positions[i]*positions[j]*cov[i][j] for i in range(2) for j in range(2
 VaR_param = z99 * math.sqrt(var)
 print(f"parametric VaR_99 = {VaR_param:,.2f}")
 
-# --- 2) HISTORICAL: 6th worst of 500 daily portfolio P&L scenarios ---
+# --- 2) HISTORICAL: 5th worst of 500 daily portfolio P&L scenarios ---
 random.seed(20260910); n = 500
 pnl = []
 for _ in range(n):
     z  = random.gauss(0, 1)
     r1, r2 = sd[0]*z, sd[1]*(rho*z + math.sqrt(1-rho*rho)*random.gauss(0, 1))
     pnl.append(r1*positions[0] + r2*positions[1])          # P&L, not loss
-k = math.ceil(n*(1-0.99))                                   # 5 -> 6th worst, sorted ASC
+k = int(round(n*(1-0.99)))                                 # ceil(n(1-a))=5 (round kills the 5.000000000000001 float)
 VaR_hist = -sorted(pnl)[k-1]
 print(f"historical VaR_99 (rank {k})  = {VaR_hist:,.2f}")
 
@@ -90,7 +90,7 @@ print(f"Monte Carlo VaR_99 (m={m})   = {VaR_mc:,.2f}")
 ```
 ```
 parametric VaR_99 = 3,396.15
-historical VaR_99 (rank 6)  = 3,218.55
+historical VaR_99 (rank 5)  = 3,289.54
 Monte Carlo VaR_99 (m=200000)   = 3,405.97
 ```
 Note the deliberate **sign convention**: $L=-\Delta V$ (loss positive), so a historical rank `k` of the *worst* P&L is the `k`-th smallest of `sorted(pnl)` and VaR = `-pnl[k-1]`; MC sorts *loss* directly and takes the $\alpha$-quantile. Mixing these two signs is the single most common implementation bug.

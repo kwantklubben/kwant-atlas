@@ -36,7 +36,7 @@ $\xi>0$ Fréchet (heavy/power-law tails) · $\xi=0$ Gumbel (light/exponential ta
 |---|---|---|
 | GEV CDF (shape $\xi$) | $\exp\{-(1+\xi x)^{-1/\xi}\}$ | — |
 | **GPD** CDF (shape $\xi$, scale $\beta$) | $1-\big(1+\xi y/\beta\big)^{-1/\xi}$ | — |
-| GPD mean excess | $e(u)=\mathbb{E}[X-u\mid X>u]=\dfrac{\beta+\xi u}{1-\xi}$ | $\xi{=}0.36$ → $e(u)\approx 2.7\times$ scale |
+| GPD mean excess | $e(u)=\mathbb{E}[X-u\mid X>u]=\dfrac{\beta+\xi u}{1-\xi}$ | $\beta{=}.01167,u{=}.03183,\xi{=}.36$ → $e(u)=0.0361\approx3.1\times$ scale |
 | Tail estimator (de Haan/McNeil 2000 eq. 8) | $\widehat F(x)=1-\dfrac{N_u}{n}\Big(1+\hat\xi\dfrac{x-u}{\hat\beta}\Big)^{-1/\hat\xi}$ | $x{=}u$ gives $\frac{N_u}{n}$ ✓ |
 | **EVT quantile / VaR** (McNeil 2000 eq. 10) | $\widehat{x}_q = u+\dfrac{\hat\beta}{\hat\xi}\Big[\Big(\dfrac{n}{N_u}(1-q)\Big)^{-\hat\xi}-1\Big]$ | t₃ losses $q{=}.999$: $0.1319$ |
 | **EVT Expected Shortfall** | $\widehat{\text{ES}}_q = \dfrac{\widehat{x}_q+\hat\beta-\hat\xi u}{1-\hat\xi}$ | t₃ losses $q{=}.999$: $0.2064$ |

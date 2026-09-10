@@ -50,7 +50,7 @@ $$\text{LR}_{\text{POF}}=-2\ln\!\Big[\tfrac{(1-p)^{T-x}p^{x}}{(1-\hat p)^{T-x}\h
 Reject at 5% if $\text{LR}_{\text{POF}}>3.841$ (the $\chi^2_1$ 95% point). This only checks the *rate* — it is blind to ordering.
 
 **Christoffersen (1998) independence.** A model can pass Kupiec yet have its breaches **clustered** (all in one crash week) — the worst failure mode there is. Build the $2\times2$ transition count matrix $\{n_{ij}\}$ of the violation sequence ($0\to0,0\to1,1\to0,1\to1$). Let $p_0=n_{01}/(n_{00}+n_{01})$, $p_1=n_{11}/(n_{10}+n_{11})$, and overall $p=(n_{01}+n_{11})/(n_{00}+n_{01}+n_{10}+n_{11})$. The independence LR
-$$\text{LR}_{\text{ind}}=-2\Big[\tfrac{(n_{00}+n_{10})\log(1-p)+(n_{01}+n_{11})\log p}{-\;n_{00}\log(1-p_0)-n_{01}\log p_0-n_{10}\log(1-p_1)-n_{11}\log p_1}\Big]\sim\chi^2_1.$$
+$$\text{LR}_{\text{ind}}=-2\Big[(n_{00}+n_{10})\log(1-p)+(n_{01}+n_{11})\log p-\;n_{00}\log(1-p_0)-n_{01}\log p_0-n_{10}\log(1-p_1)-n_{11}\log p_1\Big]\sim\chi^2_1.$$
 Reject at 5% if $>3.841$. Combined **(conditional) coverage = $\text{LR}_{\text{POF}}+\text{LR}_{\text{ind}}\sim\chi^2_2$** catches both wrong-rate *and* clustering.
 
 **Regulatory reading (BCBS 1996).** Supervisors grade internal-models VaR by breaches: green (≤4 exceptions in 250) to red (≥10) with escalating capital multipliers — the frequency test mapped to a capital add-on. Modern FRTB (2019) moves market-risk capital from 99% VaR to **97.5% Expected Shortfall** for that exact reason (VaR's non-subadditivity and tail blindness) — see [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & ES]].
@@ -161,4 +161,4 @@ The under-stated-vol model breaches ~11× too often — **Kupiec rejects it deci
 
 ---
 
-*All numbers above (`3,396.15 / 3,218.55 / 3,405.97`, the Student-$t(4)$ `1.5565%`, the ghost `3,465 / 3,196`, the delta-gamma `0.0141` vs full `0.0143`, and the backtest `LR=363.3` rejection) were generated and verified with the standard library only.*
+*All numbers above (`3,396.15 / 3,289.54 / 3,405.97`, the Student-$t(4)$ `1.5565%`, the ghost `3,465 / 3,196`, the delta-gamma `0.0141` vs full `0.0143`, and the backtest `LR=363.3` rejection) were generated and verified with the standard library only.*

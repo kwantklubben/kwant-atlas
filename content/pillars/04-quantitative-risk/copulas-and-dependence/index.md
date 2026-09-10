@@ -48,7 +48,7 @@ This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: 
 | **Clayton** (Archimedean) | $C^{Cl}_\theta(u,v)=\big(u^{-\theta}+v^{-\theta}-1\big)^{-1/\theta}$ | — |
 | **Kendall's tau** | $\rho_\tau=4\!\iint C\,dC-1$; Gauss: $\rho_\tau=\tfrac{2}{\pi}\arcsin\varrho$ | $\varrho{=}0.7\!:\ \rho_\tau=0.4936$ (empirical $0.4893$) |
 | **Spearman's rho** | $\rho_S=12\!\iint(C-u_1u_2)\,du_1du_2$ (linear corr. of the copula); Gauss: $\tfrac{6}{\pi}\arcsin(\varrho/2)$ | $\varrho{=}0.7\!:\ \rho_S=0.6829$ (empirical $0.6780$) |
-| **Upper tail dependence** | $\lambda_u=\lim_{q\to1}\Pr\!\big(X_2>F_2^{\leftarrow}(q)\mid X_1>F_1^{\leftarrow}(q)\big)=\lim_{q\to1}\hat C(q,q)/(1-q)$ | — |
+| **Upper tail dependence** | $\lambda_u=\lim_{q\to1}\Pr\!\big(X_2>F_2^{\leftarrow}(q)\mid X_1>F_1^{\leftarrow}(q)\big)=\lim_{q\to1^-}\hat C(1-q,\,1-q)/(1-q)$ | — |
 | **Gaussian tail** | $\lambda_u=0$ for $\varrho<1$ (asymptotically independent) | sub-page 04 |
 | **$t$-copula tail** | $\lambda=2\,t_{\nu+1}\!\left(-\sqrt{\tfrac{(\nu+1)(1-\varrho)}{1+\varrho}}\,\right)$ | $\nu{=}4,\varrho{=}0.5\!:\ \lambda=0.2532$ (McNeil Table 7.1: $0.25$) |
 | **Gumbel / Clayton tail** | $\lambda_u^{Gu}=2-2^{1/\theta}$ · $\lambda_l^{Cl}=2^{-1/\theta}$ | $\theta{=}2\!:\ 0.5858$ resp. $0.7071$ |

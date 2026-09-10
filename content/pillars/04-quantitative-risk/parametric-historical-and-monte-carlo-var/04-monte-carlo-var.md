@@ -43,7 +43,7 @@ exactly the HS quantile formula of [[pillars/04-quantitative-risk/parametric-his
 
 **The quantile's sampling error (Glasserman Ch 9 §9.1).** Same honest formula as HS:
 $$\sqrt m\,(\widehat x_p-x_p)\Rightarrow N\!\Big(0,\tfrac{p(1-p)}{f(x_p)^2}\Big),\quad p=1-\alpha.$$
-To halve the *absolute* uncertainty in the VaR you need $4\times$ the scenarios — the $\sigma/\sqrt m$ law. And since $f(x_p)$ is small in the tail, $f(x_p)^2$ in the denominator makes **tail quantiles diverge slowly** — exactly where variance reduction pays. Antithetic variates (Halton-Glasserman Ch 4 §4.2) and importance sampling for rare tails (Ch 9 §9.2) attack exactly this.
+To halve the *absolute* uncertainty in the VaR you need $4\times$ the scenarios — the $\sigma/\sqrt m$ law. And since $f(x_p)$ is small in the tail, $f(x_p)^2$ in the denominator makes **tail quantiles diverge slowly** — exactly where variance reduction pays. Antithetic variates (the Glasserman Ch 4 Ch 4 §4.2) and importance sampling for rare tails (Ch 9 §9.2) attack exactly this.
 
 ---
 

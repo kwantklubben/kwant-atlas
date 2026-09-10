@@ -30,7 +30,7 @@ $$X_t=\mu+\sigma_t Z_t,\qquad Z_t \text{ i.i.d. heavy-tailed},$$
 where $\sigma_t$ follows GARCH(1,1) $\sigma_t^2=\omega+\alpha X_{t-1}^2+\beta\sigma_{t-1}^2$ (Tsay Ch 3). The two-step method:
 1. **Filter:** estimate $\hat\mu,\hat\sigma_t$ (GARCH or EWMA), form standardized residuals $\hat Z_t=(X_t-\hat\mu)/\hat\sigma_t$.
 2. **Tail:** fit a GPD to the residual tail and estimate the residual quantile $\hat z_q$ (the EVT machinery of [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/04-peaks-over-threshold|04 · POT]]).
-3. **Rescale:** one-day conditional VaR $=\hat\mu_{t+1}+\hat\sigma_{t+1}\hat z_q$; conditional ES $=\hat\mu_{t+1}+\hat\sigma_{t+1}\,\mathbb{E}[Z\mid Z>\hat z_q]$, with $\mathbb{E}[Z\mid Z>z_q]=\frac{z_q+\hat\beta}{1-\hat\xi}$ (McNeil & Frey eq. 14).
+3. **Rescale:** one-day conditional VaR $=\hat\mu_{t+1}+\hat\sigma_{t+1}\hat z_q$; conditional ES $=\hat\mu_{t+1}+\hat\sigma_{t+1}\,\mathbb{E}[Z\mid Z>\hat z_q]$, with $\mathbb{E}[Z\mid Z>z_q]=\frac{\hat\beta+\hat\xi z_q}{1-\hat\xi}$ (McNeil & Frey eq. 14).
 
 **Why it works.** Standardized residuals are far closer to i.i.d. than raw returns, so the EVT limit theorem and the excesses-independence assumption hold (Embrechts–Klüppelberg–Mikosch Ch 5; McNeil & Frey §2.2 cite the AR(1) example where residual-based Hill estimates are far more stable than raw-data Hill). McNeil & Frey's backtests (S&P, DAX, BMW, $/$£, Gold): conditional EVT was correct in 11/15 cases and *never* rejected, while conditional normal failed 11 times and unconditional EVT misread stress periods.
 

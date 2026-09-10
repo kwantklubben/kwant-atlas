@@ -38,7 +38,7 @@ $$\mathrm{VaR}_\alpha(X)=-\inf\{x\in\mathbb{R}:\mathbb{P}(X\le x\,r)>\alpha\}.$$
 
 Artzner's own example: two digital options on a stock with the same expiry. $A$ pays $1000$ if $S_T>U$; $B$ pays $1000$ if $S_T<L$ (with $L<U$). Choose $L,U$ so $\mathbb{P}(S_T<L)=\mathbb{P}(S_T>U)=0.008$. A trader **writes** two $A$'s and two $B$'s.
 
-- Writing $2A$ alone: the $1\%$ VaR of the net worth is $-2u$ (essentially the premium — the $1.6\%$ chance of a $2000$ payout sits *inside* the $1\%$ quantile only if it is the adverse tail; the point is the isolated positions look cheap).
+- Writing $2A$ alone: the $1\%$ VaR of the net worth is $-2u$ (essentially the premium — the $0.8\%$ chance of a $2000$ payout sits *inside* the $1\%$ quantile when it is the adverse tail; the point is the isolated positions look cheap).
 - Writing $A+B$ together: now the union of the two tail events has probability $0.016$, and the $1\%$ VaR jumps to the positive number $1000-l-u$.
 
 The consequence Artzner stresses: **the set of acceptable net worths is not convex** — "an even worse feature than the non-subadditivity of the measurement." A non-convex acceptance set means the risk measure can have **multiple local minima as a function of portfolio weights**, so a VaR-constrained optimiser can be trapped away from the true safe portfolio (Rockafellar–Uryasev make the same point: VaR "can exhibit multiple local extrema").

@@ -44,7 +44,7 @@ using maximum likelihood for $(\hat\xi,\hat\beta)$ (McNeil 1997 §3.6 — regula
 
 Inverting the tail estimator for $q>1-N_u/n$:
 $$\boxed{\ \widehat{x}_q=u+\frac{\hat\beta}{\hat\xi}\Big[\Big(\frac{n}{N_u}(1-q)\Big)^{-\hat\xi}-1\Big]\ }$$
-This is the **EVT VaR** at confidence $q$. The expected shortfall follows from the GPD mean-excess identity (McNeil & Frey eq. 14: $E[W-w\mid W>w]=\frac{w+\hat\beta}{1-\hat\xi}$):
+This is the **EVT VaR** at confidence $q$. The expected shortfall follows from the GPD mean-excess identity (McNeil & Frey eq. 14: $E[W-w\mid W>w]=\frac{\hat\beta+\hat\xi w}{1-\hat\xi}$):
 $$\boxed{\ \widehat{\text{ES}}_q=\frac{\widehat{x}_q+\hat\beta-\hat\xi u}{1-\hat\xi}\ }$$
 Interpretation: ES is VaR plus the average excess beyond it, scaled by the GPD shape. For $\xi>0$ the ES/VaR ratio exceeds 1 and *grows* into the tail — the two measures diverge exactly in the fat-tailed regime where VaR's subadditivity and information failures matter most ([[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]]).
 

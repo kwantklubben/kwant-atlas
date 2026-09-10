@@ -47,7 +47,7 @@ This folder is a *hub*: it (a) gives the **fast formula lookup and the coherence
 | **M** Monotonicity | $L_1\le L_2\ \text{a.s.}\Rightarrow\rho(L_1)\le\rho(L_2)$ | ✅ | ✅ |
 | *(bonus)* Convexity / optimizability | convex in positions | ❌ (may have local extrema) | ✅ (convex, LP-solvable) |
 
-> **Subadditivity failure in one line (Artzner §3.3; §3 of this hub).** Two independent bonds each default with probability $4\%$ losing $\$100$: $\mathrm{VaR}_{95\%}=0$ for each alone, but $1-0.96^2=7.84\%>5\%$, so the merged $\mathrm{VaR}_{95\%}=100$. *A merger created measured risk from nothing.*
+> **Subadditivity failure in one line (after Artzner §3.3, made discrete; §3 of this hub).** Two independent bonds each default with probability $4\%$ losing $\$100$: $\mathrm{VaR}_{95\%}=0$ for each alone, but $1-0.96^2=7.84\%>5\%$, so the merged $\mathrm{VaR}_{95\%}=100$. *A merger created measured risk from nothing.*
 
 **Regulatory switch (Basel FRTB).** The 1996 Amendment / Basel II.5 set market-risk capital on **10-day $99\%$ VaR**, $\text{capital}=k\cdot\mathrm{VaR}$ with multiplier $k\ge3$ (Hull BS 22.1). The **Fundamental Review of the Trading Book** (BCBS 2019, d457) replaces VaR with **$97.5\%$ Expected Shortfall** — chosen so that, in the normal benchmark, $\mathrm{ES}_{97.5\%}\approx\mathrm{VaR}_{99\%}$ while capturing the tail VaR ignores.
 

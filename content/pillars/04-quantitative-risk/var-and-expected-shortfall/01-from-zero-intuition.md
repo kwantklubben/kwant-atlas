@@ -36,7 +36,7 @@ $$\mathrm{VaR}_\alpha(L)=F_L^{-1}(\alpha)=\inf\{l:\mathbb{P}(L\le l)\ge\alpha\},
 
 VaR is the $\alpha$-quantile of the loss distribution; ES is the mean excess over that quantile. Both are **monetary amounts** (same units as $L$).
 
-**The subadditivity koan (Artzner §3.3), made discrete.** Take two independent bonds. Each loses $\$100$ with probability $4\%$ and loses nothing with probability $96\%$. Ask for the $95\%$ VaR of each *alone* and then of the *merged* position:
+**The subadditivity koan (after Artzner §3.3), made discrete.** Take two independent bonds. Each loses $\$100$ with probability $4\%$ and loses nothing with probability $96\%$. Ask for the $95\%$ VaR of each *alone* and then of the *merged* position:
 
 - Alone: $\mathbb{P}(L>0)=4\%\le 5\%$, so the $95\%$ quantile is $\mathrm{VaR}_{95\%}=0$. Each bond looks riskless.
 - Merged: $\mathbb{P}(\text{at least one defaults})=1-(0.96)^2=7.84\%>5\%$. The $95\%$ quantile is now $100$.

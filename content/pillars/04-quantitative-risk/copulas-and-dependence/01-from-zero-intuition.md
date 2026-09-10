@@ -51,7 +51,7 @@ $$\max\!\Big(\sum_{i=1}^d u_i+1-d,\ 0\Big)\ \le\ C(u_1,\dots,u_d)\ \le\ \min(u_1
 
 The lower bound is the **countermonotone** copula $W$ (positions perfectly negatively aligned), the upper bound the **comonotone** copula $M$ (perfectly positively aligned; $M(u)=\min u_i$). Every portfolio risk measure therefore lies in a band whose width is exactly the dependence uncertainty:
 
-$$\text{risk}(M)\ \le\ \text{risk}(C)\ \le\ \text{risk}(W)\quad\text{(for coherent, subadditive risk measures)}.$$
+$$\text{risk}(W)\ \le\ \text{risk}(C)\ \le\ \text{risk}(M)\quad\text{(for risk measures monotone in the concordance order, e.g. ES; plain VaR is not generally so).}$$
 
 **Why "ranks, not levels".** The copula is invariant under strictly increasing transformations of the margins: if you replace a loss in dollars by its logarithm, or a return by its rank, the copula does not change. Pearson correlation *does* change. That is the first clue that the correct dependence input is a rank quantity.
 

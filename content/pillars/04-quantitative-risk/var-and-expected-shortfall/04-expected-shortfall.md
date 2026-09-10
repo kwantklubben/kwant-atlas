@@ -44,7 +44,7 @@ Consequences: (i) you can compute ES **without first computing VaR**; (ii) minim
 
 #### 2.3 ES $\ge$ VaR, always
 
-Since $F_\alpha(\beta)=\beta+(1-\alpha)^{-1}\mathbb{E}[(L-\beta)^+]$ and $\mathbb{E}[L\mid L\ge\mathrm{VaR}]\ge\mathrm{VaR}$ on the tail, the minimum $F_\alpha(\mathrm{VaR})=\mathrm{ES}_\alpha$ cannot fall below $\mathrm{VaR}_\alpha$. Rockafellar–Uryasev: "$(x)\le \mathrm{CVaR}$… portfolios with low CVaR necessarily have low VaR as well."
+Since $F_\alpha(\beta)=\beta+(1-\alpha)^{-1}\mathbb{E}[(L-\beta)^+]$ and $\mathbb{E}[L\mid L\ge\mathrm{VaR}]\ge\mathrm{VaR}$ on the tail, the minimum $F_\alpha(\mathrm{VaR})=\mathrm{ES}_\alpha$ cannot fall below $\mathrm{VaR}_\alpha$. Rockafellar–Uryasev: "the $\alpha$-VaR is never more than the $\alpha$-CVaR" — portfolios with low CVaR necessarily have low VaR as well.
 
 #### 2.4 Closed form and the normal benchmark
 
@@ -119,7 +119,7 @@ All three agree to Monte Carlo precision (the small residual is $O(1/\sqrt{N})$ 
 - **Acerbi, C. & Tasche, D.**, *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7):1487–1503 (2002) — ES coherence for general distributions; Euler allocation of ES.
 - **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 (ES definition, normal ES eq. 22.1, Basel ES@97.5%). *Numerically verified in the corpus.*
 - **McNeil & Frey**, *Estimation of Tail-Related Risk Measures…*, *J. Empirical Finance* 7 (2000) — conditional ES via GARCH + EVT.
-- **Gneiting, T.**, *Making and Evaluating Point Forecasts*, *JASA* 106(494) (2011) — non-elic lack of ES (the backtesting caveat).
+- **Gneiting, T.**, *Making and Evaluating Point Forecasts*, *JASA* 106(494) (2011) — the non-elicatability of ES (the backtesting caveat).
 
 ---
 

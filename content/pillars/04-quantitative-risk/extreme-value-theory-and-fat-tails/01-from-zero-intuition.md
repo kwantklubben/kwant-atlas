@@ -17,7 +17,7 @@ This page builds the *why* of extreme value theory with **no prior EVT knowledge
 
 Start with the dumbest question: *why can't we just use a normal distribution?* Because a normal's tail probability decays as $e^{-x^2/2}$ — absurdly fast. Under a normal with daily vol $\sigma=1\%$, a single-day $-6\sigma$ move ($-6\%$) has probability
 $$P(X<-6\sigma)=\Phi(-6)\approx 1.0\times 10^{-9},$$
-roughly once in 4 billion trading days — about 16 million years. Real equity markets saw multiple $-6\sigma$ days in the twentieth century alone. Something is structurally wrong with the normal as a *tail* model even if it is a fine *center* model.
+roughly once in a billion trading days (single-sided) — on the order of 4 million years at 250 trading days/yr. Real equity markets saw multiple $-6\sigma$ days in the twentieth century alone. Something is structurally wrong with the normal as a *tail* model even if it is a fine *center* model.
 
 Three steps, three "aha"s:
 
