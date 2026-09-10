@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/statistics-and-inference/index|Statistics & Inference]] (correlations, regression, the t-statistic) and [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (timestamps, vendors, point-in-time hygiene). No prior ML needed.
+**Basic Prerequisites:** [[foundations/statistics-and-inference/index|Statistics & Inference]] (correlations, regression, the t-statistic) and [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (timestamps, vendors, point-in-time hygiene). No prior ML needed. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (vectors, matrices, quadratic forms, eigenvalues). *Note: this folder builds the multivariable/optimization machinery the linear-algebra page assumes is available.*
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (vectors, matrices, quadratic forms, eigenvalues). *Note: this folder builds the multivariable/optimization machinery the linear-algebra page assumes is available.* *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

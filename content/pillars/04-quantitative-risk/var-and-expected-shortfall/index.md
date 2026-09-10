@@ -7,7 +7,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, quantiles, expectation) and [[pillars/04-quantitative-risk/var-and-expected-shortfall/01-from-zero-intuition|01 · From Zero (this folder)]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, quantiles, expectation) and [[pillars/04-quantitative-risk/var-and-expected-shortfall/01-from-zero-intuition|01 · From Zero (this folder)]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** Elementary set theory and calculus.
+**Basic Prerequisites:** Elementary set theory and calculus. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

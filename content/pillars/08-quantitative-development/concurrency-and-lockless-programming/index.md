@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++ for Trading]] and [[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Low-Latency Systems Architecture]]. Working knowledge of threads, CPU caches, and modern C++ atomics.
+**Basic Prerequisites:** [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++ for Trading]] and [[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Low-Latency Systems Architecture]]. Working knowledge of threads, CPU caches, and modern C++ atomics. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

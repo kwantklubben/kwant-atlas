@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (expectations, laws of large numbers, martingales) and [[foundations/calculus-and-optimization|Calculus & Optimization]] (maximising $\mathbb{E}[\ln W]$, concavity).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (expectations, laws of large numbers, martingales) and [[foundations/calculus-and-optimization|Calculus & Optimization]] (maximising $\mathbb{E}[\ln W]$, concavity). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

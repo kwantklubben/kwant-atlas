@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization & the Efficient Frontier]] and [[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Factor Timing]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization & the Efficient Frontier]] and [[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Factor Timing]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]] (TCP sockets, kernel bypass) and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]] (what an order *is* at the venue).
+**Basic Prerequisites:** [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]] (TCP sockets, kernel bypass) and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]] (what an order *is* at the venue). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

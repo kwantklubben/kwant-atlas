@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (autocovariance, MA(1), stationarity) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (i.i.d., conditional expectation, martingales).
+**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (autocovariance, MA(1), stationarity) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (i.i.d., conditional expectation, martingales). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

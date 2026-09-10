@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (OLS, projections, eigen-decomposition) and [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (regression, covariance, stationarity).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (OLS, projections, eigen-decomposition) and [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (regression, covariance, stationarity). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

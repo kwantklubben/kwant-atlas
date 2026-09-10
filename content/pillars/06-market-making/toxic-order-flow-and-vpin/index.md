@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & the Glosten–Milgrom Model]] (the information-cost foundation this builds on) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Poisson processes, mixtures).
+**Basic Prerequisites:** [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & the Glosten–Milgrom Model]] (the information-cost foundation this builds on) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Poisson processes, mixtures). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]], [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]], and [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]], [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]], and [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

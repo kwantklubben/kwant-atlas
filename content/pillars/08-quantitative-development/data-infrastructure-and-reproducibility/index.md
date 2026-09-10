@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/08-quantitative-development/tick-level-databases-and-timeseries|Tick-Level Databases & kdb+/q]] (how honest, point-in-time stores are built) and [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (where raw data comes from). Comfort with Python and `hashlib` is assumed.
+**Basic Prerequisites:** [[pillars/08-quantitative-development/tick-level-databases-and-timeseries|Tick-Level Databases & kdb+/q]] (how honest, point-in-time stores are built) and [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (where raw data comes from). Comfort with Python and `hashlib` is assumed. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

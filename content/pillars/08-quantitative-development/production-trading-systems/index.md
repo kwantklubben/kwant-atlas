@@ -10,7 +10,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/08-quantitative-development/event-driven-backtesting-engines/index|Event-Driven Backtesting Engines]] (you must be able to replay time honestly before you can run time live) and [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/index|FIX & Exchange Connectivity]] (the wire the orders actually travel on). Working Python.
+**Basic Prerequisites:** [[pillars/08-quantitative-development/event-driven-backtesting-engines/index|Event-Driven Backtesting Engines]] (you must be able to replay time honestly before you can run time live) and [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/index|FIX & Exchange Connectivity]] (the wire the orders actually travel on). Working Python. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

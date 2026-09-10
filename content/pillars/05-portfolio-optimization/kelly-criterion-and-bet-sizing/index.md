@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (multiplicative growth, log-utility) and [[foundations/calculus-and-optimization/index|Calculus & KKT Optimization]] (maximising a concave function).
+**Basic Prerequisites:** [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (multiplicative growth, log-utility) and [[foundations/calculus-and-optimization/index|Calculus & KKT Optimization]] (maximising a concave function). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

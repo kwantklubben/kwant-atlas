@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (gradients, backpropagation) and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] (why finance is a hard learning problem). The classical ancestor of every model here — the linear state-space / Kalman filter — lives at [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (gradients, backpropagation) and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] (why finance is a hard learning problem). The classical ancestor of every model here — the linear state-space / Kalman filter — lives at [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

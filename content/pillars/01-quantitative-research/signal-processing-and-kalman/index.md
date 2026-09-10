@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (matrix inverse, positive-definiteness) and [[foundations/probability-and-measure-theory/index|Probability Theory]] (Gaussian conditioning, Bayes' rule).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (matrix inverse, positive-definiteness) and [[foundations/probability-and-measure-theory/index|Probability Theory]] (Gaussian conditioning, Bayes' rule). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

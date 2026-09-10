@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (what the statements *are*) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (what you will compute from them).
+**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (what the statements *are*) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (what you will compute from them). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

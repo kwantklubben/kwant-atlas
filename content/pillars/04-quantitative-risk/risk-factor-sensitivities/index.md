@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (only the idea of a partial derivative — **no options knowledge required at this entry point**; the Pillar-3 Greeks are developed/utilised from [[pillars/04-quantitative-risk/risk-factor-sensitivities/02-delta-gamma-vega|02 · Delta, Gamma & Vega]] onward).
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (only the idea of a partial derivative — **no options knowledge required at this entry point**; the Pillar-3 Greeks are developed/utilised from [[pillars/04-quantitative-risk/risk-factor-sensitivities/02-delta-gamma-vega|02 · Delta, Gamma & Vega]] onward). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

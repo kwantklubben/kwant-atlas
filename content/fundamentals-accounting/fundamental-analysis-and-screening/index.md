@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the ratio catalog and its lookup table) and [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] (what "value" means before you screen for it).
+**Basic Prerequisites:** [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the ratio catalog and its lookup table) and [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] (what "value" means before you screen for it). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

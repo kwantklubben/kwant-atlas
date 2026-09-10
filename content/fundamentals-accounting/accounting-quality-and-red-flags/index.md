@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the three statements, accrual vs. cash) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the ratio engine this folder is the defense layer for).
+**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the three statements, accrual vs. cash) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the ratio engine this folder is the defense layer for). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

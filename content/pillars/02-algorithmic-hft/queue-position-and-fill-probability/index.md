@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the three statements) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the leverage, coverage, and ROIC ratios this folder explains).
+**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the three statements) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the leverage, coverage, and ROIC ratios this folder explains). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

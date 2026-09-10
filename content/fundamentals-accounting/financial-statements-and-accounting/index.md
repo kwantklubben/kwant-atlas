@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** None — this topic-folder starts from **absolute zero**. No prior balance-sheet or accounting knowledge is assumed, and the only math needed is add/subtract/multiply/divide. The first sub-page genuinely begins with *"what is a company and why does it print three reports?"*
+**Basic Prerequisites:** None — this topic-folder starts from **absolute zero**. No prior balance-sheet or accounting knowledge is assumed, and the only math needed is add/subtract/multiply/divide. The first sub-page genuinely begins with *"what is a company and why does it print three reports?"* *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

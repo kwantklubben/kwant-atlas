@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/01-quantitative-research/index|Quantitative Research]] and [[foundations/numerical-methods/index|Numerical Methods]]. Comfort with Python syntax; no performance background required.
+**Basic Prerequisites:** [[pillars/01-quantitative-research/index|Quantitative Research]] and [[foundations/numerical-methods/index|Numerical Methods]]. Comfort with Python syntax; no performance background required. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

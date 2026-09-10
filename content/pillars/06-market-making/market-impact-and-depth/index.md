@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional expectation, projection theorem) and [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (OLS, autocovariance).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional expectation, projection theorem) and [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (OLS, autocovariance). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (a backtest is a search) and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] (spreads, queues, order types). Working Python.
+**Basic Prerequisites:** [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (a backtest is a search) and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] (spreads, queues, order types). Working Python. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (units & error budgets) and [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (units & error budgets) and [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] and [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] (single-page overview). Working knowledge of modern C++ (C++17) and the memory hierarchy.
+**Basic Prerequisites:** [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] and [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] (single-page overview). Working knowledge of modern C++ (C++17) and the memory hierarchy. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] and [[foundations/stochastic-calculus/index|Stochastic Calculus]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] and [[foundations/stochastic-calculus/index|Stochastic Calculus]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

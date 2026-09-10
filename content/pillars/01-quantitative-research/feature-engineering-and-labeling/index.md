@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and Python/pandas. Fluency with [[pillars/01-quantitative-research/index|Pillar 1 — Quantitative Research]] helps but is not required.
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and Python/pandas. Fluency with [[pillars/01-quantitative-research/index|Pillar 1 — Quantitative Research]] helps but is not required. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

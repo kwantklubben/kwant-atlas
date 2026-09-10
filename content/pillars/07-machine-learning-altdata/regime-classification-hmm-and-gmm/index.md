@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/statistics-and-inference/index|Statistics & Inference]] (maximum likelihood, Gaussian densities) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Bayes' rule, conditional expectation, Markov chains). The econometric twin of this folder lives in [[pillars/01-quantitative-research/regime-detection/index|Regime Detection]] — that folder is the Hamilton-filter / Markov-switching / timeseries view; **this** folder is the machine-learning view: clustering (GMM / K-means), the EM algorithm, HMM as a probabilistic generative model, and regime-conditional supervised learning.
+**Basic Prerequisites:** [[foundations/statistics-and-inference/index|Statistics & Inference]] (maximum likelihood, Gaussian densities) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Bayes' rule, conditional expectation, Markov chains). The econometric twin of this folder lives in [[pillars/01-quantitative-research/regime-detection/index|Regime Detection]] — that folder is the Hamilton-filter / Markov-switching / timeseries view; **this** folder is the machine-learning view: clustering (GMM / K-means), the EM algorithm, HMM as a probabilistic generative model, and regime-conditional supervised learning. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

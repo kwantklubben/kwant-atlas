@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (distributions, expectation, conditional expectation) and [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] (Taylor expansions, maximization).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (distributions, expectation, conditional expectation) and [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] (Taylor expansions, maximization). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

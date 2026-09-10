@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (spectral decomposition, condition number, Wishart matrices) and [[foundations/probability-and-measure-theory/index|Probability & Statistics]] (sample covariance, quadratic forms).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (spectral decomposition, condition number, Wishart matrices) and [[foundations/probability-and-measure-theory/index|Probability & Statistics]] (sample covariance, quadratic forms). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

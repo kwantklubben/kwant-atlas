@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] and computer-architecture fundamentals (gates, clocks, caches, PCIe).
+**Basic Prerequisites:** [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] and computer-architecture fundamentals (gates, clocks, caches, PCIe). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

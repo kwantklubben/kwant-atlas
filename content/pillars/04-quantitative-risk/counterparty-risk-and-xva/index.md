@@ -7,7 +7,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (derivative valuation) and [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (default probability, LGD).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (derivative valuation) and [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (default probability, LGD). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

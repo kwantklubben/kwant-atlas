@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/statistics-and-inference/index|Statistics & Inference]] (regression on the feature matrix) and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] (why a text-derived signal dies without leak-proof evaluation). The *inputs* being mined are described in [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]].
+**Basic Prerequisites:** [[foundations/statistics-and-inference/index|Statistics & Inference]] (regression on the feature matrix) and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] (why a text-derived signal dies without leak-proof evaluation). The *inputs* being mined are described in [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (inverses, condition numbers) and [[foundations/statistics-and-inference/index|Statistics & Inference]] (covariance, correlation, OLS). Prior exposure to [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization]] is strongly recommended; ML itself is treated as a black box you have already trained.
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (inverses, condition numbers) and [[foundations/statistics-and-inference/index|Statistics & Inference]] (covariance, correlation, OLS). Prior exposure to [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization]] is strongly recommended; ML itself is treated as a black box you have already trained. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/08-quantitative-development/tick-level-databases-and-timeseries|Tick-Level Databases & kdb+/q]] (single-page overview) and [[pillars/08-quantitative-development/high-performance-cpp-for-trading/03-memory-and-cache|High-Performance C++ · Memory & Cache]] (why layout beats arithmetic). Working knowledge of SQL and Python.
+**Basic Prerequisites:** [[pillars/08-quantitative-development/tick-level-databases-and-timeseries|Tick-Level Databases & kdb+/q]] (single-page overview) and [[pillars/08-quantitative-development/high-performance-cpp-for-trading/03-memory-and-cache|High-Performance C++ · Memory & Cache]] (why layout beats arithmetic). Working knowledge of SQL and Python. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

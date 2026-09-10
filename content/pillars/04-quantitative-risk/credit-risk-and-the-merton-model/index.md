@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (the equity-as-call identity *is* BSM) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, the normal quantile $N^{-1}$).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (the equity-as-call identity *is* BSM) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, the normal quantile $N^{-1}$). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

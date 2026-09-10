@@ -10,7 +10,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]] and [[foundations/calculus-and-optimization/index|Calculus & Statistics]].
+**Basic Prerequisites:** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]] and [[foundations/calculus-and-optimization/index|Calculus & Statistics]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

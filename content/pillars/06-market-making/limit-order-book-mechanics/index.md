@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (point processes, conditional expectation, martingales).
+**Basic Prerequisites:** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (point processes, conditional expectation, martingales). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

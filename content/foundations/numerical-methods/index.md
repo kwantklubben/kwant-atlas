@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]], [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]], and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]], [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]], and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

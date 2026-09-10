@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (the Deflated Sharpe Ratio, PBO, multiple testing). Comfort with [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (interval labels) is what makes the purge meaningful.
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (the Deflated Sharpe Ratio, PBO, multiple testing). Comfort with [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (interval labels) is what makes the purge meaningful. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

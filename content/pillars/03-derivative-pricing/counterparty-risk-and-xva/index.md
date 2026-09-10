@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] and [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] and [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

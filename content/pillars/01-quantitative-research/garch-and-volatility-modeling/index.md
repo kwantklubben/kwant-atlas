@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (stationarity, ARMA, forecasting, conditional moments) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional expectation, filtrations, martingale-difference sequences).
+**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (stationarity, ARMA, forecasting, conditional moments) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional expectation, filtrations, martingale-difference sequences). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

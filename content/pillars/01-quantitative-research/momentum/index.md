@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (serial correlation, stationarity, forecasting) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (moments, skewness, correlation).
+**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (serial correlation, stationarity, forecasting) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (moments, skewness, correlation). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (return aggregation, market-model regression, OLS, serial correlation) and [[foundations/statistics-and-inference/index|Statistics & Inference]] (hypothesis testing, the t-statistic, the CLT).
+**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (return aggregation, market-model regression, OLS, serial correlation) and [[foundations/statistics-and-inference/index|Statistics & Inference]] (hypothesis testing, the t-statistic, the CLT). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 
