@@ -92,7 +92,8 @@ print("int B dB        = %.4f   vs  0.5B(T)^2-0.5T = %.4f"
       % (sum(W[i]*(W[i+1]-W[i]) for i in range(n)), 0.5*W[-1]**2-0.5))
 
 # (5) risk-neutral price MC vs BSM closed form (rule of the folder)
-def bsm(S,X,T,r,s):  d1=(math.log(S/X)+(r+0.5*s*s)*T)/(s*math.sqrt(T)); d2=d1-s*math.sqrt(T)
+def bsm(S,X,T,r,s):
+    d1=(math.log(S/X)+(r+0.5*s*s)*T)/(s*math.sqrt(T)); d2=d1-s*math.sqrt(T)
     return S*0.5*(1+math.erf(d1/math.sqrt(2)))-X*math.exp(-r*T)*0.5*(1+math.erf(d2/math.sqrt(2)))
 S,X,T,r,s=100.,100.,1.,0.05,0.20
 tot=sum(max(S*math.exp((r-0.5*s*s)*T+s*random.gauss(0,1.0))-X,0.0) for _ in range(300000))

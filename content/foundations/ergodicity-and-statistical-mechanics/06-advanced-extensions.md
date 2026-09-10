@@ -110,7 +110,7 @@ The punchline is in block B: with a modest estimation error, **full Kelly has al
 
 1. **Plugging in $\hat{\boldsymbol f}^\*$ from estimated moments.** The single most common way to lose money with Kelly. Overbetting is asymmetric; the estimate is biased high; shrink the fraction (block B).
 2. **Ignoring the $1^\top\boldsymbol f = c$ and $\boldsymbol f\ge0$ constraints.** Unconstrained vector Kelly can demand huge leverage or violent shorts; the constrained problem needs KKT ([[foundations/calculus-and-optimization/04-constrained-optimization|page 04 of calculus]]) and its solution is *not* a simple rescaling.
-3. **Treating $\Sigma$ as known.** A poor covariance estimate (noisy, ill-conditioned) inverts into explosive weights; shrinkage/denoising is mandatory ([[pillars/05-portfolio-optimization/covariance-estimation-shrinkage-rmt/index|Covariance Estimation]]).
+3. **Treating $\Sigma$ as known.** A poor covariance estimate (noisy, ill-conditioned) inverts into explosive weights; shrinkage/denoising is mandatory ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Estimation]]).
 4. **Assuming stationarity.** $f^\*$ moves as $\mu,s$ move; a static full-Kelly lever is a bet on regime stability as much as on the edge.
 5. **Confusing vector Kelly with mean-variance optimality.** They share $\Sigma^{-1}$ but maximise different objectives; a mean-variance "optimal" portfolio is generally *not* growth-optimal (it ignores the $\tfrac12\boldsymbol f^\top\Sigma\boldsymbol f$ curvature of log wealth).
 
@@ -131,5 +131,5 @@ The punchline is in block B: with a modest estimation error, **full Kelly has al
 - Back: [[foundations/ergodicity-and-statistical-mechanics/05-ruin-and-drawdown|05 · Ruin & Drawdown]]
 - Hub: [[foundations/ergodicity-and-statistical-mechanics/index|Index Hub]]
 - Base: [[foundations/calculus-and-optimization/04-constrained-optimization|Constrained Optimization]] (constrained vector Kelly) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
-- Applied destinations: [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] · [[pillars/05-portfolio-optimization/covariance-estimation-shrinkage-rmt/index|Covariance Estimation, Shrinkage & RMT]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/01-quantitative-research/index|Quantitative Research]] (overfitting & estimation error)
+- Applied destinations: [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Estimation, Shrinkage & RMT]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/01-quantitative-research/index|Quantitative Research]] (overfitting & estimation error)
 - Forward topic-folder (in Pillar 5): `kelly-criterion-and-bet-sizing` — the applied treatment of this material.

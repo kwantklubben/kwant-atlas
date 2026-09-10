@@ -19,15 +19,23 @@ This **First-Principles Toolbox** provides the rigorous ground truth underlying 
 
 ### Core Theoretical Pillars
 
-1. **[[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrix Decompositions]]**: Vector spaces, spectral theory, positive semi-definiteness, singular value decomposition (SVD), and random matrix theory (Marchenko-Pastur).
-2. **[[foundations/calculus-and-optimization/index|Multivariable Calculus & Constrained Optimization]]**: Gradients, Hessians, Taylor series expansions (the foundation of Greeks), Lagrange multipliers, and Karush-Kuhn-Tucker (KKT) conditions.
+1. **[[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]**: Vector spaces, spectral theory, positive semi-definiteness, singular value decomposition (SVD), PCA, and random matrix theory.
+2. **[[foundations/calculus-and-optimization/index|Calculus & Optimization]]**: Single & multivariable calculus, gradients, Hessians, Taylor series (the foundation of Greeks), Lagrange multipliers, and KKT conditions.
 3. **[[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**: Probability spaces $(\Omega, \mathcal{F}, \mathbb{P})$, filtrations, conditional expectations, martingales, and the Radon-Nikodym derivative.
 4. **[[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]]**: Quadratic variation, continuous Brownian paths, Itô integration, Itô-Doeblin formula, and Girsanov change of measure.
-5. **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series Analysis]]**: Weak vs strict stationarity, unit root tests (ADF), Engle-Granger and Johansen cointegration, and ARCH/GARCH volatility clustering.
-6. **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble averages vs time averages, non-ergodic multiplicative wealth dynamics, the Kelly criterion, and ruin probability.
+5. **[[foundations/statistics-and-inference/index|Statistics & Inference]]**: Point estimation (MLE), the CLT, confidence intervals & hypothesis testing, bias-variance, bootstrap.
+6. **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]**: Weak vs strict stationarity, unit root tests (ADF), Engle-Granger and Johansen cointegration, and ARCH/GARCH volatility modeling.
+7. **[[foundations/bayesian-statistics/index|Bayesian Statistics]]**: Bayes' theorem & conjugate priors, posterior inference, regularization-as-MAP, and MCMC (Metropolis, Gibbs).
+8. **[[foundations/numerical-methods/index|Numerical Methods]]**: Finite-difference methods, Monte Carlo, numerical optimization, numerical linear algebra — the general computational toolbox.
+9. **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble averages vs time averages, non-ergodic multiplicative wealth dynamics, the Kelly criterion, and ruin probability.
 
 ---
 
-### How to Use This Toolbox
+### Reading Path — how to approach the toolbox
 
-Every operational pillar in the Atlas explicitly links its **Basic Prerequisites** to these foundational nodes. When you encounter a topic in Alpha Generation, Derivatives, or Portfolio Construction that relies on linear projections or martingales, start here to build immutable mathematical intuition before touching production code.
+- **Absolute beginner (any background, incl. econ/no-math):** start with **1 Linear Algebra → 2 Calculus** (the two workhorses), then **3 Probability**. These unlock everything else.
+- **Quant-interested (building):** add **4 Stochastic Calculus** and **6 Econometrics** — the two most-used in derivatives and alpha research.
+- **Statistically deep / ML:** add **5 Statistics** then **7 Bayesian** (regularization + MCMC are the ML bridge).
+- **Implementation-focused:** **8 Numerical Methods** is the engine for pricing and optimization; **9 Ergodicity** is the lens for long-horizon growth, Kelly sizing and ruin.
+
+Each operational pillar links its **Basic Prerequisites** to these foundational nodes. When a topic in Alpha Generation, Derivatives, or Portfolio Construction relies on linear projections or martingales, start here to build immutable mathematical intuition before touching production code.
