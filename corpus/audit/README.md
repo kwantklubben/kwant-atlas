@@ -67,8 +67,10 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 | Wave | Area | Folders | Status |
 | :--- | :--- | :--- | :--- |
 | 1 | foundations (8 folders) | bayesian, calculus, econometrics, ergodicity, linear-algebra, numerical-methods, probability, statistics | ✅ done, fixes committed |
-| 2 | foundations/stochastic-calculus + fundamentals-accounting (8) | — | running |
-| 3-10 | pillars 01-08 (90 folders) | — | queued |
+| 2 | foundations/stochastic-calculus + fundamentals-accounting (8) | — | ✅ done, fixes committed |
+| 3 | pillars/01-quantitative-research (10) | — | ✅ done, fixes committed |
+| 4 | pillars/02-algorithmic-hft (9) + pillars/03 black-scholes-merton | — | running |
+| 5-10 | pillars 03-08 (remaining ~69 folders) | — | queued |
 
 ## How to re-run
 
