@@ -104,7 +104,7 @@ tick-size lever on the maker's edge floor e_min = tau/2 + r and residual R_tau:
 
 - The maximum sustainable PFOF is **\$0.0050/share (0.5¢)**; at that payment the wholesaler earns exactly zero, and any higher payment requires a wider effective spread or cheaper technology — which is why PFOF ultimately shows up as a *retail execution-quality* question, not merely a routing question.
 - The **access-fee cap** ($0.0030$) bounds the fee component of the cum-fee spread at $2\times0.0030=0.0060$ — real but small relative to the raw spread; it constrains the *fee* channel, not the spread channel.
-- The **tick lever is dominant and highly non-linear**: the SEC pilot's **\$0.05 tick** would lift the maker's edge floor to $0.0270$ and the protected rent $R_\tau$ to **$+0.0210$** — more than **3×** the rent at a \$0.01 tick ($+0.0010$) and **4×** the daily half-spread itself. **A tick-size rule is, quantitatively, a liquidity-supplier subsidy far larger than any rebate schedule.**
+- The **tick lever is dominant and highly non-linear**: the SEC pilot's **\$0.05 tick** would lift the maker's edge floor to $0.0270$ and the protected rent $R_\tau$ to **$+0.0210$** — **21×** the rent at a \$0.01 tick ($+0.0010$) and **4×** the daily half-spread itself. **A tick-size rule is, quantitatively, a liquidity-supplier subsidy far larger than any rebate schedule.**
 
 ---
 

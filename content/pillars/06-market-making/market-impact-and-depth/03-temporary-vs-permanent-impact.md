@@ -70,7 +70,7 @@ If the book refills immediately, all impact is temporary and total cost is zero 
 
 ### 3. Computational Implementation — the same order, four speeds
 
-One sell of $X=-10^6$ shares, executed at four speeds (10, 25, 100, 500 child orders). Permanent coefficient $\gamma=-2\times10^{-6}$/share, transient coefficient $\eta=-8\times10^{-6}$/share, per-slice decay $\rho=0.90$. Stdlib only.
+One sell of $X=-10^6$ shares, executed at four speeds (10, 25, 100, 500 child orders). Permanent coefficient $\gamma=+2\times10^{-6}$/share (so a *sell* has negative signed flow and pushes the price down), transient coefficient $\eta=+8\times10^{-6}$/share, per-slice decay $\rho=0.90$. Stdlib only.
 
 ```python
 def propagator(X, n_slices, gamma_perm, eta_temp, rho, S0=50.0):
@@ -80,35 +80,34 @@ def propagator(X, n_slices, gamma_perm, eta_temp, rho, S0=50.0):
     q = X / n_slices
     m = S0            # permanent / efficient price
     T = 0.0           # transient pressure (price units)
-    peak = S0; notional = 0.0
+    extreme = S0; notional = 0.0
     for _ in range(n_slices):
         m += gamma_perm * q              # permanent drift accumulates with size
         T = rho * T + eta_temp * q       # new transient pressure + decayed old
         mid = m + T
-        peak = max(peak, mid)
+        extreme = min(extreme, mid) if X < 0 else max(extreme, mid)
         notional += mid * q              # we trade at the observed (impacted) mid
-    return gamma_perm * X, peak - S0, notional / X - S0
+    return gamma_perm * X, extreme - S0, notional / X - S0
 
 print("Temporary vs permanent: same size X, different execution speed")
 print(f"{'slices':>7} {'speed':>6} {'permanent':>11} {'peak impact':>12} {'exec VWAP imp':>14}")
 for n in (10, 25, 100, 500):
-    perm, peak, vwap = propagator(-1_000_000, n, -2e-6, -8e-6, 0.90)
+    perm, peak, vwap = propagator(-1_000_000, n, 2e-6, 8e-6, 0.90)
     print(f"{n:>7} {n/10:>5.0f}x {perm:>11.4f} {peak:>12.4f} {vwap:>14.4f}")
 ```
-
 ```
 Temporary vs permanent: same size X, different execution speed
  slices  speed   permanent  peak impact  exec VWAP imp
-     10     1x      2.0000       7.2106         4.4105
-     25     2x      2.0000       4.9703         3.1707
-    100    10x      2.0000       2.8000         1.7380
-    500    50x      2.0000       2.1600         1.1591
+     10     1x     -2.0000      -7.2106        -4.4105
+     25     2x     -2.0000      -4.9703        -3.1707
+    100    10x     -2.0000      -2.8000        -1.7380
+    500    50x     -2.0000      -2.1600        -1.1591
 ```
 
 Read the table:
-- **Permanent impact is constant at 2.0000** across a fifty-fold speed range — exactly the Almgren–Chriss prediction $\tfrac12\gamma X^2$ (here $\gamma X=-2\times10^{-6}\times(-10^6)=\$2$), schedule-independent.
-- **Peak impact falls from 7.21 to 2.16** as execution slows: the temporary component $\to0$, and the peak converges on the permanent level.
-- **Realized VWAP impact** is always *between* the two (4.41 down to 1.16): it is what you actually pay, and it is the quantity your execution schedule controls.
+- **Permanent impact is constant at $-2.0000$** across a fifty-fold speed range — the per-share permanent impact $\gamma X=2\times10^{-6}\times(-10^6)=-\$2$ (in total dollars, $\tfrac12\gamma X^2=-\$1\text{M}$), schedule-independent.
+- **Peak (adverse) impact falls from $-7.21$ to $-2.16$** as execution slows: the temporary component $\to0$, and the peak converges on the permanent level.
+- **Realized VWAP impact** is always *between* the two ($-4.41$ down to $-1.16$): it is what you actually pay, and it is the quantity your execution schedule controls.
 
 ---
 

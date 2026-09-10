@@ -20,7 +20,7 @@ Pages 01–05 treated the book mechanically: a state and a deterministic engine.
 | Family | Core idea | Buys you | Costs you |
 |---|---|---|---|
 | **Zero-intelligence (ZI)** | random arrivals, no strategy | a *null model*: how much price formation is mechanical | ignores informed flow entirely |
-| **Makidian / queueing** | Markov chain in queue sizes, rates by distance | tractable spread/spread-depth distributions | strong Markov assumption |
+| **Markovian / queueing** | Markov chain in queue sizes, rates by distance | tractable spread/spread-depth distributions | strong Markov assumption |
 | **Queue-reactive** | touch queues mean-revert to empirical targets | realistic short-horizon price-move probabilities | needs rich calibration |
 | **OFI / micro-price** | price change $\propto$ order-flow imbalance | a stable, tradeable impact law | non-stationary under spoofing |
 
@@ -56,7 +56,7 @@ is the static counterpart of the same idea: it prices the *weights*, not the lev
 
 **2.3 Queue-reactive dynamics (Huang, Lehalle & Rosenbaum).** The refined short-horizon model: at the touch, queue sizes are **mean-reverting** to empirical, state-dependent targets $\bar q^\pm$; price changes occur when a touch queue is depleted or improves. This reproduces the empirical fact that *imbalance at the touch forecasts the next move* — which is exactly what a market maker monetises. The transition probability takes the form
 
-$$P(\text{up-tick}\mid q^b,q^a)=\Phi\!\left(\frac{q^b-\bar q^b}{\theta^b}\right)\cdot\Psi\!\left(\frac{q^a-\bar q^a}{\theta^a}\right),$$
+$$P(\text{up-tick}\mid q^b,q^a)=\Phi\!\left(\frac{q^b-\bar q^b}{\theta^b}\right)\cdot\Psi\!\left(\frac{\bar q^a-q^a}{\theta^a}\right),$$
 
 rising with bid-heavy and ask-light queues.
 

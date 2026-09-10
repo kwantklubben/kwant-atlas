@@ -91,7 +91,7 @@ desk P&L / day  = $500,000
 without rebate  = $300,000  (rebate is 67% of P&L)
 ```
 
-**Read the last two lines carefully.** The rebate is *40% of net profit* when it is present, and removing it cuts the desk's profit by two-thirds ($500k → $300k). This is the empirical reason the maker-taker debate is so bitter: a payment that looks like a rounding error on the spread is a first-order term in the **margin**. That is the subject of the rest of this folder.
+**Read the last two lines carefully.** The rebate is *40% of net profit* when it is present, and removing it cuts the desk's profit by 40% ($500k → $300k). This is the empirical reason the maker-taker debate is so bitter: a payment that looks like a rounding error on the spread is a first-order term in the **margin**. That is the subject of the rest of this folder.
 
 ---
 

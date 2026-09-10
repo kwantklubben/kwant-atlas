@@ -100,7 +100,7 @@ minimum viable tick tau_min = 2*(lambda - r) = 0.0080
 
 - At an edge of $0.014$/share the industry supports exactly **$N^\star=7$ competitive makers**; a tenth entrant loses **$600{,}000$/year** — the race to zero is a *counting* result, not a vague tendency.
 - The **minimum viable tick is $0.0080$**: $\tau=0.002$ and $\tau=0.005$ leave makers below the adverse-selection cost (residual $-0.0030$ and $-0.0015$), while $\tau=0.010$ and $\tau=0.020$ leave **positive** rents ($+0.0010$ and $+0.0060$).
-- Quadrupling the tick ($0.005\to0.020$) *quadruples* the protected rent ($-0.0015\to+0.0060$, a swing of $0.0075 = 3\tau/2$): **tick size is a liquidity subsidy the exchange cannot print on its own.** That is the entire regulatory stakes of this page.
+- Quadrupling the tick ($0.005\to0.020$) converts a **negative** protected rent into a clearly positive one ($-0.0015\to+0.0060$, a swing of $0.0075 = 3\tau/2$) — the tick floor turns a losing no-rebate race into a profitable one: **tick size is a liquidity subsidy the exchange cannot print on its own.** That is the entire regulatory stakes of this page.
 
 ---
 

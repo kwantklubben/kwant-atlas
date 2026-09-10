@@ -34,7 +34,7 @@ $$S_t=S_0+\int_0^t h\big(\dot X_s\big)\,G(t-s)\,ds,$$
 where $h$ is the instantaneous impact function (linear $h(x)=cx$, or concave $h(x)=c|x|^\delta\mathrm{sgn}(x)$) and $G$ is the **decay kernel** (the "propagator"). The discrete version applies a price move $h(\xi_{t_k})G(t_n-t_k)$ at each trade time $t_k$. The three headline results:
 
 1. **Temporary + permanent are limits.** $G\equiv$ const $\Rightarrow$ all impact permanent; $G\to0$ instantly $\Rightarrow$ all impact temporary. Real markets sit between: $G$ decays slowly (a power law), so impact is *mostly* temporary but with a persistent tail.
-2. **The decay can be inferred from the impact curve.** For a single metaorder, $G$ is (up to a factor) the *derivative of the post-trade price-reversion curve* — the observable object. Empirically `impact decays as a power law $G(\tau)\sim\tau^{-\gamma}$` with $\gamma\approx0.5$ (Bouchaud et al. 2004), matching the order-sign autocorrelation exponent $\gamma=(1-\beta)/2$ of page 04.
+2. **The decay can be inferred from the impact curve.** For a single metaorder, $G$ is (up to a factor) the *derivative of the post-trade price-reversion curve* — the observable object. Empirically `impact decays as a power law $G(\tau)\sim\tau^{-\gamma}$` with $\gamma\approx0.5$ (Bouchaud et al. 2004), matching the Bouchaud response relation $\beta=(1-\gamma)/2$ of page 04.
 3. **The model reproduces the square-root law.** With $\delta=\tfrac12$ and $G(\tau)=\tau^{-\gamma}$, the peak impact of a metaorder of size $Q$ scales as $Q^{1/2}$ (§3), reconciling the static square-root fit of page 04 with a dynamic mechanism.
 
 #### 2.2 No-dynamic-arbitrage (the key constraint)

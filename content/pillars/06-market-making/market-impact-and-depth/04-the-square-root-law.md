@@ -127,7 +127,7 @@ The regression recovers the square-root exponent **0.5054** on the diffusive boo
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Fitting linear impact to square-root data.** The most damaging misspecification: linear models **understate** the cost of large orders (they treat impact as proportional) and mis-price the marginal cost of size, which is precisely the decision a large order turns on.
+1. **Fitting linear impact to square-root data.** The most damaging misspecification: linear models **overstate** the cost of large orders (they treat impact as proportional, so the fitted line sits above the concave curve at the large sizes) and mis-price the marginal cost of size, which is precisely the decision a large order turns on.
 2. **Over-fitting the exponent.** Almgren et al. reject the pure $\tfrac12$ square root at 95% in favour of $\tfrac35$; quoting "the square-root law" as exact is a simplification. The *sign* of the concavity is robust; the exact exponent is venue- and size-regime-dependent.
 3. **Ignoring that impact scales with volatility, not size alone.** $I\propto\sigma\sqrt{Q/V}$ means the same order costs twice as much in a high-vol regime. Backtests that fix $\sigma$ under-charge exactly when it matters most.
 4. **Assuming fast impact decay.** A kernel that decays too quickly (e.g. exponential) plus nonlinear impact **implies arbitrage** (Gatheral) — it lets a strategy buy, wait, sell, and profit risklessly. Empirically impact decays *slowly*, so any model that "resets" impact within a day is suspect.

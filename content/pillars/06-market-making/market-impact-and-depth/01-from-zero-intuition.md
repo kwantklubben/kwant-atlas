@@ -38,7 +38,7 @@ $$P = p_0 + \lambda\,y .$$
 
 The coefficient $\lambda$ has units of dollars per share of order flow, and it is exactly **the price impact of one unit of flow**. Its reciprocal is the **market depth**:
 
-$$\text{depth}=\frac{1}{\lambda}= \frac{\text{signed order flow needed for a \$1 price move}}{}.$$
+$$\text{depth}=\frac{1}{\lambda}\quad\text{(the signed order flow needed for a \$1 price move).}$$
 
 **Why should the response be linear?** It need not be in general — empirically it is *concave* (the square-root law, page 04). But linearity is the remarkable, and remarkably robust, prediction at the **short horizon** and for **small/aggregated** flow, and it is what makes the equilibrium model of page 02 exactly solvable. It also matches the empirical finding that the *mid-price change over short intervals is linear in order-flow imbalance* (Cont, Kukanov & Stoikov 2014).
 
@@ -110,7 +110,7 @@ Read the last line: the price change equals $\lambda$ times the *net* signed flo
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Confusing the spread with the cost of size.** The quoted spread is the impact of *one small trade*. Trading a *large* order costs the spread *plus* the depth you consume walking the book. The two are different objects — the spread is a cost per share, depth is a cost per share *that grows with size*.
-2. **Assuming impact is linear forever.** Linearity is an excellent approximation at short horizons and moderate sizes, but it is *empirically wrong at scale*: the true response is concave. A linear model underestimates (or a naive one overestimates) the cost of very large orders — page 04.
+2. **Assuming impact is linear forever.** Linearity is an excellent approximation at short horizons and moderate sizes, but it is *empirically wrong at scale*: the true response is concave. A linear model **overestimates** the cost of very large orders (the true law is concave) while understating it at small sizes — page 04.
 3. **Treating the price you see as the price you get.** The pre-trade price $p_0$ is not attainable for size. The realized VWAP is worse by the amount of impact; a backtest that fills at $p_0$ systematically overstates a strategy's profitability.
 4. **Forgetting that impact is a *flow* quantity, not a *stock* quantity.** What moves the price is signed *order flow* (in the Kyle sense), not the size of your order per se. Trading the same size more slowly produces less instantaneous impact but not less permanent impact — the seed of the temporary/permanent distinction (page 03).
 5. **Ignoring that "the stock does not know you own it."** Impact is a statement about *information and immediacy*, not about you personally: a market maker's response to your order is a response to the *flow*, and its magnitude is governed by how much the flow could be informed.

@@ -59,7 +59,7 @@ which is **negative past $\pi^\star=h/J$**. The limit order's spread is not free
 | **Hidden** | on the book but invisible | **loses priority** to visible orders at the same price |
 | **Reserve / iceberg** | only a slice is displayed | refreshed from reserve at the back of the queue |
 
-Hasbrouck's concrete illustration (IBM/Island ECN) is the canonical "walk": bids at \$112.50, \$110.00, \$108.00, and a \$.63 stub — a market sell of the right size consumes them in order, printing a stair-step of prices. Note also the rule variation: on Euronext an unfilled market-order remainder *converts to a limit order* at the execution price, whereas INET requires all orders to be priced — a venue's mechanism, not the order, decides what happens to the stub.
+Hasbrouck's concrete illustration (IBM/Island ECN) is the canonical "walk": bids at \$112.50, \$110.00, \$108.00, and a \$2.63 stub — a market sell of the right size consumes them in order, printing a stair-step of prices. Note also the rule variation: on Euronext an unfilled market-order remainder *converts to a limit order* at the execution price, whereas INET requires all orders to be priced — a venue's mechanism, not the order, decides what happens to the stub.
 
 ---
 

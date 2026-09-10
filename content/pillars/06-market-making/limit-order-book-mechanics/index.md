@@ -30,7 +30,7 @@ Three ideas the whole folder rests on:
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Quick-Reference Lookup.** All formulas are standard microstructure quantities, transcribed from Hasbrouck (2007) Ch 2, Foucault–Pagano–Röell (2013) Ch 2, and Cont–Kukanov–Stoikov (2014); the numbers in the check column were **re-executed and reproduced exactly** from the code in §3.
+**Quick-Reference Lookup.** All formulas are standard microstructure quantities, transcribed from Hasbrouck (2007) Ch 2, Foucault–Pagano–Röell (2013) Ch 2, and Cont–Kukanov–Stoikov (2014); the numbers in the check column were **re-executed and reproduced exactly** — the book totals from the §3 code on this page, the rest from the sub-pages cited (02 for VWAP half-level fills, 03 for OFI).
 
 **Notation:** resting buy (bid) orders at prices $p$ with sizes $q$; best bid $b_t$, best ask $a_t$; bid/ask sizes at the touch $q^b_t,q^a_t$; order $i$ arriving at time $t_i$.
 
@@ -41,8 +41,8 @@ Three ideas the whole folder rests on:
 | Midquote | $m_t=\tfrac12(a_t+b_t)$ | $m=100.0050$ |
 | Depth at a price | $D_t(p)=\sum_{i}\,\mathbf{1}\{p_i=p\}\,q_i$ | total resting depth $=1400$ |
 | Queue position | $Q_0=\sum_{i\,\text{at }p}\mathbf{1}\{t_i<t_0\}\,q_i$ (size ahead of a new order) | $300$ |
-| Market-order VWAP | $\bar p(Q)=\dfrac{1}{Q}\sum_k q_k p_k$ over the swept levels | $100.002$ at $Q=250$ |
-| Effective half-spread | $\text{Se}=d\,(p-m)$, $d=+1$ buy $/-1$ sell | $\text{Se}=0.013$ at $Q=1000$ |
+| Market-order VWAP | $\bar p(Q)=\dfrac{1}{Q}\sum_k \min\!\big(q_k,\max(0,Q-Q_{k-1})\big)\,p_k$ over the swept levels | $100.012$ at $Q=250$ (hub book) |
+| Effective half-spread | $\text{Se}=d\,(p-m)$, $d=+1$ buy $/-1$ sell | $0.013$ at $Q=1000$ *(page 02's book, $m=100.00$)* |
 | Order Flow Imbalance | $\text{OFI}_t=I^b_t-I^a_t$ (see [[pillars/06-market-making/limit-order-book-mechanics\|03 page]]) | $\text{OFI}=-50$ |
 | Microprice | $m^{\text{micro}}_t=\dfrac{q^b_t\,a_t+q^a_t\,b_t}{q^b_t+q^a_t}$ (size-weighted touch) | falls between $b_t,a_t$ |
 | Toxic-fill EV | $\mathbb{E}[\pi]=h-\pi J$ (half-spread $h$, adverse move $J$, informed share $\pi$) | break-even $\pi^\*=h/J=0.20$ |
