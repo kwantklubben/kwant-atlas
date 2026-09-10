@@ -11,7 +11,15 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 1. **[Quantitative Research (Alpha Generation)](content/pillars/01-quantitative-research/index.md)**  
    *Analyzing historical and alternative market data to discover predictive trading signals and statistical anomalies.*  
-   Core: Statistical Arbitrage (Pairs Trading, Cointegration), Cross-Sectional & Time-Series Momentum (CTA), Fundamental Multi-Factor Models (Fama-French, Barra), Signal Processing (Kalman Filter), Feature Engineering (Triple Barrier, Meta-Labeling), and Backtesting Hygiene (Deflated Sharpe Ratio).
+   **Structure:** organised as **8 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
+   1. **[Statistical Arbitrage & Pairs Trading](content/pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index.md)** — Trading the deviation of a stationary asset relationship (cointegration, Engle-Granger/Johansen, Ornstein-Uhlenbeck spreads) rather than market direction.
+   2. **[Backtesting Hygiene & Deflated Sharpe](content/pillars/01-quantitative-research/backtesting-hygiene/index.md)** — Treating a backtest as the *maximum* of a search: multiple-testing correction, deflated Sharpe ratio, and purged/embargoed cross-validation.
+   3. **[Fundamental Multi-Factor Models](content/pillars/01-quantitative-research/fundamental-multi-factor-models/index.md)** — Projecting the cross-section onto a low-dimensional basis of systematic risk factors (Fama-French, Barra) to price and rank stocks.
+   4. **[Cross-Sectional & Time-Series Momentum](content/pillars/01-quantitative-research/momentum/index.md)** — The persistence of ~1-12 month winners and losers; ranking, volatility scaling, and momentum crashes.
+   5. **[Signal Processing & Kalman Filtering](content/pillars/01-quantitative-research/signal-processing-and-kalman/index.md)** — Extracting the latent signal from noisy, asynchronously observed prices via state-space models and the Kalman filter.
+   6. **[Feature Engineering & Labeling](content/pillars/01-quantitative-research/feature-engineering-and-labeling/index.md)** — Constructing stationary, leak-free features and strategy-faithful labels (triple-barrier, meta-labeling) *before* any model is trained.
+   7. **[Event Studies](content/pillars/01-quantitative-research/event-studies/index.md)** — Measuring the abnormal return around corporate events (earnings, M&A, index changes) and testing market efficiency (Fama; MacKinlay; Brown & Warner).
+   8. **[Regime Detection](content/pillars/01-quantitative-research/regime-detection/index.md)** — Learning the market's current statistical state (Markov-switching, HMM, SETAR/STAR) to make single-regime models robust to structural change.
 
 2. **[Algorithmic and High-Frequency Trading (HFT)](content/pillars/02-algorithmic-hft/index.md)**  
    *Designing automated execution systems operating across the millisecond to nanosecond frontier.*  
