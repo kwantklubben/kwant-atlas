@@ -29,7 +29,7 @@ This folder is the topic-hub for **purged cross-validation and backtest hygiene*
 | Quantity | Formula | Verified check |
 |---|---|---|
 | **Purge condition** (drop train $i$ if label overlaps test $j$ — any of 3) | $t_{j,0}\!\le t_{i,0}\!\le t_{j,1}$ · $t_{j,0}\!\le t_{i,1}\!\le t_{j,1}$ · $t_{i,0}\!\le t_{j,0}\le t_{j,1}\le t_{i,1}$ | all three = overlap $\Rightarrow$ purge |
-| **Embargo** (kill post-test serial memory) | re-label test as $Y_j=f[[t_{j,0},\,t_{j,1}+h]]$, then purge; $h\approx 0.01\,T$ suffices | $h{=}10,\,T{=}1000\Rightarrow 1\%$ |
+| **Embargo** (kill post-test serial memory) | re-label test as $Y_j=f\big[t_{j,0},\,t_{j,1}+h\big]$, then purge; $h\approx 0.01\,T$ suffices | $h{=}10,\,T{=}1000\Rightarrow 1\%$ |
 | Number of train/test **splits** (test $=k$ of $N$ groups) | $\displaystyle\binom{N}{k}=\prod_{i=0}^{k-1}\frac{N-i}{k!}$ | $N{=}6,k{=}2\Rightarrow 15$ |
 | **Number of backtest paths** | $\displaystyle\varphi[N,k]=\frac{k}{N}\binom{N}{k}=\prod_{i=1}^{k-1}\frac{N-i}{(k-1)!}$ | $\varphi[6,2]{=}5$; $\varphi[6,3]{=}10$; $\varphi[101,2]{=}100$ |
 | Fraction of data used for training per combination | $\theta=1-k/N$ | $N{=}10,k{=}2\Rightarrow 0.80$ |

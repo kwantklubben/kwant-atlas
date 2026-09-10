@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (partial derivatives, Taylor expansion) and [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|Pillar 3 · The Greeks & Dynamic Hedging]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (only the idea of a partial derivative — **no options knowledge required at this entry point**; the Pillar-3 Greeks are developed/utilised from [[pillars/04-quantitative-risk/risk-factor-sensitivities/02-delta-gamma-vega|02 · Delta, Gamma & Vega]] onward).
 
 ---
 

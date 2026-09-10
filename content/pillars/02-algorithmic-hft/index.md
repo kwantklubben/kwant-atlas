@@ -33,6 +33,9 @@ This pillar is organised into **nine topic folders** (folder-per-topic), each a 
 
 ### Reading Path (Zero to HFT)
 
+> **Before this pillar (foundations):** read [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/numerical-methods/index|Numerical Methods]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 A guided route through the nine folders, in five stages.
 
 - **Start (the machinery):** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|1 · Market Microstructure & Order Types]]. Learn what limits, auctions, hidden orders, and maker-taker fees actually are — everything downstream assumes these.

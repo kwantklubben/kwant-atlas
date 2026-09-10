@@ -17,6 +17,18 @@ Rather than a linear, week-by-week curriculum, the Atlas is structured around th
 
 ---
 
+## 🚦 New here? Start here.
+
+The Atlas is a **map, not a straight line** — but if you are starting from zero and want a route, follow this:
+
+1. **Foundations first — this is required, not an appendix.** Read the math toolbox before (or alongside) any pillar. The core trio is **[[foundations/linear-algebra-and-matrices/index|Linear Algebra]] → [[foundations/calculus-and-optimization/index|Calculus & Optimization]] → [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**; then take the extra foundations each pillar needs (the [[foundations/index|Foundations hub]] lists the exact consumption order — e.g. *Econometrics* before Pillar 1, *Stochastic Calculus* before Pillar 3, *Statistics* before Pillar 4).
+2. **Pick one pillar and walk its Reading Path.** Every pillar hub has a staged **"Reading Path (Zero to X)"** that starts at a `01-from-zero-intuition` page and climbs to `06-advanced-extensions`, plus a **"Before this pillar (foundations)"** line naming exactly which foundation folders to read first. Recommended first pillar by interest: **[[pillars/01-quantitative-research/index|1 · Quantitative Research]]** to build strategies, **[[pillars/03-derivative-pricing/index|3 · Derivative Pricing]]** for the mathematics of pricing, **[[pillars/04-quantitative-risk/index|4 · Quantitative Risk]]** to understand risk.
+3. **Mid-project? Use it as a lookup + debug tool.** Don't read front-to-back — jump straight in via the pillar hubs' lookup tables and formula indexes, check "what is near this topic" on the interactive graph (see the [Knowledge Graph](/visualizer.html) section below), and use the **diagnostic matrix** below for symptom → cause → fix.
+
+> **Every page carries runnable code.** All Python is stdlib-or-numpy, deterministic, and reproduces the printed output shown. Clone the repo and run it as you read.
+
+---
+
 ## 🧭 The 8 Key Pillars of Quantitative Finance
 
 ```mermaid
@@ -66,23 +78,23 @@ graph TD
 
 ### 1. [[pillars/01-quantitative-research/index|Quantitative Research (Alpha Generation)]]
 Analyzing historical and alternative market data to discover predictive trading signals and statistical anomalies.
-- **[[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage & Pairs Trading]]**: Cointegration, Ornstein–Uhlenbeck spread dynamics, and half-life decay.
-- **[[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Cross-Sectional & Time-Series Momentum]]**: Factor ranking, CTA trend following, volatility scaling, and momentum crashes.
-- **[[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]**: Fama–French 5-factor, Barra cross-sectional style factors, and factor crowding.
-- **[[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]]**: Linear state-space systems, dynamic hedge ratios, and adaptive noise filtering.
-- **[[pillars/01-quantitative-research/feature-engineering-and-labeling|Feature Engineering & Target Labeling]]**: Flaws of fixed-time horizons, the Triple Barrier Method, and Meta-Labeling.
-- **[[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe Ratio]]**: The multiple testing problem, selection bias, and Bailey & Lopez de Prado's DSR.
+- **[[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs Trading]]**: Cointegration, Ornstein–Uhlenbeck spread dynamics, and half-life decay.
+- **[[pillars/01-quantitative-research/momentum/index|Cross-Sectional & Time-Series Momentum]]**: Factor ranking, CTA trend following, volatility scaling, and momentum crashes.
+- **[[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]**: Fama–French 5-factor, Barra cross-sectional style factors, and factor crowding.
+- **[[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]]**: Linear state-space systems, dynamic hedge ratios, and adaptive noise filtering.
+- **[[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Target Labeling]]**: Flaws of fixed-time horizons, the Triple Barrier Method, and Meta-Labeling.
+- **[[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe Ratio]]**: The multiple testing problem, selection bias, and Bailey & Lopez de Prado's DSR.
 
 ---
 
 ### 2. [[pillars/02-algorithmic-hft/index|Algorithmic and High-Frequency Trading (HFT)]]
 Designing automated execution systems operating across the millisecond to nanosecond frontier.
-- **[[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]]**: Passive vs aggressive orders, hidden icebergs, pegged orders, and maker-taker fee rebates.
-- **[[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]]**: Kernel bypass (Solarflare Onload, DPDK), CPU pinning, NUMA affinity, and zero-copy pipelines.
-- **[[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]]**: FIFO vs Pro-Rata matching engines, cancellation dynamics, and adverse selection at queue heads.
-- **[[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|Execution Algorithms: VWAP, TWAP, & POV]]**: Institutional order slicing, intraday volume curves, and tracking error optimization.
-- **[[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]**: Permanent vs temporary market impact, execution risk aversion, and calculus of variations trajectories.
-- **[[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA]]**: Wire-speed packet parsing on silicon, sub-50ns tick-to-trade, and hardware safety gates.
+- **[[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]]**: Passive vs aggressive orders, hidden icebergs, pegged orders, and maker-taker fee rebates.
+- **[[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Low-Latency Systems Architecture]]**: Kernel bypass (Solarflare Onload, DPDK), CPU pinning, NUMA affinity, and zero-copy pipelines.
+- **[[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]]**: FIFO vs Pro-Rata matching engines, cancellation dynamics, and adverse selection at queue heads.
+- **[[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/index|Execution Algorithms: VWAP, TWAP, & POV]]**: Institutional order slicing, intraday volume curves, and tracking error optimization.
+- **[[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]]**: Permanent vs temporary market impact, execution risk aversion, and calculus of variations trajectories.
+- **[[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/index|Hardware Acceleration & FPGA]]**: Wire-speed packet parsing on silicon, sub-50ns tick-to-trade, and hardware safety gates.
 
 ---
 
@@ -99,12 +111,12 @@ The traditional sell-side quant domain: valuing non-linear financial contracts a
 
 ### 4. [[pillars/04-quantitative-risk/index|Quantitative Risk Management]]
 Measuring, bounding, and mitigating financial exposure to guarantee firm survival across extreme market volatility.
-- **[[pillars/04-quantitative-risk/var-and-expected-shortfall|Value at Risk & Expected Shortfall (CVaR)]]**: Coherent risk measure axioms, the subadditivity flaw of VaR, and Cornish–Fisher expansions.
-- **[[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical, & Monte Carlo VaR]]**: Variance-covariance methods, filtered historical simulation (FHS), and Kupiec backtest batteries.
-- **[[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]]**: Breakdown of normality, Peaks-Over-Threshold (POT), Generalized Pareto Distributions (GPD), and the Hill tail index.
-- **[[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Reverse Stress Testing]]**: Historical crisis replay (1987, 1998, 2008, 2020), macro factor shocks, and reverse stress testing.
-- **[[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model]]**: Equity as a call option on firm assets, distance-to-default, and structural default probability.
-- **[[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals]]**: Bid-ask spread hair-cuts, market depth exhaustion, and the Brunnermeier–Pedersen margin spiral.
+- **[[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall (CVaR)]]**: Coherent risk measure axioms, the subadditivity flaw of VaR, and Cornish–Fisher expansions.
+- **[[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical, & Monte Carlo VaR]]**: Variance-covariance methods, filtered historical simulation (FHS), and Kupiec backtest batteries.
+- **[[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]]**: Breakdown of normality, Peaks-Over-Threshold (POT), Generalized Pareto Distributions (GPD), and the Hill tail index.
+- **[[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Reverse Stress Testing]]**: Historical crisis replay (1987, 1998, 2008, 2020), macro factor shocks, and reverse stress testing.
+- **[[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Structural Model]]**: Equity as a call option on firm assets, distance-to-default, and structural default probability.
+- **[[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]]**: Bid-ask spread hair-cuts, market depth exhaustion, and the Brunnermeier–Pedersen margin spiral.
 
 ---
 
@@ -132,39 +144,35 @@ Designing automated systems that quote continuous two-sided liquidity, profiting
 
 ### 7. [[pillars/07-machine-learning-altdata/index|Machine Learning and Alternative Data]]
 Extracting non-linear signals and structural patterns from alternative, unstructured, and high-dimensional datasets.
-- **[[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]**: Why standard ML fails, the microscopic Signal-to-Noise Ratio, non-stationarity, and subtle data leakage traps.
-- **[[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]**: LightGBM/XGBoost factor synthesis, Mean Decrease Accuracy (MDA), and Purged/Embargoed Cross-Validation.
-- **[[pillars/07-machine-learning-altdata/financial-nlp-and-earnings-transcripts|Financial NLP & Earnings Transcripts]]**: SEC 10-K delta analysis, FinBERT fine-tuning, earnings call Q&A sentiment, and LLM extraction.
-- **[[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation|Alternative Data Pipelines & Evaluation]]**: Credit card streams, web scraping, geolocation, point-in-time hygiene, and alpha decay.
-- **[[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification: HMM & GMM]]**: Unsupervised regime detection, Baum–Welch Expectation–Maximization, and Viterbi state path decoding.
-- **[[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]]**: LSTMs, Temporal Convolutional Networks (TCN), and Temporal Fusion Transformers for tick and bar series.
+- **[[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]**: Why standard ML fails, the microscopic Signal-to-Noise Ratio, non-stationarity, and subtle data leakage traps.
+- **[[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Tree-Based Factor Ranking & Purged CV]]**: LightGBM/XGBoost factor synthesis, Mean Decrease Accuracy (MDA), and Purged/Embargoed Cross-Validation.
+- **[[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index|Financial NLP & Earnings Transcripts]]**: SEC 10-K delta analysis, FinBERT fine-tuning, earnings call Q&A sentiment, and LLM extraction.
+- **[[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alternative Data Pipelines & Evaluation]]**: Credit card streams, web scraping, geolocation, point-in-time hygiene, and alpha decay.
+- **[[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]]**: Unsupervised regime detection, Baum–Welch Expectation–Maximization, and Viterbi state path decoding.
+- **[[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequential Data]]**: LSTMs, Temporal Convolutional Networks (TCN), and Temporal Fusion Transformers for tick and bar series.
 
 ---
 
 ### 8. [[pillars/08-quantitative-development/index|Quantitative Development (Quant Engineering)]]
 The software and systems engineering backbone: translating mathematical models into ultra-low-latency production infrastructure.
-- **[[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]]**: Zero-allocation paradigms, CPU cache locality (L1/L2/L3), cacheline false sharing, and SIMD vectorization.
-- **[[pillars/08-quantitative-development/tick-level-databases-and-timeseries|Tick-Level Databases & kdb+/q]]**: Column-oriented architectures, kdb+/q vector primitives, DuckDB/ClickHouse pipelines, and point-in-time as-of joins.
-- **[[pillars/08-quantitative-development/event-driven-backtesting-engines|Event-Driven Backtesting Engines]]**: Vectorized vs event loops, realistic fill modeling, order state machines, and deterministic historical replay.
-- **[[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity|FIX Protocol & Exchange Connectivity]]**: Tag-value FIX, session recovery, binary ITCH/OUCH protocols, and order state lifecycles.
-- **[[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]**: The LMAX Disruptor pattern, SPSC ring buffers, memory fences, and atomic synchronization.
-- **[[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]]**: Wire-speed pre-trade risk checks, fat-finger caps, rate throttles, and automated kill switches.
+- **[[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++ for Trading]]**: Zero-allocation paradigms, CPU cache locality (L1/L2/L3), cacheline false sharing, and SIMD vectorization.
+- **[[pillars/08-quantitative-development/tick-level-databases-and-timeseries/index|Tick-Level Databases & kdb+/q]]**: Column-oriented architectures, kdb+/q vector primitives, DuckDB/ClickHouse pipelines, and point-in-time as-of joins.
+- **[[pillars/08-quantitative-development/event-driven-backtesting-engines/index|Event-Driven Backtesting Engines]]**: Vectorized vs event loops, realistic fill modeling, order state machines, and deterministic historical replay.
+- **[[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/index|FIX Protocol & Exchange Connectivity]]**: Tag-value FIX, session recovery, binary ITCH/OUCH protocols, and order state lifecycles.
+- **[[pillars/08-quantitative-development/concurrency-and-lockless-programming/index|Concurrency & Lockless Programming]]**: The LMAX Disruptor pattern, SPSC ring buffers, memory fences, and atomic synchronization.
+- **[[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]]**: Wire-speed pre-trade risk checks, fat-finger caps, rate throttles, and automated kill switches.
 
 ---
 
 ## 🔬 First-Principles Toolbox & Foundations
 
-Before diving into complex models, anchor your intuition in the rigorous mathematical foundations that underwrite all 8 disciplines:
+**Read this before (or alongside) the pillars — it is the shared foundation the whole Atlas is built on, not an optional appendix.** Every pillar's `01-from-zero-intuition` page assumes the foundations its prerequisites name; the [[foundations/index|Foundations hub]] gives the exact consumption order (which foundation to read before which pillar). The core trio everyone needs:
 
 * 📐 **[[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]**: Vector spaces, spectral theory, positive semi-definiteness, and SVD.
 * 📈 **[[foundations/calculus-and-optimization/index|Calculus & Constrained Optimization]]**: Gradients, Hessians, Taylor expansions (Greeks), and KKT conditions.
 * 🎲 **[[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**: Probability spaces, filtrations, conditional expectations, and martingales.
-* 🌊 **[[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]]**: Brownian motion, quadratic variation, Itô's formula, and Girsanov change of measure.
-* 📊 **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]**: Stationarity, unit roots (ADF), cointegration, and GARCH volatility clustering.
-* 📈 **[[foundations/statistics-and-inference/index|Statistics & Inference]]**: Point estimation, the Central Limit Theorem, confidence intervals, and bias–variance validation.
-* 🎛️ **[[foundations/bayesian-statistics/index|Bayesian Statistics]]**: Bayes' theorem, priors, posterior inference, MCMC, and Bayesian regularization.
-* 🔢 **[[foundations/numerical-methods/index|Numerical Methods]]**: Finite differences, Monte Carlo, numerical optimization, and numerical linear algebra.
-* ⏳ **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble vs time averages, multiplicative growth, the Kelly criterion, and ruin theory.
+
+Then the foundations each pillar draws on: **[[foundations/stochastic-calculus/index|Stochastic Calculus]]** (Pillars 3, 6), **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]** (Pillars 1, 6), **[[foundations/statistics-and-inference/index|Statistics & Inference]]** (Pillars 4, 7), **[[foundations/bayesian-statistics/index|Bayesian Statistics]]** (Pillar 5), **[[foundations/numerical-methods/index|Numerical Methods]]** (Pillars 2, 3, 8), and **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]** (Pillar 5, Kelly).
 
 ---
 
@@ -193,14 +201,14 @@ When a quantitative strategy underperforms, drawdowns blow out, or live executio
 
 | Observed Symptom in Production / Test | Underlying First-Principles Failure Mode | Diagnostic & Root Cause | Remedy Note |
 | :--- | :--- | :--- | :--- |
-| **Strategy shows 3.5 Sharpe in backtest, but instantly loses money live** | Backtest Overfitting & Selection Bias | Testing thousands of parameter permutations without controlling for sample length or non-normality. | [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe\|Backtesting Hygiene (DSR)]] |
-| **Pairs trading spread diverges indefinitely into a 5-sigma loss** | Cointegration Structural Break | The underlying linear relationship $z_t = P_A - \beta P_B$ broke down due to corporate or macro shifts. | [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading\|Statistical Arbitrage]] |
-| **Portfolio weights swing violently ($+300\%$ to $-200\%$) on small updates** | Inverted Covariance Noise Maximization ($N > T$) | Unconstrained sample covariance matrix inversion $\Sigma^{-1}$ magnifies empirical noise eigenvalues. | [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising\|Covariance Shrinkage & RMT]] |
-| **Market maker fills 100 consecutive buys right before price crashes** | Toxic Order Flow & Adverse Selection | Passive limit orders at inside spread were swept by informed traders; quote skewing failed to react. | [[pillars/06-market-making/adverse-selection-and-glosten-milgrom\|Adverse Selection (Glosten–Milgrom)]] |
+| **Strategy shows 3.5 Sharpe in backtest, but instantly loses money live** | Backtest Overfitting & Selection Bias | Testing thousands of parameter permutations without controlling for sample length or non-normality. | [[pillars/01-quantitative-research/backtesting-hygiene/index\|Backtesting Hygiene (DSR)]] |
+| **Pairs trading spread diverges indefinitely into a 5-sigma loss** | Cointegration Structural Break | The underlying linear relationship $z_t = P_A - \beta P_B$ broke down due to corporate or macro shifts. | [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index\|Statistical Arbitrage]] |
+| **Portfolio weights swing violently ($+300\%$ to $-200\%$) on small updates** | Inverted Covariance Noise Maximization ($N > T$) | Unconstrained sample covariance matrix inversion $\Sigma^{-1}$ magnifies empirical noise eigenvalues. | [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index\|Covariance Shrinkage & RMT]] |
+| **Market maker fills 100 consecutive buys right before price crashes** | Toxic Order Flow & Adverse Selection | Passive limit orders at inside spread were swept by informed traders; quote skewing failed to react. | [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index\|Adverse Selection (Glosten–Milgrom)]] |
 | **Delta-hedged option portfolio bleeds cash in fast volatile markets** | Discrete Hedging Error & Jump Risk | Black–Scholes continuous rebalancing assumption violated ($dt > 0$); unhedged Gamma loss $\frac{1}{2} S^4 \sigma^4 \Gamma^2 \Delta t$. | [[pillars/03-derivative-pricing/black-scholes-merton/index\|Black–Scholes (Greeks & Hedging)]] |
-| **Machine learning model achieves 95% accuracy in-sample, 0% live** | Information Leakage in Cross-Validation | Standard K-Fold CV leaked auto-regressive returns across folds; standard differencing destroyed memory. | [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr\|Financial ML Pitfalls]] |
-| **Trading engine latency spikes from 1 $\mu$s to 2 ms intermittently** | OS Syscall / Dynamic Memory Heap Lock | Fast path called `malloc` or hit OS page fault, triggering kernel context switch and heap contention. | [[pillars/08-quantitative-development/high-performance-cpp-for-trading\|High-Performance C++]] |
-| **Fund suffers catastrophic liquidation during market stress** | Funding & Market Liquidity Spiral | Prime broker hiked margin haircuts; forced liquidations depressed market prices in feedback spiral. | [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals\|Liquidity Risk & Margin Spirals]] |
+| **Machine learning model achieves 95% accuracy in-sample, 0% live** | Information Leakage in Cross-Validation | Standard K-Fold CV leaked auto-regressive returns across folds; standard differencing destroyed memory. | [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index\|Financial ML Pitfalls]] |
+| **Trading engine latency spikes from 1 $\mu$s to 2 ms intermittently** | OS Syscall / Dynamic Memory Heap Lock | Fast path called `malloc` or hit OS page fault, triggering kernel context switch and heap contention. | [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index\|High-Performance C++]] |
+| **Fund suffers catastrophic liquidation during market stress** | Funding & Market Liquidity Spiral | Prime broker hiked margin haircuts; forced liquidations depressed market prices in feedback spiral. | [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index\|Liquidity Risk & Margin Spirals]] |
 
 ---
 

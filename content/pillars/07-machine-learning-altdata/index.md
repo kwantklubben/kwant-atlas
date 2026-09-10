@@ -37,6 +37,9 @@ This pillar is organised into **nine topic folders**, each a self-contained hub 
 
 ### Reading Path (Nothing → Deployed Model)
 
+> **Before this pillar (foundations):** read [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 A guided route through the nine folders, in five stages.
 
 - **Stage 0 — The foundation (must read first):** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] → [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged Cross-Validation & Backtest Hygiene]]. Start with why every naive ML backtest is a lie — low SNR, non-stationarity, leakage — then adopt purged/embargoed validation so every later model is measured honestly.

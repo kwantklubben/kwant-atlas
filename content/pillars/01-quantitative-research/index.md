@@ -33,6 +33,9 @@ This pillar is organised into **ten topic folders**, each a self-contained hub w
 
 ### Reading Path (Zero to Alpha)
 
+> **Before this pillar (foundations):** read [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/statistics-and-inference/index|Statistics & Inference]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 A guided route through the ten folders, in three stages.
 
 - **Start (from nothing → alpha basics):** [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs Trading]] → [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] → [[pillars/01-quantitative-research/momentum/index|Momentum]]. This builds the two canonical alpha families — mean-reversion and factor/momentum premia — and the vocabulary (spreads, betas, factors, rankings) everything else assumes.

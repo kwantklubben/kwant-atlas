@@ -26,7 +26,7 @@ The objective is precise bookkeeping: for each fold, compute *exactly which* tra
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Purging — the overlap rule (AFML §7.4.1, Snippet 7.1).** Suppose the test observation's label is $Y_j=f[[t_{j,0},t_{j,1}]]$. A training observation's label $Y_i=f[[t_{i,0},t_{i,1}]]$ overlaps it — and is purged — if any one of three sufficient conditions holds:
+**Purging — the overlap rule (AFML §7.4.1, Snippet 7.1).** Suppose the test observation's label is $Y_j=f\big[t_{j,0},\,t_{j,1}\big]$. A training observation's label $Y_i=f\big[t_{i,0},\,t_{i,1}\big]$ overlaps it — and is purged — if any one of three sufficient conditions holds:
 
 $$t_{j,0}\le t_{i,0}\le t_{j,1} \qquad(\text{train label starts inside test}),$$
 $$t_{j,0}\le t_{i,1}\le t_{j,1} \qquad(\text{train label ends inside test}),$$
@@ -40,7 +40,7 @@ For a *contiguous* test block spanning bars $[a,b]$, every test label reaches to
 
 $$s \le b+h_{label}-1 \;\wedge\; s+h_{label}-1 \ge a .$$
 
-**Embargo — the post-test buffer (AFML §7.4.2, Snippet 7.2).** We only need to drop training observations that *follow* the test, i.e. those with $t_{j,1}\le t_{i,0}\le t_{j,1}+h$. López de Prado implements this by *extending the test label* to $Y_j=f[[t_{j,0},\,t_{j,1}+h]]$ *before* purging: extending the test interval by $h$ bars and then purging automatically removes any training observation starting within the next $h$ bars. A small $h\approx0.01\,T$ "often suffices to prevent all leakage," verified by the test that performance no longer improves as $k\to T$ (AFML §7.4.2).
+**Embargo — the post-test buffer (AFML §7.4.2, Snippet 7.2).** We only need to drop training observations that *follow* the test, i.e. those with $t_{j,1}\le t_{i,0}\le t_{j,1}+h$. López de Prado implements this by *extending the test label* to $Y_j=f\big[t_{j,0},\,t_{j,1}+h\big]$ *before* purging: extending the test interval by $h$ bars and then purging automatically removes any training observation starting within the next $h$ bars. A small $h\approx0.01\,T$ "often suffices to prevent all leakage," verified by the test that performance no longer improves as $k\to T$ (AFML §7.4.2).
 
 **The cost — sample loss.** Every purged/embargoed row is a row the model never trains on. For a label horizon $h_{label}$ and embargo $h$, roughly a fraction $\approx (2h_{label}+h)/T$ of the sample is discarded per interior fold — real information gone, which is why purging is a **bias–variance tradeoff**, not a free lunch (see page 05).
 

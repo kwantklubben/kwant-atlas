@@ -40,6 +40,9 @@ This pillar is organised into **thirteen topic folders**, each a self-contained 
 
 ### Reading Path (Zero to Risk-Governed)
 
+> **Before this pillar (foundations):** read [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/statistics-and-inference/index|Statistics & Inference]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 A guided route through the thirteen folders, in four stages.
 
 - **Start (from nothing → first risk numbers):** [[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Risk-Factor Sensitivities]] → [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] → [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]. Begin with the sensitivity vector — the atomic vocabulary of risk (how value moves when a factor moves) — then the two canonical risk measures and the three methods that compute them. With these three you can produce and backtest a defensible VaR/ES number.

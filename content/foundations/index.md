@@ -31,11 +31,37 @@ This **First-Principles Toolbox** provides the rigorous ground truth underlying 
 
 ---
 
-### Reading Path — how to approach the toolbox
+### Reading Path — the consumption order (read this *before* a pillar)
 
-- **Absolute beginner (any background, incl. econ/no-math):** start with **1 Linear Algebra → 2 Calculus** (the two workhorses), then **3 Probability**. These unlock everything else.
-- **Quant-interested (building):** add **4 Stochastic Calculus** and **6 Econometrics** — the two most-used in derivatives and alpha research.
-- **Statistically deep / ML:** add **5 Statistics** then **7 Bayesian** (regularization + MCMC are the ML bridge).
-- **Implementation-focused:** **8 Numerical Methods** is the engine for pricing and optimization; **9 Ergodicity** is the lens for long-horizon growth, Kelly sizing and ruin.
+This is not a menu; it is a **contract**. Each pillar's `01-from-zero-intuition` pages assume the foundations listed here, and the pillar hubs name them in their "Before this pillar (foundations)" line. Read the core trio first, then the pillar-specific foundations *before* you enter that pillar.
 
-Each operational pillar links its **Basic Prerequisites** to these foundational nodes. When a topic in Alpha Generation, Derivatives, or Portfolio Construction relies on linear projections or martingales, start here to build immutable mathematical intuition before touching production code.
+**Step 1 — the core trio (everyone, before any pillar):**
+**[[foundations/linear-algebra-and-matrices/index|1 · Linear Algebra]] → [[foundations/calculus-and-optimization/index|2 · Calculus & Optimization]] → [[foundations/probability-and-measure-theory/index|3 · Probability & Measure Theory]]**. These unlock everything else.
+
+**Step 2 — the pillar-specific foundations (read before entering that pillar):**
+
+| Before this pillar | Read first |
+| :--- | :--- |
+| **1 · Quantitative Research** | [[foundations/econometrics-and-timeseries/index\|Econometrics & Time Series]] (stationarity, unit roots, cointegration, GARCH) + [[foundations/probability-and-measure-theory/index\|Probability]] |
+| **2 · Algorithmic & HFT** | [[foundations/probability-and-measure-theory/index\|Probability]] + [[foundations/numerical-methods/index\|Numerical Methods]] (execution/impact numerics) |
+| **3 · Derivative Pricing** | [[foundations/stochastic-calculus/index\|Stochastic Calculus]] (Itô, Girsanov) + [[foundations/probability-and-measure-theory/index\|Probability]] |
+| **4 · Quantitative Risk** | [[foundations/probability-and-measure-theory/index\|Probability]] + [[foundations/statistics-and-inference/index\|Statistics & Inference]] (quantiles, estimation) |
+| **5 · Portfolio Optimization** | [[foundations/linear-algebra-and-matrices/index\|Linear Algebra]] (spectral, PSD) + [[foundations/calculus-and-optimization/index\|Calculus]] (KKT) + [[foundations/statistics-and-inference/index\|Statistics]]; [[foundations/ergodicity-and-statistical-mechanics/index\|Ergodicity]] for Kelly |
+| **6 · Market Making** | [[foundations/probability-and-measure-theory/index\|Probability]] + [[foundations/stochastic-calculus/index\|Stochastic Calculus]] (SDEs for optimal quoting) + [[foundations/econometrics-and-timeseries/index\|Econometrics]] |
+| **7 · ML & Alt-Data** | [[foundations/statistics-and-inference/index\|Statistics & Inference]] + [[foundations/linear-algebra-and-matrices/index\|Linear Algebra]] (PCA, regularization) |
+| **8 · Quantitative Development** | [[foundations/numerical-methods/index\|Numerical Methods]] + basic Python/C++ |
+
+**Step 3 — deeper / optional:** [[foundations/bayesian-statistics/index|Bayesian Statistics]] (the bridge into Pillar 5 and ML), and [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (multiplicative growth, Kelly sizing, ruin).
+
+---
+
+### Exit ramp — now enter a pillar
+
+You have the foundations; pick a pillar and walk its Reading Path:
+
+- **Build strategies?** → [[pillars/01-quantitative-research/index|Pillar 1 · Quantitative Research]], start at [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs]].
+- **The mathematics of pricing?** → [[pillars/03-derivative-pricing/index|Pillar 3 · Derivative Pricing]], start at [[pillars/03-derivative-pricing/options-fundamentals-and-markets/index|Options Fundamentals & Markets]].
+- **Understand risk?** → [[pillars/04-quantitative-risk/index|Pillar 4 · Quantitative Risk]], start at [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]].
+- **Portfolio construction?** → [[pillars/05-portfolio-optimization/index|Pillar 5 · Portfolio Optimization]], start at [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|MPT & Mean–Variance]].
+
+When a topic in any pillar relies on linear projections or martingales, return here to rebuild the immutable mathematical intuition before touching production code.

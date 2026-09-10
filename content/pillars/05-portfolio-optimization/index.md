@@ -37,6 +37,9 @@ This pillar is organised into **nine topic folders**, each a self-contained hub 
 
 ### Reading Path (Zero to Production Allocation)
 
+> **Before this pillar (foundations):** read [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/calculus-and-optimization/index|Calculus]] · [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 A guided route through the nine folders, in four stages.
 
 - **Start (from nothing → a defensible portfolio):** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance]] → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]]. Build the Markowitz framework first — efficient frontier, tangency portfolio, two-fund separation — then immediately confront its fatal flaw: it runs on a noisy sample covariance, so shrink and denoise the input before ever touching an optimizer.

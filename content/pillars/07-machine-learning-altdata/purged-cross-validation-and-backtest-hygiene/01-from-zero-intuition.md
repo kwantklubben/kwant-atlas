@@ -41,7 +41,7 @@ For jointly normal sums, the probability the two *signs* agree is (Sheppard's fo
 
 **Why standard $k$-fold CV misses it.** Standard CV's guarantee assumes each observation is drawn independently. When $y$ is built from overlapping windows, consecutive rows violate that: the "independent" test row is a function of nearly the same random draw as its training neighbour. Shuffling makes it *worse* — it interleaves the near-duplicate pairs across folds, so leakage is no longer confined to fold boundaries but is spread through every training set (AFML exercise 7.2: shuffled CV scores far higher than unshuffled on the same data).
 
-**The formal overlap (preview of page 03).** Two interval labels $Y_i=f[[t_{i,0},t_{i,1}]]$ and $Y_j=f[[t_{j,0},t_{j,1}]]$ overlap — hence leak — if any of three sufficient conditions holds:
+**The formal overlap (preview of page 03).** Two interval labels $Y_i=f\big[t_{i,0},\,t_{i,1}\big]$ and $Y_j=f\big[t_{j,0},\,t_{j,1}\big]$ overlap — hence leak — if any of three sufficient conditions holds:
 
 $$t_{j,0}\le t_{i,0}\le t_{j,1}\qquad\text{or}\qquad t_{j,0}\le t_{i,1}\le t_{j,1}\qquad\text{or}\qquad t_{i,0}\le t_{j,0}\le t_{j,1}\le t_{i,1}.$$
 

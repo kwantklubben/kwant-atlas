@@ -38,6 +38,9 @@ This pillar is organised into **ten topic folders** (folder-per-topic), each a s
 
 ### Reading Path (Zero to Market Maker)
 
+> **Before this pillar (foundations):** read [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/stochastic-calculus/index|Stochastic Calculus]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 - **Start (the machinery):** [[pillars/06-market-making/limit-order-book-mechanics/index|1 · Limit Order Book Mechanics]] → [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|4 · Adverse Selection & Glosten–Milgrom]]. You learn what the book is and why a spread exists at all (adverse selection).
 - **The quoting models:** [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|2 · Avellaneda–Stoikov]] → [[pillars/06-market-making/inventory-management-and-quote-skewing/index|3 · Inventory & Quote Skewing]]. The two workhorses for how to quote and how to manage the inventory the quotes create.
 - **Diagnostics:** [[pillars/06-market-making/spread-decomposition-and-roll-model/index|5 · Spread Decomposition & Roll]] → [[pillars/06-market-making/toxic-order-flow-and-vpin/index|6 · Toxic Flow & VPIN]]. How to measure the components of the spread and detect when you are being picked off.

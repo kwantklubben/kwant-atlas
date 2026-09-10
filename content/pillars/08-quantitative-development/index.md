@@ -33,6 +33,9 @@ This pillar is organised into **nine topic folders** (folder-per-topic), each a 
 
 ### Reading Path (Zero to Production Trading System)
 
+> **Before this pillar (foundations):** read [[foundations/numerical-methods/index|Numerical Methods]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 A guided route through the nine folders, in five stages.
 
 - **Start (from nothing — the prototyping layer):** [[pillars/08-quantitative-development/python-quant-stack/index|1 · Python Quant Stack]]. Learn the research stack that expresses a signal in an afternoon — and the vectorization/pandas traps that quietly corrupt it. Then [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|2 · High-Performance C++ for Trading]] for what the compiled core is doing when the researcher's loop gets too slow.

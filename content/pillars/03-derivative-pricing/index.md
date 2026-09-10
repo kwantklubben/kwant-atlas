@@ -38,6 +38,9 @@ This pillar is organised into **eleven topic folders**, each a self-contained hu
 
 ### Reading Path (Zero to Expert)
 
+> **Before this pillar (foundations):** read [[foundations/stochastic-calculus/index|Stochastic Calculus]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
+
+
 A guided route through the eleven folders, in three stages.
 
 - **Start (foundations):** [[pillars/03-derivative-pricing/options-fundamentals-and-markets/index|Options, Futures & Markets]] → [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & the Binomial Model]] → [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]]. This builds the vocabulary and the no-arbitrage/replication core that everything else extends.
