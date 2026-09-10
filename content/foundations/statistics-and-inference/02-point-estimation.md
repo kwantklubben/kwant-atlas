@@ -9,7 +9,7 @@ tags:
   - cramer-rao
 ---
 
-**Basic Prerequisites:** [[foundations/statistics-and-inference/01-from-zero-intuition|01 · From Zero]] and [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] (maximisation).
+**Basic Prerequisites:** [[foundations/statistics-and-inference/01-from-zero-intuition|01 · From Zero]] and [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] (maximisation).
 
 ---
 
@@ -163,4 +163,4 @@ Three takeaways visible in the numbers: the numerical MLE recovers \(\alpha=4.03
 
 - Back: [[foundations/statistics-and-inference/01-from-zero-intuition|01 · From Zero]] · [[foundations/statistics-and-inference/index|Index Hub]]
 - Continue: [[foundations/statistics-and-inference/03-the-clt-and-sampling|03 · The CLT & Sampling]] · [[foundations/statistics-and-inference/04-confidence-intervals-and-testing|04 · Confidence Intervals & Testing]] · [[foundations/statistics-and-inference/05-bias-variance-and-validation|05 · Bias–Variance & Validation]]
-- Application: [[foundations/econometrics-and-timeseries/04-volatility-modeling|Volatility Modeling]] (GARCH MLE) · [[pillars/07-machine-learning-altdata/index|Machine Learning & Alt-Data]] (regularised likelihoods) · [[foundations/multivariable-calculus-and-optimization|Optimization]] (the numerical search itself)
+- Application: [[foundations/econometrics-and-timeseries/04-volatility-modeling|Volatility Modeling]] (GARCH MLE) · [[pillars/07-machine-learning-altdata/index|Machine Learning & Alt-Data]] (regularised likelihoods) · [[foundations/calculus-and-optimization/index|Optimization]] (the numerical search itself)

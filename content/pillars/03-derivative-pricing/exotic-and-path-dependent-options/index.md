@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]].
 
 ---
 
@@ -103,7 +103,7 @@ Hub signposts — full analysis in [[pillars/03-derivative-pricing/exotic-and-pa
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]] (the vanilla anchor all exotics reduce to)
+- Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]] (the vanilla anchor all exotics reduce to)
 - Sibling topics: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]
 - Sub-pages (in-folder): 01 From Zero · 02 Barriers & Digitals · 03 Lookbacks & Asians · 04 Compound/Chooser/Quanto/Exchange · 05 Failure Modes · 06 Advanced Extensions
 
@@ -111,4 +111,4 @@ Hub signposts — full analysis in [[pillars/03-derivative-pricing/exotic-and-pa
 - **Absolute beginner:** [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/02-barriers-and-digitals|02 · Barriers & Digitals]] → [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/03-lookbacks-and-asians|03 · Lookbacks & Asians]] → [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/04-compound-chooser-quanto-exchange|04 · Compound/Chooser/Quanto/Exchange]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (model risk for the closed forms) · [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]]
+- Forward: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (model risk for the closed forms) · [[foundations/calculus-and-optimization/index|Multivariable Calculus]]

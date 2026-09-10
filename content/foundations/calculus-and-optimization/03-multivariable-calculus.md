@@ -8,7 +8,7 @@ tags:
   - jacobian
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/02-single-variable-calculus|02 · Single-Variable Calculus]] and [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] (vectors, matrices, quadratic forms, eigenvalues).
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/02-single-variable-calculus|02 · Single-Variable Calculus]] and [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (vectors, matrices, quadratic forms, eigenvalues).
 
 ---
 
@@ -152,5 +152,5 @@ error (O(||d||^2)) = 1.00e-06, 1.00e-06
 
 - Back: [[foundations/calculus-and-optimization/02-single-variable-calculus|02 · Single-Variable Calculus]] · [[foundations/calculus-and-optimization/index|Index Hub]]
 - Next: [[foundations/calculus-and-optimization/04-constrained-optimization|04 · Constrained Optimization]] (add equality/inequality borders to $\nabla f=0$) → [[foundations/calculus-and-optimization/05-gradient-and-newton-methods|05 · Gradient & Newton]] (follow $-\nabla f$, utilise $H$)
-- Base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] (quadratic forms, eigenvalues, definiteness)
+- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (quadratic forms, eigenvalues, definiteness)
 - Applied: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|Greeks & Hedging]] (delta vector, gamma matrix) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]] ($w^\top\Sigma w$)

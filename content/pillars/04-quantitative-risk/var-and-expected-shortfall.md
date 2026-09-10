@@ -7,7 +7,7 @@ tags:
   - coherent-risk
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability Theory]] (Cumulative Distribution Functions, Quantiles).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] (Cumulative Distribution Functions, Quantiles).
 
 ---
 
@@ -119,6 +119,6 @@ print("Notice how Gaussian Parametric CVaR drastically underestimates fat-tailed
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]]
+- Foundational Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Bridges to: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory]]
 - Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Risk Constraints]]

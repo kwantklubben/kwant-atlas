@@ -126,6 +126,6 @@ Three facts to read off the table:
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · 03 Pricing Formulas]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · 03 Pricing Formulas]]
 - Continue: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/02-the-heston-model|02 · The Heston Model]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/01-from-zero-intuition|VS · 01 From Zero]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR (flat note)]]

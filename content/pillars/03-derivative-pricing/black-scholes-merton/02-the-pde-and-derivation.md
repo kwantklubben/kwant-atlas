@@ -8,7 +8,7 @@ tags:
   - girsanov
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
 
 ---
 
@@ -133,4 +133,4 @@ The MC expectation converges to the PDE solution — the Feynman–Kac bridge, v
 
 - Back: [[pillars/03-derivative-pricing/black-scholes-merton/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · Pricing Formulas]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Index Hub]]
-- Theory: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]
+- Theory: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

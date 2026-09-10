@@ -160,4 +160,4 @@ int_0^1 x^2 dx  (exact 1/3 = 0.3333333333333333 )
 - Back: [[foundations/calculus-and-optimization/01-from-zero-intuition|01 · From Zero]] · [[foundations/calculus-and-optimization/index|Index Hub]]
 - Next: [[foundations/calculus-and-optimization/03-multivariable-calculus|03 · Multivariable Calculus]] (the same ideas in $\mathbb R^n$)
 - Applied: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] (Taylor = delta–gamma) · [[foundations/numerical-methods/02-finite-difference-methods|Finite-Difference Methods]] (MVT-driven truncation error)
-- Base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]]
+- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]

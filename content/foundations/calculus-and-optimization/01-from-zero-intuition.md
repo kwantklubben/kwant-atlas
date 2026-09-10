@@ -154,4 +154,4 @@ The straight line misses by $0.061$ over a step of $0.1$ — the miss is the *cu
 
 - Next: [[foundations/calculus-and-optimization/02-single-variable-calculus|02 · Single-Variable Calculus]] · [[foundations/calculus-and-optimization/03-multivariable-calculus|03 · Multivariable Calculus]] · [[foundations/calculus-and-optimization/index|Index Hub]]
 - Applied: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] (why delta, gamma and theta are derivatives)
-- Base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]]
+- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]

@@ -8,7 +8,7 @@ tags:
   - conditioning
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] and [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]].
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] and [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]].
 
 ---
 
@@ -18,7 +18,7 @@ Almost every numerical method ends by **solving a linear system**. A finite-diff
 
 The practical objective of this page is the **algorithm-and-cost lookup**: which factorisation or iteration, what it costs, and how the **condition number** caps the achievable digits.
 
-This page is the *numerical* counterpart to the conceptual [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] page: that page explains spectral theory, PSD and SVD; this page explains how those objects are *computed* and where the computation breaks.
+This page is the *numerical* counterpart to the conceptual [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] page: that page explains spectral theory, PSD and SVD; this page explains how those objects are *computed* and where the computation breaks.
 
 > **The one-sentence essence.** "A linear solve is only as good as the condition number — the algorithm decides the *cost*, the conditioning decides the *accuracy*, and the two can be traded against each other with iteration."
 
@@ -30,7 +30,7 @@ This page is the *numerical* counterpart to the conceptual [[foundations/linear-
 
 - **Triangular systems** are solved by forward/back substitution in $O(n^2)$.
 - **LU decomposition** factors $A=LU$; solve $Ly=b$, $Ux=y$. Cost $O(n^3)$ once, $O(n^2)$ per solve. With partial pivoting it is the general workhorse.
-- **Cholesky** for SPD $A$: $A=LL^\top$, $L$ lower-triangular. Half the work of LU and provably stable without pivoting. **If Cholesky fails your matrix was not PSD** — the diagnostic behind every covariance-matrix repair (see [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]]).
+- **Cholesky** for SPD $A$: $A=LL^\top$, $L$ lower-triangular. Half the work of LU and provably stable without pivoting. **If Cholesky fails your matrix was not PSD** — the diagnostic behind every covariance-matrix repair (see [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]).
 - **Special structures pay huge dividends.** A **tridiagonal** system — the form of every 1-D finite-difference scheme — is solved by the **Thomas algorithm** in $O(n)$ instead of $O(n^3)$:
 
   $$c'_1=\frac{c_1}{b_1},\quad c'_i=\frac{c_i}{b_i-a_ic'_{i-1}},\quad
@@ -59,7 +59,7 @@ Loss of accuracy is roughly $\log_{10}\kappa$ digits. For SPD $A$, $\kappa=L/\mu
 - **Gershgorin** (Duffy Thm 8.2): the eigenvalues lie in the union of discs $\{|z-a_{ii}|\le\sum_{j\ne i}|a_{ij}|\}$ — a cheap a-priori bracket, used to bound spectral radii of stability matrices.
 - **Power iteration** for the dominant eigenvalue: $v_{k+1}=Av_k/\|Av_k\|$, with $\lambda_k=v_k^\top Av_k$ converging at the rate $|\lambda_2/\lambda_1|$ — **linear**, fast only when the top eigenvalue is well-separated.
 - **Tridiagonal Toeplitz** spectra are closed-form: $\lambda_j=b+2\sqrt{ac}\cos\!\big(\tfrac{j\pi}{n+1}\big)$ (Duffy eqs. 7.8, 8.51) — this is how the stability of an FDM scheme is read off analytically.
-- **QR algorithm** is the general dense eigensolver; the **SVD** ($A=U\Sigma V^\top$) is the numerically-preferred route to singular values, rank and least-squares solutions (see [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]]).
+- **QR algorithm** is the general dense eigensolver; the **SVD** ($A=U\Sigma V^\top$) is the numerically-preferred route to singular values, rank and least-squares solutions (see [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]).
 
 ---
 
@@ -141,7 +141,7 @@ Note the conditioning number in dollars and cents: with $\kappa=4\times10^{6}$, 
 
 1. **Conditioning is the hard ceiling.** $\kappa(A)$ caps accuracy at $\sim\log_{10}\kappa$ lost digits. A Hilbert matrix ($n=12$, $\kappa\sim10^{16}$) cannot be inverted to a single correct digit in double precision, no matter the algorithm. Diagnose with `cond`; cure with **regularisation** (ridge, shrinkage) or **preconditioning**, not with a different solver.
 2. **Normal equations square the condition number.** Forming $A^\top A$ for least squares gives $\kappa(A^\top A)=\kappa(A)^2$ — halving your accuracy. Use **QR** (or SVD) instead. This is the single most common numerical-linear-algebra mistake in quantitative code.
-3. **Cholesky failure = not PSD.** A covariance matrix estimated from $N>T$ returns `LinAlgError: Matrix is not positive definite`; the fix is PSD repair / shrinkage, not a pivot trick ([[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]]).
+3. **Cholesky failure = not PSD.** A covariance matrix estimated from $N>T$ returns `LinAlgError: Matrix is not positive definite`; the fix is PSD repair / shrinkage, not a pivot trick ([[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]).
 4. **Iterative methods fail silently on the wrong matrix.** Jacobi/GS can diverge for a non-diagonally-dominant matrix; CG requires SPD and **breaks on indefinite systems** (use GMRES/BiCGStab). Always check the residual, not just the iteration count.
 5. **Power iteration stalls on near-degenerate eigenvalues.** Its rate is $|\lambda_2/\lambda_1|$; when $\lambda_1\approx\lambda_2$ convergence is glacial, and it finds only the *dominant* eigenvalue (use QR/subspace iteration for the rest).
 6. **Fill-in destroys sparse advantages.** A direct LU on a sparse matrix can become dense in the factors; that is exactly why large systems use **iterative** Krylov solvers and **preconditioners**.
@@ -160,6 +160,6 @@ Note the conditioning number in dollars and cents: with $\kappa=4\times10^{6}$, 
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] · [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]] · [[foundations/numerical-methods/04-numerical-optimization|04 · Optimization]]
+- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]] · [[foundations/numerical-methods/04-numerical-optimization|04 · Optimization]]
 - Continue: [[foundations/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]] · [[foundations/numerical-methods/index|Index Hub]]
-- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & Denoising]] · [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] (PSD repair, SVD)
+- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage & Denoising]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (PSD repair, SVD)

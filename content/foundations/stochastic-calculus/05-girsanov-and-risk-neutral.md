@@ -9,7 +9,7 @@ tags:
   - market-price-of-risk
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus/04-sdes-and-simulation|04 · SDEs & Simulation]] and [[foundations/probability-and-measure-theory|Probability & Measure Theory]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/04-sdes-and-simulation|04 · SDEs & Simulation]] and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
 
 ---
 

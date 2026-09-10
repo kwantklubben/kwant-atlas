@@ -10,7 +10,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]] and [[foundations/econometrics-and-timeseries|Econometrics & Time Series]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and [[foundations/econometrics-and-timeseries|Econometrics & Time Series]].
 
 ---
 
@@ -130,7 +130,7 @@ Hub signposts — the folder's failure analysis lives on the sub-pages. In one l
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (Bayes' rule, conditional expectation) · [[foundations/linear-algebra-and-matrices|Linear Algebra]] (precision matrices, Gaussian conditionals) · [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]] (MAP = optimization, convexity)
+- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Bayes' rule, conditional expectation) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (precision matrices, Gaussian conditionals) · [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (MAP = optimization, convexity)
 - Sibling foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (MLE, state-space/Kalman — the frequency-side twin of §05–06) · [[foundations/numerical-methods/index|Numerical Methods]] (Monte Carlo; MCMC is "MC with dependence") · [[foundations/stochastic-calculus/index|Stochastic Calculus]] (measure change; the Radon–Nikodym view of Bayes)
 - Sub-pages (in-folder): 01 From Zero · 02 Bayes' Theorem & Priors · 03 Posterior Inference · 04 Bayesian & Regularization · 05 MCMC · 06 Advanced Extensions
 

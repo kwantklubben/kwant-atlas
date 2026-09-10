@@ -7,7 +7,7 @@ tags:
   - kyles-lambda
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability Theory]] (Bayesian Updating) and [[pillars/06-market-making/limit-order-book-mechanics-and-l3|LOB Mechanics]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] (Bayesian Updating) and [[pillars/06-market-making/limit-order-book-mechanics-and-l3|LOB Mechanics]].
 
 ---
 
@@ -114,6 +114,6 @@ print(f"Final Midpoint:   {trades[-1]['mid']:.2f} (Converged toward True Value 1
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/probability-and-measure-theory|Probability Theory]]
+- Foundational Base: [[foundations/probability-and-measure-theory/index|Probability Theory]]
 - Bridges to: [[pillars/06-market-making/toxic-order-flow-and-vpin|VPIN & Toxic Flow]]
 - Bridges to: [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda-Stoikov]]

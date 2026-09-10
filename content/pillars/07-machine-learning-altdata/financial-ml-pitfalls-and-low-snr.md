@@ -7,7 +7,7 @@ tags:
   - financial-ml
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability Theory]] and basic supervised machine learning concepts.
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] and basic supervised machine learning concepts.
 
 ---
 

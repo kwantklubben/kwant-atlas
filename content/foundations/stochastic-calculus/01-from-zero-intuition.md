@@ -7,7 +7,7 @@ tags:
   - brownian-motion
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
 
 ---
 
@@ -97,5 +97,5 @@ increment stdev = 0.0032   (theory sqrt(dt) = 0.0032)
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]]
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Continue: [[foundations/stochastic-calculus/02-brownian-motion-and-martingales|02 · Brownian Motion & Martingales]] · [[foundations/stochastic-calculus/index|Index Hub]]

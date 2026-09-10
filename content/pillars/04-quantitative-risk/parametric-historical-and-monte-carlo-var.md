@@ -7,7 +7,7 @@ tags:
   - kupiec-test
 ---
 
-**Basic Prerequisites:** [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & CVaR]] and [[foundations/linear-algebra-and-matrices|Linear Algebra]].
+**Basic Prerequisites:** [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & CVaR]] and [[foundations/linear-algebra-and-matrices/index|Linear Algebra]].
 
 ---
 
@@ -97,6 +97,6 @@ print(f"Kupiec LR: {lr_stat:.2f} | p-value: {p_val:.4f} | Model Accepted: {valid
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/linear-algebra-and-matrices|Linear Algebra]]
+- Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]
 - Bridges to: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory]]

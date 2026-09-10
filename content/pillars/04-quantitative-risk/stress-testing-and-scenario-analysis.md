@@ -7,7 +7,7 @@ tags:
   - crisis-replay
 ---
 
-**Basic Prerequisites:** [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & CVaR]] and [[foundations/linear-algebra-and-matrices|Linear Algebra]].
+**Basic Prerequisites:** [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & CVaR]] and [[foundations/linear-algebra-and-matrices/index|Linear Algebra]].
 
 ---
 

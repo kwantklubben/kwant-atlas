@@ -7,7 +7,7 @@ tags:
   - gmm
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability Theory]] and [[foundations/econometrics-and-time-series|Econometrics]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] and [[foundations/econometrics-and-timeseries/index|Econometrics]].
 
 ---
 
@@ -104,6 +104,6 @@ print(f"Sample generated: Bull days={np.sum(states==0)} | Bear days={np.sum(stat
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/econometrics-and-time-series|Econometrics]]
+- Foundational Base: [[foundations/econometrics-and-timeseries/index|Econometrics]]
 - Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]
 - Bridges to: [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Momentum Strategies]]

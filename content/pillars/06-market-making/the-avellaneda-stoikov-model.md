@@ -7,7 +7,7 @@ tags:
   - inventory-risk
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus]] and [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus]] and [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]].
 
 ---
 
@@ -111,6 +111,6 @@ print(f"Inventory q=10: ResPrice={r_10:.3f} | Bid={bid_10:.3f} | Ask={ask_10:.3f
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Foundational Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
 - Bridges to: [[pillars/06-market-making/inventory-management-and-quote-skewing|Quote Skewing]]
 - Bridges to: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]]

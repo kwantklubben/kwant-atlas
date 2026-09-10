@@ -19,12 +19,12 @@ This **First-Principles Toolbox** provides the rigorous ground truth underlying 
 
 ### Core Theoretical Pillars
 
-1. **[[foundations/linear-algebra-and-matrices|Linear Algebra & Matrix Decompositions]]**: Vector spaces, spectral theory, positive semi-definiteness, singular value decomposition (SVD), and random matrix theory (Marchenko-Pastur).
-2. **[[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Constrained Optimization]]**: Gradients, Hessians, Taylor series expansions (the foundation of Greeks), Lagrange multipliers, and Karush-Kuhn-Tucker (KKT) conditions.
-3. **[[foundations/probability-and-measure-theory|Probability & Measure Theory]]**: Probability spaces $(\Omega, \mathcal{F}, \mathbb{P})$, filtrations, conditional expectations, martingales, and the Radon-Nikodym derivative.
-4. **[[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]]**: Quadratic variation, continuous Brownian paths, Itô integration, Itô-Doeblin formula, and Girsanov change of measure.
-5. **[[foundations/econometrics-and-time-series|Econometrics & Time Series Analysis]]**: Weak vs strict stationarity, unit root tests (ADF), Engle-Granger and Johansen cointegration, and ARCH/GARCH volatility clustering.
-6. **[[foundations/ergodicity-and-statistical-mechanics|Ergodicity & Statistical Mechanics]]**: Ensemble averages vs time averages, non-ergodic multiplicative wealth dynamics, the Kelly criterion, and ruin probability.
+1. **[[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrix Decompositions]]**: Vector spaces, spectral theory, positive semi-definiteness, singular value decomposition (SVD), and random matrix theory (Marchenko-Pastur).
+2. **[[foundations/calculus-and-optimization/index|Multivariable Calculus & Constrained Optimization]]**: Gradients, Hessians, Taylor series expansions (the foundation of Greeks), Lagrange multipliers, and Karush-Kuhn-Tucker (KKT) conditions.
+3. **[[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**: Probability spaces $(\Omega, \mathcal{F}, \mathbb{P})$, filtrations, conditional expectations, martingales, and the Radon-Nikodym derivative.
+4. **[[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]]**: Quadratic variation, continuous Brownian paths, Itô integration, Itô-Doeblin formula, and Girsanov change of measure.
+5. **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series Analysis]]**: Weak vs strict stationarity, unit root tests (ADF), Engle-Granger and Johansen cointegration, and ARCH/GARCH volatility clustering.
+6. **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble averages vs time averages, non-ergodic multiplicative wealth dynamics, the Kelly criterion, and ruin probability.
 
 ---
 

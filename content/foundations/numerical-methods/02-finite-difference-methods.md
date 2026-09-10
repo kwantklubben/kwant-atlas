@@ -8,7 +8,7 @@ tags:
   - pde
 ---
 
-**Basic Prerequisites:** [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]] and [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]].
+**Basic Prerequisites:** [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]] and [[foundations/calculus-and-optimization/index|Multivariable Calculus]].
 
 ---
 
@@ -174,6 +174,6 @@ Three lessons in one table: (i) at equal $(M,N)$ **Crank–Nicolson is more accu
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]] · [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]]
+- Base: [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]] · [[foundations/calculus-and-optimization/index|Multivariable Calculus]]
 - Continue: [[foundations/numerical-methods/03-monte-carlo|03 · Monte Carlo]] · [[foundations/numerical-methods/index|Index Hub]]
 - Cross-link (pricing application): [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|Pricing · Finite Differences]] — the BSM/ADI/penalty specialisation of exactly these schemes

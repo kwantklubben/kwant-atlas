@@ -7,7 +7,7 @@ tags:
   - multiple-testing
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability Theory]] (Order Statistics, Extreme Value Distributions).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] (Order Statistics, Extreme Value Distributions).
 
 ---
 
@@ -104,6 +104,6 @@ print(f"DSR (500 trials): {dsr_overfit:.4f} (Pure Data-Mining Artifact)")
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/probability-and-measure-theory|Probability Theory]]
+- Foundational Base: [[foundations/probability-and-measure-theory/index|Probability Theory]]
 - Bridges to: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Quantitative Risk]]
 - Bridges to: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]

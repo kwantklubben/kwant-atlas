@@ -149,4 +149,4 @@ The Fourier integrator reproduces the Black-Scholes closed form to $\sim10^{-13}
 
 - Back: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|BSM · Advanced Extensions]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]]
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/probability-and-measure-theory|Probability & Measure Theory]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]

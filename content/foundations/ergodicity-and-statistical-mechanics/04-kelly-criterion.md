@@ -189,5 +189,5 @@ Read the third block: at $c=2$ (double Kelly, $f=0.12$) the growth rate has coll
 
 - Back: [[foundations/ergodicity-and-statistical-mechanics/03-multiplicative-growth|03 · Multiplicative Growth]]
 - Forward: [[foundations/ergodicity-and-statistical-mechanics/05-ruin-and-drawdown|05 · Ruin & Drawdown]] · [[foundations/ergodicity-and-statistical-mechanics/06-advanced-extensions|06 · Advanced Extensions]] · [[foundations/ergodicity-and-statistical-mechanics/index|Index Hub]]
-- Base: [[foundations/calculus-and-optimization/04-constrained-optimization|Constrained Optimization]] (concave maximisation) · [[foundations/probability-and-measure-theory|Probability & Measure Theory]]
+- Base: [[foundations/calculus-and-optimization/04-constrained-optimization|Constrained Optimization]] (concave maximisation) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Applications: [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Skewing]]

@@ -10,7 +10,7 @@ tags:
   - market-price-of-risk
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/02-bonds-yield-curve-forward-rates|02 · Bonds, Yield Curve & Forward Rates]] and [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/02-bonds-yield-curve-forward-rates|02 · Bonds, Yield Curve & Forward Rates]] and [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
 
 ---
 
@@ -173,4 +173,4 @@ Closed forms and MC agree to $O(10^{-4})$ (MC sampling error). The Hull-White $\
 
 - Back: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/02-bonds-yield-curve-forward-rates|02 · Bonds, Yield Curve & Forward Rates]]
 - Forward: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/04-numeraire-hjm-and-market-models|04 · Numeraire, HJM & Market Models]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Index Hub]]
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]

@@ -7,7 +7,7 @@ tags:
   - transformers
 ---
 
-**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Calculus & Gradients]] and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Gradients]] and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]].
 
 ---
 
@@ -81,6 +81,6 @@ print("Causal Attention Mask (Tokens cannot attend to future):\n", mask)
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]]
+- Foundational Base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
 - Bridges to: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]
 - Bridges to: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems]]

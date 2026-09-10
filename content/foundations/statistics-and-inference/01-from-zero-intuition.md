@@ -118,5 +118,5 @@ Read the two columns: the standard deviation of the mean tracks \(1/\sqrt n\) (0
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/probability-and-measure-theory/01-from-zero-intuition|Probability from Zero]]
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/probability-and-measure-theory/01-from-zero-intuition|Probability from Zero]]
 - Continue: [[foundations/statistics-and-inference/02-point-estimation|02 · Point Estimation]] · [[foundations/statistics-and-inference/03-the-clt-and-sampling|03 · The CLT & Sampling]] · [[foundations/statistics-and-inference/index|Index Hub]]

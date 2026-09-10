@@ -7,7 +7,7 @@ tags:
   - state-space
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra]] and [[foundations/probability-and-measure-theory|Probability Theory]] (Bayesian Updating).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] and [[foundations/probability-and-measure-theory/index|Probability Theory]] (Bayesian Updating).
 
 ---
 
@@ -108,6 +108,6 @@ class DynamicBetaKalman:
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/linear-algebra-and-matrices|Linear Algebra]]
+- Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Bridges to: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage]]
 - Bridges to: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification]]

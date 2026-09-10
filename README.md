@@ -45,13 +45,19 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 ## 🔬 First-Principles Toolbox & Foundations
 
-Underlying all 8 disciplines is a shared transversal foundation of rigorous mathematics, stochastics, and computational theory:
-* **[Linear Algebra & Matrices](content/foundations/linear-algebra-and-matrices.md)**
-* **[Multivariable Calculus & Constrained Optimization](content/foundations/multivariable-calculus-and-optimization.md)**
-* **[Probability & Measure Theory](content/foundations/probability-and-measure-theory.md)**
-* **[Stochastic Calculus & Itô's Lemma](content/foundations/stochastic-calculus-and-ito.md)**
-* **[Econometrics & Time Series Analysis](content/foundations/econometrics-and-time-series.md)**
-* **[Ergodicity & Statistical Mechanics](content/foundations/ergodicity-and-statistical-mechanics.md)**
+Underlying all 8 disciplines is a shared transversal foundation of rigorous mathematics, stochastics, and computational theory.
+
+**Structure:** organised as **9 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus **six sub-pages** walking from raw intuition to working formulas. They are the shared substrate the 8 pillars draw on — not a pillar of their own:
+
+1. **[Linear Algebra & Matrices](content/foundations/linear-algebra-and-matrices/index.md)** — Vectors, linear systems, eigenvalues, covariance, SVD/PCA, and random matrix theory (Marchenko-Pastur). The entry point.
+2. **[Calculus & Optimization](content/foundations/calculus-and-optimization/index.md)** — Gradients, Jacobians, Hessians, Taylor expansions (the Greeks), convexity, Lagrange multipliers, KKT conditions, and iterative solvers.
+3. **[Probability & Measure Theory](content/foundations/probability-and-measure-theory/index.md)** — Probability spaces, filtrations, conditional expectation, martingales, and the Radon-Nikodym derivative.
+4. **[Stochastic Calculus](content/foundations/stochastic-calculus/index.md)** — Quadratic variation, Brownian motion, the Itô integral & Itô-Doeblin lemma, SDEs, Girsanov, and Feynman-Kac.
+5. **[Statistics & Inference](content/foundations/statistics-and-inference/index.md)** — Point estimation (MLE, moments), bias-variance-MSE, Cramér-Rao, sampling distributions, confidence intervals, testing, and multiplicity.
+6. **[Econometrics & Time Series](content/foundations/econometrics-and-timeseries/index.md)** — Stationarity, unit roots (ADF), cointegration (Engle-Granger, Johansen), ARCH/GARCH, and Kalman filtering.
+7. **[Bayesian Statistics](content/foundations/bayesian-statistics/index.md)** — Priors and posteriors, conjugacy, credible intervals, posterior prediction, and MCMC.
+8. **[Numerical Methods](content/foundations/numerical-methods/index.md)** — Finite differences, root finding, Monte Carlo, numerical linear algebra, and error control.
+9. **[Ergodicity & Statistical Mechanics](content/foundations/ergodicity-and-statistical-mechanics/index.md)** — Ensemble vs time averages, non-ergodic multiplicative growth, the Kelly criterion, and ruin theory.
 
 ---
 

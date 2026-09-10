@@ -8,7 +8,7 @@ tags:
   - zero-coupon-bonds
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/01-from-zero-intuition|01 · From Zero]] and [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/01-from-zero-intuition|01 · From Zero]] and [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
 
 ---
 
@@ -133,4 +133,4 @@ The reconstruction error is at the level of numerical integration ($\sim10^{-11}
 
 - Back: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/03-short-rate-models|03 · Short-Rate Models]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Index Hub]]
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]

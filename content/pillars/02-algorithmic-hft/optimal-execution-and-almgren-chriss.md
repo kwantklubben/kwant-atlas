@@ -7,7 +7,7 @@ tags:
   - market-impact
 ---
 
-**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]] and [[foundations/stochastic-calculus-and-ito|Stochastic Calculus]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] and [[foundations/stochastic-calculus/index|Stochastic Calculus]].
 
 ---
 
@@ -112,6 +112,6 @@ print(f"  Risk-Averse:  {x_averse[50]:.0f} (Liquidated rapidly to reduce vol exp
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/multivariable-calculus-and-optimization|Optimization & KKT]]
+- Foundational Base: [[foundations/calculus-and-optimization/index|Optimization & KKT]]
 - Bridges to: [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda-Stoikov Model]]
 - Bridges to: [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk]]

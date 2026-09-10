@@ -142,5 +142,5 @@ The ensemble mean ($131.5\times$) and the typical outcome ($0.005\times$) differ
 ### 6. Connected Graph Bridges
 
 - Next: [[foundations/ergodicity-and-statistical-mechanics/02-ensemble-vs-time-averages|02 · Ensemble vs Time Averages]] · [[foundations/ergodicity-and-statistical-mechanics/index|Index Hub]]
-- Theory behind it: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (law of large numbers, Jensen)
+- Theory behind it: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (law of large numbers, Jensen)
 - Where the growth rate is used: [[foundations/ergodicity-and-statistical-mechanics/04-kelly-criterion|04 · Kelly Criterion]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]]

@@ -10,7 +10,7 @@ tags:
   - shrinkage
 ---
 
-**Basic Prerequisites:** [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|02 · Bayes' Theorem & Priors]] and [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]].
+**Basic Prerequisites:** [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|02 · Bayes' Theorem & Priors]] and [[foundations/calculus-and-optimization/index|Multivariable Calculus]].
 
 ---
 
@@ -154,5 +154,5 @@ Read the three coefficient vectors together. **OLS** spreads small non-zero nois
 
 - Back: [[foundations/bayesian-statistics/03-posterior-inference|03 · Posterior Inference]] · [[foundations/bayesian-statistics/index|Index Hub]]
 - Continue: [[foundations/bayesian-statistics/05-mcmc|05 · MCMC]] (sampling the posterior when the prior is non-conjugate) · [[foundations/bayesian-statistics/06-advanced-extensions|06 · Advanced Extensions]] (hierarchical shrinkage)
-- Base: [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]] (penalized optimization, convexity) · [[foundations/linear-algebra-and-matrices|Linear Algebra]] (ridge normal equation, regularizing singular $X^{\!\top}X$)
+- Base: [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (penalized optimization, convexity) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (ridge normal equation, regularizing singular $X^{\!\top}X$)
 - Forward: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]] (the same prior logic on a covariance matrix) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|MPT & the Error-Maximizer Paradox]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]] (why regularization is non-negotiable at low SNR)

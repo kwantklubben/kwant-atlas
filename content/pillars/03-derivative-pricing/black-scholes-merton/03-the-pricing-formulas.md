@@ -8,7 +8,7 @@ tags:
   - black-76
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
 
 ---
 
@@ -132,4 +132,4 @@ lower bound (S-Xe^-rT)+ = 0.12091  <=  c=5.69445
 
 - Back: [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|02 · PDE & Derivation]]
 - Forward: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|04 · Greeks & Hedging]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Index Hub]]
-- Base: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]

@@ -7,7 +7,7 @@ tags:
   - matching-engine
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability Theory]] and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] and [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure]].
 
 ---
 
@@ -111,6 +111,6 @@ print(f"Fill Probability (Pos 50): {p_fill_pos50:.2%}")
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/probability-and-measure-theory|Probability Theory]]
+- Foundational Base: [[foundations/probability-and-measure-theory/index|Probability Theory]]
 - Bridges to: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection]]
 - Bridges to: [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda-Stoikov Model]]

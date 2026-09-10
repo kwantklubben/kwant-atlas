@@ -148,5 +148,5 @@ The additive path's time average ($0.00501$) sits on its ensemble mean ($0.00500
 
 - Back: [[foundations/ergodicity-and-statistical-mechanics/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[foundations/ergodicity-and-statistical-mechanics/03-multiplicative-growth|03 · Multiplicative Growth]] · [[foundations/ergodicity-and-statistical-mechanics/index|Index Hub]]
-- Theory: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (LLN, Jensen) · [[foundations/stochastic-calculus/02-brownian-motion-and-martingales|Brownian Motion & Martingales]]
+- Theory: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (LLN, Jensen) · [[foundations/stochastic-calculus/02-brownian-motion-and-martingales|Brownian Motion & Martingales]]
 - Applications: [[foundations/ergodicity-and-statistical-mechanics/04-kelly-criterion|04 · Kelly Criterion]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]

@@ -30,7 +30,7 @@ graph TD
     ML["<b>7. Machine Learning & AltData</b><br/><i>(Low SNR, Tree Boosting, NLP, HMM)</i>"]
     QD["<b>8. Quantitative Development</b><br/><i>(HPC C++, kdb+/q, Lockless, FIX, Risk Guards)</i>"]
 
-    F["<b>Shared First-Principles Toolbox</b><br/><i>Linear Algebra • Stochastics • Econometrics • Optimization • Ergodicity</i>"]
+    F["<b>Shared First-Principles Toolbox</b><br/><i>Linear Algebra • Calculus • Probability • Stochastics • Statistics • Bayesian • Econometrics • Numerical • Ergodicity</i>"]
 
     F -.-> QR
     F -.-> HFT
@@ -149,12 +149,15 @@ The software and systems engineering backbone: translating mathematical models i
 
 Before diving into complex models, anchor your intuition in the rigorous mathematical foundations that underwrite all 8 disciplines:
 
-* 📐 **[[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]]**: Vector spaces, spectral theory, positive semi-definiteness, and SVD.
-* 📈 **[[foundations/multivariable-calculus-and-optimization|Calculus & Constrained Optimization]]**: Gradients, Hessians, Taylor expansions (Greeks), and KKT conditions.
-* 🎲 **[[foundations/probability-and-measure-theory|Probability & Measure Theory]]**: Probability spaces, filtrations, conditional expectations, and martingales.
-* 🌊 **[[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]]**: Brownian motion, quadratic variation, Itô's formula, and Girsanov change of measure.
-* 📊 **[[foundations/econometrics-and-time-series|Econometrics & Time Series]]**: Stationarity, unit roots (ADF), cointegration, and GARCH volatility clustering.
-* ⏳ **[[foundations/ergodicity-and-statistical-mechanics|Ergodicity & Statistical Mechanics]]**: Ensemble vs time averages, multiplicative growth, the Kelly criterion, and ruin theory.
+* 📐 **[[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]**: Vector spaces, spectral theory, positive semi-definiteness, and SVD.
+* 📈 **[[foundations/calculus-and-optimization/index|Calculus & Constrained Optimization]]**: Gradients, Hessians, Taylor expansions (Greeks), and KKT conditions.
+* 🎲 **[[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**: Probability spaces, filtrations, conditional expectations, and martingales.
+* 🌊 **[[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]]**: Brownian motion, quadratic variation, Itô's formula, and Girsanov change of measure.
+* 📊 **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]**: Stationarity, unit roots (ADF), cointegration, and GARCH volatility clustering.
+* 📈 **[[foundations/statistics-and-inference/index|Statistics & Inference]]**: Point estimation, the Central Limit Theorem, confidence intervals, and bias–variance validation.
+* 🎛️ **[[foundations/bayesian-statistics/index|Bayesian Statistics]]**: Bayes' theorem, priors, posterior inference, MCMC, and Bayesian regularization.
+* 🔢 **[[foundations/numerical-methods/index|Numerical Methods]]**: Finite differences, Monte Carlo, numerical optimization, and numerical linear algebra.
+* ⏳ **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble vs time averages, multiplicative growth, the Kelly criterion, and ruin theory.
 
 ---
 

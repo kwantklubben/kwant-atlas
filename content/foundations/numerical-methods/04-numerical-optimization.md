@@ -8,7 +8,7 @@ tags:
   - newton
 ---
 
-**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] and [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] and [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]].
 
 ---
 
@@ -49,7 +49,7 @@ The single organising idea: **speed of convergence is a number.** Two algorithms
 - **Quasi-Newton** (BFGS, L-BFGS). Build an approximate Hessian from gradient differences — superlinear, no second derivatives, $O(d^2)$ per step (L-BFGS $O(d)$).
 - **Line search / trust region.** The step $H^{-1}g$ is a *direction*; the **step length** is chosen by a Wolfe/Armijo condition. Without it, full Newton steps can overshoot far from the minimum (Newton is only locally guaranteed).
 
-**Convexity and the KKT conditions.** If $f$ is convex the local minimum *is* global and gradient-based methods cannot be trapped by a spurious stationary point; if it is not, every method above can converge to a saddle or a local minimum. Constrained problems are characterised by the **KKT conditions** (stationarity, primal/dual feasibility, complementary slackness) — the full treatment is in [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]]; numerically, constraints are often handled by **penalty** or **projected** (PSOR) methods, which replace the constraint by a reaction term that drives the iterate back into the feasible region (Duffy eqs. 28.15–28.17, 29.11).
+**Convexity and the KKT conditions.** If $f$ is convex the local minimum *is* global and gradient-based methods cannot be trapped by a spurious stationary point; if it is not, every method above can converge to a saddle or a local minimum. Constrained problems are characterised by the **KKT conditions** (stationarity, primal/dual feasibility, complementary slackness) — the full treatment is in [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]]; numerically, constraints are often handled by **penalty** or **projected** (PSOR) methods, which replace the constraint by a reaction term that drives the iterate back into the feasible region (Duffy eqs. 28.15–28.17, 29.11).
 
 **Conditioning of the optimiser.** The GD rate $(\kappa-1)/(\kappa+1)$ and the Newton step both degrade with $\kappa$; **preconditioning** (a change of variables that makes the Hessian near-identity) is the standard cure — the same idea as the parameter transformation $x=\text{diag}(H)^{1/2}z$ that whitens an ill-conditioned quadratic.
 
@@ -131,6 +131,6 @@ Two fingerprints of quadratic convergence: in the root-finding log the error seq
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] · [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]]
+- Base: [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] · [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]]
 - Continue: [[foundations/numerical-methods/05-numerical-linear-algebra|05 · Numerical Linear Algebra]] (the linear solve inside every Newton step) · [[foundations/numerical-methods/index|Index Hub]]
 - Forward links: [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|Pricing · Failure Modes]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory]] (the canonical constrained optimisation)

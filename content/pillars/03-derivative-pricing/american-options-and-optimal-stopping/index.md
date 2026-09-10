@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton: Hub]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton: Hub]].
 
 ---
 
@@ -124,7 +124,7 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/americ
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]]
+- Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
 - Upstream: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton: Hub]] (the PDE being constrained) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the discrete seed of the recursion)
 - **Numerical implementation detail lives elsewhere** (linked, not duplicated): [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|FDM: penalty & PSOR]] · [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|Monte Carlo]] · [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|Numerical Methods · Advanced]]
 - Sub-pages (in-folder): 01 From Zero · 02 Optimal-Stopping Theory · 03 Analytic Approximations · 04 Free Boundary & Complementarity · 05 Failure Modes · 06 Advanced Extensions

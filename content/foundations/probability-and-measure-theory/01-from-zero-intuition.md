@@ -98,6 +98,6 @@ CLT: P(|Z|<2) = 0.9546 (theory 0.9545)
 
 ### 6. Connected Graph Bridges
 
-- Base: none (this is the entry point) · [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]] (expectations as integrals)
+- Base: none (this is the entry point) · [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (expectations as integrals)
 - Continue: [[foundations/probability-and-measure-theory/02-probability-spaces-and-filtrations|02 · Probability Spaces & Filtrations]] · [[foundations/probability-and-measure-theory/index|Index Hub]]
 - Forward: [[foundations/stochastic-calculus/index|Stochastic Calculus]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]

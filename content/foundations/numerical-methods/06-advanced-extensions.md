@@ -8,7 +8,7 @@ tags:
   - high-dimensional
 ---
 
-**Basic Prerequisites:** [[foundations/numerical-methods/03-monte-carlo|03 · Monte Carlo]] and [[foundations/econometrics-and-time-series|Econometrics & Time Series]].
+**Basic Prerequisites:** [[foundations/numerical-methods/03-monte-carlo|03 · Monte Carlo]] and [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]].
 
 ---
 
@@ -161,7 +161,7 @@ At $n=4096$ in $d=4$, **scrambled Sobol' beats plain Monte Carlo by $418\times$*
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/numerical-methods/03-monte-carlo|03 · Monte Carlo]] · [[foundations/numerical-methods/02-finite-difference-methods|02 · Finite Differences]] · [[foundations/econometrics-and-time-series|Econometrics & Time Series]]
+- Base: [[foundations/numerical-methods/03-monte-carlo|03 · Monte Carlo]] · [[foundations/numerical-methods/02-finite-difference-methods|02 · Finite Differences]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
 - Continue / hub: [[foundations/numerical-methods/index|Index Hub]] · [[foundations/numerical-methods/05-numerical-linear-algebra|05 · Linear Algebra]] (the solve inside every Kalman step)
 - Cross-link (pricing-specific application — the same tools applied to derivative pricing): [[pillars/03-derivative-pricing/numerical-methods/index|Pricing Numerical Methods]] · [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|Pricing · Advanced Extensions (American, multidimensional, QMC)]]
-- Forward links: [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|Advanced Extensions (pricing)]] · [[foundations/ergodicity-and-statistical-mechanics|Ergodicity & Statistical Mechanics]] (MCMC and the ergodic theorem)
+- Forward links: [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|Advanced Extensions (pricing)]] · [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (MCMC and the ergodic theorem)

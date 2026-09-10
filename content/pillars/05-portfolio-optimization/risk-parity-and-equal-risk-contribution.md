@@ -7,7 +7,7 @@ tags:
   - marginal-risk
 ---
 
-**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Calculus]] and [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus]] and [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]].
 
 ---
 
@@ -107,6 +107,6 @@ print("ERC Portfolio Weights: ", np.round(w_erc, 4))
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]]
+- Foundational Base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
 - Bridges to: [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity]]
 - Bridges to: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Risk Measurement]]

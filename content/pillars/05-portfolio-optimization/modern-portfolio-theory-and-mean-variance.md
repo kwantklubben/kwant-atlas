@@ -7,7 +7,7 @@ tags:
   - efficient-frontier
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra]] and [[foundations/multivariable-calculus-and-optimization|Calculus & KKT Optimization]].
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] and [[foundations/calculus-and-optimization/index|Calculus & KKT Optimization]].
 
 ---
 
@@ -115,6 +115,6 @@ print("Weights (Perturbed):", np.round(w_perturbed, 3))
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]]
+- Foundational Base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
 - Bridges to: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]]
 - Bridges to: [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black-Litterman]]

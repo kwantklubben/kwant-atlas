@@ -8,7 +8,7 @@ tags:
   - martingale
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/01-from-zero-intuition|01 · From Zero]] and [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/01-from-zero-intuition|01 · From Zero]] and [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
 
 ---
 
@@ -136,4 +136,4 @@ The no-dividend call has **exactly zero** nodes where intrinsic beats continuati
 
 - Back: [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/01-from-zero-intuition|01 · From Zero]] · [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/03-analytic-approximations|03 · Analytic Approximations]] · [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/04-free-boundary-and-complementarity|04 · Free Boundary]]
-- Theory base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|Fundamental Theorems of Asset Pricing]]
+- Theory base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|Fundamental Theorems of Asset Pricing]]

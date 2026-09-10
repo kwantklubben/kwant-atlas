@@ -198,4 +198,4 @@ Three verifications: the RMSE ratio between $n$ and $10n$ is $3.54$ and between 
 
 - Back: [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|02 · Finite Differences]] · [[pillars/03-derivative-pricing/numerical-methods/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/numerical-methods/04-variance-reduction-and-efficiency|04 · Variance Reduction & Efficiency]] → [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]] (American MC, QMC)
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · Pricing Formulas]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · Pricing Formulas]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]

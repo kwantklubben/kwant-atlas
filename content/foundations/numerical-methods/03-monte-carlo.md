@@ -8,7 +8,7 @@ tags:
   - sampling
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]] and [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and [[foundations/numerical-methods/01-from-zero-intuition|01 · From Zero]].
 
 ---
 
@@ -153,6 +153,6 @@ The control variate — exploiting the $0.992$ correlation between $e^U$ and $U$
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
 - Continue: [[foundations/numerical-methods/04-numerical-optimization|04 · Optimization]] · [[foundations/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]] (QMC, MCMC) · [[foundations/numerical-methods/index|Index Hub]]
 - Cross-link (pricing application): [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|Pricing · Monte Carlo]] · [[pillars/03-derivative-pricing/numerical-methods/04-variance-reduction-and-efficiency|Pricing · Variance Reduction]]

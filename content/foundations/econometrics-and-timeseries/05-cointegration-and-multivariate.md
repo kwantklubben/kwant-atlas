@@ -8,7 +8,7 @@ tags:
   - error-correction
 ---
 
-**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/03-forecasting-and-unit-roots|03 · Forecasting & Unit Roots]] (unit roots) and [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] (matrix decompositions).
+**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/03-forecasting-and-unit-roots|03 · Forecasting & Unit Roots]] (unit roots) and [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (matrix decompositions).
 
 ---
 

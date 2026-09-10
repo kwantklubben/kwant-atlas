@@ -7,7 +7,7 @@ tags:
   - implied-returns
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra]] and [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]].
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] and [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]].
 
 ---
 
@@ -119,6 +119,6 @@ print("BL Optimal Portfolio Weights: ", np.round(w_post, 4))
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/linear-algebra-and-matrices|Linear Algebra]]
+- Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]]
 - Bridges to: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Denoising]]

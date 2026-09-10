@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (expectations, laws of large numbers, martingales) and [[foundations/calculus-and-optimization|Calculus & Optimization]] (maximising $\mathbb{E}[\ln W]$, concavity).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (expectations, laws of large numbers, martingales) and [[foundations/calculus-and-optimization|Calculus & Optimization]] (maximising $\mathbb{E}[\ln W]$, concavity).
 
 ---
 
@@ -141,8 +141,8 @@ Hub signposts — the folder's failure analysis lives in the sub-pages. In one l
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/calculus-and-optimization|Calculus & Optimization]] (concave $\mathbb{E}\ln$, interior optimum)
-- Legacy page (archived seed): [[foundations/ergodicity-and-statistical-mechanics|Ergodicity & Statistical Mechanics (legacy note)]]
+- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/calculus-and-optimization|Calculus & Optimization]] (concave $\mathbb{E}\ln$, interior optimum)
+- Legacy page (archived seed): [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics (legacy note)]]
 - Applied destination — risk & tails: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/index|Quantitative Risk]]
 - Applied destination — allocation: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]] · [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] (Kelly as the growth-optimal allocation)
 - Applied destination — sizing in execution/market-making: [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Almgren–Chriss]]

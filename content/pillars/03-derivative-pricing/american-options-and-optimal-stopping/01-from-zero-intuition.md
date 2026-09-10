@@ -8,7 +8,7 @@ tags:
   - optimal-stopping
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]]. *(No prior derivatives knowledge needed.)*
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]]. *(No prior derivatives knowledge needed.)*
 
 ---
 
@@ -112,6 +112,6 @@ European BSM put            = 4.4494
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
 - Continue: [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/02-optimal-stopping-theory|02 · Optimal-Stopping Theory]] · [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|BSM · Advanced Extensions]] (the same recursion, one page)

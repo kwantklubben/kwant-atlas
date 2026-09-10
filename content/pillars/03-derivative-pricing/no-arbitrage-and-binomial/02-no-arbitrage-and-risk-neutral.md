@@ -8,7 +8,7 @@ tags:
   - state-prices
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/01-from-zero|01 · From Zero]] and [[foundations/probability-and-measure-theory|Probability & Measure Theory]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/01-from-zero|01 · From Zero]] and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
 
 ---
 
@@ -138,4 +138,4 @@ Two things are visible in that output. The state prices reproduce *both* traded 
 
 - Back: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/01-from-zero|01 · From Zero]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/03-binomial-trees-and-convergence|03 · Trees & Convergence]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|04 · Fundamental Theorems]]
-- Theory: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · 02 PDE & Derivation]]
+- Theory: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · 02 PDE & Derivation]]

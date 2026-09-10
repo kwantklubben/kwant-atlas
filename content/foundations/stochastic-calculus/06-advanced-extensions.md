@@ -126,4 +126,4 @@ Martingale rep. (delta-replication): S_T=80.84  hedge P&L = 0.0151 (theory 0)
 
 - Back: [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05 · Girsanov & Risk-Neutral]] · [[foundations/stochastic-calculus/index|Index Hub]]
 - Forward topic-folder: [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM 02 · PDE & Derivation]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]
-- Theory: [[foundations/probability-and-measure-theory|Probability & Measure Theory]]
+- Theory: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]

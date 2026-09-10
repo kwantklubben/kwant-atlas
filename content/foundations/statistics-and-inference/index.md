@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (distributions, expectation, conditional expectation) and [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] (Taylor expansions, maximization).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (distributions, expectation, conditional expectation) and [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] (Taylor expansions, maximization).
 
 ---
 
@@ -137,8 +137,8 @@ Hub signposts — the folder's failure-mode analysis lives on the sub-pages. In 
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]]
-- Sibling foundations: [[foundations/econometrics-and-time-series|Econometrics & Time Series]] (stationarity & MLE for GARCH) · [[foundations/ergodicity-and-statistical-mechanics|Ergodicity & Statistical Mechanics]] (time vs ensemble averages) · [[foundations/numerical-methods|Numerical Methods]] (Monte Carlo uses LLN/CLT)
+- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
+- Sibling foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (stationarity & MLE for GARCH) · [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (time vs ensemble averages) · [[foundations/numerical-methods|Numerical Methods]] (Monte Carlo uses LLN/CLT)
 - Sub-pages (in-folder): 01 From Zero · 02 Point Estimation · 03 The CLT & Sampling · 04 Confidence Intervals & Testing · 05 Bias–Variance & Validation · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

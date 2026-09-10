@@ -8,7 +8,7 @@ tags:
   - stationarity
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (conditional expectation) — nothing else is assumed.
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional expectation) — nothing else is assumed.
 
 ---
 
@@ -36,7 +36,7 @@ Simple one-period return: $R_t=\dfrac{P_t}{P_{t-1}}-1$. Continuously-compounded 
 $$r_t[k]=p_t-p_{t-k}=\sum_{j=0}^{k-1}r_{t-j}.$$
 Portfolio simple return is the *weighted average* of constituents' simple returns (log returns are only *approximately* so — Tsay eq. 1.7).
 
-**Why the log.** Over one step $\ln(P_t/P_{t-1})\approx R_t$ for small moves, but over many steps log returns *exactly add* while simple returns multiply. And under geometric Brownian motion (see [[foundations/stochastic-calculus-and-ito|Stochastic Calculus]]), $p_t$ is Gaussian, so returns are lognormal-consistent.
+**Why the log.** Over one step $\ln(P_t/P_{t-1})\approx R_t$ for small moves, but over many steps log returns *exactly add* while simple returns multiply. And under geometric Brownian motion (see [[foundations/stochastic-calculus/index|Stochastic Calculus]]), $p_t$ is Gaussian, so returns are lognormal-consistent.
 
 **Random walk.** The simplest non-stationary process: $p_t=p_{t-1}+a_t$, i.e. $p_t=p_0+\sum_{i=1}^t a_i$. Then $\mathrm{Var}(p_t)=t\,\sigma_a^2$ — variance grows *linearly with time*. A shock never decays. This is the *unit root*, and it is why prices can never be treated as stationary.
 
@@ -88,7 +88,7 @@ The price's first autocorrelation is ~0.99 — a shock essentially never decays 
 1. **Regressing on levels = spurious regression.** If you run $P_t^{(1)}$ on $P_t^{(2)}$ for two *independent* random walks, you get a high $R^2$ and a huge $t$-statistic — pure artifact of non-stationarity, zero economic content. This is the number-one trap, developed fully in [[foundations/econometrics-and-timeseries/03-forecasting-and-unit-roots|03 · Forecasting & Unit Roots]].
 2. **Log vs simple return confusions are minor — for the mean.** For daily/monthly data the two are nearly equal, but for *portfolios* simple returns average correctly while log returns do not. Never average log returns of a portfolio.
 3. **"Stationary" is not "iid."** White noise (uncorrelated) is not independent: GARCH innovations are *uncorrelated but dependent* (the squared values are autocorrelated). Missing this confuses the mean model with the variance model — the gateway error into [[foundations/econometrics-and-timeseries/04-volatility-modeling|04 · Volatility Modeling]].
-4. **The $\tfrac12\sigma^2$ correction.** Under GBM, $\ln P_t$ has drift $\mu-\tfrac12\sigma^2$, not $\mu$ (Itô's lemma, [[foundations/stochastic-calculus-and-ito|Stochastic Calculus]]). Pricing and long-horizon return forecasts that omit it are biased — see the BSM derivations.
+4. **The $\tfrac12\sigma^2$ correction.** Under GBM, $\ln P_t$ has drift $\mu-\tfrac12\sigma^2$, not $\mu$ (Itô's lemma, [[foundations/stochastic-calculus/index|Stochastic Calculus]]). Pricing and long-horizon return forecasts that omit it are biased — see the BSM derivations.
 
 ---
 
@@ -102,5 +102,5 @@ The price's first autocorrelation is ~0.99 — a shock essentially never decays 
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
 - Continue: [[foundations/econometrics-and-timeseries/02-stationarity-and-arma|02 · Stationarity & ARMA]] · [[foundations/econometrics-and-timeseries/index|Index Hub]]

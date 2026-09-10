@@ -141,4 +141,4 @@ SVI fits the whole slice to a total-variance RMSE of $2.3\\times10^{-5}$ (about 
 
 - Back: [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva|Counterparty Risk & XVA]]
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]

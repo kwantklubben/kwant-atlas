@@ -7,7 +7,7 @@ tags:
   - machine-learning
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra]] and basic graph/tree theory.
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] and basic graph/tree theory.
 
 ---
 
@@ -136,6 +136,6 @@ print("HRP Allocations: ", np.round(w, 4))
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/linear-algebra-and-matrices|Linear Algebra]]
+- Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Bridges to: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution|Risk Parity]]
 - Bridges to: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising|Covariance Shrinkage]]

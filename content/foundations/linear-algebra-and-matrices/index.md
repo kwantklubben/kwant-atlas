@@ -134,7 +134,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[foundations/line
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: self-contained entry node; feeds [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] · [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/stochastic-calculus/index|Stochastic Calculus]]
+- Foundational base: self-contained entry node; feeds [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/stochastic-calculus/index|Stochastic Calculus]]
 - Sibling toolbox node: [[foundations/numerical-methods/index|Numerical Methods]] (05 · Numerical Linear Algebra is this folder's computational shadow)
 - Sub-pages (in-folder): 01 From Zero · 02 Vectors, Spaces & Matrices · 03 Linear Systems & Decompositions · 04 Eigenvalues & Covariance · 05 SVD, PCA & Regression · 06 Advanced Extensions (RMT & Numerics)
 

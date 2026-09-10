@@ -7,7 +7,7 @@ tags:
   - spread-decomposition
 ---
 
-**Basic Prerequisites:** [[foundations/econometrics-and-time-series|Econometrics]] (Autocovariance).
+**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics]] (Autocovariance).
 
 ---
 
@@ -98,6 +98,6 @@ print(f"Roll Est. Spread: ${roll_est:.4f}")
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/econometrics-and-time-series|Econometrics]]
+- Foundational Base: [[foundations/econometrics-and-timeseries/index|Econometrics]]
 - Bridges to: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection]]
 - Bridges to: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure]]

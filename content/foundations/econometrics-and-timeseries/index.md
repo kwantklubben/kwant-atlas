@@ -7,7 +7,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] and [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (conditional expectation, iid/white noise).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional expectation, iid/white noise).
 
 ---
 
@@ -140,8 +140,8 @@ Hub signposts — the folder's failure-mode analysis lives on the sub-pages. In 
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] · [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
-- Sibling foundations: [[foundations/ergodicity-and-statistical-mechanics|Ergodicity & Statistical Mechanics]] (time vs ensemble averages — the twin of stationarity)
+- Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
+- Sibling foundations: [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (time vs ensemble averages — the twin of stationarity)
 - Sub-pages (in-folder): 01 From Zero · 02 Stationarity & ARMA · 03 Forecasting & Unit Roots · 04 Volatility Modeling · 05 Cointegration & Multivariate · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

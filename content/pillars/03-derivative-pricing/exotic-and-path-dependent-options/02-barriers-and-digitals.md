@@ -8,7 +8,7 @@ tags:
   - reflection-principle
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]].
 
 ---
 
@@ -141,4 +141,4 @@ asset-or-nothing put= 20.2069  (Haug 20.2069)
 
 - Back: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/03-lookbacks-and-asians|03 · Lookbacks & Asians]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Index Hub]]
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]

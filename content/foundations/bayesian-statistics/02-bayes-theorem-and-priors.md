@@ -10,7 +10,7 @@ tags:
   - gamma-poisson
 ---
 
-**Basic Prerequisites:** [[foundations/bayesian-statistics/01-from-zero-intuition|01 · From Zero]] and [[foundations/probability-and-measure-theory|Probability & Measure Theory]].
+**Basic Prerequisites:** [[foundations/bayesian-statistics/01-from-zero-intuition|01 · From Zero]] and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
 
 ---
 
@@ -50,7 +50,7 @@ $$\frac1{\tau_{\text{post}}^2}=\frac1{\tau^2}+\frac{n}{\sigma^2},\qquad
 
 **Precisions add.** Information (reciprocal variance) is additive: the posterior precision is the prior precision plus the data precision $n/\sigma^2$. This is the single most useful Bayesian intuition — and its matrix version ($\Sigma_{\text{post}}^{-1}=\Sigma_0^{-1}+\sigma^{-2}X^{\!\top}X$) is the same statement for vectors. As $\tau^2\to\infty$ (vague prior) $\mu_{\text{post}}\to\bar x$: **the datum wins when the prior has no precision.**
 
-**The multivariate normal prior is the Gaussian-process/regression prior.** With a design matrix $X$, the posterior above is a *posterior over regression coefficients*, and its mean is the ridge solution (§04) — the deep link between Bayesian regression and penalized least squares. See [[foundations/linear-algebra-and-matrices|Linear Algebra]] for precision matrices and Gaussian conditionals.
+**The multivariate normal prior is the Gaussian-process/regression prior.** With a design matrix $X$, the posterior above is a *posterior over regression coefficients*, and its mean is the ridge solution (§04) — the deep link between Bayesian regression and penalized least squares. See [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] for precision matrices and Gaussian conditionals.
 
 **Sequential vs batch.** Because $m(x)=\prod_i m_i$ factorizes for independent data, updating observation-by-observation (using the current posterior as the next prior) equals the batch update. **The order of the data is irrelevant** — a property frequentists' estimators also share, but which Bayes makes visible.
 
@@ -157,5 +157,5 @@ Three facts are visible in the output. (i) **Precisions add**: $10.250 = 0.250 +
 
 - Back: [[foundations/bayesian-statistics/01-from-zero-intuition|01 · From Zero]] · [[foundations/bayesian-statistics/index|Index Hub]]
 - Continue: [[foundations/bayesian-statistics/03-posterior-inference|03 · Posterior Inference]] (what to *do* with the posterior) · [[foundations/bayesian-statistics/04-bayesian-and-regularization|04 · Bayesian & Regularization]] (the Gaussian prior *is* ridge)
-- Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (conditional distributions, densities) · [[foundations/linear-algebra-and-matrices|Linear Algebra]] (precision matrices, Gaussian conditionals)
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (conditional distributions, densities) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (precision matrices, Gaussian conditionals)
 - Forward: [[pillars/05-portfolio-optimization/black-litterman-asset-allocation|Black–Litterman Allocation]] (a normal–normal update on expected returns)

@@ -8,7 +8,7 @@ tags:
   - forward-rates
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
 
 ---
 
@@ -106,6 +106,6 @@ The closed form ([[pillars/03-derivative-pricing/interest-rate-and-term-structur
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
 - Continue: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/02-bonds-yield-curve-forward-rates|02 · Bonds, Yield Curve & Forward Rates]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (constant $r$ vs term structure)

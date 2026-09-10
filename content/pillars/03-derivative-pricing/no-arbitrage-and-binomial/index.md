@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]] and high-school algebra.
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and high-school algebra.
 
 ---
 
@@ -114,7 +114,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
 - Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the continuous-time limit of exactly this model)
 - Related flat notes: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|BSM & Feynman-Kac]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Sub-pages (in-folder): 01 From Zero · 02 No-Arbitrage & Risk-Neutral · 03 Trees & Convergence · 04 Fundamental Theorems · 05 Failure Modes · 06 Advanced Extensions

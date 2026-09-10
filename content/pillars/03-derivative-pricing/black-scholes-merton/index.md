@@ -7,7 +7,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] and [[foundations/calculus-and-optimization/index|Multivariable Calculus]].
 
 ---
 
@@ -103,7 +103,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/multivariable-calculus-and-optimization|Calculus]]
+- Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[foundations/calculus-and-optimization/index|Calculus]]
 - Sibling topic: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]] (the discrete seed of this model)
 - Sub-pages (in-folder): 01 From Zero · 02 PDE & Derivation · 03 Pricing Formulas · 04 Greeks & Hedging · 05 Failure Modes · 06 Advanced Extensions
 

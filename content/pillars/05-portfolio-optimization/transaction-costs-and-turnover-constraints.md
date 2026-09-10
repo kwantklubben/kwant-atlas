@@ -7,7 +7,7 @@ tags:
   - market-impact
 ---
 
-**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]] and [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] and [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]].
 
 ---
 
@@ -112,6 +112,6 @@ print("Realized Turnover:", np.round(np.sum(np.abs(w_target - current_weights)),
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]]
+- Foundational Base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
 - Bridges to: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]]
 - Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Markowitz Optimization]]

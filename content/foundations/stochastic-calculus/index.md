@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
 
 ---
 
@@ -131,11 +131,11 @@ Hub signposts — the folder's failure analysis lives in each sub-page. In one l
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] (martingales, RN derivative, conditional expectation) · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma (legacy page)]]
+- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (martingales, RN derivative, conditional expectation) · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma (legacy page)]]
 - Sub-pages (in-folder): 01 From Zero · 02 Brownian Motion & Martingales · 03 Itô Integral & Doeblin · 04 SDEs & Simulation · 05 Girsanov & Risk-Neutral · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[foundations/stochastic-calculus/01-from-zero-intuition|01 · From Zero]] — no prior knowledge.
 - **Tools to derive (undergrad/job-seeking):** [[foundations/stochastic-calculus/02-brownian-motion-and-martingales|02 · BM & Martingales]] → [[foundations/stochastic-calculus/03-ito-integral-and-doeblin|03 · Itô Integral & Doeblin]] → [[foundations/stochastic-calculus/04-sdes-and-simulation|04 · SDEs & Simulation]].
 - **Rigorous measure-theoretic framing (graduate):** [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05 · Girsanov]] → [[foundations/stochastic-calculus/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] · [[foundations/econometrics-and-time-series|Econometrics & Time Series]]
+- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]

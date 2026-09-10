@@ -7,7 +7,7 @@ tags:
   - default-probability
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] and [[foundations/stochastic-calculus-and-ito|Stochastic Calculus]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] and [[foundations/stochastic-calculus/index|Stochastic Calculus]].
 
 ---
 

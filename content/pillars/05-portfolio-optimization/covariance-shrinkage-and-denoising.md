@@ -7,7 +7,7 @@ tags:
   - random-matrix-theory
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra]] (Spectral Decomposition, Eigenvalues).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (Spectral Decomposition, Eigenvalues).
 
 ---
 
@@ -111,6 +111,6 @@ print(f"Condition Number Denoised: {np.linalg.cond(clean_corr):.2f} (Vastly more
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/linear-algebra-and-matrices|Linear Algebra]]
+- Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Markowitz Optimization]]
 - Bridges to: [[pillars/05-portfolio-optimization/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity]]

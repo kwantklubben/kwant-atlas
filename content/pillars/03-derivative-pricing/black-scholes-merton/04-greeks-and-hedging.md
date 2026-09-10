@@ -8,7 +8,7 @@ tags:
   - gamma-theta
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · The Pricing Formulas]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · The Pricing Formulas]].
 
 ---
 

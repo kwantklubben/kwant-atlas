@@ -174,4 +174,4 @@ print(f"      numeric d(1/2 variance)/d r0 = {(vh_hi-vh_lo)/(2*h):.6f}  (== l1 =
 - Back: [[foundations/calculus-and-optimization/03-multivariable-calculus|03 · Multivariable Calculus]] · [[foundations/calculus-and-optimization/index|Index Hub]]
 - Next: [[foundations/calculus-and-optimization/05-gradient-and-newton-methods|05 · Gradient & Newton]] (solving the stationarity system iteratively) → [[foundations/calculus-and-optimization/06-advanced-extensions|06 · Convexity & Applications]]
 - Applied: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]] (the QP solved here) · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|Pricing Formulas]] (hedging as a constrained problem)
-- Base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] (linear systems, saddle-point structure)
+- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (linear systems, saddle-point structure)

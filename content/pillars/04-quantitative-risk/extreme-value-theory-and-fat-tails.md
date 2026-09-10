@@ -7,7 +7,7 @@ tags:
   - power-laws
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability Theory]] and [[foundations/ergodicity-and-statistical-mechanics|Statistical Mechanics]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability Theory]] and [[foundations/ergodicity-and-statistical-mechanics/index|Statistical Mechanics]].
 
 ---
 
@@ -105,6 +105,6 @@ print(f"99.9% EVT VaR: {var_999*100:.2f}% | EVT Expected Shortfall: {es_999*100:
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/ergodicity-and-statistical-mechanics|Ergodicity & Statistical Mechanics]]
+- Foundational Base: [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]
 - Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]
 - Bridges to: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & CVaR]]

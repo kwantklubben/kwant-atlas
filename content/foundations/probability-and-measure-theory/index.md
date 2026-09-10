@@ -126,7 +126,7 @@ Hub signposts — the folder's failure analysis lives on the sub-pages. In one l
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]] (expectations as integrals) · [[foundations/linear-algebra-and-matrices|Linear Algebra]] (covariance, normal vectors)
+- Foundational base: [[foundations/calculus-and-optimization/index|Multivariable Calculus]] (expectations as integrals) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (covariance, normal vectors)
 - Sibling foundations: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] (martingales, Girsanov, quadratic variation) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (conditional expectation as the mean model, stationarity)
 - Sub-pages (in-folder): 01 From Zero · 02 Probability Spaces & Filtrations · 03 Distributions & Expectation · 04 Conditional Expectation · 05 Martingales · 06 Advanced Extensions
 

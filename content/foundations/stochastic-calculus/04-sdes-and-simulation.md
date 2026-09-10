@@ -131,4 +131,4 @@ CIR Euler    r(T)=0.0457     CIR Milstein r(T)=0.0404
 
 - Back: [[foundations/stochastic-calculus/03-ito-integral-and-doeblin|03 · Itô Integral & Doeblin]]
 - Forward: [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05 · Girsanov & Risk-Neutral]] · [[foundations/stochastic-calculus/index|Index Hub]]
-- Application: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM Pricing Formula]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]] · [[foundations/econometrics-and-time-series|Econometrics & Time Series]]
+- Application: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM Pricing Formula]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]

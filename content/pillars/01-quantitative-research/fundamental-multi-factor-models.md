@@ -7,7 +7,7 @@ tags:
   - barra
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra]] (OLS, Orthogonal Projections).
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (OLS, Orthogonal Projections).
 
 ---
 
@@ -109,6 +109,6 @@ print(f"R-squared:    {res['r_squared']:.3f}")
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]]
+- Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]
 - Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Portfolio Optimization]]
 - Bridges to: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking]]

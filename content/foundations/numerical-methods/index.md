@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]], [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]], and [[foundations/probability-and-measure-theory|Probability & Measure Theory]].
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]], [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]], and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]].
 
 ---
 
@@ -170,7 +170,7 @@ Hub signposts — the full first-principles analysis lives on the sub-pages. In 
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/linear-algebra-and-matrices|Linear Algebra]] · [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] · [[foundations/probability-and-measure-theory|Probability & Measure Theory]]
+- Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Applied destination: [[pillars/03-derivative-pricing/numerical-methods/index|Derivative-Pricing Numerical Methods]] — the pricing-specific application of exactly these tools
 - Sub-pages (in-folder): 01 From Zero · 02 Finite Differences · 03 Monte Carlo · 04 Numerical Optimization · 05 Numerical Linear Algebra · 06 Advanced Extensions
 

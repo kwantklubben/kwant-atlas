@@ -127,6 +127,6 @@ Read the shape: from $h=10^{-2}$ to $h=10^{-5}$ the error falls like $h^2$ (as t
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/linear-algebra-and-matrices|Linear Algebra & Matrices]] · [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]]
+- Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]]
 - Continue: [[foundations/numerical-methods/02-finite-difference-methods|02 · Finite Differences]] · [[foundations/numerical-methods/index|Index Hub]]
 - Cross-link: [[pillars/03-derivative-pricing/numerical-methods/01-from-zero|Pricing · From Zero]]

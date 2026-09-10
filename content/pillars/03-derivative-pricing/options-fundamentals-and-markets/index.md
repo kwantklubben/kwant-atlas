@@ -142,7 +142,7 @@ Hub signposts — the folder's full failure-mode analysis lives in [[pillars/03-
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
 - **Forward topic-page (next step):** [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]]
 - Sibling topic-folders (in-pillar): [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial|No-Arbitrage & the Binomial Model]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles|Volatility Surfaces & Smiles]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options|Exotic & Path-Dependent Options]] · [[pillars/03-derivative-pricing/numerical-methods|Numerical Methods]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva|Counterparty Risk & XVA]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure|Interest Rate & Term Structure]]
 - Sub-pages (in-folder): 01 What Is a Derivative · 02 Options Mechanics & Payoffs · 03 Markets & Products · 04 No-Arbitrage & Bounds · 05 Failure Modes · 06 Advanced Extensions

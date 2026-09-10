@@ -8,7 +8,7 @@ tags:
   - quadratic-variation
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory|Probability & Measure Theory]] and [[foundations/stochastic-calculus/01-from-zero-intuition|01 · From Zero]].
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and [[foundations/stochastic-calculus/01-from-zero-intuition|01 · From Zero]].
 
 ---
 
@@ -103,4 +103,4 @@ E[e^{sig W - .5 sig^2 t}] = 0.9997  (theory 1.0)
 
 - Back: [[foundations/stochastic-calculus/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[foundations/stochastic-calculus/03-ito-integral-and-doeblin|03 · Itô Integral & Doeblin]] · [[foundations/stochastic-calculus/index|Index Hub]]
-- Theory: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
+- Theory: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
