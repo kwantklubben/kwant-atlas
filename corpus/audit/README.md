@@ -93,6 +93,21 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 
 **Pacing:** waves of **4** concurrent agents (one dedicated agent per topic-folder), per instruction.
 
+## Structural check: fence pairing (repo-wide)
+
+Beyond the per-folder audits, a **repo-wide fence-pair check** walks every page, executes each
+python block, and compares stdout to the *immediately following* fence. It caught a class of bug
+the per-folder pass structurally could not: **12 output fences whose closing backticks were glued
+onto the last line of output** (`...nothing lost)\`\`\``), so the fence never closed and the
+following prose rendered *inside* the code block. Fixed across 5 black-litterman pages + 1 kelly
+page + 6 concurrency pages.
+
+Note on judgement: several Pillar-8 pages intentionally document **timing benchmarks** (numpy vs
+loop speedups, allocation ns/op, heap-vs-sorted-list ratios). Those outputs cannot be byte-stable
+and are **not** errors — the checker flags them; a human must classify. The rule: a mismatch is
+only a defect if the code is deterministic. If the page's fence header says "ms"/"ns/op"/"x", it's
+a benchmark.
+
 ## How to re-run
 
 
