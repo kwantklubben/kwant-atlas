@@ -43,9 +43,9 @@ $$w\ \propto\ \sum_i\frac{1}{\lambda_i}\,(q_i^\top\mathbf 1)\,q_i .$$
 
 **The dimensional mismatch, precisely.** $S$ has $N(N+1)/2$ free parameters and is computed from $NT$ numbers. The information per parameter is
 
-$$\frac{NT}{N(N+1)/2}=\frac{2T}{N+1}\xrightarrow[\ N\approx T\ ]{}\ 1 .$$
+$$\frac{NT}{N(N+1)/2}=\frac{2T}{N+1}\xrightarrow[\ N\approx T\ ]{}\ 2 .$$
 
-When $N$ is comparable to $T$, there is *one* observation per parameter. The regime is parameterized by $q=N/T$, the ratio that governs everything on the following pages.
+When $N$ is comparable to $T$, there are *two* observations per parameter (the one-observation regime is $N/T\approx\tfrac12$). The regime is parameterized by $q=N/T$, the ratio that governs everything on the following pages.
 
 **Bias–variance in one line.** The shrinkage objective is
 

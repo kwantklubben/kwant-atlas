@@ -24,7 +24,7 @@ Page 05 showed risk parity *works* only if you can lever the safe leg. This page
 
 **Why risk parity can earn a premium (Black 1972; Frazzini & Pedersen 2010).** The CAPM says everyone holds the market, levered to taste, so the market is mean-variance efficient. But many investors **cannot or will not use leverage** (mutual-fund and pension rules, margin constraints, funding costs, outright aversion). Such an investor who wants more risk than the tangency portfolio must move *up* the hyperbola past the tangency point by buying the **riskier** asset — concentrating in stocks instead of levering bonds. Enough of these investors bid equity prices *up* (expected returns *down*) and leave the safe asset underpriced (high expected return). The equilibrium implication:
 
-$$\frac{\mu_B-r_f}{\sigma_B^{?}} > \frac{\mu_S-r_f}{\sigma_S},$$
+$$\frac{\mu_B-r_f}{\sigma_B} > \frac{\mu_S-r_f}{\sigma_S},$$
 
 i.e. the **Security Market Line is too flat** — safer assets deliver higher risk-adjusted returns than riskier ones. An investor *willing* to borrow can then hold the safe-asset-heavy (risk-parity-flavored) portfolio, lever it, and capture the flatness — the "Betting Against Beta" (BAB) intuition of Frazzini & Pedersen (2010). Risk parity is, in this light, the **cross-asset incarnation of low-beta investing**: overweight the low-$\beta$ leg, lever up.
 

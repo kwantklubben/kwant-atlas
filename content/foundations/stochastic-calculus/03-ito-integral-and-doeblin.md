@@ -58,8 +58,6 @@ Three stdlib checks: (a) the Itô integral with $\Delta\equiv1$ equals $W(T)$, m
 import math, random
 random.seed(7)
 
-def N_inv(x): return math.erf(x/math.sqrt(2.0))   # placeholder (unused)
-
 def ito_path(Delta, nsteps, T=1.0):
     """Discrete Itô sum int_0^T Delta(t) dW, Delta taken at left endpoints."""
     dt = T/nsteps; s = 0.0

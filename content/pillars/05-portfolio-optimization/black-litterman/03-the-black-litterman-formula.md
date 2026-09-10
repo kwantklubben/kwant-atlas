@@ -25,7 +25,7 @@ The intuition is a leveraged weighted average. Your prior says "the market is ri
 **Setup.** Prior on the (unknown, random) expected-return vector $r$:
 $$r \sim \mathcal{N}(\Pi,\ \tau\Sigma).$$
 Views, expressed as a noisy linear constraint on $r$ (Black–Litterman 1992, Idzorek eq. 5–6):
-$$P\, r = Q + \varepsilon,\qquad \varepsilon \sim \mathcal{N}(0_H,\ \Omega),$$
+$$P\, r = Q + \varepsilon,\qquad \varepsilon \sim \mathcal{N}(0,\ \Omega),$$
 where $P$ is $K\times N$, $Q$ is $K$, $\Omega$ is $K\times K$. Each row of $P$ is a view: **absolute** view on asset $i$ has $P_{ki}=1$; **relative** view "$i$ out-returns $j$ by $q$" has $P_{ki}=+1,\ P_{kj}=-1$ and $Q=q$.
 
 **Bayesian posterior (conjugate Gaussian).** By the standard Normal–Normal update (the same machinery as Bayesian linear regression — ESL §3; see [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|Bayes & Priors]]), the posterior is Normal with:

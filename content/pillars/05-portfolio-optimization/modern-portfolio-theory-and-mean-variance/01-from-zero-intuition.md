@@ -66,6 +66,7 @@ Equal-vol pair (0.30, 0.30), w=0.5 portfolio volatility vs rho:
   rho=+0.0: vol = 0.2121 (vs 0.3000 for either asset alone)
   rho=+0.3: vol = 0.2419 (vs 0.3000 for either asset alone)
   rho=-0.7: vol = 0.1162 (vs 0.3000 for either asset alone)
+
 Unequal-vol pair (0.25, 0.40): min-variance weight  w*=(s2^2-rho s1 s2)/denom
   rho=0.0: w*_quiet=0.719  vol@w*=0.2120   vol@0.5=0.2358
   rho=0.3: w*_quiet=0.800  vol@w*=0.2366   vol@0.5=0.2658

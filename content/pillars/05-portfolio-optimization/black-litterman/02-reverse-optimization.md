@@ -45,7 +45,7 @@ $$w_{\text{tan}}=\frac{\Sigma^{-1}(\Pi-r_f\mathbf{1})}{\mathbf{1}^T\Sigma^{-1}(\
 The $\delta$ and $r_f$ cancel; the equilibrium is recovered **exactly**. The folklore "drop $r_f$" is precise in this sense: $r_f$ lives in $\Pi$ but drops out of the *weights*.
 
 **Calibrating $\delta$.** Multiply the identity by $w_{mkt}^T$: $w_{mkt}^T\Pi = \delta\, w_{mkt}^T\Sigma w_{mkt}$. The LHS is the market's excess expected return $\mu_{mkt}$, the last term the market variance $\sigma_{mkt}^2$, giving
-$$\delta = \frac{\mu_{mkt}-r_f}{\sigma_{mkt}^2}.$$
+$$\delta = \frac{\mu_{mkt}}{\sigma_{mkt}^2}\qquad(\mu_{mkt}=w_{mkt}^T\Pi\text{ is already the \emph{excess} return, since }\Pi=\delta\Sigma w_{mkt}\text{ is the excess vector}).$$
 Requiring the model to price the market at its own observed Sharpe pins $\delta$ down, removing the entirely free dial.
 
 **The prior.** Returns are modeled as random with *mean* $\Pi$ and covariance $\tau\Sigma$:
@@ -81,9 +81,9 @@ w_rf  = ex / ex.sum()                            # normalize weights to 1
 print("with rf, excess-return round-trip =", np.round(w_rf,5), " == w_mkt?",
       np.allclose(w_rf, w_mkt))
 
-# calibrate delta from the market's own Sharpe ratio
+# calibrate delta from the market's own excess-return / variance ratio
 mu_mkt  = float(w_mkt @ Pi); var_mkt = float(w_mkt @ Sigma @ w_mkt)
-delta_c = (mu_mkt - rf) / var_mkt
+delta_c = mu_mkt / var_mkt          # Pi is already the EXCESS return vector
 print(f"market mu=%.5f var=%.5f  ->  delta_from_market = {delta_c:.3f}"%(mu_mkt,var_mkt))
 Pi_c = delta_c * (Sigma @ w_mkt)
 print("Pi re-calibrated   =", np.round(Pi_c,5))
@@ -92,14 +92,14 @@ print("Pi re-calibrated   =", np.round(Pi_c,5))
 Pi (delta=2.50) = [0.06625 0.04725 0.0465 ]
 reverse round-trip = [0.5 0.3 0.2] == w_mkt? True
 with rf, excess-return round-trip = [0.5 0.3 0.2]  == w_mkt? True
-market mu=0.05660 var=0.02264  ->  delta_from_market = 1.617
-Pi re-calibrated   = [0.04284 0.03055 0.03007]```
+market mu=0.05660 var=0.02264  ->  delta_from_market = 2.500
+Pi re-calibrated   = [0.06625 0.04725 0.0465 ]```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **$\delta$ is not free** — it rescales *both* $\Pi$ and the final $w^\*$. Using $\delta=2.5$ (a guess) versus $\delta\approx1.62$ (market-implied) changes every implied return; see [[pillars/05-portfolio-optimization/black-litterman/06-advanced-extensions|06 · Advanced Extensions]] for the consequence.
+1. **$\delta$ is not free** — it rescales *both* $\Pi$ and the final $w^\*$. Fix $\delta$ by requiring the model to price the market at its own observed Sharpe (here $\delta=\mu_{mkt}^\text{excess}/\sigma_{mkt}^2=2.5$, recovering the given value) — a poorly chosen $\delta$ rescales every implied return; see [[pillars/05-portfolio-optimization/black-litterman/06-advanced-extensions|06 · Advanced Extensions]] for the consequence.
 2. **$w_{mkt}$ must be investable and observable.** If you use a proxy index with poor coverage, or weights that include illiquid positions, the "equilibrium" you invert is garbage. Reverse optimization is only as clean as its inputs.
 3. **Equilibrium is an assumption.** The identity $\tfrac1\delta\Sigma^{-1}\Pi=w_{mkt}$ is *constructed* to hold, not derived from data. If the market is not efficient, $\Pi$ is the return a *model with wrong beliefs* would price, not the true opportunity set.
 

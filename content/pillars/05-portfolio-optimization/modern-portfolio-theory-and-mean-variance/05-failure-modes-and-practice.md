@@ -19,18 +19,22 @@ Mean-variance optimization is *mathematically beautiful and empirically fragile 
 The three failures, in one line each:
 1. **The optimizer is an "estimation-error maximizer"** (Michaud's phrase): it places its biggest bets on the assets whose $\mu$ estimates are *worst* (Best & Grauer 1991 quantify this).
 2. **Covariance inversion instability:** near-collinear assets make $\Sigma^{-1}$ enormous, so tiny eigenvalue noise becomes huge weights.
-3. **Means dominate everything:** errors in $\mu$ are ~10–11× more damaging than errors in $\Sigma$ in the MV objective (Chopra & Ziemba 1993) — and $\mu$ is exactly what we know least.
+3. **Means dominate everything:** errors in $\mu$ are ~11× more damaging than errors in **variances** (and ~21× more than covariances) in the MV objective (Chopra & Ziemba 1993) — and $\mu$ is exactly what we know least.
 
 ---
 
 ### 2. Mathematical Ground Truth & Derivations
 
 **The sensitivity formula.** With the budget-only (unconstrained, shortable) tangency/frontier solution $w=\Sigma^{-1}(\lambda\mathbf{1}+\gamma\mu)$, derivative with respect to one mean:
-$$\frac{\partial w}{\partial \mu_j}=\Sigma^{-1}e_j\;\cdot\;(\text{scalar multipliers}),$$
+$$\frac{\partial w}{\partial \mu_j}=\Sigma^{-1}\!\Big[\tfrac{\partial\lambda}{\partial\mu_j}\mathbf{1}+\tfrac{\partial\gamma}{\partial\mu_j}\mu+\gamma\,e_j\Big],$$
+
+the multiplier derivatives $\partial\lambda/\partial\mu_j,\partial\gamma/\partial\mu_j$ come from re-imposing the two budget/return constraints; they are what makes the response *amplified* (the Best–Grauer effect) rather than the bare $\Sigma^{-1}e_j$.
 i.e. **a change in the mean of asset $j$ is pushed through the full leverage matrix $\Sigma^{-1}$**. When $\Sigma$ has small eigenvalues (assets nearly collinear), $\Sigma^{-1}$ has large eigenvalues, and a tiny change in one $\mu_j$ can move many weights by multiples of 100%. This is the mathematical core of "error maximizer."
 
 **Ranking of input damage (Chopra & Ziemba 1993).** In terms of lost value in the MV objective, as sample size grows the cost of an error in **means** stays roughly constant while the cost of errors in **variances/covariances** falls, so for realistic sample sizes:
-$$\text{cost}(\mu\text{ error}) \approx 10\text{–}11\times \text{cost}(\Sigma \text{ error}),\qquad\text{cost}(\mu\text{ error}) \approx 2\times \text{cost}(\sigma^2 \text{ error}).$$
+$$\text{cost}(\mu\text{ error}) \approx 11\times \text{cost}(\sigma^2 \text{ error}),\qquad\text{cost}(\sigma^2 \text{ error}) \approx 2\times \text{cost}(\text{covariance error}),$$
+
+(Chopra & Ziemba: errors in means are \~11$\times$ as damaging as variance errors and \~21$\times$ as damaging as covariance errors; the ranking is $\mu > \sigma^2 > \sigma_{ij}$.)
 **Why:** the objective rewards $w^T\mu$ linearly but penalizes $w^T\Sigma w$ quadratically in *weight* — noise in $\mu$ selects extreme weights whose variance cost is then borne fully.
 
 **Best & Grauer's headline (1991).** In a 100-asset equally-weighted universe, the mean increase needed to drive the *most sensitive* asset out of the portfolio is just **0.08%**; five assets **0.18%**; ten **0.30%**; and about **11.6%** drives *half* the universe out — **yet the portfolio's own return and standard deviation change almost not at all** (the frontier is deep; the corner weights are shallow).
@@ -103,7 +107,7 @@ Read it twice: **at a perfectly ordinary near-collinear covariance ($\kappa{=}16
 
 1. **Mean-error amplification (the #1 killer).** Because $w\propto\Sigma^{-1}(\mu-r_f\mathbf{1})$, and $\mu$ is the least reliably estimated input, the optimizer bets hardest precisely where the evidence is thinnest. Best & Grauer: a 0.08% mean shift drops the most-sensitive asset. Test: perturb $\mu$ by sampling error and watch $\|w\|$; real deployments *must* shrink or regularize ([[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/06-advanced-extensions|06 · Advanced Extensions]]).
 2. **Small-eigenvalue explosion.** As soon as two assets are near-duplicates ($\rho\to1$), $\Sigma^{-1}$ has a huge eigenvalue and the weights become garbage — the structural root of "why not just optimize over 500 correlated names."
-3. **Means > covariances, always.** Chopra–Ziemba's ~10–11× factor means that pouring effort into a better $\Sigma$ while feeding naive sample *means* still leaves you dominated by mean noise. Priorities: fix $\mu$ (Black–Litterman, shrinkage) before polishing $\Sigma$.
+3. **Means > variances > covariances, always.** Chopra–Ziemba's ~11× factor means that pouring effort into a better $\Sigma$ while feeding naive sample *means* still leaves you dominated by mean noise. Priorities: fix $\mu$ (Black–Litterman, shrinkage) before polishing $\Sigma$.
 4. **The "portrait of the frontier is stable" illusion.** The *frontier curve* is stable under input noise (Best–Grauer: return/SD barely move) while the *corresponding weights* are not. An investor who plots the frontier and trusts the point on it is trusting a knife-edge. Resampling (Michaud) is one fix.
 5. **Constraint leak / nonpositive reality.** Once you add $w\ge0$, turnover caps, and impact costs, the raw optimizer's extreme weights are partially tamed but the *signal* is also lost — the transfer-coefficient idea behind [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]].
 

@@ -40,7 +40,7 @@ Leverage makes risk linear in a *loan* — and a loan does not forgive a correla
 
 ### 3. Computational Implementation — the three failures, measured
 
-**Failure A — correlation regime flips the *risk* of a fixed parity book.** Equity $\sigma_b=18\%$, bonds $\sigma_b=6\%$. The inverse-vol (parity) weights are fixed 25/75 regardless of regime. Ask how much leverage it takes to hit a 9% volatility target, then what happens if the manager sized that leverage in the calm regime and the correlation flips.
+**Failure A — correlation regime flips the *risk* of a fixed parity book.** Equity $\sigma_e=18\%$, bonds $\sigma_b=6\%$. The inverse-vol (parity) weights are fixed 25/75 regardless of regime. Ask how much leverage it takes to hit a 9% volatility target, then what happens if the manager sized that leverage in the calm regime and the correlation flips.
 
 ```python
 import math

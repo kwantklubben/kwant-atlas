@@ -25,7 +25,7 @@ Page 05 established *why* raw MVO is an estimation-error maximizer. This page is
 
 **Shrinkage estimation (Ledoit & Wolf 2004).** Replace the sample covariance $S$ with a convex blend of $S$ and a structural target $F$ (diagonal of variances, or constant-correlation matrix):
 $$\hat\Sigma(\delta)=(1-\delta)\,S+\delta\,F,\qquad \delta\in[0,1].$$
-Ledoit–Wolf choose $\delta^\*$ to minimize expected Frobenius loss $\mathbb{E}\|(1-\delta)S+\delta F-\Sigma\|_F^2$, yielding a closed-form optimal shrinkage intensity that depends only on $S$ and $F$. The effect on the *portfolio* is immediate: the smallest eigenvalues of $\hat\Sigma$ are lifted, so $(\hat\Sigma)^{-1}$ no longer explodes. This is the same regularization spirit as ridge regression in [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]/$20^{th}$-century ESL Ch 3–4.
+Ledoit–Wolf choose $\delta^\*$ to minimize expected Frobenius loss $\mathbb{E}\|(1-\delta)S+\delta F-\Sigma\|_F^2$, yielding a closed-form optimal shrinkage intensity that depends only on $S$ and $F$. The effect on the *portfolio* is immediate: the smallest eigenvalues of $\hat\Sigma$ are lifted, so $(\hat\Sigma)^{-1}$ no longer explodes. This is the same regularization spirit as ridge regression in [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]/ESL (21st-century) Ch 3–4.
 
 **Robust MVO (Goldfarb & Iyengar 2003).** Instead of a point estimate, place the uncertain parameters in a bounded **uncertainty set** $\mathcal{U}=\{\,(\mu,\Sigma):\|\Delta\mu\|\le\varepsilon,\ \text{etc.}\,\}$ and optimize the *worst case*:
 $$\max_w \min_{(\mu,\Sigma)\in\mathcal{U}}\big(w^T\mu-\tfrac12\lambda\, w^T\Sigma w\big),$$

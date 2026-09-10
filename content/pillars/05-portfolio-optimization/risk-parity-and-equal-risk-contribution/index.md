@@ -45,7 +45,7 @@ $$
 | Percentage risk contribution | $RC_i/\sigma(w)$ | ERC: **25.0%** for each of the 4 assets |
 | Euler decomposition | $\sigma(w)=\sum_{i=1}^N RC_i$ | $\sum RC_i = 0.102934 = \sigma$ exactly (verified < $10^{-9}$) |
 | **ERC condition** | $RC_i=RC_j=\sigma(w)/N \iff w_i(\Sigma w)_i=w_j(\Sigma w)_j$ | ERC weights $[0.384,\ 0.192,\ 0.243,\ 0.182]$ |
-| Two-asset ERC (closed form) | $w_1=\dfrac{\sigma_2^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}},\; w_2=\dfrac{\sigma_1^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}}$  *(independent of $\rho$)* | $\sigma_1{=}15.1\%,\sigma_2{=}4.6\%,\rho{=}0.2 \Rightarrow w=[0.234,0.766]$ |
+| Two-asset ERC (closed form) | $w_1=\dfrac{\sigma_1^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}}=\dfrac{\sigma_2}{\sigma_1+\sigma_2},\; w_2=\dfrac{\sigma_2^{-1}}{\sigma_1^{-1}+\sigma_2^{-1}}=\dfrac{\sigma_1}{\sigma_1+\sigma_2}$  *(independent of $\rho$)* | $\sigma_1{=}15.1\%,\sigma_2{=}4.6\%,\rho{=}0.2 \Rightarrow w=[0.234,0.766]$ |
 | Constant-correlation ERC | $w_i=\dfrac{\sigma_i^{-1}}{\sum_j \sigma_j^{-1}}$ *(= inverse-vol)* | vols $10/20/30/40$, $\rho{=}0.3$: $[0.48,0.24,0.16,0.12]$ |
 | Beta form | $w_i\propto \beta_i^{-1},\ \beta_i=\dfrac{(\Sigma w)_i}{\sigma(w)^2}$ *(endogenous)* | useful for interpretation, not closed form |
 | **Risk budgeting** (budgets $b$) | $RC_i(w)=b_i\,\sigma(w),\ \sum b_i=1$ *(ERC = $b_i=1/N$)* | $b=[.40,.30,.20,.10] \Rightarrow w=[0.493,0.190,0.194,0.123]$ |

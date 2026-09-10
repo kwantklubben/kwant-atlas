@@ -86,10 +86,13 @@ for R in (0.10,0.12,0.14):
     an=(C*R*R-2*A*R+B)/D
     ws=str(['%+.3f'%x for x in w])
     print(f"   {R:.2f}    {ws:>24}   {sd:.4f}    {an:.5f}")
-
-# two-fund: every frontier portfolio is wmv + lam*(wt - wmv); pick target 0.12
-w12=frontier(0.12); wt=z.copy()
-lam=(0.12-dot(wmv,mu))/(dot(wt,mu)-dot(wmv,mu))  # placeholder, replaced by true tangency below
+```
+```
+min-variance: w=['0.569', '0.219', '0.212']  mu=0.10574 (=A/C=0.10574) var=0.06905
+frontier  target  ->  w                         sd       analytic (C mu^2-2A mu+B)/D
+   0.10    ['+0.655', '+0.189', '+0.155']   0.2655    0.07051
+   0.12    ['+0.354', '+0.292', '+0.354']   0.2794    0.07807
+   0.14    ['+0.053', '+0.395', '+0.553']   0.3481    0.12115
 ```
 *(The true tangency two-fund combination is carried out with the Sharpe-maximal portfolio on the next page; the section below verifies the all-risky "two-fund" identity using the minimum-variance portfolio and an arbitrary second frontier portfolio.)*
 
@@ -129,11 +132,6 @@ for R in (0.12,0.14):
     print(f"R*={R:.2f}: span error max|w - combo| = {max(abs(w[i]-combo[i]) for i in range(3)):.2e}")
 ```
 ```
-min-variance: w=['0.569', '0.219', '0.212']  mu=0.10574 (=A/C=0.10574) var=0.06905
-frontier  target  ->  w                         sd       analytic (C mu^2-2A mu+B)/D
-   0.10    ['+0.655', '+0.189', '+0.155']   0.2655    0.07051
-   0.12    ['+0.354', '+0.292', '+0.354']   0.2794    0.07807
-   0.14    ['+0.053', '+0.395', '+0.553']   0.3481    0.12115
 R*=0.12: span error max|w - combo| = 8.88e-16
 R*=0.14: span error max|w - combo| = 1.44e-15
 ```

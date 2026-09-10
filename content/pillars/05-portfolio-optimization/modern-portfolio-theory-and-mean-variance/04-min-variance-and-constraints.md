@@ -28,7 +28,7 @@ $$\mathcal{L}=\tfrac12w^T\Sigma w-\lambda(w^T\mathbf{1}-1)\;\Rightarrow\;\Sigma 
 
 **The constrained (long-only) frontier.** Add non-negativity and a return floor:
 $$\min_w \tfrac12 w^T\Sigma w \quad \text{s.t.}\quad w^T\mathbf{1}=1,\quad w\ge0,\quad w^T\mu\ge R^\*.$$
-The KKT conditions now include complementary slackness $\lambda_i w_i=0$: whenever a weight wants to be negative, the optimum *pins it at 0* and re-solves on the remaining assets. The efficient long-only set is therefore built from **(a) the min-var portfolio** (if all-majority-positive) **through (b) successive "corner" portfolios** where one asset exits, **up to (c) the single-asset portfolio** of the highest-return asset. At every corner the active set changes, and beyond the highest return only the best asset survives.
+The KKT conditions now include complementary slackness $\nu_i w_i=0$ (using $\nu_i$ for the per-asset multipliers to avoid colliding with the budget multiplier $\lambda$ above): whenever a weight wants to be negative, the optimum *pins it at 0* and re-solves on the remaining assets. The efficient long-only set is therefore built from **(a) the min-var portfolio** (if all-majority-positive) **through (b) successive "corner" portfolios** where one asset exits, **up to (c) the single-asset portfolio** of the highest-return asset. At every corner the active set changes, and beyond the highest return only the best asset survives.
 
 **Why the min-var answer is "good enough" so often.** Because $w_{\text{mv}}$ uses only $\Sigma$, it is (i) stable under mean noise, and (ii) frequently already positive for well-separated assets — so long-only doesn't bind near it. The binding happens only as $R^\*$ rises and the optimizer tries to short the low-return assets.
 
