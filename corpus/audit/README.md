@@ -35,8 +35,12 @@ listed as recommendations.
 **Navigation / the three jobs**
 - Home page: "New here? Start here" 3-step panel; Foundations relabelled as required.
 - Foundations hub: consumption-order contract (core trio → per-pillar foundations) + exit ramp.
-- Every pillar hub: "Before this pillar (foundations)" line.
-- `content/glossary.md` (term + symbol index) and `content/diagnostics.md` (global symptom→cause→fix).
+- Every pillar hub: "Before this pillar (foundations)" line; all 96 topic hubs: prerequisite-scope clause.
+- `content/glossary.md` (171 term + symbol entries) and `content/diagnostics.md` (344 symptom→cause→fix
+  rows across 9 areas) — the global findability layer the builder audit flagged as missing; both linked
+  from the home page and all 10 area hubs.
+- Counterparty-risk P3/P4 duplicated folder: mirrored scope notes partition the pricing/desk vs
+  risk/regulatory views; quick-lookup tables added to 3 prose-only hubs.
 
 ## Outstanding recommendations (not blocking)
 
