@@ -46,7 +46,8 @@
 - ✅ **Deep-read & verified** the 5 priority gap books: Gatheral (Volatility Surface), Bergomi (Stochastic Volatility Modeling), Duffy (Finite Difference Methods), Haug (Option Pricing Formulas, lookup), Gregory (xVA Challenge). → `corpus/verified/` (now 53 verified files total).
 - ✅ **Built the first topic-folder** as the flagship pattern: `content/pillars/03-derivative-pricing/black-scholes-merton/` (index lookup-hub + 6 sub-pages, committed `73a996b`). All formulas verified, Python runnable.
 - **User review (2026-09-10):** structure approved ("to the point, not too verbose, good structure"). **Coherence + depth-thoroughness review deferred** until more topics are fleshed out — the plan is to build several topic-folders, THEN assess whether the whole hangs together and whether hard areas are deep enough.
-- **In progress / next:** build the next Pillar-3 topic-folders (volatility-surfaces-and-smiles, then Heston/SABR, no-arbitrage-and-binomial, numerical methods, exotics, interest rates, xVA) from the verified corpus.
+- **In progress / next:** ~~build the next Pillar-3 topic-folders~~ **DONE — Pillar 3 complete skeleton.** All 8 topic-folders built and committed: black-scholes-merton, volatility-surfaces-and-smiles, advanced-volatility-heston-sabr, no-arbitrage-and-binomial, numerical-methods, exotic-and-path-dependent-options, interest-rate-and-term-structure, counterparty-risk-and-xva. Each = index lookup-hub + 6 sub-pages, math verified vs corpus, Python runnable. 56 pages / ~648 KB total.
+- **Next:** (a) coherence + depth review of Pillar 3 with the user (the deferred review — now there's enough flesh to judge); (b) lockstep maintenance pass (visualizer.html nodes, index.md diagnostic matrix, pillar index, README, migrate/replace the 6 flat notes); (c) then scale the pattern to other pillars.
 - **Deferred (after pattern approval):** lockstep maintenance (visualizer.html nodes, index.md diagnostic matrix, pillar index, README).
 
 ---
