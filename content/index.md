@@ -32,6 +32,8 @@ graph TD
 
     F["<b>Shared First-Principles Toolbox</b><br/><i>Linear Algebra • Calculus • Probability • Stochastics • Statistics • Bayesian • Econometrics • Numerical • Ergodicity</i>"]
 
+    FA["<b>Fundamentals & Accounting</b><br/><i>(Statements • Ratios • Valuation • Screening • Quality • Capital Structure • Factors • Data)</i>"]
+
     F -.-> QR
     F -.-> HFT
     F -.-> DP
@@ -48,11 +50,16 @@ graph TD
     DP <--> QRisk
     MM <--> QD
     QRisk <--> PO
+    FA <--> QR
+    FA <--> PO
+    FA <--> ML
 
     classDef pillar fill:#1E2530,stroke:#C2EB2B,stroke-width:2px,color:#FFFFFF;
     classDef foundation fill:#0C1016,stroke:#D5F25A,stroke-width:1px,stroke-dasharray: 5 5,color:#C2EB2B;
+    classDef crosscut fill:#161B24,stroke:#7FB3D5,stroke-width:1px,stroke-dasharray: 5 5,color:#9CD0F0;
     class QR,HFT,DP,QRisk,PO,MM,ML,QD pillar;
     class F foundation;
+    class FA crosscut;
 ```
 
 ---
@@ -158,6 +165,25 @@ Before diving into complex models, anchor your intuition in the rigorous mathema
 * 🎛️ **[[foundations/bayesian-statistics/index|Bayesian Statistics]]**: Bayes' theorem, priors, posterior inference, MCMC, and Bayesian regularization.
 * 🔢 **[[foundations/numerical-methods/index|Numerical Methods]]**: Finite differences, Monte Carlo, numerical optimization, and numerical linear algebra.
 * ⏳ **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble vs time averages, multiplicative growth, the Kelly criterion, and ruin theory.
+
+---
+
+## 📊 Fundamentals & Accounting (Cross-Cutting Area)
+
+The company underneath every security. This area sits *alongside* the 8 pillars and the Foundations toolbox, covering how a business is reported, valued, financed, quality-checked, and sourced as data — the shared substrate for both **quantitative** factor projects and **discretionary** fundamental work.
+
+**→ [[fundamentals-accounting/index|Open the Fundamentals & Accounting area hub]]**
+
+The 8 topic-folders, in recommended learning order:
+
+1. [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] — the accounting equation, double-entry, and the three statements.
+2. [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] — profitability, multiples, liquidity, leverage, and the ratio lookup table.
+3. [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] — DCF, cost of capital, multiples, comps, and the margin of safety.
+4. [[fundamentals-accounting/fundamental-analysis-and-screening/index|Fundamental Analysis & Screening]] — Graham-style criteria and mechanical screen construction.
+5. [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] — accruals, earnings management, and the red-flag checklist.
+6. [[fundamentals-accounting/capital-structure-and-corporate-finance/index|Capital Structure & Corporate Finance]] — Modigliani–Miller, the tax shield, distress, and agency costs.
+7. [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] — value, profitability, investment, and accrual *factors*.
+8. [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] — EDGAR/XBRL, vendors, and point-in-time data hygiene.
 
 ---
 

@@ -61,6 +61,23 @@ Underlying all 8 disciplines is a shared transversal foundation of rigorous math
 
 ---
 
+## 📊 Fundamentals & Accounting (Cross-Cutting Area)
+
+A transversal area that sits alongside the 8 pillars and the Foundations toolbox: it explains **how a company actually makes money** — the accounting, financial-statement, valuation, and equity-analysis layer that every factor, screen, and DCF ultimately rests on. No quantitative strategy that touches fundamentals can be judged without this layer.
+
+**Structure:** organised as **8 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus **six sub-pages** (intuition, mathematical ground truth, computational implementation, failure modes & practice, advanced extensions):
+
+1. **[Financial Statements & Accounting](content/fundamentals-accounting/financial-statements-and-accounting/index.md)** — The accounting equation, double-entry, the three statements, and the accrual-vs-cash distinction. Starts from absolute zero.
+2. **[Core Financial Ratios](content/fundamentals-accounting/core-financial-ratios/index.md)** — Profitability, valuation multiples, liquidity & leverage — with the two consistency identities that verify the math.
+3. **[Equity Valuation](content/fundamentals-accounting/equity-valuation/index.md)** — DCF, cost of capital (WACC), terminal value, and EV-to-equity (Damodaran's *Investment Valuation* as the canonical reference).
+4. **[Fundamental Analysis & Screening](content/fundamentals-accounting/fundamental-analysis-and-screening/index.md)** — Graham defensive criteria, value-investing, screening metrics, and the research workflow.
+5. **[Accounting Quality & Red Flags](content/fundamentals-accounting/accounting-quality-and-red-flags/index.md)** — The Sloan accrual measure, the red-flag checklist, and shenanigans detection (Beneish M-score).
+6. **[Capital Structure & Corporate Finance](content/fundamentals-accounting/capital-structure-and-corporate-finance/index.md)** — Modigliani-Miller, debt/equity/seniority, dilution, and buybacks.
+7. **[Quantitative Fundamental Investing](content/fundamentals-accounting/quantitative-fundamental-investing/index.md)** — Fundamental factors (Fama-French, value/profitability, quality & F-scores) as a systematic layer.
+8. **[Data Sources & Corporate Data](content/fundamentals-accounting/data-sources-and-corporate-data/index.md)** — SEC EDGAR & XBRL, commercial providers, insider/ownership data, and point-in-time hygiene.
+
+---
+
 ## 🛠️ First-Principles Diagnostics ("Why Is My Strategy Failing?")
 
 The Atlas features an interactive diagnostic matrix that maps observed production symptoms (e.g. backtest overfitting, pairs spread blowups, covariance collapse, toxic flow execution bleed, delta-hedge gamma slippage) directly to their mathematical root causes and remedy notes.
@@ -88,6 +105,9 @@ Every note cross-references the canonical texts in KwantKlubben's self-study lib
 - **Avellaneda & Stoikov (2008):** *High-frequency trading in a limit order book*
 - **Almgren & Chriss (2000):** *Optimal execution of portfolio transactions*
 - **Peters (2019):** *The Ergodicity Problem in Economics*
+- **Penman:** *Financial Statement Analysis and Security Valuation*
+- **Damodaran:** *Investment Valuation: Tools and Techniques for Determining the Value of Any Asset*
+- **Graham & Dodd:** *Security Analysis*
 
 ---
 
