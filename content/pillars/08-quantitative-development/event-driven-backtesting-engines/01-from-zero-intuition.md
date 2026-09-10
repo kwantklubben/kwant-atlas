@@ -44,9 +44,9 @@ Now the weight that multiplies $r_t$ is measurable at $t-1$, and $\mathbb{E}[r_t
 
 **The execution reality the shift still hides.** Even `shift(1)` assumes you get filled at the *next bar's close*, at zero cost, at unlimited size. A real engine replaces that with a fill condition and a cost:
 
-$$P_{\text{fill}}=S^{\text{ask}}_{t+\tau}(1+s),\qquad \tau=\tau_{\text{struct}}+\tau_{\text{wire}},$$
+$$P_{\text{fill}}=S^{\text{mid}}_{t+\tau}\Bigl(1+\tfrac12 s\Bigr)=S^{\text{ask}}_{t+\tau},\qquad \tau=\tau_{\text{struct}}+\tau_{\text{wire}},$$
 
-where $\tau_{\text{struct}}=1$ is unavoidable (the signal needs a completed bar) and $s$ is the spread-half you cross. The event-driven pages make each term of this equation an explicit number.
+where $\tau_{\text{struct}}=1$ is unavoidable (the signal needs a completed bar) and $s$ is the *quoted spread*: crossing the half-spread $\tfrac12 s$ takes you from the mid to the ask (so the fully-crossed fill price is just $S^{\text{ask}}_{t+\tau}$ — the mid form is the bookkeeping identity, not an extra cost). The event-driven pages make each term of this equation an explicit number.
 
 ---
 

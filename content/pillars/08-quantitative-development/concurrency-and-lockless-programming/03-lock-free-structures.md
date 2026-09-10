@@ -87,7 +87,7 @@ SPSC ring buffer: transferred 100000 items, capacity 1024
   exact and in-order      : True
   no loss / no duplication: True
 ```
-All 100 000 items pass through exactly once, in order, with no loss and no duplication. (Wall time is machine-dependent in CPython's GIL sim, on the order of ~10 ns/item; the real C++ `std::atomic` ring runs at true single-digit nanoseconds.) The producer and consumer never block each other — the only coordination is the two monotonic counters, each owned by one thread. In real C++ with `std::atomic` and `alignas(64)` the same protocol runs at true nanoseconds (see [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++]] for the C++ realisation; the flat concurrency file carries the C++ class).
+All 100 000 items pass through exactly once, in order, with no loss and no duplication. (Wall time in CPython's GIL sim is ~10 µs/item on this box — the GIL serialises the two threads, so the *timing* is not the point; what the sim proves is correctness: exact-once, in-order transfer. A real C++ `std::atomic` ring at the same capacity runs at true single-digit nanoseconds per item.) The producer and consumer never block each other — the only coordination is the two monotonic counters, each owned by one thread. In real C++ with `std::atomic` and `alignas(64)` the same protocol runs at true nanoseconds (see [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++]] for the C++ realisation; the flat concurrency file carries the C++ class).
 
 ---
 

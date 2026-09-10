@@ -48,7 +48,7 @@ This folder is the topic-hub for **event-driven backtesting engines** in Kwant-A
 | Bars to work an order | $B=\big\lceil q/(\rho V_{\text{bar}})\big\rceil$ | $50$ bars $=5.0$ trading days at $10$ bars/day |
 | Annualised Sharpe | $\widehat{SR}=\sqrt{A}\,\dfrac{\hat\mu}{\hat\sigma}$ of the *engine's* equity returns | vectorized $3.50$ vs event-driven $0.03$ |
 
-> **Critical caveat.** The bps figures are engineering magnitudes, not guarantees: they depend on the spread, the venue, and the regime. The **qualitative** result is the stable one — the naive vectorized Sharpe is inflated by roughly an order of magnitude over what the same signal achieves under honest fills. Always re-run on your own data (see [[pillars/08-quantitative-development/event-driven-backtesting-engines/06-advanced-extensions|06 · Advanced Extensions]]).
+> **Critical caveat.** The bps figures are engineering magnitudes, not guarantees: they depend on the spread, the venue, and the regime. The **qualitative** result is the stable one — the naive vectorized Sharpe is inflated by **two orders of magnitude** (the lookup table below measures $\approx116\times$) over what the same signal achieves under honest fills. Always re-run on your own data (see [[pillars/08-quantitative-development/event-driven-backtesting-engines/06-advanced-extensions|06 · Advanced Extensions]]).
 
 **The headline result of this folder** (reproduced exactly by the runnable engine of [[pillars/08-quantitative-development/event-driven-backtesting-engines/04-vectorized-vs-event-driven|04 · Vectorized vs Event-Driven]], mean over 400 synthetic trending paths of 1500 bars):
 

@@ -158,7 +158,7 @@ Four things the trace proves, each a first principle:
 
 1. **Causality holds.** The order is accepted at $t=4$ and fills at $t=7$. It never fills at $t=4$.
 2. **Latency costs money.** The signal fired at mid $100.41$; the fill happened at $100.52$ — the price ran $11$ bps away while the order waited. That is the execution shortfall of the hub lookup, appearing spontaneously.
-3. **The `working` counter matters.** Without subtracting in-flight orders from the target, the Portfolio would re-submit the same 100-share order on every bar until the fill landed, manufacturing a $10\times$ position. Every naive engine does this.
+3. **The `working` counter matters.** The Portfolio nets in-flight quantity out of the target (`d = target − (pos + in-flight)`) so it never *re-submits* size for an order that is already live. In this trace the strategy emits only on change, so dropping the term changes nothing visible (the SELL is simply skipped, `d = 0`); but an engine whose strategy re-emits its target every bar — the common case — would stack a fresh order on top of each unfilled one, multiplying the intended position. Netting `working` is what makes the engine idempotent to repeated signals.
 4. **The SELL order at $t=7$ is stuck in flight.** Activates at $t=10$, data ends at $t=7$, so the position never closes. A real engine must decide what to do with unfilled orders at the last bar — a detail that silently changes reported P&L.
 
 ---

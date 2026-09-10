@@ -132,7 +132,7 @@ Signal-to-fill delay -> shortfall:
 
 The trace reads exactly as the lattice dictates: at $t=3$, `MARKET0` (priority 0) precedes `ORDER` (2) precedes `FILL` (3); then the $t=5$ market events in arrival order. The `ratio` is wall-clock and swings by $10$–$20\%$ between runs and machines — the durable claim is the $O(\log N)$ vs $O(N)$ asymptotics behind it, not the constant.
 
-**Averaged over real strategies, the shortfall grows roughly like $\sqrt{\text{delay}}$**, which is the fingerprint of diffusive price movement. A full 300-path simulation of the momentum strategy in [[pillars/08-quantitative-development/event-driven-backtesting-engines/04-vectorized-vs-event-driven|04]] gives mean realised shortfall rising from $18.81$ bps (delay 1) to $25.13$ bps (delay 100) — an implementation cost that a vectorized backtest simply does not have a slot to record.
+**The shortfall grows with delay, but sub-linearly.** The strategy simulation in [[pillars/08-quantitative-development/event-driven-backtesting-engines/04-vectorized-vs-event-driven|04]] gives mean realised shortfall rising from $18.81$ bps (delay 1) to $25.13$ bps (delay 100) — a factor $1.34$ over a $100\times$ delay, i.e. far slower than the $\sqrt{\text{delay}}$ (10×) that pure diffusion would predict, because the fill rule caps how much delay can hurt. Even that modest rise is an implementation cost a vectorized backtest has no slot to record.
 
 ---
 

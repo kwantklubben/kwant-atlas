@@ -46,7 +46,7 @@ where $C_{\text{setup}}$ is the one-time dispatch cost (negligible for large $N$
 
 $$E_T = E_0 \prod_{t=1}^{T}\big(1 + r^\star_t\big) \;\equiv\; E_0 \exp\Big(\textstyle\sum_{t=1}^{T} \ln(1 + r^\star_t)\Big),$$
 
-which is a single `np.log1p` + `cumsum` + `exp` chain — a handful of C-level passes over the data instead of a day-of-the-month Python loop over every bar.
+which is a single `np.log1p` + `cumsum` + `exp` chain — a handful of C-level passes over the data instead of a bar-by-bar Python loop run in the interpreter.
 
 **The lookup numbers (each reproduced by a verified script in §3 / the sub-pages):**
 
@@ -54,7 +54,7 @@ which is a single `np.log1p` + `cumsum` + `exp` chain — a handful of C-level p
 |---|---|
 | Python loop vs NumPy elementwise (5M elems) | **82.8×** faster (620 ms → 7.5 ms) |
 | Python double-loop vs NumPy broadcasting (1.2M cells) | **122×** faster (0.28 s → 0.002 s) |
-| Python loop vs numba `@njit` (2M dot) | **165.7×** faster; numba within ~2× of numpy (`np.dot` 0.69 ms vs njit 1.96 ms) |
+| Python loop vs numba `@njit` (2M dot) | **165.7×** faster; numba within ~2–3× of numpy (`np.dot` 0.69 ms vs njit 1.96 ms) |
 | GIL: two *threads* on CPU-bound work | speedup ≈ **1.0×** (serialized) — vs **1.9×** for two *processes* |
 | pandas chained assignment `df[mask]["col"]=v` | **write silently lost** (SettingWithCopyWarning), value stays unchanged |
 | pandas `object` vs `float64` column arithmetic | **47×** slower (0.08 ms → 3.93 ms); ~**4×** the memory |

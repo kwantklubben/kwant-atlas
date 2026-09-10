@@ -40,7 +40,7 @@ In words: `9` counts **everything from after the `9` field up to and including t
 
 $$\texttt{10} = \Big(\sum_{i \in [0,E)} b_i\Big) \bmod 256,\qquad \texttt{10} = \text{fmt}(c, \text{“03d”}),\quad \text{so } \texttt{10}=007\ \text{not}\ \texttt{7}.$$
 
-**Integrity properties.** A single flipped bit changes the byte sum by at most $\pm 127$ (well within the mod-256 range), so a corrupted message almost always yields a mismatch — *detection*, not correction. Two independent checks (length and checksum) mean an attacker or a bit-flip must satisfy *both*, which is why a strict parser validates in order: structure → `BeginString` → `BodyLength` → `CheckSum`.
+**Integrity properties.** A single flipped bit changes the byte sum by at most $\pm 128$ (well within the mod-256 range), so a corrupted message almost always yields a mismatch — *detection*, not correction. Two independent checks (length and checksum) mean an attacker or a bit-flip must satisfy *both*, which is why a strict parser validates in order: structure → `BeginString` → `BodyLength` → `CheckSum`.
 
 **Common message bodies (the ones you will actually send/receive).**
 

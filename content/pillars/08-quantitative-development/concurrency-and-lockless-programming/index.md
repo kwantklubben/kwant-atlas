@@ -52,7 +52,7 @@ As $\rho\to1$, $W_q\to\infty$: at 90% utilization a 100 ns critical section cost
 | Queueing wait @ $\rho=0.90$, $E[S]=100$ ns | 450 ns (det.) / 900 ns (jitter) |
 | Queueing wait @ $\rho=0.99$ | 4 950 / 9 900 ns |
 | False sharing (one shared line) | $18\times$ slowdown |
-| SPSC ring, per-item cost (CPython sim) | ~10 ns / item |
+| SPSC ring, per-item cost (CPython GIL sim) | ~10 µs / item (a real C++ `std::atomic` ring is single-digit ns) |
 
 > **Critical caveat.** These are cost *magnitudes*, not guarantees. Real numbers depend on microarchitecture, NUMA placement, and SMT — always re-measure on the target box (see [[pillars/08-quantitative-development/concurrency-and-lockless-programming/06-advanced-extensions|06 · Advanced Extensions]]).
 
@@ -78,8 +78,8 @@ for rho in (0.30, 0.50, 0.70, 0.90, 0.95, 0.99):
     L = rho * (we + es) / es      # Little: L = lambda*W, lambda=rho/es
     print(f"{rho:6.2f}  {wd:20.1f} ns  {we:20.1f} ns  {L:16.1f}")
 
-print("\nReading: at 90% utilization a contending thread waits ~90x the service "
-      "time (450ns for a 100ns CS); at 99% it waits ~50us. Jitter doubles it "
+print("\nReading: at 90% utilization a contending thread waits ~4.5x the service "
+      "time (450ns for a 100ns CS); at 99% it waits ~5us (~10us with jitter). Jitter doubles it "
       "(cs=1 vs cs=0). Locks turn a fast CS into a queue whose latency diverges "
       "as rho -> 1 -- the single structural reason contention is the enemy.")
 ```
@@ -93,7 +93,7 @@ Pollaczek-Khinchine: mean queueing wait vs utilization (es=100 ns)
   0.95                 950.0 ns                1900.0 ns              19.0
   0.99                4950.0 ns                9900.0 ns              99.0
 
-Reading: at 90% utilization a contending thread waits ~90x the service time (450ns for a 100ns CS); at 99% it waits ~50us. Jitter doubles it (cs=1 vs cs=0). Locks turn a fast CS into a queue whose latency diverges as rho -> 1 -- the single structural reason contention is the enemy.
+Reading: at 90% utilization a contending thread waits ~4.5x the service time (450ns for a 100ns CS); at 99% it waits ~5us (~10us with jitter). Jitter doubles it (cs=1 vs cs=0). Locks turn a fast CS into a queue whose latency diverges as rho -> 1 -- the single structural reason contention is the enemy.
 ```
 Read it as an engineering rule: **keep contended sections short and utilization low.** The divergence as $\rho\to1$ is why "just use a lock, it's fast when uncontended" fails — the lock is only cheap while nobody else wants it.
 
