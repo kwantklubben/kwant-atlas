@@ -56,8 +56,8 @@
 - **In progress:** Pillar 7 (Machine Learning & Alt-Data, dir `07-machine-learning-altdata`) — **DONE + lockstep + AUDITED** (9 topic-folders; audit PASS, fixed 10 non-canonical wikilinks, 1 snapshot, hub tag).
 - **In progress:** Pillar 6 (Market Making) — **DONE + lockstep + AUDITED** (10 topic-folders: + dealer-banks-and-otc added to close the audit gap; audit PASS, fixed 12 broken links + hub + flat notes → `_legacy/`).
 - **In progress/complete:** Pillar 2 (Algorithmic Trading & HFT) — **DONE + lockstep + AUDITED** (9 topic-folders; audit PASS — 63/63 template, 67/67 code runs, 0 math errors; fixed a walrus-op MC bug in queue-position/index).
-- **In progress:** Pillar 8 (Quant Dev, dir `08-quantitative-development`) — 7 committed (high-performance-cpp-for-trading, low-latency-linux-and-networking, tick-level-databases-and-timeseries, event-driven-backtesting-engines, concurrency-and-lockless-programming, fix-protocol-and-exchange-connectivity, python-quant-stack). Building: data-infrastructure-and-reproducibility, production-trading-systems (→9). Then lockstep + audit.
-- **Then:** final full-repo build + comprehensive status; merge branch to main (verify, then delete orphan branches).
+- **In progress:** Pillar 8 (Quant Dev, dir `08-quantitative-development`) — **DONE (9 topic-folders)**: high-performance-cpp-for-trading, low-latency-linux-and-networking, tick-level-databases-and-timeseries, event-driven-backtesting-engines, concurrency-and-lockless-programming, fix-protocol-and-exchange-connectivity, python-quant-stack, data-infrastructure-and-reproducibility, production-trading-systems. Lockstep + audit running.
+- **MILESTONE: ALL 8 PILLARS + Foundations + Fundamentals & Accounting are now WRITTEN** (every topic built as folder-per-topic hub + 6 sub-pages, verified Python, LaTeX). Remaining: Pillar 8 lockstep/audit fixes; final full-repo build + link sweep; merge branch `handover/2026-09-09-corpus-research` to main.
 - **Deferred (after pattern approval):** lockstep maintenance (visualizer.html nodes, index.md diagnostic matrix, pillar index, README). — **DONE for Pillar 3.**
 
 ---
