@@ -115,6 +115,16 @@ and are **not** errors — the checker flags them; a human must classify. The ru
 only a defect if the code is deterministic. If the page's fence header says "ms"/"ns/op"/"x", it's
 a benchmark.
 
+The strict checker (exact line-based fence pairing, no regex) then found, beyond the glued-fence
+class: 5 fences drifted only in whitespace, and 2 blocks that printed but had **no** output fence at
+all (one was also missing its *opening* marker, so its output rendered as bare prose). All fixed.
+One block is deliberately unfenced — a network stub labelled "not executed here".
+
+Checkers must be line-based. A regex `` ```python\n(.*?)```\n```\n(.*?)``` `` is non-greedy and will
+silently match a LATER fence when one is missing, reporting a stale comparison (usually a spurious
+"mismatch") instead of the real "no fence" defect. That is why the loose pass produced ~79 noisy
+hits where the strict pass produced ~22 real ones.
+
 ## Legacy-note retirement (duplicate slugs)
 
 19 superseded flat notes were retired to `<pillar>/_legacy/` (never deleted): 10 shared a slug with a
