@@ -96,7 +96,16 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 8. **[Quantitative Development (Quant Engineering)](content/pillars/08-quantitative-development/index.md)**  
    *The software and systems engineering backbone: translating mathematical models into ultra-low-latency production infrastructure.*  
-   Core: High-Performance C++ for Trading (Zero-Allocation, Cache Locality, SIMD), Tick-Level Databases & Time-Series (kdb+/q, DuckDB, ClickHouse, As-Of Joins), Event-Driven Backtesting Engines, FIX Protocol & Exchange Connectivity, Concurrency & Lockless Programming (Disruptor Pattern, Memory Fences), and Production Risk Guards & Kill Switches.
+   **Structure:** organised as **9 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code:
+   1. **[Python Quant Stack](content/pillars/08-quantitative-development/python-quant-stack/index.md)** — The research-and-prototyping layer that front-ends the compiled core: NumPy vectorization, pandas pitfalls, and Numba/JIT acceleration.
+   2. **[High-Performance C++ for Trading](content/pillars/08-quantitative-development/high-performance-cpp-for-trading/index.md)** — Zero-allocation paradigms, CPU cache locality (L1/L2/L3), cacheline false sharing, zero-cost abstraction, and SIMD on the tick-to-trade hot path.
+   3. **[Concurrency & Lockless Programming](content/pillars/08-quantitative-development/concurrency-and-lockless-programming/index.md)** — Why locks are slow, lock-free structures (SPSC ring buffers, the LMAX Disruptor), the C++ memory model, and memory fences.
+   4. **[Low-Latency Linux & Networking](content/pillars/08-quantitative-development/low-latency-linux-and-networking/index.md)** — Turning a stock Linux box deterministic: kernel tuning, kernel-bypass NICs (Solarflare/DPDK), market-data networking, and tail-latency measurement.
+   5. **[Tick-Level Databases & Time-Series](content/pillars/08-quantitative-development/tick-level-databases-and-timeseries/index.md)** — Columnar storage, formats and compression, kdb+/q vs DuckDB/ClickHouse, and point-in-time as-of joins.
+   6. **[Data Infrastructure & Reproducibility](content/pillars/08-quantitative-development/data-infrastructure-and-reproducibility/index.md)** — Data pipelines, versioning and lineage, checksum arithmetic, and the reproducibility triangle.
+   7. **[Event-Driven Backtesting Engines](content/pillars/08-quantitative-development/event-driven-backtesting-engines/index.md)** — Vectorized vs event loops, order state machines, realistic fill models, and deterministic historical replay.
+   8. **[FIX Protocol & Exchange Connectivity](content/pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/index.md)** — Tag-value FIX, session management and sequence recovery, order lifecycles, and binary ITCH/OUCH venue protocols.
+   9. **[Production Trading Systems](content/pillars/08-quantitative-development/production-trading-systems/index.md)** — Lifecycle and deployment, monitoring and alerting, wire-speed risk guards and kill switches, and reconciliation.
 
 ---
 
