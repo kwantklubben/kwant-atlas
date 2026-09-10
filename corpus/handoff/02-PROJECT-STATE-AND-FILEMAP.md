@@ -40,6 +40,15 @@
 3. **Build Pillar 3 to full depth** (folder-per-topic) as the flagship model.
 4. **Review together**, then scale the pattern to other pillars + foundations + fundamentals.
 
+## 3b. BUILD PROGRESS (updated 2026-09-10)
+
+**Pillar 3 (flagship) — in progress.**
+- ✅ **Deep-read & verified** the 5 priority gap books: Gatheral (Volatility Surface), Bergomi (Stochastic Volatility Modeling), Duffy (Finite Difference Methods), Haug (Option Pricing Formulas, lookup), Gregory (xVA Challenge). → `corpus/verified/` (now 53 verified files total).
+- ✅ **Built the first topic-folder** as the flagship pattern: `content/pillars/03-derivative-pricing/black-scholes-merton/` (index lookup-hub + 6 sub-pages, committed `73a996b`). All formulas verified, Python runnable.
+- **User review (2026-09-10):** structure approved ("to the point, not too verbose, good structure"). **Coherence + depth-thoroughness review deferred** until more topics are fleshed out — the plan is to build several topic-folders, THEN assess whether the whole hangs together and whether hard areas are deep enough.
+- **In progress / next:** build the next Pillar-3 topic-folders (volatility-surfaces-and-smiles, then Heston/SABR, no-arbitrage-and-binomial, numerical methods, exotics, interest rates, xVA) from the verified corpus.
+- **Deferred (after pattern approval):** lockstep maintenance (visualizer.html nodes, index.md diagnostic matrix, pillar index, README).
+
 ---
 
 ## 4. Files to update before building content
