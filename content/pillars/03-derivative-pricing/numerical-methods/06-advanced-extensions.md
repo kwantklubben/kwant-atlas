@@ -376,6 +376,6 @@ At 2,000 points in 8 dimensions, low-discrepancy points cut the RMSE from $0.169
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/numerical-methods/04-variance-reduction-and-efficiency|04 · Variance Reduction]] · [[pillars/03-derivative-pricing/numerical-methods/index|Index Hub]]
-- Forward topics: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] (whose 2-D PDE needs ADI/splitting) · [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest Rate & Term Structure Models]] (HJM/LMM simulation, Ch 3.6–3.7 of Glasserman)
+- Forward topics: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (whose 2-D PDE needs ADI/splitting) · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]] (HJM/LMM simulation, Ch 3.6–3.7 of Glasserman)
 - Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|BSM · Advanced Extensions]] (American early exercise and jump-diffusion MC)
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]]
+- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]

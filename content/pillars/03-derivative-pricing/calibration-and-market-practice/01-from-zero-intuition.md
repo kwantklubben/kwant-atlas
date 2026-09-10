@@ -109,4 +109,4 @@ Price-RMSE picks $\\sigma{=}0.239$ (biased to ATM where prices are largest); vol
 
 - Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton Hub]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
 - Continue: [[pillars/03-derivative-pricing/calibration-and-market-practice/02-the-calibration-problem|02 · The Calibration Problem]] · [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]
+- Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

@@ -131,4 +131,4 @@ The payer swap is a *net asset* (EFV > 0 throughout), so FVA is a cost; but noti
 
 - Back: [[pillars/03-derivative-pricing/counterparty-risk-and-xva/03-cva-and-dva|03 · CVA & DVA]]
 - Forward: [[pillars/03-derivative-pricing/counterparty-risk-and-xva/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva/06-advanced-extensions|06 · Advanced Extensions]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Index Hub]]
-- Base: [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest Rate & Term Structure Models]] (the discounting/FVA connection)
+- Base: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]] (the discounting/FVA connection)

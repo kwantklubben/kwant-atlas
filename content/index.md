@@ -81,12 +81,12 @@ Designing automated execution systems operating across the millisecond to nanose
 
 ### 3. [[pillars/03-derivative-pricing/index|Derivative Pricing and Structuring]]
 The traditional sell-side quant domain: valuing non-linear financial contracts and engineering self-financing dynamic hedges.
-- **[[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage Foundations & Binomial Trees]]**: Law of one price, put-call parity, Cox-Ross-Rubinstein discrete replication, and American early exercise.
-- **[[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac Bridge]]**: Delta-neutral hedging, parabolic PDE derivation, and risk-neutral conditional expectations.
-- **[[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]]**: First and higher-order Greeks (Delta, Gamma, Vega, Theta, Vanna, Volga) and the fundamental Gamma-Theta trade-off.
-- **[[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces & Smiles]]**: Numerical root finding, skew/smile dynamics, sticky rules, and Dupire local volatility.
-- **[[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Advanced Volatility: Heston & SABR Models]]**: Stochastic variance processes, the Feller condition, and swaption smile fitting.
-- **[[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest Rate & Term Structure Models]]**: Yield curve bootstrapping, short-rate dynamics (Vasicek, CIR), and the Hull-White framework.
+- **[[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]]**: Law of one price, put-call parity, Cox-Ross-Rubinstein discrete replication, and American early exercise.
+- **[[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac Bridge]]**: Delta-neutral hedging, parabolic PDE derivation, and risk-neutral conditional expectations.
+- **[[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]**: First and higher-order Greeks (Delta, Gamma, Vega, Theta, Vanna, Volga) and the fundamental Gamma-Theta trade-off.
+- **[[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces & Smiles]]**: Numerical root finding, skew/smile dynamics, sticky rules, and Dupire local volatility.
+- **[[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Advanced Volatility: Heston & SABR Models]]**: Stochastic variance processes, the Feller condition, and swaption smile fitting.
+- **[[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]]**: Yield curve bootstrapping, short-rate dynamics (Vasicek, CIR), and the Hull-White framework.
 
 ---
 
@@ -168,7 +168,7 @@ When a quantitative strategy underperforms, drawdowns blow out, or live executio
 | **Pairs trading spread diverges indefinitely into a 5-sigma loss** | Cointegration Structural Break | The underlying linear relationship $z_t = P_A - \beta P_B$ broke down due to corporate or macro shifts. | [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading\|Statistical Arbitrage]] |
 | **Portfolio weights swing violently ($+300\%$ to $-200\%$) on small updates** | Inverted Covariance Noise Maximization ($N > T$) | Unconstrained sample covariance matrix inversion $\Sigma^{-1}$ magnifies empirical noise eigenvalues. | [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising\|Covariance Shrinkage & RMT]] |
 | **Market maker fills 100 consecutive buys right before price crashes** | Toxic Order Flow & Adverse Selection | Passive limit orders at inside spread were swept by informed traders; quote skewing failed to react. | [[pillars/06-market-making/adverse-selection-and-glosten-milgrom\|Adverse Selection (Glosten-Milgrom)]] |
-| **Delta-hedged option portfolio bleeds cash in fast volatile markets** | Discrete Hedging Error & Jump Risk | Black-Scholes continuous rebalancing assumption violated ($dt > 0$); unhedged Gamma loss $\frac{1}{2} S^4 \sigma^4 \Gamma^2 \Delta t$. | [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging\|The Greeks & Dynamic Hedging]] |
+| **Delta-hedged option portfolio bleeds cash in fast volatile markets** | Discrete Hedging Error & Jump Risk | Black-Scholes continuous rebalancing assumption violated ($dt > 0$); unhedged Gamma loss $\frac{1}{2} S^4 \sigma^4 \Gamma^2 \Delta t$. | [[pillars/03-derivative-pricing/black-scholes-merton/index\|Black-Scholes (Greeks & Hedging)]] |
 | **Machine learning model achieves 95% accuracy in-sample, 0% live** | Information Leakage in Cross-Validation | Standard K-Fold CV leaked auto-regressive returns across folds; standard differencing destroyed memory. | [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr\|Financial ML Pitfalls]] |
 | **Trading engine latency spikes from 1 $\mu$s to 2 ms intermittently** | OS Syscall / Dynamic Memory Heap Lock | Fast path called `malloc` or hit OS page fault, triggering kernel context switch and heap contention. | [[pillars/08-quantitative-development/high-performance-cpp-for-trading\|High-Performance C++]] |
 | **Fund suffers catastrophic liquidation during market stress** | Funding & Market Liquidity Spiral | Prime broker hiked margin haircuts; forced liquidations depressed market prices in feedback spiral. | [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals\|Liquidity Risk & Margin Spirals]] |

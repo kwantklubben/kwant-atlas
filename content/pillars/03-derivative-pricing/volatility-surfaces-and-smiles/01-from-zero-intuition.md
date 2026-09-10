@@ -115,4 +115,4 @@ The inversion recovers the skew exactly (28/24/20/17/15%) — confirming that th
 
 - Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · Pricing Formulas]]
 - Continue: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/02-implied-vs-local-vol|02 · Implied vs Local Vol]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surface & Smiles]]
+- Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]]

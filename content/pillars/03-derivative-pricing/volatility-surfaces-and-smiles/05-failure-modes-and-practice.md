@@ -126,4 +126,4 @@ The bad slice produces a **negative risk-neutral density** ($-6.92$ at $k=-0.04$
 
 - Back: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/04-advanced-dynamics|04 · Advanced Dynamics]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|BSM · Failure Modes]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]
+- Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|BSM · Failure Modes]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]

@@ -117,4 +117,4 @@ A *0.4-vol-point* wiggle in the smile blows one reconstructed local variance up 
 
 - Back: [[pillars/03-derivative-pricing/calibration-and-market-practice/04-calibrating-stochastic-vol|04 · Calibrating Stochastic Vol]] · [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/calibration-and-market-practice/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva|Counterparty Risk & XVA]]
+- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva|Counterparty Risk & XVA]]

@@ -107,6 +107,6 @@ The vanilla MC lands on the BSM closed form (terminal-only: the closed form *is*
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac]]
+- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]]
 - Continue: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/02-barriers-and-digitals|02 · Barriers & Digitals]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Index Hub]]
 - Theory: [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus]]

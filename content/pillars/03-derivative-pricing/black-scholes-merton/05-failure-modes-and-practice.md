@@ -103,7 +103,7 @@ for X in (80.0, 100.0, 120.0):
   X=  100: BSM call (sigma=20%) = 10.4506
   X=  120: BSM call (sigma=20%) = 3.2475
 ```
-If the market prices OTM puts richer than this (post-1987 skew), then the *implied* $\sigma$ differs by strike — direct evidence the constant-vol assumption (A1) is false (see [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]).
+If the market prices OTM puts richer than this (post-1987 skew), then the *implied* $\sigma$ differs by strike — direct evidence the constant-vol assumption (A1) is false (see [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]).
 
 ---
 
@@ -112,7 +112,7 @@ If the market prices OTM puts richer than this (post-1987 skew), then the *impli
 1. **The constant-vol delusion (A1 fails).** Real implied vols trace a skew/smile, not a flat line. Since $\sigma$ is the *only* free parameter, forcing one value cannot match all strikes — the model under/overprices systematically by strike and maturity.
 2. **Continuous-hedging friction (A2 fails).** Costs, discrete rebalancing, and gaps turn the "riskless" portfolio into a loss maker, as Experiment 1 shows. There is a fundamental trade: hedge often to control gamma, hedge rarely to control costs.
 3. **Jumps & fat tails (A3 fails).** Real returns jump; $S_T$ is not lognormal. Jumps inject randomness the hedge cannot remove (incomplete markets), so $\mu$-independence breaks and the price is no longer unique. The delta–gamma hedge cannot protect against a discontinuous move.
-4. **Stochastic/rough volatility.** Volatility itself moves randomly (clustering, mean reversion); a *deterministic* $\sigma$ path is wrong even on average. This is the gateway to [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]].
+4. **Stochastic/rough volatility.** Volatility itself moves randomly (clustering, mean reversion); a *deterministic* $\sigma$ path is wrong even on average. This is the gateway to [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]].
 5. **Rate & dividend simplification (A4).** Constant $r$ and no dividends understate term-structure and dividend risk, especially for long-dated and index options.
 
 ---
@@ -130,4 +130,4 @@ If the market prices OTM puts richer than this (post-1987 skew), then the *impli
 
 - Back: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|04 · Greeks & Hedging]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]
+- Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]

@@ -121,4 +121,4 @@ The explosion is not a modelling nicety — $f$ goes from 5% to **1000%** in 20 
 
 - Back: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/04-numeraire-hjm-and-market-models|04 · Numeraire, HJM & Market Models]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]
+- Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]

@@ -10,7 +10,7 @@ tags:
   - ridge
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] and [[pillars/03-derivative-pricing/calibration-and-market-practice/02-the-calibration-problem|02 · The Calibration Problem]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] and [[pillars/03-derivative-pricing/calibration-and-market-practice/02-the-calibration-problem|02 · The Calibration Problem]].
 
 ---
 
@@ -123,7 +123,7 @@ Two lessons jump out. **(1) The free fit recovers the truth** ($\\beta{=}0.51,\\
 
 1. **Non-identifiability of $\\beta/\\rho$ (SABR) and $\\kappa/\\eta$ (Heston).** The smile pins products like $\\rho\\eta$, not the parameters. Different sets fit equally but hedge differently. Regularize or fix one parameter (the desk's convention fixes $\\beta$, e.g. $\\beta{=}0.5$ equity, $\\beta{=}1$ FX).
 2. **One-slice blindness.** A single maturity fits $\\rho$ and $\\chi$ but cannot separate mean reversion; term structure (multiple maturities) is required for $\\lambda$, and even then $\\lambda$ is weakly identified. Gatheral's recipe uses the *term structure of skew* to separate parameters.
-3. **No time-homogeneous SV model fits the market short end.** Gatheral Ch 3: the observed short-dated skew rises faster than Heston allows — a pure diffusion SV model cannot match the far short-end smile; jumps are needed (see [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]). A calibration that "fits" by contorting parameters there is overfitting.
+3. **No time-homogeneous SV model fits the market short end.** Gatheral Ch 3: the observed short-dated skew rises faster than Heston allows — a pure diffusion SV model cannot match the far short-end smile; jumps are needed (see [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]). A calibration that "fits" by contorting parameters there is overfitting.
 4. **Heston's structural deficiencies.** Bergomi Ch 6: Heston hard-wires skew $\\propto 1/\\hat\\sigma$ (inverse to vol level — reality shows the opposite), has a single vol-of-vol time scale $\\propto(1-e^{-kT})/(kT)$, and cannot fit a general variance-swap term structure. Calibrating it to a wide surface forces compromises.
 5. **Incomplete-market pricing choice.** The $\\phi=0$ choice (no vol-risk premium) is a modeling assumption; it affects exotic prices even when the vanilla fit is identical.
 
@@ -142,4 +142,4 @@ Two lessons jump out. **(1) The free fit recovers the truth** ($\\beta{=}0.51,\\
 
 - Back: [[pillars/03-derivative-pricing/calibration-and-market-practice/03-calibrating-local-vol|03 · Calibrating Local Vol]] · [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/calibration-and-market-practice/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]
+- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

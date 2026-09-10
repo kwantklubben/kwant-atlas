@@ -135,4 +135,4 @@ The LV **skew stickiness ratio climbs toward $R=2$–$3$** exactly as the power-
 
 - Back: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/03-surface-models|03 · Surface Models]]
 - Forward: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/06-advanced-extensions|06 · Advanced Extensions]]
+- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/06-advanced-extensions|06 · Advanced Extensions]]

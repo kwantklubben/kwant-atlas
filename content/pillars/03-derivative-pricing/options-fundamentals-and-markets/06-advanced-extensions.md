@@ -61,7 +61,7 @@ The **butterfly** is the discrete "spike": as $K_2\to K_1$ it approaches a $1$-u
 
 - **Insurance floor $+$ cheap upside** $=$ principal-protected note $=$ zero-coupon bond $+$ European call (Hull Ch 12.1): the note's floor at $100$ is the bond; the participation is the call.
 - **Futures/index hedging** (the hedging half) is Hull Ch 3: the minimum-variance ratio, basis, and tailing — developed in [[pillars/03-derivative-pricing/options-fundamentals-and-markets/05-failure-modes-and-practice|05 · Failure Modes]].
-- **Dynamic hedging:** the option's *delta* is the static hedge; rebalancing it is dynamic hedging — the subject of [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]].
+- **Dynamic hedging:** the option's *delta* is the static hedge; rebalancing it is dynamic hedging — the subject of [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]].
 
 ---
 
@@ -131,7 +131,7 @@ Read the table: the **bull call spread is capped** at $K_2-K_1=10$ (it gives up 
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/03-derivative-pricing/options-fundamentals-and-markets/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/options-fundamentals-and-markets/index|Index Hub]]
-- Hedging, deeper: [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|BSM · Greeks & Hedging]]
-- Volatility bets and surfaces: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles|Volatility Surfaces & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]
+- Hedging, deeper: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|BSM · Greeks & Hedging]]
+- Volatility bets and surfaces: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles|Volatility Surfaces & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]
 - Exotics and structured payoffs: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options|Exotic & Path-Dependent Options]]
 - Numerical pricing of non-vanilla payoffs: [[pillars/03-derivative-pricing/numerical-methods|Numerical Methods]]

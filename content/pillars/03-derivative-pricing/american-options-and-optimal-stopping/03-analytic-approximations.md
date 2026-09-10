@@ -190,4 +190,4 @@ BAW vs CRR American put, X=95 r=b=8% sig=30%:
 
 - Back: [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/02-optimal-stopping-theory|02 · Optimal-Stopping Theory]] · [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/04-free-boundary-and-complementarity|04 · Free Boundary]] · [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/05-failure-modes-and-practice|05 · Failure Modes]]
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · Pricing Formulas]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · Pricing Formulas]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]

@@ -108,7 +108,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage Foundations & Binomial Trees]]
+- Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]]
 - Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the constant-$r$ seed this folder generalises)
 - Sub-pages (in-folder): 01 From Zero · 02 Bonds, Yield Curve & Forward Rates · 03 Short-Rate Models · 04 Numeraire, HJM & Market Models · 05 Failure Modes · 06 Advanced Extensions
 
@@ -116,4 +116,4 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 - **Absolute beginner:** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Math + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/02-bonds-yield-curve-forward-rates|02 · Bonds, Yield Curve & Forward Rates]] → [[pillars/03-derivative-pricing/interest-rate-and-term-structure/03-short-rate-models|03 · Short-Rate Models]] → [[pillars/03-derivative-pricing/interest-rate-and-term-structure/04-numeraire-hjm-and-market-models|04 · Numeraire, HJM & Market Models]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/interest-rate-and-term-structure/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|Fixed Income Risk]]
+- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|Fixed Income Risk]]

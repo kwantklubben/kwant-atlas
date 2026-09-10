@@ -149,4 +149,4 @@ The forward LIBOR is driftless under its own measure (MC returns $F(0)$ to $10^{
 
 - Back: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/03-short-rate-models|03 · Short-Rate Models]]
 - Forward: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Index Hub]]
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]]
+- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]

@@ -109,6 +109,6 @@ print("Optimal weights:", np.round(weights, 4))
 
 ### 6. Connected Graph Bridges
 
-- Feeds into: [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]]
+- Feeds into: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Feeds into: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance|Mean-Variance Optimization]]
 - Feeds into: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Almgren-Chriss Optimal Execution]]

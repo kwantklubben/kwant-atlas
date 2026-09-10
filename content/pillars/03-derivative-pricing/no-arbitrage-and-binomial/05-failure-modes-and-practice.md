@@ -149,4 +149,4 @@ The put carries a $+5.2\%$ early-exercise premium that no European formula can s
 
 - Back: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/03-binomial-trees-and-convergence|03 · Trees & Convergence]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|04 · Fundamental Theorems]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/06-advanced-extensions|06 · Advanced Extensions]]
-- Siblings: [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|BSM · 05 Failure Modes]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]
+- Siblings: [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|BSM · 05 Failure Modes]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

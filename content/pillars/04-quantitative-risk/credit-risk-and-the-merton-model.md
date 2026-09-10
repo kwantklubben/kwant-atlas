@@ -7,7 +7,7 @@ tags:
   - default-probability
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton]] and [[foundations/stochastic-calculus-and-ito|Stochastic Calculus]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] and [[foundations/stochastic-calculus-and-ito|Stochastic Calculus]].
 
 ---
 
@@ -110,5 +110,5 @@ print(f"1-Year Implied Default Probability: {p_def*100:.2f}%")
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton]]
+- Foundational Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]]
 - Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]

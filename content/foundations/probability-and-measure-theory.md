@@ -108,5 +108,5 @@ simulate_martingale_and_verify()
 ### 6. Connected Graph Bridges
 
 - Feeds into: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
-- Feeds into: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]]
+- Feeds into: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
 - Feeds into: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]]

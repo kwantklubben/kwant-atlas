@@ -115,6 +115,6 @@ print(f"Theoretical E[S_T]: {theoretical_mean:.2f}")
 
 ### 6. Connected Graph Bridges
 
-- Feeds into: [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton PDE]]
-- Feeds into: [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]]
+- Feeds into: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton PDE]]
+- Feeds into: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Feeds into: [[pillars/06-market-making/the-avellaneda-stoikov-model|Avellaneda-Stoikov Model]]

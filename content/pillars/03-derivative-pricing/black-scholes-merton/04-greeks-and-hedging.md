@@ -105,7 +105,7 @@ gamma-theta: 0.5*G*S^2*sig^2=11.579966 == driftless|theta|=11.579966
 
 - **Haug**, *The Complete Guide to Option Pricing Formulas*, §2 (the complete first/second/third-order Greek set; Table 2-3 reproduced here), §2.10 (ATM-forward approximations), §2.15 (theta, gamma–theta). *Numerically verified.*
 - **Shreve**, *Stochastic Calculus for Finance II*, §4.5 (delta $=c_x$, theta, gamma, vega; the delta-hedging rule eq. 4.5.11).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 19 (the Greeks, hedging). *See also the flat sibling topic* [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]].
+- **Hull**, *Options, Futures, and Other Derivatives*, Ch 19 (the Greeks, hedging). *See also the flat sibling topic* [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]].
 
 ---
 
@@ -113,4 +113,4 @@ gamma-theta: 0.5*G*S^2*sig^2=11.579966 == driftless|theta|=11.579966
 
 - Back: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · Pricing Formulas]]
 - Forward: [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]]
+- Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]

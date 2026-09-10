@@ -8,7 +8,7 @@ tags:
   - turnbull-wakeman
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]].
 
 ---
 
@@ -140,4 +140,4 @@ The geometric closed form and MC agree to ~0.007 (MC $O(1/\sqrt n)$ error), conf
 
 - Back: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/02-barriers-and-digitals|02 · Barriers & Digitals]]
 - Forward: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/04-compound-chooser-quanto-exchange|04 · Compound/Chooser/Quanto/Exchange]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Index Hub]]
-- Theory: [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Theory: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]

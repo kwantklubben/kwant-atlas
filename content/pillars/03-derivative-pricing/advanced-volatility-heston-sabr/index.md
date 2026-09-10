@@ -127,7 +127,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 - Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] · [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/econometrics-and-time-series|Econometrics & Time Series]]
 - Sibling topics: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the constant-$\sigma$ zero point) · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles|Volatility Surfaces & Smiles]] (the empirical object these models must reproduce *and* move)
-- Related flat notes: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest-Rate & Term-Structure Models]] (SABR's home market)
+- Related flat notes: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]] (SABR's home market)
 - Sub-pages (in-folder): 01 From Zero · 02 The Heston Model · 03 SABR & Asymptotics · 04 SV Dynamics · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

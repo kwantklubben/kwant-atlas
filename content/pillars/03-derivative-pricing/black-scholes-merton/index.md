@@ -104,11 +104,11 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/multivariable-calculus-and-optimization|Calculus]]
-- Sibling topic: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage Foundations & Binomial Trees]] (the discrete seed of this model)
+- Sibling topic: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]] (the discrete seed of this model)
 - Sub-pages (in-folder): 01 From Zero · 02 PDE & Derivation · 03 Pricing Formulas · 04 Greeks & Hedging · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/03-derivative-pricing/black-scholes-merton/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|02 · PDE & Derivation]] → [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · Pricing Formulas]] → [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|04 · Greeks & Hedging]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]
+- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]

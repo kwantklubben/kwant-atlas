@@ -43,8 +43,8 @@ $$C_{\text{Merton}}=\sum_{n=0}^{\infty}\frac{e^{-\lambda' T}(\lambda' T)^n}{n!}\
 
 #### 2.3 Beyond: toward local & stochastic volatility (bridges)
 
-- **Local volatility (Dupire):** replace constant $\sigma$ with a deterministic function $\sigma(S,t)$ *calibrated to the entire smile*; the model stays complete (one driver). → [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]].
-- **Stochastic volatility (Heston/SABR):** add a second driver to variance, breaking completeness; characteristic-function/Fourier pricing. → [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]].
+- **Local volatility (Dupire):** replace constant $\sigma$ with a deterministic function $\sigma(S,t)$ *calibrated to the entire smile*; the model stays complete (one driver). → [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]].
+- **Stochastic volatility (Heston/SABR):** add a second driver to variance, breaking completeness; characteristic-function/Fourier pricing. → [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]].
 - **Numerical methods:** finite-difference schemes (Duffy) for the PDE, Monte Carlo (Glasserman) for path-dependent exotics.
 
 ---
@@ -126,7 +126,7 @@ The two-factor jump model prices dramatically higher — constant-vol BSM cannot
 1. **American pricing is a free-boundary problem, not a closed form.** Applying the European formula to an American *put* understates value by the early-exercise premium ($0.24$ here). Use the tree/analytic approximations (Haug Ch 3).
 2. **Jump-diffusion markets are incomplete.** One stock cannot hedge the jump source of randomness, so prices are *not* unique — the Merton price is one (risk-neutral) choice, not a no-arbitrage necessity. This is the theoretical cliff-edge beyond BSM.
 3. **Numerical methods carry their own errors.** Trees have discretization (oscillating) error; MC has $O(n^{-1/2})$ error and needs variance reduction (Glasserman Ch 4); FDM has stability/consistency constraints (Duffy Ch 3). "More steps" is not automatically better — see the failure pages of the linked topics.
-4. **Stochastic-vol parameters are hard to identify.** Heston/SABR free parameters trade off against each other and are notoriously hard to calibrate stably (see [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]).
+4. **Stochastic-vol parameters are hard to identify.** Heston/SABR free parameters trade off against each other and are notoriously hard to calibrate stably (see [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]).
 
 ---
 
@@ -143,5 +143,5 @@ The two-factor jump model prices dramatically higher — constant-vol BSM cannot
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Index Hub]]
-- Forward topic-folder pages: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest Rate Models]]
-- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]]
+- Forward topic-folder pages: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]
+- Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]

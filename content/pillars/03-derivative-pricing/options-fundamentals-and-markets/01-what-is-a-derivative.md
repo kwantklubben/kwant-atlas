@@ -133,5 +133,5 @@ Read the last three lines: the **forward** loses $8$ when $S_T=55$; the **call**
 ### 6. Connected Graph Bridges
 
 - Next: [[pillars/03-derivative-pricing/options-fundamentals-and-markets/02-options-mechanics-and-payoffs|02 · Options Mechanics & Payoffs]] · [[pillars/03-derivative-pricing/options-fundamentals-and-markets/index|Index Hub]]
-- Forward topic-page: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage Foundations & Binomial Trees]] (the discrete seed of this replication idea)
+- Forward topic-page: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]] (the discrete seed of this replication idea)
 - Sibling topic-folders: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure|Interest Rate & Term Structure]] (forwards on rates, FRAs and swaps)

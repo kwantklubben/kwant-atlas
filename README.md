@@ -19,7 +19,7 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 3. **[Derivative Pricing and Structuring](content/pillars/03-derivative-pricing/index.md)**  
    *The traditional sell-side quant domain: valuing non-linear contracts and engineering self-financing hedges.*  
-   Core: No-Arbitrage Foundations & Binomial Trees (CRR), Black-Scholes-Merton PDE & Feynman-Kac Bridge, The Greeks & Dynamic Hedging, Implied Volatility Surfaces & Smiles (Dupire), Advanced Volatility (Heston, SABR), and Interest Rate Term Structure (Vasicek, CIR, Hull-White).
+   **Structure:** organised as **11 topic-folders** (folder-per-topic), each a self-contained study sequence spanning **intro-to-advanced depth** with worked mathematics and code. Topics: Options Fundamentals & Markets, No-Arbitrage & Binomial Trees, Black-Scholes-Merton (PDE, Feynman-Kac, Greeks & Dynamic Hedging), Volatility Surfaces & Smiles (Dupire), Advanced Volatility (Heston, SABR), American Options & Optimal Stopping, Numerical Methods (Finite Difference, Monte Carlo), Exotic & Path-Dependent Options, Interest Rate & Term Structure (Vasicek, CIR, Hull-White), Counterparty Risk & xVA, and Calibration & Market Practice.
 
 4. **[Quantitative Risk Management](content/pillars/04-quantitative-risk/index.md)**  
    *Measuring, bounding, and mitigating financial exposure to guarantee firm survival across extreme market volatility.*  
@@ -74,6 +74,11 @@ Every note cross-references the canonical texts in KwantKlubben's self-study lib
 - **Foucault, Pagano, Röell:** *Market Liquidity: Theory, Evidence, and Practice*
 - **Strang:** *Linear Algebra and Learning from Data*
 - **Lopez de Prado:** *Advances in Financial Machine Learning*
+- **Gatheral:** *The Volatility Surface: A Practitioner's Guide*
+- **Bergomi:** *Stochastic Volatility Modeling*
+- **Duffy:** *Finite Difference Methods in Financial Engineering*
+- **Gregory:** *The xVA Challenge: Counterparty Risk, Funding, Collateral, Capital and Initial Margin*
+- **Haug:** *The Complete Guide to Option Pricing Formulas*
 - **Avellaneda & Stoikov (2008):** *High-frequency trading in a limit order book*
 - **Almgren & Chriss (2000):** *Optimal execution of portfolio transactions*
 - **Peters (2019):** *The Ergodicity Problem in Economics*

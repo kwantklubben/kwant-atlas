@@ -19,7 +19,7 @@ The closed forms in this folder are beautiful, and *three of their assumptions b
 
 1. **Monitoring is discrete, not continuous.** The barrier closed forms assume the barrier is watched continuously. Real contracts (and MC) check at discrete dates, so the discrete price is systematically **above** the continuous one for knock-outs (the grid "misses" touches).
 2. **Pathwise MC Greeks fail for the step payoffs.** Digit/digital and barrier deltas come from a *density*, not a step — pathwise differentiation gives exactly zero (Glasserman Ch 7). Only the likelihood-ratio (score) method recovers the true Greek.
-3. **Correlation is a wobbly input.** Quanto/exchange/spread prices depend on $\rho$; it is the least-stable market parameter, and a small error propagates through the closed forms ([[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]).
+3. **Correlation is a wobbly input.** Quanto/exchange/spread prices depend on $\rho$; it is the least-stable market parameter, and a small error propagates through the closed forms ([[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]).
 
 ---
 
@@ -146,4 +146,4 @@ The pathwise derivative of the digital is identically zero — useless. The like
 
 - Back: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/04-compound-chooser-quanto-exchange|04 · Compound/Chooser/Quanto/Exchange]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]
+- Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]

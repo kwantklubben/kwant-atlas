@@ -137,5 +137,5 @@ Three verified statements in one run: parity pins the put at $8.37909$; the arbi
 
 - Back: [[pillars/03-derivative-pricing/options-fundamentals-and-markets/03-markets-and-products|03 · Markets & Products]] · [[pillars/03-derivative-pricing/options-fundamentals-and-markets/index|Index Hub]]
 - Next: [[pillars/03-derivative-pricing/options-fundamentals-and-markets/05-failure-modes-and-practice|05 · Failure Modes & Practice]]
-- This is the seed of the pillar: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial|No-Arbitrage & the Binomial Model]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage Foundations & Binomial Trees]]
+- This is the seed of the pillar: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial|No-Arbitrage & the Binomial Model]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]]
 - Parity in closed form: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · The Pricing Formulas]]

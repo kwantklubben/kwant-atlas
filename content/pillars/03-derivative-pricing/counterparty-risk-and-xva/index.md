@@ -145,11 +145,11 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 - Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the clean, default-free price xVA adjusts)
 - Related credit: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] (PFE = VaR)
-- Market context: [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest Rate & Term Structure Models]] (swap exposure is the canonical EPE profile)
+- Market context: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]] (swap exposure is the canonical EPE profile)
 - Sub-pages (in-folder): 01 From Zero · 02 Exposure & Margin · 03 CVA & DVA · 04 FVA & MVA · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/03-derivative-pricing/counterparty-risk-and-xva/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/counterparty-risk-and-xva/02-exposure-and-margin|02 · Exposure & Margin]] → [[pillars/03-derivative-pricing/counterparty-risk-and-xva/03-cva-and-dva|03 · CVA & DVA]] → [[pillars/03-derivative-pricing/counterparty-risk-and-xva/04-fva-and-mva|04 · FVA & MVA]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/counterparty-risk-and-xva/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/counterparty-risk-and-xva/06-advanced-extensions|06 · Advanced Extensions]].
-- Back to the clean price: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest Rate Models]]
+- Back to the clean price: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]

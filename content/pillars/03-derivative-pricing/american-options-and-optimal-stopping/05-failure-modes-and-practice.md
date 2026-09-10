@@ -133,4 +133,4 @@ Failure 2 - discrete (Bermudan) exercise costs value vs continuous American:
 
 - Back: [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/04-free-boundary-and-complementarity|04 · Free Boundary]] · [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/06-advanced-extensions|06 · Advanced Extensions]]
-- Practical branches: [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|Numerical Methods · Failure Modes]] · [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|BSM · Failure Modes]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]
+- Practical branches: [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|Numerical Methods · Failure Modes]] · [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|BSM · Failure Modes]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

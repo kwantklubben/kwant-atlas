@@ -7,7 +7,7 @@ tags:
   - discretisation
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton Hub]] (or at least [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]]).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton Hub]] (or at least [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]).
 
 ---
 
@@ -167,4 +167,4 @@ Read the errors: the tree's error falls roughly as $1/n$ ($0.0399 \to 0.0100 \to
 
 - Back: [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · PDE & Feynman-Kac]] · [[pillars/03-derivative-pricing/numerical-methods/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|02 · Finite-Difference Methods]] → [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte-Carlo Pricing]]
-- Sibling: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]] (the lattice this page borrows)
+- Sibling: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the lattice this page borrows)

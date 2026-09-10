@@ -10,7 +10,7 @@ tags:
   - spread-options
 ---
 
-**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] and [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac]].
+**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]].
 
 ---
 
@@ -150,7 +150,7 @@ Kirk spread call = 2.1670  (Haug 2.1670)
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Correlation is the hidden input.** Margrabe, quanto and spread all carry $\rho$; the closed forms *look* like BSM but the effective volatility is correlation-dependent ($\sigma_1^2+\sigma_2^2-2\rho\sigma_1\sigma_2$). A wrong $\rho$ misprices the whole contract — and correlations are notoriously unstable (see [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]).
+1. **Correlation is the hidden input.** Margrabe, quanto and spread all carry $\rho$; the closed forms *look* like BSM but the effective volatility is correlation-dependent ($\sigma_1^2+\sigma_2^2-2\rho\sigma_1\sigma_2$). A wrong $\rho$ misprices the whole contract — and correlations are notoriously unstable (see [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]).
 2. **Quanto adjustment sign.** The drift shift is $-\rho\sigma_S\sigma_E$ in the quanto (domestic payoff at fixed FX); confuse it with the foreign-equity case ($+\rho$ in the combined vol) and you flip the sign of the entire covariance correction.
 3. **Critical-level root finding.** Compound and complex choosers need $I$ solved from a BSM equality; a sloppy root finder (or using the wrong side of the equation) invalidates every bivariate term. The $I$ here is verified ($538.3165$, $51.1156$) — but re-solve it, don't hardcode.
 4. **$M(a,b;\rho)$ is the real cost.** These closed forms hide a bivariate-normal evaluation; a naive/incorrect bivariate routine silently corrupts all four terms. Use the integral form or Genz, and validate against a known anchor before production.
@@ -170,5 +170,5 @@ Kirk spread call = 2.1670  (Haug 2.1670)
 
 - Back: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/03-lookbacks-and-asians|03 · Lookbacks & Asians]]
 - Forward: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Index Hub]]
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
-- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] (the correlation/vol input)
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]] · [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]]
+- Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (the correlation/vol input)

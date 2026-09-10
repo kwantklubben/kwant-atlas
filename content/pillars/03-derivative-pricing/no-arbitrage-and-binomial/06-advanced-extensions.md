@@ -58,7 +58,7 @@ $$\log\frac{S_T}{S_0}=\sigma\sqrt{\Delta t}\sum_{k=1}^{n}\varepsilon_k,\qquad \v
 
 whose variance is $\sigma^2T$ and whose standardized sum converges (CLT / Donsker) to $N\big((r-\tfrac12\sigma^2)T,\sigma^2T\big)$ — the **lognormal of geometric Brownian motion**. Substituting that limiting distribution into the risk-neutral expectation $e^{-rT}\widetilde{\mathbb E}[(S_T-K)^+]$ *is* the Black-Scholes-Merton derivation ([[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · 02]]) — which is exactly why the CRR price converges to the BSM price $O(1/n)$.
 
-Beyond the limit, the two structural extensions are **jump-diffusion** (Merton 1976: a Poisson mixture of lognormals, closed form but an *incomplete* market — FT2 fails, [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|04]]) and **stochastic/local volatility** ([[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]).
+Beyond the limit, the two structural extensions are **jump-diffusion** (Merton 1976: a Poisson mixture of lognormals, closed form but an *incomplete* market — FT2 fails, [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|04]]) and **stochastic/local volatility** ([[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]).
 
 ---
 
@@ -158,5 +158,5 @@ for n in (10, 100, 500, 1000, 5000):
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|Index Hub]]
-- Forward: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest-Rate & Term-Structure Models]] · [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]]
+- Forward: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/probability-and-measure-theory|Probability & Measure Theory]]

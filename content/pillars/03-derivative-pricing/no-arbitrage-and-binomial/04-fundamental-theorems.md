@@ -149,4 +149,4 @@ With two assets the state-price vector lives on a one-dimensional segment ($0<\z
 
 - Back: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/03-binomial-trees-and-convergence|03 · Trees & Convergence]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/06-advanced-extensions|06 · Advanced Extensions]]
-- Siblings: [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · 02 PDE & Derivation]] (completeness via the Martingale Representation Theorem) · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] (an incomplete-market example)
+- Siblings: [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · 02 PDE & Derivation]] (completeness via the Martingale Representation Theorem) · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (an incomplete-market example)

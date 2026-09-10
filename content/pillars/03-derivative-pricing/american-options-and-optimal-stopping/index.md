@@ -125,7 +125,7 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/americ
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/multivariable-calculus-and-optimization|Calculus & Optimization]]
-- Upstream: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton: Hub]] (the PDE being constrained) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]] (the discrete seed of the recursion)
+- Upstream: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton: Hub]] (the PDE being constrained) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the discrete seed of the recursion)
 - **Numerical implementation detail lives elsewhere** (linked, not duplicated): [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|FDM: penalty & PSOR]] · [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|Monte Carlo]] · [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|Numerical Methods · Advanced]]
 - Sub-pages (in-folder): 01 From Zero · 02 Optimal-Stopping Theory · 03 Analytic Approximations · 04 Free Boundary & Complementarity · 05 Failure Modes · 06 Advanced Extensions
 
@@ -133,4 +133,4 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/americ
 - **Absolute beginner:** [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/01-from-zero-intuition|01 · From Zero]] — no prior derivatives knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/03-analytic-approximations|03 · Analytic Approximations]] → [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/04-free-boundary-and-complementarity|04 · Free Boundary]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/02-optimal-stopping-theory|02 · Optimal-Stopping Theory]] → [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Exotic & Path-Dependent Options]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]
+- Forward links: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Exotic & Path-Dependent Options]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

@@ -125,4 +125,4 @@ The degree-6 polynomial cuts the in-sample RMSE by $5\\times$ (0.0082 → 0.0017
 
 - Back: [[pillars/03-derivative-pricing/calibration-and-market-practice/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/03-derivative-pricing/calibration-and-market-practice/03-calibrating-local-vol|03 · Calibrating Local Vol]] · [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]
+- Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

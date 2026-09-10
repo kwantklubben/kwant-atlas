@@ -171,11 +171,11 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/numeri
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/multivariable-calculus-and-optimization|Calculus]]
-- Upstream theory: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton Hub]] (the PDE being discretised) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage & Binomial Trees]] (the discrete seed)
+- Upstream theory: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton Hub]] (the PDE being discretised) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the discrete seed)
 - Sub-pages (in-folder): 01 From Zero · 02 Finite Differences · 03 Monte Carlo · 04 Variance Reduction · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/03-derivative-pricing/numerical-methods/01-from-zero|01 · From Zero]] — no prior numerical knowledge needed.
 - **Working knowledge (undergrad/job-seeking):** [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|02 · Finite Differences]] → [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte Carlo]] → [[pillars/03-derivative-pricing/numerical-methods/04-variance-reduction-and-efficiency|04 · Variance Reduction]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|BSM · Advanced Extensions]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] (whose PDE needs these solvers).
+- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|BSM · Advanced Extensions]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (whose PDE needs these solvers).

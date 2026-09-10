@@ -139,4 +139,4 @@ The two constructions agree to six decimals at every strike — the numerical pr
 
 - Back: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/01-from-zero-intuition|01 · From Zero]] · [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM PDE]]
 - Forward: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/03-surface-models|03 · Surface Models]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]]
+- Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]

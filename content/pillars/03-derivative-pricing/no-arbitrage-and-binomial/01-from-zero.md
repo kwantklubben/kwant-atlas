@@ -122,6 +122,6 @@ The hedge is a **short** position of half a share plus $3.20$ in the bank; it pa
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial-trees|No-Arbitrage Foundations & Binomial Trees]]
+- Base: [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]]
 - Continue: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/02-no-arbitrage-and-risk-neutral|02 · No-Arbitrage & Risk-Neutral]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/black-scholes-merton/01-from-zero-intuition|BSM · 01 From Zero]]

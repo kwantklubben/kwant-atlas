@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]], [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]], and [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô's Lemma]], [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]], and [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]].
 
 ---
 
@@ -111,12 +111,12 @@ Hub signposts — full analysis lives in [[pillars/03-derivative-pricing/calibra
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surfaces]]
-- Sibling models: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton Hub]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest Rate Models]]
+- Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]
+- Sibling models: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton Hub]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]
 - Sub-pages (in-folder): 01 From Zero · 02 The Calibration Problem · 03 Calibrating Local Vol · 04 Calibrating Stochastic Vol · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/03-derivative-pricing/calibration-and-market-practice/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/calibration-and-market-practice/02-the-calibration-problem|02 · The Calibration Problem]] → [[pillars/03-derivative-pricing/calibration-and-market-practice/03-calibrating-local-vol|03 · Calibrating Local Vol]] → [[pillars/03-derivative-pricing/calibration-and-market-practice/04-calibrating-stochastic-vol|04 · Calibrating Stochastic Vol]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/calibration-and-market-practice/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva|Counterparty Risk & XVA]] · [[pillars/03-derivative-pricing/numerical-methods|Numerical Methods]]
+- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva|Counterparty Risk & XVA]] · [[pillars/03-derivative-pricing/numerical-methods|Numerical Methods]]

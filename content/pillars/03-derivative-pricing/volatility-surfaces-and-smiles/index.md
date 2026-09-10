@@ -100,11 +100,11 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 - Foundational base: [[foundations/stochastic-calculus-and-ito|Stochastic Calculus & Itô]] · [[foundations/probability-and-measure-theory|Probability & Measure Theory]] · [[foundations/econometrics-and-time-series|Econometrics & Time Series]]
 - Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the constant-$\sigma$ zero point this folder generalizes)
-- Related flat notes: [[pillars/03-derivative-pricing/implied-volatility-surface-and-smiles|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/the-greeks-and-dynamic-hedging|The Greeks & Dynamic Hedging]]
+- Related flat notes: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Sub-pages (in-folder): 01 From Zero · 02 Implied vs Local Vol · 03 Surface Models · 04 Advanced Dynamics · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/01-from-zero-intuition|01 · From Zero]] — no prior derivatives knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/02-implied-vs-local-vol|02 · Implied vs Local Vol]] → [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/03-surface-models|03 · Surface Models]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/04-advanced-dynamics|04 · Advanced Dynamics]] → [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-and-sabr|Heston & SABR]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure-models|Interest-Rate & Term-Structure Models]]
+- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]]
