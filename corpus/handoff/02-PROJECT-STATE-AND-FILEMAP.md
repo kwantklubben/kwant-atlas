@@ -1,5 +1,14 @@
 # Kwant-Atlas — Project State & File Map (handoff 2026-09-09)
 
+> **STATUS (2026-09-10, end of build session): THE ATLAS IS BUILT AND AUDITED.**
+> All 8 operational pillars + Foundations (math toolbox) + Fundamentals & Accounting are written in the folder-per-topic model and every area has passed its audit.
+> **Scale:** 97 topic-folders, 710 content pages (excl. `_legacy/`), 767 runnable Python blocks, 7.5 MB of markdown. 37 superseded flat notes archived in `_legacy/`.
+> **Pages per area:** P1 77 · P2 64 · P3 78 · P4 98 · P5 64 · P6 71 · P7 70 · P8 65 · Foundations 64 · Fundamentals 57.
+> **Each topic-folder** = `index.md` lookup-hub + 6 sub-pages (`01-from-zero-intuition` → `06-advanced-extensions`): intuition → mathematical ground truth (LaTeX) → runnable verified Python → failure modes → canonical literature → graph bridges.
+> **Site:** `npx quartz build` clean at **747 files**; visualizer 107 nodes / 255 links / 0 dangling; all area hubs list their folders with a reading path; repo-wide wikilink check clean (remaining "dangling" hits are math/numpy-notation false positives).
+> **Branch:** all work committed on `handover/2026-09-09-corpus-research`; merged to `main` at session end.
+
+
 > Everything that exists, where it lives, and what's done. Updated as work progresses — keep this current.
 
 ---
