@@ -70,8 +70,11 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 | 2 | foundations/stochastic-calculus + fundamentals-accounting (8) | — | ✅ done, fixes committed |
 | 3 | pillars/01-quantitative-research (10) | — | ✅ done, fixes committed |
 | 4 | pillars/02-algorithmic-hft (9) + pillars/03 black-scholes-merton | — | ✅ done, fixes committed |
-| 5 | pillars/03-derivative-pricing (remaining 10) | — | running |
-| 6-11 | pillars 04-08 (~59 folders) | — | queued |
+| 5 | pillars/03-derivative-pricing (remaining 10) | — | ✅ done, fixes committed |
+| 6 | pillars/04-quantitative-risk (1st 4) | var-and-expected-shortfall, parametric-historical-and-monte-carlo-var, extreme-value-theory-and-fat-tails, copulas-and-dependence | running |
+| 7+ | pillars 04-08 (~76 folders) | — | queued |
+
+**Pacing:** waves of **4** concurrent agents (one dedicated agent per topic-folder), per instruction.
 
 ## How to re-run
 
