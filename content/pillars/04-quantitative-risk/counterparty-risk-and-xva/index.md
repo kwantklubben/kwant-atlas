@@ -9,6 +9,8 @@ tags:
 
 **Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (derivative valuation) and [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (default probability, LGD). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
+> **Scope note — two views of xVA.** This is the **risk/regulatory view**: exposure profiles (EE/EPE/PFE), collateral & netting, SA-CCR, FVA/MVA and wrong-way risk as a *risk-management* problem. The complementary **pricing/desk view** — xVA as an adjustment to the derivative's price, marked and hedged by the desk — lives at [[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Pillar 3 · Counterparty Risk & xVA]]. Same mathematics, different job; use this folder to govern, that one to price.
+
 ---
 
 ### 1. Intuition & Practical Objective

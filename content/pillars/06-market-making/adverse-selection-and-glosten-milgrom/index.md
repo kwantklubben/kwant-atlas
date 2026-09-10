@@ -24,6 +24,19 @@ This folder is the **adverse-selection and Glosten–Milgrom (1985)** topic-fold
 
 ### 2. Mathematical Ground Truth & Derivations
 
+**Quick lookup.** The folder's key formulas in one table; each is derived on the sub-pages.
+
+| Quantity | Formula | Note |
+| :--- | :--- | :--- |
+| Buy-arrival law | $\mathbb{P}(B\mid V_H)=\tfrac{1+\pi}{2},\ \mathbb{P}(B\mid V_L)=\tfrac{1-\pi}{2}$ | $\pi$ = informed share |
+| Bayesian update | $\theta_t^{+}=\dfrac{\tfrac{1+\pi}{2}\theta_{t-1}}{\tfrac{1+\pi}{2}\theta_{t-1}+\tfrac{1-\pi}{2}(1-\theta_{t-1})}$ | buy raises belief |
+| Zero-profit quotes | ask $=$ E$[V\mid$ buy$]$, bid $=$ E$[V\mid$ sell$]$ | competitive MM |
+| GM spread (symmetric, $\theta=\tfrac12$) | $A-B=\pi\,(V_H-V_L)$ | widens with informed share |
+| P(informed $\mid$ buy) | $\dfrac{2\pi}{1+\pi}$ | toxicity of a fill |
+| PIN (EKOP) | $\dfrac{\alpha\mu}{\alpha\mu+2\varepsilon}$ | $\alpha$=info-event prob, $\mu$=informed rate, $\varepsilon$=noise rate |
+| Kyle lambda | $\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}$, depth $=1/\lambda$ | from Kyle 1985 |
+
+
 **Notation (Foucault/standard):** true value $V\in\{V_L,V_H\}$; prior belief $\theta_t=\mathbb{P}(V=V_H)$; $\pi$ (or $\mu$) $=$ probability a trader is **informed**; $\mu_t=\theta_t V_H+(1-\theta_t)V_L$ the semi-strong efficient price.
 
 #### The Glosten–Milgrom Bayesian market maker (the core)

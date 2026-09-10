@@ -10,6 +10,8 @@ tags:
 
 **Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] and [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]]. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
+> **Scope note — two views of xVA.** This is the **pricing/desk view**: how CVA/DVA/FVA enter the *price* of a derivative and how a desk marks and hedges xVA. The complementary **risk/regulatory view** — capital, netting sets, SA-CCR, wrong-way risk as a risk-management problem — lives at [[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Pillar 4 · Counterparty Risk & xVA]]. Same mathematics, different job; use this folder to price, that one to govern.
+
 ---
 
 ### 1. Intuition & Practical Objective

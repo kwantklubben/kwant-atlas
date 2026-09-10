@@ -28,6 +28,19 @@ It is a *hub*: it (a) gives the **practitioner lookup** below (premiums, IC, the
 
 ### 2. Mathematical Ground Truth & Practitioner Lookup
 
+**Quick lookup.** The folder's key formulas in one table; each is derived on the sub-pages.
+
+| Quantity | Formula | Note |
+| :--- | :--- | :--- |
+| Information coefficient | $IC_t=\mathrm{corr}_i(C_{it},R_{i,t+1})$ | cross-sectional char-return correlation |
+| Fundamental law | $IR\approx IC\times\sqrt{\text{breadth}}$ | Grinold 1989 |
+| Correlated-bets law | $IR_{\text{port}}=IR_1\sqrt{N/\big(1+(N-1)\rho\big)}$ | effective breadth falls with correlation |
+| Factor premium (traded) | $f_t=$ long-short portfolio return | decays post-publication (McLean–Pontiff) |
+| Publication decay | $5\%/\text{yr}\to3.3\%/\text{yr}$ post-publication; OOS $\approx$ 58% of in-sample | `04-post-publication-decay` |
+| Capacity break-even AUM | $A^\star=\dfrac{252\,ADV}{\text{turn}}\Big[\dfrac{g}{2\,\text{turn}\,\lambda\,\sigma}\Big]^2$ | quadratic in $\alpha$ |
+| Factor-timing signal | $S_t$: valuation spread / trend on the factor | IC $\approx0.16$ (val) / $0.21$ (trend) |
+
+
 **Notation:** $R_{it}$ asset $i$ return at $t$; $f_t$ a factor's long-short return; $C_{it}$ security $i$'s characteristic (standardized); $N$ cross-section size; $K$ number of candidate factors; $IC_t$ the cross-sectional information coefficient; $S_t$ a factor-timing signal; $A$ assets under management; $Q$ traded quantity; $ADV$ average daily volume.
 
 **The cross-section of expected returns.** The panel-forecasting view (Cochrane 2011, §II):

@@ -27,6 +27,19 @@ This folder is the quantitative engine layer beneath the accounting-based factor
 
 ### 2. Mathematical Ground Truth & Model Lookup
 
+**Quick lookup.** The folder's key formulas in one table; each is derived on the sub-pages.
+
+| Model / quantity | Formula | Note |
+| :--- | :--- | :--- |
+| FF3 time-series regression | $R_{it}-R_{ft}=\alpha_i+\beta_{i,M}MKT_t+\beta_{i,\text{SMB}}\text{SMB}_t+\beta_{i,\text{HML}}\text{HML}_t+\varepsilon_{it}$ | FF 1993 |
+| FF5 model | $+\,r_i\text{RMW}_t+c_i\text{CMA}_t$ added | FF 2015, eq. 5 |
+| 2×3 sorts | $\text{HML}=\tfrac12(R_{SH}+R_{BH})-\tfrac12(R_{SL}+R_{BL})$ | NYSE breakpoints |
+| SMB | average of the size factors from the B/M, profitability & investment sorts | FF 2015 |
+| Cross-sectional (Barra) fit | $f_t=(X_t'\Omega^{-1}X_t)^{-1}X_t'\Omega^{-1}R_t$ | WLS/GLS per period |
+| Factor covariance | $\Sigma=B\Lambda B'+\Psi$ | systematic + specific |
+| PCA factor number | eigenvalues of $\hat\Sigma$; Kaiser / Bai–Ng | $K$ selection |
+
+
 **Notation:** $R_{it}$ asset $i$ return at $t$; $R_{ft}$ risk-free rate; $R_{Mt}$ market return; $MKT_t=R_{Mt}-R_{ft}$ market excess; $\text{SMB},\text{HML},\text{RMW},\text{CMA}$ the Fama–French factor returns; $X_t$ the $N\times K$ cross-sectional matrix of standardized factor exposures; $f_t\in\mathbb{R}^K$ factor returns; $\Omega$ factor covariance; $\Delta$ diagonal idiosyncratic covariance; $\alpha_i$ the pricing-error/intercept.
 
 **Fama–French 3-factor time-series regression** (Fama & French 1993; Tsay §9.3.2):
