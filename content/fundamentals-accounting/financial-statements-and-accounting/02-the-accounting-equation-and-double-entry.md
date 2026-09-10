@@ -129,4 +129,4 @@ Note *why* debits and credits each total \$37,200: the business recorded every t
 
 - Back: [[fundamentals-accounting/financial-statements-and-accounting/01-from-zero-intuition|01 · From Zero]] · [[fundamentals-accounting/financial-statements-and-accounting/index|Index Hub]]
 - Forward: [[fundamentals-accounting/financial-statements-and-accounting/03-the-three-statements|03 · The Three Statements]] · [[fundamentals-accounting/financial-statements-and-accounting/04-accrual-vs-cash|04 · Accrual vs Cash]]
-- Analysis use: [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]] (reformulation assumes you can reconstruct the books)
+- Analysis use: [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]] (reformulation assumes you can reconstruct the books)

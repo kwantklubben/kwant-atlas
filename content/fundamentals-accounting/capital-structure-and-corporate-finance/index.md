@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] (the three statements) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the leverage, coverage, and ROIC ratios this folder explains).
+**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the three statements) and [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the leverage, coverage, and ROIC ratios this folder explains).
 
 ---
 
@@ -129,7 +129,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[fundamentals-acc
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios — Liquidity & Leverage]]
+- Foundational base: [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios — Liquidity & Leverage]]
 - Sibling topic: [[fundamentals-accounting/equity-valuation/index|Equity Valuation — DCF & WACC]] (WACC is the discount rate this folder explains) · [[fundamentals-accounting/fundamental-analysis-and-screening/index|Fundamental Analysis & Screening]]
 - Sub-pages (in-folder): 01 From Zero · 02 Modigliani–Miller · 03 Debt, Equity & Seniority · 04 Dilution & Buybacks · 05 Failure Modes & Practice · 06 Advanced Extensions
 

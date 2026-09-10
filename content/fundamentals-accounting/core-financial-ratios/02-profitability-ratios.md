@@ -122,4 +122,4 @@ Agreement: ROE==DuPont True, ROE==ROCE True
 
 - Back: [[fundamentals-accounting/core-financial-ratios/01-from-zero-intuition|01 · From Zero]] · [[fundamentals-accounting/core-financial-ratios/index|Index Hub]]
 - Forward: [[fundamentals-accounting/core-financial-ratios/06-advanced-extensions|06 · Advanced Extensions (ROIC decomposition)]] · [[fundamentals-accounting/equity-valuation/index|Equity Valuation]]
-- Base: [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]]
+- Base: [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]]

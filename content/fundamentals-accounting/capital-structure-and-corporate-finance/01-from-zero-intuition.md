@@ -8,7 +8,7 @@ tags:
   - residual-claim
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] (the accounting equation). No prior corporate-finance knowledge needed.
+**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the accounting equation). No prior corporate-finance knowledge needed.
 
 ---
 
@@ -94,5 +94,5 @@ Read the spread: all-equity ranges 6–30%; at 80% debt it ranges **−2% to +11
 
 ### 6. Connected Graph Bridges
 
-- Base: [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios — Liquidity & Leverage]]
+- Base: [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios — Liquidity & Leverage]]
 - Continue: [[fundamentals-accounting/capital-structure-and-corporate-finance/02-modigliani-miller|02 · Modigliani–Miller]] · [[fundamentals-accounting/capital-structure-and-corporate-finance/index|Index Hub]]

@@ -131,7 +131,7 @@ Hub signposts — the folder's full failure-mode analysis lives in [[fundamental
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/financial-statements-and-accounting/04-accrual-vs-cash|Accrual vs. Cash]]
-- Sibling topics: [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the engine this folder defends) · [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] (why an accrual-inflated earnings stream breaks a DCF) · [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]]
+- Sibling topics: [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the engine this folder defends) · [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] (why an accrual-inflated earnings stream breaks a DCF) · [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]]
 - Quantitative layer: [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] (the accruals factor as a screen input) · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
 - Data hygiene: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (point-in-time data, or the whole screen leaks the future)
 - Sub-pages (in-folder): 01 From Zero · 02 The Accrual Anomaly · 03 Detecting Earnings Management · 04 Red Flags & Shenanigans · 05 Failure Modes & Practice · 06 Advanced Extensions

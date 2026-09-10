@@ -134,7 +134,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[fundamentals-acc
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]] · [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the ratios every screen is built from)
+- Foundational base: [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]] · [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] (the ratios every screen is built from)
 - Sibling topics: [[fundamentals-accounting/equity-valuation/index|Equity Valuation — DCF, Comps & Value Logic]] (the intrinsic value a margin of safety is measured against) · [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] (the systematic factor translation of these screens) · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] (the defense layer a screen cannot replace)
 - Data layer: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (EDGAR/XBRL, point-in-time Compustat — where screen inputs come from)
 - Quantitative bridge: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (value, quality, and profitability factors as screened portfolios)

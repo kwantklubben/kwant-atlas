@@ -106,4 +106,4 @@ With NetDebt doubled: EV/EBITDA=10.62 (was 9.60) vs. what P/E does to a buyback 
 
 - Back: [[fundamentals-accounting/core-financial-ratios/02-profitability-ratios|02 · Profitability Ratios]] · [[fundamentals-accounting/core-financial-ratios/index|Index Hub]]
 - Forward: [[fundamentals-accounting/core-financial-ratios/05-failure-modes-and-practice|05 · Failure Modes]] · [[fundamentals-accounting/equity-valuation/index|Equity Valuation — DCF & Comp]s]]
-- Base: [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]]
+- Base: [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]]

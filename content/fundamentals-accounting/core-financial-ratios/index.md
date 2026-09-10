@@ -7,7 +7,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] (the three statements, the accounting equation) and [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]].
+**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the three statements, the accounting equation) and [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]].
 
 ---
 
@@ -136,7 +136,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[fundamentals-acc
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]]
+- Foundational base: [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]]
 - Sibling topic: [[fundamentals-accounting/equity-valuation/index|Equity Valuation — DCF, Comp]s & Value Logic]] (multiples as value, not just description) · [[fundamentals-accounting/capital-structure-and-corporate-finance/index|Capital Structure & Corporate Finance]] (the leverage theory behind the D/E and coverage ratios) · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] (the defense layer that checks every ratio)
 - Sub-pages (in-folder): 01 From Zero · 02 Profitability Ratios · 03 Valuation Multiples · 04 Liquidity & Leverage · 05 Failure Modes & Practice · 06 Advanced Extensions
 

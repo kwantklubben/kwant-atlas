@@ -8,7 +8,7 @@ tags:
   - 10-k
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/fundamental-analysis-and-screening/03-screening-metrics|03 · Screening Metrics]] (the screen that produces candidates) and [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]].
+**Basic Prerequisites:** [[fundamentals-accounting/fundamental-analysis-and-screening/03-screening-metrics|03 · Screening Metrics]] (the screen that produces candidates) and [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]].
 
 ---
 
@@ -120,5 +120,5 @@ The verdict writes itself: **four red flags against one green.** The receivables
 
 - Back: [[fundamentals-accounting/fundamental-analysis-and-screening/03-screening-metrics|03 · Screening Metrics]] · [[fundamentals-accounting/fundamental-analysis-and-screening/02-graham-criteria-and-value-investing|02 · Graham Criteria]] · [[fundamentals-accounting/fundamental-analysis-and-screening/index|Index Hub]]
 - Continue: [[fundamentals-accounting/fundamental-analysis-and-screening/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[fundamentals-accounting/fundamental-analysis-and-screening/06-advanced-extensions|06 · Advanced Extensions]]
-- Depth: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] · [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]]
+- Depth: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] · [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]]
 - Data/source: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (EDGAR, XBRL, point-in-time)

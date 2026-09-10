@@ -7,7 +7,7 @@ tags:
   - ratio-analysis
 ---
 
-**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] (the three statements, the accounting equation). No prior ratio knowledge needed.
+**Basic Prerequisites:** [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] (the three statements, the accounting equation). No prior ratio knowledge needed.
 
 ---
 
@@ -120,5 +120,5 @@ identities: P/E*EY=1.00  ROE(Penman)=34.15%
 
 ### 6. Connected Graph Bridges
 
-- Base: [[fundamentals-accounting/financial-statements-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/financial-statement-analysis/index|Financial Statement Analysis]]
+- Base: [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] · [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|Financial Statement Analysis]]
 - Continue: [[fundamentals-accounting/core-financial-ratios/02-profitability-ratios|02 · Profitability Ratios]] · [[fundamentals-accounting/core-financial-ratios/index|Index Hub]]
