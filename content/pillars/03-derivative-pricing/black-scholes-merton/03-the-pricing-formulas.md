@@ -38,7 +38,7 @@ $$d_1=\frac{\ln(S/X)+\left(b+\tfrac12\sigma^2\right)T}{\sigma\sqrt T},\qquad d_2
 
 #### 2.2 Put–Call Parity (Haug §1.2; Shreve II 4.5.29; Hull 18.1) — model-free
 
-$$c-p = S\,e^{bT}-X\,e^{-rT}.$$
+$$c-p = S\,e^{(b-r)T}-X\,e^{-rT} = e^{-rT}\left(S\,e^{bT}-X\right).$$
 
 Special cases: stock $c-p=S-Xe^{-rT}$; continuous yield $c-p=Se^{-qT}-Xe^{-rT}$; futures $c-p=(F-X)e^{-rT}$; currency $c-p=Se^{-r_fT}-Xe^{-rT}$. *Parity is a pure no-arbitrage identity — it holds regardless of volatility and even for non-lognormal dynamics.*
 

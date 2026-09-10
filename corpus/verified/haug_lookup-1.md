@@ -92,7 +92,7 @@ Confirmed identical to the vol form. ✅
 
 ### 1.9 Parities & symmetries ✅
 **Put-call parity** (eq. 1.13–1.18), generalized (eq. 1.18):
-$$\boxed{\ c-p = Se^{bT}-Xe^{-rT}\ }$$
+$$\boxed{\ c-p = Se^{(b-r)T}-Xe^{-rT} = e^{-rT}\left(Se^{bT}-X\right)\ }$$
 Special cases: stock $c=p+S-Xe^{-rT}$ (1.13); cont. yield $c=p+Se^{-qT}-Xe^{-rT}$ (1.14); futures $c=p+(F-X)e^{-rT}$ (1.15); margined futures $c=p+F-X$ (1.16); currency $c=p+Se^{-r_fT}-Xe^{-rT}$ (1.17). Numeric (1.13): $S{=}100,X{=}105,T{=}0.5,r{=}0.1,c{=}8.5 \Rightarrow p=8.3791$ → reproduced $8.37909$. ✅
 **ATM-forward value symmetry** (1.2.2): put=call when $Se^{bT}=X$ (Nelson 1904); also rho & theta symmetry there (not delta).
 **Put-call symmetry** (Bates 1991/Carr 1994; eq. 1.19) 🔁:

@@ -35,7 +35,7 @@ This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: 
 | $d_2$ | $d_1-\sigma\sqrt T=\dfrac{\ln(S/X)+\left(b-\tfrac12\sigma^2\right)T}{\sigma\sqrt T}$ | — |
 | Generalized call $c$ | $S\,e^{(b-r)T}N(d_1)-X\,e^{-rT}N(d_2)$ | $S{=}60,X{=}65,T{=}.25,r{=}.08,\sigma{=}.30 \Rightarrow c=2.13337$ |
 | Generalized put $p$ | $X\,e^{-rT}N(-d_2)-S\,e^{(b-r)T}N(-d_1)$ | Merton $p=2.46479$ ($q{=}5\%$) |
-| **Put–call parity** | $c-p=S\,e^{bT}-X\,e^{-rT}$ | $S{=}100,X{=}105,T{=}.5,r{=}.10$: $C+Xe^{-rT}=P+S=105.57354$ |
+| **Put–call parity** | $c-p=S\,e^{(b-r)T}-X\,e^{-rT}$ | $S{=}100,X{=}105,T{=}.5,r{=}.10$: $C+Xe^{-rT}=P+S=105.57354$ |
 | Delta call | $e^{(b-r)T}N(d_1)$ | $0.503105$ |
 | Gamma (call=put) | $\dfrac{e^{(b-r)T}n(d_1)}{S\,\sigma\sqrt T}$ | $0.026794$ |
 | Vega (call=put) | $S\,e^{(b-r)T}n(d_1)\sqrt T$ | raw $19.2999$, per 1 vol-point $0.1930$ |

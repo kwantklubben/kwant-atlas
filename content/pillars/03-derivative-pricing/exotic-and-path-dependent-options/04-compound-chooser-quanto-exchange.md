@@ -10,7 +10,7 @@ tags:
   - spread-options
 ---
 
-**Basic Prerequisites:** [[foundations/multivariable-calculus-and-ito|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac]].
+**Basic Prerequisites:** [[foundations/multivariable-calculus-and-optimization|Multivariable Calculus & Optimization]] and [[pillars/03-derivative-pricing/black-scholes-merton-and-feynman-kac|Black-Scholes-Merton & Feynman-Kac]].
 
 ---
 
