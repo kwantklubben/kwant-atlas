@@ -65,7 +65,16 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 7. **[Machine Learning and Alternative Data](content/pillars/07-machine-learning-altdata/index.md)**  
    *Extracting non-linear signals and structural patterns from alternative, unstructured, and high-dimensional datasets.*  
-   Core: Financial ML Pitfalls (Microscopic SNR, Non-Stationarity, Data Leakage), Tree-Based Factor Ranking & Purged CV (LightGBM, XGBoost, MDA), Financial NLP & Transcripts (FinBERT, 10-K deltas), Alternative Data Pipelines (Point-in-Time Hygiene), Regime Classification (HMM, GMM), and Deep Learning for Sequential Data (LSTM, Transformers).
+   Nine topic folders:
+   1. [Financial ML Pitfalls & Low SNR](content/pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index.md) — Why standard ML fails: microscopic SNR, non-stationarity, data leakage.
+   2. [Purged Cross-Validation & Backtest Hygiene](content/pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index.md) — Why vanilla K-fold leaks, purge/embargo, and Combinatorial Purged CV.
+   3. [Tree & Boosting Methods](content/pillars/07-machine-learning-altdata/tree-and-boosting-methods/index.md) — Decision trees, random forests, and gradient boosting (LightGBM/XGBoost) for tabular factors.
+   4. [Financial NLP & Transcripts](content/pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index.md) — Bag-of-words to FinBERT sentiment and LLM extraction on earnings transcripts and SEC filings.
+   5. [Alternative Data Pipelines & Evaluation](content/pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index.md) — The alt-data lifecycle with point-in-time hygiene and alpha-decay evaluation.
+   6. [Deep Learning for Sequences](content/pillars/07-machine-learning-altdata/deep-learning-for-sequences/index.md) — RNNs/LSTMs, attention & transformers, and autoencoders for tick/bar series.
+   7. [Reinforcement Learning for Trading](content/pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/index.md) — Trading as an MDP: value-based RL, policy-gradient, and actor-critic methods.
+   8. [Regime Classification: HMM & GMM](content/pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index.md) — Unsupervised regime detection via GMM/K-means, EM, and hidden Markov models.
+   9. [ML for Portfolio Construction](content/pillars/07-machine-learning-altdata/ml-for-portfolio/index.md) — From model forecasts to positions: ensembling and ML-driven covariance/portfolio inputs.
 
 8. **[Quantitative Development (Quant Engineering)](content/pillars/08-quantitative-development/index.md)**  
    *The software and systems engineering backbone: translating mathematical models into ultra-low-latency production infrastructure.*  
