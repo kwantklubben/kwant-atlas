@@ -151,4 +151,4 @@ Three readings: **(1)** the exact order statistic tracks Monte Carlo (2.531 vs 2
 
 - Back: [[pillars/01-quantitative-research/backtesting-hygiene/02-why-backtests-lie|02 · Why Backtests Lie]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · The Deflated Sharpe Ratio]] (the order statistic becomes the DSR threshold) → [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|06 · PBO & Reality Check]]
-- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]

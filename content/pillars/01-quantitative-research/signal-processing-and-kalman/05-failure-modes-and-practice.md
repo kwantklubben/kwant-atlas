@@ -140,4 +140,4 @@ Failure mode B - collapse & divergence when the model says 'static' (q=0)
 
 - Back: [[pillars/01-quantitative-research/signal-processing-and-kalman/04-time-varying-beta|04 · Time-Varying Beta]]
 - Continue: [[pillars/01-quantitative-research/signal-processing-and-kalman/06-advanced-extensions|06 · Smoothing & Particle Filters]] · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Index Hub]]
-- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene|Backtesting Hygiene & Deflated Sharpe]] (validate the strategy, not just the filter) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]]
+- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene|Backtesting Hygiene & Deflated Sharpe]] (validate the strategy, not just the filter) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Stat-Arb & Pairs Trading]]

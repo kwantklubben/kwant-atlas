@@ -30,7 +30,7 @@ Plus the transversals: **VaR isn't subadditive**, and **every VaR must be backte
 
 **Every method lives on the same quantile, so the failures reduce to "which distribution did you use?"**
 
-- **Parametric:** assumes $L\sim N(\mu,\sigma_p^2)$, so $\text{VaR}=z_\alpha\sigma_p\sqrt h$. The *entire* method is the normality assumption. Real returns have heavier tails (Bollerslev vol clustering; see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT]]).
+- **Parametric:** assumes $L\sim N(\mu,\sigma_p^2)$, so $\text{VaR}=z_\alpha\sigma_p\sqrt h$. The *entire* method is the normality assumption. Real returns have heavier tails (Bollerslev vol clustering; see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]]).
 - **Historical:** uses the empirical $\hat F_n$, so the VaR is $-\hat F_n^{-1}(1-\alpha)$. Its bias is **window selection**: the empirical quantile of a 250-day window vs a 1500-day window can differ hugely because the 5 worst days differ.
 - **Monte Carlo:** uses a *chosen* model density $g$; VaR = quantile of simulated $g$-losses. Its failure is **modeling error** (wrong $g$) plus **simulation error** $\propto\sqrt{p/f(x_p)^2}$.
 
@@ -85,7 +85,7 @@ clean 500-day historical VaR_99     = 3,348.79
 crash sitting in the window         = 3,465.15
 after it ages out of a 250-day window = 3,195.63
 ```
-The crash lifts VaR by ~$116 while present, then pulls it ~$153 *below* the clean level once it scrolls off. **The portfolio didn't change — the estimator did.** This is the ghost effect: historical VaR is an *ordering artifact*, not a live risk signal. Filtered HS ([[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/03-historical-simulation|03]]) and EVT tails ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT]]) are the two mitigations.
+The crash lifts VaR by ~$116 while present, then pulls it ~$153 *below* the clean level once it scrolls off. **The portfolio didn't change — the estimator did.** This is the ghost effect: historical VaR is an *ordering artifact*, not a live risk signal. Filtered HS ([[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/03-historical-simulation|03]]) and EVT tails ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]]) are the two mitigations.
 
 **Experiment 3 — MC inherits its model.** (Covered in [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/04-monte-carlo-var|04]]: simulate the same portfolio under normal vs Student-t factors and the VaR jumps, even though both have *identical* variance.) Same logic, heavier coat: MC with a bad model is a precise estimate of a wrong number.
 
@@ -93,9 +93,9 @@ The crash lifts VaR by ~$116 while present, then pulls it ~$153 *below* the clea
 
 ### 4. Failure Modes & First-Principles Breakdowns (numbered)
 
-1. **Normality assumption (parametric; A1 of 02).** The whole delta-normal formula is a normal quantile. Fat tails make it breach underpriced — 1.56% vs the promised 1.00% (Exp. 1). *Fix at the source:* [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT tail fitting]], Cornish–Fisher (page 06), or move to ES.
+1. **Normality assumption (parametric; A1 of 02).** The whole delta-normal formula is a normal quantile. Fat tails make it breach underpriced — 1.56% vs the promised 1.00% (Exp. 1). *Fix at the source:* [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT tail fitting]], Cornish–Fisher (page 06), or move to ES.
 2. **Ghost / window artifact (historical; assumption H1–H2 of 03).** The VaR is pinned by a handful of worst days; it jumps on an old crash and collapses when that crash scrolls off (Exp. 2). *Fix:* filtered HS, volatility weighting, longer-but-filtered windows.
-3. **Model error in MC (MC).** A normal-factor or wrong-correlation MC is a precise wrong answer; and full-vs-partial revaluation is a bias-versus-variance tradeoff, not a shortcut-with-no-cost. *Fix:* honest factor modeling ([[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|stress tests]] as a cross-check).
+3. **Model error in MC (MC).** A normal-factor or wrong-correlation MC is a precise wrong answer; and full-vs-partial revaluation is a bias-versus-variance tradeoff, not a shortcut-with-no-cost. *Fix:* honest factor modeling ([[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|stress tests]] as a cross-check).
 4. **VaR is not subadditive.** $\text{VaR}(X+Y)$ can exceed $\text{VaR}(X)+\text{VaR}(Y)$, so summed desk VaRs can *understate* firm risk (Artzner et al. 1999) — why regulators moved to coherent ES.
 5. **No backtest, no model.** A VaR you don't validate against realized breaches is a confidence sticker on a guess. Every method above must be backtested (Kupiec + Christoffersen) or it fails silently ([[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/06-advanced-extensions|06]]).
 
@@ -115,4 +115,4 @@ The crash lifts VaR by ~$116 while present, then pulls it ~$153 *below* the clea
 
 - Back: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/04-monte-carlo-var|04 · Monte Carlo VaR]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Index Hub]].
 - Forward: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/06-advanced-extensions|06 · Delta–Gamma & Backtesting]].
-- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]].
+- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]].

@@ -126,5 +126,5 @@ This is the exact mechanism that, at scale, silently eats increments, order coun
 
 - Back: [[pillars/08-quantitative-development/concurrency-and-lockless-programming/04-memory-model-and-ordering|04 · Memory Model & Ordering]] · [[pillars/08-quantitative-development/concurrency-and-lockless-programming/index|Index Hub]]
 - Forward: [[pillars/08-quantitative-development/concurrency-and-lockless-programming/06-advanced-extensions|06 · Advanced Extensions]]
-- Cross-pillar: [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]] (futexes, scheduler, priority policies) · [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] (why a kill switch must be wait-free, not lock-free)
+- Cross-pillar: [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]] (futexes, scheduler, priority policies) · [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] (why a kill switch must be wait-free, not lock-free)
 - Sibling: [[pillars/08-quantitative-development/high-performance-cpp-for-trading/05-failure-modes-and-practice|High-Performance C++ · 05 Failure Modes]]

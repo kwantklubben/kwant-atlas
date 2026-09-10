@@ -140,5 +140,5 @@ The merge join does $679\times$ fewer comparisons on a *small* input — and in 
 
 - Back: [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/03-compression|03 · Compression]] · [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/index|Index Hub]]
 - Forward: [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/06-advanced-extensions|06 · Advanced Extensions]]
-- Consumers: [[pillars/08-quantitative-development/event-driven-backtesting-engines|Event-Driven Backtesting Engines]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation|Alternative Data Pipelines]]
+- Consumers: [[pillars/08-quantitative-development/event-driven-backtesting-engines|Event-Driven Backtesting Engines]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alternative Data Pipelines]]
 - Point-in-time discipline (the same as-of idea, for fundamentals): [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]]

@@ -126,4 +126,4 @@ Reading it: the three models span $10.45\to11.40$, a $\pm5\%$ range; BIC weighti
 
 - Back: [[pillars/04-quantitative-risk/model-risk-and-validation/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/04-quantitative-risk/model-risk-and-validation/04-model-risk-management|04 · Model-Risk Management]]
 - Base: [[foundations/bayesian-statistics/index|Bayesian Statistics]] · [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Coherent Risk Measures]]
-- Forward: [[pillars/04-quantitative-risk/model-risk-and-validation/index|Index Hub]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]] (ensembles, stacking, low-SNR uncertainty)
+- Forward: [[pillars/04-quantitative-risk/model-risk-and-validation/index|Index Hub]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] (ensembles, stacking, low-SNR uncertainty)

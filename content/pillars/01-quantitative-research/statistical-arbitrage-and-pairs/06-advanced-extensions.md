@@ -19,7 +19,7 @@ Three extensions take StatArb beyond the two-asset t-test:
 
 1. **Johansen's multivariate test** — instead of a *pair*, allow a *basket* and ask "how many* independent equilibrium relationships exist?" (the cointegrating rank). This is the correct tool when several assets share the same factors and you do not want to pre-pick a pair.
 2. **Optimal stopping / stochastic control of the OU spread** — instead of fixed $2\sigma$ thresholds, solve for the thresholds that maximise expected return per unit time net of costs.
-3. **Dynamic hedging (Kalman filter)** — replace the static OLS $\beta$ with a time-varying $\beta_t$ estimated recursively, so the hedge adapts when the relationship drifts (the bridge to [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]]).
+3. **Dynamic hedging (Kalman filter)** — replace the static OLS $\beta$ with a time-varying $\beta_t$ estimated recursively, so the hedge adapts when the relationship drifts (the bridge to [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]]).
 
 All three keep the OU spread at the centre; they differ in how many assets and how much structure they assume.
 
@@ -163,6 +163,6 @@ The procedure recovers the simulated rank exactly: the first trace statistic ($1
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Index Hub]]
-- Sibling: [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] (dynamic hedge ratio) · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (factor choice for residuals)
+- Sibling: [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]] (dynamic hedge ratio) · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (factor choice for residuals)
 - Foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] (for the OU first-passage solution)
 - Cross-pillar: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]

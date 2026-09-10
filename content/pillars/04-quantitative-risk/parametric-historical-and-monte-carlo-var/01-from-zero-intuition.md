@@ -44,7 +44,7 @@ $$\text{VaR}_\alpha^{(h)} = \text{VaR}_\alpha^{(1)} \cdot \sqrt{h}.$$
 
 This is the famous **$\sqrt{h}$ rule** (Hull Ch 22: "N-day VaR = 1-day VaR × √N"). It is *exact only under i.i.d. normal-ish returns* — when losses cluster (GARCH), the true $h$-day VaR scales slower or faster — a failure mode in [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05]].
 
-**Why a quantile at all? (vs the average loss).** The average loss (Expected Shortfall, [[pillars/04-quantitative-risk/var-and-expected-shortfall|ES]]) answers "given I'm in the tail, how bad is it?", which is why regulators now prefer it. But VaR is the historically standard number: it is a *single market-stable capital figure* a board can hold, and it is *computable* from each of the three methods below.
+**Why a quantile at all? (vs the average loss).** The average loss (Expected Shortfall, [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|ES]]) answers "given I'm in the tail, how bad is it?", which is why regulators now prefer it. But VaR is the historically standard number: it is a *single market-stable capital figure* a board can hold, and it is *computable* from each of the three methods below.
 
 ---
 
@@ -90,7 +90,7 @@ Watch the behavior: the **median loss is negative** (a typical day is a small *g
 1. **"The 99% VaR."** Saying just that is ambiguous — VaR lives in (confidence, horizon) space: 99% *what*? 1-day or 10-day? Differ by $\sqrt{10}\approx3.16$. Cite both, always.
 2. **Quantile instability in the tail.** Less data lives out at 99.9%, so estimates bounce wildly (Glasserman Ch 9: quantile-estimation variance $\propto p(1-p)/f(x_p)^2$ blows up as $p\to0$). The 99.9% number in §3 is the *least* reliable of the four.
 3. **Sign errors.** Loss $L=-\Delta V$; compute VaR on the wrong sign and you have quoted gains as risk. Getting VaR from P&L requires taking `-` exactly once, in the right place.
-4. **VaR isn't subadditive.** $\text{VaR}(X+Y)$ can exceed $\text{VaR}(X)+\text{VaR}(Y)$ (Artzner et al. 1999; [[pillars/04-quantitative-risk/var-and-expected-shortfall|ES is the coherent fix]]). Summing desk VaRs to get firm VaR can *understate* risk — dangerous precisely because it feels safe.
+4. **VaR isn't subadditive.** $\text{VaR}(X+Y)$ can exceed $\text{VaR}(X)+\text{VaR}(Y)$ (Artzner et al. 1999; [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|ES is the coherent fix]]). Summing desk VaRs to get firm VaR can *understate* risk — dangerous precisely because it feels safe.
 
 ---
 
@@ -104,6 +104,6 @@ Watch the behavior: the **median loss is negative** (a typical day is a small *g
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (quantiles, tail probabilities) · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] (the measure's definition and its limits).
+- Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (quantiles, tail probabilities) · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (the measure's definition and its limits).
 - Continue: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/02-parametric-var|02 · Parametric (delta-normal) VaR]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Index Hub]].
 - Forward: [[foundations/numerical-methods/index|Numerical Methods]].

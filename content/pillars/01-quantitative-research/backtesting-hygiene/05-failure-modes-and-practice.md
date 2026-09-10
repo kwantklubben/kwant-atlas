@@ -134,5 +134,5 @@ A gate that **passes at zero cost fails at 2 bps** — a cost level no high-turn
 
 - Back: [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · Deflated Sharpe]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|06 · Purged CV, PBO & Reality Check]]
-- Siblings: [[pillars/01-quantitative-research/feature-engineering-and-labeling|Feature Engineering & Labeling]] (triple-barrier labels determine the purge width) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]] (turnover-heavy, cost-sensitive)
-- Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Siblings: [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (triple-barrier labels determine the purge width) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Stat-Arb & Pairs Trading]] (turnover-heavy, cost-sensitive)
+- Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]

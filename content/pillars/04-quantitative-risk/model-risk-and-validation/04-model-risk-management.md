@@ -131,4 +131,4 @@ Reading it: the **VaR engine** is the most material model but scores *lowest* ($
 
 - Back: [[pillars/04-quantitative-risk/model-risk-and-validation/03-validation-and-backtesting|03 · Validation & Backtesting]] · [[pillars/04-quantitative-risk/model-risk-and-validation/02-sources-of-model-risk|02 · Sources of Model Risk]]
 - Forward: [[pillars/04-quantitative-risk/model-risk-and-validation/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/04-quantitative-risk/model-risk-and-validation/06-advanced-extensions|06 · Advanced Extensions]] · [[pillars/04-quantitative-risk/model-risk-and-validation/index|Index Hub]]
-- Sibling: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|Value at Risk & Expected Shortfall]] (the 1996 IMA capital link)
+- Sibling: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] (the 1996 IMA capital link)

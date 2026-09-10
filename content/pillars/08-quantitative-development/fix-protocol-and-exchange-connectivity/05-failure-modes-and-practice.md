@@ -167,4 +167,4 @@ The first two blocks are the desync proof: the same replay produces **500 phanto
 
 - Back: [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/04-order-lifecycle-and-connectivity|04 · Order Lifecycle & Connectivity]] · [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/03-session-management|03 · Session Management]] · [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/index|Index Hub]]
 - Forward: [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] · [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]]
+- Sibling: [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] · [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]]

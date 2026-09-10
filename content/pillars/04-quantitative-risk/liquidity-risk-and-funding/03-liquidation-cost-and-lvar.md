@@ -31,7 +31,7 @@ Three ideas carry the page:
 
 **2.1 Exogenous liquidation cost (spread).** Selling realises the half-spread plus a *worsening of the spread itself* in the tail. With relative spread $s$ and spread volatility $\sigma_s$, the $\alpha$-confidence liquidation cost on value $V$ is
 $$\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right).$$
-The first term is the mechanical cost of crossing a normal quarter-spread; the second prices the realistic possibility that **when you are forced to sell, the spread is wider than usual** — the cost and the tail are correlated. This is the pillar's established L-VaR form (see [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|the flat liquidity note]] for the same formula in $\sum_i P_iQ_i$ form).
+The first term is the mechanical cost of crossing a normal quarter-spread; the second prices the realistic possibility that **when you are forced to sell, the spread is wider than usual** — the cost and the tail are correlated. This is the pillar's established L-VaR form (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|the flat liquidity note]] for the same formula in $\sum_i P_iQ_i$ form).
 
 **2.2 Endogenous liquidation cost (market impact).** With linear price impact $\Delta p=\lambda q$ (Foucault eq. 2.8) and depth $D=1/\lambda$ shares to move the price by one unit, liquidating $Q$ shares moves the price by $Q/D$. The **volume-weighted** execution price sits at the mid of the impact, so the shortfall per share is $\tfrac12 Q/D$ and
 $$\boxed{\ \text{LC}_{\text{impact}}=\frac{Q^2}{2D}=\frac{\lambda Q^2}{2}\ }$$

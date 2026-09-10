@@ -33,7 +33,7 @@ So a single worst-day escalation from $-3$ to $-15$ moves a $99\%$ ES (over $3$ 
 $$\mathrm{se}(\widehat{\mathrm{VaR}}_\alpha)\approx\frac{1}{f_L(\mathrm{VaR}_\alpha)}\sqrt{\frac{\alpha(1-\alpha)}{n}}.$$
 It shrinks like $n^{-1/2}$ — *slowly*. In the normal case at $\alpha=0.99$ we measured $\approx0.23\sigma$ at $n=250$, $\approx0.12\sigma$ at $n=1000$, $\approx0.04\sigma$ at $n=10^4$. ES averages the tail and is **noisier still** in small samples, because $F_L(\mathrm{VaR}_\alpha)$ — and hence $1/f$ and the effective tail count — is exactly what is hard to estimate.
 
-**Window truncation.** Historical-simulation VaR over a fixed window assigns **zero probability** to any loss larger than the window's maximum. A $250$-day window drawn from a calm period reports a VaR *lower* than the true tail admits, and there is no data point to correct it. This is the same pathology as [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT's threshold problem]] seen from the other side.
+**Window truncation.** Historical-simulation VaR over a fixed window assigns **zero probability** to any loss larger than the window's maximum. A $250$-day window drawn from a calm period reports a VaR *lower* than the true tail admits, and there is no data point to correct it. This is the same pathology as [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT's threshold problem]] seen from the other side.
 
 **Backtesting.** A risk model is a forecast and must be graded (Hull §22.7). Two standard tests:
 - **Kupiec POF (1995)** — unconditional coverage: do exceptions occur at the promised $(1-\alpha)$ rate? A likelihood-ratio test on the count of breaches.
@@ -119,4 +119,4 @@ Panel (A): the standard error falls only as $1/\sqrt n$, and **ES's is larger th
 
 - Back: [[pillars/04-quantitative-risk/var-and-expected-shortfall/04-expected-shortfall|04 · Expected Shortfall]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Index Hub]]
 - Forward: [[pillars/04-quantitative-risk/var-and-expected-shortfall/06-advanced-extensions|06 · Advanced Extensions (Spectral/Euler, Basel ES)]]
-- Sibling: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical & Monte Carlo VaR]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]]
+- Sibling: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]

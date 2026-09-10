@@ -119,4 +119,4 @@ Read the table carefully: **the same earnings and the same growth rate produce v
 
 - Forward: [[fundamentals-accounting/equity-valuation/02-cash-flow-forecasting|02 · Cash-Flow Forecasting]] · [[fundamentals-accounting/equity-valuation/index|Index Hub]]
 - Base: [[foundations/statistics-and-inference/index|Statistics & Inference]]
-- Downstream: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (value/quality factors)
+- Downstream: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (value/quality factors)

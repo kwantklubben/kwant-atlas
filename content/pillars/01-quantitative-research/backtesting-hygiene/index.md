@@ -116,12 +116,12 @@ Hub signposts — the folder's practice checklist lives in [[pillars/01-quantita
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · order statistics & extreme-value theory
-- Sibling topics: [[pillars/01-quantitative-research/feature-engineering-and-labeling|Feature Engineering & Labeling]] (triple-barrier labels feed the purge) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]]
-- Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]] (the same overfitting disease, ML flavour)
+- Sibling topics: [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (triple-barrier labels feed the purge) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Stat-Arb & Pairs Trading]]
+- Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] (the same overfitting disease, ML flavour)
 - Sub-pages (in-folder): 01 From Zero · 02 Why Backtests Lie · 03 Multiple Testing · 04 Deflated Sharpe · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/01-quantitative-research/backtesting-hygiene/01-from-zero-intuition|01 · From Zero: Why a Backtest Is a Search]] — no prior stats needed.
 - **Formulas + code (undergrad / job-seeking):** [[pillars/01-quantitative-research/backtesting-hygiene/03-the-multiple-testing-problem|03 · The Multiple-Testing Problem]] → [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · The Deflated Sharpe Ratio]].
 - **Robustness (practitioner / graduate):** [[pillars/01-quantitative-research/backtesting-hygiene/02-why-backtests-lie|02 · Why Backtests Lie]] → [[pillars/01-quantitative-research/backtesting-hygiene/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|06 · Purged CV, PBO & Reality Checks]].
-- Forward links: [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged K-Fold & PBO]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]
+- Forward links: [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged K-Fold & PBO]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]

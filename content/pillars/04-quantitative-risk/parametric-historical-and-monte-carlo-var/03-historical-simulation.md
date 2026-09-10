@@ -27,7 +27,7 @@ Its great strengths: it is **non-parametric** (it reproduces whatever fat tails,
 
 $$r^*_{i,t}=r_{i,t}\cdot\frac{\sigma_{i,\text{today}}}{\sigma_{i,t}},$$
 
-so recent history reflects *current* market volatility while keeping the empirical tail shape. It is the bridge from this folder to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT]] (McNeil & Frey fuse a GARCH filter with a generalized-Pareto tail).
+so recent history reflects *current* market volatility while keeping the empirical tail shape. It is the bridge from this folder to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]] (McNeil & Frey fuse a GARCH filter with a generalized-Pareto tail).
 
 ---
 
@@ -94,7 +94,7 @@ The exact `3,289.54` reproduces the hub historical-simulation column (5th-worst 
 
 1. **The window is everything — and it's arbitrary.** $n=250$ days misses a crisis from 400 days ago; $n=1500$ days dilutes recent vol with ancient calm. Either way HS is only as good as the crises *in* the window. This is the **ghost effect** (verified: crash-in-window VaR `3,465`, after it exits `3,196` — [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05]]).
 2. **The i.i.d. assumption (H2).** Equal-weight HS treats a serene day the same as a crash day; if vol is currently high, plain HS **understates** risk (yesterday's calm dominates). FHS fixes the level but not the tail dependence.
-3. **Fat tails are only sampled, not modeled.** HS shows you the crashes that *happened*, but the next crash may be worse than any in the window — HS has no way to extrapolate a "worse than ever" tail. That is EVT's job ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT]]).
+3. **Fat tails are only sampled, not modeled.** HS shows you the crashes that *happened*, but the next crash may be worse than any in the window — HS has no way to extrapolate a "worse than ever" tail. That is EVT's job ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]]).
 4. **Empirical-quantile noise in the tail.** The $\propto p/f(x_p)^2$ variance (Glasserman) means HS VaR at 99.9%, built from a few extreme days, is one of the noisiest numbers in all of risk.
 5. **Cost of full revaluation.** Revaluing every option/structured position under 500–1000 historical scenarios is slow; shortcuts (delta/moment) erode exactly the nonlinearity HS exists to capture.
 
@@ -105,7 +105,7 @@ The exact `3,289.54` reproduces the hub historical-simulation column (5th-worst 
 - **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 §22.2 (historical simulation; 501-day/500-scenario, 5th-worst convention). *Verified in corpus.*
 - **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 §9.1 (empirical quantile; the $p/f(x_p)^2$ variance). *Math-verified.*
 - **Hull & White**: *Incorporating Volatility Updating into the Historical Simulation Method for Value-at-Risk* (1998) — the original filtered historical simulation.
-- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000) — GARCH-filtered EVT tail for HS; bridges to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT]].
+- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000) — GARCH-filtered EVT tail for HS; bridges to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]].
 
 ---
 
@@ -114,4 +114,4 @@ The exact `3,289.54` reproduces the hub historical-simulation column (5th-worst 
 - Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (order statistics, empirical quantiles) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (EWMA/GARCH vol filtering).
 - Back: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/02-parametric-var|02 · Parametric VaR]].
 - Forward: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/04-monte-carlo-var|04 · Monte Carlo VaR]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Index Hub]].
-- Tails: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]].
+- Tails: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]].

@@ -78,4 +78,4 @@ The legacy flat overview notes for these topics, retained from before the folder
 - [[pillars/08-quantitative-development/_legacy/event-driven-backtesting-engines|Event-Driven Backtesting Engines (original note)]]
 - [[pillars/08-quantitative-development/_legacy/fix-protocol-and-exchange-connectivity|FIX Protocol & Exchange Connectivity (original note)]]
 - [[pillars/08-quantitative-development/_legacy/concurrency-and-lockless-programming|Concurrency & Lockless Programming (original note)]]
-- [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches (original note, retained in place)]]
+- [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches (original note, retained in place)]]

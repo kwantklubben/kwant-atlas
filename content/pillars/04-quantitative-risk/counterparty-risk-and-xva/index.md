@@ -7,7 +7,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (derivative valuation) and [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (default probability, LGD). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (derivative valuation) and [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]] (default probability, LGD). *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 > **Scope note — two views of xVA.** This is the **risk/regulatory view**: exposure profiles (EE/EPE/PFE), collateral & netting, SA-CCR, FVA/MVA and wrong-way risk as a *risk-management* problem. The complementary **pricing/desk view** — xVA as an adjustment to the derivative's price, marked and hedged by the desk — lives at [[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Pillar 3 · Counterparty Risk & xVA]]. Same mathematics, different job; use this folder to govern, that one to price.
 
@@ -122,9 +122,9 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]]
+- Foundational base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]]
 - Sub-pages (in-folder): 01 From Zero · 02 Exposure (EE/EPE/PFE) · 03 CVA & DVA · 04 Collateral, Netting & SA-CCR · 05 Failure Modes · 06 Advanced Extensions
-- Sibling topics: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] · [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]
+- Sibling topics: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] · [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/04-quantitative-risk/counterparty-risk-and-xva/01-from-zero-intuition|01 · From Zero]] — no prior risk-management knowledge needed.

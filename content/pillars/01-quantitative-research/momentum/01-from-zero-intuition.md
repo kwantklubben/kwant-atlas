@@ -126,4 +126,4 @@ Average AR(1) rho across universe:         +0.053
 
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (autocorrelation, stationarity) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Continue: [[pillars/01-quantitative-research/momentum/02-cross-sectional-momentum|02 · Cross-Sectional]] · [[pillars/01-quantitative-research/momentum/03-time-series-momentum|03 · Time-Series]] · [[pillars/01-quantitative-research/momentum/index|Index Hub]]
-- Mirror image: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage & Pairs]] (momentum's mean-reversion counterpart)
+- Mirror image: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs]] (momentum's mean-reversion counterpart)

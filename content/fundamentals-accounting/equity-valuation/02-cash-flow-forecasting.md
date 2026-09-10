@@ -116,4 +116,4 @@ Both reproduce Damodaran exactly: FCFF $=212.2$ (Rs mn), and the Home Depot year
 
 - Back: [[fundamentals-accounting/equity-valuation/01-from-zero-intuition|01 · From Zero]] · [[fundamentals-accounting/equity-valuation/index|Index Hub]]
 - Forward: [[fundamentals-accounting/equity-valuation/03-cost-of-capital|03 · Cost of Capital]] → [[fundamentals-accounting/equity-valuation/04-terminal-value-and-ev-to-equity|04 · Terminal Value & EV→Equity]]
-- Sibling: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (ROIC and investment factors built on these identities)
+- Sibling: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (ROIC and investment factors built on these identities)

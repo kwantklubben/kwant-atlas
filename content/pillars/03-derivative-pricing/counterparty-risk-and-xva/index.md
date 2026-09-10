@@ -146,7 +146,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (the clean, default-free price xVA adjusts)
-- Related credit: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] (PFE = VaR)
+- Related credit: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Structural Model]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (PFE = VaR)
 - Market context: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]] (swap exposure is the canonical EPE profile)
 - Sub-pages (in-folder): 01 From Zero · 02 Exposure & Margin · 03 CVA & DVA · 04 FVA & MVA · 05 Failure Modes · 06 Advanced Extensions
 

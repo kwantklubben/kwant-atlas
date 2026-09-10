@@ -142,4 +142,4 @@ Read the story: a strategy with an annualized Sharpe of **2.5** over 5 years is 
 
 - Back: [[pillars/01-quantitative-research/backtesting-hygiene/03-the-multiple-testing-problem|03 · Multiple Testing]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/backtesting-hygiene/05-failure-modes-and-practice|05 · Failure Modes & Practice]] → [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|06 · Purged CV, PBO & Reality Check]]
-- Siblings: [[pillars/01-quantitative-research/backtesting-hygiene/02-why-backtests-lie|02 · Why Backtests Lie]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling|Feature Engineering & Labeling]] (triple-barrier labels drive the skew that DSR penalizes)
+- Siblings: [[pillars/01-quantitative-research/backtesting-hygiene/02-why-backtests-lie|02 · Why Backtests Lie]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (triple-barrier labels drive the skew that DSR penalizes)

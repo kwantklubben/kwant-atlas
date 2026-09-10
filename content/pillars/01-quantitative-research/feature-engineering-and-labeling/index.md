@@ -158,12 +158,12 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/01-quant
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · stationarity & unit-root testing
-- Sibling topics: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (triple-barrier labels set the purge/embargo width) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs|Stat-Arb & Pairs]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
-- Cross-pillar: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]] (consumes these labels) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Sibling topics: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (triple-barrier labels set the purge/embargo width) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs|Stat-Arb & Pairs]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]
+- Cross-pillar: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]] (consumes these labels) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
 - Sub-pages (in-folder): 01 From Zero · 02 Feature Construction · 03 Target Labeling · 04 Triple-Barrier & Meta-Labeling · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/01-quantitative-research/feature-engineering-and-labeling/01-from-zero-intuition|01 · From Zero: Why the Target Is the Problem]] — no prior ML needed.
 - **Formulas + code (undergrad / job-seeking):** [[pillars/01-quantitative-research/feature-engineering-and-labeling/02-feature-construction|02 · Feature Construction]] → [[pillars/01-quantitative-research/feature-engineering-and-labeling/03-target-labeling|03 · Target Labeling]] → [[pillars/01-quantitative-research/feature-engineering-and-labeling/04-triple-barrier-and-meta-labeling|04 · Triple-Barrier & Meta-Labeling]].
 - **Robustness (practitioner / graduate):** [[pillars/01-quantitative-research/feature-engineering-and-labeling/05-failure-modes-and-practice|05 · Failure Modes & Practice]] → [[pillars/01-quantitative-research/feature-engineering-and-labeling/06-advanced-extensions|06 · Fractional Diff, Sample Weights & Extensions]].
-- Forward links: [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged K-Fold & PBO]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]
+- Forward links: [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged K-Fold & PBO]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]

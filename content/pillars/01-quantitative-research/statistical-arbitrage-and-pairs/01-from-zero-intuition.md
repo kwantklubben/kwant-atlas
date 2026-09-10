@@ -126,4 +126,4 @@ The **correlations are indistinguishable** ($0.913$ vs $0.904$). Yet the cointeg
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Hub: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Index Hub]]
 - Continue: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/02-cointegration-and-the-spread|02 · Cointegration & the Spread]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/03-pairs-selection-and-hedge|03 · Pairs Selection & Hedge]]
-- Sibling: [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Cross-Sectional & Time-Series Momentum]] (the *directional* counterpart)
+- Sibling: [[pillars/01-quantitative-research/momentum/index|Cross-Sectional & Time-Series Momentum]] (the *directional* counterpart)

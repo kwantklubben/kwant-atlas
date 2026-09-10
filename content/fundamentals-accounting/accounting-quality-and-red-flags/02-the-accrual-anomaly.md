@@ -161,5 +161,5 @@ The recovered coefficients ($0.765$, $0.857$) match Sloan's pooled estimates (0.
 
 - Back: [[fundamentals-accounting/accounting-quality-and-red-flags/01-from-zero-intuition|01 · From Zero]] · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Index Hub]]
 - Forward: [[fundamentals-accounting/accounting-quality-and-red-flags/03-detecting-earnings-management|03 · Detecting Earnings Management]] (isolating the *discretionary* component of accruals) · [[fundamentals-accounting/accounting-quality-and-red-flags/04-red-flags-and-shenanigans|04 · Red Flags & Shenanigans]]
-- Factor layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]]
+- Factor layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] · [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]]
 - Valuation: [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] (why low-persistence earnings deserve a lower multiple)

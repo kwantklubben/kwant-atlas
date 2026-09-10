@@ -125,4 +125,4 @@ Part A reproduces Damodaran exactly: operating assets $\approx\text{Rs}\,2002$ m
 
 - Back: [[fundamentals-accounting/equity-valuation/03-cost-of-capital|03 · Cost of Capital]] · [[fundamentals-accounting/equity-valuation/index|Index Hub]]
 - Forward: [[fundamentals-accounting/equity-valuation/05-failure-modes-and-practice|05 · Failure Modes & Practice]] → [[fundamentals-accounting/equity-valuation/06-advanced-extensions|06 · Relative Valuation & Advanced Extensions]]
-- Risk: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] (sensitivity of the terminal term)
+- Risk: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]] (sensitivity of the terminal term)

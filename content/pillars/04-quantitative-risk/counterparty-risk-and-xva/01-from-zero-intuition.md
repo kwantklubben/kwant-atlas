@@ -131,6 +131,6 @@ Read the (B) block: at $\sigma=2$ the expected exposure is $2.17$ on a mean of $
 
 ### 6. Connected Graph Bridges
 
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]]
 - Continue: [[pillars/04-quantitative-risk/counterparty-risk-and-xva/02-exposure-and-ee-epe-pfe|02 · Exposure & EE/EPE/PFE]] · [[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Index Hub]]
 - Sibling: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] (PFE is a VaR)

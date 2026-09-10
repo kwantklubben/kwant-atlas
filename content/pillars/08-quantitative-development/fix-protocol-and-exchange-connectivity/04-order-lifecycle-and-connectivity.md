@@ -192,5 +192,5 @@ Read the two halves as one story. The lifecycle half shows the **invariants hold
 
 - Back: [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/03-session-management|03 · Session Management]]
 - Forward: [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/index|Index Hub]]
-- Sibling: [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] (what sits between the signal and the `NewOrderSingle`)
+- Sibling: [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] (what sits between the signal and the `NewOrderSingle`)
 - Context: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]] · [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]] (the socket the gateway writes to)

@@ -79,9 +79,9 @@ graph TD
 
 The legacy flat overview notes for a subset of these topics, retained from before the folder-per-topic reorganisation. They remain the same subject matter written as a single page; the topic-folder hubs above supersede them as the structured study route.
 
-- [[pillars/04-quantitative-risk/var-and-expected-shortfall|Value at Risk & Expected Shortfall (original note)]]
-- [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical & Monte Carlo VaR (original note)]]
-- [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails (original note)]]
-- [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model (original note)]]
-- [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Reverse Stress Testing (original note)]]
-- [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals (original note)]]
+- [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall (original note)]]
+- [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR (original note)]]
+- [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails (original note)]]
+- [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Structural Model (original note)]]
+- [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Reverse Stress Testing (original note)]]
+- [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals (original note)]]

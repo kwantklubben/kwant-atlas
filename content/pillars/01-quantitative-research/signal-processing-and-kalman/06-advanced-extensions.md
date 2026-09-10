@@ -177,5 +177,5 @@ Part B - bootstrap particle filter for stochastic volatility (N=4000)
 
 - Back: [[pillars/01-quantitative-research/signal-processing-and-kalman/05-failure-modes-and-practice|05 · Failure Modes]]
 - Index: [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Index Hub]]
-- Sibling: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification (HMM & GMM)]] (the discrete-state cousin of smoothing) · [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Momentum]] (trend = a smoother's slope)
+- Sibling: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification (HMM & GMM)]] (the discrete-state cousin of smoothing) · [[pillars/01-quantitative-research/momentum/index|Momentum]] (trend = a smoother's slope)
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]

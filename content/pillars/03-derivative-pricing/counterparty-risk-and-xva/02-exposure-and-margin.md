@@ -147,4 +147,4 @@ The IM table shows the *same* $\sigma_P=100$ at different horizons/levels, exact
 
 - Back: [[pillars/03-derivative-pricing/counterparty-risk-and-xva/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/03-derivative-pricing/counterparty-risk-and-xva/03-cva-and-dva|03 · CVA & DVA]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva/04-fva-and-mva|04 · FVA & MVA]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Index Hub]]
-- Sibling: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] (PFE = VaR)
+- Sibling: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (PFE = VaR)

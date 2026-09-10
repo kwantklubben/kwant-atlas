@@ -114,4 +114,4 @@ The filter tracks the planted regime **without ever seeing it** — 87.5% agreem
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Bayes) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (ARMA) · [[foundations/bayesian-statistics/index|Bayesian Statistics]] (posterior updating)
 - Continue: [[pillars/01-quantitative-research/regime-detection/02-markov-switching-models|02 · Markov-Switching Models]] · [[pillars/01-quantitative-research/regime-detection/index|Index Hub]]
-- Sibling: [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & the Kalman Filter]] (same predict/update recursion, continuous state)
+- Sibling: [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & the Kalman Filter]] (same predict/update recursion, continuous state)

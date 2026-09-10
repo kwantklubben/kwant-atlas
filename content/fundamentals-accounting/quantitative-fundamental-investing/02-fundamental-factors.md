@@ -137,4 +137,4 @@ Rank correlation  rho(B/M, GP/A) = -0.50  -> negatively-tilted axes (combine wel
 
 - Back: [[fundamentals-accounting/quantitative-fundamental-investing/01-from-zero-intuition|01 · From Zero]] · [[fundamentals-accounting/quantitative-fundamental-investing/index|Index Hub]]
 - Forward: [[fundamentals-accounting/quantitative-fundamental-investing/03-value-and-profitability|03 · Value & Profitability]] · [[fundamentals-accounting/quantitative-fundamental-investing/04-quality-and-fscores|04 · Quality & F-scores]]
-- Factor-model layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
+- Factor-model layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]

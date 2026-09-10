@@ -118,4 +118,4 @@ The same toxic tape reads 0.26, 0.30, or 0.39 purely depending on $V$. A trader 
 
 - Back: [[pillars/06-market-making/toxic-order-flow-and-vpin/04-vpin|04 · VPIN]] · [[pillars/06-market-making/toxic-order-flow-and-vpin/03-the-ekop-model|03 · The EKOP Model]] · [[pillars/06-market-making/toxic-order-flow-and-vpin/index|Index Hub]]
 - Forward: [[pillars/06-market-making/toxic-order-flow-and-vpin/06-advanced-extensions|06 · Advanced Extensions]] (how to *use* the gauge despite the failures)
-- Sibling: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/05-failure-modes-and-practice|Adverse Selection · Failure Modes]] (the winner's curse and toxicity ≠ volatility) · [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals]] (the crash channel)
+- Sibling: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/05-failure-modes-and-practice|Adverse Selection · Failure Modes]] (the winner's curse and toxicity ≠ volatility) · [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]] (the crash channel)

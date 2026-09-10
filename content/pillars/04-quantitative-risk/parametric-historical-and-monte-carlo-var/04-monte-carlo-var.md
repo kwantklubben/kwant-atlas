@@ -119,7 +119,7 @@ The delta-normal shortcut and full revaluation differ by only ~7% here — *beca
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Garbage-in, garbage-out on the factor model.** MC with normal factors and the wrong correlation is just an expensive confirmation of a bad assumption. The distribution you *simulate from* is the model — choose it consciously (normality here is a hypothesis, not a law; see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT]]).
+1. **Garbage-in, garbage-out on the factor model.** MC with normal factors and the wrong correlation is just an expensive confirmation of a bad assumption. The distribution you *simulate from* is the model — choose it consciously (normality here is a hypothesis, not a law; see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]]).
 2. **Real-world vs risk-neutral confusion.** For *loss probability* use the **real-world** measure; for *revaluing an option* use the **risk-neutral** price. Using RN revalue prices for loss probs (or vice versa) misstates both (Glasserman Ch 9; the flat file's warning).
 3. **The $\sigma/\sqrt m$ tail is cruel.** Halving VaR error = $4\times$ scenarios; tail quantiles need the most and converge slowest. Without variance reduction, "just raise $m$" is the classic brute-force error.
 4. **Numerical error in revaluation.** Full revaluation of a path-dependent or American option needs an accurate pricer; a crude/dirty pricer injects its own bias bigger than the MC error (numerical methods: [[foundations/numerical-methods/index|Numerical Methods]]).

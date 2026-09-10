@@ -157,7 +157,7 @@ Hub signposts — the folder's fault analysis lives in [[pillars/08-quantitative
 
 - Sibling topic: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] (kernel bypass, CPU isolation, NIC tuning — the OS layer beneath this one)
 - Sibling topic: [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]] (what happens when the hot path spans threads)
-- Sibling topic: [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] (the pre-trade check lives *inside* this latency budget)
+- Sibling topic: [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] (the pre-trade check lives *inside* this latency budget)
 - Base: [[foundations/numerical-methods/index|Numerical Methods]] (floating-point precision and rounding, §02/§05)
 - Sub-pages (in-folder): 01 From Zero · 02 Why C++ · 03 Memory & Cache · 04 Zero-Cost Abstraction · 05 Failure Modes · 06 Advanced Extensions
 

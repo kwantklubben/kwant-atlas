@@ -123,8 +123,8 @@ Hub signposts — the full analysis lives in [[pillars/01-quantitative-research/
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
-- Sibling topics (this pillar): [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (momentum as a factor) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage & Pairs]] (mean-reversion — momentum's mirror image) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (multiple-testing caveat)
-- Risk & portfolio: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Tail Risk (VaR/ES)]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity (vol targeting)]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance (combo)]]
+- Sibling topics (this pillar): [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (momentum as a factor) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs]] (mean-reversion — momentum's mirror image) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (multiple-testing caveat)
+- Risk & portfolio: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Tail Risk (VaR/ES)]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity (vol targeting)]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance (combo)]]
 - Sub-pages (in-folder): 01 From Zero · 02 Cross-Sectional Momentum · 03 Time-Series Momentum · 04 Value–Momentum Interaction · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

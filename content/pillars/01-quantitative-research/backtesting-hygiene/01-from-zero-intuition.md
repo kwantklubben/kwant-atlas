@@ -124,4 +124,4 @@ Two messages. **A:** with 1,000 searches on short samples, the best of pure coin
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (same-maximum-of-noisy-draws logic beneath order statistics).
 - Continue: [[pillars/01-quantitative-research/backtesting-hygiene/02-why-backtests-lie|02 · Why Backtests Lie]] · [[pillars/01-quantitative-research/backtesting-hygiene/03-the-multiple-testing-problem|03 · Multiple Testing]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Index Hub]].
-- Sibling: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]].
+- Sibling: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]].

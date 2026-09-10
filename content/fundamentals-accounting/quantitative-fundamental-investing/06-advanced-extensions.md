@@ -132,6 +132,6 @@ Value portfolio: R_p = -0.00% + 1.00*MKT + 0.50*HML
 ### 6. Connected Graph Bridges
 
 - Back: [[fundamentals-accounting/quantitative-fundamental-investing/05-failure-modes-and-practice|05 · Failure Modes]] · [[fundamentals-accounting/quantitative-fundamental-investing/index|Index Hub]]
-- Factor-model layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (Barra/FF model construction, the professional layer) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (how to audit the alpha)
+- Factor-model layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (Barra/FF model construction, the professional layer) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (how to audit the alpha)
 - Portfolio layer: [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] (turning factor tilts into an optimized portfolio)
 - Screening: [[fundamentals-accounting/fundamental-analysis-and-screening/index|Fundamental Analysis & Screening]] · [[fundamentals-accounting/fundamental-analysis-and-screening/06-advanced-extensions|Screening · Advanced Extensions]]

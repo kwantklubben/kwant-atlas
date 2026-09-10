@@ -110,5 +110,5 @@ Thin trading drags OLS beta from the true $1.5$ down to $0.87$; the Scholes–Wi
 
 - Back: [[pillars/01-quantitative-research/event-studies/04-statistical-testing|04 · Statistical Testing]] · [[pillars/01-quantitative-research/event-studies/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/event-studies/06-advanced-extensions|06 · Advanced Extensions]] (information content, PEAD — where these failures bite hardest)
-- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage & Pairs]] (microstructure/illiquidity concerns)
+- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs]] (microstructure/illiquidity concerns)
 - Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]

@@ -104,7 +104,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 1. **The normality assumption is doing the whole job (parametric).** Delta-normal VaR = $z_\alpha\sigma\sqrt h$ *is* the normal quantile; the moment real returns have fat tails this understates true tail risk. Verified on the same-sigma comparison: a Student-$t(4)$ distribution (variance-matched to normal) breaches the normal 99% VaR at a **1.56%** rate, not 1.00%.
 2. **The historical window can lie (historical).** You only see the crises in your window. A single 1987-style crash raises historical VaR while it is in the window and drops it out the moment it scrolls off — the "ghost effect" (verified: VaR `3,465` with the crash inside, `3,196` after it exits).
 3. **MC is only as good as its factor model (Monte Carlo).** Simulating under a wrong correlation or a normal (vs fat-tailed) factor process just makes a fancier version of the same mistake. And full revaluation is slow — hence the delta–gamma shortcut in [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/06-advanced-extensions|06 · Advanced Extensions]].
-4. **VaR is not subadditive.** $\text{VaR}(X+Y)$ can exceed $\text{VaR}(X)+\text{VaR}(Y)$, so summing desk VaRs can understate firm VaR — the reason regulators moved to Expected Shortfall (see [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]]).
+4. **VaR is not subadditive.** $\text{VaR}(X+Y)$ can exceed $\text{VaR}(X)+\text{VaR}(Y)$, so summing desk VaRs can understate firm VaR — the reason regulators moved to Expected Shortfall (see [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]]).
 
 ---
 
@@ -115,19 +115,19 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 - **Kupiec, Paul H.**: *Techniques for Verifying the Accuracy of Risk Measurement Models*, *Journal of Derivatives* 3(2):73–84 (1995) — the POF backtest statistic.
 - **Christoffersen, Peter F.**: *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998) — the independence/conditional-coverage backtest that complements Kupiec on clustering.
 - **BCBS**: *Supervisory Framework for the Use of Backtesting in Conjunction with the Internal Models Approach to Market Risk Capital Requirements* (1996) — the regulatory traffic-light zones grading VaR models.
-- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000) — filtered historical simulation bridging this folder to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT & Fat Tails]].
+- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000) — filtered historical simulation bridging this folder to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]].
 
 ---
 
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Covariance]] · [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/numerical-methods/index|Numerical Methods]].
-- Sibling topic: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall (CVaR)]] (the measure this folder's methods *estimate*).
-- Forward (tails & regulation): [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]].
+- Sibling topic: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall (CVaR)]] (the measure this folder's methods *estimate*).
+- Forward (tails & regulation): [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]].
 - Sub-pages (in-folder): 01 From Zero · 02 Parametric VaR · 03 Historical Simulation · 04 Monte Carlo VaR · 05 Failure Modes · 06 Advanced Extensions (delta–gamma & Backtesting).
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/01-from-zero-intuition|01 · From Zero]] — the quantile idea with no prior risk knowledge.
 - **Methods + code (undergrad/job-seeking):** [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/02-parametric-var|02 · Parametric]] → [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/03-historical-simulation|03 · Historical]] → [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/04-monte-carlo-var|04 · Monte Carlo]].
 - **Robustness (practitioner/graduate):** [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/06-advanced-extensions|06 · Advanced Extensions (delta–gamma & Backtesting)]].
-- Forward links: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & ES]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]].
+- Forward links: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing]].

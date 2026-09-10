@@ -141,4 +141,4 @@ HML = high B/M - low B/M   = +3.448%
 - Back: [[pillars/01-quantitative-research/fundamental-multi-factor-models/02-fama-french-factor-model|02 · The FF Factor Model]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/fundamental-multi-factor-models/04-cross-sectional-models|04 · Cross-Sectional Models]] (Barra-style construction of factor returns from exposures)
 - Fundamentals: [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] · [[fundamentals-accounting/quantitative-fundamental-investing/03-value-and-profitability|03 · Value & Profitability]]
-- Sibling: [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Momentum Factors]]
+- Sibling: [[pillars/01-quantitative-research/momentum/index|Momentum Factors]]

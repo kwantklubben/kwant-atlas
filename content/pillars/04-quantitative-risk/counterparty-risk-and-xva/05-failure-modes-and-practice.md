@@ -149,4 +149,4 @@ Read the three blocks:
 
 - Back: [[pillars/04-quantitative-risk/counterparty-risk-and-xva/04-collateral-netting-and-sa-ccr|04 · Collateral, Netting & SA-CCR]]
 - Forward: [[pillars/04-quantitative-risk/counterparty-risk-and-xva/06-advanced-extensions|06 · Advanced Extensions (FVA/MVA, WWR modelling)]] · [[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Index Hub]]
-- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] (jump/tail modelling) · [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals]]
+- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] (jump/tail modelling) · [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]]

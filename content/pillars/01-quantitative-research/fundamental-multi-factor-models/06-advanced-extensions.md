@@ -149,4 +149,4 @@ Two latent factors explain **91.2%** of total variance. The loadings tell the ec
 - Fundamentals (the characteristics): [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] · [[fundamentals-accounting/quantitative-fundamental-investing/03-value-and-profitability|Value & Profitability]] · [[fundamentals-accounting/quantitative-fundamental-investing/04-quality-and-fscores|Quality & F-scores]]
 - Statistical side: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (PCA/SVD) · [[pillars/07-machine-learning-altdata/index|Machine Learning & Alt Data]] (tree-based factor ranking, high-dimensional selection)
 - Multiple testing: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]
-- Sibling: [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Momentum Factors]]
+- Sibling: [[pillars/01-quantitative-research/momentum/index|Momentum Factors]]

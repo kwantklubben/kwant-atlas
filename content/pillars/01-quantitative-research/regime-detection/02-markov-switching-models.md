@@ -167,4 +167,4 @@ The bull mean ($0.01$) and both vols ($0.021$, $0.037$) are recovered well from 
 
 - Back: [[pillars/01-quantitative-research/regime-detection/01-from-zero-intuition|01 · From Zero]] · [[pillars/01-quantitative-research/regime-detection/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/regime-detection/04-hmm|04 · Hidden Markov Models]] (EM/Baum–Welch formalized) · [[pillars/01-quantitative-research/regime-detection/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & the Kalman Filter]] (the continuous-state analog; state-space view is Tsay Ch 11)
+- Sibling: [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & the Kalman Filter]] (the continuous-state analog; state-space view is Tsay Ch 11)

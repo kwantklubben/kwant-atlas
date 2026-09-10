@@ -37,7 +37,7 @@ So "the best of $M$" is *by construction* large even when *nothing is real*. Equ
 $$\pi_1=\Phi\!\left(-\frac{\sigma_0}{\sigma_1}\,z_{1-p}\right)\quad\big(\text{for normal tails, } z_{1-p}=\Phi^{-1}(1-p)\big).$$
 For $p=0.01$, $z_{0.99}=2.326$: at $\sigma_1=2\sigma_0$, $\pi_1=\Phi(-1.163)=0.122\to$ the expected exception rate is $\approx12\%$ — a $12\times$ breach with **no change in the code**. This is exactly the number measured in the drift demonstration below.
 
-**2.4 The estimator's own error.** A $99\%$ VaR estimated from $n$ observations carries density-quantile standard error $\mathrm{se}\approx\frac{1}{f(q)}\sqrt{\alpha(1-\alpha)/n}$, which shrinks only as $n^{-1/2}$ ($\approx0.23\sigma$ at $n=250$, per the [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR hub]]). Both the reported VaR *and* the backtest that grades it are randomised by this — an under-appreciated source of spurious green zones.
+**2.4 The estimator's own error.** A $99\%$ VaR estimated from $n$ observations carries density-quantile standard error $\mathrm{se}\approx\frac{1}{f(q)}\sqrt{\alpha(1-\alpha)/n}$, which shrinks only as $n^{-1/2}$ ($\approx0.23\sigma$ at $n=250$, per the [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR hub]]). Both the reported VaR *and* the backtest that grades it are randomised by this — an under-appreciated source of spurious green zones.
 
 ---
 
@@ -132,4 +132,4 @@ The same model, unchanged, goes from $0.80\%$ to $12.0\%$ exceptions — a $15\t
 
 - Back: [[pillars/04-quantitative-risk/model-risk-and-validation/04-model-risk-management|04 · Model-Risk Management]] · [[pillars/04-quantitative-risk/model-risk-and-validation/03-validation-and-backtesting|03 · Validation & Backtesting]]
 - Forward: [[pillars/04-quantitative-risk/model-risk-and-validation/06-advanced-extensions|06 · Advanced Extensions (BMA, KL, robust bounds)]] · [[pillars/04-quantitative-risk/model-risk-and-validation/index|Index Hub]]
-- Sibling: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]] (backtest overfitting in ML) · [[pillars/04-quantitative-risk/var-and-expected-shortfall|Value at Risk & Expected Shortfall]] (estimation error)
+- Sibling: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] (backtest overfitting in ML) · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] (estimation error)

@@ -145,4 +145,4 @@ Two things are verified. First, the local-level/ARIMA algebra reproduces Tsay's 
 - Back: [[pillars/01-quantitative-research/signal-processing-and-kalman/01-from-zero-intuition|01 · From Zero]]
 - Continue: [[pillars/01-quantitative-research/signal-processing-and-kalman/03-the-kalman-filter|03 · The Kalman Filter]] · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Index Hub]]
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
-- Sibling: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (the static-beta benchmark this generalizes)
+- Sibling: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (the static-beta benchmark this generalizes)

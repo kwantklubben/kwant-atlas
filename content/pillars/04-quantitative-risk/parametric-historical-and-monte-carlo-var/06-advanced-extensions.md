@@ -53,7 +53,7 @@ Reject at 5% if $\text{LR}_{\text{POF}}>3.841$ (the $\chi^2_1$ 95% point). This 
 $$\text{LR}_{\text{ind}}=-2\Big[(n_{00}+n_{10})\log(1-p)+(n_{01}+n_{11})\log p-\;n_{00}\log(1-p_0)-n_{01}\log p_0-n_{10}\log(1-p_1)-n_{11}\log p_1\Big]\sim\chi^2_1.$$
 Reject at 5% if $>3.841$. Combined **(conditional) coverage = $\text{LR}_{\text{POF}}+\text{LR}_{\text{ind}}\sim\chi^2_2$** catches both wrong-rate *and* clustering.
 
-**Regulatory reading (BCBS 1996).** Supervisors grade internal-models VaR by breaches: green (≤4 exceptions in 250) to red (≥10) with escalating capital multipliers — the frequency test mapped to a capital add-on. Modern FRTB (2019) moves market-risk capital from 99% VaR to **97.5% Expected Shortfall** for that exact reason (VaR's non-subadditivity and tail blindness) — see [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & ES]].
+**Regulatory reading (BCBS 1996).** Supervisors grade internal-models VaR by breaches: green (≤4 exceptions in 250) to red (≥10) with escalating capital multipliers — the frequency test mapped to a capital add-on. Modern FRTB (2019) moves market-risk capital from 99% VaR to **97.5% Expected Shortfall** for that exact reason (VaR's non-subadditivity and tail blindness) — see [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]].
 
 ---
 
@@ -135,11 +135,11 @@ The under-stated-vol model breaches ~11× too often — **Kupiec rejects it deci
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Delta–gamma still ignores higher-order risk (vanna, volga, jumps) and cross-gammas if $\Gamma_{ij}$ is dropped.** The quadratic bends, but a kink (jump) or stochastic vol defeats it — the gateway to [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|stress testing]] and full MC per scenario.
+1. **Delta–gamma still ignores higher-order risk (vanna, volga, jumps) and cross-gammas if $\Gamma_{ij}$ is dropped.** The quadratic bends, but a kink (jump) or stochastic vol defeats it — the gateway to [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|stress testing]] and full MC per scenario.
 2. **Backtesting has low power at high confidence.** At 99% the expected breaches are sparse; a single bad run can under/over-reject. Basel's traffic-light zones (green ≤4/250 · red ≥10/250) exist precisely because small-sample frequency tests are noisy.
 3. **Kupiec alone is blind to clustering** — a serial-crash model passes on count but is the most dangerous kind. Always pair it with Christoffersen independence (the conditional-coverage test).
 4. **Backtest = history; the next regime may differ.** Passing a backtest on calm history rewards underestimating the next crisis. This is why regulators pair backtesting with **stress testing** and why FRTB moved to ES at 97.5%.
-5. **VaR's subadditivity failure is structural.** Backtesting a subadditive measure can *reward* desks for concentrating risk — one reason ES/CVaR is the coherent successor ([[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & ES]]).
+5. **VaR's subadditivity failure is structural.** Backtesting a subadditive measure can *reward* desks for concentrating risk — one reason ES/CVaR is the coherent successor ([[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]]).
 
 ---
 
@@ -156,7 +156,7 @@ The under-stated-vol model breaches ~11× too often — **Kupiec rejects it deci
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Index Hub]].
-- Forward: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall (the coherent measure / FRTB successor)]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]].
+- Forward: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall (the coherent measure / FRTB successor)]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]].
 - Theory: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Delta-Hedging]] (the source of $\delta,\gamma$) · [[foundations/numerical-methods/index|Numerical Methods]].
 
 ---

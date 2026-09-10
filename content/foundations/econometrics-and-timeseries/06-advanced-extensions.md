@@ -112,7 +112,7 @@ The Kalman filter cuts the tracking error roughly in half (MAE 0.333 vs 0.744 on
 3. **BEKK parameters are not interpretable** and carry $k^2(m+s)+k(k+1)/2$ parameters; DCC's scalar dynamics (one $\theta_1+\theta_2$) force *all* correlations to share a single persistence. Don't read micro-structure into aggregate DCC parameters.
 4. **EWMA $\lambda$ notation traps.** Tsay's $\lambda$ is the weight on the *lagged covariance* ($\Sigma_t=(1-\lambda)aa'+\lambda\Sigma_{t-1}$), but S-Plus/other software report $\alpha=1-\lambda\approx0.07$. Equating the two inverts the persistence.
 5. **MCMC needs burn-in and mixing diagnostics.** Point estimates require discarding burn-in and (ideally) multiple chains; near-constant parameters or high correlation between draws mean the chain hasn't converged (Tsay §12.2). A single short chain's "posterior" is not trustworthy.
-6. **Multivariate-t form.** The estimable multivariate volatility density is the *standardized* $t$ with factor $(v-2)$ (Tsay eq. 10.42), not the $\Sigma=I$ textbook form — using the wrong normalization misprices tail risk (bridge to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT & Fat Tails]]).
+6. **Multivariate-t form.** The estimable multivariate volatility density is the *standardized* $t$ with factor $(v-2)$ (Tsay eq. 10.42), not the $\Sigma=I$ textbook form — using the wrong normalization misprices tail risk (bridge to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]]).
 
 ---
 
@@ -129,4 +129,4 @@ The Kalman filter cuts the tracking error roughly in half (MAE 0.333 vs 0.744 on
 ### 6. Connected Graph Bridges
 
 - Back: [[foundations/econometrics-and-timeseries/04-volatility-modeling|04 · Volatility Modeling]] · [[foundations/econometrics-and-timeseries/05-cointegration-and-multivariate|05 · Cointegration & Multivariate]] · [[foundations/econometrics-and-timeseries/index|Index Hub]]
-- Applied: [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] · [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Time-Series Momentum]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT & Fat Tails]]
+- Applied: [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]] · [[pillars/01-quantitative-research/momentum/index|Time-Series Momentum]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]]

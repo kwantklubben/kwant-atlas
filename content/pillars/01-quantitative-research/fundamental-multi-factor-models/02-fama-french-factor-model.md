@@ -104,7 +104,7 @@ The OLS recovers the true loadings to within sampling error ($R^2{=}0.90$ becaus
 
 1. **Alpha is measured, not given.** A nonzero $\hat\alpha$ is an *estimate* with a standard error; chasing every positive $\hat\alpha$ across hundreds of assets is data-mining (the [[pillars/01-quantitative-research/fundamental-multi-factor-models/05-failure-modes-and-practice|factor zoo]] / multiple-testing failure). Annualizing a noisy monthly alpha multiplies its apparent size without multiplying its significance.
 2. **Multicollinearity between factors.** If SMB and HML (or value and profitability) are correlated, their individual loadings become unstable even though the joint fit is fine — loadings "swing" while $R^2$ stays high. Estimated on overlapping sort designs (2×3 vs 2×2×2×2) this is endemic.
-3. **Nonstationary loadings.** $\beta_i$ drifts over time (a stock migrates from growth to value). A single full-sample regression averages over regimes; rolling/shrinkage estimators (see [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Kalman Filtering]]) handle it better.
+3. **Nonstationary loadings.** $\beta_i$ drifts over time (a stock migrates from growth to value). A single full-sample regression averages over regimes; rolling/shrinkage estimators (see [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Kalman Filtering]]) handle it better.
 4. **Look-ahead in factor construction.** If SMB/HML use information not available at the portfolio-formation date, the "alpha" is an artifact. The 6-month gap between accounting and returns in FF is exactly this discipline.
 
 ---

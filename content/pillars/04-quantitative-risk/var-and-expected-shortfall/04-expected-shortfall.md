@@ -50,7 +50,7 @@ Since $F_\alpha(\beta)=\beta+(1-\alpha)^{-1}\mathbb{E}[(L-\beta)^+]$ and $\mathb
 
 For $L\sim\mathcal{N}(\mu,\sigma^2)$ (Hull eq. 22.1):
 $$\mathrm{VaR}_\alpha=\mu+\sigma z_\alpha,\qquad \mathrm{ES}_\alpha=\mu+\sigma\frac{\varphi(z_\alpha)}{1-\alpha},\qquad z_\alpha=\Phi^{-1}(\alpha).$$
-At $\alpha=0.975$: $\mathrm{ES}=2.337803$ vs $z_{0.99}=2.326348$ — the reason FRTB's $97.5\%$ ES matches the old $99\%$ VaR in the normal benchmark. Under fat tails (Student-$t$, EVT), the same quantile gives a *much* larger ES ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|EVT §ES]]).
+At $\alpha=0.975$: $\mathrm{ES}=2.337803$ vs $z_{0.99}=2.326348$ — the reason FRTB's $97.5\%$ ES matches the old $99\%$ VaR in the normal benchmark. Under fat tails (Student-$t$, EVT), the same quantile gives a *much* larger ES ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT §ES]]).
 
 ---
 
@@ -108,7 +108,7 @@ All three agree to Monte Carlo precision (the small residual is $O(1/\sqrt{N})$ 
 2. **Coherence does not mean elicitable.** Gneiting (2011) showed **ES is not elicitable** on its own (VaR is). This is the honest counter-argument to ES and the reason FRTB backtests ES *indirectly*, through its VaR component and joint VaR–ES scoring. Coherence and backtestability are *different* desiderata.
 3. **Definition drift on discrete books.** For loss pmfs with atoms, "mean of losses $\ge$ VaR" over-counts the boundary atom; use the corrected quantile-integral form (§2.1) so ES equals $\lim_{\alpha'\downarrow\alpha}$ of the smooth tail mean. Two desks can otherwise disagree.
 4. **Horizon scaling is only valid i.i.d.** $\mathrm{ES}_N=\mathrm{ES}_1\sqrt N$ (Hull) presumes i.i.d. returns; with autocorrelation or volatility clustering the true multi-day ES differs — McNeil–Frey show multi-day conditional ES beats naive $\sqrt N$ scaling.
-5. **ES is still a single number.** It summarises the whole tail by its *mean*; a strategy can shape the distribution *beyond* ES (a very rare but catastrophic jump) to evade it — hence the parallel need for stress testing ([[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]).
+5. **ES is still a single number.** It summarises the whole tail by its *mean*; a strategy can shape the distribution *beyond* ES (a very rare but catastrophic jump) to evade it — hence the parallel need for stress testing ([[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing]]).
 
 ---
 
@@ -127,4 +127,4 @@ All three agree to Monte Carlo precision (the small residual is $O(1/\sqrt{N})$ 
 
 - Back: [[pillars/04-quantitative-risk/var-and-expected-shortfall/03-coherent-risk-measures|03 · Coherent Risk Measures]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Index Hub]]
 - Forward: [[pillars/04-quantitative-risk/var-and-expected-shortfall/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/06-advanced-extensions|06 · Spectral/Euler & Basel ES]]
-- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Estimation Methods]]
+- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Estimation Methods]]

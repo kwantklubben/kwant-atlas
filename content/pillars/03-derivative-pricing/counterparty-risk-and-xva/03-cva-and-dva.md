@@ -144,4 +144,4 @@ Notice the *structure*: the counterparty is riskier than you (150bp vs 100bp), s
 
 - Back: [[pillars/03-derivative-pricing/counterparty-risk-and-xva/02-exposure-and-margin|02 · Exposure & Margin]]
 - Forward: [[pillars/03-derivative-pricing/counterparty-risk-and-xva/04-fva-and-mva|04 · FVA & MVA]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Index Hub]]
-- Credit theory: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model]] · [[foundations/probability-and-measure-theory/index|Probability & Measure]]
+- Credit theory: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Structural Model]] · [[foundations/probability-and-measure-theory/index|Probability & Measure]]

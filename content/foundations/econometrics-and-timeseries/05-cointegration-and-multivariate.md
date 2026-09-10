@@ -46,7 +46,7 @@ Both have **nonstandard** (Brownian-motion-functional) critical values. Tsay's i
 
 **Pairs trading (Tsay §8.8).** Two similar-risk (e.g. same-industry) stocks are cointegrated; the spread $w_t=p_{1t}-\gamma p_{2t}$ is stationary around mean $\mu_w$; the ECM is $[r_1,r_2]'=[\alpha_1,\alpha_2]'(w_{t-1}-\mu_w)+\varepsilon_t$ with $\alpha_1,\alpha_2$ of **opposite signs**. Portfolio (long 1 share of stock 1, short $\gamma$ of stock 2) has return $r_{p,t+i}=w_{t+i}-w_t$: enter at $\mu_w-\delta$, unwind at $\mu_w+\delta$ (needs $2\delta>\eta$ cost), net profit $2\delta-\eta$.
 
-**PCA/factors (Tsay Ch 9)** — the statistical factor side: eigenvalues of $\Sigma_r$ (or correlation $\rho_r$); PCs $y_i=e_i'r$, $\mathrm{Var}(y_i)=\lambda_i$, cumulative variance $\sum\lambda_i/\sum\lambda_j$. Factor model $r_{it}=\alpha_i+\beta_{i1}f_{1t}+\dots+\beta_{im}f_{mt}+\varepsilon_{it}$, $\mathrm{Cov}(r_t)=\beta\Sigma_f\beta'+D$. (Full treatment: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]].)
+**PCA/factors (Tsay Ch 9)** — the statistical factor side: eigenvalues of $\Sigma_r$ (or correlation $\rho_r$); PCs $y_i=e_i'r$, $\mathrm{Var}(y_i)=\lambda_i$, cumulative variance $\sum\lambda_i/\sum\lambda_j$. Factor model $r_{it}=\alpha_i+\beta_{i1}f_{1t}+\dots+\beta_{im}f_{mt}+\varepsilon_{it}$, $\mathrm{Cov}(r_t)=\beta\Sigma_f\beta'+D$. (Full treatment: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]].)
 
 ---
 
@@ -130,4 +130,4 @@ The Engle–Granger procedure recovers the true hedge ratio $\beta\approx2$ and 
 
 - Back: [[foundations/econometrics-and-timeseries/03-forecasting-and-unit-roots|03 · Forecasting & Unit Roots]] · [[foundations/econometrics-and-timeseries/index|Index Hub]]
 - Forward: [[foundations/econometrics-and-timeseries/06-advanced-extensions|06 · Advanced Extensions]] (multivariate vol, state-space)
-- Applied: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]]
+- Applied: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Stat-Arb & Pairs Trading]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]]

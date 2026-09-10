@@ -101,7 +101,7 @@ Hub signposts — the full analysis lives in [[pillars/01-quantitative-research/
 
 - Foundational base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (market-model regression, stationarity) · [[foundations/statistics-and-inference/index|Statistics & Inference]] (t-tests, CLT) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Sibling topics (this pillar): [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (the expected-return model feeding abnormal returns) · [[pillars/01-quantitative-research/momentum/index|Momentum]] (PEAD's drift is a return-continuation cousin) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (multiple-testing & deflated significance)
-- Efficiency & pricing: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Tail Risk (VaR/ES)]] (event-induced volatility) · [[foundations/econometrics-and-timeseries/index|Time Series]] (return aggregation)
+- Efficiency & pricing: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Tail Risk (VaR/ES)]] (event-induced volatility) · [[foundations/econometrics-and-timeseries/index|Time Series]] (return aggregation)
 - Sub-pages (in-folder): 01 From Zero · 02 Event-Study Methodology · 03 Abnormal Returns & CAR · 04 Statistical Testing · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

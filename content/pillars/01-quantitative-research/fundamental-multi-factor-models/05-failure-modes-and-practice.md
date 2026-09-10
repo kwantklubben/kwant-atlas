@@ -123,4 +123,4 @@ Adding a single near-duplicate factor inflates HML's standard error by **1.5×**
 
 - Back: [[pillars/01-quantitative-research/fundamental-multi-factor-models/04-cross-sectional-models|04 · Cross-Sectional Models]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/fundamental-multi-factor-models/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (multiple-testing) · [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Momentum Crash]] · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]]
+- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (multiple-testing) · [[pillars/01-quantitative-research/momentum/index|Momentum Crash]] · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]]

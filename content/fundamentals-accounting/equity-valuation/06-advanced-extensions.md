@@ -124,7 +124,7 @@ Read the results:
 - **Pinto et al. (CFA Institute)**, *Equity Asset Valuation* — the standard practitioner treatment of multiples, peer selection, and the DCF-vs-comps cross-check.
 - **Graham & Dodd**, *Security Analysis* — the earliest systematic use of earnings multiples against asset-value and earnings-power floors.
 - **Koller et al. (McKinsey)**, *Valuation*, Ch 16–18 — multiples used *after* a DCF, as a sanity check rather than a primary method.
-- **Green & Hand & Zhang (2017)**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns", *RFS* — the empirical map from valuation multiples/characteristics to returns (the bridge to [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]).
+- **Green & Hand & Zhang (2017)**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns", *RFS* — the empirical map from valuation multiples/characteristics to returns (the bridge to [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]).
 
 ---
 
@@ -132,5 +132,5 @@ Read the results:
 
 - Back: [[fundamentals-accounting/equity-valuation/05-failure-modes-and-practice|05 · Failure Modes]] · [[fundamentals-accounting/equity-valuation/index|Index Hub]]
 - Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (regressions controlling for fundamentals) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
-- Research: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
-- Risk: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] (scenario + Monte Carlo robustness)
+- Research: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
+- Risk: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]] (scenario + Monte Carlo robustness)

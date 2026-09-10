@@ -137,4 +137,4 @@ Two independent random walks regressed on each other give mean $R^2=0.248$ and �
 
 - Back: [[foundations/econometrics-and-timeseries/02-stationarity-and-arma|02 · Stationarity & ARMA]] · [[foundations/econometrics-and-timeseries/index|Index Hub]]
 - Forward: [[foundations/econometrics-and-timeseries/04-volatility-modeling|04 · Volatility Modeling]] · [[foundations/econometrics-and-timeseries/05-cointegration-and-multivariate|05 · Cointegration & Multivariate]]
-- Applied: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] (square-root-of-time caveat) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
+- Applied: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (square-root-of-time caveat) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]

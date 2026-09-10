@@ -136,7 +136,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/01-quant
 
 - Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (the regression and covariance toolkit this model runs on)
 - Fundamentals source: [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] (the *characteristics* — value, profitability, investment — that this folder turns into *priced factors*) · [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]]
-- Sibling topic: [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Cross-Sectional & Time-Series Momentum]] (the momentum factor family) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage & Pairs Trading]]
+- Sibling topic: [[pillars/01-quantitative-research/momentum/index|Cross-Sectional & Time-Series Momentum]] (the momentum factor family) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs Trading]]
 - Downstream risk: [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] (factor tilts → factor-risk-budgeted portfolios) · [[pillars/04-quantitative-risk/index|Quantitative Risk]] (factor covariance $\Sigma=B\Omega B'+D$ is the risk model)
 - Sub-pages (in-folder): 01 From Zero · 02 Fama–French Factor Model · 03 Factor Construction · 04 Cross-Sectional Models · 05 Failure Modes & Practice · 06 Advanced Extensions
 

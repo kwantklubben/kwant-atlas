@@ -125,4 +125,4 @@ The filter cuts the error by **59%** versus the raw price, with a steady-state g
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Gaussian conditioning)
 - Continue: [[pillars/01-quantitative-research/signal-processing-and-kalman/02-state-space-models|02 · State-Space Models]] · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Index Hub]]
-- Sibling: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]] (the spread *is* a signal-plus-noise problem)
+- Sibling: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Stat-Arb & Pairs Trading]] (the spread *is* a signal-plus-noise problem)

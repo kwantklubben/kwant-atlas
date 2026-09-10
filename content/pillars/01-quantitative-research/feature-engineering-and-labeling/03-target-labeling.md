@@ -128,4 +128,4 @@ For symmetric barriers under a driftless random walk, the +1/−1 split is near 
 
 - Back: [[pillars/01-quantitative-research/feature-engineering-and-labeling/02-feature-construction|02 · Feature Construction]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Index Hub]]
 - Continue: [[pillars/01-quantitative-research/feature-engineering-and-labeling/04-triple-barrier-and-meta-labeling|04 · Triple-Barrier & Meta-Labeling]] → [[pillars/01-quantitative-research/feature-engineering-and-labeling/05-failure-modes-and-practice|05 · Failure Modes]]
-- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (the labels set the purge width) · [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] (conditional-volatility estimation)
+- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (the labels set the purge width) · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]] (conditional-volatility estimation)

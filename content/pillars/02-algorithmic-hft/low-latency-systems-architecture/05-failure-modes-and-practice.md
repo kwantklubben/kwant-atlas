@@ -160,5 +160,5 @@ allocation/GC pause injected (0.1% of messages), base median 2000ns:
 
 - Back: [[pillars/02-algorithmic-hft/low-latency-systems-architecture/04-lock-free-and-ring-buffers|04 · Lock-Free & Ring Buffers]] · [[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Index Hub]]
 - Forward: [[pillars/02-algorithmic-hft/low-latency-systems-architecture/06-advanced-extensions|06 · Advanced Extensions]]
-- Cross-pillar: [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] (what to do when the tail wins) · [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]
+- Cross-pillar: [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] (what to do when the tail wins) · [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]
 - Foundational: [[foundations/numerical-methods/index|Numerical Methods]] (measuring distributions honestly)

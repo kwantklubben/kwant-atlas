@@ -134,5 +134,5 @@ The linear basis explains 33% of the variance; the spline basis explains **92%**
 
 - Back: [[pillars/01-quantitative-research/feature-engineering-and-labeling/01-from-zero-intuition|01 · From Zero]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Index Hub]]
 - Continue: [[pillars/01-quantitative-research/feature-engineering-and-labeling/03-target-labeling|03 · Target Labeling]]
-- Sibling: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (factor features) · [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] (state-space feature extraction)
+- Sibling: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (factor features) · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]] (state-space feature extraction)
 - Base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]]

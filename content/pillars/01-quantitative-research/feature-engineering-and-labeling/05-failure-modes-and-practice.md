@@ -143,4 +143,4 @@ Read the two results as the folder's two silent killers. **(A)** Five hundred la
 - Back: [[pillars/01-quantitative-research/feature-engineering-and-labeling/04-triple-barrier-and-meta-labeling|04 · Triple-Barrier & Meta-Labeling]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Index Hub]]
 - Continue: [[pillars/01-quantitative-research/feature-engineering-and-labeling/06-advanced-extensions|06 · Fractional Diff, Sample Weights & Extensions]]
 - Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/05-failure-modes-and-practice|Backtesting Hygiene · Failure Modes]] (the cost/selection half of the same disease) · [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged CV, PBO & Reality Checks]]
-- Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Cross-pillar: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]

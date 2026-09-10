@@ -127,5 +127,5 @@ Read the table as the method's shape. The primary bets on everything, with preci
 
 - Back: [[pillars/01-quantitative-research/feature-engineering-and-labeling/03-target-labeling|03 · Target Labeling]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Index Hub]]
 - Continue: [[pillars/01-quantitative-research/feature-engineering-and-labeling/05-failure-modes-and-practice|05 · Failure Modes & Practice]] → [[pillars/01-quantitative-research/feature-engineering-and-labeling/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged CV, PBO & Reality Checks]] (how to validate a secondary model) · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (a natural "primary" model)
+- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged CV, PBO & Reality Checks]] (how to validate a secondary model) · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (a natural "primary" model)
 - Cross-pillar: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]]

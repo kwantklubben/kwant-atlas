@@ -131,6 +131,6 @@ Read the two layers: the **composite ranks Zeta Steel #2** purely because of its
 
 - Back: [[fundamentals-accounting/fundamental-analysis-and-screening/05-failure-modes-and-practice|05 · Failure Modes]] · [[fundamentals-accounting/fundamental-analysis-and-screening/03-screening-metrics|03 · Screening Metrics]] · [[fundamentals-accounting/fundamental-analysis-and-screening/index|Index Hub]]
 - Ratio ancestry: [[fundamentals-accounting/core-financial-ratios/06-advanced-extensions|Core Financial Ratios — Advanced Extensions]] (Altman Z, the F-score defined there)
-- Systematic layer: [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting & Validation]]
+- Systematic layer: [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting & Validation]]
 - Defense & data: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] · [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]]
 - Sibling: [[fundamentals-accounting/equity-valuation/index|Equity Valuation — DCF, Comps & Value Logic]]

@@ -62,7 +62,7 @@ $$\hat R=\sqrt{\frac{\frac{N-1}{N}W+\frac1N B}{W}},\qquad\text{converged when }\
 1. **Forward:** run the Kalman filter to get filtered moments $p(z_t\mid F_t)$ for all $t$.
 2. **Backward:** sample $z_n\sim p(z_n\mid F_n)$, then for $t=n-1,\dots,1$ sample from the Markov property $p(z_t\mid z_{t+1},F_n)=p(z_t\mid z_{t+1},F_t)$.
 
-Carter–Kohn (1994) / Frühwirth-Schnatter (1994). This is the Bayesian counterpart of the Kalman *smoother* (see [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Kalman Filtering]]) and the engine of Bayesian stochastic-volatility estimation.
+Carter–Kohn (1994) / Frühwirth-Schnatter (1994). This is the Bayesian counterpart of the Kalman *smoother* (see [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Kalman Filtering]]) and the engine of Bayesian stochastic-volatility estimation.
 
 ---
 
@@ -217,4 +217,4 @@ Gibbs normal mean/variance model (n=12, ybar=1.2333):
 - Back: [[foundations/bayesian-statistics/03-posterior-inference|03 · Posterior Inference]] · [[foundations/bayesian-statistics/04-bayesian-and-regularization|04 · Bayesian & Regularization]] · [[foundations/bayesian-statistics/index|Index Hub]]
 - Continue: [[foundations/bayesian-statistics/06-advanced-extensions|06 · Advanced Extensions]] (hierarchical models where MCMC is mandatory)
 - Base: [[foundations/numerical-methods/03-monte-carlo|Numerical Methods · Monte Carlo]] (sampling, MC error) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (Markov chains, stationarity) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (state-space models, Kalman filter — the forward half of FFBS)
-- Forward: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification (HMM/GMM)]] (Baum–Welch is EM, Bayesian HMM is Gibbs/FFBS) · [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Kalman Filtering]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure|Interest-Rate Models]] (Bayesian estimation of latent-factor term-structure models)
+- Forward: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification (HMM/GMM)]] (Baum–Welch is EM, Bayesian HMM is Gibbs/FFBS) · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Kalman Filtering]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure|Interest-Rate Models]] (Bayesian estimation of latent-factor term-structure models)

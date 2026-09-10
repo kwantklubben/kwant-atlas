@@ -173,7 +173,7 @@ Hub signposts — the folder's fault analysis lives in [[pillars/08-quantitative
 
 - Sibling topic: [[pillars/08-quantitative-development/low-latency-linux-and-networking/index|Low-Latency Linux & Networking]] (the TCP/kernel-bypass layer a FIX session sits on)
 - Sibling topic: [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++ for Trading]] (the encoder/decoder hot path)
-- Sibling topic: [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] (the pre-trade check between signal and `NewOrderSingle`)
+- Sibling topic: [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] (the pre-trade check between signal and `NewOrderSingle`)
 - Venue semantics: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]] (what the `40`/`59` fields actually mean)
 - Latency context: [[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/index|Colocation & Clock Synchronization]] (why the session's RTT is the whole game)
 - Sub-pages (in-folder): 01 From Zero · 02 The FIX Protocol · 03 Session Management · 04 Order Lifecycle & Connectivity · 05 Failure Modes · 06 Advanced Extensions
@@ -183,4 +183,4 @@ Hub signposts — the folder's fault analysis lives in [[pillars/08-quantitative
 - **Absolute beginner (zero messaging background):** [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/01-from-zero-intuition|01 · From Zero]] — why an order is a *message*.
 - **Engineering core (undergrad / job-seeking):** [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/02-the-fix-protocol|02 · The FIX Protocol]] → [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/03-session-management|03 · Session Management]] → [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/04-order-lifecycle-and-connectivity|04 · Order Lifecycle & Connectivity]].
 - **Robustness & scale (practitioner / graduate):** [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Low-Latency Systems Architecture]] · [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Risk Guards & Kill Switches]]
+- Forward links: [[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Low-Latency Systems Architecture]] · [[pillars/08-quantitative-development/production-trading-systems/index|Risk Guards & Kill Switches]]

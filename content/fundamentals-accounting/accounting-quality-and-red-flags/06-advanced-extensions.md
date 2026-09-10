@@ -169,6 +169,6 @@ Two things to notice, and they are the lesson. First, **Redwing clears the thres
 
 - Back: [[fundamentals-accounting/accounting-quality-and-red-flags/05-failure-modes-and-practice|05 · Failure Modes]] · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Index Hub]]
 - Screen building: [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] · [[fundamentals-accounting/fundamental-analysis-and-screening/index|Fundamental Analysis & Screening]]
-- Factor theory: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/index|Quantitative Research]]
+- Factor theory: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/index|Quantitative Research]]
 - Ratio composites: [[fundamentals-accounting/core-financial-ratios/06-advanced-extensions|Altman Z & the Piotroski F-Score]] (the same aggregation logic applied to distress and value)
 - Valuation: [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] (why a low-persistence-earnings firm earns a lower multiple)

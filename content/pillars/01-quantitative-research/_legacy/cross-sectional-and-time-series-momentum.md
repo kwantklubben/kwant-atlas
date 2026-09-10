@@ -100,5 +100,5 @@ def compute_vol_targeted_tsmom(prices: pd.Series, lookback: int = 252,
 ### 6. Connected Graph Bridges
 
 - Foundational Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
-- Bridges to: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Risk Management (Tail Risk)]]
+- Bridges to: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Risk Management (Tail Risk)]]
 - Bridges to: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]

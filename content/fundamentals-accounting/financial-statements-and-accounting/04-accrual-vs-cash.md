@@ -112,4 +112,4 @@ Both methods give the same \$1,500. The accruals are **−\$700**: depreciation 
 
 - Back: [[fundamentals-accounting/financial-statements-and-accounting/03-the-three-statements|03 · The Three Statements]] · [[fundamentals-accounting/financial-statements-and-accounting/index|Index Hub]]
 - Forward: [[fundamentals-accounting/financial-statements-and-accounting/05-failure-modes-and-practice|05 · Failure Modes]] · [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|06 · Advanced Extensions]]
-- Quality & factors: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (Sloan accruals factor lives here)
+- Quality & factors: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (Sloan accruals factor lives here)

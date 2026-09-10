@@ -112,4 +112,4 @@ Read that table carefully. Transaction 5 (a cash sale) raises *both* assets and 
 ### 6. Connected Graph Bridges
 
 - Forward: [[fundamentals-accounting/financial-statements-and-accounting/02-the-accounting-equation-and-double-entry|02 · Accounting Equation & Double-Entry]] · [[fundamentals-accounting/financial-statements-and-accounting/03-the-three-statements|03 · The Three Statements]] · [[fundamentals-accounting/financial-statements-and-accounting/index|Index Hub]]
-- The empirical why: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (Ball–Brown earnings-response line) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
+- The empirical why: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (Ball–Brown earnings-response line) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]

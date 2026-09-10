@@ -105,7 +105,7 @@ Read the first two lines aloud: identical economic exposures, and VaR *doubles i
 
 1. **The "it's just a percentile" trap.** A quantile is not a loss; it is a *threshold*. Reporting only VaR hides the entire loss-given-breach distribution. Always report ES (or the full tail) alongside any VaR number.
 2. **Mistaking the tail *frequency* for the tail *size*.** VaR controls how often you breach; it ignores how deep the breach is. A strategy selling far-OTM options maximises small gains while pushing catastrophic losses just past the quantile — profitable until it is fatal ([[pillars/04-quantitative-risk/var-and-expected-shortfall/05-failure-modes-and-practice|05 · Failure Modes]]).
-3. **Confidence-level superstition.** "$99\%$" is a *convention*, not a guarantee. With $250$ trading days a year, a $99\%$ one-day VaR is breached about $2.5$ times per year — the estimator itself must be backtested, not trusted (Kupiec's POF test; [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical & Monte Carlo VaR]]).
+3. **Confidence-level superstition.** "$99\%$" is a *convention*, not a guarantee. With $250$ trading days a year, a $99\%$ one-day VaR is breached about $2.5$ times per year — the estimator itself must be backtested, not trusted (Kupiec's POF test; [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]).
 4. **Sign and convention confusion.** VaR/ES are reported as *positive loss numbers*; a loss of $L=-100$ has $\mathrm{VaR}=100$. P&L sign errors flip a risk limit into a green light.
 
 ---
@@ -123,4 +123,4 @@ Read the first two lines aloud: identical economic exposures, and VaR *doubles i
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Continue: [[pillars/04-quantitative-risk/var-and-expected-shortfall/02-var-definition-and-flaws|02 · VaR Definition & Flaws]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Index Hub]]
-- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] (what happens when the tail is power-law)
+- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] (what happens when the tail is power-law)

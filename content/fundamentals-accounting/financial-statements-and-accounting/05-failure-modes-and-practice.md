@@ -142,5 +142,5 @@ Same machinery, same true obligations — but the firm reports *half* the levera
 
 - Back: [[fundamentals-accounting/financial-statements-and-accounting/04-accrual-vs-cash|04 · Accrual vs Cash]] · [[fundamentals-accounting/financial-statements-and-accounting/index|Index Hub]]
 - Forward: [[fundamentals-accounting/financial-statements-and-accounting/06-advanced-extensions|06 · Advanced Extensions]]
-- Detection & factors: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & Merton]] (distress models use leverage that off-balance-sheet items distort)
+- Detection & factors: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & Merton]] (distress models use leverage that off-balance-sheet items distort)
 - Standards & data: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (EDGAR/XBRL tags, GAAP/IFRS taxonomies)

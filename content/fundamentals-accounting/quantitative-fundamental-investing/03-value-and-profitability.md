@@ -144,4 +144,4 @@ CHEAP (high B/M) basket split by profitability:
 - Back: [[fundamentals-accounting/quantitative-fundamental-investing/02-fundamental-factors|02 · Fundamental Factors]] · [[fundamentals-accounting/quantitative-fundamental-investing/index|Index Hub]]
 - Forward: [[fundamentals-accounting/quantitative-fundamental-investing/04-quality-and-fscores|04 · Quality & F-scores]] (the composite that layers quality onto value)
 - Base: [[fundamentals-accounting/core-financial-ratios/03-valuation-multiples|Core Financial Ratios · Valuation Multiples]] · [[fundamentals-accounting/fundamental-analysis-and-screening/02-graham-criteria-and-value-investing|Graham Criteria & Value Investing]]
-- Factor-model layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
+- Factor-model layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]

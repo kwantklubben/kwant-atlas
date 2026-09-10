@@ -200,6 +200,6 @@ Read the trace as the guard's lifeline: the fat-finger and collar orders are rej
 
 - Back: [[pillars/08-quantitative-development/production-trading-systems/03-monitoring-and-alerting|03 · Monitoring & Alerting]] · Hub: [[pillars/08-quantitative-development/production-trading-systems/index|Index Hub]]
 - Next: [[pillars/08-quantitative-development/production-trading-systems/05-failure-modes-and-practice|05 · Failure Modes]] (what happens when the guard is also insufficient) · [[pillars/08-quantitative-development/production-trading-systems/06-advanced-extensions|06 · Advanced Extensions]] (kill switches at cluster scale)
-- Related flat page (superseded thematically by this folder): [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]]
+- Related flat page (superseded thematically by this folder): [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]]
 - Related: [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++ for Trading]] (the guard's ~0.25 µs slice of the budget) · [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/04-order-lifecycle-and-connectivity|FIX · Order Lifecycle]] (cancel semantics, COD)
 - Cross-pillar: [[pillars/04-quantitative-risk/index|Quantitative Risk Management]] · [[pillars/04-quantitative-risk/operational-risk/index|Operational Risk]] (the incident taxonomy this page defends against)

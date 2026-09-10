@@ -8,7 +8,7 @@ tags:
   - dynamic-capm
 ---
 
-**Basic Prerequisites:** [[pillars/01-quantitative-research/signal-processing-and-kalman/03-the-kalman-filter|03 · The Kalman Filter]] and [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]].
+**Basic Prerequisites:** [[pillars/01-quantitative-research/signal-processing-and-kalman/03-the-kalman-filter|03 · The Kalman Filter]] and [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Stat-Arb & Pairs Trading]].
 
 ---
 
@@ -145,5 +145,5 @@ The Kalman beta tracks the truth to **RMSE 0.0187**, while the 60-day rolling OL
 
 - Back: [[pillars/01-quantitative-research/signal-processing-and-kalman/03-the-kalman-filter|03 · The Kalman Filter]]
 - Continue: [[pillars/01-quantitative-research/signal-processing-and-kalman/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Index Hub]]
-- Sibling: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Stat-Arb & Pairs Trading]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
+- Sibling: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Stat-Arb & Pairs Trading]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]
 - Downstream: [[pillars/01-quantitative-research/backtesting-hygiene|Backtesting Hygiene]] (a dynamic-beta strategy must survive the DSR battery)

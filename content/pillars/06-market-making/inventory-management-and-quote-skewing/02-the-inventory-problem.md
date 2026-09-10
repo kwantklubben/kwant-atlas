@@ -115,4 +115,4 @@ The simulated P&L std matches $\lvert I\rvert\sigma\sqrt\tau$ to three decimals 
 
 - Back: [[pillars/06-market-making/inventory-management-and-quote-skewing/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/06-market-making/inventory-management-and-quote-skewing/03-ho-stoll-model|03 · The Ho–Stoll Model]] · [[pillars/06-market-making/inventory-management-and-quote-skewing/index|Index Hub]]
-- Sibling: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/02-the-market-maker-problem|A–S: The Market-Maker's Problem]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]]
+- Sibling: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/02-the-market-maker-problem|A–S: The Market-Maker's Problem]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]]

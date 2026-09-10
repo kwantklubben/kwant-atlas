@@ -135,4 +135,4 @@ The move from $99\%$ to $99.9\%$ is the whole lesson in one line: **the spread a
 
 - Base: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Continue: [[pillars/04-quantitative-risk/model-risk-and-validation/02-sources-of-model-risk|02 · Sources of Model Risk]] · [[pillars/04-quantitative-risk/model-risk-and-validation/index|Index Hub]]
-- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] (the POT machinery in full)
+- Sibling: [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] (the POT machinery in full)

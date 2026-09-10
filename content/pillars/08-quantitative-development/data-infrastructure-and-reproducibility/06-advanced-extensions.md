@@ -100,5 +100,5 @@ The two lines are the entire research-to-production story in miniature: **reorde
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/08-quantitative-development/data-infrastructure-and-reproducibility/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/08-quantitative-development/data-infrastructure-and-reproducibility/index|Index Hub]]
-- Forward (the gap's destination): [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] · [[pillars/08-quantitative-development/event-driven-backtesting-engines|Backtesting Engines]]
+- Forward (the gap's destination): [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] · [[pillars/08-quantitative-development/event-driven-backtesting-engines|Backtesting Engines]]
 - Environment foundation: [[pillars/08-quantitative-development/python-quant-stack|Python Quant Stack]] (the stack the lockfile manages)

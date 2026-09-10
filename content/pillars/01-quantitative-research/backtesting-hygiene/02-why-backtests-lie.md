@@ -131,4 +131,4 @@ The searched rule looks like a **Sharpe 1.3 strategy in sample** and is worth **
 
 - Back: [[pillars/01-quantitative-research/backtesting-hygiene/01-from-zero-intuition|01 · From Zero]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/backtesting-hygiene/03-the-multiple-testing-problem|03 · Multiple Testing]] → [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · Deflated Sharpe]] → [[pillars/01-quantitative-research/backtesting-hygiene/05-failure-modes-and-practice|05 · Failure Modes]]
-- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · Sibling: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]
+- Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · Sibling: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]

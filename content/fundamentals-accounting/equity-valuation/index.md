@@ -109,8 +109,8 @@ Hub signposts — the folder's failure-mode analysis lives in [[fundamentals-acc
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
-- Downstream quantitative layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] (value/quality factors born from these ratios)
-- Risk bridge: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (equity-as-a-call on firm assets) · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] (valuation sensitivity)
+- Downstream quantitative layer: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (value/quality factors born from these ratios)
+- Risk bridge: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]] (equity-as-a-call on firm assets) · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]] (valuation sensitivity)
 - Sub-pages (in-folder): 01 From Zero · 02 Cash-Flow Forecasting · 03 Cost of Capital · 04 Terminal Value & EV→Equity · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

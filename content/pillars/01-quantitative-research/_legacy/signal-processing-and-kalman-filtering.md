@@ -110,4 +110,4 @@ class DynamicBetaKalman:
 
 - Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Bridges to: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage]]
-- Bridges to: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification]]
+- Bridges to: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]]

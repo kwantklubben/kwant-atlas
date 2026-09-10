@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "atlas.kwantklubben.com",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "**/_legacy/**"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

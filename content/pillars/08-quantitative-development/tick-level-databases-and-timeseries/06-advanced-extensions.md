@@ -149,6 +149,6 @@ The same table answers as $104.33$ or $97.00$ depending on the *as-of date* — 
 
 - Back: [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/index|Index Hub]]
 - Ingestion side: [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity|FIX Protocol & Exchange Connectivity]] · [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]]
-- Consumption: [[pillars/08-quantitative-development/event-driven-backtesting-engines|Event-Driven Backtesting Engines]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation|Alternative Data Pipelines]]
+- Consumption: [[pillars/08-quantitative-development/event-driven-backtesting-engines|Event-Driven Backtesting Engines]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alternative Data Pipelines]]
 - Point-in-time discipline, shared with fundamentals: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] · [[fundamentals-accounting/data-sources-and-corporate-data/06-advanced-extensions|Data Sources · Advanced Extensions]]
 - Research quality: [[pillars/01-quantitative-research/index|Quantitative Research]]

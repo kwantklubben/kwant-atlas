@@ -76,7 +76,7 @@ The 99% VaR ($1.86M) and ES ($2.02M) — both perfectly valid quantile estimates
 
 1. **Confusing "model tail" with "real tail."** The most common error: "our 99.9% VaR covers everything." It covers everything *the fitted distribution contains*. A fat tail makes the 99.9% quantile extremely hard to estimate (huge variance) — so the claim is strongest exactly where the evidence is weakest. Stress testing does not fix estimation; it bypasses it.
 2. **ES-only complacency.** Because ES is coherent and "better than VaR," teams sometimes stop there. But ES is still a single scalar from one distribution; it cannot represent a *scenario-specific* joint stress, and it still depends on the correlation matrix that breaks under stress. Stressed ES in FRTB exists precisely because plain ES was judged insufficient for capital.
-3. **VaR/ES do not model the *path*.** Both are one-horizon numbers. Stress matters over a *sequence*: a $47M stress loss on day 1 triggers margin calls and forced selling that become a *funding* crisis (see [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals]]). The scenario's path — not just its one-period P&L — is what threatens survival.
+3. **VaR/ES do not model the *path*.** Both are one-horizon numbers. Stress matters over a *sequence*: a $47M stress loss on day 1 triggers margin calls and forced selling that become a *funding* crisis (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]]). The scenario's path — not just its one-period P&L — is what threatens survival.
 
 ---
 

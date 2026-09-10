@@ -200,5 +200,5 @@ Branch predictor on N=1,000,000 random vs sorted data
 - Back: [[pillars/08-quantitative-development/high-performance-cpp-for-trading/04-zero-cost-abstraction|04 · Zero-Cost Abstraction]] · [[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|Index Hub]]
 - Continue: [[pillars/08-quantitative-development/high-performance-cpp-for-trading/06-advanced-extensions|06 · Advanced Extensions]]
 - Sibling: [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]] (races, false sharing, memory fences)
-- Sibling: [[pillars/08-quantitative-development/production-risk-guards-and-kill-switches|Production Risk Guards & Kill Switches]] (pre-trade checks must not reintroduce hidden work)
+- Sibling: [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches]] (pre-trade checks must not reintroduce hidden work)
 - Base: [[foundations/numerical-methods/index|Numerical Methods]] (floating-point UB-adjacent pitfalls and precision)

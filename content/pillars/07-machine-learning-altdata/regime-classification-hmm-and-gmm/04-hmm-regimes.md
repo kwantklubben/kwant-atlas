@@ -178,4 +178,4 @@ The HMM recovers both regime volatilities ($0.00779$, $0.02461$ vs true $0.008$,
 
 - Back: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/03-the-em-algorithm|03 · The EM Algorithm]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/02-unsupervised-clustering-gmm|02 · GMM]]
 - Forward: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/06-advanced-extensions|06 · Regime-Conditional ML]]
-- Sibling (econometric twin): [[pillars/01-quantitative-research/regime-detection/04-hmm|Regime Detection · HMM (filter view)]] · [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filter]]
+- Sibling (econometric twin): [[pillars/01-quantitative-research/regime-detection/04-hmm|Regime Detection · HMM (filter view)]] · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filter]]

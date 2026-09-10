@@ -105,5 +105,5 @@ print(f"DSR (500 trials): {dsr_overfit:.4f} (Pure Data-Mining Artifact)")
 ### 6. Connected Graph Bridges
 
 - Foundational Base: [[foundations/probability-and-measure-theory/index|Probability Theory]]
-- Bridges to: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Quantitative Risk]]
-- Bridges to: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]
+- Bridges to: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Quantitative Risk]]
+- Bridges to: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]

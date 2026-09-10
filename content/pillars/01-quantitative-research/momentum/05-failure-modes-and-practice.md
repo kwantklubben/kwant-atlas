@@ -113,5 +113,5 @@ The worst WML month is $-24.6\%$, occurring exactly in the $+20\%$ rebound month
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (skewness/kurtosis) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
 - Remedies: [[pillars/01-quantitative-research/momentum/06-advanced-extensions|06 · Advanced Extensions]] (vol scaling, dynamic weighting) · [[pillars/01-quantitative-research/momentum/04-value-momentum-interaction|04 · Value–Momentum]]
-- Risk: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Tail Risk (VaR/ES)]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]]
+- Risk: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Tail Risk (VaR/ES)]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]]
 - Hygiene: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]

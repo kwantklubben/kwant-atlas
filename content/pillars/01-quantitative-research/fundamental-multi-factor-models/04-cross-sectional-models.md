@@ -116,7 +116,7 @@ The WLS recovers all three factor returns near their true values (the residual e
 1. **Exposure quality is everything.** The cross-sectional model assumes $X$ (standardized fundamentals) is measured correctly and point-in-time. Restatements, stale book values, and look-ahead in the exposures directly corrupt $\hat f_t$ (see [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]]).
 2. **Multicollinear exposures.** If several exposure columns are near-linear (five value variants), $X^\top D^{-1}X$ is near-singular and individual factor returns explode while the fit is fine — the same mechanism as [[pillars/01-quantitative-research/fundamental-multi-factor-models/05-failure-modes-and-practice|05 · Failure Modes]].
 3. **Specific-risk misspecification.** If $D$ is wrong (residuals are not independent or the variances are stale), WLS is suboptimal and the factor covariance $\Omega$ is biased — the risk model understates portfolio tail risk exactly when markets stress.
-4. **Factor-return estimation is unstable under regime shifts.** Cross-sectional betas and factor P&L rotate with the market; a model fit in one regime misprices the next (see [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Kalman Filtering]] for time-varying exposure estimation).
+4. **Factor-return estimation is unstable under regime shifts.** Cross-sectional betas and factor P&L rotate with the market; a model fit in one regime misprices the next (see [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Kalman Filtering]] for time-varying exposure estimation).
 
 ---
 

@@ -194,4 +194,4 @@ Half Kelly gives up about a third of the terminal wealth ($21.1\times$ vs $32.0\
 - Back: [[foundations/ergodicity-and-statistical-mechanics/04-kelly-criterion|04 · Kelly Criterion]]
 - Forward: [[foundations/ergodicity-and-statistical-mechanics/06-advanced-extensions|06 · Advanced Extensions]] · [[foundations/ergodicity-and-statistical-mechanics/index|Index Hub]]
 - Theory: [[foundations/stochastic-calculus/02-brownian-motion-and-martingales|Brownian Motion & First Passage]] (barrier hitting) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
-- Applications: [[pillars/04-quantitative-risk/index|Quantitative Risk]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]] · [[pillars/05-portfolio-optimization/index|Portfolio Optimization]]
+- Applications: [[pillars/04-quantitative-risk/index|Quantitative Risk]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] · [[pillars/05-portfolio-optimization/index|Portfolio Optimization]]

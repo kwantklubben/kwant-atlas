@@ -100,4 +100,4 @@ E[X^2]=0.9976 (theory 1.0)
 
 - Back: [[foundations/probability-and-measure-theory/02-probability-spaces-and-filtrations|02 · Probability Spaces & Filtrations]] · [[foundations/probability-and-measure-theory/index|Index Hub]]
 - Forward: [[foundations/probability-and-measure-theory/04-conditional-expectation|04 · Conditional Expectation]] · [[foundations/probability-and-measure-theory/05-martingales|05 · Martingales]]
-- Applications: [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] (tail distributions) · [[foundations/stochastic-calculus/index|Stochastic Calculus]] (normal increments, lognormal prices)
+- Applications: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (tail distributions) · [[foundations/stochastic-calculus/index|Stochastic Calculus]] (normal increments, lognormal prices)

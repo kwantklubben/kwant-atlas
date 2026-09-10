@@ -153,5 +153,5 @@ smoothed P(bull|all data), first 6: 0.975 0.989 0.994 0.996 0.996 0.996
 
 - Back: [[pillars/01-quantitative-research/regime-detection/02-markov-switching-models|02 · Markov-Switching]] · [[pillars/01-quantitative-research/regime-detection/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/regime-detection/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/regime-detection/06-advanced-extensions|06 · Advanced Extensions]]
-- ML cross-link: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification: HMM & GMM]] (Baum–Welch + Viterbi in the ML pillar)
+- ML cross-link: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]] (Baum–Welch + Viterbi in the ML pillar)
 - Contrast: [[pillars/01-quantitative-research/regime-detection/03-threshold-models|03 · Threshold Models]] (observed-state regimes vs latent-state HMM)

@@ -161,7 +161,7 @@ VaR 1d 99%  163.1099    200.0    81.55  ok
 3. **Cross-gamma is where multi-factor books hide.** With $N$ factors the Hessian has $N(N-1)/2$ cross terms; most systems report only the diagonal. A book of options on correlated underlyings has a large off-diagonal exposure that is invisible in a per-factor gamma report.
 4. **Limits without an action are reports.** The mechanism that makes a limit a limit is the stated consequence of breach, the escalation path, and the *time* allowed to cure. A limit system is an operating procedure with arithmetic attached, not the reverse.
 5. **Limits must be in the same units as the hedge.** A vega limit in raw units while the desk hedges per-point is a $100\times$ mismatch; a theta limit per trading day while the report is per calendar day is a $45\%$ mismatch. Unit mismatches are the most common cause of a limit system that appears to work and does not.
-6. **A VaR limit is not a stress limit.** The 99% one-day quantile says nothing about a five-sigma week. Every sensitivity-based VaR limit must be paired with a scenario/stress limit that is *not* derived from the same local model (see [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]]).
+6. **A VaR limit is not a stress limit.** The 99% one-day quantile says nothing about a five-sigma week. Every sensitivity-based VaR limit must be paired with a scenario/stress limit that is *not* derived from the same local model (see [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]).
 
 ---
 
@@ -181,5 +181,5 @@ VaR 1d 99%  163.1099    200.0    81.55  ok
 
 - Back: [[pillars/04-quantitative-risk/risk-factor-sensitivities/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Index Hub]]
 - Sibling: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/06-advanced-extensions|06 · VaR Extensions (delta–gamma & backtesting)]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall/04-expected-shortfall|Expected Shortfall (the coherent measure FRTB substitutes for VaR)]]
-- Forward: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation (FRTB SBM: delta, vega, curvature)]]
+- Forward: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation (FRTB SBM: delta, vega, curvature)]]
 - Base: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|Pillar 3 · The Greeks]] · [[foundations/numerical-methods/index|Numerical Methods]]
