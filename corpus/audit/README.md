@@ -73,8 +73,11 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 | 5 | pillars/03-derivative-pricing (remaining 10) | — | ✅ done, fixes committed |
 | 6 | pillars/04-quantitative-risk (1st 4) | var-and-expected-shortfall, parametric-historical-and-monte-carlo-var, extreme-value-theory-and-fat-tails, copulas-and-dependence | ✅ done, fixes committed |
 | 7 | pillars/04-quantitative-risk (2nd 4) | credit-risk-and-the-merton-model, stress-testing-and-scenario-analysis, liquidity-risk-and-funding, operational-risk | ✅ done, fixes committed |
-| 8 | pillars/04-quantitative-risk (last 5) | model-risk-and-validation, basel-and-regulation, risk-factor-sensitivities, systemic-risk-and-aggregation, +1 | running |
-| 9+ | pillars 04-08 (~67 folders) | — | queued |
+| 8 | pillars/04-quantitative-risk (last 4) | model-risk-and-validation, basel-and-regulation, risk-factor-sensitivities, systemic-risk-and-aggregation | ✅ done, fixes committed |
+| 9 | pillars/05-portfolio-optimization (1st 4) | modern-portfolio-theory-and-mean-variance, covariance-shrinkage-and-denoising, black-litterman, risk-parity-and-equal-risk-contribution | running |
+| 10+ | pillars 05-08 (~63 folders) | — | queued |
+
+**Pillar 4 (13 folders) is now fully audited and fixed** — 106/106 code blocks byte-exact.
 
 **Pacing:** waves of **4** concurrent agents (one dedicated agent per topic-folder), per instruction.
 
