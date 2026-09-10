@@ -98,11 +98,11 @@ for n in (10, 25, 100, 500):
 
 ```
 Temporary vs permanent: same size X, different execution speed
- slices  speed   permanent   peak impact  exec VWAP imp
-     10     1x      2.0000        7.2106         4.4105
-     25     2x      2.0000        4.9703         3.1707
-    100    10x      2.0000        2.8000         1.7380
-    500    50x      2.0000        2.1600         1.1591
+ slices  speed   permanent  peak impact  exec VWAP imp
+     10     1x      2.0000       7.2106         4.4105
+     25     2x      2.0000       4.9703         3.1707
+    100    10x      2.0000       2.8000         1.7380
+    500    50x      2.0000       2.1600         1.1591
 ```
 
 Read the table:

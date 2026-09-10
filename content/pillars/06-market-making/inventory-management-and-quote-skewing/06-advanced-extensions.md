@@ -6,7 +6,7 @@ tags:
   - optimal-liquidation
   - adverse-selection
   - multi-asset
-  - almgen-chriss
+  - almgren-chriss
 ---
 
 **Basic Prerequisites:** [[pillars/06-market-making/inventory-management-and-quote-skewing/04-quote-skewing|04 · Quote Skewing]] and [[pillars/06-market-making/inventory-management-and-quote-skewing/05-failure-modes-and-practice|05 · Failure Modes]].
@@ -55,7 +55,7 @@ so a long in a positively-correlated neighbour counts as (partial) excess invent
 
 Guéant, Lehalle & Fernandez-Tapia (2013) re-solve the market-making problem *with* the inventory cap $|q|\le Q$. Under exponential intensities, a change of variables turns the HJB into a **system of linear ODEs** for $v_q(t)$:
 
-$$\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\,v_{q-1}(t),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\big(1+\tfrac{\gamma}{k}\big)^{-(1+\gamma/k)},$$
+$$\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\big(v_{q-1}(t)+v_{q+1}(t)\big),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\big(1+\tfrac{\gamma}{k}\big)^{-(1+k/\gamma)},$$
 
 on the $2Q+1$ inventory states, with closed-form asymptotics for the quotes that reduce to the A–S spread plus an inventory-dependent correction. This supplies the **verification theorem** the raw A–S quotes lacked — the formal statement that "the skew encourages flattening, the cap guarantees it" ([[pillars/06-market-making/inventory-management-and-quote-skewing/05-failure-modes-and-practice|05]]).
 

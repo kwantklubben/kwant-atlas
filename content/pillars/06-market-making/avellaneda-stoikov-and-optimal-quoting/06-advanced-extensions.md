@@ -27,7 +27,9 @@ Every defect of the baseline AS model motivates an extension. This page is the *
 
 Guéant, Lehalle & Fernandez-Tapia (2013) re-solve the market-making problem *with the constraints the original paper left open*. Under intensities $\lambda^{a}(\delta)=Ae^{-k\delta}$ and $\lambda^{b}(\delta)=Ae^{-k\delta}$, a change of variables turns the HJB system into a system of **linear ODEs** for the functions $v_q(t)$:
 
-$$\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\,v_{q-1}(t),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\left(1+\tfrac{\gamma}{k}\right)^{-(1+\gamma/k)},$$
+$$\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\big(v_{q-1}(t)+v_{q+1}(t)\big),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\left(1+\tfrac{\gamma}{k}\right)^{-(1+k/\gamma)},$$
+
+(boundary states drop the out-of-range neighbour: $\dot v_Q=\alpha Q^2v_Q-\eta v_{Q-1}$, $\dot v_{-Q}=\alpha Q^2v_{-Q}-\eta v_{-Q+1}$.)
 
 on the $2Q+1$ inventory states $\{-Q,\dots,Q\}$ (with $v_q(T)=1$), from which $u(t,x,q,s)=-\exp(-\gamma(x+qs))\,v_q(t)^{-\gamma/k}$ recovers the value function. Two consequences matter in practice:
 

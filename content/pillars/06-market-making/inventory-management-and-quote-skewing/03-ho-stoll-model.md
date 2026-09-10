@@ -61,13 +61,13 @@ whose difference is the **reservation spread** $r^a-r^b=\gamma\sigma^2\tau$ — 
 
 #### 2.3 The cost-anchored spread
 
-Why does the dealer quote *wide* at all, and why is the spread *interior* rather than degenerate? Purely from inventory risk, with symmetric arrivals, the maximization is bang-bang (quote at the boundary). The interior spread comes from the **transaction (order-processing) cost** $c$ per trade and the elasticity of fill arrivals $\pi(A)=A e^{-kA}$. The dealer's expected revenue per sell at ask markup $A$ is $A e^{-kA}(A-c)$; maximizing gives
+Why does the dealer quote *wide* at all, and why is the spread *interior* rather than degenerate? Purely from inventory risk, with symmetric arrivals, the maximization is bang-bang (quote at the boundary). The interior spread comes from the **transaction (order-processing) cost** $c$ per trade and the elasticity of fill arrivals $\pi(\delta)=\Lambda e^{-k\delta}$ (prefactor $\Lambda$, markup $\delta$). The dealer's expected revenue per sell at ask markup $\delta$ is $\Lambda e^{-k\delta}(\delta-c)$; the FOC $-k(\delta-c)+1=0$ gives
 
-$$A^\ast = c+\frac1k. \qquad (\text{HS }3)$$
+$$\delta^\ast = c+\frac1k. \qquad (\text{HS }3)$$
 
-So the half-spread $a^\ast=c+\tfrac1k$ balances the fixed cost $c$ (quote tight enough to still be profitable) against the fill elasticity $k$ (quote far enough to slow the bleed). It is **interior**, independent of inventory, and additive with the reservation spread: the full quote is
+So the half-spread $\delta^\ast=c+\tfrac1k$ balances the fixed cost $c$ (quote tight enough to still be profitable) against the fill elasticity $k$ (quote far enough to slow the bleed). It is **interior**, independent of inventory, and additive with the reservation spread: the full quote is
 
-$$\text{ask}=r(I)+a^\ast,\qquad \text{bid}=r(I)-a^\ast.$$
+$$\text{ask}=r(I)+\delta^\ast,\qquad \text{bid}=r(I)-\delta^\ast.$$
 
 **Reading the structure.** The reservation price carries *all* the inventory dependence (the skew $-\gamma\sigma^2I\tau$); the half-spread carries the transaction-cost component. This clean separation — inventory risk in the *centre*, transaction cost in the *width* — is the Ho–Stoll legacy and the reason the spread can be decomposed empirically.
 

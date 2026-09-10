@@ -87,7 +87,7 @@ The spread column reproduces the paper's $1.29/1.33/1.15$ **exactly** (to their 
 
 Hub signposts — the folder's failure-mode analysis lives in [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
-1. **Adverse selection is not in the model.** AS prices pure *inventory* risk over a Poisson flow of uninformed orders. Informed flow (pick-off risk) is invisible to it — our simulation shows the AS P&L turning negative once a few percent of fills are informed.
+1. **Adverse selection is not in the model.** AS prices pure *inventory* risk over a Poisson flow of uninformed orders. Informed flow (pick-off risk) is invisible to it — our simulation shows the AS P&L only turning negative once roughly 60% of fills are informed (it stays positive to ~40%).
 2. **Parameter estimation kills it.** The arrival parameters $A$ and $k$ must be *estimated* from the book, and $\sigma,\gamma$ chosen; the strategy is only as good as those numbers. $k$ collapses in news, exactly when quotes matter most.
 3. **The terminal penalty vanishes near $T$.** As $T-t\to0$ the reservation skew $q\gamma\sigma^2(T-t)\to0$, so the model abandons inventory protection just when liquidity evaporates (the reason production systems add a hard inventory cap — see [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/06-advanced-extensions|06 · Advanced Extensions]]).
 

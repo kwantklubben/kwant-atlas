@@ -35,7 +35,7 @@ The four failures, in one line each:
 
 $$\gamma_1 = -c^2(1-2\rho),$$
 
-which is **less negative** than $-c^2$ for $0<\rho<\tfrac12$, so the Roll spread $\sqrt{-\gamma_1}$ is biased **downward**. (For $\rho>\tfrac12$ it would even flip positive.)
+which is **less negative** than $-c^2$ for $0<\rho<\tfrac12$, so the Roll spread $\sqrt{-\gamma_1}$ is biased **downward** (this is the lag-1-only Ex 4.2 result; a persistent Markov direction process instead gives the geometric form $\gamma_1=-c^2(1-\rho)^2$, also biased downward).
 
 **Failure 3 — information correlated with direction** (Hasbrouck Ex 4.3). Let $\rho=\mathrm{corr}(q_t,u_t)>0$ (informed traders buy before good news). Then
 

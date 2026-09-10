@@ -80,7 +80,7 @@ where $\tfrac{S}{2}(q_t-q_{t-1})$ is the transitory (order-processing) part and 
 
 ### 3. Computational Implementation — estimate $c$ and $\lambda$ from a trade tape
 
-Simulate the generalized-Roll process, then run the regression $\Delta p_t = c\,(q_t-q_{t-1})+\lambda q_t+u_t$ via the normal equations to recover both components and the total spread. Stdlib only.
+Simulate a Glosten–Harris/Huang–Stoll tape (trade prints at $m_t+q_tc$, then the efficient price absorbs the impact $\lambda q_t$), then run the regression $\Delta p_t = c\,(q_t-q_{t-1})+\lambda q_{t-1}+u_t$ via the normal equations to recover both components and the total spread. *(The boxed generalized-Roll equation above places the impact on the contemporaneous $q_t$; the equivalent Huang–Stoll regression places it on the lagged $q_{t-1}$ with a matching regressor, so both recover the same $c,\lambda$.)* Stdlib only.
 
 ```python
 import random

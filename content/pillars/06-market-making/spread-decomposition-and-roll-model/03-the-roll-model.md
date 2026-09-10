@@ -55,7 +55,7 @@ $$\boxed{\;c = \sqrt{-\gamma_1}\;, \qquad S = 2\sqrt{-\gamma_1}\;, \qquad \sigma
 
 #### 2.3 Empirical calibration anchor (Hasbrouck Ch 3)
 
-For Price Communications Oct 2003, the sample autocovariance was $\hat\gamma_1=-0.0000294$, giving $c=\$0.017$, spread $=\$0.034$ — close to the time-weighted NYSE average spread of $\$0.032$. A perfect worked example of the formula on real data.
+For Price Communications Oct 2003, the sample autocovariance was $\hat\gamma_1\approx-0.00029$, giving $c=\$0.017$, spread $=\$0.034$ — close to the time-weighted NYSE average spread of $\$0.032$. A perfect worked example of the formula on real data.
 
 #### 2.4 Connection to MA(1) (Hasbrouck Ch 4)
 

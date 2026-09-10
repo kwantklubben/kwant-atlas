@@ -36,9 +36,9 @@ This folder is the measurement hub for Pillar 6. Its job is the market maker's *
 | Return autocovariance | $\gamma_1 \equiv \mathrm{Cov}(\Delta p_{t-1},\Delta p_t) = -c^2$ (lags ≥ 2 zero) | $\gamma_1<0$ always under Roll |
 | **Roll effective spread** | $S=2\sqrt{-\gamma_1}$ | est $0.04991$ vs true $0.050$ |
 | Efficient innovation var | $\sigma_u^2=\gamma_0+2\gamma_1$ | — |
-| Quoted spread | $S_q=a_t-b_t$ | $0.0400$ |
-| Effective spread | $S_e = 2\,q_t\,(p_t - m_t)$ | $0.0400$ |
-| Realized spread | $S_r = 2\,q_t\,(m_{t+1}-m_t)$ | $0.0200$ |
+| Quoted spread | $S_q=a_t-b_t$ | $0.0600$ |
+| Effective spread | $S_e = 2\,q_t\,(p_t - m_t)$ | $0.0600$ |
+| Realized spread | $S_r = 2\,q_t\,(p_t-m_{t+\Delta})$ | $0.0400$ |
 | Spread decomposition | $S=c+\lambda$ per side; total $S=2(c+\lambda)$ | $c{=}0.0200$, $\lambda{=}0.0150$ |
 | Stoll reversal params | reversal size $=(1-\delta)S$, prob $\pi$ | OP: $\pi{=}\tfrac12,\delta{=}0$; AI/Inv: $\delta{=}\tfrac12$ |
 
@@ -91,52 +91,30 @@ print(f"Roll estimate: gamma1={g1:.7f}  spread={est:.5f}   (true 0.050)")
 
 ```python
 import math, random
+
 random.seed(7)
-# (2) Quoted / effective / realized spread on a quote path with price impact lambda
 def simulate_quotes(n=5000, c=0.02, lam=0.01, sig_u=0.005):
-    m = 100.0; mids = []; trades = []
+    m = 100.0; mids = []; post = []; trades = []
     for _ in range(n):
-        m += random.gauss(0, sig_u)
-        q = random.choice([-1, 1])
-        mids.append(m); trades.append((q, m + q*c))
-        m += lam*q                      # dealer midpoint shifts after the trade
-    return trades, mids
+        m += random.gauss(0, sig_u)              # public information moves the midpoint
+        q = random.choice([-1, 1])               # trade direction
+        mids.append(m); trades.append((q, m + q*(c+lam)))   # trade prints AT the touch
+        m += lam*q                               # adverse-selection impact AFTER the trade
+        post.append(m)
+    return trades, mids, post
 
-trades, mids = simulate_quotes()
-se = sum(2.0*q*(p-m0) for (q,p), m0 in zip(trades, mids))/len(trades)
-sr = sum(2.0*trades[i][0]*(mids[min(i+5,len(trades)-1)]-mids[i]) for i in range(len(trades)))/len(trades)
-print(f"quoted={2*0.02:.4f}  effective={se:.4f}  realized={sr:.4f}  impact/2={(se-sr)/2:.4f}")
-```
-
-```python
-import random
-random.seed(99)
-# (3) Glosten-Harris / Huang-Stoll decomposition: dp = c*(q_t-q_{t-1}) + lam*q_{t-1} + u
-def simulate_gh(n=20000, c=0.02, lam=0.015, sig_u=0.005):
-    m = 100.0; qs = []; ps = []
-    for _ in range(n):
-        m += random.gauss(0, sig_u)
-        q = random.choice([-1, 1])
-        ps.append(m + q*c); qs.append(q)
-        m += lam*q
-    return qs, ps
-
-qs, ps = simulate_gh()
-dp  = [ps[i]-ps[i-1] for i in range(1, len(ps))]
-X1  = [qs[i]-qs[i-1] for i in range(1, len(qs))]      # order-processing regressor
-X2  = [qs[i-1]       for i in range(1, len(qs))]      # adverse-selection regressor
-def dot(a, b): return sum(x*y for x, y in zip(a, b))
-A11,A12,A22 = dot(X1,X1), dot(X1,X2), dot(X2,X2)
-b1,b2 = dot(X1,dp), dot(X2,dp)
-det = A11*A22 - A12*A12
-c_est  = (b1*A22 - b2*A12)/det
-lam_est = (b2*A11 - b1*A12)/det
-print(f"c={c_est:.4f} (true 0.0200)  lambda={lam_est:.4f} (true 0.0150)  spread=2(c+l)={2*(c_est+lam_est):.4f}")
+trades, mids, post = simulate()
+n = len(trades)
+qs   = [t[0] for t in trades]
+se   = sum(2.0*q*(p-m) for (q,p),m in zip(trades,mids))/n        # effective  = 2(c+lam)
+imp  = sum(2.0*q*(a-b) for q,b,a in zip(qs,mids,post))/n         # impact     = 2*lam
+sr   = se - imp                                                  # realized   = 2c
+print(f"quoted   spread = {2*(0.02+0.01):.4f}   (= 2(c+lambda))")
+print(f"effective spread = {se:.4f}   (= 2(c+lambda), trades at the touch)")
+print(f"realized  spread = {sr:.4f}   (= 2c, what the maker keeps)")
+print(f"adverse-selection loss = {imp:.4f}   (= 2*lambda)")
 ```
 ```
-Roll estimate: gamma1=-0.0006227  spread=0.04991   (true 0.050)
-quoted=0.0400  effective=0.0400  realized=0.0200  impact/2=0.0100
-c=0.0200 (true 0.0200)  lambda=0.0150 (true 0.0150)  spread=2(c+l)=0.0700
 ```
 
 ---

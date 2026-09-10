@@ -52,7 +52,7 @@ $$\frac{\partial}{\partial I}\Big(\tfrac12\gamma\sigma^2I^2\tau\Big)=\gamma\sigm
 
 $$\mathbb{E}[W]-\frac{\gamma}{2}\mathrm{Var}(W)=\text{spread revenue}-\tfrac12\gamma\sigma^2\,\mathbb{E}[I^2]\tau.$$
 
-Because spread revenue does not require holding a position (you earn it round-trip), the variance penalty is minimized at $\mathbb{E}[I^2]=0$, i.e. **$I^\ast=0$**. Any forecast $\mu$ pulls the target away from zero: with drift, the optimal position shifts to $I^\ast=\tfrac{\mu}{\gamma\sigma^2\tau}$ (risk-adjusted trade of return vs. variance).
+Because spread revenue does not require holding a position (you earn it round-trip), the variance penalty is minimized at $\mathbb{E}[I^2]=0$, i.e. **$I^\ast=0$**. Any forecast $\mu$ pulls the target away from zero: with drift, the optimal position shifts to $I^\ast=\tfrac{\mu}{\gamma\sigma^2}$ (risk-adjusted trade of return vs. variance).
 
 **Inventory mean-reversion.** An unmanaged position is a random walk: $q_{t+1}=q_t+\varepsilon_t$ with $\mathrm{Var}(q_T)\propto T$. Quote skewing injects a *restoring drift*: the probability of the inventory-reducing trade rises with $|q|$, so the position satisfies an Ornstein–Uhlenbeck-type equation
 
@@ -97,7 +97,7 @@ The simulated P&L std matches $\lvert I\rvert\sigma\sqrt\tau$ to three decimals 
 
 1. **Treating inventory risk as linear.** The P&L *std* is linear in $|I|$, but the *cost* is quadratic — a 2x position is 4x as costly. Position limits set on the linear scale systematically understate the pain of the tail.
 2. **"I'll hold it, it'll come back" — no mean reversion.** Without skewing, inventory is a driftless random walk; there is no force returning it to zero, and holding longer only adds $\sqrt{\tau}$ more variance.
-3. **Zero drift is an assumption, not a fact.** The target $I^\ast=0$ assumes no forecast. A real signal $(\mu\neq0)$ moves the optimal position to $\tfrac{\mu}{\gamma\sigma^2\tau}$; a maker who ignores a real drift is knowingly short or long the market. But a maker who *believes* in a spurious drift becomes a directional bet — the calibration failure mode of [[pillars/06-market-making/inventory-management-and-quote-skewing/06-advanced-extensions|06]].
+3. **Zero drift is an assumption, not a fact.** The target $I^\ast=0$ assumes no forecast. A real signal $(\mu\neq0)$ moves the optimal position to $\tfrac{\mu}{\gamma\sigma^2}$; a maker who ignores a real drift is knowingly short or long the market. But a maker who *believes* in a spurious drift becomes a directional bet — the calibration failure mode of [[pillars/06-market-making/inventory-management-and-quote-skewing/06-advanced-extensions|06]].
 4. **Risk aversion is a choice.** $\gamma$ sets how fast the skew fights inventory. Too small, and positions run to the limit ([[pillars/06-market-making/inventory-management-and-quote-skewing/05-failure-modes-and-practice|05]]); too large, and the desk quotes itself out of the market to avoid $I\neq0$.
 
 ---

@@ -19,7 +19,7 @@ tags:
 
 - **Quoted spread** $S_q = a_t-b_t$: what the order book *advertises*. It is the gross cost of crossing the spread, but you almost never pay it in full because trades fill inside the touch or at better mid-market terms.
 - **Effective spread** $S_e=2q_t(p_t-m_t)$: what a trader *actually* pays, measured by how far the execution price sits from the prevailing midpoint. This is the number a venue or broker reports to a client as "your cost."
-- **Realized spread** $S_r = 2q_t(m_{t+1}-m_t)$: what the market maker *keeps*, measured by the midpoint's move *after* the trade. If the midpoint falls after a buy (or rises after a sell), the maker lost value to the counterparty — that loss is adverse selection.
+- **Realized spread** $S_r = 2q_t(p_t-m_{t+\Delta})$: what the market maker *keeps*, measured by the midquote *after* the trade relative to the price paid. The gap between effective and realized is the **price impact** $S_e-S_r = 2q_t(m_{t+\Delta}-m_t)$ — the adverse-selection loss to informed flow.
 
 The practical objective: **given a trade tape and quote data, compute all three and read off who captured the spread.** A market with $S_q$ large but $S_e\ll S_q$ is cheap to trade (liquidity hides inside the quote); a market with $S_e\gg S_r$ is one where the liquidity provider is being run over by informed flow.
 
@@ -29,13 +29,13 @@ The practical objective: **given a trade tape and quote data, compute all three 
 
 Under the generalized Roll model the three measures relate to two parameters: the half-spread $c$ and the price-impact $\lambda$ (adverse-selection cost per unit order flow).
 
-- **Quoted:** $S_q=2c$ — the full bid-ask width.
-- **Effective:** a trade at the ask ($q_t=+1$) prices at $p_t=m_t+c$, so $2q_t(p_t-m_t)=2c$; at the bid likewise. **$S_e=2c$.** The effective spread equals the quoted spread when trades print exactly at the touch.
-- **Realized:** after the trade the midpoint is revised by the information content: $m_{t+1}=m_t+\lambda q_t$ (plus public noise). Then
-  $$S_r = 2q_t(m_{t+1}-m_t)=2q_t(\lambda q_t)=2\lambda,$$
-  so **$S_r=2\lambda$** (in the no-noise limit). The difference is the adverse-selection loss:
+- **Quoted:** $S_q=2(c+\lambda)$ — the full bid-ask width (order-processing $c$ **plus** the adverse-selection component $\lambda$; Hasbrouck eq. 8.3).
+- **Effective:** a trade at the ask ($q_t=+1$) prices at $p_t=m_t+(c+\lambda)$, so $2q_t(p_t-m_t)=2(c+\lambda)$; at the bid likewise. **$S_e=2(c+\lambda)$.** The effective spread equals the quoted spread when trades print exactly at the touch.
+- **Realized:** after the trade the midquote is revised by the information content ($m_{t+\Delta}=m_t+\lambda q_t$ plus public noise), so
+  $$S_r = 2q_t\big(p_t-m_{t+\Delta}\big)=2(c+\lambda)-2\lambda=2c,$$
+  so **$S_r=2c$** (the maker keeps the order-processing half-spread). The loss to informed flow is the **price impact**:
 
-$$S_q - S_r = 2(c-\lambda),$$
+$$S_e - S_r = 2\lambda,$$
 
 and with $\lambda>0$ the ordering $S_q \ge S_e \ge S_r$ holds (the middle equality is approximate when fills are at the touch; with price improvement $S_e<S_q$).
 
@@ -51,29 +51,32 @@ Simulate a quote path where the dealer midpoint shifts by $\lambda$ after each t
 import math, random
 
 random.seed(7)
-def simulate_quotes(n=5000, c=0.02, lam=0.01, sig_u=0.005):
-    m = 100.0; mids = []; trades = []
+def simulate(n=5000, c=0.02, lam=0.01, sig_u=0.005):
+    m = 100.0; mids = []; post = []; trades = []
     for _ in range(n):
-        m += random.gauss(0, sig_u)          # public info moves the midpoint
-        q = random.choice([-1, 1])           # trade direction
-        mids.append(m); trades.append((q, m + q*c))   # trade prints at bid/ask
-        m += lam*q                           # adverse-selection impact AFTER the trade
-    return trades, mids
+        m += random.gauss(0, sig_u)              # public information moves the midpoint
+        q = random.choice([-1, 1])               # trade direction
+        mids.append(m); trades.append((q, m + q*(c+lam)))   # trade prints AT the touch
+        m += lam*q                               # adverse-selection impact AFTER the trade
+        post.append(m)
+    return trades, mids, post
 
-trades, mids = simulate_quotes()
+trades, mids, post = simulate()
 n = len(trades)
-se = sum(2.0*q*(p - m0) for (q,p), m0 in zip(trades, mids))/n          # effective
-sr = sum(2.0*trades[i][0]*(mids[min(i+5,n-1)] - mids[i]) for i in range(n))/n  # realized (k=5)
-print(f"quoted   spread = {2*0.02:.4f}   (= 2c)")
-print(f"effective spread = {se:.4f}   (= 2c, trades at the touch)")
-print(f"realized  spread = {sr:.4f}   (= 2*lambda, what the maker keeps)")
-print(f"adverse-selection loss = {se-sr:.4f}   (= 2(c-lambda))")
+qs   = [t[0] for t in trades]
+se   = sum(2.0*q*(p-m) for (q,p),m in zip(trades,mids))/n        # effective  = 2(c+lam)
+imp  = sum(2.0*q*(a-b) for q,b,a in zip(qs,mids,post))/n         # impact     = 2*lam
+sr   = se - imp                                                  # realized   = 2c
+print(f"quoted   spread = {2*(0.02+0.01):.4f}   (= 2(c+lambda))")
+print(f"effective spread = {se:.4f}   (= 2(c+lambda), trades at the touch)")
+print(f"realized  spread = {sr:.4f}   (= 2c, what the maker keeps)")
+print(f"adverse-selection loss = {imp:.4f}   (= 2*lambda)")
 ```
 ```
-quoted   spread = 0.0400   (= 2c)
-effective spread = 0.0400   (= 2c, trades at the touch)
-realized  spread = 0.0200   (= 2*lambda, what the maker keeps)
-adverse-selection loss = 0.0200   (= 2(c-lambda))
+quoted   spread = 0.0600   (= 2(c+lambda))
+effective spread = 0.0600   (= 2(c+lambda), trades at the touch)
+realized  spread = 0.0400   (= 2c, what the maker keeps)
+adverse-selection loss = 0.0200   (= 2*lambda)
 ```
 
 The maker *advertises* $0.04$ but *keeps* only $0.02$ — exactly half is surrendered to informed flow. That is the economic content of spread decomposition in its simplest form.

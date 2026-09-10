@@ -46,9 +46,9 @@ $$\boxed{\;\sigma_w^2 \equiv \lambda^2+\sigma_u^2 = \gamma_0+2\gamma_1\;}$$
 Any covariance-stationary $\Delta p_t$ is an MA(1) (Wold): $\Delta p_t=\varepsilon_t+\theta\varepsilon_{t-1}$. The Beveridge–Nelson decomposition writes $p_t=m_t+s_t$ where $m_t$ is the random-walk (permanent) component and $s_t$ is the stationary pricing error:
 
 $$\sigma_w^2 = (1+\theta)^2\,\sigma_\varepsilon^2 \qquad\text{(permanent innovation variance)},$$
-$$\sigma_s^2 = \theta^2\,\sigma_\varepsilon^2 \qquad\text{(pricing-error variance)}.$$
+$$\sigma_s^2 = \theta^2\,\sigma_\varepsilon^2 \qquad\text{(lower bound on the pricing-error variance)}.$$
 
-In the pure Roll case, $\sigma_w^2=\sigma_u^2$ and $\sigma_s^2=c^2$: the pricing error is exactly the bounce variance. The decomposition is **invariant to the identification** of the MA parameters — a strong robustness property.
+In the pure Roll case, $\sigma_w^2=\sigma_u^2$ and the *actual* pricing-error variance is $\mathrm{Var}(p_t-m_t)=c^2$, attained by the bound $\theta^2\sigma_\varepsilon^2$ only when $\sigma_u^2=0$ (in Roll, $c^2=\theta\sigma_\varepsilon^2>\theta^2\sigma_\varepsilon^2$). The decomposition is **invariant to the identification** of the MA parameters — a strong robustness property.
 
 #### 2.3 Variance ratio
 

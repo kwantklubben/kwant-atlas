@@ -37,7 +37,7 @@ with $r=s-q\gamma\sigma^2(T-t)$. **The quotes are the reservation price plus/min
 From [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/02-the-market-maker-problem|02]], the ansatz $u=-\exp(-\gamma x)\exp(-\gamma\theta(s,q,t))$ turns the HJB into (AS eq. 3.3)
 
 $$\theta_t+\tfrac12\sigma^2\theta_{ss}-\tfrac12\sigma^2\gamma\,\theta_s^2
-+\max_{\delta^b}\frac{\lambda^b(\delta^b)}{\gamma}\!\left[1-e^{-\gamma(s-\delta^b-r^b)}\right]
++\max_{\delta^b}\frac{\lambda^b(\delta^b)}{\gamma}\!\left[1-e^{+\gamma(s-\delta^b-r^b)}\right]
 +\max_{\delta^a}\frac{\lambda^a(\delta^a)}{\gamma}\!\left[1-e^{-\gamma(s+\delta^a-r^a)}\right]=0,$$
 
 with $\theta(s,q,T)=qs$. The first-order conditions for the two maxes give the **implicit quote distances** (AS eq. 3.6–3.7). For exponential intensities $\lambda^a(\delta)=\lambda^b(\delta)=Ae^{-k\delta}$ they solve explicitly.
@@ -66,7 +66,7 @@ $$\delta^a+\delta^b = 2\theta_2+\frac{2}{\gamma}\ln\!\left(1+\frac{\gamma}{k}\ri
 #### 2.3 The two-component interpretation of $\theta$
 
 - $\theta_1$ = reservation price at zero inventory.
-- $\theta_2=\tfrac12\gamma\sigma^2\tau$ = **sensitivity of the quotes to inventory**. If $\theta_2$ is large, accumulating $q>0$ drives the quotes aggressively down. The skew per unit inventory is exactly $2\theta_2\gamma\dots$ — see [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/04-inventory-and-risk-aversion|04 · Inventory & Risk Aversion]].
+- $\theta_2=\tfrac12\gamma\sigma^2\tau$ = **sensitivity of the quotes to inventory**. If $\theta_2$ is large, accumulating $q>0$ drives the quotes aggressively down. The skew per unit inventory is exactly $2\theta_2$ (the two terms are intentionally asymmetric in sign)… — see [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/04-inventory-and-risk-aversion|04 · Inventory & Risk Aversion]].
 
 ---
 

@@ -29,7 +29,7 @@ The three failures, in one line each:
 
 **The breach condition.** Inventory evolves as a random walk with reversion speed $\kappa$ set by the skew strength $\alpha=\gamma\sigma^2\tau$ and fill elasticity $k$. For weak skew ($\alpha\to0$) the position is a pure random walk and the probability of ever reaching $\pm Q$ by time $T$ is
 
-$$\mathbb{P}\!\Big(\max_{0\le t\le T}|q_t|\ge Q\Big)\;\approx\;2\,\Phi\!\Big(-\tfrac{Q}{\sigma_q\sqrt{T}}\Big)$$
+$$\mathbb{P}\!\Big(\max_{0\le t\le T}|q_t|\ge Q\Big)\;\approx\;4\,\Phi\!\Big(-\tfrac{Q}{\sigma_q\sqrt{T}}\Big)$$
 
 (a reflected-walk / first-passage bound, $\sigma_q^2=$ per-step inventory variance). Stronger skew shrinks $\sigma_q$, and the breach probability collapses. Our simulation confirms this monotone dependence.
 
@@ -39,7 +39,7 @@ $$\text{forced-loss per share}\;\approx\;\tfrac12 s_{\text{market}}+\text{advers
 
 The *expected* loss of a forced liquidation is the adverse price move $\mathbb{E}[\Delta S \mid \text{trend},\text{breach time}]$ — which, in a trending market, is large because breaches happen when the trend is running against the position. This is why the tail (P&L std) explodes under a cap without skew.
 
-**Risk limits are a variance budget.** A desk with position limit $Q$ and per-period variance $\sigma_q^2$ has inventory-risk VaR $\approx z_{\beta}\sqrt{Q}\,\sigma_q$. Choosing $Q$ is choosing how much of that tail to accept; skewing shrinks $\sigma_q$ so a given $Q$ is breached far less often.
+**Risk limits are a variance budget.** A desk with position limit $Q$ and per-period variance $\sigma_q^2$ has inventory-risk VaR $\approx z_{\beta}\,\sigma_q\sqrt{T}$ (a $Q$-period variance budget). Choosing $Q$ is choosing how much of that tail to accept; skewing shrinks $\sigma_q$ so a given $Q$ is breached far less often.
 
 ---
 

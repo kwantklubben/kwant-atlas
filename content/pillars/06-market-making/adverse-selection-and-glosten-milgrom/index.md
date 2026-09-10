@@ -71,7 +71,7 @@ s_b^t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\,(1-\theta_{t-1})+(1-\pi)\tfr
 $$\boxed{\;S=(\pi)(V_H-V_L)\;}$$
 
 - **First-trade spread at $\theta_0=\tfrac12$:** $S_1=\pi(V_H-V_L)$ (Foucault eq. 3.12).
-- Spread is largest at maximal uncertainty ($\theta=\tfrac12$) and shrinks to $0$ as the maker learns ($\theta\to1$ or $0$). **Below a single informed trader ($\pi=0$) the spread collapses to zero even with no processing/inventory cost** — the pure information result of GM (Hasbrouck Ch 5; also copeland–Galai's "short a put and a call").
+- Spread is largest at maximal uncertainty ($\theta=\tfrac12$) and shrinks to $0$ as the maker learns ($\theta\to1$ or $0$). **Below a single informed trader ($\pi=0$) the spread collapses to zero even with no processing/inventory cost** — the pure information result of GM (Hasbrouck Ch 5; also Copeland–Galai's "short a put and a call").
 - Hasbrouck writes it with $\delta=\mathbb{P}(V=V_L)$: $\;A-B=\dfrac{4(1-\delta)\delta\,\mu\,(V_H-V_L)}{1-(1-2\delta)^2\mu^2},\;$ which at $\delta=\tfrac12$ gives exactly $A-B=(V_H-V_L)\,\mu$.
 
 #### Other canonical pieces (bridged from this folder)
