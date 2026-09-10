@@ -33,7 +33,7 @@ Three facts drive practice:
 
 With $f=cf^\*$:
 
-$$\frac{g_\infty(cf^\*)}{g_\infty(f^\*)}=c(2-c),\qquad
+$$\frac{g_\infty(cf^\*)-r}{g_\infty(f^\*)-r}=c(2-c)\qquad(\text{exact for the excess growth; the raw ratio equals }c(2-c)\text{ only when }r=0),\qquad
 \frac{\mathrm{SD}(G_\infty(cf^\*))}{\mathrm{SD}(G_\infty(f^\*))}=c.$$
 
 Growth is a *quadratic* that is flat at the top; risk is *linear* in $c$. Hence half Kelly: $g/g^\*=0.75$, risk $=0.5$. Double Kelly ($c=2$): $g/g^\*=0$, risk $=2$. **The ratio of return to risk is monotonically worse the further you scale above $c=1$.**

@@ -40,7 +40,7 @@ $$d_{ij}=\sqrt{\tfrac12\bigl(1-\rho_{ij}\bigr)} .$$
 
 It is a genuine metric: $d_{ii}=0$, $d_{ij}=d_{ji}\ge0$, and the triangle inequality holds. The clean reason is an exact Euclidean embedding. Let $u_i = x_i/\|x_i\|$ be each asset's demeaned return column scaled to unit length. Then
 
-$$\|u_i-u_j\|^2 = 2-2\,\rho_{ij} \quad\Longrightarrow\quad d_{ij}=\frac{\|u_i-u_j\|}{\sqrt2},$$
+$$\|u_i-u_j\|^2 = 2-2\,\rho_{ij} \quad\Longrightarrow\quad d_{ij}=\frac{\|u_i-u_j\|}{2},$$
 
 so the "correlation distance" is literally the distance between the assets' unit direction vectors in $\mathbb{R}^T$, rescaled. Whatever single-linkage/complete-linkage do geometrically in that space, they do correctly here.
 

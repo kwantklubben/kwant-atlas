@@ -50,7 +50,7 @@ This page is the folder's *hub*: it gives the **fast formula lookup** below (job
 | **No-trade half-width** | $\theta=\dfrac{c}{\delta\sigma^2}$, band $[w^\ast-\theta,\;w^\ast+\theta]$ | $\sigma=20\%$, $c=20$ bp: $\theta=0.2000$, band $[0.80,\,1.20]$ |
 | **Turnover-penalty frontier** | $\max\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w-\lambda\lVert w-w_0\rVert_1$ | utility peaks at $\lambda=0.0010=$ **the true cost** ($0.15554$) |
 | **Multi-period tracking** | $\min\sum_t\Big[\tfrac\rho2(w_t-w^\ast)^\top\Sigma(w_t-w^\ast)+\tfrac\kappa2(w_t-w_{t-1})^\top\Lambda(w_t-w_{t-1})\Big]$ | ramp path; objective $0.3090$ vs all-at-once $0.5000$ ($\kappa{=}1$) |
-| **Aim / partial adjustment** | $F=(\delta\Sigma+\kappa\Lambda)^{-1}\delta\Sigma$, trade $=F(w^\ast-w_0)$ | $\operatorname{diag}(F)=[0.214,\,0.1262,\,0.2172,\,0.2685,\,0.3074,\,0.178]$ |
+| **Aim / partial adjustment** (quadratic impact; 04's proportional-cost form is $F=(I+\kappa\Sigma)^{-1}$) | $F=(\delta\Sigma+\kappa\Lambda)^{-1}\delta\Sigma$, trade $=F(w^\ast-w_0)$ | $\operatorname{diag}(F)=[0.214,\,0.1262,\,0.2172,\,0.2685,\,0.3074,\,0.178]$ |
 | Cross-asset coupling | $\lVert F-\operatorname{diag}(F)\rVert_F$ | $0.39122$ (off-diagonals are large — do not scalarise) |
 | **Roll spread** (Hasbrouck Ch 3) | $c=\sqrt{-\gamma_1}$, spread $=2c$ | — |
 | **Glosten–Milgrom spread** (Ch 5, $\delta=\tfrac12$) | $A-B=(V_H-V_L)\mu$ | — |

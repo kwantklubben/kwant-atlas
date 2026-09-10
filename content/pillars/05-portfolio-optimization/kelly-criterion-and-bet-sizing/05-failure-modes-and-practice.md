@@ -20,7 +20,7 @@ Every Kelly formula in the earlier pages takes $p,m,s$ as **known**. In real tra
 Four failure modes dominate:
 
 1. **Parameter-estimation error → overbetting.** If your estimated edge is too optimistic (a $+1\sigma$ draw on $p$) your "$f^\*$" is an overbet, and an overbet of $2\times$ is already at the critical fraction — a turned-negative growth rate and near-certain ruin despite a real edge.
-2. **Fat tails.** $g\approx\mu-\tfrac12\sigma^2f^2$ understates how bad the bad state is. A heavy loss-tail makes the exact log-optimal $f^\*$ *smaller* than the Gaussian approximation, so sizing on the Gaussian number overbets.
+2. **Fat tails.** $g\approx f\mu-\tfrac12\sigma^2f^2$ understates how bad the bad state is. A heavy loss-tail makes the exact log-optimal $f^\*$ *smaller* than the Gaussian approximation, so sizing on the Gaussian number overbets.
 3. **Non-ergodicity / finite horizon.** Kelly's dominance is a long-run, almost-sure result; a single path with a finite horizon and a big early drawdown can kill a strategy that is asymptotically optimal.
 4. **Drawdown / leverage interaction.** In the continuous levered case, overbetting near $f_c$ meets margin calls at exactly the worst moment — the drawdown and funding failures compound.
 
@@ -42,7 +42,7 @@ Concretely (below): truth $p=0.52$, $\hat p=0.57$ (a $+1\sigma$ estimate from $n
 
 #### 2.2 Fat tails understate the true ruin
 
-The Gaussian/continuous approximation $g\approx\mu-\tfrac12\sigma^2f^2$ is exact only for log-normal returns. A heavy-loss tail (jump risk) contributes large negative log-returns that the second-order expansion misses. The exact log-optimal $f^\*=\arg\max_f\sum_i p_i\ln(1+f\,r_i)$ is then *smaller* than the Gaussian $\mu/\sigma^2$ estimate, so a Gaussian-sized bet is an overbet in tail reality. Worked below: exact $f^\*=0.581$ vs Gaussian $f^\*_{\text{gauss}}=0.766$, and the Gaussian bet nearly doubles the ruin probability.
+The Gaussian/continuous approximation $g\approx f\mu-\tfrac12\sigma^2f^2$ is exact only for log-normal returns. A heavy-loss tail (jump risk) contributes large negative log-returns that the second-order expansion misses. The exact log-optimal $f^\*=\arg\max_f\sum_i p_i\ln(1+f\,r_i)$ is then *smaller* than the Gaussian $\mu/\sigma^2$ estimate, so a Gaussian-sized bet is an overbet in tail reality. Worked below: exact $f^\*=0.581$ vs Gaussian $f^\*_{\text{gauss}}=0.766$, and the Gaussian bet materially raises the ruin probability.
 
 ---
 
@@ -96,7 +96,7 @@ overbet     f=0.14: median wealth after 2000 =    0.0002   P(bankroll<1%) = 0.72
 heavy tail: Gaussian-approx f* = mu/s^2 = 0.7663   exact log-opt f* = 0.581
 ```
 
-The two blocks are the folder's two most important "do not do this" results. **(a)** A single-standard-deviation optimism about $p$ turns your *positive-edge* strategy into one that loses 99.995% of capital with **72.8%** probability of ending below 1% — while the correctly-sized true-Kelly bet grows a bankroll $4.9\times$ with zero such ruin. **(b)** Even with an exact mean and variance, the Gaussian Kelly $f^\*=0.766$ is 32% larger than the true log-optimal $f^\*=0.581$ because it ignores the $-60\%$ tail; sizing on the Gaussian number is a silent overbet (simulated in §4's text to double the ruin rate).
+The two blocks are the folder's two most important "do not do this" results. **(a)** A single-standard-deviation optimism about $p$ turns your *positive-edge* strategy into one that loses 99.995% of capital with **72.8%** probability of ending below 1% — while the correctly-sized true-Kelly bet grows a bankroll $4.9\times$ with zero such ruin. **(b)** Even with an exact mean and variance, the Gaussian Kelly $f^\*=0.766$ is 32% larger than the true log-optimal $f^\*=0.581$ because it ignores the $-60\%$ tail; sizing on the Gaussian number is a silent overbet (an overbet of ~32%, which steepens the ruin curve sharply).
 
 ---
 

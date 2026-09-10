@@ -41,13 +41,13 @@ This folder is Pillar 5's **HRP topic-folder** and it is a *hub*: (a) it gives t
 |---|---|---|
 | Correlation | $\rho_{ij}=\dfrac{\sigma_{ij}}{\sqrt{\sigma_{ii}\,\sigma_{jj}}}$ | — |
 | **Correlation distance** | $\boxed{\,d_{ij}=\sqrt{\tfrac12\bigl(1-\rho_{ij}\bigr)}\,}$ | EQ1–EQ3 ($\rho{=}0.60$) → $d{=}0.4472$; EQ1–BD1 ($\rho{=}0.05$) → $d{=}0.6892$ |
-| Euclidean embedding | $d_{ij}=\bigl\|\tfrac{x_i}{\|x_i\|}-\tfrac{x_j}{\|x_j\|}\bigr\|/\sqrt2$ | identical assets ($\rho{=}1$) → $d{=}0$ |
+| Euclidean embedding | $d_{ij}=\bigl\|\tfrac{x_i}{\|x_i\|}-\tfrac{x_j}{\|x_j\|}\bigr\|/2$ | identical assets ($\rho{=}1$) → $d{=}0$ |
 | **Lance–Williams update** | $d(u,k)=\alpha_i d(i,k)+\alpha_j d(j,k)+\beta\,d(i,j)+\gamma\,|d(i,k)-d(j,k)|$ | general agglomeration recurrence |
 | — single linkage | $(\alpha_i,\alpha_j,\beta,\gamma)=(\tfrac12,\tfrac12,0,-\tfrac12)\Rightarrow \min$ | U5 heights $[.2236,.2236,.3873,.6708]$ |
 | — complete linkage | $(\tfrac12,\tfrac12,0,+\tfrac12)\Rightarrow \max$ | U5 heights $[.2236,.2236,.6708,.7071]$ |
 | — average linkage (UPGMA) | $\alpha_i=\dfrac{n_i}{n_i+n_j},\ \alpha_j=\dfrac{n_j}{n_i+n_j},\ \beta=\gamma=0$ | U5 heights $[.2236,.2236,.5472,.6769]$ |
 | **Quasi-diagonalization** | leaf order $=$ in-order traversal of the dendrogram | U8 order: BD1,BD2,EQ3,EQ1,EQ2,CM3,CM1,CM2 |
-| **Cluster variance** | $V(\mathcal C)=\tilde w^\top\Sigma_{\mathcal C}\tilde w,\ \ \tilde w=\dfrac{\operatorname{diag}(\Sigma_{\mathcal C})^{-1}}{\mathbf 1^\top\operatorname{diag}(\Sigma_{\mathcal C})^{-1}}$ | $\{$BD1,BD2$\}$: $V=0.003600$ |
+| **Cluster variance** | $V(\mathcal C)=\tilde w^\top\Sigma_{\mathcal C}\tilde w,\ \ \tilde w=\dfrac{\operatorname{diag}(\Sigma_{\mathcal C})^{-1}}{\mathbf 1^\top\operatorname{diag}(\Sigma_{\mathcal C})^{-1}}$ | $\{$BD1,BD2$\}$: $V=0.003511$ |
 | **Split factor** | $\alpha_1=1-\dfrac{V_1}{V_1+V_2}=\dfrac{V_2}{V_1+V_2},\quad \alpha_2=1-\alpha_1$ | top U8 split: $\alpha=0.8557$ |
 | **HRP weights** | $w_i=\displaystyle\prod_{\text{splits }s\ni i}\alpha_s$ | BD1 $=0.4320$, BD2 $=0.3174$, EQ1 $=0.0648$ |
 | Risk ordering (U8) | $\sigma_{\text{GMV}}\le\sigma_{\text{HRP}}\le\sigma_{\text{ERC}}\le\sigma_{1/N}$ *(holds here, not a theorem for HRP vs ERC)* | $0.05282 \le 0.05534 \le 0.06579 \le 0.09823$ |

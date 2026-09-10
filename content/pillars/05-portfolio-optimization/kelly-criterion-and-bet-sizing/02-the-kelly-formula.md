@@ -105,7 +105,7 @@ continuous: f*=(m-r)/s^2 = 2.2222   g(f*) = 0.115556  (= S^2/2+r = 0.115556)
 continuous critical f_c (upper root) = 5.4272
 ```
 
-Two things worth noting in the output. First, the **discrete $f^\*$ is bounded by $1$** (you cannot bet more than your bankroll on even money) while the **continuous $f^\*=2.22$ demands leveraging 2.2× capital** — a completely different regime. Second, the **continuous $f_c=5.43$ is far above $f^\*=2.22$**, a much bigger safety gap than in the discrete game ($f_c=0.199$ vs $f^\*=0.10$), because leverage drag scales like $f^2$.
+Two things worth noting in the output. First, the **discrete $f^\*$ is bounded by $1$** (you cannot bet more than your bankroll on even money) while the **continuous $f^\*=2.22$ demands leveraging 2.2× capital** — a completely different regime. Second, the **continuous $f_c=5.43$ is far above $f^\*=2.22$**, a much bigger safety gap than in the discrete game ($f_c=0.199$ vs $f^\*=0.10$), because volatility drag scales like $f^2$.
 
 ---
 

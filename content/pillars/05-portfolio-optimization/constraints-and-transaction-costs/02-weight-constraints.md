@@ -120,7 +120,7 @@ group cap 60pct {2,3}: lambda_G=0.001749 monthly (2.0983 pct ann)  w=[0.     0. 
 
 Three verified findings:
 
-- **The cap is a knife, not a haircut.** The $35\%$ cap moves asset 2 from $0.4443\to0.35$ and asset 3 from $0.4822\to0.35$ and pushes the freed $21\%$ into assets 5 and 6 ($0.0653\to0.21$, $0.0082\to0.09$). Certainty equivalent falls $0.013814\to0.013670$; the difference is the **price of the cap** in monthly utility.
+- **The cap is a knife, not a haircut.** The $35\%$ cap moves asset 3 from $0.4443\to0.35$ and asset 4 from $0.4822\to0.35$ and pushes the freed $22.65\%$ into assets 5 and 6 ($0.0082\to0.09$, $0.0653\to0.21$). Certainty equivalent falls $0.013814\to0.013670$; the difference is the **price of the cap** in monthly utility.
 - **The group cap *is* an alpha haircut.** Capping $\{2,3\}$ at $60\%$ is exactly reproduced by subtracting $\lambda_{\mathcal G}=0.001749$ monthly from both assets' alphas — i.e. **$2.10\%$/yr off each** ($0.2086\to0.1876$, $0.2147\to0.1937$). The identity is exact, not approximate: the constraint prices itself as a uniform alpha penalty on the restricted group.
 - **Constraints interact — and can become redundant.** Re-solve with *both* the $35\%$ cap and the $60\%$ group cap and the answer is again $[0,0,0.26,0.34,0.1473,0.2527]$: the group cap already pins $w_2+w_3=0.60$ with neither weight above $0.34$, so the per-name cap never binds. The general lesson: always read the multipliers — a constraint with a zero multiplier is one you are not paying for, and a redundant cap adds reporting burden without changing a single weight.
 

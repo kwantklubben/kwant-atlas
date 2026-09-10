@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Mean-variance optimization is *mathematically beautiful and empirically fragile in one decisive way*: **it turns estimation error in the inputs — above all the expected returns $\mu$ — into violent swings in the weights.** This page makes that precise and gives a practitioner the *numbers* to distrust, and the *tests* to run before trusting an optimizer. The objective is not cynicism: it is to know exactly *which* input errors matter (the means, ten-fold over covariances — Chopra & Ziemba 1993), *how* they amplify ($\Sigma^{-1}$), and *why* the headline symptom is extreme long/short weights that are useless to an investor.
+Mean-variance optimization is *mathematically beautiful and empirically fragile in one decisive way*: **it turns estimation error in the inputs — above all the expected returns $\mu$ — into violent swings in the weights.** This page makes that precise and gives a practitioner the *numbers* to distrust, and the *tests* to run before trusting an optimizer. The objective is not cynicism: it is to know exactly *which* input errors matter (the means, ten-fold over variances — Chopra & Ziemba 1993), *how* they amplify ($\Sigma^{-1}$), and *why* the headline symptom is extreme long/short weights that are useless to an investor.
 
 The three failures, in one line each:
 1. **The optimizer is an "estimation-error maximizer"** (Michaud's phrase): it places its biggest bets on the assets whose $\mu$ estimates are *worst* (Best & Grauer 1991 quantify this).
@@ -116,7 +116,7 @@ Read it twice: **at a perfectly ordinary near-collinear covariance ($\kappa{=}16
 ### 5. Canonical Literature & Study References
 
 - **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 (1991) — the headline sensitivity numbers and elasticities this page reproduces. *Verified in the corpus.*
-- **Chopra, Vijay K. & Ziemba, William T.**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, Journal of Portfolio Management 19(2):6–11 (1993) — the ~10–11× means-dominance result.
+- **Chopra, Vijay K. & Ziemba, William T.**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, Journal of Portfolio Management 19(2):6–11 (1993) — the ~11× means-over-variances (and ~21× over covariances) result.
 - **Michaud, Richard O. (with Robert O. Michaud)**: *Efficient Asset Management*, 2nd ed., OUP (2008) — "Markowitz optimization en masse": resampling and "estimation-error maximizers".
 - **DeMiguel, Garlappi & Uppal**: *Optimal Versus Naive Diversification*, RFS 22(5) (2009) — out-of-sample, no sophisticated optimizer reliably beats $1/N$; the benchmark every optimizer must face.
 - **Kan & Zhou**: *Optimal Portfolio Choice with Parameter Uncertainty*, JFQA 42(3) (2007) — the three-fund/Bayesian answer to input risk.

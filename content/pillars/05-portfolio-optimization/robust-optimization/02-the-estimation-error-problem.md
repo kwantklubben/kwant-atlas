@@ -20,7 +20,7 @@ The chain of reasoning is short:
 
 1. **Every input is a random variable.** The sample mean $\hat\mu=\frac1T\sum_t r_t$ is itself random, centered on the truth with covariance $\Sigma/T$. The sample covariance $\hat\Sigma$ is a Wishart draw, badly conditioned when $N$ approaches $T$.
 2. **The optimizer maps those random variables non-linearly into weights.** $w^\star=\frac1\delta\hat\Sigma^{-1}\hat\mu$ therefore inherits a *heavy-tailed, wildly dispersed* distribution. Two samples from the same market can give you portfolios that look nothing alike.
-3. **Errors in the mean dominate everything.** Chopra & Ziemba (1993) — a canonical, heavily-cited result — found errors in **means** cost roughly $10$–$11\times$ as much as errors in covariances and $\sim2\times$ errors in variances, measured by certainty-equivalent loss. The means, not the covariance, are where robustness must be spent.
+3. **Errors in the mean dominate everything.** Chopra & Ziemba (1993) — a canonical, heavily-cited result — found errors in **means** cost roughly $11\times$ as much as errors in variances (and $\sim21\times$ as much as errors in covariances), while errors in variances cost $\sim2\times$ errors in covariances, measured by certainty-equivalent loss. The means, not the covariance, are where robustness must be spent.
 
 The practical objective is a mindset: **stop treating the optimizer's output as an answer, and start treating the inputs as the real problem.** Every fix downstream (shrinkage, constraints, resampling, robust sets) is an attempt to make the portfolio depend *less* on a fragile point estimate.
 
@@ -124,7 +124,7 @@ Three verified findings:
 
 - **(A) The optimizer is not stable.** Redrawing the *same* market's history of the same length produces weights with standard deviation $1.0$–$2.1$ *per asset* — larger than the weights themselves. Gross exposure roams from $1.45$ to $22.05$ across re-draws. A portfolio whose leverage is a coin flip is not a portfolio.
 - **(B) The in-sample promise decays.** Naive MVO's Sharpe falls from $1.93$ in-sample to $0.63$ out-of-sample — a $67\%$ collapse — while $1/N$ barely moves ($1.24\to0.66$). The optimizer spent its effort fitting the sample.
-- **(C) Means dominate covariances.** Using only sample *means* (true covariance) costs $0.02327$ in certainty equivalent; using only the sample *covariance* (true means) costs $0.00083$ — a factor of $\sim28$. The direction and order of magnitude match Chopra & Ziemba (1993).
+- **(C) Means dominate covariance.** Using only sample *means* (true covariance) costs $0.02327$ in certainty equivalent; using only the sample *covariance* (true means) costs $0.00083$ — a factor of $\sim28$. The direction and order of magnitude match Chopra & Ziemba (1993).
 
 ---
 
@@ -139,7 +139,7 @@ Three verified findings:
 
 ### 5. Canonical Literature & Study References
 
-- **Chopra, Vijay & Ziemba, William**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11, 1993 — the ranking of input-error damage.
+- **Chopra, Vijay & Ziemba, William**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11, 1993 — the ranking of input-error damage ($\mu > \sigma^2 > \sigma_{ij}$).
 - **Best & Grauer (1991)**, RFS 4(2) — the elasticity theory (developed on [[pillars/05-portfolio-optimization/robust-optimization/01-from-zero-intuition|01 · From Zero]]).
 - **DeMiguel, Garlappi & Uppal (2009)**, *Optimal Versus Naive Diversification*, RFS 22(5):1915–1953 — the $1/N$ benchmark and the sample-size needed to beat it.
 - **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, 2nd ed. — bias–variance decomposition (eq. 2.46 / 7.9), ridge/Lasso shrinkage (Ch. 3), and the $p\gg N$ regularized-estimator toolkit (Ch. 18).

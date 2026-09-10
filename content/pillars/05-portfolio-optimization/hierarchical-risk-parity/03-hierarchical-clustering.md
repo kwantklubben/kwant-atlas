@@ -38,7 +38,7 @@ d_{ii}=0,\qquad d_{ij}\le d_{ik}+d_{kj}.$$
 
 The triangle inequality holds because $d$ is (up to scale) a Euclidean norm. Let $u_i=x_i/\|x_i\|$ be each demeaned return column scaled to unit length. Then
 
-$$\|u_i-u_j\|^2=2-2\rho_{ij}\;\Longrightarrow\;d_{ij}=\frac{\|u_i-u_j\|}{\sqrt2}.$$
+$$\|u_i-u_j\|^2=2-2\rho_{ij}\;\Longrightarrow\;d_{ij}=\frac{\|u_i-u_j\|}{2}.$$
 
 So the "correlation distance" is exactly the distance between the assets' unit direction vectors — the assets lie in $\mathbb{R}^T$, and the tree is a nearest-neighbour structure in that honest geometry. (Two identical assets sit at $d=0$; two uncorrelated ones at $d=\sqrt{1/2}=0.7071$; perfectly anti-correlated ones at $d=1$.)
 

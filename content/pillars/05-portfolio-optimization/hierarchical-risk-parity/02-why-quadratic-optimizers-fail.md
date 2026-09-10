@@ -41,13 +41,13 @@ $$w_{\text{GMV}}\propto\sum_i \lambda_i^{-1}\,(q_i^\top\mathbf 1)\,q_i .$$
 
 Perturb one eigenvalue by $\Delta\lambda_i$ while holding its eigenvector fixed. The weight perturbation is
 
-$$\Delta w\;\sim\;\frac{\Delta\lambda_i}{\lambda_i^2}\,(q_i^\top\mathbf 1)\,q_i ,$$
+$$\Delta w\;\sim\;-\,\frac{\Delta\lambda_i}{\lambda_i^2}\,(q_i^\top\mathbf 1)\,q_i ,$$
 
 so the sensitivity of the weights to a *fixed* estimation error grows like $\lambda_i^{-2}$. Sample eigenvalues of the **smallest** directions are both biased *downward* (Marchenko–Pastur) and statistically noisiest. Therefore
 
 $$\frac{\Delta\lambda_i}{\lambda_i^2}\ \text{is largest exactly where }\lambda_i\ \text{is smallest}\;\Longrightarrow\;\text{the optimizer loads the noise subspace.}$$
 
-This is the analytic form of "estimation-error maximizer." (Chopra–Ziemba 1993 quantify the priority: errors in **means** hurt $\sim10\times$ more than covariances, and $\sim2\times$ more than variances — which is why a *returns-free* allocator like HRP is attractive, but also why covariances still matter.)
+This is the analytic form of "estimation-error maximizer." (Chopra–Ziemba 1993 quantify the priority: errors in **means** hurt $\sim11\times$ more than variances and $\sim21\times$ more than covariances (variances hurt $\sim2\times$ more than covariances) — which is why a *returns-free* allocator like HRP is attractive, but also why covariances still matter.)
 
 #### 2.2 The in-sample / out-of-sample gap
 
@@ -152,7 +152,7 @@ The mechanism is visible in the numbers: MVO's weight vector is dominated by dir
 
 1. **You cannot optimize what you cannot estimate.** The minimum-variance solution is $O(\lambda_i^{-2})$ sensitive to the smallest eigenvalues, which are the least reliable. More data or better estimation (shrinkage/denoising, factor models) helps; ignoring the problem does not. → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 2. **Reported risk is not realized risk.** Because $\hat w^\top\hat\Sigma\hat w$ is fit on the same $\hat\Sigma$, it is biased low. The $220\times$ gap above is the *definition* of overfitting, not evidence of a coding error. Always evaluate walk-forward.
-3. **Means are worse than covariances.** Chopra–Ziemba (1993): expected-return errors dominate covariance errors by an order of magnitude. HRP sidesteps this by using *no* forecasts — which is a strength for pure risk allocation and a *limitation* when you have genuine alpha.
+3. **Means are worse than covariances.** Chopra–Ziemba (1993): expected-return errors dominate covariance errors by roughly twenty-fold. HRP sidesteps this by using *no* forecasts — which is a strength for pure risk allocation and a *limitation* when you have genuine alpha.
 4. **Instability is not cured by constraints alone.** Long-only and weight caps clip the symptom; the misaligned estimate remains and the *ranking* it induces still pushes risk toward noise. Constraints bound the damage; they do not fix the model.
 5. **$1/N$ is the bar.** Any sophisticated allocator must clear $1/N$ out-of-sample (DeMiguel–Garlappi–Uppal 2009) before its complexity is earned. HRP clears it precisely because it is nearly parameter-free.
 
@@ -162,7 +162,7 @@ The mechanism is visible in the numbers: MVO's weight vector is dominated by dir
 
 - **Markowitz, H.** (1952). "Portfolio Selection." *Journal of Finance* 7(1):77–91 — the founding mean–variance program, and the inverse it requires.
 - **Michaud, R. O.** (1989); **Michaud & Michaud** (2008), *Efficient Asset Management* (2nd ed.), Oxford — "estimation-error maximizer" and resampled frontiers as the industry fix.
-- **Chopra, V. & Ziemba, W.** (1993). "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11 — mean errors dominate $\sim10\times$.
+- **Chopra, V. & Ziemba, W.** (1993). "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11 — mean errors dominate covariance errors $\sim20\times$.
 - **Best, M. & Grauer, R.** (1991). "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means." *Review of Financial Studies* 4(2):315–342 — a $1\%$ mean change can move weights $>50\%$.
 - **DeMiguel, V., Garlappi, L. & Uppal, R.** (2009). "Optimal Versus Naive Diversification: How Inefficient Is the $1/N$ Portfolio Strategy?" *Review of Financial Studies* 22(5):1915–1953 — the $1/N$ benchmark.
 - **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 — the HRP response to these failures.

@@ -90,7 +90,7 @@ growth g(w*)          = 0.133478
   asset 0 isolated (mu-r)/s^2 = 1.2500   vs coupled w*_i = 0.9201
   asset 1 isolated (mu-r)/s^2 = 1.2222   vs coupled w*_i = 1.0995```
 
-Read the last two lines: if the assets were independent, Kelly would put $1.25$ into asset 0 and $1.22$ into asset 1. Because they are **positively correlated** ($\rho_{12}=0.012/\sqrt{0.04\cdot0.09}=0.2$), the coupled optimum shifts weight — less into asset 0 ($0.92$), more into asset 1 ($1.10$) — exactly the diversification correction ($\Sigma$ cross-terms) that a per-asset shortcut misses. And the normalised $w^\*$ *is* the tangency portfolio: **multi-asset Kelly and the Sharpe-maximising tangency portfolio are the same object.**
+Read the last two lines: if the assets were independent, Kelly would put $1.25$ into asset 0 and $1.22$ into asset 1. Because they are **positively correlated** ($\rho_{12}=0.012/\sqrt{0.04\cdot0.09}=0.2$), the coupled optimum shifts weight — less into asset 0 ($0.92$) and less into asset 1 ($1.10$) — exactly the diversification correction ($\Sigma$ cross-terms) that a per-asset shortcut misses. And the normalised $w^\*$ *is* the tangency portfolio: **multi-asset Kelly and the Sharpe-maximising tangency portfolio are the same object.**
 
 ---
 

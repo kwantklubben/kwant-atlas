@@ -38,7 +38,7 @@ Layered on the mean-variance machinery of this pillar: every Sharpe ratio $S$ is
 | Continuous growth rate | $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ | $g_\infty(f^\*) = 0.115556$ |
 | Max growth via Sharpe | $g_\infty(f^\*)=\dfrac{S^2}{2}+r$ | $S{=}0.3333 \Rightarrow 0.115556$ |
 | Critical fraction (continuous) | solves $g_\infty(f_c)=0$ | $f_c{=}5.427$ (upper root) |
-| **Fractional Kelly** | $f=cf^\*$; $g(cf^\*)/g(f^\*)=c(2-c)$ | half-Kelly $c{=}0.5$: keeps $0.75\,g^\*$ at half risk |
+| **Fractional Kelly** | $f=cf^\*$; $g(cf^\*)/g(f^\*)=c(2-c)$ *(exact when $r{=}0$; with a riskless rate the ratio holds only on the excess-growth part)* | half-Kelly $c{=}0.5$: keeps $0.75\,g^\*$ at half risk |
 
 > **The asymmetry that justifies fractional Kelly.** Half Kelly ($c=\tfrac12$) keeps $c(2-c)=\tfrac34$ of the growth rate with **half** the volatility — give up 25% of growth to halve risk. Because the growth function is *concave* and asymmetric around $f^\*$, an overbet of $\Delta f$ costs more than an underbet of the same size, and overbetting past $f_c$ destroys the account (see [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/04-fractional-kelly-and-ruin|04 · Fractional Kelly & Ruin]]).
 
@@ -79,8 +79,8 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 1. **Parameter error → overbetting ruin.** $f^\*$ is computed from *estimated* $p,m,s$; if the edge or variance is mis-estimated, the "optimal" fraction is already an overbet. In the worked example, a $+1\sigma$ error in $p$ flips a growing strategy into a 73%-ruin losing one — the practitioner's #1 reason to use fractional Kelly.
 2. **Log-utility is the only correct objective.** Maximising $\mathbb{E}[W]$ means "bet everything", which maximises expected wealth and guarantees ruin. Kelly maximises $\mathbb{E}[\ln W]$ precisely to avoid that trap.
-3. **Fat tails break the Gaussian formula.** $g\approx\mu-\tfrac12\sigma^2f^2$ understates the tail; a heavy-loss outcome makes the exact log-optimal $f^\*$ *smaller* than the Gaussian approximation, so sizing on the Gaussian number overbets.
-4. **The discrete/continuous divide.** $f^\*=p-q$ assumes even-money, win-or-lose-lose-all; leverage/unbalanced payout requires $f^\*=(m-r)/s^2$ or $m/(ab)$. Mixing the two mis-sizes badly when $f^\*>1$ (borrowable).
+3. **Fat tails break the Gaussian formula.** $gpprox f\mu-	frac12\sigma^2f^2$ understates the tail; a heavy-loss outcome makes the exact log-optimal $f^\*$ *smaller* than the Gaussian approximation, so sizing on the Gaussian number overbets.
+4. **The discrete/continuous divide.** $f^\*=p-q$ assumes even-money, win-or-lose-all; leverage/unbalanced payout requires $f^\*=(m-r)/s^2$ or $m/(ab)$. Mixing the two mis-sizes badly when $f^\*>1$ (borrowable).
 
 ---
 

@@ -41,7 +41,7 @@ So maximising $\mathbb{E}[\ln X_n]$ is optimal by *both* growth and goal-reachin
 
 Scale the bet to $f=cf^\*$. For the continuous case:
 
-$$g_\infty(cf^\*)=\frac{m^2}{s^2}c\left(1-\frac c2\right),\qquad
+$$g_\infty(cf^\*)=r+\frac{(m-r)^2}{s^2}c\left(1-\frac c2\right),\qquad
 \frac{g_\infty(cf^\*)}{g_\infty(f^\*)}=c(2-c).$$
 
 **Half Kelly ($c=1/2$) keeps $c(2-c)=3/4$ of the growth rate with half the volatility.** You trade 25% of growth to cut risk 50% — the mathematically precise justification for the industry's standard half-Kelly default. At $c=1.5$ growth is already identical to $c=0.5$ (the parabola is symmetric about $f^\*$), and $c>2$ pushes growth negative.
