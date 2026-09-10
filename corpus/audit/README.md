@@ -75,8 +75,11 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 | 7 | pillars/04-quantitative-risk (2nd 4) | credit-risk-and-the-merton-model, stress-testing-and-scenario-analysis, liquidity-risk-and-funding, operational-risk | ✅ done, fixes committed |
 | 8 | pillars/04-quantitative-risk (last 4) | model-risk-and-validation, basel-and-regulation, risk-factor-sensitivities, systemic-risk-and-aggregation | ✅ done, fixes committed |
 | 9 | pillars/05-portfolio-optimization (1st 4) | modern-portfolio-theory-and-mean-variance, covariance-shrinkage-and-denoising, black-litterman, risk-parity-and-equal-risk-contribution | ✅ done, fixes committed |
-| 10 | pillars/05-portfolio-optimization (2nd 4) | hierarchical-risk-parity, robust-optimization, constraints-and-transaction-costs, kelly-criterion-and-bet-sizing | running |
-| 11+ | pillars 05-08 (~59 folders) | — | queued |
+| 10 | pillars/05-portfolio-optimization (2nd 4) | hierarchical-risk-parity, robust-optimization, constraints-and-transaction-costs, kelly-criterion-and-bet-sizing | ✅ done, fixes committed |
+| 11 | pillars/06-market-making (1st 4) | adverse-selection-and-glosten-milgrom, spread-decomposition-and-roll-model, avellaneda-stoikov-and-optimal-quoting, inventory-management-and-quote-skewing | running |
+| 12+ | pillars 06-08 (~55 folders) | — | queued |
+
+**Pillar 5 (9 folders) is now fully audited and fixed** — 55/55 code blocks byte-exact.
 
 **Pillar 4 (13 folders) is now fully audited and fixed** — 106/106 code blocks byte-exact.
 
