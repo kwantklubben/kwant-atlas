@@ -215,4 +215,6 @@ When a quantitative strategy underperforms, drawdowns blow out, or live executio
 ## 🌐 Interactive Graph & Exploration
 
 - 🕸️ **[Open Fullscreen Interactive D3 Graph](/visualizer.html)**: Explore all 8 operational clusters, foundational nodes, cross-pillar bridges, and filter by hard-skill intensity (Math, Code, Intuition).
+- 📖 **[[glossary|Glossary & Symbol Index]]**: every term and symbol, A–Z, with the canonical page to jump to — the "find a word without knowing the pillar" entry point.
+- 🩺 **[[diagnostics|Diagnostic Index (Symptom → Cause → Fix)]]**: the global debug matrix — find your symptom, get the first-principles root cause and the page that fixes it.
 - 📁 **Obsidian Integration**: If cloning locally (`git clone https://github.com/kwantklubben/kwant-atlas`), open the folder directly in Obsidian to view pre-configured branded color clusters and tag groups.
