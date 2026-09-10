@@ -92,7 +92,7 @@ for i, c in enumerate(counts):
 TF-IDF feature matrix (rows=docs, cols=vocab, transposed for view):
 term         idf   d0  d1  d2  d3
 demand       1.916  0.000  0.137  0.000  0.000
-guidance     1.916  0.137  0.000  0.000  0.000
+guidance     1.916  0.000  0.137  0.000  0.000
 impairment   1.916  0.160  0.000  0.000  0.000
 increase     1.916  0.000  0.000  0.000  0.160
 liability    1.916  0.000  0.000  0.128  0.000

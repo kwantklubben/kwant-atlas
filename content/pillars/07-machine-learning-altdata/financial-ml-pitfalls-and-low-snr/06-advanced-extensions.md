@@ -107,5 +107,5 @@ The *same* backtest (Sharpe $1.00$) is highly significant if you tried one strat
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Index Hub]]
-- Sibling topic-folder pages: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Purged & Embargoed CV for Trees]] · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling|Feature Engineering & Target Labeling (fractional differentiation, labels)]]
+- Sibling topic-folder pages: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Purged & Embargoed CV for Trees]] · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Target Labeling (fractional differentiation, labels)]]
 - Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]

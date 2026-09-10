@@ -121,4 +121,4 @@ A single path (walk-forward, plain CV) has variance $1.0$ — the *largest* poss
 
 - Back: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/04-combinatorial-purged-cv|04 · Combinatorial Purged CV]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling disease: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
+- Sibling disease: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]

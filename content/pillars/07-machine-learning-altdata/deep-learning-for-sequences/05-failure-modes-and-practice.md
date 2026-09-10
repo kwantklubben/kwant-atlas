@@ -48,7 +48,7 @@ The levers that trade expressiveness for robustness (all from ESL Ch. 11):
 
 #### 2.2 Non-stationarity: the distribution moves
 
-Assume returns follow a regime-switching process: at each time the process is in one of a few regimes, each with its own dynamics (see [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification]] for the HMM machinery). A model trained on regime $A$ estimates the regime-$A$ conditional. Applied to regime $B$ it is mis-specified, and the out-of-sample $R^2$ can be *worse than predicting the mean* ($R^2<0$). §4 quantifies this: $R^2=+0.76$ in-regime, $-0.68$ out-of-regime.
+Assume returns follow a regime-switching process: at each time the process is in one of a few regimes, each with its own dynamics (see [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]] for the HMM machinery). A model trained on regime $A$ estimates the regime-$A$ conditional. Applied to regime $B$ it is mis-specified, and the out-of-sample $R^2$ can be *worse than predicting the mean* ($R^2<0$). §4 quantifies this: $R^2=+0.76$ in-regime, $-0.68$ out-of-regime.
 
 The remedy is not a better architecture but a **validation regime**: walk-forward splits, purged/embargoed CV, refit windows, and regime-aware features — i.e. the practice of the sibling [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]] folder.
 
@@ -171,6 +171,6 @@ Read it as the whole folder's cautionary tale. In Part A the target is **pure no
 - Back: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/04-autoencoders-for-factors|04 · Autoencoders for Factors]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/06-advanced-extensions|06 · Advanced Extensions]]
 - The disease and its validation cure: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged Cross-Validation & Backtest Hygiene]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene (DSR/PBO)]]
-- Why the SNR is low: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Why the SNR is low: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
 - The tree alternative: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]
-- Regime machinery: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification (HMM & GMM)]]
+- Regime machinery: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification (HMM & GMM)]]

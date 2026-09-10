@@ -60,7 +60,7 @@ This is the canonical RL-execution formulation (Nevmyvaka–Kearns; and the DP t
 
 #### 2.4 The Markov property is engineered, not assumed
 
-The chain $S_t$ must be such that $\mathbb{E}[R_{t+1}\mid S_t,A_t]=\mathbb{E}[R_{t+1}\mid \text{history}]$. Financial state is *deliberately constructed* to satisfy this: you include the **unfilled inventory** (not just total traded), **time-to-deadline**, and enough price statistics that the conditional expectation is stable. The regime-switching analogue — where the hidden state must be *inferred* — is [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|HMM & GMM]]; here we assume the state is observed.
+The chain $S_t$ must be such that $\mathbb{E}[R_{t+1}\mid S_t,A_t]=\mathbb{E}[R_{t+1}\mid \text{history}]$. Financial state is *deliberately constructed* to satisfy this: you include the **unfilled inventory** (not just total traded), **time-to-deadline**, and enough price statistics that the conditional expectation is stable. The regime-switching analogue — where the hidden state must be *inferred* — is [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|HMM & GMM]]; here we assume the state is observed.
 
 ---
 
@@ -148,5 +148,5 @@ Two things are worth reading off. First, the **Bellman residual is exactly zero*
 - Back: [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/03-value-based-rl|03 · Value-Based RL]] · [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/04-policy-gradient-and-actor-critic|04 · Policy-Gradient & Actor-Critic]] · [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/index|Index Hub]]
 - Theory base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
-- State inference (when the state is hidden): [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification: HMM & GMM]]
+- State inference (when the state is hidden): [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]]
 - Continuous-time cousin: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]

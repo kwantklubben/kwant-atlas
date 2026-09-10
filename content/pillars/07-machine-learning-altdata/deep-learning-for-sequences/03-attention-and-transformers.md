@@ -157,4 +157,4 @@ Read it as two facts. First, the weight matrix is **lower-triangular by construc
 - Forward: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/04-autoencoders-for-factors|04 · Autoencoders for Factors]]
 - Multi-horizon forecasting target: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/06-advanced-extensions|06 · Advanced Extensions]] (TFT, DeepAR)
 - Leakage discipline (validation side): [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged Cross-Validation & Backtest Hygiene]]
-- Text/NLP attention (same mechanism, different data): [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts|Financial NLP & Transcripts]]
+- Text/NLP attention (same mechanism, different data): [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index|Financial NLP & Transcripts]]

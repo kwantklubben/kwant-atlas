@@ -49,7 +49,7 @@ $$Q^*(s,a)=R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\,\max_{a'}Q^*(s',a'),$$
 
 and the optimal action in any state is simply $a^*=\arg\max_a Q^*(s,a)$. **This one equation is the target every value-based method in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/03-value-based-rl|03 · Value-Based RL]] chases.** Policy-gradient methods in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/04-policy-gradient-and-actor-critic|04]] reach the same objective by climbing the gradient of expected return instead.
 
-**Why the Markov assumption is a modelling choice, not a gift.** The Bellman equation is exact only if $S_t$ summarizes everything relevant about the past — the **Markov property**. In trading you *engineer* this: inventory, time-to-deadline, realized volatility, imbalance. If your state omits something the reward depends on (e.g. the unfilled part of your order), the MDP is misspecified and no algorithm saves you. (Compare the Markov-switching state of [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|HMM & GMM]].)
+**Why the Markov assumption is a modelling choice, not a gift.** The Bellman equation is exact only if $S_t$ summarizes everything relevant about the past — the **Markov property**. In trading you *engineer* this: inventory, time-to-deadline, realized volatility, imbalance. If your state omits something the reward depends on (e.g. the unfilled part of your order), the MDP is misspecified and no algorithm saves you. (Compare the Markov-switching state of [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|HMM & GMM]].)
 
 ---
 
@@ -124,6 +124,6 @@ The learned policy **matches the exact optimum** (trade in states 0 and 2, hold 
 ### 6. Connected Graph Bridges
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
-- Sibling: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification: HMM & GMM]] (the Markov state of the market) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Sibling: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]] (the Markov state of the market) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
 - Continue: [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/02-the-mdp-framing|02 · The MDP Framing]] · [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/index|Index Hub]]
 - Execution context: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]

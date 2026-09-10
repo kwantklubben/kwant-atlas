@@ -171,6 +171,6 @@ Read it as the TCN's two defining properties, verified. The three-layer dilated 
 - Back: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/03-attention-and-transformers|03 · Attention & Transformers]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Index Hub]]
 - Classical state-space cousin (neural SSMs / neural ODEs generalise it): [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]]
 - Microstructure data & latency: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] · [[pillars/06-market-making/index|Market Making]]
-- Regime-aware uncertainty: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification (HMM & GMM)]]
-- NLP sequence models (same attention machinery): [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts|Financial NLP & Transcripts]]
+- Regime-aware uncertainty: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification (HMM & GMM)]]
+- NLP sequence models (same attention machinery): [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index|Financial NLP & Transcripts]]
 - Legacy flat sibling: [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]]

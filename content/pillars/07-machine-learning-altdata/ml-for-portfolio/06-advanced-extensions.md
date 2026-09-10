@@ -124,7 +124,7 @@ meta-label sized   ann.Sharpe=+3.216  ann.vol=  7.3  avg|pos|=0.306
 - **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 5–6 (Marcenko–Pastur denoising/detoning) and Ch 8 (clustering for allocation).
 - **López de Prado**, "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019 — MCD/SK/NaN/TS/DNN covariance estimators vs $1/N$.
 - **Raffinot**, "The Hierarchical Equal Risk Contribution Portfolio," SSRN 3237540, 2018 — HERC.
-- **Ang & Timmermann**, "Regime Changes and Financial Markets," *Annual Review of Financial Economics* 4:313–337, 2012 — regime structure behind allocation (bridges to [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification]]).
+- **Ang & Timmermann**, "Regime Changes and Financial Markets," *Annual Review of Financial Economics* 4:313–337, 2012 — regime structure behind allocation (bridges to [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]]).
 
 ---
 
@@ -132,4 +132,4 @@ meta-label sized   ann.Sharpe=+3.216  ann.vol=  7.3  avg|pos|=0.306
 
 - Back: [[pillars/07-machine-learning-altdata/ml-for-portfolio/05-failure-modes-and-practice|05 · Failure Modes & Practice]]
 - Hub: [[pillars/07-machine-learning-altdata/ml-for-portfolio/index|Index Hub]]
-- Extensions' homes: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV & Backtest Hygiene]]
+- Extensions' homes: [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV & Backtest Hygiene]]

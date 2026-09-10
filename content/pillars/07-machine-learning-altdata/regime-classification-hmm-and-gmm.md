@@ -105,5 +105,5 @@ print(f"Sample generated: Bull days={np.sum(states==0)} | Bear days={np.sum(stat
 ### 6. Connected Graph Bridges
 
 - Foundational Base: [[foundations/econometrics-and-timeseries/index|Econometrics]]
-- Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]
+- Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing]]
 - Bridges to: [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Momentum Strategies]]

@@ -153,7 +153,7 @@ The table is the whole lesson of the folder, in four rows. **Global** is the nai
 - **Jacobs, Jordan, Nowlan & Hinton**, "Adaptive Mixtures of Local Experts," *Neural Computation* 3(1):79–87, 1991 — the mixture-of-experts architecture the soft regime-weighted predictor is an instance of.
 - **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* — Ch 4 (logistic regression / linear classifiers for the labeler), Ch 14 (mixtures and soft assignment). *Corpus verified.*
 - **Ang & Timmermann**, "Regime Changes and Financial Markets," *ARFE* 4, 2012 — the survey connecting estimated regimes to portfolio choice; the allocation-side payoff of regime-conditional modeling.
-- **López de Prado**, *Advances in Financial Machine Learning* — Ch 3/10 (meta-labeling: a secondary model on top of a primary signal — the same "condition on a secondary latent factor" idea), Ch 7 (honest CV). See [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting]] and [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged CV]].
+- **López de Prado**, *Advances in Financial Machine Learning* — Ch 3/10 (meta-labeling: a secondary model on top of a primary signal — the same "condition on a secondary latent factor" idea), Ch 7 (honest CV). See [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting]] and [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]].
 
 ---
 
@@ -161,4 +161,4 @@ The table is the whole lesson of the folder, in four rows. **Global** is the nai
 
 - Back: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/ml-for-portfolio/index|ML for Portfolio Construction]] (regime-conditional allocation) · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequential Data]]
-- Sibling disciplines: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting Methods]] (the supervised labeler) · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]] (honest OOS) · [[pillars/01-quantitative-research/regime-detection/06-advanced-extensions|Regime Detection · Advanced Extensions]]
+- Sibling disciplines: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting Methods]] (the supervised labeler) · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]] (honest OOS) · [[pillars/01-quantitative-research/regime-detection/06-advanced-extensions|Regime Detection · Advanced Extensions]]

@@ -86,7 +86,7 @@ fitted in Regime A:  y = -0.080 + +0.642*x   (true +0.8)
 test on Regime B (sign flip + 3x vol): OOS R^2 = -0.1523
 same flip, same vol:                 OOS R^2 = -0.8253
 ```
-The model was *good* in its training regime (in-sample $R^2=0.29$), yet the moment the regime flips sign it predicts **worse than a flat guess** (negative $R^2$: $-0.83$ on a pure sign flip). This is not overfitting — the fit was honest — it is **non-stationarity**: the world changed and the model's guarantee expired. This is the structural reason behind regime-aware allocation ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|HMM/GMM regime detection]]) and why features must be built on stationary transforms.
+The model was *good* in its training regime (in-sample $R^2=0.29$), yet the moment the regime flips sign it predicts **worse than a flat guess** (negative $R^2$: $-0.83$ on a pure sign flip). This is not overfitting — the fit was honest — it is **non-stationarity**: the world changed and the model's guarantee expired. This is the structural reason behind regime-aware allocation ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|HMM/GMM regime detection]]) and why features must be built on stationary transforms.
 
 ---
 
@@ -111,4 +111,4 @@ The model was *good* in its training regime (in-sample $R^2=0.29$), yet the mome
 - Back: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/03-the-low-snr-problem|03 · The Low-SNR Problem]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/05-failure-modes-and-practice|05 · Failure Modes & Practice]]
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series (unit roots, stationarity)]]
-- Sibling solutions: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification: HMM & GMM]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling|Feature Engineering & Target Labeling]]
+- Sibling solutions: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Target Labeling]]

@@ -135,7 +135,7 @@ corpus of 16 documents, 127 unigram+bigram features  -> p >> n (127 > 16)
   features used= 30:  in-sample R^2=+1.000   leave-one-out R^2=-0.433
 ```
 
-This is the single most important number in the folder: with 30 of 127 n-gram features on 16 documents, the model reports **in-sample $R^2=1.000$** — perfect fit — while out-of-sample it is **worse than predicting the mean ($-0.433$)**. Every finance-NLP overfitting claim you will ever see is this exact shape: more phrase features than independent filings, and the "in-sample alpha" is memorized noise. The disciplines that prevent it — feature screening inside CV folds, regularization, purged/embargoed splits — are in [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] and [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]].
+This is the single most important number in the folder: with 30 of 127 n-gram features on 16 documents, the model reports **in-sample $R^2=1.000$** — perfect fit — while out-of-sample it is **worse than predicting the mean ($-0.433$)**. Every finance-NLP overfitting claim you will ever see is this exact shape: more phrase features than independent filings, and the "in-sample alpha" is memorized noise. The disciplines that prevent it — feature screening inside CV folds, regularization, purged/embargoed splits — are in [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] and [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]].
 
 ---
 
@@ -153,7 +153,7 @@ This is the single most important number in the folder: with 30 of 127 n-gram fe
 
 - **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability?" *Journal of Finance* 66(1), 2011 — dictionary misfit measured and fixed. *Corpus PDF verified.*
 - **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* — Ch 2 (curse of dimensionality), Ch 18 ($p\gg N$: sparse methods, feature screening, the exact regime n-gram models live in). *Verified in the corpus.*
-- **López de Prado, Marcos**, *Advances in Financial Machine Learning* — Ch 7 (purged/embargoed CV for overlapping text+returns) — see [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]].
+- **López de Prado, Marcos**, *Advances in Financial Machine Learning* — Ch 7 (purged/embargoed CV for overlapping text+returns) — see [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]].
 - **Gentzkow, Kelly & Taddy**, "Text as Data," *JEL* 57(3), 2019 — sparse-feature estimation and regularization for count matrices.
 
 ---
@@ -162,4 +162,4 @@ This is the single most important number in the folder: with 30 of 127 n-gram fe
 
 - Back: [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/04-embeddings-and-transformers|04 · Embeddings & Transformers]] · [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/06-advanced-extensions|06 · Advanced Extensions (Earnings-Call Analysis)]]
-- Disciplines: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]] · [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data (PIT hygiene)]]
+- Disciplines: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]] · [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data (PIT hygiene)]]

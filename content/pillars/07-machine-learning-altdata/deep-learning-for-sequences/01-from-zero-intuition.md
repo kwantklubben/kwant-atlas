@@ -8,7 +8,7 @@ tags:
   - state
 ---
 
-**Basic Prerequisites:** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]. Everything else is built from scratch on this page.
+**Basic Prerequisites:** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]. Everything else is built from scratch on this page.
 
 ---
 
@@ -121,7 +121,7 @@ Read the punchline: the shuffled and original series have **identical values** (
 1. **"Order doesn't matter if I just use good features."** False in general. Hand-built lag features can *approximate* state, but they fix the window length in advance and cannot represent a state that is updated by new information. A recurrence learns the sufficient statistic instead of you guessing it.
 2. **"Shuffling is harmless"** — the exact error that inflates CV scores in the sibling [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]] folder. For a sequence model, shuffling is not merely a validation bug; it *destroys the signal you are trying to learn* (autocorr $0.527\to0.003$ above).
 3. **Stationarity is smuggled in.** The Markov/RNN view assumes the transition $g_\theta$ is *stationary* — the same rule at every $t$. Financial regimes violate this (page 05 quantifies it: a model fit on regime A has $R^2=+0.76$ in-sample but $-0.68$ out-of-regime). Order carries information; the *rule* generating that order does not stay fixed.
-4. **State can memorise noise.** With enough hidden units, $h_t$ can encode idiosyncratic shocks that look predictive in-sample and mean nothing out-of-sample — the low-SNR failure developed in [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]].
+4. **State can memorise noise.** With enough hidden units, $h_t$ can encode idiosyncratic shocks that look predictive in-sample and mean nothing out-of-sample — the low-SNR failure developed in [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]].
 
 ---
 
@@ -135,7 +135,7 @@ Read the punchline: the shuffled and original series have **identical values** (
 
 ### 6. Connected Graph Bridges
 
-- Back: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Index Hub]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Back: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Index Hub]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
 - Forward: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/02-rnns-and-lstms|02 · RNNs & LSTMs]]
 - Classical state-space cousin: [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]]
 - Features the state model replaces/consumes: [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]]

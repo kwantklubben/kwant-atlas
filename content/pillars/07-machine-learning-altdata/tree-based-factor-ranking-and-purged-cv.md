@@ -7,7 +7,7 @@ tags:
   - purged-cv
 ---
 
-**Basic Prerequisites:** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]] and [[pillars/01-quantitative-research/feature-engineering-and-labeling|Target Labeling]].
+**Basic Prerequisites:** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]] and [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Target Labeling]].
 
 ---
 
@@ -108,5 +108,5 @@ class PurgedTimeSeriesSplit:
 
 ### 6. Connected Graph Bridges
 
-- Bridges to: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls]]
-- Bridges to: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Factor Models]]
+- Bridges to: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]
+- Bridges to: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Factor Models]]

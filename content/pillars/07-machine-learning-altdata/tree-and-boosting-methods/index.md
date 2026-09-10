@@ -112,7 +112,7 @@ Hub signposts — the full treatment lives in [[pillars/07-machine-learning-altd
 
 - Foundational base: [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/statistics-and-inference/05-bias-variance-and-validation|05 · Bias–Variance & Validation]]
 - Sibling topics: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV & Backtest Hygiene]] · [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]
-- Regression base: [[pillars/01-quantitative-research/feature-engineering-and-labeling|Feature Engineering & Target Labeling]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
+- Regression base: [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Target Labeling]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]
 - Sub-pages (in-folder): 01 From Zero · 02 Decision Trees · 03 Bagging & Random Forests · 04 Gradient Boosting · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

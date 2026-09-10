@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (gradients, backpropagation) and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]] (why finance is a hard learning problem). The classical ancestor of every model here — the linear state-space / Kalman filter — lives at [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (gradients, backpropagation) and [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] (why finance is a hard learning problem). The classical ancestor of every model here — the linear state-space / Kalman filter — lives at [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]].
 
 ---
 
@@ -131,7 +131,7 @@ Hub signposts — the decision rule and practice checklist live in [[pillars/07-
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Foundational base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
 - Classical sequence model (the linear ancestor): [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]] — the Kalman filter is a *state-space* sequence model with a closed-form update; the RNN is its nonlinear, learned cousin.
 - Feature side (what the sequence model replaces or consumes): [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]]
 - Sibling (same pillar): [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged Cross-Validation & Backtest Hygiene]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data (legacy flat page)]]

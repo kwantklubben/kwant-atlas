@@ -127,7 +127,7 @@ Hub signposts — the practice checklist lives in [[pillars/07-machine-learning-
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (classical: DSR, PBO, multiple testing)
-- Sibling (same pillar): [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] (purging applied to LightGBM/XGBoost MDA) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Sibling (same pillar): [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] (purging applied to LightGBM/XGBoost MDA) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
 - Labels that need purging: [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (triple-barrier & interval labels)
 - Sub-pages (in-folder): 01 From Zero · 02 Why Standard CV Fails · 03 Purging & Embargo · 04 Combinatorial Purged CV · 05 Failure Modes · 06 Advanced Extensions
 

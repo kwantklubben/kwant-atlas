@@ -150,5 +150,5 @@ The numbers carry the whole story. The **prepared remarks** are optimistic (+0.1
 
 - Back: [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/03-sentiment-and-tone|03 · Sentiment & Tone]] · [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/04-embeddings-and-transformers|04 · Embeddings & Transformers]] · [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index|Index Hub]]
 - Earnings quality: [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] (the narrative of managed numbers)
-- Data & hygiene: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data (PIT text)]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation|Alternative Data Pipelines & Evaluation]]
+- Data & hygiene: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data (PIT text)]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alternative Data Pipelines & Evaluation]]
 - Models: [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]]

@@ -127,7 +127,7 @@ The full analysis lives in [[pillars/07-machine-learning-altdata/financial-nlp-a
 
 - Foundational base: [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] (the evaluation discipline every text signal inherits)
 - Data provenance: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (point-in-time filings — where the text comes from) · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] (earnings management the text may reveal)
-- Sibling topic: [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation|Alternative Data Pipelines & Evaluation]] (alt-data hygiene)
+- Sibling topic: [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alternative Data Pipelines & Evaluation]] (alt-data hygiene)
 - Sub-pages (in-folder): 01 From Zero · 02 Bag-of-Words & LM Dictionary · 03 Sentiment & Tone · 04 Embeddings & Transformers · 05 Failure Modes · 06 Advanced Extensions (Earnings-Call Analysis)
 
 **Recommended reading route (audience arc):**

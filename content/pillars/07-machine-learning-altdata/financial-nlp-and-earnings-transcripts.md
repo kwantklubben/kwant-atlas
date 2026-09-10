@@ -96,5 +96,5 @@ print(f"Executive Net Sentiment Score: {score:+.3f}")
 
 ### 6. Connected Graph Bridges
 
-- Bridges to: [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation|Alternative Data Pipelines]]
-- Bridges to: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Factor Models]]
+- Bridges to: [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alternative Data Pipelines]]
+- Bridges to: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Factor Models]]

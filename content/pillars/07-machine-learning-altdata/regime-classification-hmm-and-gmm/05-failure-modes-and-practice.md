@@ -36,7 +36,7 @@ is invariant under any permutation $\sigma$ of the state indices: replacing $(\p
 $$\text{BIC}=-2\ell_{\max}+m\log T,$$
 with $m$ the number of free parameters. For a 1-D GMM, $m=3K-1$ ($K{-}1$ weights $+K$ means $+K$ variances). BIC rewards fit but charges for parameters; the true $K$ minimizes it. (This is the ESL Ch 14 model-selection discipline; the gap statistic §14.3.11 is the clustering analogue.)
 
-**Look-ahead in regime labels (first principle: no future information at time $t$).** The **filtered** posterior $\gamma_t^{\text{filt}}(k)=P(z_t{=}k\mid y_{1:t})$ uses only past data — it is the *live* call. The **smoothed** posterior $\gamma_t^{\text{smooth}}(k)=P(z_t{=}k\mid y_{1:T})$ and the **Viterbi** path use the *whole* sample, including $y_{t+1:T}$. Using smoothed/decoded labels at time $t$ substitutes information that was not knowable then — the exact arithmetic of the look-ahead that any honest backtest must purge ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]]).
+**Look-ahead in regime labels (first principle: no future information at time $t$).** The **filtered** posterior $\gamma_t^{\text{filt}}(k)=P(z_t{=}k\mid y_{1:t})$ uses only past data — it is the *live* call. The **smoothed** posterior $\gamma_t^{\text{smooth}}(k)=P(z_t{=}k\mid y_{1:T})$ and the **Viterbi** path use the *whole* sample, including $y_{t+1:T}$. Using smoothed/decoded labels at time $t$ substitutes information that was not knowable then — the exact arithmetic of the look-ahead that any honest backtest must purge ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]]).
 
 ---
 
@@ -156,7 +156,7 @@ The three failures, in numbers. **Label switching**: two EM runs, identical like
 
 1. **Label switching.** Permutation symmetry makes the labels meaningless until constrained. *Fix:* order-constrain ($\sigma_0<\sigma_1$ or $\mu_0<\mu_1$) at fit time, and *never* hard-code a semantic meaning onto an unconstrained state index.
 2. **Overfitting the number of regimes.** Likelihood grows with $K$, so the fit invents clones. *Fix:* BIC (this page's verified run), the gap statistic (ESL §14.3.11), or out-of-sample likelihood.
-3. **Look-ahead from smoothed/decoded labels.** Using $P(z_t\mid y_{1:T})$ or the Viterbi path at time $t$ leaks the future (verified $+40$ pts). *Fix:* label online with the **filtered** posterior; backtest with purged/embargoed splits ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]]).
+3. **Look-ahead from smoothed/decoded labels.** Using $P(z_t\mid y_{1:T})$ or the Viterbi path at time $t$ leaks the future (verified $+40$ pts). *Fix:* label online with the **filtered** posterior; backtest with purged/embargoed splits ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]]).
 4. **Hard regime-switching vs label error.** When regime models have opposite signs, one wrong hard label flips a coefficient and can degrade performance (verified $-8.8\%$). *Fix:* use the **soft** regime posterior (mixture-of-experts weighting) instead of a $0/1$ switch — see [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/06-advanced-extensions|06]].
 5. **Gaussian-emission misfit.** Fat tails and jumps violate the normal regime model and can manufacture a phantom "spike" regime. *Fix:* $t$-distributed or heavier-tailed emissions, and stress-check regimes against a no-regime baseline.
 
@@ -168,7 +168,7 @@ The three failures, in numbers. **Label switching**: two EM runs, identical like
 - **Dempster, Laird & Rubin**, "Maximum Likelihood from Incomplete Data via the EM Algorithm," *JRSS-B* 39(1), 1977 — the local-max / multi-start caveat for EM.
 - **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* — Ch 14.3.11 (gap statistic for $K$), Ch 2/18 (curse of dimensionality and $p\gg N$: why too many regime features overfit). *Corpus verified.*
 - **Ang & Timmermann**, "Regime Changes and Financial Markets," *ARFE* 4, 2012 — the practical survey: estimated regimes' real effects, and the caution about regime persistence/lag in live use.
-- **López de Prado**, *Advances in Financial Machine Learning* — Ch 7 (purged/embargoed CV), the hygiene that makes look-ahead impossible; see [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]].
+- **López de Prado**, *Advances in Financial Machine Learning* — Ch 7 (purged/embargoed CV), the hygiene that makes look-ahead impossible; see [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]].
 
 ---
 
@@ -177,4 +177,4 @@ The three failures, in numbers. **Label switching**: two EM runs, identical like
 - Back: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/04-hmm-regimes|04 · HMM Regimes]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/06-advanced-extensions|06 · Regime-Conditional ML]]
 - Sibling (econometric twin's failures): [[pillars/01-quantitative-research/regime-detection/05-failure-modes-and-practice|Regime Detection · Failure Modes]]
-- Disciplines: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged & Embargoed CV]]
+- Disciplines: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low-SNR]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]]
