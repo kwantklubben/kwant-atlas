@@ -61,7 +61,16 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 6. **[Market Making and Liquidity Provision](content/pillars/06-market-making/index.md)**  
    *Designing automated models that quote continuous two-sided liquidity, profiting from the spread while managing inventory and adverse selection.*  
-   Core: Limit Order Book Mechanics (Level 3 Data, OFI), The Avellaneda-Stoikov Model, Adverse Selection & Glosten-Milgrom (Kyle's Lambda), Spread Decomposition & Roll Model, Inventory Management & Quote Skewing, and Toxic Order Flow (VPIN).
+   **Structure:** organised as **9 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code:
+   1. **[Limit Order Book Mechanics](content/pillars/06-market-making/limit-order-book-mechanics/index.md)** — The book as the state of the market: limit vs market orders, L2/L3 data, matching engine (price-time priority), queue position, and order flow imbalance.
+   2. **[Avellaneda–Stoikov & Optimal Quoting](content/pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index.md)** — Stochastic control of the two-sided quote: the market-maker's problem, HJB solution, reservation price, inventory penalty, and optimal spread.
+   3. **[Inventory Management & Quote Skewing](content/pillars/06-market-making/inventory-management-and-quote-skewing/index.md)** — The Ho–Stoll dealer model, the inventory risk function, mean-reverting targets, and asymmetric quote skewing.
+   4. **[Adverse Selection & Glosten–Milgrom](content/pillars/06-market-making/adverse-selection-and-glosten-milgrom/index.md)** — Informed vs noise traders, Bayesian price updating, the sequential-trade GM model, and Copeland–Galai.
+   5. **[Spread Decomposition & the Roll Model](content/pillars/06-market-making/spread-decomposition-and-roll-model/index.md)** — Quoted/effective/realized spreads, bid-ask bounce and return autocovariance, the Roll (1984) estimator, and Glosten–Harris decomposition.
+   6. **[Toxic Order Flow & VPIN](content/pillars/06-market-making/toxic-order-flow-and-vpin/index.md)** — The Lee–Ready algorithm, PIN, the EKOP Poisson model, and VPIN as a flash-crash early-warning metric.
+   7. **[Market Impact & Depth](content/pillars/06-market-making/market-impact-and-depth/index.md)** — The Kyle (1985) equilibrium, Kyle's lambda, temporary vs permanent impact, depth, and the empirical square-root law.
+   8. **[Liquidity Risk & Asset Pricing](content/pillars/06-market-making/liquidity-risk-and-asset-pricing/index.md)** — Illiquidity measures, liquidity as a priced factor (Amihud, Pastor–Stambaugh), and liquidity risk in crises.
+   9. **[Market-Maker Economics & Rebates](content/pillars/06-market-making/market-maker-economics-and-rebates/index.md)** — The maker's P&L decomposition, maker-taker fees and rebates, the competition race to zero, and the economics of PFOF and regulation.
 
 7. **[Machine Learning and Alternative Data](content/pillars/07-machine-learning-altdata/index.md)**  
    *Extracting non-linear signals and structural patterns from alternative, unstructured, and high-dimensional datasets.*  
