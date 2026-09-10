@@ -86,7 +86,7 @@ T=1000, label horizon h=20, k=5 folds, embargo=10 bars
   totals: naive_train=3925  -purge=153  -embargo=40  final=3732  (sample loss 4.9%)
 ```
 
-Notice the geometry. Folds 1–4 each purge $\approx38$ overlapping training labels and embargo $10$; fold 5 is the *last* fold — there is no future training data to embargo, so its embargo column is $0$. The purge is symmetric (labels before *and* after the test block overlap it), which is exactly the "two overlaps that must be purged" AFML draws in his Fig. 7.2. Total cost: **4.9% of the training sample**, the price of honesty.
+Notice the geometry. Folds 2–4 each purge $\approx38$ overlapping training labels and embargo $10$; the **first** fold purges only $19$ (its test block sits at the start of the sample, so nothing precedes it to overlap) and the **last** fold $20$ plus a $0$ embargo (no future training data to embargo). For the interior folds the purge is symmetric (labels before *and* after the test block overlap it), which is exactly the "two overlaps that must be purged" AFML draws in his Fig. 7.2. Total cost: **4.9% of the training sample**, the price of honesty.
 
 ---
 

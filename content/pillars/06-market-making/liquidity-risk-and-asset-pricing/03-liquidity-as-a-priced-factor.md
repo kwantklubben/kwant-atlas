@@ -1,5 +1,5 @@
 ---
-title: "03 - Liquidity as a Priced Risk Factor: Pastor–Stambaugh"
+title: "03 - Liquidity as a Priced Risk Factor: Pástor–Stambaugh"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing
@@ -18,7 +18,7 @@ The level of illiquidity being priced (page 01) is not the whole story. The deep
 
 This page builds the standard machinery: an **aggregate liquidity factor**, its **innovations** (surprises), and each stock's **liquidity beta** — the sensitivity of its return to those innovations. The empirical punchline of Pástor & Stambaugh (2003): sorting stocks on liquidity beta produces a long-short spread of about **7.5% per year** in abnormal returns — high-liquidity-beta stocks earn more.
 
-> **The two-premium recap.** Page 01 priced the *level* of illiquidity ($E[c^i]$). This page prices the *covariance of the return with aggregate liquidity* — the "PS channel" that Acharya–Pedersen formalize as their $\beta_2$. They are different risks and both are compensated.
+> **The two-premium recap.** Page 01 priced the *level* of illiquidity ($E[c^i]$). This page prices the *covariance of the return with aggregate liquidity* — the "PS channel" that Acharya–Pedersen formalize as their $\beta_3$ (the return-vs-market-illiquidity term; AP number the four betas $\beta_1..\beta_4$, so our $\beta_1,\beta_2,\beta_3$ are their $\beta_2,\beta_3,\beta_4$). They are different risks and both are compensated.
 
 ---
 
@@ -32,7 +32,7 @@ $$\hat\gamma_t=\frac{1}{N_t}\sum_{i=1}^{N_t}\hat\gamma_{i,t}, \qquad \Delta\hat\
 
 **Step 3 — the innovation.** Because the *level* of liquidity may be forecastable (and expected changes would contaminate risk measures), Pástor–Stambaugh extract innovations by regressing the change on its own lag and the lagged deviation from trend:
 
-$$\Delta\hat\gamma_t = a+b\,\Delta\hat\gamma_{t-1}+c\left(\frac{m}{m_0}\right)_{t-1}\hat\gamma_{t-1}+u_t,$$
+$$\Delta\hat\gamma_t = a+b\,\Delta\hat\gamma_{t-1}+c\left(\frac{m_{t-1}}{m_1}\right)\hat\gamma_{t-1}+u_t,$$
 
 then define the **liquidity innovation** $L_t=\tfrac{1}{100}\hat u_t$ (the $\tfrac1{100}$ is just scaling).
 
@@ -102,7 +102,7 @@ Even in this small synthetic sample, sorting on the *estimated* liquidity beta d
 ### 5. Canonical Literature & Study References
 
 - **Pástor & Stambaugh (2003).** *Liquidity risk and expected stock returns.* JPE 111(3), 642–685. The construction (eqs. 6–8), the innovations, the predicted-beta sorts, and the 7.5%/yr spread.
-- **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77(2) — embeds the PS channel as $\beta_2$ inside a full equilibrium CAPM.
+- **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77(2) — embeds the PS channel as $\beta_3$ (our $\beta_2$) inside a full equilibrium CAPM.
 - **Chordia, Roll & Subrahmanyam (2000).** *Commonality in liquidity.* Journal of Financial Economics 56 — why aggregate liquidity exists to begin with (the factor's foundation).
 - **Hasbrouck.** *Market Microstructure: Foundations*, Ch 5, 11–15 — measuring the per-stock price-impact slopes the factor aggregates.
 

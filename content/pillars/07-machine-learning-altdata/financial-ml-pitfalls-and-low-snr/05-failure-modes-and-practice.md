@@ -41,7 +41,7 @@ in annualized units scaled by the track length. To prevent skill-less strategies
 
 $$y\ge\frac{2\ln N}{\mathrm{SR}_{\text{IS}}^2}\ \text{years}.$$
 
-For $N=45$ trials and $\mathrm{SR}_{\text{IS}}=1$, this gives $y\ge\frac{2\ln 45}{1}\approx7.6$ years — which is exactly why a 5-year backtest can only support $\approx45$ independent configurations (the corpus-verified Bailey figure: "if only five years of data are available, no more than forty-five independent model configurations should be tried").
+The simple bound $y\ge2\ln N/\mathrm{SR}_{\text{IS}}^2$ is conservative: for $N=45$, $\mathrm{SR}_{\text{IS}}=1$ it demands $\approx7.6$ years. The *exact* Bailey Minimum-Backtest-Length $y=(E[\max_N Z])^2/\mathrm{SR}_{\text{IS}}^2$ with $E[\max_N Z]=(1-\gamma)\Phi^{-1}(1-1/N)+\gamma\Phi^{-1}(1-1/(Ne))$ is sharper — $N=45$ gives $E[\max]=2.235\Rightarrow y=5.0$ years (and $N=7\Rightarrow1.92$ yr, matching the paper's two-year example). So the same bookkeeping says: over a 5-year backtest, no more than $\approx45$ independent configurations should be tried (the corpus-verified Bailey figure: "if only five years of data are available, no more than forty-five independent model configurations should be tried").
 
 ---
 

@@ -36,12 +36,12 @@ This folder is the **dealer-banks and OTC markets** topic-folder for Pillar 6. I
 | **Bid** (investors sell to dealer) | $B=\dfrac1r-\dfrac{\delta}{r}\dfrac{zr+\lambda_d+2\lambda\mu_{lo}(1-q)}{D}$ | $B=18.140204$ |
 | **Interinvestor price** | $P=\dfrac1r-\dfrac{\delta}{r}\dfrac{(1-q)r+\lambda_d+2\lambda\mu_{lo}(1-q)}{D}$ | $P=18.206093$ |
 | Common denominator | $D=r+\lambda_d+2\lambda\mu_{lo}(1-q)+\lambda_u+2\lambda\mu_{hn}q+\rho(1-z)$ | — |
-| **Bid-ask spread** | $A-B=\dfrac{\delta z}{D}=z\,(H-L)$ | $0.175702$; $\delta z/D=0.175702$ ✓ |
-| Monopolist spread ($z=1$) | $A-B=\dfrac{\delta}{r+\lambda_u+\lambda_d+\rho(1-z)}$ | $=0.219628$ at $\rho{=}0$ |
+| **Bid-ask spread** | $A-B=\dfrac{\delta z}{D}$ (the frictionless fundamental surplus is $z\delta/r$; search discounts it to $z\delta/D$) | $0.175702$; $\delta z/D=0.175702$ ✓ |
+| Monopolist spread ($z=1$) | $A-B=\dfrac{\delta}{D}=\dfrac{\delta}{r+\lambda_d+2\lambda\mu_{lo}(1-q)+\lambda_u+2\lambda\mu_{hn}q}$ (the full $D$ above; the $2\lambda\mu$ search terms do **not** drop out) | $=0.219628$ at $\rho{=}0,\lambda{=}26$ |
 | Nash price between investors | $P=(V_{lo}-V_{ln})(1-q)+(V_{ho}-V_{hn})q$ | eq (11) |
 | Dealer quotes from bargaining | $A=zH+(1-z)M,\quad B=zL+(1-z)M$ | eqs (12)–(13); $M$ = interdealer price |
 | Walrasian limit | $P^\*=\dfrac1r$ | $20.0000$ |
-| Heterogeneous-investor spread | $A-B=\dfrac{z\delta}{r+\lambda_u+\lambda_d+\rho(1-z)}$ | eq (19) |
+| Heterogeneous-investor spread | $A-B=\dfrac{z\delta}{D}$ (same $D$; eq 19 is the $z$-weighted case of the general spread) | eq (19) |
 
 > **Critical caveat (the result that surprises everyone).** With **competing** dealers ($z<1$), *faster* contact between investors and dealers ($\rho\uparrow$) **tightens** the spread to zero and prices converge to Walrasian. With a **monopolistic** dealer ($z=1$), faster contact **widens** the spread — the investor's threat to find another investor is worth less once the dealer has already absorbed everyone. The whole comparative statics hinges on $z$, the *bargaining power*, not on the level of the friction.
 

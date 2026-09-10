@@ -31,9 +31,9 @@ The three failure channels, in one line each:
 
 From the DGP closed form, the "fundamental" value is $1/r$ and the traded price is discounted by $(\delta/r)\cdot(\text{ratio})$ with ratio bounded by the meeting intensities. As $\lambda,\rho\to0$ the discount does **not** vanish — it is bounded below by the *no-trade* value:
 
-$$P\;\ge\;\frac{1-\delta}{r}\quad(\text{the low-type holding value}),\qquad \lim_{\lambda,\rho\to0}P=\frac{1-\delta}{r}.$$
+$$P\;\ge\;\frac{1-\delta}{r}\quad(\text{the low-type holding value is the lower bound}),\qquad \lim_{\lambda,\rho\to0}P=\frac1r-\frac{\delta}{r}\cdot\frac{(1-q)r+\lambda_d}{r+\lambda_d+\lambda_u}.$$
 
-So a market where nobody can find anybody prices the asset at the *low-type* value — a strictly larger discount than any traded price. The **spread** in that limit is the full surplus $\delta/r$. The failure is not a small widening; it is a step-change to an unreachable-trade regime.
+So a market where nobody can find anybody prices the asset at the limit above (e.g. $17.826$ at the standard parameters, not the low-type value $0$) — the search discount is large but bounded strictly above the no-trade floor $(1-\delta)/r$. The **spread** in that limit is the full surplus $\delta/r$. The failure is not a small widening; it is a step-change to an unreachable-trade regime.
 
 #### 2.2 Balance-sheet failure: capacity $\to$ impact
 

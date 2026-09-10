@@ -47,7 +47,7 @@ The **gain from trade** between a low-type owner (wants to sell) and a high-type
 
 $$H-L=\frac1r-\frac{1-\delta}{r}=\frac{\delta}{r}.$$
 
-That gap — the fundamental surplus — is the maximum total *spread* the two sides could ever split. In a frictionless Walrasian world they would jump straight to $P^\*=1/r$ and split the surplus costlessly. **In a search world they cannot**: each side can only trade when a counterparty is *found*.
+That gap — the **frictionless fundamental** surplus — is the *maximum* total spread the two sides could ever split; the equilibrium spread $z\delta/D$ is strictly smaller because search frictions discount it (see the hub's $D$). In a frictionless Walrasian world they would jump straight to $P^\*=1/r$ and split the surplus costlessly. **In a search world they cannot**: each side can only trade when a counterparty is *found*.
 
 **Search turns the split into a spread.** Let $\lambda$ be the intensity at which an investor meets *another investor*, and $\rho$ the intensity at which an investor meets a **dealer**. When two investors meet they Nash-bargain and split the surplus with the seller getting $(1-q)$ and buyer $q$:
 

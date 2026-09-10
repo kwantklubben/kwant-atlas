@@ -48,13 +48,13 @@ where $\sigma_i^2$ is the variance of the Sharpe across paths and $\bar\rho_i$ t
 
 $$\varphi^{-1}\sigma_i^2\;\le\;\sigma^2[\mu_i]\;<\;\sigma_i^2,$$
 
-and $\sigma^2[\mu_i]\to0$ as $\varphi\to\infty$ (subject to the upper bound $\varphi\le\varphi[T,T/2]$). More, less-correlated paths $\Rightarrow$ less volatile (hence less overfit-prone) backtest.
+and $\sigma^2[\mu_i]\to\bar\rho_i\,\sigma_i^2$ as $\varphi\to\infty$ (subject to the upper bound $\varphi\le\varphi[T,T/2]$) — it falls to zero only when the paths are independent ($\bar\rho_i=0$), otherwise a positive floor $\bar\rho_i\sigma_i^2$ survives (page 06's $\bar\rho=0.8$ case: little reduction). More, less-correlated paths $\Rightarrow$ less volatile (hence less overfit-prone) backtest.
 
 ---
 
 ### 3. Computational Implementation — counting splits and paths
 
-Stdlib only. This reproduces the book's headline numbers: $\varphi[6,2]=5$ from $15$ splits, the general counters, and the verify that every group is tested in exactly $\varphi$ paths.
+Stdlib only. This reproduces the book's headline numbers: $\varphi[6,2]=5$ from $15$ splits, the general counters, and verifies that every group is tested in exactly $\varphi$ paths.
 
 ```python
 import math

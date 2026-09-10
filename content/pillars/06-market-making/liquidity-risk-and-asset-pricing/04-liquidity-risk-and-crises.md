@@ -77,16 +77,16 @@ b2 = cov(r_i, cM)/net_var                        # return vs market liquidity (P
 b3 = cov(c_i, rM)/net_var                        # illiquidity vs market return
 print(f"var(net mkt r^M-c^M) = {net_var:.5f}")
 print(f"beta1 = cov(c^i,c^M)/varnet = {b1:+.4f}  (POSITIVE premium -> riskier)")
-print(f"beta2 = cov(r^i,c^M)/varnet = {b2:+.4f}  (NEGATIVE premium -> safer)")
-print(f"beta3 = cov(c^i,r^M)/varnet = {b3:+.4f}  (NEGATIVE premium -> safer)")
+print(f"beta2 = cov(r^i,c^M)/varnet = {b2:+.4f}  (beta2<0 -> LOW return when mkt illiquid -> riskier)")
+print(f"beta3 = cov(c^i,r^M)/varnet = {b3:+.4f}  (beta3<0 -> illiquid when mkt falls -> riskier)")
 ```
 ```
 var(net mkt r^M-c^M) = 0.00050
 beta1 = cov(c^i,c^M)/varnet = +0.0043  (POSITIVE premium -> riskier)
-beta2 = cov(r^i,c^M)/varnet = -0.0440  (NEGATIVE premium -> safer)
-beta3 = cov(c^i,r^M)/varnet = -0.0468  (NEGATIVE premium -> safer)
+beta2 = cov(r^i,c^M)/varnet = -0.0440  (beta2<0 -> LOW return when mkt illiquid -> riskier)
+beta3 = cov(c^i,r^M)/varnet = -0.0468  (beta3<0 -> illiquid when mkt falls -> riskier)
 ```
-The signs are exactly as theory requires: because the stock's illiquidity shares the market's commonality ($\beta_1>0$, the risk channel) but its *return* is high when the market is illiquid ($\beta_2<0$) and it stays *liquid* when the market falls ($\beta_3<0$, the two hedge channels), the three channels pull required return in opposite directions — and the sign of the net premium is an empirical question per asset.
+Read the signs through the AP convention (the price of risk on $\beta_2,\beta_3$ is **negative**, so each term enters with a minus sign): a **negative** $\beta_2$ means the stock's return is *low* exactly when the market is illiquid, and a **negative** $\beta_3$ means it becomes *illiquid* when the market falls. Both are **bad** risks and raise the required return. Here $\beta_1=+0.0043$, $\beta_2=-0.0440$, $\beta_3=-0.0468$, so with the minus signs the three liquidity terms are $+0.0043-(\!-0.0440\!)-(\!-0.0468\!)=+0.0951$ — **all three push required return the same way (up)**, which is what the simulated data (a pro-cyclical return, $r_i=0.9\,r^M$, and illiquidity that shares the market's commonality, $c_i=1.0\,c^M$) actually builds in.
 
 ---
 

@@ -103,7 +103,7 @@ def simulate_quotes(n=5000, c=0.02, lam=0.01, sig_u=0.005):
         post.append(m)
     return trades, mids, post
 
-trades, mids, post = simulate()
+trades, mids, post = simulate_quotes()
 n = len(trades)
 qs   = [t[0] for t in trades]
 se   = sum(2.0*q*(p-m) for (q,p),m in zip(trades,mids))/n        # effective  = 2(c+lam)
@@ -114,7 +114,10 @@ print(f"effective spread = {se:.4f}   (= 2(c+lambda), trades at the touch)")
 print(f"realized  spread = {sr:.4f}   (= 2c, what the maker keeps)")
 print(f"adverse-selection loss = {imp:.4f}   (= 2*lambda)")
 ```
-```
+quoted   spread = 0.0600   (= 2(c+lambda))
+effective spread = 0.0600   (= 2(c+lambda), trades at the touch)
+realized  spread = 0.0400   (= 2c, what the maker keeps)
+adverse-selection loss = 0.0200   (= 2*lambda)
 ```
 
 ---

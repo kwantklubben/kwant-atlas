@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (the Deflated Sharpe Ratio, PBO, multiple testing). Comfort with [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (interval labels) is what makes the purge meaningful. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (the Deflated Sharpe Ratio, PBO (*probability of backtest overfitting*), multiple testing). Comfort with [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (interval labels) is what makes the purge meaningful. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 
@@ -116,7 +116,7 @@ Hub signposts — the practice checklist lives in [[pillars/07-machine-learning-
 
 ### 5. Canonical Literature & Study References
 
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) — **Ch. 7 "Cross-Validation in Finance"** (purging, embargo, PurgedKFold, sklearn bugs) and **Ch. 12 "Backtesting Through Cross-Validation"** (§12.4 CPCV: splits, $\varphi[N,k]$, the variance formula). *The formula-authoritative source; every formula in this folder is transcribed from it and numerically reproduced.*
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) — **Ch. 7 "Cross-Validation in Finance"** (purging, embargo, PurgedKFold, sklearn bugs) and **Ch. 12 "Backtesting Through Cross-Validation"** (§12.4 CPCV: splits, $\varphi[N,k]$; §12.5 the variance formula). *The formula-authoritative source; every formula in this folder is transcribed from it and numerically reproduced.*
 - **Bailey, Borwein, López de Prado & Zhu**: *The Probability of Backtest Overfitting*, J. Computational Finance 20(4) (2017) — CSCV and the PBO measure (see sibling hub).
 - **Bailey & López de Prado**: *The Deflated Sharpe Ratio*, J. Portfolio Management 40(5) (2014) — corrects reported Sharpe for trials $N$ and non-normality.
 - **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) — **Ch. 7** (model assessment: $k$-fold CV eq. 7.48, the *wrong-vs-right* CV §7.10.2 where full-data screening yields 3% vs true 50%). *Math-verified in the corpus.*

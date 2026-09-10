@@ -1,5 +1,5 @@
 ---
-title: "03 — The Duffie–Garleanu–Pedersen Search-and-Bargaining Model"
+title: "03 — The Duffie–Gârleanu–Pedersen Search-and-Bargaining Model"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc
@@ -71,7 +71,7 @@ Each price is the present value $1/r$ of the dividend stream, **reduced by an il
 
 $$A-B=\frac{\delta z}{D}.$$
 
-**Monopolist case** ($z=1$): the spread becomes $A-B=\delta/\bigl(r+\lambda_u+\lambda_d+\rho(1-z)\bigr)$, which is **independent of the investor search intensity $\lambda$** and **increasing in $\rho$** — the counterintuitive core of the paper. **Competitive case** ($z<1$): as $\rho\to\infty$, $D\to\infty$ and $A-B\to0$ (sequential competition). **Fast investors:** as $\lambda\to\infty$, $D\to\infty$ regardless of $z$, so $A-B\to0$ (Theorem 3, part 1). The equilibrium converges to Walrasian $P^\*=1/r$.
+**Monopolist case** ($z=1$): the spread becomes $A-B=\delta/D$ with the **full** denominator $D$ (the $2\lambda\mu$ investor-search terms do *not* vanish), so it still **falls** in the investor search intensity $\lambda$ — but it is **increasing in the dealer-accessibility $\rho$** — the counterintuitive core of the paper (faster dealer contact widens the monopolist's spread). **Competitive case** ($z<1$): as $\rho\to\infty$, $D\to\infty$ and $A-B\to0$ (sequential competition). **Fast investors:** as $\lambda\to\infty$, $D\to\infty$ regardless of $z$, so $A-B\to0$ (Theorem 3, part 1). The equilibrium converges to Walrasian $P^\*=1/r$.
 
 ---
 

@@ -16,7 +16,7 @@ tags:
 
 This page is the launchpad from the core OTC search model to its three most important extensions: **central clearing** (the post-2008 reform), **dark markets & information** (Duffie 2012), and the **network/aggregation** frontier. Each answers a question the base model leaves open.
 
-- **Central clearing.** If bilateral dealer exposures cause contagion (\S05), does a **central counterparty (CCP)** fix it? Answer: *partly* — multilateral netting slashes exposure, but the CCP becomes a concentrated single point of failure. This is the central post-2008 policy trade-off.
+- **Central clearing.** If bilateral dealer exposures cause contagion (§05), does a **central counterparty (CCP)** fix it? Answer: *partly* — multilateral netting slashes exposure, but the CCP becomes a concentrated single point of failure. This is the central post-2008 policy trade-off.
 - **Dark markets and information.** DGP assumes symmetrically informed agents. In reality OTC traders have private information about *who wants to trade* and at what price — **Dark Markets** (Duffie 2012) is the book-length treatment of OTC pricing *with* information transmission.
 - **Beyond:** network theory, dealer funding/liquidity regulation (the leverage ratio, SLR), and electronic RFQ/SEF venues reshaping OTC structure.
 

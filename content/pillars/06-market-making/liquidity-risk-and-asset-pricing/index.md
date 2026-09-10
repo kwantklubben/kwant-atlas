@@ -25,7 +25,7 @@ This is the **asset-pricing view of liquidity** — liquidity as a determinant o
 
 This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b) routes to six sub-pages that walk from raw intuition through the measures, the priced-factor machinery, the crisis dynamics, the failure modes, and the bond-market extensions.
 
-> **The one-sentence essence.** "Illiquidity is a cost that appears in prices twice: once as a *level* — more illiquid assets earn a higher expected return (Amihud 2002) — and once as a *risk* — assets that fall when aggregate liquidity falls earn a higher expected return too (Pastor–Stambaugh 2003; Acharya–Pedersen 2005)."
+> **The one-sentence essence.** "Illiquidity is a cost that appears in prices twice: once as a *level* — more illiquid assets earn a higher expected return (Amihud 2002) — and once as a *risk* — assets that fall when aggregate liquidity falls earn a higher expected return too (Pástor–Stambaugh 2003; Acharya–Pedersen 2005)."
 
 ---
 
@@ -38,10 +38,10 @@ This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b
 | **Amihud ILLIQ** | $\text{ILLIQ}_{iy}=\dfrac{1}{D_{iy}}\sum_{t=1}^{D_{iy}}\dfrac{\lvert R_{iyt}\rvert}{\text{VOLD}_{iyt}}$ | Amihud (2002) eq. (1); §3 |
 | **Roll spread** | $S_R=2\sqrt{-\operatorname{cov}(\Delta p_{t+1},\Delta p_t)}$ | Roll (1984); Hasbrouck Ch 3 |
 | **Amihud–Mendelson premium** | $R\simeq r+\dfrac{s}{h}$ | Foucault eq. (9.6); §3 |
-| **PS liquidity innovation** | $L_t=\dfrac{1}{100}\,\hat{u}_t$ from $\Delta\hat\gamma_t=a+b\,\Delta\hat\gamma_{t-1}+c\big(\tfrac{m}{m_0}\big)_{t-1}\hat\gamma_{t-1}+u_t$ | Pastor–Stambaugh (2003) eqs. (7)–(8) |
-| **PS liquidity beta** | $\beta_i^L=\dfrac{\operatorname{cov}(r_{i},L)}{\operatorname{var}(L)}$ | Pastor–Stambaugh (2003) §III |
+| **PS liquidity innovation** | $L_t=\dfrac{1}{100}\,\hat{u}_t$ from $\Delta\hat\gamma_t=a+b\,\Delta\hat\gamma_{t-1}+c\big(\tfrac{m}{m_1}\big)_{t-1}\hat\gamma_{t-1}+u_t$ | Pástor–Stambaugh (2003) eqs. (7)–(8) |
+| **PS liquidity beta** | $\beta_i^L=\dfrac{\operatorname{cov}(r_{i},L)}{\operatorname{var}(L)}$ | Pástor–Stambaugh (2003) §III |
 | **AP commonality beta** | $\beta_1=\dfrac{\operatorname{cov}(c^i,c^M)}{\operatorname{var}(r^M-c^M)}$ | Acharya–Pedersen (2005) eq. (8) — **positive** premium |
-| **AP return-vs-liquidity beta** | $\beta_2=\dfrac{\operatorname{cov}(r^i,c^M)}{\operatorname{var}(r^M-c^M)}$ | Acharya–Pedersen (2005) eq. (8) — **negative** premium |
+| **AP return-vs-liquidity beta** | $\beta_2=\dfrac{\operatorname{cov}(r^i,c^M)}{\operatorname{var}(r^M-c^M)}$ | Acharya–Pedersen (2005) eq. (8) — **negative** premium (this is AP's $\beta_3$; we number the three liquidity betas $1,2,3$) |
 | **AP down-market beta** | $\beta_3=\dfrac{\operatorname{cov}(c^i,r^M)}{\operatorname{var}(r^M-c^M)}$ | Acharya–Pedersen (2005) eq. (8) — **negative** premium |
 | **Bao bond illiquidity** | $\gamma=-\operatorname{cov}(\Delta\ln P_{t+1},\Delta\ln P_t)$ | Bao, Pan & Wang (2011) — Roll-type |
 

@@ -20,7 +20,7 @@ The answer is the **cost of exiting**. A government bond you can sell into the m
 That extra required return is the **liquidity premium**. Three ideas, in increasing order of subtlety:
 
 1. **The level of illiquidity is priced (Amihud–Mendelson).** More illiquid assets earn higher expected returns, roughly the spread *amortized over the holding period*: the less often you trade, the more the one-time cost can be spread out.
-2. **The *risk* of illiquidity is priced too (Pastor–Stambaugh).** Beyond the average level, investors fear *changes* in liquidity. A stock that tends to fall precisely when the whole market's liquidity dries up is riskier and earns a premium — this is a **liquidity beta**, like a market beta but for liquidity instead of the market.
+2. **The *risk* of illiquidity is priced too (Pástor–Stambaugh).** Beyond the average level, investors fear *changes* in liquidity. A stock that tends to fall precisely when the whole market's liquidity dries up is riskier and earns a premium — this is a **liquidity beta**, like a market beta but for liquidity instead of the market.
 3. **Illiquidity is common and it spikes in bad times (Acharya–Pedersen; Bao et al.).** Illiquidity across assets moves together, and it worsens exactly in down markets — which is why the risk is so hard to hedge and so expensive.
 
 > **One mental model to keep.** Liquidity is insurance with a price. In calm markets you almost never collect; in a crisis it is the difference between getting out at 99 and getting out at 60. The premium you see in *normal* expected returns is the market charging you, in advance, for the *states* where you most need to trade and can least afford to.
@@ -31,7 +31,7 @@ This folder is the **asset-pricing** view. The sibling folder [[pillars/04-quant
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**The amortization identity (Amihud–Mendelson 1986).** Suppose the round-trip cost of trading asset $i$ is a fraction $s_i$ of its value (the relative spread). If you hold it for $h$ years and trade once to buy and once to sell, the total cost is $2s_i$ over the life of the position, i.e. roughly $2s_i/h$ per year. To make the asset competitive with a liquid asset returning $r$, its gross required return must be
+**The amortization identity (Amihud–Mendelson 1986).** Suppose the one-way cost of trading asset $i$ is a fraction $s_i$ of its value (the **relative half-spread**, the standard Foucault convention). A round trip (buy then sell) costs $2s_i$; over a holding period of $h$ years that is roughly $2s_i/h$ per year — which the literature usually writes as $s/h$ with $s$ instead denoting the **relative spread** (so $s=2\times$ the one-way cost). Here $s_i$ is the one-way cost. To make the asset competitive with a liquid asset returning $r$, its gross required return must be
 
 $$R_i \simeq r + \frac{s_i}{h},$$
 
