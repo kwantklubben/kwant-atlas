@@ -119,7 +119,8 @@ COARSE LOCK under contention  (c=100ns CS, think=40ns, wakeup=2000ns, K=1000)
   32         67198.0                 21.0x
 
 Same total work lock-FREE (atomic RMW counter, a=20ns, no blocking):
-  P=16: lock-free = 320 us vs coarse lock = 33,598 us -> 105x slower```
+  P=16: lock-free = 320 us vs coarse lock = 33,598 us -> 105x slower
+```
 
 **Read the result.** With a single thread the lock costs almost nothing (1.4x). Add a second thread and the wake-up tax on every handoff makes the whole thing ~21x over the raw critical-section time, and it stays ~21x as you add threads (the makespan doubles linearly with $P$ — pure serialisation). The lock-free atomic counter does the *same* work in 320 µs against 33 598 µs — **105x** faster, purely because no thread ever blocks and no wake-up tax is paid. This is the quantified case for eliminating the lock, not for "using a faster lock."
 

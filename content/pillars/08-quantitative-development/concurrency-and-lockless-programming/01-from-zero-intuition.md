@@ -91,7 +91,8 @@ Amdahl's law speedup ceiling  S(P) = 1 / (f + (1-f)/P)
 Asymptotic ceiling as P->inf is exactly 1/f_serial:
   f_serial= 1.0%  ->  speedup ceiling = 100.0x
   f_serial= 5.0%  ->  speedup ceiling = 20.0x
-  f_serial=20.0%  ->  speedup ceiling = 5.0x```
+  f_serial=20.0%  ->  speedup ceiling = 5.0x
+```
 Read the $f=5\%$ column: going from 16 to 1024 cores buys you just 2x more (9.14 → 19.64), and you will *never* beat 20x. The lesson for a trading engine: **the first thing to optimise is the serial fraction (the lock), not the core count.**
 
 ---

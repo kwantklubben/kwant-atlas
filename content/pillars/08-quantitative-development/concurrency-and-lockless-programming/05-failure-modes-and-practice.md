@@ -96,7 +96,8 @@ Deterministic lost-update race (two threads, one increment each):
   expected final = 2    actual final = 1
   lost updates   = 1  <- A's stale store wiped out B's write
 
-With a LOCK: final = 2 == expected 2 (exact, nothing lost)```
+With a LOCK: final = 2 == expected 2 (exact, nothing lost)
+```
 This is the exact mechanism that, at scale, silently eats increments, order counts, and position sizes. The lock version is always correct but pays the contention cost of [[pillars/08-quantitative-development/concurrency-and-lockless-programming/02-why-locks-are-slow|02 · Why Locks Are Slow]] — which is precisely the tension this folder teaches: correctness needs a happens-before edge; a lock provides one but queues you; a properly-ordered atomic provides one without blocking.
 
 ---

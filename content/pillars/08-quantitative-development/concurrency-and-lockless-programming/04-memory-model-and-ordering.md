@@ -77,7 +77,8 @@ False-sharing cost model  (a=5 ns local increment, T=40 ns line transfer)
          100,000          9,000 us        500 us      18.0x
        1,000,000         90,000 us      5,000 us      18.0x
 
-Headline (K=1,000,000): false-shared = 90,000 us vs padded = 5,000 us -> 18.0x slowdown from one shared cache line.```
+Headline (K=1,000,000): false-shared = 90,000 us vs padded = 5,000 us -> 18.0x slowdown from one shared cache line.
+```
 The slowdown is a **constant 18x** for any $K$: it comes from the *rate* at which the shared line bounces, not the amount of work. That is why `alignas(64)` on `head`/`tail` in an SPSC ring is not cosmetics — it is an 18x performance floor. In a real trading engine the two hot counters (producer `tail`, consumer `head`) *must* sit on separate cache lines or the "lock-free" channel silently becomes cache-contended.
 
 *(The release/acquire handshake is best seen in the runnable SPSC of [[pillars/08-quantitative-development/concurrency-and-lockless-programming/03-lock-free-structures|03 · Lock-Free Structures]] — the producer writes the payload before advancing `tail`, which is exactly a store-release; the consumer loads `tail` before reading the payload, a load-acquire.)*

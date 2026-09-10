@@ -93,7 +93,8 @@ Pi (delta=2.50) = [0.06625 0.04725 0.0465 ]
 reverse round-trip = [0.5 0.3 0.2] == w_mkt? True
 with rf, excess-return round-trip = [0.5 0.3 0.2]  == w_mkt? True
 market mu=0.05660 var=0.02264  ->  delta_from_market = 2.500
-Pi re-calibrated   = [0.06625 0.04725 0.0465 ]```
+Pi re-calibrated   = [0.06625 0.04725 0.0465 ]
+```
 
 ---
 

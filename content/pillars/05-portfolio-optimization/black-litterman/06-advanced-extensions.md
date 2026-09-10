@@ -90,7 +90,8 @@ combined Sigma_total=Sigma+M :
  [0.01572 0.0315  0.01264]
  [0.01093 0.01264 0.05193]]
 return-risk Sigma trace : 0.12  | total-risk trace: 0.1251
-prior precision=500.00  view precision=1000.00 -> posterior var0 = 0.000667 (prior 0.0400)```
+prior precision=500.00  view precision=1000.00 -> posterior var0 = 0.000667 (prior 0.0400)
+```
 
 ---
 

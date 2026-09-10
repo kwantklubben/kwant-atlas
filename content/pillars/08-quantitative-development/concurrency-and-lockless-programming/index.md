@@ -93,7 +93,8 @@ Pollaczek-Khinchine: mean queueing wait vs utilization (es=100 ns)
   0.95                 950.0 ns                1900.0 ns              19.0
   0.99                4950.0 ns                9900.0 ns              99.0
 
-Reading: at 90% utilization a contending thread waits ~90x the service time (450ns for a 100ns CS); at 99% it waits ~50us. Jitter doubles it (cs=1 vs cs=0). Locks turn a fast CS into a queue whose latency diverges as rho -> 1 -- the single structural reason contention is the enemy.```
+Reading: at 90% utilization a contending thread waits ~90x the service time (450ns for a 100ns CS); at 99% it waits ~50us. Jitter doubles it (cs=1 vs cs=0). Locks turn a fast CS into a queue whose latency diverges as rho -> 1 -- the single structural reason contention is the enemy.
+```
 Read it as an engineering rule: **keep contended sections short and utilization low.** The divergence as $\rho\to1$ is why "just use a lock, it's fast when uncontended" fails — the lock is only cheap while nobody else wants it.
 
 ---

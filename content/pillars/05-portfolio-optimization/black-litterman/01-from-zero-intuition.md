@@ -80,7 +80,8 @@ naive MVO weights   = [ 0.87  -0.274  0.932]  sum= 1.527
 perturb mu0 +0.1%   : w0 0.8699 -> 0.8824   dW0 = 0.0124
 BL implied returns  = [0.06625 0.04725 0.0465 ]
 BL no-view weights  = [0.5 0.3 0.2]  == w_mkt? True
-BL one-view weights = [0.5579 0.3    0.1421]  sum= 1.0```
+BL one-view weights = [0.5579 0.3    0.1421]  sum= 1.0
+```
 
 ---
 

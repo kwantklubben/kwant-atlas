@@ -101,7 +101,8 @@ SPMC/MPMC cost vs SPSC (rough, from the single-writer principle):
   SPSC: 1 producer, 1 consumer -> counters never contended, ~2 stores/msg
   MPMC: need CAS on the shared tail -> atomic RMW serializes all producers,
         plus ABA risk -> strictly slower than SPSC (this is WHY Disruptor
-        is single-writer: it sidesteps CAS entirely).```
+        is single-writer: it sidesteps CAS entirely).
+```
 Read the table. Moving from $B=1$ to $B=64$ is a **5.6x** throughput gain with *no algorithmic change* — just amortising the fixed publish cost. Beyond $B=256$ the handshake is negligible (0.4 ns/message) and throughput approaches its work-bound ceiling of $1/20\,\text{ns} = 50$M msg/s. The Disruptor's reported ~6M msg/s at sub-µs latency is exactly this batching economics applied to a real engine — the number the corpus cites. And the progress table is the map for when lock-free is enough vs when you need wait-free (a kill switch).
 
 ---

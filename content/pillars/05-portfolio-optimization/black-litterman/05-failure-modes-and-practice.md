@@ -74,7 +74,8 @@ Omega->inf (deaf)   : [0.5 0.3 0.2] == w_mkt True
 cond(Sigma) normal  = 3.54
 cond(Sigma_ill)     = 427.2
 MVO w (clean Sigma) : [ 0.87  -0.274  0.932]
-MVO w (ill Sigma)   : [ 60.232 -59.768   0.947]```
+MVO w (ill Sigma)   : [ 60.232 -59.768   0.947]
+```
 
 ---
 
