@@ -7,6 +7,8 @@
 > **Each topic-folder** = `index.md` lookup-hub + 6 sub-pages (`01-from-zero-intuition` → `06-advanced-extensions`): intuition → mathematical ground truth (LaTeX) → runnable verified Python → failure modes → canonical literature → graph bridges.
 > **Site:** `npx quartz build` clean at **747 files**; visualizer 107 nodes / 255 links / 0 dangling; all area hubs list their folders with a reading path; repo-wide wikilink check clean (remaining "dangling" hits are math/numpy-notation false positives).
 > **Branch:** all work committed on `handover/2026-09-09-corpus-research`; merged to `main` at session end.
+>
+> **AUDIT (2026-09-10):** seven-perspective audit suite run and fixes applied — see `corpus/audit/README.md` for the index. Correctness: 2 math errors + 1 caveat fixed, 3 non-self-contained code blocks fixed, 10 prose typos fixed. Consistency: 50 compound terms normalised, 96 hubs given prereq-scope clauses. Navigation: home "Start here" panel, foundations consumption-order contract + exit ramp, per-pillar "Before this pillar (foundations)" lines, new `content/glossary.md` + `content/diagnostics.md`. Build clean; visualizer 0 dead nodes.
 
 
 > Everything that exists, where it lives, and what's done. Updated as work progresses — keep this current.
