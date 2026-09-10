@@ -34,7 +34,7 @@ Two engineering facts make TSMOM a *system*, not a slogan: **volatility scaling*
 $$S^s_t = \operatorname{sign}\Big(r^s_{t-12,t}\Big), \qquad r^s_{t-12,t}=\prod_{k=1}^{12}\big(1+r^s_{t-k}\big)-1.$$
 
 **Ex-ante volatility (MOP §2.4).** An exponentially weighted variance with a 60-day center of mass, annualized by 261:
-$$\sigma^2_t = 261\sum_{i\ge0}(1-\delta)^i\big(r_{t-1-i}-\bar r_t\big)^2, \qquad \frac{\delta}{1-\delta}=60\ \text{days}.$$
+$$\sigma^2_t = 261\sum_{i\ge0}(1-\delta)\,\delta^i\big(r_{t-1-i}-\bar r_t\big)^2, \qquad \frac{\delta}{1-\delta}=60\ \text{days}.$$
 To avoid look-ahead, the volatility measured at $t-1$ is applied to the time-$t$ return.
 
 **Position sizing and TSMOM return.** Size each position to an ex-ante annualized volatility $\sigma_{\text{tgt}}$ (MOP use 40%):

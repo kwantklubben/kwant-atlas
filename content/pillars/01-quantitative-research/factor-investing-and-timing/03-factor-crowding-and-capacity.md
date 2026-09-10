@@ -42,7 +42,7 @@ Three structural facts follow immediately:
 
 1. **Concavity.** $g_{\text{net}}$ is concave in $A$: the first billion is nearly free, the thousandth is ruinous. Capacity has *diminishing* marginal cost, which is why a factor can support one small manager or many tiny ones but not one enormous one.
 2. **Capacity scales with ADV and with $g^2$.** Setting $g_{\text{net}}=0$ and solving, the break-even scales as $A^\star\propto ADV\cdot g^2/(\lambda\sigma)^2$ — a factor with *half* the gross alpha has *one quarter* the capacity. Weak factors are small business, not small versions of big business.
-3. **Capacity scales as $1/\tau^2$.** A 4× higher-turnover version of the same factor has 16× less capacity. This is the quantitative reason short-horizon alphas are capacity-starved relative to value.
+3. **Capacity scales as $1/\tau^3$.** From $A^\star\propto ADV\,g^2/(\lambda\sigma)^2$ with $g_{\text{net}}=g-2\tau\lambda\sigma\sqrt{A\tau/(252\,ADV)}$, solving $g_{\text{net}}=0$ gives $A^\star\propto1/\tau^3$ — so a 4× higher-turnover version of the same factor has 64× less capacity (verified: $\tau{=}2\Rightarrow\$630$bn, $\tau{=}8\Rightarrow\$9.84$bn, ratio $64.0$). This is the quantitative reason short-horizon alphas are capacity-starved relative to value.
 
 **Crowding as a correlated-flow shock.** Suppose $K$ managers each hold the factor with weight $w_j$ and, in a deleveraging episode, each must cut a fraction $\varphi$ of its book over a short window. The aggregate forced flow is
 $$Q_{\text{forced}}=\varphi\sum_j w_j A_j,$$

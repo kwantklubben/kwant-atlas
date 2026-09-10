@@ -21,7 +21,7 @@ Start with the dumbest version. You have a coin, but it is one of two coins: a f
 Now swap the metaphor into markets:
 
 1. **"Coin" = market regime.** A bull regime is a coin biased toward positive, calm returns; a bear regime is one biased toward negative, violent returns. The bias is never directly labeled on the tape — you infer it from the outcomes (returns).
-2. **The switch is a hidden, stochastic process.** Regimes do not switch on a schedule; the next regime depends probabilistically on the current one (a Markov chain: "if it's bull today, there's a 4% chance of bear tomorrow"). This is Hamilton's (1989) core modeling move.
+2. **The switch is a hidden, stochastic process.** Regimes do not switch on a schedule; the next regime depends probabilistically on the current one (a Markov chain: "if it's bull today, there's a 5% chance of bear tomorrow"). This is Hamilton's (1989) core modeling move.
 3. **You maintain a probability, not a verdict.** At every step you carry $\mathbb{P}[\text{bull}\mid\text{all returns so far}]$. A filtered probability of $0.85$ says "probably bull," not "it's bull." The filter *recursively* updates this number with each new return via Bayes' rule — the same engine that runs a Kalman filter, but on a discrete hidden state.
 
 Why this matters for a practitioner: a strategy fitted on calm data is systematically wrong in turbulence. **Knowing the regime lets you switch allocation, target volatility, and size risk to the state you are probably in** (see [[pillars/01-quantitative-research/regime-detection/06-advanced-extensions|06 · Advanced Extensions]]).
@@ -48,7 +48,7 @@ where $f(y_t\mid s_t=j)$ is the regime-conditional density of the return (e.g., 
 
 $$\mathbb{E}[\text{time in }i]=\frac{1}{1-P_{ii}}.$$
 
-With Hamilton's US GNP estimates ($p=0.9049$, $q=0.7550$): a recession lasts on average $1/(1-0.7550)=4.1$ quarters, an expansion $1/(1-0.9049)=10.5$ quarters — versus NBER postwar averages of $4.7$ and $14.3$. **Persistence is a parameter, not an assumption.**
+With Hamilton's US GNP estimates ($p=0.9049$, $q=0.7550$): a recession lasts on average $1/(1-0.7550)=4.1$ quarters, an expansion $1/(1-0.9049)=10.5$ quarters — versus NBER postwar averages of roughly $4$ and $14$–$15$ quarters (NBER business-cycle peak/trough dates). **Persistence is a parameter, not an assumption.**
 
 ---
 

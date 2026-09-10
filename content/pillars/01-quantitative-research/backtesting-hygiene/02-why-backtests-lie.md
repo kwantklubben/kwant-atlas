@@ -51,7 +51,7 @@ Let $\widehat{SR}^{\text{IS}}$ be the selected strategy's in-sample Sharpe and $
 | Door | Mechanism | In-sample symptom | Fix |
 |---|---|---|---|
 | Selection bias | Reported = max of $N$ trials | "Best" beats all others; $N$ undisclosed | DSR / haircut (pages 03–04) |
-| In-sample optimism | Tuned on the scored data | $d$$ free params raise apparent fit | Hold out + effective $df=\mathrm{tr}(S)$ |
+| In-sample optimism | Tuned on the scored data | $d$ free params raise apparent fit | Hold out + effective $df=\mathrm{tr}(S)$ |
 | Look-ahead | Uses future info | Unrealistically smooth equity curve | Point-in-time data, lag by publish date |
 | Survivorship | Only survivors measured | Universe biased to winners | Point-in-time universe, include delistings |
 | Backfill / self-selection | Only winners disclosed | Too-good-to-be-true track records | Demand full trial history |

@@ -39,7 +39,7 @@ This folder is the topic-hub for **momentum** in Kwant-Atlas. It (a) gives the *
 | Rank weights (dollar-neutral) | $w_i=\dfrac{\text{rank}_i-\frac{N+1}{2}}{\sum_j\|\text{rank}_j-\frac{N+1}{2}\|}$ | $\sum_i w_i=0.000$, $\sum_i\|w_i\|=1.0000$ |
 | WML (winners minus losers) | $\text{WML}_t=\sum_i w_i\,r_{i,t}$ | skip-$12\text{-}1$: SR $+1.75$; include-last-mo: SR $-0.07$ |
 | TSMOM position | $\text{pos}_{i,t}=\text{sign}\big(R_i^{(12)}\big)\cdot\dfrac{\sigma_{\text{tgt}}}{\sigma_{i,t-1}}$ | realized vol $39.2\%$ vs target $40\%$ |
-| EWMA ex-ante vol (MOP) | $\sigma_{i,t}^2=261\sum_k(1-\delta)^k(r_{i,t-1-k}-\bar r)^2$, center-of-mass $\frac{\delta}{1-\delta}=60$ d | — |
+| EWMA ex-ante vol (MOP) | $\sigma_{i,t}^2=261\sum_k(1-\delta)\,\delta^k(r_{i,t-1-k}-\bar r)^2$, center-of-mass $\frac{\delta}{1-\delta}=60$ d | — |
 | Diversified TSMOM return | $r^{\text{TSMOM}}_{t,t+1}=\frac1{S_t}\sum_s \text{sign}(r^s_{t-12,t})\,\frac{40\%}{\sigma^s_{t-1}}\,r^s_{t,t+1}$ | ann. vol $11.7\%$ (paper: $12\%$), SR $+1.95$ |
 | XSMOM expected return | $\mathbb{E}[r^{\text{XS}}]=\dfrac{\operatorname{tr}(\Omega)}{N}-\dfrac{\mathbf{1}'\Omega\mathbf{1}}{N^2}+12\sigma_m^2$ | 3 channels: own-AC, cross-serial, mean-dispersion |
 | TSMOM expected return | $\mathbb{E}[r^{\text{TS}}]=\dfrac{\operatorname{tr}(\Omega)}{N}+\dfrac{12\,\mu'\mu}{N}$ | time-series channel dominates |

@@ -35,7 +35,7 @@ This folder is the quantitative engine layer beneath the accounting-based factor
 | FF5 model | $+\,r_i\text{RMW}_t+c_i\text{CMA}_t$ added | FF 2015, eq. 5 |
 | 2×3 sorts | $\text{HML}=\tfrac12(R_{SH}+R_{BH})-\tfrac12(R_{SL}+R_{BL})$ | NYSE breakpoints |
 | SMB | average of the size factors from the B/M, profitability & investment sorts | FF 2015 |
-| Cross-sectional (Barra) fit | $f_t=(X_t'\Omega^{-1}X_t)^{-1}X_t'\Omega^{-1}R_t$ | WLS/GLS per period |
+| Cross-sectional (Barra) fit | $\hat f_t=(X_t'V^{-1}X_t)^{-1}X_t'V^{-1}R_t$, $V=\operatorname{diag}\sigma_i^2$ | WLS/GLS per period |
 | Factor covariance | $\Sigma=B\Lambda B'+\Psi$ | systematic + specific |
 | PCA factor number | eigenvalues of $\hat\Sigma$; Kaiser / Bai–Ng | $K$ selection |
 

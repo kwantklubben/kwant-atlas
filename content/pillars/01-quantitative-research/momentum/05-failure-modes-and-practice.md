@@ -21,7 +21,7 @@ The two canonical crashes (all verified corpus numbers):
 | Episode | Market context | What happened to WML |
 |---|---|---|
 | July–Aug 1932 | market rose +82% in two months | losers $+232\%$ vs winners $+32\%$; WML $-74.4\%$, $-61.0\%$ |
-| Mar–May 2009 | market rose +26% in three months | losers $+163\%$ vs winners $+8\%$; WML $-45.5\%$, $-42.3\%$, $-30.5\%$ |
+| 2009 reversal (Mar/Apr/Aug) | market rose +26% over the rebound | losers $+163\%$ vs winners $+8\%$; WML $-42.3\%$ (Mar), $-45.5\%$ (Apr), $-30.5\%$ (Aug) |
 
 **The crash is a "loser crash-up," not a market crash.** Momentum does not lose because the market fell — it loses when the market *rebounds* sharply after a decline. Fourteen of the 15 worst momentum months follow a **negative two-year market return** and occur in months the market **rose contemporaneously**.
 

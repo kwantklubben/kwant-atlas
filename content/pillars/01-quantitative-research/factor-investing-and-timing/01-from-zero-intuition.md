@@ -48,7 +48,7 @@ $$IC_t=\mathrm{corr}_i(z_{it},\,R_{i,t+1}).$$
 If we form a portfolio with weights $w_i\propto z_i$ (a long-short characteristic portfolio), the expected return of that portfolio is $\mathbb{E}[R_w]=IC\cdot\sigma_{\text{cross-sectional return}}\cdot\sqrt{N_{\text{effective}}}$ in magnitude — the precise statement of "breadth amplifies a weak signal." The **fundamental law of active management** (Grinold 1989) makes this an information ratio:
 $$IR\approx IC\times\sqrt{\text{breadth}}.$$
 
-**Worked numbers.** For a factor with IC $=0.045$ and breadth $=12\times 300=3600$ independent stock-months per year, $IR\approx0.045\times\sqrt{3600}=0.045\times60=2.7$ — close to the 1.97 measured in §3 (the gap is the imperfect independence of the bets and the decile-truncation loss). This is the *entire* reason factor investing exists: the signal is weak, the cross-section is wide.
+**Worked numbers.** For a factor with IC $=0.045$ and breadth $=12\times 300=3600$ independent stock-months per year, $IR\approx0.045\times\sqrt{3600}=0.045\times60=2.7$ — close to the 2.05 measured in §3 (the gap is the imperfect independence of the bets and the decile-truncation loss). This is the *entire* reason factor investing exists: the signal is weak, the cross-section is wide.
 
 **Why the same law kills factor timing.** Factor timing makes *one bet per month* on the factor itself. Its breadth is $\approx12$. To achieve an IR of 0.5 — a modest active strategy — you would need
 $$IC_{\text{timing}}=\frac{0.5}{\sqrt{12}}\approx0.14,$$

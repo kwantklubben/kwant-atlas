@@ -37,7 +37,7 @@ This folder is the topic-hub for **regime detection** in Kwant-Atlas. It (a) giv
 | Hamilton filter — **update** | $\hat\xi_{t\mid t,j}=\dfrac{f(y_t\mid s_t=j)\,\mathbb{P}[s_t=j\mid y_{1:t-1}]}{\sum_k f(y_t\mid s_t=k)\,\mathbb{P}[s_t=k\mid y_{1:t-1}]}$ | filtered probs sum to $1.0000$ |
 | Conditional density (Gaussian) | $f(y_t\mid s_t=j)=\dfrac{1}{\sqrt{2\pi}\sigma_j}\exp\!\Big[-\tfrac{(y_t-\mu_j)^2}{2\sigma_j^2}\Big]$ | — |
 | **Sample log-likelihood** (Hamilton §4.2) | $\ln L=\sum_{t=1}^{T}\ln\Big[\sum_j f(y_t\mid s_t=j)\,\mathbb{P}[s_t=j\mid y_{1:t-1}]\Big]$ | filter $889.5$; EM $\to891.195$ |
-| HMM forward / backward | $\alpha_t(j)=f(y_{1:t},s_t{=}j)$, $\beta_t(j)=f(y_{t+1:T}\mid s_t{=}j)$; $\gamma_t(j)=\alpha_t(j)\beta_t(j)$ | smoothed agreement $88.6\%$ |
+| HMM forward / backward | $\alpha_t(j)=f(y_{1:t},s_t{=}j)$, $\beta_t(j)=f(y_{t+1:T}\mid s_t{=}j)$; $\gamma_t(j)\propto\alpha_t(j)\beta_t(j)$ | smoothed agreement $88.6\%$ |
 | Viterbi (MAP path) | $\delta_t(j)=\max_i\delta_{t-1}(i)P_{ij}f(y_t\mid j)$; backtrace | $77.8\%$ agreement |
 | SETAR($2$;$d$) | $x_t=\phi_0^{(j)}+\sum_i\phi_i^{(j)}x_{t-i}+a_t^{(j)}$ if $\gamma_{j-1}\le x_{t-d}<\gamma_j$ | threshold recovered $0.000$ |
 | STAR (logistic) | $x_t=c_0+\sum_i\phi_{0,i}x_{t-i}+F[(x_{t-d}-\ell)/s]\big(c_1+\sum_i\phi_{1,i}x_{t-i}\big)+a_t$ | midpoint $c=0.00\approx\gamma$ |
@@ -53,14 +53,15 @@ Standard library only. Reproduces the two cleanest verified numbers from §2: **
 ```python
 import math
 
-# Hamilton (1989) Table I, US real GNP: P[s_t=1|s_{t-1}=1]=p, P[s_t=0|s_{t-1}=0]=q
+# Hamilton (1989) Table I, US real GNP: state 0 = recession, state 1 = expansion
+# P[s_t=0|s_{t-1}=0]=q (recession persists), P[s_t=1|s_{t-1}=1]=p (expansion persists)
 p, q = 0.9049, 0.7550
 print(f"expected expansion duration = 1/(1-p) = {1/(1-p):.2f} qtr   (paper 10.5)")
 print(f"expected recession duration = 1/(1-q) = {1/(1-q):.2f} qtr   (paper 4.1)")
 
-# stationary distribution pi P = pi  (2-state closed form)
-pi0 = (1-q)/(2-p-q); pi1 = 1-pi0
-print(f"stationary P(expansion)={pi0:.3f}  P(recession)={pi1:.3f}")
+# stationary distribution pi P = pi  (2-state closed form): pi_rec=(1-p)/(2-p-q)
+pi_rec = (1-p)/(2-p-q); pi_exp = 1-pi_rec
+print(f"stationary P(expansion)={pi_exp:.3f}  P(recession)={pi_rec:.3f}")
 
 # Hamilton filter: forward recursion, probabilities sum to 1 by construction
 def gauss(x,m,v): return math.exp(-0.5*((x-m)/v)**2)/(math.sqrt(2*math.pi)*v)
@@ -73,9 +74,9 @@ def hamilton_filter(y, mu, sig, P, pinit):
         xi.append([pred[j]*f[j]/d for j in range(n)])                 # update (Bayes)
     return xi[1:]
 
-mu=[-0.004,0.012]; sig=[0.769,0.769]          # Hamilton's growth states
+mu=[-0.004,0.012]; sig=[0.769,0.769]          # Hamilton's growth states (0=recession, 1=expansion)
 P=[[q,1-q],[1-p,p]]                           # rows=prev state
-xi = hamilton_filter([-0.3,1.5,0.2], mu, sig, P, [pi0,pi1])
+xi = hamilton_filter([-0.3,1.5,0.2], mu, sig, P, [pi_rec,pi_exp])
 for t,pr in enumerate(xi):
     print(f"t={t+1}: P(expansion|data)={pr[1]:.4f}  P(recession|data)={pr[0]:.4f}  sum={sum(pr):.4f}")
 ```
@@ -83,11 +84,11 @@ for t,pr in enumerate(xi):
 expected expansion duration = 1/(1-p) = 10.52 qtr   (paper 10.5)
 expected recession duration = 1/(1-q) = 4.08 qtr   (paper 4.1)
 stationary P(expansion)=0.720  P(recession)=0.280
-t=1: P(expansion|data)=0.4275  P(recession|data)=0.5725  sum=1.0000
-t=2: P(expansion|data)=0.5372  P(recession|data)=0.4628  sum=1.0000
-t=3: P(expansion|data)=0.6008  P(recession|data)=0.3992  sum=1.0000
+t=1: P(expansion|data)=0.7187  P(recession|data)=0.2813  sum=1.0000
+t=2: P(expansion|data)=0.7274  P(recession|data)=0.2726  sum=1.0000
+t=3: P(expansion|data)=0.7261  P(recession|data)=0.2739  sum=1.0000
 ```
-As positive observations arrive the filter shifts from recession-leaning to expansion-leaning — the qualitative essence of regime detection, reproduced on three data points.
+Starting from the *correct* stationary prior ($P(\text{expansion})=0.72$), the filter stays expansion-leaning and firms up slightly as the two positive observations arrive — the qualitative essence of regime detection, reproduced on three data points. (Note how sensitive the path is to the prior: mislabel the states and the same data appear to "start in recession", which is exactly the identification problem the caveat below warns about.)
 
 ---
 
@@ -119,6 +120,6 @@ Hub signposts — the folder's full failure-mode analysis lives in [[pillars/01-
 - Sub-pages (in-folder): 01 From Zero · 02 Markov-Switching Models · 03 Threshold Models · 04 Hidden Markov Models · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
-- **Absolute beginner:** [[pillars/01-quantitative-research/regime-detection/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
+- **Absolute beginner:** [[pillars/01-quantitative-research/regime-detection/01-from-zero-intuition|01 · From Zero]] — elementary probability; everything else is built from zero.
 - **Models + code (undergrad/job-seeking):** [[pillars/01-quantitative-research/regime-detection/02-markov-switching-models|02 · Markov-Switching]] → [[pillars/01-quantitative-research/regime-detection/03-threshold-models|03 · Threshold Models]] → [[pillars/01-quantitative-research/regime-detection/04-hmm|04 · Hidden Markov Models]].
 - **Robustness (practitioner/graduate):** [[pillars/01-quantitative-research/regime-detection/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/01-quantitative-research/regime-detection/06-advanced-extensions|06 · Advanced Extensions (Regime Allocation)]].

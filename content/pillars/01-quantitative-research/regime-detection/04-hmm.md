@@ -105,7 +105,6 @@ agree=sum(1 for t in range(T) if (g[t][0]>0.5)==(s[t]==0))
 print(f"forward-backward smoothed agreement: {agree}/{T} ({100*agree/T:.1f}%)")
 
 # ---- Viterbi decoding
-delt=[[p0*gauss(y[0],0,sig[0]),(1-p0)*gauss(y[0],mu[1],sig[1])]]  # j=0 uses mu=mu[0]? use mu[j]
 delt=[[ (p0 if j==0 else 1-p0)*gauss(y[0],mu[j],sig[j]) for j in range(2)]]
 psi=[]
 for t in range(1,T):

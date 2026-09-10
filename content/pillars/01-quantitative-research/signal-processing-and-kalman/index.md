@@ -20,7 +20,7 @@ The Kalman filter is the optimal recursive answer to that inference problem, und
 
 This folder is the topic-hub for **signal processing & Kalman filtering** in Kwant-Atlas. It (a) gives the **fast recursion/formula lookup** below — the job #1 of a hub — and (b) routes you to six sub-pages that walk from raw intuition through state-space models, the filter itself, time-varying beta, the failure modes, and the advanced extensions (smoothing, particle filters).
 
-> **The one-sentence essence.** "Every financial estimator is a filter; the Kalman filter is the *provably optimal* one — it prices each new observation by its **signal-to-noise ratio** and corrects the state by exactly the **Kalman gain** $K=P^{-}\,H^\top(HP^{-}H^\top+R)^{-1}$, the fraction of the innovation that is signal rather than noise."
+> **The one-sentence essence.** "Every financial estimator is a filter; the Kalman filter is the *provably optimal* one — it prices each new observation by its **signal-to-noise ratio** and corrects the state by exactly the **Kalman gain** $K=\Sigma^{-}Z^\top(Z\Sigma^{-}Z^\top+H)^{-1}$, the fraction of the innovation that is signal rather than noise."
 
 ---
 
@@ -41,10 +41,10 @@ $$s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad \eta_t\sim N(0,Q_t);\qquad y_t=c_t+Z_t s_
 | Covariance update | $\Sigma_{t+1\mid t}=T_t\Sigma_{t\mid t-1}L_t^\top+R_tQ_tR_t^\top$, $\;L_t=T_t-K_tZ_t$ | — |
 | Log-likelihood (prediction-error) | $\ln L=-\tfrac{T}{2}\ln(2\pi)-\tfrac12\sum_t\!\big[\ln V_t+v_t^2/V_t\big]$ | — |
 | **Scalar local-level** (Tsay 11.14) | $K_t=\Sigma_{t\mid t-1}/(\Sigma_{t\mid t-1}+\sigma_e^2)$, $\;\mu_{t+1\mid t}=\mu_{t\mid t-1}+K_tv_t$ | 1-step $P_0{=}1,q{=}.25,r{=}1,y{=}1.5\Rightarrow x{=}0.833333,\,P{=}0.555556$ |
-| Steady-state gain | $\Sigma_\infty$ solves the algebraic Riccati equation (scalar: $\Sigma=r(\Sigma+q)/(\Sigma+q+r)$) | $q{=}.25,r{=}1\Rightarrow\Sigma_\infty{=}0.390388,\,K_\infty{=}0.390388$ |
+| Steady-state gain | $\Sigma^{-}_\infty$ solves the algebraic Riccati equation (scalar: $\Sigma^{-}=r(\Sigma^{-}+q)/(\Sigma^{-}+q+r)$; a-priori) | $q{=}.25,r{=}1\Rightarrow\Sigma^{-}_\infty{=}0.640388,\ K_\infty{=}0.390388$, posterior $\Sigma_\infty^{}=0.390388$ |
 | Local-level $\leftrightarrow$ ARIMA(0,1,1) | $\sigma_e^2=\theta\sigma_a^2$, $\;2\sigma_e^2+\sigma_\eta^2=(1+\theta^2)\sigma_a^2$ | $\theta{=}.858,\sigma_a{=}.5184\Rightarrow\sigma_e{=}0.4802,\ \sigma_\eta{=}0.0736$ |
 | Dynamic CAPM (time-varying beta) | $r_t=\alpha_t+\beta_t r_{M,t}+e_t$; $\alpha_{t+1}=\alpha_t+\eta_t$, $\beta_{t+1}=\beta_t+\varepsilon_t$; $Z_t=(1,\ r_{M,t})$ | see [[pillars/01-quantitative-research/signal-processing-and-kalman/04-time-varying-beta|04 · Time-Varying Beta]]: KF RMSE $0.0187$ vs rolling-OLS $0.1164$ |
-| Joseph (numerically stable) update | $\Sigma_{t\mid t}=(I-K_tH_t)\Sigma_{t\mid t-1}(I-K_tH_t)^\top+K_tR_tK_t^\top$ | keeps $\Sigma$ symmetric & positive-semi-definite |
+| Joseph (numerically stable) update | $\Sigma_{t\mid t}=(I-K_tZ_t)\Sigma_{t\mid t-1}(I-K_tZ_t)^\top+K_tH_tK_t^\top$ | keeps $\Sigma$ symmetric & positive-semi-definite |
 | RTS smoother (offline) | $s_{t\mid T}=s_{t\mid t}+C_t(s_{t+1\mid T}-s_{t+1\mid t})$, $C_t=\Sigma_{t\mid t}T_t^\top\Sigma_{t+1\mid t}^{-1}$ | variance $\downarrow$ $44.4\%$, RMSE $\downarrow$ $15.2\%$ ([[pillars/01-quantitative-research/signal-processing-and-kalman/06-advanced-extensions|06]]) |
 
 > **Critical convention caveat (Tsay 11.1).** The filter comes in **two equivalent forms** and they must not be mixed within one pass. This hub uses the *canonical (11.64) form*, where $\Sigma_{t+1\mid t}$ is reached with $L_t=T_t-K_tZ_t$ and $K_t$ carries the $T_t$ factor (state one step *ahead*). The alternative *contemporaneous* form uses $\Sigma_{t+1\mid t}=T_t\Sigma_{t\mid t}T_t^\top+RQR^\top$ and defines $K$ on the filtered step. Both give identical estimates for time-invariant models, but the state/covariance *indices* differ — mixing them silently off-by-ones every result.

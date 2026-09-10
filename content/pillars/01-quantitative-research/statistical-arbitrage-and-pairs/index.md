@@ -37,7 +37,7 @@ This folder is a *hub*. It gives the **method lookup** below (§2), a single run
 | AR(1) discretisation | $z_{t}-z_{t-1}=a+b\,z_{t-1}+\varepsilon_t$ | $b=-0.1804$ |
 | Mean-reversion speed | $\theta=-\dfrac{\ln(1+b)}{\Delta t}$ | $\theta=0.1990$/day (true $0.20$) |
 | Half-life | $\tau_{1/2}=\dfrac{\ln 2}{\theta}$ | $3.48$ d (true $3.47$) |
-| OU stationary variance | $\sigma^2_{\text{eq}}=\dfrac{\sigma_z^2}{2\theta}$ (continuous) $=\dfrac{\operatorname{Var}(\varepsilon)}{1-b^2}$ (discrete) | $\sigma_{\text{eq}}=0.01167$ |
+| OU stationary variance | $\sigma^2_{\text{eq}}=\dfrac{\sigma_z^2}{2\theta}$ (continuous) $=\dfrac{\operatorname{Var}(\varepsilon)}{1-b^2}$ (discrete) | $\sigma_{\text{eq}}=0.8333$ (hub sim, discrete) |
 | $z$-score (spread signal) | $Z_t=\dfrac{z_t-\mu_z}{\sigma_z}$ | entry $\lvert Z\rvert>2$, exit $\to0$, stop $\lvert Z\rvert\ge3.5$ |
 | Avellaneda–Lee s-score | $s_i=\dfrac{X_i-m_i}{\sigma_{\text{eq},i}}$, enter $\lvert s\rvert>1.25$ | $s=-0.462$ on a 60-day window |
 | Gatev distance metric | $D_{ij}=\sum_{t}\left(\tilde P^i_t-\tilde P^j_t\right)^2$ on normalised prices | top pair $D=0.0116$ |

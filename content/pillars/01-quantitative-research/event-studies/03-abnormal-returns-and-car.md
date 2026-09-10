@@ -93,7 +93,7 @@ CAR(0,+1)  = +1.973%    t = +4.43
 s(AR_t) (estimation window) = 0.315%
 ```
 
-**Reading the output.** The day-0 mean abnormal return ($+1.48\%$) stands out against the pre-event noise (individual daily $AR_t$ wander within $\pm0.5\%$). The cumulative CAR steps up on day 0 and stays elevated. With 40 firms, the CAR's t-statistic is a decisive $+3.54$ — the same +1.5% signal that was statistically invisible for *one* firm in [[pillars/01-quantitative-research/event-studies/02-event-study-methodology|02]] is now significant, purely from cross-sectional aggregation cancelling noise.
+**Reading the output.** The day-0 mean abnormal return ($+1.48\%$) stands out against the pre-event noise (individual daily $AR_t$ wander within $\pm0.5\%$). The cumulative CAR steps up on day 0 and stays elevated. With 40 firms, the CAR's t-statistic is a decisive $+3.54$ — the same +3.0% signal that was statistically invisible for *one* firm in [[pillars/01-quantitative-research/event-studies/02-event-study-methodology|02]] is now significant, purely from cross-sectional aggregation cancelling noise.
 
 ---
 

@@ -21,7 +21,7 @@ Two implementation facts shape everything:
 1. **Skip the most recent month (the $12\text{-}1$ convention).** Rank on months $t-12\ldots t-2$, *not* $t-1$. The last month reverses (Jegadeesh 1990; Lehmann 1990) and, if included, drags the signal toward a trade that loses. This one convention is the single most important detail of the strategy.
 2. **The portfolio is dollar-neutral by construction.** Rank weights $w_i\propto(\text{rank}_i-\frac{N+1}{2})$ sum to zero, so the long and short legs offset exactly — no net market exposure. The loser *short* leg is where both the profit and the crash risk live.
 
-The verified US facts: winners decile earns $\sim15\%$/yr, losers $\sim-2.5\%$/yr, WML (winners-minus-losers) has a Sharpe $\approx0.60$–$0.71$ and a *negative* CAPM beta $(-0.58)$ with annual alpha $\approx22\%$ (Daniel & Moskowitz 2016, 1927–2013). Momentum profits are essentially a **non-January** phenomenon (JT 2001).
+The verified US facts: winners decile (a *decile* = one tenth of the cross-section, i.e. a 10% rank bucket by past return) earns $\sim15\%$/yr, losers $\sim-2.5\%$/yr, WML (winners-minus-losers) has a Sharpe $\approx0.60$–$0.71$ and a *negative* CAPM beta $(-0.58)$ with annual alpha $\approx22\%$ (Daniel & Moskowitz 2016, 1927–2013). Momentum profits are essentially a **non-January** phenomenon (JT 2001).
 
 ---
 

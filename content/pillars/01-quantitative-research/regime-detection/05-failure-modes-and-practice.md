@@ -15,7 +15,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Regime models are *beautifully estiomable and empirically fragile in three specific ways*. This page names them precisely and shows them in numbers, so a practitioner knows *which* failure mode to guard against. The objective is not cynicism — it is knowing exactly where the model's identifiability and stability break so the output can be used safely.
+Regime models are *beautifully estimable and empirically fragile in three specific ways*. This page names them precisely and shows them in numbers, so a practitioner knows *which* failure mode to guard against. The objective is not cynicism — it is knowing exactly where the model's identifiability and stability break so the output can be used safely.
 
 The three failures, in one line each:
 

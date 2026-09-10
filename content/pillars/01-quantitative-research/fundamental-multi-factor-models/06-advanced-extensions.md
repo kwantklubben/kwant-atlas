@@ -41,7 +41,7 @@ so that (Tsay eq. 9.17) $\Sigma_r=\beta\beta'+D$. **PCA** finds the loadings fro
 #### 2.3 The factor zoo and its consolidation
 
 The zoo is the empirical failure of the small-factor premise: hundreds of published return-predictive characteristics (Green–Hand–Zhang count ~100, ~24 genuinely independent). Two consolidation directions:
-- **q-factor model** (Hou, Xue & Zhang 2015): a *production-based* model whose two investment factors (market + investment + ROE) digest most anomalies through one economic lens — investment is the bridge to expected returns because a firm invests until marginal benefit equals discount rate.
+- **q-factor model** (Hou, Xue & Zhang 2015): a *production-based* model whose **four** factors (market, size, investment, ROE) digest most anomalies through one economic lens — investment is the bridge to expected returns because a firm invests until marginal benefit equals discount rate.
 - **Statistical compression** (PCA / APCA): let the data reveal the factor dimension structure rather than imposing characteristics. **APCA** (Connor–Korajczyk) works when $k>T$: eigen-analysis of the $T\times T$ inner product $\hat\Omega_T=(1/k)(R-1_T\bar r')(R-1_T\bar r')'$ (Tsay §9.6).
 
 ---

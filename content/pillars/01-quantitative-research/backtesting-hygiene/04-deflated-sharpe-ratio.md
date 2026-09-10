@@ -114,7 +114,7 @@ Minimum Track Record Length (DSR>0.95), sk=-3 kurt=10:
   SR(ann)=2.0: MinTRL=242 daily obs (~1.0 yr)
   SR(ann)=2.5: MinTRL=168 daily obs (~0.7 yr)
 ```
-Read the story: a strategy with an annualized Sharpe of **2.5** over 5 years is only fundable if it survived **at most ~46 trials** ($\text{DSR}=0.950$). At the **100** trials it actually survived, **$\text{DSR}=0.900$** — below the 95% bar. The **normal-returns** column isolates the second source of inflation: holding $N$ fixed, non-normality (skew $-3$, kurt $10$) costs ~4 percentage points of DSR at $N{=}100$ (0.942 $\to$ 0.900). MinTRL shows the flip side: a Sharpe-2.5 record needs only ~0.7 years *ignoring* non-normality, but the same skew/kurtosis makes the honest requirement far longer in relative terms — negative skew is expensive.
+Read the story: a strategy with an annualized Sharpe of **2.5** over 5 years is only fundable if it survived **at most ~46 trials** ($\text{DSR}=0.950$). At the **100** trials it actually survived, **$\text{DSR}=0.900$** — below the 95% bar. The **normal-returns** column isolates the second source of inflation: holding $N$ fixed, non-normality (skew $-3$, kurt $10$) costs ~4 percentage points of DSR at $N{=}100$ (0.942 $\to$ 0.900). MinTRL shows the flip side: a Sharpe-2.5 record needs only ~110 days (~0.44 yr) *ignoring* non-normality, stretched to ~168 days (0.7 yr) once skew $-3$ / kurt $10$ are priced in — negative skew is expensive.
 
 ---
 

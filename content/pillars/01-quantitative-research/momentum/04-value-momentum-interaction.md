@@ -83,7 +83,7 @@ combo var: empirical 0.000359  analytic 0.000359  (diff 0.0e+00)
 tangency weights: w_momentum 0.398  w_value 0.602
 ```
 
-The combination's Sharpe ($+0.67$) **more than doubles** the better single-leg ($+0.34$): the negative correlation roughly halves the combo's volatility (1.89% vs the 3.4–4.9% legs) while keeping the mean near the average. The variance identity is reproduced exactly.
+The combination's Sharpe ($+0.67$) **nearly doubles** ($1.95\times$) the better single-leg ($+0.34$): the negative correlation roughly halves the combo's volatility (1.89% vs the 3.4–4.9% legs) while keeping the mean near the average. The variance identity is reproduced exactly.
 
 ---
 

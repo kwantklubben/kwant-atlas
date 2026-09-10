@@ -36,8 +36,8 @@ This folder is the topic-hub for **event studies** in Kwant-Atlas. It (a) gives 
 | **Abnormal return** | $AR_{it}=R_{it}-(\hat\alpha_i+\hat\beta_i R_{mt})$ | event-day $+3.021\%$ (Ex. 02) |
 | Mean-adjusted model (BW eq. 1–2) | $AR_{it}=R_{it}-\frac{1}{L}\sum_{k}R_{ik}$ | $+2.717\%$ (Ex. 01) |
 | Cross-sectional mean (KW eq. 3) | $AR_t=\frac{1}{N}\sum_{i=1}^{N}AR_{it}$ | — |
-| **Cumulative abnormal return** (KW eq. 4) | $CAR(t_1,t_2)=\sum_{t=t_1}^{t_2}AR_t$ | $CAR(0,+1){=}+1.925\%$ (Ex. 03) |
-| Test statistic (KW eq. 5–6) | $J=\dfrac{CAR(t_1,t_2)}{\sqrt{L\,\sigma^2(AR_t)}}$ | $t{=}+4.62$ (Ex. 03) |
+| **Cumulative abnormal return** (KW eq. 4) | $CAR(t_1,t_2)=\sum_{t=t_1}^{t_2}AR_t$ | $CAR(0,+1){=}+1.973\%$ (Ex. 03) |
+| Test statistic (KW eq. 5–6) | $J=\dfrac{CAR(t_1,t_2)}{\sqrt{L\,\sigma^2(AR_t)}}$ | $t{=}+4.43$ (Ex. 03) |
 | Buy-and-hold AR (KW eq. 7) | $BHAR_i(t,T)=\prod_{k}(1{+}R_{ik})-\prod_{k}(1{+}R_{Bk})$ | — |
 | Cross-correlation SE inflation (KW eq. 10) | $\dfrac{\sigma_{AR}(\text{dep})}{\sigma_{AR}(\text{ind})}=\sqrt{1+(N-1)\rho}$ | $\rho{=}.02,N{=}100 \Rightarrow 1.73$ (Ex. 04) |
 

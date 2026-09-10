@@ -36,7 +36,7 @@ This folder is the topic-hub for **feature engineering & target labeling** in Kw
 | Triple-barrier label | $y_{i}=\begin{cases}+1 & \text{upper touched 1st}\\ -1 & \text{lower touched 1st}\\ \operatorname{sgn}(r_{i,1}) & \text{vertical touched 1st}\end{cases}$ | +1:660 / −1:790 on dense events |
 | First-barrier touch time | $t_{i,1}=\min\big(t_{i,0}+h,\ \inf\{t: P_t\ge P_{i,0}(1+pt\,\sigma)\ \text{or}\ P_t\le P_{i,0}(1-sl\,\sigma)\}\big)$ | path-dependent — needs the whole $\sigma$-path |
 | Meta-label (LdP §3.6) | $y^{\text{meta}}_i=\mathbf 1\big[s_i\,r_{i,1}>0\big]\in\{0,1\}$, $s_i$=primary side | precision **0.517 → 0.721** after filtering |
-| Concurrency | $c_t=\sum_i \mathbf 1\{[t_{i,0},t_{i,1}]\ni t\}$ | max $c_t=61$ labels share one return |
+| Concurrency | $c_t=\sum_i \mathbf 1\{[t_{i,0},t_{i,1}]\ni t\}$ | max $c_t=16$ in the hub's $H{=}20$ run ($61$ under page 05's $H{=}60$) |
 | Average uniqueness | $\bar u_i=\frac{1}{t_{i,1}-t_{i,0}+1}\sum_{t=t_{i,0}}^{t_{i,1}}\frac{1}{c_t}$ | effective $N=\sum_i\bar u_i=407.6$ of $1450$ (**3.6×**) |
 | Fractional weights | $w_0=1,\ w_k=-w_{k-1}\frac{d-k+1}{k}$ | $d{=}1\Rightarrow w=\{1,-1,0,\dots\}$ |
 | Fixed-width window (FFD) | drop $w_k$ once $|w_k|<\tau$; width $\ell^*=\min\{\ell:|w_\ell|<\tau\}$ | $d{=}0.3$: DF $t=-6.46$ |
@@ -119,7 +119,7 @@ print(f"  effective independent outcomes = {sum(uniq):.1f} of {len(labels)} even
       f"({len(labels)/sum(uniq):.1f}x overlap inflation)")
 ```
 ```
-fracdiff d=0.0: DF t =   -1.47  stationarity fail
+  fracdiff d=0.0: DF t =   -1.47  stationarity fail
   fracdiff d=0.2: DF t =   -2.27  stationarity fail
   fracdiff d=0.3: DF t =   -6.46  stationarity PASS
   fracdiff d=0.4: DF t =  -12.46  stationarity PASS

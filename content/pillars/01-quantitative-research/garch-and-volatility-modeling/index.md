@@ -45,12 +45,12 @@ This folder is the topic-hub for **GARCH & volatility modeling** in Kwant-Atlas.
 | Multistep forecast | $\sigma_{h}^2(\ell)=\alpha_0+(\alpha_1+\beta_1)\,\sigma_h^2(\ell-1)\to\dfrac{\alpha_0}{1-\alpha_1-\beta_1}$ | path $4.86\text{e-}05\to4.40\text{e-}05\to$ uncond ✓ |
 | ARMA($1,1$) form of $a_t^2$ | $a_t^2=\alpha_0+(\alpha_1+\beta_1)a_{t-1}^2+\eta_t-\beta_1\eta_{t-1}$, $\eta_t=a_t^2-\sigma_t^2$ a **m.d.s.** | — |
 | Excess kurtosis (Gaussian) | $K_a^{(g)}=\dfrac{6\alpha_1^2}{1-2\alpha_1^2-(\alpha_1+\beta_1)^2}$ (finite iff denom $>0$) | $\ge0$: fat tails without fat-tailed shocks |
-| IGARCH / **EWMA (RiskMetrics)** | $\alpha_1+\beta_1=1$; $\sigma_t^2=(1-\lambda)a_{t-1}^2+\lambda\sigma_{t-1}^2$, $\lambda{=}.94$ daily / $.97$ monthly | corr(EWMA,GARCH) $=0.9523$ ✓ |
+| IGARCH / **EWMA (RiskMetrics)** | $\alpha_1+\beta_1=1$; $\sigma_t^2=(1-\lambda)a_{t-1}^2+\lambda\sigma_{t-1}^2$, $\lambda{=}.94$ daily / $.97$ monthly | closely tracks GARCH ($\lambda$ tuned per horizon) |
 | GJR / TGARCH (leverage) | $\sigma_t^2=\alpha_0+\big(\alpha_1+\gamma N_{t-1}\big)a_{t-1}^2+\beta_1\sigma_{t-1}^2$, $N_{t-1}=\mathbf{1}\{a_{t-1}<0\}$ | $\gamma>0$; $-$3σ var $1.48\times$ $+$3σ ✓ |
 | EGARCH (Nelson) | $\ln\sigma_t^2=\omega+\beta\ln\sigma_{t-1}^2+\theta z_{t-1}+\gamma\big(|z_{t-1}|-\mathbb{E}|z|\big)$, $\mathbb{E}|z|{=}\sqrt{2/\pi}$ | $\theta<0\Rightarrow$ leverage; $-3σ$ lifts vol $82\%$ ✓ |
 | Realized variance | $RV_t=\displaystyle\sum_{i=1}^{n}r_{t,i}^2$; log $RV\approx$ ARIMA(0,1,q) (long memory) | unbiased for $\sigma^2$: $1.4396\text{e-}04$ vs $1.44\text{e-}04$ ✓ |
 | HAR-RV (Corsi 2009) | $RV_{t+1}=c+\beta_d RV_t+\beta_w \overline{RV}_t^{(5)}+\beta_m\overline{RV}_t^{(22)}$ | log-HAR $R^2{=}0.6797$, slopes $\sum{=}0.9420$ ✓ |
-| DCC($1,1$) (Engle 2002) | $Q_t=(1-\theta_1-\theta_2)\bar Q+\theta_1\varepsilon_{t-1}\varepsilon_{t-1}'+\theta_2 Q_{t-1}$, $R_t=J_tQ_tJ_t$, $J_t=\operatorname{diag}(q_{ii,t}^{-1/2})$ | mean $\hat\rho=0.5930$ vs target $0.60$ ✓ |
+| DCC($1,1$) (Engle 2002) | $Q_t=(1-\theta_1-\theta_2)\bar Q+\theta_1\varepsilon_{t-1}\varepsilon_{t-1}'+\theta_2 Q_{t-1}$, $R_t=J_tQ_tJ_t$, $J_t=\operatorname{diag}(q_{ii,t}^{-1/2})$ | mean $\hat\rho=0.5916$ vs target $0.60$ ✓ |
 
 > **Critical caveat (the model's blind spot).** Plain ARCH/GARCH **responds symmetrically** to $+$ and $-$ shocks — it deliberately cannot see the leverage effect. Empirics say negative shocks raise future volatility more (Black 1976). Any GARCH used for equity risk without a GJR/EGARCH asymmetry term is mis-specified on the downside — see [[pillars/01-quantitative-research/garch-and-volatility-modeling/03-asymmetric-models|03 · Asymmetric Models]].
 

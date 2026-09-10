@@ -46,7 +46,7 @@ Empirically, one of the most damaging breaks is a **merger or index reconstituti
 
 GGR (2006) found average annualised excess returns up to $11\%$ over 1962–2002. **Do & Faff (2010)** extended the sample and documented a steady, structural decline:
 
-- mean excess return on employed capital fell from $1.24\%$/month (1962–88) to $0.37\%$ (1989–2002), a **$57\%$ decline**, and further to $0.24\%$/$0.33\%$ for 2003–09;
+- mean excess return on employed capital fell (delayed-trading rule) from $0.86\%$/month (1962–88) to $0.37\%$ (1989–2002), a **$57\%$ decline**, and further to $0.24\%$ (2003–09); the no-delay rule runs higher but lower, $1.24\%\to0.56\%\to0.33\%$;
 - the strategy remained statistically significant but economically thin after costs;
 - profitability is state-dependent — it spiked in 2001–02 (the dot-com bust) and again in 2008–09.
 
@@ -54,7 +54,7 @@ GGR (2006) found average annualised excess returns up to $11\%$ over 1962–2002
 
 #### 2.3 Data snooping in pair selection
 
-Screening $N$ stocks yields $M=N(N-1)/2$ pairs; the best in-sample pair has an in-sample statistic that is an **extreme order statistic** of $M$ draws. Under the null of *no* cointegration anywhere, the best pair still shows a strongly negative ADF $t$-stat purely by chance. Formally, with $M$ independent tests the expected minimum $t$-statistic grows roughly like $-\Phi^{-1}(1/M)$ in magnitude; for $M=200$, $\Phi^{-1}(1-1/200)\approx2.88$, i.e. a spurious "$-2.9$" ADF is *expected*. Two corrections:
+Screening $N$ stocks yields $M=N(N-1)/2$ pairs; the best in-sample pair has an in-sample statistic that is an **extreme order statistic** of $M$ draws. Under the null of *no* cointegration anywhere, the best pair still shows a strongly negative ADF $t$-stat purely by chance. Formally, with $M$ independent tests the expected minimum $t$-statistic grows roughly like $-\Phi^{-1}(1/M)$ in magnitude; for $M=200$, $\Phi^{-1}(1-1/200)=\Phi^{-1}(0.995)\approx2.576$, i.e. a spurious "$-2.58$" ADF is *expected*. Two corrections:
 
 - **Out-of-sample protocol** (GGR): choose pairs on a formation window, trade a disjoint trading window — never re-tune on the trading window.
 - **Deflated Sharpe Ratio / multiple-testing haircut** (Bailey & López de Prado): deflate the reported Sharpe by the number of trials.
