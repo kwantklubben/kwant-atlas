@@ -54,6 +54,8 @@ The `vision_analyze` tool for reading rendered page PNGs was **flaky all session
 - Build with `npx quartz build`. Preview with `npx quartz preview`.
 - **Broken-wikilink check:** Quartz surfaces unresolved `[[links]]` — run a build after adding content to catch them.
 - `visualizer.html` node/link data is **hardcoded** — new notes won't appear in the D3 graph until their node JSON + edges are added (see `03-BUILD-METHOD` §5).
+- **YAML frontmatter titles must be plain ASCII — no backslashes.** A title containing LaTeX like `$\gamma$` produces `unknown escape sequence` and **aborts the whole quartz build** (error is on the file, but the site won't emit at all). Write `Gamma` in the title, keep the math for the body. If a build fails, grep frontmatter titles for `\`: `grep -rn '^title:.*\\\\' content/`.
+- **Numeric-literal table rows are not wikilinks.** `[[1.0,0.0,-1.0]]` in a numpy code fence is matched by naive `[[...]]` link-checkers — ignore those false positives when auditing dangling links; strip a trailing `\` (from `\|` table escapes) before resolving.
 
 ---
 
