@@ -154,7 +154,7 @@ Three results, all exact:
 - **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*J. Financial Markets* 1(1), 1998) — the DP/state-dependent ancestor of learned execution; the strongest non-RL baseline's lineage.
 - **Almgren, Robert & Chriss, Neil**: "Optimal Execution of Portfolio Transactions" (*Journal of Risk* 3, 2000) — the closed-form baseline RL must beat (see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Almgren–Chriss]]).
 - **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE TNN* 12(4), 2001) — recurrent direct RL on a Sharpe-like differential objective.
-- **Ning, Baruch & Jaimungal (and Ning, Lin & Jaimungal)**: reinforcement-learning execution / market-making — the modern state-conditional execution line.
+- **Ning, Lin & Jaimungal (2018, double deep Q-learning for optimal execution)**: reinforcement-learning execution / market-making — the modern state-conditional execution line.
 - **Deng, Yue et al.**: "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading" (*IEEE TNNLS*, 2017) — a concrete deep-RL trading template, to be read with the caveats above.
 - **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018) — Ch 13 (policy gradients, the methods modern execution agents use).
 
@@ -166,4 +166,4 @@ Three results, all exact:
 - Execution cousins: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|Execution Algorithms: VWAP/TWAP/POV]] · [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]]
 - Cost & constraints: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Constraints & Transaction Costs]]
 - Method base: [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/03-value-based-rl|03 · Value-Based RL]] · [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/04-policy-gradient-and-actor-critic|04 · Policy-Gradient & Actor-Critic]]
-- Hygiene: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Hygiene: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]

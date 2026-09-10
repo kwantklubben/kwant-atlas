@@ -79,7 +79,6 @@ print(f"3 dropped msgs: sequence-gap detection fired {detections} time(s), "
 simulated 10000 messages, nominal ~100k msg/s
 mean IAT= 3.59 us, p99 IAT= 31.54 us, max IAT=  78.4 us
 large inter-arrival gaps (>25us, jitter events): 195 (1.95% of messages)
-
 3 dropped msgs: sequence-gap detection fired 3 time(s), all 3 lost messages detected
 ```
 

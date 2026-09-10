@@ -192,7 +192,7 @@ The model-averaging block: a single deep tree scores $R^2=0.612$; the RF and the
 2. **Permutation leakage.** Permuting features to compute MDA can break time structure or create impossible rows; cluster/block-permute for correlated features.
 3. **Averaging cannot create signal.** The blend is bounded by its components; if all base learners overfit, the average overfits. Ensembles reduce variance, not bias.
 4. **Weight-fitting overfits.** Stacking weights fit on the full sample leak; fit them on purged CV. Unweighted averaging avoids the issue at a small cost.
-5. **Deep nets are not a free upgrade.** More parameters on a low-SNR tabular problem means more ways to overfit; the Gu–Kelly–Xiu evidence says trees/shallow nets dominate. Deep sequence models earn their keep on *sequential* data — see [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]] — not on a static cross-section.
+5. **Deep nets are not a free upgrade.** More parameters on a low-SNR tabular problem means more ways to overfit; the Gu–Kelly–Xiu evidence says trees/shallow nets dominate. Deep sequence models earn their keep on *sequential* data — see [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequences]] — not on a static cross-section.
 6. **Monotonicity and governance.** Unconstrained tree ensembles can learn non-monotone, fragile relationships; adding monotone constraints (where the economic prior is monotone) is a cheap, powerful regulariser.
 
 ---
@@ -210,8 +210,8 @@ The model-averaging block: a single deep tree scores $R^2=0.612$; the RF and the
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Index Hub]]
-- Applied tree workflow: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]
-- Siblings: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]]
+- Applied tree workflow: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]]
+- Siblings: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequences]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]]
 - Regression base: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Target Labeling]]
 
 **Reading path recommendation:** the natural continuation is to take this toolbox into [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed Cross-Validation]] — importance and ensembles are only as trustworthy as the CV that scores them.

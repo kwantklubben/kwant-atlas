@@ -118,7 +118,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/01-quant
 
 1. **Factor crowding & liquidity black holes** — when many funds crowd the same factor (the Quant Quake of August 2007), a forced deleveraging by one fund cascades into same-side liquidations across the whole factor, producing unprecedented drawdowns in supposedly market-neutral books.
 2. **Multicollinearity in style factors** — overlapping factors (five variants of value/momentum) make $X^\top X$ nearly singular: betas swing wildly and their standard errors explode (the factor zoo).
-3. **Data-mining / multiple testing** — with hundreds of candidate characteristics, some premium will look significant by chance; backtested factor premiums must be discounted (Green–Hand–Zhang; see [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]).
+3. **Data-mining / multiple testing** — with hundreds of candidate characteristics, some premium will look significant by chance; backtested factor premiums must be discounted (Green–Hand–Zhang; see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]).
 
 ---
 

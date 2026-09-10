@@ -69,7 +69,7 @@ graph LR
 The legacy flat overview note for each topic, retained from before the hub reorganisation.
 
 - [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage & Pairs Trading (original note)]]
-- [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe (original note)]]
+- [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe (original note)]]
 - [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models (original note)]]
 - [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Cross-Sectional & Time-Series Momentum (original note)]]
 - [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering (original note)]]

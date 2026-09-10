@@ -128,7 +128,7 @@ Two latent factors explain **91.2%** of total variance. The loadings tell the ec
 1. **The 5-factor model is rejected, not accepted.** FF 2015 fails the GRS joint test and specifically misprices small, low-profitability, high-investment stocks. "Five factors" is a pragmatic description of average returns, not the true pricing kernel. Add factors and you approach the zoo; keep few and you misprice segments.
 2. **Statistical factors are rotation-invariant and unlabeled.** PCA loadings are identified only up to orthogonal rotation (Tsay §9.5.2); the "market" and "tech-vs-financial" labels above are *interpretations*, not outputs. Varimax/quartimax rotation helps but does not guarantee economic meaning.
 3. **Latent factors ≠ traded factors.** A statistical factor is a statistical object; it is not directly a tradeable long-short portfolio until you build a mimicking portfolio on it. Bridging latent structure to tradeable factors requires the [[pillars/01-quantitative-research/fundamental-multi-factor-models/03-factor-construction|construction]] step.
-4. **The factor zoo is a multiple-testing problem.** With ~100 characteristics tested, spurious premiums are guaranteed by chance. The correct number of factors is an *econometric* choice (CK, Bai–Ng) AND a *discipline* choice (Harvey–Liu–Zhu's $t>3$ hurdle, Deflated Sharpe) — see [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]].
+4. **The factor zoo is a multiple-testing problem.** With ~100 characteristics tested, spurious premiums are guaranteed by chance. The correct number of factors is an *econometric* choice (CK, Bai–Ng) AND a *discipline* choice (Harvey–Liu–Zhu's $t>3$ hurdle, Deflated Sharpe) — see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]].
 
 ---
 
@@ -148,5 +148,5 @@ Two latent factors explain **91.2%** of total variance. The loadings tell the ec
 - Back: [[pillars/01-quantitative-research/fundamental-multi-factor-models/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Index Hub]]
 - Fundamentals (the characteristics): [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] · [[fundamentals-accounting/quantitative-fundamental-investing/03-value-and-profitability|Value & Profitability]] · [[fundamentals-accounting/quantitative-fundamental-investing/04-quality-and-fscores|Quality & F-scores]]
 - Statistical side: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (PCA/SVD) · [[pillars/07-machine-learning-altdata/index|Machine Learning & Alt Data]] (tree-based factor ranking, high-dimensional selection)
-- Multiple testing: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Multiple testing: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]
 - Sibling: [[pillars/01-quantitative-research/cross-sectional-and-time-series-momentum|Momentum Factors]]

@@ -32,7 +32,7 @@ Three biases, each a first-principles consequence of how factor research is actu
 $$\mathbb{E}[\text{false discoveries}] \approx M\alpha, \qquad
 P(\text{at least one false discovery}) \approx 1-(1-\alpha)^M \xrightarrow[M \text{ large}]{} 1.$$
 
-With $\alpha=5\%$ and $M=200$, the chance of *some* spurious "premium" is effectively 100%. The standard remedy is the multiple-testing correction — the familywise or false-discovery-rate control that [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] formalizes.
+With $\alpha=5\%$ and $M=200$, the chance of *some* spurious "premium" is effectively 100%. The standard remedy is the multiple-testing correction — the familywise or false-discovery-rate control that [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] formalizes.
 
 **Look-ahead bias.** If book value is restated (write-downs recognized with hindsight), the *measured* B/M uses information unavailable at the sort date:
 
@@ -103,7 +103,7 @@ Cheapest-third avg B/M: point-in-time=0.465  restated=0.321  <- restated looks c
 
 - **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**: "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017) — the ~100-characteristic census; 24 priced at $|t|\ge3$, a parsimonious 10-signal model; the empirical map of redundancy vs. genuine factors.
 - **Fama, Eugene & French, Kenneth**: "Choosing Factors" (*JFE*, 2018) — the factor-selection and multiple-testing discipline for deciding *which* characteristics are real factors.
-- **Bailey, Borwein, López de Prado & Zhu**: "The Probability of Backtest Overfitting" (*J. Computational Finance*, 2017) — the deflated-Sharpe/familywise machinery for backtests; see [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]].
+- **Bailey, Borwein, López de Prado & Zhu**: "The Probability of Backtest Overfitting" (*J. Computational Finance*, 2017) — the deflated-Sharpe/familywise machinery for backtests; see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]].
 - **Hou, Xue & Zhang**: "Replicating Anomalies" (*RFS*, 2020) — the replication audit showing a large share of published anomalies fail to survive replication.
 - **Novy-Marx, Robert**: "Backtesting Strategies Based on Multiple Signals" (working paper) — the multiple-testing correction applied to signal selection.
 - **Loughran & McDonald**: "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks" (*JF*, 2011) — data-quality discipline for mining filings.
@@ -115,4 +115,4 @@ Cheapest-third avg B/M: point-in-time=0.465  restated=0.321  <- restated looks c
 - Back: [[fundamentals-accounting/quantitative-fundamental-investing/04-quality-and-fscores|04 · Quality & F-scores]] · [[fundamentals-accounting/quantitative-fundamental-investing/index|Index Hub]]
 - Forward: [[fundamentals-accounting/quantitative-fundamental-investing/06-advanced-extensions|06 · Advanced Extensions (factor models, combining)]]
 - Data layer: [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] (point-in-time hygiene) · [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] (restatements, manipulation)
-- Backtesting layer: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
+- Backtesting layer: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]

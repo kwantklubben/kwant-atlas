@@ -172,5 +172,5 @@ Read it as the whole folder's cautionary tale. In Part A the target is **pure no
 - Forward: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/06-advanced-extensions|06 · Advanced Extensions]]
 - The disease and its validation cure: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged Cross-Validation & Backtest Hygiene]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene (DSR/PBO)]]
 - Why the SNR is low: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
-- The tree alternative: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]
+- The tree alternative: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]]
 - Regime machinery: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification (HMM & GMM)]]

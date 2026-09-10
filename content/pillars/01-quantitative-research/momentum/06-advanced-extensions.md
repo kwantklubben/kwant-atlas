@@ -116,5 +116,5 @@ Vol-scaling lifts Sharpe from $+0.72$ to $+1.18$, cuts the worst month from $-45
 
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (conditional moments, EWMA) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Foundation: [[pillars/01-quantitative-research/momentum/05-failure-modes-and-practice|05 · Failure Modes]] (the crashes this page tames) · [[pillars/01-quantitative-research/momentum/02-cross-sectional-momentum|02 · Cross-Sectional]] · [[pillars/01-quantitative-research/momentum/03-time-series-momentum|03 · Time-Series]]
-- Portfolio context: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity (vol targeting)]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|Tail Risk (VaR/ES)]] · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]
+- Portfolio context: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity (vol targeting)]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|Tail Risk (VaR/ES)]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
 - Home: [[pillars/01-quantitative-research/momentum/index|Index Hub]]

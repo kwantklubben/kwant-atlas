@@ -17,7 +17,7 @@ tags:
 The ML-for-portfolio frontier is a set of refinements that attack the seam from both sides: make the *position* smarter about reliability, make the *covariance* cleaner, and make the *allocation* more robust. Four extensions dominate the practitioner toolkit:
 
 1. **Meta-labeling** — train a *secondary* classifier to predict whether the primary model's side call is correct, and use its probability to size the bet (AFML Ch 3 & 10). This decouples *which side* (primary) from *how big* (secondary), and it is the single highest-leverage trick in the book: it upgrades a mediocre signal into a properly sized book without touching the primary model.
-2. **Denoised covariance (Marcenko–Pastur) & robust frontier estimators** — collapse noise eigenvalues before inversion, or use MCD/TS/DNN covariance estimators to feed the optimizer a covariance that survives inversion (AFML 2018 Ch 16; *ML for Asset Managers* Ch 5–6; "A Robust Estimator of the Efficient Frontier").
+2. **Denoised covariance (Marchenko–Pastur) & robust frontier estimators** — collapse noise eigenvalues before inversion, or use MCD/TS/DNN covariance estimators to feed the optimizer a covariance that survives inversion (AFML 2018 Ch 16; *ML for Asset Managers* Ch 2; "A Robust Estimator of the Efficient Frontier").
 3. **HERC (Hierarchical Equal Risk Contribution) & HRP-family** — extend HRP from inverse-variance bisection to *equal-risk* splits, giving cluster-aware risk contributions that beat both HRP and standard risk parity out-of-sample (Raffinot 2018).
 4. **RL allocation** — treat position sizing as a sequential decision problem (MDP) and optimize the *policy* directly against a risk-adjusted reward, sidestepping the explicit forecast→position decomposition. Powerful, but data-hungry and prone to the low-signal overfitting that plagues all of Pillar 7.
 
@@ -37,7 +37,7 @@ and hold $m_t\cdot s_t$. The insight: the secondary model is trained on a *much*
 
 #### 2.2 Denoising before inversion
 
-Given a sample covariance $\hat\Sigma$ with eigen-decomposition $\hat\Sigma=\sum_i \lambda_i v_iv_i^\top$, the Marcenko–Pastur law bounds the eigenvalues of a pure-noise covariance in $[\lambda_-,\lambda_+]$ (function of $N,T,\sigma^2$). Collapse the $\lambda_i<\lambda_+$ directions to their average and keep only the $>$ band:
+Given a sample covariance $\hat\Sigma$ with eigen-decomposition $\hat\Sigma=\sum_i \lambda_i v_iv_i^\top$, the Marchenko–Pastur law bounds the eigenvalues of a pure-noise covariance in $[\lambda_-,\lambda_+]$ (function of $N,T,\sigma^2$). Collapse the $\lambda_i<\lambda_+$ directions to their average and keep only the $>$ band:
 
 $$\hat\Sigma_{\text{den}} = \sum_{\lambda_i>\lambda_+}\lambda_i v_iv_i^\top + \bar\lambda_{\text{noise}}\sum_{\lambda_i\le\lambda_+} v_iv_i^\top .$$
 
@@ -112,7 +112,7 @@ meta-label sized   ann.Sharpe=+3.216  ann.vol=  7.3  avg|pos|=0.306
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Meta-labeling inherits the primary's side errors.** The secondary model sizes the bet but cannot change the sign. If the primary is systematically wrong about *which side* (not just how reliable), meta-labeling only reduces how much you lose — it cannot make a bad side call good. Pair it with a trustworthy side model.
-2. **Denoising mis-calibrates on short data.** Marcenko–Pastur needs $T$ large and correlations stable; on overlapping/short samples the noise band is wrong and denoising discards real structure or keeps noise. Validate on embargoed data.
+2. **Denoising mis-calibrates on short data.** Marchenko–Pastur needs $T$ large and correlations stable; on overlapping/short samples the noise band is wrong and denoising discards real structure or keeps noise. Validate on embargoed data.
 3. **HERC adds parameters, not robustness, on small universes.** Equal-risk bisection needs reliable per-cluster risk estimates; with $N\approx T$ it inherits the same estimation error it tries to avoid. On thin data, plain HRP or $1/N$ is the honest choice.
 4. **RL overfits the reward.** A policy gradient maximizing Sharpe on a short, non-stationary history memorizes that history. The low-signal, adaptive-market problem ([[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial-ML Pitfalls & Low SNR]]) makes RL the *least* robust of these four extensions unless data is long and reward is stable.
 
@@ -121,7 +121,7 @@ meta-label sized   ann.Sharpe=+3.216  ann.vol=  7.3  avg|pos|=0.306
 ### 5. Canonical Literature & Study References
 
 - **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 3 (meta-labeling) and Ch 10 (bet sizing from probabilities) — the meta-labeling machinery demonstrated in §3.
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 5–6 (Marcenko–Pastur denoising/detoning) and Ch 8 (clustering for allocation).
+- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 2 (Marchenko–Pastur denoising/detoning) and Ch 7 (NCO portfolio construction).
 - **López de Prado**, "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019 — MCD/SK/NaN/TS/DNN covariance estimators vs $1/N$.
 - **Raffinot**, "The Hierarchical Equal Risk Contribution Portfolio," SSRN 3237540, 2018 — HERC.
 - **Ang & Timmermann**, "Regime Changes and Financial Markets," *Annual Review of Financial Economics* 4:313–337, 2012 — regime structure behind allocation (bridges to [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]]).

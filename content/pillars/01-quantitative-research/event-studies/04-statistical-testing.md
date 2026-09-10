@@ -143,4 +143,4 @@ power to detect +1% abnormal return on a KNOWN day (sigma=5.3%):
 - Back: [[pillars/01-quantitative-research/event-studies/03-abnormal-returns-and-car|03 · Abnormal Returns & CAR]] · [[pillars/01-quantitative-research/event-studies/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/event-studies/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/event-studies/06-advanced-extensions|06 · Advanced Extensions]]
 - Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (t-tests, power, CLT) · [[foundations/bayesian-statistics/index|Bayesian Statistics]]
-- Practice: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]] (multiple-testing caveat on significance thresholds)
+- Practice: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (multiple-testing caveat on significance thresholds)

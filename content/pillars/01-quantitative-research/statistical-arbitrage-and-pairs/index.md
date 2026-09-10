@@ -120,7 +120,7 @@ Signposts — the folder's failure-mode analysis lives in [[pillars/01-quantitat
 - Foundational base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Pillar hub: [[pillars/01-quantitative-research/index|Pillar 1 — Quantitative Research (Alpha Generation)]]
 - Legacy flat overview: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs-trading|Statistical Arbitrage & Pairs Trading (overview)]]
-- Sibling topics: [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] (time-varying beta) · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] (the multiple-testing tax on pair selection)
+- Sibling topics: [[pillars/01-quantitative-research/signal-processing-and-kalman-filtering|Signal Processing & Kalman Filtering]] (time-varying beta) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (the multiple-testing tax on pair selection)
 - Sub-pages (in-folder): 01 From Zero · 02 Cointegration & the Spread · 03 Pairs Selection & Hedge · 04 Trading Rules & Backtest · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

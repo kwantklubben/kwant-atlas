@@ -145,7 +145,7 @@ p=0.90  z=+1.333  bet size m=+0.818
 - **Granger & Ramanathan**, "Improved Methods of Combining Forecasts," *J. Forecasting* 3(2):197–204, 1984 — the OLS combination regression.
 - **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 10 (bet sizing from predicted probabilities, meta-labeling, averaging active bets) and Ch 3 (meta-labeling as a reliability/secondary classifier). *Primary anchor.*
 - **Bates & Granger**, "The Combination of Forecasts," *Operational Research Quarterly* 20(4):451–468, 1969 — the original inverse-variance combination result.
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 4 (meta-labeling practical recipe).
+- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 5, §5.5 (the meta-labeling practical recipe).
 
 ---
 

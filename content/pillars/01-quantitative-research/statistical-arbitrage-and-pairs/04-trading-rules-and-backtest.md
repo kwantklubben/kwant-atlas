@@ -170,7 +170,7 @@ The estimated half-life is $4.78$ days (fast, well inside the $\kappa>252/30$ fi
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Thresholds fitted to the backtest.** Choosing $2\sigma/0.5\sigma/3.5\sigma$ because they maximise historical Sharpe is in-sample optimisation; the Deflated Sharpe Ratio corrects for exactly this ([[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]).
+1. **Thresholds fitted to the backtest.** Choosing $2\sigma/0.5\sigma/3.5\sigma$ because they maximise historical Sharpe is in-sample optimisation; the Deflated Sharpe Ratio corrects for exactly this ([[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
 2. **The stop is a model-rejection test, not a loss cap.** Repeated $\lvert Z\rvert\ge3.5$ means the cointegration has broken; averaging down ("it must revert") is the classic way a market-neutral book dies.
 3. **Costs scale with turnover, turnover scales with $1/\tau_{1/2}$.** A spread with a 5-day half-life can turn the book over every week; two legs of spread cost then dominate. Always report net-of-cost Sharpe.
 4. **Non-synchronous legs.** If one leg trades thinly, the closing-price spread is stale and the backtest fills at prices you cannot get (GGR's bid-ask discussion). Use quotes or trade both legs simultaneously.
@@ -192,5 +192,5 @@ The estimated half-life is $4.78$ days (fast, well inside the $\kappa>252/30$ fi
 
 - Back: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/03-pairs-selection-and-hedge|03 · Pairs Selection & Hedge]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]
 - Costs: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover Constraints]]

@@ -159,7 +159,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/01-quant
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · stationarity & unit-root testing
 - Sibling topics: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (triple-barrier labels set the purge/embargo width) · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs|Stat-Arb & Pairs]] · [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]]
-- Cross-pillar: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] (consumes these labels) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
+- Cross-pillar: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]] (consumes these labels) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr|Financial ML Pitfalls & Low SNR]]
 - Sub-pages (in-folder): 01 From Zero · 02 Feature Construction · 03 Target Labeling · 04 Triple-Barrier & Meta-Labeling · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

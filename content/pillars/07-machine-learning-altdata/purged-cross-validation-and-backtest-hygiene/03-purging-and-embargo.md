@@ -109,4 +109,4 @@ Notice the geometry. Folds 2–4 each purge $\approx38$ overlapping training lab
 - Back: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/02-why-standard-cv-fails|02 · Why Standard CV Fails]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/04-combinatorial-purged-cv|04 · Combinatorial Purged CV]]
 - The labels being purged come from: [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]] (triple-barrier, interval labels)
-- Purged CV applied to trees: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]
+- Purged CV applied to trees: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]]

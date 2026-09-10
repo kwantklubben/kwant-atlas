@@ -142,7 +142,7 @@ This is the discriminating test. If publication decay were driven by a *statisti
 - **Ilmanen, Antti**: *Expected Returns* (2011) — "The persistent success of any asset class or trading strategy leads to a 'virtuous' cycle of growing popularity and further success, resulting in eventual overcrowding and subsequent disappointments." *Verified against the corpus book.*
 - **Schwert, G. William**: "Anomalies and Market Efficiency" (*Handbook of the Economics of Finance*, 2003) — the earlier, single-anomaly evidence that value and size "fail to generate alpha" after publication; cited by MP as one of the conflicting prior results.
 - **Jegadeesh, Narasimhan & Titman, Sheridan**: "Profitability of Momentum Strategies: An Evaluation of Alternative Explanations" (*JF*, 2001) — the counter-example: momentum returns *increased* after publication. Both results are real; the reconciliation is that momentum is a costlier, faster-decaying trade. Corpus paper *13_jegadeesh_2001*.
-- **Bailey, Borwein, López de Prado & Zhu** (2014) and [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] — the statistical-bias half of the story, quantified.
+- **Bailey, Borwein, López de Prado & Zhu** (2014) and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] — the statistical-bias half of the story, quantified.
 
 ---
 
@@ -150,5 +150,5 @@ This is the discriminating test. If publication decay were driven by a *statisti
 
 - Back: [[pillars/01-quantitative-research/factor-investing-and-timing/03-factor-crowding-and-capacity|03 · Crowding & Capacity]] · [[pillars/01-quantitative-research/factor-investing-and-timing/02-the-factor-zoo|02 · The Factor Zoo]] · [[pillars/01-quantitative-research/factor-investing-and-timing/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/factor-investing-and-timing/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/01-quantitative-research/factor-investing-and-timing/06-advanced-extensions|06 · Advanced Extensions: Factor Timing]]
-- Efficiency evidence: [[pillars/01-quantitative-research/event-studies/index|Event Studies]] (how market efficiency is actually tested) · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Efficiency evidence: [[pillars/01-quantitative-research/event-studies/index|Event Studies]] (how market efficiency is actually tested) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]
 - The factor family: [[pillars/01-quantitative-research/momentum/index|Momentum]] (the publication counter-example) · [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]

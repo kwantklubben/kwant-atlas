@@ -8,7 +8,7 @@ tags:
   - dqn
 ---
 
-**Basic Prerequisites:** [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/02-the-mdp-framing|02 · The MDP Framing]] and [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]].
+**Basic Prerequisites:** [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/02-the-mdp-framing|02 · The MDP Framing]] and [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequences]].
 
 ---
 
@@ -133,5 +133,5 @@ Q-learning, seeing only $(x,a,r,x')$ samples, reproduces the exact $V^*$ to $0.0
 
 - Back: [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/02-the-mdp-framing|02 · The MDP Framing]]
 - Forward: [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/04-policy-gradient-and-actor-critic|04 · Policy-Gradient & Actor-Critic]] · [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/index|Index Hub]]
-- Function approximators: [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]] (LSTM/TCN/Transformer value networks)
+- Function approximators: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequences]] (LSTM/TCN/Transformer value networks)
 - Practical application: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]] · [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/06-advanced-extensions|06 · Advanced Extensions (Execution RL)]]

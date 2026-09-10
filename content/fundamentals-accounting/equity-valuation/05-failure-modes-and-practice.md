@@ -133,4 +133,4 @@ Read the numbers: a **$2$-point margin** swing ($18\%\to22\%$) moves the value *
 - Back: [[fundamentals-accounting/equity-valuation/04-terminal-value-and-ev-to-equity|04 · Terminal Value & EV→Equity]] · [[fundamentals-accounting/equity-valuation/index|Index Hub]]
 - Forward: [[fundamentals-accounting/equity-valuation/06-advanced-extensions|06 · Relative Valuation & Advanced Extensions]]
 - Risk: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]]
-- Research: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] (overfitting the forecast to the past)
+- Research: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (overfitting the forecast to the past)

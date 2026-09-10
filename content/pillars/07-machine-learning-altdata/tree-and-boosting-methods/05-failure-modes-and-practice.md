@@ -163,7 +163,7 @@ Feature selection on PURE NOISE (true R^2 = 0.00):
 4. **Feature selection before the fold split = leakage.** Screening uses the target; doing it once on all data then CV-ing leaks the future. Screen *inside* each fold on training data only.
 5. **Unpurged hyperparameter search.** Overlapping labels leak across folds; `GridSearchCV` on standard K-fold double-overfits. Use purged/embargoed CV ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]]) and a proper loss (log-loss), not accuracy.
 6. **Accuracy is a dishonest metric.** It is insensitive to confidence; a model that is right but low-conviction scores the same as one that is confidently right. Use log-loss / proper scoring for tuning.
-7. **Ignoring transaction costs and capacity.** A tree edge of a few basis points vanishes after costs; validate net of costs ([[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]).
+7. **Ignoring transaction costs and capacity.** A tree edge of a few basis points vanishes after costs; validate net of costs ([[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
 
 ---
 
@@ -180,4 +180,4 @@ Feature selection on PURE NOISE (true R^2 = 0.00):
 
 - Back: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/04-gradient-boosting|04 · Gradient Boosting]] · [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Index Hub]]
 - Continue: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/06-advanced-extensions|06 · Advanced Extensions]]
-- Hygiene: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV & Backtest Hygiene]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/05-failure-modes-and-practice|Financial ML Failure Modes]] · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Hygiene: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV & Backtest Hygiene]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/05-failure-modes-and-practice|Financial ML Failure Modes]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]

@@ -120,7 +120,7 @@ Every top-5 pair is **within sector A** — the screen correctly identifies the 
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Selection is a multiple test.** Screening $N$ stocks gives $N(N-1)/2$ pairs; the "best" distance is an extreme order statistic and is biased toward spurious fits. GGR mitigate this by fixing the formation/trading split *ex ante*; modern practice uses the Deflated Sharpe Ratio ([[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]).
+1. **Selection is a multiple test.** Screening $N$ stocks gives $N(N-1)/2$ pairs; the "best" distance is an extreme order statistic and is biased toward spurious fits. GGR mitigate this by fixing the formation/trading split *ex ante*; modern practice uses the Deflated Sharpe Ratio ([[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
 2. **Distance ignores $\beta$.** Normalised-price matching forces $\beta=1$; a pair with different volatilities is mis-hedged, leaving residual factor exposure that surfaces as a directional loss in a market move.
 3. **Economic link ≠ statistical link.** Same-sector stocks can have different regulatory, leverage or commodity exposure. The distance screen finds *optical* comovement; a structural break in the link (Ch 5) is invisible to it.
 4. **Factor model choice drives the residuals (Avellaneda–Lee).** PCA vs ETF factors give different residuals and hence different P&L; ETF weights are biased to large caps, PCA factors are not, and the number of significant eigenvalues is itself time-varying.

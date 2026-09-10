@@ -131,4 +131,4 @@ On data with **no signal whatsoever**, the naive random K-fold CV is biased **$+
 - Back: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/01-from-zero-intuition|01 · From Zero]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/03-the-low-snr-problem|03 · The Low-SNR Problem]]
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/statistics-and-inference/05-bias-variance-and-validation|Bias–Variance & Model Selection]]
-- Sibling solution: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Purged & Embargoed CV]]
+- Sibling solution: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Purged & Embargoed CV]]

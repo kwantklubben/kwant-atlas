@@ -129,4 +129,4 @@ Read the tension in the "General counters" block. With $k=2$ you get $N-1$ paths
 - Back: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/03-purging-and-embargo|03 · Purging & Embargo]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/06-advanced-extensions|06 · Advanced Extensions]]
 - Why a distribution matters (single-path Sharpe is a lottery): [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
-- CPCV hyperparameter tuning in practice: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]
+- CPCV hyperparameter tuning in practice: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]]

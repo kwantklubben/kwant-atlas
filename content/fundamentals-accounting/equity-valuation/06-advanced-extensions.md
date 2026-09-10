@@ -132,5 +132,5 @@ Read the results:
 
 - Back: [[fundamentals-accounting/equity-valuation/05-failure-modes-and-practice|05 · Failure Modes]] · [[fundamentals-accounting/equity-valuation/index|Index Hub]]
 - Base: [[foundations/statistics-and-inference/index|Statistics & Inference]] (regressions controlling for fundamentals) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
-- Research: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]
+- Research: [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
 - Risk: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing & Scenario Analysis]] (scenario + Monte Carlo robustness)

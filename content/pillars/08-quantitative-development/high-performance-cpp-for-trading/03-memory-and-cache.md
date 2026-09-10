@@ -68,7 +68,7 @@ Once prices are contiguous 8-byte values, one 256-bit AVX register holds $4$ dou
 
 $$\text{lanes} = \frac{W_v}{b}, \qquad b=8\ \text{B} \Rightarrow \text{lanes} = \frac{512}{64}=8 \ (\text{AVX-512}).$$
 
-SoA is *what makes SIMD possible*: a strided AoS layout cannot be loaded into a vector register with one aligned load. The flat overview page at [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] shows the corresponding `_mm256_cmp_pd` / `_mm256_movemask_pd` intrinsics — the C++ side of this arithmetic.
+SoA is *what makes SIMD possible*: a strided AoS layout cannot be loaded into a vector register with one aligned load. The flat overview page at [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] works through the AoS-vs-SoA line-count arithmetic that makes the point — the C++ side of this arithmetic.
 
 #### 2.4 False sharing
 

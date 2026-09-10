@@ -149,7 +149,7 @@ Extracting non-linear signals and structural patterns from alternative, unstruct
 - **[[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index|Financial NLP & Earnings Transcripts]]**: SEC 10-K delta analysis, FinBERT fine-tuning, earnings call Q&A sentiment, and LLM extraction.
 - **[[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alternative Data Pipelines & Evaluation]]**: Credit card streams, web scraping, geolocation, point-in-time hygiene, and alpha decay.
 - **[[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]]**: Unsupervised regime detection, Baum–Welch Expectation–Maximization, and Viterbi state path decoding.
-- **[[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequential Data]]**: LSTMs, Temporal Convolutional Networks (TCN), and Temporal Fusion Transformers for tick and bar series.
+- **[[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequences]]**: LSTMs, Temporal Convolutional Networks (TCN), and Temporal Fusion Transformers for tick and bar series.
 
 ---
 

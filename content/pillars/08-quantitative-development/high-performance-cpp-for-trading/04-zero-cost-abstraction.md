@@ -130,7 +130,7 @@ allocation benchmark, N=1,000,000 iterations (warm)
   per-op saving      :    63.6 ns  (3.37x)
 
 At 1e6 msgs/s, saving 64 ns/op removes ~0.06 us per message
-  = 6.4% of a 100 us alpha half-life window consumed by the allocator
+  = 0.06% of a 100 us alpha half-life window consumed by the allocator
 ```
 
 **Reading the result.** Reusing pre-allocated storage is $\approx 3.37\times$ cheaper per operation (26.8 vs 90.4 ns/op) for *identical work* — the difference is entirely allocator/runtime overhead. The absolute numbers are interpreter-specific, but the *ratio* and the *direction* are the C++ rule stated as arithmetic: allocate once before the hot path, then write into the buffer. (In C++ the same experiment with `std::vector` + `reserve` vs `push_back` shows the §2.3 inequality directly — see [[pillars/08-quantitative-development/high-performance-cpp-for-trading/05-failure-modes-and-practice|05 · Failure Modes]] for the growth-cost model.)

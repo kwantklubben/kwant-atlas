@@ -106,12 +106,12 @@ Hub signposts — the full treatment lives in [[pillars/07-machine-learning-altd
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/statistics-and-inference/index|Statistics & Inference]] · [[foundations/statistics-and-inference/05-bias-variance-and-validation|05 · Bias–Variance & Model Selection]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series (stationarity)]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
-- Sibling topic: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] (the algorithm-side answer to the pitfalls)
-- Backtesting hygiene: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Sibling topic: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]] (the algorithm-side answer to the pitfalls)
+- Backtesting hygiene: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]
 - Sub-pages (in-folder): 01 From Zero · 02 Why Finance Is Different · 03 The Low-SNR Problem · 04 Non-Stationarity & Samples · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Practitioner / job-seeking:** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/02-why-finance-is-different|02 · Why Finance Is Different]] → [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/03-the-low-snr-problem|03 · The Low-SNR Problem]] → [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/05-failure-modes-and-practice|05 · Failure Modes]].
 - **Graduate / research:** [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/04-non-stationarity-and-samples|04 · Non-Stationarity & Samples]] → [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Purged CV & Trees]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alt-Data Pipelines]]
+- Forward links: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Purged CV & Trees]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification: HMM & GMM]] · [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/index|Alt-Data Pipelines]]

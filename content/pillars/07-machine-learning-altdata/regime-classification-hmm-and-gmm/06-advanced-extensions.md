@@ -160,5 +160,5 @@ The table is the whole lesson of the folder, in four rows. **Global** is the nai
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Index Hub]]
-- Forward: [[pillars/07-machine-learning-altdata/ml-for-portfolio/index|ML for Portfolio Construction]] (regime-conditional allocation) · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequential Data]]
+- Forward: [[pillars/07-machine-learning-altdata/ml-for-portfolio/index|ML for Portfolio Construction]] (regime-conditional allocation) · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequences]]
 - Sibling disciplines: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting Methods]] (the supervised labeler) · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]] (honest OOS) · [[pillars/01-quantitative-research/regime-detection/06-advanced-extensions|Regime Detection · Advanced Extensions]]

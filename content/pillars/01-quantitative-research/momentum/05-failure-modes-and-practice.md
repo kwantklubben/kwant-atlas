@@ -96,7 +96,7 @@ The worst WML month is $-24.6\%$, occurring exactly in the $+20\%$ rebound month
 3. **Whipsaw / turning-point drawdown.** Distinct from the fast crash: 12–18 months of buying tops and shorting bottoms in a mean-reverting regime — slow capital bleed, harder to detect on a Sharpe basis.
 4. **Hedged-momentum illusion.** Grundy & Martin's market/size-hedged momentum looked excellent, but their hedge used *ex-post/forward-looking* betas; an implementable ex-ante hedge does **not** avoid the crashes (Daniel & Moskowitz 2016). Any backtest claim that "hedging fixes momentum" must be checked for look-ahead bias.
 5. **Transaction costs & short-leg capacity.** The loser leg is high-turnover and often illiquid/small; shorts are expensive and can be impossible in a squeeze. Live costs (AQR, 1998–2013) are manageable but do not vanish.
-6. **Multiple testing.** With the historical record mined at every horizon and market, the published momentum Sharpe overstates tradability — deflate it (see [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]).
+6. **Multiple testing.** With the historical record mined at every horizon and market, the published momentum Sharpe overstates tradability — deflate it (see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
 
 ---
 
@@ -114,4 +114,4 @@ The worst WML month is $-24.6\%$, occurring exactly in the $+20\%$ rebound month
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (skewness/kurtosis) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
 - Remedies: [[pillars/01-quantitative-research/momentum/06-advanced-extensions|06 · Advanced Extensions]] (vol scaling, dynamic weighting) · [[pillars/01-quantitative-research/momentum/04-value-momentum-interaction|04 · Value–Momentum]]
 - Risk: [[pillars/04-quantitative-risk/var-and-expected-shortfall|Tail Risk (VaR/ES)]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]]
-- Hygiene: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Hygiene: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]

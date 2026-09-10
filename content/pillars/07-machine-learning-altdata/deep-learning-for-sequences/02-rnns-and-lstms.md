@@ -155,7 +155,7 @@ t |    f_t    i_t    g_t    o_t |    C_t     h_t
   f=0.99  T=50 : f^T = 6.050e-01
 ```
 
-Read it as the derivation in numbers. The vanilla RNN at $W{=}0.9$ loses ten orders of magnitude between $T{=}10$ ($8.6\times10^{-4}$) and $T{=}20$ ($8.7\times10^{-11}$) — the 20th-step dependency carries essentially zero gradient, so the cell can never learn it. The LSTM cell path with $f{=}0.99$ still transmits **$0.605$** of the gradient at $T{=}50$ — $26$ orders of magnitude larger. That gap *is* the LSTM.
+Read it as the derivation in numbers. The vanilla RNN at $W{=}0.9$ loses seven orders of magnitude between $T{=}10$ ($8.6\times10^{-4}$) and $T{=}20$ ($8.7\times10^{-11}$) — the 20th-step dependency carries essentially zero gradient, so the cell can never learn it. The LSTM cell path with $f{=}0.99$ still transmits **$0.605$** of the gradient at $T{=}50$ — $26$ orders of magnitude larger. That gap *is* the LSTM.
 
 ---
 

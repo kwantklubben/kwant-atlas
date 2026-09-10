@@ -9,7 +9,7 @@ tags:
   - fdr
 ---
 
-**Basic Prerequisites:** [[pillars/01-quantitative-research/factor-investing-and-timing/01-from-zero-intuition|01 · From Zero]] and [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]].
+**Basic Prerequisites:** [[pillars/01-quantitative-research/factor-investing-and-timing/01-from-zero-intuition|01 · From Zero]] and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]].
 
 ---
 
@@ -49,7 +49,7 @@ then $M\gg K$ candidate characteristics are just noisy functions of the same $K$
 
 **Data-snooping in the presence of a search.** Bailey, Borwein, López de Prado & Zhu (2014) put a number on the search itself. If you try $m$ configurations and keep the best in-sample Sharpe $SR^*$, the *expected maximum* under the null is approximately
 $$\mathbb{E}\big[\max SR\big]\approx\sqrt{2\ln m}\cdot \sigma_{SR},$$
-so the best of $m=1000$ null backtests looks like a Sharpe of order $2\text{–}3$ by construction. The **Deflated Sharpe Ratio** discounts exactly this. (See [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]].)
+so the best of $m=1000$ null backtests looks like a Sharpe of order $2\text{–}3$ by construction. The **Deflated Sharpe Ratio** discounts exactly this. (See [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]].)
 
 ---
 
@@ -147,5 +147,5 @@ Two lessons the numbers force. **(i)** At the naive $|t|>2$ hurdle, **60% of the
 
 - Back: [[pillars/01-quantitative-research/factor-investing-and-timing/01-from-zero-intuition|01 · From Zero]] · [[pillars/01-quantitative-research/factor-investing-and-timing/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/factor-investing-and-timing/03-factor-crowding-and-capacity|03 · Crowding & Capacity]] · [[pillars/01-quantitative-research/factor-investing-and-timing/04-post-publication-decay|04 · Post-Publication Decay]]
-- Discipline: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] (DSR, purged CV) · [[pillars/01-quantitative-research/fundamental-multi-factor-models/06-advanced-extensions|The sibling folder's zoo page]] (q-factor, statistical consolidation)
+- Discipline: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (DSR, purged CV) · [[pillars/01-quantitative-research/fundamental-multi-factor-models/06-advanced-extensions|The sibling folder's zoo page]] (q-factor, statistical consolidation)
 - Statistical base: [[pillars/07-machine-learning-altdata/index|Machine Learning & Alt Data]] (high-dimensional selection) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]

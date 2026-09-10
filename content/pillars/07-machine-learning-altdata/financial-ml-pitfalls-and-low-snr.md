@@ -103,5 +103,5 @@ demonstrate_random_cv_leakage()
 
 ### 6. Connected Graph Bridges
 
-- Bridges to: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking]]
-- Bridges to: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]
+- Bridges to: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking]]
+- Bridges to: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]

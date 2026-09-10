@@ -113,4 +113,4 @@ print(f"R-squared:    {res['r_squared']:.3f}")
 
 - Foundational Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]
 - Bridges to: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Optimization]]
-- Bridges to: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking]]
+- Bridges to: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking]]

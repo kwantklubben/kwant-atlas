@@ -129,7 +129,7 @@ inv-var ensemble weights: [0.526 0.316 0.159]
 equal-weight ensemble oos IC : 0.0147
 inverse-var   ensemble oos IC: 0.0217
 ```
-Weighting the ensemble members by their out-of-sample reliability (again inverse-variance) lifts the combined IC from $0.0147$ to $0.0217$ — the same $\approx$+50% relative gain seen on page 02, transferred from forecast-combination to model-ensembling.
+Weighting the ensemble members by their out-of-sample reliability (again inverse-variance) lifts the combined IC from $0.0147$ to $0.0217$ — a gain of the same order as page 02's best-single$\to$inverse-variance combination (+42%), transferred from forecast-combination to model-ensembling.
 
 ---
 

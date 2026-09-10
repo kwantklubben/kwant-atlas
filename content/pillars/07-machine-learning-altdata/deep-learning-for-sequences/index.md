@@ -37,7 +37,7 @@ The honest framing up front, because it decides everything after it: **deep sequ
 | **LSTM gates** | $\begin{aligned}f_t&=\sigma(W_f h_{t-1}+U_f x_t+b_f)\\ i_t&=\sigma(W_i h_{t-1}+U_i x_t+b_i)\\ o_t&=\sigma(W_o h_{t-1}+U_o x_t+b_o)\end{aligned}$ | forget/input/output, all in $(0,1)$ |
 | LSTM candidate & update | $\tilde C_t=\tanh(W_c h_{t-1}+U_c x_t+b_c)$; $\;C_t=f_t\odot C_{t-1}+i_t\odot\tilde C_t$ | additive (constant-error-carousel) path |
 | LSTM hidden output | $h_t=o_t\odot\tanh(C_t)$ | — |
-| **CEC gradient** (cell path) | $\dfrac{\partial C_T}{\partial C_0}=\displaystyle\prod_{t=1}^{T}f_t$ | $f{=}0.99,T{=}50\Rightarrow 0.605$ (vs $8.7\times10^{-11}$ RNN) |
+| **CEC gradient** (cell path) | $\dfrac{\partial C_T}{\partial C_0}=\displaystyle\prod_{t=1}^{T}f_t$ | $f{=}0.99,T{=}50\Rightarrow 0.605$ (vs $5.4\times10^{-27}$ RNN at the same $T{=}50$) |
 | **Scaled dot-product attention** | $\operatorname{Attn}(Q,K,V)=\operatorname{softmax}\!\Big(\dfrac{QK^\top}{\sqrt{d_k}}+M\Big)V$ | rows sum to $1$; $\max(\text{upper-tri})=0$ |
 | Causal mask | $M_{ij}=-\infty$ for $j>i$, $0$ otherwise | strictly no look-ahead |
 | Multi-head attention | $\operatorname{Concat}(\text{head}_1,\dots,\text{head}_h)W^O$ | $h$ parallel subspaces |
@@ -134,7 +134,7 @@ Hub signposts — the decision rule and practice checklist live in [[pillars/07-
 - Foundational base: [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
 - Classical sequence model (the linear ancestor): [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]] — the Kalman filter is a *state-space* sequence model with a closed-form update; the RNN is its nonlinear, learned cousin.
 - Feature side (what the sequence model replaces or consumes): [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]]
-- Sibling (same pillar): [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged Cross-Validation & Backtest Hygiene]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data (legacy flat page)]]
+- Sibling (same pillar): [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged Cross-Validation & Backtest Hygiene]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Deep Learning for Sequences]]
 - Sub-pages (in-folder): 01 From Zero · 02 RNNs & LSTMs · 03 Attention & Transformers · 04 Autoencoders for Factors · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

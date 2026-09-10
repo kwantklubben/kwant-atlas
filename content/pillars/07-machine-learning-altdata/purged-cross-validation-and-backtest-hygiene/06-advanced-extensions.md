@@ -116,4 +116,4 @@ Read it as the design trade-off: with independent paths ($\bar\rho=0$) even $\va
 
 - Back: [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Index Hub]]
 - Deflation & PBO: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]
-- Applied in a real pipeline: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]
+- Applied in a real pipeline: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]] · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]

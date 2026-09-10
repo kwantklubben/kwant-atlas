@@ -7,7 +7,7 @@ tags:
   - data-pipelines
 ---
 
-**Basic Prerequisites:** Python data engineering and [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]].
+**Basic Prerequisites:** Python data engineering and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]].
 
 ---
 
@@ -81,4 +81,4 @@ def enforce_point_in_time(transactions: pd.DataFrame, as_of_date: pd.Timestamp) 
 ### 6. Connected Graph Bridges
 
 - Bridges to: [[pillars/07-machine-learning-altdata/financial-nlp-and-earnings-transcripts|Financial NLP]]
-- Bridges to: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]
+- Bridges to: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]

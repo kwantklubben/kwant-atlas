@@ -9,7 +9,7 @@ tags:
   - crowding
 ---
 
-**Basic Prerequisites:** [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/04-trading-rules-and-backtest|04 · Trading Rules & Backtest]] and [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]].
+**Basic Prerequisites:** [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/04-trading-rules-and-backtest|04 · Trading Rules & Backtest]] and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]].
 
 ---
 
@@ -170,7 +170,7 @@ PART B — data snooping over a random universe
 - **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 — §7 the August 2007 liquidity crisis and the "unwinding" explanation; performance degradation after 2002 (Sharpe $1.44$ 1997–2002 → $0.9$ 2003–2007 for PCA).
 - **Krauss, C.**, *J. Economic Surveys* 31(2), 2017 — decay of profitability, robustness to transaction costs, data-snooping discussion.
 - **Hasbrouck**, *Empirical Market Microstructure*, Ch 10 §10.3.4 — "cointegration tests are sensitive to data snooping (understate test size when the pair is selected ex post) and to structural breaks in long-run error means."
-- **Bailey, D. H. & López de Prado, M.** — the Deflated Sharpe Ratio; see [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]].
+- **Bailey, D. H. & López de Prado, M.** — the Deflated Sharpe Ratio; see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]].
 
 ---
 
@@ -178,5 +178,5 @@ PART B — data snooping over a random universe
 
 - Back: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/04-trading-rules-and-backtest|04 · Trading Rules & Backtest]] · [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Index Hub]]
 - Forward: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]
+- Sibling: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]
 - Bridges: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]

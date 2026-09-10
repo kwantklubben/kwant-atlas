@@ -162,5 +162,5 @@ Read the table as the stationarity–memory frontier. At $d=0$ the level fails t
 
 - Back: [[pillars/01-quantitative-research/feature-engineering-and-labeling/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Index Hub]]
 - Sibling: [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs|Stat-Arb & Pairs]] (cointegration = the multi-series version of "just enough differencing") · [[pillars/01-quantitative-research/backtesting-hygiene/06-advanced-extensions|Purged CV, PBO & Reality Checks]] (weights + purging together)
-- Cross-pillar: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]] (sequential bootstrap and purged CV in the model pipeline)
+- Cross-pillar: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]] (sequential bootstrap and purged CV in the model pipeline)
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · time-series stationarity

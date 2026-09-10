@@ -27,7 +27,7 @@ The audience arc: **beginner** starts at 01 (the pipeline) → 02 (forecasts→p
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Quick-Reference Lookup (job #1).** Formulas transcribed from López de Prado, *Advances in Financial Machine Learning* (2018, Ch 6 & 16), *Machine Learning for Asset Managers* (2020, Ch 5–6 & 8), and Granger & Ramanathan (1984); the bias–variance decomposition and bagging variance formula are cross-checked against Hastie, Tibshirani & Friedman, *ESL* (2009) §7.3 and eq. 15.1. Every number in the check column was **re-executed and reproduced exactly** from the verified corpus (see §3).
+**Quick-Reference Lookup (job #1).** Formulas transcribed from López de Prado, *Advances in Financial Machine Learning* (2018, Ch 6 & 16), *Machine Learning for Asset Managers* (2020, Ch 2, 4 & 7), and Granger & Ramanathan (1984); the bias–variance decomposition and bagging variance formula are cross-checked against Hastie, Tibshirani & Friedman, *ESL* (2009) §7.3 and eq. 15.1. Every number in the check column was **re-executed and reproduced exactly** from the verified corpus (see §3).
 
 **Notation:** $f_i$ forecast of model $i$, $\sigma_i^2$ variance of model $i$'s forecast error, $\mu$ vector of expected returns, $\Sigma$ covariance matrix, $r$ realized return, $\rho_{ij}$ correlation, $B$ number of ensemble members, $\Phi(\cdot)$ standard-normal CDF.
 
@@ -119,7 +119,7 @@ Hub signposts — the folder's full failure-mode analysis lives in [[pillars/07-
 ### 5. Canonical Literature & Study References
 
 - **López de Prado, Marcos**: *Advances in Financial Machine Learning* (2018) — Ch 6 (ensemble methods, bias–variance–noise, bagging variance), Ch 10 (bet sizing from predicted probabilities, meta-labeling), Ch 16 (Machine Learning Asset Allocation: Markowitz's curse, condition number, HRP tree clustering → quasi-diagonalization → recursive bisection). *The primary anchor for this folder.*
-- **López de Prado, Marcos**: *Machine Learning for Asset Managers* (2020) — Ch 5–6 (covariance estimation, denoising/detoning, Marcenko–Pastur), Ch 8 (clustering for portfolio construction). *Companion anchor.*
+- **López de Prado, Marcos**: *Machine Learning for Asset Managers* (2020) — Ch 2 (covariance estimation, denoising/detoning, Marchenko–Pastur), Ch 4 (optimal clustering) and Ch 7 (portfolio construction / NCO). *Companion anchor.*
 - **Granger, C. W. J. & Ramanathan, R.**: "Improved Methods of Combining Forecasts," *J. Forecasting* 3(2):197–204, 1984 — the OLS forecast-combination regression.
 - **López de Prado, Marcos**: "Building Diversified Portfolios That Outperform Out of Sample," *J. Portfolio Management* 42(4):59–69, 2016 — the HRP paper; canonical ML-for-portfolio reference.
 - **López de Prado, Marcos**: "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019 — MCD/SK/NaN/TS/DNN covariance estimators vs the naive $1/N$ benchmark.

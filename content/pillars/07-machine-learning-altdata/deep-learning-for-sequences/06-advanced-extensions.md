@@ -173,4 +173,3 @@ Read it as the TCN's two defining properties, verified. The three-layer dilated 
 - Microstructure data & latency: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] · [[pillars/06-market-making/index|Market Making]]
 - Regime-aware uncertainty: [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification (HMM & GMM)]]
 - NLP sequence models (same attention machinery): [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/index|Financial NLP & Transcripts]]
-- Legacy flat sibling: [[pillars/07-machine-learning-altdata/deep-learning-for-sequential-data|Deep Learning for Sequential Data]]

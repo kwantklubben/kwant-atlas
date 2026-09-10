@@ -39,7 +39,7 @@ $$\hat X_k=U_k\Sigma_k V_k^\top,$$
 
 attained when $E=V_k^\top$ (rows $=$ top-$k$ right singular vectors, the principal directions) and $D=V_k$. Hence:
 
-> **Theorem (Baldi & Hornik 1989).** A linear autoencoder with bottleneck $k$ trained to global optimality recovers the top-$k$ PCA subspace. Its reconstruction error equals the PCA error: $\mathcal L^\star=\sum_{j>k}\sigma_j^2$ (sum of the discarded singular values squared), which is $0$ when the data is exactly rank-$k$.
+> **Theorem (Baldi & Hornik 1989).** A linear autoencoder with bottleneck $k$ trained to global optimality recovers the top-$k$ PCA subspace. Its reconstruction error equals the PCA error: $\mathcal L^\star=\tfrac1n\sum_{j>k}\sigma_j^2$ (mean squared error over the discarded singular values), which is $0$ when the data is exactly rank-$k$.
 
 So a linear autoencoder is a *neural re-implementation of PCA*; the weights are a rotation of the principal directions, and the codes are the principal-component scores up to that rotation.
 
@@ -52,7 +52,7 @@ Replacing linear maps with nonlinearities $z=\phi(W_e x+b_e)$, $\hat x=\psi(W_d 
 - **Undercomplete vs overcomplete** — a bottleneck smaller than $d$ forces compression (the factor view); a bottleneck *larger* than $d$ requires a sparsity or noise penalty to avoid the identity function (the dictionary-learn view).
 - **VAE** — a probabilistic autoencoder that learns a latent *distribution* $q(z\mid x)$ and can generate/sample; the bridge to latent-factor risk models with uncertainty.
 
-For factors specifically, the encoding step is the *unsupervised* counterpart of [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|supervised factor ranking]]: it finds structure in $X$ without ever seeing a label, which is either a strength (no target leakage) or a weakness (unrelated to the return you care about) depending on the task.
+For factors specifically, the encoding step is the *unsupervised* counterpart of [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|supervised factor ranking]]: it finds structure in $X$ without ever seeing a label, which is either a strength (no target leakage) or a weakness (unrelated to the return you care about) depending on the task.
 
 ---
 
@@ -121,7 +121,7 @@ Read it as the theorem verified. The trained autoencoder's reconstruction error 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **"My autoencoder beat PCA" (it didn't).** With linear layers and no regularisation, the two coincide (verified above). Any apparent improvement is (a) not converged, (b) a nonlinearity you forgot you added, or (c) noise in the comparison. Always report the PCA baseline.
-2. **Best reconstruction ≠ best factor.** The objective minimises *variance* reconstruction. A factor that is statistically loud may be *financially irrelevant*; autoencoders are unsupervised and know nothing about returns. Pair them with a supervised check (→ [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|tree-based factor ranking]]).
+2. **Best reconstruction ≠ best factor.** The objective minimises *variance* reconstruction. A factor that is statistically loud may be *financially irrelevant*; autoencoders are unsupervised and know nothing about returns. Pair them with a supervised check (→ [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|tree-based factor ranking]]).
 3. **Overcomplete autoencoders memorise.** If the bottleneck is $\ge d$ and there is no sparsity/denoising penalty, the network learns the identity (zero error, zero information). The bottleneck must be *smaller* or *regularised*.
 4. **Factors drift.** Loadings fit on one period may no longer describe another (non-stationarity); a factor model is a *stationary* assumption (recall page 05's regime shift). Refit on a rolling window and monitor.
 5. **PCA-of-returns recovers noise in the low-SNR regime.** With a weak signal, the top principal components of *features* are dominated by common noise unless the features are cleaned (standardise, sector-neutralise, fractionally differentiate). See [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering]].
@@ -144,6 +144,6 @@ Read it as the theorem verified. The trained autoencoder's reconstruction error 
 
 - Back: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/03-attention-and-transformers|03 · Attention & Transformers]] · [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/index|Index Hub]]
 - Forward: [[pillars/07-machine-learning-altdata/deep-learning-for-sequences/05-failure-modes-and-practice|05 · Failure Modes & Practice]]
-- Supervised counterpart: [[pillars/07-machine-learning-altdata/tree-based-factor-ranking-and-purged-cv|Tree-Based Factor Ranking & Purged CV]]
+- Supervised counterpart: [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree-Based Factor Ranking & Purged CV]]
 - Feature inputs the encoder consumes: [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]]
 - Low-SNR reality check: [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]

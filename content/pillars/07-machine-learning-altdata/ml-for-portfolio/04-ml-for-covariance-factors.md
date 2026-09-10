@@ -21,7 +21,7 @@ The core difficulty is **Markowitz's curse** (López de Prado, AFML Ch 16.3): to
 ML's answer is a family of robust covariance estimators and allocation methods that *stop inverting the fragile object*:
 
 1. **Shrinkage** (Ledoit–Wolf) — pull the sample covariance toward a structured target to lower its condition number.
-2. **RMT denoising / Marcenko–Pastur** — remove the eigenvalues that are statistically indistinguishable from pure noise (see [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]]).
+2. **RMT denoising / Marchenko–Pastur** — remove the eigenvalues that are statistically indistinguishable from pure noise (see [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]]).
 3. **Clustering / HRP** — replace the covariance *inverse* with a hierarchical tree, sidestepping inversion entirely (see [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]]).
 
 The practical objective: feed the optimizer a $\Sigma$ you trust, or use a method that does not need to invert $\Sigma$ at all.
@@ -58,9 +58,9 @@ $$\alpha = 1 - \frac{\tilde V^{(1)}}{\tilde V^{(1)} + \tilde V^{(2)}},\qquad \ti
 
 HRP **never computes $\Sigma^{-1}$** and never solves a quadratic program — it reads only the *diagonal* of sub-blocks of $\Sigma$ and the correlation *ranks*. That makes it well-defined even on a singular covariance ($N>T$) and far less sensitive to estimation error — the property that lets it beat the min-variance optimizer out-of-sample despite min-variance being "optimal" in-sample.
 
-#### 2.4 Marcenko–Pastur denoising (bridge)
+#### 2.4 Marchenko–Pastur denoising (bridge)
 
-Random-matrix theory fixes the null: the eigenvalues of a pure-noise covariance concentrate in $[\lambda_-, \lambda_+]$, the Marcenko–Pastur band. Eigenvalues *inside* the band are statistically indistinguishable from noise and should be collapsed; only those *above* it carry genuine structure. This is the modern, ML-native upgrade of shrinkage and is developed fully in [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] and *ML for Asset Managers* Ch 5–6.
+Random-matrix theory fixes the null: the eigenvalues of a pure-noise covariance concentrate in $[\lambda_-, \lambda_+]$, the Marchenko–Pastur band. Eigenvalues *inside* the band are statistically indistinguishable from noise and should be collapsed; only those *above* it carry genuine structure. This is the modern, ML-native upgrade of shrinkage and is developed fully in [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] and *ML for Asset Managers* Ch 2.
 
 ---
 
@@ -129,14 +129,14 @@ sample-cov eigen range: [0.0052, 0.380]
 1. **Feeding ML forecasts into an unstable inverse.** The optimizer amplifies *any* input error by $\sim 1/\lambda_{\min}^2$. ML makes $\mu$ more accurate but not error-free, so ML-informed mean-variance inherits the same instability as any mean-variance book unless the covariance is fixed (shrunken/denoised) or inversion is avoided (HRP).
 2. **Condition number is the canary.** Before running any quadratic optimizer, compute $\kappa(\Sigma)$. If it is large, the min-variance "solution" is mostly numerical garbage — shrink or denoise first.
 3. **Shrinkage target bias.** Shrinkage toward the diagonal assumes you want variances to dominate; shrink toward a wrong factor model instead can inject a different bias. Choose the target that matches your prior (Ledoit–Wolf has an optimal $\alpha$; don't hard-code it).
-4. **Denoising without validation.** Marcenko–Pastur needs $T$ large relative to $N$ and stable correlations; on short/overlapping data the "noise band" is mis-estimated. Always re-validate on embargoed out-of-sample data.
+4. **Denoising without validation.** Marchenko–Pastur needs $T$ large relative to $N$ and stable correlations; on short/overlapping data the "noise band" is mis-estimated. Always re-validate on embargoed out-of-sample data.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
 - **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 16 (Markowitz's curse, condition number, the HRP algorithm: tree clustering → quasi-diagonalization → recursive bisection). *Primary anchor.*
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 5–6 (covariance estimation, Marcenko–Pastur denoising/detoning) and Ch 8 (clustering for allocation).
+- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 2 (covariance estimation, Marchenko–Pastur denoising/detoning), Ch 4 (optimal clustering) and Ch 7 (portfolio construction via NCO).
 - **López de Prado**, "Building Diversified Portfolios That Outperform Out of Sample," *J. Portfolio Management* 42(4):59–69, 2016 — the HRP paper.
 - **López de Prado**, "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019 — MCD/SK/NaN/TS/DNN estimators vs $1/N$.
 - **Ledoit & Wolf**, "Improved Estimation of the Covariance Matrix of Stock Returns," *J. Empirical Finance* 10(5):603–621, 2003 — shrinkage.

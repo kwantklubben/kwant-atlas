@@ -117,7 +117,7 @@ dollar neutrality  sum(w)   = +0.000e+00
 1. **The loser short leg is where crashes live.** WML's profit and its crash risk both concentrate in the *short* losers. In a panic rebound the losers "crash up" (they are levered, high-beta, option-like), so the short leg loses violently — this is the entire momentum-crash mechanism (see [[pillars/01-quantitative-research/momentum/05-failure-modes-and-practice|05 · Failure Modes]]).
 2. **Skip-month violations destroy the edge.** Using month $t-1$ in the signal loads one-month reversal; the verified example above shows SR dropping from $+1.75$ to $-0.07$. This is a *first-principles* failure: wrong autocorrelation band.
 3. **Beta exposure contamination.** Because winners are stocks that did well in the past, WML loads positively on whatever factor did well over the formation window — after market declines it is long low-beta, short high-beta (loser beta can exceed 3), giving time-varying, crash-prone exposure (Kothari–Shanken 1992; Grundy–Martin 2001).
-4. **Multiple testing & crowding.** With 200+ papers and endless parameter sweeps over lookbacks/holdings, the published momentum Sharpe is inflated by selection; capacity and crowding compress realized returns (see [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]).
+4. **Multiple testing & crowding.** With 200+ papers and endless parameter sweeps over lookbacks/holdings, the published momentum Sharpe is inflated by selection; capacity and crowding compress realized returns (see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
 
 ---
 

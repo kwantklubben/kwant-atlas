@@ -57,7 +57,7 @@ Model short-horizon edge as halving every $h$ microseconds. The surviving fracti
 
 $$\text{edge}(t) = 2^{-t/h} = e^{-(\ln 2)\, t/h}.$$
 
-This is exponential decay with rate $\lambda = \ln 2 / h$. Over a *small* window the loss is nearly linear, but across an order of magnitude it is catastrophic — the table in §3 shows 87% → 0.1% for a 2 µs → 100 µs delay. **The derivative matters more than the value:** at $t=0$ the marginal loss rate is $\lambda = \ln 2/h \approx 0.0693/h$ per µs, so shaving the first microsecond off a 2 µs path is worth exactly as much as the last.
+This is exponential decay with rate $\lambda = \ln 2 / h$. Over a *small* window the loss is nearly linear, but across an order of magnitude it is catastrophic — the table in §3 shows 87% → 0.1% for a 2 µs → 100 µs delay. **The derivative matters more than the value:** at $t=0$ the marginal loss rate is $\lambda = \ln 2/h$ (for $h{=}10\,\mu s$, $\lambda\approx0.069$ per µs), so shaving the first microsecond off a 2 µs path is worth exactly as much as the last.
 
 #### 2.4 Little's law — separating latency from throughput
 

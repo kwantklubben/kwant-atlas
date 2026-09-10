@@ -58,7 +58,7 @@ $$\mu\mid\theta,\tau^2\sim N\!\Big(\frac{\mu_0/A+\sum_j\theta_j/\tau^2}{1/A+J/\t
 - **Covariance shrinkage** ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]]) shrinks the noisy sample covariance toward a structured target — a hierarchical/factor prior on the covariance.
 - **Regime / latent-state models** ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|HMM/GMM]]) place a prior over hidden states and transition probabilities; the Bayesian fit uses FFBS + Gibbs (§05).
 - **Stochastic volatility** (Tsay §12.7–12.8) puts a random-walk prior on latent log-volatility — a hierarchical state-space model estimated by FFBS.
-- **Multiple-testing discipline** ([[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene]]) — local FDR / q-values are the empirical-Bayes shrinkage of many test statistics toward a null.
+- **Multiple-testing discipline** ([[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]) — local FDR / q-values are the empirical-Bayes shrinkage of many test statistics toward a null.
 
 ---
 
@@ -178,4 +178,4 @@ spread of posterior   = 1.474  <- shrunk toward the grand mean
 
 - Back: [[foundations/bayesian-statistics/05-mcmc|05 · MCMC]] · [[foundations/bayesian-statistics/04-bayesian-and-regularization|04 · Bayesian & Regularization]] · [[foundations/bayesian-statistics/index|Index Hub]]
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (random-effects/panel models, state space, Kalman/FFBS) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (mixtures, iterated expectation, conditional distributions) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (multivariate normals, covariance structure)
-- Forward (applications): [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Allocation]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification (HMM/GMM)]] · [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] (empirical-Bayes multiple testing) · [[pillars/03-derivative-pricing/interest-rate-and-term-structure|Interest-Rate Models]]
+- Forward (applications): [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Allocation]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm|Regime Classification (HMM/GMM)]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (empirical-Bayes multiple testing) · [[pillars/03-derivative-pricing/interest-rate-and-term-structure|Interest-Rate Models]]

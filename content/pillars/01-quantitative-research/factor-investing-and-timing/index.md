@@ -108,7 +108,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/01-quant
 
 1. **Factor crowding & liquidity black holes** — when many funds hold the same long-short, a forced unwind has *no counterparty*; realized tails are far wider than the modeled beta-risk (the Quant Quake of August 2007). Modeled $\Sigma$ assumes independent flow shocks and systematically understates this.
 2. **Post-publication decay** — a premium is an arbitrage with a half-life; McLean–Pontiff measure a **~35% decay after publication**, and the decay is largest for the *cheapest-to-arbitrage* characteristics (exactly the mispricing signature).
-3. **The factor zoo / multiple testing** — with hundreds of candidates, ~4.6% look significant at $t>2$ by chance; the correct hurdle is $t>3$ (HLZ) or a Bonferroni/deflated-Sharpe correction (see [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]]).
+3. **The factor zoo / multiple testing** — with hundreds of candidates, ~4.6% look significant at $t>2$ by chance; the correct hurdle is $t>3$ (HLZ) or a Bonferroni/deflated-Sharpe correction (see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]).
 4. **Factor timing is a high-variance, low-IC bet** — breadth is ~12, so timing needs an IC ≈ 0.1 to matter, and in-sample-optimal timing weights routinely collapse out-of-sample.
 
 ---
@@ -130,7 +130,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/01-quant
 - Foundational base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]
 - Sibling topic (the *construction* half): [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] — FF 3/5-factor construction, cross-sectional models, statistical factors
 - The factor family: [[pillars/01-quantitative-research/momentum/index|Cross-Sectional & Time-Series Momentum]] · [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] (the characteristics)
-- Discipline: [[pillars/01-quantitative-research/backtesting-hygiene-and-deflated-sharpe|Backtesting Hygiene & Deflated Sharpe]] (multiple testing, DSR) · [[pillars/01-quantitative-research/regime-detection/index|Regime Detection]] (regime-conditional factor behaviour)
+- Discipline: [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] (multiple testing, DSR) · [[pillars/01-quantitative-research/regime-detection/index|Regime Detection]] (regime-conditional factor behaviour)
 - Downstream: [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] (factor-risk budgeting, capacity-constrained sizing) · [[pillars/04-quantitative-risk/index|Quantitative Risk]] (the factor covariance $\Sigma=B\Omega B'+D$ — and its crowding blind spot)
 - Sub-pages (in-folder): 01 From Zero · 02 The Factor Zoo · 03 Crowding & Capacity · 04 Post-Publication Decay · 05 Failure Modes & Practice · 06 Advanced Extensions (Factor Timing)
 
