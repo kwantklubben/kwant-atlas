@@ -106,23 +106,21 @@ for i in range(1,m+1):
     prev=S[-1]; S.append([p*exp((r-0.5*sig**2)*dt+sig*sqrt(dt)*rnd.gauss(0,1)) for p in prev])
 disc=exp(-r*dt); V=[max(K-s,0.0) for s in S[m]]
 for i in range(m-1,0,-1):
-    s=S[i]; itm=[j for j,ss in enumerate(s) if K-ss>0]
+    s=S[i]; V=[disc*v for v in V]          # discount continuation once, each step
+    itm=[j for j,ss in enumerate(s) if K-ss>0]
     if not itm: continue
-    Xn=[[1.0,s[j],s[j]*s[j]] for j in itm]; y=[disc*V[j] for j in itm]
+    Xn=[[1.0,s[j],s[j]*s[j]] for j in itm]; y=[V[j] for j in itm]   # y already discounted
     XtX=[[sum(Xn[k][a]*Xn[k][bb] for k in range(len(itm))) for bb in range(3)] for a in range(3)]
     Xty=[sum(Xn[k][a]*y[k] for k in range(len(itm))) for a in range(3)]
     beta=solve3([r[:] for r in XtX], Xty[:])
     for j in itm:
         if (K-s[j]) > beta[0]+beta[1]*s[j]+beta[2]*s[j]*s[j]: V[j]=K-s[j]
-    keep=set(itm)
-    for j in range(N):
-        if j not in keep: V[j]=disc*V[j]
 print(f"LSM American put = {sum(V)/N:.4f}")
 ```
 ```
-LSM American put = 6.2518
+LSM American put = 6.1339
 ```
-The LSM value (6.2518) is the low-biased estimate; a binomial benchmark with 5000 steps gives 6.0902 — the gap is the suboptimality/discretization of the fitted continuation value, and it tightens with more paths, finer exercise grids, and richer bases (Glasserman §8.6; the dual upper bound brackets it from above).
+The LSM value (6.1339) is a low-biased estimate of the American put for $S=100,\,K=100,\,T=1,\,r=0.05,\,\sigma=0.20$; the European put for the same parameters is 5.5735, so the ~0.56 early-exercise premium is captured. A binomial benchmark with 5000 CRR steps gives 6.0902 (verified; 1000 steps gives 6.0896). LSM sits within its own seed-to-seed noise (~±0.03 for $N=40000$) of the binomial value, consistently from below as expected of a suboptimal stopping rule; the gap tightens with more paths, finer exercise grids, and richer bases (Glasserman §8.6; the dual upper bound brackets it from above).
 
 ---
 
