@@ -56,6 +56,7 @@ The `vision_analyze` tool for reading rendered page PNGs was **flaky all session
 - `visualizer.html` node/link data is **hardcoded** — new notes won't appear in the D3 graph until their node JSON + edges are added (see `03-BUILD-METHOD` §5).
 - **YAML frontmatter titles must be plain ASCII — no backslashes.** A title containing LaTeX like `$\gamma$` produces `unknown escape sequence` and **aborts the whole quartz build** (error is on the file, but the site won't emit at all). Write `Gamma` in the title, keep the math for the body. If a build fails, grep frontmatter titles for `\`: `grep -rn '^title:.*\\\\' content/`.
 - **Numeric-literal table rows are not wikilinks.** `[[1.0,0.0,-1.0]]` in a numpy code fence is matched by naive `[[...]]` link-checkers — ignore those false positives when auditing dangling links; strip a trailing `\` (from `\|` table escapes) before resolving.
+- **Bulk link rewrites: use plain `str.replace`, never a regex with alternation.** A regex like `r'\[\[([^\]|]+?)\\|'` parses as `(...)` OR *empty alternative*, so `re.sub` with a function injects `[[None|` at every character position and destroys every file it touches. For slug→slug rewrites the targets are literal strings — use `s.replace(old, new)`. If a bulk edit goes wrong, `git checkout HEAD -- <dir>` restores committed files, but anything uncommitted at that moment is lost (and a concurrently-running subagent may have written to the same dir) — so do bulk edits while no subagent is writing to that directory.
 
 ---
 
