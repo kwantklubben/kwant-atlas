@@ -79,8 +79,11 @@ shrinkage direction inversion. Progress is tracked below as waves complete.
 | 11 | pillars/06-market-making (1st 4) | adverse-selection-and-glosten-milgrom, spread-decomposition-and-roll-model, avellaneda-stoikov-and-optimal-quoting, inventory-management-and-quote-skewing | ✅ done, fixes committed |
 | 12 | pillars/06-market-making (2nd 4) | limit-order-book-mechanics, toxic-order-flow-and-vpin, market-impact-and-depth, market-maker-economics-and-rebates | ✅ done, fixes committed |
 | 13 | pillars/06 (last 2) + pillars/07 (1st 2) | dealer-banks-and-otc, liquidity-risk-and-asset-pricing, financial-ml-pitfalls-and-low-snr, purged-cross-validation-and-backtest-hygiene | ✅ done, fixes committed |
-| 14 | pillars/07-machine-learning-altdata (next 4) | — | queued |
-| 15+ | pillars 07-08 (~43 folders) | — | queued |
+| 14 | pillars/07-machine-learning-altdata (next 4) | regime-classification-hmm-and-gmm, tree-and-boosting-methods, financial-nlp-and-transcripts, alternative-data-pipelines-and-evaluation | ✅ done, fixes committed |
+| 15 | pillars/07 (last 3) + pillars/08 (1st) | deep-learning-for-sequences, reinforcement-learning-for-trading, ml-for-portfolio, high-performance-cpp-for-trading | running |
+| 16-17 | pillars/08 (remaining 8) | — | queued |
+
+**Pillar 7 (9 folders) code: 69/69 blocks byte-exact as of wave 14.**
 
 **Pillar 6 (12 folders) is now fully audited and fixed** — 53/53 code blocks byte-exact.
 
