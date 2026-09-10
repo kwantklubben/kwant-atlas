@@ -103,7 +103,7 @@ bump-and-revalue: delta=0.597734  gamma=0.027359   (call=6.888729)
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Linearisation is not a safety margin.** A delta-only P&L can be *too optimistic* (long a hedge that decays) or *too pessimistic*. It has no directional bias — which is worse than a known bias, because you cannot correct for it.
-2. **The shock size is a modelling choice, and it is doing the work.** Central differences with $h=0.01$ gave delta and gamma to six decimals here, but a $h$ that is too small drowns in floating-point cancelation and one that is too large straddles curvature. **A sensitivity is only meaningful together with the shock that produced it.**
+2. **The shock size is a modelling choice, and it is doing the work.** Central differences with $h=0.01$ gave delta and gamma to six decimals here, but a $h$ that is too small drowns in floating-point cancellation and one that is too large straddles curvature. **A sensitivity is only meaningful together with the shock that produced it.**
 3. **Wrong factor map, wrong risk.** If you hedge a 30-year bond with a 10-year future on a "parallel shift" assumption, your delta is right for a parallel curve move and wrong for every actual curve move (see [[pillars/04-quantitative-risk/risk-factor-sensitivities/03-rates-and-key-rate-duration|03 · Rates & Key-Rate Duration]]).
 4. **Sensitivities are local, positions are not.** A book of 10,000 different options has 10,000 different local maps; aggregating them into one firm-level delta throws away the *distribution* of curvature. This is the structural argument for factor decomposition ([[pillars/04-quantitative-risk/risk-factor-sensitivities/04-factor-exposures|04 · Factor Exposures]]).
 
@@ -111,7 +111,7 @@ bump-and-revalue: delta=0.597734  gamma=0.027359   (call=6.888729)
 
 ### 5. Canonical Literature & Study References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) — Ch 19 §19.1 (why sensitivities are the desk's risk language), Ch 21 §21.8 (computing Greeks from a finite-difference grid — the same central-difference idea used here), Ch 22 §22.5 (mapping a portfolio to factors, eq. 22.6). *Verified in the corpus.*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) — Ch 19 §19.1 (why sensitivities are the desk's risk language), Ch 21 §21.8 (finite-difference *pricing* machinery, eq. 21.27) — the same central-difference idea used here for Greeks, Ch 22 §22.5 (mapping a portfolio to factors, eq. 22.6). *Verified in the corpus.*
 - **RiskMetrics (J.P. Morgan)**: *Technical Document*, 4th ed. (1996) — Ch 6–7, the original "map every position to a small set of primary risk factors" doctrine, and the reason delta-normal VaR is a *sensitivity* method.
 - **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) — §2.2, the analytic first-order Greeks that bump-and-revalue is used to avoid (and used to check).
 - **Alexander, Carol**: *Market Risk Analysis, Vol. III* (2008) — Ch 4–7, instrument-by-instrument risk-factor mapping (bonds, swaps, FX, equity, options).

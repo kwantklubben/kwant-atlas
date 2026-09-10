@@ -57,7 +57,7 @@ $$\mathrm{IMCC}=\rho\,\mathrm{IMCC}(C)+(1-\rho)\sum_{i}\mathrm{IMCC}(C_i),\qquad
 and the eligible-desk capital is
 $$C_A=\max\!\big(\mathrm{IMCC}_{t-1}+\mathrm{SES}_{t-1},\; m_c\cdot\overline{\mathrm{IMCC}}+\overline{\mathrm{SES}}\big),\qquad m_c\ge1.5,$$
 with $m_c=1.5$ plus a $0$–$0.5$ backtesting add-on, plus a separate **SES** charge for non-modellable risk factors (NMRFs), a **DRC** model (99.9%, one-year VaR), and the PLA-test surcharge for amber-zone desks. The eligible total is
-$$\mathrm{IMAG}_{,A}=C_A+\mathrm{DRC},\qquad \text{then}\quad \mathrm{RWA}=12.5\times\text{capital}.$$
+$$\mathrm{IMAG}_A=C_A+\mathrm{DRC},\qquad \text{then}\quad \mathrm{RWA}=12.5\times\text{capital}.$$
 
 > **Reading the two regimes together.** 1996: capital $=3\times$ a 99%/10-day VaR. FRTB: capital $=1.5\times$ a 97.5% ES *stretched along liquidity horizons and stress-calibrated*. The multiplier looks smaller, but the horizon scaling and stress calibration more than make up for it — the model is *more* conservative where granularity is poor.
 
@@ -162,4 +162,3 @@ SA total (SBM+DRC) = 8,217,887  ->  RWA 102,723,582
 - Back: [[pillars/04-quantitative-risk/basel-and-regulation/02-capital-and-rwa|02 · Capital & RWA]] · [[pillars/04-quantitative-risk/basel-and-regulation/index|Index Hub]]
 - Prerequisite / sibling: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]
 - Forward: [[pillars/04-quantitative-risk/basel-and-regulation/04-credit-and-operational-risk|04 · Credit & Operational Risk]] · [[pillars/04-quantitative-risk/basel-and-regulation/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/04-quantitative-risk/basel-and-regulation/06-advanced-extensions|06 · Advanced Extensions]]
-- Risk-factor mapping input: [[pillars/04-quantitative-risk/basel-and-regulation/03-market-risk-and-frtb|this folder · sensitivities]]

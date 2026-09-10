@@ -33,7 +33,7 @@ $$\text{ES}_\alpha(X_1+X_2) \le \text{ES}_\alpha(X_1) + \text{ES}_\alpha(X_2),$$
 
 with equality **only** in perfect comonotonicity (one's tail *is* the other's). So summing the marginal ES (the regulator's simple approach) can only *overstate* — it keeps you solvent at the price of holding too much capital. The Basel formula for operational risk add-ons is a cousin of this: add risk types with a fixed "correlation" coefficient instead of measuring it.
 
-**The shared-macro-factor truth.** In reality market, credit and liquidity losses are all driven by *one* macro state $Z$ (a recession is bad for all of them *at once*). So the naive *independence* model — `VaR_combined = sqrt(VaR_1² + VaR_2²)` from summing variances — is the dangerous direction: it treats tails as addable in quadratic form and **understates** the joint tail, because the covariance term $2\,\mathbb{E}[X_1 X_2]$ is far from zero exactly when $Z$ is extreme.
+**The shared-macro-factor truth.** In reality market, credit and liquidity losses are all driven by *one* macro state $Z$ (a recession is bad for all of them *at once*). So the naive *independence* model — `VaR_combined = sqrt(VaR_1² + VaR_2²)` from summing variances — is the dangerous direction: it treats tails as addable in quadratic form and **understates** the joint tail, because the covariance term $2\operatorname{Cov}(X_1,X_2)=2(\mathbb E[X_1X_2]-\mathbb E[X_1]\mathbb E[X_2])$ is far from zero exactly when $Z$ is extreme.
 
 **Copula aggregation (Sklar).** A copula $C$ joins marginals and carries *only the dependence*:
 
@@ -110,7 +110,7 @@ B. tail dependence (co-exceedance at 1%, baseline a^2=0.0001):
 
 1. **Naive sum = assuming perfect comonotonicity.** It can only overstate (safe, wasteful). Structural.
 2. **Naive independence = assuming zero covariance.** Quadratic-covariance aggregation ignores the macro factor and *understates* the joint tail. Dangerous.
-3. **Gaussian copula = assuming zero tail dependence.** Even at corr 0.5 its joint 1% tail is under-represented vs a fat-marginal / t-4 clumping (0.0013 vs 0.0027); Gaussian codependence asymptotically cannot model simultaneous crashes.
+3. **Gaussian copula = assuming zero tail dependence.** Even at corr 0.5 its joint 1% tail is under-represented vs a fat-marginal / t-4 clumping (0.0013 vs 0.0030); Gaussian dependence asymptotically cannot model simultaneous crashes.
 4. **The copula-freedom illusion.** When tail dependence is unobservable, the result is *decision-under-model-uncertainty*: report a *range* across copulas (Gaussian vs t vs Clayton) and stress the worst, exactly as Bellini's scenario-integration does ([[pillars/04-quantitative-risk/systemic-risk-and-aggregation/06-advanced-extensions|06 · Advanced Extensions]]).
 
 ---

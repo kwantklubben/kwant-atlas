@@ -90,7 +90,7 @@ VaR-target leverage : terminal wealth = 0.011    forced sales 42.835
 1. **Procyclicality (feedback).** VaR/ES/leverage rules expand-and-contract with *current* vol, forcing selling in exactly the worst state — the §3 experiment: compliance destroys 0.011-vs-0.612 and sells 42.8×. First principle: a binding constraint driven by a lagging, mean-reverting volatility process creates its own momentum.
 2. **Unmeasurable tail dependence (statistical).** Aggregate-capital drivers like $\lambda_u$ are limits with ~zero joint-tail data; Gaussian vs t-4 gives a >2× different 1% joint-tail (0.0013 vs 0.0030). First principle: you cannot estimate an asymptotic property from a finite sample of the rare region where it matters. Report the range across copulas and capitalise the worst.
 3. **Aggregation fallacy (logical).** "Sum the ES" overstates (subadditivity: 63.97 vs true 45.85–55.65 in §04); "treat as independent" understates; Gaussian copula assumes $\lambda_u=0$. No dependence choice is innocent. First principle: aggregation is a *modelling* claim about unobservable dependence, so disclosure of the assumption is as important as the number.
-4. **The hub-and-spoke blind spot.** Network measures need the full exposure matrix; bilateral/OTc data is incomplete, and the missing edges are the contagious ones (see [[pillars/04-quantitative-risk/systemic-risk-and-aggregation/02-contagion-and-networks|02 · Contagion & Networks]]).
+4. **The hub-and-spoke blind spot.** Network measures need the full exposure matrix; bilateral/OTC data is incomplete, and the missing edges are the contagious ones (see [[pillars/04-quantitative-risk/systemic-risk-and-aggregation/02-contagion-and-networks|02 · Contagion & Networks]]).
 5. **The SRISK horizon.** Capital-shortfall measures depend on the (arbitrary, procyclical) crisis threshold and horizon; two defensible calibrations can rank the same banks differently.
 
 ---
@@ -98,7 +98,7 @@ VaR-target leverage : terminal wealth = 0.011    forced sales 42.835
 ### 5. Canonical Literature & Study References
 
 - **Brunnermeier & Pedersen**, *Market Liquidity and Funding Liquidity*, *RFS* 22(6) (2009) — the loss/margin spiral, the micro-mechanism of §3's loop (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/04-margin-and-funding-spirals|Margin & Funding Spirals]]).
-- **Brunnermeier & Adrian**, *CoVaR*, *AER* 106(7) (2016) — CoVaR as a feed-back measure; its procyclical sensitivity is a known defect.
+- **Adrian & Brunnermeier**, *CoVaR*, *AER* 106(7) (2016) — CoVaR as a feed-back measure; its procyclical sensitivity is a known defect.
 - **McNeil, Frey & Embrechts**, *QRM* (2015), §5.4 (tail-dependence limits) and §6.4.2 (copula-risk aggregation and its model risk). *In the corpus.*
 - **Embrechts, McNeil & Straumann**, *Correlation and Dependence in Risk Management* (2002) — the classic "correlation is not a good dependence measure for fat tails" argument.
 - **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009) — the regulatory push that moved firms from pure VaR to scenario/stress capital (bridges [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing]]).
@@ -109,4 +109,4 @@ VaR-target leverage : terminal wealth = 0.011    forced sales 42.835
 
 - Back: [[pillars/04-quantitative-risk/systemic-risk-and-aggregation/04-aggregating-risk-types|04 · Aggregating Risk Types]] · [[pillars/04-quantitative-risk/systemic-risk-and-aggregation/index|Index Hub]]
 - Forward: [[pillars/04-quantitative-risk/systemic-risk-and-aggregation/06-advanced-extensions|06 · Advanced Extensions (macroprudential & stress integration)]]
-- Sibling: [[pillars/04-quantitative-risk/liquidity-risk-and-funding/04-margin-and-funding-spirals|Margin & Funding Spirals]] (the amplication channel) · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]
+- Sibling: [[pillars/04-quantitative-risk/liquidity-risk-and-funding/04-margin-and-funding-spirals|Margin & Funding Spirals]] (the amplification channel) · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]

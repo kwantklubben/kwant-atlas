@@ -17,7 +17,7 @@ This page builds the *why* of bank regulation with **no prior regulatory knowled
 
 Start with the dumbest question: *why can't a bank just take any risk it likes with depositors' money?* Because four things break the ordinary discipline of the market:
 
-1. **Leverage.** A bank funds itself mostly with debt (deposits, wholesale borrowing) and only a sliver of equity. At an 8% capital ratio a bank holds roughly **12.5 dollars of assets per dollar of equity** — so a 1% loss on assets is an 8%−ish hit to equity. Leverage magnifies both return *and* ruin.
+1. **Leverage.** A bank funds itself mostly with debt (deposits, wholesale borrowing) and only a sliver of equity. At an 8% capital ratio a bank holds roughly **12.5 dollars of assets per dollar of equity** — so a 1% loss on assets is a **~12.5%** hit to equity. Leverage magnifies both return *and* ruin.
 2. **Deposit insurance and the lender of last resort.** Once deposits are insured and the central bank stands ready to lend, depositors stop policing the bank's risk — and the bank gains an incentive to take *more* risk, since the upside is private and the downside is social. This is **moral hazard**.
 3. **Contagion / externalities.** A bank's failure is not a private event: it freezes interbank funding and payment systems, hurting solvent bystanders. The private cost of failure is far below the social cost.
 4. **Opacity.** Outsiders cannot easily see how risky a bank's book is, so market discipline is weak and slow.

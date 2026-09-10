@@ -47,7 +47,7 @@ and the **ΔCoVaR** is the *contribution* — how much worse the system's tail i
 
 $$\Delta\text{CoVaR}_i = \text{CoVaR}_i^{\alpha} - \text{CoVaR}_i^{50\%},$$
 
-(commonly using the firm's median state $\text{VaR}_i^{50\%}$ as the "not distressed" baseline). Note it is a *difference of conditional quantiles*, not a sensitivity/derivative — ΔCoVaR is *not* a calculus gradient, a point often muddled in practice.
+(the textbook baseline is the firm's median state $\text{VaR}_i^{50\%}$; the common practical simplification — used by this page's code and the hub — takes the *unconditional system VaR* as the baseline, which is the figure quoted below). Note it is a *difference of conditional quantiles*, not a sensitivity/derivative — ΔCoVaR is *not* a calculus gradient, a point often muddled in practice.
 
 **SRISK (Brownlees–Engle).** A crisis scenario (cumulative market loss over some horizon ≥ threshold). Each firm's capital shortfall is
 

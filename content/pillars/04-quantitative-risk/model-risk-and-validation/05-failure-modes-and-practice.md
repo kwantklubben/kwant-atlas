@@ -34,8 +34,8 @@ So "the best of $M$" is *by construction* large even when *nothing is real*. Equ
 **2.2 The deflated Sharpe ratio.** Bailey & López de Prado convert 2.1 into a corrected significance test. With $T$ observations and $M$ trials, the sharpest $t$-statistic must beat $\sqrt{2\ln M}$ (the expected maximum *under the null*) before it is evidence at all. The **probability of backtest overfitting** is the rate at which the in-sample best fails out-of-sample; it rises with $M$ and falls with $T$.
 
 **2.3 Calibration slippage under drift.** If the model is calibrated on a period with volatility $\sigma_0$ but the world moves to $\sigma_1> \sigma_0$, the true exception rate becomes
-$$\pi_1=\Phi\!\left(\frac{\sigma_0}{\sigma_1}\,z_{1-p}\right)\quad\big(\text{for normal tails, } z_{1-p}=\Phi^{-1}(1-p)\big).$$
-For $p=0.01$, $z_{0.99}=2.326$: at $\sigma_1=2\sigma_0$, $\pi_1=\Phi(1.163)=0.878\to$ the expected exception rate is $\approx12\%$ — a $12\times$ breach with **no change in the code**. This is exactly the number measured in the drift demonstration below.
+$$\pi_1=\Phi\!\left(-\frac{\sigma_0}{\sigma_1}\,z_{1-p}\right)\quad\big(\text{for normal tails, } z_{1-p}=\Phi^{-1}(1-p)\big).$$
+For $p=0.01$, $z_{0.99}=2.326$: at $\sigma_1=2\sigma_0$, $\pi_1=\Phi(-1.163)=0.122\to$ the expected exception rate is $\approx12\%$ — a $12\times$ breach with **no change in the code**. This is exactly the number measured in the drift demonstration below.
 
 **2.4 The estimator's own error.** A $99\%$ VaR estimated from $n$ observations carries density-quantile standard error $\mathrm{se}\approx\frac{1}{f(q)}\sqrt{\alpha(1-\alpha)/n}$, which shrinks only as $n^{-1/2}$ ($\approx0.23\sigma$ at $n=250$, per the [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR hub]]). Both the reported VaR *and* the backtest that grades it are randomised by this — an under-appreciated source of spurious green zones.
 

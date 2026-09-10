@@ -55,7 +55,7 @@ $$\Delta V\approx\Delta\,\Delta S+\nu\,\Delta\sigma+\tfrac12\Gamma(\Delta S)^2+\
 
 $$\text{P\&L}\approx\tfrac12\Gamma S^2\left[\left(\frac{\Delta S}{S}\right)^2-\sigma^2\Delta t\right]$$
 
-— the realised-variance minus implied-variance trade. Its **expectation under $\mathbb{Q}$ is zero**; its **variance is $\tfrac12\Gamma^2S^4\sigma^4\Delta t$**, which is why the *risk* of a delta-hedged book is proportional to $\Gamma^2$, and why short-gamma positions (selling options) have a P&L distribution with a fat left tail and a thin right one: many small gains, rare large losses.
+— the realised-variance minus implied-variance trade. Its **expectation under $\mathbb{Q}$ is zero**; its **variance is $\tfrac12\Gamma^2S^4\sigma^4\Delta t^2$** per step (accumulating to $\tfrac12\Gamma^2S^4\sigma^4\,T\Delta t$ over horizon $T$), which is why the *risk* of a delta-hedged book is proportional to $\Gamma^2$, and why short-gamma positions (selling options) have a P&L distribution with a fat left tail and a thin right one: many small gains, rare large losses.
 
 ---
 

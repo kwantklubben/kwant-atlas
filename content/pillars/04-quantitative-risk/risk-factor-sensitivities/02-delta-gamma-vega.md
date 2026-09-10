@@ -44,7 +44,7 @@ Being long gamma is being long **realised variance** and short **implied varianc
 | **Theta** | $-\partial V/\partial T$ | $-\dfrac{S e\,n(d_1)\sigma}{2\sqrt T}-(b-r)Se\,N(d_1)-rXe^{-rT}N(d_2)$ | $-\dfrac{Se\,n(d_1)\sigma}{2\sqrt T}+(b-r)Se\,N(-d_1)+rXe^{-rT}N(-d_2)$ | usually $-$ |
 | **Rho** | $\partial V/\partial r$ | $T X e^{-rT}N(d_2)$ | $-T X e^{-rT}N(-d_2)$ | $+/-$ |
 
-**Conventions that matter in a risk system.** Vega and rho are quoted **per 1 vol/rate point** $=$ raw$/100$; theta **per day** $=$ raw$/365$. Gamma is a *pure* second derivative and has no point-scaling convention — a frequent source of cross-desk confusion. Note the structural facts a risk manager exploits: **gamma and vega are identical for calls and puts**, and both peak at-the-money and decay with $\sqrt T$; **theta is the most negative at-the-money**; **rho is negligible for short-dated options**.
+**Conventions that matter in a risk system.** Vega and rho are quoted **per 1 vol/rate point** $=$ raw$/100$; theta **per day** $=$ raw$/365$. Gamma is a *pure* second derivative and has no point-scaling convention — a frequent source of cross-desk confusion. Note the structural facts a risk manager exploits: **gamma and vega are identical for calls and puts**, gamma peaks at-the-money and decays as $1/\sqrt T$; ATM vega *grows* as $\sqrt T$ (it is gamma's scale factor $S^2T$); **theta is the most negative at-the-money**; **rho is negligible for short-dated options**.
 
 **The key identities (Haug §2.15, §2.3.3).**
 

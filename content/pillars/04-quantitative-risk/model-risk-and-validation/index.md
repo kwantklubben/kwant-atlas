@@ -52,7 +52,7 @@ For small independent errors the channels add in **quadrature**: $\sigma_{\text{
 
 | Exceptions $x$ | $LR_{uc}$ | $p$-value | $\mathbb{P}(K\le x\mid99\%)$ | Zone | Plus | $k=3+\text{plus}$ |
 |---|---|---|---|---|---|---|
-| 0–4 | ≤0.77 | ≥0.38 | — | **green** | 0.00 | 3.00 |
+| 0–4 | ≤3.84$^\dagger$ | ≥0.05 | — | **green** | 0.00 | 3.00 |
 | 5 | 1.9568 | 0.1619 | 0.958817 | yellow | 0.40 | 3.40 |
 | 6 | 3.5554 | 0.0594 | 0.986299 | yellow | 0.50 | 3.50 |
 | 7 | 5.4970 | 0.0190 | 0.995975 | yellow | 0.65 | 3.65 |

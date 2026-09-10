@@ -27,7 +27,7 @@ The objective: see that **the right aggregation is a *model of a shared economy*
 
 **Countercyclical capital buffer (BCBS 2010; the credit-gap rule).** Let $g_t$ be the credit-to-GDP gap (credit ratio minus its trend). The CCyB add-on is
 
-$$\text{buffer}_t = k\cdot\max(g_t,\,0),\qquad k\approx0.625\ \text{per gap-point (capped at 2.5\%),}$$
+$$\text{buffer}_t = 0.3125\cdot\max(g_t-2,\,0)\quad\text{(i.e. }0\%\text{ at a 2pp gap, }2.5\%\text{ at }10\text{pp, capped at }2.5\%\text{),}$$
 
 so the buffer *rises as credit outgrows the trend* — before the bust — and *releases* as the gap shrinks, feeding capital back into the system during the downcycle. This is the anti-procyclical mirror of the VaR-target loop in §05: it removes the *need* to delever in the bust because capital was pre-positioned.
 
@@ -83,26 +83,26 @@ print(f"standalone ES[0.95] market={es_m:.2f}  credit={es_c:.2f}  -> naive sum={
 print(f"integrated ES[0.95] (shared Z scenario) = {es_tot:.2f}")
 print(f"double-count avoided = {(es_m+es_c)-es_tot:.2f}")
 
-print("CCyB: credit-to-GDP gap -> countercyclical buffer (k=0.625):")
+print("CCyB: credit-to-GDP gap -> countercyclical buffer (2pp activation, 2.5% at 10pp):")
 for g in (-2, -1, 0, 1, 2, 3, 2, 1, -1, -3):
-    print(f"   gap={g:+3d}%  -> buffer={0.625*max(g,0.0):.1f}%")
+    print(f"   gap={g:+3d}%  -> buffer={min(2.5, 0.3125*max(g-2.0,0.0)):.2f}%")
 ```
 ```
 mean PD: Z normal(0)=1.80% | Z stress(+2)=16.8% | Z boom(-2)=0.17%
 standalone ES[0.95] market=5.25  credit=9.12  -> naive sum=14.37
 integrated ES[0.95] (shared Z scenario) = 14.13
 double-count avoided = 0.24
-CCyB: credit-to-GDP gap -> countercyclical buffer (k=0.625):
-   gap= -2%  -> buffer=0.0%
-   gap= -1%  -> buffer=0.0%
-   gap= +0%  -> buffer=0.0%
-   gap= +1%  -> buffer=0.6%
-   gap= +2%  -> buffer=1.2%
-   gap= +3%  -> buffer=1.9%
-   gap= +2%  -> buffer=1.2%
-   gap= +1%  -> buffer=0.6%
-   gap= -1%  -> buffer=0.0%
-   gap= -3%  -> buffer=0.0%
+CCyB: credit-to-GDP gap -> countercyclical buffer (2pp activation, 2.5% at 10pp):
+   gap= -2%  -> buffer=0.00%
+   gap= -1%  -> buffer=0.00%
+   gap= +0%  -> buffer=0.00%
+   gap= +1%  -> buffer=0.00%
+   gap= +2%  -> buffer=0.00%
+   gap= +3%  -> buffer=0.31%
+   gap= +2%  -> buffer=0.00%
+   gap= +1%  -> buffer=0.00%
+   gap= -1%  -> buffer=0.00%
+   gap= -3%  -> buffer=0.00%
 ```
 
 **Read the output.** The macro factor does the coupling: lending PDs climb from 1.80% at the mean, through 0.17% in a boom, to **16.8%** in a $+2$ macro stress. The two standalone ES stack to **14.37**, but the integrated figure — market and credit forced onto the *same* macro scenario — is **14.13**: the naive sum overstates by ~0.24 because a single bad scenario can't simultaneously strain each book's *idiosyncratic* versus its *macro* component. More important than the (modest) saving is *what the method commits to*: it replaces an untestable copula with a tested **shared-economy model** — you audit the macro driver $Z$ and the PD and market-loading coefficients ($\beta$, $b$), which are identifiable from data, instead of trusting an unobservable $\lambda_u$. The CCyB rows make the policy explicit: the buffer is **zero while the gap is negative (bust) and builds to 1.9% at a +3% gap** — capital accumulate in the boom, released in the bust, precisely anti-procyclical to the §05 loop.

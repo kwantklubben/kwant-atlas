@@ -39,7 +39,7 @@ This folder is the *hub*: it (a) gives the **fast formula & measure lookup** bel
 | **SRISK** (capital shortfall) | $\text{SRISK}_i = \mathbb{E}\big[\,k\,A_i - E_i \mid \text{crisis}\,\big]_+$ | — (conceptual, §3) |
 | **ES of sum (Gaussian, corr $\rho$)** | $\sigma_S=\sqrt{\sigma_1^2+\sigma_2^2+2\rho\sigma_1\sigma_2};\ \text{ES}=\mu_S+\sigma_S\,\dfrac{\phi(\Phi^{-1}(\alpha))}{1-\alpha}$ | naive sum 63.97 → 45.85 / 55.65 / 63.97 as $\rho{=}0/0.5/1$ |
 | **Naive aggregate = sum of ES** | $\text{ES}(X_1+X_2)\le\text{ES}(X_1)+\text{ES}(X_2)$ (subadditivity gap) | $45.85 \le 63.97$ |
-| **Co-exceedance (tail dependence)** | $\mathbb{P}(X_1\le q_\alpha^{X_1},\,X_2\le q_\alpha^{X_2})$ | Gaussian 0.0013 vs t-4 0.0027 at 1% |
+| **Co-exceedance (tail dependence)** | $\mathbb{P}(X_1\le q_\alpha^{X_1},\,X_2\le q_\alpha^{X_2})$ | Gaussian 0.0013 vs t-4 0.0030 at 1% |
 
 > **Corners to keep straight.** ΔCoVaR is *not* a derivative in the calculus sense — it is a *difference* of two conditional quantiles (Adrian–Brunnermeier). MES conditions on the *system's* tail; CoVaR conditions on the *firm's* tail. The two measure different objects and answer different policy questions.
 
