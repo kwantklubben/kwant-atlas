@@ -83,7 +83,7 @@ If kappa=1 (full fill): IS = execution cost only = 20,000
 If pbar=mt (fills all at terminal): no opp cost, IS = 60,000
 ```
 
-**Read the numbers.** The untouched-Foucault case reproduces $24{,}000$ exactly. The fresh case: execution cost on the 40,000 filled shares is $16{,}000 = 0.8\\cdot50{,}000\\cdot(50.40-50)$; opportunity cost on the 10,000 unfilled shares is $12{,}000 = 0.2\\cdot50{,}000\\cdot(51.20-50)$. **Observe the knife-edge**: if the trader had been perfectly patient and filled everything at the terminal price, IS would be $60{,}000$ (all opportunity, no estimate saved), while filling everything at the decision price gives $20{,}000$ — the schedule is the map between these, which is exactly the Almgren–Chriss trajectory of the sibling folder.
+**Read the numbers.** The untouched-Foucault case reproduces $24{,}000$ exactly. The fresh case: execution cost on the 40,000 filled shares is $16{,}000 = 0.8\\cdot50{,}000\\cdot(50.40-50)$; opportunity cost on the 10,000 unfilled shares is $12{,}000 = 0.2\\cdot50{,}000\\cdot(51.20-50)$. **Observe the knife-edge**: if the trader had been perfectly patient and filled everything at the terminal price, IS would be $60{,}000$ (all opportunity, no estimate saved), while filling everything at the realized average price $\\bar p=50.40$ gives $20{,}000$ (execution cost only, no opportunity cost) — the schedule is the map between these, which is exactly the Almgren–Chriss trajectory of the sibling folder.
 
 ---
 

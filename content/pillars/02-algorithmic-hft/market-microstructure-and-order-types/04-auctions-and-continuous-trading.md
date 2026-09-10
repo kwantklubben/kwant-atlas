@@ -108,13 +108,13 @@ every executed order gets the SAME price -> no price discrimination
 CONTINUOUS: volume 2100, VW price 100.1810, prices ranged 100.10-100.30
 ```
 
-**Read the numbers.** The executable-volume curve peaks at **$p^\*=100.10$ with $V^\*=2000$ shares** — at that single price, 2100 shares of demand and 2000 shares of supply overlap, so 2000 trade and every one of them crosses at $100.10$, whether their limit was $100.10$ or $100.30$. Replayed continuously, the *same order flow* prints **2100 shares at prices ranging from 100.10 to 100.30**, with a volume-weighted average of **100.1810** — early buyers got 100.10, late sellers got 100.30, and price was *discriminated*. The auction delivered one fair price; the continuous book delivered immediacy with a $\sim 8$-cent price band.
+**Read the numbers.** The executable-volume curve peaks at **$p^\*=100.10$ with $V^\*=2000$ shares** — at that single price, 2100 shares of demand and 2000 shares of supply overlap, so 2000 trade and every one of them crosses at $100.10$, whether their limit was $100.10$ or $100.30$. Replayed continuously, the *same order flow* prints **2100 shares at prices ranging from 100.10 to 100.30**, with a volume-weighted average of **100.1810** — early buyers got 100.10, late sellers got 100.30, and price was *discriminated*. The auction delivered one fair price; the continuous book delivered immediacy at the cost of a $\sim 20$-cent price band (100.10 to 100.30).
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Last-instant sniping in the auction.** If the closing time is deterministic, a trader can inject a large order in the final microsecond to *move* $p^\*$. Random stopping times and early deadlines exist precisely to defeat this; a deterministic window is an standing invitation.
+1. **Last-instant sniping in the auction.** If the closing time is deterministic, a trader can inject a large order in the final microsecond to *move* $p^\*$. Random stopping times and early deadlines exist precisely to defeat this; a deterministic window is a standing invitation.
 2. **Marking-the-close manipulation.** Because closing prices settle ETFs, index funds, and derivatives, there is real money in nudging $p^\*$. Continuous-only traders underestimate this; the manipulation is in the *auction*, not the tape.
 3. **Assuming the auction price equals the continuous price.** They are different mechanisms and generally give different prices. An execution algorithm benchmarked to the continuous VWAP can look "cheap" or "expensive" at the open/close purely because the auction cleared somewhere else.
 4. **The auction rewards size, the continuous rewards speed.** Under continuous price–time priority, *speed* (arriving first) wins; under a batch auction, ties can be broken by *size* (largest orders fill first), inverting the advantage. A strategy tuned for one mechanism mis-executes in the other.

@@ -39,7 +39,7 @@ so the expected loss on $q$ shares is $\approx q\,\sigma\sqrt{L}$ — **sublinea
 **Latency as an effective-price term.** The router should not rank on $p_i+f_i$ but on $p_i+f_i+\sigma\sqrt{L_i}$ — the **latency-aware effective price** (page 06 develops the full optimizer). A venue with a 1-cent better quote but 8 ms of lag can be strictly worse once $\sigma\sqrt{L}$ is added.
 
 **Fee-driven misrouting.** The per-share misrouting cost is
-$$\Delta_{\text{fee}}=\min_i(p_i+f_i)-\min_i p_i-\big(\text{fee of the raw-best venue}\big),$$
+$$\Delta_{\text{fee}}=\min_i p_i+\big(\text{fee of the raw-best venue}\big)-\min_i(p_i+f_i),$$
 which is positive whenever the price-gap/fee-gap reorder condition $f_i-f_j=p_j-p_i$ is crossed. Its magnitude scales with the take fee (up to the SEC's $0.0030/share cap).
 
 ---

@@ -39,7 +39,7 @@ with $L$ the round-trip latency distribution, $p_{\text{sweep}}$ the probability
 
 For a Gaussian tail, $\mathbb P(L>\theta) = 1-\Phi((\theta-\mu)/\sigma)$; the sensitivity is
 
-$$\frac{\partial \mathbb P(L>\theta)}{\partial\mu} = -\frac{1}{\sigma\sqrt{2\pi}}e^{-(\theta-\mu)^2/2\sigma^2},$$
+$$\frac{\partial \mathbb P(L>\theta)}{\partial\mu} = +\frac{1}{\sigma\sqrt{2\pi}}e^{-(\theta-\mu)^2/2\sigma^2},$$
 
 so cutting the mean helps *least* exactly where the tail is far out — the mirror image of the race-curve saturation. **Jitter reduction, not mean reduction, is what cuts pick-off risk.**
 

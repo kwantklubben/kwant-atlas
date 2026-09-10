@@ -19,7 +19,7 @@ Low-latency systems are not defeated by being *slow*; they are defeated by being
 
 The recurring culprits, in one line each:
 
-1. **Allocation / garbage collection** in the hot path — a stop-the-world event measured in microseconds land inside a nanosecond-scale path.
+1. **Allocation / garbage collection** in the hot path — a stop-the-world event measured in microseconds lands inside a nanosecond-scale path.
 2. **Cache misses and false sharing** — touching data the CPU doesn't have, or fighting another core for a cache line.
 3. **The OS getting in the way** — timer interrupts, context switches, page faults, syscalls.
 4. **Load-induced queueing** — the engine is fine but its *utilization* is too high ([[pillars/02-algorithmic-hft/low-latency-systems-architecture/03-system-architecture|03]]).

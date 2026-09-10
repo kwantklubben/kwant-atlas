@@ -39,7 +39,7 @@ You start filling once $\xi>x$ and finish once $\xi>x+L$. The **fill fraction** 
 #### 2.2 Fill probability and fill time
 
 - **Poisson trades** at rate $\mu$ (share volume), $N_S=\mu T$: $\xi(T)\sim\text{Poisson}(\mu T)$, so the fill probability is the Poisson upper tail
-  $$\mathbb P(\xi(T)\ge x)=1-\sum_{k<\,x/\bar v}\frac{(\mu T)^k e^{-\mu T}}{k!}.$$
+  $$\mathbb P(\xi(T)\ge x)=1-\sum_{k<\,x}\frac{(\mu T)^k e^{-\mu T}}{k!}.$$
 - **Binomial trades** (per-tick probability $p$, trade size $s$): $\xi=s\cdot\text{Bin}(T,p)$; the exact expected fill is a finite sum
   $$\mathbb E[\text{Filled}]=\sum_{k=0}^{T}\binom{T}{k}p^k(1-p)^{T-k}\min\!\big((ks-x)^+,L\big).$$
 - **Fill time** at the front (unit size): the waiting time to the $x$-th trade is negative-binomial, **mean $x/\mu$**.
@@ -163,7 +163,7 @@ for depth in (1000, 2000, 5000):
    level depth= 5000: P(sweep>=depth)=0.0107
 ```
 
-Three lessons. **(A)** The closed form and Monte Carlo agree to the third digit — the fill model is *simulable*, which is what makes execution backtesting a Monte Carlo discipline. **(C)** The optimistic rule is benign at the front of the queue ($1.02\times$) and disastrous behind it ($4.47\times$ at $x=1000$) — the error is *concentrated exactly where a strategy's edge is thinnest*. **(D)** Trade-through is rare at deep levels ($1.1\%$ at depth $5000$) but common at shallow ones ($24.5\%$ at depth $1000$) — so the guaranteed-fill channel must be modelled, and it is strongest in the same shallow, volatile books where queue models are least reliable.
+Three lessons. **(A)** The binomial closed form and its Monte Carlo agree to ~3 decimals — the fill model is *simulable*, which is what makes execution backtesting a Monte Carlo discipline. **(C)** The optimistic rule is benign at the front of the queue ($1.02\times$) and disastrous behind it ($4.47\times$ at $x=1000$) — the error is *concentrated exactly where a strategy's edge is thinnest*. **(D)** Trade-through is rare at deep levels ($1.1\%$ at depth $5000$) but common at shallow ones ($24.5\%$ at depth $1000$) — so the guaranteed-fill channel must be modelled, and it is strongest in the same shallow, volatile books where queue models are least reliable.
 
 ---
 

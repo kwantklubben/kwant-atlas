@@ -60,7 +60,7 @@ Because it is a **sum**, the slowest stages dominate the mean and the *tails* do
 
 $$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)},\qquad W = W_q + \mathbb{E}[S],\qquad L=\lambda W\ \ (\text{Little}).$$
 
-Two facts follow. **(i)** As $\rho\to1$, $W_q\to\infty$: an engine running at 90 % utilization has ten times the queueing delay of one at 50 %. **(ii)** Jitter multiplies it: a stage with $C_s=1$ queues twice as long as a constant-cost stage at the same load. *Determinism, not just speed, is what keeps $W_q$ small.*
+Two facts follow. **(i)** As $\rho\to1$, $W_q\to\infty$: an engine running at 90 % utilization has nine times the queueing delay of one at 50 %. **(ii)** Jitter multiplies it: a stage with $C_s=1$ queues twice as long as a constant-cost stage at the same load. *Determinism, not just speed, is what keeps $W_q$ small.*
 
 **Tail composition.** If each of $k$ independent hops is in its worst top-$q$ fraction with probability $q$, the chance *at least one* hop is in the tail is
 

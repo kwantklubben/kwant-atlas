@@ -108,7 +108,6 @@ print(f"  (cancel-only x(t) = x0 exp(-theta t); halves in {math.log(2)/theta:.2f
 ```
 ```
 x0=50.0, mu=5.0/s, theta=0.02/s  =>  mean-field crossing t* = 9.116 s
-
  horizon T | P(fill) Monte Carlo | mean-field x(T)
        0.5 |              0.0000 |           47.01
        1.0 |              0.0000 |           44.06

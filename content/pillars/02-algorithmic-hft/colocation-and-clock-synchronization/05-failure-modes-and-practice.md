@@ -96,8 +96,8 @@ The shock is Experiment A: a mere **0.3 µs** of clock skew inverts the reconstr
 ### 4. Failure Modes & First-Principles Breakdowns (numbered)
 
 1. **Clock skew beyond the edge (violates "clocks measure the same instant").** Skew ≥ the microsecond margin ⇒ random ordering. Practice: discipline to <100 ns via PTP grandmaster + GPS; verify with a holdover/packet-delay audit (bridge: [[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/04-clock-synchronization|04 · Clock Sync]]).
-2. **Latency underestimation via RTT/2 (violates "use the right one-way").** Asymmetric routes bias the estimate by $\tfrac12(d_r-d_f)$; a 4:1 asymmetry here — a +2.0 ms error — dwarfing your *entire* colocated budget. Practice: measure one-way with synchronized clocks, never RTT/2.
-3. **Mean-vs-tail budget (violates "size to the worst case").** p99.9 ≈ 13 µs vs mean 2 µs here — a 6.5× gulf. A budget built on the mean fails ~10× too often. Practice: size tick-to-trade budgets to the p99/p99.9 tail, and pin that tail with the low-latency stack.
+2. **Latency underestimation via RTT/2 (violates "use the right one-way").** Asymmetric routes bias the estimate by $\tfrac12(d_r-d_f)$; a 3:1 asymmetry here ($d_f{=}2.0$, $d_r{=}6.0$ ms) — a +2.0 ms error — dwarfing your *entire* colocated budget. Practice: measure one-way with synchronized clocks, never RTT/2.
+3. **Mean-vs-tail budget (violates "size to the worst case").** p99.9 ≈ 13.4 µs vs mean 2.0 µs here — a 6.7× gulf. A budget built on the mean fails ~10× too often. Practice: size tick-to-trade budgets to the p99/p99.9 tail, and pin that tail with the low-latency stack.
 4. **The arms race (violates "speed must clear a real budget").** $V(N-1)/N$ of the rent is re-spent on speed that only *re-qualifies* who's fastest. Practice: buy microseconds only if they convert to fills you can measure (bread-and-butter of [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]]); treat un-measurable speed as rent spent, not value built.
 
 ---

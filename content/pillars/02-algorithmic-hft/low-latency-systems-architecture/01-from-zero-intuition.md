@@ -35,7 +35,7 @@ $$T_{\text{T2T}} = \sum_{i=1}^{n} T_i = T_{\text{wire}}+T_{\text{NIC}}+T_{\text{
 
 **Two consequences follow immediately, and they organize the whole field.**
 
-**(A) The mean is a sum; the extremes are a max.** If you condition on the *worst* hop being slow — a context switch, a page fault, a cache miss on a cold structure — the total cost is set by the maximum single hiccup, not by the sum of hopes. The relevant statistics are therefore **percentiles, not averages**. Define the tail ratio
+**(A) The mean is a sum; the extremes are a max.** If you condition on the *worst* hop being slow — a context switch, a page fault, a cache miss on a cold structure — the total cost is set by the maximum single hiccup, not by the sum of hops. The relevant statistics are therefore **percentiles, not averages**. Define the tail ratio
 
 $$R = \frac{Q_{0.99}}{Q_{0.50}},$$
 

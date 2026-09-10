@@ -18,7 +18,7 @@ Once a firm has exhausted kernel bypass and FPGA, the next latency frontier is *
 
 1. **Microwave & laser links** — beating fiber by transmitting through *air* at $0.2997\ \text{m/ns}$ instead of glass at $0.2\ \text{m/ns}$, plus the shorter straight-line route.
 2. **In-network compute / programmable switches (P4)** — doing aggregation *inside* the switch fabric so it never reaches a host.
-3. **HLS (high-level synthesis)** — writing FPGA datapath logic in C++-like code instead of RTL, trading ~20% performance for ~5× productivity.
+3. **HLS (high-level synthesis)** — writing FPGA datapath logic in C++-like code instead of RTL, trading ~20% performance for ~4.7× productivity.
 4. **The exchange-side response (batch auctions)** — the market-design answer to the arms race (Budish–Cramton–Shim), which would make much of this hardware obsolete by construction.
 
 Each is one honest step past the single-box accelerator. Everything farther (photonic switching, cross-datacentre free-space optics, hardware-implemented market making) is linked from here.

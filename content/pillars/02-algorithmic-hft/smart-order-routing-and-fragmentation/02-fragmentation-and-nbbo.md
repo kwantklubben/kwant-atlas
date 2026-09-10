@@ -111,7 +111,7 @@ fragmentation (Herfindahl) index = 0.2850  -> 1/HHI = 3.51 effective venues
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Single-venue blindness.** Using one venue's top-of-book as "the price" costs 1–2 cents per share in this example — 500+ bps of round-trip edge on a stock trading near 100.00 with a 0.5 bps NBBO half-spread.
+1. **Single-venue blindness.** Using one venue's top-of-book as "the price" costs 1–2 cents per share in this example — 1–2 bps per side, 2–4 bps round-trip on a stock trading near 100.00 with a 0.5 bps NBBO half-spread.
 2. **The NBBO is a lagged composite, not a fact.** Venues report at different speeds; quotes lock and cross transiently. A router that *trusts* the NBBO without re-checking at execution can trade through a better protected quote (page 05). The NBBO is best treated as a *prediction* of the venue's state, not a guarantee.
 3. **Fragmentation ≠ worse quality, but ≠ free either.** O'Hara & Ye (2011) find spreads *fall* and speed *improves* with fragmentation, but the infrastructure cost (consolidated feeds, latency) is real, and each thinner book means a bigger fraction of your order walks to the next venue. See [[pillars/02-algorithmic-hft/smart-order-routing-and-fragmentation/05-failure-modes-and-practice|05 · Failure Modes]].
 

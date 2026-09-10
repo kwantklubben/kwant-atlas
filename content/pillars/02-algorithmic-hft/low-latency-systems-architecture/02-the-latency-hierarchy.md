@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Every latency a trading system can experience is a point on a **single hierarchy** that spans six orders of magnitude, from ~1 ns (a register/L1 hit) to ~10 ms (a transatlantic round trip). The practical objective of this page is to **internalise that hierarchy as a ruler**, so that when you read "$X$ nanoseconds" you immediately know *which layer of the machine it belongs to* and whether the number is plausible. The ruler also tells you what is *fixable*: a 100 ns cache miss is fixable by data layout; a 5 µs kernel-stack traversal disappears under kernel bypass; a 6 ms ocean crossing is only fixable by moving the box.
+Every latency a trading system can experience is a point on a **single hierarchy** that spans nearly eight orders of magnitude, from ~1 ns (a register/L1 hit) to ~60 ms (a transatlantic round trip). The practical objective of this page is to **internalise that hierarchy as a ruler**, so that when you read "$X$ nanoseconds" you immediately know *which layer of the machine it belongs to* and whether the number is plausible. The ruler also tells you what is *fixable*: a 100 ns cache miss is fixable by data layout; a 5 µs kernel-stack traversal disappears under kernel bypass; a 6 ms ocean crossing is only fixable by moving the box.
 
 The mental model is a pyramid. At the tip: the CPU working on data it already has (registers, L1). Each step down is roughly an order of magnitude slower — L2, L3, DRAM, a device (NIC/disk), the kernel, another machine. **The hot path of a trading engine is an argument for staying as close to the tip as possible, and the entire software design follows from that wish.**
 
@@ -40,7 +40,7 @@ The mental model is a pyramid. At the tip: the CPU working on data it already ha
 | Linux TCP/IP RX path | $\sim5000-25000$ ns | — | $10^4$ ns |
 | SSD read | $\sim10^5$ ns (100 µs) | — | $10^5$ ns |
 | Same metro round trip (colocated) | $\sim10^5$ ns | — | $10^5$ ns |
-| Ocean round trip (NJ–London) | $\sim5-10\times10^6$ ns | — | $10^7$ ns |
+| Ocean round trip (NJ–London) | $\sim5.5-6\times10^7$ ns (~56 ms) | — | $6\times10^7$ ns |
 
 **Read this as ratios, not absolutes.** A DRAM access is ~100x an L1 hit. A kernel-stack traversal is ~15 000x an L1 hit. Those ratios are the only reason the architecture choices in this folder exist: *each technique is a move from a lower row to a higher row.*
 

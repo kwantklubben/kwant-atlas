@@ -54,7 +54,7 @@ Even with bypass, the scheduler can preempt the hot thread. The standard configu
 
 #### 2.4 The physical floor (and why the silicon tier ends the ladder)
 
-Round-trip latency has an irreducible geographic term: $\text{RTT}\gtrsim 2\times d/c_{\text{fibre}} + \text{switching}$, e.g. an NJ–Chicago corridor (≈1 200 km) is ≈6–8 ms of fibre RTT, cut by microwave (straighter path, ~4–4.5 ms). Colocation removes the "last mile". **No software optimization competes with walking the box closer**; the FPGA tier (below 200 ns wire-to-wire) is the end of the CPU ladder and the doorway to the hardware topic-folder.
+Round-trip latency has an irreducible geographic term: $\text{RTT}\gtrsim 2\times d/c_{\text{fibre}} + \text{switching}$, e.g. an NJ–Chicago corridor (≈1 200 km) is ≈12 ms of fibre RTT (≈6 ms one-way), cut by microwave to ≈8 ms RTT (straighter path, ~4 ms one-way). Colocation removes the "last mile". **No software optimization competes with walking the box closer**; the FPGA tier (below 200 ns wire-to-wire) is the end of the CPU ladder and the doorway to the hardware topic-folder.
 
 ---
 

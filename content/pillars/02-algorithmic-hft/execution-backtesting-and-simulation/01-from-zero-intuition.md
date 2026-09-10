@@ -47,7 +47,7 @@ and the whole game is the *sign and size of $s+2h$ relative to $\alpha_H$*.
 
 **Perold's implementation shortfall** (Hasbrouck Ch 14, eq 14.1) is the accounting identity that makes the omission precise. With $n_0$=initial position, $v$=desired position, $n_1$=final position, decision/arrival price $\pi_0$, terminal price $\pi_1$:
 
-$$\text{IS}=(v-n_1)'\pi_1=\underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution cost}}+\underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity cost}}.$$
+$$\text{IS}=\underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution cost}}+\underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity cost}},$$
 
 A signal backtest that assumes you always trade the full size at $\pi_0$ forces **both** terms to zero. An execution backtest must simulate $p$ (the realised fill price, from the book) *and* $n_1$ (the realised filled quantity, from the queue).
 

@@ -18,7 +18,7 @@ Software on a general-purpose CPU can be made *fast*, but it cannot be made *det
 
 This folder is the **hardware-acceleration topic-folder** for Pillar 2. It is a *hub*: it gives you **(a) the fast latency-budget lookup** below (job #1) and **(b) routes you to six sub-pages** that go from zero-knowledge intuition, through the tick-to-trade pipeline stage by stage, the FPGA/CPU/GPU trade-off, kernel-bypass networking, the failure modes that turn an accelerator into an outage, and the modern extensions (microwave, in-network compute, HLS).
 
-> **The one-sentence essence.** "Software latency is a *ceiling* set by physics plus cache-and-OS overhead (about 950 ns of tick-to-trade on a tuned kernel-bypass box); an FPGA breaks the ceiling by executing the *same* logic as combinational/registered silicon in ~60 ns, but it buys that speed with rigidity — it can only do what the designer wired, and it cannot be patched at 3:59 p.m."
+> **The one-sentence essence.** "Software latency is a *ceiling* set by physics plus cache-and-OS overhead (about 1,200 ns of tick-to-trade on a tuned kernel-bypass box); an FPGA breaks the ceiling by executing the *same* logic as combinational/registered silicon in ~65 ns, but it buys that speed with rigidity — it can only do what the designer wired, and it cannot be patched at 3:59 p.m."
 
 **Scope note (vs the siblings).** [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] covers *how to make software fast* (CPU pinning, NUMA, caches, zero-allocation, lock-free structures). This folder starts where that tops out: **what to do when software is still too slow** — silicon, and the networking that feeds it. [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] and [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]] are the Pillar-8 engineering detail; this page cross-links rather than duplicates.
 
@@ -61,7 +61,7 @@ Pipelining multiplies throughput by $S$ **at constant latency** — while a non-
 
 **Wire serialization** sets the hard floor per packet: $t_{\text{wire}} = 8B/\text{rate}$. An 84-byte minimum frame takes 67.20 ns at 10GbE, 26.88 ns at 25GbE, 6.72 ns at 100GbE.
 
-> **Critical framing caveat.** Latency is a *budget*, not a scalar to "optimise." Spending \$1.4M of FPGA NRE (see §3) to cut 890 ns only pays if your *strategy* converts nanoseconds into fills — an economic question, not an engineering one. Accelerating a strategy that is not latency-sensitive is the single most expensive mistake in this folder.
+> **Critical framing caveat.** Latency is a *budget*, not a scalar to "optimise." Spending \$1.25M of FPGA NRE (see §3) to cut 1,135 ns only pays if your *strategy* converts nanoseconds into fills — an economic question, not an engineering one. Accelerating a strategy that is not latency-sensitive is the single most expensive mistake in this folder.
 
 ---
 

@@ -30,7 +30,7 @@ Track one side's queue size (orders ahead at the level), $i\ge1$. In the Cont–
 - **market orders** (deaths) arrive at rate $\mu$;
 - **cancellations** occur at rate $\theta(i)\,i$ — i.e. **per-order** hazard $\theta$, so a batch of $i$ orders cancels at rate $\theta i$ (each order is cancelled at an exponential time with parameter $\theta$).
 
-The generator on state $i\ge1$ has birth rate $\lambda$ and death rate $\mu + \theta i$. The process is **ergodic** (bounded birth rate, death rate growing linearly), so it has a stationary distribution; the queue is **mean-reverting** around $\mu/\theta$ in the cancel-dominated regime. Filling corresponds to **first passage to $0$**.
+The generator on state $i\ge1$ has birth rate $\lambda$ and death rate $\mu + \theta i$. The process is **ergodic** (bounded birth rate, death rate growing linearly), so it has a stationary distribution; the queue is **mean-reverting** around $\mathbb{E}[i]=(\lambda-\mu)/\theta$ (set birth = death: $\lambda=\mu+\theta\,\mathbb{E}[i]$); in the *no-birth* limit this is the floor $\mu/\theta$. Filling corresponds to **first passage to $0$**.
 
 #### 2.2 Queue-reactive intensities (the "reactive" part)
 
@@ -121,7 +121,7 @@ lam=1.0, mu=1.5, theta=0.05, truncation A=30
 (15, 8)     |           0.2349 |      0.2337
 ```
 
-The exact backward-equation solution and the simulation agree to three decimals. The economics is immediate and is the core of queue-reactive price prediction: **the side with the thinner queue is more likely to be eaten first**, so a thin ask relative to the bid predicts an upward move (probability $0.7678$ for $(a,b)=(5,10)$), and a deep ask predicts a downward move ($0.2322$ for $(10,5)$). This *conditional-on-book-state* probability is exactly what CTST's Laplace methods compute in closed form and what real market-making systems compute in production.
+The exact backward-equation solution and the simulation agree to ~2 decimals (within $0.002$). The economics is immediate and is the core of queue-reactive price prediction: **the side with the thinner queue is more likely to be eaten first**, so a thin ask relative to the bid predicts an upward move (probability $0.7678$ for $(a,b)=(5,10)$), and a deep ask predicts a downward move ($0.2322$ for $(10,5)$). This *conditional-on-book-state* probability is exactly what CTST's Laplace methods compute in closed form and what real market-making systems compute in production.
 
 ---
 

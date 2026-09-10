@@ -46,7 +46,7 @@ Treat each stage as a single server. Arrivals are message events; the service ti
 
 $$L = \lambda W \quad(\text{Little's law}),\qquad W_q = \frac{\rho}{1-\rho}\,\mathbb{E}[S],\qquad \rho=\lambda\,\mathbb{E}[S].$$
 
-The mean *time in system* is $W = W_q + \mathbb{E}[S] = \dfrac{\mathbb{E}[S]}{1-\rho}$. **At $\rho=0.5$, $W=2\,\mathbb{E}[S]$; at $\rho=0.9$, $W=10\,\mathbb{E}[S]$; at $\rho=0.99$, $W=100\,\mathbb{E}[S]$.** A stage that looks "twice as fast as needed" is not wasting half its capacity — it is buying a **5x reduction in queueing delay**.
+The mean *time in system* is $W = W_q + \mathbb{E}[S] = \dfrac{\mathbb{E}[S]}{1-\rho}$. **At $\rho=0.5$, $W=2\,\mathbb{E}[S]$; at $\rho=0.9$, $W=10\,\mathbb{E}[S]$; at $\rho=0.99$, $W=100\,\mathbb{E}[S]$.** A stage that looks "twice as fast as needed" is not wasting half its capacity — it is buying a **5x reduction in mean sojourn time** (a **9x** cut in queueing delay proper, $W_q$).
 
 For general service-time variability the **Pollaczek–Khinchine** formula generalises this:
 

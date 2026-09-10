@@ -100,7 +100,7 @@ for rho in (0.05, 0.15, 0.40, 0.90):
  0.90       18,939          518   65.66 22.85  7.94  3.56      11.49   sum=1,000,000
 ```
 
-Read the first and last columns: for **low resilience** ($\rho=0.05$ — the book barely refills) the schedule is nearly symmetric with a **large terminal block** ($n_N=61{,}309$, and the last quarter carries 25% of the volume); for **high resilience** ($\rho=0.90$ — the book refills fast) the schedule is **front-loaded** and the terminal block vanishes ($n_N=518$). The Obizhaeva–Wang symmetry is an exact check: in the risk-neutral limit ($\lambda=0$) the two blocks are equal to machine precision ($n_1/n_N=1.000000$ for $\rho=0.05,0.2,0.5$).
+Read the first and last columns: for **low resilience** ($\rho=0.05$ — the book barely refills) the schedule is nearly symmetric with a **large terminal block** ($n_N=61{,}309$, and the last quarter carries 25% of the volume); for **high resilience** ($\rho=0.90$ — the book refills fast) the schedule is **front-loaded** and the terminal block vanishes ($n_N=518$). The Obizhaeva–Wang limit is visible in the ratio $n_1/n_N$: it falls toward $1$ as resilience vanishes — $1.41$ at $\rho=0.05$, $5.6$ at $\rho=0.40$, $36.6$ at $\rho=0.90$ (exactly $1$ only in the joint limit $\lambda\to0,\ \rho\to0$).
 
 **B. Dark-pool allocation.** The break-even fill probability on the example numbers.
 

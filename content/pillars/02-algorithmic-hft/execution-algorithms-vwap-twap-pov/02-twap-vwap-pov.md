@@ -36,7 +36,7 @@ Over $B$ buckets with realized volume shares $\\phi_t$, this is $\\text{VWAP}=\\
 **TWAP schedule.** Equal child sizes,
 $$q_t = \\frac{V}{B} + \\varepsilon_t,$$
 where $\\varepsilon_t$ is bounded anti-gaming noise. Its weights are flat, $w_t^{\\text{exec}}=1/B$, so it executes at the *time-weighted* average price, $\\bar p_{\\text{TWAP}}=\\frac1B\\sum_t p_t$, which deviates from VWAP by the *covariance between price and volume*,
-$$\\bar p_{\\text{TWAP}} - \\text{VWAP} = \\underbrace{\\text{Cov}_{\\phi}\\left(p,\\, \\phi\\right)}_{\\text{where the day's volume sits}}.$$
+$$\\text{VWAP} - \\bar p_{\\text{TWAP}} = \\underbrace{\\text{Cov}_{\\phi}\\left(p,\\, \\phi\\right)}_{\\text{covariance of price with volume share}},$$
 
 **VWAP schedule.** Proportional to the *forecast* profile $\\phi_t$:
 $$q_t = V\\,\\phi_t + \\varepsilon_t .$$
@@ -73,8 +73,8 @@ def te(s):                                   # tracking error vs realized volume
     w=[x/X for x in s]; return math.sqrt(sum((w[k]-vol[k])**2 for k in range(B)))
 ev, et = exec_avg(vwap_sched), exec_avg(twap_sched)
 print(f"day VWAP benchmark = {vwap_bench:.4f}   (arrival S0={S0})")
-print(f"VWAP engine avg exec = {ev:.4f}   vs VWAP {1e4*(ev-vwap_bench):+.2f} bps, vs arrival {1e4*(ev-S0)/S0:+.2f} bps")
-print(f"TWAP engine  avg exec = {et:.4f}   vs VWAP {1e4*(et-vwap_bench):+.2f} bps, vs arrival {1e4*(et-S0)/S0:+.2f} bps")
+print(f"VWAP engine avg exec = {ev:.4f}   vs VWAP {1e4*(ev-vwap_bench)/vwap_bench:+.2f} bps, vs arrival {1e4*(ev-S0)/S0:+.2f} bps")
+print(f"TWAP engine  avg exec = {et:.4f}   vs VWAP {1e4*(et-vwap_bench)/vwap_bench:+.2f} bps, vs arrival {1e4*(et-S0)/S0:+.2f} bps")
 print(f"volume-profile tracking error:  VWAP {te(vwap_sched):.4f}   TWAP {te(twap_sched):.4f}")
 print("child sizes  VWAP:", [round(s) for s in vwap_sched])
 print("child sizes  TWAP:", [round(s,1) for s in twap_sched])
@@ -82,11 +82,10 @@ print("child sizes  TWAP:", [round(s,1) for s in twap_sched])
 ```
 day VWAP benchmark = 100.8039   (arrival S0=100.0)
 VWAP engine avg exec = 100.8039   vs VWAP +0.00 bps, vs arrival +80.39 bps
-TWAP engine  avg exec = 100.7436   vs VWAP -603.94 bps, vs arrival +74.36 bps
+TWAP engine  avg exec = 100.7436   vs VWAP -5.99 bps, vs arrival +74.36 bps
 volume-profile tracking error:  VWAP 0.0000   TWAP 0.0607
 child sizes  VWAP: [5263, 6842, 7895, 8421, 7895, 7368, 6316, 5789, 6316, 7368, 8947, 10000, 11579]
 child sizes  TWAP: [7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3]
-
 ```
 
 **Read the numbers.** With volume = forecast, the VWAP engine hits the benchmark to four decimals ($+0.00$ bps) and its tracking error is $0.0000$ by construction. TWAP, spreading equally across a U-shaped day, over-trades the thin midday and under-trades the heavy open/close — a tracking error of $0.0607$ and a $\\approx\\!6$ bps gap vs the VWAP benchmark. The VWAP schedule's children (5,263 … 11,579) trace the smile; TWAP's are flat. **The VWAP engine is not smarter — it is *matched to the day's volume*; TWAP is deliberately volume-blind.**
@@ -96,7 +95,7 @@ child sizes  TWAP: [7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **"Beat VWAP" is meaningless as a discovery — it is a benchmarking artifact.** Because VWAP depends on your *own* realized volume, an engine can "beat" the day's VWAP merely by over-trading the heavy buckets (or a broker by dominating volume). Hasbrouck Ch 14 and Harris (2003) both flag this: **VWAP slippage is gameable**, so it is a *reporting* benchmark, not a *decision* benchmark.
-2. **TWAP's volume blindness is a feature and a bug.** No forecast needed (good on an illiquid, unpredictable name) but zero volume awareness (bad on any day with an U-shaped profile, where it systematically mis-paces).
+2. **TWAP's volume blindness is a feature and a bug.** No forecast needed (good on an illiquid, unpredictable name) but zero volume awareness (bad on any day with a U-shaped profile, where it systematically mis-paces).
 3. **VWAP's accuracy is hostage to the forecast.** The $0.0000$ above was a *free gift*: realized volume exactly equaled forecast. The moment a CPI print moves volume, the VWAP engine's tracking error explodes (page 05).
 4. **POV's self-pacing is exposure.** POV cannot be front-run by sharing size, but it *must* participate in whatever volume arrives — on an informed down-trend it is forced to sell into the knife (adverse selection).
 

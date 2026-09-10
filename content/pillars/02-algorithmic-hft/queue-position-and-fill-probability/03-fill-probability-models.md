@@ -47,7 +47,7 @@ When $x$ is large (deep in the queue) $\frac{x}{Q}\to1$ and cancels help maximal
 
 #### 2.3 The Cont–Kukanov fill function (random outflow)
 
-The general statement (Cont & Kukanov 2017): for queue $Q$ ahead, order size $L$, and random outflow $\xi$ with distribution $F$,
+The general statement (Cont & Kukanov 2017): for queue position $x$ ahead, order size $L$, and random outflow $\xi$ with distribution $F$,
 
 $$\boxed{\;\mathbb{E}[\text{filled}] = \int \Big[(\xi-Q)^+ - (\xi-Q-L)^+\Big]\,dF(\xi)\;}$$
 

@@ -29,7 +29,7 @@ Each is one honest step past the tractable core. Everything farther (Hawkes self
 
 #### 2.1 Cont–Kukanov fill function and the value of being early
 
-For queue $Q$ ahead, order size $L$, and random outflow $\xi\!\sim\!F$,
+For queue position $x$ ahead, order size $L$, and random outflow $\xi\!\sim\!F$,
 
 $$\mathbb{E}[\text{filled}] = \mathbb{E}\big[(\xi-Q)^+ - (\xi-Q-L)^+\big].$$
 
@@ -40,9 +40,9 @@ $$\mathbb{E}[(\xi-Q)^+] = m\,e^{-Q/m},\qquad
 
 #### 2.2 Optimal multi-venue overbooking
 
-With $K$ venues, queues $Q_k$ ahead, and the same limit price, total bought is
+With $K$ venues, queue positions $x_k$ ahead, and the same limit price, total bought is
 
-$$A(X,\xi) = M + \sum_{k=1}^{K}\big[(\xi_k-Q_k)^+ - (\xi_k-Q_k-L_k)^+\big],$$
+$$A(X,\xi) = M + \sum_{k=1}^{K}\big[(\xi_k-x_k)^+ - (\xi_k-x_k-L_k)^+\big],$$
 
 where $M$ is the market-order catch-up at the horizon. Because the $\xi_k$ are **imperfectly correlated**, posting $L_k$ on each of several venues ("overbooking") and cancelling the unused rest drives **non-execution risk down faster than it raises impact** — the fills are a diversified portfolio. This is the optimal-placement insight of Cont–Kukanov (2017): size is determined jointly by queue position *and* the correlation of outflows across venues.
 
@@ -139,7 +139,7 @@ Three lessons in the numbers. **(i)** Queue position is a fill-ratio *tax*: movi
 1. **Ignoring outflow correlation across venues.** Overbooking only diversifies when $\xi_k$ are imperfectly correlated. On venues with the same taker base (or during a market-wide sweep) the fills co-move and the diversification benefit vanishes exactly when you need it.
 2. **OFI is an aggregate, not a queue.** $\Delta P=\beta\,\mathrm{OFI}/\mathrm{depth}$ prices *average* impact; it is blind to *your* queue position. Using a single $\beta$ to size a passive edge double-counts price impact that your position may never experience (or misses impact your fills do incur).
 3. **Reactive intensity mis-specification.** The concave $\lambda(q)$ is an empirical shape, not a law; on venues with different tick sizes / fee structures the curvature differs. Calibrating on the wrong venue's shape biases the fill forecast.
-4. **Static overbooking.** The optimal $L_k$ depends on the *live* queues $Q_k$ and the remaining time — a static split is stale within seconds. Production systems re-optimise continuously.
+4. **Static overbooking.** The optimal $L_k$ depends on the *live* queue positions $x_k$ and the remaining time — a static split is stale within seconds. Production systems re-optimise continuously.
 5. **Fees and rebates dominate at the margin.** $r_k$ can flip sign across venues (maker-taker vs inverted); the queue-optimal placement is wrong if the fee term is dropped. This is a first-order cost, not a rounding error.
 
 ---

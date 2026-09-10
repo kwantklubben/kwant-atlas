@@ -40,7 +40,7 @@ This folder is the **execution-algorithms topic-folder** for Pillar 2. It is a *
 | **Implementation-shortfall (arrival)** | schedule from impact model (AC curve) | decision-time price $m_0$ | flexible urgency | when PM cares about *decision*, not a day benchmark | model mis-calibrated impact |
 
 **VWAP benchmark (Foucault eq 2.7).** The market's day VWAP is the volume-weighted mean of transaction prices,
-$$\\text{VWAP} = \\sum_{k=1}^K w_t\\,p_k ,\\qquad w_k = \\frac{v_k}{\\sum_{k=1}^K v_k},$$
+$$\\text{VWAP} = \\sum_{k=1}^K w_k\\,p_k ,\\qquad w_k = \\frac{v_k}{\\sum_{k=1}^K v_k},$$
 equivalently over buckets $\\text{VWAP}=\\sum_{t=1}^B \\phi_t\\,p_t$ when $\\phi_t$ is realized volume share. **Key flaw (Hasbrouck Ch 14; Foucault):** VWAP depends on your *own* realized volume — a broker that handles a large share of the day sets the benchmark and "always wins." It is **gameable** (Harris 2003).
 
 **VWAP slippage / tracking error.** The engine's target. Its average execution price $\\bar p = \\sum_t w_t^{\\text{exec}} p_t$ (weights = child shares) beats the benchmark when $\\bar p < \\text{VWAP}$ for a buy. The schedule's **tracking error** is the RMS deviation of its child-allocation weights from realized volume shares,

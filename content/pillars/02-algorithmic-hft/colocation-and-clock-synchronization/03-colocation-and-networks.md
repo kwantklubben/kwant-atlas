@@ -48,7 +48,7 @@ The verified anchors (from [[pillars/02-algorithmic-hft/colocation-and-clock-syn
 
 Note London–NY: the realized 59.6 ms exceeds even the straight-fiber ideal 55.7 ms because an *undersea fiber* route is longer and includes optical/electrical regeneration — yet it is the same order as physics demands, underscoring that the race is now about geometry, not code.
 
-**Why the geometry wins.** $d$ in the great-circle formula is straight-line distance; fiber hugs railroad/terrain curves, microwave flies straight over horizon towers. The ratio of what you can buy per kilometre, air vs fiber, is $(0.9997/0.6666) - 1 = 0.50$ — i.e. **50%** less propagation latency on an air path, *before* line-of-sight constraints.
+**Why the geometry wins.** $d$ in the great-circle formula is straight-line distance; fiber hugs railroad/terrain curves, microwave flies straight over horizon towers. The ratio of what you can buy per kilometre, air vs fiber, is $0.9997/0.6666 = 1.50$ — i.e. microwave is **50% *faster*** in speed, which is **~33% *less* latency per km** ($1-0.6666/0.9997$) on an air path, *before* line-of-sight constraints.
 
 ---
 

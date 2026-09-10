@@ -121,7 +121,7 @@ Read the table: the closed form and the 400,000-path Monte Carlo agree to four d
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **"Optimise the biggest stage."** Optimising the strategy (150 ns) while serialize+TX (600 ns) dominates buys 150 ns of a 1,200 ns budget and may not move the win probability at all. **Always rank stages by contribution to $T_{\text{T2T}}$ before touching code.**
-2. **Mean-blindness (ignoring the tail).** Planning on the mean 250 ns while p99.9 is 5,000 ns means 0.4% of your quotes are stale enough to be swept. At 2% sweep probability and \$50 adverse move, that is \$0.04 of expected loss *per quote* — millions per day at volume. See [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/05-failure-modes-and-practice|05 · Failure Modes]].
+2. **Mean-blindness (ignoring the tail).** Planning on the mean 250 ns while p99.9 is 5,000 ns means ~4% of your quotes are stale enough to be swept. At 2% sweep probability and \$50 adverse move, that is \$0.04 of expected loss *per quote* — millions per day at volume. See [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/05-failure-modes-and-practice|05 · Failure Modes]].
 3. **Jumping to silicon.** FPGA is the *last* microsecond. Kernel bypass gets 24.8 µs → 1.2 µs for zero hardware spend. Buying an FPGA first is buying the expensive microsecond before the cheap ones.
 4. **Ignoring the saturation.** Past $\Delta \gtrsim 3\sigma$ more speed is worth *nothing* — the S-curve's tails are flat. The arms race is rational only while firms are inside the steep part; once everyone is sub-100 ns, further spend is a pure cost transfer.
 

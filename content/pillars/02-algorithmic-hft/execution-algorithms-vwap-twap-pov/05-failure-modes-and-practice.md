@@ -31,7 +31,7 @@ The practical objective: make each failure quantitative, then state the desk-lev
 
 **Gaming: the fixed-schedule concession.** Let a TWAP engine ship a fixed child $X/B$ at deterministic 60-second intervals. A sniper who has reverse-engineered the heartbeat buys $h$ shares just before each child, pushing the quote up by $\\Delta$; the engine's child then fills $\\Delta$ worse. Per child the engine pays an extra $\\tfrac{X}{B}\\Delta$, so over the parent:
 $$\\text{extra cost} = \\sum_{t=1}^B \\tfrac{X}{B}\\,\\Delta = X\\Delta.$$
-The fix is randomization (Foucault: VWAP "can be gamed by slow trickling") — child size, timing, and venue all get bounded noise, so the schedule is *not* a reproduceable linear prediction. This is why the anti-gaming $\\varepsilon_t$ in page 01/02 is not decoration.
+The fix is randomization (Foucault: VWAP "can be gamed by slow trickling") — child size, timing, and venue all get bounded noise, so the schedule is *not* a reproducible linear prediction. This is why the anti-gaming $\\varepsilon_t$ in page 01/02 is not decoration.
 
 **Misestimation: tracking-error magnification.** From page 04, a VWAP schedule with weights $w=q/V$ faces tracking error
 $$\\text{TE} = \\sqrt{\\textstyle\\sum_t \\left(w_t - \\phi_t^{\\text{real}}\\right)^2},$$

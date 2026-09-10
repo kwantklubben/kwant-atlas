@@ -93,31 +93,54 @@ def bsm_call(S, X, T, r, sig):
     d1 = (math.log(S/X)+(r+0.5*sig**2)*T)/(sig*math.sqrt(T)); d2 = d1 - sig*math.sqrt(T)
     return S*N(d1) - X*math.exp(-r*T)*N(d2)
 
+def poisson(lam):
+    # Knuth: multiply uniforms until their product falls below exp(-lam)
+    L = math.exp(-lam); k = 0; p = 1.0
+    while True:
+        k += 1; p *= random.random()
+        if p <= L: break
+    return k - 1
+
 def merton_jump_call(S, X, T, r, sig, lam, muJ, sigJ, npaths):
     kappa = math.exp(muJ + 0.5*sigJ**2) - 1
     tot = 0.0
     for _ in range(npaths):
-        W = random.gauss(0, 1)
-        L = math.exp(-lam*T); p = 1.0; nJ = 0; u = random.random()   # sample Poisson
-        while u > p:
-            nJ += 1; p *= lam*T/nJ
-        J = sum(random.gauss(muJ, sigJ) for _ in range(nJ))
+        W  = random.gauss(0, 1)
+        nJ = poisson(lam*T)                                     # N_jumps ~ Poisson(lam*T)
+        J  = sum(random.gauss(muJ, sigJ) for _ in range(nJ))     # sum of the jumps
         ST = S*math.exp((r - 0.5*sig**2 - lam*kappa)*T + sig*math.sqrt(T)*W + J)
         tot += max(ST - X, 0.0)
     return math.exp(-r*T) * tot / npaths
 
+def merton_jump_call_exact(S, X, T, r, sig, lam, muJ, sigJ, nterms=100):
+    # Poisson mixture of lognormals -- closed form, no MC (discount at r, drift shifts)
+    kappa = math.exp(muJ + 0.5*sigJ**2) - 1
+    def payoff(m, v):                                            # E[(S e^Y - X)^+], Y~N(m,v)
+        d1 = (m + v - math.log(X/S))/math.sqrt(v); d2 = (m - math.log(X/S))/math.sqrt(v)
+        return S*math.exp(m + 0.5*v)*N(d1) - X*N(d2)
+    tot = 0.0
+    for n in range(nterms):
+        w = math.exp(-lam*T) * (lam*T)**n / math.factorial(n)     # P(N_jumps = n)
+        m = (r - 0.5*sig**2 - lam*kappa)*T + n*muJ
+        v = sig**2*T + n*sigJ**2
+        tot += w * payoff(m, v)
+    return math.exp(-r*T) * tot
+
 random.seed(42)
 S, X, T, r, sig = 100.0, 100.0, 1.0, 0.05, 0.20
-bs = bsm_call(S, X, T, r, sig)
-mj = merton_jump_call(S, X, T, r, sig, 2.0, -0.10, 0.10, 200000)
-print(f"pure BSM call (sigma=20%)           = {bs:.4f}")
-print(f"Merton jump-diffusion MC (lam=2)    = {mj:.4f}")
+bs  = bsm_call(S, X, T, r, sig)
+mj  = merton_jump_call(S, X, T, r, sig, 2.0, -0.10, 0.10, 200000)
+mje = merton_jump_call_exact(S, X, T, r, sig, 2.0, -0.10, 0.10)
+print(f"pure BSM call (sigma=20%)              = {bs:.4f}")
+print(f"Merton jump-diffusion MC (lam=2)       = {mj:.4f}")
+print(f"Merton jump-diffusion exact (mixture)  = {mje:.4f}")
 ```
 ```
-pure BSM call (sigma=20%)           = 10.4506
-Merton jump-diffusion MC (lam=2)    = 26.0969
+pure BSM call (sigma=20%)              = 10.4506
+Merton jump-diffusion MC (lam=2)       = 13.3015
+Merton jump-diffusion exact (mixture)  = 13.3506
 ```
-The two-factor jump model prices dramatically higher — constant-vol BSM cannot represent the tail risk, exactly the structural failure of [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|05 · Failure Modes]].
+The jump model prices the call materially higher ($13.35$ vs $10.45$): the fat left tail makes the payoff right-skewed, and constant-vol BSM cannot represent that tail risk — exactly the structural failure of [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|05 · Failure Modes]].
 
 ---
 

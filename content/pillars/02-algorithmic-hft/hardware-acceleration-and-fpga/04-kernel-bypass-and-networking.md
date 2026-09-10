@@ -59,7 +59,7 @@ for an 84-byte minimum frame. **A NIC faster than this ceiling buys nothing** fo
 
 **Why busy-poll is stable (and interrupts are not).** With interrupts, packet processing cost grows with *rate* and the system has a positive-feedback failure mode ("interrupt livelock"): higher rate ⇒ more interrupts ⇒ less real work ⇒ queues grow (Little's law, §2 of [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/02-the-tick-to-trade-pipeline|02]]) ⇒ more delay. Busy-polling makes cost **constant per packet**, so latency stays flat until the core saturates — a *hard* ceiling instead of a soft cliff.
 
-**DMA and the PCIe floor.** A zero-copy receive moves a packet by DMA with no CPU-visible copy. The PCIe transfer of a 64-byte payload at 16 GB/s is $64/16\times10^{-9}$ s = **4.00 ns** — negligible next to the ~50–100 ns of NIC/DMA descriptor overhead. The lesson: on the bypass path, *overhead dominates payload*; optimise desynchronisation, not bytes.
+**DMA and the PCIe floor.** A zero-copy receive moves a packet by DMA with no CPU-visible copy. The PCIe transfer of a 64-byte payload at 16 GB/s is $64/16\times10^{-9}$ s = **4.00 ns** — negligible next to the ~50–100 ns of NIC/DMA descriptor overhead. The lesson: on the bypass path, *overhead dominates payload*; optimise the descriptor path, not the payloadon, not bytes.
 
 ---
 

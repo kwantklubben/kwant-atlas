@@ -29,7 +29,7 @@ Three truths, three "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The impact non-linearity (Almgren–Chriss temporary impact).** In the AC model the temporary impact paid on a block traded at rate $v$ is linear:
-$$h(v) = \\varepsilon + \\frac{\\eta}{\\tau}\\,n,_\\text{ per share,}$$ so the *total* cost of trading $n$ shares in one interval is $n\\cdot h(n/\\tau)$ — and the key fact is that this **grows quadratically in the slice size**. The temporary-impact contribution to expected cost is
+$$h(v) = \\varepsilon + \\frac{\\eta}{\\tau}\\,v \\quad\\text{(per share)},$$ so the *total* cost of trading $n$ shares in one interval is $n\\cdot h(n/\\tau)$ — and the key fact is that this **grows quadratically in the slice size**. The temporary-impact contribution to expected cost is
 $$\\frac{\\tilde\\eta}{\\tau}\\sum_{t=1}^N n_t^2, \\qquad \\text{so if you split into } N \\text{ equal slices, it becomes } \\frac{\\tilde\\eta}{\\tau}\\,\\frac{X^2}{N}.$$
 **Splitting into $N$ equal parts divides the temporary-impact term by $N$** — not by $\\sqrt N$, exactly by $N$. That is the cleanest number in the field: *why slicing is not optional.*
 
@@ -53,17 +53,17 @@ print(f"Parent buy X=1,000,000  S0=100  T=5d  N=50 slices")
 print(f"temporary-impact cost  SWEEP (all at once) = ${sweep:,.0f}")
 print(f"temporary-impact cost  TWAP  (equal slices) = ${twap:,.0f}")
 print(f"reduction by slicing                        = ${sweep-twap:,.0f}")
-print(f"per-share: sweep {100*sweep/(X*S0):.2f} bps   twap {100*twap/(X*S0):.2f} bps")
+print(f"per-share: sweep {1e4*sweep/(X*S0):.2f} bps   twap {1e4*twap/(X*S0):.2f} bps")
 ```
 ```
 Parent buy X=1,000,000  S0=100  T=5d  N=50 slices
 temporary-impact cost  SWEEP (all at once) = $25,020,000
 temporary-impact cost  TWAP  (equal slices) = $520,000
 reduction by slicing                        = $24,500,000
-per-share: sweep 25.02 bps   twap 0.52 bps
+per-share: sweep 2502.00 bps   twap 52.00 bps
 ```
 
-**Read the number.** The unbonded $\\varepsilon X = \\$20{,}000$ fixed cost is identical in both — it is schedule-independent. The rest is the quadratic term, and it collapses by a factor of $50$ because the temporary-impact cost scales as $\\sum n_t^2$. Sweeping a $5\\text{-}day$ parent order in one shot would cost the desk ~$25$ bps of pure impact *before any price drift*; slicing brings it under $1$ bps. This is why the practice exists.
+**Read the number.** The fixed $\\varepsilon X = \\$20{,}000$ cost is identical in both — it is schedule-independent. The rest is the quadratic term, and it collapses by a factor of $50$ because the temporary-impact cost scales as $\\sum n_t^2$. Sweeping a $5\\text{-}day$ parent order in one shot would cost the desk ~$2500$ bps of pure impact *before any price drift*; slicing brings it under $100$ bps. This is why the practice exists.
 
 ---
 

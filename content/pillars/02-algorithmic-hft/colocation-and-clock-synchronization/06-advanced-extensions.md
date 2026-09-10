@@ -97,7 +97,7 @@ Uniform-price clearing (the mechanism behind batch auctions):
   stale quotes cannot be selectively picked off; the sniper's time edge inside a batch is 0.
 ```
 
-Read the table across: a 1 ms edge is worth $75M under continuous matching but only **$75k** under a 1-second batch — two and a half orders of magnitude less (the BCS 1/1000 rule). The value column discriminates cleanly: 100 µs is worth 10× less than 1 ms, and the sniping exposure is linear in $\delta$. That single compression is what turns the speed race into a price race.
+Read the table across: a 1 ms edge is worth $75M under continuous matching but only **$75k** under a 1-second batch — three orders of magnitude less (the BCS 1/1000 rule). The value column discriminates cleanly: 100 µs is worth 10× less than 1 ms, and the sniping exposure is linear in $\delta$. That single compression is what turns the speed race into a price race.
 
 ---
 

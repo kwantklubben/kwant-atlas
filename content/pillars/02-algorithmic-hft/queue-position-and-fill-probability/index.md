@@ -57,7 +57,7 @@ You start filling once outflow passes $x$, and you finish once it passes $x+L$. 
 
 ### 3. Computational Implementation — the fill-probability engine
 
-Runs on **numpy** (and stdlib) only. It reproduces every verified number above: the negative-binomial closed form matches the Monte Carlo fill rate, the mean-field ODE brackets the Gillespie simulation, and the exact Markov-chain mid-move probability matches simulation to 3 decimals.
+Runs on the **standard library only** here (pages 04 and 06 additionally use numpy). It reproduces every verified number above: the negative-binomial closed form matches the Monte Carlo fill rate, the mean-field ODE brackets the Gillespie simulation, and the exact Markov-chain mid-move probability matches simulation to ~2 decimals (within $0.002$).
 
 ```python
 import random
@@ -105,7 +105,7 @@ Hub signposts — the full failure analysis lives in [[pillars/02-algorithmic-hf
 ### 5. Canonical Literature & Study References
 
 - **Cont, Rama; Stoikov, Sasha; Talreja, Rishi** — "A stochastic model for order book dynamics," *Operations Research* 58(3), 549–563 (2010). *The foundational tractable queue model: independent Poisson queues, birth–death first-passage, Laplace-transform conditional probabilities. Read §2 (model), §4 (Laplace methods).* `ADV`
-- **Cont, Rama; Kukanov, Arseniy** — "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017). *The fill function $(\xi-Q)^+ - (\xi-Q-L)^+$ and the queue-position-aware optimal placement / multi-venue overbooking problem. Read §2–3.* `ADV`
+- **Cont, Rama; Kukanov, Arseniy** — "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017). *The fill function $(\xi-x)^+ - (\xi-x-L)^+$ and the queue-position-aware optimal placement / multi-venue overbooking problem. Read §2–3.* `ADV`
 - **Cont, Rama; Kukanov, Arseniy; Stoikov, Sasha** — "The price impact of order book events," *Journal of Financial Markets* 17, 47–88 (2014). *The linear OFI price-impact law $\Delta P=\beta\,\text{OFI}/\text{depth}$ — the bridge from queue dynamics to price moves. Read §2.3–4.* `ADV`
 - **Lo, Andrew W.; MacKinlay, A. C.; Zhang, June** — "Econometric models of limit-order executions," *Journal of Financial Economics* 65(1), 31–71 (2002). *The classic empirical survival/hazard model of limit-order execution times — "how long until I fill or cancel."* `ADV`
 - **Gould, Martin D.; Porter, M. A.; Williams, S.; McDonald, M.; Fenn, D. J.; Howison, S. D.** — "Limit order books," *Quantitative Finance* 13(11), 1709–1742 (2013). *Structured empirical survey: price-time vs pro-rata, cancel-to-trade ratios, latency effects on conditional event studies. arXiv:1012.0349.* `ADV`

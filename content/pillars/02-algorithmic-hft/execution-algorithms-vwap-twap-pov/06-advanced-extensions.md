@@ -69,11 +69,11 @@ print(f"  front-loaded  avg exec = {ea:.4f}   IS vs arrival {bps(ea):+.2f} bps")
 print(f"  front-loading beats VWAP on a rising tape by {bps(ev)-bps(ea):+.2f} bps\n")
 
 rho=0.08; k_spike=B-3
-vol_spike=[v*(3.0 if k==k_spike else 1.0) for k in range(B)]
+vol_spike=[vol[k]*(3.0 if k==k_spike else 1.0) for k in range(B)]
 Z2=sum(vol_spike)
 print(f"late volume spike (3x in bucket {k_spike} of {B})")
 print(f"  that bucket = {100*vol_spike[k_spike]/Z2:.1f}% of realized day volume")
-print(f"  FIXED VWAP ships {100*X*vol[k_spike]/Z/X:.1f}% of parent (sized from forecast)")
+print(f"  FIXED VWAP ships {100*vol[k_spike]:.1f}% of parent (sized from forecast)")
 print(f"    -> under-participates the spike and carries residual size late")
 print(f"  POV(rho={rho}) sizes ~{X*rho:,.0f} scrip and rides the actual market volume,")
 print("    shrinking when volume dries up - immune to profile misestimation.")
@@ -85,14 +85,14 @@ trend day (drift +1%, VWAP=100.8410, arrival S0=100.0)
   front-loading beats VWAP on a rising tape by +18.43 bps
 
 late volume spike (3x in bucket 10 of 13)
-  that bucket = 20.0% of realized day volume
-  FIXED VWAP ships 9.4% of parent (sized from forecast)
+  that bucket = 22.8% of realized day volume
+  FIXED VWAP ships 8.9% of parent (sized from forecast)
     -> under-participates the spike and carries residual size late
   POV(rho=0.08) sizes ~8,000 scrip and rides the actual market volume,
     shrinking when volume dries up - immune to profile misestimation.
 ```
 
-**Read the numbers.** On the rising day, the VWAP engine executes at the VWAP ($+84.1$ bps of IS vs the decision price) while the front-loaded arrival-price engine buys early and lands at $+65.67$ bps — **$18.4$ bps cheaper** precisely *because* it ignored the day benchmark and followed the drift instead. That $18.4$ bps is the value of picking the right benchmark (IS on a trend) and the whole point of benchmark-aware scheduling. Second, on a late volume spike the fixed VWAP engine sizes its child from the *forecast* profile, which allots $9.4\\%$ of the parent to a bucket that then *realizes* $20.0\\%$ of the day — under-participating the spike and carrying residual size into the thin close — while POV sizes its child to the actual arriving volume share ($\\sim8{,}000$ scrip scaled to live volume) and never over-commits.
+**Read the numbers.** On the rising day, the VWAP engine executes at the VWAP ($+84.1$ bps of IS vs the decision price) while the front-loaded arrival-price engine buys early and lands at $+65.67$ bps — **$18.4$ bps cheaper** precisely *because* it ignored the day benchmark and followed the drift instead. That $18.4$ bps is the value of picking the right benchmark (IS on a trend) and the whole point of benchmark-aware scheduling. Second, on a late volume spike the fixed VWAP engine sizes its child from the *forecast* profile, which allots $8.9\\%$ of the parent to a bucket that then *realizes* $22.8\\%$ of the day — under-participating the spike and carrying residual size into the thin close — while POV sizes its child to the actual arriving volume share ($\\sim8{,}000$ scrip scaled to live volume) and never over-commits.
 
 ---
 

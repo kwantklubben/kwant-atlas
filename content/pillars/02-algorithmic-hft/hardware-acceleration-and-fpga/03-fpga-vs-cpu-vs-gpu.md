@@ -16,7 +16,7 @@ tags:
 
 There are three compute substrates and each owns one corner of a triangle you cannot have all of at once:
 
-- **CPU (software)** — the most *flexible*: any strategy, any model, patched in a deploy at 3 p.m. Latency ceiling ≈ 1 µs (tuned kernel-bypass) to 25 µs (naive stack).
+- **CPU (software)** — the most *flexible*: any strategy, any model, patched in a deploy at 3 p.m. Latency ceiling ≈ 1.2 µs (tuned kernel-bypass) to 25 µs (naive stack).
 - **FPGA (reconfigurable silicon)** — the most *latency-deterministic*: ~65 ns, fixed and knowable, because logic and state are *placed* rather than fetched. It is also the most *rigid*: only what the designer wired, and a bug is a hardware bug.
 - **GPU (SIMD accelerator)** — the most *throughput*: thousands of lanes evaluating the same formula on different data. It is *terrible* at single-stream latency (~30 µs including host↔device) and *superb* at the opposite problem — a million Monte Carlo paths, a 10,000-instrument risk grid.
 
@@ -26,7 +26,7 @@ Three "aha"s:
 
 1. **FPGA is not a faster CPU; it is a *different* machine.** A CPU executes a sequence of instructions; an FPGA *is* a circuit. You cannot port a strategy to FPGA — you *re-place* it as dataflow, and only strategies that are simple, deterministic, and branch-free survive the trip.
 2. **GPU is not a faster FPGA; it is the opposite trade.** GPU buys 400× throughput for a ~500× latency penalty. It is the right tool for overnight risk, end-of-day backtests, and calibration — never for tick-to-trade.
-3. **SIMD is the free middle ground.** Before buying silicon, vectorize: one AVX-512/NEON instruction does 8–16 operations per cycle. A CPU with good SIMD often beats a GPU on small grids (no transfer cost) and is *always* cheaper to maintain.
+3. **SIMD is the free middle ground.** Before buying silicon, vectorize: one AVX-512 instruction does 8–16 operations per cycle (NEON: 4–16). A CPU with good SIMD often beats a GPU on small grids (no transfer cost) and is *always* cheaper to maintain.
 
 > **Why it matters.** The most common expensive mistake in this tier is reaching for an FPGA for a workload that is throughput-bound, or for a GPU for a workload that is latency-bound. The substrate is not a status symbol; it is an answer to a specific question.
 
@@ -67,7 +67,7 @@ FPGA is worth it iff $T_{\text{payback}}$ is short relative to the strategy's de
 Stdlib only. We compute FPGA payback vs daily alpha, cost per nanosecond saved, the GPU-vs-CPU risk speedup, and the three-tier latency/throughput table.
 
 ```python
-NRE, per_board, boards = 1_200_000, 25_000, 2
+NRE, per_board, boards = 1_250_000, 25_000, 2
 fpga_cost = NRE + per_board*boards
 print(f"FPGA fixed cost = NRE ${NRE:,} + {boards} boards x ${per_board:,} = ${fpga_cost:,}")
 print("\nbreakeven vs daily alpha capture (FPGA only pays if latency < venue threshold):")
@@ -75,8 +75,8 @@ for A in (2_000, 5_000, 10_000, 25_000):
     d = fpga_cost/A
     print(f"  alpha ${A:>6,}/day -> breakeven {d:8.1f} days ({d/252:.2f} yr)")
 
-ns_saved = 950 - 60
-print(f"\nlatency saved (software 950 ns -> FPGA 60 ns) = {ns_saved} ns")
+ns_saved = 1200 - 65
+print(f"\nlatency saved (software 1200 ns -> FPGA 65 ns) = {ns_saved} ns")
 print(f"cost per nanosecond saved = ${fpga_cost/ns_saved:,.0f} (one-time)")
 sw_build = 350_000
 print(f"pure-software build ${sw_build:,} -> FPGA is {fpga_cost/sw_build:.1f}x the fixed cost")
@@ -88,22 +88,22 @@ print(f"  scenario-prices = {sims:,}")
 print(f"  CPU @ {cpu_rate/1e6:.0f}M/s : {sims/cpu_rate:9.1f} s")
 print(f"  GPU @ {gpu_rate/1e9:.0f}G/s  : {sims/gpu_rate:9.6f} s  ({gpu_rate/cpu_rate:.0f}x)")
 print("\nlatency vs throughput: the three tiers")
-tiers = [("CPU (software)", 950, 2e6), ("FPGA (silicon)", 60, 2e8), ("GPU (massively parallel)", 30_000, 2e9)]
+tiers = [("CPU (software)", 1200, 2e6), ("FPGA (silicon)", 65, 2e8), ("GPU (massively parallel)", 30_000, 2e9)]
 for name, lat, thr in tiers:
     print(f"  {name:26s} latency {lat:7,d} ns | throughput {thr/1e6:7.1f} M op/s")
 ```
 ```
-FPGA fixed cost = NRE $1,200,000 + 2 boards x $25,000 = $1,250,000
+FPGA fixed cost = NRE $1,250,000 + 2 boards x $25,000 = $1,300,000
 
 breakeven vs daily alpha capture (FPGA only pays if latency < venue threshold):
-  alpha $ 2,000/day -> breakeven    625.0 days (2.48 yr)
-  alpha $ 5,000/day -> breakeven    250.0 days (0.99 yr)
-  alpha $10,000/day -> breakeven    125.0 days (0.50 yr)
-  alpha $25,000/day -> breakeven     50.0 days (0.20 yr)
+  alpha $ 2,000/day -> breakeven    650.0 days (2.58 yr)
+  alpha $ 5,000/day -> breakeven    260.0 days (1.03 yr)
+  alpha $10,000/day -> breakeven    130.0 days (0.52 yr)
+  alpha $25,000/day -> breakeven     52.0 days (0.21 yr)
 
-latency saved (software 950 ns -> FPGA 60 ns) = 890 ns
-cost per nanosecond saved = $1,404 (one-time)
-pure-software build $350,000 -> FPGA is 3.6x the fixed cost
+latency saved (software 1200 ns -> FPGA 65 ns) = 1135 ns
+cost per nanosecond saved = $1,145 (one-time)
+pure-software build $350,000 -> FPGA is 3.7x the fixed cost
 
 GPU vs CPU for overnight risk: 1e6 MC paths x 1e4 instruments
   scenario-prices = 10,000,000,000
@@ -111,12 +111,12 @@ GPU vs CPU for overnight risk: 1e6 MC paths x 1e4 instruments
   GPU @ 2G/s  :  5.000000 s  (400x)
 
 latency vs throughput: the three tiers
-  CPU (software)             latency     950 ns | throughput     2.0 M op/s
-  FPGA (silicon)             latency      60 ns | throughput   200.0 M op/s
+  CPU (software)             latency   1,200 ns | throughput     2.0 M op/s
+  FPGA (silicon)             latency      65 ns | throughput   200.0 M op/s
   GPU (massively parallel)   latency  30,000 ns | throughput  2000.0 M op/s
 ```
 
-Read the ladder. **(i)** FPGA payback swings from 2.5 years to 50 days across a 12.5× range of daily alpha — the *same hardware* is a bargain or a boondoggle depending entirely on the strategy's latency edge. **(ii)** The cost of a nanosecond is **\$1,404 one-time** (~\$6/day amortised over a year) — put that next to the win-probability curve from [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/01-from-zero-intuition|01 · From Zero]] and you can price speed directly. **(iii)** The substrate table is the whole page in three lines: **CPU trades latency for flexibility, FPGA wins latency, GPU wins throughput** — and 10 billion scenario-prices drop from 33 minutes on CPU to 5 seconds on GPU, which is why risk and calibration (not execution) own the GPU.
+Read the ladder. **(i)** FPGA payback swings from 2.5 years to 50 days across a 12.5× range of daily alpha — the *same hardware* is a bargain or a boondoggle depending entirely on the strategy's latency edge. **(ii)** The cost of a nanosecond is **\$1,145 one-time** (~\$4.5/day amortised over a year) — put that next to the win-probability curve from [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/01-from-zero-intuition|01 · From Zero]] and you can price speed directly. **(iii)** The substrate table is the whole page in three lines: **CPU trades latency for flexibility, FPGA wins latency, GPU wins throughput** — and 10 billion scenario-prices drop from 33 minutes on CPU to 5 seconds on GPU, which is why risk and calibration (not execution) own the GPU.
 
 ---
 

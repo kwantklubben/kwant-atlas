@@ -61,7 +61,7 @@ $$N = \lambda\,T.$$
 
 At line rate 14.88 M pkt/s with $T = 30$ ns, $N = 0.45$ packets — **less than one packet of buffering is needed**. This is the theoretical reason an FPGA can hold its entire book and pipeline in on-chip BRAM and why its queueing delay is effectively zero.
 
-**Single-cycle trigger.** At $f = 312.5$ MHz, one clock tick is $1/f = 3.2$ ns. A comparator plus register fits in one tick, so the trigger stage's latency is exactly 3.2 ns — *deterministic*, not "usually fast."
+**Single-cycle trigger.** At $f = 312.5$ MHz, one clock tick is $1/f = 3.2$ ns. The comparator-plus-register logic fits in a single tick (3.2 ns); with its pipeline registers the trigger stage's end-to-end latency is ~10 ns — *deterministic*, not "usually fast."
 
 ---
 

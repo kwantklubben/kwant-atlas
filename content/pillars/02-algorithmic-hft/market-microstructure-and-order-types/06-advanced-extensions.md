@@ -88,7 +88,7 @@ no first-mover race -> latency advantage is worthless (sniping profit = $0).
 market-maker net = rebate 0.0020 + spread 0.0050 - adverse 0.0015 = 0.0055 $/share
 ```
 
-**Read the numbers.** The winning probability decays exponentially ($e^{-\Delta/50}$), so a **10 µs** edge keeps **82%** of the $16M/day pot while a **200 µs** edge keeps only **1.8%** — and crucially, the *slower* firm's 18% share at 10 µs is its **losses**, not its profits. The concavity is exactly the arms-race signature: the first 10 µs of speed buy ~$3M/day of rent; the next 190 µs buy ~$10M more but at vastly higher engineering cost. Batch clearing **zeros** the entire $\Delta$-dependence. Finally, the market maker's **5.5 cents/share** net is *conditional on the adverse-selection term being small* — raise adverse selection above rebate $+$ spread and the strategy is a guaranteed loser.
+**Read the numbers.** The winning probability decays exponentially ($e^{-\Delta/50}$), so a **10 µs** edge keeps **82%** of the $16M/day pot while a **200 µs** edge keeps only **1.8%** — and crucially, the *slower* firm's 18% share at 10 µs is its **losses**, not its profits. The concavity is exactly the arms-race signature: the first 10 µs of speed buy ~$3M/day of rent; the next 190 µs buy a further ~$12.8M more but at vastly higher engineering cost. Batch clearing **zeros** the entire $\Delta$-dependence. Finally, the market maker's **5.5 cents/share** net is *conditional on the adverse-selection term being small* — raise adverse selection above rebate $+$ spread and the strategy is a guaranteed loser.
 
 ---
 

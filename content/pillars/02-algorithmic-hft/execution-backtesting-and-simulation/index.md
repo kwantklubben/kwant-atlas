@@ -35,7 +35,7 @@ This folder is the **execution-backtesting-and-simulation topic-folder** for Pil
 | Quantity | Formula | Verified check |
 |---|---|---|
 | FIFO fill condition | $\text{Filled}(x,L,\xi)=(\xi-x)^+-(\xi-x-L)^+$ | replay: optimistic $1.0000$ vs FIFO $0.3686$ |
-| Fill probability by $T$ (Poisson trades) | $\mathbb{P}(\xi(T)\ge x)=1-\sum_{k<x}\dfrac{(\mu T)^k e^{-\mu T}}{k!}$ | $x{=}1200\text{ sh}$: closed $0.5306$ |
+| Fill probability by $T$ (Poisson trades) | $\mathbb{P}(\xi(T)\ge x)=1-\sum_{k<x}\dfrac{(\mu T)^k e^{-\mu T}}{k!}$, $\xi(T)\sim\text{Poisson}(\mu T)$ | $\mu T{=}1200,\ x{=}1200$: closed $0.5038$ |
 | Expected fill (exponential outflow) | $\mathbb{E}[\text{filled}]=m\!\left(e^{-Q/m}-e^{-(Q+L)/m}\right)$ | $Q{=}1000,L{=}1000,m{=}3000\Rightarrow609.34$ (MC $609.51$) |
 | Fill fraction vs queue position | $\mathbb{E}\!\left[\min\big((\xi-x)^+,L\big)\right]/L$ | $x{=}0\Rightarrow0.9762$, $x{=}1000\Rightarrow0.2238$ |
 | Fill time (pure trades) | $\sim\text{NegBin}(x,p)$, mean $x/\mu$ | mean $100$ ticks at $x{=}5,p{=}0.05$ |
@@ -82,6 +82,13 @@ print("(C) optimistic model (any print fills 100%) vs conservative:")
 for x in (0, 400, 800, 1000):
     print(f"   x={x:>4}: optimistic=1.0000  conservative={E_fraction(x):.4f}"
           f"  overstatement={1/E_fraction(x):.2f}x")
+
+# --- (D) Poisson trade-arrival upper tail: xi(T) ~ Poisson(mu T) share outflow ---
+def poisson_tail(x, lam):                        # P(X >= x), X~Poisson(lam), log-space stable
+    return max(0.0, 1.0 - sum(math.exp(-lam + k*math.log(lam) - math.lgamma(k+1)) for k in range(int(x))))
+print("(D) Poisson fill probability (mu*T = 1200 share outflow):")
+for x in (600, 1200, 1500):
+    print(f"   x={x:>5}: P(xi>=x)={poisson_tail(x, 1200.0):.4f}")
 ```
 ```
 Q=   0: closed= 850.41  MC= 848.49
@@ -97,8 +104,12 @@ Q=3000: closed= 312.85  MC= 316.49
    x= 400: optimistic=1.0000  conservative=0.7728  overstatement=1.29x
    x= 800: optimistic=1.0000  conservative=0.4024  overstatement=2.49x
    x=1000: optimistic=1.0000  conservative=0.2238  overstatement=4.47x
+(D) Poisson fill probability (mu*T = 1200 share outflow):
+   x=  600: P(xi>=x)=1.0000
+   x= 1200: P(xi>=x)=0.5038
+   x= 1500: P(xi>=x)=0.0000
 ```
-Read it as the whole folder in miniature: the closed form and Monte Carlo agree to the third digit (the model is *simulable*); and the naive fill rule is **fine when you are at the front of the queue and catastrophic when you are not** — exactly the regime a backtest with no queue awareness cannot see.
+Read it as the whole folder in miniature: the binomial closed form and its Monte Carlo agree to ~3 decimals (the model is *simulable*); and the naive fill rule is **fine when you are at the front of the queue and catastrophic when you are not** — exactly the regime a backtest with no queue awareness cannot see.
 
 ---
 
@@ -106,7 +117,7 @@ Read it as the whole folder in miniature: the closed form and Monte Carlo agree 
 
 Hub signposts — the full failure analysis lives in [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
-1. **Optimistic fills (the standing-queue delusion).** Treating "a trade printed at my price" as "I filled" books fills that never happened; measured here, the naive rule booked **800 shares** where FIFO fills **234** ($3.4\times$ overbooking).
+1. **Optimistic fills (the standing-queue delusion).** Treating "a trade printed at my price" as "I filled" books fills that never happened; measured on [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/05-failure-modes-and-practice|05]] (F1), the naive rule booked **800 shares** where FIFO fills **234** ($3.4\times$ overbooking).
 2. **Ignoring the queue.** The fill condition is $\xi\ge x$, not $\xi\ge 0$; no-queue fills can overstate edge by nearly an order of magnitude ($\$16.00$ vs $\$1.86$ per order).
 3. **Look-ahead in replay.** Deciding the fill from data *after* the cancellation/decision time inflated $P(\text{fill})$ from $0.3301$ to $1.0000$ in the toy replay.
 4. **Latency omission.** Your modeled fill assumes you acted instantly; real quotes are stale for $\ell$ and the fraction of *adverse* fills rises with it ($P\!\approx\!1-e^{-\rho\ell}$).

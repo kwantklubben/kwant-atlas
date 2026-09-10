@@ -44,9 +44,9 @@ The naive rules are special, biased, cases:
 | look-ahead | $\xi=\xi(T_{\text{day}})$ instead of $\xi(t_{\text{cancel}})$ | **up** (uses the future) |
 | fill at mid | $p=m$ instead of $p=m\pm c$ | **up** |
 
-**Fill probability.** For Poisson trade arrivals at rate $\mu$, the outflow by time $T$ is $\xi(T)\sim\text{Poisson}(\mu T)$, so an order **at the front** ($x\to0$) is filled by $T$ iff at least one trade arrives, and an order at position $x$ (in shares) with average trade size $\bar v$ satisfies
+**Fill probability.** For Poisson trade arrivals at rate $\mu$, the outflow by time $T$ is $\xi(T)\sim\text{Poisson}(\mu T)$, so an order **at the front** ($x\to0$) is filled by $T$ iff at least one trade arrives, and an order at position $x$ (in shares) satisfies (with $\mu$ the share-volume rate)
 
-$$\mathbb P(\text{reach front by }T)=\mathbb P\!\left(\xi(T)\ge x\right)=1-\sum_{k<\,x/\bar v}\frac{(\mu T)^k e^{-\mu T}}{k!},$$
+$$\mathbb P(\text{reach front by }T)=\mathbb P\!\left(\xi(T)\ge x\right)=1-\sum_{k<\,x}\frac{(\mu T)^k e^{-\mu T}}{k!},$$
 
 a Poisson upper-tail (equivalently, the waiting time is negative-binomial with mean $x/\mu$).
 
