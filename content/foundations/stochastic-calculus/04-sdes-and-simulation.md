@@ -23,8 +23,8 @@ read rigorously as an integral equality $X_t=X_0+\int_0^t\mu\,ds+\int_0^t\sigma\
 
 Practical objective: three workhorse SDEs drive all of quantitative finance —
 - **GBM** $dS=\mu S\,dt+\sigma S\,dW$ (equities, indices; closed-form lognormal solution),
-- **Vasicek** $dR=(\alpha-\beta R)dt+\sigma dW$ (Gaussian mean-reversion; interest rates, closed form),
-- **CIR** $dR=(\alpha-\beta R)dt+\sigma\sqrt R\,dW$ (mean-reversion with vol proportional to $\sqrt R$; no closed form, stays nonnegative under the Feller condition).
+- **Vasicek** $dR=\kappa(\theta-R)\,dt+\sigma dW$ (Gaussian mean-reversion; interest rates, closed form),
+- **CIR** $dR=\kappa(\theta-R)\,dt+\sigma\sqrt R\,dW$ (mean-reversion with vol proportional to $\sqrt R$; no closed form, stays nonnegative under the Feller condition).
 
 The whole point of this page: know **which SDEs have exact transitions** (simulate without error) vs **which need discrete schemes** (Euler–Maruyama, Milstein) — and what each scheme gets wrong.
 
@@ -39,16 +39,16 @@ $$S(t_{i+1})=S(t_i)\,e^{\left(\mu-\tfrac12\sigma^2\right)\Delta t+\sigma\sqrt{\D
 The **Euler–Maruyama** scheme $S_{i+1}=S_i(1+\mu\Delta t+\sigma\sqrt{\Delta t}\,Z)$ has an easier-to-see but *biased* form, especially for coarse $\Delta t$ — the "simulate exact, not Euler, whenever possible" rule.
 
 #### 2.2 Vasicek — Gaussian, closed form (Shreve II Ex 4.4.10; Glasserman §3.3)
-$$dR_t=(\alpha-\beta R_t)dt+\sigma\,dW_t\;\Longrightarrow\;R_t=e^{-\beta t}R_0+\frac{\alpha}{\beta}\Big(1-e^{-\beta t}\Big)+\sigma e^{-\beta t}\!\int_0^t e^{\beta s}dW_s.$$
-As a Gaussian process: mean $e^{-\beta t}R_0+\frac{\alpha}{\beta}\left(1-e^{-\beta t}\right)$, variance $\frac{\sigma^2}{2\beta}\left(1-e^{-2\beta t}\right)\to\frac{\sigma^2}{2\beta}$. **Exact transition** (Glasserman eq 3.43–3.45):
-$$R_{t_{i+1}}\sim N\Big(e^{-\alpha\Delta t}R_{t_i}+\tfrac{\alpha}{\beta}\big(1-e^{-\alpha\Delta t}\big),\ \tfrac{\sigma^2}{2\alpha}\big(1-e^{-2\alpha\Delta t}\big)\Big).$$
-Long-run mean $\alpha/\beta$; **can go negative** (unlike CIR).
+$$dR_t=\kappa(\theta-R_t)\,dt+\sigma\,dW_t\;\Longrightarrow\;R_t=e^{-\kappa t}R_0+\theta\Big(1-e^{-\kappa t}\Big)+\sigma e^{-\kappa t}\!\int_0^t e^{\kappa s}dW_s.$$
+As a Gaussian process: mean $e^{-\kappa t}R_0+\theta\left(1-e^{-\kappa t}\right)$, variance $\frac{\sigma^2}{2\kappa}\left(1-e^{-2\kappa t}\right)\to\frac{\sigma^2}{2\kappa}$. **Exact transition** (Glasserman eq 3.43–3.45):
+$$R_{t_{i+1}}\sim N\Big(e^{-\kappa\Delta t}R_{t_i}+\theta\big(1-e^{-\kappa\Delta t}\big),\ \tfrac{\sigma^2}{2\kappa}\big(1-e^{-2\kappa\Delta t}\big)\Big).$$
+Long-run mean $\theta$; **can go negative** (unlike CIR).
 
 #### 2.3 CIR — no closed form, nonnegative (Shreve II Ex 4.4.11; Glasserman §3.4)
-$$dR_t=(\alpha-\beta R_t)dt+\sigma\sqrt{R_t}\,dW_t.$$
-Expectation **identical to Vasicek** $\mathbb E[R_t]=e^{-\beta t}R_0+\tfrac{\alpha}{\beta}\left(1-e^{-\beta t}\right)$; the variance grows to $\alpha\sigma^2/(2\beta^2)$. The diffusion $\sigma\sqrt R\to0$ at the origin, so with $\alpha>0$ the drift pushes back up — **stays nonnegative**. **Feller condition** $2\alpha\beta\ge\sigma^2$ ⇒ strictly positive (Glasserman §3.4).
+$$dR_t=\kappa(\theta-R_t)\,dt+\sigma\sqrt{R_t}\,dW_t.$$
+Expectation **identical to Vasicek** $\mathbb E[R_t]=e^{-\kappa t}R_0+\theta\left(1-e^{-\kappa t}\right)$; the variance grows to $\theta\sigma^2/(2\kappa)$. The diffusion $\sigma\sqrt R\to0$ at the origin, so with $\theta>0$ the drift pushes back up — **stays nonnegative**. **Feller condition** $2\kappa\theta\ge\sigma^2$ ⇒ strictly positive (Glasserman §3.4).
 
-Because there is no closed-form transition, CIR simulation uses **exact noncentral-$\chi^2$ sampling** (Glasserman eq 3.105: $d\equiv\tfrac{4\beta\alpha}{\sigma^2}$ "degrees of freedom", $c\equiv\tfrac{\sigma^2(1-e^{-\alpha\Delta t})}{4\alpha}$, noncentrality $\lambda\equiv\tfrac{R_{t_i}e^{-\alpha\Delta t}}{c}$) *or* a well-behaved **Milstein** scheme; plain Euler undershoots below zero.
+Because there is no closed-form transition, CIR simulation uses **exact noncentral-$\chi^2$ sampling** (Glasserman eq 3.105: $d\equiv\tfrac{4\kappa\theta}{\sigma^2}$ "degrees of freedom", $c\equiv\tfrac{\sigma^2(1-e^{-\kappa\Delta t})}{4\kappa}$, noncentrality $\lambda\equiv\tfrac{R_{t_i}e^{-\kappa\Delta t}}{c}$) *or* a well-behaved **Milstein** scheme; plain Euler undershoots below zero.
 
 ---
 
@@ -75,7 +75,7 @@ def exact_gbm(): return S0*math.exp((mu-0.5*sig*sig)*T + sig*random.gauss(0, mat
 print("Euler-Maruyama GBM S_T (n=10) = %.4f" % euler_gbm(10))
 print("Exact-transition GBM S_T       = %.4f" % exact_gbm())
 
-# (c) Vasicek exact one-step + stationary variance
+# (c) Vasicek exact one-step + stationary variance   [code names: alpha = kappa (reversion speed), b = theta (mean)]
 r0, alpha, b, s, dtl = 0.03, 1.2, 0.05, 0.02, 1.0/12
 mean = r0*math.exp(-alpha*dtl) + b*(1-math.exp(-alpha*dtl))
 sd   = math.sqrt(s*s/(2*alpha)*(1-math.exp(-2*alpha*dtl)))

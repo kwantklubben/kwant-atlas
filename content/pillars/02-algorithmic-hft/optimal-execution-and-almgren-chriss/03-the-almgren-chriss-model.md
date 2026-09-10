@@ -61,9 +61,9 @@ whose solution with $x(0)=X,\;x(T)=0$ is the same $\sinh$ trajectory. **Limits:*
 
 $$-V_t = \min_{\nu\ge0}\Big[\varepsilon\nu+\eta\nu^2-\nu\,V_x\Big],\qquad V(T,x)=0 .$$
 
-The first-order condition $\varepsilon+2\eta\nu-V_x=0$ gives $\nu^\star=(V_x-\varepsilon)/(2\eta)$, and substituting yields the **HJB equation**
+The first-order condition $\varepsilon+2\eta\nu-V_x=0$ gives $\nu^\star=(V_x-\varepsilon)/(2\eta)$, and substituting yields the **HJB equation** (note the sign: the minimised bracket is $-(V_x-\varepsilon)^2/(4\eta)$)
 
-$$\boxed{\;-V_t=\frac{(V_x-\varepsilon)^2}{4\eta}\;}.$$
+$$\boxed{\;-V_t=-\frac{(V_x-\varepsilon)^2}{4\eta}\;\Longleftrightarrow\;V_t=\frac{(V_x-\varepsilon)^2}{4\eta}\;}.$$
 
 Its solution $V(t,x)=\varepsilon x+\eta x^2/(T-t)$ (readily checked) gives $\nu^\star=x/(T-t)$ — the constant-rate **TWAP** optimum — and $V(0,X)=\varepsilon X+\eta X^2/T$, the risk-neutral cost. **Adding the risk penalty** $\lambda\sigma^2x^2$ to the running cost turns the same HJB into the one whose characteristics solve $\ddot x=\kappa^2x$: the risk-aversion term is precisely what bends TWAP into the hyperbolic curve.
 

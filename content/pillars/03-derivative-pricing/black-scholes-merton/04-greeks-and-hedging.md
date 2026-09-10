@@ -41,6 +41,10 @@ Notation as the index page; $n(d_1)=\frac{1}{\sqrt{2\pi}}e^{-d_1^2/2}$. All form
 | **Rho** (call) | $\dfrac{\partial c}{\partial r}$ | $T\,X\,e^{-rT}N(d_2)$ | $>0$ |
 | Rho (put) | $\dfrac{\partial p}{\partial r}$ | $-T\,X\,e^{-rT}N(-d_2)$ | $<0$ |
 
+> **Caveat — the generalized-BSM rho and cost-of-carry $b\neq r$.** The compact form $T X e^{-rT}N(d_2)$ (and the worked example below, $\rho=0.109656$/pt) is the rho of the *standard* Black–Scholes where $b=r$; it is the convention Haug prints in his table (§2.16), and the numbers here reproduce it exactly. Strictly, however, $\partial c/\partial r$ under the generalized formula (where $d_1,d_2$ and the $e^{(b-r)T}$ factor also depend on $r$) is
+> $$\rho_{\text{call}}=\frac{\partial c}{\partial r}=-T\,S\,e^{(b-r)T}N(d_1)+T\,X\,e^{-rT}N(d_2),$$
+> which agrees with the compact form when $b=r$ but differs otherwise — at the worked example's parameters ($b=0.05\ne r=0.10$) the full derivative is *negative*. The distinction only bites when the drift $b$ is treated as an independent input (futures, FX, dividend yield); for textbook equity BSM with $b=r$ the two coincide.
+
 **Gamma–theta / vega–gamma relations** (Haug §2.15, §2.3.3):
 
 $$\Gamma=-\frac{2\,\Theta_{\text{driftless}}}{S^2\sigma^2},\qquad \nu=\Gamma\,\sigma\,S^2T,\qquad \Theta_{\text{driftless}}=-\frac{\nu\sigma}{2T}.$$
