@@ -103,12 +103,12 @@ for n in (10, 40, 160):
     print(f"n={n:4d}: sd(mean)={math.sqrt(var(xs)):.5f}  sigma/sqrt(n)={1/math.sqrt(n):.5f}")
 ```
 ```
-MSE(sigma2_MLE)=3.0553  theory (2n-1)/n^2*sig^4=3.0400
-MSE(S^2)       =3.5790  theory 2*sig^4/(n-1)     =3.5556
-Exp rate MLE: mean=2.5141 (true 2.5)  Var=0.031716 vs CRLB lam^2/n=0.031250
-n=  10: sd(mean)=0.31672  sigma/sqrt(n)=0.31623
-n=  40: sd(mean)=0.15831  sigma/sqrt(n)=0.15811
-n= 160: sd(mean)=0.07901  sigma/sqrt(n)=0.07906
+MSE(sigma2_MLE)=3.0366  theory (2n-1)/n^2*sig^4=3.0400
+MSE(S^2)       =3.5459  theory 2*sig^4/(n-1)     =3.5556
+Exp rate MLE: mean=2.5145 (true 2.5)  Var=0.031743 vs CRLB lam^2/n=0.031250
+n=  10: sd(mean)=0.31681  sigma/sqrt(n)=0.31623
+n=  40: sd(mean)=0.15793  sigma/sqrt(n)=0.15811
+n= 160: sd(mean)=0.07893  sigma/sqrt(n)=0.07906
 ```
 
 ---

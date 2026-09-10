@@ -82,6 +82,9 @@ print(f"  (above the plain sample vol {sd[0]:.4f} -> FHS would scale recent shoc
 ```
 ```
 HS: 500 scenarios, 99% VaR = 3,218.55  (rank 6 worst)
+
+EWMA factor-1 next-day vol after the spike = 0.0136
+  (above the plain sample vol 0.0120 -> FHS would scale recent shocks up)
 ```
 The exact `3,218.55` reproduces the hub historical-simulation column. The EWMA recursion shows the mechanism behind FHS: when today's conditional vol (say ~0.024) exceeds the calm historical average (0.012), filtered HS *up-weights* the biggest recent moves so VaR bends toward the current regime — while plain equal-weight HS keeps saying "the last 500 days looked like this," which is precisely the ghost/window problem.
 

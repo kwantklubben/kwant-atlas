@@ -122,6 +122,7 @@ UPM caplet: mixture of 3 Black vols -> implied-vol smile, min near ATM F0=4.04%
   K=4.04%  implied vol=15.99%
   K=5.00%  implied vol=16.66%
   K=6.00%  implied vol=18.09%
+
 SABR (beta=1) implied vol vs strike: alpha=level, nu=curvature, rho=slope
   SABR K=3.00%  implied vol=18.56%
   SABR K=3.50%  implied vol=16.47%
@@ -129,6 +130,7 @@ SABR (beta=1) implied vol vs strike: alpha=level, nu=curvature, rho=slope
   SABR K=4.04%  implied vol=15.37%
   SABR K=4.50%  implied vol=14.50%
   SABR K=5.00%  implied vol=14.65%
+  (rho=-0.3 -> downward ATM skew; nu=0.5 -> curvature -> smile)
 ```
 The UPM mixture produces a textbook **smile**: implied vol dips to its minimum at the ATM strike $F_0=4.04\%$ and rises away from it — the exact signature BM Ch10 (LM) proves analytically. SABR with $\rho<0$ gives a downward skew through ATM with curvature from $\nu$.
 

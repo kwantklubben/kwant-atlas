@@ -105,28 +105,48 @@ print(f"\nTop-2 singular values: {s[0]:.3f}, {s[1]:.3f}   "
 ```
 ```
 Rank-2 PPMI embeddings (word -> [dim0, dim1]):
+  a             [-0.405, +2.454]
+  again         [-0.927, +0.151]
+  and           [-3.080, -0.851]
+  badly         [-0.484, +1.217]
+  beat          [-0.437, +1.213]
+  charge        [-0.571, +3.146]
+  costs         [-1.975, -0.760]
+  cut           [-2.220, -0.976]
+  demand        [-1.224, -0.302]
+  disappointed  [-1.719, -0.374]
   earnings      [-0.641, +2.286]
   estimates     [-0.828, +1.675]
-  revenue       [-1.556, +0.125]
+  exceeded      [-1.125, +0.638]
+  expanded      [-1.687, -0.605]
+  expectations  [-0.869, +0.940]
+  faster        [-1.074, +0.613]
+  flat          [-1.382, -0.567]
+  grew          [-1.433, +0.331]
   guidance      [-1.622, +0.194]
-  outlook       [-1.589, -0.767]
-  missed        [-0.457, +1.304]
-  beat          [-0.437, +1.213]
-  demand        [-1.224, -0.302]
+  hit           [-0.538, +2.608]
   margins       [-1.359, -0.460]
-  costs         [-1.975, -0.760]
+  missed        [-0.457, +1.304]
+  our           [-1.137, +0.793]
+  outlook       [-1.589, -0.767]
   quarter       [-0.553, +1.226]
-  charge        [-0.571, +3.146]
+  revenue       [-1.556, +0.125]
+  stayed        [-1.697, -0.650]
   strong        [-1.698, -0.345]
-  ...           (...)
+  surprise      [-0.504, +2.943]
+  than          [-0.869, +0.647]
+  the           [-1.996, -0.927]
+  this          [-0.748, +1.675]
+  was           [-1.548, -0.401]
+  we            [-2.189, -0.844]
 
 Cosine similarities in latent space:
   cos(earnings,estimates) = +0.983
-  cos(earnings,revenue)   = +0.347
-  cos(beat,missed)        = +1.000
-  cos(guidance,outlook)   = +0.842
-  cos(costs,margins)      = +0.999
-  cos(guidance,earnings)  = +0.383
+  cos(earnings,revenue) = +0.347
+  cos(beat,missed) = +1.000
+  cos(guidance,outlook) = +0.842
+  cos(guidance,earnings) = +0.383
+  cos(costs,margins) = +0.999
 
 Top-2 singular values: 8.103, 7.584   (rank-2 captures 0.216 of variance)
 ```
