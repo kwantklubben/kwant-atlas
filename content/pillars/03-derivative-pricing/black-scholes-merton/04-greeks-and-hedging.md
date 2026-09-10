@@ -45,6 +45,12 @@ Notation as the index page; $n(d_1)=\frac{1}{\sqrt{2\pi}}e^{-d_1^2/2}$. All form
 
 $$\Gamma=-\frac{2\,\Theta_{\text{driftless}}}{S^2\sigma^2},\qquad \nu=\Gamma\,\sigma\,S^2T,\qquad \Theta_{\text{driftless}}=-\frac{\nu\sigma}{2T}.$$
 
+**Higher-order cross-Greeks** (Haug §2.3.3; the sensitivity of Delta to vol, and of Vega to vol — the vega-convexity of a book):
+
+$$\text{Vanna}=\frac{\partial^2 V}{\partial S\,\partial\sigma}=-e^{(b-r)T}N'(d_1)\frac{d_2}{\sigma},\qquad \text{Volga}=\frac{\partial^2 V}{\partial\sigma^2}=\nu\,\frac{d_1 d_2}{\sigma}.$$
+
+Vanna matters for vol-skew risk (Delta changes as vol moves) and Volga for vega-convexity (the $d_1d_2$ sign flips across the strike, so a book's volga changes sign with moneyness) — both are first-order in the skew-stickiness / vanna-volga pricing corrections.
+
 **Critical scaling convention (Haug §2 — read before using any number):** raw derivatives are per *unit*; screen/lookup values quote Vega, Rho, Phi, Carry, Vanna, Zomma **per 1 vol/rate point** $=$ raw $/100$; Vomma $/10^4$; Ultima $/10^6$; **Theta per day** $=\frac{1}{365}\Theta$.
 
 ---
@@ -98,6 +104,8 @@ gamma-theta: 0.5*G*S^2*sig^2=11.579966 == driftless|theta|=11.579966
 2. **Discrete hedging leaves gamma risk.** Delta is only locally exact; between rebalances the position is exposed to $dS^2$. The residual P&L over one rebalance step is $\sim\tfrac12\Gamma S^2\left[(\Delta S/S)^2-\sigma^2\Delta t\right]$ — zero in expectation under $\mathbb{Q}$, nonzero in reality (see [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|05 · Failure Modes]]).
 3. **Vega is the most fragile assumption.** BSM vega assumes $\sigma$ is a single constant; real markets have a *surface* (skew/smile). A delta-hedged book hedges delta and gamma but is systematically short/long the higher moments the constant-vol model ignores.
 4. **Rho sign confusion.** Call rho $>0$, put rho $<0$; but for *futures* options both are $<0$ ($\rho=-Tc$). Haug §2.16.
+5. **Pin risk at expiration.** When spot lingers near strike at expiry, $\Gamma\to\infty$ and Delta flips violently between 0 and 1, so a delta-hedger is whipsawed into large trades hedging a binary outcome — the classic expiry-day failure (Taleb, *Dynamic Hedging*). Mitigation: close or roll the position before expiry rather than hedging the knife-edge.
+6. **Discrete-rebalancing gamma bleed (variance of hedging error).** Rebalancing at intervals $\Delta t$ leaves unhedged residual variance $\approx \tfrac12 S^4\sigma^4\Gamma^2\,\Delta t$; in fast crashes discrete hedging systematically sells lows and buys highs. This is the practical cost of the "continuous" delta-hedge ideal (see also failure mode 2).
 
 ---
 
@@ -105,7 +113,8 @@ gamma-theta: 0.5*G*S^2*sig^2=11.579966 == driftless|theta|=11.579966
 
 - **Haug**, *The Complete Guide to Option Pricing Formulas*, §2 (the complete first/second/third-order Greek set; Table 2-3 reproduced here), §2.10 (ATM-forward approximations), §2.15 (theta, gamma–theta). *Numerically verified.*
 - **Shreve**, *Stochastic Calculus for Finance II*, §4.5 (delta $=c_x$, theta, gamma, vega; the delta-hedging rule eq. 4.5.11).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 19 (the Greeks, hedging). *See also the flat sibling topic* [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]].
+- **Hull**, *Options, Futures, and Other Derivatives*, Ch 19 (the Greeks, hedging).
+- **Taleb, Nassim Nicholas**: *Dynamic Hedging: Managing Vanilla and Exotic Options*, Wiley — pin risk, vega/volga trading, real desk practice.
 
 ---
 
@@ -113,4 +122,4 @@ gamma-theta: 0.5*G*S^2*sig^2=11.579966 == driftless|theta|=11.579966
 
 - Back: [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · Pricing Formulas]]
 - Forward: [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
+- Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/index|Index Hub]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]
