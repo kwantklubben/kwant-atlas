@@ -90,8 +90,8 @@ print(f"\nheavy tail: Gaussian-approx f* = mu/s^2 = {mu/var:.4f}   exact log-opt
 std(p-hat) = 0.0500
 bet f*=f(phat)=0.1400  but true Kelly=0.0400  -> overbet
 true g at your bet = -0.00426   true g at true Kelly = +0.00080
-true-Kelly  f=0.04: median wealth after 2000 =    4.8692   P(bankroll<1%) = 0.000
-overbet     f=0.14: median wealth after 2000 =    0.0002   P(bankroll<1%) = 0.728
+true-Kelly  f=0.04: median wealth after 2000 =   4.8692   P(bankroll<1%) = 0.000
+overbet     f=0.14: median wealth after 2000 =   0.0002   P(bankroll<1%) = 0.728
 
 heavy tail: Gaussian-approx f* = mu/s^2 = 0.7663   exact log-opt f* = 0.581
 ```

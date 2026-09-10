@@ -123,7 +123,7 @@ print("persistence al+be           :", round(al_+be_,4), " [true 0.95]")
 ```
 ARCH-LM (m=5) on GARCH squares: 2817.2  (chi2 5 @95% = 11.07 => reject no-ARCH)
 GARCH(1,1) MLE (w,al,be) : (0.0588, 0.1178, 0.8257)   [true (0.050,0.100,0.850)]
-unconditional var w/(1-al-be): 1.0417  [true 1.0]
+unconditional var w/(1-al-be): 1.0417  [true 1.0 ]
 persistence al+be           : 0.9436  [true 0.95]
 ```
 The ARCH-LM test screams rejection ($2817\gg11.07$) — the squared returns are unmistakably autocorrelated even though the returns themselves look white. The Gaussian MLE recovers $(\alpha,\beta)\approx(0.118,0.826)$ against truth $(0.10,0.85)$, and the persistence $\alpha+\beta=0.944\approx0.95$ (so unconditional variance $1.04\approx1.0$) — the fitted model reproduces the *level* of risk almost exactly even with modest parameter error.

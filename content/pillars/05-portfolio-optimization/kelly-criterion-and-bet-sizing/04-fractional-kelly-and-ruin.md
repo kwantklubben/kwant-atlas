@@ -75,9 +75,9 @@ for c in (0.5, 1.0, 2.0):
 ```
 ```text
 c  f     median wealth   P(ruin<0.1)   avg.max-drawdown
-0.5 0.05      2.1222      0.000          0.883
-1.0 0.10      2.7333      0.009          0.991
-2.0 0.20      0.9804      0.221          1.000
+0.5 0.05       2.1222      0.000          0.883
+1.0 0.10       2.7333      0.009          0.991
+2.0 0.20       0.9804      0.221          1.000
 ```
 
 The pattern is unmistakable. **Double Kelly** ($c=2$, right at the critical $f_c=0.199$): half the terminal wealth of half-Kelly earnings, **22% of accounts ruined**, and terminal drawdown 100%. **Full Kelly**: 0.9% ruin but 99% max-drawdown. **Half Kelly**: zero ruin in 20,000 paths and still compounds positively. The **overbet is strictly worse on every risk metric** — more ruin *and* lower median wealth — which is exactly the failure mode of page 05. Fractional Kelly is the only one of the three that is actually deployable.

@@ -74,6 +74,13 @@ for K,vol in {80:0.28,90:0.24,100:0.20,110:0.17,120:0.15}.items():
     pr,_=bsm_call(S,K,T,r,vol)
     print(f"K={K:4d} price={pr:8.4f}  implied={implied_vol(pr,S,K,T,r)*100:6.2f}%")
 ```
+```
+K=  80 price= 24.2063  implied= 28.00%
+K=  90 price= 16.0715  implied= 24.00%
+K= 100 price=  8.9160  implied= 20.00%
+K= 110 price=  3.8054  implied= 17.00%
+K= 120 price=  1.1542  implied= 15.00%
+```
 
 ---
 

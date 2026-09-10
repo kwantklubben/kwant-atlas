@@ -82,6 +82,7 @@ for tick, label in ((0.002, "FINE tick  (0.2c)"), (0.010, "COARSE tick (1.0c)"))
 ```
 
 ```text
+
 FINE tick  (0.2c):
   rebate 0.000 -> target 0.0120  raw 0.0120  take_fee 0.0010  cum-fee spread 0.0260
   rebate 0.002 -> target 0.0100  raw 0.0100  take_fee 0.0030  cum-fee spread 0.0260

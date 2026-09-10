@@ -88,6 +88,9 @@ pr = simulate_roll()
 est, g1 = roll_estimate(pr)
 print(f"Roll estimate: gamma1={g1:.7f}  spread={est:.5f}   (true 0.050)")
 ```
+```
+Roll estimate: gamma1=-0.0006227  spread=0.04991   (true 0.050)
+```
 
 ```python
 import math, random
@@ -113,6 +116,7 @@ print(f"quoted   spread = {2*(0.02+0.01):.4f}   (= 2(c+lambda))")
 print(f"effective spread = {se:.4f}   (= 2(c+lambda), trades at the touch)")
 print(f"realized  spread = {sr:.4f}   (= 2c, what the maker keeps)")
 print(f"adverse-selection loss = {imp:.4f}   (= 2*lambda)")
+```
 ```
 quoted   spread = 0.0600   (= 2(c+lambda))
 effective spread = 0.0600   (= 2(c+lambda), trades at the touch)

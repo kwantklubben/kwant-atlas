@@ -73,8 +73,8 @@ print("CLT: P(|Z|<2) = %.4f (theory 0.9545)        " % in2)
 ```
 LLN: sample mean of fair coin (theory 0.5)  = 0.5006
 CLT: std of sample mean (k=100 Unif)       = 0.0288 (theory 0.0289)
-CLT: P(|Z|<1) = 0.6822 (theory 0.6827)
-CLT: P(|Z|<2) = 0.9546 (theory 0.9545)
+CLT: P(|Z|<1) = 0.6822 (theory 0.6827)        
+CLT: P(|Z|<2) = 0.9546 (theory 0.9545)        
 ```
 
 ---
