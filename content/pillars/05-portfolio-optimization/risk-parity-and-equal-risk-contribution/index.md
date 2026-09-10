@@ -149,7 +149,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 - Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/calculus-and-optimization/index|Calculus & Convex Optimization]] · [[foundations/statistics-and-inference/index|Statistics]]
 - Sub-pages (in-folder): 01 From Zero · 02 Risk Contributions · 03 Equal Risk Contribution · 04 Risk Budgeting · 05 Failure Modes · 06 Advanced Extensions
-- Sibling topics: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Markowitz]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]
+- Sibling topics: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & Markowitz]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.

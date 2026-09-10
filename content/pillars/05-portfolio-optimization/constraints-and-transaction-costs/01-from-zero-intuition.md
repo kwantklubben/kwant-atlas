@@ -8,7 +8,7 @@ tags:
   - transaction-costs
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean-Variance from Zero]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean–Variance from Zero]].
 
 ---
 
@@ -149,7 +149,7 @@ Read the second and third blocks together. The unconstrained "optimum" is unatte
 
 ### 6. Connected Graph Bridges
 
-- Base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean-Variance from Zero]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]]
+- Base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean–Variance from Zero]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]]
 - Foundations: [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (convexity, KKT, the kink) · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Execution sibling: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution (Almgren–Chriss)]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|VWAP / TWAP / POV]]
 - Microstructure source: [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]]

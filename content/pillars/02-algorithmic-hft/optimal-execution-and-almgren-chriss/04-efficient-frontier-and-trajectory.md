@@ -8,13 +8,13 @@ tags:
   - risk-aversion
 ---
 
-**Basic Prerequisites:** [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/03-the-almgren-chriss-model|03 - The Almgren-Chriss Model]].
+**Basic Prerequisites:** [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/03-the-almgren-chriss-model|03 - The Almgren–Chriss Model]].
 
 ---
 
 ### 1. Intuition & Practical Objective
 
-There is no single "best" execution schedule — only a **frontier**. For every level of risk you are willing to accept, there is a cheapest way to trade; for every level of cost, there is a lowest-risk way. Plot those best-possible pairs and you have the **efficient frontier of execution** (Almgren-Chriss 2000, §2). Picking $\lambda$ is then a client decision, and the trajectory follows: high $\lambda$ (impatient) sells fast and pays impact; low $\lambda$ (patient) sells slowly and carries risk.
+There is no single "best" execution schedule — only a **frontier**. For every level of risk you are willing to accept, there is a cheapest way to trade; for every level of cost, there is a lowest-risk way. Plot those best-possible pairs and you have the **efficient frontier of execution** (Almgren–Chriss 2000, §2). Picking $\lambda$ is then a client decision, and the trajectory follows: high $\lambda$ (impatient) sells fast and pays impact; low $\lambda$ (patient) sells slowly and carries risk.
 
 This page has two deliverables: (a) how to **construct** the frontier and read off a strategy for a given $\lambda$, and (b) how to **describe/compare** trajectories using the half-life $\theta$ and the shape of $x_t$. The one operational rule is the tangency condition: choosing $\lambda$ selects the frontier point where the curve's slope equals $-\lambda$.
 
@@ -127,7 +127,7 @@ Three verified facts from AC §2: **(i)** the frontier is convex; **(ii)** each 
 
 ### 6. Connected Graph Bridges
 
-- Back: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/03-the-almgren-chriss-model|03 - The Almgren-Chriss Model]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Index Hub]]
+- Back: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/03-the-almgren-chriss-model|03 - The Almgren–Chriss Model]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Index Hub]]
 - Forward: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/05-failure-modes-and-practice|05 - Failure Modes & Practice]] → [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/06-advanced-extensions|06 - Advanced Extensions]]
-- Portfolio analogue: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean-Variance]] (the same mean-variance frontier, one level up: allocations instead of schedules)
+- Portfolio analogue: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance]] (the same mean-variance frontier, one level up: allocations instead of schedules)
 - Risk: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (why the L-VaR frontier exists)

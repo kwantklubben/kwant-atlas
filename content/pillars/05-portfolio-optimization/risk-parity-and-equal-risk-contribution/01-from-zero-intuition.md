@@ -103,4 +103,4 @@ The lesson is on the left column of the weights: **60/40 gives the equity leg ~9
 
 - Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/calculus-and-optimization/index|Calculus]]
 - Continue: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/02-risk-contributions|02 · Risk Contributions]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Index Hub]]
-- Sibling: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Markowitz]]
+- Sibling: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & Markowitz]]

@@ -21,7 +21,7 @@ Factors represent common economic exposures: Size (SMB), Value (HML), Profitabil
 
 ### 2. Mathematical Ground Truth & Derivations
 
-#### The Fama-French 5-Factor Specification
+#### The Fama–French 5-Factor Specification
 For asset $i$ at time $t$:
 $$R_{it} - R_{ft} = \alpha_i + \beta_{i, M} (R_{mt} - R_{ft}) + \beta_{i, \text{SMB}} \text{SMB}_t + \beta_{i, \text{HML}} \text{HML}_t + \beta_{i, \text{RMW}} \text{RMW}_t + \beta_{i, \text{CMA}} \text{CMA}_t + \epsilon_{it}$$
 - $\alpha_i$: True excess return above factor compensation (expected value should be 0 under Efficient Market Hypothesis).

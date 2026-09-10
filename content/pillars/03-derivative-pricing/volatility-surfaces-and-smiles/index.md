@@ -8,13 +8,13 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] and [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] and [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]].
 
 ---
 
 ### 1. Intuition & Practical Objective
 
-Black-Scholes-Merton has one free parameter, the volatility $\sigma$. If the model were true, inverting every liquid option price back to its implied volatility would return **the same number** for every strike and every maturity. It never does. The inverted number traces a **surface** $\sigma_{BS}(K,T)$ — downward-sloping in strike for equities ("the skew"), U-shaped for FX ("the smile"), flattening with maturity. That surface is the *empirical object* and this folder is its topic-hub.
+Black–Scholes–Merton has one free parameter, the volatility $\sigma$. If the model were true, inverting every liquid option price back to its implied volatility would return **the same number** for every strike and every maturity. It never does. The inverted number traces a **surface** $\sigma_{BS}(K,T)$ — downward-sloping in strike for equities ("the skew"), U-shaped for FX ("the smile"), flattening with maturity. That surface is the *empirical object* and this folder is its topic-hub.
 
 The one-sentence essence:
 
@@ -99,7 +99,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
-- Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the constant-$\sigma$ zero point this folder generalizes)
+- Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (the constant-$\sigma$ zero point this folder generalizes)
 - Related flat notes: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Sub-pages (in-folder): 01 From Zero · 02 Implied vs Local Vol · 03 Surface Models · 04 Advanced Dynamics · 05 Failure Modes · 06 Advanced Extensions
 

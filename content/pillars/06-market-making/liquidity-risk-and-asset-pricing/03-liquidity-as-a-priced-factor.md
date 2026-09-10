@@ -1,5 +1,5 @@
 ---
-title: "03 - Liquidity as a Priced Risk Factor: Pastor-Stambaugh"
+title: "03 - Liquidity as a Priced Risk Factor: Pastor–Stambaugh"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

@@ -80,7 +80,7 @@ The 2008 replay loses $47M — 47% of NAV — on a portfolio whose VaR model, ca
 
 1. **The "probability of the scenario" trap.** A beginner asks "but how likely is this scenario?" — that is the wrong question. Stress testing *by design* discards probability because the tail's likelihood is unknowable (fat tails make tail probabilities poorly estimated — see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]]). Demanding a probability forces you back into the distribution you were trying to escape.
 2. **Scenario is not forecast.** A stress shock is a *hypothesis* about joint factor behavior, not a prediction of where markets go. It will almost surely not happen as specified; its value is in exposing which *combination* of moves threatens survival, not in predicting the move.
-3. **First-order linearity hides convexity.** A delta-only stress misses the *gamma* loss: an options book loses more than $\beta\Delta F$ because the delta itself moves. Stress tests on option-heavy books must add $\tfrac12\gamma(\Delta S)^2$ (see [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] Greeks). Neglecting this understates exactly the tail you are trying to measure.
+3. **First-order linearity hides convexity.** A delta-only stress misses the *gamma* loss: an options book loses more than $\beta\Delta F$ because the delta itself moves. Stress tests on option-heavy books must add $\tfrac12\gamma(\Delta S)^2$ (see [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] Greeks). Neglecting this understates exactly the tail you are trying to measure.
 
 ---
 

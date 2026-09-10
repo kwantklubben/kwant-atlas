@@ -58,7 +58,7 @@ and $\sigma_{X+Y}\le\sigma_X+\sigma_Y$ (standard deviation is subadditive) so Va
 
 ### 3. Computational Implementation — the counterexample, exactly and by Monte Carlo
 
-Exact pmfs (no simulation noise), plus a Monte-Carlo confirmation. Stdlib only.
+Exact pmfs (no simulation noise), plus a Monte Carlo confirmation. Stdlib only.
 
 ```python
 import math, random
@@ -103,7 +103,7 @@ ES : ES(A)+ES(B) =160.00  vs ES(A+B)=103.20  -> coherent
 MC n=2: VaR_95=100.0  ES_95=103.23
 ```
 
-The exact and Monte-Carlo numbers agree; the Monte-Carlo path also shows the estimator noise that any production VaR carries (see [[pillars/04-quantitative-risk/var-and-expected-shortfall/05-failure-modes-and-practice|05 · Failure Modes]]).
+The exact and Monte Carlo numbers agree; the Monte Carlo path also shows the estimator noise that any production VaR carries (see [[pillars/04-quantitative-risk/var-and-expected-shortfall/05-failure-modes-and-practice|05 · Failure Modes]]).
 
 ---
 

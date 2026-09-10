@@ -36,7 +36,7 @@ Three "aha"s:
 
 $$v_k(x)=\max\Big\{\underbrace{\tfrac{1}{1+r}\big[\tilde p\,v_{k+1}(ux)+\tilde q\,v_{k+1}(dx)\big]}_{\text{continuation}},\;\; \underbrace{g(x)}_{\text{exercise now}}\Big\},\qquad v_n(x)=g(x).$$
 
-At every node you simply compare **continuation** with **intrinsic**. Exercise where intrinsic wins. This is the *whole* algorithm — trees, finite differences and Monte-Carlo LSM are all refinements of this single line.
+At every node you simply compare **continuation** with **intrinsic**. Exercise where intrinsic wins. This is the *whole* algorithm — trees, finite differences and Monte Carlo LSM are all refinements of this single line.
 
 **Worked example (Shreve I, Ex 5.1).** $S_0=4$, $u=2$, $d=\tfrac12$, $r=\tfrac14$, $n=2$, $K=5$, $\tilde p=\tilde q=\tfrac12$. Terminal payoffs: $v_2(16)=0,\ v_2(4)=1,\ v_2(1)=4$. Rolling back:
 

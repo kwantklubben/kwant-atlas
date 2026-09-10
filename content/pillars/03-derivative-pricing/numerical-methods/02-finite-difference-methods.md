@@ -233,5 +233,5 @@ Four verified facts fall out of this single run: Crank–Nicolson's time order i
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/03-derivative-pricing/numerical-methods/01-from-zero|01 · From Zero]] · [[pillars/03-derivative-pricing/numerical-methods/index|Index Hub]]
-- Forward: [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte-Carlo Pricing]] → [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]] (American, ADI, splitting)
+- Forward: [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte Carlo Pricing]] → [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]] (American, ADI, splitting)
 - Base: [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|The BSM PDE]] · [[foundations/calculus-and-optimization/index|Multivariable Calculus]]

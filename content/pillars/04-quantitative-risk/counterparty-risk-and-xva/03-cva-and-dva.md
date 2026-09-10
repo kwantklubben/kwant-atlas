@@ -141,7 +141,7 @@ CVA vs counterparty credit spread (LGD 60%):
   spread   300bp -> CVA =   -1.9689
   spread   600bp -> CVA =   -3.4206
 ```
-Read the block: CVA is **−1.06** on a zero-value ATM forward — the price of the promise. The discrete sum and the fine-grid integral agree to **~3%** (the residual is Monte-Carlo noise plus the crude 20-step grid), which is the practical check that the two identities (17.2) and (17.3) are the same object. DVA (**+0.73**) uses the weaker own spread; it is smaller than CVA because our own credit is better, and BCVA lands at **−0.327**. The spread ladder shows CVA rising monotonically with spread — roughly linearly at moderate spreads, with the curvature that creates the large CVA *gamma* (and jump-to-default risk) discussed in [[pillars/04-quantitative-risk/counterparty-risk-and-xva/05-failure-modes-and-practice|05 · Failure Modes]].
+Read the block: CVA is **−1.06** on a zero-value ATM forward — the price of the promise. The discrete sum and the fine-grid integral agree to **~3%** (the residual is Monte Carlo noise plus the crude 20-step grid), which is the practical check that the two identities (17.2) and (17.3) are the same object. DVA (**+0.73**) uses the weaker own spread; it is smaller than CVA because our own credit is better, and BCVA lands at **−0.327**. The spread ladder shows CVA rising monotonically with spread — roughly linearly at moderate spreads, with the curvature that creates the large CVA *gamma* (and jump-to-default risk) discussed in [[pillars/04-quantitative-risk/counterparty-risk-and-xva/05-failure-modes-and-practice|05 · Failure Modes]].
 
 ---
 

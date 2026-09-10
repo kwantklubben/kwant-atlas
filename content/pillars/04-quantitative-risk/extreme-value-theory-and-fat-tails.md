@@ -23,7 +23,7 @@ Financial market returns do not have thin Gaussian tails: asset returns exhibit 
 
 ### 2. Mathematical Ground Truth & Derivations
 
-#### The Fisher-Tippett-Gnedenko Theorem (Block Maxima)
+#### The Fisher–Tippett–Gnedenko Theorem (Block Maxima)
 Let $M_n = \max(X_1, \dots, X_n)$ be normalized sample maxima. If a non-degenerate limiting distribution exists as $n \to \infty$, it *must* belong to the **Generalized Extreme Value (GEV)** family:
 $$G(x) = \exp\left( -\left[ 1 + \xi \left( \frac{x - \mu}{\sigma} \right) \right]^{-1/\xi} \right)$$
 - $\xi = 0$: Gumbel (thin, exponential tails; Normal, Lognormal).
@@ -32,7 +32,7 @@ $$G(x) = \exp\left( -\left[ 1 + \xi \left( \frac{x - \mu}{\sigma} \right) \right
 
 #### Peaks-Over-Threshold (POT) & Generalized Pareto Distribution
 Rather than discarding data into block maxima, POT models all losses $Y = X - u$ exceeding a high threshold $u$.
-By the **Pickands-Balkema-de Haan Theorem (1975)**, for sufficiently high threshold $u$, the conditional excess distribution $F_u(y) = \mathbb{P}(X - u \le y \mid X > u)$ converges to the **Generalized Pareto Distribution (GPD)**:
+By the **Pickands–Balkema-de Haan Theorem (1975)**, for sufficiently high threshold $u$, the conditional excess distribution $F_u(y) = \mathbb{P}(X - u \le y \mid X > u)$ converges to the **Generalized Pareto Distribution (GPD)**:
 $$G_\xi(y) = 1 - \left( 1 + \frac{\xi y}{\beta} \right)^{-1/\xi}$$
 where $\xi$ is the shape parameter (tail index) and $\beta > 0$ is scale.
 
@@ -87,7 +87,7 @@ print(f"99.9% EVT VaR: {var_999*100:.2f}% | EVT Expected Shortfall: {es_999*100:
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Threshold Selection Bias (Bias-Variance Dilemma):**
+1. **Threshold Selection Bias (Bias–Variance Dilemma):**
    - *Failure:* If threshold $u$ is chosen too low, non-tail central observations contaminate the GPD fit. If $u$ is chosen too high, sample size $N_u$ is tiny and parameter variance explodes.
    - *Remedy:* Inspect mean excess plots (Hill plots) for the linear stability region before selecting $u$.
 

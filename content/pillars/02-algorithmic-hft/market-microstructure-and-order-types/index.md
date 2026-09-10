@@ -53,7 +53,7 @@ It is a *hub*. It gives you (a) the **fast order-type lookup table** below (job 
 - *Realized half-spread (Foucault eq 2.5):* $S_r=d_t\,(p_t-m_{t+\Delta})$ — the liquidity supplier's profit after the market has moved (the mirror image of adverse selection).
 - *Roll model (Hasbrouck Ch 3):* $p_t=m_t+q_t c,\ m_t=m_{t-1}+u_t \Rightarrow \gamma_0=2c^2+\sigma_u^2,\ \gamma_1=-c^2,\ c=\sqrt{-\gamma_1},\ \text{spread}=2c.$
 - *Kyle price impact (Hasbrouck Ch 7):* $\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}$, with market depth $1/\lambda$.
-- *Glosten-Milgrom adverse-selection spread (Hasbrouck Ch 5), symmetric prior: $A-B=(V_H-V_L)\,\mu$* — the spread is the *information* cost of facing an informed share $\mu$.
+- *Glosten–Milgrom adverse-selection spread (Hasbrouck Ch 5), symmetric prior: $A-B=(V_H-V_L)\,\mu$* — the spread is the *information* cost of facing an informed share $\mu$.
 
 **Fee identity (maker-taker).** For a trade of $N$ shares, the all-in cash cost is
 $$\text{cost}=N\,p+N\,f,\qquad f=\begin{cases}-r_m & \text{maker (rebate)}\\ t_a & \text{taker (access fee)}\end{cases}$$
@@ -120,7 +120,7 @@ Hub signposts — the full analysis is in [[pillars/02-algorithmic-hft/market-mi
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - LOB mechanics depth (cross-linked, not duplicated): [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]] · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]]
-- Adverse selection & spread: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] · [[pillars/06-market-making/spread-decomposition-and-roll-model/index|Spread Decomposition & the Roll Model]]
+- Adverse selection & spread: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/spread-decomposition-and-roll-model/index|Spread Decomposition & the Roll Model]]
 - Sub-pages (in-folder): 01 From Zero · 02 Order Types · 03 Exchanges & Venues · 04 Auctions & Continuous Trading · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
@@ -128,4 +128,4 @@ Hub signposts — the full analysis is in [[pillars/02-algorithmic-hft/market-mi
 - **Order types + code (undergrad/job-seeking):** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/02-order-types|02 · Order Types]] → [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/03-exchanges-and-venues|03 · Exchanges & Venues]].
 - **Market structure (practitioner):** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/04-auctions-and-continuous-trading|04 · Auctions & Continuous Trading]] → [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/05-failure-modes-and-practice|05 · Failure Modes]].
 - **Advanced (HFT taxonomy & regulation):** [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/index|Execution Algorithms: VWAP, TWAP, POV]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]]
+- Forward links: [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/index|Execution Algorithms: VWAP, TWAP, POV]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]]

@@ -111,7 +111,7 @@ Read it twice: **at a perfectly ordinary near-collinear covariance ($\kappa{=}16
 
 ### 5. Canonical Literature & Study References
 
-- **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 (1991) — the headline sensitivity numbers and elasticities this page reproduces. *Verified in the corpus.*
+- **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 (1991) — the headline sensitivity numbers and elasticities this page reproduces. *Verified in the corpus.*
 - **Chopra, Vijay K. & Ziemba, William T.**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, Journal of Portfolio Management 19(2):6–11 (1993) — the ~10–11× means-dominance result.
 - **Michaud, Richard O. (with Robert O. Michaud)**: *Efficient Asset Management*, 2nd ed., OUP (2008) — "Markowitz optimization en masse": resampling and "estimation-error maximizers".
 - **DeMiguel, Garlappi & Uppal**: *Optimal Versus Naive Diversification*, RFS 22(5) (2009) — out-of-sample, no sophisticated optimizer reliably beats $1/N$; the benchmark every optimizer must face.
@@ -123,4 +123,4 @@ Read it twice: **at a perfectly ordinary near-collinear covariance ($\kappa{=}16
 
 - Back: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Min-Variance & Constraints]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling fixes: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP]]
+- Sibling fixes: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP]]

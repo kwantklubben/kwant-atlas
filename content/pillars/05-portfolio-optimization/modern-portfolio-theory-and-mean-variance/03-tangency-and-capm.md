@@ -120,4 +120,4 @@ Read the output: the theoretical Sharpe identity $(C r_f^2-2A r_f+B)=0.085121$ r
 
 - Back: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/02-the-efficient-frontier|02 · Efficient Frontier]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Min-Variance & Constraints]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Failure Modes]]
-- Sibling: [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]] (reverse-optimizes means so the tangency = market weights) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]
+- Sibling: [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] (reverse-optimizes means so the tangency = market weights) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]

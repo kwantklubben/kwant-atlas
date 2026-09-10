@@ -23,7 +23,7 @@ Three things to internalise before the maths:
 2. **The Feller condition is a statement about the *origin*.** $v_t$ is a square-root process; whether it can reach zero is decided by $2\lambda\bar v\gtrless\eta^2$. This matters numerically (negative variance) and economically (vol clustering at zero), and — crucially — **calibrated market parameters routinely violate it**.
 3. **Affinity is what you buy.** Everything downstream — calibration to hundreds of quotes, VIX computation, time-dependent extensions — depends on $\varphi$ being a closed-form function of $(u,T)$.
 
-The practical objective: be able to (a) write down the Heston SDE and PDE, (b) state and use the Feller condition, (c) derive/implement the characteristic function, (d) price by Fourier and validate the implementation against Black-Scholes and the martingale condition.
+The practical objective: be able to (a) write down the Heston SDE and PDE, (b) state and use the Feller condition, (c) derive/implement the characteristic function, (d) price by Fourier and validate the implementation against Black–Scholes and the martingale condition.
 
 ---
 
@@ -98,7 +98,7 @@ The shift to the contour $\mathrm{Im}\,u=\tfrac12$ makes the integrand decay and
 
 ### 3. Computational Implementation — CF, Fourier price, and four validation checks
 
-We implement $\varphi_T$ and the Lewis pricer, then run the four checks: (a) the martingale identity, (b) the $\eta\to0$ Black-Scholes collapse, (c) put–call parity, (d) the $T\to0$ ATM limit $\sigma_{BS}\to\sqrt{v_0}$. Stdlib only.
+We implement $\varphi_T$ and the Lewis pricer, then run the four checks: (a) the martingale identity, (b) the $\eta\to0$ Black–Scholes collapse, (c) put–call parity, (d) the $T\to0$ ATM limit $\sigma_{BS}\to\sqrt{v_0}$. Stdlib only.
 
 ```python
 import math, cmath
@@ -195,7 +195,7 @@ print(f"  deterministic average of the forward-variance curve, (1/T)int xi_0^t, 
 **What each check proves.**
 
 - **(a)** The martingale identity holds to machine precision at three maturities — the Riccati normalisation, the root choice and the $\lambda$ sign are all right.
-- **(b)** With $\eta\to0$ and $v_0=\bar v$ the Heston price collapses onto Black-Scholes to $5\times10^{-4}$ (the residual is Simpson-quadrature error, not model error). The SV model *contains* BSM as a limit.
+- **(b)** With $\eta\to0$ and $v_0=\bar v$ the Heston price collapses onto Black–Scholes to $5\times10^{-4}$ (the residual is Simpson-quadrature error, not model error). The SV model *contains* BSM as a limit.
 - **(c)** Put–call parity is satisfied **exactly** (residual $0.0$) at every strike — a consequence of $\varphi(-i)=1$ plus the structure of the Lewis formula. The implied vols trace the downward equity skew: $19.573\%$ at $K{=}80$ down to $10.993\%$ at $K{=}120$.
 - **(d)** As $T\to0$ the ATM implied vol converges to $\sqrt{v_0}=13.191\%$ — the *instantaneous* variance, exactly as it must ($13.1903\%$ at $T{=}0.01$ and $0.05$; the slight excess at $T{=}0.002$, $13.2237\%$, is quadrature error in the Fourier integral at extremely small $T$). It then rises with maturity toward the deterministic average of the forward-variance curve, $15.946\%$ at $T{=}1$ (§04).
 - **An independent path check.** A full Monte Carlo of the SDE pair (60 000 antithetic paths, 300 Euler steps, $T{=}1$ ATM) gives $5.66266$ against the Fourier price $5.67364$ — a $0.2\%$ gap, inside one standard error ($\approx0.03$), and the simulated average realized variance matches its theoretical value $(1/T)\int_0^T\xi_0^t dt=0.025427$ (simulated $0.025350$). The Fourier route is validated end to end.

@@ -63,7 +63,7 @@ which peaks at $\Delta=0$ and collapses in the tails: **the first nanoseconds ar
 
 ### 3. Computational Implementation — latency *is* a budget you can spend
 
-Stdlib only. We build the budget table, convert latency to distance, and trace the winner-take-all S-curve (with a Monte-Carlo cross-check of the closed form).
+Stdlib only. We build the budget table, convert latency to distance, and trace the winner-take-all S-curve (with a Monte Carlo cross-check of the closed form).
 
 ```python
 import math, random
@@ -114,7 +114,7 @@ P(faster firm wins) vs mean-latency gap (both jitter sd = 30 ns):
   Monte-Carlo check at gap = 50 ns: 0.8807
 ```
 
-Read the table: the closed form and the 400,000-path Monte-Carlo agree to four decimals (0.8807), which validates the Gaussian race model. **The S-curve is the point.** A 5 ns gap is *nearly worthless* (54.7%, a coin flip with an edge). A 50 ns gap wins 88% of the time. A 905 ns gap — roughly software versus FPGA — wins **100%** of the time. Below ~3σ the race is contestable and speed pays; beyond it, the loser is simply not in the game.
+Read the table: the closed form and the 400,000-path Monte Carlo agree to four decimals (0.8807), which validates the Gaussian race model. **The S-curve is the point.** A 5 ns gap is *nearly worthless* (54.7%, a coin flip with an edge). A 50 ns gap wins 88% of the time. A 905 ns gap — roughly software versus FPGA — wins **100%** of the time. Below ~3σ the race is contestable and speed pays; beyond it, the loser is simply not in the game.
 
 ---
 

@@ -15,7 +15,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The xVA formulas in this folder rest on assumptions that are *quietly strong*. This page names them precisely, so a practitioner knows **which** assumption to distrust and **how** the failure shows up in money terms. The objective is not cynicism — it is knowing exactly where the model is an approximation so the residual risk can be measured and managed (the same discipline as [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|Black-Scholes' failure modes]]).
+The xVA formulas in this folder rest on assumptions that are *quietly strong*. This page names them precisely, so a practitioner knows **which** assumption to distrust and **how** the failure shows up in money terms. The objective is not cynicism — it is knowing exactly where the model is an approximation so the residual risk can be measured and managed (the same discipline as [[pillars/03-derivative-pricing/black-scholes-merton/05-failure-modes-and-practice|Black–Scholes' failure modes]]).
 
 The failures, in one line each:
 1. **Wrong-way risk (WWR)** — exposure and counterparty credit are assumed independent; in reality default is *more likely when exposure is high*, so CVA is underpriced.

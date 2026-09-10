@@ -19,7 +19,7 @@ An institutional fund rarely wants to "buy stock" the way you buy a lunch. It wa
 Three truths, three "aha"s:
 
 1. **A parent order is not a trade; it is a sociotechnical event.** If you dump it at once, you sweep the book, walk the price up through every resting limit order, and pay for it. Walk the price up = **market impact**, paid dollar-for-dollar.
-2. **The only reason to slice at all is that impact is superlinear in size.** Halving the order does not halve the cost — it reduces it by *more than* half. That is why "go fast = expensive" is not a linear statement; it is the whole economic justification for slicing (the temporary-impact term of [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren-Chriss]]).
+2. **The only reason to slice at all is that impact is superlinear in size.** Halving the order does not halve the cost — it reduces it by *more than* half. That is why "go fast = expensive" is not a linear statement; it is the whole economic justification for slicing (the temporary-impact term of [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss]]).
 3. **Slicing has a price of its own: time.** While you wait to cut impact, the market drifts. So execution is globally a **trade-off between impact (go fast risks it) and timing risk (go slow risks drift)** — and every algorithm is a different answer to that trade-off.
 
 > **The one-sentence essence.** "You cannot trade a parent order as one thing; you must chop it, and chopping trades impact against timing risk — the schedule and the benchmark are the two dials that define the algorithm's character."
@@ -28,14 +28,14 @@ Three truths, three "aha"s:
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**The impact non-linearity (Almgren-Chriss temporary impact).** In the AC model the temporary impact paid on a block traded at rate $v$ is linear:
+**The impact non-linearity (Almgren–Chriss temporary impact).** In the AC model the temporary impact paid on a block traded at rate $v$ is linear:
 $$h(v) = \\varepsilon + \\frac{\\eta}{\\tau}\\,n,_\\text{ per share,}$$ so the *total* cost of trading $n$ shares in one interval is $n\\cdot h(n/\\tau)$ — and the key fact is that this **grows quadratically in the slice size**. The temporary-impact contribution to expected cost is
 $$\\frac{\\tilde\\eta}{\\tau}\\sum_{t=1}^N n_t^2, \\qquad \\text{so if you split into } N \\text{ equal slices, it becomes } \\frac{\\tilde\\eta}{\\tau}\\,\\frac{X^2}{N}.$$
 **Splitting into $N$ equal parts divides the temporary-impact term by $N$** — not by $\\sqrt N$, exactly by $N$. That is the cleanest number in the field: *why slicing is not optional.*
 
 **What slicing costs you instead.** The risk (variance of shortfall) is
 $$V = \\sigma^2\\sum_{t=1}^N \\tau\\,x_t^2,$$
-which shrinks as you trade *faster* (lower $x_t$ inventory) — the exact reverse of impact. Setting these two against each other is the Almgren-Chriss frontier ([[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/02-the-execution-problem|02 · The Execution Problem]]). For this page the message is structural: **impact wants you slow and even; risk wants you fast and done; the schedule is your position on that line.**
+which shrinks as you trade *faster* (lower $x_t$ inventory) — the exact reverse of impact. Setting these two against each other is the Almgren–Chriss frontier ([[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/02-the-execution-problem|02 · The Execution Problem]]). For this page the message is structural: **impact wants you slow and even; risk wants you fast and done; the schedule is your position on that line.**
 
 ---
 

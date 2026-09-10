@@ -8,7 +8,7 @@ tags:
   - default
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, expectation) and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] (a call \(=\max(S-K,0)\) can be priced from no-arbitrage alone).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, expectation) and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (a call \(=\max(S-K,0)\) can be priced from no-arbitrage alone).
 
 ---
 
@@ -47,7 +47,7 @@ $$F \;=\; V-E \;=\; \underbrace{D\,e^{-rT}}_{\text{risk-free bond}} \;-\; \under
 
 **The risk-neutral default probability.** In the risk-neutral world $V_T$ is lognormal with drift $r$ and volatility $\sigma_V$, so
 $$\mathbb{Q}(V_T<D)=\mathbb{Q}\!\left(\ln\frac{V_T}{V}<\ln\frac{D}{V}\right)=N(-d_2),\qquad d_2=\frac{\ln(V/D)+(r-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.$$
-This is the exact statement: **the risk-neutral probability of default is the Black-Scholes risk-neutral exercise probability.** (Section 03 separates this from the *real-world* PD, which uses the physical drift $\mu$.)
+This is the exact statement: **the risk-neutral probability of default is the Black–Scholes risk-neutral exercise probability.** (Section 03 separates this from the *real-world* PD, which uses the physical drift $\mu$.)
 
 **Where the model lives.** Merton (1974) derives this directly from his eq. (10) — the PDE satisfied by $f(V,t)$, the equity value — and notes (his words) that it is "identical to the equations for a European call option on a non-dividend-paying common stock where firm value corresponds to stock price and $B$ corresponds to the exercise price."
 
@@ -95,6 +95,6 @@ Read the table: below $V_T=100$ the equity is **flat at zero** (the call is out 
 
 ### 6. Connected Graph Bridges
 
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Continue: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/02-the-merton-structural-model|02 · The Merton Structural Model]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Index Hub]]
 - Forward: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (what to do with the loss distribution this option payoff generates)

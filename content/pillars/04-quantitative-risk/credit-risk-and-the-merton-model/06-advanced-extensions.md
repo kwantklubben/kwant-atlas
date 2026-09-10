@@ -176,4 +176,4 @@ The one-year numbers reproduce the matrix's default column exactly (BBB $0.18\%$
 
 - Back: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/04-reduced-form-and-cds|04 · Reduced-Form & CDS]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Index Hub]]
 - Siblings: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (the quantile $\theta_q$ *is* a credit VaR) · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]] (the joint-tail failure of the Gaussian copula) · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Index Hub]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Index Hub]]

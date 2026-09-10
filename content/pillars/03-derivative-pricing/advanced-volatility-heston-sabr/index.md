@@ -15,11 +15,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Black-Scholes-Merton has one free parameter and it is the *wrong kind of object*: a constant. Real volatility is itself a random process — it clusters, it mean-reverts, and it moves **against** the equity market. Once you accept that, the pricing problem changes shape: you have a second risk factor, you cannot hedge it with the underlying alone, and you must choose a **dynamics** — not merely a curve. This folder is the topic-hub for the two models that define the modern answer: **Heston (1993)**, the tractable *stochastic-volatility* (SV) process with a quasi-closed-form price, and **SABR (Hagan et al. 2002)**, the tractable *smile expansion*.
+Black–Scholes–Merton has one free parameter and it is the *wrong kind of object*: a constant. Real volatility is itself a random process — it clusters, it mean-reverts, and it moves **against** the equity market. Once you accept that, the pricing problem changes shape: you have a second risk factor, you cannot hedge it with the underlying alone, and you must choose a **dynamics** — not merely a curve. This folder is the topic-hub for the two models that define the modern answer: **Heston (1993)**, the tractable *stochastic-volatility* (SV) process with a quasi-closed-form price, and **SABR (Hagan et al. 2002)**, the tractable *smile expansion*.
 
 The one-sentence essence:
 
-> **Stochastic volatility fixes Black-Scholes' single-$\sigma$ failure by making variance a mean-reverting, spot-correlated diffusion; Heston makes that model *computable* (affine characteristic function ⇒ one-dimensional Fourier inversion) and SABR makes its smile *closed-form* in the short-expiration limit — but the smile's *shape* barely discriminates between models, so the model choice is settled by the dynamics (vol-of-vol, skew term structure, skew stickiness), not by the static fit.**
+> **Stochastic volatility fixes Black–Scholes' single-$\sigma$ failure by making variance a mean-reverting, spot-correlated diffusion; Heston makes that model *computable* (affine characteristic function ⇒ one-dimensional Fourier inversion) and SABR makes its smile *closed-form* in the short-expiration limit — but the smile's *shape* barely discriminates between models, so the model choice is settled by the dynamics (vol-of-vol, skew term structure, skew stickiness), not by the static fit.**
 
 This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages that walk from raw intuition through the Heston SDE and its characteristic function, the SABR expansion and the short-expiration asymptotics, the Bergomi–Guyon dynamics, calibration/hedging practice, and the frontier (forward-variance, LSV, rough vol).
 
@@ -27,7 +27,7 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Notation.** $S$ spot, $F_T=S_0e^{(r-q)T}$ forward, $K$ strike, $T$ maturity, $\tau=T-t$, $v_t$ instantaneous variance, $\bar v$ its long-run mean, $\lambda$ (also written $\kappa$) the mean-reversion speed, $\eta$ (= Bergomi's $\sigma$) the **vol-of-vol**, $\rho$ the spot/variance correlation, $k=\ln(K/F_T)$ log-moneyness, $\sigma_{BS}$ Black-Scholes implied vol, $\varphi_T(u)=\mathbb{E}[e^{iuX_T}]$ the characteristic function of $X_T=\ln(S_T/F_T)$.
+**Notation.** $S$ spot, $F_T=S_0e^{(r-q)T}$ forward, $K$ strike, $T$ maturity, $\tau=T-t$, $v_t$ instantaneous variance, $\bar v$ its long-run mean, $\lambda$ (also written $\kappa$) the mean-reversion speed, $\eta$ (= Bergomi's $\sigma$) the **vol-of-vol**, $\rho$ the spot/variance correlation, $k=\ln(K/F_T)$ log-moneyness, $\sigma_{BS}$ Black–Scholes implied vol, $\varphi_T(u)=\mathbb{E}[e^{iuX_T}]$ the characteristic function of $X_T=\ln(S_T/F_T)$.
 
 **Quick-Reference Lookup (job #1).** Every formula is transcribed from the verified corpus (Gatheral, *The Volatility Surface*, ch 2–8; Bergomi, *Stochastic Volatility Modeling*, ch 6–10; Hagan et al. 2002) and every number in the check column was **re-executed** (§3 and the sub-pages).
 
@@ -37,7 +37,7 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 | **Feller condition** | $2\lambda\bar v>\eta^2\ \Rightarrow v_t>0$ a.s. | fitted SPX params: $0.09383<0.15031$ → **violated** |
 | Milstein positivity | $4\lambda\bar v/\eta^2>1$ | $1.24849>1$ → the discretisation still stays positive |
 | **Characteristic function** (2.12/2.15) | $\varphi_T(u)=\exp\!\big(C(u,\tau)\bar v+D(u,\tau)v_0\big)$, $D=r_-\frac{1-e^{-d\tau}}{1-ge^{-d\tau}}$, $C=\lambda\big\{r_-\tau-\frac{2}{\eta^2}\ln\frac{1-ge^{-d\tau}}{1-g}\big\}$, $r_\pm=\frac{\beta\pm d}{\eta^2}$, $d=\sqrt{\beta^2-4\alpha\gamma}$, $g=r_-/r_+$, $\alpha=-\frac{u^2}{2}-\frac{iu}{2}$, $\beta=\lambda-\rho\eta iu$, $\gamma=\frac{\eta^2}{2}$ | reproduces BSM as $\eta\to0$ |
-| **Lewis / Carr-Madan price** (5.6) | $C=F_T-\frac{\sqrt{F_TK}}{\pi}\displaystyle\int_0^\infty\!\frac{du}{u^2+\frac14}\,\mathrm{Re}\!\big[e^{-iuk}\varphi_T(u-\tfrac i2)\big]$ | BSM limit: Heston $\eta\!\to\!0$ gives $7.96607957$ vs BSM $7.96556746$ |
+| **Lewis / Carr–Madan price** (5.6) | $C=F_T-\frac{\sqrt{F_TK}}{\pi}\displaystyle\int_0^\infty\!\frac{du}{u^2+\frac14}\,\mathrm{Re}\!\big[e^{-iuk}\varphi_T(u-\tfrac i2)\big]$ | BSM limit: Heston $\eta\!\to\!0$ gives $7.96607957$ vs BSM $7.96556746$ |
 | Heston price, $T{=}1$ (Table 3.2) | (Lewis integral above) | $K{=}80/90/100/110/120 \Rightarrow$ iv $19.573/16.895/14.234/11.989/10.993\%$ |
 | Put–call parity | $C-P=e^{-rT}(F_T-K)$ | residual $0.0$ at every strike |
 | ATM implied variance (3.18) | $\sigma^2_{BS}\big|_{K=F_T}=\frac{(\bar v-\bar v')(1-e^{-\lambda'T})}{\lambda'T}+\bar v'$, $\lambda'=\lambda-\frac{\rho\eta}{2}$, $\bar v'=\bar v\lambda/\lambda'$ | **order-1 in $\eta$ approximation only** (see caveat) |
@@ -126,12 +126,12 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
-- Sibling topics: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the constant-$\sigma$ zero point) · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles|Volatility Surfaces & Smiles]] (the empirical object these models must reproduce *and* move)
+- Sibling topics: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (the constant-$\sigma$ zero point) · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles|Volatility Surfaces & Smiles]] (the empirical object these models must reproduce *and* move)
 - Related flat notes: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]] (SABR's home market)
 - Sub-pages (in-folder): 01 From Zero · 02 The Heston Model · 03 SABR & Asymptotics · 04 SV Dynamics · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
-- **Absolute beginner:** [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/01-from-zero-intuition|01 · From Zero]] — needs only Black-Scholes and the idea of a smile.
+- **Absolute beginner:** [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/01-from-zero-intuition|01 · From Zero]] — needs only Black–Scholes and the idea of a smile.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/02-the-heston-model|02 · The Heston Model]] → [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/03-sabr-and-asymptotics|03 · SABR & Asymptotics]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/04-stochastic-vol-dynamics|04 · SV Dynamics]] → [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/05-failure-modes-and-practice|05 · Failure Modes & Practice]] → [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/06-advanced-extensions|06 · Advanced Extensions]].
 - Back-references: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/06-advanced-extensions|VS · 06 Advanced Extensions]] (the launchpad version of this material) · [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|BSM · 06 Advanced Extensions]]

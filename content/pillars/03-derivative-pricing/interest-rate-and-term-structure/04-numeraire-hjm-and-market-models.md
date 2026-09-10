@@ -53,7 +53,7 @@ No-arbitrage forces the **drift condition** (Björk Prop 25.2):
 
 $$\alpha(t,T)=\sigma(t,T)\int_t^T\sigma(t,s)ds .$$
 
-The drift is *completely determined by volatility* — no freedom remains. With this, the bond satisfies $dP=rP\,dt-\sigma^*(t,T)P\,dW$ with accumulated vol $\sigma^*(t,T)=\int_t^T\sigma(t,s)ds$. **Musiela parametrization** ($x=T-t$, $r(t,x)=f(t,t+x)$) turns this into an infinite-dimensional SDE (Björk §25.3). One-factor HJM with mean-reverting vol $\sigma e^{-a(T-t)}$ **is** the Hull-White model (BM Ch5 headline).
+The drift is *completely determined by volatility* — no freedom remains. With this, the bond satisfies $dP=rP\,dt-\sigma^*(t,T)P\,dW$ with accumulated vol $\sigma^*(t,T)=\int_t^T\sigma(t,s)ds$. **Musiela parametrization** ($x=T-t$, $r(t,x)=f(t,t+x)$) turns this into an infinite-dimensional SDE (Björk §25.3). One-factor HJM with mean-reverting vol $\sigma e^{-a(T-t)}$ **is** the Hull–White model (BM Ch5 headline).
 
 #### 2.3 Why lognormal *instantaneous* forwards explode (Shreve Ch34; Björk Ch27)
 

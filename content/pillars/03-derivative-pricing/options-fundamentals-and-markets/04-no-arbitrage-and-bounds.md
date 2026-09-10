@@ -15,7 +15,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page is the **model-free spine** of the pillar. Before Black-Scholes, before any assumption about volatility or lognormal prices, there are relationships an option price *cannot* violate without creating free money. The practical objective: have the bounds, put–call parity, and the early-exercise rules at your fingertips, because they are (a) the first sanity check on any quoted price and (b) the only results that survive when the model is wrong.
+This page is the **model-free spine** of the pillar. Before Black–Scholes, before any assumption about volatility or lognormal prices, there are relationships an option price *cannot* violate without creating free money. The practical objective: have the bounds, put–call parity, and the early-exercise rules at your fingertips, because they are (a) the first sanity check on any quoted price and (b) the only results that survive when the model is wrong.
 
 The central object is **put–call parity**. It says a call plus a discounted strike is the *same cash-flow stream* as a put plus the stock — so the two must cost the same. It is not a model; it is an *identity* built from two portfolios that pay identically in every state of the world. Every quoted option price in a liquid market obeys it to within the bid/ask spread. When it is violated, a **conversion** (buy the cheap side, sell the rich side, hold the hedge to expiry) locks a riskless profit.
 

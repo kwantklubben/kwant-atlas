@@ -147,7 +147,7 @@ spread of raw means   = 1.783
 spread of posterior   = 1.474  <- shrunk toward the grand mean
 ```
 
-**What the output shows.** Each raw group mean moves toward the grand mean $\approx2.92$: the low group $1.834\to2.022$ moves up, the high group $3.617\to3.496$ moves down, and the spread narrows from $1.783$ to $1.474$. The **Gibbs posterior means match the closed-form shrinkage formula** ($2.022$ vs $1.976$, $3.496$ vs $3.524$, …) to within Monte-Carlo error — independent confirmation that the sampler and the analytic formula agree. The learned hyperparameters ($\hat\mu=2.913$, $\hat\tau^2=0.824$) are the data-driven shrinkage strength; $B_j=0.132$ says each group is pulled 13% of the way to the population. All three failure modes below live in this number.
+**What the output shows.** Each raw group mean moves toward the grand mean $\approx2.92$: the low group $1.834\to2.022$ moves up, the high group $3.617\to3.496$ moves down, and the spread narrows from $1.783$ to $1.474$. The **Gibbs posterior means match the closed-form shrinkage formula** ($2.022$ vs $1.976$, $3.496$ vs $3.524$, …) to within Monte Carlo error — independent confirmation that the sampler and the analytic formula agree. The learned hyperparameters ($\hat\mu=2.913$, $\hat\tau^2=0.824$) are the data-driven shrinkage strength; $B_j=0.132$ says each group is pulled 13% of the way to the population. All three failure modes below live in this number.
 
 ---
 

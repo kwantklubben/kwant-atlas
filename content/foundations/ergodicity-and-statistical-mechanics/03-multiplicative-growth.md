@@ -134,4 +134,4 @@ The ensemble mean ($27.11\times$) and the geometric mean / median ($19.35\times$
 - Back: [[foundations/ergodicity-and-statistical-mechanics/02-ensemble-vs-time-averages|02 · Ensemble vs Time Averages]]
 - Forward: [[foundations/ergodicity-and-statistical-mechanics/04-kelly-criterion|04 · Kelly Criterion]] · [[foundations/ergodicity-and-statistical-mechanics/index|Index Hub]]
 - Theory: [[foundations/stochastic-calculus/03-ito-integral-and-doeblin|Itô Integral & Doeblin]] (the $\tfrac12\sigma^2$ correction) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (log returns, fat tails)
-- Applications: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance Optimization]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]]
+- Applications: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails|Extreme Value Theory & Fat Tails]]

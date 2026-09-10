@@ -17,7 +17,7 @@ tags:
 Closed forms exist for a handful of contracts. Everything else — American exercise, path-dependent payoffs, multi-factor models, barriers with monitoring dates — has **no formula**, and must be priced by *discretising* the object it came from. There are exactly two objects to discretise:
 
 - **The PDE** (Feynman–Kac's differential form): replace the space and time derivatives by divided differences, and solve the resulting linear system on a grid. → [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|Finite-Difference Methods]].
-- **The expectation** (Feynman–Kac's integral form): replace the integral over $\mathbb{Q}$-paths by an average over *simulated* paths. → [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|Monte-Carlo Pricing]].
+- **The expectation** (Feynman–Kac's integral form): replace the integral over $\mathbb{Q}$-paths by an average over *simulated* paths. → [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|Monte Carlo Pricing]].
 
 Trees sit between the two: a binomial/trinomial tree is a **backward-induction PDE solver** on a log-price grid, and (Hull Ch 21) the *explicit* finite-difference scheme **is** a trinomial tree.
 
@@ -57,7 +57,7 @@ $$\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\tfrac\xi2,\qquad
 
 The **triangle** that governs everything (Definitions 8.1/8.3/8.4 + Theorem 8.1): *consistency* (truncation error $\to0$) + *stability* ($\|Q^n\|\le K$) $\iff$ *convergence* — Lax equivalence. Order $(p,q)$ means $\|\tau^n\|=O(h^p)+O(k^q)$.
 
-**Lookup 3 — the Monte-Carlo estimator** (Glasserman eqs. 1.1–1.8, 1.39, 3.20).
+**Lookup 3 — the Monte Carlo estimator** (Glasserman eqs. 1.1–1.8, 1.39, 3.20).
 
 $$\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i),\qquad \hat\alpha_n-\alpha\approx\mathcal N\!\left(0,\frac{\sigma_f}{\sqrt n}\right),\qquad
 V(0)=e^{-rT}\,\mathbb{E}^{\mathbb{Q}}[h(S_T)].$$
@@ -162,7 +162,7 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/numeri
 ### 5. Canonical Literature & Study References
 
 - **Duffy, Daniel J.**: *Finite Difference Methods in Financial Engineering* (Wiley, 2006) — Ch 3 (parabolic IBVPs, maximum principle), Ch 4 (BS → heat reduction), Ch 6 (divided differences, Euler/CN, Padé), Ch 7 (method of lines, $\theta$-method, M-matrix), Ch 8 (consistency, stability, Lax, von Neumann), Ch 11 (exponential fitting), Ch 12 (explicit schemes + stability bounds), Ch 19–21 (ADI, splitting, IMEX), Ch 27–29 (front fixing, penalty, PSOR). *The primary FDM source for this folder; equations verified at glyph level in the corpus.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004) — Ch 1 (estimator, MSE/efficiency), Ch 3 (sample paths, GBM, Brownian bridge, jump diffusions), Ch 4 (variance reduction), Ch 5 (QMC), Ch 6 (discretisation, Brownian interpolation), Ch 7 (sensitivities), Ch 8 (American by simulation, LSM, duality). *The primary Monte-Carlo source; math-verified in the corpus.*
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004) — Ch 1 (estimator, MSE/efficiency), Ch 3 (sample paths, GBM, Brownian bridge, jump diffusions), Ch 4 (variance reduction), Ch 5 (QMC), Ch 6 (discretisation, Brownian interpolation), Ch 7 (sensitivities), Ch 8 (American by simulation, LSM, duality). *The primary Monte Carlo source; math-verified in the corpus.*
 - **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) — Ch 21 (numerical procedures: trees, MC variance reduction, implicit/explicit/CN finite differences, explicit FDM ≡ trinomial). *Verified extraction in the corpus.*
 - **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) — §4.1–4.2 (CRR binomial, European 4.4496 vs BSM 4.4494; American put 4.692 at $n{=}1000$), §4.5 (Boyle trinomial, 13.1752 vs BSM 13.1744). *Numerically verified.*
 
@@ -171,7 +171,7 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/numeri
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[foundations/calculus-and-optimization/index|Calculus]]
-- Upstream theory: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton Hub]] (the PDE being discretised) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the discrete seed)
+- Upstream theory: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton Hub]] (the PDE being discretised) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the discrete seed)
 - Sub-pages (in-folder): 01 From Zero · 02 Finite Differences · 03 Monte Carlo · 04 Variance Reduction · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

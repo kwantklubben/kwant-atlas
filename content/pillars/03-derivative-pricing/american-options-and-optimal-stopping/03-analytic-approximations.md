@@ -1,5 +1,5 @@
 ---
-title: "03 — Analytic Approximations: Perpetual Closed Forms, BAW & Bjerksund-Stensland"
+title: "03 — Analytic Approximations: Perpetual Closed Forms, BAW & Bjerksund–Stensland"
 tags:
   - pillar-derivative-pricing
   - american-options
@@ -15,13 +15,13 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-American options have no exact closed form — but they have an **exact closed form in one limit and good closed-form approximations everywhere else**. This page is the **analytic-approximation lookup**: the base case (perpetual options, which *do* solve exactly), the two industry approximations (Barone-Adesi-Whaley, Bjerksund-Stensland), and the transformation that turns every American *put* into an American *call*.
+American options have no exact closed form — but they have an **exact closed form in one limit and good closed-form approximations everywhere else**. This page is the **analytic-approximation lookup**: the base case (perpetual options, which *do* solve exactly), the two industry approximations (Barone–Adesi–Whaley, Bjerksund–Stensland), and the transformation that turns every American *put* into an American *call*.
 
 The idea behind every approximation is the same as the structure of the problem. The American value is the European value plus a **premium** for the early-exercise right;
 
 $$V^{\text{Am}}(S)=v^{\text{Eu}}(S)+\text{early-exercise premium}(S).$$
 
-The premium is zero deep out-of-the-money, grows as $S$ moves toward the boundary, and is exactly $(S-X)-v^{\text{Eu}}$ at the boundary. Approximations differ only in *how they guess the shape of the premium*. Barone-Adesi-Whaley guesses a single power $A_2(S/S^*)^{q_2}$ and solves a one-dimensional root-find for the boundary $S^*$; Bjerksund-Stensland instead approximates the *exercise boundary itself* as flat (1993) or two-piece (2002), and integrates the resulting payoff analytically.
+The premium is zero deep out-of-the-money, grows as $S$ moves toward the boundary, and is exactly $(S-X)-v^{\text{Eu}}$ at the boundary. Approximations differ only in *how they guess the shape of the premium*. Barone–Adesi–Whaley guesses a single power $A_2(S/S^*)^{q_2}$ and solves a one-dimensional root-find for the boundary $S^*$; Bjerksund–Stensland instead approximates the *exercise boundary itself* as flat (1993) or two-piece (2002), and integrates the resulting payoff analytically.
 
 > **Why perpetual matters.** With infinite maturity the value is time-homogeneous, the PDE becomes an ODE, and the problem *solves exactly* — boundary and all. It is both the only true closed form and the $\tau\to\infty$ limit that every finite-maturity boundary tends toward.
 
@@ -49,16 +49,16 @@ $$c=\frac{(\gamma_1-1)^{\gamma_1-1}}{\gamma_1^{\gamma_1}}\left(\frac{S}{X}\right
 $$p=\frac{X}{1-\gamma_2}\left(\frac{\gamma_2-1}{\gamma_2}\cdot\frac{S}{X}\right)^{\gamma_2},\quad
 \gamma_2=\left(\tfrac12-\tfrac{b}{\sigma^2}\right)-\sqrt{\left(\tfrac{b}{\sigma^2}-\tfrac12\right)^2+\tfrac{2r}{\sigma^2}}\qquad(\text{put}).$$
 
-#### 2.3 Barone-Adesi-Whaley (1987) (Haug §3.1)
+#### 2.3 Barone–Adesi–Whaley (1987) (Haug §3.1)
 
 **Call** ($b<r$; else $C=c_{BSM}$):
 $$C(S)=\begin{cases} c_{BSM}(S)+A_2\left(\dfrac{S}{S^*}\right)^{q_2}, & S<S^*,\\[4pt] S-X, & S\ge S^*,\end{cases}
 \quad A_2=\frac{S^*}{q_2}\Big[1-e^{(b-r)T}N\big(d_1(S^*)\big)\Big],$$
 $$q_2=\frac{-(N-1)+\sqrt{(N-1)^2+4M/K}}{2},\quad M=\frac{2r}{\sigma^2},\ N=\frac{2b}{\sigma^2},\ K=1-e^{-rT}.$$
 
-The critical price $S^*$ solves $S^*-X=c_{BSM}(S^*)+\big(1-e^{(b-r)T}N(d_1(S^*))\big)S^*/q_2$ (Newton-Raphson, tolerance $|LHS-RHS|/X<10^{-5}$). The **put** is symmetric with $q_1=\frac{-(N-1)-\sqrt{(N-1)^2+4M/K}}{2}$, $A_1=-\frac{S^{**}}{q_1}[1-e^{(b-r)T}N(-d_1(S^{**}))]$ and boundary $S^{**}<X$.
+The critical price $S^*$ solves $S^*-X=c_{BSM}(S^*)+\big(1-e^{(b-r)T}N(d_1(S^*))\big)S^*/q_2$ (Newton–Raphson, tolerance $|LHS-RHS|/X<10^{-5}$). The **put** is symmetric with $q_1=\frac{-(N-1)-\sqrt{(N-1)^2+4M/K}}{2}$, $A_1=-\frac{S^{**}}{q_1}[1-e^{(b-r)T}N(-d_1(S^{**}))]$ and boundary $S^{**}<X$.
 
-#### 2.4 Bjerksund-Stensland 1993 (Haug §3.2)
+#### 2.4 Bjerksund–Stensland 1993 (Haug §3.2)
 
 Model the boundary as a **flat** trigger $I$ and integrate the payoff analytically:
 $$C=\alpha S^\beta-\alpha\,\phi(S,T,\beta,I,I)+\phi(S,T,1,I,I)-\phi(S,T,1,X,I)-X\phi(S,T,0,I,I)+X\phi(S,T,0,X,I),$$

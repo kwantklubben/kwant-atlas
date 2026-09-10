@@ -146,4 +146,4 @@ The LSM value (6.1339) is a low-biased estimate of the American put for $S=100,\
 
 - Back: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (the next layer of model risk) · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]]
-- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton & Feynman–Kac]]

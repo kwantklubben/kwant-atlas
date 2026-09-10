@@ -10,7 +10,7 @@ tags:
   - spread-options
 ---
 
-**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]].
+**Basic Prerequisites:** [[foundations/calculus-and-optimization/index|Multivariable Calculus & Optimization]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton & Feynman–Kac]].
 
 ---
 
@@ -170,5 +170,5 @@ Kirk spread call = 2.1670  (Haug 2.1670)
 
 - Back: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/03-lookbacks-and-asians|03 · Lookbacks & Asians]]
 - Forward: [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Index Hub]]
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton & Feynman-Kac]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton & Feynman–Kac]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
 - Sibling: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] (the correlation/vol input)

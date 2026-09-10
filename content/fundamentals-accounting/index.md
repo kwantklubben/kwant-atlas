@@ -16,7 +16,7 @@ tags:
 
 It matters to **both** audiences:
 
-- **Quantitative projects** consume fundamental data at scale — Fama-French and Barra style factors, value/profitability/investment sorts, point-in-time fundamental panels — and an unwittingly wrong as-of date or a naive restatement policy silently destroys a backtest.
+- **Quantitative projects** consume fundamental data at scale — Fama–French and Barra style factors, value/profitability/investment sorts, point-in-time fundamental panels — and an unwittingly wrong as-of date or a naive restatement policy silently destroys a backtest.
 - **Discretionary / fundamental projects** live or die on reading the filings, judging accrual quality, and building a defensible valuation — the Graham–Buffett–Penman line of reasoning.
 
 The two are the same discipline viewed at different frequencies: *the accounting is the ground truth; the quant layer is what you do once that ground truth is machine-readable and honest.*
@@ -50,7 +50,7 @@ In short: **beginner goes top-down (statements → ratios → valuation → scre
 
 ## 🔗 Where This Area Connects
 
-- **[[pillars/01-quantitative-research/index|Pillar 1 · Quantitative Research]]** — fundamental multi-factor models (Fama-French, Barra) are built directly on this area's data; see [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]].
+- **[[pillars/01-quantitative-research/index|Pillar 1 · Quantitative Research]]** — fundamental multi-factor models (Fama–French, Barra) are built directly on this area's data; see [[pillars/01-quantitative-research/fundamental-multi-factor-models|Fundamental Multi-Factor Models]].
 - **[[pillars/05-portfolio-optimization/index|Pillar 5 · Portfolio Optimization]]** — value/quality/profitability factors become the inputs to portfolio construction and risk models.
 - **[[pillars/07-machine-learning-altdata/index|Pillar 7 · Machine Learning & AltData]]** — filings, earnings transcripts, and XBRL feeds are the alternative/structured data this area's topics feed.
 - **[[foundations/index|First-Principles Toolbox & Foundations]]** — the mathematics (statistics, econometrics, linear algebra) that underpins factor testing and valuation.

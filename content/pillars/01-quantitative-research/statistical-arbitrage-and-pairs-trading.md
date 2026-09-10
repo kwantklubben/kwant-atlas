@@ -7,7 +7,7 @@ tags:
   - mean-reversion
 ---
 
-**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (Stationarity, Unit Roots, Engle-Granger Cointegration).
+**Basic Prerequisites:** [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (Stationarity, Unit Roots, Engle–Granger Cointegration).
 
 ---
 
@@ -26,14 +26,14 @@ Two asset prices $P_t^A$ and $P_t^B$ can have high correlation ($> 0.95$) over a
 $$P_t^A = \alpha + \beta P_t^B + z_t$$
 where $P_t^A, P_t^B \sim I(1)$ (non-stationary random walks), but the residual spread $z_t \sim I(0)$ (strictly stationary with constant mean 0 and finite variance $\sigma_z^2$).
 
-#### Ornstein-Uhlenbeck (OU) Mean-Reverting Spread Dynamics
-The continuous-time spread $z_t$ is modeled as an Ornstein-Uhlenbeck process:
+#### Ornstein–Uhlenbeck (OU) Mean-Reverting Spread Dynamics
+The continuous-time spread $z_t$ is modeled as an Ornstein–Uhlenbeck process:
 $$d z_t = \theta (\mu - z_t) dt + \sigma_z dW_t$$
 - $\theta > 0$: Speed of mean reversion.
 - $\mu$: Long-term equilibrium level (typically normalized to 0).
 - $\sigma_z$: Diffusion volatility.
 
-Discretizing via Euler-Maruyama over time step $\Delta t$:
+Discretizing via Euler–Maruyama over time step $\Delta t$:
 $$z_{t} - z_{t-1} = \theta \mu \Delta t - \theta z_{t-1} \Delta t + \epsilon_t = a + b z_{t-1} + \epsilon_t$$
 where $b = -\theta \Delta t$. From the OLS estimate $\hat{b}$:
 $$\theta = -\frac{\ln(1 + \hat{b})}{\Delta t}$$

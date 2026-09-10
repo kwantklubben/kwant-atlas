@@ -8,7 +8,7 @@ tags:
   - equity-call
 ---
 
-**Basic Prerequisites:** [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/01-from-zero-intuition|01 · From Zero]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]].
+**Basic Prerequisites:** [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/01-from-zero-intuition|01 · From Zero]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]].
 
 ---
 
@@ -139,4 +139,4 @@ The solver recovers the firm parameters to machine precision — the forward/inv
 
 - Back: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/03-distance-to-default-and-pd|03 · Distance-to-Default & PD]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Index Hub]]
-- Theory: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/06-advanced-extensions|06 · Portfolio Credit & Vasicek]]
+- Theory: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/06-advanced-extensions|06 · Portfolio Credit & Vasicek]]

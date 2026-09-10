@@ -132,4 +132,4 @@ kernel bypass (EF_VI)         866      860      1087       1191      1.26x
 - Back: [[pillars/02-algorithmic-hft/low-latency-systems-architecture/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Index Hub]]
 - Cross-pillar: [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]] · [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] · [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity|FIX Protocol & Exchange Connectivity]]
 - Forward topic-folder pages: [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA]] · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]]
-- Economics: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] (the value of speed in execution)
+- Economics: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] (the value of speed in execution)

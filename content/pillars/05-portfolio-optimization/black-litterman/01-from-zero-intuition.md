@@ -1,5 +1,5 @@
 ---
-title: "01 — Black-Litterman from Zero: Why Naive Mean-Variance Fails"
+title: "01 — Black–Litterman from Zero: Why Naive Mean–Variance Fails"
 tags:
   - pillar-portfolio-optimization
   - black-litterman
@@ -8,13 +8,13 @@ tags:
   - markowitz
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean-Variance from Zero]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean–Variance from Zero]].
 
 ---
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of Black-Litterman with **no portfolio-optimization experience needed beyond the one-line spec of Markowitz**. The objective is one idea: **when you hand a mean-variance optimizer your best-guess expected returns, it doesn't optimize — it amplifies your noise into extreme bets you never meant to make. Black-Litterman's cure is to stop guessing and start from the one portfolio nobody argues with: the market itself.**
+This page builds the *why* of Black–Litterman with **no portfolio-optimization experience needed beyond the one-line spec of Markowitz**. The objective is one idea: **when you hand a mean-variance optimizer your best-guess expected returns, it doesn't optimize — it amplifies your noise into extreme bets you never meant to make. Black–Litterman's cure is to stop guessing and start from the one portfolio nobody argues with: the market itself.**
 
 Start with the dumbest question: *what expected returns should I feed the optimizer?* Markowitz tells you $w^\* = \tfrac{1}{\delta}\Sigma^{-1}(\mu - r_f\mathbf{1})$. The problem: **you do not know $\mu$.** Sample means are notoriously noisy (estimation error scales like $\sigma/\sqrt{T}$). What the optimizer does with that noise is the crime: because $w^\*$ is *linear in $\Sigma^{-1}$*, any error in $\mu$ is multiplied by the inverse covariance, whose tiny-eigenvalue directions blow up. The result is weights like $[+0.90, -0.30, +0.93]$ that look like a bet on apocalypse.
 
@@ -95,12 +95,12 @@ BL one-view weights = [0.5579 0.3    0.1421]  sum= 1.0```
 ### 5. Canonical Literature & Study References
 
 - **Black & Litterman (1992)**, *Global Portfolio Optimization*, §Motivation — the market-cap starting point and why it beats raw MVO.
-- **Best & Grauer (1991)**, *On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2) — the formal estimation-error-maximizer theorem that motivates the whole BL approach.
+- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2) — the formal estimation-error-maximizer theorem that motivates the whole BL approach.
 - **He & Litterman (1999)**, Goldman note — the worked intuition connecting views to weight tilts.
 
 ---
 
 ### 6. Connected Graph Bridges
 
-- Base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean-Variance from Zero]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]] · [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|Bayes & Priors]]
+- Base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean–Variance from Zero]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]] · [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|Bayes & Priors]]
 - Continue: [[pillars/05-portfolio-optimization/black-litterman/02-reverse-optimization|02 · Reverse Optimization]] · [[pillars/05-portfolio-optimization/black-litterman/index|Index Hub]]

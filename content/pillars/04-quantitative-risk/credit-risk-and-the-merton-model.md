@@ -7,7 +7,7 @@ tags:
   - default-probability
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] and [[foundations/stochastic-calculus/index|Stochastic Calculus]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] and [[foundations/stochastic-calculus/index|Stochastic Calculus]].
 
 ---
 
@@ -29,7 +29,7 @@ At maturity $T$:
 - **Equity Payoff:** $E_T = \max(V_T - D, \; 0)$
 - **Debt Payoff:** $D_T = \min(V_T, \; D) = D - \max(D - V_T, \; 0)$ (Bondholders are short a put option on firm assets).
 
-#### Equity Pricing via Black-Scholes Formula
+#### Equity Pricing via Black–Scholes Formula
 $$E_0 = V_0 N(d_1) - D e^{-rT} N(d_2)$$
 $$d_1 = \frac{\ln(V_0 / D) + (r + \frac{1}{2} \sigma_V^2) T}{\sigma_V \sqrt{T}}, \quad d_2 = d_1 - \sigma_V \sqrt{T}$$
 
@@ -110,5 +110,5 @@ print(f"1-Year Implied Default Probability: {p_def*100:.2f}%")
 
 ### 6. Connected Graph Bridges
 
-- Foundational Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]]
+- Foundational Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]]
 - Bridges to: [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis|Stress Testing]]

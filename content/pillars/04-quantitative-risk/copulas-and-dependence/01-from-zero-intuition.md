@@ -125,4 +125,4 @@ The simulation reproduces the analytic VaR to three decimals. The three books ar
 
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Continue: [[pillars/04-quantitative-risk/copulas-and-dependence/02-sklars-theorem-and-copulas|02 · Sklar's Theorem & Copulas]] · [[pillars/04-quantitative-risk/copulas-and-dependence/index|Index Hub]]
-- Related risk: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (the subadditivity question this page makes concrete) · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parameteric, Historical & Monte Carlo VaR]]
+- Related risk: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (the subadditivity question this page makes concrete) · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]

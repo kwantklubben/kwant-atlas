@@ -137,5 +137,5 @@ print(f"(3) HIDDEN/DARK: midpoint order hit-rate {p_fill:.0%}; "
 
 - Back: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/04-auctions-and-continuous-trading|04 · Auctions & Continuous Trading]] · [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Index Hub]]
 - Continue: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/06-advanced-extensions|06 · Advanced Extensions]]
-- Root causes: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] · [[pillars/06-market-making/limit-order-book-mechanics/04-matching-and-priority|Matching & Priority]]
+- Root causes: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/limit-order-book-mechanics/04-matching-and-priority|Matching & Priority]]
 - Where the losses bite: [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]] · [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]]

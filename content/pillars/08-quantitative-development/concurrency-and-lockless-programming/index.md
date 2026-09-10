@@ -37,7 +37,7 @@ This folder is a *hub*: it (a) gives the **fast lookup** below (job #1 — memor
 $$S(P) = \frac{1}{f + (1-f)/P} \;\longrightarrow\; \frac{1}{f} \quad (P\to\infty).$$
 Only 5% serial work caps you at a **20x** speedup no matter how many cores you add. This is the first reason locking — an inherently serial section — caps throughput.
 
-**The lock is a queue (Pollaczek-Khinchine).** A contended critical section is a single-server queue with mean service time $\mathbb{E}[S]$ and utilization $\rho$. Mean queueing time:
+**The lock is a queue (Pollaczek–Khinchine).** A contended critical section is a single-server queue with mean service time $\mathbb{E}[S]$ and utilization $\rho$. Mean queueing time:
 $$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)}.$$
 As $\rho\to1$, $W_q\to\infty$: at 90% utilization a 100 ns critical section costs ~450 ns of queueing (deterministic) or ~900 ns (exponential jitter); at 99% it is ~5–10 µs. **This is the structural reason contention is the enemy — not the lock's own cost.**
 

@@ -113,5 +113,5 @@ TWAP tracking error vs news-shocked day:   0.1238
 ### 6. Connected Graph Bridges
 
 - Continue: [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/05-failure-modes-and-practice|05 · Failure Modes & Practice]]
-- Optimal scheduling: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/06-advanced-extensions|AC Advanced · U-shaped strategies]]
+- Optimal scheduling: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/06-advanced-extensions|AC Advanced · U-shaped strategies]]
 - Microstructure base: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]]

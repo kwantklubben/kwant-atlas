@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page derives the **one number that makes Black-Litterman work: the implied equilibrium return vector $\Pi$**. Instead of *estimating* expected returns with noisy statistics (the hopeless job that breaks MVO), you **reverse-engineer** them from a fact you can actually observe: the market capitalization weights $w_{mkt}$. The move is pure bookkeeping — invert Markowitz on the market portfolio and ask *which* expected returns would have produced those weights as the optimizer's answer.
+This page derives the **one number that makes Black–Litterman work: the implied equilibrium return vector $\Pi$**. Instead of *estimating* expected returns with noisy statistics (the hopeless job that breaks MVO), you **reverse-engineer** them from a fact you can actually observe: the market capitalization weights $w_{mkt}$. The move is pure bookkeeping — invert Markowitz on the market portfolio and ask *which* expected returns would have produced those weights as the optimizer's answer.
 
 The objective in one line: **"If I believe the market-cap portfolio is held because it's optimal, then the expected returns that justify it are $\Pi=\delta\Sigma w_{mkt}$ — and those, not my noisy sample means, are the only sane starting prior."** This converts an unobservable quantity (true expected returns) into a deterministic function of observables $\Sigma$ and $w_{mkt}$ plus one parameter $\delta$ you can set or estimate.
 

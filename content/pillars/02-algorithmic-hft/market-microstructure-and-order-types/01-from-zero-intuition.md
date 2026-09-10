@@ -51,7 +51,7 @@ $$\boxed{\;c=\sqrt{-\gamma_1},\qquad \sigma_u^2=\gamma_0+2\gamma_1,\qquad \text{
 
 **Why this matters.** The spread $2c$ is *estimable from trade prices alone* — a pure microstructure signal hidden inside an otherwise near-random-walk price series. Empirically (Hasbrouck Ch 3, PCO Oct 2003) $\hat\gamma_1=-0.0000294$ gives $c=\$0.017$, spread $\$0.034$, close to the observed time-weighted NYSE average of $\$0.032$ — a striking confirmation.
 
-**The same spread, from information (Foucault Ch 1; Hasbrouck Ch 5).** The Roll $c$ is a cost of *waiting*; the Glosten-Milgrom spread is a cost of *being picked off*. With informed arrival proportion $\mu$ and value dispersion $(V_H-V_L)$, the symmetric-prior spread is $A-B=(V_H-V_L)\,\mu$ — the model-free intuition that **more adverse selection widens the spread.** Both costs coexist: the quoted spread pays for order processing, inventory, *and* adverse selection at once.
+**The same spread, from information (Foucault Ch 1; Hasbrouck Ch 5).** The Roll $c$ is a cost of *waiting*; the Glosten–Milgrom spread is a cost of *being picked off*. With informed arrival proportion $\mu$ and value dispersion $(V_H-V_L)$, the symmetric-prior spread is $A-B=(V_H-V_L)\,\mu$ — the model-free intuition that **more adverse selection widens the spread.** Both costs coexist: the quoted spread pays for order processing, inventory, *and* adverse selection at once.
 
 ---
 
@@ -104,7 +104,7 @@ passive fill earns mid   = -0.0200 /share  (-2.00 bps)  BUT only if it fills
 - **Hasbrouck, Joel** — *Empirical Market Microstructure* (2007), Ch 1 (the field, multiple simultaneous prices, liquidity = depth/breadth/resiliency) and Ch 3 (the Roll model, PCO calibration). *Verified in `hasbrouck_ch1-5.md`.*
 - **Foucault, Pagano & Röell** — *Market Liquidity* (2013), Ch 1 (liquidity and price discovery, the liquidity-definition triad, the spread as the primary illiquidity measure). *Verified in `foucault_ch1-3.md`.*
 - **Harris, Larry** — *Trading and Exchanges* (2003). *The accessible map of traders, orders, and venues — the best zero-knowledge companion to this page.*
-- **O'Hara, Maureen** — *Market Microstructure Theory* (1995). *The model-based foundation beneath the Roll and Glosten-Milgrom ideas.*
+- **O'Hara, Maureen** — *Market Microstructure Theory* (1995). *The model-based foundation beneath the Roll and Glosten–Milgrom ideas.*
 
 ---
 
@@ -112,5 +112,5 @@ passive fill earns mid   = -0.0200 /share  (-2.00 bps)  BUT only if it fills
 
 - Continue: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/02-order-types|02 · Order Types]] · [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Index Hub]]
 - Book mechanics: [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]]
-- The spread, decomposed: [[pillars/06-market-making/spread-decomposition-and-roll-model/index|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]]
+- The spread, decomposed: [[pillars/06-market-making/spread-decomposition-and-roll-model/index|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]]
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]

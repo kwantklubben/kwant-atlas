@@ -1,5 +1,5 @@
 ---
-title: "01 — Black-Scholes-Merton from Zero: Intuition & the Why"
+title: "01 — Black–Scholes–Merton from Zero: Intuition & the Why"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton
@@ -13,7 +13,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of Black-Scholes-Merton with **no prior derivatives knowledge needed**. The objective is one idea: **an option can be exactly replicated by a continuously-rebalanced portfolio of the underlying stock and the risk-free bond, and therefore its price is forced by the no-arbitrage principle — it cannot be anything else.**
+This page builds the *why* of Black–Scholes–Merton with **no prior derivatives knowledge needed**. The objective is one idea: **an option can be exactly replicated by a continuously-rebalanced portfolio of the underlying stock and the risk-free bond, and therefore its price is forced by the no-arbitrage principle — it cannot be anything else.**
 
 Start with the dumbest question: *why does an option have a price at all?* A stock has a price because it pays future cash flows. An option is just a *contract* — a bet written as $\max(S_T-K,0)$ for a call. Its value comes from a different mechanism: you can **manufacture** that payoff by trading. If the manufacturing cost is knowable, then the option must trade at that cost, or someone can lock in a risk-free profit by selling the option and manufacturing the payoff cheaply (or vice-versa).
 

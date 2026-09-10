@@ -62,7 +62,7 @@ A digital call pays $1$ if $S_T>K$. It is a strike derivative of a call, $D(K,T)
 
 $$D(K,T)=-\frac{\partial C_{BS}}{\partial K}-\underbrace{\frac{\partial C_{BS}}{\partial\sigma_{BS}}}_{\text{vega}}\frac{\partial\sigma_{BS}}{\partial K}.$$
 
-The first term is the Black-Scholes digital; the second is the **skew correction**. For a 1y ATM digital at $25\%$ vol with a skew of $3$ vol points per $10\%$ strike, vega$\,\times\,$skew $=0.1188$ against an undiscounted digital value of $0.4503$ — i.e. **$26\%$ of the digital's value, or $11.9\%$ of notional**. Gatheral's ch 8 figure of "$\sim12\%$ of notional" is exactly this number. Any desk pricing digitals off a flat interpolated smile has a 12%-of-notional error, and it is a *first-order* effect, not a correction.
+The first term is the Black–Scholes digital; the second is the **skew correction**. For a 1y ATM digital at $25\%$ vol with a skew of $3$ vol points per $10\%$ strike, vega$\,\times\,$skew $=0.1188$ against an undiscounted digital value of $0.4503$ — i.e. **$26\%$ of the digital's value, or $11.9\%$ of notional**. Gatheral's ch 8 figure of "$\sim12\%$ of notional" is exactly this number. Any desk pricing digitals off a flat interpolated smile has a 12%-of-notional error, and it is a *first-order* effect, not a correction.
 
 #### 2.4 Model risk on structured products: the LV/SV gap
 

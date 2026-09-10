@@ -122,7 +122,7 @@ Local vol calibrated from the smile, reproduced via MC
   T=1.0 k=+0.30  implied=0.1474  target=0.1608  diff=-1.34 volpts
 recovered local variance: v_loc(-0.4,0.5)=0.06414  v_loc(0.0,0.5)=0.02662
 ```
-The round-trip closes: options priced under the *calibrated* local vol come back with implied vols matching the input smile within ~1–3 vol pts at short maturity (grid + Monte-Carlo discretization error; the inversion itself is exact *by construction* — Gatheral (1.10) is a definition). Note the local vol is **smile-shaped in strike** (variance 0.064 on the put side vs 0.027 at the money) — that is how one function of $S$ encodes the whole smile. Deep-OTM/ITM strikes are dropped from the table because implied vol is ill-conditioned there under MC.
+The round-trip closes: options priced under the *calibrated* local vol come back with implied vols matching the input smile within ~1–3 vol pts at short maturity (grid + Monte Carlo discretization error; the inversion itself is exact *by construction* — Gatheral (1.10) is a definition). Note the local vol is **smile-shaped in strike** (variance 0.064 on the put side vs 0.027 at the money) — that is how one function of $S$ encodes the whole smile. Deep-OTM/ITM strikes are dropped from the table because implied vol is ill-conditioned there under MC.
 
 ---
 

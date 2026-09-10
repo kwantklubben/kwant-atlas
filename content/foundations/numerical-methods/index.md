@@ -16,7 +16,7 @@ tags:
 
 Almost nothing closed-form survives contact with a real problem. The moment a model has a free boundary, a jump, a stochastic volatility, a non-linear constraint, or more than two state variables, the analytic solution disappears and the answer must be *computed*. Numerical methods are the discipline of computing those answers **with a known, quantifiable error**.
 
-This folder is the **general numerical-methods toolbox** — the core techniques that any quantitative field needs, independent of the specific model. It is deliberately model-agnostic: the same finite-difference machinery solves the heat equation and the Black–Scholes PDE; the same Monte-Carlo estimator prices an option and evaluates a risk integral; the same Newton iteration finds a root and minimises a loss.
+This folder is the **general numerical-methods toolbox** — the core techniques that any quantitative field needs, independent of the specific model. It is deliberately model-agnostic: the same finite-difference machinery solves the heat equation and the Black–Scholes PDE; the same Monte Carlo estimator prices an option and evaluates a risk integral; the same Newton iteration finds a root and minimises a loss.
 
 Everything reduces to **five primitive operations**:
 
@@ -65,7 +65,7 @@ $$\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\tfrac\xi2,\qquad
 
 The **triangle** that governs everything (Duffy Defs. 8.1–8.4 + Thm 8.1): *consistency* (truncation error $\to0$) $+$ *stability* ($\|Q^n\|\le K$) $\iff$ *convergence* — the **Lax equivalence theorem**.
 
-**Lookup 3 — the Monte-Carlo estimator and its error** (Glasserman eqs. 1.1–1.8):
+**Lookup 3 — the Monte Carlo estimator and its error** (Glasserman eqs. 1.1–1.8):
 
 $$\hat\alpha_n=\frac1n\sum_{i=1}^n f(U_i),\qquad
 \hat\alpha_n-\alpha \approx \mathcal N\!\left(0,\frac{\sigma_f}{\sqrt n}\right),\qquad
@@ -160,7 +160,7 @@ Hub signposts — the full first-principles analysis lives on the sub-pages. In 
 ### 5. Canonical Literature & Study References
 
 - **Duffy, Daniel J.**: *Finite Difference Methods in Financial Engineering* (Wiley, 2006) — Ch 3 (parabolic IBVPs, maximum principle), Ch 4 (BS → heat reduction), Ch 6 (divided differences, Euler/CN, round-off, Padé, Richardson), Ch 7 (method of lines, $\theta$-method, M-matrices), Ch 8 (consistency, stability, Lax, von Neumann, Gershgorin). *The primary finite-difference source; equations verified at glyph level in the corpus.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004) — Ch 1 (estimator, MSE/efficiency), Ch 4 (control variates, antithetics, stratification, LHS, importance sampling), Ch 5 (quasi-Monte Carlo, discrepancy, Koksma–Hlawka, Sobol'/Halton/lattices, RQMC), Ch 6 (Euler/Milstein, strong vs weak order, MSE balancing, Brownian interpolation), Ch 7 (pathwise & likelihood-ratio sensitivities), Ch 8 (American by simulation, LSM, duality). *The primary Monte-Carlo source; math-verified in the corpus.*
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004) — Ch 1 (estimator, MSE/efficiency), Ch 4 (control variates, antithetics, stratification, LHS, importance sampling), Ch 5 (quasi-Monte Carlo, discrepancy, Koksma–Hlawka, Sobol'/Halton/lattices, RQMC), Ch 6 (Euler/Milstein, strong vs weak order, MSE balancing, Brownian interpolation), Ch 7 (pathwise & likelihood-ratio sensitivities), Ch 8 (American by simulation, LSM, duality). *The primary Monte Carlo source; math-verified in the corpus.*
 - **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) — Ch 11 (state-space models and the Kalman filter), Ch 12 (MCMC: Gibbs, Metropolis–Hastings, FFBS). *Verified in the corpus; the source for the state-space/MCMC extensions.*
 - **Golub, G. H. & Van Loan, C. F.**: *Matrix Computations* — LU/Cholesky, conditioning, eigenvalue algorithms. *(Standard reference for page 05.)*
 - **Nocedal, J. & Wright, S. J.**: *Numerical Optimization* — line search, Newton, quasi-Newton, convergence rates. *(Standard reference for page 04.)*

@@ -28,7 +28,7 @@ Every concurrency text says "locks are slow," but *why* deserves precision. The 
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Contention as queueing (Pollaczek-Khinchine).** A contended critical section is a single-server queue with utilization $\rho=\lambda\mathbb{E}[S]$ (arrival rate × mean service time). Mean waiting time:
+**Contention as queueing (Pollaczek–Khinchine).** A contended critical section is a single-server queue with utilization $\rho=\lambda\mathbb{E}[S]$ (arrival rate × mean service time). Mean waiting time:
 
 $$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)}.$$
 

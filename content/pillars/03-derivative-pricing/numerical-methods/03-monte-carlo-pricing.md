@@ -1,5 +1,5 @@
 ---
-title: "03 — Monte-Carlo Pricing: the Estimator, Paths and Path Dependence"
+title: "03 — Monte Carlo Pricing: the Estimator, Paths and Path Dependence"
 tags:
   - pillar-derivative-pricing
   - numerical-methods
@@ -8,7 +8,7 @@ tags:
   - path-dependent
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/numerical-methods/01-from-zero|01 · From Zero]] and [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · The PDE & Feynman-Kac]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/numerical-methods/01-from-zero|01 · From Zero]] and [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · The PDE & Feynman–Kac]].
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] (derivative valuation) and [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (default probability, LGD).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (derivative valuation) and [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]] (default probability, LGD).
 
 ---
 
@@ -120,7 +120,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]]
+- Foundational base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Model]]
 - Sub-pages (in-folder): 01 From Zero · 02 Exposure (EE/EPE/PFE) · 03 CVA & DVA · 04 Collateral, Netting & SA-CCR · 05 Failure Modes · 06 Advanced Extensions
 - Sibling topics: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] · [[pillars/04-quantitative-risk/liquidity-risk-and-margin-spirals|Liquidity Risk & Margin Spirals]] · [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]
 

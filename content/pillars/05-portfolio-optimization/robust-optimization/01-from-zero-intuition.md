@@ -8,7 +8,7 @@ tags:
   - markowitz
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean-Variance from Zero]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean–Variance from Zero]].
 
 ---
 
@@ -111,7 +111,7 @@ Read the last line carefully: a **1% per annum** bump to one asset's expected re
 
 ### 5. Canonical Literature & Study References
 
-- **Best & Grauer (1991)**, *On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 — §1 the elasticity theory (eqs. 6–13) and §3–6 the CRSP computational magnitudes.
+- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 — §1 the elasticity theory (eqs. 6–13) and §3–6 the CRSP computational magnitudes.
 - **Markowitz (1952)**, *Portfolio Selection*, Journal of Finance 7(1):77–91 — the original quadratic program this page perturbs.
 - **Chopra & Ziemba (1993)**, *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11 — the *relative* damage of input errors, developed on [[pillars/05-portfolio-optimization/robust-optimization/02-the-estimation-error-problem|02 · The Estimation-Error Problem]].
 
@@ -119,6 +119,6 @@ Read the last line carefully: a **1% per annum** bump to one asset's expected re
 
 ### 6. Connected Graph Bridges
 
-- Base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean-Variance from Zero]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]]
+- Base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|Mean–Variance from Zero]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]]
 - Sibling (the same disease, Bayesian cure): [[pillars/05-portfolio-optimization/black-litterman/01-from-zero-intuition|Black–Litterman from Zero]]
 - Continue: [[pillars/05-portfolio-optimization/robust-optimization/02-the-estimation-error-problem|02 · The Estimation-Error Problem]] · [[pillars/05-portfolio-optimization/robust-optimization/index|Index Hub]]

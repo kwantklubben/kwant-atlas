@@ -56,7 +56,7 @@ At $\alpha=0.975$: $\mathrm{ES}=2.337803$ vs $z_{0.99}=2.326348$ — the reason 
 
 ### 3. Computational Implementation — three representations, verified to agree
 
-Monte-Carlo normal sample; verify the empirical tail mean equals the quantile integral equals the analytic formula. Stdlib only.
+Monte Carlo normal sample; verify the empirical tail mean equals the quantile integral equals the analytic formula. Stdlib only.
 
 ```python
 import math, random
@@ -98,7 +98,7 @@ MC quantile-int = 2.66903   ((1/(1-a)) Int_a^1 VaR_u du)
 check ES >= VaR : ES_99=2.6652 >= VaR_99=2.3263 ? True
 ```
 
-All three agree to Monte-Carlo precision (the small residual is $O(1/\sqrt{N})$ and the discrete-quantile granularity of the tail mean). ES exceeds VaR by the expected $14.6\%$ normal gap.
+All three agree to Monte Carlo precision (the small residual is $O(1/\sqrt{N})$ and the discrete-quantile granularity of the tail mean). ES exceeds VaR by the expected $14.6\%$ normal gap.
 
 ---
 

@@ -24,7 +24,7 @@ Standard backtests suffer from selection bias, lookahead bias, and survival bias
 #### Expected Maximum Sharpe Ratio Under the Null Hypothesis
 Let $N$ independent strategies be tested under the null hypothesis $H_0: \text{Sharpe} = 0$. By extreme value theory, the expected maximum Sharpe ratio is:
 $$\mathbb{E}\left[\max_n \{SR_n\}\right] \approx \sqrt{2 \ln(N)} + \frac{\gamma}{\sqrt{2 \ln(N)}}$$
-where $\gamma \approx 0.5772$ is the Euler-Mascheroni constant.
+where $\gamma \approx 0.5772$ is the Euler–Mascheroni constant.
 - If you test $N=1,000$ trials, the expected maximum Sharpe under pure randomness is $\approx 3.26$!
 
 #### Deflated Sharpe Ratio (Bailey & Lopez de Prado, 2014)

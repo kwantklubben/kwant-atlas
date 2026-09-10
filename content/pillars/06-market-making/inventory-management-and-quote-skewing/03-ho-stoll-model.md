@@ -1,5 +1,5 @@
 ---
-title: "03 — The Ho-Stoll Dealer Model: Reservation Price & the Inventory Recursion"
+title: "03 — The Ho–Stoll Dealer Model: Reservation Price & the Inventory Recursion"
 tags:
   - pillar-market-making
   - inventory-management-and-quote-skewing

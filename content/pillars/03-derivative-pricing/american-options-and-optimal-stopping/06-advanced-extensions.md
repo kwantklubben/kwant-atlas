@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Monte-Carlo American (LSM & Duality) and Beyond"
+title: "06 — Advanced Extensions: Monte Carlo American (LSM & Duality) and Beyond"
 tags:
   - pillar-derivative-pricing
   - american-options
@@ -17,7 +17,7 @@ tags:
 
 Everything so far assumes a *low-dimensional* American problem — one or two assets, where a tree or a finite-difference grid can carry the free boundary. For a **high-dimensional** American option (a Bermudan swaption on many rates, a max-of-$d$ option) grids are impossible: FDM memory is exponential in dimension, and trees are worse. **Monte Carlo is the only tool that scales** — but its natural backward induction is exactly what simulation cannot do.
 
-The resolution is the theme of Glasserman Ch 8: approximate the **continuation value** by regression on simulated paths (Longstaff-Schwartz / LSM), which yields a **sub-optimal** stopping rule and hence a **low-biased** price; then obtain a **guaranteed upper bound** from the **duality** theorem (Rogers; Haugh-Kogan) to bracket the true value. The interval $[\text{LSM low},\ \text{dual high}]$ *contains* the truth.
+The resolution is the theme of Glasserman Ch 8: approximate the **continuation value** by regression on simulated paths (Longstaff–Schwartz / LSM), which yields a **sub-optimal** stopping rule and hence a **low-biased** price; then obtain a **guaranteed upper bound** from the **duality** theorem (Rogers; Haugh–Kogan) to bracket the true value. The interval $[\text{LSM low},\ \text{dual high}]$ *contains* the truth.
 
 > **The bias pair (Glasserman p. 421).** Using *future information* (backward induction over a finite path set, Jensen) biases **high**; using a *sub-optimal policy* biases **low**. LSM is a policy ⇒ low. The dual is a near-optimal martingale ⇒ high. Together they sandwich the price.
 
@@ -33,7 +33,7 @@ $$V_m=h_m,\qquad V_i(x)=\max\big\{h_i(x),\ \underbrace{\mathbb E[V_{i+1}(X_{i+1}
 
 and the stopping rule induced by exact continuation values is $\hat\tau=\min\{i: h_i(X_i)\ge C_i(X_i)\}$.
 
-#### 2.2 Longstaff-Schwartz LSM (Glasserman 8.52) — the low-biased estimator
+#### 2.2 Longstaff–Schwartz LSM (Glasserman 8.52) — the low-biased estimator
 
 Regress the (discounted) realised continuation cash-flow on basis functions $\psi$ of the current state:
 
@@ -45,7 +45,7 @@ $$\hat V_{ij}=h_i(X_{ij})\ \text{if }h_i\ge\hat C_i(X_{ij}),\quad\text{else }\ha
 
 This is **low-biased** (Clément–Lamberton–Protter): a suboptimal policy can never beat the optimum. *(Contrast the Tsitsiklis–van Roy regression-DP $\hat V_{ij}=\max\{h_i,\hat C_i\}$, which uses the fitted value to both decide and value and is generally **high**-biased.)* Best practice: fit $\hat\beta$ on one sample, then run a **second independent pass** at the fixed rule — only then is the estimator guaranteed low.
 
-#### 2.3 Duality — the upper bound (Glasserman 8.58–8.65; Rogers; Haugh-Kogan)
+#### 2.3 Duality — the upper bound (Glasserman 8.58–8.65; Rogers; Haugh–Kogan)
 
 For any martingale $M$ with $M_0=0$, optional sampling gives $\mathbb E[h_\tau]\le\mathbb E[\max_k(h_k(X_k)-M_k)]$ for every $\tau$, hence
 

@@ -120,7 +120,7 @@ Experiment A: in the crisis regime the *same* portfolio's volatility jumps from 
 
 1. **Correlation crisis (diversification illusion).** Calm-data covariances understate joint losses. The equal-weight portfolio's volatility rises $1.19\times$ and its effective bets collapse $3.17\to2.20$ when correlations move to crisis levels. Fix: stress covariance, regime conditioning (page 06), tail-aware allocation.
 2. **Factor crowding.** A crowded factor's premium decays and its correlation rises — in drawdowns, crowding *becomes* correlation. Detect via factor crowding/capacity diagnostics and de-size (see [[pillars/01-quantitative-research/factor-investing-and-timing/03-factor-crowding-and-capacity|Factor Crowding & Capacity]]).
-3. **Estimation error dominates.** Out-of-sample, unconstrained MVO lost to $1/N$ here by a wide margin. Fix: shrink means ([[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]]), shrink $\Sigma$ ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|shrinkage & RMT]]), constrain weights, or resample.
+3. **Estimation error dominates.** Out-of-sample, unconstrained MVO lost to $1/N$ here by a wide margin. Fix: shrink means ([[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]]), shrink $\Sigma$ ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|shrinkage & RMT]]), constrain weights, or resample.
 4. **Carry crash (negative skew).** Carry's steady gains hide a heavy left tail; mean-variance ignores skew and over-sizes. Fix: explicit tail hedge, leverage caps, defensive overlay.
 5. **Strategic/tactical confusion.** Repeated tactical re-optimisation re-writes the strategic plan with noise; the tracking-error budget is what keeps the two separate.
 
@@ -129,7 +129,7 @@ Experiment A: in the crisis regime the *same* portfolio's volatility jumps from 
 ### 5. Canonical Literature & Study References
 
 - **Chopra & Ziemba**, "The Effect of Errors in Means, Variances, and Covariances…," *JPM* 19(2):6–11, 1993 — the error-dominance result.
-- **Best & Grauer**, "On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means," *RFS* 4(2):315–342, 1991 — the formal MVO-fragility statement.
+- **Best & Grauer**, "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means," *RFS* 4(2):315–342, 1991 — the formal MVO-fragility statement.
 - **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* 22(5):1915–1953, 2009 — $1/N$ as the benchmark every optimizer must beat.
 - **Laloux, Cizeau, Bouchaud & Potters**, "Noise Dressing of Financial Correlation Matrices," *PRL* 83(7):1467–1470, 1999 — why empirical correlation is mostly noise (covariance denoising).
 - **Koijen et al.**, "Carry," *JFE* 127(2):197–225, 2018 — the carry crash (negative skew) result.
@@ -141,5 +141,5 @@ Experiment A: in the crisis regime the *same* portfolio's volatility jumps from 
 
 - Back: [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/04-carry-and-styles|04 · Carry & Styles]] · [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/index|Index Hub]]
 - Forward: [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/06-advanced-extensions|06 · Advanced Extensions]]
-- Sibling: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]] · [[pillars/05-portfolio-optimization/robust-optimization/index|Robust Portfolio Optimization]]
+- Sibling: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/robust-optimization/index|Robust Portfolio Optimization]]
 - Cross-pillar: [[pillars/01-quantitative-research/factor-investing-and-timing/03-factor-crowding-and-capacity|Factor Crowding & Capacity]] · [[pillars/04-quantitative-risk/index|Quantitative Risk]]

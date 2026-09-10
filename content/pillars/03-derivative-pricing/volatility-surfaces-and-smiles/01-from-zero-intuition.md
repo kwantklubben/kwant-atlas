@@ -8,7 +8,7 @@ tags:
   - skew
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (or none — this page is written to stand alone).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (or none — this page is written to stand alone).
 
 ---
 
@@ -113,6 +113,6 @@ The inversion recovers the skew exactly (28/24/20/17/15%) — confirming that th
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · Pricing Formulas]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|03 · Pricing Formulas]]
 - Continue: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/02-implied-vs-local-vol|02 · Implied vs Local Vol]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]]

@@ -8,13 +8,13 @@ tags:
   - smile
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (or none — this page is written to stand alone).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (or none — this page is written to stand alone).
 
 ---
 
 ### 1. Intuition & Practical Objective
 
-In Black-Scholes the volatility is a number you look up. That is not a simplification you can get away with, because the market *tells* you it is false: invert the Black-Scholes formula on every listed option and you get a surface, not a number. The only honest reading of that surface is that **the variance of the underlying is itself random**.
+In Black–Scholes the volatility is a number you look up. That is not a simplification you can get away with, because the market *tells* you it is false: invert the Black–Scholes formula on every listed option and you get a surface, not a number. The only honest reading of that surface is that **the variance of the underlying is itself random**.
 
 This page builds the *why* with no prior stochastic-volatility background. The objective is one idea: **a stochastic-volatility model fixes the smile because it makes the risk-neutral distribution a mixture — and a mixture is exactly what produces fat tails, a smile, and a skew.** Everything in the rest of this folder is a choice about *which* process drives that mixture.
 
@@ -24,7 +24,7 @@ Three "aha"s:
 
 2. **The skew needs correlation, not just randomness.** A *symmetric* variance mixture produces a symmetric U-shaped **smile** (both tails fat — this is what FX options look like). Equity options show a downward **skew**: the left tail is fatter than the right. For that you need the two Brownian motions to be correlated: $\langle d\ln S,dv\rangle=\rho\eta v\,dt$ with $\rho<0$. Prices fall *because* volatility rises — the **leverage effect**. One parameter, $\rho$, turns a smile into a skew.
 
-3. **Variance's own "volatility" is the missing knob.** Black-Scholes has one number; an SV model has a *distribution* of variance. Its dispersion, the **vol-of-vol** $\eta$, sets the *curvature* of the smile (how much the wings lift). This is why $\eta$ is the parameter that matters for exotic products: it controls convexity in vol, which is precisely what cliquets and forward-skew products pay for.
+3. **Variance's own "volatility" is the missing knob.** Black–Scholes has one number; an SV model has a *distribution* of variance. Its dispersion, the **vol-of-vol** $\eta$, sets the *curvature* of the smile (how much the wings lift). This is why $\eta$ is the parameter that matters for exotic products: it controls convexity in vol, which is precisely what cliquets and forward-skew products pay for.
 
 The practical objective: understand that a stochastic-volatility model is a *distributional* device, and that its parameters are not "a better volatility" — they are the shape of the variance distribution and its coupling to the spot.
 
@@ -42,7 +42,7 @@ Its cumulants are the *cumulants of the variance-average*, and the third cumulan
 
 #### 2.2 Why a single $\sigma$ cannot reproduce a mixture's prices
 
-Black-Scholes assigns one density. The mixture assigns another. If the two disagree in the wings, **no choice of $\sigma$ can repair it**: the model has one degree of freedom and the mismatch is a *function* of $K$. Concretely, with a two-point variance mixture,
+Black–Scholes assigns one density. The mixture assigns another. If the two disagree in the wings, **no choice of $\sigma$ can repair it**: the model has one degree of freedom and the mismatch is a *function* of $K$. Concretely, with a two-point variance mixture,
 
 $$C(K,T)=p\,\text{BSM}(F,K,T,\sigma_1)+(1-p)\,\text{BSM}(F,K,T,\sigma_2),$$
 
@@ -60,7 +60,7 @@ Failure to produce a smile is *not* an option here: the variance mixture induced
 
 ### 3. Computational Implementation — a two-state mixture *is* a smile
 
-We price a two-state variance mixture in closed form and invert the Black-Scholes formula strike-by-strike. No simulation, no free parameters to fit: the smile appears because the density is a mixture. Stdlib only.
+We price a two-state variance mixture in closed form and invert the Black–Scholes formula strike-by-strike. No simulation, no free parameters to fit: the smile appears because the density is a mixture. Stdlib only.
 
 ```python
 import math
@@ -119,13 +119,13 @@ Three facts to read off the table:
 
 - **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 §20.3–20.8 (why smiles exist: leverage, volatility feedback, crashophobia; FX smile vs equity skew; surface as an interpolation tool; single-large-jump "frown") and Ch 23 §23.1–23.6 (EWMA/GARCH volatility term structure eq. 23.14 — the $\mathbb P$-measure cousin of the SV term structure). *Verification report in the corpus.*
 - **Gatheral**, *The Volatility Surface*, Ch 1 (empirical motivation: volatility clustering, fat tails, and the SDEs 1.1–1.2 that follow), Ch 7 §7.8 (shape is model-generic). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 1 (what a "usable" model is; the Black-Scholes equation as an accounting device) and Ch 5 Appendix B (the Gram–Charlier/$\kappa_3$ perturbation that makes the mixed-density intuition precise). *Math-verified.*
+- **Bergomi**, *Stochastic Volatility Modeling*, Ch 1 (what a "usable" model is; the Black–Scholes equation as an accounting device) and Ch 5 Appendix B (the Gram–Charlier/$\kappa_3$ perturbation that makes the mixed-density intuition precise). *Math-verified.*
 - **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.1–1.9 (generalized BSM, put–call parity, symmetries) and §2.9 (vega — the map that makes vol-inversion well posed). *Numerically verified.*
 
 ---
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · 03 Pricing Formulas]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/03-the-pricing-formulas|BSM · 03 Pricing Formulas]]
 - Continue: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/02-the-heston-model|02 · The Heston Model]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/01-from-zero-intuition|VS · 01 From Zero]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR (flat note)]]

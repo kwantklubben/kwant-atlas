@@ -16,7 +16,7 @@ tags:
 How do you compute the risk of a portfolio holding 2,000 equities, 50 interest rate swaps, and 100 foreign exchange options?
 
 Risk management relies on three distinct computational methodologies:
-1. **Parametric (Variance-Covariance):** Lightning fast, closed-form linear approximations, but assumes multivariate normality.
+1. **Parametric (Variance–Covariance):** Lightning fast, closed-form linear approximations, but assumes multivariate normality.
 2. **Historical Simulation:** Non-parametric, preserves empirical fat tails, but blind to unobserved crises.
 3. **Monte Carlo Simulation:** Full non-linear revaluation across tens of thousands of simulated paths, essential for complex options portfolios, but computationally heavy.
 
@@ -30,7 +30,7 @@ Portfolio variance is:
 $$\sigma_p^2 = w^T \Sigma w$$
 The 1-day parametric VaR at confidence $\alpha$ is:
 $$\text{VaR}_\alpha = -w^T \mu + z_\alpha \sqrt{w^T \Sigma w}$$
-For options portfolios, include Gamma (second-order Delta-Gamma approximation):
+For options portfolios, include Gamma (second-order Delta–Gamma approximation):
 $$\Delta V \approx \sum_i \Delta_i \Delta S_i + \frac{1}{2} \sum_i \sum_j \Gamma_{ij} \Delta S_i \Delta S_j$$
 
 #### Filtered Historical Simulation (FHS - Hull & White, 1998)

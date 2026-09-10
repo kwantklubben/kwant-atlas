@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance Optimization & the Efficient Frontier]] and [[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Factor Timing]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization & the Efficient Frontier]] and [[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Factor Timing]].
 
 ---
 
@@ -99,7 +99,7 @@ Hub signposts — the folder's full failure-mode analysis lives in [[pillars/05-
 ### 5. Canonical Literature & Study References
 
 - **Ang, Andrew**: *Asset Management: A Systematic Approach to Factor Investing* (Oxford University Press, 2014) — ★ the modern canonical text on allocating across asset classes *and* factor premia (value, momentum, carry, defensive); bridges Pillar 1 (factor models) and Pillar 5 (how to hold them). *Cornerstone of this folder.*
-- **Meucci, Attilio**: *Risk and Asset Allocation* (Springer Finance, 2005) — rigorous univariate/multivariate statistics → flexible allocation, including the Black-Litterman treatments; the statistical backbone.
+- **Meucci, Attilio**: *Risk and Asset Allocation* (Springer Finance, 2005) — rigorous univariate/multivariate statistics → flexible allocation, including the Black–Litterman treatments; the statistical backbone.
 - **Ilmanen, Antti**: *Expected Returns: An Investor's Guide to Harvesting Market Rewards* (Wiley, 2011) — the practical tour of what premium each asset class / factor actually pays and why (the "carry" chapter is the reference for page 04).
 - **Qian, Hua & Sorensen**: *Quantitative Equity Portfolio Management* (Chapman & Hall/CRC, 2007) — factor-based expected returns and risk budgeting in one applied text.
 - **Grinold & Kahn**: *Active Portfolio Management* (2nd ed., 2000) — the practitioner bible for turning forecasts into constrained active portfolios (strategic vs tactical, tracking-error budgets).
@@ -109,7 +109,7 @@ Hub signposts — the folder's full failure-mode analysis lives in [[pillars/05-
 ### 6. Connected Graph Bridges
 
 - **Sub-pages (in-folder):** [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/01-from-zero-intuition|01 · From Zero Intuition]] · [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/02-asset-class-allocation|02 · Asset-Class Allocation]] · [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/03-factor-based-allocation|03 · Factor-Based Allocation]] · [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/04-carry-and-styles|04 · Carry & Styles]] · [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/06-advanced-extensions|06 · Advanced Extensions]]
-- **Sibling topics (Pillar 5):** [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman Bayesian Allocation]] (turning views into strategic weights) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] (the all-weather multi-asset idea) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|MPT & the Efficient Frontier]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]]
+- **Sibling topics (Pillar 5):** [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Bayesian Allocation]] (turning views into strategic weights) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] (the all-weather multi-asset idea) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|MPT & the Efficient Frontier]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]]
 - **Cross-pillar:** [[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Factor Timing]] (the factor zoo, crowding, timing) · [[pillars/01-quantitative-research/regime-detection/index|Regime Detection]] (the input to page 06)
 - **Foundations:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] · [[foundations/calculus-and-optimization/index|Calculus & Convex Optimization]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 

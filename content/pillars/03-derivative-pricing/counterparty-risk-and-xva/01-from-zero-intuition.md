@@ -107,5 +107,5 @@ The EPE + ENE = EFV check is visible in the outputs (30 + (−8) = 22), and the 
 
 ### 6. Connected Graph Bridges
 
-- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]]
+- Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]]
 - Continue: [[pillars/03-derivative-pricing/counterparty-risk-and-xva/02-exposure-and-margin|02 · Exposure & Margin]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Index Hub]]

@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes and Desk Practice: Where Almgren-Chriss Breaks"
+title: "05 - Failure Modes and Desk Practice: Where Almgren–Chriss Breaks"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution
@@ -15,7 +15,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The Almgren-Chriss trajectory is *mathematically optimal for an idealized market*: linear impact, constant parameters, no adversaries. Real markets violate all three. This page names the failures precisely, gives the first-principles reason for each, and quantifies the dollar cost of getting it wrong — because the point of a model is not to be true but to tell you **which of its assumptions you are betting on**.
+The Almgren–Chriss trajectory is *mathematically optimal for an idealized market*: linear impact, constant parameters, no adversaries. Real markets violate all three. This page names the failures precisely, gives the first-principles reason for each, and quantifies the dollar cost of getting it wrong — because the point of a model is not to be true but to tell you **which of its assumptions you are betting on**.
 
 The four failures, one line each:
 1. **Impact is concave, not linear** — per-share impact grows roughly as $v^{1/2}$, so the AC linear schedule is provably suboptimal (Almgren 2003).
@@ -156,7 +156,7 @@ A 4x error in $\lambda$ costs 22.6% of utility; a 4x error in $\eta$ costs 24.0%
 - **Almgren, Robert** — "Optimal execution with nonlinear impact functions and trading-enhanced risk," *Applied Mathematical Finance* 10(1), 1-18 (2003). *Power-law impact, size-dependent characteristic time, trading-enhanced risk.*
 - **Almgren, Robert; Thum, Chee; Hauptmann, Emmanuel; Li, Hong** — "Direct estimation of equity market impact," *Risk* 18(7), 58-62 (2005). *Fitting the real impact curve — where the linear model's error is measured.*
 - **Almgren, Robert; Chriss, Neil** — "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §3.2-3.4 (VaR/L-VaR, parameter choice), §4 (drift, serial correlation, parameter shifts).
-- **Gatheral, Jim** — "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7), 749-759 (2010). *Huberman-Stanzl consistency: which impact/decay models are even admissible.*
+- **Gatheral, Jim** — "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7), 749-759 (2010). *Huberman–Stanzl consistency: which impact/decay models are even admissible.*
 - **Hasbrouck, Joel** — *Empirical Market Microstructure* (2007), Ch 15 (drift-augmented optimum eq 15.4, slowly-decaying temporary impact ⇒ U-shaped strategies).
 - **Perold, André F.** — "The implementation shortfall," *JPM* 14(3), 4-9 (1988). *Opportunity cost.*
 - **Cartea, A.; Jaimungal, S.; Penalva, J.** — *Algorithmic and High-Frequency Trading* (2015), Ch 6-9. *Adaptive re-solving, randomisation and gaming countermeasures.*

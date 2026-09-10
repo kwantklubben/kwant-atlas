@@ -18,7 +18,7 @@ There are three compute substrates and each owns one corner of a triangle you ca
 
 - **CPU (software)** — the most *flexible*: any strategy, any model, patched in a deploy at 3 p.m. Latency ceiling ≈ 1 µs (tuned kernel-bypass) to 25 µs (naive stack).
 - **FPGA (reconfigurable silicon)** — the most *latency-deterministic*: ~65 ns, fixed and knowable, because logic and state are *placed* rather than fetched. It is also the most *rigid*: only what the designer wired, and a bug is a hardware bug.
-- **GPU (SIMD accelerator)** — the most *throughput*: thousands of lanes evaluating the same formula on different data. It is *terrible* at single-stream latency (~30 µs including host↔device) and *superb* at the opposite problem — a million Monte-Carlo paths, a 10,000-instrument risk grid.
+- **GPU (SIMD accelerator)** — the most *throughput*: thousands of lanes evaluating the same formula on different data. It is *terrible* at single-stream latency (~30 µs including host↔device) and *superb* at the opposite problem — a million Monte Carlo paths, a 10,000-instrument risk grid.
 
 The objective of this page is the discipline of **matching the substrate to the question**: a *decision* (low latency, streamed, stateful, unpredictable branches) wants FPGA; a *formula across a large grid* (high throughput, parallel, branch-free) wants GPU; **everything else wants CPU** — and "everything else" is most of a trading firm.
 
@@ -145,4 +145,4 @@ Read the ladder. **(i)** FPGA payback swings from 2.5 years to 50 days across a 
 - Back: [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/02-the-tick-to-trade-pipeline|02 · The Tick-to-Trade Pipeline]] · [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/index|Index Hub]]
 - Forward: [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/04-kernel-bypass-and-networking|04 · Kernel Bypass & Networking]] · [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/05-failure-modes-and-practice|05 · Failure Modes]]
 - Software tier: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] · [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] · [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]
-- GPU workloads: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical & Monte-Carlo VaR]] · [[pillars/03-derivative-pricing/numerical-methods/index|Numerical Methods: Finite Difference & Monte Carlo]]
+- GPU workloads: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var|Parametric, Historical & Monte Carlo VaR]] · [[pillars/03-derivative-pricing/numerical-methods/index|Numerical Methods: Finite Difference & Monte Carlo]]

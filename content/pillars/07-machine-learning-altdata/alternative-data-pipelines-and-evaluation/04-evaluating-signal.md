@@ -19,7 +19,7 @@ You have a clean, point-in-time feature. Now the only question that matters: **d
 The protocol, in order (each step can veto the dataset):
 
 1. **Information Coefficient (IC)** — the cross-sectional correlation between the signal and the next-period return. Use **rank IC** (Spearman) to be robust to outliers.
-2. **ICIR and $t$-statistic** — the *consistency* of that IC across periods. A $0.05$ IC that varies wildy is worthless; a $0.03$ IC that is stable is a business.
+2. **ICIR and $t$-statistic** — the *consistency* of that IC across periods. A $0.05$ IC that varies wildly is worthless; a $0.03$ IC that is stable is a business.
 3. **Decay curve** — IC as a function of forecast horizon, fit to $\text{IC}(h)\approx\text{IC}_0 e^{-\lambda h}$ to get the **half-life** and decide the rebalance frequency.
 4. **Residual (orthogonalized) IC** — IC *after* removing existing factors; the part you don't already trade.
 5. **Out-of-sample** — repeat 1–4 under purged/embargoed CV ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]]), and deflate for the number of datasets you tried.

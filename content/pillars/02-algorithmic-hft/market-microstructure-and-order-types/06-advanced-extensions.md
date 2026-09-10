@@ -46,7 +46,7 @@ because whoever arrives marginally earlier in the window loses ties to the large
 
 $$\text{net}=\underbrace{r_m}_{\text{rebate}}+\underbrace{S_r}_{\text{realized spread}}-\underbrace{\text{AS}}_{\text{adverse selection}},$$
 
-so a higher rebate is not "free money" — it is compensation that must cover the adverse-selection term (Hasbrouck Ch 5; the Glosten-Milgrom spread).
+so a higher rebate is not "free money" — it is compensation that must cover the adverse-selection term (Hasbrouck Ch 5; the Glosten–Milgrom spread).
 
 **The regulatory frame.** Regulation acts directly on the mechanics of this folder: **order-protection / trade-through rules** (Reg NMS Rule 611 in the US, shaping SOR and the NBBO), **best-execution and algorithmic-trading rules** (MiFID II, notably RTS 6 obligations on testing, kill-switches, and market-making schemes), **market-access controls** (SEC Rule 15c3-5), **execution-quality disclosure** (Rule 605/606), and **dark-pool** reporting. None of these changes the mechanics; all of them change what an engine is *allowed* to do with them.
 
@@ -118,5 +118,5 @@ market-maker net = rebate 0.0020 + spread 0.0050 - adverse 0.0015 = 0.0055 $/sha
 - Back: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Index Hub]]
 - Systems tier: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] · [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA]]
 - Queue & fill: [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]]
-- Market-maker economics: [[pillars/06-market-making/market-maker-economics-and-rebates/index|Market-Maker Economics & Rebates]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda-Stoikov & Optimal Quoting]]
+- Market-maker economics: [[pillars/06-market-making/market-maker-economics-and-rebates/index|Market-Maker Economics & Rebates]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov & Optimal Quoting]]
 - Design counterpoint: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/04-auctions-and-continuous-trading|04 · Auctions & Continuous Trading]]

@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] (the equity-as-call identity *is* BSM) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, the normal quantile $N^{-1}$).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (the equity-as-call identity *is* BSM) and [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, the normal quantile $N^{-1}$).
 
 ---
 
@@ -18,11 +18,11 @@ Credit risk is the risk of loss when a borrower does not pay. The *pricing* prob
 
 > **A firm's equity is a European call option on the firm's assets, struck at the face value of its debt.**
 
-At maturity, equity holders pay off the debt if the firm is worth more than the debt and pocket the residual; otherwise they exercise limited liability, hand the firm to the bondholders, and walk away. Therefore the entire apparatus of Black-Scholes-Merton — the PDE, the risk-neutral measure, $N(d_1)$, $N(d_2)$ — applies *directly*, with firm value playing the role of the "stock" and debt the role of the "strike". Risk-neutral default probability is then simply $N(-d_2)$: the BSM exercise probability.
+At maturity, equity holders pay off the debt if the firm is worth more than the debt and pocket the residual; otherwise they exercise limited liability, hand the firm to the bondholders, and walk away. Therefore the entire apparatus of Black–Scholes–Merton — the PDE, the risk-neutral measure, $N(d_1)$, $N(d_2)$ — applies *directly*, with firm value playing the role of the "stock" and debt the role of the "strike". Risk-neutral default probability is then simply $N(-d_2)$: the BSM exercise probability.
 
 This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: it (a) gives the **fast formula lookup** below (job #1), covering the structural (Merton), reduced-form (intensity), CDS pricing, and portfolio (Vasicek) layers, and (b) routes you to six sub-pages that walk from raw intuition through the structural model, distance-to-default and PD, reduced-form and CDS, the failure modes, and the portfolio extensions.
 
-> **The one-sentence essence.** "Default is an option: equity is a call on firm assets, so a credit spread is the price of a put that the firm's owners hold against its creditors — and the probability of exercise is a Black-Scholes exercise probability."
+> **The one-sentence essence.** "Default is an option: equity is a call on firm assets, so a credit spread is the price of a put that the firm's owners hold against its creditors — and the probability of exercise is a Black–Scholes exercise probability."
 
 ---
 
@@ -130,7 +130,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
+- Foundational base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Sibling topic: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]] (the portfolio-loss machinery this folder feeds) · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] (the tail of the loss distribution)
 - Sub-pages (in-folder): 01 From Zero · 02 Structural Model · 03 Distance-to-Default & PD · 04 Reduced-Form & CDS · 05 Failure Modes · 06 Advanced Extensions
 
@@ -138,4 +138,4 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/04-quant
 - **Absolute beginner:** [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/01-from-zero-intuition|01 · From Zero]] — no prior credit knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/02-the-merton-structural-model|02 · Structural Model]] → [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/03-distance-to-default-and-pd|03 · Distance-to-Default & PD]] → [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/04-reduced-form-and-cds|04 · Reduced-Form & CDS]].
 - **Robustness (practitioner/graduate):** [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]]
+- Forward links: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] · [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]]

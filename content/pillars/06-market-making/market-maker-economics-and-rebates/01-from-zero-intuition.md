@@ -33,7 +33,7 @@ Work per **share**. Let the maker post a two-sided quote around the mid-price $m
 **Term 1 — Gross spread capture.** Each fill earns the maker $h$ per share.
 $$\text{spread revenue} = h.$$
 
-**Term 2 — Adverse selection $\lambda$.** Some of the counterparties know something. When an informed buyer lifts your ask, the mid is about to rise; you sold $h$ above the pre-trade mid but the mid *itself* jumps. If the mid moves against your new position by $\lambda$ on average, you lose $\lambda$ per share. (This is the whole content of [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Glosten-Milgrom]]: the winner's curse.)
+**Term 2 — Adverse selection $\lambda$.** Some of the counterparties know something. When an informed buyer lifts your ask, the mid is about to rise; you sold $h$ above the pre-trade mid but the mid *itself* jumps. If the mid moves against your new position by $\lambda$ on average, you lose $\lambda$ per share. (This is the whole content of [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Glosten–Milgrom]]: the winner's curse.)
 
 **Term 3 — Inventory cost $c_{\text{inv}}$.** Fills are one-sided in bursts. The inventory you accumulate must be financed (repo/capital), hedged, and carried through volatility — and it is a non-diversifiable risk you must be paid for (Stoll 1978; Grossman & Miller 1988). Write it as a per-share penalty $c_{\text{inv}}$.
 
@@ -116,5 +116,5 @@ without rebate  = $300,000  (rebate is 67% of P&L)
 ### 6. Connected Graph Bridges
 
 - Next: [[pillars/06-market-making/market-maker-economics-and-rebates/02-market-maker-pnl|02 · Market-Maker P&L]] — the decomposition made precise and simulated.
-- Model inputs: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] (Term 2) · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] (Term 3).
+- Model inputs: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]] (Term 2) · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] (Term 3).
 - Hub: [[pillars/06-market-making/market-maker-economics-and-rebates/index|Market-Maker Economics & Rebates — Index Hub]]

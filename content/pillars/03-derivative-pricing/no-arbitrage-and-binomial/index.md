@@ -115,12 +115,12 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
-- Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the continuous-time limit of exactly this model)
-- Related flat notes: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|BSM & Feynman-Kac]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
+- Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (the continuous-time limit of exactly this model)
+- Related flat notes: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|BSM & Feynman–Kac]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Sub-pages (in-folder): 01 From Zero · 02 No-Arbitrage & Risk-Neutral · 03 Trees & Convergence · 04 Fundamental Theorems · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/01-from-zero|01 · From Zero]] — one-period replication, no prior derivatives knowledge.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/02-no-arbitrage-and-risk-neutral|02 · No-Arbitrage & Risk-Neutral]] → [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/03-binomial-trees-and-convergence|03 · Trees & Convergence]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|04 · Fundamental Theorems]] → [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]]
+- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]]

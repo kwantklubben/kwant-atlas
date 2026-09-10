@@ -45,7 +45,7 @@ Everything else in this folder is the mathematics of that third point.
 
 $$\frac{dU}{dT} = -\frac{\eta X^2}{T^2} + \frac{\lambda\sigma^2 X^2}{3}=0 \quad\Longrightarrow\quad \boxed{\;T^\star=\sqrt{\frac{3\eta}{\lambda\sigma^2}}=\sqrt3\,\theta\;},\qquad \theta\equiv\sqrt{\frac{\eta}{\lambda\sigma^2}}=\frac1\kappa .$$
 
-The quantity $\theta$ is the **half-life of the trade** (time to deplete the position by a factor $e$) and $\kappa=1/\theta$ is the **urgency**. Note what does *not* appear: $X$ and $T$ itself. With linear impact, **every basket of the same stock is liquidated on the same intrinsic time scale** — a counter-intuitive but exact consequence of cost and variance both scaling as $X^2$ (Almgren-Chriss 2000, §2.3).
+The quantity $\theta$ is the **half-life of the trade** (time to deplete the position by a factor $e$) and $\kappa=1/\theta$ is the **urgency**. Note what does *not* appear: $X$ and $T$ itself. With linear impact, **every basket of the same stock is liquidated on the same intrinsic time scale** — a counter-intuitive but exact consequence of cost and variance both scaling as $X^2$ (Almgren–Chriss 2000, §2.3).
 
 ---
 

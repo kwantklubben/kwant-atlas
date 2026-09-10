@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance Optimization & the Efficient Frontier]] and [[foundations/calculus-and-optimization/index|Multivariable Calculus & Convex Optimization]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization & the Efficient Frontier]] and [[foundations/calculus-and-optimization/index|Multivariable Calculus & Convex Optimization]].
 
 ---
 
@@ -138,7 +138,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Efficient Frontier]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
+- Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & Efficient Frontier]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Sibling topics: [[pillars/05-portfolio-optimization/robust-optimization/index|Robust Optimization]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|HRP]]
 - Execution (Pillar 2): [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution (Almgren–Chriss)]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|VWAP / TWAP / POV]]
 - Market making (Pillar 6): [[pillars/06-market-making/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov]] · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]]

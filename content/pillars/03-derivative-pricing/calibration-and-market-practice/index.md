@@ -112,7 +112,7 @@ Hub signposts — full analysis lives in [[pillars/03-derivative-pricing/calibra
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]
-- Sibling models: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton Hub]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]
+- Sibling models: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton Hub]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]
 - Sub-pages (in-folder): 01 From Zero · 02 The Calibration Problem · 03 Calibrating Local Vol · 04 Calibrating Stochastic Vol · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

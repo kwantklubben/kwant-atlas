@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance Optimization & the Efficient Frontier]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization & the Efficient Frontier]] and [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 
 ---
 
@@ -108,7 +108,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 ### 5. Canonical Literature & Study References
 
 - **Goldfarb, Donald & Iyengar, Garud**: *Robust Portfolio Selection Problems*, Mathematics of Operations Research 28(1):1–38, 2003. **The seminal deterministic robust-MVO paper and the math-authoritative source for this folder.** Uncertainty sets on mean/factor-loadings/residual covariance; worst-case formulations as SOCPs; sets as regression confidence regions. ★ MUST-HAVE
-- **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means*, Review of Financial Studies 4(2):315–342, 1991. The formal estimation-error-maximizer result: weight elasticities up to $14{,}000\times$ those of portfolio returns. ★ STRONG
+- **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, Review of Financial Studies 4(2):315–342, 1991. The formal estimation-error-maximizer result: weight elasticities up to $14{,}000\times$ those of portfolio returns. ★ STRONG
 - **Michaud, Richard O. & Michaud, Robert O.**: *Efficient Asset Management: A Practical Guide to Stock Portfolio Optimization and Asset Allocation*, 2nd ed., Oxford University Press, 2008. Resampling as an error-aware alternative to robust formulations. ★ MUST-HAVE
 - **Tütüncü, Reha & Koenig, Michael**: *Robust Asset Allocation*, Annals of Operations Research 132:157–187, 2004. Robust reformulations of MV and VaR/CVaR allocation against moment uncertainty; complements Goldfarb–Iyengar.
 - **Fabozzi, Kolm, Pachamanova & Focardi**: *Robust Portfolio Optimization and Management*, Wiley, 2007. The broad reference shelf item: estimation error, resampling vs robust vs Black–Litterman, robust input estimation, QP/SOCP formulations. ★ STRONG
@@ -118,7 +118,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Efficient Frontier]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
+- Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & Efficient Frontier]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Sibling inputs it consumes: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] (Bayesian robustness on $\mu$)
 - Cost/rebalancing bridge: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]
 - Sub-pages (in-folder): 01 From Zero · 02 The Estimation-Error Problem · 03 Robust Formulations · 04 Constraints & Resampling · 05 Failure Modes · 06 Advanced Extensions

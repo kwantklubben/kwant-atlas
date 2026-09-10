@@ -19,7 +19,7 @@ Before optimizing anything, we must be able to *measure* it. The industry's meas
 - **Execution cost** — what you paid on the shares you *did* trade, relative to the decision price.
 - **Opportunity cost** — the P&L on the shares you *failed* to trade (canceled, or the order was too patient and the price ran away).
 
-The practical objective of this page: build the cost-and-risk objective as a **random variable** with a mean $E[x]$ and a variance $V[x]$, then verify with Monte Carlo that the closed forms in the Almgren-Chriss model actually describe the simulated world. Every later page optimizes $E+\lambda V$; this page is where those two objects are defined.
+The practical objective of this page: build the cost-and-risk objective as a **random variable** with a mean $E[x]$ and a variance $V[x]$, then verify with Monte Carlo that the closed forms in the Almgren–Chriss model actually describe the simulated world. Every later page optimizes $E+\lambda V$; this page is where those two objects are defined.
 
 > **The one-sentence essence.** "Implementation shortfall is the difference between the paper portfolio and the real one; it splits into execution cost (you traded but at a bad price) and opportunity cost (you didn't trade and the price moved) — and prior to trading it is a *random variable*, so we optimize its mean and variance."
 
@@ -126,6 +126,6 @@ The Monte Carlo reproduces the closed forms to within sampling error ($O(1/\sqrt
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/01-from-zero-intuition|01 - From Zero]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Index Hub]]
-- Forward: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/03-the-almgren-chriss-model|03 - The Almgren-Chriss Model]]
+- Forward: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/03-the-almgren-chriss-model|03 - The Almgren–Chriss Model]]
 - Costs in the optimizer: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Constraints & Transaction Costs]]
 - Measurement view: [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]] (how $m_{t+5}-m_t$ is estimated)

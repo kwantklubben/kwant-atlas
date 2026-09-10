@@ -127,4 +127,4 @@ Two things to notice. First, the **ATM call is pure time value** ($10.4506$ of i
 - Back: [[pillars/03-derivative-pricing/options-fundamentals-and-markets/01-what-is-a-derivative|01 · What Is a Derivative]] · [[pillars/03-derivative-pricing/options-fundamentals-and-markets/index|Index Hub]]
 - Next: [[pillars/03-derivative-pricing/options-fundamentals-and-markets/03-markets-and-products|03 · Markets & Products]] · [[pillars/03-derivative-pricing/options-fundamentals-and-markets/04-no-arbitrage-and-bounds|04 · No-Arbitrage & Bounds]]
 - Strategies built from these payoffs: [[pillars/03-derivative-pricing/options-fundamentals-and-markets/06-advanced-extensions|06 · Advanced Extensions]]
-- Forward topic-pages: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]]
+- Forward topic-pages: [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]]

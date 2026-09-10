@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton: Hub]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton: Hub]].
 
 ---
 
@@ -16,13 +16,13 @@ tags:
 
 A European option fixes one decision date: hold to $T$, then collect. An **American option** lets the holder *choose when to stop*. That single change — from "at maturity" to "at any time" — converts a pricing formula into an **optimal-stopping problem**: the price is the *maximum* over all exercise strategies of the discounted payoff, and the exercise strategy is itself unknown.
 
-The whole topic rests on one structural fact. For a European option the price solves a linear PDE with **known** boundary data. For an American option the boundary is a *free boundary* $S^*(t)$ — the price level below which it is optimal to exercise a put (above it, for a call) — and it is **part of the unknown**. The PDE holds only on the "continue" region; on the "exercise" region the price equals intrinsic value. This is a **variational inequality / linear-complementarity problem**, and it is why American options have no Black-Scholes-style closed form (except in the perpetual, infinite-horizon limit).
+The whole topic rests on one structural fact. For a European option the price solves a linear PDE with **known** boundary data. For an American option the boundary is a *free boundary* $S^*(t)$ — the price level below which it is optimal to exercise a put (above it, for a call) — and it is **part of the unknown**. The PDE holds only on the "continue" region; on the "exercise" region the price equals intrinsic value. This is a **variational inequality / linear-complementarity problem**, and it is why American options have no Black–Scholes-style closed form (except in the perpetual, infinite-horizon limit).
 
 This folder is the **single owner of the optimal-stopping theory and the American analytic-approximation methods**. Three facts orient everything:
 
 1. **When is early exercise optimal?** Never for a dividend-free call (the discounted payoff is a submartingale). For puts always possible (dividends/interest make waiting costly); for calls only with dividends.
 2. **How much is early exercise worth?** The **early-exercise premium** — the American value minus the European value. It is 0 for the no-dividend call and strictly positive otherwise.
-3. **How do you price it?** A free-boundary problem: solve analytically by approximation (perpetual closed forms, Barone-Adesi-Whaley, Bjerksund-Stensland) or numerically (trees, finite differences with PSOR/penalty, Monte-Carlo LSM + duality — see [[pillars/03-derivative-pricing/numerical-methods/index|Numerical Methods: Hub]]).
+3. **How do you price it?** A free-boundary problem: solve analytically by approximation (perpetual closed forms, Barone–Adesi–Whaley, Bjerksund–Stensland) or numerically (trees, finite differences with PSOR/penalty, Monte Carlo LSM + duality — see [[pillars/03-derivative-pricing/numerical-methods/index|Numerical Methods: Hub]]).
 
 > **The one-sentence essence.** "An American option is worth the discounted payoff under the *best stopping rule*; finding that rule is a free-boundary problem, and the price is the smallest supersolution of the BSM operator that dominates the intrinsic payoff."
 
@@ -116,7 +116,7 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/americ
 
 - **Shreve, Steven E.**: *Stochastic Calculus for Finance II* — **Ch 8, "American Derivative Securities"** (optimal-stopping value 8.1–8.2; perpetual put 8.3.12–13 with smooth pasting 8.3.14 and the LCP 8.3.18–20; finite-expiration free boundary 8.4; dividend-call recursion 8.5). *Math-verified deep-read in the corpus — the primary source for this folder.*
 - **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.) — **Ch 21, "Optimal Stopping Theory & American Options"** (Snell envelope Thm 21.12/21.23; backward recursion Prop 21.7; variational inequalities Prop 21.25/21.26; free-boundary §21.6.2; perpetual put Prop 21.30). *Math-verified.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) — **Ch 3** (BAW 3.1, Bjerksund-Stensland 1993 3.2 / 2002 3.3, put-call transformation 3.4, perpetual 3.5) and §4.2 (CRR American recursion). *Numerically verified — the formula-authoritative lookup source.*
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) — **Ch 3** (BAW 3.1, Bjerksund–Stensland 1993 3.2 / 2002 3.3, put-call transformation 3.4, perpetual 3.5) and §4.2 (CRR American recursion). *Numerically verified — the formula-authoritative lookup source.*
 - **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* — **Ch 8** (pricing American options by simulation: LSM 8.52, regression-DP, stochastic mesh §8.5, duality §8.7). *Math-verified.*
 - **Shreve, Steven E.**: *Stochastic Calculus for Finance I* — Ch 5–6, 8 (stopping times, American recursion, no-early-exercise corollary, binomial perpetual put). *Math-verified.*
 
@@ -125,7 +125,7 @@ Hub signposts — the full analysis is in [[pillars/03-derivative-pricing/americ
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[foundations/calculus-and-optimization/index|Calculus & Optimization]]
-- Upstream: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton: Hub]] (the PDE being constrained) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the discrete seed of the recursion)
+- Upstream: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton: Hub]] (the PDE being constrained) · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] (the discrete seed of the recursion)
 - **Numerical implementation detail lives elsewhere** (linked, not duplicated): [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|FDM: penalty & PSOR]] · [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|Monte Carlo]] · [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|Numerical Methods · Advanced]]
 - Sub-pages (in-folder): 01 From Zero · 02 Optimal-Stopping Theory · 03 Analytic Approximations · 04 Free Boundary & Complementarity · 05 Failure Modes · 06 Advanced Extensions
 

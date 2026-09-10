@@ -31,8 +31,8 @@ $$A_{ij} = \mathbb{P}(S_t = j \mid S_{t-1} = i), \quad \sum_{j=1}^K A_{ij} = 1$$
 Given state $S_t = k$, observed market returns $y_t$ are drawn from state-dependent Gaussian distributions:
 $$y_t \mid (S_t = k) \sim \mathcal{N}(\mu_k, \sigma_k^2)$$
 
-#### Training via Baum-Welch (Expectation-Maximization)
-1. **E-Step (Forward-Backward Algorithm):**
+#### Training via Baum–Welch (Expectation–Maximization)
+1. **E-Step (Forward–Backward Algorithm):**
    - Compute forward variable $\alpha_t(i) = \mathbb{P}(y_1, \dots, y_t, S_t = i)$
    - Compute backward variable $\beta_t(i) = \mathbb{P}(y_{t+1}, \dots, y_T \mid S_t = i)$
    - Posterior state probability:

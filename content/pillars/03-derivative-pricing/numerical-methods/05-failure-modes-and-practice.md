@@ -8,7 +8,7 @@ tags:
   - accuracy
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|02 · Finite Differences]] and [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte-Carlo Pricing]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|02 · Finite Differences]] and [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte Carlo Pricing]].
 
 ---
 
@@ -223,7 +223,7 @@ importance sampling for the ATM call (exact = 10.4506), 20000 paths x 20 seeds:
   tilt mu=4.0  mean =  10.1557  s.d. = 1.1247
 ```
 
-Read the five verdicts off the numbers: CN inflates the true maximum gamma $0.02182$ by $32\times$ at $\Delta t=0.25$ and is still off by $6\times$ at $\Delta t=0.0625$, while implicit and Rannacher stay within $6\%$ throughout; the explicit scheme returns $-1.96\times10^{7}$ and $-7.48\times10^{10}$ on the wrong side of its bound, then $10.41$ once inside it; Euler's bias is $-0.2430$ at a single step and falls roughly as $1/\text{steps}$, disappearing into the $\pm0.02$ Monte-Carlo noise by 8 steps, while the log-Euler scheme is exact at **one** step; truncating at $S_{\max}=120$ costs $0.2157$ ($2.1\%$) and nothing improves past $S_{\max}=150$; and a tilt of $\mu=1$ cuts the digital-free call's standard error $3.2\times$ ($9.99\times$ in variance) while $\mu=2$ and $\mu=4$ make it *worse* than no tilt at all ($0.0481$ and $1.1247$ against $0.0651$).
+Read the five verdicts off the numbers: CN inflates the true maximum gamma $0.02182$ by $32\times$ at $\Delta t=0.25$ and is still off by $6\times$ at $\Delta t=0.0625$, while implicit and Rannacher stay within $6\%$ throughout; the explicit scheme returns $-1.96\times10^{7}$ and $-7.48\times10^{10}$ on the wrong side of its bound, then $10.41$ once inside it; Euler's bias is $-0.2430$ at a single step and falls roughly as $1/\text{steps}$, disappearing into the $\pm0.02$ Monte Carlo noise by 8 steps, while the log-Euler scheme is exact at **one** step; truncating at $S_{\max}=120$ costs $0.2157$ ($2.1\%$) and nothing improves past $S_{\max}=150$; and a tilt of $\mu=1$ cuts the digital-free call's standard error $3.2\times$ ($9.99\times$ in variance) while $\mu=2$ and $\mu=4$ make it *worse* than no tilt at all ($0.0481$ and $1.1247$ against $0.0651$).
 
 ---
 
@@ -231,7 +231,7 @@ Read the five verdicts off the numbers: CN inflates the true maximum gamma $0.02
 
 1. **Ringing without instability (CN at a kink).** CN's symbol is negative at high frequency, so the payoff kink's error alternates in sign and decays slowly. It is *stable*, hence convergent, hence wrong only in the Greek/high-frequency content — which is precisely what hedgers use. Fix: Rannacher (two implicit start-up steps), Richardson-extrapolated implicit Euler, or smooth the initial datum (Duffy Ch 33).
 2. **Violating the CFL bound (explicit).** $k\le h^2/(\sigma^2S_{\max}^2)$ is a *hard* constraint: values of $-10^{7}$ are not "approximate", they are meaningless. Fix: switch to implicit/CN, or use exponential fitting whose stability is independent of $h$ (Duffy Ch 11).
-3. **Discretisation bias masquerading as noise.** Euler's $-0.2430$ bias at one step is $23\times$ the Monte-Carlo standard error, so no path count removes it. Fix: the log transform (exact for GBM), a weak-order-2 scheme, or Richardson extrapolation $2\mathbb E[\hat X^h]-\mathbb E[\hat X^{2h}]$ (Glasserman eq. 6.43) — and for barriers/extrema, Brownian interpolation, since the Euler running-max scheme is only weak order $\le\frac12$.
+3. **Discretisation bias masquerading as noise.** Euler's $-0.2430$ bias at one step is $23\times$ the Monte Carlo standard error, so no path count removes it. Fix: the log transform (exact for GBM), a weak-order-2 scheme, or Richardson extrapolation $2\mathbb E[\hat X^h]-\mathbb E[\hat X^{2h}]$ (Glasserman eq. 6.43) — and for barriers/extrema, Brownian interpolation, since the Euler running-max scheme is only weak order $\le\frac12$.
 4. **Truncation error is a *bias*, not a mesh error.** $S_{\max}=120$ produced a $2.1\%$ error that vanished when $S_{\max}\ge150$ — refining $h$ inside the truncated domain would never have fixed it. Fix: set $S_{\max}$ from a multiple of $K$ (or use $x=S/(S+K)$ to eliminate the boundary condition entirely) and *verify* by widening once.
 5. **A badly tilted importance sampler is worse than none.** The variance of the likelihood ratio is the whole game; tilting towards a region the payoff does not reach inflates it. Diagnostic: monitor the second moment of the weights, and reach for stratification on top of IS rather than a bigger tilt.
 6. **Reporting one number.** "The model says 10.42" is the failure mode that hides all five others. Report the price *plus* its error budget: $\pm$ MC standard error, the mesh/order term, the boundary term, and the scheme (CN vs Rannacher vs implicit).

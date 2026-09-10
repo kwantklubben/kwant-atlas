@@ -107,7 +107,7 @@ Read those four numbers together. The optimizer reports a variance of $0.0216$ �
 
 - **Markowitz, H. (1952).** "Portfolio Selection." *Journal of Finance* 7(1):77–91. *The mean–variance quadratic program whose $\Sigma^{-1}$ is the source of the sensitivity.*
 - **Michaud, R. O. (1989).** "The Markowitz Optimization Enigma: Is 'Optimized' Optimal?" *Financial Analysts Journal* 45(1):31–42. *Coins "error maximization."*
-- **Best, M. J. & Grauer, R. R. (1991).** "On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means." *Review of Financial Studies* 4(2):315–342. *Formalizes the $1/\lambda$ amplification.*
+- **Best, M. J. & Grauer, R. R. (1991).** "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means." *Review of Financial Studies* 4(2):315–342. *Formalizes the $1/\lambda$ amplification.*
 - **Ledoit, O. & Wolf, M. (2004).** "Honey, I shrunk the sample covariance matrix." *Journal of Portfolio Management* 30(4):110–119. *The accessible introduction to the fix.*
 - **DeMiguel, V., Garlappi, L. & Uppal, R. (2009).** "Optimal Versus Naive Diversification." *Review of Financial Studies* 22(5):1915–1953. *Why $1/N$ is the bar to beat.*
 

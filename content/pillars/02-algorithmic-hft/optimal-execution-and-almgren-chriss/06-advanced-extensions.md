@@ -16,7 +16,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Each failure of Almgren-Chriss (page 05) is the seed of an extension. This page is the launchpad: it shows the four extensions that turn the static linear model into something a modern desk can run — **nonlinear impact** (Almgren 2003), **resilient/transient impact** (Obizhaeva-Wang 2013; Gatheral, Schied & Slynko 2012), **dark pools / alternative venues**, and **adaptive stochastic control** (Cartea-Jaimungal-Penalva 2015) — and it hands off to the dedicated topic-folders for the microstructure and market-making views.
+Each failure of Almgren–Chriss (page 05) is the seed of an extension. This page is the launchpad: it shows the four extensions that turn the static linear model into something a modern desk can run — **nonlinear impact** (Almgren 2003), **resilient/transient impact** (Obizhaeva–Wang 2013; Gatheral, Schied & Slynko 2012), **dark pools / alternative venues**, and **adaptive stochastic control** (Cartea–Jaimungal–Penalva 2015) — and it hands off to the dedicated topic-folders for the microstructure and market-making views.
 
 Why in this order? Nonlinear impact fixes the *cost function*; resilience fixes the *market's memory* (the book refills, so the optimal schedule gains discrete trades at both ends); dark pools add a *venue choice* with its own fill risk; adaptive control fixes the *dynamics* by re-solving as information arrives. Together they are the minimal set that makes the AC idea survive contact with a real order.
 
@@ -31,31 +31,31 @@ Why in this order? Nonlinear impact fixes the *cost function*; resilience fixes 
 - in the regime $\alpha\gg1$ the trajectory reaches $x=0$ with $\dot x=0$ at a finite $T_{\max}=\tfrac{\alpha+1}{\alpha-1}T_\star$;
 - closed forms per regime: for $0<\alpha<1$ a stretched-exponential; for $\alpha=1$ the exponential (AC); for $\alpha>1$ a polynomial tail.
 
-**2.2 Resilient / transient impact — Obizhaeva-Wang (2013).** Model the book's *state*: the transient impact $a_t$ created by trading decays with a **resilience** rate $\rho$, and the execution price is depressed by the accumulated, still-unreplenished impact:
+**2.2 Resilient / transient impact — Obizhaeva–Wang (2013).** Model the book's *state*: the transient impact $a_t$ created by trading decays with a **resilience** rate $\rho$, and the execution price is depressed by the accumulated, still-unreplenished impact:
 
 $$\text{cost}_k = n_k\Big(\tfrac{s}{2}+a_k+\tfrac{n_k}{2q}\Big),\qquad a_{k+1}=(1-\rho)\Big(a_k+\tfrac{n_k}{q}\Big),\qquad q=\text{book depth}.$$
 
-The optimal schedule is **not** smooth: it is a **discrete block at $t=0$**, a continuous/small-trade middle, and a **discrete block at $T$** — "block-continuous-block". In the risk-neutral limit the two blocks are **exactly equal** ($n_1=n_N$), the Obizhaeva-Wang symmetry. This is the discrete time-value of finite resilience: trading before the book refreshes is expensive, so you wait at the ends and work only when the book has refilled.
+The optimal schedule is **not** smooth: it is a **discrete block at $t=0$**, a continuous/small-trade middle, and a **discrete block at $T$** — "block-continuous-block". In the risk-neutral limit the two blocks are **exactly equal** ($n_1=n_N$), the Obizhaeva–Wang symmetry. This is the discrete time-value of finite resilience: trading before the book refreshes is expensive, so you wait at the ends and work only when the book has refilled.
 
 **2.3 Transient impact in continuous time — Gatheral (2010, 2013); Gatheral-Schied-Slynko (2012).** Generalize the temporary impact to a **decay kernel** $G(\cdot)$: the price impact of a trade at $u<t$ contributes $G(t-u)\,dX_u$, and the mid-price is
 
 $$S_t = S_0 + \sigma W_t + \int_0^t G(t-u)\,dX_u .$$
 
-The **no-dynamic-arbitrage** condition (Huberman-Stanzl 2004; Gatheral 2010) requires $G$ to be nonincreasing and convex — this rules out many "natural" models and is the consistency constraint every impact model must satisfy. The optimal execution problem becomes a Fredholm equation; for power-law kernels $G(t)\propto t^{-\gamma}$ the optimal strategy has a characteristic oscillating/decaying profile (Gatheral's Figure 22.2).
+The **no-dynamic-arbitrage** condition (Huberman–Stanzl 2004; Gatheral 2010) requires $G$ to be nonincreasing and convex — this rules out many "natural" models and is the consistency constraint every impact model must satisfy. The optimal execution problem becomes a Fredholm equation; for power-law kernels $G(t)\propto t^{-\gamma}$ the optimal strategy has a characteristic oscillating/decaying profile (Gatheral's Figure 22.2).
 
-**2.4 Dark pools and venue choice (Cartea-Jaimungal-Penalva 2015, Ch 8-9).** A dark venue executes at the midpoint (saving the half-spread) but fills only with probability $p$; unfilled shares must be worked later in the lit book with an adverse-selection penalty. The per-share expected cost of routing to dark is
+**2.4 Dark pools and venue choice (Cartea–Jaimungal–Penalva 2015, Ch 8-9).** A dark venue executes at the midpoint (saving the half-spread) but fills only with probability $p$; unfilled shares must be worked later in the lit book with an adverse-selection penalty. The per-share expected cost of routing to dark is
 
 $$c_{\text{dark}}(p) = (1-p)\big(c_{\text{lit}}+\delta\big),$$
 
 so dark beats lit iff $p>p^\star=\delta/(c_{\text{lit}}+\delta)$ — a threshold rule on the fill probability. In practice $p$ is estimated per venue per order size, and the strategy becomes a **venue-allocation control**.
 
-**2.5 Adaptive / stochastic control (Cartea-Jaimungal-Penalva 2015).** Replace the static trajectory with a **feedback law** $\nu^\star(t,x,\text{state})$ from an HJB equation that includes inventory, transient impact, and possibly alpha/drift. Then parameters are re-estimated as fills arrive and the schedule updates — this is the production form of AC.
+**2.5 Adaptive / stochastic control (Cartea–Jaimungal–Penalva 2015).** Replace the static trajectory with a **feedback law** $\nu^\star(t,x,\text{state})$ from an HJB equation that includes inventory, transient impact, and possibly alpha/drift. Then parameters are re-estimated as fills arrive and the schedule updates — this is the production form of AC.
 
 ---
 
 ### 3. Computational Implementation — two extensions, verified
 
-**A. Resilient book ⇒ block-continuous-block (Obizhaeva-Wang).** Build the exact quadratic objective for the decaying-impact model and solve the equality-constrained programme. The risk-neutral limit must reproduce the OW symmetry $n_1=n_N$. numpy + stdlib.
+**A. Resilient book ⇒ block-continuous-block (Obizhaeva–Wang).** Build the exact quadratic objective for the decaying-impact model and solve the equality-constrained programme. The risk-neutral limit must reproduce the OW symmetry $n_1=n_N$. numpy + stdlib.
 
 ```python
 import numpy as np
@@ -100,7 +100,7 @@ for rho in (0.05, 0.15, 0.40, 0.90):
  0.90       18,939          518   65.66 22.85  7.94  3.56      11.49   sum=1,000,000
 ```
 
-Read the first and last columns: for **low resilience** ($\rho=0.05$ — the book barely refills) the schedule is nearly symmetric with a **large terminal block** ($n_N=61{,}309$, and the last quarter carries 25% of the volume); for **high resilience** ($\rho=0.90$ — the book refills fast) the schedule is **front-loaded** and the terminal block vanishes ($n_N=518$). The Obizhaeva-Wang symmetry is an exact check: in the risk-neutral limit ($\lambda=0$) the two blocks are equal to machine precision ($n_1/n_N=1.000000$ for $\rho=0.05,0.2,0.5$).
+Read the first and last columns: for **low resilience** ($\rho=0.05$ — the book barely refills) the schedule is nearly symmetric with a **large terminal block** ($n_N=61{,}309$, and the last quarter carries 25% of the volume); for **high resilience** ($\rho=0.90$ — the book refills fast) the schedule is **front-loaded** and the terminal block vanishes ($n_N=518$). The Obizhaeva–Wang symmetry is an exact check: in the risk-neutral limit ($\lambda=0$) the two blocks are equal to machine precision ($n_1/n_N=1.000000$ for $\rho=0.05,0.2,0.5$).
 
 **B. Dark-pool allocation.** The break-even fill probability on the example numbers.
 
@@ -136,7 +136,7 @@ A venue with fill probability above **33.2%** is worth routing to on these numbe
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Power-law exponents are estimated, not known.** Almgren's $T_\star\propto X^{(\alpha-1)/(\alpha+1)}$ is sensitive to $\alpha$; a mis-fit exponent mis-paces large orders systematically (the 2005 Almgren-Thum-Hauptmann-Li estimation paper exists precisely because this matters).
-2. **A decay kernel must satisfy no-dynamic-arbitrage.** Gatheral (2010) / Huberman-Stanzl (2004): $G$ must be nonincreasing and convex. Ad-hoc exponential kernels with the wrong parameters admit price manipulation — a model that *creates* free money is wrong regardless of its fit.
+2. **A decay kernel must satisfy no-dynamic-arbitrage.** Gatheral (2010) / Huberman–Stanzl (2004): $G$ must be nonincreasing and convex. Ad-hoc exponential kernels with the wrong parameters admit price manipulation — a model that *creates* free money is wrong regardless of its fit.
 3. **Resilience is unobservable and regime-dependent.** $\rho$ changes with volatility and with the presence of other large traders; assuming it constant under-states the terminal-block risk that OW highlights.
 4. **Dark fill probability is adversely selected.** $p$ estimated ex-ante overstates the *realized* fill rate conditional on your trade being informed/urgent (you fill when the market is about to move against you). The threshold rule $p^\star$ uses an average $p$, which is the wrong conditional quantity.
 5. **Adaptive control inherits estimation lag.** Re-solving as fills arrive helps only if the re-estimation is faster than the regime change; otherwise you chase a stale parameter (and re-solving too often adds turnover, incurring extra impact).
@@ -162,6 +162,6 @@ A venue with fill probability above **33.2%** is worth routing to on these numbe
 
 - Back: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/05-failure-modes-and-practice|05 - Failure Modes & Practice]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Index Hub]]
 - Impact-law depth: [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]] (Kyle $\lambda$, temporary vs permanent, square-root law, transient impact)
-- Market-making twin: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda-Stoikov & Optimal Quoting]] (inventory control; the same HJB family)
+- Market-making twin: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov & Optimal Quoting]] (inventory control; the same HJB family)
 - Execution heuristics: [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|Execution Algorithms: VWAP, TWAP, POV]] · [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] (dark/hidden orders)
 - Risk & portfolio: [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Constraints & Transaction Costs]]

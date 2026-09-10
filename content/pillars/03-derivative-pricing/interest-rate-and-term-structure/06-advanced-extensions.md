@@ -146,7 +146,7 @@ The UPM mixture produces a textbook **smile**: implied vol dips to its minimum a
 
 ### 5. Canonical Literature & Study References
 
-- **Brigo–Mercurio**, *Interest Rate Models*, Ch 9 (smile in LFM: Breeden-Litzenberger, six-family taxonomy), Ch 10 (LVM: shifted-lognormal, CEV, lognormal-mixture, LMDM, HSDM, Dupire-à-la), Ch 11 (SVM: AB-R, Wu-Zhang Heston, Piterbarg, SABR, Joshi-Rebonato), Ch 12 (UPM: SLMUP, mixture-of-Black caplet/swaption 12.7/12.8, calibration), Ch 7 (cascade/RCCAEI calibration). *Primary verified source.*
+- **Brigo–Mercurio**, *Interest Rate Models*, Ch 9 (smile in LFM: Breeden–Litzenberger, six-family taxonomy), Ch 10 (LVM: shifted-lognormal, CEV, lognormal-mixture, LMDM, HSDM, Dupire-à-la), Ch 11 (SVM: AB-R, Wu–Zhang Heston, Piterbarg, SABR, Joshi-Rebonato), Ch 12 (UPM: SLMUP, mixture-of-Black caplet/swaption 12.7/12.8, calibration), Ch 7 (cascade/RCCAEI calibration). *Primary verified source.*
 - **Hull**, *Options, Futures, and Other Derivatives*, Ch 29 (SABR, shifted lognormal, Bachelier for negative rates, SOFR backward-looking).
 - **Shreve**, *Stochastic Calculus for Finance I*, Ch 34 (BGM) — the single-asset vs multi-rate distinction.
 - **Björk**, *Arbitrage Theory in Continuous Time*, Ch 27 (LMM) and Ch 28 (positive-interest / potential models) — for completeness of the positive-rate landscape.

@@ -53,7 +53,7 @@ Every backtest that trades at the signal bar's own price has quietly set $\tau_{
 
 $$\mathbb{E}\lvert\Delta S\rvert=\sigma S\sqrt{\frac{2\tau}{\pi}}.$$
 
-Taking $\sigma=20\%$, $S=100$, $\tau=1/252$ (one trading day): $\sigma S\sqrt{2\tau/\pi}=1.0052$. A Monte-Carlo with $5\times10^5$ paths gives $1.0066$ — a $0.14\%$ agreement, confirming the formula. This is the *magnitude* of the price risk your order is exposed to while it waits; the **shortfall** of the hub lookup is the *signed, realised* version of it.
+Taking $\sigma=20\%$, $S=100$, $\tau=1/252$ (one trading day): $\sigma S\sqrt{2\tau/\pi}=1.0052$. A Monte Carlo with $5\times10^5$ paths gives $1.0066$ — a $0.14\%$ agreement, confirming the formula. This is the *magnitude* of the price risk your order is exposed to while it waits; the **shortfall** of the hub lookup is the *signed, realised* version of it.
 
 **Determinism as an equation.** The ordering key is a triple. With $\mathcal{Q}$ as a heap on $(t,p,s)$ and $s$ a strictly increasing counter, the pop sequence is a deterministic function of the input data alone:
 

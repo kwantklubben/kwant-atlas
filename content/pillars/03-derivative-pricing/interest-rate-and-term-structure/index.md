@@ -16,7 +16,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-In equity options the short rate $r$ is a scalar input to a formula. In fixed income the *rate is the underlying*. The whole object of study is the **term structure** — the continuum of yields / forward rates across maturities — and the derivative products written on it: bonds, interest-rate swaps (IRS), caps/floors, and swaptions. The pricing question is *different* from Black-Scholes in one structural way: **you cannot hedge a rate derivative with a single tradable whose drift is observable, because the drift (the rate itself) is what moves.** This is why interest-rate modelling is built on two distinctive pillars: the **market price of risk** (short-rate models) and the **change of numeraire** (forward-measure pricing), which are absent from a constant-$r$ BSM world.
+In equity options the short rate $r$ is a scalar input to a formula. In fixed income the *rate is the underlying*. The whole object of study is the **term structure** — the continuum of yields / forward rates across maturities — and the derivative products written on it: bonds, interest-rate swaps (IRS), caps/floors, and swaptions. The pricing question is *different* from Black–Scholes in one structural way: **you cannot hedge a rate derivative with a single tradable whose drift is observable, because the drift (the rate itself) is what moves.** This is why interest-rate modelling is built on two distinctive pillars: the **market price of risk** (short-rate models) and the **change of numeraire** (forward-measure pricing), which are absent from a constant-$r$ BSM world.
 
 This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: it (a) gives the **fast formula lookup** below, and (b) routes you to six sub-pages that walk from raw intuition through bonds/yield curves/forward rates, short-rate models, the numeraire/HJM/market-model machinery, failure modes, and advanced extensions (multi-curve, the smile in rates, calibration).
 
@@ -40,7 +40,7 @@ This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: 
 | Simple forward (LIBOR) | $L(t;T,S)=\frac{1}{\tau}(\frac{P(t,T)}{P(t,S)}-1)$ | flat 4%: $L(0;0,0.5)=4.0403\%$ |
 | **Vasicek** $dr=a(b-r)dt+\sigma dW$ | $P(t,T)=A(t,T)e^{-B(t,T)r}$, $B=\frac{1-e^{-a(T-t)}}{a}$ | $a{=}.15,b{=}.05,\sigma{=}.01,r{=}.04: P(0,5)=0.807678$ |
 | **CIR** $dr=a(b-r)dt+\sigma\sqrt r\,dW$ | $P=Ae^{-Br}$, $h=\sqrt{a^2+2\sigma^2}$, $B=\frac{2(e^{h\tau}-1)}{(h+a)(e^{h\tau}-1)+2h}$ | $a{=}.2,b{=}.05,\sigma{=}.05,r{=}.04: P(0,5)=0.804696$ |
-| **Hull-White** $dr=[\theta(t)-ar]dt+\sigma dW$ | $\theta(t)=\partial_T f^{M}(0,t)+a f^{M}(0,t)+\frac{\sigma^2}{2a}(1-e^{-2at})$ | flat 4%: $\theta(0)=.0040,\ \theta(5)=.0047$ |
+| **Hull–White** $dr=[\theta(t)-ar]dt+\sigma dW$ | $\theta(t)=\partial_T f^{M}(0,t)+a f^{M}(0,t)+\frac{\sigma^2}{2a}(1-e^{-2at})$ | flat 4%: $\theta(0)=.0040,\ \theta(5)=.0047$ |
 | HJM drift (Q) | $\alpha(t,T)=\sigma(t,T)\int_t^T\sigma(t,s)ds$ | $\sigma$ free, $\alpha$ fixed |
 | Caplet = Black | $Cpl=P(0,T_i)\tau[F N(d_1)-K N(d_2)]$, $d_1=\frac{\ln(F/K)+\frac12 v^2 T}{v\sqrt T}$ | $F{=}K{=}4\%,\ v{=}.2,\ T{=}1,\ \tau{=}.5: 0.001637$ |
 | Black swaption | $PS=C_{\alpha,\beta}(0)[R(0)N(d_1)-K N(d_2)]$ | 5y-into-5y ATM $v{=}.15$: 0.023902 |
@@ -101,7 +101,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 - **Brigo, Damiano & Mercurio, Fabio**: *Interest Rate Models — Theory and Practice: With Smile, Inflation and Credit* (2nd ed., 2006) — Ch 1–2 (definitions, numeraire change), Ch 3–4 (one/two-factor short-rate models), Ch 5 (HJM), Ch 6 (LFM/LSM), Ch 7 (calibration), Ch 9–12 (smile in rates). *Primary math-verified source for this folder.*
 - **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed., 2009) — Ch 22–27 (bonds, short-rate models, HJM, change of numeraire, LIBOR & swap market models), Ch 29 (forwards vs futures). *Math-verified deep-read in the corpus.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* — Ch 27–34 (bonds & term structure, Hull-White, CIR, change of numeraire, BGM/LIBOR). *Math-verified in the corpus.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* — Ch 27–34 (bonds & term structure, Hull–White, CIR, change of numeraire, BGM/LIBOR). *Math-verified in the corpus.*
 - **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) — Ch 29 (Black caplet/swaption market models), Ch 31–32 (equilibrium & no-arbitrage short-rate models), Ch 33 (HJM & LMM). *Verified in the corpus.*
 
 ---
@@ -109,7 +109,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]]
-- Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the constant-$r$ seed this folder generalises)
+- Sibling topic: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (the constant-$r$ seed this folder generalises)
 - Sub-pages (in-folder): 01 From Zero · 02 Bonds, Yield Curve & Forward Rates · 03 Short-Rate Models · 04 Numeraire, HJM & Market Models · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

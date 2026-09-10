@@ -67,7 +67,7 @@ Pipelining multiplies throughput by $S$ **at constant latency** — while a non-
 
 ### 3. Computational Implementation — the latency-budget engine
 
-Stdlib only. It builds the budget table, converts latency into distance, and computes the winner-take-all curve with a Monte-Carlo cross-check.
+Stdlib only. It builds the budget table, converts latency into distance, and computes the winner-take-all curve with a Monte Carlo cross-check.
 
 ```python
 import math, random
@@ -149,7 +149,7 @@ Hub signposts — the full failure analysis lives in [[pillars/02-algorithmic-hf
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability Theory]] (normal race probabilities) · [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (saturating marginal value) · [[foundations/numerical-methods/index|Numerical Methods]] (simulation)
-- Sibling in-pillar: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] (the software ceiling this folder escapes) · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]] (why latency buys queue position) · [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]]
+- Sibling in-pillar: [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] (the software ceiling this folder escapes) · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]] (why latency buys queue position) · [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]]
 - Engineering detail (Pillar 8): [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] · [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]
 - Market-making view: [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]] · [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]]
 

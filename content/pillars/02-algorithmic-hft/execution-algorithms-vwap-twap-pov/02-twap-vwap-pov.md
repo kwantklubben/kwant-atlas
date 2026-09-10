@@ -113,5 +113,5 @@ child sizes  TWAP: [7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692
 ### 6. Connected Graph Bridges
 
 - Continue: [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/03-implementation-shortfall|03 · Implementation Shortfall]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/04-scheduling-and-volume-profiles|04 · Scheduling & Volume Profiles]]
-- Benchmark-deep-dive: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]]
+- Benchmark-deep-dive: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]]
 - Microstructure base: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]]

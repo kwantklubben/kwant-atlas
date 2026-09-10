@@ -18,16 +18,16 @@ This pillar is organised into **ten topic folders**, each a self-contained hub w
 
 ### Core Research Topics
 
-1. **[[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs Trading]]**: Cointegration vs correlation, spread construction, Ornstein-Uhlenbeck mean-reversion, half-life estimation, and spread divergence risk.
+1. **[[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs Trading]]**: Cointegration vs correlation, spread construction, Ornstein–Uhlenbeck mean-reversion, half-life estimation, and spread divergence risk.
 2. **[[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]**: The multiple testing problem, backtest overfitting, Bailey & Lopez de Prado's Deflated Sharpe Ratio (DSR), Haircut Sharpe, and Purged K-Fold Cross-Validation.
-3. **[[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]**: Cross-sectional asset pricing, Fama-French 3/5-factor models, Barra style factors (Size, Value, Momentum, Quality, Low-Vol), and factor crowding.
+3. **[[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]**: Cross-sectional asset pricing, Fama–French 3/5-factor models, Barra style factors (Size, Value, Momentum, Quality, Low-Vol), and factor crowding.
 4. **[[pillars/01-quantitative-research/momentum/index|Cross-Sectional & Time-Series Momentum]]**: Relative strength factor ranking, trend following across multi-asset futures (CTA), volatility scaling, and momentum crash dynamics.
 5. **[[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman Filtering]]**: Linear state-space formulations, dynamic time-varying beta estimation, adaptive hedge ratios, and noise attenuation.
 6. **[[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Target Labeling]]**: Flaws of fixed-time horizons, the Triple Barrier Method, Meta-Labeling (separating direction from bet sizing), and Fractional Differentiation.
 7. **[[pillars/01-quantitative-research/event-studies/index|Event Studies]]**: Abnormal returns & CAR, market-model regression, statistical testing, and post-earnings-announcement drift.
 8. **[[pillars/01-quantitative-research/regime-detection/index|Regime Detection]]**: Markov-switching models (Hamilton), threshold models (SETAR/STAR), hidden Markov models (HMM), and regime-aware allocation.
 9. **[[pillars/01-quantitative-research/garch-and-volatility-modeling/index|GARCH & Volatility Modeling]]**: Volatility clustering, ARCH/GARCH(1,1), asymmetric models (EGARCH/GJR), realized volatility & HAR-RV, EWMA, and multivariate DCC.
-10. **[[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Timing]]**: The factor zoo, factor crowding & capacity, post-publication decay (McLean-Pontiff), and factor timing via valuation spreads and trend.
+10. **[[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Timing]]**: The factor zoo, factor crowding & capacity, post-publication decay (McLean–Pontiff), and factor timing via valuation spreads and trend.
 
 ---
 

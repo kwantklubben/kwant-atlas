@@ -1,5 +1,5 @@
 ---
-title: "Black-Litterman: Topic Hub & Formula Lookup"
+title: "Black–Litterman: Topic Hub & Formula Lookup"
 tags:
   - pillar-portfolio-optimization
   - black-litterman
@@ -9,13 +9,13 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance Optimization & the Efficient Frontier]] and [[foundations/bayesian-statistics/index|Bayesian Statistics]].
+**Basic Prerequisites:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization & the Efficient Frontier]] and [[foundations/bayesian-statistics/index|Bayesian Statistics]].
 
 ---
 
 ### 1. Intuition & Practical Objective
 
-Naive mean-variance optimization is an **estimation-error maximizer**: feed in noisy return estimates and the optimizer hands back extreme, unstable, short-saturated weights (Best & Grauer 1991). The Black-Litterman (BL) model — invented by Black & Litterman at Goldman Sachs (1992) — attacks the two root causes at once: it **starts the optimizer from a supply-driven equilibrium prior** instead of a blank slate, and it **blends in only the views you actually hold**, each weighted by its confidence. The result is a shrinkage from the market portfolio toward your views, with the non-viewed assets left alone. It is the canonical **Bayesian answer to the garbage-in/garbage-out problem of Markowitz**.
+Naive mean-variance optimization is an **estimation-error maximizer**: feed in noisy return estimates and the optimizer hands back extreme, unstable, short-saturated weights (Best & Grauer 1991). The Black–Litterman (BL) model — invented by Black & Litterman at Goldman Sachs (1992) — attacks the two root causes at once: it **starts the optimizer from a supply-driven equilibrium prior** instead of a blank slate, and it **blends in only the views you actually hold**, each weighted by its confidence. The result is a shrinkage from the market portfolio toward your views, with the non-viewed assets left alone. It is the canonical **Bayesian answer to the garbage-in/garbage-out problem of Markowitz**.
 
 This page is the *hub*: it gives the **fast formula lookup** (job #1) and routes you to six sub-pages that walk from raw intuition through reverse optimization, the BL update, views & confidence, failure modes, and extensions. Every formula below is transcribed from **Black & Litterman (1992)** and cross-checked against **He & Litterman (1999)** and **Idzorek (2005)**; the check-column numbers were **re-executed and reproduced exactly** (§3).
 
@@ -103,21 +103,21 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 ### 5. Canonical Literature & Study References
 
 - **Black, Fischer & Litterman, Robert**: *Global Portfolio Optimization*, Financial Analysts Journal 48(5):28–43, 1992. **The origin paper and math-authoritative source for this folder; all formulas verified.** ★ MUST-HAVE
-- **He, Guangliang & Litterman, Robert**: *The Intuition Behind Black-Litterman Model Portfolios*, Goldman Sachs Investment Management, 1999 (SSRN #334304). The accessible worked-intuition note; §3–4 of this folder follow its relative-view / market-interpretation framing. ★ MUST-HAVE
+- **He, Guangliang & Litterman, Robert**: *The Intuition Behind Black–Litterman Model Portfolios*, Goldman Sachs Investment Management, 1999 (SSRN #334304). The accessible worked-intuition note; §3–4 of this folder follow its relative-view / market-interpretation framing. ★ MUST-HAVE
 - **Satchell, Stephen & Scowcroft, Alan**: *A Demystification of the Black–Litterman Model*, Journal of Asset Management 1(2):138–150, 2000. Clean derivation of the posterior and its special cases (zero-views, uniform views).
-- **Idzorek, Thomas**: *A Step-by-Step Guide to the Black-Litterman Model*, 2005 (SSRN #3479867). The practitioner cookbook and origin of the 0–100% confidence method for converting $\Omega$.
+- **Idzorek, Thomas**: *A Step-by-Step Guide to the Black–Litterman Model*, 2005 (SSRN #3479867). The practitioner cookbook and origin of the 0–100% confidence method for converting $\Omega$.
 
 ---
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & Efficient Frontier]] · [[foundations/bayesian-statistics/index|Bayesian Statistics]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
+- Foundational base: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & Efficient Frontier]] · [[foundations/bayesian-statistics/index|Bayesian Statistics]] · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Sibling topic (this folder's "bad input" it fixes): [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Estimation-Error Maximizers]]
 - Cost/rebalancing bridge: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs & Turnover]]
-- Sub-pages (in-folder): 01 From Zero · 02 Reverse Optimization · 03 The Black-Litterman Formula · 04 Views & Confidence · 05 Failure Modes · 06 Advanced Extensions
+- Sub-pages (in-folder): 01 From Zero · 02 Reverse Optimization · 03 The Black–Litterman Formula · 04 Views & Confidence · 05 Failure Modes · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/05-portfolio-optimization/black-litterman/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/05-portfolio-optimization/black-litterman/02-reverse-optimization|02 · Reverse Optimization]] → [[pillars/05-portfolio-optimization/black-litterman/03-the-black-litterman-formula|03 · The BL Formula]] → [[pillars/05-portfolio-optimization/black-litterman/04-views-and-confidence|04 · Views & Confidence]].
 - **Robustness (practitioner/graduate):** [[pillars/05-portfolio-optimization/black-litterman/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/05-portfolio-optimization/black-litterman/06-advanced-extensions|06 · Advanced Extensions]].
-- Flat-format sibling (leave as-is): [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman Bayesian Allocation (flat)]].
+- Flat-format sibling (leave as-is): [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Bayesian Allocation (flat)]].

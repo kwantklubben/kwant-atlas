@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] and [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]].
+**Basic Prerequisites:** [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] and [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]].
 
 ---
 
@@ -16,7 +16,7 @@ tags:
 
 Every OTC derivative is a *bilateral* contract that can run for decades, and either party can be in-the-money at any future time. **Counterparty credit risk (CCR)** is the risk that the party who owes you money at a given moment defaults before paying it. Unlike a bond — where the exposure is (roughly) the par amount, known today — a derivative's exposure is **uncertain and symmetric**: it evolves with the market and can flip sign. That uncertainty is exactly what the *xVA* world exists to price.
 
-This folder is the counterpoint to the *Black-Scholes-Merton* folder. There, one asset, one volatility, and the price is fixed by no-arbitrage. Here, the pricing question is: **what does the counterparty's default, my own default, the funding of margin, and the cost of regulatory capital add to (or subtract from) that clean price?** The answers are the valuation adjustments — **CVA, DVA, FVA, MVA, KVA, ColVA** — and the object that bundles them, the **xVA** (the subject of Gregory's *The xVA Challenge*, the primary source for this folder).
+This folder is the counterpoint to the *Black–Scholes–Merton* folder. There, one asset, one volatility, and the price is fixed by no-arbitrage. Here, the pricing question is: **what does the counterparty's default, my own default, the funding of margin, and the cost of regulatory capital add to (or subtract from) that clean price?** The answers are the valuation adjustments — **CVA, DVA, FVA, MVA, KVA, ColVA** — and the object that bundles them, the **xVA** (the subject of Gregory's *The xVA Challenge*, the primary source for this folder).
 
 This page is a *hub*: it (a) gives you the **fast formula lookup** below (job #1 of this pillar), and (b) routes you to six sub-pages that walk from raw intuition, through exposure & margin, the CVA/DVA and FVA/MVA formulas, the failure modes, and the practitioner extensions (capital, the xVA desk, wrong-way risk).
 
@@ -143,7 +143,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 ### 6. Connected Graph Bridges
 
-- Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (the clean, default-free price xVA adjusts)
+- Foundational base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (the clean, default-free price xVA adjusts)
 - Related credit: [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model|Credit Risk & the Merton Structural Model]] · [[pillars/04-quantitative-risk/var-and-expected-shortfall|VaR & Expected Shortfall]] (PFE = VaR)
 - Market context: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure Models]] (swap exposure is the canonical EPE profile)
 - Sub-pages (in-folder): 01 From Zero · 02 Exposure & Margin · 03 CVA & DVA · 04 FVA & MVA · 05 Failure Modes · 06 Advanced Extensions
@@ -152,4 +152,4 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 - **Absolute beginner:** [[pillars/03-derivative-pricing/counterparty-risk-and-xva/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/counterparty-risk-and-xva/02-exposure-and-margin|02 · Exposure & Margin]] → [[pillars/03-derivative-pricing/counterparty-risk-and-xva/03-cva-and-dva|03 · CVA & DVA]] → [[pillars/03-derivative-pricing/counterparty-risk-and-xva/04-fva-and-mva|04 · FVA & MVA]].
 - **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/counterparty-risk-and-xva/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/counterparty-risk-and-xva/06-advanced-extensions|06 · Advanced Extensions]].
-- Back to the clean price: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]
+- Back to the clean price: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]

@@ -49,7 +49,7 @@ For a standard normal loss distribution $L \sim \mathcal{N}(\mu, \sigma^2)$:
 $$\text{VaR}_\alpha = \mu + \sigma \Phi^{-1}(\alpha)$$
 $$\text{ES}_\alpha = \mu + \sigma \frac{\phi(\Phi^{-1}(\alpha))}{1 - \alpha}$$
 
-#### Cornish-Fisher Expansion for Non-Gaussian Losses
+#### Cornish–Fisher Expansion for Non-Gaussian Losses
 When returns exhibit skewness $\gamma_1$ and excess kurtosis $\gamma_2$:
 $$z_\alpha^{\text{CF}} = z_\alpha + \frac{1}{6}(z_\alpha^2 - 1)\gamma_1 + \frac{1}{24}(z_\alpha^3 - 3z_\alpha)\gamma_2 - \frac{1}{36}(2z_\alpha^3 - 5z_\alpha)\gamma_1^2$$
 where $z_\alpha = \Phi^{-1}(\alpha)$.

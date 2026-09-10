@@ -7,13 +7,13 @@ tags:
   - model-calibration
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton Hub]]. No prior derivatives knowledge needed.
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton Hub]]. No prior derivatives knowledge needed.
 
 ---
 
 ### 1. Intuition & Practical Objective
 
-Start with the dumbest possible question: *if Black-Scholes says an option has one price, why does a desk need a "calibration" step at all?* Because the model has free parameters (volatility, and in fancier models several of them), and the market has already decided the *actual* prices. **Calibration is the act of choosing the parameters so the model agrees with the market.** Everything else on this page is unpacking that sentence.
+Start with the dumbest possible question: *if Black–Scholes says an option has one price, why does a desk need a "calibration" step at all?* Because the model has free parameters (volatility, and in fancier models several of them), and the market has already decided the *actual* prices. **Calibration is the act of choosing the parameters so the model agrees with the market.** Everything else on this page is unpacking that sentence.
 
 Think of a model as a machine with dials. You feed it a strike and a maturity and it prints a price. The dials are $\\theta$ (for BSM just $\\sigma$; for Heston $v_0,\\bar v,\\lambda,\\eta,\\rho$; for SABR $\\alpha,\\beta,\\rho,\\nu$). Market quotes are the *answer key*. Calibration turns the dials until the machine's answers match the key.
 
@@ -107,6 +107,6 @@ Price-RMSE picks $\\sigma{=}0.239$ (biased to ATM where prices are largest); vol
 
 ### 6. Connected Graph Bridges
 
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton Hub]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton Hub]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
 - Continue: [[pillars/03-derivative-pricing/calibration-and-market-practice/02-the-calibration-problem|02 · The Calibration Problem]] · [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]
 - Sibling: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surfaces]]

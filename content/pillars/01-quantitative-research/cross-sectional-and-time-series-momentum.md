@@ -86,7 +86,7 @@ def compute_vol_targeted_tsmom(prices: pd.Series, lookback: int = 252,
 
 2. **Beta Exposure Contamination:**
    - *Failure:* Cross-sectional momentum portfolios inadvertently load heavily on market beta or industry factors (e.g., being 80% long Tech and 80% short Energy).
-   - *Remedy:* Factor-neutralize momentum scores against Fama-French industry and style vectors.
+   - *Remedy:* Factor-neutralize momentum scores against Fama–French industry and style vectors.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "03 - The Almgren-Chriss Model: Euler-Lagrange, HJB and the Hyperbolic Trajectory"
+title: "03 - The Almgren–Chriss Model: Euler-Lagrange, HJB and the Hyperbolic Trajectory"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution
@@ -15,11 +15,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The execution problem has now been reduced to two scalars: an expected cost $E[x]$ and a variance $V[x]$, both functions of the trading trajectory $x=(x_0,\dots,x_N)$. The Almgren-Chriss model closes the problem by choosing the trajectory that minimizes
+The execution problem has now been reduced to two scalars: an expected cost $E[x]$ and a variance $V[x]$, both functions of the trading trajectory $x=(x_0,\dots,x_N)$. The Almgren–Chriss model closes the problem by choosing the trajectory that minimizes
 
 $$U[x] = E[x] + \lambda\,V[x],$$
 
-a **quadratic objective** in $x$. For linear impact it is exactly a convex quadratic program, so the optimum is unique, static, and — in continuous time — has a closed form: a hyperbolic (exponential-decay) trajectory. This page does the derivation twice: the Euler-Lagrange route AC themselves used, and the dynamic-programming / Hamilton-Jacobi-Bellman route that is the modern control-theoretic statement, and shows they agree.
+a **quadratic objective** in $x$. For linear impact it is exactly a convex quadratic program, so the optimum is unique, static, and — in continuous time — has a closed form: a hyperbolic (exponential-decay) trajectory. This page does the derivation twice: the Euler-Lagrange route AC themselves used, and the dynamic-programming / Hamilton–Jacobi–Bellman route that is the modern control-theoretic statement, and shows they agree.
 
 The practical objective: understand **where the shape comes from**, so that when the trajectory later disappoints (page 05) you know exactly which assumption to blame.
 
@@ -143,7 +143,7 @@ The closed form and the exact discrete minimizer agree to **2 shares in 1,000,00
 
 - **Almgren, Robert; Chriss, Neil** — "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §1.5 (linear impact), §2.1-2.4 (frontier, eqs 16-19, half-life), §3.1 (quadratic utility, the time-homogeneity Theorem), §3.2 (Value at Risk / L-VaR).
 - **Bertsimas, Dimitris; Lo, Andrew W.** — "Optimal control of execution costs," *Journal of Financial Markets* 1(1), 1-50 (1998). *The dynamic-programming / HJB formulation ($s_t^\star=\bar s/T$ in the zero-drift case).*
-- **Cartea, A.; Jaimungal, S.; Penalva, J.** — *Algorithmic and High-Frequency Trading* (2015), Ch 6-7. *The HJB statement in full generality, with inventory penalties and the Almgren-Chriss problem as a special case.*
+- **Cartea, A.; Jaimungal, S.; Penalva, J.** — *Algorithmic and High-Frequency Trading* (2015), Ch 6-7. *The HJB statement in full generality, with inventory penalties and the Almgren–Chriss problem as a special case.*
 - **Gueant, Olivier** — *The Financial Mathematics of Market Liquidity* (2016), Ch 1-4. *Rigorous treatment of the execution problem and its well-posedness.*
 - **Hasbrouck, Joel** — *Empirical Market Microstructure* (2007), Ch 15 (the discrete DP, eqs 15.1-15.4, and the drift-augmented optimum).
 
@@ -154,4 +154,4 @@ The closed form and the exact discrete minimizer agree to **2 shares in 1,000,00
 - Back: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/02-the-execution-problem|02 - The Execution Problem]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Index Hub]]
 - Forward: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/04-efficient-frontier-and-trajectory|04 - Efficient Frontier & Trajectory]]
 - Theory: [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (Euler-Lagrange, convex QP) · [[foundations/stochastic-calculus/index|Stochastic Calculus]] (martingale conditioning under the dynamic program)
-- Control-theory twin: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda-Stoikov & Optimal Quoting]] (same HJB machinery, inventory instead of execution)
+- Control-theory twin: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov & Optimal Quoting]] (same HJB machinery, inventory instead of execution)

@@ -19,7 +19,7 @@ The interest-rate toolkit is *mathematically elegant and fails in a small set of
 
 The failures, in one line each:
 1. **One factor ⇒ perfect correlation** — a single short-rate Brownian motion moves the whole curve in lockstep, so curve-steepener and yield-spread products are mispriced.
-2. **Gaussian short rates go negative** — Vasicek/Hull-White have $\mathbb{P}(r<0)>0$; and in real low/negative-rate regimes the *lognormal* Black machinery breaks because $\ln(F)$ is undefined for $F\le0$.
+2. **Gaussian short rates go negative** — Vasicek/Hull–White have $\mathbb{P}(r<0)>0$; and in real low/negative-rate regimes the *lognormal* Black machinery breaks because $\ln(F)$ is undefined for $F\le0$.
 3. **Lognormal instantaneous forwards explode** — HJM with $\sigma\propto f$ has drift $\sim f^2$ and blows up before $T$; only *simple* (LIBOR) rates are safe to model lognormally.
 4. **Calibration instability** — HW's exact-fit $\theta(t)$ and market-model parameter recovery need numerically unstable derivatives / inversions.
 

@@ -13,7 +13,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Linear factor models (like Fama-French) assume that factor returns have fixed linear relationships with stock returns. In reality, market dynamics are non-linear: high volatility might enhance momentum up to a point, after which momentum crashes; value stocks might only outperform when earnings quality is high.
+Linear factor models (like Fama–French) assume that factor returns have fixed linear relationships with stock returns. In reality, market dynamics are non-linear: high volatility might enhance momentum up to a point, after which momentum crashes; value stocks might only outperform when earnings quality is high.
 
 Gradient Boosted Decision Trees (**LightGBM, XGBoost, CatBoost**) are the workhorses of quantitative factor modeling. They naturally capture complex non-linear feature interactions and resist outliers. However, to evaluate them honestly, they must be paired with **Purged and Embargoed TimeSeries Cross-Validation**.
 

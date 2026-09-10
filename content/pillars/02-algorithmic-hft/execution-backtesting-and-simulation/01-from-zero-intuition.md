@@ -124,4 +124,4 @@ The signal backtest is **identical in all three rows** ($\text{SR}=0.671$): it n
 
 - Base: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]] (the signal-backtest half)
 - Continue: [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/02-why-execution-backtests-lie|02 · Why Execution Backtests Lie]] · [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/index|Index Hub]]
-- Cost model to calibrate: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] · [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]]
+- Cost model to calibrate: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] · [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]]

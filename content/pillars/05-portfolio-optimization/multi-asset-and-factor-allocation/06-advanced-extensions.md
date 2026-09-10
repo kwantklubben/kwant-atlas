@@ -129,5 +129,5 @@ Read the rotation: the min-variance portfolio **shorts equities** ($-20.6\%$) an
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/05-portfolio-optimization/multi-asset-and-factor-allocation/index|Index Hub]]
-- Sibling: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]]
+- Sibling: [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]]
 - Cross-pillar: [[pillars/01-quantitative-research/regime-detection/index|Regime Detection]] · [[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Factor Timing]]

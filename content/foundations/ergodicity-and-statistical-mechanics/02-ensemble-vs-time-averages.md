@@ -20,7 +20,7 @@ The practical objective is a *test you can apply*: given a quantity that evolves
 
 Two vocabulary items make the rest of the folder precise:
 
-- **Ensemble average** $\langle x\rangle$: freeze time, average over many parallel worlds. This is what a *backtest across many assets* or a *Monte-Carlo expectation* computes.
+- **Ensemble average** $\langle x\rangle$: freeze time, average over many parallel worlds. This is what a *backtest across many assets* or a *Monte Carlo expectation* computes.
 - **Time average** $\bar x$: freeze the world (one realisation), average over a long stretch of time. This is what *your account statement* computes.
 
 A process is **ergodic** when the two coincide almost surely. Wealth is not ergodic. That single fact is the reason a fund that looks superb in a cross-sectional study can blow up the one account that actually holds the position.

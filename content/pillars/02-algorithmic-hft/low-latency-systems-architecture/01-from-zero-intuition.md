@@ -45,7 +45,7 @@ where $Q_p$ is the $p$-th percentile of end-to-end latency. For a real trading p
 
 $$W_q = \frac{\rho}{1-\rho}\,\mathbb{E}[S]\qquad(\text{M/M/1}),$$
 
-which diverges as $\rho\to1$. A handler at 90 % utilization waits ten times longer than one at 50 % — even though its individual instructions are identical. **Load, not just speed, sets latency.** (General service-time jitter is handled by the Pollaczek-Khinchine formula on the hub.)
+which diverges as $\rho\to1$. A handler at 90 % utilization waits ten times longer than one at 50 % — even though its individual instructions are identical. **Load, not just speed, sets latency.** (General service-time jitter is handled by the Pollaczek–Khinchine formula on the hub.)
 
 **The physics floor.** Light covers ~30 cm/ns in vacuum, ~20 cm/ns in fibre (≈5 ns per metre). No amount of engineering beats this; it is why the *first* latency decision is *where the machine sits* (colocation), not *what code it runs*.
 

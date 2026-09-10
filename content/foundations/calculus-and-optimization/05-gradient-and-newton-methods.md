@@ -162,5 +162,5 @@ for i in range(5):
 
 - Back: [[foundations/calculus-and-optimization/04-constrained-optimization|04 · Constrained Optimization]] · [[foundations/calculus-and-optimization/index|Index Hub]]
 - Next: [[foundations/calculus-and-optimization/06-advanced-extensions|06 · Convexity & Applications]]
-- Applied: [[foundations/numerical-methods/04-numerical-optimization|Numerical Optimization]] (the methods as numerical primitives) · [[pillars/07-machine-learning-altdata/index|Machine Learning]] (SGD, IRLS, gradient boosting) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance Optimization]]
+- Applied: [[foundations/numerical-methods/04-numerical-optimization|Numerical Optimization]] (the methods as numerical primitives) · [[pillars/07-machine-learning-altdata/index|Machine Learning]] (SGD, IRLS, gradient boosting) · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization]]
 - Base: [[foundations/calculus-and-optimization/03-multivariable-calculus|03 · Multivariable Calculus]] (Hessian, conditioning)

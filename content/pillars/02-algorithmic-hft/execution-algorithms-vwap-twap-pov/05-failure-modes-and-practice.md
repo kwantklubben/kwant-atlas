@@ -117,5 +117,5 @@ print(f"    extra cost of slow participation = ${late_fill-early_fill:,.0f}"
 ### 6. Connected Graph Bridges
 
 - Continue: [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/06-advanced-extensions|06 · Advanced Extensions]]
-- Root cause: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] · [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]]
-- Optimal defense: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]]
+- Root cause: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]]
+- Optimal defense: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] · [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]]

@@ -128,5 +128,5 @@ minimum viable tick tau_min = 2*(lambda - r) = 0.0080
 
 - Back: [[pillars/06-market-making/market-maker-economics-and-rebates/03-maker-taker-fees-and-rebates|03 · Maker-Taker Fees & Rebates]]
 - Forward: [[pillars/06-market-making/market-maker-economics-and-rebates/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/06-market-making/market-maker-economics-and-rebates/06-advanced-extensions|06 · Advanced Extensions]]
-- Inputs: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten-Milgrom]] (the $\lambda$ floor) · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory]] (adding $c_{\text{inv}}$ to the cost floor)
+- Inputs: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Adverse Selection & Glosten–Milgrom]] (the $\lambda$ floor) · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory]] (adding $c_{\text{inv}}$ to the cost floor)
 - Cross-pillar: [[pillars/03-derivative-pricing/index|Pillar 3]] — the same zero-profit logic prices options (no-arbitrage).

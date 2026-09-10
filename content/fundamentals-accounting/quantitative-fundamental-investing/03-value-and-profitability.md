@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Value says *buy cheap*; profitability says *buy good*. This page is where the two meet — and where the naivest reading of each fails. The objective is one idea from Robert Novy-Marx (2013): **profitability is "the other side of value" — profitable firms earn higher returns than unprofitable ones, even though they are systematically more expensive.** And the reverse is the value-trap trap: the cheapest stocks by book-to-market are often cheap *because* they are unprofitable.
+Value says *buy cheap*; profitability says *buy good*. This page is where the two meet — and where the naivest reading of each fails. The objective is one idea from Robert Novy-Marx (2013): **profitability is "the other side of value" — profitable firms earn higher returns than unprofitable ones, even though they are systematically more expensive.** And the reverse is the value trap: the cheapest stocks by book-to-market are often cheap *because* they are unprofitable.
 
 The two facts sit awkwardly together, and resolving them is the whole craft:
 

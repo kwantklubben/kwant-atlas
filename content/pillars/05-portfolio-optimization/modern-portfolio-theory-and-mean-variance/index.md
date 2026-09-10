@@ -1,5 +1,5 @@
 ---
-title: "Modern Portfolio Theory & Mean-Variance: Topic Hub & Formula Lookup"
+title: "Modern Portfolio Theory & Mean–Variance: Topic Hub & Formula Lookup"
 tags:
   - pillar-portfolio-optimization
   - modern-portfolio-theory-and-mean-variance
@@ -125,7 +125,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 - **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1):77–91 (1952) — the founding E-V quadratic program and efficient set.
 - **Tobin, James**: *Liquidity Preference as Behavior Toward Risk*, Review of Economic Studies 25(2):65–86 (1958) — the (two-fund) separation theorem: a riskless asset + one efficient risky portfolio.
 - **Sharpe, William F.**: *Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk*, Journal of Finance 19(3):425–442 (1964) — equilibrium tangency = market portfolio + the SML/CAPM.
-- **Best & Grauer**: *On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means*, Review of Financial Studies 4(2):315–342 (1991) — the formal "estimation-error maximizer" result.
+- **Best & Grauer**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, Review of Financial Studies 4(2):315–342 (1991) — the formal "estimation-error maximizer" result.
 
 ---
 
@@ -133,10 +133,10 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 
 - Foundational base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] · [[foundations/calculus-and-optimization/index|Calculus & KKT Optimization]]
 - Sub-pages (in-folder): 01 From Zero · 02 Efficient Frontier · 03 Tangency & CAPM · 04 Min-Variance & Constraints · 05 Failure Modes · 06 Advanced Extensions
-- Sibling topics: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]
+- Sibling topics: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] · [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]
 
 **Recommended reading route (audience arc):**
 - **Absolute beginner:** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
 - **Formulas + code (undergrad/job-seeking):** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/02-the-efficient-frontier|02 · Efficient Frontier]] → [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/03-tangency-and-capm|03 · Tangency & CAPM]] → [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/04-min-variance-and-constraints|04 · Min-Variance & Constraints]].
 - **Robustness (practitioner/graduate):** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black-Litterman Bayesian Allocation]]
+- Forward links: [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman Bayesian Allocation]]

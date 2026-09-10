@@ -9,7 +9,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (inverses, condition numbers) and [[foundations/statistics-and-inference/index|Statistics & Inference]] (covariance, correlation, OLS). Prior exposure to [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance Optimization]] is strongly recommended; ML itself is treated as a black box you have already trained.
+**Basic Prerequisites:** [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]] (inverses, condition numbers) and [[foundations/statistics-and-inference/index|Statistics & Inference]] (covariance, correlation, OLS). Prior exposure to [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance Optimization]] is strongly recommended; ML itself is treated as a black box you have already trained.
 
 ---
 
@@ -131,7 +131,7 @@ Hub signposts — the folder's full failure-mode analysis lives in [[pillars/07-
 
 ### 6. Connected Graph Bridges
 
-- **Pillar 5 (portfolio construction):** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean-Variance]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/robust-optimization/index|Robust Optimization]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/index|Kelly Criterion & Bet Sizing]]
+- **Pillar 5 (portfolio construction):** [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance]] · [[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity (HRP)]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]] · [[pillars/05-portfolio-optimization/robust-optimization/index|Robust Optimization]] · [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]] · [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/index|Kelly Criterion & Bet Sizing]]
 - **Pillar 1 (signals):** [[pillars/01-quantitative-research/factor-investing-and-timing/index|Factor Investing & Factor Timing]] (where the forecasts come from)
 - **Pillar 7 (ML stack):** [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting Methods]] (the ensembling machinery) · [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV & Backtest Hygiene]] (how you *measure* the seam) · [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial-ML Pitfalls & Low SNR]] · [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]]
 - Sub-pages (in-folder): 01 From Zero · 02 Forecasts→Positions · 03 Ensembling Models · 04 ML for Covariance & Factors · 05 Failure Modes · 06 Advanced Extensions

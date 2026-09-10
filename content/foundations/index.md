@@ -21,10 +21,10 @@ This **First-Principles Toolbox** provides the rigorous ground truth underlying 
 
 1. **[[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]**: Vector spaces, spectral theory, positive semi-definiteness, singular value decomposition (SVD), PCA, and random matrix theory.
 2. **[[foundations/calculus-and-optimization/index|Calculus & Optimization]]**: Single & multivariable calculus, gradients, Hessians, Taylor series (the foundation of Greeks), Lagrange multipliers, and KKT conditions.
-3. **[[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**: Probability spaces $(\Omega, \mathcal{F}, \mathbb{P})$, filtrations, conditional expectations, martingales, and the Radon-Nikodym derivative.
+3. **[[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**: Probability spaces $(\Omega, \mathcal{F}, \mathbb{P})$, filtrations, conditional expectations, martingales, and the Radon–Nikodym derivative.
 4. **[[foundations/stochastic-calculus/index|Stochastic Calculus & Itô's Lemma]]**: Quadratic variation, continuous Brownian paths, Itô integration, Itô-Doeblin formula, and Girsanov change of measure.
 5. **[[foundations/statistics-and-inference/index|Statistics & Inference]]**: Point estimation (MLE), the CLT, confidence intervals & hypothesis testing, bias-variance, bootstrap.
-6. **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]**: Weak vs strict stationarity, unit root tests (ADF), Engle-Granger and Johansen cointegration, and ARCH/GARCH volatility modeling.
+6. **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]**: Weak vs strict stationarity, unit root tests (ADF), Engle–Granger and Johansen cointegration, and ARCH/GARCH volatility modeling.
 7. **[[foundations/bayesian-statistics/index|Bayesian Statistics]]**: Bayes' theorem & conjugate priors, posterior inference, regularization-as-MAP, and MCMC (Metropolis, Gibbs).
 8. **[[foundations/numerical-methods/index|Numerical Methods]]**: Finite-difference methods, Monte Carlo, numerical optimization, numerical linear algebra — the general computational toolbox.
 9. **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble averages vs time averages, non-ergodic multiplicative wealth dynamics, the Kelly criterion, and ruin probability.

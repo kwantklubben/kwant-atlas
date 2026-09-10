@@ -1,5 +1,5 @@
 ---
-title: "03 — Binomial Trees & Convergence to Black-Scholes"
+title: "03 — Binomial Trees & Convergence to Black–Scholes"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial
@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-A one-period binomial has two states; a real market has a continuum. The **multi-period binomial tree** bridges the gap: chop $[0,T]$ into $n$ steps, put a two-state bet at each, and let the coin be re-tossed at every node. The stock after $n$ steps is $S_0u^{Y}d^{\,n-Y}$ with $Y\sim\text{Binomial}(n,p)$ — a *discrete* approximation to the lognormal. Price each node by backward induction and, as $n\to\infty$, the price converges to the Black-Scholes-Merton value.
+A one-period binomial has two states; a real market has a continuum. The **multi-period binomial tree** bridges the gap: chop $[0,T]$ into $n$ steps, put a two-state bet at each, and let the coin be re-tossed at every node. The stock after $n$ steps is $S_0u^{Y}d^{\,n-Y}$ with $Y\sim\text{Binomial}(n,p)$ — a *discrete* approximation to the lognormal. Price each node by backward induction and, as $n\to\infty$, the price converges to the Black–Scholes–Merton value.
 
 The practical objective of this page is the **Cox–Ross–Rubinstein (CRR) recipe** — how to choose $u,d,p$ so the tree has the right volatility — plus an honest picture of the *error*: CRR converges at $O(1/n)$, **not monotonically**.
 
@@ -149,4 +149,4 @@ Read the table as two messages. First, CRR **does** converge: $n{=}1000$ gives $
 
 - Back: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/02-no-arbitrage-and-risk-neutral|02 · No-Arbitrage & Risk-Neutral]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|04 · Fundamental Theorems]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/06-advanced-extensions|06 · Advanced Extensions]]
-- Siblings: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
+- Siblings: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]

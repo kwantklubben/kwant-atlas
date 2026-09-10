@@ -51,7 +51,7 @@ Then
 
 $$\text{value per share}=\frac{V_{\text{equity}}}{\#\text{diluted shares}},$$
 
-where diluted shares include options/RSUs, and the option value is best handled by subtracting the **estimated option value** (a Black-Scholes / treasury-stock-method charge) rather than by raw share counts. Getting the bridge wrong is as damaging as getting the cash flows wrong — a large cash pile or an off-balance-sheet claim can move per-share value by double digits.
+where diluted shares include options/RSUs, and the option value is best handled by subtracting the **estimated option value** (a Black–Scholes / treasury-stock-method charge) rather than by raw share counts. Getting the bridge wrong is as damaging as getting the cash flows wrong — a large cash pile or an off-balance-sheet claim can move per-share value by double digits.
 
 ---
 

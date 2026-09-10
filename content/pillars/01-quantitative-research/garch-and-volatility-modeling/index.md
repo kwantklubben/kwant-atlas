@@ -132,7 +132,7 @@ Hub signposts — the full analysis lives in [[pillars/01-quantitative-research/
 
 - Foundational base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (stationarity, ARMA, forecasting) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (martingale differences) · [[foundations/statistics-and-inference/index|Statistics & Inference]] (MLE)
 - Sibling topics (this pillar): [[pillars/01-quantitative-research/regime-detection/index|Regime Detection]] (vol regimes as states) · [[pillars/01-quantitative-research/momentum/index|Momentum]] (vol scaling) · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman]] (SV as state space)
-- Risk & portfolio: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (uses the vol forecast) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] (vol targeting) · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] (vol as *the* pricing parameter)
+- Risk & portfolio: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (uses the vol forecast) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] (vol targeting) · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (vol as *the* pricing parameter)
 - Sub-pages (in-folder): 01 From Zero · 02 ARCH & GARCH · 03 Asymmetric Models · 04 Realized Vol & HAR · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

@@ -81,7 +81,7 @@ mu = 0.30  (break-even half-spread per GM = mu = 0.30)
   h=0.30  half-spread = mu (GM quote) -> break-even / zero-profit:  mean P&L per trade = -0.0009
 ```
 
-Two solid numbers from the run: quoting the **mid** costs the dealer $0.301$ per trade (matches $-\pi=-0.30$ to Monte-Carlo error), and quoting the **GM half-spread** brings P&L to $\approx 0$ (the noise band around the theoretical $0$). The spread is not a fee for services rendered — it is *insurance against information*.
+Two solid numbers from the run: quoting the **mid** costs the dealer $0.301$ per trade (matches $-\pi=-0.30$ to Monte Carlo error), and quoting the **GM half-spread** brings P&L to $\approx 0$ (the noise band around the theoretical $0$). The spread is not a fee for services rendered — it is *insurance against information*.
 
 ---
 

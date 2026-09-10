@@ -110,4 +110,4 @@ The combination's Sharpe ($+0.67$) **more than doubles** the better single-leg (
 - Base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (correlation, variance) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]
 - Continue: [[pillars/01-quantitative-research/momentum/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/01-quantitative-research/momentum/06-advanced-extensions|06 · Advanced Extensions]]
 - Factor view: [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]] (value HML + momentum UMD)
-- Portfolio construction: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance (combo weights)]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]
+- Portfolio construction: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance (combo weights)]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]

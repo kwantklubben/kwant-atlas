@@ -10,7 +10,7 @@ tags:
   - rough-volatility
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/04-advanced-dynamics|04 · Advanced Dynamics]] and [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (familiarity with the characteristic-function method).
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/04-advanced-dynamics|04 · Advanced Dynamics]] and [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (familiarity with the characteristic-function method).
 
 ---
 
@@ -65,7 +65,7 @@ Empirically the log-realized-volatility has Hurst $H\approx0.1$ (much rougher th
 
 ### 3. Computational Implementation — Heston by Fourier, verified against BS
 
-We implement the Heston characteristic function and a single Lewis integral pricer, then (i) validate the integrator by feeding it the **Black-Scholes** characteristic function and checking it reproduces the closed form, (ii) check the two Heston martingale identities $\varphi(0)=\varphi(-i)=1$, and (iii) produce a Heston smile. Stdlib only (`cmath`).
+We implement the Heston characteristic function and a single Lewis integral pricer, then (i) validate the integrator by feeding it the **Black–Scholes** characteristic function and checking it reproduces the closed form, (ii) check the two Heston martingale identities $\varphi(0)=\varphi(-i)=1$, and (iii) produce a Heston smile. Stdlib only (`cmath`).
 
 ```python
 import math, cmath
@@ -121,7 +121,7 @@ Heston K=  110: price=1.5232  implied vol=11.989%
 Heston K=  120: price=0.2433  implied vol=10.993%
 ```
 
-The Fourier integrator reproduces the Black-Scholes closed form to $\sim10^{-13}$ — the numerical proof that the Lewis representation and the characteristic function are correctly implemented. The Heston CF satisfies both martingale identities exactly, and the resulting smile is **downward-sloping** ($19.57\%$ at $K{=}80$ down to $10.99\%$ at $K{=}120$) at the very parameters (Table 3.2) that were shown in §04 to be **too flat at the short end** — the calibration failure that motivates jumps, forward-variance models, and rough vol.
+The Fourier integrator reproduces the Black–Scholes closed form to $\sim10^{-13}$ — the numerical proof that the Lewis representation and the characteristic function are correctly implemented. The Heston CF satisfies both martingale identities exactly, and the resulting smile is **downward-sloping** ($19.57\%$ at $K{=}80$ down to $10.99\%$ at $K{=}120$) at the very parameters (Table 3.2) that were shown in §04 to be **too flat at the short end** — the calibration failure that motivates jumps, forward-variance models, and rough vol.
 
 **Calibration, in one paragraph.** Calibration is a *nonlinear least-squares fit of model prices to the whole surface*, typically weighted by vega/bid-offer. Heston has 5 parameters $(v_0,\bar v,\lambda,\eta,\rho)$; two expirations fix $\lambda'$ and $\rho\eta$, the term structure gives $\bar v,v_0$, and the skew curvature separates $\rho$ from $\eta$ (Gatheral §3.4). But since the surface *shape* is model-generic, good fits are easy and **do not validate the model** — only the dynamics (SSR, forward skew) do.
 

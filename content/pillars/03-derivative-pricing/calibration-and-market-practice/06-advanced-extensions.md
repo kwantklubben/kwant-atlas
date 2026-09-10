@@ -35,7 +35,7 @@ fit to all expirations *simultaneously* subject to no calendar-spread arbitrage 
 
 **The LIBOR Market Model (BM Ch 6).** Under its own forward measure each forward-LIBOR is driftless: $dF_k=\\sigma_k(t)F_k\\,dZ_k$, and a caplet is exactly the Black formula (Prop 6.4.1), $\\text{Cpl}=P(0,T_i)\\tau_i\\,Bl(K,F_i(0),v_i)$. The *correlation* of the $\\{F_k\\}$ and the *volatility parameterization* (piecewise-constant, humped Formulations 6/7, separable) determine everything else.
 
-**Cascade calibration (BM Ch 7, Algorithm 7.4.1).** With exogenous instantaneous correlations $\\rho$ and the approximate swaption-vol formula, the piecewise-constant volatilities $\\sigma_{k,\\beta(t)}$ are recovered **one at a time** by walking the swaption-volatility matrix (maturity × tenor) left-to-right/top-down; each entry yields a positive algebraic quadratic in exactly one new $\\sigma$. Refinements: **endogenous interpolation** of missing swaption quotes (removes the negative/complex artifacts of naive interpolation), and Monte-Carlo reliability tests of the underlying analytical approximation.
+**Cascade calibration (BM Ch 7, Algorithm 7.4.1).** With exogenous instantaneous correlations $\\rho$ and the approximate swaption-vol formula, the piecewise-constant volatilities $\\sigma_{k,\\beta(t)}$ are recovered **one at a time** by walking the swaption-volatility matrix (maturity × tenor) left-to-right/top-down; each entry yields a positive algebraic quadratic in exactly one new $\\sigma$. Refinements: **endogenous interpolation** of missing swaption quotes (removes the negative/complex artifacts of naive interpolation), and Monte Carlo reliability tests of the underlying analytical approximation.
 
 **Why two-step works (the intuition).** *Caps fix average vol* (a cap is a strip of caplets, each a function of one forward rate's integrated vol), leaving the *differences* between rates' vols — and hence the correlation — to be fixed by *swaptions* (which depend on a basket of forward rates and their covariance). This decomposition is the rates analogue of "ATM term structure fixes $v_0,\\bar v$; the skew fixes the rest" in Heston.
 
@@ -122,7 +122,7 @@ SVI fits the whole slice to a total-variance RMSE of $2.3\\times10^{-5}$ (about 
 
 1. **SVI without the arbitrage constraints.** A careless SVI fit (free $b,\\rho$) can produce $w''<0$ locally — strike arbitrage hidden in the "smooth" surface. Always *check* the butterfly and calendar-spread conditions after fitting, and fit slices jointly to avoid calendar arbitrage.
 2. **LMM: too many parameters.** The full LFM covariance is $O(N^2)$; without low-rank parameterizations (Rebonato's angles, Schoenmakers–Coffey) or exogenous correlations, the calibration is under-determined. The cascade keeps correlations exogenous and solves the rest one-slice-at-a-time (BM Ch 7).
-3. **Analytical-approximation risk in rates.** The cascade relies on the approximate swaption-vol formula (eq 6.67); BM Ch 8's Monte-Carlo tests show it holds well except in pathological high-vol regimes. Trusting it blindly near the pathology is a calibration error.
+3. **Analytical-approximation risk in rates.** The cascade relies on the approximate swaption-vol formula (eq 6.67); BM Ch 8's Monte Carlo tests show it holds well except in pathological high-vol regimes. Trusting it blindly near the pathology is a calibration error.
 4. **Conventions compound.** Rates add curve/discount conventions (OIS vs LIBOR discounting, day-count, caplet-tenor linkage) on top of the vol conventions of **05**; two desks can differ on calibrated $\\sigma_k$ purely through convention, not model.
 5. **Surface-first overfitting.** Fitting SVI to the *entire* surface across expirations reduces in-sample error by increasing the number of slices — but the far OTM wings have few quotes, and the fitted wings there are model output, not market fact.
 
@@ -131,7 +131,7 @@ SVI fits the whole slice to a total-variance RMSE of $2.3\\times10^{-5}$ (about 
 ### 5. Canonical Literature & Study References
 
 - **Gatheral**, *The Volatility Surface*, Ch 3 (SVI, eq 3.20, surface fitting under no calendar-spread arbitrage; ATM level/skew term-structure table).
-- **Brigo–Mercurio**, *Interest Rate Models — Theory and Practice* (2nd ed.), Ch 6 (LFM dynamics, caplet=Black, correlation parameterizations, swaption Black) and Ch 7 (Cases of Calibration: cascade algorithm 7.4.1, RCCAEI endogenous interpolation, Monte-Carlo reliability). *Verified in the corpus.*
+- **Brigo–Mercurio**, *Interest Rate Models — Theory and Practice* (2nd ed.), Ch 6 (LFM dynamics, caplet=Black, correlation parameterizations, swaption Black) and Ch 7 (Cases of Calibration: cascade algorithm 7.4.1, RCCAEI endogenous interpolation, Monte Carlo reliability). *Verified in the corpus.*
 - **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 8–12 (numerical schemes for pricing a calibrated surface).
 - **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (smiles, model risk) and Ch 28+ (the LIBOR market model).
 

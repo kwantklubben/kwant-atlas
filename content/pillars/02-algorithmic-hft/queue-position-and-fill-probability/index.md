@@ -20,7 +20,7 @@ This folder is the **queue-and-fill topic-folder** for Pillar 2. It is a *hub*: 
 
 > **The one-sentence essence.** "Your fill probability is governed by the *outflow process in front of you*, not by how attractive your price looks: under FIFO you fill when $\xi \ge x$ (cumulative outflow $\xi$ ahead exceeds your queue position $x$), so the queue position $x$ is the single control variable a passive trader actually manages — and it is exactly the variable a naive backtest ignores."
 
-**Scope note (vs the siblings).** This folder is the *micro-event* view — will *this* order fill, and when. For the *aggregate* view of price movement see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] (scheduling a block) and [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]] (how fills move the price). The three meet at the **order-flow-imbalance** variable.
+**Scope note (vs the siblings).** This folder is the *micro-event* view — will *this* order fill, and when. For the *aggregate* view of price movement see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] (scheduling a block) and [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]] (how fills move the price). The three meet at the **order-flow-imbalance** variable.
 
 *Primary verified sources:* Cont, Stoikov & Talreja (2010); Cont & Kukanov (2017); Cont, Kukanov & Stoikov (2014); Gould et al. (2013); Lo, MacKinlay & Zhang (2002); Rosu (2009); Foucault, Pagano & Roell, *Market Liquidity* Ch 4–6 (corpus verification `foucault_ch4-6.md`); Hasbrouck, *Empirical Market Microstructure* Ch 6–10 (corpus verification `hasbrouck_ch6-10.md`). All numbers below were **re-executed and reproduced** (see §3).
 
@@ -57,7 +57,7 @@ You start filling once outflow passes $x$, and you finish once it passes $x+L$. 
 
 ### 3. Computational Implementation — the fill-probability engine
 
-Runs on **numpy** (and stdlib) only. It reproduces every verified number above: the negative-binomial closed form matches the Monte-Carlo fill rate, the mean-field ODE brackets the Gillespie simulation, and the exact Markov-chain mid-move probability matches simulation to 3 decimals.
+Runs on **numpy** (and stdlib) only. It reproduces every verified number above: the negative-binomial closed form matches the Monte Carlo fill rate, the mean-field ODE brackets the Gillespie simulation, and the exact Markov-chain mid-move probability matches simulation to 3 decimals.
 
 ```python
 import random
@@ -118,7 +118,7 @@ Hub signposts — the full failure analysis lives in [[pillars/02-algorithmic-hf
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability Theory]] (Poisson processes, first passage, Laplace transforms) · [[foundations/stochastic-calculus/index|Stochastic Calculus]] (CTMC generators)
-- Sibling in-pillar: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] (order-type menu, maker–taker fees) · [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] (how latency enters the queue) · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] · [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA]]
+- Sibling in-pillar: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] (order-type menu, maker–taker fees) · [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]] (how latency enters the queue) · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] · [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA]]
 - Market-making view: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov & Optimal Quoting]] · [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]]
 
 **Recommended reading route (audience arc):**

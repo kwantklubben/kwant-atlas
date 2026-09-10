@@ -79,7 +79,7 @@ Read the output as a decision, not a calculation: at \$30 the stock trades at a 
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Confusing cheap with good.** A low P/E can mean "the market hasn't noticed" *or* "the market has correctly noticed the business is dying." The Graham Number cannot tell you which — only the business reading can. This is the value-trap trap, and it is the whole thesis of [[fundamentals-accounting/fundamental-analysis-and-screening/05-failure-modes-and-practice|05 · Failure Modes]].
+1. **Confusing cheap with good.** A low P/E can mean "the market hasn't noticed" *or* "the market has correctly noticed the business is dying." The Graham Number cannot tell you which — only the business reading can. This is the value trap, and it is the whole thesis of [[fundamentals-accounting/fundamental-analysis-and-screening/05-failure-modes-and-practice|05 · Failure Modes]].
 2. **Book value is an accounting number, not a floor.** On a modern firm whose assets are intangible (software, brands, people), $BVPS$ understates true net worth; on a declining manufacturer with obsolete plant, it *overstates* it. The Graham Number inherits every weakness of the book value that feeds it.
 3. **A margin of safety on the wrong value estimate is no safety at all.** If your $\hat{V}$ is anchored to a growth assumption that is too optimistic, a "30% discount" is a discount to a fantasy. The margin of safety is only as real as the value estimate under it — which is why the estimate must be grounded in the actual filings.
 

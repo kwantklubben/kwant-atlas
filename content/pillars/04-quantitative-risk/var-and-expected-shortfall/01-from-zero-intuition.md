@@ -51,7 +51,7 @@ At $\alpha=0.99$ the ratio $\mathrm{ES}/\mathrm{VaR}=1.1457$: the average loss *
 
 ### 3. Computational Implementation — the two-bond koan, by hand and by Monte Carlo
 
-We enumerate the loss distribution exactly (no simulation noise), then confirm it with a Monte-Carlo book of 50 bonds. Stdlib only.
+We enumerate the loss distribution exactly (no simulation noise), then confirm it with a Monte Carlo book of 50 bonds. Stdlib only.
 
 ```python
 import math, random

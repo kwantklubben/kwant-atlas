@@ -114,7 +114,7 @@ CONTINUOUS: volume 2100, VW price 100.1810, prices ranged 100.10-100.30
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Last-instant sniping in the auction.** If the closing time is deterministic, a trader can inject a large order in the final microsecond to *move* $p^\*$. Random stopping times and early deadlines exist precisely to defeat this; a determinstic window is an standing invitation.
+1. **Last-instant sniping in the auction.** If the closing time is deterministic, a trader can inject a large order in the final microsecond to *move* $p^\*$. Random stopping times and early deadlines exist precisely to defeat this; a deterministic window is an standing invitation.
 2. **Marking-the-close manipulation.** Because closing prices settle ETFs, index funds, and derivatives, there is real money in nudging $p^\*$. Continuous-only traders underestimate this; the manipulation is in the *auction*, not the tape.
 3. **Assuming the auction price equals the continuous price.** They are different mechanisms and generally give different prices. An execution algorithm benchmarked to the continuous VWAP can look "cheap" or "expensive" at the open/close purely because the auction cleared somewhere else.
 4. **The auction rewards size, the continuous rewards speed.** Under continuous price–time priority, *speed* (arriving first) wins; under a batch auction, ties can be broken by *size* (largest orders fill first), inverting the advantage. A strategy tuned for one mechanism mis-executes in the other.

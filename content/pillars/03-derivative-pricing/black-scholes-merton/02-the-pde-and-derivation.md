@@ -1,5 +1,5 @@
 ---
-title: "02 — The BSM PDE, Its Derivation & the Feynman-Kac Bridge"
+title: "02 — The BSM PDE, Its Derivation & the Feynman–Kac Bridge"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton

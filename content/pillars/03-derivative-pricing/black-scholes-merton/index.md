@@ -1,5 +1,5 @@
 ---
-title: "Black-Scholes-Merton: Topic Hub & Formula Lookup"
+title: "Black–Scholes–Merton: Topic Hub & Formula Lookup"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton
@@ -13,7 +13,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The Black-Scholes-Merton (BSM) model is the continuous-time limit of binomial dynamic replication, and it is the *zero point* of all modern derivative pricing. Its claim is sharp: if you can trade the underlying continuously, then the price of a European option is **uniquely fixed by the no-arbitrage condition** — it depends on the current spot, the strike, the remaining time, the risk-free rate, and the (assumed constant) volatility, and on **nothing else**. Not on the drift of the stock, not on your forecast of where the market is going.
+The Black–Scholes–Merton (BSM) model is the continuous-time limit of binomial dynamic replication, and it is the *zero point* of all modern derivative pricing. Its claim is sharp: if you can trade the underlying continuously, then the price of a European option is **uniquely fixed by the no-arbitrage condition** — it depends on the current spot, the strike, the remaining time, the risk-free rate, and the (assumed constant) volatility, and on **nothing else**. Not on the drift of the stock, not on your forecast of where the market is going.
 
 This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: it (a) gives you the **fast formula lookup** below (job #1 of this pillar), and (b) routes you to six sub-pages that walk you from raw intuition through the derivations, the closed forms, the Greeks, the failure modes, and the extensions.
 

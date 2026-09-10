@@ -56,7 +56,7 @@ Because it is a **sum**, the slowest stages dominate the mean and the *tails* do
 
 **Physics floor.** Light travels $\approx 30$ cm/ns in vacuum and $\approx 20$ cm/ns in optical fibre, so ~5 ns per metre one way. A 1 200 km route (e.g. New Jersey to Chicago) is therefore $1200\,\text{km}\times 5\,\mu\text{s/km}\approx 6$ ms of one-way fibre latency — *no software makes that faster*. This is why microwave towers beat fibre on that corridor (shorter straight-line path) and why colocation, not code, is the first lever.
 
-**Queueing — where a "fast" stage still loses.** A single-threaded handler is a queue; its waiting time is the **Pollaczek-Khinchine** formula:
+**Queueing — where a "fast" stage still loses.** A single-threaded handler is a queue; its waiting time is the **Pollaczek–Khinchine** formula:
 
 $$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)},\qquad W = W_q + \mathbb{E}[S],\qquad L=\lambda W\ \ (\text{Little}).$$
 

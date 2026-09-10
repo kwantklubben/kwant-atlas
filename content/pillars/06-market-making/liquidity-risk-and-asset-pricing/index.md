@@ -25,7 +25,7 @@ This is the **asset-pricing view of liquidity** — liquidity as a determinant o
 
 This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b) routes to six sub-pages that walk from raw intuition through the measures, the priced-factor machinery, the crisis dynamics, the failure modes, and the bond-market extensions.
 
-> **The one-sentence essence.** "Illiquidity is a cost that appears in prices twice: once as a *level* — more illiquid assets earn a higher expected return (Amihud 2002) — and once as a *risk* — assets that fall when aggregate liquidity falls earn a higher expected return too (Pastor-Stambaugh 2003; Acharya-Pedersen 2005)."
+> **The one-sentence essence.** "Illiquidity is a cost that appears in prices twice: once as a *level* — more illiquid assets earn a higher expected return (Amihud 2002) — and once as a *risk* — assets that fall when aggregate liquidity falls earn a higher expected return too (Pastor–Stambaugh 2003; Acharya–Pedersen 2005)."
 
 ---
 

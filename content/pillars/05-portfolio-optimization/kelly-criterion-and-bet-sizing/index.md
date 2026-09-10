@@ -97,7 +97,7 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portf
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
-- Sibling topic: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean-Variance]] (continuous Kelly = scaled tangency portfolio) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]
+- Sibling topic: [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance]] (continuous Kelly = scaled tangency portfolio) · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]]
 - Sub-pages (in-folder): 01 From Zero · 02 The Kelly Formula · 03 Growth & Optimality · 04 Fractional Kelly & Ruin · 05 Failure Modes & Practice · 06 Advanced Extensions
 
 **Recommended reading route (audience arc):**

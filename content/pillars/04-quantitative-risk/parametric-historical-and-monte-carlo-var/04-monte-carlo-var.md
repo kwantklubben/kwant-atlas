@@ -140,4 +140,4 @@ The delta-normal shortcut and full revaluation differ by only ~7% here — *beca
 - Base: [[foundations/numerical-methods/index|Numerical Methods]] (MC, variance reduction, quasi-MC) · [[foundations/probability-and-measure-theory/index|Probability & Measure]] (CLT, martingales, risk-neutral measure).
 - Back: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/03-historical-simulation|03 · Historical Simulation]].
 - Forward: [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05 · Failure Modes]] · [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/06-advanced-extensions|06 · Delta–Gamma & Backtesting]].
-- Measure: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] (risk-neutral revaluation).
+- Measure: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (risk-neutral revaluation).

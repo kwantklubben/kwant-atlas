@@ -1,5 +1,5 @@
 ---
-title: "03 — The Duffie-Garleanu-Pedersen Search-and-Bargaining Model"
+title: "03 — The Duffie–Garleanu–Pedersen Search-and-Bargaining Model"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc

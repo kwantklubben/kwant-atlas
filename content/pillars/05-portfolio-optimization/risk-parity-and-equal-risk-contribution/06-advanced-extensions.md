@@ -96,7 +96,7 @@ Two numbers tell the whole story. First, the **max-Sharpe (tangency) portfolio s
 1. **The free-lunch trap.** "Risk parity outperforms" is a claim about the *premium*, which depends on the flat-SML assumption staying true and on cheap leverage staying available — neither is a law of nature, and both reverse in inflation/rate shocks.
 2. **Leverage is a loan, and loans are callable.** The 4.2× in the example is a *model* 4.2×; real forced de-leveraging (margin) converts a mild drawdown into a realized loss and breaks the parity promise. Asness et al. App. B quantify the cost of even higher financing rates.
 3. **Concentration masquerading under "parity."** Because parity over-weights the low-$\beta$ leg, a levered parity book can carry enormous *capital* concentration in bonds — a single-rate shock to the safe leg is a shock to the whole (levered) book. Risk-balance in shares ≠ capital-balance in dollars.
-4. **HRP is a robust alternative, not a silver bullet.** *López de Prado (2016)* Hierarchical Risk Parity climbs a correlation tree and rebalances within/between clusters *without ever inverting $\Sigma$* — robust when $N\gtrsim T$, which ERC is not. But HRP abandons the clean budget meaning (you cannot express $RC_i=b_i\sigma$ inside it), so the choice is a robustness-vs-intepretability trade, not a clear win.
+4. **HRP is a robust alternative, not a silver bullet.** *López de Prado (2016)* Hierarchical Risk Parity climbs a correlation tree and rebalances within/between clusters *without ever inverting $\Sigma$* — robust when $N\gtrsim T$, which ERC is not. But HRP abandons the clean budget meaning (you cannot express $RC_i=b_i\sigma$ inside it), so the choice is a robustness-vs-interpretability trade, not a clear win.
 
 ---
 

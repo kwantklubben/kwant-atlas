@@ -56,7 +56,7 @@ where $\lambda$ is the **market price of risk** — the excess return per unit o
 
 ### 3. Computational Implementation — the discount factor in motion
 
-Simulate the short rate $r_t$ under a model and Monte-Carlo the discount factor to recover a bond price — the most direct way to *see* Fact 1. Stdlib only.
+Simulate the short rate $r_t$ under a model and Monte Carlo the discount factor to recover a bond price — the most direct way to *see* Fact 1. Stdlib only.
 
 ```python
 import math, random
@@ -108,4 +108,4 @@ The closed form ([[pillars/03-derivative-pricing/interest-rate-and-term-structur
 
 - Base: [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]]
 - Continue: [[pillars/03-derivative-pricing/interest-rate-and-term-structure/02-bonds-yield-curve-forward-rates|02 · Bonds, Yield Curve & Forward Rates]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Index Hub]]
-- Sibling: [[pillars/03-derivative-pricing/black-scholes-merton|Black-Scholes-Merton]] (constant $r$ vs term structure)
+- Sibling: [[pillars/03-derivative-pricing/black-scholes-merton|Black–Scholes–Merton]] (constant $r$ vs term structure)

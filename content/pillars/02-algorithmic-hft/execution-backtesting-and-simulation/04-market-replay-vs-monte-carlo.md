@@ -110,7 +110,7 @@ counterfactual sweep (mean fill ratio, 95% CI):
    queue ahead Q= 9000: 0.1508  [0.1359, 0.1656]
 ```
 
-The numbers teach the whole lesson. The **single replay** reports a fill ratio of $1.0000$ — a fully-filled day — while the **Monte-Carlo mean is $0.6384$** with a $95\%$ interval $[0.626, 0.651]$ that *excludes the replay value*. The one recorded path was a lucky draw ($0.36$ standard deviations above the mean of a distribution with $\sigma=0.45$); had the desk trusted it, it would have sized the strategy for fills that occur on a minority of days. The **standard error** shows Monte-Carlo precision is purchasable ($0.0451\!\to\!0.001426$ as $N$ goes $10^2\!\to\!10^5$), and the **counterfactual sweep** shows what replay structurally cannot: the full fill-vs-queue curve ($0.98$ at $Q{=}3000$ collapsing to $0.15$ at $Q{=}9000$), each point with a confidence interval — the input to a placement decision.
+The numbers teach the whole lesson. The **single replay** reports a fill ratio of $1.0000$ — a fully-filled day — while the **Monte Carlo mean is $0.6384$** with a $95\%$ interval $[0.626, 0.651]$ that *excludes the replay value*. The one recorded path was a lucky draw ($0.36$ standard deviations above the mean of a distribution with $\sigma=0.45$); had the desk trusted it, it would have sized the strategy for fills that occur on a minority of days. The **standard error** shows Monte Carlo precision is purchasable ($0.0451\!\to\!0.001426$ as $N$ goes $10^2\!\to\!10^5$), and the **counterfactual sweep** shows what replay structurally cannot: the full fill-vs-queue curve ($0.98$ at $Q{=}3000$ collapsing to $0.15$ at $Q{=}9000$), each point with a confidence interval — the input to a placement decision.
 
 ---
 
@@ -120,19 +120,19 @@ The numbers teach the whole lesson. The **single replay** reports a fill ratio o
 2. **Trusting a single path.** Replay gives one draw from an unseen distribution; here it landed $0.36\sigma$ high and would have mis-sized the strategy by $\sim56\%$. *Fix:* always pair replay with a distribution (MC or a cross-day ensemble).
 3. **Counterfactual blindness.** Replay cannot answer "what if my queue position were $x'$?" — the recorded stream does not contain the responses to an action you never took. Using it to *optimise* placement overfits the one path.
 4. **Model risk in Monte Carlo.** A generator that misses a stylized fact (here the U-shaped intensity, elsewhere the fat tails or the cancel correlation) yields a confidently wrong interval. *Fix:* validate the generator against the stylized facts before trusting any counterfactual (page 06).
-5. **Calibrating on the replay day.** Fitting the arrival model *and* evaluating on the same recorded day is in-sample optimism of the classic backtest kind — the Monte-Carlo analogue of [[pillars/01-quantitative-research/backtesting-hygiene/index|backtest overfitting]].
+5. **Calibrating on the replay day.** Fitting the arrival model *and* evaluating on the same recorded day is in-sample optimism of the classic backtest kind — the Monte Carlo analogue of [[pillars/01-quantitative-research/backtesting-hygiene/index|backtest overfitting]].
 6. **Variance reduction gone wrong.** Common random numbers across strategy variants can *hide* risk if the variants' responses to the same draw are correlated in exactly the way the real market is not.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **López de Prado, Marcos** — *Advances in Financial Machine Learning* (Wiley, 2018), Ch 13 ("Backtesting on Synthetic Data") and Ch 11–12 — the case for Monte-Carlo/synthetic evaluation and the discipline required to make it honest.
-- **Cont, Stoikov & Talreja** — "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) — a queue model fast enough for Monte-Carlo fill simulation; the standard substrate.
-- **Gould et al.** — "Limit order books," *Quantitative Finance* 13(11) (2013) — the stylized-fact checklist a Monte-Carlo generator must satisfy.
+- **López de Prado, Marcos** — *Advances in Financial Machine Learning* (Wiley, 2018), Ch 13 ("Backtesting on Synthetic Data") and Ch 11–12 — the case for Monte Carlo/synthetic evaluation and the discipline required to make it honest.
+- **Cont, Stoikov & Talreja** — "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) — a queue model fast enough for Monte Carlo fill simulation; the standard substrate.
+- **Gould et al.** — "Limit order books," *Quantitative Finance* 13(11) (2013) — the stylized-fact checklist a Monte Carlo generator must satisfy.
 - **Abergel et al.** — *Limit Order Books* (Cambridge, 2016) — agent-based LOB generators for replay-vs-simulation studies.
 - **Glasserman, Paul** — *Monte Carlo Methods in Financial Engineering* (2004) — standard error, antithetic and control variates, and the variance-reduction toolbox.
-- **Almgren, Thum, Hauptmann & Li** — "Direct estimation of equity market impact," *Risk* 18(7) (2005) — the impact parameters a realistic Monte-Carlo execution simulation must calibrate.
+- **Almgren, Thum, Hauptmann & Li** — "Direct estimation of equity market impact," *Risk* 18(7) (2005) — the impact parameters a realistic Monte Carlo execution simulation must calibrate.
 
 ---
 

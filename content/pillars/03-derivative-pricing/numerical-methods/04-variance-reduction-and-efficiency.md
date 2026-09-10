@@ -1,5 +1,5 @@
 ---
-title: "04 — Variance Reduction & Monte-Carlo Efficiency"
+title: "04 — Variance Reduction & Monte Carlo Efficiency"
 tags:
   - pillar-derivative-pricing
   - numerical-methods
@@ -8,7 +8,7 @@ tags:
   - importance-sampling
 ---
 
-**Basic Prerequisites:** [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte-Carlo Pricing]].
+**Basic Prerequisites:** [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte Carlo Pricing]].
 
 ---
 
@@ -250,6 +250,6 @@ The numbers confirm the theory each time. Antithetic: $4.41\times$. Control vari
 
 ### 6. Connected Graph Bridges
 
-- Back: [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte-Carlo Pricing]] · [[pillars/03-derivative-pricing/numerical-methods/index|Index Hub]]
+- Back: [[pillars/03-derivative-pricing/numerical-methods/03-monte-carlo-pricing|03 · Monte Carlo Pricing]] · [[pillars/03-derivative-pricing/numerical-methods/index|Index Hub]]
 - Forward: [[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/numerical-methods/06-advanced-extensions|06 · Advanced Extensions]] (QMC, American MC, pathwise Greeks)
 - Sibling: [[pillars/03-derivative-pricing/black-scholes-merton/06-advanced-extensions|BSM · Advanced Extensions]] (jump-diffusion MC and the same variance toolbox)

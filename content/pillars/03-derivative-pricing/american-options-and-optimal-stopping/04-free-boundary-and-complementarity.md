@@ -59,7 +59,7 @@ or equivalently the complementarity system
 
 $$V\ge g,\qquad \mathcal LV\le 0,\qquad (V-g)\cdot(\mathcal LV)=0.$$
 
-Discretise $\mathcal L$ (implicit Euler / Crank-Nicolson) and you get, at each time step, an algebraically messy linear system $AV\ge b$, $V\ge g$, with complementarity $(V-g)^{\!\top}(AV-b)=0$ — solved by **PSOR** (projected SOR) or by a **penalty method** (Duffy Ch 27–29). This is precisely the "1-factor American" row of the numerical-methods scheme table — the implementation detail lives in [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|Numerical Methods · FDM]]; this page owns the *formulation*.
+Discretise $\mathcal L$ (implicit Euler / Crank–Nicolson) and you get, at each time step, an algebraically messy linear system $AV\ge b$, $V\ge g$, with complementarity $(V-g)^{\!\top}(AV-b)=0$ — solved by **PSOR** (projected SOR) or by a **penalty method** (Duffy Ch 27–29). This is precisely the "1-factor American" row of the numerical-methods scheme table — the implementation detail lives in [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|Numerical Methods · FDM]]; this page owns the *formulation*.
 
 #### 2.4 Why the boundary is where it is — the drift test (Björk Prop 21.28)
 
@@ -127,7 +127,7 @@ Read the residual table: on the exercise side ($x=60,75$) the value *equals* pay
 
 1. **Sign confusion in the VI.** Shreve writes $\mathcal LV=rV-rSV_S-\tfrac12\sigma^2S^2V_{SS}$, the *negative* of the usual BSM operator; it is $\ge0$ (not $\le$) and equals $rK$ in the exercise region. Writing the wrong sign turns a correct solver into a subtly wrong one with no obvious symptom.
 2. **Smooth pasting is a consequence, not an assumption.** Imposing $V_S(S^*)=-1$ *with an otherwise wrong ansatz* produces a boundary that satisfies the tangency but not the PDE — a plausible-looking wrong answer. The VI formulation (no explicit boundary) is the safe statement.
-3. **$V_{SS}$ discontinuity breaks naive schemes.** The gamma jump at $S^*$ is precisely what makes Crank-Nicolson ring near the strike; Rannacher startup / extrapolated implicit Euler suppress it ([[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|Numerical Methods · Failure Modes]]).
+3. **$V_{SS}$ discontinuity breaks naive schemes.** The gamma jump at $S^*$ is precisely what makes Crank–Nicolson ring near the strike; Rannacher startup / extrapolated implicit Euler suppress it ([[pillars/03-derivative-pricing/numerical-methods/05-failure-modes-and-practice|Numerical Methods · Failure Modes]]).
 4. **Freezing the boundary or the "exercise-if-deep-ITM" heuristic.** Both are sub-optimal policies; they return a value *below* the true one and, worse, an inconsistent delta. The boundary must be solved, not guessed.
 5. **The free boundary is a full curve, not a point.** For a finite-maturity put $S^*(t)$ rises to $K$ at $t=T$; discretising only the current boundary (a perpetuity) misprices intermediate maturities.
 

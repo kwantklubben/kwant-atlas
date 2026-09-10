@@ -41,7 +41,7 @@ The secondary model determines **bet sizing** (e.g., if predicted probability $p
 Standard integer differencing ($d=1$: $\Delta P_t = P_t - P_{t-1}$) achieves stationarity but destroys all long-term price memory.
 Using the binomial series expansion for real $d \in (0, 1)$:
 $$(1 - B)^d = \sum_{k=0}^\infty (-1)^k \binom{d}{k} B^k = 1 - d B + \frac{d(d-1)}{2!} B^2 - \frac{d(d-1)(d-2)}{3!} B^3 + \dots$$
-Fractional differentiation finds the minimum $d^*$ that passes the Augmented Dickey-Fuller stationarity test ($p < 0.05$) while preserving maximum correlation with original prices.
+Fractional differentiation finds the minimum $d^*$ that passes the Augmented Dickey–Fuller stationarity test ($p < 0.05$) while preserving maximum correlation with original prices.
 
 ---
 

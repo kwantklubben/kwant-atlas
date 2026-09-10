@@ -1,5 +1,5 @@
 ---
-title: "Adverse Selection & the Glosten-Milgrom Model: Topic Hub & Formula Lookup"
+title: "Adverse Selection & the Glosten–Milgrom Model: Topic Hub & Formula Lookup"
 tags:
   - pillar-market-making
   - adverse-selection
@@ -16,7 +16,7 @@ tags:
 
 Why does a bid-ask spread exist even in a liquid market with zero exchange fees and zero inventory-carrying costs? The answer is **adverse selection**. When a trader hits your ask with a market buy, they may *know* the stock is about to tick up and you do not. If they are an informed insider, every such fill costs you money. The spread is the toll the market maker charges — extracted from liquidity-driven noise traders — to stay whole against the losses inflicted by better-informed counterparties.
 
-This folder is the **adverse-selection and Glosten-Milgrom (1985)** topic-folder for Pillar 6. It is a *hub*: it (a) gives you the **fast formula-and-model lookup** below, and (b) routes you to six sub-pages that walk from first-principles intuition through the GM sequential-trade model and its Bayesian market maker. *Primary verified sources:* Hasbrouck *Empirical Market Microstructure* (Ch 5, the GM model; Ch 6 PIN; Ch 7 Kyle; Ch 8 generalized Roll) and Foucault, Pagano & Röell *Market Liquidity* (Ch 3), cross-checked against the primary papers (Glosten–Milgrom 1985; Copeland–Galai 1983; Kyle 1985; Glosten–Harris 1988).
+This folder is the **adverse-selection and Glosten–Milgrom (1985)** topic-folder for Pillar 6. It is a *hub*: it (a) gives you the **fast formula-and-model lookup** below, and (b) routes you to six sub-pages that walk from first-principles intuition through the GM sequential-trade model and its Bayesian market maker. *Primary verified sources:* Hasbrouck *Empirical Market Microstructure* (Ch 5, the GM model; Ch 6 PIN; Ch 7 Kyle; Ch 8 generalized Roll) and Foucault, Pagano & Röell *Market Liquidity* (Ch 3), cross-checked against the primary papers (Glosten–Milgrom 1985; Copeland–Galai 1983; Kyle 1985; Glosten–Harris 1988).
 
 > **The one-sentence essence.** "The bid-ask spread is, at bottom, the market maker's compensation for trading against better-informed counterparties: quote your ask at the expected value **conditional on** having sold (a buy just arrived) and your bid at the expected value **conditional on** having bought — the gap between the two is the cost of information."
 

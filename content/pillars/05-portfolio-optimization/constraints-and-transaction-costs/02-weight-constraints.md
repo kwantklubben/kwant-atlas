@@ -148,7 +148,7 @@ Three verified findings:
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/01-from-zero-intuition|01 · From Zero]]
-- Siblings: [[pillars/05-portfolio-optimization/robust-optimization/04-constraints-and-resampling|Robust Optimization · Constraints as Robustness]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean-Variance & the Efficient Frontier]]
+- Siblings: [[pillars/05-portfolio-optimization/robust-optimization/04-constraints-and-resampling|Robust Optimization · Constraints as Robustness]] · [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Mean–Variance & the Efficient Frontier]]
 - Cost continuation: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/03-transaction-cost-models|03 · Transaction-Cost Models]]
 - Foundations: [[foundations/calculus-and-optimization/index|Calculus & Optimization]] (KKT, Lagrange multipliers, the envelope theorem) · [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]
 - Hub: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Index Hub]]

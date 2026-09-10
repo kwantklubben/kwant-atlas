@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The previous pages built an honest fill model and a Monte-Carlo engine. This page is the **launchpad** for the simulators used at the frontier — and for the *test* that decides whether any of them is trustworthy:
+The previous pages built an honest fill model and a Monte Carlo engine. This page is the **launchpad** for the simulators used at the frontier — and for the *test* that decides whether any of them is trustworthy:
 
 1. **Agent-based LOB simulation** — generate the whole book from agent behaviours (Abergel et al.), so that fills, impact, and liquidity emerge rather than being assumed.
 2. **Queue-reactive and Hawkes models** — make the intensities state-dependent and self-exciting, so the generator reproduces the *correlation* structure of real flow.
@@ -123,7 +123,7 @@ The three tests pass. **(1)** The simulator's trade prices carry the exact Roll 
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Model risk smuggled in as precision.** A Monte-Carlo interval is only as meaningful as the generator; a tight CI around a mis-specified model is worse than an honest single replay because it *looks* rigorous (page 04, [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
+1. **Model risk smuggled in as precision.** A Monte Carlo interval is only as meaningful as the generator; a tight CI around a mis-specified model is worse than an honest single replay because it *looks* rigorous (page 04, [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
 2. **Validation leakage.** Calibrating the generator and testing the stylized facts on the *same* data guarantees a pass; the tests must run out-of-sample (different days, different names, different regime).
 3. **Matching the wrong stylized facts.** Reproducing the U-shaped volume but missing the cancel-to-trade ratio leaves fills too optimistic; the checklist must be complete and the facts *empirically sourced*, not assumed.
 4. **Non-stationarity.** LOB generators are fit on a regime; execution behaviour changes with volatility, tick size, and fee structure. A generator validated in calm markets can be badly wrong in a stress regime — the very regime where execution P&L is decided.
@@ -139,7 +139,7 @@ The three tests pass. **(1)** The simulator's trade prices carry the exact Roll 
 - **Huang, W.; Lehalle, C.-A.; Rosenbaum, M.** — "Simulating and analyzing order book data: the queue-reactive model," *JASA* 110(509), 107–122 (2015) — state-dependent $\lambda(q),\mu(q)$ intensities and the concave depth relation.
 - **Almgren, R.; Thum, C.; Hauptmann, E.; Li, H.** — "Direct estimation of equity market impact," *Risk* 18(7), 58–62 (2005) — the empirical square-root/power-law impact a simulator must reproduce.
 - **Gatheral, J.** — "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7) (2010) — the consistency constraint any impact model/simulator must satisfy.
-- **Cont, Stoikov & Talreja** — "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) — the tractable model fast enough for Monte-Carlo fill simulation.
+- **Cont, Stoikov & Talreja** — "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) — the tractable model fast enough for Monte Carlo fill simulation.
 - **Gould et al.** — "Limit order books," *Quantitative Finance* 13(11) (2013) — the stylized-facts survey that doubles as a simulator-acceptance checklist.
 - **López de Prado, M.** — *Advances in Financial Machine Learning* (Wiley, 2018), Ch 13 — backtesting on synthetic data, and its validation requirements.
 - **Hasbrouck, J.** — *Empirical Market Microstructure*, Ch 3 (Roll signature) and Ch 8 (generalized Roll) — the spread-recovery tests used in Validation #1. *Corpus verification `hasbrouck_ch1-5.md` / `hasbrouck_ch11-15.md`.*
@@ -149,6 +149,6 @@ The three tests pass. **(1)** The simulator's trade prices carry the exact Roll 
 ### 6. Connected Graph Bridges
 
 - Back: [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/05-failure-modes-and-practice|05 · Failure Modes & Practice]] · [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/index|Index Hub]]
-- Sibling in-pillar: [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/06-advanced-extensions|Queue Position: 06 · Advanced Extensions]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|Execution Algorithms: VWAP, TWAP, POV]]
+- Sibling in-pillar: [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/06-advanced-extensions|Queue Position: 06 · Advanced Extensions]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] · [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov|Execution Algorithms: VWAP, TWAP, POV]]
 - Impact & market-making: [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]] · [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]]
 - Foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (Roll autocovariance, power-law estimation) · [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]

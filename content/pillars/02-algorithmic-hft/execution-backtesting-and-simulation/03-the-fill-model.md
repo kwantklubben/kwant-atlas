@@ -51,7 +51,7 @@ If the outflow over the horizon is exponential, $\xi\sim\text{Exp}(\text{mean }m
 $$\mathbb E\big[(\xi-Q)^+\big]=m\,e^{-Q/m},\qquad
 \mathbb E[\text{filled}]=m\big(e^{-Q/m}-e^{-(Q+L)/m}\big),$$
 
-the tractable primitive a Monte-Carlo fill engine is built on.
+the tractable primitive a Monte Carlo fill engine is built on.
 
 #### 2.4 Trade-through (price priority)
 
@@ -163,7 +163,7 @@ for depth in (1000, 2000, 5000):
    level depth= 5000: P(sweep>=depth)=0.0107
 ```
 
-Three lessons. **(A)** The closed form and Monte Carlo agree to the third digit — the fill model is *simulable*, which is what makes execution backtesting a Monte-Carlo discipline. **(C)** The optimistic rule is benign at the front of the queue ($1.02\times$) and disastrous behind it ($4.47\times$ at $x=1000$) — the error is *concentrated exactly where a strategy's edge is thinnest*. **(D)** Trade-through is rare at deep levels ($1.1\%$ at depth $5000$) but common at shallow ones ($24.5\%$ at depth $1000$) — so the guaranteed-fill channel must be modelled, and it is strongest in the same shallow, volatile books where queue models are least reliable.
+Three lessons. **(A)** The closed form and Monte Carlo agree to the third digit — the fill model is *simulable*, which is what makes execution backtesting a Monte Carlo discipline. **(C)** The optimistic rule is benign at the front of the queue ($1.02\times$) and disastrous behind it ($4.47\times$ at $x=1000$) — the error is *concentrated exactly where a strategy's edge is thinnest*. **(D)** Trade-through is rare at deep levels ($1.1\%$ at depth $5000$) but common at shallow ones ($24.5\%$ at depth $1000$) — so the guaranteed-fill channel must be modelled, and it is strongest in the same shallow, volatile books where queue models are least reliable.
 
 ---
 

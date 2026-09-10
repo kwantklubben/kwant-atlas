@@ -69,7 +69,7 @@ Using raw $M$ overstates the threshold; treating correlated trials as independen
 
 ### 3. Computational Implementation — the three numbers
 
-Stdlib only. (1) The expected-maximum table with Monte-Carlo verification, (2) the Harvey–Liu haircut, (3) FWER and Bonferroni.
+Stdlib only. (1) The expected-maximum table with Monte Carlo verification, (2) the Harvey–Liu haircut, (3) FWER and Bonferroni.
 
 ```python
 import math, random

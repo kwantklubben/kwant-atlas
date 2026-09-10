@@ -22,7 +22,7 @@ This folder is the **execution-algorithms topic-folder** for Pillar 2. It is a *
 
 > **The one-sentence essence.** "Execution is the physics of turning a *decision* (price + size) into a *realization*; TWAP splits by clock, VWAP by forecast volume, POV by live volume, and implementation shortfall measures the gap between the paper portfolio and the real one as execution cost plus opportunity cost."
 
-**Scope note (vs the sibling folder).** This folder is the *benchmark-and-schedule* view — *what algorithm, measured against what.* For the *optimal* schedule under impact and volatility (the calculus), see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]]. The two meet where VWAP/TWAP become special cases of an Almgren-Chriss timetable.
+**Scope note (vs the sibling folder).** This folder is the *benchmark-and-schedule* view — *what algorithm, measured against what.* For the *optimal* schedule under impact and volatility (the calculus), see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]]. The two meet where VWAP/TWAP become special cases of an Almgren–Chriss timetable.
 
 ---
 
@@ -98,7 +98,7 @@ Hub signposts — the full analysis is in [[pillars/02-algorithmic-hft/execution
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]] · [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]]
-- Sibling topic: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren-Chriss]] (the *optimal* schedule; this folder's IS view is its measurement side)
+- Sibling topic: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] (the *optimal* schedule; this folder's IS view is its measurement side)
 - Sibling topic: [[pillars/02-algorithmic-hft/queue-position-and-fill-probability/index|Queue Position & Fill Probability]] (how a child order actually gets filled)
 - Transaction costs & turnover: [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Constraints & Transaction Costs]]
 - Sub-pages (in-folder): 01 From Zero · 02 TWAP·VWAP·POV · 03 Implementation Shortfall · 04 Scheduling & Volume Profiles · 05 Failure Modes & Practice · 06 Advanced Extensions

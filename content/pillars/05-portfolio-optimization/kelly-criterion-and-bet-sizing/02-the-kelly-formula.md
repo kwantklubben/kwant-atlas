@@ -111,7 +111,7 @@ Two things worth noting in the output. First, the **discrete $f^\*$ is bounded b
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Using the wrong formula for the regime.** Pluggting the even-money $p-q$ into a leveraged/securities sizing decision is wrong: the continuous case admits $f^\*>1$ (borrow), and the unequal case requires the $m/(ab)$ margin form — for a losing payout $a>1$, $f^\*$ shrinks because you can lose more than you stake.
+1. **Using the wrong formula for the regime.** Plugging the even-money $p-q$ into a leveraged/securities sizing decision is wrong: the continuous case admits $f^\*>1$ (borrow), and the unequal case requires the $m/(ab)$ margin form — for a losing payout $a>1$, $f^\*$ shrinks because you can lose more than you stake.
 2. **Ignoring $f_c$.** $f^\*$ is the *optimum*; $f_c$ is the *cliff*. Because $g(f)$ is asymmetric and concave, an overbet costs more than an underbet, and any $f>f_c$ is a guaranteed-loss strategy regardless of how real the edge is.
 3. **Assuming a stable edge.** All three formulas take $p,m,s$ as known numbers. They are estimated; an overestimated $p$ or underestimated $s$ inflates $f^\*$ — the theme of [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/04-fractional-kelly-and-ruin|04 · Fractional Kelly & Ruin]] and [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/05-failure-modes-and-practice|05 · Failure Modes]].
 4. **A zero/negative edge has no Kelly.** If $m\le r$ or $bp-aq\le0$, there is no positive $f^\*$; the correct bet is $0$. Kelly never manufactures an edge.

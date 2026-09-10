@@ -9,7 +9,7 @@ tags:
   - monte-carlo
 ---
 
-**Basic Prerequisites:** [[pillars/04-quantitative-risk/counterparty-risk-and-xva/01-from-zero-intuition|01 · From Zero]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] (lognormal simulation).
+**Basic Prerequisites:** [[pillars/04-quantitative-risk/counterparty-risk-and-xva/01-from-zero-intuition|01 · From Zero]] and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (lognormal simulation).
 
 ---
 
@@ -143,4 +143,4 @@ Three things to verify by eye: (i) the Monte Carlo EE tracks the closed form wit
 
 - Back: [[pillars/04-quantitative-risk/counterparty-risk-and-xva/01-from-zero-intuition|01 · From Zero]]
 - Forward: [[pillars/04-quantitative-risk/counterparty-risk-and-xva/03-cva-and-dva|03 · CVA & DVA]] · [[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Index Hub]]
-- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]
+- Base: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[foundations/stochastic-calculus/index|Stochastic Calculus & Itô]]

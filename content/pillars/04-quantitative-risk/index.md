@@ -22,12 +22,12 @@ This pillar is organised into **thirteen topic folders**, each a self-contained 
 
 ### Core Risk Topics
 
-1. **[[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall (CVaR)]]**: Coherent risk measure axioms, the subadditivity flaw of VaR, Cornish-Fisher non-normal expansions, and why ES prices what sits behind the tail door.
+1. **[[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall (CVaR)]]**: Coherent risk measure axioms, the subadditivity flaw of VaR, Cornish–Fisher non-normal expansions, and why ES prices what sits behind the tail door.
 2. **[[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical & Monte Carlo VaR]]**: Variance-covariance methods, filtered historical simulation (FHS), full-revaluation Monte Carlo, and the Kupiec/Christoffersen backtest batteries.
 3. **[[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]]**: Breakdown of normality, stylized facts of fat tails, Peaks-Over-Threshold (POT), Generalized Pareto Distributions (GPD), and the Hill tail index.
 4. **[[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Structural Model]]**: Equity as a call option on firm assets, distance-to-default and PD, reduced-form default intensity, and CDS pricing.
 5. **[[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing & Scenario Analysis]]**: Historical crisis replay (1987, 1998, 2008, 2020), macroeconomic factor shocks, scenario construction, and reverse stress testing to capital exhaustion.
-6. **[[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]]**: Market vs funding liquidity, liquidation cost and liquidity-adjusted VaR (L-VaR), margin calls, and the Brunnermeier-Pedersen funding spiral.
+6. **[[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]]**: Market vs funding liquidity, liquidation cost and liquidity-adjusted VaR (L-VaR), margin calls, and the Brunnermeier–Pedersen funding spiral.
 7. **[[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Counterparty Risk & xVA]]**: EE/EPE/PFE exposure, CVA/DVA, collateral, netting and SA-CCR, and the funding/capital extensions (FVA, MVA, KVA).
 8. **[[pillars/04-quantitative-risk/model-risk-and-validation/index|Model Risk & Validation]]**: Sources of model risk, effective challenge, validation and backtesting statistics, model-risk governance, and uncertainty quantification (BMA, KL, robust bounds).
 9. **[[pillars/04-quantitative-risk/basel-and-regulation/index|Basel & Regulation]]**: Capital and RWA arithmetic, the three-pillar architecture, the market-risk FRTB regime (SA vs IMA), credit/operational capital, and the liquidity, leverage and output-floor backstops.

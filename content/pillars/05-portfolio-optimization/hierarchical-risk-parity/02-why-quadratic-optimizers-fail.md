@@ -163,7 +163,7 @@ The mechanism is visible in the numbers: MVO's weight vector is dominated by dir
 - **Markowitz, H.** (1952). "Portfolio Selection." *Journal of Finance* 7(1):77–91 — the founding mean–variance program, and the inverse it requires.
 - **Michaud, R. O.** (1989); **Michaud & Michaud** (2008), *Efficient Asset Management* (2nd ed.), Oxford — "estimation-error maximizer" and resampled frontiers as the industry fix.
 - **Chopra, V. & Ziemba, W.** (1993). "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11 — mean errors dominate $\sim10\times$.
-- **Best, M. & Grauer, R.** (1991). "On the Sensitivity of Mean-Variance-Efficient Portfolios to Changes in Asset Means." *Review of Financial Studies* 4(2):315–342 — a $1\%$ mean change can move weights $>50\%$.
+- **Best, M. & Grauer, R.** (1991). "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means." *Review of Financial Studies* 4(2):315–342 — a $1\%$ mean change can move weights $>50\%$.
 - **DeMiguel, V., Garlappi, L. & Uppal, R.** (2009). "Optimal Versus Naive Diversification: How Inefficient Is the $1/N$ Portfolio Strategy?" *Review of Financial Studies* 22(5):1915–1953 — the $1/N$ benchmark.
 - **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 — the HRP response to these failures.
 

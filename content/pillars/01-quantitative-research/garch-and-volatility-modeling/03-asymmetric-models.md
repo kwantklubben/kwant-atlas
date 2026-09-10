@@ -118,4 +118,4 @@ The GJR model gives **1.48× the variance** after a negative 3σ shock versus a 
 - Base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] · [[foundations/statistics-and-inference/index|Statistics & Inference]]
 - Prior: [[pillars/01-quantitative-research/garch-and-volatility-modeling/02-arch-and-garch|02 · ARCH & GARCH]] · Hub: [[pillars/01-quantitative-research/garch-and-volatility-modeling/index|Index]]
 - Continue: [[pillars/01-quantitative-research/garch-and-volatility-modeling/04-realized-vol-and-har|04 · Realized Vol & HAR]] · [[pillars/01-quantitative-research/garch-and-volatility-modeling/05-failure-modes-and-practice|05 · Failure Modes]]
-- Applied: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black-Scholes-Merton]] (the volatility smile *is* leverage in option prices) · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]]
+- Applied: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (the volatility smile *is* leverage in option prices) · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]]
