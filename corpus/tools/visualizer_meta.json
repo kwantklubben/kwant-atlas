@@ -856,6 +856,38 @@
    "code": 3,
    "intuition": 2,
    "failure": "Unsorted timestamps degrading as-of join from O(N) to O(N^2)."
+  },
+  "pillars/03-derivative-pricing/rough-volatility-and-fractional-models": {
+   "id": "P3-ROUGHVOL",
+   "title": "Rough Volatility & Fractional Models",
+   "math": 3,
+   "code": 3,
+   "intuition": 2,
+   "failure": "Hurst is hard to estimate and drifts; a rough model calibrated on one window misprices the level of the skew out-of-sample, and the simulation is sensitive to the scheme."
+  },
+  "pillars/03-derivative-pricing/local-stochastic-volatility-models": {
+   "id": "P3-LSV",
+   "title": "Local-Stochastic Volatility (LSV)",
+   "math": 3,
+   "code": 2,
+   "intuition": 2,
+   "failure": "The leverage function depends on the very marginal it defines, so calibration is a fixed-point that can fail to converge; small errors in the leverage amplify into exotic mispricing."
+  },
+  "pillars/03-derivative-pricing/deep-hedging-and-bsdes": {
+   "id": "P3-DEEPHEDGE",
+   "title": "Deep Hedging & BSDEs",
+   "math": 3,
+   "code": 3,
+   "intuition": 2,
+   "failure": "The learned hedge minimises risk under the *model* the paths came from, so model risk is not reduced but hidden; training is seed-unstable and the policy is unauditable."
+  },
+  "pillars/03-derivative-pricing/path-signatures-and-rough-paths": {
+   "id": "P3-SIGNATURE",
+   "title": "Path Signatures & Rough Paths",
+   "math": 3,
+   "code": 2,
+   "intuition": 2,
+   "failure": "The signature needs a rough-path lift (and time/lead-lag augmentation) or it is the wrong object for a non-geometric path; truncation order silently discards the information that mattered."
   }
  },
  "_links_comment": "Curated graph edges [source, target, type], by node id. Editorial: which edges to draw is a design choice, so they are listed rather than derived. build_visualizer.py VALIDATES that both endpoints exist, so retiring a node becomes a loud error instead of a silently-dangling edge.",
@@ -2133,6 +2165,56 @@
   [
    "P8-CPP",
    "P2-HUB",
+   "inter"
+  ],
+  [
+   "P3-HUB",
+   "P3-ROUGHVOL",
+   "pillar"
+  ],
+  [
+   "P3-HUB",
+   "P3-LSV",
+   "pillar"
+  ],
+  [
+   "P3-HUB",
+   "P3-DEEPHEDGE",
+   "pillar"
+  ],
+  [
+   "P3-HUB",
+   "P3-SIGNATURE",
+   "pillar"
+  ],
+  [
+   "P3-ROUGHVOL",
+   "P3-HESTON",
+   "inter"
+  ],
+  [
+   "P3-LSV",
+   "P3-VOLSURF",
+   "inter"
+  ],
+  [
+   "P3-LSV",
+   "P3-HESTON",
+   "inter"
+  ],
+  [
+   "P3-DEEPHEDGE",
+   "P3-BSM",
+   "inter"
+  ],
+  [
+   "P3-DEEPHEDGE",
+   "P3-EXOT",
+   "inter"
+  ],
+  [
+   "P3-SIGNATURE",
+   "P3-VOLSURF",
    "inter"
   ]
  ]

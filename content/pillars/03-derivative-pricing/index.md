@@ -18,7 +18,7 @@ tags:
 
 Derivative Pricing represents the classical sell-side quantitative domain, founded upon stochastic calculus, partial differential equations, and martingale measure theory. Its primary mandate is valuing complex non-linear financial contracts (options, swaps, structured exotics) and engineering self-financing dynamic hedges that insulate trading desks from market risk.
 
-This pillar is organised into **eleven topic folders**, each a self-contained hub with six sub-pages. Follow them in the order below — each assumes the vocabulary of the ones before it.
+This pillar is organised into **fifteen topic folders**, each a self-contained hub with six sub-pages. Follow them in the order below — each assumes the vocabulary of the ones before it.
 
 ---
 
@@ -35,6 +35,10 @@ This pillar is organised into **eleven topic folders**, each a self-contained hu
 9. **[[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure]]**: Yield-curve bootstrapping, short-rate dynamics (Vasicek, CIR, Hull–White), and HJM / market models.
 10. **[[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Counterparty Risk & xVA]]**: CVA/DVA/FVA, collateral, credit exposure, and how counterparty credit risk reprices a derivative.
 11. **[[pillars/03-derivative-pricing/calibration-and-market-practice/index|Calibration & Market Practice]]**: Objective-function design, model selection, parameter fitting to market quotes, and model-risk governance on the desk.
+12. **[[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/index|Rough Volatility & Fractional Models]]**: Fractional Brownian motion with $H\approx0.1$, the rough Bergomi model, Hurst estimation, and why an $T^{H-1/2}$ skew is where Markovian SV models fail structurally.
+13. **[[pillars/03-derivative-pricing/local-stochastic-volatility-models/index|Local-Stochastic Volatility (LSV)]]**: The leverage function, Gyöngy's Markovian projection, Dupire consistency, and the Guyon–Henry-Labordère particle method — how to keep stochastic-vol dynamics *and* fit the smile exactly.
+14. **[[pillars/03-derivative-pricing/deep-hedging-and-bsdes/index|Deep Hedging & BSDEs]]**: Convex-risk minimisation in incomplete markets, the quadratic-BSDE / nonlinear Feynman–Kac backbone, and Deep BSDE / Deep Galerkin solvers.
+15. **[[pillars/03-derivative-pricing/path-signatures-and-rough-paths/index|Path Signatures & Rough Paths]]**: Iterated integrals, Chen's identity and the shuffle product, the log-signature and free Lie algebra, and rough path theory — the language rough volatility is written in.
 
 ---
 
@@ -43,11 +47,12 @@ This pillar is organised into **eleven topic folders**, each a self-contained hu
 > **Before this pillar (foundations):** read [[foundations/stochastic-calculus/index|Stochastic Calculus]] · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] first — see the [[foundations/index|Foundations hub]] for the full consumption order.
 
 
-A guided route through the eleven folders, in three stages.
+A guided route through the fifteen folders, in three stages (the last of which is the frontier).
 
 - **Start (foundations):** [[pillars/03-derivative-pricing/options-fundamentals-and-markets/index|Options, Futures & Markets]] → [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & the Binomial Model]] → [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]]. This builds the vocabulary and the no-arbitrage/replication core that everything else extends.
 - **Intermediate (volatility & exotics):** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Volatility Surfaces & Smiles]] → [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston / SABR]] → [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/index|American Options & Optimal Stopping]] → [[pillars/03-derivative-pricing/exotic-and-path-dependent-options/index|Exotic & Path-Dependent Options]] → [[pillars/03-derivative-pricing/numerical-methods/index|Numerical Methods]]. Here you move from single-model pricing to smiles, early exercise, path dependence, and the numerics that make them computable.
 - **Expert (institutional pricing):** [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate & Term Structure]] → [[pillars/03-derivative-pricing/counterparty-risk-and-xva/index|Counterparty Risk & xVA]] → [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Calibration & Market Practice]]. These cover rates desks, credit-adjusted pricing, and the live calibration discipline of a production trading floor.
+- **Frontier (research-grade):** [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/index|Rough Volatility & Fractional Models]] → [[pillars/03-derivative-pricing/path-signatures-and-rough-paths/index|Path Signatures & Rough Paths]] → [[pillars/03-derivative-pricing/local-stochastic-volatility-models/index|Local-Stochastic Volatility]] → [[pillars/03-derivative-pricing/deep-hedging-and-bsdes/index|Deep Hedging & BSDEs]]. Where the current literature is: rough vol for the skew term structure, signatures for path-dependent learning, LSV for exact smile calibration, and deep BSDEs for hedging when the market is incomplete.
 
 ---
 
