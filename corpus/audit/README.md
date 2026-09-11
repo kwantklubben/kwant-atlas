@@ -136,6 +136,33 @@ the escaped `[[slug\|Alias]]` form used inside markdown tables.
 (`**/_legacy/**` — globby matches full paths, so a bare `_legacy` is a no-op). Build: 749 → 693 files,
 0 archived pages emitted (65 were previously live).
 
+## The visualizer is generated, not hand-maintained
+
+`content/visualizer.html`'s D3 data is produced by `corpus/tools/build_visualizer.py`:
+
+```
+python3 corpus/tools/build_visualizer.py          # rewrite the nodes/links arrays
+python3 corpus/tools/build_visualizer.py --check  # exit 1 if stale (use in CI)
+```
+
+* **Derived** from the content tree every run: each node's click-through `path`, its `group`,
+  and whether its target still exists.
+* **Curated but validated**: the 255 edges live in `corpus/tools/visualizer_meta.json` (`links`),
+  with both endpoints checked against the live node set. Which edges to draw is graph design;
+  *that they resolve* is mechanical.
+* Editorial per-node fields (id, title, the math/code/intuition ratings, the `failure` line)
+  also live in that JSON.
+
+It fails loudly on: a metadata target that no longer exists, a topic-folder with no metadata
+entry, a duplicate node id, an edge endpoint that is not a live node, or a duplicate edge.
+
+**Why the four nodes 404'd** (and why "0 dangling edges" didn't catch it): edges reference node
+**IDs**, but click-through uses a separate **path** field. Validating one says nothing about the
+other. Retiring a legacy note repointed every markdown wikilink but not those paths.
+
+Deriving edges from the markdown instead was tried and rejected: hubs cross-reference so widely
+that it yields ~1040 edges — an unreadable hairball against the curated 255.
+
 ## How to re-run
 
 - **Code (fences):** run `python3 corpus/audit/tools/fencecheck_strict.py` from the repo root.
