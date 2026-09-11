@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Tail Latency, Impact, Queue Position & Determinism"
+title: "8.7.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - event-driven-backtesting

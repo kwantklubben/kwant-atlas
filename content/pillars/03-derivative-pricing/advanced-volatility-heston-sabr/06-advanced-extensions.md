@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Jumps, Forward-Variance Models, LSV & Rough Volatility"
+title: "3.5.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - advanced-volatility-heston-sabr

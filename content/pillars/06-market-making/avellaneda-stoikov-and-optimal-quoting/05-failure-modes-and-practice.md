@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Adverse Selection, Parameters, Limits"
+title: "6.2.5 Failure Modes & Practice"
 tags:
   - pillar-market-making
   - avellaneda-stoikov-and-optimal-quoting

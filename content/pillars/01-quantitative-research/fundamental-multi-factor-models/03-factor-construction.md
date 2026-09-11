@@ -1,5 +1,5 @@
 ---
-title: "03 — Factor Construction: SMB, HML, RMW, CMA via Independent Sorts"
+title: "1.3.3 Factor Construction"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

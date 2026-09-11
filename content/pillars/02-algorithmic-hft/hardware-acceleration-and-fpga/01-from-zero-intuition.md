@@ -1,5 +1,5 @@
 ---
-title: "01 - Hardware Acceleration & FPGA from Zero: Why Software Has a Latency Ceiling"
+title: "2.8.1 Hardware Acceleration & FPGA from Zero"
 tags:
   - pillar-algorithmic-hft
   - fpga

@@ -1,5 +1,5 @@
 ---
-title: "03 — Temporary vs Permanent Impact: The Two Components"
+title: "6.7.3 Temporary vs Permanent Impact"
 tags:
   - pillar-market-making
   - market-impact

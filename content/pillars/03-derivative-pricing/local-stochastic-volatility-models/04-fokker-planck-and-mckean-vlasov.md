@@ -1,5 +1,5 @@
 ---
-title: "04 — The Fokker–Planck / McKean–Vlasov Route: Solving for the Leverage from the Joint Density"
+title: "3.13.4 The Fokker–Planck / McKean–Vlasov Route"
 tags:
   - pillar-derivative-pricing
   - local-stochastic-volatility-models

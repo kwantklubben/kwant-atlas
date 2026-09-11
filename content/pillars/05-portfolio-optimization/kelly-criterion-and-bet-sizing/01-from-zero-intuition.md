@@ -1,5 +1,5 @@
 ---
-title: "01 — The Kelly Criterion from Zero: Why 'Bet More on an Edge' Is a Trap"
+title: "5.7.1 The Kelly Criterion from Zero"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

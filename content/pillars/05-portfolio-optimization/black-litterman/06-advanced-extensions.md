@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Views on Covariance & the Full BL Stack"
+title: "5.3.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - black-litterman

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Deflated Sharpe, Fractional Differentiation, Purged CV"
+title: "7.1.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - financial-ml-pitfalls-and-low-snr

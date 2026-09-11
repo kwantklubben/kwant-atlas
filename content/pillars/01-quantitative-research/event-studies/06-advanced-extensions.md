@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Information Content & PEAD"
+title: "1.7.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - event-studies

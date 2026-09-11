@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "7.2.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-machine-learning
   - purged-cross-validation

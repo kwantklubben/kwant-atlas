@@ -1,5 +1,5 @@
 ---
-title: "Tree & Boosting Methods"
+title: "7.3 Tree & Boosting Methods"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

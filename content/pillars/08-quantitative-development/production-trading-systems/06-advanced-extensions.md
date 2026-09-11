@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: High Availability, Failover & Cluster-Scale Safety"
+title: "8.9.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - production-trading-systems

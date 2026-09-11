@@ -1,5 +1,5 @@
 ---
-title: "04 — Random-Matrix-Theory Denoising: Cleaning the Eigenvalue Spectrum"
+title: "5.2.4 Random-Matrix-Theory Denoising"
 tags:
   - pillar-portfolio-optimization
   - covariance-shrinkage

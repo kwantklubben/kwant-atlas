@@ -1,5 +1,5 @@
 ---
-title: "01 - Market Microstructure from Zero: The Trading Landscape and Why Trading Costs Money"
+title: "2.1.1 Market Microstructure from Zero"
 tags:
   - pillar-algorithmic-hft
   - microstructure

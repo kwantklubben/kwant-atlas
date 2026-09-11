@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: The 5-Factor Model, Statistical Factors & the Factor Zoo"
+title: "1.3.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

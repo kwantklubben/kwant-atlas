@@ -1,5 +1,5 @@
 ---
-title: "01 — Market Impact & Depth from Zero: Intuition & the Why"
+title: "6.7.1 Market Impact & Depth from Zero"
 tags:
   - pillar-market-making
   - market-impact

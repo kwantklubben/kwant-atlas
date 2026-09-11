@@ -1,5 +1,5 @@
 ---
-title: "01 — Fundamental Multi-Factor Models from Zero: Intuition & the Why"
+title: "1.3.1 Fundamental Multi-Factor Models from Zero"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

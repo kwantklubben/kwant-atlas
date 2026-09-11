@@ -1,5 +1,5 @@
 ---
-title: "03 — SABR & the Short-Expiration Asymptotics: The Smile in Closed Form"
+title: "3.5.3 SABR & the Short-Expiration Asymptotics"
 tags:
   - pillar-derivative-pricing
   - advanced-volatility-heston-sabr

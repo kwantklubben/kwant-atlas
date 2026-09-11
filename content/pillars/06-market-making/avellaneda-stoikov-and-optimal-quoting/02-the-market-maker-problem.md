@@ -1,5 +1,5 @@
 ---
-title: "02 — The Market-Maker's Problem: Utility, Reservation Price & the HJB"
+title: "6.2.2 The Market-Maker's Problem"
 tags:
   - pillar-market-making
   - avellaneda-stoikov-and-optimal-quoting

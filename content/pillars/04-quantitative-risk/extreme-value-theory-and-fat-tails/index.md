@@ -1,5 +1,5 @@
 ---
-title: "Extreme Value Theory & Fat Tails"
+title: "4.3 Extreme Value Theory & Fat Tails"
 tags:
   - pillar-quantitative-risk
   - extreme-value-theory

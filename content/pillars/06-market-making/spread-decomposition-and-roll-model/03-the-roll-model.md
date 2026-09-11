@@ -1,5 +1,5 @@
 ---
-title: "03 — The Roll (1984) Model: Measuring the Effective Spread from Return Autocovariance"
+title: "6.5.3 The Roll (1984) Model"
 tags:
   - pillar-market-making
   - spread-decomposition-and-roll-model

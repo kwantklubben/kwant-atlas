@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: LVR Theory, CLMM Pricing, Hedging & Multi-Venue"
+title: "6.11.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

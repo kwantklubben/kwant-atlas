@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes and Desk Practice: Where Almgren–Chriss Breaks"
+title: "2.2.5 Failure Modes and Desk Practice"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution

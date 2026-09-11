@@ -1,5 +1,5 @@
 ---
-title: "01 — The Volatility Surface from Zero: Why It Is Not Flat"
+title: "3.4.1 The Volatility Surface from Zero"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

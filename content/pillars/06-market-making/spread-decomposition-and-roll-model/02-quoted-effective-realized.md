@@ -1,5 +1,5 @@
 ---
-title: "02 — Quoted, Effective & Realized Spread: The Three Measures of Trading Cost"
+title: "6.5.2 Quoted, Effective & Realized Spread"
 tags:
   - pillar-market-making
   - spread-decomposition-and-roll-model

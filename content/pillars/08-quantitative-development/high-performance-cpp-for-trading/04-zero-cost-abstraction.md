@@ -1,5 +1,5 @@
 ---
-title: "04 - Zero-Cost Abstraction: Templates, Move Semantics, No Hot-Path Allocation"
+title: "8.2.4 Zero-Cost Abstraction"
 tags:
   - pillar-quant-dev
   - high-performance-cpp

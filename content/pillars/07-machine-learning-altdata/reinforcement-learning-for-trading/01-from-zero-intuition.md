@@ -1,5 +1,5 @@
 ---
-title: "01 — Reinforcement Learning for Trading from Zero: Intuition & the Why"
+title: "7.7.1 Reinforcement Learning for Trading from Zero"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

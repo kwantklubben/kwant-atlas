@@ -1,5 +1,5 @@
 ---
-title: "04 — Compound, Chooser, Quanto, Exchange & Spread Options"
+title: "3.7.4 Compound, Chooser, Quanto, Exchange & Spread Options"
 tags:
   - pillar-derivative-pricing
   - exotic-options

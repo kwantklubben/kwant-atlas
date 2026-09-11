@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Desk Practice: Stability, Identifiability, Conventions"
+title: "3.11.5 Failure Modes & Desk Practice"
 tags:
   - pillar-derivative-pricing
   - calibration-and-market-practice

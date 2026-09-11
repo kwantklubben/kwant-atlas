@@ -1,5 +1,5 @@
 ---
-title: "03 — The BSDE Backbone & Nonlinear Feynman–Kac: Pardoux–Peng, Quadratic Drivers, Entropic Risk"
+title: "3.14.3 The BSDE Backbone & Nonlinear Feynman–Kac"
 tags:
   - pillar-derivative-pricing
   - deep-hedging-and-bsdes

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Expected Signature, Signature Kernels & Signatures in Machine Learning"
+title: "3.15.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - path-signatures-and-rough-paths

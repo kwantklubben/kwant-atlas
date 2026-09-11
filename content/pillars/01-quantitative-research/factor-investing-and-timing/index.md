@@ -1,5 +1,5 @@
 ---
-title: "Factor Investing & Factor Timing"
+title: "1.10 Factor Investing & Factor Timing"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

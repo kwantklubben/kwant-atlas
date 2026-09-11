@@ -1,5 +1,5 @@
 ---
-title: "03 — Fractional Brownian Motion & Derivations: Covariance, Self-Similarity, Hurst, and the Skew Functional"
+title: "3.12.3 Fractional Brownian Motion & Derivations"
 tags:
   - pillar-derivative-pricing
   - rough-volatility-and-fractional-models

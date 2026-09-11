@@ -1,5 +1,5 @@
 ---
-title: "03 - Lock-Free Data Structures: Atomics, CAS, and the SPSC/MPMC Queues"
+title: "8.3.3 Lock-Free Data Structures"
 tags:
   - pillar-quant-dev
   - concurrency

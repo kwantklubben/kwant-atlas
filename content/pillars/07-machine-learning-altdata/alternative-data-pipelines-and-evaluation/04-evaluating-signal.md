@@ -1,5 +1,5 @@
 ---
-title: "04 — Evaluating Signal: IC, ICIR, Decay & the Research Protocol"
+title: "7.5.4 Evaluating Signal"
 tags:
   - pillar-machine-learning
   - alternative-data-pipelines-and-evaluation

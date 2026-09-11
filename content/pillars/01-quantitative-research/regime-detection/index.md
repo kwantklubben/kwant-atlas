@@ -1,5 +1,5 @@
 ---
-title: "Regime Detection"
+title: "1.8 Regime Detection"
 tags:
   - pillar-quant-research
   - regime-detection

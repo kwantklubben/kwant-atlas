@@ -1,5 +1,5 @@
 ---
-title: "02 — Finite-Difference Methods for the BSM PDE"
+title: "3.8.2 Finite-Difference Methods for the BSM PDE"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

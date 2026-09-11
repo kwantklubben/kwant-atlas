@@ -1,5 +1,5 @@
 ---
-title: "03 - Data Versioning & Lineage: Hashes, Blocks, and Audit Trails"
+title: "8.6.3 Data Versioning & Lineage"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

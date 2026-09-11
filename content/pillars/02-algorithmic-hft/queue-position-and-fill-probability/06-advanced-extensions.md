@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Overbooking, OFI, and Reactive Intensity"
+title: "2.4.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - queue-reactive

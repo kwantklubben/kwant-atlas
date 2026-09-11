@@ -1,5 +1,5 @@
 ---
-title: "03 — Markets, Products & Contract Mechanics"
+title: "3.1.3 Markets, Products & Contract Mechanics"
 tags:
   - pillar-derivative-pricing
   - options-fundamentals

@@ -1,5 +1,5 @@
 ---
-title: "02 — Options Mechanics & Payoff Diagrams"
+title: "3.1.2 Options Mechanics & Payoff Diagrams"
 tags:
   - pillar-derivative-pricing
   - options-fundamentals

@@ -1,5 +1,5 @@
 ---
-title: "03 — Short-Rate Models: Vasicek, CIR, Hull–White & the Market Price of Risk"
+title: "3.9.3 Short-Rate Models"
 tags:
   - pillar-derivative-pricing
   - interest-rates

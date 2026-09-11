@@ -1,5 +1,5 @@
 ---
-title: "04 — Fractional Kelly, Drawdowns & the Risk of Ruin From Overbetting"
+title: "5.7.4 Fractional Kelly, Drawdowns & the Risk of Ruin From Overbetting"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

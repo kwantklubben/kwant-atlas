@@ -1,5 +1,5 @@
 ---
-title: "01 — Counterparty Risk & xVA from Zero: Intuition & the Why"
+title: "4.7.1 Counterparty Risk & xVA from Zero"
 tags:
   - pillar-quantitative-risk
   - counterparty-risk-and-xva

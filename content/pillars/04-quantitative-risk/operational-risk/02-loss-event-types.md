@@ -1,5 +1,5 @@
 ---
-title: "02 — Operational Risk Loss-Event Types & the Basel Taxonomy"
+title: "4.10.2 Operational Risk Loss-Event Types & the Basel Taxonomy"
 tags:
   - pillar-quantitative-risk
   - operational-risk

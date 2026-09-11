@@ -1,5 +1,5 @@
 ---
-title: "02 — From Forecasts to Positions: Combining Models & Sizing Bets"
+title: "7.9.2 From Forecasts to Positions"
 tags:
   - pillar-machine-learning
   - ml-for-portfolio

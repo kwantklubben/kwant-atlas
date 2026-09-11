@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Multi-Curve, the Smile in Rates & Calibration"
+title: "3.9.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - interest-rates

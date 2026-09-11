@@ -1,5 +1,5 @@
 ---
-title: "02 - The Execution Problem: Cost, Risk and Implementation Shortfall"
+title: "2.2.2 The Execution Problem"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution

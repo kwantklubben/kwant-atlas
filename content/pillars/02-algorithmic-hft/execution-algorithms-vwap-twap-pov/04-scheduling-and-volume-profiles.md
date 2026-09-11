@@ -1,5 +1,5 @@
 ---
-title: "04 - Scheduling and Volume Profiles: From Forecast to Child Orders"
+title: "2.3.4 Scheduling and Volume Profiles"
 tags:
   - pillar-algorithmic-hft
   - execution-algos

@@ -1,5 +1,5 @@
 ---
-title: "03 — Value-Based RL: TD Learning, Q-Learning & DQN"
+title: "7.7.3 Value-Based RL"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

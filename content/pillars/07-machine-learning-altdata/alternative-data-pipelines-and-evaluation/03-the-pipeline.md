@@ -1,5 +1,5 @@
 ---
-title: "03 — The Alt-Data Pipeline: Ingest → Store → Clean → Feature → Evaluate"
+title: "7.5.3 The Alt-Data Pipeline"
 tags:
   - pillar-machine-learning
   - alternative-data-pipelines-and-evaluation

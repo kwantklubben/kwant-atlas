@@ -1,5 +1,5 @@
 ---
-title: "04 — Collateral, Netting & SA-CCR: Mitigating Counterparty Risk"
+title: "4.7.4 Collateral, Netting & SA-CCR"
 tags:
   - pillar-quantitative-risk
   - counterparty-risk-and-xva

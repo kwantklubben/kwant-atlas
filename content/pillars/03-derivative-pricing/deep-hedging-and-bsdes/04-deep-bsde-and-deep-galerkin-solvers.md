@@ -1,5 +1,5 @@
 ---
-title: "04 — Deep BSDE & Deep Galerkin Solvers: Learning the Value and the Hedge"
+title: "3.14.4 Deep BSDE & Deep Galerkin Solvers"
 tags:
   - pillar-derivative-pricing
   - deep-hedging-and-bsdes

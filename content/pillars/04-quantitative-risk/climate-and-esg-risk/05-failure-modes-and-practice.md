@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Greenwashing, Data Quality & Non-Stationarity"
+title: "4.14.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quantitative-risk
   - climate-and-esg-risk

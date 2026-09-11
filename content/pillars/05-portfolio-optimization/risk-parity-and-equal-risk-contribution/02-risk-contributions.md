@@ -1,5 +1,5 @@
 ---
-title: "02 — Risk Contributions: MRC, RC & the Euler Decomposition"
+title: "5.4.2 Risk Contributions"
 tags:
   - pillar-portfolio-optimization
   - risk-parity-and-equal-risk-contribution

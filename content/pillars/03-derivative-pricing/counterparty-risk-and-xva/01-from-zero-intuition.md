@@ -1,5 +1,5 @@
 ---
-title: "01 — Counterparty Risk & xVA from Zero: Intuition & the Why"
+title: "3.10.1 Counterparty Risk & xVA from Zero"
 tags:
   - pillar-derivative-pricing
   - counterparty-risk

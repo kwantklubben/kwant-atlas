@@ -1,5 +1,5 @@
 ---
-title: "04 — Factor Exposures and Factor-Based Risk Decomposition"
+title: "4.11.4 Factor Exposures and Factor-Based Risk Decomposition"
 tags:
   - pillar-quantitative-risk
   - risk-factor-sensitivities

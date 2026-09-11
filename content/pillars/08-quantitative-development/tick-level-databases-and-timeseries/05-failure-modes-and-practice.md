@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes and Real-World Practice"
+title: "8.5.5 Failure Modes and Real-World Practice"
 tags:
   - pillar-quant-dev
   - tick-level-databases-and-timeseries

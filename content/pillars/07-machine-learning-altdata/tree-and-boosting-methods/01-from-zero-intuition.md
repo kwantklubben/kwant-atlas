@@ -1,5 +1,5 @@
 ---
-title: "01 — Trees & Boosting from Zero: Intuition & the Why"
+title: "7.3.1 Trees & Boosting from Zero"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

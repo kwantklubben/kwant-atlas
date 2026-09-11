@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Local/Stochastic Vol, Jumps, Numerical Methods"
+title: "3.3.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton

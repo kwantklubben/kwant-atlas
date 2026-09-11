@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "4.9.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

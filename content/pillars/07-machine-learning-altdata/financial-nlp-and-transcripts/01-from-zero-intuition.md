@@ -1,5 +1,5 @@
 ---
-title: "01 — Financial NLP from Zero: Why Text Is a Signal"
+title: "7.4.1 Financial NLP from Zero"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

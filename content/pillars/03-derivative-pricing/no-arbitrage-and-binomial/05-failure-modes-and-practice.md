@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Where Binomial Pricing Breaks"
+title: "3.2.5 Failure Modes & Practice"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial

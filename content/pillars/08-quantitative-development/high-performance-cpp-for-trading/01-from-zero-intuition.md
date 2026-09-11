@@ -1,5 +1,5 @@
 ---
-title: "01 - High-Performance C++ from Zero: Latency as the Business"
+title: "8.2.1 High-Performance C++ from Zero"
 tags:
   - pillar-quant-dev
   - high-performance-cpp

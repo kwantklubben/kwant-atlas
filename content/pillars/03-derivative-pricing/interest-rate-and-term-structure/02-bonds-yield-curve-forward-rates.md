@@ -1,5 +1,5 @@
 ---
-title: "02 — Bonds, the Yield Curve & Forward Rates"
+title: "3.9.2 Bonds, the Yield Curve & Forward Rates"
 tags:
   - pillar-derivative-pricing
   - interest-rates

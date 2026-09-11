@@ -1,5 +1,5 @@
 ---
-title: "03 — Attention & Transformers: Query-Key Lookup, Causality & Multi-Head"
+title: "7.6.3 Attention & Transformers"
 tags:
   - pillar-machine-learning
   - deep-learning-for-sequences

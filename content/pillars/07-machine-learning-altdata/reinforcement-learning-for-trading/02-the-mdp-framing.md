@@ -1,5 +1,5 @@
 ---
-title: "02 — The MDP Framing: State, Action, Reward & the Bellman Equations"
+title: "7.7.2 The MDP Framing"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

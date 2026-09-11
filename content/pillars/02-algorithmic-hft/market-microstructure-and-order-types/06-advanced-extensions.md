@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: The HFT Strategy Taxonomy, Latency and Market Design"
+title: "2.1.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - hft

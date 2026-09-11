@@ -1,5 +1,5 @@
 ---
-title: "04 — Model-Risk Management: SR 11-7, Effective Challenge & the Capital Link"
+title: "4.8.4 Model-Risk Management"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

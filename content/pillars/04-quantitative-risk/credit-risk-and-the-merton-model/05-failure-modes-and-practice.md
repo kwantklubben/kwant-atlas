@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "4.4.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quantitative-risk
   - credit-risk-and-the-merton-model

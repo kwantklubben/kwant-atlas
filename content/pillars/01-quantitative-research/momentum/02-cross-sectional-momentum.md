@@ -1,5 +1,5 @@
 ---
-title: "02 — Cross-Sectional Momentum: Ranking Winners & Shorting Losers"
+title: "1.4.2 Cross-Sectional Momentum"
 tags:
   - pillar-quant-research
   - momentum

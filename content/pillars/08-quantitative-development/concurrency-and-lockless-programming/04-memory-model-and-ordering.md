@@ -1,5 +1,5 @@
 ---
-title: "04 - The Memory Model & Memory Ordering: Acquire/Release and False Sharing"
+title: "8.3.4 The Memory Model & Memory Ordering"
 tags:
   - pillar-quant-dev
   - concurrency

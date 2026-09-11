@@ -1,5 +1,5 @@
 ---
-title: "03 — pandas Pitfalls: Chained Assignment, object dtype, Performance"
+title: "8.1.3 pandas Pitfalls"
 tags:
   - pillar-quant-dev
   - python-quant-stack

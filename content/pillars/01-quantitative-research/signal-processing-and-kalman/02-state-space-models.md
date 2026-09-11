@@ -1,5 +1,5 @@
 ---
-title: "02 — State-Space Models: One Form to Hold Them All"
+title: "1.5.2 State-Space Models"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

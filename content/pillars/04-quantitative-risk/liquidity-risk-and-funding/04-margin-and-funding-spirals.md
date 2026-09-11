@@ -1,5 +1,5 @@
 ---
-title: "04 — Margin, Funding Spirals & the Brunnermeier–Pedersen Mechanism"
+title: "4.6.4 Margin, Funding Spirals & the Brunnermeier–Pedersen Mechanism"
 tags:
   - pillar-quantitative-risk
   - liquidity-risk-and-funding

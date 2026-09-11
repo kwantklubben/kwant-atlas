@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: The Low-SNR Reality and When DL Beats Trees"
+title: "7.6.5 Failure Modes & Practice"
 tags:
   - pillar-machine-learning
   - deep-learning-for-sequences

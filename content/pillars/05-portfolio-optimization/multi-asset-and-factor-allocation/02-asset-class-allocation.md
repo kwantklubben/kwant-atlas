@@ -1,5 +1,5 @@
 ---
-title: "02 — Asset-Class Allocation: The Strategic vs Tactical Split"
+title: "5.9.2 Asset-Class Allocation"
 tags:
   - pillar-portfolio-optimization
   - multi-asset-and-factor-allocation

@@ -1,5 +1,5 @@
 ---
-title: "04 - Risk Guards & Kill Switches"
+title: "8.9.4 Risk Guards & Kill Switches"
 tags:
   - pillar-quant-dev
   - production-trading-systems

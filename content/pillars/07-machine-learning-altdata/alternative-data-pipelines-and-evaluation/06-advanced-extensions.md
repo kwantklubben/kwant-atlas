@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Uniqueness, Signal Combination & Vendor Economics"
+title: "7.5.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - alternative-data-pipelines-and-evaluation

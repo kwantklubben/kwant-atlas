@@ -1,5 +1,5 @@
 ---
-title: "02 - Storage Formats: Row, Column, Parquet and Arrow"
+title: "8.5.2 Storage Formats"
 tags:
   - pillar-quant-dev
   - tick-level-databases-and-timeseries

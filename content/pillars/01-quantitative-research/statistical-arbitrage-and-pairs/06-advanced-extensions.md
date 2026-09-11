@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Johansen, Optimal Stopping & Dynamic Hedging"
+title: "1.1.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - statistical-arbitrage-and-pairs

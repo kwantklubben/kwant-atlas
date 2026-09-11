@@ -1,5 +1,5 @@
 ---
-title: "03 — Binomial Trees & Convergence to Black–Scholes"
+title: "3.2.3 Binomial Trees & Convergence to Black–Scholes"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial

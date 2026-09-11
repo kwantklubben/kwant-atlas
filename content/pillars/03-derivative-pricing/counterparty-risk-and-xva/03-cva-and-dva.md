@@ -1,5 +1,5 @@
 ---
-title: "03 — CVA & DVA: Pricing Counterparty Default (and Your Own)"
+title: "3.10.3 CVA & DVA"
 tags:
   - pillar-derivative-pricing
   - counterparty-risk

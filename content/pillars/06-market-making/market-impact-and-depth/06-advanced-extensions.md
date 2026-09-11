@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Transient Impact, Cross-Impact & Beyond"
+title: "6.7.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - market-impact

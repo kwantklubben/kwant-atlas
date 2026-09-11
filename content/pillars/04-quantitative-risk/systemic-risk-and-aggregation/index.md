@@ -1,5 +1,5 @@
 ---
-title: "Systemic Risk & Risk Aggregation"
+title: "4.13 Systemic Risk & Risk Aggregation"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

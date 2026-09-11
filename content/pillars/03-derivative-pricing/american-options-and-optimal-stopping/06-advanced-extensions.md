@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Monte Carlo American (LSM & Duality) and Beyond"
+title: "3.6.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - american-options

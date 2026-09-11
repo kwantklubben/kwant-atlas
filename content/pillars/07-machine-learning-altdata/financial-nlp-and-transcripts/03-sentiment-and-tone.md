@@ -1,5 +1,5 @@
 ---
-title: "03 — Sentiment & Tone: Turning Text into a Tradable Scalar"
+title: "7.4.3 Sentiment & Tone"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

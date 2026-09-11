@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: What Stress Testing Gets Wrong"
+title: "4.5.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quantitative-risk
   - stress-testing-and-scenario-analysis

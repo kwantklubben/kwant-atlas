@@ -1,5 +1,5 @@
 ---
-title: "04 — Credit & Operational Risk: SA vs IRB, and the SMA"
+title: "4.9.4 Credit & Operational Risk"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

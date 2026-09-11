@@ -1,5 +1,5 @@
 ---
-title: "01 — Exotic & Path-Dependent Options from Zero: Intuition & the Why"
+title: "3.7.1 Exotic & Path-Dependent Options from Zero"
 tags:
   - pillar-derivative-pricing
   - exotic-options

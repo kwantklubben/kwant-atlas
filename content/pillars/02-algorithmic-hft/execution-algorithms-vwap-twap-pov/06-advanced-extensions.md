@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Benchmark-Aware, Adaptive and Participation-Based Execution"
+title: "2.3.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - execution-algos

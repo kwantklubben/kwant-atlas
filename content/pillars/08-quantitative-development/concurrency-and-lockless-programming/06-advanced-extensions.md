@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Batching, the Disruptor Pattern, and Wait-Free Progress"
+title: "8.3.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - concurrency

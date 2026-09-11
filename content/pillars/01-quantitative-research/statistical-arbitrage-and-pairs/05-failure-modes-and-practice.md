@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Structural Breaks, Data Snooping, Crowding"
+title: "1.1.5 Failure Modes & Practice"
 tags:
   - pillar-quant-research
   - statistical-arbitrage-and-pairs

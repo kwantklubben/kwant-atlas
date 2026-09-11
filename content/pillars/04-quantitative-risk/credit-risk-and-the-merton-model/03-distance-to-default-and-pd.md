@@ -1,5 +1,5 @@
 ---
-title: "03 — Distance to Default & Default Probability"
+title: "4.4.3 Distance to Default & Default Probability"
 tags:
   - pillar-quantitative-risk
   - credit-risk-and-the-merton-model

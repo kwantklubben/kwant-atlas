@@ -1,5 +1,5 @@
 ---
-title: "01 — Risk-Factor Sensitivities from Zero: The Map from Positions to P&L"
+title: "4.11.1 Risk-Factor Sensitivities from Zero"
 tags:
   - pillar-quantitative-risk
   - risk-factor-sensitivities

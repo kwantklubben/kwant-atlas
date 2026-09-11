@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Transaction Costs, Robust Hedging, High Dimensions & Risk-Averse RL"
+title: "3.14.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - deep-hedging-and-bsdes

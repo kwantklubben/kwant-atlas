@@ -1,5 +1,5 @@
 ---
-title: "01 — VaR from Zero: Intuition & the Why"
+title: "4.2.1 VaR from Zero"
 tags:
   - pillar-quantitative-risk
   - parametric-historical-and-monte-carlo-var

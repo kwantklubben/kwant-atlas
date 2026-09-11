@@ -1,5 +1,5 @@
 ---
-title: "01 — Toxic Order Flow from Zero: Intuition, the Volume Clock, and the Flash Crash"
+title: "6.6.1 Toxic Order Flow from Zero"
 tags:
   - pillar-market-making
   - flow-toxicity

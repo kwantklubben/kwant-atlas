@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice in EVT"
+title: "4.3.5 Failure Modes & Real-World Practice in EVT"
 tags:
   - pillar-quantitative-risk
   - extreme-value-theory

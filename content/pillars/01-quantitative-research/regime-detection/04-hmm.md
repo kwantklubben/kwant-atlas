@@ -1,5 +1,5 @@
 ---
-title: "04 — Hidden Markov Models: Forward–Backward, Viterbi & the EM/Baum–Welch Engine"
+title: "1.8.4 Hidden Markov Models"
 tags:
   - pillar-quant-research
   - regime-detection

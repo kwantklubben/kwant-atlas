@@ -1,5 +1,5 @@
 ---
-title: "02 — Sklar's Theorem & the Copula Machinery"
+title: "4.12.2 Sklar's Theorem & the Copula Machinery"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

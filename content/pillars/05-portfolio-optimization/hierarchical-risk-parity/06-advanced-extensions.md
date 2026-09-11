@@ -1,5 +1,5 @@
 ---
-title: "06 — HRP Extensions: HERC, Nested Clustered Optimization & Variants"
+title: "5.5.6 HRP Extensions"
 tags:
   - pillar-portfolio-optimization
   - hierarchical-risk-parity

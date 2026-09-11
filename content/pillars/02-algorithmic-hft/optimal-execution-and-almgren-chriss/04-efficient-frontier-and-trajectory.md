@@ -1,5 +1,5 @@
 ---
-title: "04 - The Efficient Frontier of Execution and the Optimal Trajectory"
+title: "2.2.4 The Efficient Frontier of Execution and the Optimal Trajectory"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution

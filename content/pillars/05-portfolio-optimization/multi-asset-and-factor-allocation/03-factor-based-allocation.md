@@ -1,5 +1,5 @@
 ---
-title: "03 — Factor-Based Allocation: Allocating to Sources, Not Labels"
+title: "5.9.3 Factor-Based Allocation"
 tags:
   - pillar-portfolio-optimization
   - multi-asset-and-factor-allocation

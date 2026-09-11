@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Earnings-Call Analysis & the Full Pipeline"
+title: "7.4.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

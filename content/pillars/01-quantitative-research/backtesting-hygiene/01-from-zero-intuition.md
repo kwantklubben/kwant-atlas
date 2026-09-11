@@ -1,5 +1,5 @@
 ---
-title: "01 — Backtesting Hygiene from Zero: A Backtest Is a Search, Not a Measurement"
+title: "1.2.1 Backtesting Hygiene from Zero"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

@@ -1,5 +1,5 @@
 ---
-title: "02 — ARCH & GARCH: The Recursion, Stationarity & Estimation"
+title: "1.9.2 ARCH & GARCH"
 tags:
   - pillar-quant-research
   - garch-and-volatility-modeling

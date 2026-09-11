@@ -1,5 +1,5 @@
 ---
-title: "Operational Risk"
+title: "4.10 Operational Risk"
 tags:
   - pillar-quantitative-risk
   - operational-risk

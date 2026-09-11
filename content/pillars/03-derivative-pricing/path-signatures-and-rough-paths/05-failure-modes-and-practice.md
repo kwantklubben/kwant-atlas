@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Time Augmentation, Lead-Lag & Signature-Based Hedging"
+title: "3.15.5 Failure Modes & Practice"
 tags:
   - pillar-derivative-pricing
   - path-signatures-and-rough-paths

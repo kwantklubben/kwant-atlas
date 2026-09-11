@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes and Practice: Stale NBBO, Latency Arbitrage and Fee Misrouting"
+title: "2.5.5 Failure Modes and Practice"
 tags:
   - pillar-algorithmic-hft
   - failure-modes

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Walk-Forward vs CPCV, Variance, Hyperparameter Tuning"
+title: "7.2.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - purged-cross-validation

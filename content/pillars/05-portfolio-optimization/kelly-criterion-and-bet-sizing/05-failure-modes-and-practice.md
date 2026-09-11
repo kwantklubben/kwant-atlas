@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Estimation Error, Fat Tails, and How Professionals De-Rate"
+title: "5.7.5 Failure Modes & Practice"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

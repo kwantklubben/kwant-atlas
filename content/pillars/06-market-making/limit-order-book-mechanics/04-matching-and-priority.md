@@ -1,5 +1,5 @@
 ---
-title: "04 — Matching and Priority: The Engine, Queues, and Fill Odds"
+title: "6.1.4 Matching and Priority"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

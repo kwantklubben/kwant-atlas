@@ -1,5 +1,5 @@
 ---
-title: "04 — Post-Publication Decay: Does Publishing a Factor Destroy It?"
+title: "1.10.4 Post-Publication Decay"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

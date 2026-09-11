@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Portfolio Credit Risk, Vasicek & Ratings"
+title: "4.4.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - credit-risk-and-the-merton-model

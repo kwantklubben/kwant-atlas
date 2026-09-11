@@ -1,5 +1,5 @@
 ---
-title: "01 — Purged CV & Backtest Hygiene from Zero: The Leakage Idea"
+title: "7.2.1 Purged CV & Backtest Hygiene from Zero"
 tags:
   - pillar-machine-learning
   - purged-cross-validation

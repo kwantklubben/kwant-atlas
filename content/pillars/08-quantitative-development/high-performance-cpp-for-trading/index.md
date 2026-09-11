@@ -1,5 +1,5 @@
 ---
-title: "High-Performance C++ for Trading"
+title: "8.2 High-Performance C++ for Trading"
 tags:
   - pillar-quant-dev
   - high-performance-cpp

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Volatility Scaling, Crash Risk & Dynamic Momentum"
+title: "1.4.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - momentum

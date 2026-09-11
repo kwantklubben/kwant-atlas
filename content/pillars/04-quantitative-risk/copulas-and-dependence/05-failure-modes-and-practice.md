@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Fitting Copulas in the Real World"
+title: "4.12.5 Failure Modes & Practice"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

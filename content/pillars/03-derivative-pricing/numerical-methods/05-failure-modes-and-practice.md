@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Numerical Practice"
+title: "3.8.5 Failure Modes & Numerical Practice"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

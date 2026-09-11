@@ -1,5 +1,5 @@
 ---
-title: "02 — The Event-Study Methodology: Windows & the Market Model"
+title: "1.7.2 The Event-Study Methodology"
 tags:
   - pillar-quant-research
   - event-studies

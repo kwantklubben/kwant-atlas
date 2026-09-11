@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Search Frictions, Balance Sheets, Contagion"
+title: "6.10.5 Failure Modes & Practice"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc

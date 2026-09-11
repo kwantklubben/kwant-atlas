@@ -1,5 +1,5 @@
 ---
-title: "02 — Exposure, Netting & Margin: EE/PFE/EPE and the MPoR"
+title: "3.10.2 Exposure, Netting & Margin"
 tags:
   - pillar-derivative-pricing
   - counterparty-risk

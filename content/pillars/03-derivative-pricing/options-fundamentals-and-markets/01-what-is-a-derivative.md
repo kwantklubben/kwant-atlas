@@ -1,5 +1,5 @@
 ---
-title: "01 — What Is a Derivative? From Zero"
+title: "3.1.1 What Is a Derivative? From Zero"
 tags:
   - pillar-derivative-pricing
   - options-fundamentals

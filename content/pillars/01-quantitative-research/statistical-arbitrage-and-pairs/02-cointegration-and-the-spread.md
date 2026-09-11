@@ -1,5 +1,5 @@
 ---
-title: "02 — Cointegration, the Error-Correction Form & the Ornstein–Uhlenbeck Spread"
+title: "1.1.2 Cointegration, the Error-Correction Form & the Ornstein–Uhlenbeck Spread"
 tags:
   - pillar-quant-research
   - statistical-arbitrage-and-pairs

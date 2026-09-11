@@ -1,5 +1,5 @@
 ---
-title: "04 — VPIN: Volume-Synchronized Probability of Informed Trading, with Bulk-Volume Classification"
+title: "6.6.4 VPIN"
 tags:
   - pillar-market-making
   - vpin

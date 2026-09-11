@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Latency-Aware, Toxicity-Aware and Adaptive Routing"
+title: "2.5.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - smart-order-routing

@@ -1,5 +1,5 @@
 ---
-title: "01 — Momentum from Zero: Intuition & the Why"
+title: "1.4.1 Momentum from Zero"
 tags:
   - pillar-quant-research
   - momentum

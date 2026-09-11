@@ -1,5 +1,5 @@
 ---
-title: "04 - Fees and Venue Selection: Make, Take and the Cum-Fee Price"
+title: "2.5.4 Fees and Venue Selection"
 tags:
   - pillar-algorithmic-hft
   - trading-fees

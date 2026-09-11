@@ -1,5 +1,5 @@
 ---
-title: "01 — Local-Stochastic Volatility from Zero: One Scale Factor Fits the Smile, and It Costs You Nothing in Dynamics"
+title: "3.13.1 Local-Stochastic Volatility from Zero"
 tags:
   - pillar-derivative-pricing
   - local-stochastic-volatility-models

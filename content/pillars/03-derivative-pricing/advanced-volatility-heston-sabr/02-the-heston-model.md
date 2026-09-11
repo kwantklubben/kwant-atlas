@@ -1,5 +1,5 @@
 ---
-title: "02 — The Heston Model: SDE, Feller Condition, Characteristic Function & Fourier Pricing"
+title: "3.5.2 The Heston Model"
 tags:
   - pillar-derivative-pricing
   - advanced-volatility-heston-sabr

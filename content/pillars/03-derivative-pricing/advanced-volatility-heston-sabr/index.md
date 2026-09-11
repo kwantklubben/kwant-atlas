@@ -1,5 +1,5 @@
 ---
-title: "Advanced Volatility — Heston, SABR & Stochastic-Vol Dynamics"
+title: "3.5 Advanced Volatility — Heston, SABR & Stochastic-Vol Dynamics"
 tags:
   - pillar-derivative-pricing
   - advanced-volatility-heston-sabr

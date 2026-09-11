@@ -1,5 +1,5 @@
 ---
-title: "01 — Deep Learning for Sequences from Zero: Why Order Matters"
+title: "7.6.1 Deep Learning for Sequences from Zero"
 tags:
   - pillar-machine-learning
   - deep-learning-for-sequences

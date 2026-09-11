@@ -1,5 +1,5 @@
 ---
-title: "02 — Probability of Informed Trading (PIN): the Informed Fraction of the Flow"
+title: "6.6.2 Probability of Informed Trading (PIN)"
 tags:
   - pillar-market-making
   - pin

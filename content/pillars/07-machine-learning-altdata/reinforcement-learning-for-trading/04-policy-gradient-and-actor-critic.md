@@ -1,5 +1,5 @@
 ---
-title: "04 — Policy-Gradient & Actor-Critic: REINFORCE, A2C, PPO"
+title: "7.7.4 Policy-Gradient & Actor-Critic"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

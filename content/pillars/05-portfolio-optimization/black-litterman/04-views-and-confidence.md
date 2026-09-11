@@ -1,5 +1,5 @@
 ---
-title: "04 — Views and Confidence: P, Q, and Omega"
+title: "5.3.4 Views and Confidence"
 tags:
   - pillar-portfolio-optimization
   - black-litterman

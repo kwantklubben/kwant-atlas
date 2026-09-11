@@ -1,5 +1,5 @@
 ---
-title: "Limit Order Book Mechanics"
+title: "6.1 Limit Order Book Mechanics"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

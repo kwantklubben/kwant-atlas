@@ -1,5 +1,5 @@
 ---
-title: "04 — The Fundamental Theorems of Asset Pricing"
+title: "3.2.4 The Fundamental Theorems of Asset Pricing"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial

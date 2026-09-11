@@ -1,5 +1,5 @@
 ---
-title: "03 - Colocation, Fiber, Microwave & the Speed-of-Light Limit"
+title: "2.7.3 Colocation, Fiber, Microwave & the Speed-of-Light Limit"
 tags:
   - pillar-algorithmic-hft
   - colocation

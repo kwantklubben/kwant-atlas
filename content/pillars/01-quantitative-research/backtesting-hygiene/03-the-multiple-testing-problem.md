@@ -1,5 +1,5 @@
 ---
-title: "03 — The Multiple-Testing Problem: Expected Maximum Sharpe & the Haircut"
+title: "1.2.3 The Multiple-Testing Problem"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

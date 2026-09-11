@@ -1,5 +1,5 @@
 ---
-title: "02 - The Tick-to-Trade Pipeline: Stages, Pipelining, and Wire Time"
+title: "2.8.2 The Tick-to-Trade Pipeline"
 tags:
   - pillar-algorithmic-hft
   - fpga

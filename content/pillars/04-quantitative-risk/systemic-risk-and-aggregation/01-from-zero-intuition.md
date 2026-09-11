@@ -1,5 +1,5 @@
 ---
-title: "01 — Systemic Risk & Aggregation from Zero: Intuition & the Why"
+title: "4.13.1 Systemic Risk & Aggregation from Zero"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: NUMA, Kernel Bypass, and the Silicon Tier"
+title: "2.9.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

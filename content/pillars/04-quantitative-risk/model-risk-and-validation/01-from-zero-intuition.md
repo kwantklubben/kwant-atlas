@@ -1,5 +1,5 @@
 ---
-title: "01 — Model Risk from Zero: The Risk of Being Wrong"
+title: "4.8.1 Model Risk from Zero"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

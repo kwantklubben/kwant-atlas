@@ -1,5 +1,5 @@
 ---
-title: "01 — Constraints & Transaction Costs from Zero: Why the Unconstrained Optimum Is Unimplementable"
+title: "5.8.1 Constraints & Transaction Costs from Zero"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

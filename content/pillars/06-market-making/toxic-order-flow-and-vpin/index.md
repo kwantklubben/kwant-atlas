@@ -1,5 +1,5 @@
 ---
-title: "Toxic Order Flow & VPIN"
+title: "6.6 Toxic Order Flow & VPIN"
 tags:
   - pillar-market-making
   - vpin

@@ -1,5 +1,5 @@
 ---
-title: "03 — The Log-Signature, the Free Lie Algebra & Signature Uniqueness"
+title: "3.15.3 The Log-Signature, the Free Lie Algebra & Signature Uniqueness"
 tags:
   - pillar-derivative-pricing
   - path-signatures-and-rough-paths

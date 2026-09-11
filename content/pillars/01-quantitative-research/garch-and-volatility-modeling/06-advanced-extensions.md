@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Multivariate, DCC & Forecasting"
+title: "1.9.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - garch-and-volatility-modeling

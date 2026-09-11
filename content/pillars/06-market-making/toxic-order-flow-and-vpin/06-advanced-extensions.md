@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: VPIN as a Live Risk Signal, Information Risk in Asset Pricing, and Kill-Switch Dynamics"
+title: "6.6.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - vpin

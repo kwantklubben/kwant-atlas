@@ -1,5 +1,5 @@
 ---
-title: "Options, Futures & Markets"
+title: "3.1 Options, Futures & Markets"
 tags:
   - pillar-derivative-pricing
   - options-fundamentals

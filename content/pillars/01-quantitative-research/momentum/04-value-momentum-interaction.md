@@ -1,5 +1,5 @@
 ---
-title: "04 — The Value–Momentum Interaction"
+title: "1.4.4 The Value–Momentum Interaction"
 tags:
   - pillar-quant-research
   - momentum

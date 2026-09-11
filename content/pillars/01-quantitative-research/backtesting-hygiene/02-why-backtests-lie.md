@@ -1,5 +1,5 @@
 ---
-title: "02 — Why Backtests Lie: Selection Bias, Optimism & the Is/OOS Gap"
+title: "1.2.2 Why Backtests Lie"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

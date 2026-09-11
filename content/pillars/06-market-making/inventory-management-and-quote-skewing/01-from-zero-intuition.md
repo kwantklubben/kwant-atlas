@@ -1,5 +1,5 @@
 ---
-title: "01 — Inventory from Zero: Why the Market Maker's Biggest Enemy Is the Position He Already Holds"
+title: "6.3.1 Inventory from Zero"
 tags:
   - pillar-market-making
   - inventory-management-and-quote-skewing

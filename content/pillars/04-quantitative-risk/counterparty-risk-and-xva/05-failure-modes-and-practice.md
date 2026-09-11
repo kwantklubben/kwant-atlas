@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Wrong-Way Risk, Misestimation, Jump-to-Default"
+title: "4.7.5 Failure Modes & Practice"
 tags:
   - pillar-quantitative-risk
   - counterparty-risk-and-xva

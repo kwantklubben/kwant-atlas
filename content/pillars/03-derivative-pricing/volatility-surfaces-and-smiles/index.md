@@ -1,5 +1,5 @@
 ---
-title: "Volatility Surfaces & Smiles"
+title: "3.4 Volatility Surfaces & Smiles"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

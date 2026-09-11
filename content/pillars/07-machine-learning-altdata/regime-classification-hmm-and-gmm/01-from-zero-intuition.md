@@ -1,5 +1,5 @@
 ---
-title: "01 — Regime Classification from Zero: Why a Regime Is a Latent Label"
+title: "7.8.1 Regime Classification from Zero"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Multi-Asset Kelly, Estimation & the Road to Deployment"
+title: "5.7.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

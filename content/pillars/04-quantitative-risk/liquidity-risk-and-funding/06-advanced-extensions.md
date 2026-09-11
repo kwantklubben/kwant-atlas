@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Liquidity Spirals, Systemic Risk & Liquidity-Adjusted Pricing"
+title: "4.6.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - liquidity-risk-and-funding

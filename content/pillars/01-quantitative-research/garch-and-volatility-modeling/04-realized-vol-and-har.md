@@ -1,5 +1,5 @@
 ---
-title: "04 — Realized Volatility & HAR: The Model-Free Path to Long Memory"
+title: "1.9.4 Realized Volatility & HAR"
 tags:
   - pillar-quant-research
   - garch-and-volatility-modeling

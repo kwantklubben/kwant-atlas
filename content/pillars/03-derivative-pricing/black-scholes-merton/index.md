@@ -1,5 +1,5 @@
 ---
-title: "Black–Scholes–Merton"
+title: "3.3 Black–Scholes–Merton"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton

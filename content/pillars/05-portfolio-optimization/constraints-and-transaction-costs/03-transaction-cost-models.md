@@ -1,5 +1,5 @@
 ---
-title: "03 — Transaction-Cost Models: Linear Spreads, Quadratic and Square-Root Impact"
+title: "5.8.3 Transaction-Cost Models"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

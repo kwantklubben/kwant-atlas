@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: The Pitfalls, Measured"
+title: "7.1.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-machine-learning
   - financial-ml-pitfalls-and-low-snr

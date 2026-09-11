@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: When Black–Litterman Breaks"
+title: "5.3.5 Failure Modes & Practice"
 tags:
   - pillar-portfolio-optimization
   - black-litterman

@@ -1,5 +1,5 @@
 ---
-title: "Concurrency & Lock-Free Programming"
+title: "8.3 Concurrency & Lock-Free Programming"
 tags:
   - pillar-quant-dev
   - concurrency

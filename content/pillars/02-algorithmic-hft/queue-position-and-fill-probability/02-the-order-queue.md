@@ -1,5 +1,5 @@
 ---
-title: "02 - The Order Queue: Mechanics, Priority, and Position"
+title: "2.4.2 The Order Queue"
 tags:
   - pillar-algorithmic-hft
   - queue-position

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Meta-Labeling, Denoised Covariance, HERC & RL Allocation"
+title: "7.9.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - ml-for-portfolio

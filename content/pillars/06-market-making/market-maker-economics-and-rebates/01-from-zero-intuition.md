@@ -1,5 +1,5 @@
 ---
-title: "01 — From Zero: What a Market Maker Actually Earns"
+title: "6.9.1 From Zero"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

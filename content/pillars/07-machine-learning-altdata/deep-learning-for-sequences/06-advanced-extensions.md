@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: TCN, GRU, Seq2Seq, DeepAR, TFT & DeepLOB"
+title: "7.6.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - deep-learning-for-sequences

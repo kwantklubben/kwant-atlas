@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Fractional Differentiation, Sample Weights & Structural Breaks"
+title: "1.6.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

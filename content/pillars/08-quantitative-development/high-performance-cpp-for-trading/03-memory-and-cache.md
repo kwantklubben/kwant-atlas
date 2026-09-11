@@ -1,5 +1,5 @@
 ---
-title: "03 - Memory & Cache: Cache Lines, AoS vs SoA, False Sharing"
+title: "8.2.3 Memory & Cache"
 tags:
   - pillar-quant-dev
   - high-performance-cpp

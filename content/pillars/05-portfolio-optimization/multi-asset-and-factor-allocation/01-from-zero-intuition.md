@@ -1,5 +1,5 @@
 ---
-title: "01 — Multi-Asset & Factor Allocation from Zero: Intuition & the Why"
+title: "5.9.1 Multi-Asset & Factor Allocation from Zero"
 tags:
   - pillar-portfolio-optimization
   - multi-asset-and-factor-allocation

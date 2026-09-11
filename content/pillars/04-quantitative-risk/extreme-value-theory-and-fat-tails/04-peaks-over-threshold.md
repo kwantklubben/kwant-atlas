@@ -1,5 +1,5 @@
 ---
-title: "04 — Peaks-Over-Threshold: the Generalized Pareto Distribution and EVT VaR / Expected Shortfall"
+title: "4.3.4 Peaks-Over-Threshold"
 tags:
   - pillar-quantitative-risk
   - extreme-value-theory

@@ -1,5 +1,5 @@
 ---
-title: "02 — Physical vs Transition Risk: Carbon Pricing, Pass-Through & Stranded Assets"
+title: "4.14.2 Physical vs Transition Risk"
 tags:
   - pillar-quantitative-risk
   - climate-and-esg-risk

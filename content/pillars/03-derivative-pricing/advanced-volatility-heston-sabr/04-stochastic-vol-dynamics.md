@@ -1,5 +1,5 @@
 ---
-title: "04 — Stochastic-Vol Dynamics: Vol-of-Vol, Skew Stickiness & the Bergomi–Guyon Expansion"
+title: "3.5.4 Stochastic-Vol Dynamics"
 tags:
   - pillar-derivative-pricing
   - advanced-volatility-heston-sabr

@@ -1,5 +1,5 @@
 ---
-title: "03 - FPGA vs CPU vs GPU: The Latency, Throughput, and Flexibility Triangle"
+title: "2.8.3 FPGA vs CPU vs GPU"
 tags:
   - pillar-algorithmic-hft
   - fpga

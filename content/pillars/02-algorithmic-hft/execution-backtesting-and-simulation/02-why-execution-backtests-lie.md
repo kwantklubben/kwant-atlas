@@ -1,5 +1,5 @@
 ---
-title: "02 - Why Execution Backtests Lie: The Fill Illusion"
+title: "2.6.2 Why Execution Backtests Lie"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

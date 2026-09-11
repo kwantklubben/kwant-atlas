@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Heston & Fourier Pricing, Calibration, Rough Vol"
+title: "3.4.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

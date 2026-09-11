@@ -1,5 +1,5 @@
 ---
-title: "04 — Dealer Capacity & Balance Sheets: Slow-Moving Capital"
+title: "6.10.4 Dealer Capacity & Balance Sheets"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc

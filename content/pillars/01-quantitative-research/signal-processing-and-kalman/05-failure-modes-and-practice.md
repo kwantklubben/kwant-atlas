@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: When the Filter Lies"
+title: "1.5.5 Failure Modes & Practice"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

@@ -1,5 +1,5 @@
 ---
-title: "03 — Purging & Embargo: The Two Leak-Killers"
+title: "7.2.3 Purging & Embargo"
 tags:
   - pillar-machine-learning
   - purged-cross-validation

@@ -1,5 +1,5 @@
 ---
-title: "Feature Engineering & Target Labeling"
+title: "1.6 Feature Engineering & Target Labeling"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

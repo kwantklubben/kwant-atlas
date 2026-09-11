@@ -1,5 +1,5 @@
 ---
-title: "Numerical Methods"
+title: "3.8 Numerical Methods"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

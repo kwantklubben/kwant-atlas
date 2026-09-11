@@ -1,5 +1,5 @@
 ---
-title: "04 — The Greeks & Dynamic Hedging (Full Sensitivity Lookup)"
+title: "3.3.4 The Greeks & Dynamic Hedging (Full Sensitivity Lookup)"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton

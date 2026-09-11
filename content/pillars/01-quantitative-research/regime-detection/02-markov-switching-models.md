@@ -1,5 +1,5 @@
 ---
-title: "02 — Markov-Switching Models: the Hamilton Filter & Estimation"
+title: "1.8.2 Markov-Switching Models"
 tags:
   - pillar-quant-research
   - regime-detection

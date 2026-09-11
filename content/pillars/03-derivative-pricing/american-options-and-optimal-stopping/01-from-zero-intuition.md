@@ -1,5 +1,5 @@
 ---
-title: "01 — American Options from Zero: Why 'When to Stop' Has a Price"
+title: "3.6.1 American Options from Zero"
 tags:
   - pillar-derivative-pricing
   - american-options

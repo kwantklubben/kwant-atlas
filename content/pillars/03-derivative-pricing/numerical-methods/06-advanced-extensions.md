@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: American, Multidimensional, QMC"
+title: "3.8.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

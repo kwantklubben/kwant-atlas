@@ -1,5 +1,5 @@
 ---
-title: "03 - The HFT System Architecture: Feed Handler to Order Gateway"
+title: "2.9.3 The HFT System Architecture"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

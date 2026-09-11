@@ -1,5 +1,5 @@
 ---
-title: "01 — Adverse Selection from Zero: Why the Spread Exists at All"
+title: "6.4.1 Adverse Selection from Zero"
 tags:
   - pillar-market-making
   - adverse-selection

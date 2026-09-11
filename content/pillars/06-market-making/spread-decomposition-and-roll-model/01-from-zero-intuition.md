@@ -1,5 +1,5 @@
 ---
-title: "01 — Spread Decomposition & the Roll Model from Zero: Intuition & the Why"
+title: "6.5.1 Spread Decomposition & the Roll Model from Zero"
 tags:
   - pillar-market-making
   - spread-decomposition-and-roll-model

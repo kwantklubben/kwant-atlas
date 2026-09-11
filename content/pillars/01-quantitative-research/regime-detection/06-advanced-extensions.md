@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Regime-Based Allocation & the Estimation Frontier"
+title: "1.8.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - regime-detection

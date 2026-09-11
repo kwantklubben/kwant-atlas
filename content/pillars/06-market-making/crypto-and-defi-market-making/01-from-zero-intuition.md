@@ -1,5 +1,5 @@
 ---
-title: "01 — Crypto & DeFi Market Making from Zero: The AMM Is a Market Maker"
+title: "6.11.1 Crypto & DeFi Market Making from Zero"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

@@ -1,5 +1,5 @@
 ---
-title: "03 — The EM Algorithm: Fitting Latent-Variable Models by Maximizing a Lower Bound"
+title: "7.8.3 The EM Algorithm"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

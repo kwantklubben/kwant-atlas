@@ -1,5 +1,5 @@
 ---
-title: "04 — Time-Varying Beta & Dynamic Hedge Ratios"
+title: "1.5.4 Time-Varying Beta & Dynamic Hedge Ratios"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

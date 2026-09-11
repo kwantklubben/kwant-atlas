@@ -1,5 +1,5 @@
 ---
-title: "02 — The Factor Zoo: Multiple Testing & How Many Factors Are Real"
+title: "1.10.2 The Factor Zoo"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

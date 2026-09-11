@@ -1,5 +1,5 @@
 ---
-title: "01 — Credit Risk from Zero: Default as an Option on Firm Assets"
+title: "4.4.1 Credit Risk from Zero"
 tags:
   - pillar-quantitative-risk
   - credit-risk-and-the-merton-model

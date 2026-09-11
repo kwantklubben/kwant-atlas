@@ -1,5 +1,5 @@
 ---
-title: "04 — Autoencoders for Factor Extraction: Encoder, Decoder & the PCA Limit"
+title: "7.6.4 Autoencoders for Factor Extraction"
 tags:
   - pillar-machine-learning
   - deep-learning-for-sequences

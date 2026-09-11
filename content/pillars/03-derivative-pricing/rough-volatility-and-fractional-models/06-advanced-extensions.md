@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Rough Heston, Markovian Lifts, VIX in Rough Vol & Microstructural Foundations"
+title: "3.12.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - rough-volatility-and-fractional-models

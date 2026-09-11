@@ -1,5 +1,5 @@
 ---
-title: "03 — Concentrated Liquidity & Uniswap v3: Ticks, LP Value & Short Gamma"
+title: "6.11.3 Concentrated Liquidity & Uniswap v3"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

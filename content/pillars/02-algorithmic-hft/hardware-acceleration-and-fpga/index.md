@@ -1,5 +1,5 @@
 ---
-title: "Hardware Acceleration & FPGA"
+title: "2.8 Hardware Acceleration & FPGA"
 tags:
   - pillar-algorithmic-hft
   - hardware-acceleration

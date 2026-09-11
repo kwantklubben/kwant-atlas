@@ -1,5 +1,5 @@
 ---
-title: "Liquidity Risk & Asset Pricing"
+title: "6.8 Liquidity Risk & Asset Pricing"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

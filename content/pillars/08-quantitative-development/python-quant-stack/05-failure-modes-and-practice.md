@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "8.1.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-dev
   - python-quant-stack

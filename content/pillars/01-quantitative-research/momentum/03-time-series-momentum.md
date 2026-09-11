@@ -1,5 +1,5 @@
 ---
-title: "03 — Time-Series Momentum: Trend-Following & CTA"
+title: "1.4.3 Time-Series Momentum"
 tags:
   - pillar-quant-research
   - momentum

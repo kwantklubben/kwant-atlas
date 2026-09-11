@@ -1,5 +1,5 @@
 ---
-title: "Data Infrastructure & Reproducibility"
+title: "8.6 Data Infrastructure & Reproducibility"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

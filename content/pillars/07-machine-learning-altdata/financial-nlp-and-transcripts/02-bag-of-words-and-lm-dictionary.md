@@ -1,5 +1,5 @@
 ---
-title: "02 — Bag-of-Words & the Loughran–McDonald Finance Dictionary"
+title: "7.4.2 Bag-of-Words & the Loughran–McDonald Finance Dictionary"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

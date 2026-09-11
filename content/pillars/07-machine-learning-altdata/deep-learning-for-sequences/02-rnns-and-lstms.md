@@ -1,5 +1,5 @@
 ---
-title: "02 — Recurrent Networks: RNNs, the Vanishing Gradient & LSTM Gates"
+title: "7.6.2 Recurrent Networks"
 tags:
   - pillar-machine-learning
   - deep-learning-for-sequences

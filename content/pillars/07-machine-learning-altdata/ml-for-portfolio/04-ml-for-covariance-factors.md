@@ -1,5 +1,5 @@
 ---
-title: "04 — ML for Covariance & Factor Estimation: Feeding the Optimizer"
+title: "7.9.4 ML for Covariance & Factor Estimation"
 tags:
   - pillar-machine-learning
   - ml-for-portfolio

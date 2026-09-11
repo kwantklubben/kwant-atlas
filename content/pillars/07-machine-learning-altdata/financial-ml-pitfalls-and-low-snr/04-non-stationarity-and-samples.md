@@ -1,5 +1,5 @@
 ---
-title: "04 — Non-Stationarity and Non-IID Samples: Regimes, Breaks, and Overlap"
+title: "7.1.4 Non-Stationarity and Non-IID Samples"
 tags:
   - pillar-machine-learning
   - financial-ml-pitfalls-and-low-snr

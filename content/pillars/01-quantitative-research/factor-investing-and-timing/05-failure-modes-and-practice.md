@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Crowding, Decay, Costs, Timing"
+title: "1.10.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

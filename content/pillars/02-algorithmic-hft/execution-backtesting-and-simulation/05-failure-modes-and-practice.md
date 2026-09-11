@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Real-World Practice"
+title: "2.6.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

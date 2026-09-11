@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Optimal Execution RL & the Finance-RL Canon"
+title: "7.7.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

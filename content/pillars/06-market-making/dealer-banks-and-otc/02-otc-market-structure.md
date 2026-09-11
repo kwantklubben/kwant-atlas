@@ -1,5 +1,5 @@
 ---
-title: "02 — OTC Market Structure: Dealers, Interdealer Markets, RFQ and Clearing"
+title: "6.10.2 OTC Market Structure"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc

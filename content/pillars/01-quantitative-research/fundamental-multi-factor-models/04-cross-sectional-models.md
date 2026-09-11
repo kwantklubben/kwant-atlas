@@ -1,5 +1,5 @@
 ---
-title: "04 — Cross-Sectional Factor Models: Barra/Axioma, WLS/GLS & Factor Returns"
+title: "1.3.4 Cross-Sectional Factor Models"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

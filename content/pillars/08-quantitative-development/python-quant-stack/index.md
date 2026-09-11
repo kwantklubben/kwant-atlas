@@ -1,5 +1,5 @@
 ---
-title: "Python Quant Stack"
+title: "8.1 Python Quant Stack"
 tags:
   - pillar-quant-dev
   - python-quant-stack

@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Reward Hacking, Sim-to-Real, Non-Stationarity"
+title: "7.7.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

@@ -1,5 +1,5 @@
 ---
-title: "02 — Sources of Model Risk: Derman's Taxonomy & the Error Budget"
+title: "4.8.2 Sources of Model Risk"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

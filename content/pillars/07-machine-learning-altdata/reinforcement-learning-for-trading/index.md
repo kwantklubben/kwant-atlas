@@ -1,5 +1,5 @@
 ---
-title: "Reinforcement Learning for Trading"
+title: "7.7 Reinforcement Learning for Trading"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

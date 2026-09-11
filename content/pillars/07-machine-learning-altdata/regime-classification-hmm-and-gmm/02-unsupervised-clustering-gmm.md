@@ -1,5 +1,5 @@
 ---
-title: "02 — Unsupervised Regime Clustering: GMM (Soft Clusters & Responsibilities)"
+title: "7.8.2 Unsupervised Regime Clustering"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

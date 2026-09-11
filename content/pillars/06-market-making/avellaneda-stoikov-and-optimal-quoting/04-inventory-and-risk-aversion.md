@@ -1,5 +1,5 @@
 ---
-title: "04 — Inventory, Risk Aversion and the Role of Gamma"
+title: "6.2.4 Inventory, Risk Aversion and the Role of Gamma"
 tags:
   - pillar-market-making
   - avellaneda-stoikov-and-optimal-quoting

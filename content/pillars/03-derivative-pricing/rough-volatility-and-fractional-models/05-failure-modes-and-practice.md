@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: The Singular Kernel, Spurious Long Memory, Calibration & Model Risk"
+title: "3.12.5 Failure Modes & Practice"
 tags:
   - pillar-derivative-pricing
   - rough-volatility-and-fractional-models

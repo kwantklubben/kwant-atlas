@@ -1,5 +1,5 @@
 ---
-title: "03 — Coherent Risk Measures: The Artzner Axioms & Scenario Representation"
+title: "4.1.3 Coherent Risk Measures"
 tags:
   - pillar-quantitative-risk
   - var-and-expected-shortfall

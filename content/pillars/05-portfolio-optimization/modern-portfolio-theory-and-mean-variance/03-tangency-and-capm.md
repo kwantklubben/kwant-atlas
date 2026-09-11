@@ -1,5 +1,5 @@
 ---
-title: "03 — Tangency Portfolio, the Capital Market Line & CAPM"
+title: "5.1.3 Tangency Portfolio, the Capital Market Line & CAPM"
 tags:
   - pillar-portfolio-optimization
   - modern-portfolio-theory-and-mean-variance

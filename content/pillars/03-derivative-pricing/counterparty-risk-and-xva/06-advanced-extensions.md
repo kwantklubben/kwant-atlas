@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: CVA Capital, Wrong-Way Risk, and the xVA Desk"
+title: "3.10.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - counterparty-risk

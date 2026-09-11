@@ -1,5 +1,5 @@
 ---
-title: "04 - Lock-Free Channels & Ring Buffers: the SPSC Queue"
+title: "2.9.4 Lock-Free Channels & Ring Buffers"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

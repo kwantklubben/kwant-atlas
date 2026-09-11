@@ -1,5 +1,5 @@
 ---
-title: "03 — Extreme Value Theory: Fisher–Tippett–Gnedenko, the GEV, and Tail-Index Estimation"
+title: "4.3.3 Extreme Value Theory"
 tags:
   - pillar-quantitative-risk
   - extreme-value-theory

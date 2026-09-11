@@ -1,5 +1,5 @@
 ---
-title: "01 — Covariance Shrinkage from Zero: Why the Sample Matrix Lies"
+title: "5.2.1 Covariance Shrinkage from Zero"
 tags:
   - pillar-portfolio-optimization
   - covariance-shrinkage

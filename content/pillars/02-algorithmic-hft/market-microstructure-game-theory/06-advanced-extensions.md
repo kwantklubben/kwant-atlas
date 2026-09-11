@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Competing Insiders, Many-Agent Crowding, Stochastic Liquidity"
+title: "2.10.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - market-microstructure-game-theory

@@ -1,5 +1,5 @@
 ---
-title: "03 — The Kalman Filter: Prediction, Update, Gain"
+title: "1.5.3 The Kalman Filter"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

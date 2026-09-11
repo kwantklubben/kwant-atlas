@@ -1,5 +1,5 @@
 ---
-title: "02 - Kyle (1985) and the Back Continuous-Time Limit"
+title: "2.10.2 Kyle (1985) and the Back Continuous-Time Limit"
 tags:
   - pillar-algorithmic-hft
   - market-microstructure-game-theory

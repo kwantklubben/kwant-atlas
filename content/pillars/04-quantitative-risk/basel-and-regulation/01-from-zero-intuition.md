@@ -1,5 +1,5 @@
 ---
-title: "01 — Basel & Regulation from Zero: Why Banks Are Regulated"
+title: "4.9.1 Basel & Regulation from Zero"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

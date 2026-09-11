@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: the Winner's Curse, Underestimated µ, Spread Widening, Toxicity"
+title: "6.4.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-market-making
   - failure-modes

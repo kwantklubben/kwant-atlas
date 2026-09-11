@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Feature Importance, Ensembles & Why Trees Win"
+title: "7.3.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

@@ -1,5 +1,5 @@
 ---
-title: "01 — GARCH from Zero: Intuition & the Why"
+title: "1.9.1 GARCH from Zero"
 tags:
   - pillar-quant-research
   - garch-and-volatility-modeling

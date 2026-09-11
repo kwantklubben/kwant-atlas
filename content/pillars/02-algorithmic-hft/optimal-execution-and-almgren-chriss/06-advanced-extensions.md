@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Nonlinear Impact, Resilient Books, Dark Pools, Adaptive Control"
+title: "2.2.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution

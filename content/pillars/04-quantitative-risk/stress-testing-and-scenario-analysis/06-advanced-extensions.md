@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Macro Stress Testing & Supervisory Stress Tests (CCAR, EBA, FRTB)"
+title: "4.5.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - stress-testing-and-scenario-analysis

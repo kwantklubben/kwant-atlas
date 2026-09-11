@@ -1,5 +1,5 @@
 ---
-title: "04 — Calibrating Stochastic Volatility: Heston, SABR & the Identification Problem"
+title: "3.11.4 Calibrating Stochastic Volatility"
 tags:
   - pillar-derivative-pricing
   - calibration-and-market-practice

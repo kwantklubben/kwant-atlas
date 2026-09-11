@@ -1,5 +1,5 @@
 ---
-title: "02 — Delta, Gamma, Vega: Option Sensitivities as Risk Factors"
+title: "4.11.2 Delta, Gamma, Vega"
 tags:
   - pillar-quantitative-risk
   - risk-factor-sensitivities

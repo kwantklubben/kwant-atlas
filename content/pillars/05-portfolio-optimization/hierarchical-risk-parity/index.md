@@ -1,5 +1,5 @@
 ---
-title: "Hierarchical Risk Parity (HRP)"
+title: "5.5 Hierarchical Risk Parity (HRP)"
 tags:
   - pillar-portfolio-optimization
   - hierarchical-risk-parity

@@ -1,5 +1,5 @@
 ---
-title: "01 - From Zero: Markets Are Games Between Makers, Informed and Noise"
+title: "2.10.1 From Zero"
 tags:
   - pillar-algorithmic-hft
   - market-microstructure-game-theory

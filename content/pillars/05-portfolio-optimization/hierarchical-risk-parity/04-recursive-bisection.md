@@ -1,5 +1,5 @@
 ---
-title: "04 — Recursive Bisection: Allocating Down the Tree"
+title: "5.5.4 Recursive Bisection"
 tags:
   - pillar-portfolio-optimization
   - hierarchical-risk-parity

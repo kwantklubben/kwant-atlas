@@ -1,5 +1,5 @@
 ---
-title: "04 - Vectorized vs Event-Driven: Same Signal, Two Different Worlds"
+title: "8.7.4 Vectorized vs Event-Driven"
 tags:
   - pillar-quant-dev
   - event-driven-backtesting

@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Inventory Limits, Forced Liquidation, Risk Limits"
+title: "6.3.5 Failure Modes & Practice"
 tags:
   - pillar-market-making
   - inventory-management-and-quote-skewing

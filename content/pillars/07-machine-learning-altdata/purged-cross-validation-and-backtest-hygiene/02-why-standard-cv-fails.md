@@ -1,5 +1,5 @@
 ---
-title: "02 — Why Standard k-Fold CV Fails in Finance"
+title: "7.2.2 Why Standard k-Fold CV Fails in Finance"
 tags:
   - pillar-machine-learning
   - purged-cross-validation

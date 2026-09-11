@@ -1,5 +1,5 @@
 ---
-title: "Parametric, Historical & Monte Carlo VaR"
+title: "4.2 Parametric, Historical & Monte Carlo VaR"
 tags:
   - pillar-quantitative-risk
   - parametric-historical-and-monte-carlo-var

@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Batch Auctions & the Arms-Race Debate"
+title: "2.7.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - batch-auctions

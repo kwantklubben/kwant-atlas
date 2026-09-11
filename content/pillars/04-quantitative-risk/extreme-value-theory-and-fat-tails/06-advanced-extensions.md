@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Filtered EVT, Multivariate EVT & Copulas"
+title: "4.3.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - extreme-value-theory

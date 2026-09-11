@@ -1,5 +1,5 @@
 ---
-title: "04 — FVA & MVA: The Cost of Funding (Under- and Over-Collateralisation)"
+title: "3.10.4 FVA & MVA"
 tags:
   - pillar-derivative-pricing
   - counterparty-risk

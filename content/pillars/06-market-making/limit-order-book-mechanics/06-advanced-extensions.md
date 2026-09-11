@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Stochastic Models of the Order Book"
+title: "6.1.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

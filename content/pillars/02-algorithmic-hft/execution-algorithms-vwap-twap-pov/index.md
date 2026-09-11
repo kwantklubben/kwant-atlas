@@ -1,5 +1,5 @@
 ---
-title: "Execution Algorithms: VWAP, TWAP, POV, Implementation Shortfall"
+title: "2.3 Execution Algorithms: VWAP, TWAP, POV, Implementation Shortfall"
 tags:
   - pillar-algorithmic-hft
   - execution-algos

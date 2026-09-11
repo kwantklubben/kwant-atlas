@@ -1,5 +1,5 @@
 ---
-title: "01 — Statistical Arbitrage & Pairs Trading from Zero: Correlation Is Not Cointegration"
+title: "1.1.1 Statistical Arbitrage & Pairs Trading from Zero"
 tags:
   - pillar-quant-research
   - statistical-arbitrage-and-pairs

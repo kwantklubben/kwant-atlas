@@ -1,5 +1,5 @@
 ---
-title: "Signal Processing & Kalman Filtering"
+title: "1.5 Signal Processing & Kalman Filtering"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

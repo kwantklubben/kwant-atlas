@@ -1,5 +1,5 @@
 ---
-title: "05 — HRP Failure Modes & Real-World Practice"
+title: "5.5.5 HRP Failure Modes & Real-World Practice"
 tags:
   - pillar-portfolio-optimization
   - hierarchical-risk-parity

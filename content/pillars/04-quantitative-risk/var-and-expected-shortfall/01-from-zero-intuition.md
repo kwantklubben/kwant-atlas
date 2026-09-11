@@ -1,5 +1,5 @@
 ---
-title: "01 — Value at Risk & Expected Shortfall from Zero: Intuition & the Why"
+title: "4.1.1 Value at Risk & Expected Shortfall from Zero"
 tags:
   - pillar-quantitative-risk
   - var-and-expected-shortfall

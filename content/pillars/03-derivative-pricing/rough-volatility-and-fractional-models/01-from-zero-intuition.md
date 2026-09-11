@@ -1,5 +1,5 @@
 ---
-title: "01 — Rough Volatility from Zero: Why Log-Vol Is Rougher Than Brownian Motion"
+title: "3.12.1 Rough Volatility from Zero"
 tags:
   - pillar-derivative-pricing
   - rough-volatility-and-fractional-models

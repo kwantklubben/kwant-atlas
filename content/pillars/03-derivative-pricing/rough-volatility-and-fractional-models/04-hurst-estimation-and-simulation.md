@@ -1,5 +1,5 @@
 ---
-title: "04 — Hurst Estimation & Rough-Vol Simulation: The Variogram OLS and the Hybrid Scheme"
+title: "3.12.4 Hurst Estimation & Rough-Vol Simulation"
 tags:
   - pillar-derivative-pricing
   - rough-volatility-and-fractional-models

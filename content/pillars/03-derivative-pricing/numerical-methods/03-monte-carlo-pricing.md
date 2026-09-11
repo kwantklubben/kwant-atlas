@@ -1,5 +1,5 @@
 ---
-title: "03 — Monte Carlo Pricing: the Estimator, Paths and Path Dependence"
+title: "3.8.3 Monte Carlo Pricing"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: polars/Arrow & the Production Limits of Python"
+title: "8.1.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - python-quant-stack

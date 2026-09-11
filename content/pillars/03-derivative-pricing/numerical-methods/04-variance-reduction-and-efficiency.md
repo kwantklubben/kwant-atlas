@@ -1,5 +1,5 @@
 ---
-title: "04 — Variance Reduction & Monte Carlo Efficiency"
+title: "3.8.4 Variance Reduction & Monte Carlo Efficiency"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

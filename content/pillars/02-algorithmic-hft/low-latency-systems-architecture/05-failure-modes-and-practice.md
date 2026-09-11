@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Practice: Tail Latency, Allocation, Cache"
+title: "2.9.5 Failure Modes & Practice"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

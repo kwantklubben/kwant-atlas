@@ -1,5 +1,5 @@
 ---
-title: "01 — Interest Rates & Term Structure from Zero: Intuition & the Why"
+title: "3.9.1 Interest Rates & Term Structure from Zero"
 tags:
   - pillar-derivative-pricing
   - interest-rates

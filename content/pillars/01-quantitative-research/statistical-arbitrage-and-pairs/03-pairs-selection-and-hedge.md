@@ -1,5 +1,5 @@
 ---
-title: "03 — Pairs Selection & Hedging: Distance Method vs Cointegration"
+title: "1.1.3 Pairs Selection & Hedging"
 tags:
   - pillar-quant-research
   - statistical-arbitrage-and-pairs

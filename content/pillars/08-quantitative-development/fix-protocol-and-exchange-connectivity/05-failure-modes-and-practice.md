@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Practice: Desync, Duplicates & Certification"
+title: "8.8.5 Failure Modes & Practice"
 tags:
   - pillar-quant-dev
   - fix-protocol

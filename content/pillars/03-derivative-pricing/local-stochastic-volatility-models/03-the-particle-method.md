@@ -1,5 +1,5 @@
 ---
-title: "03 — The Particle Method: Solving the McKean–Vlasov Fixed Point by Monte-Carlo Binning"
+title: "3.13.3 The Particle Method"
 tags:
   - pillar-derivative-pricing
   - local-stochastic-volatility-models

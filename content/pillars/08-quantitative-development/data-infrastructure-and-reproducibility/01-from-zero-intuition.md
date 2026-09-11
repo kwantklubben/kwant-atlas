@@ -1,5 +1,5 @@
 ---
-title: "01 - Data Infrastructure & Reproducibility from Zero: Intuition & the Why"
+title: "8.6.1 Data Infrastructure & Reproducibility from Zero"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

@@ -1,5 +1,5 @@
 ---
-title: "02 — Exposure Profiles: EE, EPE, ENE and PFE"
+title: "4.7.2 Exposure Profiles"
 tags:
   - pillar-quantitative-risk
   - counterparty-risk-and-xva

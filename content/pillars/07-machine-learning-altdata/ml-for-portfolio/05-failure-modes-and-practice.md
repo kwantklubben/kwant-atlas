@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: What Breaks When ML Meets the Optimizer"
+title: "7.9.5 Failure Modes & Practice"
 tags:
   - pillar-machine-learning
   - ml-for-portfolio

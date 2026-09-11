@@ -1,5 +1,5 @@
 ---
-title: "02 — Markovian Projection & the Leverage Function: Gyöngy's Theorem, Dupire's Local Vol and the One-Factor Completeness Argument"
+title: "3.13.2 Markovian Projection & the Leverage Function"
 tags:
   - pillar-derivative-pricing
   - local-stochastic-volatility-models

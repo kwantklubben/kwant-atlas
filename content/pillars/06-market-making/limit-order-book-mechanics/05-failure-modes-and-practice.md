@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "6.1.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

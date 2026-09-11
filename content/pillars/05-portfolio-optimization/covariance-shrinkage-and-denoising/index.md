@@ -1,5 +1,5 @@
 ---
-title: "Covariance Shrinkage & Denoising"
+title: "5.2 Covariance Shrinkage & Denoising"
 tags:
   - pillar-portfolio-optimization
   - covariance-shrinkage

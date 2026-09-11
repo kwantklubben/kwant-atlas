@@ -1,5 +1,5 @@
 ---
-title: "02 — Feature Construction: Turning Raw Data into Stationary, Leak-Free Predictors"
+title: "1.6.2 Feature Construction"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

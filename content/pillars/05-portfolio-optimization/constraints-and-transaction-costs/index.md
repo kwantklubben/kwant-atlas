@@ -1,5 +1,5 @@
 ---
-title: "Constraints & Transaction Costs"
+title: "5.8 Constraints & Transaction Costs"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

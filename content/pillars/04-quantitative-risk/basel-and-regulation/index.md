@@ -1,5 +1,5 @@
 ---
-title: "Basel & Regulation"
+title: "4.9 Basel & Regulation"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

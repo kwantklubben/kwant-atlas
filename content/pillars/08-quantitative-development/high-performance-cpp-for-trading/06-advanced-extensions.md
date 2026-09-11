@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Profiling, Benchmark Methodology & Toolchain"
+title: "8.2.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - high-performance-cpp

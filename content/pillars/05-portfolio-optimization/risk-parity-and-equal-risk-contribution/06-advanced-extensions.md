@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Leverage Aversion, the Critique & the HRP Link"
+title: "5.4.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - risk-parity-and-equal-risk-contribution

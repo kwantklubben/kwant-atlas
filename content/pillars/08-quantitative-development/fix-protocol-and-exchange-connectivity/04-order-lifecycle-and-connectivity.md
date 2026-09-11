@@ -1,5 +1,5 @@
 ---
-title: "04 - Order Lifecycle & Connectivity Architecture"
+title: "8.8.4 Order Lifecycle & Connectivity Architecture"
 tags:
   - pillar-quant-dev
   - fix-protocol

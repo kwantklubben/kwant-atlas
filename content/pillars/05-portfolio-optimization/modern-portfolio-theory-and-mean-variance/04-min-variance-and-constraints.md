@@ -1,5 +1,5 @@
 ---
-title: "04 — Minimum-Variance Portfolio & the Constraints That Bind"
+title: "5.1.4 Minimum-Variance Portfolio & the Constraints That Bind"
 tags:
   - pillar-portfolio-optimization
   - modern-portfolio-theory-and-mean-variance

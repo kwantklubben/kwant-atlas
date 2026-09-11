@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Regulation, Tick Size, and Payment for Order Flow"
+title: "6.9.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

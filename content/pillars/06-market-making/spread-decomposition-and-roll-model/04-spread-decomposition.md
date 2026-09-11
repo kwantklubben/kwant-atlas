@@ -1,5 +1,5 @@
 ---
-title: "04 — Spread Decomposition: Order Processing, Inventory & Adverse Selection"
+title: "6.5.4 Spread Decomposition"
 tags:
   - pillar-market-making
   - spread-decomposition-and-roll-model

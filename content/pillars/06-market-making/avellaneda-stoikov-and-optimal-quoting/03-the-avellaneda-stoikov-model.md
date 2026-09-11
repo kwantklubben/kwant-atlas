@@ -1,5 +1,5 @@
 ---
-title: "03 — The Avellaneda–Stoikov Model: Reservation Price & Optimal Spread"
+title: "6.2.3 The Avellaneda–Stoikov Model"
 tags:
   - pillar-market-making
   - avellaneda-stoikov-and-optimal-quoting

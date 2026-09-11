@@ -1,5 +1,5 @@
 ---
-title: "04 — MEV, Sandwiching & Cross-Venue Arbitrage: Adverse Selection in DeFi"
+title: "6.11.4 MEV, Sandwiching & Cross-Venue Arbitrage"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

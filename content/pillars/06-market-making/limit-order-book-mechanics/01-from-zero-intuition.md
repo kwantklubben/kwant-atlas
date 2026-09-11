@@ -1,5 +1,5 @@
 ---
-title: "01 — Limit Order Book Mechanics from Zero: Intuition & the Why"
+title: "6.1.1 Limit Order Book Mechanics from Zero"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

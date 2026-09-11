@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: MVO the Estimation-Error Maximizer"
+title: "5.1.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-portfolio-optimization
   - modern-portfolio-theory-and-mean-variance

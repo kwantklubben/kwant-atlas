@@ -1,5 +1,5 @@
 ---
-title: "Smart Order Routing and Fragmentation"
+title: "2.5 Smart Order Routing and Fragmentation"
 tags:
   - pillar-algorithmic-hft
   - smart-order-routing

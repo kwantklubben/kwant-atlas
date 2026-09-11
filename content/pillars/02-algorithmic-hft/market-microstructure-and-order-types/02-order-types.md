@@ -1,5 +1,5 @@
 ---
-title: "02 - Order Types: Mechanics, Payoffs and Execution Costs"
+title: "2.1.2 Order Types"
 tags:
   - pillar-algorithmic-hft
   - order-types

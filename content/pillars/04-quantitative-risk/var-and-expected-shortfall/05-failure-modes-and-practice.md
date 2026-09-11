@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Tail Blindness, Estimation Error & Backtesting"
+title: "4.1.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quantitative-risk
   - var-and-expected-shortfall

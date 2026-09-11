@@ -1,5 +1,5 @@
 ---
-title: "03 — Equal Risk Contribution (ERC): the Convex Problem & Its Closed Forms"
+title: "5.4.3 Equal Risk Contribution (ERC)"
 tags:
   - pillar-portfolio-optimization
   - risk-parity-and-equal-risk-contribution

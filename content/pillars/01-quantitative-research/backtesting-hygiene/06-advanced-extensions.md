@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Purged CV, PBO & the Reality Check"
+title: "1.2.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

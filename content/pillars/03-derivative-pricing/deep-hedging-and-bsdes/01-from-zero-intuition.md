@@ -1,5 +1,5 @@
 ---
-title: "01 — Deep Hedging from Zero: Why Replication Fails When the Market Is Incomplete"
+title: "3.14.1 Deep Hedging from Zero"
 tags:
   - pillar-derivative-pricing
   - deep-hedging-and-bsdes

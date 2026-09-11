@@ -1,5 +1,5 @@
 ---
-title: "ML for Portfolio Construction"
+title: "7.9 ML for Portfolio Construction"
 tags:
   - pillar-machine-learning
   - ml-for-portfolio

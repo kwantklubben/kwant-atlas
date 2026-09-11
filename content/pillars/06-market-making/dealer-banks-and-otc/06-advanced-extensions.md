@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Central Clearing, Dark Markets, Information"
+title: "6.10.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc

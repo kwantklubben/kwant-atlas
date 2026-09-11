@@ -1,5 +1,5 @@
 ---
-title: "02 — Why Finance Is Not Normal ML: Non-IID Samples & Adaptive Markets"
+title: "7.1.2 Why Finance Is Not Normal ML"
 tags:
   - pillar-machine-learning
   - financial-ml-pitfalls-and-low-snr

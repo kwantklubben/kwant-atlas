@@ -1,5 +1,5 @@
 ---
-title: "Exotic & Path-Dependent Options"
+title: "3.7 Exotic & Path-Dependent Options"
 tags:
   - pillar-derivative-pricing
   - exotic-options

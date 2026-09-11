@@ -1,5 +1,5 @@
 ---
-title: "Purged Cross-Validation & Backtest Hygiene"
+title: "7.2 Purged Cross-Validation & Backtest Hygiene"
 tags:
   - pillar-machine-learning
   - purged-cross-validation

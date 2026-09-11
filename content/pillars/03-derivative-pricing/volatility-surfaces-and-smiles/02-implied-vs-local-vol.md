@@ -1,5 +1,5 @@
 ---
-title: "02 — Implied vs Local Volatility: Dupire's Formula & the Mapping"
+title: "3.4.2 Implied vs Local Volatility"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

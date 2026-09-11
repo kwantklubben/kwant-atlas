@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Spectral Risk Measures, Euler Allocation & Basel ES"
+title: "4.1.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - var-and-expected-shortfall

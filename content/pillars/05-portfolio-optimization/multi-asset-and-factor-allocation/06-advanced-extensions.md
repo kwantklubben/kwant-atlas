@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Regime-Conditional, Trend & Risk-Budgeted Allocation"
+title: "5.9.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - multi-asset-and-factor-allocation

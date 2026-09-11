@@ -1,5 +1,5 @@
 ---
-title: "03 — Systemic Risk Measures: CoVaR, MES, SRISK, and Marginal Contribution"
+title: "4.13.3 Systemic Risk Measures"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

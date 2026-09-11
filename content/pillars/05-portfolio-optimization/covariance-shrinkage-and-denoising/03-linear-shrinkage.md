@@ -1,5 +1,5 @@
 ---
-title: "03 — Linear Shrinkage: The Ledoit–Wolf Optimal Intensity"
+title: "5.2.3 Linear Shrinkage"
 tags:
   - pillar-portfolio-optimization
   - covariance-shrinkage

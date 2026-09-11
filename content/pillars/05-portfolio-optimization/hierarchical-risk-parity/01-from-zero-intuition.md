@@ -1,5 +1,5 @@
 ---
-title: "01 — Hierarchical Risk Parity from Zero: Intuition & the Why"
+title: "5.5.1 Hierarchical Risk Parity from Zero"
 tags:
   - pillar-portfolio-optimization
   - hierarchical-risk-parity

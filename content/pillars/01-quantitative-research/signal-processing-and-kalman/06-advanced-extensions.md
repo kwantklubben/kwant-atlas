@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Smoothing, Nonlinear & Particle Filters"
+title: "1.5.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

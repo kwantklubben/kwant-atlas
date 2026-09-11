@@ -1,5 +1,5 @@
 ---
-title: "01 - Execution Algorithms from Zero: The Parent Order and the Execution Problem"
+title: "2.3.1 Execution Algorithms from Zero"
 tags:
   - pillar-algorithmic-hft
   - execution-algos

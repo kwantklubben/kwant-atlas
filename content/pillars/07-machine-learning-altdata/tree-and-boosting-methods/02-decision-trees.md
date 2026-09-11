@@ -1,5 +1,5 @@
 ---
-title: "02 — Decision Trees: CART, Splits, Impurity & Pruning"
+title: "7.3.2 Decision Trees"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

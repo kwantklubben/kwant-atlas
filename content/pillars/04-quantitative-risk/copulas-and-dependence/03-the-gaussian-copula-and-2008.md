@@ -1,5 +1,5 @@
 ---
-title: "03 — The Gaussian Copula & the 2008 CDO Crisis"
+title: "4.12.3 The Gaussian Copula & the 2008 CDO Crisis"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

@@ -1,5 +1,5 @@
 ---
-title: "01 - Liquidity Risk & Asset Pricing from Zero: the Illiquidity Premium"
+title: "6.8.1 Liquidity Risk & Asset Pricing from Zero"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

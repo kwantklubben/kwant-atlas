@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Kyle's Lambda, PIN, Event Uncertainty, and Market Impact"
+title: "6.4.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - kyles-lambda

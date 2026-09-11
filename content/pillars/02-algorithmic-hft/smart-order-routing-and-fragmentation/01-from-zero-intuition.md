@@ -1,5 +1,5 @@
 ---
-title: "01 - Smart Order Routing from Zero: One Order, Many Venues"
+title: "2.5.1 Smart Order Routing from Zero"
 tags:
   - pillar-algorithmic-hft
   - smart-order-routing

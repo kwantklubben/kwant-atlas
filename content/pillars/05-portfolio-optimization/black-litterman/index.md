@@ -1,5 +1,5 @@
 ---
-title: "Black–Litterman"
+title: "5.3 Black–Litterman"
 tags:
   - pillar-portfolio-optimization
   - black-litterman

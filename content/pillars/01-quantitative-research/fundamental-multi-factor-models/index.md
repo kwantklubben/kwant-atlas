@@ -1,5 +1,5 @@
 ---
-title: "Fundamental Multi-Factor Models"
+title: "1.3 Fundamental Multi-Factor Models"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

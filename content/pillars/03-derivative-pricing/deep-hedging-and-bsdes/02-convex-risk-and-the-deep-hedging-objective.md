@@ -1,5 +1,5 @@
 ---
-title: "02 — Convex Risk Measures & the Deep-Hedging Objective: Variance, CVaR, Entropic"
+title: "3.14.2 Convex Risk Measures & the Deep-Hedging Objective"
 tags:
   - pillar-derivative-pricing
   - deep-hedging-and-bsdes

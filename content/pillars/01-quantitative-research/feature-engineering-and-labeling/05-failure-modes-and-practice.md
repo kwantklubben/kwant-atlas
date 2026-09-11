@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: The Labeling Checklist"
+title: "1.6.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

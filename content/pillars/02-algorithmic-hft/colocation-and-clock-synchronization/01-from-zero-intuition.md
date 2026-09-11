@@ -1,5 +1,5 @@
 ---
-title: "01 - Colocation & Clock Synchronization from Zero: Intuition, Units & the Speed of Light"
+title: "2.7.1 Colocation & Clock Synchronization from Zero"
 tags:
   - pillar-algorithmic-hft
   - colocation

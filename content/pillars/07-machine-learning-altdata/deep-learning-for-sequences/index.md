@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning for Sequences"
+title: "7.6 Deep Learning for Sequences"
 tags:
   - pillar-machine-learning
   - deep-learning-for-sequences

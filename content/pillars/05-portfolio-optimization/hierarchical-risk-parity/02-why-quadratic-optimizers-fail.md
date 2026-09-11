@@ -1,5 +1,5 @@
 ---
-title: "02 — Why Quadratic Optimizers Fail: Estimation Error Maximization"
+title: "5.5.2 Why Quadratic Optimizers Fail"
 tags:
   - pillar-portfolio-optimization
   - hierarchical-risk-parity

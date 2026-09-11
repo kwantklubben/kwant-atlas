@@ -1,5 +1,5 @@
 ---
-title: "01 — Alternative Data from Zero: Why Being Early Is the Whole Edge"
+title: "7.5.1 Alternative Data from Zero"
 tags:
   - pillar-machine-learning
   - alternative-data-pipelines-and-evaluation

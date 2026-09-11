@@ -1,5 +1,5 @@
 ---
-title: "04 — Gradient Boosting: Stagewise Additive Trees (XGBoost/LightGBM)"
+title: "7.3.4 Gradient Boosting"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

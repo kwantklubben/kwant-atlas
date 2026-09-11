@@ -1,5 +1,5 @@
 ---
-title: "Optimal Execution & Almgren–Chriss"
+title: "2.2 Optimal Execution & Almgren–Chriss"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution

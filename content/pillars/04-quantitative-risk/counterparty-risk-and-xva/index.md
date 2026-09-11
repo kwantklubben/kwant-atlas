@@ -1,5 +1,5 @@
 ---
-title: "Counterparty Risk & xVA"
+title: "4.7 Counterparty Risk & xVA"
 tags:
   - pillar-quantitative-risk
   - counterparty-risk-and-xva

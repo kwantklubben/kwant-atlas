@@ -1,5 +1,5 @@
 ---
-title: "02 — The Inventory Problem: Risk, the Optimal Position, and Mean Reversion"
+title: "6.3.2 The Inventory Problem"
 tags:
   - pillar-market-making
   - inventory-management-and-quote-skewing

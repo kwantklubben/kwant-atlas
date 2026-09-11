@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Factor Euler Allocation, Carbon-Adjusted PD & Robust Measures"
+title: "4.14.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - climate-and-esg-risk

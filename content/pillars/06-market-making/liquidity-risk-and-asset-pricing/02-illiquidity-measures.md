@@ -1,5 +1,5 @@
 ---
-title: "02 - Illiquidity Measures: Amihud ILLIQ, Bid-Ask Spread, Roll & Turnover"
+title: "6.8.2 Illiquidity Measures"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

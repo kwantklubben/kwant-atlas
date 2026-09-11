@@ -1,5 +1,5 @@
 ---
-title: "02 — Value at Risk: Definition, Geometry & the Subadditivity Flaw"
+title: "4.1.2 Value at Risk"
 tags:
   - pillar-quantitative-risk
   - var-and-expected-shortfall

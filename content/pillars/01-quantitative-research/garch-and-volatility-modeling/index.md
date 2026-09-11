@@ -1,5 +1,5 @@
 ---
-title: "GARCH & Volatility Modeling"
+title: "1.9 GARCH & Volatility Modeling"
 tags:
   - pillar-quant-research
   - garch-and-volatility-modeling

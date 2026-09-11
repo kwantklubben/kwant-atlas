@@ -1,5 +1,5 @@
 ---
-title: "02 - Fragmentation and the NBBO: The Consolidated View"
+title: "2.5.2 Fragmentation and the NBBO"
 tags:
   - pillar-algorithmic-hft
   - fragmentation

@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Corporate-Bond Illiquidity and Beyond"
+title: "6.8.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

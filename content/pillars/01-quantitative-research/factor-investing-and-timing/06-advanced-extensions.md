@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Factor Timing, Valuation Spreads & Trend"
+title: "1.10.6 Advanced Extensions"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

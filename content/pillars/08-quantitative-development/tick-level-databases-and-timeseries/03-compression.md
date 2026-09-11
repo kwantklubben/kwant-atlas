@@ -1,5 +1,5 @@
 ---
-title: "03 - Compression: Delta, Dictionary, and Bit-Packing"
+title: "8.5.3 Compression"
 tags:
   - pillar-quant-dev
   - tick-level-databases-and-timeseries

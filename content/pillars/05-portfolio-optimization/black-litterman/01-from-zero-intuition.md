@@ -1,5 +1,5 @@
 ---
-title: "01 — Black–Litterman from Zero: Why Naive Mean–Variance Fails"
+title: "5.3.1 Black–Litterman from Zero"
 tags:
   - pillar-portfolio-optimization
   - black-litterman

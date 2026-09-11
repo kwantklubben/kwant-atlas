@@ -1,5 +1,5 @@
 ---
-title: "01 — Signal Processing & Kalman from Zero: Signal vs Noise"
+title: "1.5.1 Signal Processing & Kalman from Zero"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

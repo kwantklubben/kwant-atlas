@@ -1,5 +1,5 @@
 ---
-title: "01 - FIX From Zero: Why an Order Is a Message"
+title: "8.8.1 FIX From Zero"
 tags:
   - pillar-quant-dev
   - fix-protocol

@@ -1,5 +1,5 @@
 ---
-title: "02 — Parametric VaR: Variance–Covariance (Delta-Normal)"
+title: "4.2.2 Parametric VaR"
 tags:
   - pillar-quantitative-risk
   - parametric-historical-and-monte-carlo-var

@@ -1,5 +1,5 @@
 ---
-title: "03 — Bagging & Random Forests: Variance Reduction by Averaging"
+title: "7.3.3 Bagging & Random Forests"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

@@ -1,5 +1,5 @@
 ---
-title: "03 - SOR Logic: Best Price, Then Size, Then Fees"
+title: "2.5.3 SOR Logic"
 tags:
   - pillar-algorithmic-hft
   - smart-order-routing

@@ -1,5 +1,5 @@
 ---
-title: "02 — The Efficient Frontier: Analytic Derivation & Merton's Closed Forms"
+title: "5.1.2 The Efficient Frontier"
 tags:
   - pillar-portfolio-optimization
   - modern-portfolio-theory-and-mean-variance

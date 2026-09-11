@@ -1,5 +1,5 @@
 ---
-title: "Colocation & Clock Synchronization"
+title: "2.7 Colocation & Clock Synchronization"
 tags:
   - pillar-algorithmic-hft
   - colocation

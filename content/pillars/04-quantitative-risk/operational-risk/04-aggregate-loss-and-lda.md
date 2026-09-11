@@ -1,5 +1,5 @@
 ---
-title: "04 — Aggregate Loss & the Loss Distribution Approach (LDA)"
+title: "4.10.4 Aggregate Loss & the Loss Distribution Approach (LDA)"
 tags:
   - pillar-quantitative-risk
   - operational-risk

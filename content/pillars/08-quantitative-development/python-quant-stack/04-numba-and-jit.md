@@ -1,5 +1,5 @@
 ---
-title: "04 — numba & JIT: Compiled Python for the Loop You Can't Vectorize"
+title: "8.1.4 numba & JIT"
 tags:
   - pillar-quant-dev
   - python-quant-stack

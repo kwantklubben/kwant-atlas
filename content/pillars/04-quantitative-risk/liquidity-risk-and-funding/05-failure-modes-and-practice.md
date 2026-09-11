@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Horizon Blindness, Fire-Sale Externalities & Funding/Market Coupling"
+title: "4.6.5 Failure Modes & Practice"
 tags:
   - pillar-quantitative-risk
   - liquidity-risk-and-funding

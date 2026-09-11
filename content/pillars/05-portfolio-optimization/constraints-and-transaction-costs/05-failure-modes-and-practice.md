@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Cost Underestimation, Turnover Explosion, Constraint Interaction"
+title: "5.8.5 Failure Modes & Practice"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

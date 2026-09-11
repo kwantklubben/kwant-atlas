@@ -1,5 +1,5 @@
 ---
-title: "03 — Rates and Key-Rate Duration: DV01 and the Duration Ladder"
+title: "4.11.3 Rates and Key-Rate Duration"
 tags:
   - pillar-quantitative-risk
   - risk-factor-sensitivities

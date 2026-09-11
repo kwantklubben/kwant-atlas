@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: When Volatility Models Lie"
+title: "1.9.5 Failure Modes & Practice"
 tags:
   - pillar-quant-research
   - garch-and-volatility-modeling

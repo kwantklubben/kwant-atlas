@@ -1,5 +1,5 @@
 ---
-title: "04 — The Square-Root Law of Market Impact"
+title: "6.7.4 The Square-Root Law of Market Impact"
 tags:
   - pillar-market-making
   - market-impact

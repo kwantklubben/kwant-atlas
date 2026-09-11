@@ -1,5 +1,5 @@
 ---
-title: "04 - Time-Series Databases: kdb+, ClickHouse, DuckDB, Arctic"
+title: "8.5.4 Time-Series Databases"
 tags:
   - pillar-quant-dev
   - tick-level-databases-and-timeseries

@@ -1,5 +1,5 @@
 ---
-title: "04 — The Deflated Sharpe Ratio: Correcting for Selection Bias & Non-Normality"
+title: "1.2.4 The Deflated Sharpe Ratio"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

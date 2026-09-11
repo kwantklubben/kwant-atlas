@@ -1,5 +1,5 @@
 ---
-title: "04 — Monte Carlo VaR (Simulate the Factors, Full Revaluation)"
+title: "4.2.4 Monte Carlo VaR (Simulate the Factors, Full Revaluation)"
 tags:
   - pillar-quantitative-risk
   - parametric-historical-and-monte-carlo-var

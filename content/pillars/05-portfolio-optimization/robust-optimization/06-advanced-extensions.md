@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Shrinkage, Bayesian Priors & Distributionally Robust Allocation"
+title: "5.6.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - robust-optimization

@@ -1,5 +1,5 @@
 ---
-title: "01 - Production Trading Systems from Zero: Intuition & the Why"
+title: "8.9.1 Production Trading Systems from Zero"
 tags:
   - pillar-quant-dev
   - production-trading-systems

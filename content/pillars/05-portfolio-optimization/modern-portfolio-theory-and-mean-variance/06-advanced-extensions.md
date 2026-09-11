@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Estimation Error, Shrinkage & the Road to Robust Allocation"
+title: "5.1.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - modern-portfolio-theory-and-mean-variance

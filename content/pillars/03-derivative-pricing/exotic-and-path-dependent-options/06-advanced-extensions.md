@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Discrete Monitoring & Monte Carlo for Path-Dependence"
+title: "3.7.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - exotic-options

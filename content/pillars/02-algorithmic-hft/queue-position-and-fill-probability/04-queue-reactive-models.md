@@ -1,5 +1,5 @@
 ---
-title: "04 - Queue-Reactive Models: Birth-Death Dynamics and Price Moves"
+title: "2.4.4 Queue-Reactive Models"
 tags:
   - pillar-algorithmic-hft
   - queue-reactive

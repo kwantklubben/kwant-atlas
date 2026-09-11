@@ -1,5 +1,5 @@
 ---
-title: "04 — Tail Dependence & the t-Copula"
+title: "4.12.4 Tail Dependence & the t-Copula"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

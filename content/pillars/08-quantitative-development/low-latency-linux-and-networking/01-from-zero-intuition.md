@@ -1,5 +1,5 @@
 ---
-title: "01 - Low-Latency Linux & Networking from Zero: Intuition & the Why"
+title: "8.4.1 Low-Latency Linux & Networking from Zero"
 tags:
   - pillar-quant-dev
   - low-latency-linux

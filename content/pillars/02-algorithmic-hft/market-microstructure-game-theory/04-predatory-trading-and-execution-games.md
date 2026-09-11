@@ -1,5 +1,5 @@
 ---
-title: "04 - Predatory Trading and Games Among Competing Liquidators"
+title: "2.10.4 Predatory Trading and Games Among Competing Liquidators"
 tags:
   - pillar-algorithmic-hft
   - market-microstructure-game-theory

@@ -1,5 +1,5 @@
 ---
-title: "02 — Weight Constraints: Long-Only, Caps, and Group Bounds"
+title: "5.8.2 Weight Constraints"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

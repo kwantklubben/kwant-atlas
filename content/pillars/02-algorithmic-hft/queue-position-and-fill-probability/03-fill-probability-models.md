@@ -1,5 +1,5 @@
 ---
-title: "03 - Fill-Probability Models: Survival, Hazard, and the Fill Function"
+title: "2.4.3 Fill-Probability Models"
 tags:
   - pillar-algorithmic-hft
   - fill-probability

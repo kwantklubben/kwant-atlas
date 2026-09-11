@@ -1,5 +1,5 @@
 ---
-title: "Market Microstructure and Order Types"
+title: "2.1 Market Microstructure and Order Types"
 tags:
   - pillar-algorithmic-hft
   - microstructure

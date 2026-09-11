@@ -1,5 +1,5 @@
 ---
-title: "01 — Path Signatures from Zero: Why a Path Is More Than Its Endpoint"
+title: "3.15.1 Path Signatures from Zero"
 tags:
   - pillar-derivative-pricing
   - path-signatures-and-rough-paths

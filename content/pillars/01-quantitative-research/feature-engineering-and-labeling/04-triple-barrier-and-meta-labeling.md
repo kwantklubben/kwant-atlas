@@ -1,5 +1,5 @@
 ---
-title: "04 — Triple-Barrier & Meta-Labeling: Separating Direction from Bet Size"
+title: "1.6.4 Triple-Barrier & Meta-Labeling"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

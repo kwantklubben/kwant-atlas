@@ -1,5 +1,5 @@
 ---
-title: "04 - Reproducibility: Pinning Data, Code, and Environment"
+title: "8.6.4 Reproducibility"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

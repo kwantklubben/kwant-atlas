@@ -1,5 +1,5 @@
 ---
-title: "03 — Lookbacks & Asian (Average-Rate) Options"
+title: "3.7.3 Lookbacks & Asian (Average-Rate) Options"
 tags:
   - pillar-derivative-pricing
   - exotic-options

@@ -1,5 +1,5 @@
 ---
-title: "01 — Dealer Banks & OTC Markets from Zero: Why OTC Exists"
+title: "6.10.1 Dealer Banks & OTC Markets from Zero"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc

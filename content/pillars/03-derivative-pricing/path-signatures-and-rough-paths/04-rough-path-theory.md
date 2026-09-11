@@ -1,5 +1,5 @@
 ---
-title: "04 — Rough Path Theory: p-Variation, the Rough-Path Lift & the Extension Theorem"
+title: "3.15.4 Rough Path Theory"
 tags:
   - pillar-derivative-pricing
   - path-signatures-and-rough-paths

@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Practice: Reconciliation, Incidents & Post-Mortems"
+title: "8.9.5 Failure Modes & Practice"
 tags:
   - pillar-quant-dev
   - production-trading-systems

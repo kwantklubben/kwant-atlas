@@ -1,5 +1,5 @@
 ---
-title: "01 — Extreme Value Theory & Fat Tails from Zero: Intuition & the Why"
+title: "4.3.1 Extreme Value Theory & Fat Tails from Zero"
 tags:
   - pillar-quantitative-risk
   - extreme-value-theory

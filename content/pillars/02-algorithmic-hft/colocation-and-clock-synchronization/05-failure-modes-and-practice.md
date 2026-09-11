@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Practice: Clock Skew, Latency Underestimation, the Arms Race"
+title: "2.7.5 Failure Modes & Practice"
 tags:
   - pillar-algorithmic-hft
   - failure-modes

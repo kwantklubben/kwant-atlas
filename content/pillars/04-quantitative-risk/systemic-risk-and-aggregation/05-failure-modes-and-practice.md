@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice (Procyclicality, Tail Dependence, Aggregation Fallacy)"
+title: "4.13.5 Failure Modes & Real-World Practice (Procyclicality, Tail Dependence, Aggregation Fallacy)"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

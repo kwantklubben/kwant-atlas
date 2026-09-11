@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Correlation, Crowding, Estimation Error"
+title: "5.9.5 Failure Modes & Practice"
 tags:
   - pillar-portfolio-optimization
   - multi-asset-and-factor-allocation

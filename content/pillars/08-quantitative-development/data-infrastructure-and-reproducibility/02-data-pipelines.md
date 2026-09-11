@@ -1,5 +1,5 @@
 ---
-title: "02 - Data Pipelines: Ingest, Validate, Store, Serve"
+title: "8.6.2 Data Pipelines"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

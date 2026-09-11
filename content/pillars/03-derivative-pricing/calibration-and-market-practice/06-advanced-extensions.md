@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: SVI Fitting, Rates (LMM) Calibration & Desk Practice"
+title: "3.11.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - calibration-and-market-practice

@@ -1,5 +1,5 @@
 ---
-title: "01 — Risk Parity & ERC from Zero: Intuition & the Why"
+title: "5.4.1 Risk Parity & ERC from Zero"
 tags:
   - pillar-portfolio-optimization
   - risk-parity-and-equal-risk-contribution

@@ -1,5 +1,5 @@
 ---
-title: "03 — The Low-Signal-to-Noise Problem: SNR, IC, and Effective Sample Size"
+title: "7.1.3 The Low-Signal-to-Noise Problem"
 tags:
   - pillar-machine-learning
   - financial-ml-pitfalls-and-low-snr

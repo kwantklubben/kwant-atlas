@@ -1,5 +1,5 @@
 ---
-title: "03 — Surface Models: SVI, Sticky Rules, Term Structure & Variance Swaps"
+title: "3.4.3 Surface Models"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

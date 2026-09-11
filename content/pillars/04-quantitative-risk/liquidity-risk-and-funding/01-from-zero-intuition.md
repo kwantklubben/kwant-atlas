@@ -1,5 +1,5 @@
 ---
-title: "01 — Liquidity Risk from Zero: Two Kinds of 'Can't Sell'"
+title: "4.6.1 Liquidity Risk from Zero"
 tags:
   - pillar-quantitative-risk
   - liquidity-risk-and-funding

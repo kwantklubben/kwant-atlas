@@ -1,5 +1,5 @@
 ---
-title: "02 — Barriers & Digital (Binary) Options"
+title: "3.7.2 Barriers & Digital (Binary) Options"
 tags:
   - pillar-derivative-pricing
   - exotic-options

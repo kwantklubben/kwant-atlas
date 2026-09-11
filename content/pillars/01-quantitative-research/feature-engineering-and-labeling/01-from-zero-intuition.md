@@ -1,5 +1,5 @@
 ---
-title: "01 — Feature Engineering & Labeling from Zero: Why the Target Is the Problem"
+title: "1.6.1 Feature Engineering & Labeling from Zero"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

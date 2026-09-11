@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Generalized Roll, Random-Walk Decomposition & Price Impact"
+title: "6.5.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - spread-decomposition-and-roll-model

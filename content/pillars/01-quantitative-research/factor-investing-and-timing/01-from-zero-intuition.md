@@ -1,5 +1,5 @@
 ---
-title: "01 — Factor Investing from Zero: Intuition & the Why"
+title: "1.10.1 Factor Investing from Zero"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

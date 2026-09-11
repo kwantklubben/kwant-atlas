@@ -1,5 +1,5 @@
 ---
-title: "04 - Auctions and Continuous Trading: Clearing, Openings and the Mark-the-Close Problem"
+title: "2.1.4 Auctions and Continuous Trading"
 tags:
   - pillar-algorithmic-hft
   - auctions

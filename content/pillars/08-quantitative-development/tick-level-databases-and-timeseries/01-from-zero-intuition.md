@@ -1,5 +1,5 @@
 ---
-title: "01 - Tick Data from Zero: Intuition and the Why"
+title: "8.5.1 Tick Data from Zero"
 tags:
   - pillar-quant-dev
   - tick-level-databases-and-timeseries

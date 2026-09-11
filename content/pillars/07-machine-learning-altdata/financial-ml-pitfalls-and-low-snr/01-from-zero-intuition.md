@@ -1,5 +1,5 @@
 ---
-title: "01 — Financial ML Pitfalls & Low SNR from Zero: Intuition & the Why"
+title: "7.1.1 Financial ML Pitfalls & Low SNR from Zero"
 tags:
   - pillar-machine-learning
   - financial-ml-pitfalls-and-low-snr

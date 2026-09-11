@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: FVA, MVA, KVA and WWR Modelling"
+title: "4.7.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - counterparty-risk-and-xva

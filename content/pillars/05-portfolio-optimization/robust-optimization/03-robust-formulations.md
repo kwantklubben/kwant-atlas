@@ -1,5 +1,5 @@
 ---
-title: "03 — Robust Formulations: Uncertainty Sets & Worst-Case (Max-Min) Optimization"
+title: "5.6.3 Robust Formulations"
 tags:
   - pillar-portfolio-optimization
   - robust-optimization

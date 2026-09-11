@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "1.7.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-research
   - event-studies

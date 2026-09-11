@@ -1,5 +1,5 @@
 ---
-title: "Market Impact & Depth"
+title: "6.7 Market Impact & Depth"
 tags:
   - pillar-market-making
   - market-impact

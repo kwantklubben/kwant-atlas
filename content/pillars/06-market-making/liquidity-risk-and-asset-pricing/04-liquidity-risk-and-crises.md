@@ -1,5 +1,5 @@
 ---
-title: "04 - Liquidity Risk & Crises: Acharya–Pedersen and Commonality"
+title: "6.8.4 Liquidity Risk & Crises"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

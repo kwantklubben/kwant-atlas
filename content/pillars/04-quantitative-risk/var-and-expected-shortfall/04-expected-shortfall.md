@@ -1,5 +1,5 @@
 ---
-title: "04 — Expected Shortfall (CVaR): Definition, Representations & Coherence"
+title: "4.1.4 Expected Shortfall (CVaR)"
 tags:
   - pillar-quantitative-risk
   - var-and-expected-shortfall

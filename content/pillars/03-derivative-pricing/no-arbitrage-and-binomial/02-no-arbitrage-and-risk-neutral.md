@@ -1,5 +1,5 @@
 ---
-title: "02 — No-Arbitrage, the Risk-Neutral Measure & State Prices"
+title: "3.2.2 No-Arbitrage, the Risk-Neutral Measure & State Prices"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial

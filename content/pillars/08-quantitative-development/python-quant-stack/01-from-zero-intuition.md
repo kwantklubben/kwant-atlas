@@ -1,5 +1,5 @@
 ---
-title: "01 — The Python Quant Stack from Zero: Intuition & the Why"
+title: "8.1.1 The Python Quant Stack from Zero"
 tags:
   - pillar-quant-dev
   - python-quant-stack

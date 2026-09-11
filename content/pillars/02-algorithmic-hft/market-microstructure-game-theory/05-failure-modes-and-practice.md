@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes and Desk Practice: Where the Games Break"
+title: "2.10.5 Failure Modes and Desk Practice"
 tags:
   - pillar-algorithmic-hft
   - market-microstructure-game-theory

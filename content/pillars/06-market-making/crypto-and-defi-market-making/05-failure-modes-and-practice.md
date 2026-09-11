@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Fees vs LVR, Gas, Bridges, Protocol Risk"
+title: "6.11.5 Failure Modes & Practice"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

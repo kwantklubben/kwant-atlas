@@ -1,5 +1,5 @@
 ---
-title: "02 — The Constant-Product AMM (xy=k): Pricing, Slippage & Divergence Loss"
+title: "6.11.2 The Constant-Product AMM (xy=k)"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

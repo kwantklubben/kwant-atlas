@@ -1,5 +1,5 @@
 ---
-title: "02 — The Signature Algebra: Iterated Integrals, Chen's Identity & the Shuffle Product"
+title: "3.15.2 The Signature Algebra"
 tags:
   - pillar-derivative-pricing
   - path-signatures-and-rough-paths

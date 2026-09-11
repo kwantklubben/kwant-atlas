@@ -1,5 +1,5 @@
 ---
-title: "04 — Hidden Markov Models: Regimes That Persist & Switch"
+title: "7.8.4 Hidden Markov Models"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

@@ -1,5 +1,5 @@
 ---
-title: "03 - The Event Loop: Scheduling, Determinism, and the Order Lifecycle"
+title: "8.7.3 The Event Loop"
 tags:
   - pillar-quant-dev
   - event-driven-backtesting

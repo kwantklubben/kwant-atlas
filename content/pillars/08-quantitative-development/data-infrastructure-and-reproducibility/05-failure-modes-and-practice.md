@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Practice: Silent Corruption, Drift, and Leakage"
+title: "8.6.5 Failure Modes & Practice"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

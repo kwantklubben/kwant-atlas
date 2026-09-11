@@ -1,5 +1,5 @@
 ---
-title: "04 - Market Replay vs Monte Carlo Simulation"
+title: "2.6.4 Market Replay vs Monte Carlo Simulation"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

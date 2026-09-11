@@ -1,5 +1,5 @@
 ---
-title: "01 — Advanced Volatility from Zero: Why Variance Must Be a Process"
+title: "3.5.1 Advanced Volatility from Zero"
 tags:
   - pillar-derivative-pricing
   - advanced-volatility-heston-sabr

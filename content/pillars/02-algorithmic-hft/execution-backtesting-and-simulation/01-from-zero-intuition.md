@@ -1,5 +1,5 @@
 ---
-title: "01 - Execution Backtesting from Zero: Signal vs Execution"
+title: "2.6.1 Execution Backtesting from Zero"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

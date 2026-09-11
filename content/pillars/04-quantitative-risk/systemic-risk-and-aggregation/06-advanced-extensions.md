@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Macroprudential Policy & Bellini Stress Integration"
+title: "4.13.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

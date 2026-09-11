@@ -1,5 +1,5 @@
 ---
-title: "02 - Kernel Tuning for Latency: CPU Isolation, Hugepages, NUMA"
+title: "8.4.2 Kernel Tuning for Latency"
 tags:
   - pillar-quant-dev
   - low-latency-linux

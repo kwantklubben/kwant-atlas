@@ -1,5 +1,5 @@
 ---
-title: "01 - Concurrency & Lock-Free Programming from Zero: Intuition & the Why"
+title: "8.3.1 Concurrency & Lock-Free Programming from Zero"
 tags:
   - pillar-quant-dev
   - concurrency

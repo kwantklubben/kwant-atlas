@@ -1,5 +1,5 @@
 ---
-title: "03 — Liquidation Cost & Liquidity-Adjusted VaR (L-VaR)"
+title: "4.6.3 Liquidation Cost & Liquidity-Adjusted VaR (L-VaR)"
 tags:
   - pillar-quantitative-risk
   - liquidity-risk-and-funding

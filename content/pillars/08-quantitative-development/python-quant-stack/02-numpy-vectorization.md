@@ -1,5 +1,5 @@
 ---
-title: "02 — NumPy Vectorization: Broadcasting, Views vs Copies"
+title: "8.1.2 NumPy Vectorization"
 tags:
   - pillar-quant-dev
   - python-quant-stack

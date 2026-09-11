@@ -1,5 +1,5 @@
 ---
-title: "04 — ESG Scores, Temperature Alignment & the Carbon Premium"
+title: "4.14.4 ESG Scores, Temperature Alignment & the Carbon Premium"
 tags:
   - pillar-quantitative-risk
   - climate-and-esg-risk

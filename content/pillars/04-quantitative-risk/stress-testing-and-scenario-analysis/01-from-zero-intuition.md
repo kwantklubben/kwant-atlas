@@ -1,5 +1,5 @@
 ---
-title: "01 — Stress Testing from Zero: Intuition & the Why"
+title: "4.5.1 Stress Testing from Zero"
 tags:
   - pillar-quantitative-risk
   - stress-testing-and-scenario-analysis

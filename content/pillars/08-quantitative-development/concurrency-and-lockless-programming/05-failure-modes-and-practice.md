@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Real-World Practice: Races, Ordering Bugs, and Inversions"
+title: "8.3.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-dev
   - concurrency

@@ -1,5 +1,5 @@
 ---
-title: "03 - Glosten–Milgrom: Adverse Selection as a Sequential Bayesian Equilibrium"
+title: "2.10.3 Glosten–Milgrom"
 tags:
   - pillar-algorithmic-hft
   - market-microstructure-game-theory

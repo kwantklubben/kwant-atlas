@@ -1,5 +1,5 @@
 ---
-title: "02 — The Market-Maker P&L Decomposition"
+title: "6.9.2 The Market-Maker P&L Decomposition"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

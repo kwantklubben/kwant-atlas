@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Measuring Latency, Perf Histograms & PTP"
+title: "8.4.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - low-latency-linux

@@ -1,5 +1,5 @@
 ---
-title: "02 — The Kelly Formula: Discrete, Continuous, and the Critical Fraction"
+title: "5.7.2 The Kelly Formula"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

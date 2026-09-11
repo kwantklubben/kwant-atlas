@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Where Regime Labels Lie"
+title: "7.8.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

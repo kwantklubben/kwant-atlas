@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Rebate Distortion, Erosion, Inventory Blowups"
+title: "6.9.5 Failure Modes & Practice"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

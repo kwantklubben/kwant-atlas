@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Practice: Look-Ahead, Optimistic Fills, Survivorship"
+title: "8.7.5 Failure Modes & Practice"
 tags:
   - pillar-quant-dev
   - event-driven-backtesting

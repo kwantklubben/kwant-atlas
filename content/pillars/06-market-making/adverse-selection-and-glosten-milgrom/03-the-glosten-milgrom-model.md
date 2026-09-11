@@ -1,5 +1,5 @@
 ---
-title: "03 — The Glosten–Milgrom Sequential-Trade Model: the Bayesian Market Maker"
+title: "6.4.3 The Glosten–Milgrom Sequential-Trade Model"
 tags:
   - pillar-market-making
   - glosten-milgrom

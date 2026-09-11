@@ -1,5 +1,5 @@
 ---
-title: "03 — Ensembling Models: Bagging, Boosting & Weighted Model Outputs"
+title: "7.9.3 Ensembling Models"
 tags:
   - pillar-machine-learning
   - ml-for-portfolio

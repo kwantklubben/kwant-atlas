@@ -1,5 +1,5 @@
 ---
-title: "05 — Operational Risk Failure Modes: Data Scarcity, Tail Dependence & Practice"
+title: "4.10.5 Operational Risk Failure Modes"
 tags:
   - pillar-quantitative-risk
   - operational-risk

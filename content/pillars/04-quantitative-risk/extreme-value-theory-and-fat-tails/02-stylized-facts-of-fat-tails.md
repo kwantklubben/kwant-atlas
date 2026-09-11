@@ -1,5 +1,5 @@
 ---
-title: "02 — Stylized Facts of Fat-Tailed Financial Returns"
+title: "4.3.2 Stylized Facts of Fat-Tailed Financial Returns"
 tags:
   - pillar-quantitative-risk
   - extreme-value-theory

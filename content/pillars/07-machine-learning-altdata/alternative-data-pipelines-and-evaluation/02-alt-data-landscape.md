@@ -1,5 +1,5 @@
 ---
-title: "02 — The Alt-Data Landscape: Taxonomy, Breadth & Uniqueness"
+title: "7.5.2 The Alt-Data Landscape"
 tags:
   - pillar-machine-learning
   - alternative-data-pipelines-and-evaluation

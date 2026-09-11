@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Proxy Bias, Binning Noise, Gauge Freedom and 'Usable' LSV"
+title: "3.13.5 Failure Modes & Practice"
 tags:
   - pillar-derivative-pricing
   - local-stochastic-volatility-models

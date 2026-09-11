@@ -1,5 +1,5 @@
 ---
-title: "04 — The Free Boundary & the Linear-Complementarity Problem"
+title: "3.6.4 The Free Boundary & the Linear-Complementarity Problem"
 tags:
   - pillar-derivative-pricing
   - american-options

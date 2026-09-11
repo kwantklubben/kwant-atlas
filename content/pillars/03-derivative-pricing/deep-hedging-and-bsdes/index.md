@@ -1,5 +1,5 @@
 ---
-title: "Deep Hedging & BSDEs — Convex Risk Minimisation, the BSDE Backbone & Deep Solvers"
+title: "3.14 Deep Hedging & BSDEs — Convex Risk Minimisation, the BSDE Backbone & Deep Solvers"
 tags:
   - pillar-derivative-pricing
   - deep-hedging-and-bsdes

@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Agent-Based LOB and Simulator Validation"
+title: "2.6.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

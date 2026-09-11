@@ -1,5 +1,5 @@
 ---
-title: "03 — Growth & Optimality: Why Kelly Wins Investing, and at What Cost"
+title: "5.7.3 Growth & Optimality"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

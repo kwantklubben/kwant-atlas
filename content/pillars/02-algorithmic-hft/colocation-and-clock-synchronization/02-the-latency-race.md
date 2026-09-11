@@ -1,5 +1,5 @@
 ---
-title: "02 - The Latency Arms Race: Rents, Speed & Wasted Investment"
+title: "2.7.2 The Latency Arms Race"
 tags:
   - pillar-algorithmic-hft
   - arms-race

@@ -1,5 +1,5 @@
 ---
-title: "Model Risk & Validation"
+title: "4.8 Model Risk & Validation"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Regime-Conditional ML & Supervised Regime Labeling"
+title: "7.8.6 Advanced Extensions"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

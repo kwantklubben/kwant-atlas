@@ -1,5 +1,5 @@
 ---
-title: "Market-Maker Economics & Rebates"
+title: "6.9 Market-Maker Economics & Rebates"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

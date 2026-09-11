@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Real-World Practice: Hidden Allocations, Cache Misses, UB"
+title: "8.2.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-dev
   - high-performance-cpp

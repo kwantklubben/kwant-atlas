@@ -1,5 +1,5 @@
 ---
-title: "03 - The Almgren–Chriss Model: Euler-Lagrange, HJB and the Hyperbolic Trajectory"
+title: "2.2.3 The Almgren–Chriss Model"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution

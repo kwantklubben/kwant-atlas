@@ -1,5 +1,5 @@
 ---
-title: "01 — Event Studies from Zero: Intuition & the Why"
+title: "1.7.1 Event Studies from Zero"
 tags:
   - pillar-quant-research
   - event-studies

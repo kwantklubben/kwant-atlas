@@ -1,5 +1,5 @@
 ---
-title: "04 — Advanced Dynamics: Skew Stickiness, Heston Skew, Jumps & SABR"
+title: "3.4.4 Advanced Dynamics"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

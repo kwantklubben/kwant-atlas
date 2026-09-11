@@ -1,5 +1,5 @@
 ---
-title: "03 - Liquidity as a Priced Risk Factor: Pástor–Stambaugh"
+title: "6.8.3 Liquidity as a Priced Risk Factor"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

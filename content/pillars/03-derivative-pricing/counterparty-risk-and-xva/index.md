@@ -1,5 +1,5 @@
 ---
-title: "Counterparty Risk & xVA"
+title: "3.10 Counterparty Risk & xVA"
 tags:
   - pillar-derivative-pricing
   - counterparty-risk

@@ -1,5 +1,5 @@
 ---
-title: "02 — The rBergomi Model: Forward Variance, the Volterra Driver & the Power-Law Skew"
+title: "3.12.2 The rBergomi Model"
 tags:
   - pillar-derivative-pricing
   - rough-volatility-and-fractional-models

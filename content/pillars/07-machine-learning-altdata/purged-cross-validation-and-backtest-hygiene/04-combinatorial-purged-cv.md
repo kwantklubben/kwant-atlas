@@ -1,5 +1,5 @@
 ---
-title: "04 — Combinatorial Purged Cross-Validation (CPCV)"
+title: "7.2.4 Combinatorial Purged Cross-Validation (CPCV)"
 tags:
   - pillar-machine-learning
   - purged-cross-validation

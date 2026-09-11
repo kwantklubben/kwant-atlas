@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Nonlinear Shrinkage & Factor-Model Covariance"
+title: "5.2.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - covariance-shrinkage

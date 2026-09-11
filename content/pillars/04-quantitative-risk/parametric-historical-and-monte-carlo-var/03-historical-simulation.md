@@ -1,5 +1,5 @@
 ---
-title: "03 — Historical Simulation VaR (Empirical Quantile & Filtered Historical Simulation)"
+title: "4.2.3 Historical Simulation VaR (Empirical Quantile & Filtered Historical Simulation)"
 tags:
   - pillar-quantitative-risk
   - parametric-historical-and-monte-carlo-var

@@ -1,5 +1,5 @@
 ---
-title: "01 - Low-Latency from Zero: Why a Nanosecond Is Money"
+title: "2.9.1 Low-Latency from Zero"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

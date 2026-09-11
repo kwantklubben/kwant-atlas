@@ -1,5 +1,5 @@
 ---
-title: "03 - Exchanges, Dark Pools and OTC: Venues, Matching, Fees and the Regulatory Frame"
+title: "2.1.3 Exchanges, Dark Pools and OTC"
 tags:
   - pillar-algorithmic-hft
   - market-structure

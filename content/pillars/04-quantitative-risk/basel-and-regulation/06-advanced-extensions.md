@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: LCR, NSFR, Leverage Ratio & the Output Floor"
+title: "4.9.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

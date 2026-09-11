@@ -1,5 +1,5 @@
 ---
-title: "04 — Numeraire Change, the HJM Framework & Market Models (LFM/LMM, BGM)"
+title: "3.9.4 Numeraire Change, the HJM Framework & Market Models (LFM/LMM, BGM)"
 tags:
   - pillar-derivative-pricing
   - interest-rates

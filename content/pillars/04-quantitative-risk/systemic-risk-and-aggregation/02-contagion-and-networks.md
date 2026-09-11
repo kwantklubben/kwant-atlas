@@ -1,5 +1,5 @@
 ---
-title: "02 — Contagion & Financial-Network Models"
+title: "4.13.2 Contagion & Financial-Network Models"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

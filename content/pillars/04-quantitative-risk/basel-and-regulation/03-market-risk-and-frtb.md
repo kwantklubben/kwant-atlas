@@ -1,5 +1,5 @@
 ---
-title: "03 — Market Risk & FRTB: SA vs IMA, VaR → Expected Shortfall"
+title: "4.9.3 Market Risk & FRTB"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

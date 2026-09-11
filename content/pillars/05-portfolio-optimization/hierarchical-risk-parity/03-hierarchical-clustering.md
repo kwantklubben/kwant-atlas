@@ -1,5 +1,5 @@
 ---
-title: "03 — Hierarchical Clustering of Assets: Distance, Linkage, Quasi-Diagonalization"
+title: "5.5.3 Hierarchical Clustering of Assets"
 tags:
   - pillar-portfolio-optimization
   - hierarchical-risk-parity

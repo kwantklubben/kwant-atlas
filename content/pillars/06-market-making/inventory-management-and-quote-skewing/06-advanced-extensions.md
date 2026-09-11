@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Optimal Liquidation, Adverse Selection, Multi-Asset"
+title: "6.3.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - inventory-management-and-quote-skewing

@@ -1,5 +1,5 @@
 ---
-title: "FIX Protocol & Exchange Connectivity"
+title: "8.8 FIX Protocol & Exchange Connectivity"
 tags:
   - pillar-quant-dev
   - fix-protocol

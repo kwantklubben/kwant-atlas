@@ -1,5 +1,5 @@
 ---
-title: "Low-Latency Systems Architecture"
+title: "2.9 Low-Latency Systems Architecture"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

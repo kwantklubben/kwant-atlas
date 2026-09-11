@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Practice: Jitter, Configuration Drift, Measurement Error"
+title: "8.4.5 Failure Modes & Practice"
 tags:
   - pillar-quant-dev
   - low-latency-linux

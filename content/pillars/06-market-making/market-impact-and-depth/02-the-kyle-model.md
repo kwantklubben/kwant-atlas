@@ -1,5 +1,5 @@
 ---
-title: "02 — The Kyle (1985) Model: Linear Impact, Lambda & Depth"
+title: "6.7.2 The Kyle (1985) Model"
 tags:
   - pillar-market-making
   - market-impact

@@ -1,5 +1,5 @@
 ---
-title: "04 — Turnover Control & the Multi-Period Trade-Off"
+title: "5.8.4 Turnover Control & the Multi-Period Trade-Off"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

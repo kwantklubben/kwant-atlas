@@ -1,5 +1,5 @@
 ---
-title: "03 — The EKOP Model: the Poisson-Mixture Likelihood and Estimating PIN by MLE"
+title: "6.6.3 The EKOP Model"
 tags:
   - pillar-market-making
   - ekop

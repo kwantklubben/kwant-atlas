@@ -1,5 +1,5 @@
 ---
-title: "04 — Statistical Testing: t-stats, Power & Cross-Sectional Inference"
+title: "1.7.4 Statistical Testing"
 tags:
   - pillar-quant-research
   - event-studies

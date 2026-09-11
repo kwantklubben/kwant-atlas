@@ -1,5 +1,5 @@
 ---
-title: "03 — CVA & DVA: Pricing Counterparty Default Risk"
+title: "4.7.3 CVA & DVA"
 tags:
   - pillar-quantitative-risk
   - counterparty-risk-and-xva

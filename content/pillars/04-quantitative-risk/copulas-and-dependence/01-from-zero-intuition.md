@@ -1,5 +1,5 @@
 ---
-title: "01 — Copulas from Zero: Why Identical Risk Can Be Different Risk"
+title: "4.12.1 Copulas from Zero"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

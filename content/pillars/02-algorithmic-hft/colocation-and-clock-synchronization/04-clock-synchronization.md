@@ -1,5 +1,5 @@
 ---
-title: "04 - Clock Synchronization: PTP, GPS, Timestamping & the Order of Events"
+title: "2.7.4 Clock Synchronization"
 tags:
   - pillar-algorithmic-hft
   - clock-synchronization

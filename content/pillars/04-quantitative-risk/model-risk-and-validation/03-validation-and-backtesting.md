@@ -1,5 +1,5 @@
 ---
-title: "03 — Validation & Backtesting: Conceptual Soundness, Benchmarking & Outcomes"
+title: "4.8.3 Validation & Backtesting"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

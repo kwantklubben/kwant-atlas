@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Inventory Limits, Adverse Selection, Multi-Asset"
+title: "6.2.6 Advanced Extensions"
 tags:
   - pillar-market-making
   - avellaneda-stoikov-and-optimal-quoting

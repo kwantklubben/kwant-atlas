@@ -1,5 +1,5 @@
 ---
-title: "Kelly Criterion & Bet Sizing"
+title: "5.7 Kelly Criterion & Bet Sizing"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

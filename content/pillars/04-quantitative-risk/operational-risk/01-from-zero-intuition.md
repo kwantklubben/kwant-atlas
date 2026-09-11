@@ -1,5 +1,5 @@
 ---
-title: "01 — Operational Risk from Zero: Intuition & the Why"
+title: "4.10.1 Operational Risk from Zero"
 tags:
   - pillar-quantitative-risk
   - operational-risk

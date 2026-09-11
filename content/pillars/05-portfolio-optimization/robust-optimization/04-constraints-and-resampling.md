@@ -1,5 +1,5 @@
 ---
-title: "04 — Constraint-Based Robustness & Resampling (Michaud)"
+title: "5.6.4 Constraint-Based Robustness & Resampling (Michaud)"
 tags:
   - pillar-portfolio-optimization
   - robust-optimization

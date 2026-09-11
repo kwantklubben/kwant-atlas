@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Selection Bias, Benchmark Error & Drift"
+title: "4.8.5 Failure Modes & Practice"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

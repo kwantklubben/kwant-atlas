@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Misclassification, Non-Portable Thresholds, and the Andersen Critique"
+title: "6.6.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-market-making
   - failure-modes

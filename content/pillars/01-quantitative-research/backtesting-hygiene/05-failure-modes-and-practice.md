@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: The Hygiene Checklist"
+title: "1.2.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

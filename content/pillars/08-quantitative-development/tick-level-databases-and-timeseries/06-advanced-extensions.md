@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Pipelines, Bitemporal PIT, Partitioning"
+title: "8.5.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - tick-level-databases-and-timeseries

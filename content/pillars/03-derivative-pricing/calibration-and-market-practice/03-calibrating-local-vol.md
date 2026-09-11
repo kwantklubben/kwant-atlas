@@ -1,5 +1,5 @@
 ---
-title: "03 — Calibrating Local Volatility: Dupire from the Smile"
+title: "3.11.3 Calibrating Local Volatility"
 tags:
   - pillar-derivative-pricing
   - calibration-and-market-practice

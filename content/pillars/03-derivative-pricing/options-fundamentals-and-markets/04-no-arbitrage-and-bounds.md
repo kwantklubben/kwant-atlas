@@ -1,5 +1,5 @@
 ---
-title: "04 — No-Arbitrage Bounds, Parity & Early Exercise"
+title: "3.1.4 No-Arbitrage Bounds, Parity & Early Exercise"
 tags:
   - pillar-derivative-pricing
   - options-fundamentals

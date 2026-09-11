@@ -1,5 +1,5 @@
 ---
-title: "03 — Asymmetric Models: Leverage, EGARCH & GJR"
+title: "1.9.3 Asymmetric Models"
 tags:
   - pillar-quant-research
   - garch-and-volatility-modeling

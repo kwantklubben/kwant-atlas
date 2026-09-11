@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Binary Feeds, FAST/SBE & Venue-Native Protocols"
+title: "8.8.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - fix-protocol

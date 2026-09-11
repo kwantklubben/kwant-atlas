@@ -1,5 +1,5 @@
 ---
-title: "02 — Capital & RWA: The Arithmetic of the Ratio"
+title: "4.9.2 Capital & RWA"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

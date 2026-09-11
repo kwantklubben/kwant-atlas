@@ -1,5 +1,5 @@
 ---
-title: "American Options & Optimal Stopping"
+title: "3.6 American Options & Optimal Stopping"
 tags:
   - pillar-derivative-pricing
   - american-options

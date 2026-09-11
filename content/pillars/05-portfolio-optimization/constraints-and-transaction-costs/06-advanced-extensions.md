@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: The Aim Portfolio, Fixed Costs & Cross-Pillar Bridges"
+title: "5.8.6 Advanced Extensions"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

@@ -1,5 +1,5 @@
 ---
-title: "03 — Abnormal Returns & Cumulative Abnormal Returns (CAR)"
+title: "1.7.3 Abnormal Returns & Cumulative Abnormal Returns (CAR)"
 tags:
   - pillar-quant-research
   - event-studies

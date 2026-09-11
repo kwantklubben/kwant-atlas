@@ -1,5 +1,5 @@
 ---
-title: "Crypto & DeFi Market Making"
+title: "6.11 Crypto & DeFi Market Making"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

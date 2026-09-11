@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: WWR, Double-Counting, JTD"
+title: "3.10.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-derivative-pricing
   - counterparty-risk

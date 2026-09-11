@@ -1,5 +1,5 @@
 ---
-title: "03 — The Limit Order Book: State, Data Levels, and Stylised Facts"
+title: "6.1.3 The Limit Order Book"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

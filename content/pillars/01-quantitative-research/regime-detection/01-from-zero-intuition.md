@@ -1,5 +1,5 @@
 ---
-title: "01 — Regime Detection from Zero: Intuition & the Why"
+title: "1.8.1 Regime Detection from Zero"
 tags:
   - pillar-quant-research
   - regime-detection

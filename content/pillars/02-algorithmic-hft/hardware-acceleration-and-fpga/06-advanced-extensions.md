@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Microwave, In-Network Compute, and HLS"
+title: "2.8.6 Advanced Extensions"
 tags:
   - pillar-algorithmic-hft
   - fpga

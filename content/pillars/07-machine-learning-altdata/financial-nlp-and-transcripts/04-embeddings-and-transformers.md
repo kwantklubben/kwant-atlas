@@ -1,5 +1,5 @@
 ---
-title: "04 — Embeddings & Transformers: Beyond the Bag"
+title: "7.4.4 Embeddings & Transformers"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

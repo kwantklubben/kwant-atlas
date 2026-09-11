@@ -1,5 +1,5 @@
 ---
-title: "Financial NLP & Transcripts"
+title: "7.4 Financial NLP & Transcripts"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Where Text Signals Die"
+title: "7.4.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Gamma Risk, Cross-Greeks, and Non-Linearity"
+title: "4.11.5 Failure Modes & Practice"
 tags:
   - pillar-quantitative-risk
   - risk-factor-sensitivities

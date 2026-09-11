@@ -1,5 +1,5 @@
 ---
-title: "01 — No-Arbitrage from Zero: Replication in One Period"
+title: "3.2.1 No-Arbitrage from Zero"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial

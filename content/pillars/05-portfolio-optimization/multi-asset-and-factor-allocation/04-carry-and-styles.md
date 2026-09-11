@@ -1,5 +1,5 @@
 ---
-title: "04 — Carry & Styles Across Asset Classes"
+title: "5.9.4 Carry & Styles Across Asset Classes"
 tags:
   - pillar-portfolio-optimization
   - multi-asset-and-factor-allocation

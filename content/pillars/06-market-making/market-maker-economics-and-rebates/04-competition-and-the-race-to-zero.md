@@ -1,5 +1,5 @@
 ---
-title: "04 — Competition and the Race to Zero"
+title: "6.9.4 Competition and the Race to Zero"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

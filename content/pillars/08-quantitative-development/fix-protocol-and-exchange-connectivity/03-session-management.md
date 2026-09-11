@@ -1,5 +1,5 @@
 ---
-title: "03 - FIX Session Management: Logon, Heartbeats, Sequence Numbers & Resend"
+title: "8.8.3 FIX Session Management"
 tags:
   - pillar-quant-dev
   - fix-protocol

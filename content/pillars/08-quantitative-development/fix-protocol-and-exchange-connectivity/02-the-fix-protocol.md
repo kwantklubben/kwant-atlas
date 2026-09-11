@@ -1,5 +1,5 @@
 ---
-title: "02 - The FIX Protocol: Message Structure & Common Messages"
+title: "8.8.2 The FIX Protocol"
 tags:
   - pillar-quant-dev
   - fix-protocol

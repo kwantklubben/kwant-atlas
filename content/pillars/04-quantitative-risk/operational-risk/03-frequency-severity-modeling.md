@@ -1,5 +1,5 @@
 ---
-title: "03 — Frequency–Severity Modeling: Poisson Counts & Heavy-Tailed Loss Sizes"
+title: "4.10.3 Frequency–Severity Modeling"
 tags:
   - pillar-quantitative-risk
   - operational-risk

@@ -1,5 +1,5 @@
 ---
-title: "03 — The Black–Litterman Formula: Bayesian Posterior & Optimal Weights"
+title: "5.3.3 The Black–Litterman Formula"
 tags:
   - pillar-portfolio-optimization
   - black-litterman

@@ -1,5 +1,5 @@
 ---
-title: "04 — Aggregating Different Risk Types: Copulas & the (Im)possibility of Naive Sums"
+title: "4.13.4 Aggregating Different Risk Types"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

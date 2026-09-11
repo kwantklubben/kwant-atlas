@@ -1,5 +1,5 @@
 ---
-title: "02 - The Architecture: Event Queue, DataHandler, Strategy, Portfolio, ExecutionHandler"
+title: "8.7.2 The Architecture"
 tags:
   - pillar-quant-dev
   - event-driven-backtesting

@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "6.5.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-market-making
   - spread-decomposition-and-roll-model

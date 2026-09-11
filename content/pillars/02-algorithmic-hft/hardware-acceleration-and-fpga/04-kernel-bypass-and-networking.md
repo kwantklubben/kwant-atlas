@@ -1,5 +1,5 @@
 ---
-title: "04 - Kernel Bypass & Networking: The Cheapest Microseconds"
+title: "2.8.4 Kernel Bypass & Networking"
 tags:
   - pillar-algorithmic-hft
   - kernel-bypass

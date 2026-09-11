@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Crowding, Multicollinearity, the Factor Zoo"
+title: "1.3.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

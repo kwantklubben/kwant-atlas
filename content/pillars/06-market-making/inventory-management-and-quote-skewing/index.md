@@ -1,5 +1,5 @@
 ---
-title: "Inventory Management & Quote Skewing"
+title: "6.3 Inventory Management & Quote Skewing"
 tags:
   - pillar-market-making
   - inventory-management-and-quote-skewing

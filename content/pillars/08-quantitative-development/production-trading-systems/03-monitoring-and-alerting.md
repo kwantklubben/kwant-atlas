@@ -1,5 +1,5 @@
 ---
-title: "03 - Monitoring & Alerting for Trading Systems"
+title: "8.9.3 Monitoring & Alerting for Trading Systems"
 tags:
   - pillar-quant-dev
   - production-trading-systems

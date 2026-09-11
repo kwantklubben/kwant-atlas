@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice for Exotics"
+title: "3.7.5 Failure Modes & Real-World Practice for Exotics"
 tags:
   - pillar-derivative-pricing
   - exotic-options

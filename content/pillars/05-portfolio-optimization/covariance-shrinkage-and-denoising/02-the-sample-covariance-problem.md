@@ -1,5 +1,5 @@
 ---
-title: "02 — The Sample-Covariance Problem: Curse of Dimensionality & the Marchenko–Pastur Law"
+title: "5.2.2 The Sample-Covariance Problem"
 tags:
   - pillar-portfolio-optimization
   - covariance-shrinkage

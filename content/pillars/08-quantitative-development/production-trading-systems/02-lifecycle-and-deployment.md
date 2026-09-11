@@ -1,5 +1,5 @@
 ---
-title: "02 - The Research-to-Production Lifecycle & Deployment"
+title: "8.9.2 The Research-to-Production Lifecycle & Deployment"
 tags:
   - pillar-quant-dev
   - production-trading-systems

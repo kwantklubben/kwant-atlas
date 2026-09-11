@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes and Practice: Gaming, Misestimation and Adverse Selection"
+title: "2.3.5 Failure Modes and Practice"
 tags:
   - pillar-algorithmic-hft
   - execution-algos

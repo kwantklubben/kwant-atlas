@@ -1,5 +1,5 @@
 ---
-title: "Adverse Selection & the Glosten–Milgrom Model"
+title: "6.4 Adverse Selection & the Glosten–Milgrom Model"
 tags:
   - pillar-market-making
   - adverse-selection

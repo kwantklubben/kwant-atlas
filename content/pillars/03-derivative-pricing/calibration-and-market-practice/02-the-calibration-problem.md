@@ -1,5 +1,5 @@
 ---
-title: "02 — The Calibration Problem: Objectives, Regularization & Stability"
+title: "3.11.2 The Calibration Problem"
 tags:
   - pillar-derivative-pricing
   - calibration-and-market-practice

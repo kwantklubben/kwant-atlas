@@ -1,5 +1,5 @@
 ---
-title: "02 — The Merton Structural Model: Equity as a Call on Firm Assets"
+title: "4.4.2 The Merton Structural Model"
 tags:
   - pillar-quantitative-risk
   - credit-risk-and-the-merton-model

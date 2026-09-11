@@ -1,5 +1,5 @@
 ---
-title: "01 — Avellaneda–Stoikov from Zero: Why Inventory Is the Enemy"
+title: "6.2.1 Avellaneda–Stoikov from Zero"
 tags:
   - pillar-market-making
   - avellaneda-stoikov-and-optimal-quoting

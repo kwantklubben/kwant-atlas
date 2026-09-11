@@ -1,5 +1,5 @@
 ---
-title: "01 - Queue Position & Fill Probability from Zero: Intuition"
+title: "2.4.1 Queue Position & Fill Probability from Zero"
 tags:
   - pillar-algorithmic-hft
   - queue-position

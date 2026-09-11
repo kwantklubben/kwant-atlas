@@ -1,5 +1,5 @@
 ---
-title: "03 — Maker-Taker Fees and Rebates: the Cum-Fee Spread"
+title: "6.9.3 Maker-Taker Fees and Rebates"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

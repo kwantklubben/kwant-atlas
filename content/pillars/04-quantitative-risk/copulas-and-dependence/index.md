@@ -1,5 +1,5 @@
 ---
-title: "Copulas & Dependence"
+title: "4.12 Copulas & Dependence"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

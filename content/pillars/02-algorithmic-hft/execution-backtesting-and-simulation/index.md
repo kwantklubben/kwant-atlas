@@ -1,5 +1,5 @@
 ---
-title: "Execution Backtesting & Simulation"
+title: "2.6 Execution Backtesting & Simulation"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

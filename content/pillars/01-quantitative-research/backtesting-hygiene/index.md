@@ -1,5 +1,5 @@
 ---
-title: "Backtesting Hygiene"
+title: "1.2 Backtesting Hygiene"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

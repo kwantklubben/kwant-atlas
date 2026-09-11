@@ -1,5 +1,5 @@
 ---
-title: "02 — Informed vs Uninformed Traders: Recognizing the Toxic Flow"
+title: "6.4.2 Informed vs Uninformed Traders"
 tags:
   - pillar-market-making
   - informed-trading

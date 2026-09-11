@@ -1,5 +1,5 @@
 ---
-title: "03 - Implementation Shortfall: Arrival Price and the Paper-versus-Reality Gap"
+title: "2.3.3 Implementation Shortfall"
 tags:
   - pillar-algorithmic-hft
   - execution-algos

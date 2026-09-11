@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes and Practice: Order-Type Misuse, Hidden Liquidity and Latency"
+title: "2.1.5 Failure Modes and Practice"
 tags:
   - pillar-algorithmic-hft
   - failure-modes

@@ -1,5 +1,5 @@
 ---
-title: "01 — Numerical Methods from Zero: Two Ways to Discretise"
+title: "3.8.1 Numerical Methods from Zero"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

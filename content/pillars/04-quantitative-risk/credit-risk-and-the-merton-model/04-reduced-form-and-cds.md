@@ -1,5 +1,5 @@
 ---
-title: "04 — Reduced-Form (Intensity) Models & CDS Pricing"
+title: "4.4.4 Reduced-Form (Intensity) Models & CDS Pricing"
 tags:
   - pillar-quantitative-risk
   - credit-risk-and-the-merton-model

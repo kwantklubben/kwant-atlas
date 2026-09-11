@@ -1,5 +1,5 @@
 ---
-title: "Regime Classification: HMM & GMM"
+title: "7.8 Regime Classification: HMM & GMM"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

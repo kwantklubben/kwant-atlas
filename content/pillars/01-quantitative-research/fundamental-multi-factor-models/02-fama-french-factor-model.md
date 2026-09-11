@@ -1,5 +1,5 @@
 ---
-title: "02 — The Fama–French Factor Model: Time-Series Regression & Alpha"
+title: "1.3.2 The Fama–French Factor Model"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

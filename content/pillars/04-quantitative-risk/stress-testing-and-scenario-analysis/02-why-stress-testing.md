@@ -1,5 +1,5 @@
 ---
-title: "02 — Why Stress Testing: When VaR & Expected Shortfall Are Not Enough"
+title: "4.5.2 Why Stress Testing"
 tags:
   - pillar-quantitative-risk
   - stress-testing-and-scenario-analysis

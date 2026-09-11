@@ -1,5 +1,5 @@
 ---
-title: "05 - Failure Modes & Real-World Practice: Measurement and the Liquidity Spiral"
+title: "6.8.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

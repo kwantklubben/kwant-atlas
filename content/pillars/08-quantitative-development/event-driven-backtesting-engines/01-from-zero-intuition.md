@@ -1,5 +1,5 @@
 ---
-title: "01 - Event-Driven Backtesting from Zero: Why Your Vectorized Backtest Lies"
+title: "8.7.1 Event-Driven Backtesting from Zero"
 tags:
   - pillar-quant-dev
   - event-driven-backtesting

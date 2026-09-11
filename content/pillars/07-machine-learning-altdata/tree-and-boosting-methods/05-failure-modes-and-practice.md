@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Overfitting Trees in Low SNR"
+title: "7.3.5 Failure Modes & Practice"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

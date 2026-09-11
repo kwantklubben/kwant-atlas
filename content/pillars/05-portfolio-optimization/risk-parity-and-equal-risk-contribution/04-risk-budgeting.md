@@ -1,5 +1,5 @@
 ---
-title: "04 — Risk Budgeting: Arbitrary Budgets, ERC as the Equal-Budget Case"
+title: "5.4.4 Risk Budgeting"
 tags:
   - pillar-portfolio-optimization
   - risk-parity-and-equal-risk-contribution

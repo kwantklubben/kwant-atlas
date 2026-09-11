@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Delta–Gamma Approximations & Backtesting VaR"
+title: "4.2.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - parametric-historical-and-monte-carlo-var

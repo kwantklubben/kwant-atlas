@@ -1,5 +1,5 @@
 ---
-title: "01 — Modern Portfolio Theory from Zero: Return, Risk & Diversification"
+title: "5.1.1 Modern Portfolio Theory from Zero"
 tags:
   - pillar-portfolio-optimization
   - modern-portfolio-theory-and-mean-variance

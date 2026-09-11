@@ -1,5 +1,5 @@
 ---
-title: "01 - Optimal Execution from Zero: Why Big Orders Are Hard"
+title: "2.2.1 Optimal Execution from Zero"
 tags:
   - pillar-algorithmic-hft
   - optimal-execution

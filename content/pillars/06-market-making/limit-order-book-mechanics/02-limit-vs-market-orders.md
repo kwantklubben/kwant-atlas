@@ -1,5 +1,5 @@
 ---
-title: "02 — Limit vs Market Orders: Making and Taking Liquidity"
+title: "6.1.2 Limit vs Market Orders"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

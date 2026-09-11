@@ -1,5 +1,5 @@
 ---
-title: "02 - The Latency Hierarchy: Nanoseconds to Milliseconds"
+title: "2.9.2 The Latency Hierarchy"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

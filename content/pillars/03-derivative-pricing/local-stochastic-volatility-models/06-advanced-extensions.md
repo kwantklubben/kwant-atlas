@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: LSV with Jumps, Multi-Factor & Rough Drivers, LSV-LMM and the Calibration Frontier"
+title: "3.13.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - local-stochastic-volatility-models

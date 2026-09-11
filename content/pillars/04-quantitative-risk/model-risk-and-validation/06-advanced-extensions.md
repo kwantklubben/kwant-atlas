@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Model Uncertainty, Entropy & Robust Bounds"
+title: "4.8.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

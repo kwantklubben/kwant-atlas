@@ -1,5 +1,5 @@
 ---
-title: "02 — Optimal-Stopping Theory: Snell Envelope, Supermartingales & the Call/Put Asymmetry"
+title: "3.6.2 Optimal-Stopping Theory"
 tags:
   - pillar-derivative-pricing
   - american-options

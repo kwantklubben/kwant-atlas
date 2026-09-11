@@ -1,5 +1,5 @@
 ---
-title: "Event Studies"
+title: "1.7 Event Studies"
 tags:
   - pillar-quant-research
   - event-studies

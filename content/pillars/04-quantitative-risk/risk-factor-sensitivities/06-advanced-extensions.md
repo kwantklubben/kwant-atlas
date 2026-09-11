@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Delta–Gamma VaR, Cornish–Fisher, and Limit Systems"
+title: "4.11.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - risk-factor-sensitivities

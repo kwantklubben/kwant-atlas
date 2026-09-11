@@ -1,5 +1,5 @@
 ---
-title: "03 - Kernel Bypass & NICs: DPDK, Solarflare/Onload, Interrupts vs Polling"
+title: "8.4.3 Kernel Bypass & NICs"
 tags:
   - pillar-quant-dev
   - low-latency-linux

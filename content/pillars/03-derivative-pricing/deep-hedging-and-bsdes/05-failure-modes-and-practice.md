@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Model Risk, Training Instability, Costs & the √Δt Law"
+title: "3.14.5 Failure Modes & Practice"
 tags:
   - pillar-derivative-pricing
   - deep-hedging-and-bsdes

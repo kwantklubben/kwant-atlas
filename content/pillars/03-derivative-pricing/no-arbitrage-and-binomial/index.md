@@ -1,5 +1,5 @@
 ---
-title: "No-Arbitrage & the Binomial Model"
+title: "3.2 No-Arbitrage & the Binomial Model"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial

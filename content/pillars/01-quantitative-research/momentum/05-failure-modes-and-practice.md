@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Crashes, Crowding, the 2009 Reversal"
+title: "1.4.5 Failure Modes & Practice"
 tags:
   - pillar-quant-research
   - momentum

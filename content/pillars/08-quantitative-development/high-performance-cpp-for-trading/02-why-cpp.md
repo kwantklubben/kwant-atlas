@@ -1,5 +1,5 @@
 ---
-title: "02 - Why C++ for Latency-Critical Code: RAII, Determinism, No Runtime"
+title: "8.2.2 Why C++ for Latency-Critical Code"
 tags:
   - pillar-quant-dev
   - high-performance-cpp

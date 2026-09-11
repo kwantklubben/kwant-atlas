@@ -1,5 +1,5 @@
 ---
-title: "03 - The Fill Model: Queue, Trade-Through and Fill Probability"
+title: "2.6.3 The Fill Model"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

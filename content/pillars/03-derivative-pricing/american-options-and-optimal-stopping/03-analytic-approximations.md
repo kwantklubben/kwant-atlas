@@ -1,5 +1,5 @@
 ---
-title: "03 — Analytic Approximations: Perpetual Closed Forms, BAW & Bjerksund–Stensland"
+title: "3.6.3 Analytic Approximations"
 tags:
   - pillar-derivative-pricing
   - american-options

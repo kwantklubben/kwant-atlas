@@ -1,5 +1,5 @@
 ---
-title: "05 — Measuring Impact: Practice & Failure Modes"
+title: "6.7.5 Measuring Impact"
 tags:
   - pillar-market-making
   - market-impact

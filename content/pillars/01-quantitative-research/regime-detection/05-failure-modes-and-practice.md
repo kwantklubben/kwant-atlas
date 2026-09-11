@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "1.8.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-quant-research
   - regime-detection

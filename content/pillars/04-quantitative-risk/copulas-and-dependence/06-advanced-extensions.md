@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Archimedean Copulas, Factor & Implied Models"
+title: "4.12.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

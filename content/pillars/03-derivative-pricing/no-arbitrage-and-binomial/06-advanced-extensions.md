@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: American Options & the Road to Continuous Time"
+title: "3.2.6 Advanced Extensions"
 tags:
   - pillar-derivative-pricing
   - no-arbitrage-and-binomial

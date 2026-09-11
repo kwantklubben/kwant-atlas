@@ -1,5 +1,5 @@
 ---
-title: "06 - Advanced Extensions: Environments, Experiment Tracking & the Research-to-Production Gap"
+title: "8.6.6 Advanced Extensions"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

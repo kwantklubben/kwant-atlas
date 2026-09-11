@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Feller, Discretisation, Calibration & Model Risk"
+title: "3.5.5 Failure Modes & Practice"
 tags:
   - pillar-derivative-pricing
   - advanced-volatility-heston-sabr

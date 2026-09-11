@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Estimation, Leverage & Correlation Regimes"
+title: "5.4.5 Failure Modes & Practice"
 tags:
   - pillar-portfolio-optimization
   - risk-parity-and-equal-risk-contribution

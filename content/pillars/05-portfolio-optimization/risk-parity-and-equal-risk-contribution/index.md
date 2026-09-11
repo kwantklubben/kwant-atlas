@@ -1,5 +1,5 @@
 ---
-title: "Risk Parity & Equal Risk Contribution"
+title: "5.4 Risk Parity & Equal Risk Contribution"
 tags:
   - pillar-portfolio-optimization
   - risk-parity-and-equal-risk-contribution

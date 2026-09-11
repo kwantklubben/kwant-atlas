@@ -1,5 +1,5 @@
 ---
-title: "02 - Why Locks Are Slow: Contention, Priority Inversion, and the Wake-Up Tax"
+title: "8.3.2 Why Locks Are Slow"
 tags:
   - pillar-quant-dev
   - concurrency

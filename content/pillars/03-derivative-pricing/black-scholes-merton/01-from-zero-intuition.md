@@ -1,5 +1,5 @@
 ---
-title: "01 — Black–Scholes–Merton from Zero: Intuition & the Why"
+title: "3.3.1 Black–Scholes–Merton from Zero"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton

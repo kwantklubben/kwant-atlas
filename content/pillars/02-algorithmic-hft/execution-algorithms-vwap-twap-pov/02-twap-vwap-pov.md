@@ -1,5 +1,5 @@
 ---
-title: "02 - TWAP, VWAP and POV: The Three Workhorse Schedules"
+title: "2.3.2 TWAP, VWAP and POV"
 tags:
   - pillar-algorithmic-hft
   - execution-algos

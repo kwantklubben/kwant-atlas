@@ -1,5 +1,5 @@
 ---
-title: "04 — Trading Rules, the z-score & a Full Pairs Backtest"
+title: "1.1.4 Trading Rules, the z-score & a Full Pairs Backtest"
 tags:
   - pillar-quant-research
   - statistical-arbitrage-and-pairs

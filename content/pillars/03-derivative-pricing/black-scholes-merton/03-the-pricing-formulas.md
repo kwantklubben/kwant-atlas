@@ -1,5 +1,5 @@
 ---
-title: "03 — The European Pricing Formulas (Closed Forms, Dividends, FX, Futures)"
+title: "3.3.3 The European Pricing Formulas (Closed Forms, Dividends, FX, Futures)"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton

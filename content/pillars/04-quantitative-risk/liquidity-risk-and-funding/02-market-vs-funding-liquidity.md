@@ -1,5 +1,5 @@
 ---
-title: "02 — Market Liquidity vs Funding Liquidity: Measurement & the Two Curves"
+title: "4.6.2 Market Liquidity vs Funding Liquidity"
 tags:
   - pillar-quantitative-risk
   - liquidity-risk-and-funding

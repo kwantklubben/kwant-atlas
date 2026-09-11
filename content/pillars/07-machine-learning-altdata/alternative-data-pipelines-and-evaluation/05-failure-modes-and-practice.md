@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Backfill, Survivorship, Panel Bias, Compliance"
+title: "7.5.5 Failure Modes & Practice"
 tags:
   - pillar-machine-learning
   - alternative-data-pipelines-and-evaluation

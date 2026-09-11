@@ -1,5 +1,5 @@
 ---
-title: "03 — Threshold Models: SETAR & STAR (Observed-State Regimes)"
+title: "1.8.3 Threshold Models"
 tags:
   - pillar-quant-research
   - regime-detection

@@ -1,5 +1,5 @@
 ---
-title: "03 — Factor Crowding & Capacity: How Much Money a Premium Can Absorb"
+title: "1.10.3 Factor Crowding & Capacity"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

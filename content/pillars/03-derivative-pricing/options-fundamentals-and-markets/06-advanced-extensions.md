@@ -1,5 +1,5 @@
 ---
-title: "06 — Trading Strategies & Hedging Basics (Advanced Extensions)"
+title: "3.1.6 Trading Strategies & Hedging Basics (Advanced Extensions)"
 tags:
   - pillar-derivative-pricing
   - options-fundamentals

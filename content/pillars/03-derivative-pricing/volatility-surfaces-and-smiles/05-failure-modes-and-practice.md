@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Arbitrage, Forward Skew, Robustness"
+title: "3.4.5 Failure Modes & Real-World Practice"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

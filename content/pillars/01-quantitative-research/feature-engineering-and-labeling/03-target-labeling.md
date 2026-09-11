@@ -1,5 +1,5 @@
 ---
-title: "03 — Target Labeling: The Fixed-Horizon Problem and the Triple Barrier"
+title: "1.6.3 Target Labeling"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

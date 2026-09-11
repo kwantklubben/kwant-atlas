@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Basel SMA Capital & Insurance / Risk Transfer"
+title: "4.10.6 Advanced Extensions"
 tags:
   - pillar-quantitative-risk
   - operational-risk

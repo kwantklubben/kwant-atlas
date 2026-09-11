@@ -1,5 +1,5 @@
 ---
-title: "04 — Reverse Stress Testing: Find the Scenario That Breaks Capital"
+title: "4.5.4 Reverse Stress Testing"
 tags:
   - pillar-quantitative-risk
   - stress-testing-and-scenario-analysis

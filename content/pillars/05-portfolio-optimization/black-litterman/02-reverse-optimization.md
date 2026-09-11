@@ -1,5 +1,5 @@
 ---
-title: "02 — Reverse Optimization & the Implied Equilibrium Returns"
+title: "5.3.2 Reverse Optimization & the Implied Equilibrium Returns"
 tags:
   - pillar-portfolio-optimization
   - black-litterman
