@@ -68,14 +68,3 @@ graph LR
 ```
 
 ---
-
-### Original Notes
-
-The legacy flat overview notes for these topics, retained from before the folder-per-topic reorganisation. The topic-folder hubs above supersede them as the structured study route. One cross-cutting flat note (risk guards) has no colliding folder and is retained in place, thematically superseded by the Production Trading Systems folder.
-
-- [[pillars/08-quantitative-development/_legacy/high-performance-cpp-for-trading|High-Performance C++ for Trading (original note)]]
-- [[pillars/08-quantitative-development/_legacy/tick-level-databases-and-timeseries|Tick-Level Databases & kdb+/q (original note)]]
-- [[pillars/08-quantitative-development/_legacy/event-driven-backtesting-engines|Event-Driven Backtesting Engines (original note)]]
-- [[pillars/08-quantitative-development/_legacy/fix-protocol-and-exchange-connectivity|FIX Protocol & Exchange Connectivity (original note)]]
-- [[pillars/08-quantitative-development/_legacy/concurrency-and-lockless-programming|Concurrency & Lockless Programming (original note)]]
-- [[pillars/08-quantitative-development/production-trading-systems/index|Production Risk Guards & Kill Switches (original note, retained in place)]]

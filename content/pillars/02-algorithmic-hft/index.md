@@ -66,14 +66,3 @@ graph TD
 ```
 
 ---
-
-### Original Notes
-
-The legacy flat overview notes for these topics, retained from before the folder-per-topic reorganisation. The topic-folder hubs above supersede them as the structured study route.
-
-- [[pillars/02-algorithmic-hft/_legacy/market-microstructure-and-order-types|Market Microstructure & Order Types (original note)]]
-- [[pillars/02-algorithmic-hft/_legacy/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss (original note)]]
-- [[pillars/02-algorithmic-hft/_legacy/execution-algorithms-vwap-twap-pov|Execution Algorithms: VWAP, TWAP, & POV (original note)]]
-- [[pillars/02-algorithmic-hft/_legacy/queue-position-and-fill-probability|Queue Position & Fill Probability (original note)]]
-- [[pillars/02-algorithmic-hft/_legacy/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA (original note)]]
-- [[pillars/02-algorithmic-hft/_legacy/low-latency-systems-architecture|Low-Latency Systems Architecture (original note)]]

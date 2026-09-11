@@ -71,14 +71,3 @@ graph TD
 ```
 
 ---
-
-### Original Notes
-
-The legacy flat overview notes for these topics, retained from before the folder-per-topic reorganisation. The topic-folder hubs above supersede them as the structured study route.
-
-- [[pillars/06-market-making/_legacy/limit-order-book-mechanics-and-l3|Limit Order Book Mechanics & L3 (original note)]]
-- [[pillars/06-market-making/_legacy/the-avellaneda-stoikov-model|The Avellaneda–Stoikov Model (original note)]]
-- [[pillars/06-market-making/_legacy/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom (original note)]]
-- [[pillars/06-market-making/_legacy/spread-decomposition-and-roll-model|Spread Decomposition & the Roll Model (original note)]]
-- [[pillars/06-market-making/_legacy/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing (original note)]]
-- [[pillars/06-market-making/_legacy/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN (original note)]]

@@ -1,0 +1,68 @@
+name: Content checks
+
+# Gate for the content itself, separate from the deploy in deploy.yml.
+#
+# Hard gates (fail the run):
+#   1. the site builds                  -- a bad title/backslash in YAML frontmatter breaks it
+#   2. every wikilink resolves          -- catches dangling links and dead _legacy pointers
+#   3. the visualizer is not stale      -- node paths/edges are generated from the content tree
+#
+# Report-only (never fails the run):
+#   4. the python-fence check           -- it deliberately cannot distinguish a wrong result
+#                                          from a machine-dependent timing benchmark, so it
+#                                          prints findings + uploads them as an artifact for a
+#                                          human to classify. Making this a hard gate would
+#                                          fail on every legitimate benchmark page.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build Quartz
+        run: npx quartz build
+
+      - name: Check wikilinks resolve
+        run: python3 corpus/tools/check_links.py
+
+      - name: Check the visualizer is not stale
+        run: python3 corpus/tools/build_visualizer.py --check
+
+      - name: Python output-fence check (report only)
+        continue-on-error: true
+        run: |
+          python3 corpus/audit/tools/fencecheck_strict.py | tee fencecheck.txt
+
+      - name: Upload fence-check report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fencecheck-report
+          path: |
+            fencecheck.txt
+            /tmp/fence_problems.json
+          if-no-files-found: ignore

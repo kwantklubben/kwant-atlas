@@ -73,14 +73,3 @@ graph TD
 ```
 
 ---
-
-### Original Notes
-
-The legacy flat overview notes for a subset of these topics, retained from before the folder-per-topic reorganisation. They remain the same subject matter written as a single page; the topic-folder hubs above supersede them as the structured study route.
-
-- [[pillars/05-portfolio-optimization/_legacy/modern-portfolio-theory-and-mean-variance|Modern Portfolio Theory & Mean–Variance (original note)]]
-- [[pillars/05-portfolio-optimization/_legacy/covariance-shrinkage-and-denoising|Covariance Shrinkage & RMT Denoising (original note)]]
-- [[pillars/05-portfolio-optimization/_legacy/black-litterman-asset-allocation|Black–Litterman Bayesian Asset Allocation (original note)]]
-- [[pillars/05-portfolio-optimization/_legacy/risk-parity-and-equal-risk-contribution|Risk Parity & Equal Risk Contribution (original note)]]
-- [[pillars/05-portfolio-optimization/_legacy/hierarchical-risk-parity-and-clustering|Hierarchical Risk Parity & Clustering (original note)]]
-- [[pillars/05-portfolio-optimization/_legacy/transaction-costs-and-turnover-constraints|Transaction Costs & Turnover Constraints (original note)]]
