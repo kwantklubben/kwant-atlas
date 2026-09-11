@@ -1,0 +1,64 @@
+name: Fence check (deep, report only)
+
+# The python output-fence check: for every page, run each ```python block and byte-compare its
+# stdout to the immediately following fence. This is the check that caught the 12 glued fences,
+# the 2 missing fences and the whitespace drift.
+#
+# WHY IT IS NOT A PER-PUSH GATE
+#   * It takes 10-30 minutes (745 blocks, each in its own subprocess; one page's Monte Carlo
+#     legitimately needs ~10 minutes).
+#   * It cannot tell a WRONG result from a machine-dependent TIMING benchmark -- pages whose
+#     fence header reads ms/us/ns-op/x are legitimately not byte-stable (Pillar 8 is full of
+#     them). Gating on it would fail on every such page.
+# So: weekly + manual, report-only, output uploaded as an artifact for a human to classify.
+#
+# FENCE_TIMEOUT bounds each block; a slow block reports TIMEOUT rather than hanging the run.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fencecheck:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python output-fence check (report only)
+        env:
+          FENCE_TIMEOUT: "30"
+        run: python3 corpus/audit/tools/fencecheck_strict.py | tee fencecheck.txt
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Fence check"
+            echo
+            echo '```'
+            tail -40 fencecheck.txt || echo "(no output)"
+            echo '```'
+            echo
+            echo "Reminder: MISMATCH is only a defect when the code is deterministic."
+            echo "Timing benchmarks (ms / us / ns-op / x) and libm-sensitive ill-conditioned"
+            echo "results are expected to differ. TIMEOUT means re-check that block manually."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fencecheck-report
+          path: |
+            fencecheck.txt
+            /tmp/fence_problems.json
+          if-no-files-found: ignore

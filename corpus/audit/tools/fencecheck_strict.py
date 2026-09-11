@@ -12,7 +12,7 @@ network-blocked block cannot hang the pass.
 In the subprocess, earlier blocks are re-executed with stdout suppressed, so
 their prints never contaminate the comparison. That was the bug in v1.
 """
-import glob, json, subprocess, sys
+import glob, json, os, subprocess, sys
 
 SKIP = {  # page -> python-block indices deliberately not executed
     # network stub, explicitly labelled "not executed here"
@@ -55,6 +55,13 @@ def fences(s):
 
 
 def run_block(prior, target, timeout=90):
+    """Run one block in a subprocess with a hard timeout.
+
+    The timeout is configurable via FENCE_TIMEOUT (seconds) so a scheduled CI run can bound
+    its total wall time; a slow block then reports TIMEOUT and a human re-checks it at a
+    longer budget rather than the whole pass hanging. (One page's Monte Carlo legitimately
+    needs ~10 min and matches its fence exactly -- a timeout is not a defect.)
+    """
     import json as _j
     payload = _j.dumps({"prior": prior, "target": target})
     prog = ("import json,sys\n"
@@ -70,6 +77,8 @@ def run_block(prior, target, timeout=90):
 
 problems = []
 npages = nblocks = nskip = 0
+TIMEOUT = int(os.environ.get("FENCE_TIMEOUT", "90"))
+print(f"per-block timeout: {TIMEOUT}s", flush=True)
 for f in sorted(glob.glob("content/**/*.md", recursive=True)):
     if "/_legacy/" in f:
         continue
@@ -88,7 +97,7 @@ for f in sorted(glob.glob("content/**/*.md", recursive=True)):
             pi += 1
             continue
         nblocks += 1
-        out, err, terr = run_block(prior, c)
+        out, err, terr = run_block(prior, c, timeout=TIMEOUT)
         prior.append(c)
         if terr:
             problems.append((f, pi, terr))
