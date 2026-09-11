@@ -16,7 +16,7 @@ tags:
 
 Fundamental analysis lives or dies on **data quality and timing**. Every ratio, screen, and backtest in this area is downstream of a factual claim — "revenue was 1000 in FY2022" — and that claim has a *source*, a *timestamp*, and a *restatement history*. The discipline of this folder is to make those three visible. A screen built on the *wrong* version of a number is not a rough approximation of a good screen; it is a different screen with a hidden, unknowable bias.
 
-This folder is the **hub**. It (a) gives you the **fast source lookup table** below — job #1 of this folder, the single best "where do I get this number, and what will it cost me" page in the whole Fundamentals & Accounting area — and (b) routes you to six sub-pages that walk from raw intuition (what the sources *are*) through EDGAR/XBRL, commercial providers, insider & ownership data, failure modes, and the advanced extension layer (building a working point-in-time pipeline).
+This folder is the **hub**. It (a) gives you the **fast source lookup table** below — job #1 of this folder, the single best "where do I get this number, and what will it cost me" page in the whole Accounting & Finance area — and (b) routes you to six sub-pages that walk from raw intuition (what the sources *are*) through EDGAR/XBRL, commercial providers, insider & ownership data, failure modes, and the advanced extension layer (building a working point-in-time pipeline).
 
 > **The one-sentence essence.** "Every fundamental number has a provenance — a filer, a tag, a vendor, and an as-of date — and the whole game is to keep the as-of date honest, because a backtest that reads *today's* database as if it were *then's* database is reading the future."
 

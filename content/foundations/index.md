@@ -1,5 +1,5 @@
 ---
-title: "First-Principles Toolbox & Foundations"
+title: "Foundations"
 tags:
   - foundations
   - mathematics
@@ -9,13 +9,13 @@ tags:
 
 > 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
 
-# First-Principles Toolbox & Foundations
+# Foundations
 
 > "If you cannot derive it from first principles, you cannot debug it when real markets break your assumptions."
 
 Quantitative finance is not a set of plug-and-play formulas. It is the applied intersection of rigorous mathematics, computational systems, and empirical market microstructure. When a trading strategy incurs catastrophic drawdowns, a derivative pricing engine misquotes, or an optimizer produces singular portfolios, the root cause is almost always a violation of fundamental mathematical or physical assumptions.
 
-This **First-Principles Toolbox** provides the rigorous ground truth underlying all 8 operational quantitative disciplines. Use these nodes to master the prerequisite mathematics and diagnose whether a mathematical model has structural integrity or is fundamentally flawed.
+This **Foundations** provides the rigorous ground truth underlying all 8 operational quantitative disciplines. Use these nodes to master the prerequisite mathematics and diagnose whether a mathematical model has structural integrity or is fundamentally flawed.
 
 ---
 

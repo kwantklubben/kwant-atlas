@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Every ratio in the Fundamentals & Accounting area is a *flow over a stock*, and every one of them inherits the same weakness: **the numerator and denominator are accrual-accounting constructs, and accrual accounting is a set of estimates a manager chooses.** Reported earnings are not a measurement of cash — they are a *claim* about economic activity, recognised under rules that leave real discretion at the edges. This folder is the **defense layer**: how that discretion detaches earnings from economic reality, how to measure the gap, and how to notice it before the price does.
+Every ratio in the Accounting & Finance area is a *flow over a stock*, and every one of them inherits the same weakness: **the numerator and denominator are accrual-accounting constructs, and accrual accounting is a set of estimates a manager chooses.** Reported earnings are not a measurement of cash — they are a *claim* about economic activity, recognised under rules that leave real discretion at the edges. This folder is the **defense layer**: how that discretion detaches earnings from economic reality, how to measure the gap, and how to notice it before the price does.
 
 The spine is one identity, and it is the single most useful sentence in the whole area:
 

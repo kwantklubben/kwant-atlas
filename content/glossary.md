@@ -205,4 +205,4 @@ A term or symbol may live in several pillars — the **canonical page** is the s
 
 - [[foundations/index|Foundations Hub]] — the shared math toolbox behind every term above.
 - [[pillars/01-quantitative-research/index|Pillar 1 · Quantitative Research]] · [[pillars/03-derivative-pricing/index|Pillar 3 · Derivative Pricing]] · [[pillars/04-quantitative-risk/index|Pillar 4 · Quantitative Risk]] · [[pillars/05-portfolio-optimization/index|Pillar 5 · Portfolio Optimization]] · [[pillars/06-market-making/index|Pillar 6 · Market Making]] · [[pillars/07-machine-learning-altdata/index|Pillar 7 · ML & AltData]]
-- [[fundamentals-accounting/index|Fundamentals & Accounting Hub]]
+- [[fundamentals-accounting/index|Accounting & Finance Hub]]

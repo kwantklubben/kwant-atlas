@@ -15,7 +15,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Financial statements are the **scoreboard of a business** — the three reports a company is required to publish that turn its thousands of daily transactions into a small, auditable set of numbers. This folder answers the on-ramp question of the whole Fundamentals & Accounting area: **"What *is* a balance sheet?"** — and by extension what an income statement and a cash flow statement are, how transactions become line items, and how to read them so you are not fooled.
+Financial statements are the **scoreboard of a business** — the three reports a company is required to publish that turn its thousands of daily transactions into a small, auditable set of numbers. This folder answers the on-ramp question of the whole Accounting & Finance area: **"What *is* a balance sheet?"** — and by extension what an income statement and a cash flow statement are, how transactions become line items, and how to read them so you are not fooled.
 
 Its claim is sharp: **every financial statement is governed by an exact accounting identity, and those identities chain together (they "articulate").** If you hold the identities, you can build the three statements from any transaction list by hand, and you can *detect* when a company's numbers are inconsistent or engineered. The math is genuinely just conservation laws — money neither appears nor disappears — expressed as equations you can verify on a ledger.
 

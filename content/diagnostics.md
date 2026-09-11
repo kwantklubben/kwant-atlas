@@ -1,5 +1,5 @@
 ---
-title: "Diagnostic Index: Symptom -> Cause -> Fix"
+title: "Diagnostic Index"
 tags:
   - hub
   - diagnostics
@@ -362,7 +362,7 @@ This is the **global** troubleshooting index for the whole Atlas — the aggrega
 
 ---
 
-## Fundamentals & Accounting
+## Accounting & Finance
 
 | Observed symptom | First-principles root cause | Remedy | Canonical page |
 | :--- | :--- | :--- | :--- |

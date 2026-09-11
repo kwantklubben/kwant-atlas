@@ -8,7 +8,7 @@ tags:
   - index-hub
 ---
 
-**Basic Prerequisites:** High-school algebra and introductory vector geometry. This node is the *entry point* of the First-Principles Toolbox — every other foundations node ([[foundations/calculus-and-optimization/index|Calculus & Optimization]], [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]], [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]], [[foundations/stochastic-calculus/index|Stochastic Calculus]]) assumes it, and every factor model, covariance-denoiser, and mean-variance optimizer in the operational pillars is built on top of it. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
+**Basic Prerequisites:** High-school algebra and introductory vector geometry. This node is the *entry point* of the Foundations — every other foundations node ([[foundations/calculus-and-optimization/index|Calculus & Optimization]], [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]], [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]], [[foundations/stochastic-calculus/index|Stochastic Calculus]]) assumes it, and every factor model, covariance-denoiser, and mean-variance optimizer in the operational pillars is built on top of it. *(these are the folder-level prerequisites for pages `02`–`06`; page `01` states its own, smaller, entry requirements)*
 
 ---
 

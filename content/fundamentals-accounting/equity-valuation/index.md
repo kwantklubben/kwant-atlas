@@ -15,7 +15,7 @@ tags:
 
 Equity valuation answers one question with many dialects: **what is a claim on a business worth today?** The first-principles answer is blunt and old — *the present value of the cash the owner will receive, discounted at a rate that compensates for the risk of not receiving it*. Everything else (multiples, "comps", screen thresholds) is either a shortcut around that computation or a market-based cross-check on it.
 
-This folder is the **valuation hub** of the Fundamentals & Accounting area. It is a *hub*: it (a) gives you the **fast formula lookup** below (the DCF identities every later note cross-references), and (b) routes you to six sub-pages that walk from raw intuition through cash-flow forecasting, the cost of capital, terminal value and the enterprise-to-equity bridge, the failure modes, and the relative-valuation / sensitivity layer.
+This folder is the **valuation hub** of the Accounting & Finance area. It is a *hub*: it (a) gives you the **fast formula lookup** below (the DCF identities every later note cross-references), and (b) routes you to six sub-pages that walk from raw intuition through cash-flow forecasting, the cost of capital, terminal value and the enterprise-to-equity bridge, the failure modes, and the relative-valuation / sensitivity layer.
 
 > **The one-sentence essence.** "Value an asset as the discounted present value of its expected future cash flows, discounted at a rate that reflects their risk; keep cash flows and discount rates **consistent** (equity flows at the cost of equity, firm flows at the cost of capital), and never let a perpetuity assumption hide inside a spreadsheet."
 

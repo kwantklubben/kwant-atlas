@@ -67,3 +67,19 @@ h3 + .katex-display,
 h4 + .katex-display {
   margin-top: 0.6rem;
 }
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TAGS HIDDEN
+//
+// The per-page tag rows and the per-child tag rows on folder pages were pure
+// clutter — the search box covers lookup, and nothing else consumes the
+// hashtags. The frontmatter `tags` are deliberately left intact: the template
+// contract requires the first tag (`pillar-*` / `foundations-*` / etc.), and
+// the content checks read it. Only their rendering is suppressed, so this is
+// one line to revert.
+// ─────────────────────────────────────────────────────────────────────────────
+ul.tags,
+a.tag-link {
+  display: none !important;
+}

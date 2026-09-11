@@ -42,9 +42,9 @@ graph TD
     ML["<b>7. Machine Learning & AltData</b><br/><i>(Low SNR, Tree Boosting, NLP, HMM)</i>"]
     QD["<b>8. Quantitative Development</b><br/><i>(HPC C++, kdb+/q, Lockless, FIX, Risk Guards)</i>"]
 
-    F["<b>Shared First-Principles Toolbox</b><br/><i>Linear Algebra • Calculus • Probability • Stochastics • Statistics • Bayesian • Econometrics • Numerical • Ergodicity</i>"]
+    F["<b>Foundations</b><br/><i>Linear Algebra • Calculus • Probability • Stochastics • Statistics • Bayesian • Econometrics • Numerical • Ergodicity</i>"]
 
-    FA["<b>Fundamentals & Accounting</b><br/><i>(Statements • Ratios • Valuation • Screening • Quality • Capital Structure • Factors • Data)</i>"]
+    FA["<b>Accounting & Finance</b><br/><i>(Statements • Ratios • Valuation • Screening • Quality • Capital Structure • Factors • Data)</i>"]
 
     F -.-> QR
     F -.-> HFT
@@ -164,7 +164,7 @@ The software and systems engineering backbone: translating mathematical models i
 
 ---
 
-## 🔬 First-Principles Toolbox & Foundations
+## 🔬 Foundations
 
 **Read this before (or alongside) the pillars — it is the shared foundation the whole Atlas is built on, not an optional appendix.** Every pillar's `01-from-zero-intuition` page assumes the foundations its prerequisites name; the [[foundations/index|Foundations hub]] gives the exact consumption order (which foundation to read before which pillar). The core trio everyone needs:
 
@@ -176,11 +176,11 @@ Then the foundations each pillar draws on: **[[foundations/stochastic-calculus/i
 
 ---
 
-## 📊 Fundamentals & Accounting (Cross-Cutting Area)
+## 📊 Accounting & Finance (Cross-Cutting Area)
 
 The company underneath every security. This area sits *alongside* the 8 pillars and the Foundations toolbox, covering how a business is reported, valued, financed, quality-checked, and sourced as data — the shared substrate for both **quantitative** factor projects and **discretionary** fundamental work.
 
-**→ [[fundamentals-accounting/index|Open the Fundamentals & Accounting area hub]]**
+**→ [[fundamentals-accounting/index|Open the Accounting & Finance area hub]]**
 
 The 8 topic-folders, in recommended learning order:
 

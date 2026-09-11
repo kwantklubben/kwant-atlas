@@ -10,7 +10,6 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       "KwantKlubben": "https://kwantklubben.com",
       "GitHub Organization": "https://github.com/kwantklubben",
-      "Workshop Repo": "https://github.com/kwantklubben/kwantklubben",
     },
   }),
 }

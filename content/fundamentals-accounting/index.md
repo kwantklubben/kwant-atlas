@@ -1,5 +1,5 @@
 ---
-title: "Fundamentals & Accounting"
+title: "Accounting & Finance"
 tags:
   - fundamentals-accounting
   - accounting
@@ -10,11 +10,11 @@ tags:
 
 > 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
 
-# Fundamentals & Accounting
+# Accounting & Finance
 
 > *"The numbers nominate; the business case confirms."*
 
-**Fundamentals & Accounting** is the Atlas's cross-cutting area — it sits *alongside* the **8 operational pillars** and the shared **Foundations toolbox**, not inside either. Where the pillars teach the machinery of alpha, execution, pricing, risk, optimization, market making, machine learning, and engineering, this area covers the **company underneath every security**: how its business is reported (statements), how that reporting is turned into signals (ratios, screens, factors), what the claim is worth (valuation), how it is financed (capital structure), when the reporting lies (quality & red flags), and where the raw facts come from (data provenance).
+**Accounting & Finance** is the Atlas's cross-cutting area — it sits *alongside* the **8 operational pillars** and the shared **Foundations toolbox**, not inside either. Where the pillars teach the machinery of alpha, execution, pricing, risk, optimization, market making, machine learning, and engineering, this area covers the **company underneath every security**: how its business is reported (statements), how that reporting is turned into signals (ratios, screens, factors), what the claim is worth (valuation), how it is financed (capital structure), when the reporting lies (quality & red flags), and where the raw facts come from (data provenance).
 
 It matters to **both** audiences:
 
@@ -55,4 +55,4 @@ In short: **beginner goes top-down (statements → ratios → valuation → scre
 - **[[pillars/01-quantitative-research/index|Pillar 1 · Quantitative Research]]** — fundamental multi-factor models (Fama–French, Barra) are built directly on this area's data; see [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]].
 - **[[pillars/05-portfolio-optimization/index|Pillar 5 · Portfolio Optimization]]** — value/quality/profitability factors become the inputs to portfolio construction and risk models.
 - **[[pillars/07-machine-learning-altdata/index|Pillar 7 · Machine Learning & AltData]]** — filings, earnings transcripts, and XBRL feeds are the alternative/structured data this area's topics feed.
-- **[[foundations/index|First-Principles Toolbox & Foundations]]** — the mathematics (statistics, econometrics, linear algebra) that underpins factor testing and valuation.
+- **[[foundations/index|Foundations]]** — the mathematics (statistics, econometrics, linear algebra) that underpins factor testing and valuation.
