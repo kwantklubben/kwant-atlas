@@ -1,5 +1,5 @@
 ---
-title: "Constraints & Transaction Costs: Topic Hub & Formula Lookup"
+title: "Constraints & Transaction Costs"
 tags:
   - pillar-portfolio-optimization
   - constraints-and-transaction-costs

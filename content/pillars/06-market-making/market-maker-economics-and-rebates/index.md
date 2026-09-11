@@ -1,5 +1,5 @@
 ---
-title: "Market-Maker Economics & Rebates: Topic Hub & Formula Lookup"
+title: "Market-Maker Economics & Rebates"
 tags:
   - pillar-market-making
   - market-maker-economics-and-rebates

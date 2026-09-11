@@ -1,5 +1,5 @@
 ---
-title: "Numerical Methods: Topic Hub & Method Lookup"
+title: "Numerical Methods"
 tags:
   - foundations
   - numerical-methods

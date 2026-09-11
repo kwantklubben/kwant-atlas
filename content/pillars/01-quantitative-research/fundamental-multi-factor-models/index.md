@@ -1,5 +1,5 @@
 ---
-title: "Fundamental Multi-Factor Models: Topic Hub & Factor-Model Lookup"
+title: "Fundamental Multi-Factor Models"
 tags:
   - pillar-quant-research
   - fundamental-multi-factor-models

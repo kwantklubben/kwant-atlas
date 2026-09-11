@@ -1,5 +1,5 @@
 ---
-title: "Volatility Surfaces & Smiles: Topic Hub & Formula Lookup"
+title: "Volatility Surfaces & Smiles"
 tags:
   - pillar-derivative-pricing
   - volatility-surfaces-and-smiles

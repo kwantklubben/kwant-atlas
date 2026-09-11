@@ -1,5 +1,5 @@
 ---
-title: "Linear Algebra & Matrices: Topic Hub & Formula Lookup"
+title: "Linear Algebra & Matrices"
 tags:
   - foundations
   - linear-algebra

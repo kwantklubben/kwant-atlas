@@ -1,5 +1,5 @@
 ---
-title: "Local-Stochastic Volatility — The Leverage Function, Markovian Projection & the Particle Method: Topic Hub & Formula Lookup"
+title: "Local-Stochastic Volatility — The Leverage Function, Markovian Projection & the Particle Method"
 tags:
   - pillar-derivative-pricing
   - local-stochastic-volatility-models

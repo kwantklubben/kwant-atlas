@@ -1,5 +1,5 @@
 ---
-title: "Rough Volatility & Fractional Models: Topic Hub & Formula Lookup"
+title: "Rough Volatility & Fractional Models"
 tags:
   - pillar-derivative-pricing
   - rough-volatility-and-fractional-models

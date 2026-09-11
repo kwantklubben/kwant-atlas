@@ -1,5 +1,5 @@
 ---
-title: "Market Microstructure and Order Types: Topic Hub and Order-Type Lookup"
+title: "Market Microstructure and Order Types"
 tags:
   - pillar-algorithmic-hft
   - microstructure

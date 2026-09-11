@@ -1,5 +1,5 @@
 ---
-title: "Event-Driven Backtesting Engines: Topic Hub & Lookup"
+title: "Event-Driven Backtesting Engines"
 tags:
   - pillar-quant-dev
   - event-driven-backtesting

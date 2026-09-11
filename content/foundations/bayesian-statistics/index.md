@@ -1,5 +1,5 @@
 ---
-title: "Bayesian Statistics: Topic Hub & Formula Lookup"
+title: "Bayesian Statistics"
 tags:
   - foundations
   - bayesian-statistics

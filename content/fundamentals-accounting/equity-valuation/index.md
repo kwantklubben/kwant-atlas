@@ -1,5 +1,5 @@
 ---
-title: "Equity Valuation: Topic Hub & Formula Lookup"
+title: "Equity Valuation"
 tags:
   - fundamentals-accounting
   - equity-valuation

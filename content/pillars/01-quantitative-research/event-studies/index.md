@@ -1,5 +1,5 @@
 ---
-title: "Event Studies: Topic Hub & Formula Lookup"
+title: "Event Studies"
 tags:
   - pillar-quant-research
   - event-studies

@@ -1,5 +1,5 @@
 ---
-title: "Quantitative Fundamental Investing: Topic Hub & Fundamental-Factor Lookup"
+title: "Quantitative Fundamental Investing"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

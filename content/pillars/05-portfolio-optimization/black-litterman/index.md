@@ -1,5 +1,5 @@
 ---
-title: "Black–Litterman: Topic Hub & Formula Lookup"
+title: "Black–Litterman"
 tags:
   - pillar-portfolio-optimization
   - black-litterman

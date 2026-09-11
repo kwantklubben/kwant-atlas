@@ -1,5 +1,5 @@
 ---
-title: "Fundamentals & Accounting: The Cross-Cutting Area Hub"
+title: "Fundamentals & Accounting"
 tags:
   - fundamentals-accounting
   - accounting

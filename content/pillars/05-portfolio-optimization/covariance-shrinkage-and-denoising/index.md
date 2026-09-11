@@ -1,5 +1,5 @@
 ---
-title: "Covariance Shrinkage & Denoising: Topic Hub & Formula Lookup"
+title: "Covariance Shrinkage & Denoising"
 tags:
   - pillar-portfolio-optimization
   - covariance-shrinkage

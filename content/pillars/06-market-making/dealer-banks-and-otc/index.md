@@ -1,5 +1,5 @@
 ---
-title: "Dealer Banks & OTC Markets: Topic Hub & Formula Lookup"
+title: "Dealer Banks & OTC Markets"
 tags:
   - pillar-market-making
   - dealer-banks-and-otc

@@ -1,5 +1,5 @@
 ---
-title: "Low-Latency Linux & Networking: Topic Hub & Lookup"
+title: "Low-Latency Linux & Networking"
 tags:
   - pillar-quant-dev
   - low-latency-linux

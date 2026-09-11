@@ -1,5 +1,5 @@
 ---
-title: "Inventory Management & Quote Skewing: Topic Hub & Formula Lookup"
+title: "Inventory Management & Quote Skewing"
 tags:
   - pillar-market-making
   - inventory-management-and-quote-skewing

@@ -1,5 +1,5 @@
 ---
-title: "Financial Statements & Accounting: Topic Hub & Identity Lookup"
+title: "Financial Statements & Accounting"
 tags:
   - fundamentals-accounting
   - financial-statements-and-accounting

@@ -1,5 +1,5 @@
 ---
-title: "Smart Order Routing and Fragmentation: Topic Hub and Routing Logic Lookup"
+title: "Smart Order Routing and Fragmentation"
 tags:
   - pillar-algorithmic-hft
   - smart-order-routing

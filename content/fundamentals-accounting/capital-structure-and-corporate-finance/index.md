@@ -1,5 +1,5 @@
 ---
-title: "Capital Structure & Corporate Finance: Topic Hub & Key Results"
+title: "Capital Structure & Corporate Finance"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

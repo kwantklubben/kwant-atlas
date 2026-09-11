@@ -1,5 +1,5 @@
 ---
-title: "Risk-Factor Sensitivities: Topic Hub & Sensitivity Lookup"
+title: "Risk-Factor Sensitivities"
 tags:
   - pillar-quantitative-risk
   - risk-factor-sensitivities

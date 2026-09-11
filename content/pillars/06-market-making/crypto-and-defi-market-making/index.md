@@ -1,5 +1,5 @@
 ---
-title: "Crypto & DeFi Market Making: Topic Hub & Formula Lookup"
+title: "Crypto & DeFi Market Making"
 tags:
   - pillar-market-making
   - crypto-and-defi-market-making

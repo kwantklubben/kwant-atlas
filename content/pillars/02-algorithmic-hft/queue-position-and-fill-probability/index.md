@@ -1,5 +1,5 @@
 ---
-title: "Queue Position & Fill Probability: Topic Hub & Formula Lookup"
+title: "Queue Position & Fill Probability"
 tags:
   - pillar-algorithmic-hft
   - queue-position

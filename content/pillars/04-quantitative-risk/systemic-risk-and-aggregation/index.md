@@ -1,5 +1,5 @@
 ---
-title: "Systemic Risk & Risk Aggregation: Topic Hub & Formula Lookup"
+title: "Systemic Risk & Risk Aggregation"
 tags:
   - pillar-quantitative-risk
   - systemic-risk-and-aggregation

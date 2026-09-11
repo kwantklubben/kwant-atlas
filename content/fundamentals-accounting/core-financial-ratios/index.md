@@ -1,5 +1,5 @@
 ---
-title: "Core Financial Ratios: Topic Hub & Ratio Lookup Table"
+title: "Core Financial Ratios"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

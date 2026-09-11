@@ -1,5 +1,5 @@
 ---
-title: "Regime Detection: Topic Hub & Formula Lookup"
+title: "Regime Detection"
 tags:
   - pillar-quant-research
   - regime-detection

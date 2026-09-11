@@ -1,5 +1,5 @@
 ---
-title: "Calibration & Market Practice: Topic Hub & Objective-Function Lookup"
+title: "Calibration & Market Practice"
 tags:
   - pillar-derivative-pricing
   - calibration-and-market-practice

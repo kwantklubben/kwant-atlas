@@ -1,5 +1,5 @@
 ---
-title: "Execution Backtesting & Simulation: Topic Hub & Formula Lookup"
+title: "Execution Backtesting & Simulation"
 tags:
   - pillar-algorithmic-hft
   - execution-backtesting

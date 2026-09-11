@@ -1,5 +1,5 @@
 ---
-title: "Tree & Boosting Methods: Topic Hub & Method Lookup"
+title: "Tree & Boosting Methods"
 tags:
   - pillar-machine-learning
   - tree-and-boosting-methods

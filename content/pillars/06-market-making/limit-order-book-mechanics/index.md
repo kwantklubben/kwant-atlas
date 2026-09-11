@@ -1,5 +1,5 @@
 ---
-title: "Limit Order Book Mechanics: Topic Hub & Formula Lookup"
+title: "Limit Order Book Mechanics"
 tags:
   - pillar-market-making
   - limit-order-book-mechanics

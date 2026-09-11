@@ -1,5 +1,5 @@
 ---
-title: "Feature Engineering & Target Labeling: Topic Hub & Formula Lookup"
+title: "Feature Engineering & Target Labeling"
 tags:
   - pillar-quant-research
   - feature-engineering-and-labeling

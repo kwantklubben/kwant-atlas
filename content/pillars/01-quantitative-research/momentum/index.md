@@ -1,5 +1,5 @@
 ---
-title: "Momentum: Topic Hub & Formula Lookup"
+title: "Momentum"
 tags:
   - pillar-quant-research
   - momentum

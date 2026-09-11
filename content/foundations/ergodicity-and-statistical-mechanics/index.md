@@ -1,5 +1,5 @@
 ---
-title: "Ergodicity & Statistical Mechanics: Topic Hub & Formula Lookup"
+title: "Ergodicity & Statistical Mechanics"
 tags:
   - foundations
   - ergodicity

@@ -1,5 +1,5 @@
 ---
-title: "Copulas & Dependence: Topic Hub & Formula Lookup"
+title: "Copulas & Dependence"
 tags:
   - pillar-quantitative-risk
   - copulas-and-dependence

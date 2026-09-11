@@ -1,5 +1,5 @@
 ---
-title: "Kelly Criterion & Bet Sizing: Topic Hub & Formula Lookup"
+title: "Kelly Criterion & Bet Sizing"
 tags:
   - pillar-portfolio-optimization
   - kelly-criterion

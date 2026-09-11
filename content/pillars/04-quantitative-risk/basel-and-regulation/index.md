@@ -1,5 +1,5 @@
 ---
-title: "Basel & Regulation: Topic Hub & Capital-Ratio Lookup"
+title: "Basel & Regulation"
 tags:
   - pillar-quantitative-risk
   - basel-and-regulation

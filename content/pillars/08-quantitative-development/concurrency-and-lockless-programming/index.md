@@ -1,5 +1,5 @@
 ---
-title: "Concurrency & Lock-Free Programming: Topic Hub & Lookup"
+title: "Concurrency & Lock-Free Programming"
 tags:
   - pillar-quant-dev
   - concurrency

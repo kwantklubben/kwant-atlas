@@ -1,5 +1,5 @@
 ---
-title: "Spread Decomposition & the Roll Model: Topic Hub & Formula Lookup"
+title: "Spread Decomposition & the Roll Model"
 tags:
   - pillar-market-making
   - spread-decomposition-and-roll-model

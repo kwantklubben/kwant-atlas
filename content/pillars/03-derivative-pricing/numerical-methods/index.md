@@ -1,5 +1,5 @@
 ---
-title: "Numerical Methods: Topic Hub & Scheme Lookup"
+title: "Numerical Methods"
 tags:
   - pillar-derivative-pricing
   - numerical-methods

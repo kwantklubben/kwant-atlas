@@ -1,5 +1,5 @@
 ---
-title: "Stress Testing & Scenario Analysis: Topic Hub & Scenario Lookup"
+title: "Stress Testing & Scenario Analysis"
 tags:
   - pillar-quantitative-risk
   - stress-testing-and-scenario-analysis

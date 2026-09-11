@@ -1,5 +1,5 @@
 ---
-title: "Parametric, Historical & Monte Carlo VaR: Topic Hub & Method Lookup"
+title: "Parametric, Historical & Monte Carlo VaR"
 tags:
   - pillar-quantitative-risk
   - parametric-historical-and-monte-carlo-var

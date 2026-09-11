@@ -1,5 +1,5 @@
 ---
-title: "Probability & Measure Theory: Topic Hub & Definition Lookup"
+title: "Probability & Measure Theory"
 tags:
   - foundations
   - probability-and-measure-theory

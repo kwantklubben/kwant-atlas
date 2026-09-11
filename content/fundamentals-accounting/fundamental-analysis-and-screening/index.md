@@ -1,5 +1,5 @@
 ---
-title: "Fundamental Analysis & Screening: Topic Hub & Screen Criteria Lookup"
+title: "Fundamental Analysis & Screening"
 tags:
   - fundamentals-accounting
   - fundamental-analysis-and-screening

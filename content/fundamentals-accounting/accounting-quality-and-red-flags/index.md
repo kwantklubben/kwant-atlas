@@ -1,5 +1,5 @@
 ---
-title: "Accounting Quality & Red Flags: Topic Hub — the Accrual Formula & the Red-Flag Checklist"
+title: "Accounting Quality & Red Flags"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

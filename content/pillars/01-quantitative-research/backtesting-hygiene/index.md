@@ -1,5 +1,5 @@
 ---
-title: "Backtesting Hygiene: Topic Hub & Formula Lookup"
+title: "Backtesting Hygiene"
 tags:
   - pillar-quant-research
   - backtesting-hygiene

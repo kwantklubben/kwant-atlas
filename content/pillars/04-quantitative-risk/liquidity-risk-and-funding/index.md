@@ -1,5 +1,5 @@
 ---
-title: "Liquidity Risk & Funding: Topic Hub & Formula Lookup"
+title: "Liquidity Risk & Funding"
 tags:
   - pillar-quantitative-risk
   - liquidity-risk-and-funding

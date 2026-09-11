@@ -1,5 +1,5 @@
 ---
-title: "Stochastic Calculus: Topic Hub & Theorem Lookup"
+title: "Stochastic Calculus"
 tags:
   - foundations
   - stochastic-calculus

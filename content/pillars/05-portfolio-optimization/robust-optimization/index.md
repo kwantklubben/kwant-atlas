@@ -1,5 +1,5 @@
 ---
-title: "Robust Portfolio Optimization: Topic Hub & Formula Lookup"
+title: "Robust Portfolio Optimization"
 tags:
   - pillar-portfolio-optimization
   - robust-optimization

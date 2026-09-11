@@ -1,5 +1,5 @@
 ---
-title: "FIX Protocol & Exchange Connectivity: Topic Hub & Message Lookup"
+title: "FIX Protocol & Exchange Connectivity"
 tags:
   - pillar-quant-dev
   - fix-protocol

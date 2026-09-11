@@ -1,5 +1,5 @@
 ---
-title: "Signal Processing & Kalman Filtering: Topic Hub & Recursion Lookup"
+title: "Signal Processing & Kalman Filtering"
 tags:
   - pillar-quant-research
   - signal-processing-and-kalman

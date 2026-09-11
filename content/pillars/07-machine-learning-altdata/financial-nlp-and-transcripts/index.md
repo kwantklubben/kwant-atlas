@@ -1,5 +1,5 @@
 ---
-title: "Financial NLP & Transcripts: Topic Hub — From Bag-of-Words to FinBERT"
+title: "Financial NLP & Transcripts"
 tags:
   - pillar-machine-learning
   - financial-nlp-and-transcripts

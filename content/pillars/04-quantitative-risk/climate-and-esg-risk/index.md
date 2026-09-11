@@ -1,5 +1,5 @@
 ---
-title: "Climate & ESG Risk: Topic Hub & Metric Lookup"
+title: "Climate & ESG Risk"
 tags:
   - pillar-quantitative-risk
   - climate-and-esg-risk

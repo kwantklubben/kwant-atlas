@@ -1,5 +1,5 @@
 ---
-title: "Hardware Acceleration & FPGA: Topic Hub & Latency Budget Lookup"
+title: "Hardware Acceleration & FPGA"
 tags:
   - pillar-algorithmic-hft
   - hardware-acceleration

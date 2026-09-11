@@ -1,5 +1,5 @@
 ---
-title: "Tick-Level Databases & Time-Series: Topic Hub & Lookup"
+title: "Tick-Level Databases & Time-Series"
 tags:
   - pillar-quant-dev
   - tick-level-databases-and-timeseries

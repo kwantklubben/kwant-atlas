@@ -1,5 +1,5 @@
 ---
-title: "Production Trading Systems: Topic Hub & Risk-Limit Lookup"
+title: "Production Trading Systems"
 tags:
   - pillar-quant-dev
   - production-trading-systems

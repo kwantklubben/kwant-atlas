@@ -1,5 +1,5 @@
 ---
-title: "Credit Risk & the Merton Model: Topic Hub & Formula Lookup"
+title: "Credit Risk & the Merton Model"
 tags:
   - pillar-quantitative-risk
   - credit-risk-and-the-merton-model

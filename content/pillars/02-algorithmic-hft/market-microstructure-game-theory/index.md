@@ -1,5 +1,5 @@
 ---
-title: "Market Microstructure Game Theory: Topic Hub & Formula Lookup"
+title: "Market Microstructure Game Theory"
 tags:
   - pillar-algorithmic-hft
   - market-microstructure-game-theory

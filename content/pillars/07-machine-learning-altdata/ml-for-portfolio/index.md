@@ -1,5 +1,5 @@
 ---
-title: "ML for Portfolio Construction: Topic Hub & Formula Lookup"
+title: "ML for Portfolio Construction"
 tags:
   - pillar-machine-learning
   - ml-for-portfolio

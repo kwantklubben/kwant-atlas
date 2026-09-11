@@ -1,5 +1,5 @@
 ---
-title: "Statistics & Inference: Topic Hub & Estimator/Test Lookup"
+title: "Statistics & Inference"
 tags:
   - foundations
   - statistics-and-inference

@@ -1,5 +1,5 @@
 ---
-title: "Data Infrastructure & Reproducibility: Topic Hub & Lookup"
+title: "Data Infrastructure & Reproducibility"
 tags:
   - pillar-quant-dev
   - data-infrastructure-and-reproducibility

@@ -1,5 +1,5 @@
 ---
-title: "Colocation & Clock Synchronization: Topic Hub & Latency-Budget Lookup"
+title: "Colocation & Clock Synchronization"
 tags:
   - pillar-algorithmic-hft
   - colocation

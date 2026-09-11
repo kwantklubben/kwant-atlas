@@ -1,5 +1,5 @@
 ---
-title: "Avellaneda–Stoikov & Optimal Quoting: Topic Hub & Formula Lookup"
+title: "Avellaneda–Stoikov & Optimal Quoting"
 tags:
   - pillar-market-making
   - avellaneda-stoikov-and-optimal-quoting

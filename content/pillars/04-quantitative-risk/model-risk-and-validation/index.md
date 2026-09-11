@@ -1,5 +1,5 @@
 ---
-title: "Model Risk & Validation: Topic Hub & Test Lookup"
+title: "Model Risk & Validation"
 tags:
   - pillar-quantitative-risk
   - model-risk-and-validation

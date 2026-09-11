@@ -1,5 +1,5 @@
 ---
-title: "Calculus & Optimization: Topic Hub & Formula Lookup"
+title: "Calculus & Optimization"
 tags:
   - foundations
   - calculus

@@ -1,5 +1,5 @@
 ---
-title: "Alternative Data Pipelines & Evaluation: Topic Hub — The Alt-Data Lifecycle & Signal Test"
+title: "Alternative Data Pipelines & Evaluation"
 tags:
   - pillar-machine-learning
   - alternative-data-pipelines-and-evaluation

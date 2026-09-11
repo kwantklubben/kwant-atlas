@@ -1,5 +1,5 @@
 ---
-title: "Econometrics & Time Series: Topic Hub & Formula Lookup"
+title: "Econometrics & Time Series"
 tags:
   - foundations
   - econometrics-timeseries

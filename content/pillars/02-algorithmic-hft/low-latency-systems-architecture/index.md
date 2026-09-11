@@ -1,5 +1,5 @@
 ---
-title: "Low-Latency Systems Architecture: Topic Hub & Latency Lookup"
+title: "Low-Latency Systems Architecture"
 tags:
   - pillar-algorithmic-hft
   - low-latency-systems-architecture

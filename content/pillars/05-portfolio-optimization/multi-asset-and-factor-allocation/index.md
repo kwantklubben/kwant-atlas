@@ -1,5 +1,5 @@
 ---
-title: "Multi-Asset & Factor Allocation: Topic Hub & Formula Lookup"
+title: "Multi-Asset & Factor Allocation"
 tags:
   - pillar-portfolio-optimization
   - multi-asset-and-factor-allocation

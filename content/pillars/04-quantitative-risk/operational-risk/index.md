@@ -1,5 +1,5 @@
 ---
-title: "Operational Risk: Topic Hub & Formula Lookup"
+title: "Operational Risk"
 tags:
   - pillar-quantitative-risk
   - operational-risk

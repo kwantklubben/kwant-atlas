@@ -1,5 +1,5 @@
 ---
-title: "Data Sources & Corporate Data: Topic Hub & Source Lookup Table"
+title: "Data Sources & Corporate Data"
 tags:
   - fundamentals-accounting
   - data-sources-and-corporate-data

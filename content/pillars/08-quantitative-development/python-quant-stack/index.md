@@ -1,5 +1,5 @@
 ---
-title: "Python Quant Stack: Topic Hub & Lookup"
+title: "Python Quant Stack"
 tags:
   - pillar-quant-dev
   - python-quant-stack

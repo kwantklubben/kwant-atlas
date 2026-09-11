@@ -1,5 +1,5 @@
 ---
-title: "Statistical Arbitrage & Pairs Trading: Topic Hub & Method Lookup"
+title: "Statistical Arbitrage & Pairs Trading"
 tags:
   - pillar-quant-research
   - statistical-arbitrage-and-pairs

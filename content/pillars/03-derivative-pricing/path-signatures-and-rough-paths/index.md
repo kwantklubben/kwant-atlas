@@ -1,5 +1,5 @@
 ---
-title: "Path Signatures & Rough Paths: Iterated Integrals, Chen's Identity & the Signature of a Path — Topic Hub & Formula Lookup"
+title: "Path Signatures & Rough Paths: Iterated Integrals, Chen's Identity & the Signature of a Path"
 tags:
   - pillar-derivative-pricing
   - path-signatures-and-rough-paths

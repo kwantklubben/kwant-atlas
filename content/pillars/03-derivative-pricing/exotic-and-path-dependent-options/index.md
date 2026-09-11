@@ -1,5 +1,5 @@
 ---
-title: "Exotic & Path-Dependent Options: Topic Hub & Formula Lookup"
+title: "Exotic & Path-Dependent Options"
 tags:
   - pillar-derivative-pricing
   - exotic-options

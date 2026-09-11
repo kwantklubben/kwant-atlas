@@ -1,5 +1,5 @@
 ---
-title: "Options, Futures & Markets: Topic Hub & Lookup"
+title: "Options, Futures & Markets"
 tags:
   - pillar-derivative-pricing
   - options-fundamentals

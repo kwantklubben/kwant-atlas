@@ -1,5 +1,5 @@
 ---
-title: "American Options & Optimal Stopping: Topic Hub & Formula Lookup"
+title: "American Options & Optimal Stopping"
 tags:
   - pillar-derivative-pricing
   - american-options

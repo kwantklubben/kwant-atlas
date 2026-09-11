@@ -1,5 +1,5 @@
 ---
-title: "Regime Classification: HMM & GMM — Topic Hub (Unsupervised & Feature-Based Regimes)"
+title: "Regime Classification: HMM & GMM"
 tags:
   - pillar-machine-learning
   - regime-classification-hmm-and-gmm

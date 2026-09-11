@@ -1,5 +1,5 @@
 ---
-title: "Reinforcement Learning for Trading: Topic Hub & Algorithm Lookup"
+title: "Reinforcement Learning for Trading"
 tags:
   - pillar-machine-learning
   - reinforcement-learning-for-trading

@@ -1,5 +1,5 @@
 ---
-title: "Interest Rate & Term Structure: Topic Hub & Formula Lookup"
+title: "Interest Rate & Term Structure"
 tags:
   - pillar-derivative-pricing
   - interest-rates

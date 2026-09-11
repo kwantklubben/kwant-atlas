@@ -1,5 +1,5 @@
 ---
-title: "Liquidity Risk & Asset Pricing: Topic Hub & Formula Lookup"
+title: "Liquidity Risk & Asset Pricing"
 tags:
   - pillar-market-making
   - liquidity-risk-and-asset-pricing

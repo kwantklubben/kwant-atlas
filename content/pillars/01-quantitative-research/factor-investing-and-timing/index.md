@@ -1,5 +1,5 @@
 ---
-title: "Factor Investing & Factor Timing: Topic Hub & Practitioner Lookup"
+title: "Factor Investing & Factor Timing"
 tags:
   - pillar-quant-research
   - factor-investing-and-timing

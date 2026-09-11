@@ -1,5 +1,5 @@
 ---
-title: "Black–Scholes–Merton: Topic Hub & Formula Lookup"
+title: "Black–Scholes–Merton"
 tags:
   - pillar-derivative-pricing
   - black-scholes-merton
