@@ -15,7 +15,7 @@ tags:
 
 Algorithmic Trading spans automated order execution, volume-weighted slicing, and cross-venue smart order routing designed to minimize market impact for institutional portfolios. High-Frequency Trading (HFT) operates at the microsecond and nanosecond frontier, where firms act as electronic liquidity providers, arbitrage deterministic discrepancies across fragmented exchanges, and manage microsecond queue priority.
 
-This pillar is organised into **nine topic folders** (folder-per-topic), each a self-contained hub `index.md` with six sub-pages (from-zero intuition → mathematical ground truth → implementation → failure modes → advanced extensions). Follow them in the order below — each builds on the machinery of the ones before it.
+This pillar is organised into **ten topic folders** (folder-per-topic), each a self-contained hub `index.md` with six sub-pages (from-zero intuition → mathematical ground truth → implementation → failure modes → advanced extensions). Follow them in the order below — each builds on the machinery of the ones before it.
 
 ---
 
@@ -30,6 +30,7 @@ This pillar is organised into **nine topic folders** (folder-per-topic), each a 
 7. **[[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/index|Colocation & Clock Synchronization]]**: Proximity hosting, fibre vs microwave links, PTP/NTP time sync, and timestamp accuracy for latencies measured in nanoseconds.
 8. **[[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/index|Hardware Acceleration & FPGA]]**: Silicon tick-to-trade, wire-speed network parsing (Solarflare/DPDK), FPGA vs CPU vs GPU, and hardware-level trade validation.
 9. **[[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Low-Latency Systems Architecture]]**: Kernel-bypass networking, CPU isolation, NUMA affinity, zero-allocation pipelines, and designing end-to-end systems for microsecond response.
+10. **[[pillars/02-algorithmic-hft/market-microstructure-game-theory/index|Market Microstructure Game Theory]]**: Kyle's auction and the Back continuous-time limit, Glosten–Milgrom as a sequential Bayesian game, predatory trading and multi-agent execution games — the equilibrium foundation under the models the other folders assume.
 
 ---
 

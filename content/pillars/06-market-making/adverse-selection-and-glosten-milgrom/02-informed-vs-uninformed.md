@@ -28,15 +28,17 @@ The objective: build the inference machinery that the market maker uses every ro
 
 ### 2. Mathematical Ground Truth & Derivations
 
-In the GM economy, informed traders buy with probability $1$ when $V=V_H$ and sell with probability $1$ when $V=V_L$; uninformed buy or sell with probability $\tfrac12$. So a *buy* is
+In the GM economy, informed traders buy with probability $1$ when $V=V_H$ and sell with probability $1$ when $V=V_L$; uninformed buy or sell with probability $\tfrac12$. The condition matters: an informed trader buys only in the high state, so
 
-$$\mathbb{P}(B\mid I)=1,\qquad \mathbb{P}(B\mid U)=\tfrac12,\qquad \mathbb{P}(B)=\pi\cdot 1+(1-\pi)\cdot\tfrac12=\tfrac{1+\pi}{2}.$$
+$$\mathbb{P}(B\mid I)=\mathbb{P}(V_H\mid I)=\theta_{t-1},\qquad \mathbb{P}(B\mid U)=\tfrac12,\qquad \mathbb{P}(B)=\pi\,\theta_{t-1}+(1-\pi)\tfrac12 .$$
+
+(Equivalently, conditioned on the *state*, $\mathbb{P}(B\mid V_H)=\pi+(1-\pi)\tfrac12=\tfrac{1+\pi}{2}$ — the arrival law used on [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/03-the-glosten-milgrom-model|03 · The Glosten–Milgrom Model]]. Conditioning on $I$ instead would give $\mathbb{P}(B\mid I)=1$, which is only correct in the degenerate $\theta=1$ case.)
 
 **Probability that a buy came from an informed trader** (Bayes):
 
-$$\mathbb{P}(I\mid B)=\frac{\mathbb{P}(B\mid I)\,\pi}{\mathbb{P}(B)}=\frac{\pi}{(1+\pi)/2}=\boxed{\;\frac{2\pi}{1+\pi}\;}.$$
+$$\mathbb{P}(I\mid B)=\frac{\mathbb{P}(B\mid I)\,\pi}{\mathbb{P}(B)}=\frac{\pi\,\theta_{t-1}}{\pi\theta_{t-1}+\tfrac{1-\pi}{2}}=\boxed{\;\frac{2\pi\,\theta_{t-1}}{2\pi\,\theta_{t-1}+1-\pi}\;},$$
 
-This is strictly greater than $\pi$ — *a buy is evidence, but weak evidence*. At $\pi=0.1$: $\mathbb{P}(I\mid B)=0.182$ (the buy roughly doubles the odds of an informed counterpart but you are still ~82% sure they are noise).
+which equals $\pi$ at the symmetric prior $\theta_{t-1}=\tfrac12$ and exceeds it only when $\theta_{t-1}>\tfrac12$. That is the right reading of the model: **at a symmetric prior a buy tells you about $V$, not about whether the trader was informed** ($\mathbb{P}(V_H\mid B)>\theta_{t-1}$ while $\mathbb{P}(I\mid B)=\pi$). The informed-ness becomes visible in the *streak*: after a run of buys the conditional $\theta$ rises, and a further buy is then genuinely more likely to be informed flow. At $\pi=0.1$ and $\theta=\tfrac12$: $\mathbb{P}(I\mid B)=0.100$; at $\theta=0.9$ it is $0.167$.
 
 **Posterior belief that value is high** after observing a buy at prior $\theta_{t-1}$ (the GM update, repeated here explicitly):
 
@@ -50,8 +52,10 @@ For a *run* of $n$ buys the update compounds. A sequence of buys moves $\theta\t
 ### 3. Computational Implementation — type detection and streak diagnostics (stdlib only)
 
 ```python
-def p_informed_given_buy(mu):
-    return 2.0 * mu / (1.0 + mu)
+def p_informed_given_buy(mu, theta):
+    """P(informed | buy) with prior theta = P(V_H), informed fraction mu.
+    An informed trader buys only in state V_H, so P(buy|I) = theta."""
+    return 2.0 * mu * theta / (2.0 * mu * theta + 1.0 - mu)
 
 def posterior_high(prior, mu, n_buys, n_sells):
     """Bayesian GM posterior after n_buys buys and n_sells sells, starting at prior theta."""
@@ -64,9 +68,11 @@ def posterior_high(prior, mu, n_buys, n_sells):
         th = psH * th / (psH * th + psL * (1 - th))
     return th
 
-print("--- P(informed | a Buy) as a function of the base informed fraction pi ---")
+print("--- P(informed | a Buy): function of informed fraction pi and prior theta ---")
+print("    (= pi at theta=1/2: at a symmetric prior a buy informs you about V, not about I)")
 for mu in (0.10, 0.25, 0.50):
-    print(f"  pi={mu:.2f}:  P(informed|buy) = 2*pi/(1+pi) = {p_informed_given_buy(mu):.4f}")
+    row = "  ".join(f"theta={t:.1f}: {p_informed_given_buy(mu, t):.4f}" for t in (0.20, 0.50, 0.90))
+    print(f"  pi={mu:.2f}:  {row}")
 
 print("\n--- a 1-buy vs a 10-buy streak: how fast the maker learns (pi = 0.10) ---")
 print(f"  theta=0.50, after  1 buy : {posterior_high(0.5, 0.10, 1, 0):.4f}")
@@ -76,10 +82,11 @@ print(f"  theta=0.50, 1 buy then 5 sells (buy was noise/bi-directional): {poster
 ```
 
 ```text
---- P(informed | a Buy) as a function of the base informed fraction pi ---
-  pi=0.10:  P(informed|buy) = 2*pi/(1+pi) = 0.1818
-  pi=0.25:  P(informed|buy) = 2*pi/(1+pi) = 0.4000
-  pi=0.50:  P(informed|buy) = 2*pi/(1+pi) = 0.6667
+--- P(informed | a Buy): function of informed fraction pi and prior theta ---
+    (= pi at theta=1/2: at a symmetric prior a buy informs you about V, not about I)
+  pi=0.10:  theta=0.2: 0.0426  theta=0.5: 0.1000  theta=0.9: 0.1667
+  pi=0.25:  theta=0.2: 0.1176  theta=0.5: 0.2500  theta=0.9: 0.3750
+  pi=0.50:  theta=0.2: 0.2857  theta=0.5: 0.5000  theta=0.9: 0.6429
 
 --- a 1-buy vs a 10-buy streak: how fast the maker learns (pi = 0.10) ---
   theta=0.50, after  1 buy : 0.5500

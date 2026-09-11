@@ -23,7 +23,7 @@ However, market making is a game of severe asymmetric information. A market make
 
 ### Core Market Making Topics
 
-This pillar is organised into **ten topic folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code. Follow them in the order below.
+This pillar is organised into **eleven topic folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code. Follow them in the order below.
 
 1. **[[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]]**: The book as the state of the market — limit vs market orders, L2/L3 data, matching engine (price-time priority), queue position, and order flow imbalance.
 2. **[[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Avellaneda–Stoikov & Optimal Quoting]]**: Stochastic control of the two-sided quote — the market-maker's problem, the HJB solution, reservation price, inventory penalty, and optimal spread.
@@ -35,6 +35,7 @@ This pillar is organised into **ten topic folders** (folder-per-topic), each a s
 8. **[[pillars/06-market-making/liquidity-risk-and-asset-pricing/index|Liquidity Risk & Asset Pricing]]**: Illiquidity measures (Amihud ILLIQ), liquidity as a priced factor (Pastor–Stambaugh), liquidity risk (Acharya–Pedersen), and crises.
 9. **[[pillars/06-market-making/market-maker-economics-and-rebates/index|Market-Maker Economics & Rebates]]**: Market-maker P&L decomposition, maker-taker fees and rebates, competition and the race to zero, and payment for order flow.
 10. **[[pillars/06-market-making/dealer-banks-and-otc/index|Dealer Banks & OTC Markets]]**: Why OTC markets exist, the Duffie–Garleanu–Pedersen search-and-bargaining model, dealer balance-sheet capacity, and central clearing.
+11. **[[pillars/06-market-making/crypto-and-defi-market-making/index|Crypto & DeFi Market Making]]**: The constant-product AMM as a passive market maker, divergence loss derived from scratch, Uniswap v3 concentrated liquidity as a short-gamma position, MEV/sandwiching — the same adverse selection this pillar formalises, on 24/7 venues.
 
 ---
 

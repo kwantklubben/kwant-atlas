@@ -888,6 +888,30 @@
    "code": 2,
    "intuition": 2,
    "failure": "The signature needs a rough-path lift (and time/lead-lag augmentation) or it is the wrong object for a non-geometric path; truncation order silently discards the information that mattered."
+  },
+  "pillars/02-algorithmic-hft/market-microstructure-game-theory": {
+   "id": "P2-GAMETHEORY",
+   "title": "Market Microstructure Game Theory",
+   "math": 3,
+   "code": 2,
+   "intuition": 2,
+   "failure": "Equilibrium predictions assume common knowledge and a specified game; real venues have repeated games, anonymity gaps and outages, so the 'equilibrium' spread is a benchmark, not a forecast."
+  },
+  "pillars/04-quantitative-risk/climate-and-esg-risk": {
+   "id": "P4-CLIMATE",
+   "title": "Climate & ESG Risk",
+   "math": 2,
+   "code": 2,
+   "intuition": 2,
+   "failure": "Climate risk is measured in tonnes x price over decades, but portfolios are marked to a return history of a few years; the horizon mismatch and ESG-score disagreement can silently dominate any estimate."
+  },
+  "pillars/06-market-making/crypto-and-defi-market-making": {
+   "id": "P6-CRYPTO",
+   "title": "Crypto & DeFi Market Making",
+   "math": 2,
+   "code": 2,
+   "intuition": 3,
+   "failure": "An AMM LP writes a short-gamma payoff for free: fees look positive until an arbitrageur takes the divergence loss, and MEV/sandwiching is the same toxicity the equity pillar describes."
   }
  },
  "_links_comment": "Curated graph edges [source, target, type], by node id. Editorial: which edges to draw is a design choice, so they are listed rather than derived. build_visualizer.py VALIDATES that both endpoints exist, so retiring a node becomes a loud error instead of a silently-dangling edge.",
@@ -2215,6 +2239,51 @@
   [
    "P3-SIGNATURE",
    "P3-VOLSURF",
+   "inter"
+  ],
+  [
+   "P2-HUB",
+   "P2-GAMETHEORY",
+   "pillar"
+  ],
+  [
+   "P4-HUB",
+   "P4-CLIMATE",
+   "pillar"
+  ],
+  [
+   "P6-HUB",
+   "P6-CRYPTO",
+   "pillar"
+  ],
+  [
+   "P2-GAMETHEORY",
+   "P6-ADV",
+   "inter"
+  ],
+  [
+   "P2-GAMETHEORY",
+   "P2-ALM",
+   "inter"
+  ],
+  [
+   "P4-CLIMATE",
+   "P4-VAR",
+   "inter"
+  ],
+  [
+   "P4-CLIMATE",
+   "P4-STR",
+   "inter"
+  ],
+  [
+   "P6-CRYPTO",
+   "P6-ADV",
+   "inter"
+  ],
+  [
+   "P6-CRYPTO",
+   "P6-IMPACT",
    "inter"
   ]
  ]

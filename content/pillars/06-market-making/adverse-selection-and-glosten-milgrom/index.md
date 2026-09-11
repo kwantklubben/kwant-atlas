@@ -32,7 +32,7 @@ This folder is the **adverse-selection and Glosten–Milgrom (1985)** topic-fold
 | Bayesian update | $\theta_t^{+}=\dfrac{\tfrac{1+\pi}{2}\theta_{t-1}}{\tfrac{1+\pi}{2}\theta_{t-1}+\tfrac{1-\pi}{2}(1-\theta_{t-1})}$ | buy raises belief |
 | Zero-profit quotes | ask $=$ E$[V\mid$ buy$]$, bid $=$ E$[V\mid$ sell$]$ | competitive MM |
 | GM spread (symmetric, $\theta=\tfrac12$) | $A-B=\pi\,(V_H-V_L)$ | widens with informed share |
-| P(informed $\mid$ buy) | $\dfrac{2\pi}{1+\pi}$ | toxicity of a fill |
+| P(informed $\mid$ buy) | $\dfrac{2\pi\theta_{t-1}}{2\pi\theta_{t-1}+1-\pi}$ ($=\pi$ at $\theta_{t-1}=\tfrac12$) | toxicity of a fill |
 | PIN (EKOP) | $\dfrac{\alpha\mu}{\alpha\mu+2\varepsilon}$ | $\alpha$=info-event prob, $\mu$=informed rate, $\varepsilon$=noise rate |
 | Kyle lambda | $\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}$, depth $=1/\lambda$ | from Kyle 1985 |
 

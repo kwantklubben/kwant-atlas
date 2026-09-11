@@ -11,7 +11,7 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 1. **[Quantitative Research (Alpha Generation)](content/pillars/01-quantitative-research/index.md)**  
    *Analyzing historical and alternative market data to discover predictive trading signals and statistical anomalies.*  
-   **Structure:** organised as **8 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
+   **Structure:** organised as **ten topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
    1. **[Statistical Arbitrage & Pairs Trading](content/pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index.md)** — Trading the deviation of a stationary asset relationship (cointegration, Engle-Granger/Johansen, Ornstein-Uhlenbeck spreads) rather than market direction.
    2. **[Backtesting Hygiene & Deflated Sharpe](content/pillars/01-quantitative-research/backtesting-hygiene/index.md)** — Treating a backtest as the *maximum* of a search: multiple-testing correction, deflated Sharpe ratio, and purged/embargoed cross-validation.
    3. **[Fundamental Multi-Factor Models](content/pillars/01-quantitative-research/fundamental-multi-factor-models/index.md)** — Projecting the cross-section onto a low-dimensional basis of systematic risk factors (Fama-French, Barra) to price and rank stocks.
@@ -23,7 +23,7 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 2. **[Algorithmic and High-Frequency Trading (HFT)](content/pillars/02-algorithmic-hft/index.md)**  
    *Designing automated execution systems operating across the millisecond to nanosecond frontier.*  
-   **Structure:** organised as **9 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code:
+   **Structure:** organised as **ten topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code:
    1. **[Market Microstructure & Order Types](content/pillars/02-algorithmic-hft/market-microstructure-and-order-types/index.md)** — The market's plumbing: limit vs market orders, hidden and iceberg orders, pegged orders, auctions vs continuous trading, and maker-taker fee structures.
    2. **[Optimal Execution & Almgren-Chriss](content/pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index.md)** — Permanent vs temporary market impact, execution risk aversion, and optimal liquidation trajectories.
    3. **[Execution Algorithms: VWAP, TWAP & POV](content/pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/index.md)** — Institutional order slicing, intraday volume curves, implementation shortfall, and benchmark tracking.
@@ -36,11 +36,11 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 3. **[Derivative Pricing and Structuring](content/pillars/03-derivative-pricing/index.md)**  
    *The traditional sell-side quant domain: valuing non-linear contracts and engineering self-financing hedges.*  
-   **Structure:** organised as **11 topic-folders** (folder-per-topic), each a self-contained study sequence spanning **intro-to-advanced depth** with worked mathematics and code. Topics: Options Fundamentals & Markets, No-Arbitrage & Binomial Trees, Black-Scholes-Merton (PDE, Feynman-Kac, Greeks & Dynamic Hedging), Volatility Surfaces & Smiles (Dupire), Advanced Volatility (Heston, SABR), American Options & Optimal Stopping, Numerical Methods (Finite Difference, Monte Carlo), Exotic & Path-Dependent Options, Interest Rate & Term Structure (Vasicek, CIR, Hull-White), Counterparty Risk & xVA, and Calibration & Market Practice.
+   **Structure:** organised as **fifteen topic-folders** (folder-per-topic), each a self-contained study sequence spanning **intro-to-advanced depth** with worked mathematics and code. Topics: Options Fundamentals & Markets, No-Arbitrage & Binomial Trees, Black-Scholes-Merton (PDE, Feynman-Kac, Greeks & Dynamic Hedging), Volatility Surfaces & Smiles (Dupire), Advanced Volatility (Heston, SABR), American Options & Optimal Stopping, Numerical Methods (Finite Difference, Monte Carlo), Exotic & Path-Dependent Options, Interest Rate & Term Structure (Vasicek, CIR, Hull-White), Counterparty Risk & xVA, Calibration & Market Practice, and — the frontier layer — Rough Volatility (fractional models, rBergomi), Local-Stochastic Volatility (leverage function, particle method), Deep Hedging & BSDEs, and Path Signatures & Rough Paths.
 
 4. **[Quantitative Risk Management](content/pillars/04-quantitative-risk/index.md)**  
    *Measuring, bounding, and mitigating financial exposure to guarantee firm survival across extreme market volatility.*  
-   **Structure:** organised as **13 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
+   **Structure:** organised as **fourteen topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus sub-pages walking from intuition to working formulas and code:
    1. **[Value at Risk & Expected Shortfall](content/pillars/04-quantitative-risk/var-and-expected-shortfall/index.md)** — The canonical downside risk measures; why VaR fails subadditivity and Expected Shortfall (CVaR) is the coherent alternative.
    2. **[Parametric, Historical & Monte Carlo VaR](content/pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index.md)** — The three estimation engines behind a VaR number, their distributional assumptions, and backtesting (Kupiec).
    3. **[Extreme Value Theory & Fat Tails](content/pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index.md)** — Modelling tail risk with POT/GEV when Gaussian assumptions understate rare-event losses.
@@ -70,7 +70,7 @@ The **Kwant Atlas** is KwantKlubben's interconnected knowledge graph and foundat
 
 6. **[Market Making and Liquidity Provision](content/pillars/06-market-making/index.md)**  
    *Designing automated models that quote continuous two-sided liquidity, profiting from the spread while managing inventory and adverse selection.*  
-   **Structure:** organised as **9 topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code:
+   **Structure:** organised as **eleven topic-folders** (folder-per-topic), each a self-contained hub `index.md` plus six sub-pages walking from intuition to working formulas and code:
    1. **[Limit Order Book Mechanics](content/pillars/06-market-making/limit-order-book-mechanics/index.md)** — The book as the state of the market: limit vs market orders, L2/L3 data, matching engine (price-time priority), queue position, and order flow imbalance.
    2. **[Avellaneda–Stoikov & Optimal Quoting](content/pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index.md)** — Stochastic control of the two-sided quote: the market-maker's problem, HJB solution, reservation price, inventory penalty, and optimal spread.
    3. **[Inventory Management & Quote Skewing](content/pillars/06-market-making/inventory-management-and-quote-skewing/index.md)** — The Ho–Stoll dealer model, the inventory risk function, mean-reverting targets, and asymmetric quote skewing.

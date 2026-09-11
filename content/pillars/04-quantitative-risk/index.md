@@ -18,7 +18,7 @@ tags:
 
 Quantitative Risk Management is the science of measuring, bounding, and mitigating financial exposure across market, credit, liquidity, and operational domains. Far from a passive compliance exercise, risk modeling provides the boundary conditions that dictate how much leverage a fund can deploy, whether a trading desk can survive a liquidity spiral, and how to allocate risk budgets across competing alpha strategies.
 
-This pillar is organised into **thirteen topic folders**, each a self-contained hub with six sub-pages. Follow them in the order below — each assumes the vocabulary of the ones before it.
+This pillar is organised into **fourteen topic folders**, each a self-contained hub with six sub-pages. Follow them in the order below — each assumes the vocabulary of the ones before it.
 
 ---
 
@@ -37,6 +37,7 @@ This pillar is organised into **thirteen topic folders**, each a self-contained 
 11. **[[pillars/04-quantitative-risk/risk-factor-sensitivities/index|Risk-Factor Sensitivities]]**: The map from positions to P&L — delta, gamma, vega, rho, DV01 and key-rate duration, factor exposures, and delta-normal vs delta-gamma VaR.
 12. **[[pillars/04-quantitative-risk/copulas-and-dependence/index|Copulas & Dependence]]**: Sklar's theorem, the Gaussian, $t$, Gumbel and Clayton copulas, rank correlation and tail dependence, and the Vašíček one-factor / Gaussian-copula portfolio-credit layer behind 2008.
 13. **[[pillars/04-quantitative-risk/systemic-risk-and-aggregation/index|Systemic Risk & Aggregation]]**: Network contagion and financial-stability measures (CoVaR, MES, SRISK), and the (im)possibility of aggregating market, credit, liquidity and operational risk into a single number.
+14. **[[pillars/04-quantitative-risk/climate-and-esg-risk/index|Climate & ESG Risk]]**: Physical vs transition risk, carbon pricing and pass-through, NGFS-style scenario stress testing, ESG-score disagreement, and the emerging carbon premium — a valuation problem measured over decades, not a return series.
 
 ---
 
