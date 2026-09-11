@@ -238,3 +238,30 @@ Result: display equations **6 -> 2,449**; KaTeX errors **288 -> 16**; affected p
 **Gate:** `node corpus/tools/check_math.mjs` validates every math span (both modes)
 against the same KaTeX the site builds with. Exits 1 on any span that fails to render.
 Run it after editing content; it catches the delimiter-form class before it ships.
+
+
+---
+
+## Title & numbering scheme
+
+Page **titles** drive the sidebar: Quartz's explorer resolves a node's `displayName`
+from the file's frontmatter `title` (an `index.md` supplies it for its folder), then
+sorts with `numeric: true`. So the number in a title is what puts the sidebar in
+reading order rather than alphabetical order, and `4.10` correctly follows `4.9`.
+
+| Area | Hub | Sub-page |
+|---|---|---|
+| Pillars 1-8 | `<pillar>.<topic> <Name>` — e.g. `4.9 Basel & Regulation` | `<pillar>.<topic>.<NN> <Name>` — e.g. `4.9.2 Capital & RWA` |
+| Foundations | `F.<n> <Name>` — e.g. `F.7 Bayesian Statistics` | `F.<n>.<NN> <Name>` — e.g. `F.7.2 Bayes' Theorem` |
+| Fundamentals & Accounting | `A.<n> <Name>` — e.g. `A.3 Equity Valuation` | `A.<n>.<NN> <Name>` — e.g. `A.3.2 Cash-Flow Forecasting` |
+
+**The order is not invented.** Each area hub already declares it as a numbered topic
+list (`1. **[[<path>/index|Alias]]**`); the counts match the folders exactly. Derive
+numbers from that list, never from `ls` (on-disk order is alphabetical and differs).
+
+Sub-page numbers come from the file's own `NN-` prefix, which matches its section
+order. Titles carry **no** descriptive tail — a sub-page is `Capital & RWA`, not
+`Capital & RWA: The Arithmetic of the Ratio`. Page budgets come from the numbers:
+`2x = pillar/area count`, so before adding a topic, renumber and re-run the gates.
+
+Never put a number in a **path** — 9,308 wikilinks resolve against folder slugs.
