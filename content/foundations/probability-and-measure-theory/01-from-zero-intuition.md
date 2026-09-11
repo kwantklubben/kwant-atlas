@@ -31,14 +31,18 @@ Four "aha"s:
 
 **The probability space (Shreve II Def 1.1.1–1.1.2).** A $\sigma$-algebra $\mathcal F$ on nonempty $\Omega$ contains $\varnothing$, is closed under complements and countable unions (hence countable intersections and $\Omega\in\mathcal F$). A probability measure is $\mathbb P:\mathcal F\to[0,1]$ with $\mathbb P(\Omega)=1$ and **countable additivity** for disjoint events:
 
-$$\mathbb P\Big(\bigcup_{n}A_n\Big)=\sum_n\mathbb P(A_n)\;\Rightarrow\;\mathbb P(A^c)=1-\mathbb P(A),\ \mathbb P(\varnothing)=0.$$
+$$
+\mathbb P\Big(\bigcup_{n}A_n\Big)=\sum_n\mathbb P(A_n)\;\Rightarrow\;\mathbb P(A^c)=1-\mathbb P(A),\ \mathbb P(\varnothing)=0.
+$$
 
 On a finite space one takes $\mathcal F=$ all subsets; on $[0,1]$ the **uniform (Lebesgue) measure** is defined first on intervals by $\mathbb P(a,b]=b-a$ and extended to Borel sets by countable additivity (Shreve II Ex 1.1.3).
 
 **Expectation = the "standard machine" (Shreve II §1.4–1.5).** Integrals on uncountable spaces are built in four steps — indicator $\to$ simple $\to$ nonnegative $\to$ general — and computed via densities: $\mathbb E[h(X)]=\int h(x)\,f_X(x)\,dx$ (Shreve I Ch 11 Thm 3.32). The limit theorems — Monotone Convergence, Fatou, Dominated Convergence — justify passing limits through expectations (Shreve II Thms 1.4.5/1.4.9), which is exactly what makes "stop the martingale and let $t\to\infty$" legal in Ch 3.
 
 **The two theorems that run Monte Carlo (Glasserman §1.1).** For iid $U_i$ with $\alpha=\mathbb E[f(U)]$:
-$$\hat\alpha_n=\frac1n\sum_{i=1}^n f(U_i)\xrightarrow{\text{a.s.}}\alpha \quad\text{(SLLN)},\qquad \hat\alpha_n-\alpha\approx N\!\Big(0,\tfrac{\sigma_f}{\sqrt n}\Big)\quad\text{(CLT)}.$$
+$$
+\hat\alpha_n=\frac1n\sum_{i=1}^n f(U_i)\xrightarrow{\text{a.s.}}\alpha \quad\text{(SLLN)},\qquad \hat\alpha_n-\alpha\approx N\!\Big(0,\tfrac{\sigma_f}{\sqrt n}\Big)\quad\text{(CLT)}.
+$$
 The standard error $\sigma_f/\sqrt n$ is **independent of dimension** — the raison d'être of MC in high-dimensional pricing (Glasserman §1.1; the error rate is $O(n^{-1/2})$ in any $d$).
 
 **Conditional expectation and martingales previewed.** $\mathbb E[X\mid\mathcal G]$ is $\mathcal G$-measurable and satisfies **partial averaging** $\int_A\mathbb E[X\mid\mathcal G]d\mathbb P=\int_A X\,d\mathbb P$ ∀$A\in\mathcal G$ (Shreve II Def 2.3.1). A martingale is adapted + integrable with $\mathbb E[M_t\mid\mathcal F_s]=M_s$ (Shreve I §2.4). Both get full pages below ([[foundations/probability-and-measure-theory/04-conditional-expectation|04 · Conditional Expectation]], [[foundations/probability-and-measure-theory/05-martingales|05 · Martingales]]).

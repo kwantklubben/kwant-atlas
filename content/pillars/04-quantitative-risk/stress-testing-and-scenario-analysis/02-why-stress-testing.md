@@ -30,13 +30,17 @@ Three concrete ways VaR/ES fail to be the whole story:
 
 **Why the quantile cannot see the unseen tail.** Let losses be $L$, with 99% daily VaR $q=\text{VaR}_{0.99}(L)$. For any distribution, ES is the average beyond $q$:
 
-$$\mathrm{ES}_{0.99}(L)=\mathbb{E}[\,L\mid L>q\,].$$
+$$
+\mathrm{ES}_{0.99}(L)=\mathbb{E}[\,L\mid L>q\,].
+$$
 
 For a normal $L\sim\mathcal N(\mu,\sigma^2)$ the ratio is constant: $\mathrm{ES}/\mathrm{VaR}=\dfrac{\phi(z_{0.99})}{(1-0.99)\,z_{0.99}}$ — with $z_{0.99}=2.326$, $\phi(2.326)=0.02665$, this ratio is $\approx2.665/2.326=1.146$. So for a normal world, ES is VaR plus ~15%. **But the ratio is a property of the *assumed* distribution.** For a fat-tailed (e.g. Student-$t$ or GPD) tail, ES can be a multiple of VaR — the whole point of EVT ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]]). Neither VaR nor ES tells you about a *joint* shock whose correlation structure is wrong.
 
 **Where stress enters.** A stress scenario fixes a shock vector $\Delta F^*$ and evaluates
 
-$$\Delta V^*=\beta^T\Delta F^*+\tfrac12\Delta F^{*T}\Gamma\,\Delta F^*+\dots$$
+$$
+\Delta V^*=\beta^T\Delta F^*+\tfrac12\Delta F^{*T}\Gamma\,\Delta F^*+\dots
+$$
 
 This is *not* a quantile of anything — it is a point evaluation. Its information is orthogonal to VaR's: it tells you the portfolio's behavior in one specific state, which VaR (an average over many states) necessarily obscures. The most important such state is the **correlation-breakdown** state, where the covariance that VaR uses is itself wrong — treated in [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/05-failure-modes-and-practice|05 · Failure Modes]].
 

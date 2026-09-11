@@ -33,29 +33,41 @@ Three "aha"s:
 
 **Bayes' rule for a parameter (C&B eq. 7.2.6–7.2.7).** Let $\theta$ be the unknown with **prior** density $\pi(\theta)$ (C&B: the classical parameter is now random, with a *subjective* distribution fixed before the data). Given data $x$ with likelihood $f(x\mid\theta)$, the **posterior** is
 
-$$p(\theta\mid x)=\frac{f(x\mid\theta)\,\pi(\theta)}{m(x)},\qquad m(x)=\int f(x\mid\theta)\,\pi(\theta)\,d\theta .$$
+$$
+p(\theta\mid x)=\frac{f(x\mid\theta)\,\pi(\theta)}{m(x)},\qquad m(x)=\int f(x\mid\theta)\,\pi(\theta)\,d\theta .
+$$
 
 The denominator $m(x)$ — the **marginal likelihood** or **evidence** — does not depend on $\theta$, so the whole content of the update is the proportionality
 
-$$\boxed{\;p(\theta\mid x)\;\propto\; f(x\mid\theta)\,\pi(\theta)\;}$$
+$$
+\boxed{\;p(\theta\mid x)\;\propto\; f(x\mid\theta)\,\pi(\theta)\;}
+$$
 
 **posterior $\propto$ likelihood $\times$ prior.** Renormalization is the only step that needs an integral, and for conjugate pairs even that is done for us by the known normalizing constant of the family.
 
 **The Beta–Bernoulli derivation, from scratch.** Let $X_1,\dots,X_n$ be iid $\mathrm{Bernoulli}(p)$ with $y=\sum X_i$ successes, and give $p$ a $\mathrm{Beta}(a,b)$ prior:
 
-$$\pi(p)=\frac{1}{B(a,b)}\,p^{a-1}(1-p)^{b-1},\qquad B(a,b)=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} .$$
+$$
+\pi(p)=\frac{1}{B(a,b)}\,p^{a-1}(1-p)^{b-1},\qquad B(a,b)=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)} .
+$$
 
 The likelihood is $\binom{n}{y}p^{y}(1-p)^{n-y}$, so
 
-$$p(p\mid y)\;\propto\;\underbrace{p^{y}(1-p)^{n-y}}_{\text{likelihood}}\cdot\underbrace{p^{a-1}(1-p)^{b-1}}_{\text{prior}}\;=\;p^{\,a+y-1}(1-p)^{\,b+n-y-1},$$
+$$
+p(p\mid y)\;\propto\;\underbrace{p^{y}(1-p)^{n-y}}_{\text{likelihood}}\cdot\underbrace{p^{a-1}(1-p)^{b-1}}_{\text{prior}}\;=\;p^{\,a+y-1}(1-p)^{\,b+n-y-1},
+$$
 
 which is *exactly* the kernel of $\mathrm{Beta}(a+y,\;b+n-y)$ (C&B Ex 7.2.9). **So the conjugate update is:**
 
-$$\mathrm{Beta}(a,b)\;+\;(y\text{ successes in }n)\;\longrightarrow\;\mathrm{Beta}(a+y,\;b+n-y).$$
+$$
+\mathrm{Beta}(a,b)\;+\;(y\text{ successes in }n)\;\longrightarrow\;\mathrm{Beta}(a+y,\;b+n-y).
+$$
 
 The **posterior mean** is a precision-weighted blend of prior mean and sample mean (C&B):
 
-$$\mathbb E[p\mid y]=\frac{a+y}{a+b+n}=\underbrace{\frac{n}{a+b+n}}_{\text{weight on data}}\cdot\frac{y}{n}\;+\;\underbrace{\frac{a+b}{a+b+n}}_{\text{weight on prior}}\cdot\frac{a}{a+b}.$$
+$$
+\mathbb E[p\mid y]=\frac{a+y}{a+b+n}=\underbrace{\frac{n}{a+b+n}}_{\text{weight on data}}\cdot\frac{y}{n}\;+\;\underbrace{\frac{a+b}{a+b+n}}_{\text{weight on prior}}\cdot\frac{a}{a+b}.
+$$
 
 This single formula *is* shrinkage: the MLE $y/n$ is pulled toward the prior mean $a/(a+b)$ by an amount that vanishes as $n\to\infty$. With a uniform $\mathrm{Beta}(1,1)$ prior the posterior mean is $(y+1)/(n+2)$ — **Laplace's rule of succession**, the answer to "what happens if you've seen 3 heads in 3 tosses?" (not $p=1$, but $p=4/5$).
 

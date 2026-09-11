@@ -31,13 +31,17 @@ The reading stage is qualitative, but the signals it checks have exact arithmeti
 
 **Cash conversion — does profit become cash?** The accrual identity is $\text{NI}=\text{CFO}+\text{Accruals}$, so the ratio
 
-$$\frac{\text{CFO}}{\text{NI}}$$
+$$
+\frac{\text{CFO}}{\text{NI}}
+$$
 
 should be comfortably above 1 over time. **CFO < NI** persistently means earnings are accrual-heavy (recognised before cash arrives) — the Sloan accruals warning. A screen threshold of $\text{CFO}/\text{NI} < 0.8$ is a red flag.
 
 **Days Sales Outstanding (DSO) — are customers paying on time?** With receivables $AR$ and revenue $S$ over $n$ days:
 
-$$\text{DSO}=\frac{AR}{S/n}.$$
+$$
+\text{DSO}=\frac{AR}{S/n}.
+$$
 
 A **jump** of 10+ days year-over-year (receivables growing much faster than revenue) signals channel-stuffing, weak collections, or a customer in trouble. Formally, flag when $\text{recv growth} > \text{revenue growth} + \varepsilon$.
 
@@ -45,7 +49,9 @@ A **jump** of 10+ days year-over-year (receivables growing much faster than reve
 
 **Ownership and insider alignment.** A screen reason to *buy* — not a number to filter on mechanically, but a signal to weight heavily:
 
-$$\text{insider ownership}\ \% \ \text{high and rising}, \qquad \text{net insider buys} > 0.$$
+$$
+\text{insider ownership}\ \% \ \text{high and rising}, \qquad \text{net insider buys} > 0.
+$$
 
 When managers buy their own stock with their own money, they are putting their capital where their confidence is; when they sell consistently, they are telling you something too. Combine with the **F-score's equity-issuance signal**: net share issuance dilutes you and often signals management distrust of its own price.
 

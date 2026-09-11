@@ -23,8 +23,10 @@ The solution is a **two-step procedure**:
 
 The headline result is beautifully compact:
 
-$$\boxed{\;p^{\text{ask}}=r+\tfrac12\psi,\qquad p^{\text{bid}}=r-\tfrac12\psi,\qquad
-\psi=\gamma\sigma^2(T-t)+\frac{2}{\gamma}\ln\!\left(1+\frac{\gamma}{k}\right)\;}$$
+$$
+\boxed{\;p^{\text{ask}}=r+\tfrac12\psi,\qquad p^{\text{bid}}=r-\tfrac12\psi,\qquad
+\psi=\gamma\sigma^2(T-t)+\frac{2}{\gamma}\ln\!\left(1+\frac{\gamma}{k}\right)\;}
+$$
 
 with $r=s-q\gamma\sigma^2(T-t)$. **The quotes are the reservation price plus/minus half the spread — and the spread itself does not depend on inventory** (a consequence of exponential intensities). All inventory dependence lives in the skew of $r$.
 
@@ -36,9 +38,11 @@ with $r=s-q\gamma\sigma^2(T-t)$. **The quotes are the reservation price plus/min
 
 From [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/02-the-market-maker-problem|02]], the ansatz $u=-\exp(-\gamma x)\exp(-\gamma\theta(s,q,t))$ turns the HJB into (AS eq. 3.3)
 
-$$\theta_t+\tfrac12\sigma^2\theta_{ss}-\tfrac12\sigma^2\gamma\,\theta_s^2
+$$
+\theta_t+\tfrac12\sigma^2\theta_{ss}-\tfrac12\sigma^2\gamma\,\theta_s^2
 +\max_{\delta^b}\frac{\lambda^b(\delta^b)}{\gamma}\!\left[1-e^{+\gamma(s-\delta^b-r^b)}\right]
-+\max_{\delta^a}\frac{\lambda^a(\delta^a)}{\gamma}\!\left[1-e^{-\gamma(s+\delta^a-r^a)}\right]=0,$$
++\max_{\delta^a}\frac{\lambda^a(\delta^a)}{\gamma}\!\left[1-e^{-\gamma(s+\delta^a-r^a)}\right]=0,
+$$
 
 with $\theta(s,q,T)=qs$. The first-order conditions for the two maxes give the **implicit quote distances** (AS eq. 3.6–3.7). For exponential intensities $\lambda^a(\delta)=\lambda^b(\delta)=Ae^{-k\delta}$ they solve explicitly.
 
@@ -46,18 +50,24 @@ with $\theta(s,q,T)=qs$. The first-order conditions for the two maxes give the *
 
 Expand $\theta(q,s,t)=\theta_0+q\theta_1+\tfrac12 q^2\theta_2+\dots$ (3.10). The indifference relations (3.4)–(3.5) give
 
-$$r^a=\theta_1+(1-2q)\theta_2+\dots,\qquad r^b=\theta_1+(-1-2q)\theta_2+\dots,$$
+$$
+r^a=\theta_1+(1-2q)\theta_2+\dots,\qquad r^b=\theta_1+(-1-2q)\theta_2+\dots,
+$$
 
 so that $r=\tfrac{r^a+r^b}{2}=\theta_1-2q\theta_2$ and the spread is $\delta^a+\delta^b=2\theta_2+\tfrac{2}{\gamma}\ln(1+\tfrac{\gamma}{k})$. Grouping orders of $q$:
 
 - **Order 1:** $\theta^1_t+\tfrac12\sigma^2\theta^1_{ss}=0$, $\theta^1(s,T)=s$ ⇒ $\theta_1(s,t)=s$ — the reservation price at *zero* inventory is simply the mid-price.
 - **Order $q^2$:** $\theta^2_t+\tfrac12\sigma^2\theta^2_{ss}-\tfrac12\sigma^2\gamma(\theta^1_s)^2=0$, $\theta^2(s,T)=0$ ⇒
 
-$$\theta_2(s,t)=\tfrac12\sigma^2\gamma\,(T-t).$$
+$$
+\theta_2(s,t)=\tfrac12\sigma^2\gamma\,(T-t).
+$$
 
 Hence $r=\theta_1-2q\theta_2=s-q\gamma\sigma^2(T-t)$, recovering the frozen-inventory reservation price, and the spread is
 
-$$\delta^a+\delta^b = 2\theta_2+\frac{2}{\gamma}\ln\!\left(1+\frac{\gamma}{k}\right)=\gamma\sigma^2(T-t)+\frac{2}{\gamma}\ln\!\left(1+\frac{\gamma}{k}\right). \qquad (3.18)$$
+$$
+\delta^a+\delta^b = 2\theta_2+\frac{2}{\gamma}\ln\!\left(1+\frac{\gamma}{k}\right)=\gamma\sigma^2(T-t)+\frac{2}{\gamma}\ln\!\left(1+\frac{\gamma}{k}\right). \qquad (3.18)
+$$
 
 **Reading the spread.** It has two economics:
 - $\dfrac{2}{\gamma}\ln(1+\tfrac{\gamma}{k})$ — the **adverse-selection/book component**: wider when risk aversion $\gamma$ is high or the book is thin (small $k$). In the risk-neutral limit $\gamma\to0$ this tends to $2/k$ (finite).
@@ -109,7 +119,7 @@ spread component (2/gamma)ln(1+gamma/k) vs AS paper Tables 1-3:
   gamma=0.10: (2/g)ln(1+g/k)=1.2908
   gamma=0.50: (2/g)ln(1+g/k)=1.1507
 ```
-The stationary spread column reproduces the paper's Tables 1–3 ($\gamma=0.1\Rightarrow1.29$, $\gamma=0.01\Rightarrow1.33$, $\gamma=0.5\Rightarrow1.15$) to their published precision. Note the skew: at $q=+10$ *both* quotes sit $\$2$ below the mid (bid $95.15$, ask $96.85$) — the dealer is actively trying to sell.
+The stationary spread column reproduces the paper's Tables 1–3 ($\gamma=0.1\Rightarrow1.29$, $\gamma=0.01\Rightarrow1.33$, $\gamma=0.5\Rightarrow1.15$) to their published precision. Note the skew: at $q=+10$ *both* quotes sit \$2 below the mid (bid $95.15$, ask $96.85$) — the dealer is actively trying to sell.
 
 ---
 

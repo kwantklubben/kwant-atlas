@@ -39,11 +39,15 @@ Three "aha"s:
 
 Propagation time over a route of length $d$:
 
-$$T_{\text{prop}} = \frac{d}{c},\qquad c_{\text{fiber}}\approx 0.2\ \text{m/ns} = 200\ \text{km/ms},\quad c_{\text{air}}\approx 0.2997\ \text{m/ns} = 299.7\ \text{km/ms}.$$
+$$
+T_{\text{prop}} = \frac{d}{c},\qquad c_{\text{fiber}}\approx 0.2\ \text{m/ns} = 200\ \text{km/ms},\quad c_{\text{air}}\approx 0.2997\ \text{m/ns} = 299.7\ \text{km/ms}.
+$$
 
 Air is $\times 1.5$ faster, and a line-of-sight path is also shorter than routed fiber (fibre cannot run straight; it follows rights-of-way and regeneration sites). The combined saving for crow-flies $d_{\text{air}}$ and fiber route $d_{\text{fiber}}$ is
 
-$$\Delta T = \frac{d_{\text{fiber}}}{c_{\text{fiber}}} - \frac{d_{\text{air}}}{c_{\text{air}}}.$$
+$$
+\Delta T = \frac{d_{\text{fiber}}}{c_{\text{fiber}}} - \frac{d_{\text{air}}}{c_{\text{air}}}.
+$$
 
 Microwave pays for this with **line-of-sight hops, weather sensitivity, limited bandwidth, and tower/spectrum capex**; the classic case is Chicago–NY, where micro/ millimetre-wave routes have historically beaten fiber by several milliseconds each way.
 
@@ -51,8 +55,10 @@ Microwave pays for this with **line-of-sight hops, weather sensitivity, limited 
 
 Aggregating one update from each of $k$ nodes:
 
-$$T_{\text{host}} = k\,t_{\text{msg}}\quad(\text{serialised into one host}),\qquad
-T_{\text{net}} = t_{\text{msg}}\quad(\text{switch fans in all }k\ \text{inline}),$$
+$$
+T_{\text{host}} = k\,t_{\text{msg}}\quad(\text{serialised into one host}),\qquad
+T_{\text{net}} = t_{\text{msg}}\quad(\text{switch fans in all }k\ \text{inline}),
+$$
 
 so the speedup is $k\times$ and — crucially — **no host is in the loop**, so no OS, no interrupt, and no per-message host cost is added. This is the principle behind programmable-switch aggregates (NVIDIA SHARP-style reductions, P4 match–action pipelines) and the risk of in-fabric risk limits.
 
@@ -60,8 +66,10 @@ so the speedup is $k\times$ and — crucially — **no host is in the loop**, so
 
 Productivity vs performance trade:
 
-$$\text{lines}_{\text{HLS}} \approx \frac{\text{lines}_{\text{RTL}}}{\rho},\qquad
-\text{perf}_{\text{HLS}} \approx (1-\pi)\,\text{perf}_{\text{RTL}},$$
+$$
+\text{lines}_{\text{HLS}} \approx \frac{\text{lines}_{\text{RTL}}}{\rho},\qquad
+\text{perf}_{\text{HLS}} \approx (1-\pi)\,\text{perf}_{\text{RTL}},
+$$
 
 with $\rho\approx 5$ (code reduction) and $\pi\approx 0.2$ (performance tax). The **design-time** improvement is what changes the ROI: if HLS cuts development from 6 months to 6 weeks, the same FPGA project clears a much lower alpha-capture bar.
 

@@ -31,7 +31,9 @@ Two facts to internalise:
 
 If cash flows beyond year $n$ grow at a constant $g_n<r$,
 
-$$\text{TV}_n=\sum_{t=n+1}^{\infty}\frac{\text{CF}_n(1+g_n)^{t-n}}{(1+r)^t}=\boxed{\dfrac{\text{CF}_{n+1}}{r-g_n}}$$
+$$
+\text{TV}_n=\sum_{t=n+1}^{\infty}\frac{\text{CF}_n(1+g_n)^{t-n}}{(1+r)^t}=\boxed{\dfrac{\text{CF}_{n+1}}{r-g_n}}
+$$
 
 with the flow and rate matched: discounting FCFF uses $K_c=\text{WACC}$; discounting FCFE (or dividends) uses $k_e$. Discount $\text{TV}_n$ back by $(1+r)^n$ and add the explicit-window PVs.
 
@@ -45,11 +47,15 @@ The stable-growth assumption is only coherent if three things line up:
 
 #### 2.3 The enterprise-to-equity-to-per-share bridge
 
-$$V_{\text{equity}}=V_{\text{operating assets}}+\text{Cash \& marketable securities}-\text{Debt}-\text{other claims (minority, preferred)}.$$
+$$
+V_{\text{equity}}=V_{\text{operating assets}}+\text{Cash \& marketable securities}-\text{Debt}-\text{other claims (minority, preferred)}.
+$$
 
 Then
 
-$$\text{value per share}=\frac{V_{\text{equity}}}{\#\text{diluted shares}},$$
+$$
+\text{value per share}=\frac{V_{\text{equity}}}{\#\text{diluted shares}},
+$$
 
 where diluted shares include options/RSUs, and the option value is best handled by subtracting the **estimated option value** (a Black–Scholes / treasury-stock-method charge) rather than by raw share counts. Getting the bridge wrong is as damaging as getting the cash flows wrong — a large cash pile or an off-balance-sheet claim can move per-share value by double digits.
 
@@ -98,7 +104,7 @@ FCF = [82.5, 90.8, 99.8, 109.8, 120.8]
 PV(explicit) = 375.0  PV(TV) = 1103.6  TV share = 74.6%
 EV = 1478.6  equity = 1128.6  per share = 11.29
 ```
-Part A reproduces Damodaran exactly: operating assets $\approx\text{Rs}\,2002$ million (his rounded figure; computed $2001.9$), equity $\text{Rs}\,1560$ million, $\text{Rs}\,63.36$/share (the stock traded at $\text{Rs}\,92.70$ — so this firm looked *expensive* on these inputs). The variant shows how **one assumption** — whether the firm can earn its cost of capital on *new* investment — moves the value from $\text{Rs}\,63.36$ to $\text{Rs}\,103.03$ (Damodaran: $103.04$). Part B makes terminal dominance concrete: **$74.6\%$** of the $\$1478.6$ enterprise value is the perpetuity.
+Part A reproduces Damodaran exactly: operating assets $\approx\text{Rs}\,2002$ million (his rounded figure; computed $2001.9$), equity $\text{Rs}\,1560$ million, $\text{Rs}\,63.36$/share (the stock traded at $\text{Rs}\,92.70$ — so this firm looked *expensive* on these inputs). The variant shows how **one assumption** — whether the firm can earn its cost of capital on *new* investment — moves the value from $\text{Rs}\,63.36$ to $\text{Rs}\,103.03$ (Damodaran: $103.04$). Part B makes terminal dominance concrete: **$74.6\%$** of the \$1478.6 enterprise value is the perpetuity.
 
 ---
 

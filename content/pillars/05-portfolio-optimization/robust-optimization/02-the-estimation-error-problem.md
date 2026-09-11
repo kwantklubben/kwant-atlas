@@ -30,28 +30,36 @@ The practical objective is a mindset: **stop treating the optimizer's output as 
 
 **Sampling distribution of the inputs.** For i.i.d. returns $r_t\sim(\mu,\Sigma)$, the sample moments satisfy
 
-$$\hat\mu\sim\mathcal{N}\!\left(\mu,\ \tfrac1T\Sigma\right),\qquad
-T\hat\Sigma\sim\mathrm{Wishart}(T-1,\Sigma).$$
+$$
+\hat\mu\sim\mathcal{N}\!\left(\mu,\ \tfrac1T\Sigma\right),\qquad
+T\hat\Sigma\sim\mathrm{Wishart}(T-1,\Sigma).
+$$
 
 So the *standard error of the mean* of asset $i$ is $\sigma_i/\sqrt T$. With $T=60$ months, a $20\%$-vol asset has a monthly mean estimate whose $1\sigma$ error is $0.20/\sqrt{12}/\sqrt{60}\approx0.0074/\!\ldots$ — comparable to or larger than the *true* monthly mean it is trying to measure. That is the heart of the matter: **the signal is smaller than its own error bar.**
 
 **Error propagation.** Write $\hat\mu=\mu+\eta$ with $\mathrm{Cov}(\eta)=\Sigma/T$. To first order,
 
-$$dw^\star=\tfrac1\delta\Sigma^{-1}\eta,\qquad
+$$
+dw^\star=\tfrac1\delta\Sigma^{-1}\eta,\qquad
 \mathrm{Cov}(w^\star)\approx\tfrac{1}{\delta^2}\Sigma^{-1}\Sigma\,\Sigma^{-1}\cdot\tfrac1T
-=\tfrac{1}{\delta^2 T}\Sigma^{-1}.$$
+=\tfrac{1}{\delta^2 T}\Sigma^{-1}.
+$$
 
 The weight covariance is proportional to $\Sigma^{-1}$ — again the **inverse** covariance. The directions where the market has *little* risk ($\lambda_i$ small) are precisely where the *estimator* of $\mu$ is most uncertain and where the weights are most volatile.
 
 **Bias–variance view (ESL 2nd ed.).** Any estimator's expected test error decomposes as
 
-$$\mathrm{Err}(x_0)=\sigma_\varepsilon^2+\mathrm{Bias}^2(\hat f(x_0))+\mathrm{Var}(\hat f(x_0)),$$
+$$
+\mathrm{Err}(x_0)=\sigma_\varepsilon^2+\mathrm{Bias}^2(\hat f(x_0))+\mathrm{Var}(\hat f(x_0)),
+$$
 
 three terms (the irreducible noise $\sigma_\varepsilon^2$ form is ESL eq. 2.46 / eq. 7.9). A portfolio built from noisy $\hat\mu$ is a high-*variance* estimator $\hat f$: great in-sample (it was *fit* to that sample), poor out-of-sample. Shrinkage and robustness trade a little bias for a large variance reduction — exactly the ridge/smoothing idea of ESL Ch. 3 and §5.
 
 **Chopra–Ziemba ranking (1993).** Using certainty-equivalent loss on the objective $\mu^\top w-\tfrac\delta2 w^\top\Sigma w$, the damage ranks
 
-$$\text{errors in }\mu\ >\ \text{errors in }\Sigma\ \gtrsim\ \text{errors in }\mathrm{diag}(\Sigma),$$
+$$
+\text{errors in }\mu\ >\ \text{errors in }\Sigma\ \gtrsim\ \text{errors in }\mathrm{diag}(\Sigma),
+$$
 
 with means dominating covariances by an order of magnitude. §3 reproduces the ranking on our universe.
 

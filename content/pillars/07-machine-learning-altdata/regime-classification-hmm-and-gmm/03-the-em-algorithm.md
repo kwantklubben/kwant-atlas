@@ -26,29 +26,39 @@ The practical objective: understand **why** EM works (it monotonically increases
 
 **Setup.** Observed data $\mathbf{x}$, hidden/latent regime labels $\mathbf{z}$ (you never see them), parameters $\theta$. The observed-data log-likelihood is
 
-$$\ell(\theta)=\log p(\mathbf{x}\mid\theta)=\log\sum_{\mathbf{z}}p(\mathbf{x},\mathbf{z}\mid\theta).$$
+$$
+\ell(\theta)=\log p(\mathbf{x}\mid\theta)=\log\sum_{\mathbf{z}}p(\mathbf{x},\mathbf{z}\mid\theta).
+$$
 
 The sum inside the log is the obstacle. Introduce *any* distribution $q(\mathbf{z})$ over the hidden variables; Jensen's inequality (log is concave) gives, for every $\theta$,
 
-$$\ell(\theta)=\log\mathbb{E}_{q}\!\Big[\frac{p(\mathbf{x},\mathbf{z}\mid\theta)}{q(\mathbf{z})}\Big]
+$$
+\ell(\theta)=\log\mathbb{E}_{q}\!\Big[\frac{p(\mathbf{x},\mathbf{z}\mid\theta)}{q(\mathbf{z})}\Big]
 \ \ge\ \underbrace{\mathbb{E}_{q}\!\big[\log p(\mathbf{x},\mathbf{z}\mid\theta)\big]}_{=:\ \mathcal{L}(q,\theta)}
-\ -\ \mathbb{E}_{q}\!\big[\log q(\mathbf{z})\big].$$
+\ -\ \mathbb{E}_{q}\!\big[\log q(\mathbf{z})\big].
+$$
 
 The right-hand side is the **evidence lower bound (ELBO)** $\mathcal{L}(q,\theta)$: a *lower bound* on the true log-likelihood that we can maximize. EM is **coordinate ascent on this bound** (Bishop Ch 9; the GMM view is ESL Ch 14.3.7):
 
 - **E-step:** hold $\theta=\theta^{(old)}$; the bound is tightest when $q(\mathbf{z})=p(\mathbf{z}\mid\mathbf{x},\theta^{(old)})$ — i.e. $q$ is the **posterior** over regimes given the current parameters. Then the bound *equals* $\ell(\theta^{(old)})$ (the gap is a KL divergence that the optimal $q$ drives to zero). The term that survives is the **expected complete-data log-likelihood**,
-$$Q(\theta;\theta^{(old)})=\mathbb{E}_{p(\mathbf{z}\mid\mathbf{x},\theta^{(old)})}\big[\log p(\mathbf{x},\mathbf{z}\mid\theta)\big].$$
+$$
+Q(\theta;\theta^{(old)})=\mathbb{E}_{p(\mathbf{z}\mid\mathbf{x},\theta^{(old)})}\big[\log p(\mathbf{x},\mathbf{z}\mid\theta)\big].
+$$
 - **M-step:** maximize $Q$ w.r.t. $\theta$, giving $\theta^{(new)}=\arg\max_\theta Q(\theta;\theta^{(old)})$.
 
 **Why it can't decrease the likelihood.** After the E-step the bound *equals* $\ell(\theta^{(old)})$; the M-step then maximizes the bound, so the bound (and hence $\ell$) can only rise:
 
-$$\ell(\theta^{(new)})\ \ge\ \mathcal{L}(q,\theta^{(new)})\ \ge\ \mathcal{L}(q,\theta^{(old)})=\ell(\theta^{(old)}).$$
+$$
+\ell(\theta^{(new)})\ \ge\ \mathcal{L}(q,\theta^{(new)})\ \ge\ \mathcal{L}(q,\theta^{(old)})=\ell(\theta^{(old)}).
+$$
 
 **Deriving the GMM updates.** The complete-data log-likelihood is $\log p(\mathbf{x},\mathbf{z}\mid\theta)=\sum_t\sum_k \mathbb{1}[z_t{=}k]\big[\log\pi_k+\log\mathcal{N}(x_t;\mu_k,\Sigma_k)\big]$. Taking the expectation over the posterior gives $Q$, whose maximization yields the weighted averages (ESL eq. 14.61–14.64):
 
-$$\pi_k=\frac{N_k}{N},\quad N_k=\sum_t\gamma_t(k),\quad
+$$
+\pi_k=\frac{N_k}{N},\quad N_k=\sum_t\gamma_t(k),\quad
 \mu_k=\frac{1}{N_k}\sum_t\gamma_t(k)x_t,\quad
-\Sigma_k=\frac{1}{N_k}\sum_t\gamma_t(k)(x_t-\mu_k)(x_t-\mu_k)^{\!\top},$$
+\Sigma_k=\frac{1}{N_k}\sum_t\gamma_t(k)(x_t-\mu_k)(x_t-\mu_k)^{\!\top},
+$$
 
 where $\gamma_t(k)=p(z_t{=}k\mid x_t,\theta^{(old)})$ — the responsibilities from [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/02-unsupervised-clustering-gmm|02]]. **The HMM (Baum–Welch) is the same skeleton** with $q$ being the smoothed state posterior $\gamma_t(i)$ and a Markov transition matrix to re-estimate ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/04-hmm-regimes|04]]).
 

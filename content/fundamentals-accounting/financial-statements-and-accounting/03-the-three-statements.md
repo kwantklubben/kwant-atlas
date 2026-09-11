@@ -31,22 +31,36 @@ Penman's Dell Computer exhibits (Ch 2) ground this in a real 10-K: Dell reported
 
 **Balance sheet (Penman eq. 2.1).** Assets are divided into current (expected to turn to cash within a year) and non-current; liabilities likewise. Equity is the residual:
 
-$$\text{Assets} = \text{Liabilities} + \text{Equity}, \qquad \text{Equity} = \text{Contributed capital} + \text{Retained earnings}$$
+$$
+\text{Assets} = \text{Liabilities} + \text{Equity}, \qquad \text{Equity} = \text{Contributed capital} + \text{Retained earnings}
+$$
 
 **Income statement (Penman eq. 2.2a).** The tiered build-down:
 
-$$\text{Gross margin} = \text{Net revenue}-\text{COGS}$$
-$$\text{EBIT (operating income)} = \text{Gross margin}-\text{Operating expenses}$$
-$$\text{Net income} = \text{EBIT}-\text{Interest}-\text{Tax} \;(\pm\;\text{extraordinary items})$$
+$$
+\text{Gross margin} = \text{Net revenue}-\text{COGS}
+$$
+$$
+\text{EBIT (operating income)} = \text{Gross margin}-\text{Operating expenses}
+$$
+$$
+\text{Net income} = \text{EBIT}-\text{Interest}-\text{Tax} \;(\pm\;\text{extraordinary items})
+$$
 
 **Cash flow statement (Penman eq. 2.3).** Three buckets sum to the change in cash:
 
-$$\text{CFO}+\text{CFI}+\text{CFF}=\text{Change in cash}$$
+$$
+\text{CFO}+\text{CFI}+\text{CFF}=\text{Change in cash}
+$$
 
 **Articulation — the "stocks and flows" bridge (Penman eq. 2.4, Fig 2.3).** The two flows explain the two stocks:
 
-$$\text{Ending cash} = \text{Beginning cash}+\text{CFO}+\text{CFI}+\text{CFF}$$
-$$\text{Ending equity} = \text{Beginning equity}+\text{Comprehensive income}-\text{Net payout}$$
+$$
+\text{Ending cash} = \text{Beginning cash}+\text{CFO}+\text{CFI}+\text{CFF}
+$$
+$$
+\text{Ending equity} = \text{Beginning equity}+\text{Comprehensive income}-\text{Net payout}
+$$
 
 So the balance sheet is the *before* and *after*; the income and cash-flow statements are the *change*. This is the single most important structural fact about financial statements.
 

@@ -35,11 +35,17 @@ Three "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The buffer identity.** Let $A$ be assets, $E$ equity, and suppose for the moment all assets carry weight 100%, so $\mathrm{RWA}=A$. The capital ratio is
-$$r=\frac{E}{A},\qquad \text{so}\qquad \frac{A}{E}=\frac1r .$$
+$$
+r=\frac{E}{A},\qquad \text{so}\qquad \frac{A}{E}=\frac1r .
+$$
 A proportional loss of $L$ (dollars) on the assets leaves equity $E-L$, hence
-$$r_{\text{after}}=\frac{E-L}{A}=r-\frac{L}{A}.$$
+$$
+r_{\text{after}}=\frac{E-L}{A}=r-\frac{L}{A}.
+$$
 Setting $r_{\text{after}}=0$ gives the **maximum absorbable loss** $L^{*}=E=r\,A$ — i.e. the capital ratio *is* the loss budget (when risk weights are 100%):
-$$\boxed{\;L^{*}/A = r \;}\qquad\text{(all-in RW 100%).}$$
+$$
+\boxed{\;L^{*}/A = r \;}\qquad\text{(all-in RW 100\%).}
+$$
 
 More generally, inserting risk weights decouples the two sides: the ratio is $E/\mathrm{RWA}$ but the loss falls on $A$, so a lower average risk weight *raises* the ratio without changing $E$ or $A$ — the seed of regulatory arbitrage ([[pillars/04-quantitative-risk/basel-and-regulation/05-failure-modes-and-practice|05 · Failure Modes]]).
 

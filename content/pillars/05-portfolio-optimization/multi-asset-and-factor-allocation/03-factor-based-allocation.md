@@ -35,27 +35,37 @@ Three steps, three "aha"s:
 
 **The factor model.** Asset returns follow the linear model
 
-$$r_t=\alpha+Bf_t+\varepsilon_t,\qquad \mathbb{E}[f_t]=0,\ \ \mathrm{Cov}(f_t)=\Sigma_f,\ \ \mathrm{Cov}(\varepsilon_t)=D=\mathrm{diag}(\sigma_{\varepsilon,i}^2),$$
+$$
+r_t=\alpha+Bf_t+\varepsilon_t,\qquad \mathbb{E}[f_t]=0,\ \ \mathrm{Cov}(f_t)=\Sigma_f,\ \ \mathrm{Cov}(\varepsilon_t)=D=\mathrm{diag}(\sigma_{\varepsilon,i}^2),
+$$
 
 with $\mathrm{Cov}(f_t,\varepsilon_t)=0$. Taking covariances gives the **structured covariance**
 
-$$\boxed{\;\Sigma_r=B\,\Sigma_f\,B^\top+D\;}.$$
+$$
+\boxed{\;\Sigma_r=B\,\Sigma_f\,B^\top+D\;}.
+$$
 
 This is the object that makes factor allocation possible: everything systematic lives in $B\Sigma_fB^\top$; everything asset-specific lives in the (near-diagonal) $D$.
 
 **Allocating to factors.** Let $w_f$ be factor weights ($\mathbf1^\top w_f=1$, allowing negative weights for a long-short factor). The induced asset exposure is
 
-$$w_{\text{asset}}=B\,w_f,$$
+$$
+w_{\text{asset}}=B\,w_f,
+$$
 
 and the portfolio's systematic volatility is $\sigma_f^2=w_f^\top\Sigma_f w_f$. The portfolio's *total* volatility adds the undiversified specific part,
 
-$$\sigma_{\text{tot}}^2=w_f^\top\Sigma_f w_f+w_{\text{asset}}^\top D\,w_{\text{asset}},$$
+$$
+\sigma_{\text{tot}}^2=w_f^\top\Sigma_f w_f+w_{\text{asset}}^\top D\,w_{\text{asset}},
+$$
 
 but for a broad portfolio the second term is small, so **the factor weights essentially determine the risk**. This is the theoretical reason the factor portfolio's diversification ratio is higher: the asset portfolio's $\Sigma_r$ is *dominated by* $B\Sigma_fB^\top$, which is a low-rank concentration; the factor portfolio's $\Sigma_f$ has small off-diagonals.
 
 **Attribution — the reverse map.** Given a proposed asset portfolio $w_{\text{asset}}$, regress it on the factors to get its exposures: $\beta_w=B^\top w_{\text{asset}}$, and decompose its variance as
 
-$$w^\top\Sigma_r w=\underbrace{\beta_w^\top\Sigma_f\beta_w}_{\text{common}} +\underbrace{\sum_i w_i^2\sigma_{\varepsilon,i}^2}_{\text{specific}}.$$
+$$
+w^\top\Sigma_r w=\underbrace{\beta_w^\top\Sigma_f\beta_w}_{\text{common}} +\underbrace{\sum_i w_i^2\sigma_{\varepsilon,i}^2}_{\text{specific}}.
+$$
 
 A portfolio showing 90% "common factor" variance is a concentrated factor bet no matter how many tickers it holds.
 

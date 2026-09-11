@@ -34,17 +34,23 @@ Three steps, three "aha"s:
 
 **The common-trend model.** Suppose two log-prices share one $I(1)$ factor $f_t$ and differ only by stationary noise:
 
-$$y_t = f_t + u_t, \qquad x_t = f_t + v_t, \qquad u_t,v_t \sim I(0).$$
+$$
+y_t = f_t + u_t, \qquad x_t = f_t + v_t, \qquad u_t,v_t \sim I(0).
+$$
 
 Then $y_t$ and $x_t$ are each $I(1)$, but
 
-$$y_t - x_t = u_t - v_t \sim I(0).$$
+$$
+y_t - x_t = u_t - v_t \sim I(0).
+$$
 
 The spread is stationary even though neither price is. This is **cointegration** (Engle & Granger, 1987): $y_t,x_t\sim I(1)$ are cointegrated if some $\beta\neq 0$ makes $y_t-\beta x_t\sim I(0)$. The vector $(1,-\beta)$ is the *cointegrating vector*.
 
 **Why correlation misses this.** The return correlation is determined by the *innovations*:
 
-$$\operatorname{Corr}(\Delta y_t,\Delta x_t)=\frac{\sigma_f^2}{\sqrt{(\sigma_f^2+\sigma_u^2)(\sigma_f^2+\sigma_v^2)}},$$
+$$
+\operatorname{Corr}(\Delta y_t,\Delta x_t)=\frac{\sigma_f^2}{\sqrt{(\sigma_f^2+\sigma_u^2)(\sigma_f^2+\sigma_v^2)}},
+$$
 
 which tends to $1$ as the common factor dominates the noises — **regardless of whether $u_t-v_t$ is stationary.** Two *independent* random walks with correlated increments (a wholly artificial construction) have high return correlation and a spread $\tfrac{1}{2}$-weighted random walk that diverges like $\sqrt{t}$. This is *spurious co-movement* and it is the single most common beginner disaster.
 

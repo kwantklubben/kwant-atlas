@@ -24,21 +24,27 @@ The single most important idea is that the envelope is **self-validating**. The 
 
 **The envelope.** Every FIX message is:
 
-$$\underbrace{\texttt{8=BeginString \;| \; 9=BodyLength \;| \; 35=MsgType \;| \; \cdots}}_{\text{header}},\;
+$$
+\underbrace{\texttt{8=BeginString \;| \; 9=BodyLength \;| \; 35=MsgType \;| \; \cdots}}_{\text{header}},\;
 \underbrace{\texttt{body fields}}_{\text{the point}},\;
-\underbrace{\texttt{10=CheckSum}}_{\text{trailer}}.$$
+\underbrace{\texttt{10=CheckSum}}_{\text{trailer}}.
+$$
 
 Ordering is *normative*: `8` is always first, `9` second, `35` third, `10` last. Violating it is a protocol error, not a style choice.
 
 **BodyLength (tag 9).** Let the message be the byte string $M$. With `B` the index just after the SOH terminating the `9` field, and `E` the index of the first byte of the `10` field:
 
-$$\texttt{9} = E - B \quad\text{(in bytes, }\text{not characters — FIX is ASCII, so they coincide).}$$
+$$
+\texttt{9} = E - B \quad\text{(in bytes, }\text{not characters — FIX is ASCII, so they coincide).}
+$$
 
 In words: `9` counts **everything from after the `9` field up to and including the SOH immediately before `10=`**. It excludes header fields `8` and `9` and excludes the trailer.
 
 **CheckSum (tag 10).** Sum every ASCII byte from `8=` through the SOH that precedes `10=`, take it modulo 256, and render it as three zero-padded decimal digits:
 
-$$\texttt{10} = \Big(\sum_{i \in [0,E)} b_i\Big) \bmod 256,\qquad \texttt{10} = \text{fmt}(c, \text{“03d”}),\quad \text{so } \texttt{10}=007\ \text{not}\ \texttt{7}.$$
+$$
+\texttt{10} = \Big(\sum_{i \in [0,E)} b_i\Big) \bmod 256,\qquad \texttt{10} = \text{fmt}(c, \text{“03d”}),\quad \text{so } \texttt{10}=007\ \text{not}\ \texttt{7}.
+$$
 
 **Integrity properties.** A single flipped bit changes the byte sum by at most $\pm 128$ (well within the mod-256 range), so a corrupted message almost always yields a mismatch — *detection*, not correction. Two independent checks (length and checksum) mean an attacker or a bit-flip must satisfy *both*, which is why a strict parser validates in order: structure → `BeginString` → `BodyLength` → `CheckSum`.
 

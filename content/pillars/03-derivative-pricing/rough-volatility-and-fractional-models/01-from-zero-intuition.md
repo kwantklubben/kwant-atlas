@@ -16,7 +16,9 @@ tags:
 
 Stochastic-volatility models made volatility random but kept it *smooth*: a diffusion's increments scale like $\sqrt{\Delta t}$. The market disagrees. Measure daily log-volatility $\ln\sigma_t$ and look at how its *increments* scale with the lag $\Delta$:
 
-$$\mathbb E\big[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2\big]=\nu^2\Delta^{2H}.$$
+$$
+\mathbb E\big[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2\big]=\nu^2\Delta^{2H}.
+$$
 
 If $\ln\sigma$ were a diffusion, $H=\tfrac12$. The data say **$H\approx0.1$** (Gatheral–Jaisson–Rosenbaum 2018). A process with $H<\tfrac12$ is **rougher** than Brownian motion: its increments are *anti-correlated* (a step up is more likely followed by a step down), and its paths have fractal dimension $2-H>1.5$ — visibly wiggly, not smooth.
 
@@ -36,11 +38,15 @@ The practical objective: internalise that "rough" is a precise, measurable state
 
 fBm $W^H_t$ is the Gaussian process with autocovariance (Mandelbrot–Van Ness 1968)
 
-$$\boxed{\;\mathbb E[W^H_tW^H_s]=\frac12\big(|t|^{2H}+|s|^{2H}-|t-s|^{2H}\big)\;}$$
+$$
+\boxed{\;\mathbb E[W^H_tW^H_s]=\frac12\big(|t|^{2H}+|s|^{2H}-|t-s|^{2H}\big)\;}
+$$
 
 For $H=\tfrac12$ this collapses to $\mathbb E[W_tW_s]=\min(t,s)$ — ordinary Brownian motion. For $H\neq\tfrac12$ it is neither a martingale nor a Markov process, but it has **stationary increments**: $W^H_{t+\Delta}-W^H_t$ has the same law as $W^H_\Delta$, and
 
-$$\mathbb E\big[(W^H_{t+\Delta}-W^H_t)^2\big]=\Delta^{2H}$$
+$$
+\mathbb E\big[(W^H_{t+\Delta}-W^H_t)^2\big]=\Delta^{2H}
+$$
 
 (stationary increments give this exactly, as verified in §3). It is this exact $\Delta^{2H}$ law that GJR estimate as $\nu^2\Delta^{2H}$ on log-volatility.
 
@@ -48,7 +54,9 @@ $$\mathbb E\big[(W^H_{t+\Delta}-W^H_t)^2\big]=\Delta^{2H}$$
 
 The lag-1 autocorrelation of fBm increments $X_i=W^H_{i+1}-W^H_i$ is
 
-$$\rho_1=\frac{\mathbb E[X_iX_{i+1}]}{\mathbb E[X_i^2]}=\frac12\big(2^{2H}-2\big),$$
+$$
+\rho_1=\frac{\mathbb E[X_iX_{i+1}]}{\mathbb E[X_i^2]}=\frac12\big(2^{2H}-2\big),
+$$
 
 which is **negative** for $H<\tfrac12$, zero at $H=\tfrac12$, **positive** for $H>\tfrac12$. So $H=0.14\Rightarrow\rho_1=\tfrac12(2^{0.28}-2)\approx-0.393$: after a volatility spike the next increment is more likely to reverse it — vol clusters *because* it reverts. This is the single cleanest number distinguishing rough ($H\ll\tfrac12$) from smooth ($H>\tfrac12$) from Brownian ($H=\tfrac12$).
 
@@ -56,7 +64,9 @@ which is **negative** for $H<\tfrac12$, zero at $H=\tfrac12$, **positive** for $
 
 GJR model log-vol directly as fBm ("Rough Fractional Stochastic Volatility"):
 
-$$\log\sigma_{t+\Delta}-\log\sigma_t=\nu\big(W^H_{t+\Delta}-W^H_t\big),$$
+$$
+\log\sigma_{t+\Delta}-\log\sigma_t=\nu\big(W^H_{t+\Delta}-W^H_t\big),
+$$
 
 so $\mathbb E[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2]=\nu^2\Delta^{2H}$. They further check the **monofractal scaling** of the $q$-th sample moments $m(q,\Delta)=\langle|\ln\sigma_{t+\Delta}-\ln\sigma_t|^q\rangle\propto\Delta^{\zeta_q}$ and find $\zeta_q=qH$ with $H\approx0.13$ on SPX — the signature of a single Gaussian (fractional) driver rather than a multifractal cascade. The exponent $\alpha=H-\tfrac12\approx-0.36$ is what the skew will inherit (§03, §02).
 

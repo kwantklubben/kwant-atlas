@@ -37,7 +37,7 @@ The practical objective of this page is the **lookup table** (job #1 of this pil
 | Sensitivity | Definition | Units / market convention | Verified check (§3) |
 |---|---|---|---|
 | **Delta** $\Delta$ | $\partial V/\partial S$ | shares of underlying (raw) | Haug call $\Delta=0.503105$ |
-| **Gamma** $\Gamma$ | $\partial^2 V/\partial S^2$ | $\Delta$-change per $\$1$ move in $S$ | $0.026794$ |
+| **Gamma** $\Gamma$ | $\partial^2 V/\partial S^2$ | $\Delta$-change per $ $\$1 move in S$ | $0.026794$ |
 | **Vega** $\nu$ | $\partial V/\partial\sigma$ | **per 1 vol point** $=$ raw$/100$ | $0.192999$ |
 | **Theta** $\Theta$ | $-\partial V/\partial T$ | **per day** $=$ raw$/365$ | $-0.036989$ |
 | **Rho** $\rho$ | $\partial V/\partial r$ | **per 1 rate point** $=$ raw$/100$ | $0.109656$ |
@@ -62,15 +62,21 @@ The practical objective of this page is the **lookup table** (job #1 of this pil
 
 **Delta-normal vs delta-gamma (Hull eq. 22.6–22.8).** Mapping the book onto factors $f$ with exposures $b$ and factor covariance $\Sigma$:
 
-$$\text{Linear: }\Delta V = b^\top \Delta f,\quad \text{VaR}_\alpha = z_\alpha\sqrt{b^\top\Sigma b}\ \ (\text{= }z_\alpha\sigma_{\Delta V}),\qquad
-\text{Quadratic: }\Delta V = b^\top\Delta f+\tfrac12\Delta f^\top H\Delta f .$$
+$$
+\text{Linear: }\Delta V = b^\top \Delta f,\quad \text{VaR}_\alpha = z_\alpha\sqrt{b^\top\Sigma b}\ \ (\text{= }z_\alpha\sigma_{\Delta V}),\qquad
+\text{Quadratic: }\Delta V = b^\top\Delta f+\tfrac12\Delta f^\top H\Delta f .
+$$
 
 The quadratic term $H$ carries **gamma** (own-second derivative) and **cross-gamma** $\gamma_{ij}=\partial^2V/\partial f_i\partial f_j$. With one equity factor and $\Delta S=\sigma S Z$, the quadratic form becomes $aZ+bZ^2$ with $a=\delta\sigma S$, $b=\tfrac12\gamma\sigma^2S^2$, giving **exact closed-form moments**
 
-$$\mathbb{E}[\Delta V]=b,\qquad \mathrm{Var}=a^2+2b^2,\qquad \gamma_1=\frac{6a^2b+8b^3}{(a^2+2b^2)^{3/2}},\qquad \gamma_2^{\text{ex}}=\frac{3a^4+60a^2b^2+60b^4}{(a^2+2b^2)^2}-3,$$
+$$
+\mathbb{E}[\Delta V]=b,\qquad \mathrm{Var}=a^2+2b^2,\qquad \gamma_1=\frac{6a^2b+8b^3}{(a^2+2b^2)^{3/2}},\qquad \gamma_2^{\text{ex}}=\frac{3a^4+60a^2b^2+60b^4}{(a^2+2b^2)^2}-3,
+$$
 
 which feed the **Cornish–Fisher** quantile adjustment for non-normal VaR
-$$z^{\text{CF}}_\alpha=z+\tfrac{(z^2-1)}{6}\gamma_1+\tfrac{(z^3-3z)}{24}\gamma_2-\tfrac{(2z^3-5z)}{36}\gamma_1^2 .$$
+$$
+z^{\text{CF}}_\alpha=z+\tfrac{(z^2-1)}{6}\gamma_1+\tfrac{(z^3-3z)}{24}\gamma_2-\tfrac{(2z^3-5z)}{36}\gamma_1^2 .
+$$
 
 ---
 

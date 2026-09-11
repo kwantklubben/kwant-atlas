@@ -30,8 +30,10 @@ The practical objective is to know **what each actually buys you** — and, cruc
 
 The practically-used MVO is a **quadratic program** over a box (plus simplex):
 
-$$\max_{w}\ \hat\mu^\top w-\tfrac\delta2 w^\top\hat\Sigma w
-\quad\text{s.t.}\quad \mathbf 1^\top w=1,\ \ w_{\min}\le w\le w_{\max}.$$
+$$
+\max_{w}\ \hat\mu^\top w-\tfrac\delta2 w^\top\hat\Sigma w
+\quad\text{s.t.}\quad \mathbf 1^\top w=1,\ \ w_{\min}\le w\le w_{\max}.
+$$
 
 With $w_{\min}=0$ it is **long-only** (no short sales); with a common $w_{\max}$ it caps concentration. This is a convex QP solved by active-set/interior-point methods — every real optimizer since Markowitz uses some version.
 

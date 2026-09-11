@@ -33,12 +33,16 @@ There are three decisions, and each has a first-principles answer:
 
 With $\rho_{ij}=\sigma_{ij}/\sqrt{\sigma_{ii}\sigma_{jj}}$,
 
-$$d_{ij}=\sqrt{\tfrac12\bigl(1-\rho_{ij}\bigr)}\in[0,1],\qquad
-d_{ii}=0,\qquad d_{ij}\le d_{ik}+d_{kj}.$$
+$$
+d_{ij}=\sqrt{\tfrac12\bigl(1-\rho_{ij}\bigr)}\in[0,1],\qquad
+d_{ii}=0,\qquad d_{ij}\le d_{ik}+d_{kj}.
+$$
 
 The triangle inequality holds because $d$ is (up to scale) a Euclidean norm. Let $u_i=x_i/\|x_i\|$ be each demeaned return column scaled to unit length. Then
 
-$$\|u_i-u_j\|^2=2-2\rho_{ij}\;\Longrightarrow\;d_{ij}=\frac{\|u_i-u_j\|}{2}.$$
+$$
+\|u_i-u_j\|^2=2-2\rho_{ij}\;\Longrightarrow\;d_{ij}=\frac{\|u_i-u_j\|}{2}.
+$$
 
 So the "correlation distance" is exactly the distance between the assets' unit direction vectors — the assets lie in $\mathbb{R}^T$, and the tree is a nearest-neighbour structure in that honest geometry. (Two identical assets sit at $d=0$; two uncorrelated ones at $d=\sqrt{1/2}=0.7071$; perfectly anti-correlated ones at $d=1$.)
 
@@ -46,7 +50,9 @@ So the "correlation distance" is exactly the distance between the assets' unit d
 
 Agglomerative clustering repeatedly merges the two closest active clusters. The rule for the distance from a *new* merged cluster $u=\{i,j\}$ to any other cluster $k$ is the general **Lance–Williams** update
 
-$$d(u,k)=\alpha_i\,d(i,k)+\alpha_j\,d(j,k)+\beta\,d(i,j)+\gamma\,|d(i,k)-d(j,k)|,$$
+$$
+d(u,k)=\alpha_i\,d(i,k)+\alpha_j\,d(j,k)+\beta\,d(i,j)+\gamma\,|d(i,k)-d(j,k)|,
+$$
 
 and the four constants define the linkage:
 
@@ -63,7 +69,9 @@ The recorded merge heights form the **dendrogram**. The quality of the tree as a
 
 Given the merge tree, **quasi-diagonalize** by reading the leaves in order:
 
-$$\text{order}=\text{in-order traversal of the dendrogram}\;\Longrightarrow\;\Sigma\to\Sigma[\![\text{order},\text{order}]\!].$$
+$$
+\text{order}=\text{in-order traversal of the dendrogram}\;\Longrightarrow\;\Sigma\to\Sigma[\![\text{order},\text{order}]\!].
+$$
 
 After the permutation, entries *inside* the diagonal blocks are large and entries *across* blocks are small (for a well-clustered universe). This is the "quasi-diagonal" matrix: not exactly diagonal, but banded into blocks. HRP then bisects the *list* (contiguous halves), so contiguous ordering ⟺ economically coherent splits.
 

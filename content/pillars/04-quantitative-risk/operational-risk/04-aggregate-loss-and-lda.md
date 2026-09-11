@@ -36,32 +36,42 @@ Three "aha"s:
 
 With $N\sim\text{Poisson}(\lambda)$ and $X_i\sim F_X$ iid independent of $N$,
 
-$$S=\sum_{i=1}^{N}X_i\qquad (S=0\ \text{when }N=0).$$
+$$
+S=\sum_{i=1}^{N}X_i\qquad (S=0\ \text{when }N=0).
+$$
 
 **Expectation** (Wald's identity) and **variance**:
 
-$$\mathbb{E}[S]=\mathbb{E}[N]\,\mathbb{E}[X]=\lambda\,\mathbb{E}[X],\qquad
-\text{Var}(S)=\mathbb{E}[N]\,\mathbb{E}[X^2]=\lambda\,\mathbb{E}[X^2].$$
+$$
+\mathbb{E}[S]=\mathbb{E}[N]\,\mathbb{E}[X]=\lambda\,\mathbb{E}[X],\qquad
+\text{Var}(S)=\mathbb{E}[N]\,\mathbb{E}[X^2]=\lambda\,\mathbb{E}[X^2].
+$$
 
 **Moment-generating function** (the cleanest expression of the convolution):
 
-$$M_S(t)=\mathbb{E}[e^{tS}]=\mathbb{E}\!\big[\mathbb{E}[e^{tS}\mid N]\big]
+$$
+M_S(t)=\mathbb{E}[e^{tS}]=\mathbb{E}\!\big[\mathbb{E}[e^{tS}\mid N]\big]
 =\sum_{n=0}^{\infty}\frac{e^{-\lambda}\lambda^{n}}{n!}\big[M_X(t)\big]^{n}
-=\exp\!\big[\lambda\,(M_X(t)-1)\big].$$
+=\exp\!\big[\lambda\,(M_X(t)-1)\big].
+$$
 
 This is the compound-Poisson signature: the aggregate MGF is the *exponential of* the severity MGF, encoding how Poisson frequency and severity convolve.
 
 #### LDA capital
 
-$$\text{VaR}_{\alpha}=F_S^{-1}(\alpha),\qquad
+$$
+\text{VaR}_{\alpha}=F_S^{-1}(\alpha),\qquad
 \text{UL}_{\alpha}=\text{VaR}_{\alpha}-\mathbb{E}[S],\qquad
-\text{Capital}_{\text{AMA}}=\text{EL}+\text{UL}_{0.999}.$$
+\text{Capital}_{\text{AMA}}=\text{EL}+\text{UL}_{0.999}.
+$$
 
 #### Analytic computation: Panjer recursion
 
 When severity is discretized to integer units with probabilities $f_j=\mathbb{P}(X=j)$, the aggregate probability mass $g_k=\mathbb{P}(S=k)$ obeys the **Panjer recursion** (valid for the Poisson, $\mathbb{P}(N=n)=\tfrac{\lambda^n}{n!}e^{-\lambda}$, which is of the form $p_n=(a+\tfrac{b}{n})p_{n-1}$ with $a=0,\ b=\lambda$):
 
-$$g_k=\frac{1}{1-a f_0}\sum_{j=1}^{k}\Big(a+\frac{b\,j}{k}\Big)f_j\,g_{k-j},$$
+$$
+g_k=\frac{1}{1-a f_0}\sum_{j=1}^{k}\Big(a+\frac{b\,j}{k}\Big)f_j\,g_{k-j},
+$$
 
 *(Here $g_0=\mathbb{P}(S=0)=\sum_n p_n f_0^n=e^{-\lambda(1-f_0)}$.)* The recursion gives $F_S$ *exactly* (up to discretization error) in $O(K^2)$ — the classical alternative to Monte Carlo used throughout Panjer (2006). Both routes converge to the same aggregate distribution.
 

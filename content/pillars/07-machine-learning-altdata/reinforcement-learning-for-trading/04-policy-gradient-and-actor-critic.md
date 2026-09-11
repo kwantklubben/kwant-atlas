@@ -32,11 +32,15 @@ The finance payoff is concrete: execution and portfolio-weight problems are *con
 
 Define the performance objective $J(\theta)=\mathbb{E}_{\tau\sim\pi_\theta}[G_0]=\mathbb{E}_{\pi_\theta}\!\big[\sum_t\gamma^t R_{t+1}\big]$. The **policy-gradient theorem** (Sutton et al. 2000) states, for the episodic case,
 
-$$\nabla_\theta J(\theta)=\mathbb{E}_{\pi_\theta}\!\left[\sum_{t}\nabla_\theta\log\pi_\theta(A_t\mid S_t)\,G_t\right].$$
+$$
+\nabla_\theta J(\theta)=\mathbb{E}_{\pi_\theta}\!\left[\sum_{t}\nabla_\theta\log\pi_\theta(A_t\mid S_t)\,G_t\right].
+$$
 
 The derivation uses the **likelihood-ratio identity** $\nabla_\theta \pi_\theta=\pi_\theta\,\nabla_\theta\log\pi_\theta$, which lets the gradient be estimated from *sampled trajectories alone* — no model of the environment. This is the REINFORCE estimator (Williams 1992):
 
-$$\theta\leftarrow\theta+\alpha\,\nabla_\theta\log\pi_\theta(A_t\mid S_t)\,G_t.$$
+$$
+\theta\leftarrow\theta+\alpha\,\nabla_\theta\log\pi_\theta(A_t\mid S_t)\,G_t.
+$$
 
 **Intuition:** increase the log-probability of actions that led to high return, decrease it for low-return actions, weighted by how large the return was.
 
@@ -44,16 +48,22 @@ $$\theta\leftarrow\theta+\alpha\,\nabla_\theta\log\pi_\theta(A_t\mid S_t)\,G_t.$
 
 REINFORCE is unbiased but *high variance* — returns scale across orders of magnitude and the estimator uses the full noisy $G_t$. Subtracting any baseline $b(s)$ independent of the action leaves the estimate **unbiased** (because $\sum_a\pi_\theta(a\mid s)\nabla_\theta\log\pi_\theta(a\mid s)=0$) while shrinking variance:
 
-$$\nabla_\theta J\approx\nabla_\theta\log\pi_\theta(A_t\mid S_t)\,\big(G_t-b(S_t)\big).$$
+$$
+\nabla_\theta J\approx\nabla_\theta\log\pi_\theta(A_t\mid S_t)\,\big(G_t-b(S_t)\big).
+$$
 
 The optimal baseline is the state value $b(s)=V^\pi(s)$, turning the weight into the **advantage** $A_t=G_t-V(S_t)$ — *how much better than average this action was*. Using the TD error $\delta_t=R_{t+1}+\gamma V(S_{t+1})-V(S_t)$ as the advantage estimate gives **actor–critic**: the *actor* $\pi_\theta$ chooses actions, the *critic* $V_w$ estimates values and supplies the baseline.
 
 #### 2.3 Actor–critic updates
 
 Two time-scale updates: the critic regresses onto its bootstrapped target,
-$$w\leftarrow w+\beta\,\delta_t\nabla_w V_w(S_t),\qquad \delta_t=R_{t+1}+\gamma V_w(S_{t+1})-V_w(S_t),$$
+$$
+w\leftarrow w+\beta\,\delta_t\nabla_w V_w(S_t),\qquad \delta_t=R_{t+1}+\gamma V_w(S_{t+1})-V_w(S_t),
+$$
 and the actor ascends the advantage-weighted log-policy, $\theta\leftarrow\theta+\alpha\,\delta_t\nabla_\theta\log\pi_\theta(A_t\mid S_t)$. **A2C** runs this synchronously across parallel environments; **PPO** (Schulman et al. 2017) replaces the raw step with a *clipped* importance-ratio objective
-$$L^{\text{CLIP}}(\theta)=\mathbb{E}\!\left[\min\!\big(r_t(\theta)A_t,\ \mathrm{clip}(r_t(\theta),1-\epsilon,1+\epsilon)A_t\big)\right],\quad r_t=\frac{\pi_\theta(A_t\mid S_t)}{\pi_{\theta_{\text{old}}}(A_t\mid S_t)},$$
+$$
+L^{\text{CLIP}}(\theta)=\mathbb{E}\!\left[\min\!\big(r_t(\theta)A_t,\ \mathrm{clip}(r_t(\theta),1-\epsilon,1+\epsilon)A_t\big)\right],\quad r_t=\frac{\pi_\theta(A_t\mid S_t)}{\pi_{\theta_{\text{old}}}(A_t\mid S_t)},
+$$
 which bounds how far one update can move the policy — the reason PPO is the *stable* default in finance RL frameworks.
 
 #### 2.4 The natural-gradient view

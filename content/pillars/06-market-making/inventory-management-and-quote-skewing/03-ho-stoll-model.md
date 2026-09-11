@@ -39,11 +39,15 @@ Time is discrete with $N$ periods of length $\Delta$; the dealer's horizon is $T
 
 The dealer maximizes the expected CARA utility of terminal wealth $W_T=$ cash $+I\,S_T$, where the reference price follows $S_{t+1}=S_t+\varepsilon$, $\varepsilon\sim\mathcal{N}(0,\sigma^2\Delta)$. The value function solves the Bellman recursion — the **Ho–Stoll inventory recursion**:
 
-$$V_t(I)=\max_{A,B}\Big[\;\pi_a(A)\,\mathbb{E}[V_{t+1}(I-1)]+\pi_b(B)\,\mathbb{E}[V_{t+1}(I+1)]+(1-\pi_a-\pi_b)\,\mathbb{E}[V_{t+1}(I)]\;\Big]. \qquad (\text{HS }1)$$
+$$
+V_t(I)=\max_{A,B}\Big[\;\pi_a(A)\,\mathbb{E}[V_{t+1}(I-1)]+\pi_b(B)\,\mathbb{E}[V_{t+1}(I+1)]+(1-\pi_a-\pi_b)\,\mathbb{E}[V_{t+1}(I)]\;\Big]. \qquad (\text{HS }1)
+$$
 
 Substituting the exponential form $V_t(I)=-e^{-\gamma\,\text{cash}}\,u_t(I)$ and folding the Gaussian price jump through its moment generating function (the factor $c_J=\exp(\tfrac12\gamma^2J^2\sigma^2\Delta)$ for holding $J$ over one step), the recursion on $u$ becomes
 
-$$u_t(I)=\min_{A,B}\Big[\;\pi_a e^{-\gamma A}c_{I-1}u_{t+1}(I-1)+\pi_b e^{+\gamma B}c_{I+1}u_{t+1}(I+1)+(1-\pi_a-\pi_b)c_I\,u_{t+1}(I)\;\Big], \qquad (\text{HS }2)$$
+$$
+u_t(I)=\min_{A,B}\Big[\;\pi_a e^{-\gamma A}c_{I-1}u_{t+1}(I-1)+\pi_b e^{+\gamma B}c_{I+1}u_{t+1}(I+1)+(1-\pi_a-\pi_b)c_I\,u_{t+1}(I)\;\Big], \qquad (\text{HS }2)
+$$
 
 with terminal condition $u_T(I)=1$. (The sign flips to a *min* because the exponential utility is negative; this is the same bookkeeping that makes the A–S HJB a minimization of $-\theta$.)
 
@@ -51,11 +55,15 @@ with terminal condition $u_T(I)=1$. (The sign flips to a *min* because the expon
 
 If the dealer is **forced to hold** $I$ shares to $T$ with no trading, terminal wealth is $I S_T$, whose certainty equivalent (computed in [[pillars/06-market-making/inventory-management-and-quote-skewing/02-the-inventory-problem|02]]) is $\bar S\,I-\tfrac12\gamma\sigma^2I^2\tau$. The **reservation price** — the price at which the dealer is indifferent between trading one more share and not — is the *marginal* value of a share:
 
-$$\boxed{\;r(I)=\bar S-\gamma\sigma^2 I\,\tau\;}$$
+$$
+\boxed{\;r(I)=\bar S-\gamma\sigma^2 I\,\tau\;}
+$$
 
 Linear in $I$ with slope $-\gamma\sigma^2\tau$ per share. This is Ho–Stoll's central object and the A–S reservation price $s-q\gamma\sigma^2(T-t)$ is exactly this. In Ho–Stoll's two-period solution the same structure appears through the reservation **bid** and **ask**,
 
-$$r^a(I)=\bar S+(1-2I)\frac{\gamma\sigma^2\tau}{2},\qquad r^b(I)=\bar S+(-1-2I)\frac{\gamma\sigma^2\tau}{2},$$
+$$
+r^a(I)=\bar S+(1-2I)\frac{\gamma\sigma^2\tau}{2},\qquad r^b(I)=\bar S+(-1-2I)\frac{\gamma\sigma^2\tau}{2},
+$$
 
 whose difference is the **reservation spread** $r^a-r^b=\gamma\sigma^2\tau$ — the inventory-risk component of the quoted spread, which widens with return uncertainty $\sigma^2$ and with the horizon $\tau$.
 
@@ -63,11 +71,15 @@ whose difference is the **reservation spread** $r^a-r^b=\gamma\sigma^2\tau$ — 
 
 Why does the dealer quote *wide* at all, and why is the spread *interior* rather than degenerate? Purely from inventory risk, with symmetric arrivals, the maximization is bang-bang (quote at the boundary). The interior spread comes from the **transaction (order-processing) cost** $c$ per trade and the elasticity of fill arrivals $\pi(\delta)=\Lambda e^{-k\delta}$ (prefactor $\Lambda$, markup $\delta$). The dealer's expected revenue per sell at ask markup $\delta$ is $\Lambda e^{-k\delta}(\delta-c)$; the FOC $-k(\delta-c)+1=0$ gives
 
-$$\delta^\ast = c+\frac1k. \qquad (\text{HS }3)$$
+$$
+\delta^\ast = c+\frac1k. \qquad (\text{HS }3)
+$$
 
 So the half-spread $\delta^\ast=c+\tfrac1k$ balances the fixed cost $c$ (quote tight enough to still be profitable) against the fill elasticity $k$ (quote far enough to slow the bleed). It is **interior**, independent of inventory, and additive with the reservation spread: the full quote is
 
-$$\text{ask}=r(I)+\delta^\ast,\qquad \text{bid}=r(I)-\delta^\ast.$$
+$$
+\text{ask}=r(I)+\delta^\ast,\qquad \text{bid}=r(I)-\delta^\ast.
+$$
 
 **Reading the structure.** The reservation price carries *all* the inventory dependence (the skew $-\gamma\sigma^2I\tau$); the half-spread carries the transaction-cost component. This clean separation — inventory risk in the *centre*, transaction cost in the *width* — is the Ho–Stoll legacy and the reason the spread can be decomposed empirically.
 

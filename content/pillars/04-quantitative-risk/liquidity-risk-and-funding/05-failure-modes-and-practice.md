@@ -36,11 +36,15 @@ The three failures, in one line each:
 So the **ratio of total cost to a naive 1-day VaR grows like $\sqrt T$** from the risk term and can grow like $T$ from the schedule term: at $T=16$ days the linear-impact schedule cost is **$16/4=4\times$** the market-risk term per the $\sqrt T$ scaling. **Ignoring the horizon is not a small correction; it is a factor.**
 
 **2.2 Fire-sale externality, exactly.** With linear impact ($\kappa=1/D$ per unit sold), a fund selling $Q_i$ into an aggregate $Q_{\text{agg}}=\sum_j Q_j$ bears a shortfall
-$$\text{Cost}_i=\frac{\kappa}{2}\,Q_i\,Q_{\text{agg}}\quad\text{(social)}\qquad\text{vs}\qquad \text{Cost}_i^{\text{priv}}=\frac{\kappa}{2}\,Q_i^{2}\quad\text{(private)}.$$
+$$
+\text{Cost}_i=\frac{\kappa}{2}\,Q_i\,Q_{\text{agg}}\quad\text{(social)}\qquad\text{vs}\qquad \text{Cost}_i^{\text{priv}}=\frac{\kappa}{2}\,Q_i^{2}\quad\text{(private)}.
+$$
 Because $Q_{\text{agg}}\ge Q_i$, the private model **always understates** the cost by the factor $Q_{\text{agg}}/Q_i$. Two symmetric funds each selling $Q$ double their true cost relative to the private estimate — a **100% understatement** — and the discrepancy is the *pecuniary externality*: each fund's sale is cheaper to itself than it is to the system. This is why crowded trades (mortgage credit in 2007, the 2007 quant quake, 2020 Treasury basis) fail in unison rather than one at a time.
 
 **2.3 The coupling, exactly.** Recover the margin from §2.2 of [[pillars/04-quantitative-risk/liquidity-risk-and-funding/04-margin-and-funding-spirals|04]]:
-$$m=z_\alpha\,\sigma\sqrt{\Delta t_{\text{MPOR}}},\qquad \sigma \text{ and } \Delta t_{\text{MPOR}} \text{ both increasing in stress}.$$
+$$
+m=z_\alpha\,\sigma\sqrt{\Delta t_{\text{MPOR}}},\qquad \sigma \text{ and } \Delta t_{\text{MPOR}} \text{ both increasing in stress}.
+$$
 The derivative $\partial m/\partial(\text{forced selling})>0$ is the entire coupling: **the model input ($m$) is a function of the model's own output (forced-selling-induced volatility).** A static-haircut L-VaR is not merely imprecise; it is structurally blind to the spiral.
 
 **2.4 Procyclicality of measured risk.** Historical-simulation VaR *falls* in calm markets (small shocks in the window) and *spikes* after losses. Because the margin $m=z_\alpha\sigma$ is procyclical too, the two reinforce: calm markets grant high leverage (low $m$, low measured risk), and the first shock collapses both. Supervisors counter with **stressed VaR/ES** (Basel II.5) and FRTB's liquidity horizons; the correction is a supervisory acknowledgement that "current" liquidity is the wrong scaling.

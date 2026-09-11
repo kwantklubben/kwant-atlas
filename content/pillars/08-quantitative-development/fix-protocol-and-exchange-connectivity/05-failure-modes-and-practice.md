@@ -31,31 +31,41 @@ The one idea: **a protocol failure is almost never "the message was wrong" — i
 
 **Gap arrival probability.** If a fraction $p$ of messages is lost (or reordered past the point of recovery), the probability that a gap has appeared within $n$ messages is
 
-$$P(\text{gap within } n) = 1 - (1-p)^n, \qquad \mathbb{E}[\text{messages to first gap}] = \frac{1}{p}.$$
+$$
+P(\text{gap within } n) = 1 - (1-p)^n, \qquad \mathbb{E}[\text{messages to first gap}] = \frac{1}{p}.
+$$
 
 At $p = 0.2\%$, expect a gap roughly every **500 messages** — and a gap within 1,000 messages with probability $0.865$. Connectivity is *continuously* in recovery, not occasionally.
 
 **Duplicate-execution loss.** If a replay of $k$ fills is processed twice, the position error is the summed replayed quantity,
 
-$$\Delta q = \sum_{i \in \text{replayed}} \texttt{32 LastQty}_i,$$
+$$
+\Delta q = \sum_{i \in \text{replayed}} \texttt{32 LastQty}_i,
+$$
 
 which is an unhedged directional position. For two replayed fills of 200 and 300 shares that is **500 phantom shares** — precisely the case worked in §3.
 
 **The un-acked-cancel exposure.** A cancel you sent but whose acknowledgement you missed leaves qty $q$ live for as long as it takes to detect (latency $\delta$). With a market move of $b$ basis points over $\delta$,
 
-$$\text{risk} \approx q \cdot P \cdot \frac{b}{10^4}.$$
+$$
+\text{risk} \approx q \cdot P \cdot \frac{b}{10^4}.
+$$
 
-For $q=800$, $P=\$150.50$, $b=12$ bps that is **\$144.48** of uncontrolled exposure from a single missed ack.
+For $q=800$, $P= $ \$150.50, b=12$ bps that is **$\$144.48** of uncontrolled exposure from a single missed ack.
 
 **Certification as a coverage problem.** A venue certification suite is a finite set of scenarios; the risk of going live with an untested path is the fraction of the state machine × session-event cross-product left uncovered,
 
-$$\text{coverage} = \frac{|\text{scenarios passed}|}{|\text{scenarios required}|}.$$
+$$
+\text{coverage} = \frac{|\text{scenarios passed}|}{|\text{scenarios required}|}.
+$$
 
 The required set is the **cross-product of order transitions and session events** — every state must survive every event (a fill during a resend, a cancel during failover, a logon mid-partial-fill).
 
 **Duplicate-suppression condition.** A receiver is duplicate-safe iff every application message carries a key that repeats on replay and is unique per occurrence — the pair
 
-$$(\texttt{11 ClOrdID},\ \texttt{17 ExecID})$$
+$$
+(\texttt{11 ClOrdID},\ \texttt{17 ExecID})
+$$
 
 — and the receiver keeps a set of seen `ExecID`s. `PossDupFlag(43)=Y` is the *hint*; the `ExecID` is the *proof*.
 

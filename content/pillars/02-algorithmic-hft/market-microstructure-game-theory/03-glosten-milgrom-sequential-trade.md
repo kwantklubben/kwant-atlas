@@ -33,28 +33,44 @@ Three structural results carry the rest of the folder:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Setup.** $V\in\{V_L,V_H\}$, prior belief $\theta_t=\mathbb{P}(V=V_H\mid\mathcal F_t)$, informed share $\pi$. Arrivals:
-$$\mathbb{P}(B\mid V_H)=\frac{1+\pi}{2},\qquad \mathbb{P}(B\mid V_L)=\frac{1-\pi}{2},\qquad \mathbb{P}(S\mid\cdot)=1-\mathbb{P}(B\mid\cdot).$$
+$$
+\mathbb{P}(B\mid V_H)=\frac{1+\pi}{2},\qquad \mathbb{P}(B\mid V_L)=\frac{1-\pi}{2},\qquad \mathbb{P}(S\mid\cdot)=1-\mathbb{P}(B\mid\cdot).
+$$
 
 **Zero-profit quotes (the equilibrium).** Competition forces expected profit to zero *conditional on the direction of the trade* — a maker cannot cross-subsidise the ask with the bid, because any maker who tried would be picked off on one side. Hence
-$$A_t=\mathbb{E}[V\mid B,\mathcal F_t],\qquad B_t=\mathbb{E}[V\mid S,\mathcal F_t].$$
+$$
+A_t=\mathbb{E}[V\mid B,\mathcal F_t],\qquad B_t=\mathbb{E}[V\mid S,\mathcal F_t].
+$$
 Writing $n_A=(1+\pi)\theta_t+(1-\pi)(1-\theta_t)$ and $n_B=(1-\pi)\theta_t+(1+\pi)(1-\theta_t)$ (these are twice the arrival probabilities), Bayes' rule gives
 
-$$\boxed{\;A_t=\frac{V_H(1+\pi)\theta_t+V_L(1-\pi)(1-\theta_t)}{(1+\pi)\theta_t+(1-\pi)(1-\theta_t)},\qquad B_t=\frac{V_H(1-\pi)\theta_t+V_L(1+\pi)(1-\theta_t)}{(1-\pi)\theta_t+(1+\pi)(1-\theta_t)}\;}$$
+$$
+\boxed{\;A_t=\frac{V_H(1+\pi)\theta_t+V_L(1-\pi)(1-\theta_t)}{(1+\pi)\theta_t+(1-\pi)(1-\theta_t)},\qquad B_t=\frac{V_H(1-\pi)\theta_t+V_L(1+\pi)(1-\theta_t)}{(1-\pi)\theta_t+(1+\pi)(1-\theta_t)}\;}
+$$
 
 **The belief recursion.** $A_t$ *is* the posterior after a buy, so
-$$\boxed{\;\theta_t^{+}=\frac{\mathbb{P}(B\mid V_H)\,\theta_t}{\mathbb{P}(B\mid V_H)\theta_t+\mathbb{P}(B\mid V_L)(1-\theta_t)}=\frac{(1+\pi)\theta_t}{(1+\pi)\theta_t+(1-\pi)(1-\theta_t)}=\frac{(1+\pi)\theta_t}{n_A}\;}$$
+$$
+\boxed{\;\theta_t^{+}=\frac{\mathbb{P}(B\mid V_H)\,\theta_t}{\mathbb{P}(B\mid V_H)\theta_t+\mathbb{P}(B\mid V_L)(1-\theta_t)}=\frac{(1+\pi)\theta_t}{(1+\pi)\theta_t+(1-\pi)(1-\theta_t)}=\frac{(1+\pi)\theta_t}{n_A}\;}
+$$
 and symmetrically $\theta_t^{-}=(1-\pi)\theta_t/n_B$. At $\theta=\tfrac12$: $\theta^{+}=(1+\pi)/2$ and $\theta^{-}=(1-\pi)/2$, so the spread at maximum uncertainty is
-$$A-B=\pi(V_H-V_L).$$
+$$
+A-B=\pi(V_H-V_L).
+$$
 
 **The martingale property (exact).** Arrival probabilities at the current belief are $\mathbb{P}(B)=\tfrac12 n_A$ and $\mathbb{P}(S)=\tfrac12 n_B$. Therefore, using the expressions above,
-$$\mathbb{E}[P_{t+1}\mid\mathcal{F}_t]=\tfrac12 n_A\cdot\frac{V_H(1+\pi)\theta+V_L(1-\pi)(1-\theta)}{n_A}+\tfrac12 n_B\cdot\frac{V_H(1-\pi)\theta+V_L(1+\pi)(1-\theta)}{n_B}$$
-$$=\tfrac12\big[V_H\theta\big((1+\pi)+(1-\pi)\big)+V_L(1-\theta)\big((1-\pi)+(1+\pi)\big)\big]=V_H\theta+V_L(1-\theta)=P_t.$$
+$$
+\mathbb{E}[P_{t+1}\mid\mathcal{F}_t]=\tfrac12 n_A\cdot\frac{V_H(1+\pi)\theta+V_L(1-\pi)(1-\theta)}{n_A}+\tfrac12 n_B\cdot\frac{V_H(1-\pi)\theta+V_L(1+\pi)(1-\theta)}{n_B}
+$$
+$$
+=\tfrac12\big[V_H\theta\big((1+\pi)+(1-\pi)\big)+V_L(1-\theta)\big((1-\pi)+(1+\pi)\big)\big]=V_H\theta+V_L(1-\theta)=P_t.
+$$
 **Zero drift, exactly, at every belief.** Verified to machine precision in §3.
 
 **Information eventually gets revealed.** The belief is a bounded martingale, so it converges; the only absorbing points of the recursion are $\theta\in\{0,1\}$. Since informed arrivals always push in the direction of the true value, $\theta_t\to\mathbf 1\{V=V_H\}$ almost surely. **This is the sequential-trade analogue of Kyle's $\Sigma(t)\to0$** and the reason a market "learns".
 
 **Toxicity of a fill.** The probability that a trade you just received came from an informed counterparty is
-$$\mathbb{P}(\text{informed}\mid B)=\frac{\pi\,\theta_t}{\mathbb{P}(B)}=\frac{2\pi\theta_t}{n_A}\qquad\big(\;=\pi\ \text{at }\theta=\tfrac12\;\big).$$
+$$
+\mathbb{P}(\text{informed}\mid B)=\frac{\pi\,\theta_t}{\mathbb{P}(B)}=\frac{2\pi\theta_t}{n_A}\qquad\big(\;=\pi\ \text{at }\theta=\tfrac12\;\big).
+$$
 This is the number a market maker actually cares about, and — crucially — it is **not constant**: it moves with $\theta$, so the value of a fill depends on where in the learning process you are.
 
 ---

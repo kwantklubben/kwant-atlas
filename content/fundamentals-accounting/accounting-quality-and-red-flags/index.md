@@ -34,11 +34,15 @@ This folder is the **hub**. It (a) gives you the **operating-accrual formula and
 
 **The operating-accrual measure (Sloan 1996, computed from the balance sheet and income statement — no cash-flow statement required):**
 
-$$\text{Accruals} \;=\; (\Delta CA - \Delta Cash) \;-\; (\Delta CL - \Delta STD - \Delta TP) \;-\; Dep.$$
+$$
+\text{Accruals} \;=\; (\Delta CA - \Delta Cash) \;-\; (\Delta CL - \Delta STD - \Delta TP) \;-\; Dep.
+$$
 
 *Why each subtraction:* changes in *cash* are already cash, not accruals — so the cash change is pulled out of the current-asset change. Debt in current liabilities is a **financing** transaction, and taxes payable is excluded for consistency with the pre-tax earnings definition — both are pulled out of the current-liability change. Depreciation is the non-cash expense that reduced income without reducing cash, so it is subtracted.
 
-$$\text{Accrual component}=\frac{\text{Accruals}}{\text{avg } TA},\qquad \text{Cash-flow component}=\frac{\text{NI} - \text{Accruals}}{\text{avg } TA},\qquad \text{NI}=\text{CFO}+\text{Accruals}.$$
+$$
+\text{Accrual component}=\frac{\text{Accruals}}{\text{avg } TA},\qquad \text{Cash-flow component}=\frac{\text{NI} - \text{Accruals}}{\text{avg } TA},\qquad \text{NI}=\text{CFO}+\text{Accruals}.
+$$
 
 **Averages, not endpoints (Sloan's deflator).** *TA* is the average of beginning and ending book total assets — using ending assets alone lets a year-end acquisition shrink the measured accrual ratio for free.
 

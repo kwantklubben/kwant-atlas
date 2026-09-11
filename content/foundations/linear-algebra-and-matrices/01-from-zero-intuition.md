@@ -17,7 +17,9 @@ This page builds the *why* of linear algebra with **no prior linear algebra need
 
 Start with the dumbest question: *why does a portfolio's risk behave like a matrix?* If $w$ is a vector of portfolio weights and $R$ the vector of asset returns, the portfolio variance is
 
-$$\text{Var}(w'R)=w'\Sigma w,$$
+$$
+\text{Var}(w'R)=w'\Sigma w,
+$$
 
 a **quadratic form**. The matrix $\Sigma$ is not a table of numbers to look up one at a time — it is a *rule* that takes any weight vector $w$ and returns its variance. Three steps, three "aha"s:
 
@@ -31,17 +33,23 @@ a **quadratic form**. The matrix $\Sigma$ is not a table of numbers to look up o
 
 **The stretch-and-rotate picture.** Any real symmetric matrix $\Sigma$ can be written
 
-$$\Sigma=Q\Lambda Q'=\sum_{i=1}^n \lambda_i\,q_i q_i',$$
+$$
+\Sigma=Q\Lambda Q'=\sum_{i=1}^n \lambda_i\,q_i q_i',
+$$
 
 with $Q'Q=I$ (columns $q_i$ orthonormal) and $\lambda_1\ge\lambda_2\ge\dots\ge\lambda_n$. Because the $q_i$ are orthogonal, the *contribution of direction $q_i$ to any quadratic form* is separate from all the others:
 
-$$w'\Sigma w = \sum_{i=1}^n \lambda_i\,(w'q_i)^2.$$
+$$
+w'\Sigma w = \sum_{i=1}^n \lambda_i\,(w'q_i)^2.
+$$
 
 This is the **spectral theorem** (Strang Ch 6; Horn & Johnson Thm 2.5.6) — the single most-used theorem in the toolbox. For a covariance matrix it says: *there is an orthonormal frame in which the risk matrix becomes diagonal,* i.e. the correlated problem becomes $n$ independent one-dimensional problems.
 
 **Why a covariance is a "machine".** Feed in $w$; out comes variance. The *big* eigenvalues mark the directions of large common risk; the *small* ones mark directions you can barely measure (and that $N>T$ fills with noise — see [[foundations/linear-algebra-and-matrices/06-advanced-extensions|06]]). The ratio of largest to smallest eigenvalue,
 
-$$\kappa_2(\Sigma)=\frac{\lambda_1}{\lambda_n}=\frac{\sigma_{\max}}{\sigma_{\min}},$$
+$$
+\kappa_2(\Sigma)=\frac{\lambda_1}{\lambda_n}=\frac{\sigma_{\max}}{\sigma_{\min}},
+$$
 
 the **condition number**, tells you how "stretched out" the risk ellipsoid is — how ill-conditioned any inversion of $\Sigma$ will be.
 

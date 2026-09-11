@@ -26,39 +26,51 @@ The two families of pages 02–04 solve *linear* problems on *one* state variabl
 
 **Free boundary / complementarity** (Duffy eqs. 26.5–26.11). For an American put with exercise boundary $B(t)$:
 
-$$\frac{\partial P}{\partial t}+\tfrac12\sigma^2S^2\frac{\partial^2P}{\partial S^2}+rS\frac{\partial P}{\partial S}-rP=0 \ \ \text{for }S>B(t),\qquad
-P\ge\max(K-S,0)\ \ \text{everywhere},$$
+$$
+\frac{\partial P}{\partial t}+\tfrac12\sigma^2S^2\frac{\partial^2P}{\partial S^2}+rS\frac{\partial P}{\partial S}-rP=0 \ \ \text{for }S>B(t),\qquad
+P\ge\max(K-S,0)\ \ \text{everywhere},
+$$
 
 with **smooth pasting** at the boundary $P(B(t),t)=K-B(t)$ and $\partial P/\partial S(B(t),t)=-1$, and terminal boundary $B(T)=K$. Equivalently: $\mathcal LP\le0$ and $P\ge g$, with $(\mathcal LP)\,(P-g)=0$ — a linear complementarity problem.
 
 **Penalty regularisation** (Duffy eqs. 28.15–28.17). Replace the constraint by a large nonlinear reaction term:
 
-$$f_\varepsilon(P_\varepsilon)=\frac1\varepsilon\,[g(S)-P_\varepsilon]^+ \qquad\text{or}\qquad f_\varepsilon(P_\varepsilon)=\frac{\varepsilon C}{P_\varepsilon+\varepsilon-q(S)},\quad q(S)=K-S,\ C\ge rK,$$
+$$
+f_\varepsilon(P_\varepsilon)=\frac1\varepsilon\,[g(S)-P_\varepsilon]^+ \qquad\text{or}\qquad f_\varepsilon(P_\varepsilon)=\frac{\varepsilon C}{P_\varepsilon+\varepsilon-q(S)},\quad q(S)=K-S,\ C\ge rK,
+$$
 
 then $P_\varepsilon\to P$ in $L^\infty_{\text{loc}}$ as $\varepsilon\to0$ (Thm 28.2). The semi-implicit scheme (implicit in the linear terms, explicit in $f_\varepsilon$) satisfies the discrete constraint $P^n_j\ge\max(q,0)$ **iff** $k\le\varepsilon/(rK)$ (Thm 28.3) — a cheap, monotone, no-Newton route.
 
 **Projected SOR on the LCP** (Duffy eq. 29.11, Thm 29.1).
 
-$$z_j^{(k+1)}=b_j+\sum_{i<j}A_{ji}c_i^{(k+1)}-\sum_{i>j}A_{ji}c_i^{(k)},\qquad
-c_j^{(k+1)}=\max\!\big(0,\ c_j^{(k)}+\omega\,z_j^{(k+1)}/A_{jj}\big),$$
+$$
+z_j^{(k+1)}=b_j+\sum_{i<j}A_{ji}c_i^{(k+1)}-\sum_{i>j}A_{ji}c_i^{(k)},\qquad
+c_j^{(k+1)}=\max\!\big(0,\ c_j^{(k)}+\omega\,z_j^{(k+1)}/A_{jj}\big),
+$$
 
 convergent for any start **iff** $0<\omega<2$ (positive-definiteness of $A$ is what matters). For a put the projection max is against intrinsic value.
 
 **Monte Carlo: Longstaff–Schwartz (LSM)** (Glasserman eqs. 8.46–8.52). Regress the realised discounted continuation value on basis functions of the current state,
 
-$$\hat C_i(x)=\hat\beta_i'\psi(x),\qquad \hat\beta_i=\hat B_\psi^{-1}\hat B_{\psi V},\qquad
-\hat V_{ij}=h_i(X_{ij})\ \text{if }h_i\ge\hat C_i(X_{ij}),\ \text{else}\ \hat V_{i+1,j}.$$
+$$
+\hat C_i(x)=\hat\beta_i'\psi(x),\qquad \hat\beta_i=\hat B_\psi^{-1}\hat B_{\psi V},\qquad
+\hat V_{ij}=h_i(X_{ij})\ \text{if }h_i\ge\hat C_i(X_{ij}),\ \text{else}\ \hat V_{i+1,j}.
+$$
 
 Two distinct estimators must not be confused: the **Tsitsiklis–van Roy regression DP** ($\hat V=\max\{h_i,\hat C_i\}$, biased **high** through Jensen when the basis is imperfect) and **LSM** (value taken from the *realised* continuation path, biased **low**: any implementable stopping rule is suboptimal). Duality closes the bracket (Glasserman eqs. 8.58, 8.65):
 
-$$V_0=\sup_\tau\mathbb E[h_\tau]=\inf_M\mathbb E\!\left[\max_{k=1..m}\big(h_k(X_k)-M_k\big)\right]\ \Longrightarrow\ \text{low}\le V_0\le\text{dual upper}.$$
+$$
+V_0=\sup_\tau\mathbb E[h_\tau]=\inf_M\mathbb E\!\left[\max_{k=1..m}\big(h_k(X_k)-M_k\big)\right]\ \Longrightarrow\ \text{low}\le V_0\le\text{dual upper}.
+$$
 
 #### 2.2 Multidimensional: ADI and operator splitting
 
 **Peaceman–Rachford ADI** (Duffy eqs. 19.7a–b, growth factor 19.5/19.6): each half-step is only *conditionally* stable, but the two-leg step is **unconditionally** stable and second order in time and space:
 
-$$\frac{U^{n+\frac12}_{ij}-U^n_{ij}}{k/2}=\Delta^2_xU^{n+\frac12}_{ij}+\Delta^2_yU^{n}_{ij},\qquad
-\frac{U^{n+1}_{ij}-U^{n+\frac12}_{ij}}{k/2}=\Delta^2_xU^{n+\frac12}_{ij}+\Delta^2_yU^{n+1}_{ij}.$$
+$$
+\frac{U^{n+\frac12}_{ij}-U^n_{ij}}{k/2}=\Delta^2_xU^{n+\frac12}_{ij}+\Delta^2_yU^{n}_{ij},\qquad
+\frac{U^{n+1}_{ij}-U^{n+\frac12}_{ij}}{k/2}=\Delta^2_xU^{n+\frac12}_{ij}+\Delta^2_yU^{n+1}_{ij}.
+$$
 
 Two hard limits from Duffy: a naive three-leg ADI in 3-D is **not** unconditionally stable (eq. 19.34 → use Douglas–Rachford), and **ADI breaks down with mixed derivatives** (eq. 19.37) — exactly the correlated multi-asset case. The fix is **Yanenko splitting**, treating the cross term explicitly (eqs. 20.8/20.9), or a general $m$-way split $L=L_1+\dots+L_m$ converging when the discrete operators commute (eqs. 20.21–20.24).
 
@@ -66,8 +78,10 @@ Two hard limits from Duffy: a naive three-leg ADI in 3-D is **not** unconditiona
 
 **Koksma–Hlawka** (Glasserman eq. 5.10): for a deterministic low-discrepancy set with star discrepancy $D^*$,
 
-$$\left|\frac1n\sum_if(x_i)-\int f\right|\ \le\ V_{HK}(f)\,D^*,\qquad
-D^*\le C(d,b)\,b^t\,\frac{(\log n)^d}{n}+O\!\Big(\frac{(\log n)^{d-1}}{n}\Big),$$
+$$
+\left|\frac1n\sum_if(x_i)-\int f\right|\ \le\ V_{HK}(f)\,D^*,\qquad
+D^*\le C(d,b)\,b^t\,\frac{(\log n)^d}{n}+O\!\Big(\frac{(\log n)^{d-1}}{n}\Big),
+$$
 
 so QMC's error is $O(n^{-1+\varepsilon})$ against Monte Carlo's $O(n^{-1/2})$ — **conditional on finite Hardy–Krause variation $V_{HK}(f)$**, which fails for non-axis-aligned indicator payoffs (barriers) and is the reason QMC is applied to *smooth* integrands. Randomisation (**random shift / digit scrambling**) restores unbiasedness and gives valid error bars, with scrambled-net variance $O(n^{-(3-\varepsilon)})$ for smooth $f$ — a rate Monte Carlo can never reach.
 

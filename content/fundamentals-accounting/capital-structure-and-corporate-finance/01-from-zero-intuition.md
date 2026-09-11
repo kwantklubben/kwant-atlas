@@ -32,13 +32,17 @@ Three steps, three "aha"s:
 
 **The two claims on the same pie.** Let $X$ be operating profit (EBIT), $r$ the interest rate on debt $D$, $S$ the market value of equity. Cash available to shareholders each period:
 
-$$\text{Equity cash flow} = X - rD, \qquad \text{Debt cash flow} = rD.$$
+$$
+\text{Equity cash flow} = X - rD, \qquad \text{Debt cash flow} = rD.
+$$
 
 Total to all claimants: $X$. Debt gets $rD$ regardless of how $X$ moves (a *priority* claim, until the firm cannot pay); equity gets the residual $X - rD$ (which can be negative — equity bears all the operating risk).
 
 **Leverage as amplification.** Define the equity ratio $e = S/(S+D)$ (fraction of capital that is equity) and debt $D = K - S$ where $K = S + D$ is total capital. Return on equity:
 
-$$ROE = \frac{X - rD}{S} = \frac{X - r(K-S)}{S}.$$
+$$
+ROE = \frac{X - rD}{S} = \frac{X - r(K-S)}{S}.
+$$
 
 As $S \to 0$ (equity thin), the *entire* swing in $X$ is concentrated on a shrinking base: $\text{ROE}$ spreads wider and its downside goes negative. This is the direct mechanism behind the "financial leverage" term in the Penman decomposition ([[fundamentals-accounting/core-financial-ratios/02-profitability-ratios|ROCE = RNOA + FLEV×(RNOA − NBC)]]): leverage adds to shareholder return **only while** the operating return exceeds the after-tax cost of debt.
 

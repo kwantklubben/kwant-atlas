@@ -18,7 +18,9 @@ This is *the* finance application of the Kalman filter, and it is worth being bl
 
 The state-space fix is almost too natural. Make beta a **latent random walk**:
 
-$$r_t=\alpha_t+\beta_t\,r_{M,t}+e_t,\qquad e_t\sim N(0,\sigma_e^2);\qquad \beta_{t+1}=\beta_t+\varepsilon_t,\quad \varepsilon_t\sim N(0,\sigma_\beta^2).$$
+$$
+r_t=\alpha_t+\beta_t\,r_{M,t}+e_t,\qquad e_t\sim N(0,\sigma_e^2);\qquad \beta_{t+1}=\beta_t+\varepsilon_t,\quad \varepsilon_t\sim N(0,\sigma_\beta^2).
+$$
 
 The market return $r_{M,t}$ is the regressor, so the design matrix is *time-varying*: $Z_t=(1,\ r_{M,t})$ and the state is $s_t=(\alpha_t,\ \beta_t)^\top$ (Tsay Eq. 11.29, the **time-varying CAPM**). The same construct with $Z_t=(P_t^{B},\ 1)$ and $s_t=(\beta_t,\alpha_t)^\top$ estimates the **dynamic hedge ratio** for a pairs trade: regress asset A's price on asset B's price with a *floating* coefficient.
 
@@ -32,7 +34,9 @@ The practical objective: track a coefficient that moves, react to genuine regime
 
 Stack $k$ dynamic coefficients into $s_t=(\beta_t^{(1)},\dots,\beta_t^{(k)},\alpha_t)^\top$ and set the design row to the regressors:
 
-$$T=I_k\ (\text{random walk}),\qquad Q=\operatorname{diag}(q_1,\dots,q_k,q_\alpha),\qquad Z_t=(x_{1,t},\dots,x_{k,t},1),\qquad H=\sigma_e^2 .$$
+$$
+T=I_k\ (\text{random walk}),\qquad Q=\operatorname{diag}(q_1,\dots,q_k,q_\alpha),\qquad Z_t=(x_{1,t},\dots,x_{k,t},1),\qquad H=\sigma_e^2 .
+$$
 
 Then a single scalar observation equation $y_t=Z_t s_t+e_t$ covers the dynamic CAPM ($y=r_t$, $x_{1}=r_M$), a dynamic multi-factor model, and the pairs hedge ratio ($y=P^A$, $x_1=P^B$). Everything below is just the Kalman recursion of page 03 with these matrices.
 
@@ -49,7 +53,9 @@ This is the *same* lag–smoothness trade-off, now with a single knob that you c
 
 The filter's prediction-error log-likelihood (Tsay 11.25) is a closed-form function of the parameters:
 
-$$\ln L(\sigma_e^2,q)=-\tfrac T2\ln(2\pi)-\tfrac12\sum_t\Big[\ln V_t+\frac{v_t^2}{V_t}\Big],$$
+$$
+\ln L(\sigma_e^2,q)=-\tfrac T2\ln(2\pi)-\tfrac12\sum_t\Big[\ln V_t+\frac{v_t^2}{V_t}\Big],
+$$
 
 so $(\hat\sigma_e^2,\hat q)$ are obtained by a one-dimensional (or a few-dimensional) numerical maximization — no separate likelihood derivation. In practice you also *standardize* the regressor $x_{M,t}$ (it has zero mean and unit variance by construction over long samples), which keeps $Z_t$ well-scaled and $V_t$ well-conditioned.
 

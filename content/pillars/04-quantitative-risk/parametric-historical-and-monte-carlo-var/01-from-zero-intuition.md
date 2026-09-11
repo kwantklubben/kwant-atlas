@@ -18,7 +18,9 @@ This page builds the *why* of Value at Risk with **no prior risk knowledge neede
 
 Start with the dumbest framing. A trader holds a portfolio. Tomorrow the market moves and the portfolio gains or loses $\Delta V$ dollars. We don't know $\Delta V$ in advance — it is random, drawn from some distribution. Define the **loss** $L=-\Delta V$ (positive when we lose money, and a negative loss is a gain). The 99% VaR over one day is the number $v$ such that
 
-$$P(L > v) = 0.01,$$
+$$
+P(L > v) = 0.01,
+$$
 
 i.e. *99% of the time the loss is no worse than $v$; only on 1 day in 100 do we lose more.* Three mental "aha"s:
 
@@ -34,13 +36,17 @@ i.e. *99% of the time the loss is no worse than $v$; only on 1 day in 100 do we 
 
 **VaR as an inverse CDF.** Let $F_L(l)=P(L\le l)$ be the distribution of loss. The $\alpha$-quantile is the inverse
 
-$$\text{VaR}_\alpha = F_L^{-1}(\alpha) = \inf\{l : F_L(l)\ge\alpha\}.$$
+$$
+\text{VaR}_\alpha = F_L^{-1}(\alpha) = \inf\{l : F_L(l)\ge\alpha\}.
+$$
 
 Because we defined loss as $L=-\Delta V$, a *larger* $L$ is worse, so the $\alpha$-quantile of $L$ is the number that the loss exceeds with probability $1-\alpha$.
 
 **Horizon scaling (i.i.d. returns).** If returns are i.i.d. with variance $\sigma^2$ per day, the $h$-day loss variance is $h\sigma^2$, so for *any* distribution whose tail scales the same way, the quantile scales as
 
-$$\text{VaR}_\alpha^{(h)} = \text{VaR}_\alpha^{(1)} \cdot \sqrt{h}.$$
+$$
+\text{VaR}_\alpha^{(h)} = \text{VaR}_\alpha^{(1)} \cdot \sqrt{h}.
+$$
 
 This is the famous **$\sqrt{h}$ rule** (Hull Ch 22: "N-day VaR = 1-day VaR × √N"). It is *exact only under i.i.d. normal-ish returns* — when losses cluster (GARCH), the true $h$-day VaR scales slower or faster — a failure mode in [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05]].
 

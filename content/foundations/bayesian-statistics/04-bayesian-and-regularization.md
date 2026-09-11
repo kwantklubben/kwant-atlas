@@ -28,31 +28,41 @@ This page makes that correspondence exact, because it is the single cleanest bri
 
 **The master identity (ESL §3.4, §8.3).** For iid Gaussian data $y_i\sim N(x_i^{\!\top}\beta,\sigma^2)$ and prior $p(\beta)$,
 
-$$\underbrace{-\log p(\beta\mid y)}_{\text{posterior}} \;=\;\underbrace{\frac{1}{2\sigma^2}\sum_i\big(y_i-x_i^{\!\top}\beta\big)^2}_{\text{likelihood (RSS)}}\;-\;\underbrace{\log p(\beta)}_{\text{prior}}\;+\;\text{const}.$$
+$$
+\underbrace{-\log p(\beta\mid y)}_{\text{posterior}} \;=\;\underbrace{\frac{1}{2\sigma^2}\sum_i\big(y_i-x_i^{\!\top}\beta\big)^2}_{\text{likelihood (RSS)}}\;-\;\underbrace{\log p(\beta)}_{\text{prior}}\;+\;\text{const}.
+$$
 
 Minimizing the posterior loss = **minimizing RSS plus the negative log-prior**. The prior *is* the penalty.
 
 **Gaussian prior $\Rightarrow$ ridge $L_2$.** With $\beta_j\overset{iid}{\sim}N(0,\tau^2)$,
 
-$$-\log p(\beta)=\frac{\|\beta\|^2}{2\tau^2}+\text{const}
+$$
+-\log p(\beta)=\frac{\|\beta\|^2}{2\tau^2}+\text{const}
 \;\Longrightarrow\;
-\hat\beta_{\text{MAP}}=\arg\min_\beta\Big\{\tfrac12\|y-X\beta\|^2+\tfrac{\lambda}{2}\|\beta\|^2\Big\},\quad \boxed{\lambda=\frac{\sigma^2}{\tau^2}}.$$
+\hat\beta_{\text{MAP}}=\arg\min_\beta\Big\{\tfrac12\|y-X\beta\|^2+\tfrac{\lambda}{2}\|\beta\|^2\Big\},\quad \boxed{\lambda=\frac{\sigma^2}{\tau^2}}.
+$$
 
 The closed form is the **ridge normal equation**
 
-$$\hat\beta_{\text{ridge}}=\big(X^{\!\top}X+\lambda I\big)^{-1}X^{\!\top}y .$$
+$$
+\hat\beta_{\text{ridge}}=\big(X^{\!\top}X+\lambda I\big)^{-1}X^{\!\top}y .
+$$
 
 A diffuse prior ($\tau^2\to\infty$, $\lambda\to0$) recovers OLS; a tight prior shrinks coefficients toward 0. Additivity of $+\lambda I$ to $X^{\!\top}X$ is precisely the additive-precision result of [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|02]] applied to the whole coefficient vector — and it is also why ridge fixes the singular $X^{\!\top}X$ that makes OLS ill-posed (the ridge page of [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage]] uses the same move on $\hat\Sigma$).
 
 **Laplace prior $\Rightarrow$ lasso $L_1$.** With $\beta_j\overset{iid}{\sim}\mathrm{Lap}(0,b)$, $p(\beta_j)\propto e^{-|\beta_j|/b}$, so
 
-$$-\log p(\beta)=\frac{\|\beta\|_1}{b}+\text{const}
+$$
+-\log p(\beta)=\frac{\|\beta\|_1}{b}+\text{const}
 \;\Longrightarrow\;
-\hat\beta_{\text{MAP}}=\arg\min_\beta\Big\{\tfrac12\|y-X\beta\|^2+\lambda\|\beta\|_1\Big\},\quad \lambda=\frac{\sigma^2}{b}.$$
+\hat\beta_{\text{MAP}}=\arg\min_\beta\Big\{\tfrac12\|y-X\beta\|^2+\lambda\|\beta\|_1\Big\},\quad \lambda=\frac{\sigma^2}{b}.
+$$
 
 Solved by **coordinate descent** with the **soft-thresholding** operator $S(z,\lambda)=\mathrm{sign}(z)\max(|z|-\lambda,0)$:
 
-$$\beta_j\leftarrow\frac{S\!\big(\sum_i x_{ij}r_i^{(-j)},\;\lambda\big)}{\sum_i x_{ij}^2},\qquad r^{(-j)}=y-\!\!\sum_{k\ne j}\!x_k\beta_k .$$
+$$
+\beta_j\leftarrow\frac{S\!\big(\sum_i x_{ij}r_i^{(-j)},\;\lambda\big)}{\sum_i x_{ij}^2},\qquad r^{(-j)}=y-\!\!\sum_{k\ne j}\!x_k\beta_k .
+$$
 
 **Why the Laplace prior gives exact zeros:** its log-density has a *kink* at 0, so the negative-log-prior has a corner at the origin that the quadratic RSS cannot always pull the optimum past — the coordinate can stick at exactly zero. A Gaussian prior is smooth, so it shrinks but never zeroes (ELASTIC NET combines both, a Gaussian + Laplace prior mixture).
 

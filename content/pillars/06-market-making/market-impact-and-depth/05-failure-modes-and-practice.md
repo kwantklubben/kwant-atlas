@@ -35,7 +35,9 @@ Three estimation families, in increasing order of data hunger:
 
 **Order flow imbalance (OFI)** — Cont, Kukanov & Stoikov (2014). Over a short interval, define the imbalance between supply and demand at the best quotes as the net change in the queue at the best bid minus the best ask (each event — a limit order, a cancel, or a market order — contributes to one side). The empirical finding:
 
-$$\Delta P \;=\; \lambda_{\mathrm{OFI}}\cdot \mathrm{OFI} + \varepsilon,\qquad \boxed{\ \lambda_{\mathrm{OFI}}\ \propto\ \frac{1}{\text{depth}}\ }$$
+$$
+\Delta P \;=\; \lambda_{\mathrm{OFI}}\cdot \mathrm{OFI} + \varepsilon,\qquad \boxed{\ \lambda_{\mathrm{OFI}}\ \propto\ \frac{1}{\text{depth}}\ }
+$$
 
 — a **linear** relation, robust across stocks and time scales, with a slope that is **inversely proportional to market depth**. This is the practical face of Kyle's $\lambda$: the same concept, estimated from the book rather than assumed. Other things being equal, a market with twice the depth has half the impact coefficient.
 
@@ -45,14 +47,16 @@ $$\Delta P \;=\; \lambda_{\mathrm{OFI}}\cdot \mathrm{OFI} + \varepsilon,\qquad \
 
 For each observed order, record three prices: the **pre-trade** price $S_0$ (before impact), the **post-trade** price $S_{\text{post}}$ (after temporary effects have dissipated), and the **average execution** price $\bar S$. Then
 
-$$\text{Permanent impact } I=\frac{S_{\text{post}}-S_0}{S_0},\qquad
-\text{Realized impact } J=\frac{\bar S-S_0}{S_0},$$
+$$
+\text{Permanent impact } I=\frac{S_{\text{post}}-S_0}{S_0},\qquad
+\text{Realized impact } J=\frac{\bar S-S_0}{S_0},
+$$
 
 and the *temporary* impact is recovered as $J$ minus a fraction of $I$ (half, for a constant-rate program). Regress these on order size and duration in **volume time**, fit power laws, and you get the $I,J$ formulas and $\gamma,\eta$ of page 04. The critical design choice is **volume time** (fraction of an average day's volume elapsed), which removes the intraday U-shape in volume and volatility; a naive clock-time regression mixes the two.
 
 #### 2.3 Daily illiquidity proxies
 
-- **Amihud (2002):** $I=\mathbb E\!\left[\dfrac{|r_t|}{\text{\$Vol}_t}\right]$ — the absolute return per dollar traded. Better as a $\lambda$ proxy than the inverse ratio (Hasbrouck §9.9).
+- **Amihud (2002):** $I=\mathbb E\!\left[\dfrac{|r_t|}{\text{Vol}_t}\right] — the absolute return per dollar traded. Better as a \lambda$ proxy than the inverse ratio (Hasbrouck §9.9).
 - **Amivest / liquidity ratio:** $L=\dfrac{\text{Vol}_t}{|r_t|}$ — dollars of volume per unit return (the reciprocal idea).
 - **Roll (1984):** effective spread $=2\sqrt{-\gamma_1}$ from the first autocovariance of price changes — a *spread* proxy, not an impact proxy, and biased by serial correlation in order flow.
 

@@ -36,42 +36,62 @@ Investors meet each other at intensity $\lambda$ (a **search** friction) and mee
 
 Conservation gives two identities that solve the four-type system with only one unknown:
 
-$$\mu_{lo}+\mu_{ho}=s,\qquad \mu_{ho}+\mu_{hn}=\frac{\lambda_u}{\lambda_u+\lambda_d}.$$
+$$
+\mu_{lo}+\mu_{ho}=s,\qquad \mu_{ho}+\mu_{hn}=\frac{\lambda_u}{\lambda_u+\lambda_d}.
+$$
 
 Under **Condition 1** ($s<\lambda_u/(\lambda_u+\lambda_d)$), which holds in the paper's example ($0.8<0.9091$), the market has more high-type non-owners than low-type owners ($\mu_{lo}<\mu_{hn}$), so a dealer sells to *every* non-owner he meets and the interdealer price is the buyer/taker side, $M=A=H$. The steady-state mass $\mu_{lo}$ then solves a quadratic:
 
-$$2\lambda\,x^2+\bigl(2\lambda a+\rho+\lambda_u+\lambda_d\bigr)x-\lambda_d s=0,\qquad a\equiv\frac{\lambda_u}{\lambda_u+\lambda_d}-s.$$
+$$
+2\lambda\,x^2+\bigl(2\lambda a+\rho+\lambda_u+\lambda_d\bigr)x-\lambda_d s=0,\qquad a\equiv\frac{\lambda_u}{\lambda_u+\lambda_d}-s.
+$$
 
 #### 2.2 Value functions and bargaining (the HJB)
 
 Let $V_\sigma$ be an investor's continuation value by type. In steady state the Hamilton–Jacobi–Bellman equations are (DGP eq 10):
 
-$$\dot V_{lo}=rV_{lo}-\lambda_u(V_{ho}-V_{lo})-2\lambda\mu_{hn}(P+V_{ln}-V_{lo})-\rho(B+V_{ln}-V_{lo})-(1-\delta),$$
-$$\dot V_{ln}=rV_{ln}-\lambda_u(V_{hn}-V_{ln}),\qquad \dot V_{ho}=rV_{ho}-\lambda_d(V_{lo}-V_{ho})-1,$$
-$$\dot V_{hn}=rV_{hn}-\lambda_d(V_{ln}-V_{hn})-2\lambda\mu_{ho}(V_{ho}-V_{hn}-P)-\rho(V_{ho}-V_{hn}-A).$$
+$$
+\dot V_{lo}=rV_{lo}-\lambda_u(V_{ho}-V_{lo})-2\lambda\mu_{hn}(P+V_{ln}-V_{lo})-\rho(B+V_{ln}-V_{lo})-(1-\delta),
+$$
+$$
+\dot V_{ln}=rV_{ln}-\lambda_u(V_{hn}-V_{ln}),\qquad \dot V_{ho}=rV_{ho}-\lambda_d(V_{lo}-V_{ho})-1,
+$$
+$$
+\dot V_{hn}=rV_{hn}-\lambda_d(V_{ln}-V_{hn})-2\lambda\mu_{ho}(V_{ho}-V_{hn}-P)-\rho(V_{ho}-V_{hn}-A).
+$$
 
 **Bargaining.** When a low owner meets a high non-owner, the gains from trade are $L=V_{lo}-V_{ln}$ (the seller's) and $H=V_{ho}-V_{hn}$ (the buyer's). **Nash bargaining** with seller power $q$ splits them (DGP eq 11):
 
-$$\boxed{\,P=(1-q)\,L+q\,H\,}$$
+$$
+\boxed{\,P=(1-q)\,L+q\,H\,}
+$$
 
 When an investor meets a dealer, the dealer's outside option is the interdealer price $M$ and his power is $z$ (DGP eqs 12–13):
 
-$$\boxed{\,A=zH+(1-z)M,\qquad B=zL+(1-z)M\,}\qquad\Longrightarrow\qquad A-B=z(H-L).$$
+$$
+\boxed{\,A=zH+(1-z)M,\qquad B=zL+(1-z)M\,}\qquad\Longrightarrow\qquad A-B=z(H-L).
+$$
 
 #### 2.3 The closed-form equilibrium (Theorem 2)
 
 Solving the linear value-function system gives the prices directly (DGP eqs 14–16), with
 
-$$D=r+\lambda_d+2\lambda\mu_{lo}(1-q)+\lambda_u+2\lambda\mu_{hn}q+\rho(1-z),$$
-$$A=\frac1r-\frac{\delta}{r}\,\frac{\lambda_d+2\lambda\mu_{lo}(1-q)}{D},\quad
+$$
+D=r+\lambda_d+2\lambda\mu_{lo}(1-q)+\lambda_u+2\lambda\mu_{hn}q+\rho(1-z),
+$$
+$$
+A=\frac1r-\frac{\delta}{r}\,\frac{\lambda_d+2\lambda\mu_{lo}(1-q)}{D},\quad
 B=\frac1r-\frac{\delta}{r}\,\frac{zr+\lambda_d+2\lambda\mu_{lo}(1-q)}{D},\quad
-P=\frac1r-\frac{\delta}{r}\,\frac{(1-q)r+\lambda_d+2\lambda\mu_{lo}(1-q)}{D}.$$
+P=\frac1r-\frac{\delta}{r}\,\frac{(1-q)r+\lambda_d+2\lambda\mu_{lo}(1-q)}{D}.
+$$
 
 Each price is the present value $1/r$ of the dividend stream, **reduced by an illiquidity discount** $(\delta/r)\times(\text{ratio})$. The spread is
 
-$$A-B=\frac{\delta z}{D}.$$
+$$
+A-B=\frac{\delta z}{D}.
+$$
 
-**Monopolist case** ($z=1$): the spread becomes $A-B=\delta/D$ with the **full** denominator $D$ (the $2\lambda\mu$ investor-search terms do *not* vanish), so it still **falls** in the investor search intensity $\lambda$ — but it is **increasing in the dealer-accessibility $\rho$** — the counterintuitive core of the paper (faster dealer contact widens the monopolist's spread). **Competitive case** ($z<1$): as $\rho\to\infty$, $D\to\infty$ and $A-B\to0$ (sequential competition). **Fast investors:** as $\lambda\to\infty$, $D\to\infty$ regardless of $z$, so $A-B\to0$ (Theorem 3, part 1). The equilibrium converges to Walrasian $P^\*=1/r$.
+**Monopolist case** ($z=1$): the spread becomes $A-B=\delta/D$ with the **full** denominator $D$ (the $2\lambda\mu$ investor-search terms do *not* vanish), so it still **falls** in the investor search intensity $\lambda$ — but it is **increasing in the dealer-accessibility $\rho$** — the counterintuitive core of the paper (faster dealer contact widens the monopolist's spread). **Competitive case** ($z<1$): as $\rho\to\infty$, $D\to\infty$ and $A-B\to0$ (sequential competition). **Fast investors:** as $\lambda\to\infty$, $D\to\infty$ regardless of $z$, so $A-B\to0$ (Theorem 3, part 1). The equilibrium converges to Walrasian $P^*=1/r$.
 
 ---
 

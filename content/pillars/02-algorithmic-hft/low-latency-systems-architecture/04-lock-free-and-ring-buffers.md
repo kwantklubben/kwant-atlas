@@ -29,7 +29,9 @@ The objective of this page is to explain **why the ring buffer — not a lock, n
 
 Let the buffer be an array $B$ of capacity $C=2^k$ (a power of two, so wrapping is a bit-mask rather than a division), and let `head`, `tail` be unsigned 64-bit counters that only ever increase. The **producer** writes to slot $\text{tail}\bmod C$ and then increments `tail`; the **consumer** reads slot $\text{head}\bmod C$ and then increments `head`. The invariants are:
 
-$$\text{head} \le \text{tail},\qquad \text{occupancy} = \text{tail}-\text{head} \le C,\qquad \text{slot index} = \text{index}\ \&\ (C-1).$$
+$$
+\text{head} \le \text{tail},\qquad \text{occupancy} = \text{tail}-\text{head} \le C,\qquad \text{slot index} = \text{index}\ \&\ (C-1).
+$$
 
 Note that the counters are *monotonic* (never wrapped), so wrap is handled by the mask and "full" is distinguishable from "empty" without wasting a slot. Correctness under concurrency requires **release/acquire ordering**: the producer must publish the payload *before* the atomic store of `tail` (store-release), and the consumer must load `tail` with acquire semantics *before* reading the payload — otherwise the CPU or compiler may reorder the write of the data after the write of the index, and the consumer will read garbage.
 

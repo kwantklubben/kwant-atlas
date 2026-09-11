@@ -44,11 +44,15 @@ For a path $X_t$ (any dimension), the **time augmentation** is $\widehat X_t=(t,
 
 The **lead-lag** transform of a discrete path $X_0,X_1,\dots,X_n$ builds a path in $\mathbb R^{2d}$ that moves the *lead* copy first and the *lag* copy second:
 
-$$X_0^{lead}=X_0^{lag}=X_0,\qquad\text{then }\ (X_1,X_0)\to(X_1,X_1)\to(X_2,X_1)\to\cdots$$
+$$
+X_0^{lead}=X_0^{lag}=X_0,\qquad\text{then }\ (X_1,X_0)\to(X_1,X_1)\to(X_2,X_1)\to\cdots
+$$
 
 Between each pair of sample points the lead-lag path sweeps a right triangle in the (lead,lag) plane, so its **Lévy area** equals
 
-$$\boxed{\;\mathrm{Area}_{\text{lead-lag}}=\tfrac12\sum_{k}\big(X_{k+1}-X_k\big)^2=\tfrac12\,\text{realized variance}\;}$$
+$$
+\boxed{\;\mathrm{Area}_{\text{lead-lag}}=\tfrac12\sum_{k}\big(X_{k+1}-X_k\big)^2=\tfrac12\,\text{realized variance}\;}
+$$
 
 Each little triangle has legs $\Delta X_k,\Delta X_k$ (area $\tfrac12\Delta X_k^2$), and the sum is exact — §3 verifies it to $10^{-14}$. Consequences: (a) the lead-lag path is **geometric** (the shuffle identities hold on it — the cross-covariance between lead and lag *is* the quadratic covariation), and (b) the *variance-swap payoff* $=$ realized variance $=2\times$ the lead-lag Lévy area, a level-2 signature term. This is the mathematical core of **signature-based pricing of variance** and of the **lead-lag signature of rough volatility** (Lyons–Ni–Zhang).
 

@@ -1,3 +1,69 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ─────────────────────────────────────────────────────────────────────────────
+// Math readability
+//
+// Two problems this solves:
+//  1. Inline math rendered in the same black serif as body text, so equations
+//     were hard to pick out mid-sentence. Now tinted + subtly boxed.
+//  2. Display equations had no separation from surrounding prose. Now they sit
+//     in a panel with an accent rule, and scroll instead of overflowing.
+//
+// Tune by editing the three variables per theme — nothing else needs touching.
+// ─────────────────────────────────────────────────────────────────────────────
+
+:root {
+  --math-inline: #3f3d9e; // ink colour for inline math
+  --math-inline-bg: #eef0fb; // its background chip
+  --math-display-bg: #f7f8fc; // panel behind display equations
+  --math-accent: #6366f1; // left rule on display equations
+}
+
+[saved-theme="dark"] {
+  --math-inline: #b6bcff;
+  --math-inline-bg: rgba(120, 130, 255, 0.16);
+  --math-display-bg: rgba(148, 163, 184, 0.07);
+  --math-accent: #8b93ff;
+}
+
+// --- inline math -------------------------------------------------------------
+// `.katex` wraps both inline and display math; display math is additionally
+// wrapped in `.katex-display`, so reset the tint there.
+.katex {
+  color: var(--math-inline);
+}
+
+.katex-display .katex {
+  color: inherit;
+}
+
+p > .katex,
+li > .katex,
+td .katex,
+th .katex,
+blockquote > .katex {
+  background: var(--math-inline-bg);
+  border-radius: 4px;
+  padding: 0.08em 0.28em;
+  // keep the chip from being broken across lines mid-equation
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+// --- display math ------------------------------------------------------------
+.katex-display {
+  margin: 1.15rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--math-display-bg);
+  border-left: 3px solid var(--math-accent);
+  border-radius: 0 6px 6px 0;
+  overflow-x: auto; // wide matrices scroll instead of overflowing the column
+  overflow-y: hidden;
+}
+
+// a display equation directly after a heading needs less air above it
+h2 + .katex-display,
+h3 + .katex-display,
+h4 + .katex-display {
+  margin-top: 0.6rem;
+}

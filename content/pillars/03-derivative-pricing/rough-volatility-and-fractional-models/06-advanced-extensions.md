@@ -34,11 +34,15 @@ The practical objective: know which extension is the right answer for which prob
 
 Replace the Heston variance SDE's $dW$ with a fractional/Volterra driver:
 
-$$v_t=v_0+\frac{1}{\Gamma(\alpha)}\int_0^t(t-s)^{\alpha-1}\kappa(\theta-v_s)\,ds+\frac{\nu}{\Gamma(\alpha)}\int_0^t(t-s)^{\alpha-1}\sqrt{v_s}\,dW_s,\qquad \alpha=H+\tfrac12,$$
+$$
+v_t=v_0+\frac{1}{\Gamma(\alpha)}\int_0^t(t-s)^{\alpha-1}\kappa(\theta-v_s)\,ds+\frac{\nu}{\Gamma(\alpha)}\int_0^t(t-s)^{\alpha-1}\sqrt{v_s}\,dW_s,\qquad \alpha=H+\tfrac12,
+$$
 
 with $0<\alpha<\tfrac12$ (the rough regime). The key tractability: the fractional Riccati system has a closed form, so the log-price characteristic function is
 
-$$\varphi_t(u)=\exp\!\Big(\mathbb E\!\Big[\int_0^t v_s\,ds\Big]\Psi(u,t)+\dots\Big),$$
+$$
+\varphi_t(u)=\exp\!\Big(\mathbb E\!\Big[\int_0^t v_s\,ds\Big]\Psi(u,t)+\dots\Big),
+$$
 
 where $\Psi$ solves a fractional Riccati ODE (a Mittag-Leffler-type function). This restores a Fourier-pricing route that rBergomi lacks. Short-time ATM skew again behaves as $T^{\alpha-\frac12}=T^{H}$, and the model is *richer*: it reproduces both the rough skew and, via the $\mathbb E[\int v]$ leverage, the variance-swap/VIX structure.
 
@@ -46,7 +50,9 @@ where $\Psi$ solves a fractional Riccati ODE (a Mittag-Leffler-type function). T
 
 The singular Volterra kernel $(t-u)^{\alpha-1}$ can be approximated by a sum of exponentials, yielding a *finite-dimensional* Markovian representation of the fractional driver:
 
-$$(t-u)^{\alpha-1}\approx\sum_{j=1}^{M}w_j e^{-\kappa_j(t-u)},$$
+$$
+(t-u)^{\alpha-1}\approx\sum_{j=1}^{M}w_j e^{-\kappa_j(t-u)},
+$$
 
 so the fractional integral $\int_0^t(t-u)^{\alpha-1}X_udW_u$ becomes a sum of $M$ OU-like factors. This is the "rational approximation" programme (Harang–Langrené; Bayer–Friz; Abi Jaber–El Euch): $M$ factors of spectral accuracy capture the short-time skew to arbitrary precision, and then standard MC/PDE/Fourier machinery applies. Cost: $M$ extra state variables and a delicate small-$t$ blowup to preserve.
 

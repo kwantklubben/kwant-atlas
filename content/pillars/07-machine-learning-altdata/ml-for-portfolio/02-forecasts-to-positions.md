@@ -30,17 +30,23 @@ The intuition for (2): a forecast of "up 3%" is not an instruction to bet everyt
 
 Let $f_1,\dots,f_K$ be forecasts of the same quantity from $K$ models, and let $\Sigma_e$ be the covariance of their errors. The combined forecast is a weighted sum
 
-$$\hat f = \sum_{k=1}^K w_k f_k = w^\top f,\qquad \sum_k w_k = 1.$$
+$$
+\hat f = \sum_{k=1}^K w_k f_k = w^\top f,\qquad \sum_k w_k = 1.
+$$
 
 **Inverse-variance (optimal, uncorrelated errors).** If errors are mutually uncorrelated, the variance of the combination is minimized by weighting each forecast by $1/\sigma_k^2$:
 
-$$w_k = \frac{1/\sigma_k^2}{\sum_j 1/\sigma_j^2},\qquad \mathrm{Var}(\hat f) = \frac{1}{\sum_j 1/\sigma_j^2}.$$
+$$
+w_k = \frac{1/\sigma_k^2}{\sum_j 1/\sigma_j^2},\qquad \mathrm{Var}(\hat f) = \frac{1}{\sum_j 1/\sigma_j^2}.
+$$
 
 This is the same form as the inverse-variance portfolio: reliability (precision) weights, precision = inverse variance.
 
 **Granger–Ramanathan (OLS) combination.** The most general linear combination regresses realized returns on the $K$ forecasts (Granger & Ramanathan, 1984):
 
-$$\beta = \arg\min_\beta \Big\| r - F\beta \Big\|^2,$$
+$$
+\beta = \arg\min_\beta \Big\| r - F\beta \Big\|^2,
+$$
 
 where $F$ is the design matrix of forecasts. An unconstrained OLS fit can produce large and even negative weights — it **overfits the in-sample covariance of forecast errors**, which is exactly why, on the verified example in §3, it scores *worse* out-of-sample than inverse-variance.
 
@@ -50,11 +56,15 @@ where $F$ is the design matrix of forecasts. An unconstrained OLS fit can produc
 
 For a two-outcome classifier, let $p$ be the predicted probability that the label is $+1$. Test the null that the model is no better than a coin, $H_0{:}\;p=\tfrac12$, with the z-statistic
 
-$$z = \frac{p-\tfrac12}{\sqrt{p(1-p)}} \sim \mathcal{N}(0,1),$$
+$$
+z = \frac{p-\tfrac12}{\sqrt{p(1-p)}} \sim \mathcal{N}(0,1),
+$$
 
 then set the **bet size** (position) via the normal CDF $\Phi$:
 
-$$m = 2\Phi(z) - 1 \;\in\; [-1,1].$$
+$$
+m = 2\Phi(z) - 1 \;\in\; [-1,1].
+$$
 
 - $p=0.50$ (coin flip) → $z=0$ → $m=0$ (no position).
 - $p=0.90$ (high conviction) → $z=1.33$ → $m=+0.82$ (almost a full position).

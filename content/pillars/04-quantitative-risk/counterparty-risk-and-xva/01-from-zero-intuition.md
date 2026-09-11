@@ -35,29 +35,41 @@ The whole xVA family is the same trick applied to other costs: **CVA/DVA** = cre
 
 **Exposure, defined.** Let $V(t)$ be the value (to you) of the portfolio. Gregory's definitions (Eqs 11.1–11.2):
 
-$$\text{positive exposure}=\max(V(t),0),\qquad \text{negative exposure}=\min(V(t),0)\le 0 .$$
+$$
+\text{positive exposure}=\max(V(t),0),\qquad \text{negative exposure}=\min(V(t),0)\le 0 .
+$$
 
 From these come the four exposure statistics that run through the whole subject:
 
-$$\text{EFV}=\mathbb{E}[V(t)],\quad \text{EPE}=\mathbb{E}\!\left[V(t)^+\right],\quad \text{ENE}=\mathbb{E}\!\left[V(t)^-\right]\le0,\quad \text{PFE}=\text{quantile of }V(t)^+ .$$
+$$
+\text{EFV}=\mathbb{E}[V(t)],\quad \text{EPE}=\mathbb{E}\!\left[V(t)^+\right],\quad \text{ENE}=\mathbb{E}\!\left[V(t)^-\right]\le0,\quad \text{PFE}=\text{quantile of }V(t)^+ .
+$$
 
 **Note the identity** $\text{EPE}+\text{ENE}=\text{EFV}$: the two one-sided means split the expected value. For an at-the-money forward $\text{EFV}\approx0$, so $\text{EPE}\approx-\text{ENE}$ — the expected gain and expected loss are mirror images.
 
 **PFE *is* a VaR.** The potential future exposure at confidence $\alpha$ is exactly a value-at-risk on the portfolio value — the loss exceeded with probability $\le1-\alpha$ (Gregory §2.6, §11.1.5). This is the bridge to [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall]]: same machinery, different application.
 
 **A worked five-scenario sample (Gregory Spreadsheet 11.1).** Five equally likely future values:
-$$V=(70,\,50,\,30,\,-10,\,-30).$$
+$$
+V=(70,\,50,\,30,\,-10,\,-30).
+$$
 Then
-$$\text{EFV}=\tfrac{70+50+30-10-30}{5}=22,\quad \text{EPE}=\tfrac{70+50+30}{5}=30,\quad \text{ENE}=\tfrac{-10-30}{5}=-8,\quad \text{PFE}=70.$$
+$$
+\text{EFV}=\tfrac{70+50+30-10-30}{5}=22,\quad \text{EPE}=\tfrac{70+50+30}{5}=30,\quad \text{ENE}=\tfrac{-10-30}{5}=-8,\quad \text{PFE}=70.
+$$
 None of these four numbers is the others: they answer four different questions about the *same* distribution. Confusing them is the standard beginner error.
 
 **When the value is normal** (Gregory Appendix 11A), $V\sim\mathcal{N}(\mu,\sigma^2)$ with $z=\mu/\sigma$:
 
-$$\text{EFV}=\mu,\qquad \text{PFE}(\alpha)=\mu+\sigma\Phi^{-1}(\alpha),\qquad \text{EPE}=\sigma\varphi(z)+\mu\Phi(z),\qquad \text{ENE}=\mu-\text{EPE}.$$
+$$
+\text{EFV}=\mu,\qquad \text{PFE}(\alpha)=\mu+\sigma\Phi^{-1}(\alpha),\qquad \text{EPE}=\sigma\varphi(z)+\mu\Phi(z),\qquad \text{ENE}=\mu-\text{EPE}.
+$$
 
 **Why CVA exists.** Start from "the value is whatever the risk-free model says". That assumes the counterparty always pays. Relax it: with probability the counterparty defaults (time $\tau$, probability from its survival curve) and you then lose the LGD fraction of whatever you are owed. CVA is that expected, discounted loss:
 
-$$\text{CVA}=-\text{LGD}\,\mathbb{E}\!\left[\mathbf{1}_{\tau\le T}\,D(0,\tau)\,V(\tau)^+\right].$$
+$$
+\text{CVA}=-\text{LGD}\,\mathbb{E}\!\left[\mathbf{1}_{\tau\le T}\,D(0,\tau)\,V(\tau)^+\right].
+$$
 
 The minus sign is the convention: CVA is a *subtraction* from the risk-free value. Everything in this folder is an elaboration of that one expectation.
 

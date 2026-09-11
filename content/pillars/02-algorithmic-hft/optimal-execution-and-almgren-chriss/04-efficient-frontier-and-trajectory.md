@@ -29,7 +29,9 @@ This page has two deliverables: (a) how to **construct** the frontier and read o
 - **Cost-minimal end ($\lambda=0$):** the "naive" strategy, $x_t=X(1-t/T)$, minimizing $E$ while taking maximum variance. This is TWAP.
 - **Variance-minimal end ($\lambda\to\infty$):** liquidate at $t=0$; $V\to0$, $E\to\infty$ (in the continuous limit).
 - **Convexity:** $d^2E/dV^2>0$ — the frontier is strictly convex, so each $\lambda$ selects a **unique** point, and the selection is the **tangency condition**
-  $$\frac{dE}{dV}\Big|_{\lambda} = -\lambda .$$
+$$
+\frac{dE}{dV}\Big|_{\lambda} = -\lambda .
+$$
   The Lagrange multiplier $\lambda$ is literally (minus) the slope of the frontier at the chosen point. AC §3.1 identify it with the Arrow-Pratt absolute risk aversion $\lambda_u=-u''(w)/u'(w)$ of a quadratic utility, giving $U_{\text{util}}(x)=\lambda_u V(x)+E(x)$ — so "pick a point" and "maximize utility" are the same act.
 
 **Trajectory invariants.** Three numbers summarize any AC trajectory:
@@ -102,7 +104,7 @@ convexity: min d2E/dV2 = 8.988e-19  (all positive: True)
 frontier slope: -1.559e-07 (low kappa) -> -2.432e-05 (high kappa)
 ```
 
-Three verified facts from AC §2: **(i)** the frontier is convex; **(ii)** each $\lambda$ selects the tangent point exactly; **(iii)** $\lambda=0$ reproduces TWAP ($E=\$644{,}500$, sd $=\$1{,}222{,}765$). Note how cheap the first risk reduction is — moving from $\lambda=0$ to $\lambda=10^{-7}$ cuts the standard deviation by \$67k for only \$7.7k of extra expected cost. This is AC's point that the naïve (TWAP) strategy is *never* efficient: a small cost buys a large variance reduction.
+Three verified facts from AC §2: **(i)** the frontier is convex; **(ii)** each $\lambda$ selects the tangent point exactly; **(iii)** $\lambda=0$ reproduces TWAP ($E= $ \$644{,}500, sd = \$1{,}222{,}765). Note how cheap the first risk reduction is — moving from $\lambda=0$ to $\lambda=10^{-7}$ cuts the standard deviation by \$67k for only \7.7k of extra expected cost. This is AC's point that the naïve (TWAP) strategy is *never* efficient: a small cost buys a large variance reduction.
 
 ---
 

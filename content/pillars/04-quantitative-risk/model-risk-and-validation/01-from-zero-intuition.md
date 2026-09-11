@@ -17,7 +17,7 @@ This page builds the *why* of model risk with **no prior risk-management knowled
 
 Start with the dumbest honest question: *if I have a risk model, what can go wrong?* The tempting answer is "the model could be inaccurate." That is true and useless. The useful answer decomposes the worry into things you can *measure*:
 
-1. **The output is a point, the truth is unknown.** A $99\%$ VaR of $\$10$M is not a fact; it is one number produced by choosing a distribution, a window, an estimator. Change any one and the number moves. **That movement is the model risk.**
+1. **The output is a point, the truth is unknown.** A $99\%$ VaR of \$10M is not a fact; it is one number produced by choosing a distribution, a window, an estimator. Change any one and the number moves. **That movement is the model risk.**
 2. **Models are what you build when you cannot see the future.** Derman's observation: in physics the variables (mass, time) exist whether or not humans do; in finance the variables (expected return, volatility) are *human expectations* — hidden variables inferred, not observed. You are always extrapolating from a proxy.
 3. **The failure is not symmetric with useful effort.** Most modelling effort goes into precision (more factors, faster calibration); most model risk sits in *assumption* error (wrong functional form, wrong window, wrong dependence). Precise answers to the wrong question are the signature of a model-risk event.
 
@@ -32,15 +32,21 @@ Three steps, three "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **A model, formally.** A valuation/risk model is a map $V_\theta$ from inputs $X$ and parameters $\theta$ (estimated from data or implied) to an output (price, VaR, capital). The **true** quantity is $V^\star(X)$. The **model error** is
-$$\Delta V \;=\; V_\theta(X)-V^\star(X).$$
+$$
+\Delta V \;=\; V_\theta(X)-V^\star(X).
+$$
 Model risk is the *distribution* of $\Delta V$ induced by uncertainty in (i) the functional form $V_\bullet$, (ii) the parameters $\theta$, (iii) the implementation, and (iv) the use. SR-11-7's two causes map onto this directly: fundamental error (i–iii) and misuse (iv).
 
 **Quantile model risk.** For a loss $L$ with CDF $F$, the $\alpha$-quantile (VaR) is $q_\alpha=F^{-1}(\alpha)$. Two models $F_A,F_B$ give $\mathrm{VaR}^{A}_\alpha,\mathrm{VaR}^{B}_\alpha$. The **relative model risk** is
-$$\mathrm{MR}_\alpha=\frac{\big|\mathrm{VaR}^{A}_\alpha-\mathrm{VaR}^{B}_\alpha\big|}{\mathrm{VaR}^{A}_\alpha}.$$
+$$
+\mathrm{MR}_\alpha=\frac{\big|\mathrm{VaR}^{A}_\alpha-\mathrm{VaR}^{B}_\alpha\big|}{\mathrm{VaR}^{A}_\alpha}.
+$$
 Because the density $f$ thins in the tail, $\mathrm{MR}_\alpha$ **grows with $\alpha$** — the same two models can agree to $1\%$ at the median and disagree by $50\%$ at $99.9\%$. Formally, if the two models differ by a slowly-varying ratio $\rho$ in the tail (a differing tail index $\xi_A\ne\xi_B$), then $q^A_\alpha/q^B_\alpha\sim(\dots)\alpha^{\xi_B-\xi_A}$: the discrepancy is **power-law amplified** in $\alpha$. Tail indices are exactly what data-poor quantiles estimate worst — hence the amplification.
 
 **The peaks-over-threshold (POT) estimator** used below (Pickands–Balkema–de Haan): above a high threshold $u$ the excess distribution is approximately Generalized Pareto, $Y=L-u\mid L>u\sim\mathrm{GPD}(\xi,\beta)$. With $N_u$ exceedances in $N$ observations, the quantile is
-$$\widehat{\mathrm{VaR}}_\alpha \;=\; u+\frac{\widehat\beta}{\widehat\xi}\Big[\Big(\tfrac{N}{N_u}(1-\alpha)\Big)^{-\widehat\xi}-1\Big],$$
+$$
+\widehat{\mathrm{VaR}}_\alpha \;=\; u+\frac{\widehat\beta}{\widehat\xi}\Big[\Big(\tfrac{N}{N_u}(1-\alpha)\Big)^{-\widehat\xi}-1\Big],
+$$
 and a method-of-moments fit gives $\widehat\xi=\tfrac12\big(1-\bar y^2/s^2\big)$, $\widehat\beta=\tfrac12\bar y\big(\bar y^2/s^2+1\big)$ from the exceedance mean $\bar y$ and variance $s^2$. The normal estimator, by contrast, is $\widehat{\mathrm{VaR}}_\alpha=\hat\mu+\hat\sigma z_\alpha$ — a *single* assumption about the tail shape.
 
 ---

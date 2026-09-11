@@ -39,11 +39,11 @@ $\Sigma=\begin{bmatrix}0.040&0.015&0.010\\0.015&0.030&0.012\\0.010&0.012&0.050\e
 | **Posterior mean** (Master formula) | $\bar\mu=\Pi+\tau\Sigma P^T\big[P\tau\Sigma P^T+\Omega\big]^{-1}(Q-P\Pi)$ | identical: $[0.07059,0.04768,0.04071]$ |
 | View uncertainty (He–Litterman) | $\Omega=\mathrm{diag}\big(P(\tau\Sigma)P^T\big)$ | relative view $\Rightarrow\Omega=[0.0035]$ |
 | Posterior covariance | $M=\big[(\tau\Sigma)^{-1}+P^T\Omega^{-1}P\big]^{-1}$ | $M_{00}=0.001679$ |
-| Optimal weights (unconstrained) | $w^\*=\tfrac{1}{\delta}\Sigma^{-1}\bar\mu$ | relative view $\Rightarrow[0.5579,0.3000,0.1421]$ |
-| Zero-view limit | $w^\*\to w_{mkt}$ | $[0.5000,0.3000,0.2000]$ exactly |
-| Infinite-uncertainty limit ($\Omega\to\infty$) | $w^\*\to w_{mkt}$ | $[0.5000,0.3000,0.2000]$ exactly |
+| Optimal weights (unconstrained) | $w^*=\tfrac{1}{\delta}\Sigma^{-1}\bar\mu$ | relative view $\Rightarrow[0.5579,0.3000,0.1421]$ |
+| Zero-view limit | $w^*\to w_{mkt}$ | $[0.5000,0.3000,0.2000]$ exactly |
+| Infinite-uncertainty limit ($\Omega\to\infty$) | $w^*\to w_{mkt}$ | $[0.5000,0.3000,0.2000]$ exactly |
 
-> **Why the sixty-four-thousand-dollar identities hold.** With no views, $\bar\mu=\Pi$, so $w^\*=\tfrac1\delta\Sigma^{-1}\Pi=w_{mkt}$ — the model collapses to buying the market. And the Master formula is *linear* in the view residual $(Q-P\Pi)$: the more confident the view (smaller $\Omega$), the more weight shifts toward matching $Q$; the less confident, the more you stay at the market. That linearity is what keeps BL stable where raw MVO oscillates.
+> **Why the sixty-four-thousand-dollar identities hold.** With no views, $\bar\mu=\Pi$, so $w^*=\tfrac1\delta\Sigma^{-1}\Pi=w_{mkt}$ — the model collapses to buying the market. And the Master formula is *linear* in the view residual $(Q-P\Pi)$: the more confident the view (smaller $\Omega$), the more weight shifts toward matching $Q$; the less confident, the more you stay at the market. That linearity is what keeps BL stable where raw MVO oscillates.
 
 ---
 

@@ -31,18 +31,24 @@ The only hard sub-problem is **signing** volume as buy or sell, because the tape
 
 **Bulk-volume classification (BVC).** Take the per-unit price changes $\Delta P_i$ in the bucket. Because $E[\,|V^S-V^B|\,]\approx\alpha\mu$, classify each volume unit by the standard-normal CDF $Z$ of its (normalized) price change (ELO 2012, Appendix A):
 
-$$V_\tau^B=\sum_{i\in\tau}Z\!\left(\frac{\Delta P_i}{\sigma_{\Delta P}}\right),\qquad
-V_\tau^S=V-V_\tau^B.$$
+$$
+V_\tau^B=\sum_{i\in\tau}Z\!\left(\frac{\Delta P_i}{\sigma_{\Delta P}}\right),\qquad
+V_\tau^S=V-V_\tau^B.
+$$
 
 A large positive price change is almost surely a buy ($Z\to1$); a large negative change almost surely a sell ($Z\to0$); a zero change splits 50/50. This is the *bulk* (bar-wide, probabilistic) analogue of the per-trade Lee–Ready tick rule.
 
 **VPIN.** Over a rolling window of the most recent $n$ buckets:
 
-$$\boxed{\;\mathrm{VPIN}=\frac{\sum_{\tau=1}^{n}\left|V_\tau^S-V_\tau^B\right|}{\sum_{\tau=1}^{n}\left(V_\tau^S+V_\tau^B\right)}=\frac{\sum_{\tau=1}^{n}\left|V_\tau^S-V_\tau^B\right|}{n\,V}\;}$$
+$$
+\boxed{\;\mathrm{VPIN}=\frac{\sum_{\tau=1}^{n}\left|V_\tau^S-V_\tau^B\right|}{\sum_{\tau=1}^{n}\left(V_\tau^S+V_\tau^B\right)}=\frac{\sum_{\tau=1}^{n}\left|V_\tau^S-V_\tau^B\right|}{n\,V}\;}
+$$
 
 Since each bucket has exactly $V$ volume, the denominator is $nV$. Because $E[|V^S-V^B|]/E[V^S+V^B]=\alpha\mu/(\alpha\mu+2\epsilon)$, **VPIN estimates the same PIN ratio — in volume time** (ELO eq. 9):
 
-$$\mathrm{VPIN}\approx\frac{\alpha\mu}{\alpha\mu+2\epsilon}.$$
+$$
+\mathrm{VPIN}\approx\frac{\alpha\mu}{\alpha\mu+2\epsilon}.
+$$
 
 ELO's default: $V=\tfrac1{50}$ of average daily volume and $n=50$, updated after every bucket (rolling — bucket 51 in, bucket 1 out). Updating in volume time makes each update a comparable amount of information, and faster during bursts exactly when information arrives faster.
 

@@ -31,21 +31,29 @@ This page focuses on the *cost* side (the walk). The *risk* side of the limit or
 
 **2.1 The walk and its VWAP.** Let the ask side of the book be the sequence of price levels $(p_1,q_1),(p_2,q_2),\dots$ with $p_1=a_t<p_2<\dots$ and cumulative sizes $Q_k=\sum_{m\le k}q_m$. A market buy of size $Q$ consumes levels until $Q_k\ge Q$. Its **volume-weighted average price** is
 
-$$\bar p(Q)=\frac{1}{Q}\sum_{k} \min\!\big(q_k,\ \max(0,\,Q-Q_{k-1})\big)\,p_k .$$
+$$
+\bar p(Q)=\frac{1}{Q}\sum_{k} \min\!\big(q_k,\ \max(0,\,Q-Q_{k-1})\big)\,p_k .
+$$
 
 The **slippage** is $\bar p(Q)-a_t$ and it is **convex in $Q$**: each successive level is worse, so the average price rises at an increasing rate once the order spills past the first level.
 
 **2.2 Effective spread (the realized cost).** The standard microstructure cost measure (Foucault–Pagano–Röell eq. 2.3) is the **effective half-spread**
 
-$$\text{Se}=d\,(p-m),\qquad d=+1\ (\text{buy}),\ -1\ (\text{sell}),$$
+$$
+\text{Se}=d\,(p-m),\qquad d=+1\ (\text{buy}),\ -1\ (\text{sell}),
+$$
 
 where $p$ is the execution price and $m$ the midquote *just before* the trade. For a single-tick trade at the ask, $\text{Se}=\tfrac12 s$; for an order that walks several levels, $\text{Se}$ exceeds the half-spread — it flips into the **realized half-spread** once the price impact reverts. Price impact itself is linear in order imbalance (FPR eq. 2.8):
 
-$$\Delta m_t=\lambda\,q_t+\varepsilon_t,\qquad \text{market depth}=1/\lambda .$$
+$$
+\Delta m_t=\lambda\,q_t+\varepsilon_t,\qquad \text{market depth}=1/\lambda .
+$$
 
 **2.3 A limit order is a short option.** Post a buy limit at $b$. If the future mid is $m'$, your Mark-to-Market on the fill is $m'-b$. Unconditionally the spread is positive — $\mathbb{E}[(m'-b)\mid\text{no adverse event}]>0$ — but the *fill event is informative*: you trade precisely when a better-informed (or faster) counterparty finds your price attractive. Writing $\pi$ for the probability a fill is informed and $J$ for the adverse price move,
 
-$$\mathbb{E}[\pi_{\text{fill}}]=h-\pi J,\qquad h=\tfrac12 s,$$
+$$
+\mathbb{E}[\pi_{\text{fill}}]=h-\pi J,\qquad h=\tfrac12 s,
+$$
 
 which is **negative past $\pi^\star=h/J$**. The limit order's spread is not free money; it is the premium on an option you are short. (Fully developed in [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]].)
 

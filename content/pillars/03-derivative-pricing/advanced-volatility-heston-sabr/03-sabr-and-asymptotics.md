@@ -17,7 +17,9 @@ tags:
 
 Heston gives a *model* with a computable price. SABR (Hagan, Kumar, Lesniewski, Woodward, 2002) gives the complementary object: a **closed-form smile**. Its SDE has no mean reversion at all,
 
-$$dF_t=\chi_tF_t^{\beta}dZ_1,\qquad d\chi_t=\nu\chi_t\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt,$$
+$$
+dF_t=\chi_tF_t^{\beta}dZ_1,\qquad d\chi_t=\nu\chi_t\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt,
+$$
 
 which makes it a **short-expiration tool** — and the reason it dominated interest-rate and FX smile quoting for two decades is that in exactly that regime it is *exact to leading order* and costs nothing to evaluate: no PDE, no Fourier integral, no simulation.
 
@@ -38,17 +40,23 @@ The practical objective: be able to write down and evaluate Hagan's formula, rea
 
 For $\beta=1$ (lognormal SABR), in the limit $\tau\to0$ the Black-76 implied volatility is
 
-$$\boxed{\;\sigma_{BS}(k)=\sigma_0\,\frac{y}{f(y)}\Big(1+\tfrac14\rho\nu\sigma_0+\tfrac{2-3\rho^2}{24}\nu^2\tau+O(\tau^2)\Big),\qquad y:=-\frac{\nu k}{\sigma_0},\quad f(y):=\ln\frac{\sqrt{1-2\rho y+y^2}+y-\rho}{1-\rho}\;}$$
+$$
+\boxed{\;\sigma_{BS}(k)=\sigma_0\,\frac{y}{f(y)}\Big(1+\tfrac14\rho\nu\sigma_0+\tfrac{2-3\rho^2}{24}\nu^2\tau+O(\tau^2)\Big),\qquad y:=-\frac{\nu k}{\sigma_0},\quad f(y):=\ln\frac{\sqrt{1-2\rho y+y^2}+y-\rho}{1-\rho}\;}
+$$
 
 where $k=\ln(K/F_T)$ is log-moneyness. Equivalently, for general $\beta$, $z=\frac{\nu}{\sigma_0}(FK)^{(1-\beta)/2}\ln(F/K)$ replaces $-\nu k/\sigma_0$, with the $z/x(z)$ factor and the $(1-\beta)$ backbone terms in the bracket. This is what makes SABR a *one-evaluation* model.
 
 Taylor-expanding the $y$-factor for $y\sim\sqrt\tau$ (Gatheral 7.7):
 
-$$\sigma_{BS}(k,\tau)=\sigma_0\Big(1-\tfrac12\rho y+\tfrac{2-3\rho^2}{12}y^2\Big)+\Big(\tfrac14\rho\nu\sigma_0+\tfrac{2-3\rho^2}{24}\nu^2\Big)\tau+O(\tau\sqrt\tau).$$
+$$
+\sigma_{BS}(k,\tau)=\sigma_0\Big(1-\tfrac12\rho y+\tfrac{2-3\rho^2}{12}y^2\Big)+\Big(\tfrac14\rho\nu\sigma_0+\tfrac{2-3\rho^2}{24}\nu^2\Big)\tau+O(\tau\sqrt\tau).
+$$
 
 From this, at $k=0$:
 
-$$S_0:=\frac{\partial\sigma_{BS}}{\partial k}\Big|_{k=0}=\frac{\rho\,\nu}{2}\Big\{1+O(\tau)\Big\},\qquad C_0:=\frac{\partial^2\sigma_{BS}}{\partial k^2}\Big|_{k=0}=\frac{(2-3\rho^2)\nu^2}{6\sigma_0}\Big\{1+O(\tau)\Big\}.$$
+$$
+S_0:=\frac{\partial\sigma_{BS}}{\partial k}\Big|_{k=0}=\frac{\rho\,\nu}{2}\Big\{1+O(\tau)\Big\},\qquad C_0:=\frac{\partial^2\sigma_{BS}}{\partial k^2}\Big|_{k=0}=\frac{(2-3\rho^2)\nu^2}{6\sigma_0}\Big\{1+O(\tau)\Big\}.
+$$
 
 The skew is $k$-linear to leading order and the curvature fixes the wings — these are the numbers a desk quotes.
 
@@ -56,11 +64,15 @@ The skew is $k$-linear to leading order and the curvature fixes the wings — th
 
 For a general diffusion $\frac{dS_t}{S_t}=\sigma_t dZ_1$, $d\sigma_t=a(\sigma_t)dt+b(\sigma_t)dZ_2$, the small-time implied-vol expansion is (Gatheral 7.4–7.5)
 
-$$I(z,\tau,\sigma)=\sigma+I_1(z;\sigma)\sqrt\tau+I_2(z;\sigma)\tau+O(\tau^{3/2}),\qquad I_1(z;\sigma)=\frac{\rho\,b(\sigma)\,z}{2},$$
+$$
+I(z,\tau,\sigma)=\sigma+I_1(z;\sigma)\sqrt\tau+I_2(z;\sigma)\tau+O(\tau^{3/2}),\qquad I_1(z;\sigma)=\frac{\rho\,b(\sigma)\,z}{2},
+$$
 
 with $z=k/(\sigma_{BS}\sqrt\tau)$ the normalised log-strike. Substituting $z$ and taking $\tau\to0$ gives the ATM skew (Gatheral 7.6)
 
-$$\boxed{\;\frac{\partial I}{\partial k}\Big|_{k=0}\to\frac{\rho\,b(\sigma)}{2\sigma}\;}$$
+$$
+\boxed{\;\frac{\partial I}{\partial k}\Big|_{k=0}\to\frac{\rho\,b(\sigma)}{2\sigma}\;}
+$$
 
 which **proves** the short-dated skew is a direct read-off of the instantaneous spot/vol covariance and does *not* depend on the drift $a(\sigma)$ or on time. For SABR ($b(\sigma)=\nu\sigma$) this gives $\rho\nu/2$ — the same number as §2.1. For Heston, $\eta\beta(v)=\eta$ gives $\rho\eta/(2\sqrt v)=\rho\eta/(4\sqrt v)$ (i.e. $\rho\eta/(4\sigma_{BS})$ with $v=\sigma_{BS}^2$), i.e. Bergomi's (6.18b), and the *variance* skew $\partial_k\sigma_{BS}^2|_{k=0}\to\rho\eta/2$ (Gatheral 7.3) — the number verified numerically in §04.
 
@@ -73,13 +85,17 @@ Two structural consequences:
 
 With jumps the leading skew correction is additive at $\tau=0$ (Gatheral 7.3, corollaries):
 
-$$\frac{\partial v_{BS}}{\partial k}\Big|_{k=0}\to\rho\,b(\sigma)-2\mu_J,\qquad \mu_J=\lambda_J\mathbb E[J]=\lambda_J\!\int_{-1}^{\infty}\!x f(x)\,dx\ \text{(Gatheral 7.8)},$$
+$$
+\frac{\partial v_{BS}}{\partial k}\Big|_{k=0}\to\rho\,b(\sigma)-2\mu_J,\qquad \mu_J=\lambda_J\mathbb E[J]=\lambda_J\!\int_{-1}^{\infty}\!x f(x)\,dx\ \text{(Gatheral 7.8)},
+$$
 
 so the **jump compensator $-2\mu_J$ and the SV term $\rho b(\sigma)$ contribute exactly additively** to the short-dated ATM variance skew. This is the quantitative basis for "fit Heston to the long end, then add jumps for the short end" (Gatheral ch 5).
 
 For the *wings*, the model-independent statement is Lee's moment formula (Gatheral 7.7): with $q^*=\sup\{q:\mathbb E[S_T^{-q}]<\infty\}$ and $\beta^*=\limsup_{k\to-\infty}\sigma^2_{BS}T/|k|$,
 
-$$\beta^*=g(q^*),\qquad g(x)=2-4\big(\sqrt{x^2+x}-x\big),$$
+$$
+\beta^*=g(q^*),\qquad g(x)=2-4\big(\sqrt{x^2+x}-x\big),
+$$
 
 and symmetrically on the right wing with $p^*,\alpha^*$. Implied variance is at most *linear* in $|k|$ — you cannot have plausible models with quadratic-in-$k$ total variance, which is exactly why the asymptotic smile formulas must not be used far from the money.
 
@@ -87,11 +103,15 @@ and symmetrically on the right wing with $p^*,\alpha^*$. Implied variance is at 
 
 For log-OU volatility, Fouque–Papanicolaou–Sircar give (Gatheral 7.10)
 
-$$\frac{\partial}{\partial x}\sigma_{BS}(x,T)\approx\frac{\rho\xi}{\lambda T}\quad\Longleftrightarrow\quad\frac{\partial}{\partial x}\sigma^2_{BS}\approx\frac{\rho\,\eta\,\beta(v)}{\lambda T},$$
+$$
+\frac{\partial}{\partial x}\sigma_{BS}(x,T)\approx\frac{\rho\xi}{\lambda T}\quad\Longleftrightarrow\quad\frac{\partial}{\partial x}\sigma^2_{BS}\approx\frac{\rho\,\eta\,\beta(v)}{\lambda T},
+$$
 
 matching Heston for large $\lambda T$. The **natural interpolation** between the short- and long-expiration limits is (Gatheral 7.11)
 
-$$\frac{\partial}{\partial x}\sigma^2_{BS}(x,T)\approx\frac{\rho\eta\beta(v)}{\lambda'T}\Big(1-\frac{1-e^{-\lambda'T}}{\lambda'T}\Big),\qquad\lambda'=\lambda-\tfrac12\rho\eta\beta(v),$$
+$$
+\frac{\partial}{\partial x}\sigma^2_{BS}(x,T)\approx\frac{\rho\eta\beta(v)}{\lambda'T}\Big(1-\frac{1-e^{-\lambda'T}}{\lambda'T}\Big),\qquad\lambda'=\lambda-\tfrac12\rho\eta\beta(v),
+$$
 
 and — this is the sharp statement — **Lewis' small-$\eta$ expansion (Gatheral 7.12) proves (7.11) exact to $O(\eta)$**, not merely plausible: the $J^{(1)}$ term of the perturbation reproduces it identically.
 

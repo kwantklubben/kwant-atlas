@@ -21,7 +21,9 @@ This folder is a *hub*: it (a) gives the **fast formula lookup** below (job #1 o
 
 The central object is **CVA — the credit valuation adjustment**. It is the *market price* of counterparty default risk, the number that turns a risk-free derivative value into the value an *actual, defaultable* counterparty is worth:
 
-$$\text{Value to me} = \underbrace{\text{Risk-free (base) value}}_{\text{perfect-collateral value}} \;-\; \text{CVA} \;+\; \text{DVA} \;-\; \text{FVA} \;-\; \text{MVA} \;-\; \text{KVA}.$$
+$$
+\text{Value to me} = \underbrace{\text{Risk-free (base) value}}_{\text{perfect-collateral value}} \;-\; \text{CVA} \;+\; \text{DVA} \;-\; \text{FVA} \;-\; \text{MVA} \;-\; \text{KVA}.
+$$
 
 > **The one-sentence essence.** "CVA is the *product of market risk and credit risk*: it is the loss-given-default-weighted average of your **positive exposure** over the counterparty's **default-probability** profile — an integral of an exposure path against a survival curve."
 
@@ -39,12 +41,12 @@ $$\text{Value to me} = \underbrace{\text{Risk-free (base) value}}_{\text{perfect
 | **ENE** expected negative exposure | $\mathbb{E}[V(t)^-]\le0$ | $-6,-9,-10,-8,-5$ |
 | **PFE** potential future exposure | $\alpha$-quantile of $V^+$ (= VaR) | — |
 | **Unilateral CVA** (integral) | $\displaystyle \text{UCVA}=-\text{LGD}\!\int_t^\infty \lambda_C\,D_{r+\lambda_C}(t,u)\,\text{EPE}(t,u)\,du$ | Gregory Eq 17.2 |
-| **Unilateral CVA** (discrete) | $\displaystyle \text{UCVA}\approx-\text{LGD}\sum_{i=1}^{m}\text{EPE}(t,t_i)\,\text{PD}(t_{i-1},t_i)$ | $=-0.7201\ \$m$ |
+| **Unilateral CVA** (discrete) | $\displaystyle \text{UCVA}\approx-\text{LGD}\sum_{i=1}^{m}\text{EPE}(t,t_i)\,\text{PD}(t_{i-1},t_i)$ | $=-0.7201\ $\$m |
 | **Spread approximation** | $\text{UCVA}\approx-\overline{\text{EPE}}\times\text{spread}$ | Eq 17.4 |
 | **Hazard from spread** | $\lambda=s/\text{LGD}$ | Hull Eq 24.2 |
-| **Bilateral CVA** | $\text{BCVA}=\text{CVA}+\text{DVA}$ | $=-0.3550\ \$m$ |
+| **Bilateral CVA** | $\text{BCVA}=\text{CVA}+\text{DVA}$ | $=-0.3550\ $\$m |
 | CVA (bilateral) | $-\text{LGD}_C\!\int\!\lambda_C D_{r+\lambda_C+\lambda_P}\,\text{EPE}\,du$ | Eq 17.7b |
-| DVA (bilateral) | $-\text{LGD}_P\!\int\!\lambda_P D_{r+\lambda_C+\lambda_P}\,\text{ENE}\,du$ | $=+0.3651\ \$m$ |
+| DVA (bilateral) | $-\text{LGD}_P\!\int\!\lambda_P D_{r+\lambda_C+\lambda_P}\,\text{ENE}\,du$ | $=+0.3651\ $\$m |
 | **FVA** | $\text{FVA}=\text{FCA}+\text{FBA}$ (funding cost + benefit) | Eq 18.4 |
 | **MVA** | $\text{MVA}\approx\sum_i \text{EIM}(t_i)\,\text{FS}(t_{i-1},t_i)\,\Delta t$ | Eq 20.1 |
 | **SA-CCR EAD** | $\text{EAD}=\alpha\,(\text{RC}+\text{PFE}),\ \alpha=1.4$ | BIS (13.16) |

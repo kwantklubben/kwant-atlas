@@ -31,8 +31,10 @@ The unifying discipline is simple: **a simulator earns trust only by reproducing
 
 A simulator with a realistic matching process produces trade prices $p_t=m_t+q_t c$ (efficient price $\pm$ half-spread). The **Roll signature** is a negative first-order autocovariance of price changes:
 
-$$\gamma_0=\operatorname{Var}(\Delta p_t)=2c^2+\sigma_u^2,\qquad
-\gamma_1=\operatorname{Cov}(\Delta p_{t-1},\Delta p_t)=-c^2,\qquad \gamma_k=0\ (k\ge2),$$
+$$
+\gamma_0=\operatorname{Var}(\Delta p_t)=2c^2+\sigma_u^2,\qquad
+\gamma_1=\operatorname{Cov}(\Delta p_{t-1},\Delta p_t)=-c^2,\qquad \gamma_k=0\ (k\ge2),
+$$
 
 so the simulator's own output must yield $\hat c=\sqrt{-\hat\gamma_1}$ equal to the spread it was built with. Fail this and the simulator's *fill prices* are wrong even if its *fills* are right.
 
@@ -40,7 +42,9 @@ so the simulator's own output must yield $\hat c=\sqrt{-\hat\gamma_1}$ equal to 
 
 Metaorder impact is concave in participation. The empirical form (Almgren et al. 2005; the "square-root law") is
 
-$$\Delta P\;\approx\;Y\,\sigma\,\Big(\frac{Q}{V}\Big)^{\alpha},\qquad \alpha\approx0.5\text{–}0.6,$$
+$$
+\Delta P\;\approx\;Y\,\sigma\,\Big(\frac{Q}{V}\Big)^{\alpha},\qquad \alpha\approx0.5\text{–}0.6,
+$$
 
 with $Q$ the order size, $V$ the market volume, $\sigma$ the volatility, and $Y$ a constant of order one. A simulator that reproduces this exponent is credible for *sizing*; one that produces a linear law is not. The exponent is recovered by a log–log regression: $\log\Delta P=\log(Y\sigma)+\alpha\log(Q/V)$.
 
@@ -48,7 +52,9 @@ with $Q$ the order size, $V$ the market volume, $\sigma$ the volatility, and $Y$
 
 Real limit-order intensity and market-order intensity are both **increasing and concave** in the queue size $q$ (Huang–Lehalle–Rosenbaum):
 
-$$\lambda(q)\uparrow,\ \lambda''(q)<0;\qquad \mu(q)\uparrow,\ \mu''(q)<0,$$
+$$
+\lambda(q)\uparrow,\ \lambda''(q)<0;\qquad \mu(q)\uparrow,\ \mu''(q)<0,
+$$
 
 the quantitative content of "liquidity begets liquidity." A generator with constant intensities produces too-smooth depth and mis-prices every fill near the front.
 

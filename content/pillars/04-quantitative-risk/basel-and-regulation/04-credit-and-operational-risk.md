@@ -40,18 +40,28 @@ A sample of the standardised grid (exposure × weight → RWA):
 #### 2.2 IRB credit risk — the ASRF capital formula
 
 For a corporate/retail exposure with probability of default $\mathrm{PD}$, loss-given-default $\mathrm{LGD}$, and maturity $M$:
-$$\boxed{\;K=\underbrace{\Big[\mathrm{LGD}\cdot N\!\Big(\tfrac{N^{-1}(\mathrm{PD})+\sqrt R\,N^{-1}(0.999)}{\sqrt{1-R}}\Big)-\mathrm{PD}\cdot\mathrm{LGD}\Big]}_{\text{conditional expected loss above PD}\cdot\text{LGD}}\times\mathrm{MA}\;}$$
+$$
+\boxed{\;K=\underbrace{\Big[\mathrm{LGD}\cdot N\!\Big(\tfrac{N^{-1}(\mathrm{PD})+\sqrt R\,N^{-1}(0.999)}{\sqrt{1-R}}\Big)-\mathrm{PD}\cdot\mathrm{LGD}\Big]}_{\text{conditional expected loss above PD}\cdot\text{LGD}}\times\mathrm{MA}\;}
+$$
 with the **asset correlation**
-$$R=0.12\,\frac{1-e^{-50\,\mathrm{PD}}}{1-e^{-50}}+0.24\Big(1-\frac{1-e^{-50\,\mathrm{PD}}}{1-e^{-50}}\Big),$$
+$$
+R=0.12\,\frac{1-e^{-50\,\mathrm{PD}}}{1-e^{-50}}+0.24\Big(1-\frac{1-e^{-50\,\mathrm{PD}}}{1-e^{-50}}\Big),
+$$
 and the **maturity adjustment** $b=(0.11852-0.05478\ln \mathrm{PD})^2$, $\ \mathrm{MA}=\dfrac{1+(M-2.5)b}{1-1.5b}$. The numerator $N^{-1}(\mathrm{PD})+\sqrt R\,N^{-1}(0.999)$ is the **Vasicek one-factor** conditional-default-probability argument at the 99.9% confidence level (Hull eq. 24.10): the $N^{-1}(0.999)$ shock is the systematic factor, $\sqrt R$ its loading. Then $\mathrm{RWA}=K\times12.5\times\mathrm{EAD}$ (and historically $\times1.06$ for the Basel II scaling factor).
 
 #### 2.3 Operational risk — the SMA (BCBS 2017)
 
-$$\mathrm{ORC}=\mathrm{BIC}\times\mathrm{ILM},\qquad \mathrm{RWA}_{\text{op}}=12.5\times\mathrm{ORC}.$$
+$$
+\mathrm{ORC}=\mathrm{BIC}\times\mathrm{ILM},\qquad \mathrm{RWA}_{\text{op}}=12.5\times\mathrm{ORC}.
+$$
 The **Business Indicator Component** scales the **Business Indicator** $BI$ by marginal coefficients $\alpha_i$:
-$$\mathrm{BIC}=\begin{cases}0.12\,BI, & BI\le €1\,\text{bn}\\[2pt] 0.12\cdot1+0.15\,(BI-1), & 1<BI\le €30\,\text{bn (€bn)}\\[2pt] 0.12\cdot1+0.15\cdot29+0.18\,(BI-30), & BI>€30\,\text{bn (€bn)}\end{cases}$$
+$$
+\mathrm{BIC}=\begin{cases}0.12\,BI, & BI\le €1\,\text{bn}\\[2pt] 0.12\cdot1+0.15\,(BI-1), & 1<BI\le €30\,\text{bn (€bn)}\\[2pt] 0.12\cdot1+0.15\cdot29+0.18\,(BI-30), & BI>€30\,\text{bn (€bn)}\end{cases}
+$$
 The **Internal Loss Multiplier** folds in the bank's own loss history through the Loss Component $LC=15\times$ average annual losses:
-$$\mathrm{ILM}=\ln\!\Big(e-1+\big(\tfrac{LC}{\mathrm{BIC}}\big)^{0.8}\Big),$$
+$$
+\mathrm{ILM}=\ln\!\Big(e-1+\big(\tfrac{LC}{\mathrm{BIC}}\big)^{0.8}\Big),
+$$
 so $\mathrm{ILM}=1$ when $LC=\mathrm{BIC}$, $\mathrm{ILM}>1$ for a lossy bank, $\mathrm{ILM}<1$ for a clean one. **Capital literally rises and falls with a bank's own realised losses.**
 
 ---

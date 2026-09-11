@@ -29,7 +29,9 @@ The resolution is the theme of Glasserman Ch 8: approximate the **continuation v
 
 For Bermudan dates $t_1<\dots<t_m$ with payoff $h_i$, the value obeys
 
-$$V_m=h_m,\qquad V_i(x)=\max\big\{h_i(x),\ \underbrace{\mathbb E[V_{i+1}(X_{i+1})\mid X_i=x]}_{C_i(x)\ \text{(continuation)}}\big\},$$
+$$
+V_m=h_m,\qquad V_i(x)=\max\big\{h_i(x),\ \underbrace{\mathbb E[V_{i+1}(X_{i+1})\mid X_i=x]}_{C_i(x)\ \text{(continuation)}}\big\},
+$$
 
 and the stopping rule induced by exact continuation values is $\hat\tau=\min\{i: h_i(X_i)\ge C_i(X_i)\}$.
 
@@ -37,11 +39,15 @@ and the stopping rule induced by exact continuation values is $\hat\tau=\min\{i:
 
 Regress the (discounted) realised continuation cash-flow on basis functions $\psi$ of the current state:
 
-$$C_i(x)\approx \hat\beta_i^{\!\top}\psi(x),\qquad \hat\beta_i=\hat B_\psi^{-1}\hat B_{\psi V},$$
+$$
+C_i(x)\approx \hat\beta_i^{\!\top}\psi(x),\qquad \hat\beta_i=\hat B_\psi^{-1}\hat B_{\psi V},
+$$
 
 then follow the rule "exercise if intrinsic $\ge$ fitted continuation" **along the realised path**, taking the value from the realised future cash-flow (not the fitted value):
 
-$$\hat V_{ij}=h_i(X_{ij})\ \text{if }h_i\ge\hat C_i(X_{ij}),\quad\text{else }\hat V_{i+1,j}.$$
+$$
+\hat V_{ij}=h_i(X_{ij})\ \text{if }h_i\ge\hat C_i(X_{ij}),\quad\text{else }\hat V_{i+1,j}.
+$$
 
 This is **low-biased** (Clément–Lamberton–Protter): a suboptimal policy can never beat the optimum. *(Contrast the Tsitsiklis–van Roy regression-DP $\hat V_{ij}=\max\{h_i,\hat C_i\}$, which uses the fitted value to both decide and value and is generally **high**-biased.)* Best practice: fit $\hat\beta$ on one sample, then run a **second independent pass** at the fixed rule — only then is the estimator guaranteed low.
 
@@ -49,11 +55,15 @@ This is **low-biased** (Clément–Lamberton–Protter): a suboptimal policy can
 
 For any martingale $M$ with $M_0=0$, optional sampling gives $\mathbb E[h_\tau]\le\mathbb E[\max_k(h_k(X_k)-M_k)]$ for every $\tau$, hence
 
-$$\boxed{\ V_0(X_0)=\sup_\tau\mathbb E[h_\tau(X_\tau)]=\inf_{M}\ \mathbb E\!\left[\max_{k=1..m}\big(h_k(X_k)-M_k\big)\right],\qquad M_0=0.\ }$$
+$$
+\boxed{\ V_0(X_0)=\sup_\tau\mathbb E[h_\tau(X_\tau)]=\inf_{M}\ \mathbb E\!\left[\max_{k=1..m}\big(h_k(X_k)-M_k\big)\right],\qquad M_0=0.\ }
+$$
 
 Equality is attained by the martingale built from the value process: $\Delta_i=V_i(X_i)-\mathbb E[V_i(X_i)\mid X_{i-1}]$, $M_i=\sum_{s\le i}\Delta_s$. Any *approximate* value function $\hat V_i=\max\{h_i,\hat C_i\}$ yields a **valid** (if looser) upper bound
 
-$$V_0\le\mathbb E\!\left[\max_k\big(h_k(X_k)-\hat M_k\big)\right],$$
+$$
+V_0\le\mathbb E\!\left[\max_k\big(h_k(X_k)-\hat M_k\big)\right],
+$$
 
 with $\hat M$ from nested single-step estimates of the conditional expectation. The regression residual is (approximately) the optimal martingale difference — so a *good* basis tightens the dual; a *bad* basis loosens it (verified below: over-rich polynomial bases make the bound *worse*).
 

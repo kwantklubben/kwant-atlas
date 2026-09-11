@@ -33,29 +33,39 @@ The three failures, in one line each:
 
 **Why the tail is the risk, not the mean.** A quote is *stale* if the round-trip exceeds the time for a faster counterparty to react, threshold $\theta$. Adverse-selection cost per quote is
 
-$$C_{\text{adv}} = \mathbb P(L > \theta)\cdot p_{\text{sweep}}\cdot M,$$
+$$
+C_{\text{adv}} = \mathbb P(L > \theta)\cdot p_{\text{sweep}}\cdot M,
+$$
 
 with $L$ the round-trip latency distribution, $p_{\text{sweep}}$ the probability a stale quote is actually taken, and $M$ the adverse move per unit. Note $C_{\text{adv}}$ depends on the **tail** $\mathbb P(L>\theta)$ — which the mean says nothing about. A system with mean 306 ns can still have $\mathbb P(L>1{,}000\ \text{ns}) = 4\%$.
 
 For a Gaussian tail, $\mathbb P(L>\theta) = 1-\Phi((\theta-\mu)/\sigma)$; the sensitivity is
 
-$$\frac{\partial \mathbb P(L>\theta)}{\partial\mu} = +\frac{1}{\sigma\sqrt{2\pi}}e^{-(\theta-\mu)^2/2\sigma^2},$$
+$$
+\frac{\partial \mathbb P(L>\theta)}{\partial\mu} = +\frac{1}{\sigma\sqrt{2\pi}}e^{-(\theta-\mu)^2/2\sigma^2},
+$$
 
 so cutting the mean helps *least* exactly where the tail is far out — the mirror image of the race-curve saturation. **Jitter reduction, not mean reduction, is what cuts pick-off risk.**
 
 **Runaway-order risk (the hardware-bug blow-up).** A state machine in a runaway state emits orders at its fixed clock-limited rate $R_{\text{spray}}$. Time to breach a venue rate limit $B$ is
 
-$$t_{\text{ban}} = \frac{B}{R_{\text{spray}}},$$
+$$
+t_{\text{ban}} = \frac{B}{R_{\text{spray}}},
+$$
 
 and the orders emitted in one second are $R_{\text{spray}}$. With $R_{\text{spray}} = 200{,}000$/s and $B = 10{,}000$/s, $t_{\text{ban}} = 50$ ms — you are banned before a human can react, and the damage (position, not just ban) is already done.
 
 **Over-engineering, quantified.** The marginal value of latency is the race density from [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/01-from-zero-intuition|01]]:
 
-$$\frac{\partial \mathbb P(\text{win})}{\partial\Delta} = \frac{1}{\sigma\sqrt{2\pi}}e^{-\Delta^2/(4\sigma^2)}.$$
+$$
+\frac{\partial \mathbb P(\text{win})}{\partial\Delta} = \frac{1}{\sigma\sqrt{2\pi}}e^{-\Delta^2/(4\sigma^2)}.
+$$
 
 Integrating to find the *money* value of an extra $\delta$ nanoseconds against a per-win profit $V$ and event rate $n$:
 
-$$\text{Value}(\delta) \approx n\,V\int_{\Delta}^{\Delta+\delta}\frac{1}{\sigma\sqrt{2\pi}}e^{-u^2/4\sigma^2}\,du \;\xrightarrow[\Delta\ \gg\ \sigma]{}\; 0.$$
+$$
+\text{Value}(\delta) \approx n\,V\int_{\Delta}^{\Delta+\delta}\frac{1}{\sigma\sqrt{2\pi}}e^{-u^2/4\sigma^2}\,du \;\xrightarrow[\Delta\ \gg\ \sigma]{}\; 0.
+$$
 
 Past a few $\sigma$ of lead, the integral vanishes: **the accelerator spends capital for zero incremental capture.**
 

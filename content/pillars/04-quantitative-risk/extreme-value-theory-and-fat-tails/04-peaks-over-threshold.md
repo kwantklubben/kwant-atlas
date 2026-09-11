@@ -26,26 +26,38 @@ The one-sentence claim (McNeil 1997; McNeil & Frey 2000): for a wide class of di
 #### 2.1 The Pickands–Balkema–de Haan threshold-excess theorem
 
 Let $X\sim F$, $u$ a high threshold below the right endpoint $x_0$, and define the **excess distribution**
-$$F_u(y)=\mathbb{P}\big(X-u\le y\mid X>u\big)=\frac{F(u+y)-F(u)}{1-F(u)},\qquad 0\le y<x_0-u.$$
+$$
+F_u(y)=\mathbb{P}\big(X-u\le y\mid X>u\big)=\frac{F(u+y)-F(u)}{1-F(u)},\qquad 0\le y<x_0-u.
+$$
 
 **Theorem (Balkema & de Haan 1974; Pickands 1975).** For $F\in\text{MDA}(G_\xi)$,
-$$\lim_{u\to x_0}\ \sup_{0<y<x_0-u}\Big|F_u(y)-G_{\xi,\beta(u)}(y)\Big|=0,$$
+$$
+\lim_{u\to x_0}\ \sup_{0<y<x_0-u}\Big|F_u(y)-G_{\xi,\beta(u)}(y)\Big|=0,
+$$
 i.e. the excesses over a high threshold converge to a **GPD** with scale $\beta(u)$ and shape $\xi$ equal to the GEV shape (McNeil 1997 §3.4; de Haan). The GPD:
-$$G_{\xi,\beta}(y)=\begin{cases}1-\big(1+\xi y/\beta\big)^{-1/\xi},&\xi\neq0,\\[4pt] 1-e^{-y/\beta},&\xi=0,\end{cases}\qquad y\ge0,\quad 1+\xi y/\beta>0.$$
+$$
+G_{\xi,\beta}(y)=\begin{cases}1-\big(1+\xi y/\beta\big)^{-1/\xi},&\xi\neq0,\\[4pt] 1-e^{-y/\beta},&\xi=0,\end{cases}\qquad y\ge0,\quad 1+\xi y/\beta>0.
+$$
 The shape $\xi$ is *the* tail parameter (same $\xi$ as GEV); $\beta>0$ is scale. Mean excess: $e(u)=\mathbb{E}[X-u\mid X>u]=\dfrac{\beta+\xi u}{1-\xi}$ (linear in $u$ when $\xi\neq0$ — the mean-excess-plot diagnostic).
 
 #### 2.2 Fitting the GPD and the tail estimator (McNeil & Frey 2000, eq. 8)
 
 Let $N_u$ be the number of exceedances of $u$ out of $n$. Estimate $\widehat F_u$ by the fitted GPD and $1-F(u)$ empirically by $N_u/n$:
-$$\widehat F(x)=1-\frac{N_u}{n}\Big(1+\hat\xi\frac{x-u}{\hat\beta}\Big)^{-1/\hat\xi},\qquad x>u,$$
+$$
+\widehat F(x)=1-\frac{N_u}{n}\Big(1+\hat\xi\frac{x-u}{\hat\beta}\Big)^{-1/\hat\xi},\qquad x>u,
+$$
 using maximum likelihood for $(\hat\xi,\hat\beta)$ (McNeil 1997 §3.6 — regular, asymptotically normal for $\xi>-1/2$).
 
 #### 2.3 EVT quantile (VaR) and Expected Shortfall (McNeil & Frey 2000, eq. 10 & §4.1)
 
 Inverting the tail estimator for $q>1-N_u/n$:
-$$\boxed{\ \widehat{x}_q=u+\frac{\hat\beta}{\hat\xi}\Big[\Big(\frac{n}{N_u}(1-q)\Big)^{-\hat\xi}-1\Big]\ }$$
+$$
+\boxed{\ \widehat{x}_q=u+\frac{\hat\beta}{\hat\xi}\Big[\Big(\frac{n}{N_u}(1-q)\Big)^{-\hat\xi}-1\Big]\ }
+$$
 This is the **EVT VaR** at confidence $q$. The expected shortfall follows from the GPD mean-excess identity (McNeil & Frey eq. 14: $E[W-w\mid W>w]=\frac{\hat\beta+\hat\xi w}{1-\hat\xi}$):
-$$\boxed{\ \widehat{\text{ES}}_q=\frac{\widehat{x}_q+\hat\beta-\hat\xi u}{1-\hat\xi}\ }$$
+$$
+\boxed{\ \widehat{\text{ES}}_q=\frac{\widehat{x}_q+\hat\beta-\hat\xi u}{1-\hat\xi}\ }
+$$
 Interpretation: ES is VaR plus the average excess beyond it, scaled by the GPD shape. For $\xi>0$ the ES/VaR ratio exceeds 1 and *grows* into the tail — the two measures diverge exactly in the fat-tailed regime where VaR's subadditivity and information failures matter most ([[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]]).
 
 #### 2.4 Threshold selection (McNeil 1997 §4.4; McNeil & Frey §2.3)

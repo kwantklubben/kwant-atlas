@@ -32,15 +32,21 @@ The five stages, and what each one is really guarding against:
 
 **The provenance tuple.** A vendor fact is not a scalar; it is a record
 
-$$r=\big(\underbrace{\text{key}}_{\text{entity}},\ \underbrace{v}_{\text{value}},\ \underbrace{t_E}_{\text{event time}},\ \underbrace{t_K}_{\text{knowledge time}}\big),\qquad t_K \ge t_E \text{ always}.$$
+$$
+r=\big(\underbrace{\text{key}}_{\text{entity}},\ \underbrace{v}_{\text{value}},\ \underbrace{t_E}_{\text{event time}},\ \underbrace{t_K}_{\text{knowledge time}}\big),\qquad t_K \ge t_E \text{ always}.
+$$
 
 **The point-in-time (as-of) join.** The feature at decision time $t$ is the *most recent record already known*, i.e. a left-as-of join on knowledge time:
 
-$$x_t \;=\; \operatorname{last}\big\{\,v(r)\;:\;t_K(r)\le t\,\big\}\qquad(\text{not }t_E(r)\le t).$$
+$$
+x_t \;=\; \operatorname{last}\big\{\,v(r)\;:\;t_K(r)\le t\,\big\}\qquad(\text{not }t_E(r)\le t).
+$$
 
 **The look-ahead gap.** Define the leak of using event-time alignment as the interval over which a record is used but not yet knowable:
 
-$$\Delta_{\text{leak}}(r) = t_K(r)-t_E(r) \;=\; \text{vendor lag} + \text{your ingest delay}.$$
+$$
+\Delta_{\text{leak}}(r) = t_K(r)-t_E(r) \;=\; \text{vendor lag} + \text{your ingest delay}.
+$$
 
 A naive join assigns $r$ to *every* $t\in[t_E,t_K)$ — trading on information that did not exist. The measured IC of that join is not the signal's IC; it is a **measurement of $\Delta_{\text{leak}}$**.
 

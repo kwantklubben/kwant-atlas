@@ -28,19 +28,25 @@ The objective of this page is the discipline that separates the *arithmetic* fro
 
 **EPS mechanics.** With $NI$ net income and $n$ shares outstanding,
 
-$$\text{EPS} = \frac{NI}{n}.$$
+$$
+\text{EPS} = \frac{NI}{n}.
+$$
 
 A buyback of $b$ shares (cash spent $= b \cdot P$) leaves $n-b$ shares, so *ceteris paribus* $\text{EPS} = \frac{NI}{n-b} > \frac{NI}{n}$ — **EPS always rises from a buyback.** The trap is the *ceteris paribus*: if the $bP$ of cash was generating earnings at the firm's return on assets $a$, then true net income falls to $NI - bP \cdot a$, and the honest post-buyback EPS is $\frac{NI - bP\,a}{n-b}$. Whether EPS truly rose depends on $a$ vs. the *return the market required on the equity retired* — i.e., vs. the cost of equity, which is exactly where ROIC enters.
 
 **The payout-vs-reinvest decision (Jensen 1986).** Define *free cash flow* as cash flow in excess of what all positive-NPV projects require. For a firm with free cash flow $FCF$ and required return $\rho$ (its cost of capital), investing the cash in a project returning $g < \rho$ *destroys* value:
 
-$$\text{NPV of reinvesting} = \underbrace{\frac{FCF \cdot g}{\rho}}_{\text{PV of the weak project}} - FCF < 0.$$
+$$
+\text{NPV of reinvesting} = \underbrace{\frac{FCF \cdot g}{\rho}}_{\text{PV of the weak project}} - FCF < 0.
+$$
 
 The value-maximizing choice is to **pay the cash out** (dividend or buyback) when $g < \rho$, and to **reinvest** only when $g \ge \rho$. This is the dividend-policy-vs-ROIC rule: the payout decision is governed by whether internal reinvestment earns above the cost of capital, not by any virtue of paying dividends per se.
 
 **Dilution as wealth transfer.** Let firm value be $V$ with $n$ shares (intrinsic value $V/n$). Issuing $m$ new shares at price $p < V/n$ (as under information asymmetry, [[fundamentals-accounting/capital-structure-and-corporate-finance/06-advanced-extensions|06]]) raises $mp$ of cash. New value and per-share value:
 
-$$V' = V + mp, \qquad \text{per-share} = \frac{V + mp}{n + m}.$$
+$$
+V' = V + mp, \qquad \text{per-share} = \frac{V + mp}{n + m}.
+$$
 
 Old holders' stake becomes $\frac{n}{n+m}V'$; the shortfall $\frac{V}{n}$ vs. per-share is a **transfer from old to new holders**. When that transfer exceeds the project's NPV, old holders are *worse off* by investing — the Myers–Majluf underinvestment result.
 

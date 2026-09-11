@@ -25,16 +25,22 @@ The practical objective: give the practitioner the fastest reasonable volatility
 ### 2. Mathematical Ground Truth & Derivations
 
 **Realized variance (Tsay §3.15.1).** With $n$ intraday returns $r_{t,i}$ in day $t$,
-$$RV_t=\sum_{i=1}^{n}r_{t,i}^2\ \xrightarrow[\ n\to\infty\ ]{}\ \int_{t}^{t+1}\sigma^2(s)\,ds\quad(\text{quadratic variation}),$$
+$$
+RV_t=\sum_{i=1}^{n}r_{t,i}^2\ \xrightarrow[\ n\to\infty\ ]{}\ \int_{t}^{t+1}\sigma^2(s)\,ds\quad(\text{quadratic variation}),
+$$
 and $\mathbb{E}[RV_t\mid\mathcal{F}_{t-1}]=\sigma_t^2$ when intraday returns are conditionally zero-mean — i.e. $RV_t$ is an **(almost) unbiased estimator of daily variance**. Its log, $\ln RV_t$, is close to Gaussian and behaves like an **ARIMA(0,1,$q$)** with a weakly negative MA term: **near-unit-root persistence at the daily level**, the signature of **long memory** in volatility ($\hat d\approx0.4$ in fractionally-integrated terms; Bollerslev–Jubinski; Ray–Tsay).
 
 **Microstructure bias and the sampling choice.** In the limit $n\to\infty$ the noise in intraday returns (bid–ask bounce, discreteness) dominates and $RV_t$ *diverges* with sampling frequency. The classic fix is to sample at a moderate frequency; the empirical optimum (Tsay §3.15.1) is **4–15 minutes**. (Note: this 4–15 min rule is a Ch3 result; Ch5 of Tsay does not re-derive it — attribute it here.) Alternatives: the **two-scale / multi-scale** estimators and **bipower variation** $BV_t\propto\sum|r_{t,i}||r_{t,i-1}|$, which is robust to jumps.
 
 **Range estimators (Tsay §3.15.2).** When only OHLC data exist, ranges recover efficiency: Parkinson $\hat\sigma^2=(H-L)^2/(4\ln2)\approx0.3607(H-L)^2$ (≈5× more efficient than close-to-close), Garman–Klass, Rogers–Satchell, and the **Yang–Zhang** combination
-$$\hat\sigma_{yz}^2=\hat\sigma_o^2+k\,\hat\sigma_c^2+(1-k)\,\hat\sigma_{rs}^2,\qquad k=\frac{0.34}{1.34+(n+1)/(n-1)}.$$
+$$
+\hat\sigma_{yz}^2=\hat\sigma_o^2+k\,\hat\sigma_c^2+(1-k)\,\hat\sigma_{rs}^2,\qquad k=\frac{0.34}{1.34+(n+1)/(n-1)}.
+$$
 
 **HAR-RV (Corsi 2009).** Regress tomorrow's realized variance on averages of past $RV$ over three horizons:
-$$RV_{t+1}=c+\beta_d\,RV_t+\beta_w\,\overline{RV}_t^{(5)}+\beta_m\,\overline{RV}_t^{(22)}+\epsilon_{t+1},$$
+$$
+RV_{t+1}=c+\beta_d\,RV_t+\beta_w\,\overline{RV}_t^{(5)}+\beta_m\,\overline{RV}_t^{(22)}+\epsilon_{t+1},
+$$
 where $\overline{RV}_t^{(h)}=\frac1h\sum_{j=1}^{h}RV_{t-j+1}$ (daily / weekly / monthly averages, the last two being the interesting ones; Corsi includes $RV_t$ itself as the daily term). The model is **linear in three positive, slowly-different horizons**, and the sum $\beta_d+\beta_w+\beta_m$ is close to 1. Fitting in **logs** (log-HAR) is common because $\ln RV$ is far closer to Gaussian and stabilises the residuals.
 
 **Why three timescales create long memory.** A sum of AR(1) components with geometrically-spaced decay rates has an autocorrelation that decays *hyperbolically* over a wide range of lags — an excellent approximation to true long memory. Three horizons (≈1, 5, 22 days) span roughly two decades of decay, so the HAR's implied ACF mimics a fractional process while remaining a finite, estimable OLS. That is the "simple approximate long-memory model" of the title.

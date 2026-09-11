@@ -35,7 +35,9 @@ For a fitted model, training error is systematically *below* test error. ESL qua
 - **Bias–variance decomposition** (ESL eq. 7.9): $\mathbb{E}[(Y-\hat f)^2]=\sigma_\varepsilon^2+\mathrm{Bias}^2+\mathrm{Var}$ — the irreducible $\sigma_\varepsilon^2$ cannot be fitted away.
 - **In-sample variance of the fit** (ESL eq. 7.12): $\mathrm{Var}$ in sample scales as $\dfrac{p}{N}\sigma_\varepsilon^2$ with $p$ effective parameters and $N$ observations.
 - **Optimism of the training error** (ESL §7.4, eq. 7.24): for a model with $d$ inputs/$d$ degrees of freedom,
-$$\mathbb{E}[\text{Err}_{\text{in}}]\approx \mathbb{E}[\text{Err}_{\text{out}}]-\frac{2d}{N}\sigma_\varepsilon^2,$$
+$$
+\mathbb{E}[\text{Err}_{\text{in}}]\approx \mathbb{E}[\text{Err}_{\text{out}}]-\frac{2d}{N}\sigma_\varepsilon^2,
+$$
 - **Effective degrees of freedom** for a linear smoother $\hat y=Sy$ is $df=\mathrm{tr}(S)$ (ESL eq. 7.32) — this is the honest "$d$" to count, not the nominal parameter count.
 
 **Translation to finance:** every free knob (lookback, threshold, stop, universe, weighting) raises $d$ and quietly *lowers* the reported in-sample error. A backtest Sharpe computed in sample is $\text{Err}_{\text{in}}$, i.e. it is biased optimistic by roughly $2d/N$ in variance units.

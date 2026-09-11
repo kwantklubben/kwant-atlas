@@ -36,7 +36,9 @@ The template, in words: **state = (time, inventory), action = shares this slice,
 #### 2.2 The baseline it must beat — Almgren–Chriss
 
 The closed-form benchmark: with *linear* temporary and permanent impact and a risk-aversion $\lambda$, the optimal deterministic trajectory is exponentially decaying,
-$$x_t=X_0\,\frac{\sinh\!\big(\kappa(T-t)\big)}{\sinh(\kappa T)},\qquad \kappa\approx\sqrt{\lambda\sigma^2/\eta},$$
+$$
+x_t=X_0\,\frac{\sinh\!\big(\kappa(T-t)\big)}{\sinh(\kappa T)},\qquad \kappa\approx\sqrt{\lambda\sigma^2/\eta},
+$$
 selling fast when risk-aversion $\lambda$ (or volatility $\sigma$) is high and slow when impact $\eta$ is high. Full derivation in [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]. **RL's only legitimate claim is to match or beat this** when the environment is non-linear (queue dynamics, path-dependent impact, adaptive prices) where the closed form does not apply.
 
 #### 2.3 Why RL can add something the closed form cannot

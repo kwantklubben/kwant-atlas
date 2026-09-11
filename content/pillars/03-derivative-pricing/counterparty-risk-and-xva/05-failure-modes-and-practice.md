@@ -35,13 +35,17 @@ The failures, in one line each:
 
 **(A3) fails ⇒ JTD.** Gregory Eq 21.2:
 
-$$JTD\ P\&L = -(\text{Current exposure})\times LGD + (\text{CDS hedge notional})\times LGD_{CDS} - \text{current xVA contribution}.$$
+$$
+JTD\ P\&L = -(\text{Current exposure})\times LGD + (\text{CDS hedge notional})\times LGD_{CDS} - \text{current xVA contribution}.
+$$
 
 For an ITM portfolio without a single-name hedge, JTD is **always negative** — a jump through the exposure is a first-order loss no smooth hedge captures (Gregory §21.2.5).
 
 **The double-counting structure** (Gregory §18.2.5). DVA (own default avoids paying the derivative) and FBA (negative exposure gives a funding benefit) describe the *same* cash flow. Burgard–Kjaer reconcile: $FBA\equiv DVA$ when the funding spread equals $LGD_P\,\lambda_P$ and all terms are additive at netting-set level — so the frameworks are consistent *only if you do not take both*. The two acceptable packages:
 
-$$CVA + \underbrace{FCA+FBA}_{\text{symmetric funding}}\qquad\text{or}\qquad \underbrace{CVA + DVA}_{\text{bilateral}} + FCA.$$
+$$
+CVA + \underbrace{FCA+FBA}_{\text{symmetric funding}}\qquad\text{or}\qquad \underbrace{CVA + DVA}_{\text{bilateral}} + FCA.
+$$
 
 ---
 

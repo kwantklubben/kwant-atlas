@@ -28,11 +28,15 @@ The objective is not cynicism. It is the discipline of knowing *which lever* a r
 ### 2. Mathematical Ground Truth & Derivations
 
 **Arbitrage in one identity.** The ratio is $E/\sum_i E_i\,rw_i$. Holding capital $E$ and exposure $E_i$ fixed, any *reduction in $rw_i$* raises the ratio:
-$$\frac{\partial}{\partial rw_i}\Big(\frac{E}{\mathrm{RWA}}\Big)=-\frac{E\,E_i}{\mathrm{RWA}^2}<0 .$$
+$$
+\frac{\partial}{\partial rw_i}\Big(\frac{E}{\mathrm{RWA}}\Big)=-\frac{E\,E_i}{\mathrm{RWA}^2}<0 .
+$$
 So the cheapest way to "improve" capital is never to de-risk — it is to find the lowest $rw_i$ for the same cash-flow. The reform countermeasure is to *reduce the scope* for $rw$ differences: the **output floor** ($\mathrm{RWA}\ge72.5\%\,\mathrm{RWA}_{\text{SA}}$, §06) caps how far internal models may cut RWA below the standardised measure.
 
 **Procyclicality as a function of ratings/vol.** RWA moves with $rw(\text{rating})$, and PD moves with the cycle, so
-$$\frac{\partial \mathrm{RWA}}{\partial \text{downturn}}>0\quad\Longrightarrow\quad \frac{\partial (\text{capital ratio})}{\partial \text{downturn}}<0 .$$
+$$
+\frac{\partial \mathrm{RWA}}{\partial \text{downturn}}>0\quad\Longrightarrow\quad \frac{\partial (\text{capital ratio})}{\partial \text{downturn}}<0 .
+$$
 The framework's attempted antidotes: the **countercyclical buffer** (build CET1 in good times, release in bad), through-the-cycle PD calibration, and the output floor. None fully removes the feedback.
 
 **Measurement error compounds through the ratio.** If a bank's IRB/IMA parameters understate true risk, both the numerator (via how capital is computed) and the denominator (RWA) are affected; a systematic underestimation of loss given default, say, cuts capital more than proportionally because it also lowers the conditional-loss term $N^{-1}(\mathrm{PD})+\sqrt R\,N^{-1}(0.999)$.

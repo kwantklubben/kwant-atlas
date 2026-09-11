@@ -34,23 +34,31 @@ This page turns "the race to zero" into arithmetic: a break-even count of compet
 
 Let $e$ be the maker's realised edge per share ($e = h + r$, the half-spread plus rebate actually earned after competition), $Q$ the maker-side annual volume (shares), and $C$ the desk's annual fixed cost. With $N$ symmetric competing makers each capturing $Q/N$:
 
-$$\pi_N = \frac{e\,Q}{N} - C, \qquad
-\boxed{\;N^{\star} = \frac{e\,Q}{C}\;}$$
+$$
+\pi_N = \frac{e\,Q}{N} - C, \qquad
+\boxed{\;N^{\star} = \frac{e\,Q}{C}\;}
+$$
 
 is the number of makers at which the industry just covers its fixed costs. **Below $N^\star$ the industry earns rents; above it, competition is value-destroying and desks exit.** This is Grossman & Miller (1988) and the "zero-profit" long-run condition made operational.
 
 #### 2.2 Compression and the tick floor
 
 $e$ is not constant: as $N$ rises, quotes tighten and $e$ falls. The *lower bound* on the realised edge is set by the finest quote the tick permits. A two-sided quote at the touch has half-spread $\tau/2$, so
-$$e_{\min} = \frac{\tau}{2} + r.$$
+$$
+e_{\min} = \frac{\tau}{2} + r.
+$$
 The race to zero therefore stops at $\max(\text{cost},\ e_{\min})$, where the cost floor is $\lambda$ (adverse selection; add $c_{\text{inv}}$ for inventory). Define the **residual rent at the floor**:
-$$\boxed{\;R_\tau = \underbrace{\frac{\tau}{2}+r}_{e_{\min}} - \lambda\;}$$
+$$
+\boxed{\;R_\tau = \underbrace{\frac{\tau}{2}+r}_{e_{\min}} - \lambda\;}
+$$
 
 - $R_\tau > 0$ — the tick **binds**: competition cannot erode the surplus, makers keep a protected rent. (This is why exchanges with coarse ticks support profitable liquidity provisioning.)
 - $R_\tau < 0$ — the tick does **not** bind (or binds below cost): competition drives makers **below** their adverse-selection cost, the race "overshoots," and desks lose money and withdraw — degrading liquidity until spreads widen again.
 
 **Minimum viable tick.** Setting $R_\tau=0$ gives the smallest tick at which a rebate-funded maker can survive at the touch:
-$$\tau^{\min} = 2(\lambda - r).$$
+$$
+\tau^{\min} = 2(\lambda - r).
+$$
 If $\tau<\tau^{\min}$, the tick is *too small for the market to support a maker at the touch*: the maker must either stand off the touch or exit. This is the analytical content of the SEC's tick-size pilot and of every exchange's "tick size protects liquidity" lobbying campaign.
 
 ---

@@ -30,19 +30,25 @@ The covariance matrix $\Sigma$ is the *engine*: it packages every asset's own vo
 
 **Setup.** Let $w\in\mathbb{R}^N$ be the current dollar positions in the $N$ risk factors and $\Sigma$ the $N\times N$ covariance matrix of one-period factor *returns* (per-day, if daily VaR). The portfolio's one-period P&L is
 
-$$\Delta V \approx \sum_i w_i\, R_i = w^T R,$$
+$$
+\Delta V \approx \sum_i w_i\, R_i = w^T R,
+$$
 
 where $R\sim N(0,\Sigma)$ is the factor-return vector. (The mean is usually taken to 0 for a 1-day horizon; over longer horizons drop in a drift $w^T\mu$.)
 
 **Portfolio variance (Hull Ch 22, eq. 22.3/22.4; RiskMetrics).** Because $R$ is a random vector with covariance $\Sigma$,
 
-$$\mathbb{V}[\Delta V]=w^T\Sigma w=\sum_{i,j}w_iw_j\rho_{ij}\sigma_i\sigma_j=\sum_{i,j}w_iw_j\,\text{Cov}(R_i,R_j).$$
+$$
+\mathbb{V}[\Delta V]=w^T\Sigma w=\sum_{i,j}w_iw_j\rho_{ij}\sigma_i\sigma_j=\sum_{i,j}w_iw_j\,\text{Cov}(R_i,R_j).
+$$
 
 This double sum is *the* covariance-matrix approach: each pair of assets contributes its covariance, weighted by both positions. Correlations enter as $\rho_{ij}=\text{Cov}(R_i,R_j)/(\sigma_i\sigma_j)$.
 
 **Delta-normal VaR.** $\Delta V$ is a linear combination of normals ⇒ normal with that variance. The VaR is $z_\alpha$ portfolio standard deviations:
 
-$$\boxed{\ \text{VaR}_\alpha = z_\alpha\,\sigma_p\sqrt h,\qquad \sigma_p=\sqrt{w^T\Sigma w}\ }$$
+$$
+\boxed{\ \text{VaR}_\alpha = z_\alpha\,\sigma_p\sqrt h,\qquad \sigma_p=\sqrt{w^T\Sigma w}\ }
+$$
 
 where $z_\alpha=N^{-1}(\alpha)$ (e.g. $z_{0.99}=2.3263$). Under i.i.d. returns the $h$-day version multiplies by $\sqrt h$ (Hull Ch 22: "N-day VaR = 1-day VaR × √N").
 

@@ -28,11 +28,15 @@ The unifying insight: any rotation-equivariant covariance estimator (one that ke
 
 Restrict to rotation-equivariant estimators: keep the sample eigenvectors $u_i$, replace eigenvalues $\lambda_i$ by $d_i$. Ledoit & Péché (2011) and Ledoit & Wolf (2012) derive the **oracle** optimal $d_i$ that is asymptotically equivalent to the best possible such estimator. It depends on the Stieltjes transform of the limiting sample-eigenvalue distribution $F$:
 
-$$\boxed{\ d_i^{\text{or}}=\frac{\lambda_i}{\bigl|\,1-c-c\,\lambda_i\,\breve m_F(\lambda_i)\,\bigr|^2}\ },\qquad c=\frac{N}{T},$$
+$$
+\boxed{\ d_i^{\text{or}}=\frac{\lambda_i}{\bigl|\,1-c-c\,\lambda_i\,\breve m_F(\lambda_i)\,\bigr|^2}\ },\qquad c=\frac{N}{T},
+$$
 
 where $\breve m_F(\lambda)=\lim_{y\to0^+}m_F(\lambda+iy)$ and $m_F$ is the unique solution in the upper half-plane of the **Marchenko–Pastur equation**
 
-$$m_F(z)=-\Bigl[\,z-c\int\frac{\tau}{1+\tau\,m_F(z)}\,dH(\tau)\,\Bigr]^{-1},$$
+$$
+m_F(z)=-\Bigl[\,z-c\int\frac{\tau}{1+\tau\,m_F(z)}\,dH(\tau)\,\Bigr]^{-1},
+$$
 
 with $H$ the limiting distribution of *population* eigenvalues. (Equivalently, in the $u=-1/m$ variable, $u_F(z)=z+c\,u_F(z)\,m_{LH}(u_F(z))$.) Three facts that make the formula believable:
 
@@ -44,7 +48,9 @@ with $H$ the limiting distribution of *population* eigenvalues. (Equivalently, i
 
 Instead of estimating $N(N+1)/2$ numbers, impose a low-rank-plus-diagonal structure:
 
-$$\boxed{\ \hat\Sigma=B\Lambda B^\top+\Psi\ },\qquad B\in\mathbb{R}^{N\times K}\ (K\ll N),\ \Psi=\operatorname{diag}(\psi_1,\dots,\psi_N).$$
+$$
+\boxed{\ \hat\Sigma=B\Lambda B^\top+\Psi\ },\qquad B\in\mathbb{R}^{N\times K}\ (K\ll N),\ \Psi=\operatorname{diag}(\psi_1,\dots,\psi_N).
+$$
 
 $B$ are the **factor loadings**, $\Lambda$ the factor covariance, $\Psi$ the **specific (idiosyncratic) variances**. Estimation is a rank-$K$ PCA of $S$: keep the top $K$ eigenpairs, set $B\Lambda B^\top=\sum_{k\le K}\lambda_kq_kq_k^\top$, and $\psi_i=s_{ii}-\sum_{k\le K}b_{ik}^2$ (floored at a small positive value). This is the shrinkage target of Ledoit & Wolf (2003) and the basis of every commercial risk model (Barra et al.). It is **strongly biased but low-variance**, and is well-conditioned because $\Psi\succ0$ regularizes the whole matrix. The art is choosing $K$ (or the target): too few factors → misspecification; too many → estimation error returns (the Ledoit–Wolf "Honey" paper's polynomial trade-off).
 

@@ -28,7 +28,9 @@ The practical objective is a lookup you can carry: *given my likelihood, what is
 
 **Bayes' theorem, twice.** The event form is $P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}$; the parameter form is C&B eq. 7.2.6:
 
-$$p(\theta\mid x)=\frac{f(x\mid\theta)\,\pi(\theta)}{m(x)},\qquad m(x)=\int_\Theta f(x\mid\theta)\,\pi(\theta)\,d\theta .$$
+$$
+p(\theta\mid x)=\frac{f(x\mid\theta)\,\pi(\theta)}{m(x)},\qquad m(x)=\int_\Theta f(x\mid\theta)\,\pi(\theta)\,d\theta .
+$$
 
 The numerator is the *joint* density $f(x,\theta)$; the denominator is its integral over $\theta$ — the probability of the data under the prior. **Every Bayesian quantity is a functional of the numerator after normalization.**
 
@@ -45,8 +47,10 @@ The numerator is the *joint* density $f(x,\theta)$; the denominator is its integ
 
 **Normal–Normal with known variance (C&B Ex 7.2.10) — the precision result.** With $X_i\sim N(\theta,\sigma^2)$ and $\theta\sim N(\mu_0,\tau^2)$,
 
-$$\frac1{\tau_{\text{post}}^2}=\frac1{\tau^2}+\frac{n}{\sigma^2},\qquad
-\mu_{\text{post}}=\tau_{\text{post}}^2\Big(\frac{\mu_0}{\tau^2}+\frac{n\bar x}{\sigma^2}\Big).$$
+$$
+\frac1{\tau_{\text{post}}^2}=\frac1{\tau^2}+\frac{n}{\sigma^2},\qquad
+\mu_{\text{post}}=\tau_{\text{post}}^2\Big(\frac{\mu_0}{\tau^2}+\frac{n\bar x}{\sigma^2}\Big).
+$$
 
 **Precisions add.** Information (reciprocal variance) is additive: the posterior precision is the prior precision plus the data precision $n/\sigma^2$. This is the single most useful Bayesian intuition — and its matrix version ($\Sigma_{\text{post}}^{-1}=\Sigma_0^{-1}+\sigma^{-2}X^{\!\top}X$) is the same statement for vectors. As $\tau^2\to\infty$ (vague prior) $\mu_{\text{post}}\to\bar x$: **the datum wins when the prior has no precision.**
 
@@ -58,7 +62,9 @@ $$\frac1{\tau_{\text{post}}^2}=\frac1{\tau^2}+\frac{n}{\sigma^2},\qquad
 
 **Marginal likelihood / evidence and Bayes factors.** For two models $\mathcal M_0,\mathcal M_1$,
 
-$$\mathrm{BF}_{10}=\frac{m_0(x)}{m_1(x)}=\frac{\int f(x\mid\theta_0)\pi_0(\theta_0)\,d\theta_0}{\int f(x\mid\theta_1)\pi_1(\theta_1)\,d\theta_1},$$
+$$
+\mathrm{BF}_{10}=\frac{m_0(x)}{m_1(x)}=\frac{\int f(x\mid\theta_0)\pi_0(\theta_0)\,d\theta_0}{\int f(x\mid\theta_1)\pi_1(\theta_1)\,d\theta_1},
+$$
 
 and $m(x)$ is exactly the denominator Bayes' rule dropped for estimation. It is the *automatic Occam's razor*: a model that spreads prior mass over implausible regions pays a smaller $m(x)$. BIC, $\mathrm{BIC}=-2\log\hat L+(\log n)\,d$ (ESL eq. 7.35), is a large-sample $-2\log m(x)$ approximation — the bridge to frequentist model selection.
 

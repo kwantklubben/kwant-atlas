@@ -28,21 +28,29 @@ The launchpad here is the **Kalman filter**, because it is both the cleanest sta
 ### 2. Mathematical Ground Truth & Derivations
 
 **General linear-Gaussian state-space (Tsay eq. 11.26–11.27).**
-$$s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad y_t=c_t+Z_t s_t+e_t,\qquad \eta\sim N(0,Q_t),\ e\sim N(0,H_t).$$
+$$
+s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad y_t=c_t+Z_t s_t+e_t,\qquad \eta\sim N(0,Q_t),\ e\sim N(0,H_t).
+$$
 
 **The Kalman filter recursion (Tsay eq. 11.64).** Prediction error $v_t=y_t-c_t-Z_ts_{t\mid t-1}$; innovation variance $V_t=Z_t\Sigma_{t\mid t-1}Z_t'+H_t$; gain $K_t=T_t\Sigma_{t\mid t-1}Z_t'V_t^{-1}$; $L_t=T_t-K_tZ_t$; then
-$$s_{t+1\mid t}=d_t+T_ts_{t\mid t-1}+K_tv_t,\qquad \Sigma_{t+1\mid t}=T_t\Sigma_{t\mid t-1}L_t'+R_tQR_t'.$$
+$$
+s_{t+1\mid t}=d_t+T_ts_{t\mid t-1}+K_tv_t,\qquad \Sigma_{t+1\mid t}=T_t\Sigma_{t\mid t-1}L_t'+R_tQR_t'.
+$$
 Three distinct objects: **filtering** $s_t\mid F_t$, **prediction** $s_{t+h}\mid F_t$, **smoothing** $s_t\mid F_T$ ($T>t$). In steady state $V_t,K_t,\Sigma_{t+1\mid t}$ become constant, solving an algebraic Riccati equation. Parameters are estimated by ML via the **prediction-error decomposition** $\ln L=-\tfrac{T}{2}\ln(2\pi)-\tfrac12\sum_t[\ln V_t+v_t^2/V_t]$ (Tsay eq. 11.25). Diffuse initialization ($\Sigma_{1\mid0}\to\infty$, Tsay §11.2) handles unknown state start.
 
 **Local-level model & its ARIMA equivalence (Tsay eq. 11.1–11.5).**
-$$y_t=\mu_t+e_t,\qquad \mu_{t+1}=\mu_t+\eta_t.$$
+$$
+y_t=\mu_t+e_t,\qquad \mu_{t+1}=\mu_t+\eta_t.
+$$
 If $\sigma_e=0$ this is ARIMA(0,1,0); if $\sigma_e>0$ it is ARIMA(0,1,1), $(1-B)y_t=(1-\theta B)a_t$, with the map
-$$(1+\theta^2)\sigma_a^2=2\sigma_e^2+\sigma_\eta^2,\qquad \theta\sigma_a^2=\sigma_e^2.$$
+$$
+(1+\theta^2)\sigma_a^2=2\sigma_e^2+\sigma_\eta^2,\qquad \theta\sigma_a^2=\sigma_e^2.
+$$
 This is why a *smoothed trend* and a *differenced IMA(1,1)* are the same process seen from two angles. Tsay's Alcoa log-realized-vol fit ($\hat\theta=0.858$, $\hat\sigma_a=0.5184$) implies $\hat\sigma_e=0.4803\gg\hat\sigma_\eta=0.0735$ — **microstructure noise dominates the latent-volatility signal**, a classic finding. **Time-varying CAPM** is a state-space model: $r_t=\alpha_t+\beta_tr_{M,t}+e_t$ with $\alpha_{t+1}=\alpha_t+\eta_t$, $\beta_{t+1}=\beta_t+\varepsilon_t$, observation row $Z_t=(1,r_{M,t})$ (Tsay eq. 11.29).
 
 **Markov switching (Tsay Ch 4).** A 2-state first-order Markov chain with transition probs $P(s_t{=}2\mid s_{t-1}{=}1)=w_1$, $P(s_t{=}1\mid s_{t-1}{=}2)=w_2$; expected duration in state $i$ is $1/w_i$. US real GNP: contraction ≈3.7 quarters, expansion ≈11.3 quarters (McCulloch–Tsay MCMC). Contrast SETAR (deterministic threshold switch) vs MSA (stochastic switch): under SETAR the future is single-regime once $x_{t-d}$ is observed; under MSA it is always a mixture — which is exactly what a *filter* must keep track of. Estimation via EM (Hamilton) or MCMC (McCulloch–Tsay).
 
-**Multivariate volatility (Tsay Ch 10).** Risk is a matrix $\Sigma_t$. EWMA $\Sigma_t=(1-\lambda)a_{t-1}a_{t-1}'+\lambda\Sigma_{t-1}$; **BEKK** $\Sigma_t=AA'+\sum A_i(aa')A_i'+\sum B_j\Sigma_{t-j}B_j'$ (pos-def by construction, params not directly interpretable); correlation form $\Sigma_t=D_t\rho_tD_t$, $D_t=\mathrm{diag}\{\sqrt{\sigma_{ii,t}}\}$; **DCC** (Engle 2002) $\rho_t=J_tQ_tJ_t$ with $Q_t=(1-\theta_1-\theta_2)\bar Q+\theta_1\varepsilon_{t-1}\varepsilon_{t-1}'+\theta_2Q_{t-1}$, standardized shocks $\varepsilon_{it}=a_{it}/\sqrt{\sigma_{ii,t}}$, $0<\theta_1+\theta_2<1$ — scalar dynamics, one persistence for all correlations. Portfolio VaR: $\mathrm{VaR}=\sqrt{\mathrm{VaR}_1^2+\mathrm{VaR}_2^2+2\rho\,\mathrm{VaR}_1\mathrm{VaR}_2}$ (Tsay Ch 7 §7.2.2 / Ch 10 §10.7). Verified example (Cisco+Intel, $1M each, 5%): univariate $57,117$ < time-varying-corr $57,648$ < constant-corr $58,180$.
+**Multivariate volatility (Tsay Ch 10).** Risk is a matrix $\Sigma_t$. EWMA $\Sigma_t=(1-\lambda)a_{t-1}a_{t-1}'+\lambda\Sigma_{t-1}$; **BEKK** $\Sigma_t=AA'+\sum A_i(aa')A_i'+\sum B_j\Sigma_{t-j}B_j'$ (pos-def by construction, params not directly interpretable); correlation form $\Sigma_t=D_t\rho_tD_t$, $D_t=\mathrm{diag}\{\sqrt{\sigma_{ii,t}}\}$; **DCC** (Engle 2002) $\rho_t=J_tQ_tJ_t$ with $Q_t=(1-\theta_1-\theta_2)\bar Q+\theta_1\varepsilon_{t-1}\varepsilon_{t-1}'+\theta_2Q_{t-1}$, standardized shocks $\varepsilon_{it}=a_{it}/\sqrt{\sigma_{ii,t}}$, $0<\theta_1+\theta_2<1$ — scalar dynamics, one persistence for all correlations. Portfolio VaR: $\mathrm{VaR}=\sqrt{\mathrm{VaR}_1^2+\mathrm{VaR}_2^2+2\rho\,\mathrm{VaR}_1\mathrm{VaR}_2}$ (Tsay Ch 7 §7.2.2 / Ch 10 §10.7). Verified example (Cisco+Intel, $1M each, 5\%): univariate $57,117$ < time-varying-corr $57,648$ < constant-corr $58,180$.
 
 **MCMC (Tsay Ch 12).** Gibbs sampling iterates draws from each full conditional given the others; point estimate $\bar\theta_i=\tfrac1{n-m}\sum_{j=m+1}^n\theta_{i,j}$ after discarding $m$ burn-in draws. Metropolis–Hastings accepts a candidate with $r=\frac{f(\theta^*\mid X)J_t(\theta_{t-1}\mid\theta^*)}{f(\theta_{t-1}\mid X)J_t(\theta^*\mid\theta_{t-1})}$, accept $\min(r,1)$. Used for stochastic-volatility and switching-GARCH models whose likelihoods are intractable. GARCH tends to *understate* vol vs implied vol; SV forecasts from the predictive distribution are richer (Tsay §12.10).
 

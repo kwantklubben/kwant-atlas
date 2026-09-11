@@ -32,13 +32,17 @@ Three "aha"s take you from "I click buy" to a working mental model of routing:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Why a single venue fails: convexity of the sweep.** Let a venue show an ask ladder $p_1<p_2<\dots$ with sizes $q_1,q_2,\dots$. Buying $Q$ shares there yields the **average price**
-$$\bar p(Q)=\frac{1}{Q}\sum_{k\le K-1}p_kq_k+p_K\Big(Q-\sum_{k\le K-1}q_k\Big),\qquad K=\min\big\{n:\textstyle\sum_{k\le n}q_k\ge Q\big\},$$
+$$
+\bar p(Q)=\frac{1}{Q}\sum_{k\le K-1}p_kq_k+p_K\Big(Q-\sum_{k\le K-1}q_k\Big),\qquad K=\min\big\{n:\textstyle\sum_{k\le n}q_k\ge Q\big\},
+$$
 which is **piecewise-linear and convex in $Q$**; the *marginal* cost jumps at every level boundary. This convexity is why size and venue choice cannot be separated.
 
 **Fragmentation as a network externality.** Liquidity generates a **network externality**: orders attract orders, so concentration is natural. Hasbrouck (Ch 1) states the tension exactly — the *liquidity externality favors consolidation*, while *retail-vs-institutional differences and market-designer innovation favor fragmentation*. The observed multi-venue equilibrium is the uneasy resolution.
 
 **The cross-venue optimum (why the greedy sweep is correct).** A parent buy $Q$ is allocated across venues $i$ with ask ladders; minimizing total cash cost
-$$\min_{\{q_i\}}\sum_i\sum_{k}p_{ik}\,q_{ik}\quad\text{s.t.}\quad\sum_{i,k}q_{ik}=Q,\;\;0\le q_{ik}\le \text{size}_{ik}$$
+$$
+\min_{\{q_i\}}\sum_i\sum_{k}p_{ik}\,q_{ik}\quad\text{s.t.}\quad\sum_{i,k}q_{ik}=Q,\;\;0\le q_{ik}\le \text{size}_{ik}
+$$
 is a linear program whose optimum is the greedy **global price ladder**: merge every venue's levels into one sorted list, and buy from the cheapest up. Fragmentation does not change *what* is optimal — it changes *how many places you must reach* to execute it.
 
 **Fragmented vs consolidated — the same depth, spread across venues.** If venues $I$ and $II$ each honor time priority internally but not across each other, the aggregate depth is *preserved* (Glosten 1998, summarized in Biais et al. 2005): with order-handling rules that route the remainder to the other market, the individual quotes widen (less quantity at the best price) but the *aggregate* quantity $Q_I+Q_{II}$ available at the best price is larger than under one market. Fragmentation thins each book but need not thin the *market*.

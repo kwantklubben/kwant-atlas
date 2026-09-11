@@ -25,7 +25,9 @@ The practical objective: understand (a) what a recurrent cell computes, (b) *why
 
 #### 2.1 The vanilla RNN and its unrolled graph
 
-$$h_t=\tanh\!\big(W h_{t-1}+U x_t+b_h\big),\qquad \hat y_t=\operatorname{softmax}\!\big(V h_t+b_y\big).$$
+$$
+h_t=\tanh\!\big(W h_{t-1}+U x_t+b_h\big),\qquad \hat y_t=\operatorname{softmax}\!\big(V h_t+b_y\big).
+$$
 
 The model is a deep network whose depth equals the sequence length $T$, with all layers sharing $W$. Training is **backpropagation through time (BPTT)**: unroll the graph and apply the chain rule.
 
@@ -33,13 +35,17 @@ The model is a deep network whose depth equals the sequence length $T$, with all
 
 The gradient of any loss at time $T$ w.r.t. an early state is a product of per-step Jacobians:
 
-$$\frac{\partial h_T}{\partial h_k}=\prod_{t=k+1}^{T}\frac{\partial h_t}{\partial h_{t-1}}
-=\prod_{t=k+1}^{T}\operatorname{diag}\!\big(1-h_t^2\big)\,W .$$
+$$
+\frac{\partial h_T}{\partial h_k}=\prod_{t=k+1}^{T}\frac{\partial h_t}{\partial h_{t-1}}
+=\prod_{t=k+1}^{T}\operatorname{diag}\!\big(1-h_t^2\big)\,W .
+$$
 
 Each factor is a matrix whose norm is at most $\|W\|\cdot\max|\tanh'|\le\|W\|$. Therefore:
 
-$$\Big\|\frac{\partial h_T}{\partial h_0}\Big\|\;\le\;\|W\|^{T}\quad\Longrightarrow\quad
-\begin{cases}\|W\|<1: & \text{gradient}\to 0\ \text{(vanishes)}\\ \|W\|>1: & \text{gradient}\to\infty\ \text{(explodes)}\end{cases}$$
+$$
+\Big\|\frac{\partial h_T}{\partial h_0}\Big\|\;\le\;\|W\|^{T}\quad\Longrightarrow\quad
+\begin{cases}\|W\|<1: & \text{gradient}\to 0\ \text{(vanishes)}\\ \|W\|>1: & \text{gradient}\to\infty\ \text{(explodes)}\end{cases}
+$$
 
 Because $\tanh'\le1$ and the recurrence multiplies, the **product of many $<1$ factors decays geometrically** — the network effectively cannot learn dependencies more than a handful of steps long. This is the Bengio–Simard–Frasconi (1994) result, and it is the single reason recurrence was considered impractical for long sequences until LSTM.
 
@@ -47,17 +53,21 @@ Because $\tanh'\le1$ and the recurrence multiplies, the **product of many $<1$ f
 
 The fix is a **second state $C_t$** whose update is *additive*, not multiplicative, and gated:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 f_t&=\sigma\!\big(W_f h_{t-1}+U_f x_t+b_f\big) &&\text{(forget: how much of }C_{t-1}\text{ to keep)}\\
 i_t&=\sigma\!\big(W_i h_{t-1}+U_i x_t+b_i\big) &&\text{(input: how much new info to write)}\\
 \tilde C_t&=\tanh\!\big(W_c h_{t-1}+U_c x_t+b_c\big) &&\text{(candidate cell content)}\\
 C_t&=f_t\odot C_{t-1}+i_t\odot\tilde C_t &&\text{(additive cell update)}\\
 o_t&=\sigma\!\big(W_o h_{t-1}+U_o x_t+b_o\big),\qquad h_t=o_t\odot\tanh(C_t) &&\text{(output gate)}\\
-\end{aligned}$$
+\end{aligned}
+$$
 
 The crucial term is the cell update. The gradient along the **cell path** is
 
-$$\frac{\partial C_T}{\partial C_t}=\prod_{s=t+1}^{T}f_s ,$$
+$$
+\frac{\partial C_T}{\partial C_t}=\prod_{s=t+1}^{T}f_s ,
+$$
 
 a product of *gate* values (not of weights times saturating derivatives). If the forget gate learns $f_s\approx1$, the gradient passes essentially **undamped across arbitrary distances** — the **constant-error-carousel (CEC)**. There is no $\|W\|^T$ penalty on this path; the gates can *learn* the memory horizon instead of having it imposed by the weight norm. The GRU (Cho et al. 2014) achieves a similar effect with two gates and a single state (§06).
 

@@ -18,7 +18,9 @@ Financing instruments are **ranked claims on the same future cash flows**, and t
 
 The ladder, from *most* to *least* protected (this is the user's own seniority ordering, standard across every capital market):
 
-$$\underbrace{\text{senior debt}}_{\text{paid first}} \prec \underbrace{\text{junior debt}} \prec \underbrace{\text{mezzanine}} \prec \underbrace{\text{convertible}} \prec \underbrace{\text{common equity}}_{\text{residual, paid last}}$$
+$$
+\underbrace{\text{senior debt}}_{\text{paid first}} \prec \underbrace{\text{junior debt}} \prec \underbrace{\text{mezzanine}} \prec \underbrace{\text{convertible}} \prec \underbrace{\text{common equity}}_{\text{residual, paid last}}
+$$
 
 (where $\prec$ reads "is paid *before*" — i.e. leftmost is most senior).
 
@@ -36,17 +38,23 @@ The practical objective is to see leverage through this ladder:
 
 **Priority as a waterfall.** Given liquidation value $A$ and claims $C_1 > C_2 > \dots > C_n$ ordered by seniority (largest claim = most senior), each claim $C_i$ recovers
 
-$$\text{recovery}_i = \min\Big(C_i,\ \max(0,\ A - \sum_{k<i} C_k)\Big).$$
+$$
+\text{recovery}_i = \min\Big(C_i,\ \max(0,\ A - \sum_{k<i} C_k)\Big).
+$$
 
 Equity, the last rung, receives the strict residual:
 
-$$\text{equity recovery} = \max\Big(0,\ A - \sum_{k=1}^{n-1} C_k\Big).$$
+$$
+\text{equity recovery} = \max\Big(0,\ A - \sum_{k=1}^{n-1} C_k\Big).
+$$
 
 Two immediate consequences, both first-principles: (1) **equity is worth zero for any liquidation value below the sum of all senior claims**; (2) **senior claims are shielded from losses** — a decline in $A$ first erodes equity, then convertible, then mezzanine, then junior debt, and only *last* senior debt. This is precisely why senior debt can carry the lowest rate: its downside is minimal.
 
 **Leverage and financial risk (Prop II restated).** With $S$ equity, $D$ debt, $\rho_k$ the class equity cost, $r$ the debt rate:
 
-$$r_E = \rho_k + (\rho_k - r)\frac{D}{S}.$$
+$$
+r_E = \rho_k + (\rho_k - r)\frac{D}{S}.
+$$
 
 The *financial-risk premium* $(\rho_k - r)D/S$ is the reward for standing *below* $D$ of senior claims. It rises with $D/S$ — more leverage concentrates more operating risk onto the residual rung. This is the market's price for seniority: the more senior claims stacked above equity, the more equity must earn.
 

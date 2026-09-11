@@ -17,7 +17,9 @@ tags:
 **Implied volatility** is a *quote*: one number per option, defined by inverting the BSM formula. It is not a model of how the stock moves. **Local volatility** is a *model*: a function $\sigma_L(S,t)$ that says "the stock's instantaneous vol at spot $S$ and time $t$ is this." Two different objects.
 
 The miracle that connects them is **Dupire's theorem** (1994): given the prices of *all* European calls $C(K,T)$ — i.e. the entire implied-vol surface — there is a **unique** diffusion
-$$dS_t=\mu_tS_t\,dt+\sigma_L(S_t,t)S_t\,dW_t$$
+$$
+dS_t=\mu_tS_t\,dt+\sigma_L(S_t,t)S_t\,dW_t
+$$
 that reproduces *exactly* those prices. So the surface is not just a quote convention: it uniquely determines a one-factor diffusion (Gatheral §1; Bergomi ch 2). Two complementary constructions of the same object:
 
 - **The local vol from the surface** (Dupire's formula): a closed-form expression built from derivatives of call prices.
@@ -34,9 +36,13 @@ The practical objective: understand that local volatility is a **one-factor, com
 #### 2.1 Dupire's equation (strike form)
 
 Under the risk-neutral measure, the undiscounted call satisfies
-$$\frac{\partial C}{\partial T}=\tfrac12\sigma^2K^2\frac{\partial^2C}{\partial K^2}+\mu\!\left(C-K\frac{\partial C}{\partial K}\right),\qquad \mu=r-D$$
+$$
+\frac{\partial C}{\partial T}=\tfrac12\sigma^2K^2\frac{\partial^2C}{\partial K^2}+\mu\!\left(C-K\frac{\partial C}{\partial K}\right),\qquad \mu=r-D
+$$
 (Gatheral eq 1.4). Inverting it for $\sigma^2$ gives the **canonical definition**
-$$\boxed{\;\sigma_L^2(K,T)=\frac{\partial C/\partial T}{\tfrac12K^2\,\partial^2C/\partial K^2}\;}$$
+$$
+\boxed{\;\sigma_L^2(K,T)=\frac{\partial C/\partial T}{\tfrac12K^2\,\partial^2C/\partial K^2}\;}
+$$
 (Bergomi eq 2.3 with dividends; Gatheral eq 1.6; identical to the *forward-moneyness* form $\partial C/\partial T=\tfrac12v_LK^2\partial^2C/\partial K^2$). The denominator's meaning is Breeden–Litzenberger: $\partial^2C/\partial K^2=e^{-rT}\phi(K,T)\ge0$, so a negative butterfly implies negative local variance — an arbitrage.
 
 *Sketch of the derivation* (Gatheral §1.2): write $C=\int_K^\infty dS_T\,\phi(S_T,T)(S_T-K)$; let the risk-neutral density $\phi$ evolve by the **Fokker–Planck** equation $\tfrac12\partial^2_{S_T}[\sigma^2S_T^2\phi]-\partial_{S_T}[\mu S_T\phi]=\partial_T\phi$; differentiate $C$ in $T$ and integrate by parts twice.
@@ -44,24 +50,36 @@ $$\boxed{\;\sigma_L^2(K,T)=\frac{\partial C/\partial T}{\tfrac12K^2\,\partial^2C
 #### 2.2 Dupire in implied total variance — the workhorse form
 
 Write total implied variance $w(y,T)=\sigma_{BS}^2(y,T)\,T$ with $y=\ln(K/F_T)$. Then (Gatheral eq 1.10; Bergomi eq 2.19)
-$$\boxed{\;v_L(y,T)=\frac{\dfrac{\partial w}{\partial T}}{1-\dfrac{y}{w}\dfrac{\partial w}{\partial y}+\dfrac14\!\left(-\dfrac14-\dfrac1w+\dfrac{y^2}{w^2}\right)\!\left(\dfrac{\partial w}{\partial y}\right)^{\!2}+\dfrac12\dfrac{\partial^2 w}{\partial y^2}}\;}$$
+$$
+\boxed{\;v_L(y,T)=\frac{\dfrac{\partial w}{\partial T}}{1-\dfrac{y}{w}\dfrac{\partial w}{\partial y}+\dfrac14\!\left(-\dfrac14-\dfrac1w+\dfrac{y^2}{w^2}\right)\!\left(\dfrac{\partial w}{\partial y}\right)^{\!2}+\dfrac12\dfrac{\partial^2 w}{\partial y^2}}\;}
+$$
 The two forms agree identically (Bergomi's version expands exactly to this). **No-skew special case:** if $\partial w/\partial y=0$ then $v_L=\partial_Tw$ — local variance is just the forward implied variance, $w(T)=\int_0^Tv_L(t)\,dt$. The denominator quantifies how *skew* and *curvature* of the smile pull local variance above/below the ATM forward variance.
 
 #### 2.3 The bridge both ways
 
 **Local variance = risk-neutral conditional expectation of instantaneous variance** (Dupire 1996; Derman–Kani 1998; Gatheral eq 1.12):
-$$\sigma_L^2(K,T)=\mathbb{E}\!\left[\,v_T\;\middle|\;S_T=K\,\right].$$
+$$
+\sigma_L^2(K,T)=\mathbb{E}\!\left[\,v_T\;\middle|\;S_T=K\,\right].
+$$
 **Implied variance = gamma-weighted average of local variance** (Gatheral eq 3.5; Bergomi eq 2.32):
-$$\sigma_{BS}^2(K,T)=\frac{\mathbb{E}\!\left[\int_0^T e^{-rt}S_t^2\,\Gamma_{BS}\,\sigma_L^2(S_t,t)\,dt\right]}{\mathbb{E}\!\left[\int_0^T e^{-rt}S_t^2\,\Gamma_{BS}\,dt\right]},\qquad \Gamma_{BS}=\frac{\partial^2C_{BS}}{\partial S_t^2}.$$
+$$
+\sigma_{BS}^2(K,T)=\frac{\mathbb{E}\!\left[\int_0^T e^{-rt}S_t^2\,\Gamma_{BS}\,\sigma_L^2(S_t,t)\,dt\right]}{\mathbb{E}\!\left[\int_0^T e^{-rt}S_t^2\,\Gamma_{BS}\,dt\right]},\qquad \Gamma_{BS}=\frac{\partial^2C_{BS}}{\partial S_t^2}.
+$$
 A quadratic expansion about the "Brownian-bridge" most-probable path gives the path-integral approximation
-$$\sigma_{BS}^2(K,T)\approx\frac1T\int_0^T v_L(\tilde x_t)\,dt,\qquad \tilde x_t=\frac{t}{T}\ln\frac{K}{F_T}\ \ (\text{const-vol}),$$
+$$
+\sigma_{BS}^2(K,T)\approx\frac1T\int_0^T v_L(\tilde x_t)\,dt,\qquad \tilde x_t=\frac{t}{T}\ln\frac{K}{F_T}\ \ (\text{const-vol}),
+$$
 i.e. *implied variance ≈ the average of local variance along the most probable path to the strike* (Gatheral eq 3.11; Bergomi eq 2.42/2.43). This single picture explains why the implied skew is roughly **half** the local skew (§2.4).
 
 #### 2.4 Skew mapping
 
 Parametrize the local skew linearly, $\sigma(t,S)=\sigma(t)+\alpha(t)x+\tfrac{\beta(t)}2x^2$, $x=\ln(S/F_t)$, with constant $\alpha$ (Bergomi §2.4). Then
-$$\mathcal S_T\equiv\left.\frac{d\hat\sigma_{KT}}{d\ln K}\right|_{\text{ATMF}}=\frac1T\int_0^T\frac{t}{T}\alpha(t)\,dt \;\xrightarrow[\text{const }\alpha]{}\;\frac{\alpha}{2},$$
-$$\text{curvature}=\frac1T\int_0^T\left(\frac{t}{T}\right)^2\beta(t)\,dt\;\xrightarrow[\text{const }\beta]{}\;\frac{\beta}{3}.$$
+$$
+\mathcal S_T\equiv\left.\frac{d\hat\sigma_{KT}}{d\ln K}\right|_{\text{ATMF}}=\frac1T\int_0^T\frac{t}{T}\alpha(t)\,dt \;\xrightarrow[\text{const }\alpha]{}\;\frac{\alpha}{2},
+$$
+$$
+\text{curvature}=\frac1T\int_0^T\left(\frac{t}{T}\right)^2\beta(t)\,dt\;\xrightarrow[\text{const }\beta]{}\;\frac{\beta}{3}.
+$$
 **The implied skew is half the local skew; the implied curvature is a third of the local curvature** (Bergomi eq 2.50a,b). The Berestycki–Busca–Florent short-maturity limit is a *harmonic* average, $1/\hat\sigma(0,K)=\frac{1}{\ln(K/S)}\int_S^K\frac{1}{\sigma(0,S)}\frac{dS}{S}$ (Bergomi eq 2.54) — there is no temporal averaging as $T\to0$.
 
 ---

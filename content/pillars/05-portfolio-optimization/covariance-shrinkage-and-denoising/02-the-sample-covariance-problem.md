@@ -38,7 +38,9 @@ This is why Ledoit & Wolf work in *general asymptotics*: both $N,T\to\infty$ wit
 
 Let $X\in\mathbb{R}^{T\times N}$ have i.i.d. zero-mean entries of variance $\sigma^2$. As $N,T\to\infty$ with $N/T\to q\in(0,1]$, the empirical eigenvalue distribution of $S=\tfrac1T X^\top X$ converges to the **Marchenko–Pastur density**
 
-$$f(\lambda)=\frac{1}{2\pi\sigma^2 q\,\lambda}\sqrt{(\lambda_+-\lambda)(\lambda-\lambda_-)}\;\mathbf 1_{[\lambda_-,\lambda_+]},\qquad \lambda_\pm=\sigma^2\bigl(1\pm\sqrt q\bigr)^2 .$$
+$$
+f(\lambda)=\frac{1}{2\pi\sigma^2 q\,\lambda}\sqrt{(\lambda_+-\lambda)(\lambda-\lambda_-)}\;\mathbf 1_{[\lambda_-,\lambda_+]},\qquad \lambda_\pm=\sigma^2\bigl(1\pm\sqrt q\bigr)^2 .
+$$
 
 Three facts to internalize:
 
@@ -50,7 +52,9 @@ Three facts to internalize:
 
 The condition number $\kappa(S)=\lambda_{\max}/\lambda_{\min}$ governs how much an inversion amplifies error. For pure noise at ratio $q$,
 
-$$\kappa(S)\;\approx\;\frac{(1+\sqrt q)^2}{(1-\sqrt q)^2}\ \xrightarrow[\ q\to1\ ]{}\ \infty .$$
+$$
+\kappa(S)\;\approx\;\frac{(1+\sqrt q)^2}{(1-\sqrt q)^2}\ \xrightarrow[\ q\to1\ ]{}\ \infty .
+$$
 
 A single ill-conditioned direction makes the minimum-variance weights $w\propto S^{-1}\mathbf 1$ enormous along that eigenvector. The condition number is the *quantitative* measure of "how much will the optimizer be fooled" — and shrinking brings it down to a bounded, economically meaningful value (Ledoit & Wolf 2004, Thm 3.5: the shrinkage estimator's condition number is *bounded in probability*).
 

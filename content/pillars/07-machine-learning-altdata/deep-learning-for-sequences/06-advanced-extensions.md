@@ -34,20 +34,28 @@ Everything farther — reinforcement learning for trading, neural state-space mo
 
 A TCN applies a stack of 1-D convolutions that are **causal** (no future leakage) and **dilated** (skip steps):
 
-$$(F*_d x)(t)=\sum_{k=0}^{K-1}f_k\;x_{\,t-d\,k}.$$
+$$
+(F*_d x)(t)=\sum_{k=0}^{K-1}f_k\;x_{\,t-d\,k}.
+$$
 
 With dilations $d\in\{1,2,4,\dots\}$ growing exponentially and $L$ layers of width $K$, the **receptive field** is
 
-$$\boxed{\;R=(K-1)\big(2^{L}-1\big)+1\;}$$
+$$
+\boxed{\;R=(K-1)\big(2^{L}-1\big)+1\;}
+$$
 
 so $K{=}2,\ L{=}3\Rightarrow R=8$ steps (verified in §3). The receptive field grows *exponentially* in depth while parameters grow only linearly — the reason a few TCN layers cover a long history. Each residual block is $z=\operatorname{Dropout}(\sigma(\text{WeightNorm}(F*_d x)))$ plus a skip connection, and the whole net is trained with plain backprop (no BPTT), so it **parallelises over time** — a decisive advantage over the RNN's sequential inference.
 
 #### 2.2 GRU (Cho et al. 2014): two gates, one state
 
-$$z_t=\sigma(W_z h_{t-1}+U_z x_t),\qquad
-r_t=\sigma(W_r h_{t-1}+U_r x_t),$$
-$$\tilde h_t=\tanh\!\big(W(r_t\odot h_{t-1})+U x_t\big),\qquad
-h_t=(1-z_t)\odot h_{t-1}+z_t\odot\tilde h_t .$$
+$$
+z_t=\sigma(W_z h_{t-1}+U_z x_t),\qquad
+r_t=\sigma(W_r h_{t-1}+U_r x_t),
+$$
+$$
+\tilde h_t=\tanh\!\big(W(r_t\odot h_{t-1})+U x_t\big),\qquad
+h_t=(1-z_t)\odot h_{t-1}+z_t\odot\tilde h_t .
+$$
 
 The GRU drops the LSTM's separate cell state and output gate. The **update gate** $z_t$ interpolates between keeping the old state and writing the new one — a single knob doing the job of the LSTM's forget+input pair. Empirically GRU and LSTM are close; GRU is cheaper and the common default when you do not need long memory.
 
@@ -55,7 +63,9 @@ The GRU drops the LSTM's separate cell state and output gate. The **update gate*
 
 To predict a *sequence* $y_{1:m}$ from $x_{1:T}$ (e.g. a multi-horizon return path), an encoder compresses the input and a decoder generates the output step by step, attending to the encoder states:
 
-$$c_i=\sum_{t=1}^{T}\alpha_{it}h_t,\qquad \alpha_{it}=\frac{\exp(\text{score}(s_{i-1},h_t))}{\sum_{t'}\exp(\text{score}(s_{i-1},h_{t'}))}.$$
+$$
+c_i=\sum_{t=1}^{T}\alpha_{it}h_t,\qquad \alpha_{it}=\frac{\exp(\text{score}(s_{i-1},h_t))}{\sum_{t'}\exp(\text{score}(s_{i-1},h_{t'}))}.
+$$
 
 #### 2.4 Probabilistic, multi-horizon and microstructure models
 

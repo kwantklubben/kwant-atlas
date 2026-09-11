@@ -18,7 +18,9 @@ This page builds the *why* of robust portfolio optimization with **no optimizati
 
 Start with the dumbest question: *what do I feed the optimizer?* Markowitz says: expected returns $\mu$ and covariances $\Sigma$. But nobody hands you $\mu$. You compute a **sample mean** $\hat\mu$ from history. The trouble is arithmetic: Markowitz's optimal weights are
 
-$$w^\star=\tfrac1\delta\Sigma^{-1}\mu,$$
+$$
+w^\star=\tfrac1\delta\Sigma^{-1}\mu,
+$$
 
 so the *sensitivity* of the answer to the input is $dw^\star=\tfrac1\delta\Sigma^{-1}d\mu$. Multiply the input error by the **inverse** covariance, whose eigenvalues are $1/\lambda_i$, and any error lying in a small-eigenvalue direction gets blown up by a huge factor. That is the whole disease in one line.
 
@@ -36,15 +38,21 @@ Three "aha"s:
 
 **The MVO problem.** With risk-aversion $\delta>0$ and budget $\mathbf{1}^\top w=1$, maximize $\mu^\top w-\tfrac\delta2 w^\top\Sigma w$. The unconstrained first-order condition gives the classical closed form
 
-$$w^\star=\tfrac1\delta\Sigma^{-1}\mu\qquad(\text{the "tangency" direction}).$$
+$$
+w^\star=\tfrac1\delta\Sigma^{-1}\mu\qquad(\text{the "tangency" direction}).
+$$
 
 **Sensitivity (the formal statement).** Perturb one asset's mean by $d\mu=e_j\,d\mu_j$. Then
 
-$$dw^\star=\tfrac1\delta\Sigma^{-1}e_j\,d\mu_j,$$
+$$
+dw^\star=\tfrac1\delta\Sigma^{-1}e_j\,d\mu_j,
+$$
 
 so the *weight elasticity* of asset $k$ with respect to asset $j$'s mean is (Best & Grauer 1991, eq. 10)
 
-$$E_{x_k,\mu_j}=\frac{\partial \ln x_k}{\partial \ln \mu_j}=h_{1k}\left(\frac{\mu_j-1}{x_k}\right),$$
+$$
+E_{x_k,\mu_j}=\frac{\partial \ln x_k}{\partial \ln \mu_j}=h_{1k}\left(\frac{\mu_j-1}{x_k}\right),
+$$
 
 where $h_1=\Sigma^{-1}(\mu-\mathbf{1}a/c)$ is the "varying part" of the optimal portfolio (eq. 13). Because $h_1$ is *not* small and can have either sign in each component, small mean changes produce large, sign-flipping weight changes.
 
@@ -56,7 +64,9 @@ where $h_1=\Sigma^{-1}(\mu-\mathbf{1}a/c)$ is the "varying part" of the optimal 
 
 **The robust turn (preview of §03).** Replace the point estimate by a set $U\ni\mu$ and solve the max-min
 
-$$\max_{w}\ \min_{\mu\in U}\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w .$$
+$$
+\max_{w}\ \min_{\mu\in U}\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w .
+$$
 
 For a **box** $U=\{\mu:\lvert\mu_i-\hat\mu_i\rvert\le\gamma_i\}$ the inner worst case is $\hat\mu^\top w-\gamma^\top\lvert w\rvert$, i.e. the optimizer is forced to *pay* for loading on any large position. That single penalty term is robust optimization in a nutshell.
 

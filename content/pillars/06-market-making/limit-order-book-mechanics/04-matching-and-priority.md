@@ -29,38 +29,52 @@ The objective is threefold:
 
 **2.1 Priority order.** Resting orders on side $S\in\{\text{buy},\text{sell}\}$ are ranked by a lexicographic key. The engine always matches the minimum key on the opposite side:
 
-$$\text{key}(\text{buy }i)=(-p_i,\ t_i),\qquad \text{key}(\text{sell }j)=(p_j,\ t_j),\qquad t_i=\text{arrival time}.$$
+$$
+\text{key}(\text{buy }i)=(-p_i,\ t_i),\qquad \text{key}(\text{sell }j)=(p_j,\ t_j),\qquad t_i=\text{arrival time}.
+$$
 
 **Price priority first** (better price always wins), **time priority second** (ties broken by earliest arrival, FIFO). When a match occurs, the trade prints at the **resting (older) order's price** (Hasbrouck §2.1: "matched when price limits overlap, trade at the price of the *first* (older) order") — so the maker's price prevails and the taker can receive **price improvement**.
 
 **2.2 The engine as an algorithm.** Let an incoming order have side $S$, limit $L$ (for market orders $L=\pm\infty$), and remaining size $Q_R$. Match:
 
-$$\textbf{while } Q_R>0 \text{ and } \text{best-opp}(S)\text{ crosses } L:\quad
-p^\star=\text{best-opp price},\quad x=\min\!\big(Q_R,\ D^{\text{opp}}(p^\star)\big),$$
+$$
+\textbf{while } Q_R>0 \text{ and } \text{best-opp}(S)\text{ crosses } L:\quad
+p^\star=\text{best-opp price},\quad x=\min\!\big(Q_R,\ D^{\text{opp}}(p^\star)\big),
+$$
 
-$$\text{print } x \text{ at } p^\star\ (\text{maker}= \text{oldest order at } p^\star),\quad Q_R\mathrel{-}=x,\quad D^{\text{opp}}(p^\star)\mathrel{-}=x .$$
+$$
+\text{print } x \text{ at } p^\star\ (\text{maker}= \text{oldest order at } p^\star),\quad Q_R\mathrel{-}=x,\quad D^{\text{opp}}(p^\star)\mathrel{-}=x .
+$$
 
 "Crosses" means $p^\star\le L$ for a buy, $p^\star\ge L$ for a sell. Any remainder $Q_R>0$ either rests at $L$ (limit orders) or is handled by the venue rule (rest / reject / cancel). This is exactly the code in §3.
 
 **2.3 Pro-rata, the alternative priority rule.** Some venues (notably short-end futures) split a fill *proportionally to resting size* rather than FIFO:
 
-$$\text{fill}_i=\min\!\Big(q_i,\ x\cdot\frac{q_i}{\sum_{j\in\text{level}}q_j}\Big).$$
+$$
+\text{fill}_i=\min\!\Big(q_i,\ x\cdot\frac{q_i}{\sum_{j\in\text{level}}q_j}\Big).
+$$
 
 Under pro-rata, size — not time — buys priority, so a large order at the back can out-fill a small order at the front. The optimal posting behaviour is different (you post *big*, early, and don't bother racing for the front), which is why the priority rule is a first-class design choice for exchanges.
 
 **2.4 Queue position and fill odds.** Suppose you post size $s$ at price $p$ behind $Q_0=\sum_{i\,\text{ahead}}q_i$ lots (your **initial queue position**). Under FIFO, executions at $p$ consume the queue from the front, and cancellations ahead also move you forward. Let $E_t$ = cumulative lots executed at $p$ by time $t$. Then
 
-$$\text{filled}(t)=\min\!\big(s,\ \max(0,\ E_t-Q_0)\big).$$
+$$
+\text{filled}(t)=\min\!\big(s,\ \max(0,\ E_t-Q_0)\big).
+$$
 
 If executions at $p$ arrive as a Poisson process of rate $\mu$, then $E_t\sim\text{Poisson}(\mu t)$ and the **probability of being completely filled by $t$** is
 
-$$P\big(\text{filled by }t\big)=P\big(E_t\ge Q_0+s\big)=1-\sum_{k=0}^{Q_0+s-1}e^{-\mu t}\frac{(\mu t)^k}{k!}.$$
+$$
+P\big(\text{filled by }t\big)=P\big(E_t\ge Q_0+s\big)=1-\sum_{k=0}^{Q_0+s-1}e^{-\mu t}\frac{(\mu t)^k}{k!}.
+$$
 
 Two consequences drive the entire market-making desk: **(i)** the expected **wait** to fill grows roughly linearly in $Q_0$ (the queue you join), and **(ii)** a deeper position is not merely slower — it is *more adversely selected* (§2.5), because the only way a long queue clears is a burst of aggressive flow, which is exactly when the price moves.
 
 **2.5 Why queue position is a risk, not a free option.** Combining §2.4 with the adverse-selection economics of page 02: while you wait behind $Q_0$ lots, the price can move through your quote. With adverse price-move rate $\nu$ and queue-clearing rate $\mu/Q_0$, a race argument gives
 
-$$P(\text{adverse move before fill})\approx\frac{\nu}{\nu+\mu/Q_0},$$
+$$
+P(\text{adverse move before fill})\approx\frac{\nu}{\nu+\mu/Q_0},
+$$
 
 which **increases toward 1** as $Q_0$ grows. Being at the back therefore means you are *filled mainly in the states where you would rather not be*. This single fact is the reason passive market making needs L3 data, dynamic cancel/replace, and latency — all of it is queue-position management.
 

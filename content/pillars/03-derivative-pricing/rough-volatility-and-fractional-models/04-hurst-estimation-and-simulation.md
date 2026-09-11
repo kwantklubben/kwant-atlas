@@ -30,11 +30,15 @@ The practical objective: be able to (a) take a log-vol time series and produce a
 
 Define the $q$-th sample moment of log-vol differences (GJR eq. 3.6–3.10):
 
-$$m(q,\Delta)=\Big\langle\big|\ln\sigma_{t+\Delta}-\ln\sigma_t\big|^q\Big\rangle.$$
+$$
+m(q,\Delta)=\Big\langle\big|\ln\sigma_{t+\Delta}-\ln\sigma_t\big|^q\Big\rangle.
+$$
 
 Under the RFSV model $\ln\sigma_{t+\Delta}-\ln\sigma_t=\nu(W^H_{t+\Delta}-W^H_t)$, so for $q=2$,
 
-$$m(2,\Delta)=\nu^2\Delta^{2H}\ \Rightarrow\ \log m(2,\Delta)=2H\log\Delta+\text{const}.$$
+$$
+m(2,\Delta)=\nu^2\Delta^{2H}\ \Rightarrow\ \log m(2,\Delta)=2H\log\Delta+\text{const}.
+$$
 
 An OLS regression of $\log m(2,\Delta)$ on $\log\Delta$ therefore has slope $2H$. This is the estimator; GJR's monofractal check $\zeta_q=qH$ (slope of $\log m(q,\Delta)$ vs $\log\Delta$ as a function of $q$) confirms a single Gaussian driver. Verified end-to-end in §3: simulate fBm at $H=0.14$, run the variogram, recover $H=0.140$.
 
@@ -42,10 +46,14 @@ An OLS regression of $\log m(2,\Delta)$ on $\log\Delta$ therefore has slope $2H$
 
 The rBergomi driver is $W^\alpha_t=\sqrt{2\alpha+1}\int_0^t(t-u)^\alpha dW_u$ with $\alpha=H-\tfrac12<0$. On a grid $t_i=i/n$, split the integral into a **far-field** (non-singular) part and a **proximal** (singular) last step. The first-order (κ=1) hybrid scheme (BLP 2017, eq. 1.3) is:
 
-$$\widetilde W^\alpha_{i/n}=\sqrt{2\alpha+1}\Bigg[\underbrace{\int_{(i-1)/n}^{i/n}\Big(\tfrac{i}{n}-s\Big)^\alpha dW_u}_{\text{proximal (singular)}}+
-\underbrace{\sum_{k=2}^{i}\Big(\frac{b_k}{n}\Big)^\alpha\Big(W^1_{\frac{i-k+1}{n}}-W^1_{\frac{i-k}{n}}\Big)}_{\text{far-field convolution}}\Bigg],$$
+$$
+\widetilde W^\alpha_{i/n}=\sqrt{2\alpha+1}\Bigg[\underbrace{\int_{(i-1)/n}^{i/n}\Big(\tfrac{i}{n}-s\Big)^\alpha dW_u}_{\text{proximal (singular)}}+
+\underbrace{\sum_{k=2}^{i}\Big(\frac{b_k}{n}\Big)^\alpha\Big(W^1_{\frac{i-k+1}{n}}-W^1_{\frac{i-k}{n}}\Big)}_{\text{far-field convolution}}\Bigg],
+$$
 
-$$b_k=\Bigg(\frac{k^{\alpha+1}-(k-1)^{\alpha+1}}{\alpha+1}\Bigg)^{1/\alpha}.$$
+$$
+b_k=\Bigg(\frac{k^{\alpha+1}-(k-1)^{\alpha+1}}{\alpha+1}\Bigg)^{1/\alpha}.
+$$
 
 The far-field sum is a discrete convolution (computable in $O(n\log n)$ with an FFT); the proximal integral is the genuinely singular term whose *correct* treatment (as a Gaussian of variance $\Delta^{2\alpha+1}/(2\alpha+1)$, independent of the far field) is what makes the scheme converge to $\mathrm{Var}[W^\alpha_t]=t^{2H}$. A naive Euler that samples $(t_i-u_j)^\alpha\Delta W$ with $\alpha<0$ diverges at $u_j\to t_i$ — that is the failure the hybrid scheme fixes. Verified in §3 (and in [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/02-the-rough-bergomi-model|02 · The rBergomi Model]]): $\mathrm{Var}[W^\alpha_t]\to t^{2H}$ and $\mathbb E[v_t]=\xi_0(t)$.
 

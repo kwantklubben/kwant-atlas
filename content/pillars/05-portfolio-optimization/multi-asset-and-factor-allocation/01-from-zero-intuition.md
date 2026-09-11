@@ -18,7 +18,9 @@ This page builds the *why* of multi-asset and factor allocation with **no prior 
 
 Start with the dumbest question: *why hold anything besides the best-performing asset?* Because no one knows which asset that is *next period*, and because combining two imperfectly-correlated bets gives a portfolio whose wobble is *less* than the average of its parts. That surplus — the gap between the average of the individual volatilities and the portfolio's actual volatility — is the whole point of allocation. We call it the **diversification ratio**:
 
-$$\mathrm{DR}(w)=\frac{\sum_i w_i\sigma_i}{\sqrt{w^\top\Sigma w}}.$$
+$$
+\mathrm{DR}(w)=\frac{\sum_i w_i\sigma_i}{\sqrt{w^\top\Sigma w}}.
+$$
 
 For an equal-weight four-asset portfolio of equities, bonds, commodities and credit, the average leg wobbles $11.5\%$ but the portfolio only wobbles $7.9\%$ — a $\mathrm{DR}=1.46$. The $3.6$ percentage points of "wobble" that vanished were *paid for* by owning things that move differently.
 
@@ -38,33 +40,45 @@ A clean number to carry through the folder: a **60/40** stock/bond portfolio *lo
 
 **The diversification engine.** With weights $w$, covariance $\Sigma$, the portfolio volatility is
 
-$$\sigma(w)=\sqrt{w^\top\Sigma w}.$$
+$$
+\sigma(w)=\sqrt{w^\top\Sigma w}.
+$$
 
 Because $\sigma$ is homogeneous of degree 1, Euler's theorem gives the exact **risk-contribution** decomposition
 
-$$\sigma(w)=\sum_i w_i\frac{\partial\sigma}{\partial w_i}=\sum_i \frac{w_i(\Sigma w)_i}{\sigma(w)}=\sum_i \mathrm{RC}_i,$$
+$$
+\sigma(w)=\sum_i w_i\frac{\partial\sigma}{\partial w_i}=\sum_i \frac{w_i(\Sigma w)_i}{\sigma(w)}=\sum_i \mathrm{RC}_i,
+$$
 
 so each asset's share of risk is $\mathrm{RC}_i/\sigma(w)$. For a well-diversified portfolio these shares are roughly equal; when one asset dominates, the portfolio is a single bet wearing several costumes.
 
 **Why mixing works.** Write the two-asset case explicitly. With weights $w,1-w$ and volatilities $\sigma_1,\sigma_2$, correlation $\rho$,
 
-$$\sigma_p^2=w^2\sigma_1^2+(1-w)^2\sigma_2^2+2w(1-w)\rho\,\sigma_1\sigma_2.$$
+$$
+\sigma_p^2=w^2\sigma_1^2+(1-w)^2\sigma_2^2+2w(1-w)\rho\,\sigma_1\sigma_2.
+$$
 
 The first two terms are the "average" (what you'd get with $\rho=1$); the cross term is the diversification *dividend*. It grows as $\rho$ falls below $1$ and vanishes — or turns into a *penalty* — as $\rho\to1$.
 
 **From assets to factors.** The linear factor model writes returns as
 
-$$r=\alpha+Bf+\varepsilon,\qquad \mathbb{E}[\varepsilon]=0,\quad \mathrm{Cov}(f,\varepsilon)=0,$$
+$$
+r=\alpha+Bf+\varepsilon,\qquad \mathbb{E}[\varepsilon]=0,\quad \mathrm{Cov}(f,\varepsilon)=0,
+$$
 
 which implies the covariance decomposition
 
-$$\Sigma_r=B\,\Sigma_f\,B^\top+D,\qquad D=\mathrm{diag}(\sigma_{\varepsilon,1}^2,\dots).$$
+$$
+\Sigma_r=B\,\Sigma_f\,B^\top+D,\qquad D=\mathrm{diag}(\sigma_{\varepsilon,1}^2,\dots).
+$$
 
 Allocate to *factors* with weights $w_f$; the induced asset exposure is $w_{\text{asset}}=B\,w_f$, and the portfolio variance through the factors is $\sigma_f^2=w_f^\top\Sigma_f w_f$ (plus the small idiosyncratic $w_{\text{asset}}^\top D\,w_{\text{asset}}$ if the specific risk is not diversified away). Because $\Sigma_f$ has small off-diagonal entries while the *asset* correlations come mostly from a shared load on $f$, the factor portfolio's diversification ratio is substantially higher.
 
 **The strategic/tactical decomposition.** Fix policy weights $w_{\text{SAA}}$ from long-run moments; the tactical overlay is a deviation $\Delta w$ with
 
-$$w=w_{\text{SAA}}+\Delta w,\qquad \Delta w^\top\Sigma\,\Delta w\le \mathrm{TE}^2,\qquad \mathbf 1^\top\Delta w=0.$$
+$$
+w=w_{\text{SAA}}+\Delta w,\qquad \Delta w^\top\Sigma\,\Delta w\le \mathrm{TE}^2,\qquad \mathbf 1^\top\Delta w=0.
+$$
 
 The tracking-error budget $\mathrm{TE}$ is the *only* honest constraint on how much the tactical process may override the strategic plan; without it, tactical deviations silently *become* the strategic portfolio.
 

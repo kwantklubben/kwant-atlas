@@ -40,9 +40,11 @@ Suppose the dealer trades at the **mid** with no spread. If the informed trader 
 
 Expected P&L per trade:
 
-$$\mathbb{E}[\text{P&L}]= \pi(h-1)+(1-\pi)h = h-\pi .$$
+$$
+\mathbb{E}[\text{P\&L}]= \pi(h-1)+(1-\pi)h = h-\pi .
+$$
 
-**Zero-expected-profit quote:** set $\mathbb{E}[\text{P&L}]=0\Longrightarrow \boxed{\,h^{\star}=\pi\,}$ — the required half-spread equals the informed probability. This is the *discrete, no-friction* seed of the Glosten–Milgrom result. The full symmetric GM formula $A-B=\pi(V_H-V_L)$ (with $V_H-V_L=2$) is exactly this "$h^\star=\pi$" written against the value dispersion.
+**Zero-expected-profit quote:** set $\mathbb{E}[\text{P\&L}]=0\Longrightarrow \boxed{\,h^{\star}=\pi\,}$ — the required half-spread equals the informed probability. This is the *discrete, no-friction* seed of the Glosten–Milgrom result. The full symmetric GM formula $A-B=\pi(V_H-V_L)$ (with $V_H-V_L=2$) is exactly this "$h^\star=\pi$" written against the value dispersion.
 
 ---
 

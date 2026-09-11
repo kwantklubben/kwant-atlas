@@ -47,7 +47,9 @@ The **buyer's maximum loss is the premium**; the **seller's maximum loss is unbo
 
 An American holder may exercise at any $t\le T$; a European holder only at $T$. Hence
 
-$$C\ge c,\qquad P\ge p,\qquad\text{and more sharply}\quad P\ge\max(K-S_0,0)>\max(Ke^{-rT}-S_0,0)\ \text{when deep ITM.}$$
+$$
+C\ge c,\qquad P\ge p,\qquad\text{and more sharply}\quad P\ge\max(K-S_0,0)>\max(Ke^{-rT}-S_0,0)\ \text{when deep ITM.}
+$$
 
 The *extra* value of the American right is the **early-exercise premium**. It is **zero for a call on a non-dividend-paying stock** (exercise early only throws away insurance and the time value of money — Hull Ch 11.5; Shreve §7), but **strictly positive for a put** (you can bank the strike and earn interest). This single asymmetry — calls never early-exercised, puts sometimes — explains why the BSM closed form prices American calls exactly but not American puts.
 
@@ -110,7 +112,7 @@ Two things to notice. First, the **ATM call is pure time value** ($10.4506$ of i
 2. **Reading the wrong kink for the style.** A European call diagram at $t<T$ is **smooth and above** the kinked payoff — the vertical distance is time value. Plotting the expiry kink and calling it "the value today" underprices by the time value (which at ATM is $100\%$ of the price).
 3. **Assuming American $\Rightarrow$ worth exercising.** For a **call on a non-dividend stock**, early exercise is *never* optimal — the American price equals the European (Hull 11.5). For a deep-ITM **put** it often is. Applying the call intuition to puts is a classic error.
 4. **Dividend/split blindness.** Cash dividends do not normally adjust the strike, but splits do ($K\to K\cdot m/n$, shares $\to n/m$; Hull Ch 10.4). An unadjusted split makes the payoff diagram wrong by a factor.
-5. **Ignoring the multiplier.** The *price* is per share; the *position* is $100\times$ per contract (Hull Ch 10.3). A "$\$3$ premium" is $\$300$ per contract — see [[pillars/03-derivative-pricing/options-fundamentals-and-markets/03-markets-and-products|03 · Markets & Products]].
+5. **Ignoring the multiplier.** The *price* is per share; the *position* is $100\times$ per contract (Hull Ch 10.3). A "$ $\$3 premium" is \300 per contract — see [[pillars/03-derivative-pricing/options-fundamentals-and-markets/03-markets-and-products|03 · Markets & Products]].
 
 ---
 

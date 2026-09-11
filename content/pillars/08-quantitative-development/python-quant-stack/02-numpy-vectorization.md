@@ -31,13 +31,17 @@ Three ideas anchor everything:
 
 **The speedup model.** For $N$ elements with per-element interpreted cost $c_{\text{py}}$ and compiled cost $c_C$, vectorization gives
 
-$$\text{speedup} = \frac{N\,c_{\text{py}}}{N\,c_C + C_{\text{setup}}} \approx \frac{c_{\text{py}}}{c_C}.$$
+$$
+\text{speedup} = \frac{N\,c_{\text{py}}}{N\,c_C + C_{\text{setup}}} \approx \frac{c_{\text{py}}}{c_C}.
+$$
 
 The benchmark in §3 measures $c_{\text{py}}/c_C \approx 83$ for `2x+1`, i.e. ~1–2 orders of magnitude — exactly the predicted range.
 
 **Broadcasting rules.** Two arrays are broadcast-compatible when, comparing trailing dimensions, each pair is equal, or one of them is 1. For the z-score normalization of a returns panel $R \in \mathbb{R}^{T\times K}$ against column means $\mu\in\mathbb{R}^{K}$ and column stds $\sigma\in\mathbb{R}^{K}$:
 
-$$Z_{t,k} = \frac{R_{t,k} - \mu_k}{\sigma_k} \qquad\Longleftrightarrow\qquad Z = (R - \mu) / \sigma \quad\text{(one line, shapes }(T,K)\,(K)\,(K)\rightarrow(T,K)\text{)}.$$
+$$
+Z_{t,k} = \frac{R_{t,k} - \mu_k}{\sigma_k} \qquad\Longleftrightarrow\qquad Z = (R - \mu) / \sigma \quad\text{(one line, shapes }(T,K)\,(K)\,(K)\rightarrow(T,K)\text{)}.
+$$
 
 The `(T,K)` array broadcasts against the length-`K` vectors along the last axis — no per-asset loop.
 

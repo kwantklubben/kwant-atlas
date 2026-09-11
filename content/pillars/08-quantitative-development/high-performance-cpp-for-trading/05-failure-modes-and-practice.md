@@ -35,11 +35,15 @@ The five failures, one line each:
 
 A doubling vector appending $N$ elements copies (element-wise) a total of
 
-$$C(N) = \sum_{k=0}^{\lfloor\log_2 N\rfloor} 2^{k} \approx N - 1,$$
+$$
+C(N) = \sum_{k=0}^{\lfloor\log_2 N\rfloor} 2^{k} \approx N - 1,
+$$
 
 so the **amortised** cost per append is $C(N)/N \approx 1$ element copy — $O(1)$ in the mean. But the **worst single** append, when $\text{size} = \text{capacity}$, copies $\text{capacity} \approx N/2$ elements in one operation, at a moment chosen by the data, not by you. The gap defines the engineering rule:
 
-$$C_{\text{reserve}}(N) = 0 \ \text{copies}, \quad \text{reallocations}=0 \quad\Longrightarrow\quad \text{bounded } O(1) \text{ per append.}$$
+$$
+C_{\text{reserve}}(N) = 0 \ \text{copies}, \quad \text{reallocations}=0 \quad\Longrightarrow\quad \text{bounded } O(1) \text{ per append.}
+$$
 
 Amortised $O(1)$ optimises the *mean*; the hot path needs *bounded* $O(1)$ to protect the *tail*. `reserve()` converts the first into the second.
 
@@ -51,7 +55,9 @@ For an $s$-byte AoS record scanning one field, distinct 64-byte lines scale as $
 
 A modern CPU speculates past branches; a correct guess is free, a wrong guess flushes the pipeline for $r \approx 15\text{–}20$ cycles. For a branch taken with probability $p$, a simple predictor is wrong with probability $m$ — for an unpredictable 50/50 branch $m \to 0.5$, giving expected cost per iteration
 
-$$\mathbb{E}[t_{\text{branch}}] = m \cdot r \approx 0.5 \times 15 = 7.5\ \text{cycles}.$$
+$$
+\mathbb{E}[t_{\text{branch}}] = m \cdot r \approx 0.5 \times 15 = 7.5\ \text{cycles}.
+$$
 
 The mechanism (§3) is that $m$ depends on the *data order*, not the data: sorted runs make the branch predictable ($m \to 0$), random order does not. A **branchless** rewrite (arithmetic/conditional move, no control flow) removes $m$ entirely, costing $\sim1$ cycle unconditionally.
 
@@ -63,7 +69,9 @@ The compiler is entitled to assume no signed overflow, no strict-aliasing violat
 
 Sorting the failure modes by the latency each injects:
 
-$$t_{\text{DRAM miss}} \sim 250c \;\gg\; t_{\text{allocator (slow path)}} \sim \text{100s–1000s ns} \;\gg\; t_{\text{mispredict}} \sim 15c \;\gg\; t_{\text{L1 hit}} \sim 4c.$$
+$$
+t_{\text{DRAM miss}} \sim 250c \;\gg\; t_{\text{allocator (slow path)}} \sim \text{100s–1000s ns} \;\gg\; t_{\text{mispredict}} \sim 15c \;\gg\; t_{\text{L1 hit}} \sim 4c.
+$$
 
 Optimise top-down: eliminate misses and allocations first; branches and arithmetic are last.
 

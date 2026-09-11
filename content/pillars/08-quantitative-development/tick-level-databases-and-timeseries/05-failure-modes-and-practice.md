@@ -31,20 +31,26 @@ The three, in one line each:
 
 **Point-in-time data, formally.** Let $\mathcal{D}(t)$ be the value **knowable at time $t$**, and $\mathcal{D}(t_{\text{now}})$ the value in today's file. Every honest backtest must use
 
-$$\text{signal}(t) = f\big(\mathcal{D}(t)\big), \qquad \text{NOT } f\big(\mathcal{D}(t_{\text{now}})\big).$$
+$$
+\text{signal}(t) = f\big(\mathcal{D}(t)\big), \qquad \text{NOT } f\big(\mathcal{D}(t_{\text{now}})\big).
+$$
 
 A store that overwrites rows in place (no `knowable_at` column, no vintages) *forces* the leak: it represents only $\mathcal{D}(t_{\text{now}})$. This is the same discipline formalized for fundamentals in [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] — there applied to filings, here to ticks and quotes.
 
 **The look-ahead inflation.** If the join supplies the bar at or after the decision time, the captured return is $r_{t+1}$ on information that includes $r_{t+1}$; the reported Sharpe scales with $\sqrt{252}$ on a signal that is effectively $|r|$:
 
-$$\mathrm{SR} = \frac{\bar r}{\hat\sigma_r}\sqrt{252}, \qquad
-\text{inflation} = \frac{\mathrm{SR}_{\text{leak}}}{\mathrm{SR}_{\text{honest}}}.$$
+$$
+\mathrm{SR} = \frac{\bar r}{\hat\sigma_r}\sqrt{252}, \qquad
+\text{inflation} = \frac{\mathrm{SR}_{\text{leak}}}{\mathrm{SR}_{\text{honest}}}.
+$$
 
 For a zero-mean daily return series the honest Sharpe $\to 0$ (skill absent), while the same-bar leak yields $\mathbb{E}[\lvert r\rvert]/{\sigma_r}\sqrt{252}$ — a large, purely artifactual number.
 
 **The restatement gap.** If a value $v$ reported at $t_1$ is revised to $v'$ at $t_2$, a period-keyed join substitutes $v'$ for every date. The bias is
 
-$$\Delta = \frac{v' - v}{v} \quad\text{per affected period, compounded across the panel.}$$
+$$
+\Delta = \frac{v' - v}{v} \quad\text{per affected period, compounded across the panel.}
+$$
 
 **Schema drift as a counting problem.** With $C$ breaking schema changes over $T$ years, any reader that assumes a fixed record length is corrupt for a fraction of the interval and must be re-validated $C$ times; $C = 5$ over $2$ years means a change every $\sim\!4.8$ months.
 

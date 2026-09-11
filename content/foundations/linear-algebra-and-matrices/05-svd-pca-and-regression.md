@@ -25,17 +25,23 @@ In one line: **regression asks "which combination of my *columns* best predicts 
 
 **Least squares (ESL Ch 3).** Minimize $\text{RSS}(\beta)=\sum_i(y_i-x_i'\beta)^2$ (ESL eq. 3.3). The normal equations (3.5) give the closed form (ESL eq. 3.6)
 
-$$\hat\beta=(X'X)^{-1}X'y,\qquad \hat y=X(X'X)^{-1}X'y=X\hat\beta\ \ (3.7),$$
+$$
+\hat\beta=(X'X)^{-1}X'y,\qquad \hat y=X(X'X)^{-1}X'y=X\hat\beta\ \ (3.7),
+$$
 
 with the hat matrix $H=X(X'X)^{-1}X'$ projecting $y$ onto the column space. This is *the* workhorse of factor models — each factor exposure is a linear regression of the return on the factor. **Ridge** adds an $L_2$ penalty (3.41–3.44):
 
-$$\hat\beta_{ridge}=(X'X+\lambda I)^{-1}X'y,$$
+$$
+\hat\beta_{ridge}=(X'X+\lambda I)^{-1}X'y,
+$$
 
 which, via the SVD $X=UDV'$ (ESL 3.45), shrinks each fitted component by $\frac{d_j^2}{d_j^2+\lambda}$ (3.47): **more shrinkage on the smaller (noisier) singular values** $d_j$.
 
 **SVD (ESL eq. 3.45, 14.54).** Any real $X\in\mathbb{R}^{T\times N}$ factors as $X=U\Sigma V'$ with $U'U=I$, $V'V=I$, $\Sigma$ diagonal with **singular values** $\sigma_1\ge\dots\ge\sigma_r\ge0$, where $r=\text{rank}(X)$ and $\sigma_i=\sqrt{\lambda_i(X'X)}$. Equivalently
 
-$$X=\sum_{i=1}^{r}\sigma_i\,u_i v_i'.$$
+$$
+X=\sum_{i=1}^{r}\sigma_i\,u_i v_i'.
+$$
 
 **Eckart–Young–Mirsky.** The best rank-$k$ approximation to $X$ (minimizing Frobenius error) is $X_k=\sum_{i\le k}\sigma_i u_i v_i'$, and the error is $\|X-X_k\|_F=\sqrt{\sum_{i>k}\sigma_i^2}$. This is the mathematical engine of denoising: keep the big singular layers, drop the tail.
 

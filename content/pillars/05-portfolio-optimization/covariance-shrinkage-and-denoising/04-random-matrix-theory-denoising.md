@@ -28,11 +28,15 @@ The idea is due to Laloux, Cizeau, Bouchaud & Potters (1999): **"noise dressing.
 
 For a $N\times N$ correlation matrix estimated from $T$ observations ($q=N/T$), the MP edge is
 
-$$\lambda_+=\Bigl(1+\sqrt{q}\Bigr)^2 .$$
+$$
+\lambda_+=\Bigl(1+\sqrt{q}\Bigr)^2 .
+$$
 
 The RMT hypothesis test is:
 
-$$H_0:\ \lambda_i\le\lambda_+\ \Rightarrow\ \text{eigen-direction }i\text{ is consistent with pure noise};\qquad \lambda_i>\lambda_+\ \Rightarrow\ \text{genuine cross-sectional structure}.$$
+$$
+H_0:\ \lambda_i\le\lambda_+\ \Rightarrow\ \text{eigen-direction }i\text{ is consistent with pure noise};\qquad \lambda_i>\lambda_+\ \Rightarrow\ \text{genuine cross-sectional structure}.
+$$
 
 The number of signal eigenvalues is $K=\#\{i:\lambda_i>\lambda_+\}$. In equity data $K$ is small and interpretable — typically 1 (market mode) plus a handful of sectors; Plerou et al. (2002) confirm this bulk-plus-spikes structure on real returns.
 
@@ -40,7 +44,9 @@ The number of signal eigenvalues is $K=\#\{i:\lambda_i>\lambda_+\}$. In equity d
 
 Given the spectral decomposition $C=\sum_{i=1}^N\lambda_i q_iq_i^\top$ of the sample correlation matrix $C$, and $K$ signal eigenvalues,
 
-$$\boxed{\ \lambda_i^{\text{den}}= \begin{cases} \lambda_i, & i\le K\\[4pt] \bar\lambda_{\text{noise}}, & i>K\end{cases}\ }\qquad \bar\lambda_{\text{noise}}=\frac{1}{N-K}\sum_{i=K+1}^{N}\lambda_i ,$$
+$$
+\boxed{\ \lambda_i^{\text{den}}= \begin{cases} \lambda_i, & i\le K\\[4pt] \bar\lambda_{\text{noise}}, & i>K\end{cases}\ }\qquad \bar\lambda_{\text{noise}}=\frac{1}{N-K}\sum_{i=K+1}^{N}\lambda_i ,
+$$
 
 then $\displaystyle C^{\text{den}}=\sum_i\lambda_i^{\text{den}}q_iq_i^\top$, followed by a **diagonal rescaling** $c_{ij}^{\text{den}}\leftarrow c_{ij}^{\text{den}}/\sqrt{c_{ii}^{\text{den}}c_{jj}^{\text{den}}}$ so the diagonal returns to exactly $1$.
 

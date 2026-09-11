@@ -32,21 +32,29 @@ The measurable signature is the one from page 01: on a **pure random walk** the 
 
 **Failure 2 — optimistic fills.** The default fill assumptions and their true costs, for an order of $q$ shares at decision mid $P$:
 
-$$P_{\text{mid}}=P,\qquad P_{\text{cross}}=P+\tfrac12\,\text{spread},\qquad P_{\text{slip}}=P+\tfrac12\,\text{spread}+\delta,$$
+$$
+P_{\text{mid}}=P,\qquad P_{\text{cross}}=P+\tfrac12\,\text{spread},\qquad P_{\text{slip}}=P+\tfrac12\,\text{spread}+\delta,
+$$
 
 with realised **execution shortfall** in basis points
 
-$$\text{IS}=10^4\,\frac{\operatorname{sgn}\,(P_{\text{fill}}-P)}{P}.$$
+$$
+\text{IS}=10^4\,\frac{\operatorname{sgn}\,(P_{\text{fill}}-P)}{P}.
+$$
 
 The **capacity** fiction is the sibling: a fill of $q_{\text{target}}$ shares against a bar of volume $V_{\text{bar}}$ under participation cap $\rho$ can only ever be
 
-$$q_{\text{fill}}=\min\!\big(q_{\text{target}},\ \rho V_{\text{bar}}\big),\qquad\text{bars to complete } B=\Big\lceil q_{\text{target}}/(\rho V_{\text{bar}})\Big\rceil.$$
+$$
+q_{\text{fill}}=\min\!\big(q_{\text{target}},\ \rho V_{\text{bar}}\big),\qquad\text{bars to complete } B=\Big\lceil q_{\text{target}}/(\rho V_{\text{bar}})\Big\rceil.
+$$
 
 A vectorized backtest sets $\rho=1$ and $B=1$ implicitly. For a $50{,}000$-share order into a $20{,}000$-share bar at $\rho=5\%$, $B=50$ — **the naive fill understates the working time by $50\times$**, and with it the market impact and the timing risk.
 
 **Failure 3 — survivorship.** A replay over *today's* universe holds only names that survived to today. If a fraction $d$ of the universe delists each year with loss $\ell$, the survivor-only series omits a drag of roughly $d\,\ell$ per year. Over $Y$ years,
 
-$$\frac{E^{\text{surv}}}{E^{\text{true}}}=(1+d\,\ell)^{Y},$$
+$$
+\frac{E^{\text{surv}}}{E^{\text{true}}}=(1+d\,\ell)^{Y},
+$$
 
 so the inflation compounds — it is not a flat haircut.
 

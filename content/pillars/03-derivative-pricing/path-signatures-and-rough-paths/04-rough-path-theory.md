@@ -31,7 +31,9 @@ The practical objective: know that signatures are not just "for nice paths," kno
 
 The $p$-variation of $X:[0,T]\to\mathbb R^d$ is
 
-$$\|X\|_{p\text{-var}}=\Big(\sup_{\text{partitions}}\sum_k|X_{t_{k+1}}-X_{t_k}|^p\Big)^{1/p},$$
+$$
+\|X\|_{p\text{-var}}=\Big(\sup_{\text{partitions}}\sum_k|X_{t_{k+1}}-X_{t_k}|^p\Big)^{1/p},
+$$
 
 finite for smooth paths at $p=1$ (total variation), finite for Brownian motion at $p=2$ (and only there, $p>2$), finite for fractional Brownian motion with Hurst $H$ at any $p>1/H$. The defining empirical fact, verified in §3:
 
@@ -44,7 +46,9 @@ So Brownian motion is *exactly* the boundary $p=2$ — the reason the theory is 
 
 For a path of finite $p$-variation with $2\le p<3$, the level-1 signature is classically defined but the **level-2 iterated integral** is not (it depends on the refining sequence — Itô vs Stratonovich differ). The rough-path solution is to **choose** the area $\mathbb X^{ij}_{s,t}$ satisfying the analytic bound
 
-$$|\mathbb X^{ij}_{s,t}|\le C|t-s|^{2/p}$$
+$$
+|\mathbb X^{ij}_{s,t}|\le C|t-s|^{2/p}
+$$
 
 and Chen's identity, and treat $\mathbf X=(X,\mathbb X)$ as the *fundamental object*. For Brownian motion the canonical choice is the **Stratonovich** area; §3 shows it is a finite, converging quantity under refinement — a well-defined rough-path lift — exactly where the raw level-1 variation blows up. The choice of area is the *one* free, non-redundant degree of freedom of the lift; everything above is determined.
 

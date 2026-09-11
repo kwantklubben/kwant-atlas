@@ -36,15 +36,21 @@ The practical objective: state Gyöngy's theorem and Dupire's formula precisely,
 
 Let $X$ solve a (possibly non-Markov, possibly random-coefficient) Itô SDE
 
-$$dX_t=\mu_t\,dt+\alpha_t\,dW_t,\qquad \alpha_t>0,$$
+$$
+dX_t=\mu_t\,dt+\alpha_t\,dW_t,\qquad \alpha_t>0,
+$$
 
 with $\mu,\alpha$ adapted and integrable enough. Then there exists a Markov diffusion $Y$ with the same one-dimensional marginal laws as $X$, $Y_t\stackrel{d}{=}X_t$ for every $t$, whose coefficients are the conditional expectations
 
-$$\bar\mu(t,y)=\mathbb E[\mu_t\,|\,X_t=y],\qquad \bar\alpha^2(t,y)=\mathbb E[\alpha_t^2\,|\,X_t=y].$$
+$$
+\bar\mu(t,y)=\mathbb E[\mu_t\,|\,X_t=y],\qquad \bar\alpha^2(t,y)=\mathbb E[\alpha_t^2\,|\,X_t=y].
+$$
 
 The second identity is the one that matters here, and the intuition is the Fokker–Planck equation: if $p(t,\cdot)$ is the (common) marginal density, then
 
-$$\partial_t p+\partial_y\!\left(\bar\mu\,p\right)=\tfrac12\,\partial^2_{yy}\!\left(\bar\alpha^2 p\right),$$
+$$
+\partial_t p+\partial_y\!\left(\bar\mu\,p\right)=\tfrac12\,\partial^2_{yy}\!\left(\bar\alpha^2 p\right),
+$$
 
 so any two processes with the same $p$ must agree on $\bar\alpha^2$ **as a function of $(t,y)$ after multiplying by $p$** — hence on the conditional expectation. Note the projection is onto *marginals*: it says nothing about the joint law of $(X_t,X_s)$, which is exactly why the "dynamics" survive LSV calibration.
 
@@ -52,11 +58,15 @@ so any two processes with the same $p$ must agree on $\bar\alpha^2$ **as a funct
 
 For a martingale spot $S$ with $r=q=0$ and undiscounted call prices $C(K,T)$,
 
-$$\boxed{\;\sigma^2_{loc}(K,T)=\frac{\partial_T C(K,T)}{\frac12K^2\,\partial^2_{KK}C(K,T)}\;}$$
+$$
+\boxed{\;\sigma^2_{loc}(K,T)=\frac{\partial_T C(K,T)}{\frac12K^2\,\partial^2_{KK}C(K,T)}\;}
+$$
 
 and in the log-moneyness coordinates $k=\ln(K/F_T)$, $w(k,T)=\sigma_{BS}(k,T)^2T$ (the form that avoids differentiating prices, and the one used in this folder),
 
-$$\boxed{\;\sigma^2_{loc}=\frac{\partial_T w}{1-\frac{k}{w}\partial_k w+\frac14\!\left(-\frac14-\frac1w+\frac{k^2}{w^2}\right)\!\left(\partial_k w\right)^2+\frac12\partial^2_k w}\;}$$
+$$
+\boxed{\;\sigma^2_{loc}=\frac{\partial_T w}{1-\frac{k}{w}\partial_k w+\frac14\!\left(-\frac14-\frac1w+\frac{k^2}{w^2}\right)\!\left(\partial_k w\right)^2+\frac12\partial^2_k w}\;}
+$$
 
 Dupire's theorem: a *deterministic* local volatility $\sigma_{loc}(t,S)$ makes the model reproduce the market's marginals, i.e. every European price. The relation to Gyöngy is immediate and is the crux of this page:
 
@@ -66,19 +76,27 @@ Dupire's theorem: a *deterministic* local volatility $\sigma_{loc}(t,S)$ makes t
 
 Write the LSV spot process with driver $v_t$ and leverage $\sigma(t,S)$:
 
-$$dS_t=(r-q)S_t\,dt+\sigma(t,S_t)\sqrt{v_t}\,S_t\,dW^S_t,\qquad \alpha_t:=\sigma(t,S_t)\sqrt{v_t}.$$
+$$
+dS_t=(r-q)S_t\,dt+\sigma(t,S_t)\sqrt{v_t}\,S_t\,dW^S_t,\qquad \alpha_t:=\sigma(t,S_t)\sqrt{v_t}.
+$$
 
 Applying §2.1 and §2.2 at once: the LSV model's marginals are those of the local-volatility model with local variance
 
-$$\bar\alpha^2(t,y)=\mathbb E\!\left[\sigma(t,S_t)^2v_t\,\middle|\,S_t=y\right]=\sigma(t,y)^2\,\mathbb E\!\left[v_t\,\middle|\,S_t=y\right]=\sigma(t,y)^2m(t,y).$$
+$$
+\bar\alpha^2(t,y)=\mathbb E\!\left[\sigma(t,S_t)^2v_t\,\middle|\,S_t=y\right]=\sigma(t,y)^2\,\mathbb E\!\left[v_t\,\middle|\,S_t=y\right]=\sigma(t,y)^2m(t,y).
+$$
 
 Setting this equal to the market's Dupire local variance gives the **leverage function**:
 
-$$\boxed{\;\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{m(t,S)},\qquad m(t,S)=\mathbb E[v_t\,|\,S_t=S]\;}\qquad\text{(Guyon–Henry-Labordère 2012)}$$
+$$
+\boxed{\;\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{m(t,S)},\qquad m(t,S)=\mathbb E[v_t\,|\,S_t=S]\;}\qquad\text{(Guyon–Henry-Labordère 2012)}
+$$
 
 Equivalently, and this is the form to remember, **the local-variance decomposition**:
 
-$$\boxed{\;\sigma^2_{loc}(t,S)=\sigma(t,S)^2\,\mathbb E[v_t\,|\,S_t=S]\;}$$
+$$
+\boxed{\;\sigma^2_{loc}(t,S)=\sigma(t,S)^2\,\mathbb E[v_t\,|\,S_t=S]\;}
+$$
 
 The market's local variance is *split* between the deterministic leverage and the driver's conditional variance. Vanillas see only the product. The driver chooses the split.
 
@@ -86,7 +104,9 @@ The market's local variance is *split* between the deterministic leverage and th
 
 At $t=0$ the driver's variance is *known*, so $m(0,S_0)=\mathbb E[v_0|S_0]=v_0$ and
 
-$$\sigma(0,S_0)=\frac{\sigma_{loc}(0,S_0)}{\sqrt{v_0}}.$$
+$$
+\sigma(0,S_0)=\frac{\sigma_{loc}(0,S_0)}{\sqrt{v_0}}.
+$$
 
 This is the only point of the leverage surface that can be written down without solving anything, and it is the standard sanity test of an LSV implementation (§3 of the hub: to bend a Heston driver with $v_0=0.0174$ onto a flat-$20\%$ surface, $\sigma(0,S_0)=0.20/\sqrt{0.0174}=1.51620$; to reproduce Heston's own surface, $1.0$).
 
@@ -112,7 +132,9 @@ So a one-factor LSV model is "complete on the marginals": the smallest possible 
 
 Given the joint law, the leverage formula can be written without any conditional-expectation notation. Let $\rho(t,S,v)$ be the joint density of the LSV model. Then
 
-$$\mathbb E[v\,|\,S_t=S]=\frac{\displaystyle\int_0^\infty v\,\rho(t,S,v)\,dv}{\displaystyle\int_0^\infty \rho(t,S,v)\,dv},\qquad\text{so}\qquad \sigma^2(t,S)=\sigma^2_{loc}(t,S)\left(\int_0^\infty \rho\,dv\right)\bigg/\left(\int_0^\infty v\rho\,dv\right).$$
+$$
+\mathbb E[v\,|\,S_t=S]=\frac{\displaystyle\int_0^\infty v\,\rho(t,S,v)\,dv}{\displaystyle\int_0^\infty \rho(t,S,v)\,dv},\qquad\text{so}\qquad \sigma^2(t,S)=\sigma^2_{loc}(t,S)\left(\int_0^\infty \rho\,dv\right)\bigg/\left(\int_0^\infty v\rho\,dv\right).
+$$
 
 Substituting this into the joint Fokker–Planck equation for $(S,v)$ makes the equation **nonlinear** — a *McKean–Vlasov* equation: the coefficients depend on the solution's own law. This is the deterministic route to the same fixed point the particle method solves by simulation ([[pillars/03-derivative-pricing/local-stochastic-volatility-models/04-fokker-planck-and-mckean-vlasov|04]]).
 

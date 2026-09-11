@@ -40,24 +40,32 @@ Three "aha"s:
 
 **Pipelined latency and throughput.** For $S$ stages each of processing time $L$:
 
-$$T_{\text{lat,pipe}} = S\cdot L \quad(\text{latency is unchanged by pipelining}),\qquad
-\Theta_{\text{pipe}} = \frac{1}{L}\ \frac{\text{packets}}{\text{ns}},$$
+$$
+T_{\text{lat,pipe}} = S\cdot L \quad(\text{latency is unchanged by pipelining}),\qquad
+\Theta_{\text{pipe}} = \frac{1}{L}\ \frac{\text{packets}}{\text{ns}},
+$$
 
 whereas a serial (non-overlapping) implementation has
 
-$$\Theta_{\text{ser}} = \frac{1}{S\cdot L} = \frac{1}{S}\,\Theta_{\text{pipe}}.$$
+$$
+\Theta_{\text{ser}} = \frac{1}{S\cdot L} = \frac{1}{S}\,\Theta_{\text{pipe}}.
+$$
 
 So pipelining gives an **$S\times$ throughput gain at zero latency cost** — the single most important fact in hardware feed handling. A serial pipeline is *unstable* whenever the arrival rate $\lambda > 1/(SL)$; its queue then grows without bound (Little's law below), which is why the serial numbers in §3 explode.
 
 **Wire serialization.** A frame of $B$ bytes on a link of rate $R$ (bits/ns) occupies the wire for
 
-$$t_{\text{wire}} = \frac{8B}{R}.$$
+$$
+t_{\text{wire}} = \frac{8B}{R}.
+$$
 
 With the standard 84-byte minimum frame (64 B frame + 8 B preamble/SFD + 12 B inter-frame gap): 67.20 ns at 10GbE, 26.88 ns at 25GbE, 6.72 ns at 100GbE. The corresponding **line-rate packet ceilings** are $R/8B$: 14.88, 37.20, and 148.81 M pkt/s.
 
 **Little's law (buffering).** For a stable system, the mean number in flight is
 
-$$N = \lambda\,T.$$
+$$
+N = \lambda\,T.
+$$
 
 At line rate 14.88 M pkt/s with $T = 30$ ns, $N = 0.45$ packets — **less than one packet of buffering is needed**. This is the theoretical reason an FPGA can hold its entire book and pipeline in on-chip BRAM and why its queueing delay is effectively zero.
 

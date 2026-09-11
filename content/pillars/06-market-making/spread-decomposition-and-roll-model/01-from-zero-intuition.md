@@ -34,15 +34,21 @@ Three "aha"s, built from nothing:
 
 So write the observed price change:
 
-$$\Delta p_t = u_t + c\,(q_t - q_{t-1}),$$
+$$
+\Delta p_t = u_t + c\,(q_t - q_{t-1}),
+$$
 
 where $q_t=+1$ for a buy, $-1$ for a sell, and $u_t$ is the efficient-price innovation (small, random, unpredictable). Now ask: what is the **covariance** between consecutive changes?
 
-$$\gamma_1=\mathrm{Cov}(\Delta p_{t-1},\Delta p_t) = -c^2\,\mathbb{E}[q_{t-1}^2] = -c^2.$$
+$$
+\gamma_1=\mathrm{Cov}(\Delta p_{t-1},\Delta p_t) = -c^2\,\mathbb{E}[q_{t-1}^2] = -c^2.
+$$
 
 The minus sign appears because the $q_{t-1}$ term appears with $+c$ in $\Delta p_t$ and $-c$ in $\Delta p_{t-1}$. **The bounce forces the autocovariance negative.** Invert:
 
-$$c=\sqrt{-\gamma_1},\qquad S=2\sqrt{-\gamma_1}.$$
+$$
+c=\sqrt{-\gamma_1},\qquad S=2\sqrt{-\gamma_1}.
+$$
 
 This is Roll's formula — a full spread estimator from a single autocovariance.
 

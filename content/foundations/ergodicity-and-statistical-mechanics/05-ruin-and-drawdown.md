@@ -31,24 +31,30 @@ The practical objective is to internalise that **drawdown is a first-class outpu
 
 A gambler starts with $i$ units, wins $1$ with probability $p$ and loses $1$ with $q=1-p$ each trial, and stops at $0$ (ruin) or $N$ (goal). The classic result (Feller) is
 
-$$\mathbb{P}(\text{ruin})=
+$$
+\mathbb{P}(\text{ruin})=
 \begin{cases}
 \dfrac{\left(q/p\right)^{i}-\left(q/p\right)^{N}}{1-\left(q/p\right)^{N}}, & p\ne\tfrac12,\\[2mm]
 1-\dfrac{i}{N}, & p=\tfrac12.
-\end{cases}$$
+\end{cases}
+$$
 
 For a fair game ($p=\tfrac12$) the probability of losing $i$ before reaching $N$ is $1-i/N$: from $i=50$ toward $N=100$ this is exactly $\tfrac12$. Fixed-stake ruin is a *linear* boundary problem.
 
 #### 2.2 Drawdown law for a growth process
 
-Model $\ln W(t)$ as Brownian motion with drift $g_\infty$ (the growth rate) and per-unit-time variance $\mathrm{Var}(G_\infty)$. The classic two-barrier result (Cox & Miller; Thorp eq. 7.12) says: if $x<1<y$, then for a fraction $f=cf^\*$,
+Model $\ln W(t)$ as Brownian motion with drift $g_\infty$ (the growth rate) and per-unit-time variance $\mathrm{Var}(G_\infty)$. The classic two-barrier result (Cox & Miller; Thorp eq. 7.12) says: if $x<1<y$, then for a fraction $f=cf^*$,
 
-$$\mathbb{P}\!\left(W\text{ reaches }yW_0\text{ before }xW_0\right)
-=\frac{1-x^{a}}{1-(x/y)^{a}},\qquad a=\frac{2g_\infty}{\mathrm{Var}(G_\infty)} .$$
+$$
+\mathbb{P}\!\left(W\text{ reaches }yW_0\text{ before }xW_0\right)
+=\frac{1-x^{a}}{1-(x/y)^{a}},\qquad a=\frac{2g_\infty}{\mathrm{Var}(G_\infty)} .
+$$
 
 Letting $y\to\infty$ gives the **drawdown law**
 
-$$\boxed{\;\mathbb{P}\!\left(\text{ever}\le x\right)=x^{\,a},\qquad a=\frac{2g_\infty}{\mathrm{Var}(G_\infty)}\;}$$
+$$
+\boxed{\;\mathbb{P}\!\left(\text{ever}\le x\right)=x^{\,a},\qquad a=\frac{2g_\infty}{\mathrm{Var}(G_\infty)}\;}
+$$
 
 For the continuous Kelly model, $\mathrm{Var}(G_\infty(f))=s^2f^2$ and $g_\infty=r+f(m-r)-\tfrac12s^2f^2$. Two clean special cases (Thorp §7.4):
 

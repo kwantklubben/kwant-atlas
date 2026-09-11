@@ -28,27 +28,35 @@ This folder is the **optimal-execution topic-folder** for Pillar 2. It is a *hub
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Notation.** $X$ = initial position to liquidate (units); $T$ = horizon; $N$ = number of trading intervals of length $\tau=T/N$; $t_k=k\tau$; $x_k$ = units still held at $t_k$ (so $x_0=X$, $x_N=0$); $n_k=x_{k-1}-x_k$ = units sold in interval $k$; $S_0$ = initial price; $\sigma$ = volatility ($\$$/share/$\sqrt{\text{day}}$); $\gamma$ = **permanent** impact coefficient ($\$/$share/$share); $\eta$ = **temporary** impact coefficient ($(\$/\text{share})/(\text{share}/\text{day})$); $\varepsilon$ = fixed cost per share (half-spread + fees); $\lambda$ = risk-aversion ($1/\$$).
+**Notation.** $X$ = initial position to liquidate (units); $T$ = horizon; $N$ = number of trading intervals of length $\tau=T/N$; $t_k=k\tau$; $x_k$ = units still held at $t_k$ (so $x_0=X$, $x_N=0$); $n_k=x_{k-1}-x_k$ = units sold in interval $k$; $S_0$ = initial price; $\sigma$ = volatility ($ $\$/share/\sqrt{\text{day}}$); $\gamma$ = **permanent** impact coefficient ($\$/share/$share); $\eta$ = **temporary** impact coefficient ($($ $\$/\text{share})/(\text{share}/\text{day})); \varepsilon$ = fixed cost per share (half-spread + fees); $\lambda$ = risk-aversion ($1/\$).
 
 **Price dynamics (AC eqs 1-2).** Arithmetic random walk with permanent impact $g$, plus a temporary impact $h$ paid only on the shares traded:
 
-$$S_k = S_{k-1} + \sigma\sqrt{\tau}\,\xi_k - \tau\,g\!\left(\tfrac{n_k}{\tau}\right), \qquad \tilde S_k = S_{k-1} - h\!\left(\tfrac{n_k}{\tau}\right),$$
+$$
+S_k = S_{k-1} + \sigma\sqrt{\tau}\,\xi_k - \tau\,g\!\left(\tfrac{n_k}{\tau}\right), \qquad \tilde S_k = S_{k-1} - h\!\left(\tfrac{n_k}{\tau}\right),
+$$
 
 with linear $g(v)=\gamma v$ and $h(v)=\varepsilon+\tfrac{\eta}{\tau}v$.
 
 **Cost / risk (AC eqs 4-5, 8).** Expected shortfall and its variance, expressed in the trajectory $x$:
 
-$$\boxed{\;E[x] = \tfrac12\gamma X^2 + \varepsilon\sum_{k=1}^N |n_k| + \frac{\tilde\eta}{\tau}\sum_{k=1}^N n_k^2\;}, \qquad \boxed{\;V[x] = \sigma^2 \sum_{k=1}^N \tau\,x_k^2\;}, \qquad \tilde\eta = \eta - \tfrac12\gamma\tau .$$
+$$
+\boxed{\;E[x] = \tfrac12\gamma X^2 + \varepsilon\sum_{k=1}^N |n_k| + \frac{\tilde\eta}{\tau}\sum_{k=1}^N n_k^2\;}, \qquad \boxed{\;V[x] = \sigma^2 \sum_{k=1}^N \tau\,x_k^2\;}, \qquad \tilde\eta = \eta - \tfrac12\gamma\tau .
+$$
 
 Note the constant $\tfrac12\gamma X^2$: **permanent impact costs the same no matter how you pace the trade** — only temporary impact and risk depend on the schedule. This is the single most useful simplification in the model.
 
 **Objective and solution (AC §2).** Minimize $U(x)=E[x]+\lambda V[x]$. Setting $\partial U/\partial x_j=0$ gives the linear difference equation
 
-$$\frac{1}{\tau^2}\left(x_{j-1}-2x_j+x_{j+1}\right) = \tilde\kappa^2 x_j, \qquad \tilde\kappa^2 = \frac{\lambda\sigma^2}{\tilde\eta},$$
+$$
+\frac{1}{\tau^2}\left(x_{j-1}-2x_j+x_{j+1}\right) = \tilde\kappa^2 x_j, \qquad \tilde\kappa^2 = \frac{\lambda\sigma^2}{\tilde\eta},
+$$
 
 whose solution with $x_0=X$, $x_N=0$ is the **hyperbolic (exponential-decay) trajectory**:
 
-$$\boxed{\;x_j = X\,\frac{\sinh\!\big(\kappa\,(T-t_j)\big)}{\sinh(\kappa T)}\;}, \qquad n_j = \frac{2\sinh\!\big(\tfrac12\kappa\tau\big)}{\sinh(\kappa T)}\cosh\!\big(\kappa(T-t_{j-\frac12})\big)\,X ,$$
+$$
+\boxed{\;x_j = X\,\frac{\sinh\!\big(\kappa\,(T-t_j)\big)}{\sinh(\kappa T)}\;}, \qquad n_j = \frac{2\sinh\!\big(\tfrac12\kappa\tau\big)}{\sinh(\kappa T)}\cosh\!\big(\kappa(T-t_{j-\frac12})\big)\,X ,
+$$
 
 with the continuous-time urgency $\kappa=\sqrt{\lambda\sigma^2/\eta}$ (AC eq 19: $\kappa=\tilde\kappa+O(\tau)$).
 
@@ -61,8 +69,8 @@ with the continuous-time urgency $\kappa=\sqrt{\lambda\sigma^2/\eta}$ (AC eq 19:
 | Trajectory | $x_t=X\dfrac{\sinh(\kappa(T-t))}{\sinh(\kappa T)}$ | $x(1\text{d}){=}545{,}055$, $x(2.5\text{d}){=}212{,}003$ of $10^6$ |
 | Risk-neutral limit | $\lambda\to0 \Rightarrow \kappa\to0,\; x_t=X(1-t/T)$ | TWAP |
 | Infinitely risk-averse | $\lambda\to\infty \Rightarrow$ liquidate at $t=0$ | block |
-| Expected cost | $\tfrac12\gamma X^2+\varepsilon X+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | TWAP $E=\$644{,}500$; AC $E=\$921{,}572$ |
-| Cost variance | $\sigma^2\sum\tau x_k^2$ | TWAP sd $=\$1{,}222{,}765$; AC sd $=\$850{,}375$ |
+| Expected cost | $\tfrac12\gamma X^2+\varepsilon X+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | TWAP $E= $ \$644{,}500; AC E= \$921{,}572 |
+| Cost variance | $\sigma^2\sum\tau x_k^2$ | TWAP sd $= $ \$1{,}222{,}765; AC sd = \$850{,}375 |
 | Efficient frontier | $E$ convex, increasing in $V$; selected by tangent slope $-\lambda$ | tangency error $0.00\%$ at $\lambda{=}10^{-6}$ |
 | TWAP-horizon optimum | $T^\star=\sqrt3\,\theta$ | $\theta{=}1.664 \Rightarrow T^\star{=}2.883$ d |
 | Implementation shortfall | $IS=$ execution cost $+$ opportunity cost (Perold 1988) | MC mean matches theory to $0.12\%$ |

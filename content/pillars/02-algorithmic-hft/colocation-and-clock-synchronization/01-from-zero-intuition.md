@@ -39,13 +39,17 @@ Three intuitions, each built on the previous:
 
 **Why fiber ≠ light.** In glass the speed is the phase velocity $v_{\text{fiber}}\approx c/n$ with refractive index $n\approx1.5$, i.e. $v\approx0.67c$. Microwave links in air travel at $v\approx0.9997c$. Convert to **per-kilometre latency**:
 
-$$v_{\text{fiber}}\approx0.67c \;\Rightarrow\; 5.00\ \mu\text{s/km}, \qquad v_{\text{air}}\approx c \;\Rightarrow\; 3.34\ \mu\text{s/km}.$$
+$$
+v_{\text{fiber}}\approx0.67c \;\Rightarrow\; 5.00\ \mu\text{s/km}, \qquad v_{\text{air}}\approx c \;\Rightarrow\; 3.34\ \mu\text{s/km}.
+$$
 
 **The reach of an edge.** If you have a $\Delta t$ head start, you can be $\Delta t / (\mu\text{s per km})$ kilometres behind your rival and still win. At a 1 µs edge: $\approx0.30$ km (air) — i.e. even a microwave rival only ~300 m behind you forces a dead heat. At a 10 µs edge: ~3.0 km (air).
 
 **The latent race in equations.** For a cross-venue arbitrage between markets $M_1$ (signal origin) and $M_2$ (the price that lags), the full capture time is
 
-$$T_{\text{capture}} = T_{\text{prop}}(M_1\!\to\! M_2) + T_{\text{T2T}}(M_2) = \underbrace{\tfrac{d_{12}}{v}}_{\text{light transport}} + \underbrace{(T_{\text{prop}}+T_{\text{nw}}+T_{\text{mach}})}_{\text{orders to reach $M_2$'s engine}}.$$
+$$
+T_{\text{capture}} = T_{\text{prop}}(M_1\!\to\! M_2) + T_{\text{T2T}}(M_2) = \underbrace{\tfrac{d_{12}}{v}}_{\text{light transport}} + \underbrace{(T_{\text{prop}}+T_{\text{nw}}+T_{\text{mach}})}_{\text{orders to reach $M_2$'s engine}}.
+$$
 
 Only the first term is irreducibly about where the markets are; everything else is optimized by colocation and low-latency infrastructure from [[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]].
 

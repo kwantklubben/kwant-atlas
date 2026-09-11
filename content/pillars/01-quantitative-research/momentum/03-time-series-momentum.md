@@ -31,20 +31,30 @@ Two engineering facts make TSMOM a *system*, not a slogan: **volatility scaling*
 ### 2. Mathematical Ground Truth & Derivations
 
 **Signal.** For asset $s$ with daily/monthly excess returns, the sign of its own trailing 12-month excess return:
-$$S^s_t = \operatorname{sign}\Big(r^s_{t-12,t}\Big), \qquad r^s_{t-12,t}=\prod_{k=1}^{12}\big(1+r^s_{t-k}\big)-1.$$
+$$
+S^s_t = \operatorname{sign}\Big(r^s_{t-12,t}\Big), \qquad r^s_{t-12,t}=\prod_{k=1}^{12}\big(1+r^s_{t-k}\big)-1.
+$$
 
 **Ex-ante volatility (MOP §2.4).** An exponentially weighted variance with a 60-day center of mass, annualized by 261:
-$$\sigma^2_t = 261\sum_{i\ge0}(1-\delta)\,\delta^i\big(r_{t-1-i}-\bar r_t\big)^2, \qquad \frac{\delta}{1-\delta}=60\ \text{days}.$$
+$$
+\sigma^2_t = 261\sum_{i\ge0}(1-\delta)\,\delta^i\big(r_{t-1-i}-\bar r_t\big)^2, \qquad \frac{\delta}{1-\delta}=60\ \text{days}.
+$$
 To avoid look-ahead, the volatility measured at $t-1$ is applied to the time-$t$ return.
 
 **Position sizing and TSMOM return.** Size each position to an ex-ante annualized volatility $\sigma_{\text{tgt}}$ (MOP use 40%):
-$$w^s_t = \frac{\sigma_{\text{tgt}}}{\sigma^s_{t-1}}\,\operatorname{sign}\big(r^s_{t-12,t}\big), \qquad r^{\text{TSMOM,s}}_{t,t+1}=w^s_t\, r^s_{t,t+1}.$$
+$$
+w^s_t = \frac{\sigma_{\text{tgt}}}{\sigma^s_{t-1}}\,\operatorname{sign}\big(r^s_{t-12,t}\big), \qquad r^{\text{TSMOM,s}}_{t,t+1}=w^s_t\, r^s_{t,t+1}.
+$$
 The diversified factor (equal-weight across the $S_t$ available contracts) is
-$$r^{\text{TSMOM}}_{t,t+1}=\frac{1}{S_t}\sum_{s=1}^{S_t}\operatorname{sign}\big(r^s_{t-12,t}\big)\,\frac{\sigma_{\text{tgt}}}{\sigma^s_{t-1}}\,r^s_{t,t+1}.$$
+$$
+r^{\text{TSMOM}}_{t,t+1}=\frac{1}{S_t}\sum_{s=1}^{S_t}\operatorname{sign}\big(r^s_{t-12,t}\big)\,\frac{\sigma_{\text{tgt}}}{\sigma^s_{t-1}}\,r^s_{t,t+1}.
+$$
 Because each position is scaled to the same ex-ante vol, the diversified portfolio has vol $\approx\sigma_{\text{tgt}}/\sqrt{S_t}$ (diversification) — in the corpus, ~12% annualized.
 
 **Expected return decomposition (MOP eq. 7).** With portfolio weights $w^{\text{TS}}_t=(1/N)r_{t-12,t}$,
-$$\mathbb{E}\big[r^{\text{TS}}_{t,t+1}\big]=\frac{\operatorname{tr}(\Omega)}{N}+\frac{12\,\mu'\mu}{N},$$
+$$
+\mathbb{E}\big[r^{\text{TS}}_{t,t+1}\big]=\frac{\operatorname{tr}(\Omega)}{N}+\frac{12\,\mu'\mu}{N},
+$$
 so TSMOM profit is driven primarily by **own time-series autocovariance** $\operatorname{tr}(\Omega)$ — the cleanest statement that TSMOM is a bet on *each asset's own* return continuation.
 
 **TSMOM vs XSMOM.** Regressing TSMOM on XSMOM (MOP §5) gives $\beta=0.66$ ($t=15.2$, $R^2=44\%$) with a **positive significant alpha of 76 bp/month** ($t=5.9$): related, but not the same strategy.

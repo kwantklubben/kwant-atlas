@@ -34,18 +34,24 @@ Three properties make this the right choice:
 
 **Node rule.** For a cluster $\mathcal C$ with budget $W$, split it into contiguous halves $\mathcal C_0,\mathcal C_1$. Let
 
-$$\tilde w_{\mathcal C}=\frac{\operatorname{diag}(\Sigma_{\mathcal C})^{-1}}{\mathbf 1^\top\operatorname{diag}(\Sigma_{\mathcal C})^{-1}},\qquad
-V_{\mathcal C}=\tilde w_{\mathcal C}^\top\,\Sigma_{\mathcal C}\,\tilde w_{\mathcal C}$$
+$$
+\tilde w_{\mathcal C}=\frac{\operatorname{diag}(\Sigma_{\mathcal C})^{-1}}{\mathbf 1^\top\operatorname{diag}(\Sigma_{\mathcal C})^{-1}},\qquad
+V_{\mathcal C}=\tilde w_{\mathcal C}^\top\,\Sigma_{\mathcal C}\,\tilde w_{\mathcal C}
+$$
 
 be the *inverse-variance* (naive risk-parity) weights and portfolio variance of that sub-block. Then allocate
 
-$$\alpha_0=\frac{V_1}{V_0+V_1},\qquad \alpha_1=1-\alpha_0=\frac{V_0}{V_0+V_1},\qquad W_0=W\alpha_0,\;\;W_1=W\alpha_1 .$$
+$$
+\alpha_0=\frac{V_1}{V_0+V_1},\qquad \alpha_1=1-\alpha_0=\frac{V_0}{V_0+V_1},\qquad W_0=W\alpha_0,\;\;W_1=W\alpha_1 .
+$$
 
 The **riskier** half ($V$ larger) gets the **smaller** fraction — inverse variance, exactly the two-asset ERC solution when $\rho_{12}=0$ (see [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]], where $w_1\propto\sigma_1^{-1}$ for independent assets).
 
 **Final weights.** Recurse to singletons; the weight of asset $i$ is the product of the $\alpha$'s on its root-to-leaf path:
 
-$$w_i=\prod_{s\in\text{path}(i)}\alpha_s .$$
+$$
+w_i=\prod_{s\in\text{path}(i)}\alpha_s .
+$$
 
 **Why this is not ERC.** ERC finds $w$ such that $w_i(\Sigma w)_i$ is equal for all $i$ — a *global* fixed point requiring the full covariance. HRP never computes risk contributions at all; it decomposes the allocation into independent local decisions. The two coincide for $N=2$ and diverge for $N\ge3$ (a structural, not incidental, difference).
 
@@ -154,7 +160,9 @@ Read the trace: the low-variance block `{BD1,BD2,EQ3,EQ1}` (var $0.0032$) takes 
 
 **Comparison.** On this universe the volatility ordering is
 
-$$\sigma_{\text{GMV}}=0.05282\;\le\;\sigma_{\text{HRP}}=0.05534\;\le\;\sigma_{\text{ERC}}=0.06579\;\le\;\sigma_{1/N}=0.09823 .$$
+$$
+\sigma_{\text{GMV}}=0.05282\;\le\;\sigma_{\text{HRP}}=0.05534\;\le\;\sigma_{\text{ERC}}=0.06579\;\le\;\sigma_{1/N}=0.09823 .
+$$
 
 HRP lands between the unconstrained optimum and ERC, and beats $1/N$ by a wide margin. Note the *shape* of the HRP solution: it is long-only, gross $=1$, and it gives the bond block **74.9%** of assets' dollars ($0.4320+0.3174$) — because bonds are the lowest-variance diversifiers, HRP loads them, exactly as risk parity does. Note also that **HRP $\ne$ ERC**: ERC gives the bond block $0.2996+0.2568=55.6\%$ of capital and spreads the rest across equities ($\approx0.074$ each) and commodities ($\approx0.074$ each) — a genuinely *equal-risk* print — while HRP concentrates **74.9%** in the bond block ($0.4320+0.3174$) and starves the commodity block ($0.0921$ total), because its splits used the *naive-RP* sub-portfolio variance rather than equalizing risk contributions. GMV, by contrast, shorts EQ2 ($-0.0024$) — a signal that even on a well-conditioned matrix the unconstrained optimizer reaches for a short the risk-based allocators never take.
 

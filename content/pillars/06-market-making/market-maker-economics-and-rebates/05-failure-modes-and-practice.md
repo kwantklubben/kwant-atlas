@@ -33,18 +33,26 @@ The five ways a market-making desk dies:
 #### 2.1 Rebate-driven distortion: the rebate *buys tolerance for toxicity*
 
 Use the Glosten–Milgrom per-trade result (see [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/05-failure-modes-and-practice|GM — 05]]): with $V_H-V_L=2$ (a $\pm1$ move about the mid), the expected adverse-selection cost per trade is $\pi$, the informed fraction. Adding the rebate, the maker's per-trade P&L is
-$$\mathbb{E}[\pi_{\text{trade}}] = h + r - \pi.$$
+$$
+\mathbb{E}[\pi_{\text{trade}}] = h + r - \pi.
+$$
 Break-even informs the **toxicity tolerance**:
-$$\boxed{\;\pi^{\star} = h + r.\;}$$
+$$
+\boxed{\;\pi^{\star} = h + r.\;}
+$$
 A rebate of $r$ raises the toxicity the maker can survive by exactly $r$:
-$$\Delta\pi^{\star} = r.$$
+$$
+\Delta\pi^{\star} = r.
+$$
 
 **This is the failure.** The rebate does not make a bad market good; it makes a bad maker *survive longer* in a market he should leave. A maker who *should* exit at $\pi>\pi^\star$ instead keeps quoting, bleeding $r$ per trade less than he otherwise would — the loss is *masked*, not removed. Regulators reading "rebates improve liquidity" must ask whether the additional liquidity is good or merely *persistent*.
 
 #### 2.2 Inventory blowups: the random walk with a levered boundary
 
 Inventory $q_t$ accumulates fill-by-fill. Under balanced flow it is a **zero-drift random walk**: $\mathbb{E}[q_t]=0$, $\text{sd}(q_t)\propto\sqrt{t}$. Under *informed* one-sided flow it acquires a **drift**: $q_t \approx (2p-1)\,t$ where $p$ is the buy-probability. The maker's loss from carrying inventory scales with the **variance** of the terminal mark,
-$$\text{inventory P\&L} \;\sim\; -\tfrac12\,\gamma_{\text{risk}}\,\sigma^2 q^2,$$
+$$
+\text{inventory P\&L} \;\sim\; -\tfrac12\,\gamma_{\text{risk}}\,\sigma^2 q^2,
+$$
 which is **quadratic in $q$** (the Avellaneda–Stoikov penalty). A blowup is therefore a *self-accelerating* process: the more one-sided the flow, the larger $|q|$, the larger the required reserve, the more leverage — until a financing or risk-limit boundary is breached. Hasbrouck (2007) Ch 11 notes the ruin channel is precisely this **levered inventory + credit withdrawal** (Brunnermeier–Pedersen 2005), not the spread.
 
 #### 2.3 Edge erosion and cost escalation

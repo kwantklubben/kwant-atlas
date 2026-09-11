@@ -32,21 +32,29 @@ Why this matters for a practitioner: a strategy fitted on calm data is systemati
 
 **The recursive Bayes core.** Let $s_t$ be the hidden regime and $y_t$ the observed return. You want the filtered belief
 
-$$\hat\xi_{t\mid t}\;\equiv\;\mathbb{P}[s_t\mid y_1,y_2,\dots,y_t].$$
+$$
+\hat\xi_{t\mid t}\;\equiv\;\mathbb{P}[s_t\mid y_1,y_2,\dots,y_t].
+$$
 
 Because you cannot observe $s_t$, this is a *latent-state* inference problem. The two-step recursion (Hamilton 1989 §4.2) is:
 
 **Predict** (roll the Markov chain one step forward):
-$$\mathbb{P}[s_t=j\mid y_{1:t-1}]=\sum_{i}P_{ij}\,\hat\xi_{t-1\mid t-1,i}, \qquad P_{ij}=\mathbb{P}[s_t=j\mid s_{t-1}=i].$$
+$$
+\mathbb{P}[s_t=j\mid y_{1:t-1}]=\sum_{i}P_{ij}\,\hat\xi_{t-1\mid t-1,i}, \qquad P_{ij}=\mathbb{P}[s_t=j\mid s_{t-1}=i].
+$$
 
 **Update** (incorporate the new observation via Bayes):
-$$\hat\xi_{t\mid t,j}=\frac{f(y_t\mid s_t=j)\;\mathbb{P}[s_t=j\mid y_{1:t-1}]}{\sum_k f(y_t\mid s_t=k)\;\mathbb{P}[s_t=k\mid y_{1:t-1}]},$$
+$$
+\hat\xi_{t\mid t,j}=\frac{f(y_t\mid s_t=j)\;\mathbb{P}[s_t=j\mid y_{1:t-1}]}{\sum_k f(y_t\mid s_t=k)\;\mathbb{P}[s_t=k\mid y_{1:t-1}]},
+$$
 
 where $f(y_t\mid s_t=j)$ is the regime-conditional density of the return (e.g., a Gaussian with regime mean $\mu_j$ and vol $\sigma_j$). The denominator is the conditional likelihood of $y_t$ — so the **same filter that infers the regime also evaluates the sample likelihood**, which is why ML estimation and state inference are one loop (Hamilton §4.2, line "evaluation of the sample likelihood is a natural byproduct of the filter").
 
 **Stationary distribution & expected durations.** A 2-state chain with transition probs $P_{00}=q$, $P_{11}=p$ has stationary probabilities $\pi_0=(1-q)/(2-p-q)$, and the expected duration of state $i$ is
 
-$$\mathbb{E}[\text{time in }i]=\frac{1}{1-P_{ii}}.$$
+$$
+\mathbb{E}[\text{time in }i]=\frac{1}{1-P_{ii}}.
+$$
 
 With Hamilton's US GNP estimates ($p=0.9049$, $q=0.7550$): a recession lasts on average $1/(1-0.7550)=4.1$ quarters, an expansion $1/(1-0.9049)=10.5$ quarters — versus NBER postwar averages of roughly $4$ and $14$–$15$ quarters (NBER business-cycle peak/trough dates). **Persistence is a parameter, not an assumption.**
 

@@ -31,18 +31,24 @@ Each is one honest step past the tractable core. Everything farther (Hawkes self
 
 For queue position $x$ ahead, order size $L$, and random outflow $\xi\!\sim\!F$,
 
-$$\mathbb{E}[\text{filled}] = \mathbb{E}\big[(\xi-Q)^+ - (\xi-Q-L)^+\big].$$
+$$
+\mathbb{E}[\text{filled}] = \mathbb{E}\big[(\xi-Q)^+ - (\xi-Q-L)^+\big].
+$$
 
 The **fill ratio** $\mathbb{E}[\text{filled}]/L$ is maximised by small $Q$ (be at the front). For an exponential(mean $m$) outflow there is a closed form: with $\xi\sim\text{Exp}(1/m)$,
 
-$$\mathbb{E}[(\xi-Q)^+] = m\,e^{-Q/m},\qquad
-\mathbb{E}[\text{filled}] = m\big(e^{-Q/m}-e^{-(Q+L)/m}\big).$$
+$$
+\mathbb{E}[(\xi-Q)^+] = m\,e^{-Q/m},\qquad
+\mathbb{E}[\text{filled}] = m\big(e^{-Q/m}-e^{-(Q+L)/m}\big).
+$$
 
 #### 2.2 Optimal multi-venue overbooking
 
 With $K$ venues, queue positions $x_k$ ahead, and the same limit price, total bought is
 
-$$A(X,\xi) = M + \sum_{k=1}^{K}\big[(\xi_k-x_k)^+ - (\xi_k-x_k-L_k)^+\big],$$
+$$
+A(X,\xi) = M + \sum_{k=1}^{K}\big[(\xi_k-x_k)^+ - (\xi_k-x_k-L_k)^+\big],
+$$
 
 where $M$ is the market-order catch-up at the horizon. Because the $\xi_k$ are **imperfectly correlated**, posting $L_k$ on each of several venues ("overbooking") and cancelling the unused rest drives **non-execution risk down faster than it raises impact** — the fills are a diversified portfolio. This is the optimal-placement insight of Cont–Kukanov (2017): size is determined jointly by queue position *and* the correlation of outflows across venues.
 
@@ -54,11 +60,15 @@ Replace constants by functions of the current size: market-order intensity $\mu(
 
 Define the **order-flow imbalance** at the best quotes over an interval as the signed change in best-queue sizes:
 
-$$\mathrm{OFI}_k = \sum_{\text{events in }k}\big[\text{signed change in bid size} - \text{signed change in ask size}\big].$$
+$$
+\mathrm{OFI}_k = \sum_{\text{events in }k}\big[\text{signed change in bid size} - \text{signed change in ask size}\big].
+$$
 
 Over short intervals,
 
-$$\boxed{\;\Delta P_k = \beta\,\frac{\mathrm{OFI}_k}{\text{depth}_k} + \varepsilon_k\;}$$
+$$
+\boxed{\;\Delta P_k = \beta\,\frac{\mathrm{OFI}_k}{\text{depth}_k} + \varepsilon_k\;}
+$$
 
 a **linear** relation whose slope is inversely proportional to market depth, robust across time scales and stocks. Combined with a scaling argument it implies the empirical **square-root** relation between price change and traded volume. OFI is the single variable that ties queue dynamics to price — the empirical bridge between this folder and the market-impact literature.
 

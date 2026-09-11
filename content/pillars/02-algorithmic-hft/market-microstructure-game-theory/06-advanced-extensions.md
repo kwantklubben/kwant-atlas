@@ -32,24 +32,36 @@ Why this order? (1) fixes *who is informed*; (2) fixes *how many are trading*; (
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 $K$ competing informed traders (Holden–Subrahmanyam 1992).** Keep Kyle's batch structure but let $K$ insiders each observe $v$ and each submit informed demand. With **aggregate** informed intensity $K\beta$ (so the total informed order is $K\beta(v-p_0)$) and noise $u\sim\mathcal N(0,\sigma_u^2)$, one round of Bayesian updating gives
-$$y=K\beta(v-p_0)+u,\qquad \operatorname{Var}(y)=(K\beta)^2\Sigma_0+\sigma_u^2,$$
-$$\boxed{\;\Sigma'=\Sigma_0-\frac{(K\beta)^2\Sigma_0^2}{(K\beta)^2\Sigma_0+\sigma_u^2}=\frac{\Sigma_0\sigma_u^2}{(K\beta)^2\Sigma_0+\sigma_u^2},\qquad \lambda_K=\frac{K\beta\,\Sigma_0}{(K\beta)^2\Sigma_0+\sigma_u^2}\;}$$
+$$
+y=K\beta(v-p_0)+u,\qquad \operatorname{Var}(y)=(K\beta)^2\Sigma_0+\sigma_u^2,
+$$
+$$
+\boxed{\;\Sigma'=\Sigma_0-\frac{(K\beta)^2\Sigma_0^2}{(K\beta)^2\Sigma_0+\sigma_u^2}=\frac{\Sigma_0\sigma_u^2}{(K\beta)^2\Sigma_0+\sigma_u^2},\qquad \lambda_K=\frac{K\beta\,\Sigma_0}{(K\beta)^2\Sigma_0+\sigma_u^2}\;}
+$$
 $K=1$ with $\beta=\sqrt{\sigma_u^2/\Sigma_0}$ recovers $\Sigma_0/2$ and $\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}$ — the Kyle benchmark. As $K\to\infty$, $\Sigma'\to0$ (instant revelation) and $\lambda_K\to0$ (**infinite depth**). The economics is simple: competition among the informed forces each of them to trade more aggressively relative to their information, so the price learns faster and the market is *more* liquid, not less.
 
 **Caveat, stated plainly.** The formula above treats the *aggregate* intensity $K\beta$ as given. Holden & Subrahmanyam's own result is subtly different: as $K$ rises, each insider becomes *less* aggressive individually, but the aggregate is still more aggressive than the monopolist's, and revelation is faster. The table below is therefore the correct *mechanism* with a deliberately transparent assumption; the qualitative conclusion (more informed $\Rightarrow$ faster revelation, deeper market) is theirs.
 
 **2.2 $J$ symmetric liquidators sharing one pool.** Generalise page 04's two-player game. Agent $i$'s cost is
-$$C_i=\frac{\eta}{\tau}\sum_{k}n^i_k\Bigl(n^i_k+\sum_{j\ne i}n^j_k\Bigr)+\lambda_{\text{risk}}\sigma^2\tau\sum_k\bigl(x^i_k\bigr)^2,\qquad \sum_k n^i_k=\frac{X}{J},$$
+$$
+C_i=\frac{\eta}{\tau}\sum_{k}n^i_k\Bigl(n^i_k+\sum_{j\ne i}n^j_k\Bigr)+\lambda_{\text{risk}}\sigma^2\tau\sum_k\bigl(x^i_k\bigr)^2,\qquad \sum_k n^i_k=\frac{X}{J},
+$$
 and the first-order condition in symmetric equilibrium $n^j_k=n^i_k=n_k$ is
-$$\frac{\eta}{\tau}\Bigl(2n_k+(J-1)n_k\Bigr)+[\text{risk terms}]=\mu\;\Longrightarrow\;\text{curvature}\;\frac{\eta(J+1)}{\tau},$$
+$$
+\frac{\eta}{\tau}\Bigl(2n_k+(J-1)n_k\Bigr)+[\text{risk terms}]=\mu\;\Longrightarrow\;\text{curvature}\;\frac{\eta(J+1)}{\tau},
+$$
 versus $2\eta/\tau$ for a single agent. Hence
-$$\boxed{\;\eta_{\text{eff}}=\frac{J+1}{2}\,\eta\;\Longrightarrow\;\kappa_{\text{eff}}=\sqrt{\frac{\lambda_{\text{risk}}\sigma^2}{\eta_{\text{eff}}}}=\kappa_1\sqrt{\frac{2}{J+1}}\;}$$
+$$
+\boxed{\;\eta_{\text{eff}}=\frac{J+1}{2}\,\eta\;\Longrightarrow\;\kappa_{\text{eff}}=\sqrt{\frac{\lambda_{\text{risk}}\sigma^2}{\eta_{\text{eff}}}}=\kappa_1\sqrt{\frac{2}{J+1}}\;}
+$$
 so $J=2$ gives $\eta_{\text{eff}}=\tfrac32\eta$ and $\kappa_{\text{eff}}=\sqrt{2/3}\,\kappa_1$ (page 04's result), and $J=100$ gives $\kappa_{\text{eff}}\approx0.085$/day against $0.601$/day for a lone liquidator — **a seven-fold increase in the effective time-scale of the trade**. Verified to two decimals in all four quarters for $J=1,2,3,5$ below.
 
 **2.3 Anonymity: the mean-field limit.** When $J$ is large and agents are anonymous, tracking each agent's schedule is hopeless; the right object is the *distribution* of positions. Cardaliaguet & Lehalle (2018) formulate this as a **mean-field game of controls**: an individual agent solves an HJB equation whose coefficients depend on the aggregate, while the aggregate position evolves according to a Fokker–Planck equation driven by the individual optimal controls. The fixed point of the two is the mean-field equilibrium. The practical upshot is that in a crowded trade the *market-wide* cost is a function of the crowd's total size and dispersion, not of any individual's order — which is why "trade crowding" is a first-class risk factor rather than a modelling nuisance.
 
 **2.4 Transient impact and resilience.** Replace instantaneous impact by a decay kernel $G$: the impact of a trade at $u$ on the mid at $t$ is $G(t-u)\,dX_u$, i.e.
-$$S_t=S_0+\sigma W_t+\int_0^tG(t-u)\,dX_u .$$
+$$
+S_t=S_0+\sigma W_t+\int_0^tG(t-u)\,dX_u .
+$$
 **No-dynamic-arbitrage** (Huberman–Stanzl 2004; Gatheral 2010) requires $G$ to be non-increasing and convex; models with the wrong kernel admit manipulation and are admissible only as curve-fits, never as equilibrium. For power-law kernels $G(t)\propto t^{-\gamma}$ the optimal strategy oscillates and decays (Gatheral's Figure 22.2), and — the punchline of Schied–Zhang–Cordoni–Lillo — the **multi-agent** game built on such a kernel becomes unstable below a threshold on the temporary-cost parameter.
 
 **2.5 Stochastic liquidity.** Both of the model families above take $\sigma_u^2$ and $\Sigma_0$ as constants. In reality liquidity is stochastic and, worse, *correlated with informed flow*: on the days when $\Sigma_0$ and $\pi$ are largest, $\sigma_u^2$ is smallest. Kyle's model with an exogenous *stochastic* liquidity process (and its elaboration with a general volatility process) gives $\lambda_t$ as a **path-dependent** quantity — for a deterministic volatility profile $\lambda=\sqrt{\Sigma_0/\tau_T}$ with $\tau_T=\int_0^T\sigma_u^2(s)ds$, so what looks like "constant λ" in Back (1992) is really "constant λ *given a deterministic noise profile*". Replace that profile with a process and λ becomes a stochastic functional, which is why empirical λ estimates are so unstable across windows.

@@ -36,7 +36,9 @@ The senior tranche looked almost risk-free under the model, was rated AAA, and b
 
 Give obligor $i$ a marginal default-time distribution $F_i$ (from its credit curve / hazard rate). Define correlated latent Gaussians $Z_i$ with $\mathrm{corr}(Z_i,Z_j)=\rho_{ij}$. Set
 
-$$\tau_i=F_i^{-1}\big(\Phi(Z_i)\big)\quad\Longleftrightarrow\quad \Phi(Z_i)=F_i(\tau_i)=U_i .$$
+$$
+\tau_i=F_i^{-1}\big(\Phi(Z_i)\big)\quad\Longleftrightarrow\quad \Phi(Z_i)=F_i(\tau_i)=U_i .
+$$
 
 By Sklar's theorem this is exactly the **meta-Gaussian** model: Gaussian copula, arbitrary marginal default times. The parameter is the correlation matrix of the latents.
 
@@ -44,12 +46,16 @@ By Sklar's theorem this is exactly the **meta-Gaussian** model: Gaussian copula,
 
 The market's standard reduced form collapses all pairwise correlations to a single common factor: $X_i=\sqrt\rho\,Y+\sqrt{1-\rho}\,Z_i$ with $Y,Z_i\overset{iid}{\sim}N(0,1)$. Obligor $i$ defaults if its threshold is breached, $\Pr=\Phi(X_i<\Phi^{-1}(p_i))=p_i$. **Conditional on $Y=x$**, defaults are independent with
 
-$$p_i(x)=\Phi\!\bigg(\frac{\Phi^{-1}(p_i)-\sqrt\rho\,x}{\sqrt{1-\rho}}\bigg).$$
+$$
+p_i(x)=\Phi\!\bigg(\frac{\Phi^{-1}(p_i)-\sqrt\rho\,x}{\sqrt{1-\rho}}\bigg).
+$$
 
 For a large homogeneous portfolio the realized default rate *equals* $p(x)$, so the stochastic factor becomes the loss and, inverting, Vašíček's **asymptotic loss CDF** and quantile are
 
-$$F(\theta)=\Phi\!\bigg(\frac{\sqrt{1-\rho}\,\Phi^{-1}(\theta)-\Phi^{-1}(p)}{\sqrt\rho}\bigg),\qquad
-\theta_q=\Phi\!\bigg(\frac{\Phi^{-1}(p)+\sqrt\rho\,\Phi^{-1}(q)}{\sqrt{1-\rho}}\bigg).$$
+$$
+F(\theta)=\Phi\!\bigg(\frac{\sqrt{1-\rho}\,\Phi^{-1}(\theta)-\Phi^{-1}(p)}{\sqrt\rho}\bigg),\qquad
+\theta_q=\Phi\!\bigg(\frac{\Phi^{-1}(p)+\sqrt\rho\,\Phi^{-1}(q)}{\sqrt{1-\rho}}\bigg).
+$$
 
 $\theta_q$ **is** the Basel IRB capital formula. This is the same formula cross-verified in [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/06-advanced-extensions|Credit Risk · 06 · Advanced Extensions]].
 
@@ -57,7 +63,9 @@ $\theta_q$ **is** the Basel IRB capital formula. This is the same formula cross-
 
 A tranche $[a,b]$ holds the loss between attachment $a$ and detachment $b$; its **expected loss per unit of tranche notional** is
 
-$$\mathrm{EL}_{[a,b]}=\frac{\mathbb{E}\big[\min(L,b)-\min(L,a)\big]}{b-a}.$$
+$$
+\mathrm{EL}_{[a,b]}=\frac{\mathbb{E}\big[\min(L,b)-\min(L,a)\big]}{b-a}.
+$$
 
 Every tranche's value is a functional of $\rho$ alone (given the marginals). Increasing $\rho$ fattens *both* tails of the loss distribution: the equity tranche becomes safer (it is always wiped, less variance), and the senior tranche becomes far riskier. Pricing all tranches off one $\rho$ fails — each liquid tranche implies a *different* $\rho$, producing the **correlation smile/skew**. The smile is the model telling you it is wrong: a single-parameter dependence model cannot fit a term structure of joint-tail prices. (Hull §25.9; McNeil §12.2–12.3.)
 

@@ -31,27 +31,35 @@ Three "aha"s, in order:
 
 **The traffic identity.** Let $N$ be the number of rows and $s$ the record width. A single-field scan touches
 
-$$W_{\text{row}} = N s \quad\text{(row store: every byte of every record)}, \qquad
-W_{\text{col}} = N s_c \quad\text{(column store: only the field)},$$
+$$
+W_{\text{row}} = N s \quad\text{(row store: every byte of every record)}, \qquad
+W_{\text{col}} = N s_c \quad\text{(column store: only the field)},
+$$
 
 so the penalty of a row layout for a $k$-column query is exactly the record-to-payload ratio
 
-$$\frac{W_{\text{row}}}{W_{\text{col}}} = \frac{s}{s_c} = \frac{\sum_j s_j}{s_c}.$$
+$$
+\frac{W_{\text{row}}}{W_{\text{col}}} = \frac{s}{s_c} = \frac{\sum_j s_j}{s_c}.
+$$
 
 For an $8{+}4{+}8{+}4 = 24$-byte record and a 4-byte `size` column, this is $6$.
 
 **Cache-line arithmetic (the real mechanism).** Memory moves in 64-byte lines. Scanning one 8-byte field:
 
-$$L_{\text{AoS}} = \frac{N s}{64} = \frac{3N}{8}, \qquad
+$$
+L_{\text{AoS}} = \frac{N s}{64} = \frac{3N}{8}, \qquad
 L_{\text{SoA}} = \frac{N \cdot 8}{64} = \frac{N}{8},
-\qquad \frac{L_{\text{AoS}}}{L_{\text{SoA}}} = 3.$$
+\qquad \frac{L_{\text{AoS}}}{L_{\text{SoA}}} = 3.
+$$
 
 The row store moves $\tfrac{3}{4}$ of every line to answer a question about $\tfrac{1}{3}$ of its bytes — the hardware fetches what you laid out, not what you asked for.
 
 **The storage bill.** At $N_{\text{day}} = 5\times10^{8}$ messages and $s=24$:
 
-$$B_{\text{day}} = N_{\text{day}} s = 1.2\times10^{10}\ \text{B} = 12\ \text{GB}, \qquad
-B_{\text{year}} = 252 \cdot B_{\text{day}} = 3.02\ \text{TB}.$$
+$$
+B_{\text{day}} = N_{\text{day}} s = 1.2\times10^{10}\ \text{B} = 12\ \text{GB}, \qquad
+B_{\text{year}} = 252 \cdot B_{\text{day}} = 3.02\ \text{TB}.
+$$
 
 ---
 

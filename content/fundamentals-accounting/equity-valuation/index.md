@@ -29,9 +29,13 @@ This folder is the **valuation hub** of the Fundamentals & Accounting area. It i
 
 **Cash-flow definitions (the two rivers).**
 
-$$\text{FCFF}=\text{EBIT}(1-t)+\text{Dep}-\text{CapEx}-\Delta\text{NWC}$$
+$$
+\text{FCFF}=\text{EBIT}(1-t)+\text{Dep}-\text{CapEx}-\Delta\text{NWC}
+$$
 
-$$\text{FCFE}=N\!I-(\text{CapEx}-\text{Dep})-\Delta\text{NWC}+(\text{New Debt}-\text{Debt Repaid})$$
+$$
+\text{FCFE}=N\!I-(\text{CapEx}-\text{Dep})-\Delta\text{NWC}+(\text{New Debt}-\text{Debt Repaid})
+$$
 
 | Quantity | Formula | Verified check |
 |---|---|---|
@@ -83,7 +87,7 @@ equity from firm   = 1073.55   (consistency: 0.54)
 Error 1  equity @ WACC = 1248.50
 Error 2  firm @ k_e    = 1612.86
 ```
-Both routes give equity $\approx\$1073$ (Damodaran rounds to $1073$ and $1873$; the residual $0.54$ is his rounding of $\text{WACC}=9.94\%$). Discount equity flows at the cost of capital and you over-value equity by $\$175$; discount firm flows at the cost of equity and you under-value by $\$261$. **Consistency is not a convention — it is the model.**
+Both routes give equity $\approx$ \$1073 (Damodaran rounds to 1073$ and $1873$; the residual $0.54$ is his rounding of $\text{WACC}=9.94\%$). Discount equity flows at the cost of capital and you over-value equity by $\$175; discount firm flows at the cost of equity and you under-value by \$261. **Consistency is not a convention — it is the model.**
 
 ---
 

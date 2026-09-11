@@ -37,22 +37,28 @@ The practical objective of this folder is to make you fluent in three layers at 
 
 **Message rate and bandwidth.** A session's required bandwidth is the message rate times the message size:
 
-$$B_{\text{wire}} = 8\,R\,s \quad\text{(bit/s)},\qquad \text{link utilisation} = \frac{8Rs}{C}.$$
+$$
+B_{\text{wire}} = 8\,R\,s \quad\text{(bit/s)},\qquad \text{link utilisation} = \frac{8Rs}{C}.
+$$
 
 For $R = 20{,}000$ msg/s at $s = 165$ B on a 1 Gbps link this is $26.4$ Mbit/s — only $2.64\%$ of the link, so **latency, not bandwidth, is the binding constraint.**
 
 **Journal (resend-log) growth.** Every outbound message must be persisted for replay, so the log grows at
 
-$$\dot{S} = R\,s = \frac{B_{\text{wire}}}{8} \quad\text{(byte/s)}.$$
+$$
+\dot{S} = R\,s = \frac{B_{\text{wire}}}{8} \quad\text{(byte/s)}.
+$$
 
 **Sequence-number invariant.** Let $N_{\text{in}}$ be the next inbound sequence number expected. On receipt of message with `MsgSeqNum = M`:
 
-$$\text{action} =
+$$
+\text{action} =
 \begin{cases}
 \text{accept},\ N_{\text{in}} \leftarrow M+1 & M = N_{\text{in}},\\[2pt]
 \text{ResendRequest}(N_{\text{in}}.\,,M-1) & M > N_{\text{in}}\ \ (\text{gap of } M-N_{\text{in}}),\\[2pt]
 \text{discard (already seen)} & M < N_{\text{in}}.
-\end{cases}$$
+\end{cases}
+$$
 
 The gap size is exactly $g = M - N_{\text{in}}$, and the request covers the half-open-closed range $[\,N_{\text{in}},\,M-1\,]$.
 
@@ -62,7 +68,9 @@ The gap size is exactly $g = M - N_{\text{in}}$, and the request covers the half
 
 **FIX message anatomy.** A FIX message is a strictly ordered triplet: **header** → **body** → **trailer**, with `8` (BeginString) first, `9` (BodyLength) second, `35` (MsgType) in the header, and `10` (CheckSum) last. `BodyLength` counts the bytes between the `9`-field's SOH and the `10`-field's start; `CheckSum` is the byte sum modulo 256 rendered as three digits:
 
-$$\texttt{9} = \Big|\text{body}\Big|_{\text{bytes}},\qquad \texttt{10} = \Big(\sum_i b_i\Big) \bmod 256,\quad b_i \in [0,255].$$
+$$
+\texttt{9} = \Big|\text{body}\Big|_{\text{bytes}},\qquad \texttt{10} = \Big(\sum_i b_i\Big) \bmod 256,\quad b_i \in [0,255].
+$$
 
 **Common message types (`35`) and key tags.**
 

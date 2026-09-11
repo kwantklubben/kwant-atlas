@@ -28,13 +28,17 @@ The objective: demonstrate the *decision* — show that a toxicity-aware maker b
 
 **From toxicity reading to quoting rule.** Model the maker's per-trade P&L against flow with informed fraction $\pi$: an uninformed fill collects the half-spread $h$; an informed fill loses $k-h$ (the efficient value moves $k$ against the maker). Expected P&L per trade:
 
-$$\mathbb{E}[\text{P&L}]=h-\pi\,k.$$
+$$
+\mathbb{E}[\text{P\&L}]=h-\pi\,k.
+$$
 
 A maker who knows $\pi$ (equivalently, reads it from VPIN) sets the *break-even* half-spread $h^{\star}=\pi k$. A **toxicity-aware** maker estimates $\widehat\pi$ from the recent imbalance and sets $h_t=h_0+\gamma\,\widehat\pi_t$, so the half-spread tracks the risk. Because VPIN is a *rolling* statistic, this is a closed feedback loop: imbalance → $\widehat\pi$ → $h$ → (reduced exposure to the next informed fill).
 
 **Information risk as a priced factor (EHO 2002).** In a rational-expectations equilibrium, uninformed traders must be compensated for the adverse selection of trading against better-informed flow. PIN enters the pricing kernel:
 
-$$r_i=\beta_i\,r_m+\lambda\,\mathrm{PIN}_i+\varepsilon_i,$$
+$$
+r_i=\beta_i\,r_m+\lambda\,\mathrm{PIN}_i+\varepsilon_i,
+$$
 
 with $\lambda>0$: higher-PIN stocks carry a higher expected return. PIN becomes a cross-sectional characteristic, not just a liquidity gauge.
 

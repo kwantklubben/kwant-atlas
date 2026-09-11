@@ -44,7 +44,9 @@ When *neither* holds, the options are the **exact CIR transition** (Broadie–Ka
 
 Calibration is the nonlinear least squares
 
-$$\min_{\theta=(v_0,\bar v,\lambda,\eta,\rho)}\sum_{i}w_i\big(C^{\text{model}}_{i}(\theta)-C^{\text{mkt}}_{i}\big)^2,\qquad w_i\propto\frac{1}{\text{vega}_i^2}\ \text{or}\ \frac{1}{\text{bid-ask}^2_i},$$
+$$
+\min_{\theta=(v_0,\bar v,\lambda,\eta,\rho)}\sum_{i}w_i\big(C^{\text{model}}_{i}(\theta)-C^{\text{mkt}}_{i}\big)^2,\qquad w_i\propto\frac{1}{\text{vega}_i^2}\ \text{or}\ \frac{1}{\text{bid-ask}^2_i},
+$$
 
 with vega/bid-ask weights converting *price* errors into *vol-point* errors — mandatory, since raw price errors are dominated by the high-premium wings. Gatheral's factorial identification recipe (§3.4) is:
 
@@ -60,7 +62,9 @@ Note what the data can and cannot see: only *products* $\rho\eta$ (skew) and $\n
 
 A digital call pays $1$ if $S_T>K$. It is a strike derivative of a call, $D(K,T)=-\partial C/\partial K$, and in a smile model
 
-$$D(K,T)=-\frac{\partial C_{BS}}{\partial K}-\underbrace{\frac{\partial C_{BS}}{\partial\sigma_{BS}}}_{\text{vega}}\frac{\partial\sigma_{BS}}{\partial K}.$$
+$$
+D(K,T)=-\frac{\partial C_{BS}}{\partial K}-\underbrace{\frac{\partial C_{BS}}{\partial\sigma_{BS}}}_{\text{vega}}\frac{\partial\sigma_{BS}}{\partial K}.
+$$
 
 The first term is the Black–Scholes digital; the second is the **skew correction**. For a 1y ATM digital at $25\%$ vol with a skew of $3$ vol points per $10\%$ strike, vega$\,\times\,$skew $=0.1188$ against an undiscounted digital value of $0.4503$ — i.e. **$26\%$ of the digital's value, or $11.9\%$ of notional**. Gatheral's ch 8 figure of "$\sim12\%$ of notional" is exactly this number. Any desk pricing digitals off a flat interpolated smile has a 12%-of-notional error, and it is a *first-order* effect, not a correction.
 

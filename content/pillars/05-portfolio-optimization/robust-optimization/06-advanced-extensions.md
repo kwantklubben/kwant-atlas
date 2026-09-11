@@ -33,13 +33,17 @@ The page closes with the two remaining directions from the canonical literature:
 
 Blend the sample covariance toward a structured target $F$:
 
-$$\hat\Sigma_{\mathrm{LW}}=(1-\lambda)\,\hat\Sigma+\lambda\,F,\qquad F=\mu I,\quad\mu=\frac{\mathrm{tr}(\hat\Sigma)}{N},$$
+$$
+\hat\Sigma_{\mathrm{LW}}=(1-\lambda)\,\hat\Sigma+\lambda\,F,\qquad F=\mu I,\quad\mu=\frac{\mathrm{tr}(\hat\Sigma)}{N},
+$$
 
 with the **analytically optimal intensity** (Ledoit & Wolf 2004)
 
-$$\lambda^\star=\frac{\min(\beta^2,\delta^2)}{\delta^2},\qquad
+$$
+\lambda^\star=\frac{\min(\beta^2,\delta^2)}{\delta^2},\qquad
 \delta^2=\frac{\lVert\hat\Sigma-\mu I\rVert_F^2}{N},\qquad
-\beta^2=\frac{1}{NT^2}\sum_{t=1}^{T}\big\lVert x_tx_t^\top-\hat\Sigma\big\rVert_F^2 .$$
+\beta^2=\frac{1}{NT^2}\sum_{t=1}^{T}\big\lVert x_tx_t^\top-\hat\Sigma\big\rVert_F^2 .
+$$
 
 The single-index target $F=\hat\Sigma_{\text{market}}$ (Ledoit–Wolf JEF 2004) is the finance-specific choice — "structure" means "one common market factor." Shrinkage guarantees a **well-conditioned, invertible** $\hat\Sigma_{\mathrm{LW}}$ even when $N>T$, because $F\succ0$ and $\lambda>0$. It is *implicit* robustness: it does not mention $\mu$'s uncertainty, but it removes the ill-conditioned directions in which MVO amplifies noise.
 
@@ -47,7 +51,9 @@ The single-index target $F=\hat\Sigma_{\text{market}}$ (Ledoit–Wolf JEF 2004) 
 
 A ridge penalty on the objective, $\max_w\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w-\tfrac\tau2\lVert w\rVert^2$, has the closed form
 
-$$w^\star=\tfrac1\delta\left(\Sigma+\tfrac\tau\delta I\right)^{-1}\mu,$$
+$$
+w^\star=\tfrac1\delta\left(\Sigma+\tfrac\tau\delta I\right)^{-1}\mu,
+$$
 
 i.e. it shrinks the *weights* toward zero — the same effect as shrinking the mean toward zero, or as a worst-case objective with an ellipsoidal weight-penalty. This is the portfolio face of ESL's ridge (eq. 3.44, $(X^\top X+\lambda I)^{-1}X^\top y$) and of neural-network **weight decay** (ESL eq. 11.16).
 
@@ -55,7 +61,9 @@ i.e. it shrinks the *weights* toward zero — the same effect as shrinking the m
 
 The Black–Litterman posterior blends an equilibrium prior with views. In the limit of no views we saw it collapses to the equilibrium weights, so the posterior mean behaves like
 
-$$\mu_{\text{post}}=(1-\tau)\,\hat\mu+\tau\,\Pi,\qquad \Pi=\delta\Sigma w_{\text{mkt}} ,$$
+$$
+\mu_{\text{post}}=(1-\tau)\,\hat\mu+\tau\,\Pi,\qquad \Pi=\delta\Sigma w_{\text{mkt}} ,
+$$
 
 a **shrinkage of the sample mean toward market-implied returns** — robustness against mean-estimation error with an *economically meaningful* anchor (unlike shrinking toward the grand mean, which [[pillars/05-portfolio-optimization/robust-optimization/05-failure-modes-and-practice|05]] showed can hurt). This is why BL and robust optimization are siblings, not rivals: both fight the same disease with a prior instead of a set.
 
@@ -63,7 +71,9 @@ a **shrinkage of the sample mean toward market-implied returns** — robustness 
 
 Instead of a set of *parameters*, take a set $\mathcal P$ of *distributions* (a Wasserstein ball, or a $\phi$-divergence ball around the empirical measure) and solve
 
-$$\min_{w}\ \sup_{\mathbb{P}\in\mathcal P}\ \mathbb{E}_{\mathbb P}\!\left[\,\ell(r^\top w)\,\right].$$
+$$
+\min_{w}\ \sup_{\mathbb{P}\in\mathcal P}\ \mathbb{E}_{\mathbb P}\!\left[\,\ell(r^\top w)\,\right].
+$$
 
 DRO interpolates between sample optimization ($\mathcal P=\{\hat{\mathbb P}\}$) and worst-case over all distributions ($\mathcal P=$ everything, giving $1/N$). With a Wasserstein ball the ambiguity set *shrinks as data grows*, so the allocation is conservative in small samples and converges to the plug-in optimum as $T\to\infty$ — an automatic, self-calibrating robustness. The ellipsoidal-mean robust problem of [[pillars/05-portfolio-optimization/robust-optimization/03-robust-formulations|03]] is the parameter-level special case.
 

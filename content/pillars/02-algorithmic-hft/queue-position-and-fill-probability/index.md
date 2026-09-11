@@ -32,7 +32,9 @@ This folder is the **queue-and-fill topic-folder** for Pillar 2. It is a *hub*: 
 
 **The fill condition (price-time priority).** Under strict FIFO, an order of size $L$ at queue position $x$ receives
 
-$$\text{Filled}(x,L,\xi) = \big(\xi - x\big)^{+} - \big(\xi - x - L\big)^{+}, \qquad (z)^+ = \max(z,0).$$
+$$
+\text{Filled}(x,L,\xi) = \big(\xi - x\big)^{+} - \big(\xi - x - L\big)^{+}, \qquad (z)^+ = \max(z,0).
+$$
 
 You start filling once outflow passes $x$, and you finish once it passes $x+L$. This is the fill function of Cont & Kukanov (2017) and the object every queue model is trying to predict.
 
@@ -49,7 +51,7 @@ You start filling once outflow passes $x$, and you finish once it passes $x+L$. 
 | Cancel-only crossing | $x(t)=x_0 e^{-\theta t}$ (never reaches 0 in finite mean) | halving time $34.66$ s |
 | Mid-move-up probability (CS&T) | $\mathbb{P}(\sigma_{\text{ask}}<\sigma_{\text{bid}})$ for two indep. birth–death queues | $(10,5)$: exact $0.2322$, MC $0.2324$ |
 | OFI price impact (2014) | $\Delta P = \beta\,\dfrac{\text{OFI}}{\text{depth}}$ | fitted slope $0.005007$ vs $1/\text{depth}=0.005000$, $R^2{=}0.896$ |
-| Adverse selection | $\mathbb{E}[\Delta M_T \mid \text{filled}] < 0$ | fill $-\$0.0119$ vs no-fill $+\$0.0166$ per 100 sh |
+| Adverse selection | $\mathbb{E}[\Delta M_T \mid \text{filled}] < 0$ | fill $-$ \$0.0119 vs no-fill + \$0.0166 per 100 sh |
 
 > **Critical framing caveat.** $x$ (queue position) and $Q$ (depth) are *different* variables and both matter. Deep total depth is good for spreads but bad for you if $x$ is large: your fill odds fall with $x$ but the *adverse-selection* penalty falls with $Q$. Calibrating on $Q$ alone is the single most common modelling error.
 
@@ -97,7 +99,7 @@ Hub signposts — the full failure analysis lives in [[pillars/02-algorithmic-hf
 
 1. **The standing-queue delusion** — a backtest that treats "a trade printed at my price" as "I was filled" overstates the fill rate ($1.0000$ vs true $0.7939$ here) and books P&L on trades that never happened.
 2. **Latency & stale-quote pick-off** — the fraction of fills that are *adverse* grows with your round-trip latency ($P(\text{picked off})$ goes $0.025\to0.993$ as latency goes $0.05\to10$ ms in the toy model).
-3. **Adverse selection at the fill** — $\mathbb{E}[\Delta M_T\mid\text{filled}]<0$: passive fills are systematically followed by unfavorable moves (fill $-\$0.0119$ vs no-fill $+\$0.0166$).
+3. **Adverse selection at the fill** — $\mathbb{E}[\Delta M_T\mid\text{filled}]<0$: passive fills are systematically followed by unfavorable moves (fill $-$ \$0.0119 vs no-fill + \$0.0166).
 4. **Cancel-and-reinsert is not free** — re-joining the queue after a cancel puts you at the *back*; every refresh trades queue position for a marginally better price.
 
 ---

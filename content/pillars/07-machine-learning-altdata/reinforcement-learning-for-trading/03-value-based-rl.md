@@ -28,7 +28,9 @@ The key idea in one line: **$Q(s,a)\leftarrow Q(s,a)+\alpha\,[\,r+\gamma\max_{a'
 
 The **TD error** $\delta_t=R_{t+1}+\gamma V(S_{t+1})-V(S_t)$ is the surprise between the bootstrapped target and the current estimate. TD(0) nudges the value by $\alpha\delta_t$:
 
-$$V(S_t)\leftarrow V(S_t)+\alpha\big[R_{t+1}+\gamma V(S_{t+1})-V(S_t)\big].$$
+$$
+V(S_t)\leftarrow V(S_t)+\alpha\big[R_{t+1}+\gamma V(S_{t+1})-V(S_t)\big].
+$$
 
 TD is a *stochastic approximation* of the Bellman expectation backup; it converges to $V^\pi$ for a fixed policy under decaying step sizes (Robbins–Monro conditions $\sum\alpha_t=\infty,\,\sum\alpha_t^2<\infty$).
 
@@ -36,7 +38,9 @@ TD is a *stochastic approximation* of the Bellman expectation backup; it converg
 
 Off-policy Q-learning (Watkins & Dayan 1992) approximates the **optimality** operator regardless of the behaviour policy:
 
-$$\boxed{\;Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha\Big[R_{t+1}+\gamma\max_{a}Q(S_{t+1},a)-Q(S_t,A_t)\Big]\;}$$
+$$
+\boxed{\;Q(S_t,A_t)\leftarrow Q(S_t,A_t)+\alpha\Big[R_{t+1}+\gamma\max_{a}Q(S_{t+1},a)-Q(S_t,A_t)\Big]\;}
+$$
 
 The $\max$ is what makes it *off-policy* (it learns about the greedy policy while behaving $\epsilon$-greedily). For tabular Q-learning with $\epsilon$-greedy exploration and decaying $\alpha$, $Q\to Q^*$ with probability 1 (Watkins & Dayan). SARSA is the on-policy variant, using the *actually taken* next action $Q(S_{t+1},A_{t+1})$ instead of the max — safer under risk (it accounts for exploratory mistakes) but converges to a different, more conservative policy.
 

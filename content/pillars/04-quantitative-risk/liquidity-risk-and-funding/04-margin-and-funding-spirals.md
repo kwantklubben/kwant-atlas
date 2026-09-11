@@ -29,31 +29,43 @@ They are usually described as one "liquidity spiral," but they are **two distinc
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 The margin constraint and the two-armed squeeze.** A financier holding position value $P$ with equity $N$ and margin (haircut) $m$ faces
-$$P\le \frac{N}{m}\qquad\Longleftrightarrow\qquad \text{required deleveraging}=\left(P-\frac{N}{m}\right)^+.$$
+$$
+P\le \frac{N}{m}\qquad\Longleftrightarrow\qquad \text{required deleveraging}=\left(P-\frac{N}{m}\right)^+.
+$$
 In Brunnermeier–Pedersen the speculator's demand is $P=\max\left\{\,N/m\ \text{(funding-limited)},\ y\ \text{(unconstrained)}\right\}$, so when the funding constraint binds, **every** shock propagates. Before a shock, $P=N/m$; after a shock that changes both $N$ and $m$,
-$$\Delta P_{\text{forced}}=\frac{N}{m}-\frac{N'}{m'},\qquad N'=N-\underbrace{(\text{loss})}_{\text{loss spiral}},\quad m'=m+\underbrace{\beta\,\Delta\text{Vol}}_{\text{margin spiral}}.$$
+$$
+\Delta P_{\text{forced}}=\frac{N}{m}-\frac{N'}{m'},\qquad N'=N-\underbrace{(\text{loss})}_{\text{loss spiral}},\quad m'=m+\underbrace{\beta\,\Delta\text{Vol}}_{\text{margin spiral}}.
+$$
 Both terms in $\dfrac{N'}{m'}=\dfrac{N-\text{loss}}{m+\beta\Delta\text{Vol}}$ move for the worse: the fraction decreases because its numerator falls *and* its denominator rises.
 
 **2.2 Margin set from risk (the margin spiral's driver).** Haircuts are set from the collateral's VaR over the margin period of risk,
-$$m=z_\alpha\,\sigma_{\text{MPOR}},\qquad \sigma_{\text{MPOR}}=\sigma\sqrt{\Delta t_{\text{MPOR}}},$$
+$$
+m=z_\alpha\,\sigma_{\text{MPOR}},\qquad \sigma_{\text{MPOR}}=\sigma\sqrt{\Delta t_{\text{MPOR}}},
+$$
 so $m$ rises with $\sigma$ and with the *lengthening liquidation delay* $\Delta t_{\text{MPOR}}$ of the collateral — and that delay is exactly *market* illiquidity. **This is the coupling that makes the two liquidities one system:** market illiquidity lengthens MPOR, MPOR raises the haircut, the haircut forces sales, the sales worsen market illiquidity.
 
 **2.3 Loss spiral as an amplification factor.** If forced sales of size $S$ move the price by $\kappa S$ (linear impact, $\kappa=\text{impact coefficient}/ADV$), and a fraction $L=P/N$ of the resulting equity loss is re-deleveraged, the *total* liquidation is the geometric series
-$$S_{\text{total}}=S_0\sum_{k\ge0}(L\kappa)^k=\frac{S_0}{1-L\kappa},\qquad L\kappa<1.$$
-The **amplification factor is $1/(1-L\kappa)$**. It is benign at $L\kappa=0.1$ ($\times1.1$) and explosive as $L\kappa\to1$: at $L\kappa=0.5$ the initial \$10M sale becomes \$20M; at $L\kappa\ge1$ the series **diverges** — deleveraging cannot keep up with the price impact it creates. This is the formal statement of "the spiral has no fixed point."
+$$
+S_{\text{total}}=S_0\sum_{k\ge0}(L\kappa)^k=\frac{S_0}{1-L\kappa},\qquad L\kappa<1.
+$$
+The **amplification factor is $1/(1-L\kappa)$**. It is benign at $L\kappa=0.1$ ($\times1.1$) and explosive as $L\kappa\to1$: at $L\kappa=0.5$ the initial $ $\$10M sale becomes \20M; at L\kappa\ge1$ the series **diverges** — deleveraging cannot keep up with the price impact it creates. This is the formal statement of "the spiral has no fixed point."
 
 **2.4 The loss spiral across agents (fire-sale externality preview).** When *many* agents share the same collateral and margin rules, each agent's $\kappa$ depends on the *aggregate* sale $S_{\text{agg}}$, not its own. Private optimisation uses $\kappa S_i$; the social cost uses $\kappa S_{\text{agg}}$. Because $S_{\text{agg}}>S_i$, the private cost is systematically too low — a pecuniary externality (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/05-failure-modes-and-practice|05 · Failure Modes]]).
 
 **2.5 The regulatory layer (BCBS).** Funding-liquidity risk is now capital-adjacent via two ratios:
-$$\text{LCR}=\frac{\text{HQLA}}{\text{Net cash outflows over 30 days}}\ge100\%\quad\text{(BCBS 2013, d238)},$$
-$$\text{NSFR}=\frac{\text{Available stable funding}}{\text{Required stable funding}}\ge100\%\quad\text{(BCBS 2014, d295)}.$$
+$$
+\text{LCR}=\frac{\text{HQLA}}{\text{Net cash outflows over 30 days}}\ge100\%\quad\text{(BCBS 2013, d238)},
+$$
+$$
+\text{NSFR}=\frac{\text{Available stable funding}}{\text{Required stable funding}}\ge100\%\quad\text{(BCBS 2014, d295)}.
+$$
 The LCR forces enough high-quality liquid assets to survive 30 days of stress outflows — a direct defence against the funding spiral. Its **procyclicality** is the known cost: the required stock of HQLA rises exactly when everyone wants to hold it, and the LCR's run-off assumptions can *dictate* the sale of the very assets under stress (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/06-advanced-extensions|06 · Advanced Extensions]]).
 
 ---
 
 ### 3. Computational Implementation — a deterministic margin-spiral simulation
 
-We run the recurrence of §2.1–2.3 on a \$50M book funded at 5× leverage. Each round: the broker hikes the haircut (margin spiral), the constraint binds, the shortfall is sold, and the sale's market impact feeds back as a mark-to-market loss (loss spiral). Stdlib only; fully deterministic.
+We run the recurrence of §2.1–2.3 on a $$\$50M book funded at 5× leverage. Each round: the broker hikes the haircut (margin spiral), the constraint binds, the shortfall is sold, and the sale's market impact feeds back as a mark-to-market loss (loss spiral). Stdlib only; fully deterministic.
 
 ```python
 def margin_spiral(N0=10_000_000.0, P0=50_000_000.0, m0=0.20, shock=-0.03,

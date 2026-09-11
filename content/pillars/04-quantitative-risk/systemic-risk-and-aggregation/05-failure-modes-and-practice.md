@@ -26,13 +26,17 @@ Systemic-risk practice is not a software problem; it is a *feedback* problem. Th
 
 **The procyclicality loop.** Let a value-at-risk-driven bank target leverage $\ell_t = c / \text{VaR}_t$ (hold enough capital that a $\text{VaR}_t$ loss won't breach it). During stress volatility $v_t$ spikes, so $\text{VaR}_t \approx z_\alpha v_t$ jumps, so required leverage $\ell_t$ *falls* — the bank must cut risk now, in the worst market. Selling illiquid assets at a fire-sale discount (penalty $~\propto v_t$) feeds *more* volatility and *more* forced selling:
 
-$$\text{stress}\;\Rightarrow\; v_t\!\uparrow\ \Rightarrow\ \text{VaR}_t\!\uparrow\ \Rightarrow\ \ell_t\!\downarrow\ \Rightarrow\ \text{fire-sales}\;\Rightarrow\; v_t\!\uparrow .$$
+$$
+\text{stress}\;\Rightarrow\; v_t\!\uparrow\ \Rightarrow\ \text{VaR}_t\!\uparrow\ \Rightarrow\ \ell_t\!\downarrow\ \Rightarrow\ \text{fire-sales}\;\Rightarrow\; v_t\!\uparrow .
+$$
 
 This is the *loss spiral* and *margin spiral* of Brunnermeier–Pedersen (2009) viewed at the bank level: **per-firm risk-parity is systemically procyclical.** The fix (see 06) is *countercyclical* capital: build buffers in good times so they don't have to be built in bad ones.
 
 **Tail dependence is a limit, not a parameter.** Upper-tail dependence is defined as a limit as the threshold recedes to infinity:
 
-$$\lambda_u = \lim_{u\to 1^+} \mathbb{P}\big(X_1 > F_1^{-1}(u) \,\big|\, X_2 > F_2^{-1}(u)\big).$$
+$$
+\lambda_u = \lim_{u\to 1^+} \mathbb{P}\big(X_1 > F_1^{-1}(u) \,\big|\, X_2 > F_2^{-1}(u)\big).
+$$
 
 Estimating it from data means counting *joint extreme* events — scarce by construction. A Gaussian copula has $\lambda_u=0$ (no asymptotic tail dependence); a t-copula with df $<\infty$ has $\lambda_u>0$. Because $\lambda_u$ is a *limit*, no finite sample can pin it down; **the choice of $\lambda_u$ is an act of judgement, not estimation**, and it moves the aggregate capital materially (0.0013 vs 0.0030 in §04 — a >2× read on the 1% joint tail).
 

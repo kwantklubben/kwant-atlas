@@ -35,7 +35,9 @@ The discipline: fit a **mean model** first (remove linear dependence → residua
 **ARCH(m)** (Engle 1982): $a_t=\sigma_t\varepsilon_t$, $\sigma_t^2=\alpha_0+\sum_{i=1}^m\alpha_i a_{t-i}^2$, with $\alpha_0>0,\alpha_i\ge0$. Unconditional variance $\alpha_0/(1-\sum\alpha_i)$ requires $0\le\sum\alpha_i<1$. ARCH(1) unconditional kurtosis $3(1-\alpha_1^2)/(1-3\alpha_1^2)>3$ — heavy tails come *for free* from a conditional-Gaussian model (finite 4th moment needs $\alpha_1^2<1/3$).
 
 **GARCH(m,s)** (Bollerslev 1986): $\sigma_t^2=\alpha_0+\sum_{i=1}^m\alpha_i a_{t-i}^2+\sum_{j=1}^s\beta_j\sigma_{t-j}^2$, nonnegative, with **stationarity $\sum_{i=1}^{\max(m,s)}(\alpha_i+\beta_i)<1$** (Tsay eq. 3.14). $a_t^2$ itself is an ARMA (eq. 3.15) with martingale-difference noise — *not* iid. GARCH(1,1):
-$$\sigma_t^2=\omega+\alpha a_{t-1}^2+\beta\sigma_{t-1}^2.$$
+$$
+\sigma_t^2=\omega+\alpha a_{t-1}^2+\beta\sigma_{t-1}^2.
+$$
 - persistence $=\alpha+\beta$; stationary iff $\alpha+\beta<1$;
 - unconditional variance $\bar\sigma^2=\dfrac{\omega}{1-\alpha-\beta}$;
 - heavy tails if $1-2\alpha^2-(\alpha+\beta)^2>0$;

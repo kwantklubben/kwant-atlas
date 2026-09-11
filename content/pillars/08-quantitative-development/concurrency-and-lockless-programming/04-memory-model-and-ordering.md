@@ -32,13 +32,17 @@ This page has one practical objective: make you fluent in the two ideas that mak
 
 **The release/acquire happens-before edge.** Let producer $P$ write payload $D$, then `store_release(tail)`. Let consumer $Q$ do `load_acquire(tail)` and, seeing the new value, read $D$. Then $D$'s write **happens-before** $Q$'s read:
 
-$$P\ \text{writes }D \xrightarrow{\text{release}} P\ \text{stores }tail \xrightarrow{\text{synchronizes-with}} Q\ \text{loads }tail \xrightarrow{\text{acquire}} Q\ \text{reads }D.$$
+$$
+P\ \text{writes }D \xrightarrow{\text{release}} P\ \text{stores }tail \xrightarrow{\text{synchronizes-with}} Q\ \text{loads }tail \xrightarrow{\text{acquire}} Q\ \text{reads }D.
+$$
 
 Formally, release/acquire on the *same atomic variable* induces a *synchronizes-with* relation, which induces *happens-before*. This is the entire correctness argument for the SPSC ring of [[pillars/08-quantitative-development/concurrency-and-lockless-programming/03-lock-free-structures|03 · Lock-Free Structures]]. Without it — if the producer uses `relaxed` and the payload write can float after the `tail` store — the consumer can read a *new* index and *old* data.
 
 **Cache-line coherence and false sharing.** Let two counters $c_1,c_2$ be accessed by threads 1 and 2 respectively. If both sit on the same 64-byte line, every store by thread 1 invalidates the line in thread 2's cache and vice-versa; each access costs a coherence transfer $T$ (~40 ns at L3) on top of the local atomic cost $a$. If $c_1,c_2$ are padded to separate lines, the threads run fully in parallel at cost $a$ each. For $K$ increments by each thread:
 
-$$\text{false-shared makespan} = 2K(a+T), \qquad \text{padded makespan} = Ka.$$
+$$
+\text{false-shared makespan} = 2K(a+T), \qquad \text{padded makespan} = Ka.
+$$
 
 The slowdown $\frac{2(a+T)}{a}$ is independent of $K$ — a constant multiple, here $\frac{2(45)}{5}=18\times$.
 

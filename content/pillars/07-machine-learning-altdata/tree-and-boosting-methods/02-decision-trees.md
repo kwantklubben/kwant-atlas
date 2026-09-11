@@ -29,25 +29,33 @@ The objective is to be able to answer three questions without hand-waving:
 
 **A. The regression split criterion (ESL 9.13).** At a node holding data $(x_i,y_i)$, choose
 
-$$\min_{j,s}\left[\min_{c_1}\!\sum_{x_i\in R_1(j,s)}(y_i-c_1)^2+\min_{c_2}\!\sum_{x_i\in R_2(j,s)}(y_i-c_2)^2\right],\quad R_1=\{x_j\le s\},\ R_2=\{x_j>s\}.$$
+$$
+\min_{j,s}\left[\min_{c_1}\!\sum_{x_i\in R_1(j,s)}(y_i-c_1)^2+\min_{c_2}\!\sum_{x_i\in R_2(j,s)}(y_i-c_2)^2\right],\quad R_1=\{x_j\le s\},\ R_2=\{x_j>s\}.
+$$
 
 The inner minima are the region means; the "best split" is the one with the largest **variance reduction** (equivalently SSE reduction). The naive cost is $O(np\log n)$ per node because you sort each feature once and scan.
 
 **B. The SSE identity that makes it fast.** For a region $R$ with $n$ points,
 
-$$SSE(R)=\sum_{x_i\in R}(y_i-\bar y)^2=\sum_{x_i\in R}y_i^2-\frac1n\Big(\sum_{x_i\in R}y_i\Big)^2 .$$
+$$
+SSE(R)=\sum_{x_i\in R}(y_i-\bar y)^2=\sum_{x_i\in R}y_i^2-\frac1n\Big(\sum_{x_i\in R}y_i\Big)^2 .
+$$
 
 So with prefix sums of $y$ and $y^2$ you evaluate every candidate split in $O(1)$: the scan is $O(np)$ per node after sorting.
 
 **C. Classification impurity (ESL 9.17).** For node $m$ with class proportions $\hat p_{mk}$:
 
-$$\text{Gini}(m)=\sum_{k}\hat p_{mk}(1-\hat p_{mk}),\qquad \text{Deviance}(m)=-\sum_{k}\hat p_{mk}\log\hat p_{mk}.$$
+$$
+\text{Gini}(m)=\sum_{k}\hat p_{mk}(1-\hat p_{mk}),\qquad \text{Deviance}(m)=-\sum_{k}\hat p_{mk}\log\hat p_{mk}.
+$$
 
 Both are more sensitive to node purity than misclassification error and, unlike misclassification error, are differentiable — which is why CART *grows* on Gini/deviance. Gini peaks at $p=1/2$ (value $0.5$ for binary) and is zero at a pure node.
 
 **D. Stopping / pruning (ESL 9.16).** Grow a large tree $T_0$ then **cost-complexity prune**: for a complexity parameter $\alpha$, minimise
 
-$$C_\alpha(T)=\sum_{m=1}^{|T|}N_m\,Q_m(T)+\alpha\,|T|,$$
+$$
+C_\alpha(T)=\sum_{m=1}^{|T|}N_m\,Q_m(T)+\alpha\,|T|,
+$$
 
 where $N_m$ is the node size and $Q_m$ the node impurity. Weakest-link pruning removes the subtree with the smallest increase in $C_\alpha$; $\alpha$ is chosen by cross-validation. In finance, the honest choice of $\alpha$ (or a max-depth / min-leaf-size cap) is the difference between a model and a noise-fitter.
 

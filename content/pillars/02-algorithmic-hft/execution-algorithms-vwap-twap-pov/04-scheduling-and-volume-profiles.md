@@ -25,16 +25,22 @@ The practical objective of this page: **(1)** learn how the profile is *estimate
 ### 2. Mathematical Ground Truth & Derivations
 
 **Volume profile estimation.** Over $D$ trailing days, the forecast fraction of volume in bucket $t$ is the average of per-day realized shares:
-$$\\phi_t = \\frac{1}{D}\\sum_{d=1}^D \\frac{V_{d,t}}{V_{d,\\text{total}}}, \\qquad \\sum_{t=1}^B \\phi_t = 1.0.$$
+$$
+\phi_t = \frac{1}{D}\sum_{d=1}^D \frac{V_{d,t}}{V_{d,\text{total}}}, \qquad \sum_{t=1}^B \phi_t = 1.0.
+$$
 This is the workhorse: it is just *normalize-then-average*. It is what a "20-day average profile" on a broker's engine means.
 
-**VWAP child sizing.** Given parent size $V$ and forecast $\\phi$, the base child in bucket $t$ is
-$$q_t = V\\,\\phi_t,$$
-then add bounded anti-gaming randomization $q_t\\to q_t(1+u_t)$, $u_t\\in[-\\delta,\\delta]$, and **renormalize to preserve the parent total** exactly so $\\sum_t q_t = V$.
+**VWAP child sizing.** Given parent size $V$ and forecast $\phi$, the base child in bucket $t$ is
+$$
+q_t = V\,\phi_t,
+$$
+then add bounded anti-gaming randomization $q_t\to q_t(1+u_t)$, $u_t\in[-\delta,\delta]$, and **renormalize to preserve the parent total** exactly so $\sum_t q_t = V$.
 
-**Tracking error as the score of the forecast.** The schedule's realized quality is the deviation of its allocation from the *realized* profile $\\phi_t^{\\text{real}}$:
-$$\\text{TE}(\\text{realized}) = \\sqrt{\\sum_{t=1}^B \\left(\\tfrac{q_t}{V} - \\phi_t^{\\text{real}}\\right)^2}.$$
-When $\\phi^{\\text{real}}=\\phi^{\\text{forecast}}$ (a clean day), TE is tiny. When a news shock reshuffles volume, TE explodes — and with it the slippage vs the realized VWAP. **The TE-vs-profile gap is the whole game.**
+**Tracking error as the score of the forecast.** The schedule's realized quality is the deviation of its allocation from the *realized* profile $\phi_t^{\text{real}}$:
+$$
+\text{TE}(\text{realized}) = \sqrt{\sum_{t=1}^B \left(\tfrac{q_t}{V} - \phi_t^{\text{real}}\right)^2}.
+$$
+When $\phi^{\text{real}}=\phi^{\text{forecast}}$ (a clean day), TE is tiny. When a news shock reshuffles volume, TE explodes — and with it the slippage vs the realized VWAP. **The TE-vs-profile gap is the whole game.**
 
 **Why the U-shape exists (connects to microstructure).** Volume is heaviest when information and inventory-rebalancing incentives peak — the open and close. This is the empirical shadow of the [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/06-advanced-extensions|slowly-decaying temporary impact]] that makes "U-shaped strategies" optimal in Hasbrouck Ch 15 and AC.
 
@@ -88,7 +94,7 @@ VWAP tracking error vs news-shocked day:   0.0741   <- blow-up
 TWAP tracking error vs news-shocked day:   0.1238
 ```
 
-**Read the numbers.** The schedule is exact: children trace the estimated U (5,284 at the open bucket … 11,247 at the close) and **sum to the parent $100{,}000$** after renormalization. On a clean day its tracking error is a negligible $0.0080$. But when news spikes the last three buckets to $1.6\\times$, the forecast-based schedule now weights them too lightly — TE jumps to $0.0741$, nine times worse — while TWAP (volume-blind) is even worse at $0.1238$. The engine is only as good as the profile; this is the documented failure on macro-announcement days.
+**Read the numbers.** The schedule is exact: children trace the estimated U (5,284 at the open bucket … 11,247 at the close) and **sum to the parent $100{,}000$** after renormalization. On a clean day its tracking error is a negligible $0.0080$. But when news spikes the last three buckets to $1.6\times$, the forecast-based schedule now weights them too lightly — TE jumps to $0.0741$, nine times worse — while TWAP (volume-blind) is even worse at $0.1238$. The engine is only as good as the profile; this is the documented failure on macro-announcement days.
 
 ---
 
@@ -97,7 +103,7 @@ TWAP tracking error vs news-shocked day:   0.1238
 1. **The clean-day illusion.** The $0.0080$ forecast TE is earned only on days whose volume follows history. On a rebalancing or event day the profile is a *different shape* and the schedule is mis-weighted by construction.
 2. **Rounding and renormalization drift.** If your engine does not renormalize, rounding errors compound and the final liquidation is forced into the last bucket — the exact "late-day dump" symptom of misestimated profiles.
 3. **Overfitting the profile.** Averaging too few days (small $D$) fits noise; too many (large $D$) smooths away genuine day-of-week effects (e.g., Monday vs Friday profiles differ). The "U" is not a constant; it is day- and name-specific.
-4. **Same-tool-as-opponent.** A static profile is itself a signal competitors can reverse-engineer; the randomization ($\\delta$) is not decoration but protection (page 05).
+4. **Same-tool-as-opponent.** A static profile is itself a signal competitors can reverse-engineer; the randomization ($\delta$) is not decoration but protection (page 05).
 
 ---
 

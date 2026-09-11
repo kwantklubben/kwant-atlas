@@ -29,24 +29,30 @@ The through-line: **a fundamental screen is a factor portfolio in disguise.** On
 
 **The Piotroski F-score (2000).** Nine binary signals, summed:
 
-$$\text{F}=\sum_{i=1}^{9} s_i \in \{0,\dots,9\}, \qquad
+$$
+\text{F}=\sum_{i=1}^{9} s_i \in \{0,\dots,9\}, \qquad
 \begin{aligned}
 &\text{Profitability: } [ROA>0],\ [CFO>0],\ [\Delta ROA>0],\ [CFO>ROA]\\
 &\text{Leverage/liquidity/funding: } [\Delta LTD<0],\ [\Delta CR>0],\ [\text{no equity issue}]\\
 &\text{Operating efficiency: } [\Delta GM>0],\ [\Delta ATO>0]
-\end{aligned}$$
+\end{aligned}
+$$
 
 where $ROA=NI/\text{avg TA}$, $CFO$ operating cash flow / avg TA, $CR=CA/CL$, $GM=(S-\text{COGS})/S$, $ATO=S/\text{avg TA}$. Piotroski's result: **within the top book-to-market tercile, high-F (8–9) firms substantially outperform low-F (0–1) firms** — quality conditions the value signal.
 
 **Standardising signals for combination.** Metrics on different scales are combined via z-scores. For a characteristic $x$ with cross-sectional mean $\mu$ and standard deviation $\sigma$:
 
-$$z(x)=\frac{x-\mu}{\sigma}, \qquad \text{composite} = w_v\,z(\text{value}) + w_q\,z(\text{quality}).$$
+$$
+z(x)=\frac{x-\mu}{\sigma}, \qquad \text{composite} = w_v\,z(\text{value}) + w_q\,z(\text{quality}).
+$$
 
 The "magic formula" is the equal-weight special case with value $=E/P+B/P$ and quality $=ROIC$.
 
 **The five-factor model (Fama–French 2015).** The expected return decomposes as
 
-$$E[R_i]-R_f=\beta_i^{\text{MKT}}\lambda_{\text{MKT}}+\beta_i^{\text{SMB}}\lambda_{\text{SMB}}+\beta_i^{\text{HML}}\lambda_{\text{HML}}+\beta_i^{\text{RMW}}\lambda_{\text{RMW}}+\beta_i^{\text{CMA}}\lambda_{\text{CMA}},$$
+$$
+E[R_i]-R_f=\beta_i^{\text{MKT}}\lambda_{\text{MKT}}+\beta_i^{\text{SMB}}\lambda_{\text{SMB}}+\beta_i^{\text{HML}}\lambda_{\text{HML}}+\beta_i^{\text{RMW}}\lambda_{\text{RMW}}+\beta_i^{\text{CMA}}\lambda_{\text{CMA}},
+$$
 
 where **RMW** (robust-minus-weak profitability) and **CMA** (conservative-minus-aggressive investment) are *built directly from accounting fundamentals* — operating profitability and asset growth. This is where screens become factors.
 

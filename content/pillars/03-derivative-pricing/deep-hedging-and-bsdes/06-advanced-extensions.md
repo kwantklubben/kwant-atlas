@@ -46,19 +46,25 @@ The practical objective: be able to state and implement the Leland correction an
 
 In continuous time with proportional cost $\kappa$ per unit traded notional, the self-financing condition is replaced by
 
-$$dY_t=\delta_t\,dS_t-\kappa\,S_t\,|d\delta_t|-\big(\text{liability accrual}\big),$$
+$$
+dY_t=\delta_t\,dS_t-\kappa\,S_t\,|d\delta_t|-\big(\text{liability accrual}\big),
+$$
 
 and $|d\delta_t|$ — the *total variation* of the strategy — is not approximable by a diffusion (it is of order $\sqrt{d\langle\delta\rangle_t}$, i.e. a local time). Two classical ways to proceed:
 
 **(i) Leland's heuristic (1985).** Require the hedged P&L to have zero *expected* cost by widening the volatility:
 
-$$\boxed{\ \sigma_L^2=\sigma^2\Big(1+\sqrt{\tfrac{2}{\pi}}\,\frac{\kappa}{\sigma\sqrt{\Delta t}}\Big)\ }\qquad\text{i.e.}\qquad \delta^{\text{Leland}}_t=\frac{\partial C_{BS}}{\partial S}\Big|_{\sigma=\sigma_L}.$$
+$$
+\boxed{\ \sigma_L^2=\sigma^2\Big(1+\sqrt{\tfrac{2}{\pi}}\,\frac{\kappa}{\sigma\sqrt{\Delta t}}\Big)\ }\qquad\text{i.e.}\qquad \delta^{\text{Leland}}_t=\frac{\partial C_{BS}}{\partial S}\Big|_{\sigma=\sigma_L}.
+$$
 
 The correction vanishes as $\Delta t\to0$ only if $\kappa\to0$; for fixed $\kappa$ the adjusted volatility *blows up* as the rebalancing interval shrinks — the mathematical statement that finer rebalancing is increasingly costly. Leland's derivation is asymptotic ($\kappa$ small, $\Delta t$ small, with $\kappa/\sqrt{\Delta t}$ fixed) and it is a *first-order* correction to *expected cost*; it is not optimal for variance or for CVaR, as §3 shows.
 
 **(ii) The BSDE/HJB route.** The exact problem is a *nonlinear* pricing equation of the form
 
-$$u_t+\tfrac{\sigma^2}{2}S^2u_{SS}+\tfrac{\sigma^2S^2u_S^2\,\kappa}{\dots}=0,$$
+$$
+u_t+\tfrac{\sigma^2}{2}S^2u_{SS}+\tfrac{\sigma^2S^2u_S^2\,\kappa}{\dots}=0,
+$$
 
 studied by Davis–Panas–Zariphopoulou (1993) and Whalley–Wilmott (1997), which in the BSDE language is a driver $f$ **concave in $z$**. This is the mathematically honest formulation and the one deep hedging attacks directly: put the cost term (a path functional) into the objective $\rho(L_T^\delta)$ and let the network optimise it. **The practitioner rule that falls out of both: the optimal rebalancing frequency is finite and is a function of $\kappa$ — never of machine speed.**
 
@@ -66,7 +72,9 @@ studied by Davis–Panas–Zariphopoulou (1993) and Whalley–Wilmott (1997), wh
 
 With discrete rebalancing at $N$ dates, §05's law $\mathrm{SD}\propto N^{-1/2}$ and the cost $\propto N^{1/2}$ combine into
 
-$$\min_N\ \frac{c_1}{\sqrt N}+c_2\kappa\sqrt N\ \Longrightarrow\ N^\star=\frac{c_1}{c_2\kappa}\ \ \text{(the two terms balancing)},$$
+$$
+\min_N\ \frac{c_1}{\sqrt N}+c_2\kappa\sqrt N\ \Longrightarrow\ N^\star=\frac{c_1}{c_2\kappa}\ \ \text{(the two terms balancing)},
+$$
 
 which is the *same* structure as the Almgren–Chriss liquidation trade-off in [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]. The measured optimum in §05 at $\kappa=50$bp is $N^\star=16$ — and it is a *business* number (it depends on $\kappa$ and on the risk measure), not a numerical one.
 
@@ -74,7 +82,9 @@ which is the *same* structure as the Almgren–Chriss liquidation trade-off in [
 
 Let $\mathcal U$ be a set of candidate models (here: volatilities $\sigma\in[0.15,0.25]$). The robust hedge is
 
-$$\boxed{\ \delta^{\mathrm{rob}}=\arg\min_{\delta}\ \max_{\sigma\in\mathcal U}\ \rho\big(L_T^\delta(\sigma)\big)\ } .$$
+$$
+\boxed{\ \delta^{\mathrm{rob}}=\arg\min_{\delta}\ \max_{\sigma\in\mathcal U}\ \rho\big(L_T^\delta(\sigma)\big)\ } .
+$$
 
 This is the *primal* problem; the **dual** is the robust representation of the risk measure over a set of measures $\mathcal Q$, and the two coincide when $\mathcal U$ and $\mathcal Q$ are appropriately paired (a minimax theorem — convexity in $\delta$, concavity/compactness in $\sigma$). Three structural facts:
 
@@ -86,7 +96,9 @@ This is the *primal* problem; the **dual** is the robust representation of the r
 
 Deep BSDE's headline result is $d=100$. The mechanism: with a grid the cost of a $d$-dimensional PDE is $O(N^d)$, whereas Monte Carlo averaging is $O(n^{-1/2})$ *in any dimension* and a neural network represents $u(t,\cdot)$ with a parameter count that grows far more slowly than the grid. Formally, the loss is
 
-$$\mathbb E\big[(\xi-Y_T^\theta)^2\big],\qquad Y_T^\theta=Y_0^\theta-\sum_i f(t_i,Y_i^\theta,Z_i^\theta)\Delta t+\sum_i Z_i^\theta\cdot\Delta W_i,$$
+$$
+\mathbb E\big[(\xi-Y_T^\theta)^2\big],\qquad Y_T^\theta=Y_0^\theta-\sum_i f(t_i,Y_i^\theta,Z_i^\theta)\Delta t+\sum_i Z_i^\theta\cdot\Delta W_i,
+$$
 
 with $Z_i^\theta\in\mathbb R^{1\times d}$ now a *matrix-valued* network output (a Jacobian), so the per-step network must learn the full gradient. Two honest caveats:
 
@@ -97,7 +109,9 @@ with $Z_i^\theta\in\mathbb R^{1\times d}$ now a *matrix-valued* network output (
 
 The deep-hedging problem is a *finite-horizon Markov decision process* with a risk-sensitive objective:
 
-$$\text{state}=(t,S_t,\delta_{t^-}),\quad \text{action}=\delta_t,\quad \text{reward}=-\kappa|\delta_t-\delta_{t^-}|S_t,\quad \text{terminal cost}=\rho\big(\cdot\big).$$
+$$
+\text{state}=(t,S_t,\delta_{t^-}),\quad \text{action}=\delta_t,\quad \text{reward}=-\kappa|\delta_t-\delta_{t^-}|S_t,\quad \text{terminal cost}=\rho\big(\cdot\big).
+$$
 
 and one optimises $\rho$ of the *cumulative* reward. Two consequences:
 

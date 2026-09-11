@@ -16,7 +16,9 @@ tags:
 
 You have a price series, you have a moving average, and you want to know if "buy when price is above its 20-day average" makes money. The fast way is one line of vectorized arithmetic:
 
-$$\Pi_T=\sum_{t=1}^{T} w_t\, r_t,\qquad r_t=\frac{S_t-S_{t-1}}{S_{t-1}},\qquad w_t=\mathbf{1}\{S_t>\overline{S}_{t-20}\}.$$
+$$
+\Pi_T=\sum_{t=1}^{T} w_t\, r_t,\qquad r_t=\frac{S_t-S_{t-1}}{S_{t-1}},\qquad w_t=\mathbf{1}\{S_t>\overline{S}_{t-20}\}.
+$$
 
 That is the backtest everybody writes first. It is also **wrong in a way that produces spectacular fake profits**, and this page exists to show you exactly why — with a runnable experiment and no hand-waving.
 
@@ -28,23 +30,31 @@ The objective is one idea: **a backtest must answer "what could I have earned gi
 
 **Where the free money comes from.** Look at the definition of $w_t$ again: it is a function of $S_t$. And $r_t$ is *also* a function of $S_t$ (it is $S_t/S_{t-1}-1$). So the product $w_t r_t$ correlates a quantity with itself. Write $S_t=\overline{S}_{t-20}(1+\epsilon_t)$ for a small deviation $\epsilon_t$; then
 
-$$w_t=\mathbf{1}\{\epsilon_t>0\},\qquad r_t=\frac{S_t-S_{t-1}}{S_{t-1}}=\frac{S_{t-1}(1+\delta)-S_{t-1}}{S_{t-1}}=\delta,$$
+$$
+w_t=\mathbf{1}\{\epsilon_t>0\},\qquad r_t=\frac{S_t-S_{t-1}}{S_{t-1}}=\frac{S_{t-1}(1+\delta)-S_{t-1}}{S_{t-1}}=\delta,
+$$
 
 where $\delta$ is the bar's own return. On a **pure random walk** $\delta$ is i.i.d. zero-mean — and yet $\operatorname{Cov}(w_t,r_t)>0$ *by construction*, because the condition $\epsilon_t>0$ (price above its own recent average) is partly satisfied *by this bar being up*. You are not detecting momentum; you are detecting your own index. Formally, conditional on the signal being on, the return is not zero-mean:
 
-$$\mathbb{E}[r_t\mid w_t=1]\;>\;0 \quad\text{even though}\quad \mathbb{E}[r_t]=0.$$
+$$
+\mathbb{E}[r_t\mid w_t=1]\;>\;0 \quad\text{even though}\quad \mathbb{E}[r_t]=0.
+$$
 
 This is the **look-ahead identity**: `signal.shift(0)` in a vectorized backtest is not "using today's close to trade today's close" — it is "using tomorrow's information to trade yesterday," because the close is not knowable until the bar is over.
 
 **The fix in one token.** Shift the signal one bar:
 
-$$w_t^{\text{honest}}=\mathbf{1}\{S_{t-1}>\overline{S}_{t-21}\}\quad\Longleftrightarrow\quad \texttt{signal.shift(1)}.$$
+$$
+w_t^{\text{honest}}=\mathbf{1}\{S_{t-1}>\overline{S}_{t-21}\}\quad\Longleftrightarrow\quad \texttt{signal.shift(1)}.
+$$
 
 Now the weight that multiplies $r_t$ is measurable at $t-1$, and $\mathbb{E}[r_t\mid w_t^{\text{honest}}]=0$ on a random walk. The whole edge vanishes — which is the point, because there never was one.
 
 **The execution reality the shift still hides.** Even `shift(1)` assumes you get filled at the *next bar's close*, at zero cost, at unlimited size. A real engine replaces that with a fill condition and a cost:
 
-$$P_{\text{fill}}=S^{\text{mid}}_{t+\tau}\Bigl(1+\tfrac12 s\Bigr)=S^{\text{ask}}_{t+\tau},\qquad \tau=\tau_{\text{struct}}+\tau_{\text{wire}},$$
+$$
+P_{\text{fill}}=S^{\text{mid}}_{t+\tau}\Bigl(1+\tfrac12 s\Bigr)=S^{\text{ask}}_{t+\tau},\qquad \tau=\tau_{\text{struct}}+\tau_{\text{wire}},
+$$
 
 where $\tau_{\text{struct}}=1$ is unavoidable (the signal needs a completed bar) and $s$ is the *quoted spread*: crossing the half-spread $\tfrac12 s$ takes you from the mid to the ask (so the fully-crossed fill price is just $S^{\text{ask}}_{t+\tau}$ — the mid form is the bookkeeping identity, not an extra cost). The event-driven pages make each term of this equation an explicit number.
 

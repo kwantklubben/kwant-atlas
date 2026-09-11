@@ -27,11 +27,17 @@ The two jobs of the regression:
 #### 2.1 The 3-factor time-series regression (FF 1993)
 
 For asset $i$ over time $t=1,\dots,T$:
-$$R_{it}-R_{ft}=\alpha_i+\beta_{i,M}\,MKT_t+\beta_{i,\text{SMB}}\,\text{SMB}_t+\beta_{i,\text{HML}}\,\text{HML}_t+\varepsilon_{it},$$
+$$
+R_{it}-R_{ft}=\alpha_i+\beta_{i,M}\,MKT_t+\beta_{i,\text{SMB}}\,\text{SMB}_t+\beta_{i,\text{HML}}\,\text{HML}_t+\varepsilon_{it},
+$$
 where $MKT_t=R_{Mt}-R_{ft}$. Stacking $T$ observations in matrix form $y=X\beta+\varepsilon$ with the first column of $X$ a column of ones, OLS gives (ESL eq. 3.6):
-$$\hat\beta=(X^\top X)^{-1}X^\top y,$$
+$$
+\hat\beta=(X^\top X)^{-1}X^\top y,
+$$
 and the intercept $\hat\alpha_i$ is the model's pricing error. **FF 2015 eq. (5)** extends this to five factors:
-$$R_{it}-R_{ft}=\alpha_i+b_i\,MKT_t+s_i\,\text{SMB}_t+h_i\,\text{HML}_t+r_i\,\text{RMW}_t+c_i\,\text{CMA}_t+\varepsilon_{it}.$$
+$$
+R_{it}-R_{ft}=\alpha_i+b_i\,MKT_t+s_i\,\text{SMB}_t+h_i\,\text{HML}_t+r_i\,\text{RMW}_t+c_i\,\text{CMA}_t+\varepsilon_{it}.
+$$
 
 **Interpretation of the coefficients** (matching the flat-page vocabulary):
 - $\alpha_i$ (annualized $=\hat\alpha_i\cdot 252$): excess return above factor compensation; under an efficient/factor-correct model it should be $0$.
@@ -41,7 +47,9 @@ $$R_{it}-R_{ft}=\alpha_i+b_i\,MKT_t+s_i\,\text{SMB}_t+h_i\,\text{HML}_t+r_i\,\te
 #### 2.2 Why alpha is the whole game
 
 The regression decomposes each period's excess return into **factor-compensated beta** and **residual**:
-$$R_{it}-R_{ft}=\underbrace{\beta_i^\top f_t}_{\text{systematic, priced}}+\underbrace{\alpha_i+\varepsilon_{it}}_{\text{residual}} .$$
+$$
+R_{it}-R_{ft}=\underbrace{\beta_i^\top f_t}_{\text{systematic, priced}}+\underbrace{\alpha_i+\varepsilon_{it}}_{\text{residual}} .
+$$
 A manager who only delivers $\beta_i^\top f_t$ has earned the *risk premium*, not skill. Only a statistically robust $\alpha_i>0$ is genuine "alpha." The GRS test (Gibbons, Ross & Shanken 1989) formalizes this across many assets at once: it rejects the model if the vector of intercepts is jointly significantly nonzero.
 
 #### 2.3 Connection to Fama–MacBeth cross-sectional tests

@@ -38,22 +38,30 @@ Consequences useful in practice: T gives $\rho(X+\rho(X)r)=0$ (the risk measure 
 #### 2.2 The deeper primitive: acceptance sets (Artzner §2.2–2.4)
 
 Define the acceptance set $\mathcal{A}=\{X:\rho(X)\le0\}$ — positions that need no extra capital. The measure is recovered as
-$$\rho_{\mathcal{A},r}(X)=\inf\{m: m\,r+X\in\mathcal{A}\}.$$
+$$
+\rho_{\mathcal{A},r}(X)=\inf\{m: m\,r+X\in\mathcal{A}\}.
+$$
 **Axioms on $\mathcal{A}$** (contains the positive orthant $L^+$; avoids the strictly-negative orthant $L^{--}$; is **convex**; is a **positively homogeneous cone**) are *equivalent* to coherence of $\rho$ (Props. 2.1–2.2). This is why VaR's failure bites: its acceptance set is **not convex** ([[pillars/04-quantitative-risk/var-and-expected-shortfall/02-var-definition-and-flaws|02 · §2.2]]).
 
 #### 2.3 Representation: coherence ⇔ worst-case scenarios (Artzner §4.1)
 
 **Proposition 4.1 (Artzner et al.).** $\rho$ is coherent **iff** there is a family $\mathcal{P}$ of probability measures on the states of the world such that
-$$\boxed{\ \rho(X)=\sup\{\mathbb{E}_P[-X/r] \mid P\in\mathcal{P}\}\ }$$
+$$
+\boxed{\ \rho(X)=\sup\{\mathbb{E}_P[-X/r] \mid P\in\mathcal{P}\}\ }
+$$
 i.e. every coherent risk measure is a **supremum of expected losses over a set of "generalized scenarios."** Conversely (Prop. 3.1) any $\rho_{\mathcal{P}}(X)=\sup_{P\in\mathcal{P}}\mathbb{E}_P[-X/r]$ is coherent (satisfying relevance iff $\bigcup_P \operatorname{supp}P=\Omega$). Adding more scenarios makes the measure **more conservative**. This is the theoretical roof over *all* coherent measures — including ES, which is the special case where $\mathcal{P}$ is the set of all measures agreeing with the base measure on the tail (equivalently the spectral representation in [[pillars/04-quantitative-risk/var-and-expected-shortfall/06-advanced-extensions|06 · Advanced Extensions]]).
 
 #### 2.4 ES as coherence repair (Artzner §5.1)
 
 Artzner's concrete repair uses the *tail conditional expectation* (TailVaR):
-$$\mathrm{TCE}_\alpha(X)=-\mathbb{E}_P[X/r\mid X/r\le-\mathrm{VaR}_\alpha(X)],\qquad
-\mathrm{WCE}_\alpha(X)=-\inf\{\mathbb{E}_P[X/r\mid A]:\mathbb{P}(A)>\alpha\}.$$
+$$
+\mathrm{TCE}_\alpha(X)=-\mathbb{E}_P[X/r\mid X/r\le-\mathrm{VaR}_\alpha(X)],\qquad
+\mathrm{WCE}_\alpha(X)=-\inf\{\mathbb{E}_P[X/r\mid A]:\mathbb{P}(A)>\alpha\}.
+$$
 He proves $\mathrm{TCE}_\alpha\le\mathrm{WCE}_\alpha$ (Prop. 5.1), with equality when $\mathbb{P}$ is uniform and the discounted outcomes are distinct (Prop. 5.3). And the sharpest statement of VaR's status (Prop. 5.2):
-$$\mathrm{VaR}_\alpha(X)=\inf\{\rho(X):\rho\ \text{coherent},\ \rho\ge\mathrm{VaR}_\alpha\},$$
+$$
+\mathrm{VaR}_\alpha(X)=\inf\{\rho(X):\rho\ \text{coherent},\ \rho\ge\mathrm{VaR}_\alpha\},
+$$
 i.e. **VaR is the least coherent measure that dominates it.** Any coherent measure you pick (ES, WCE) must be *at least* as large as VaR — coherence costs conservatism, and this identity quantifies the gap.
 
 ---

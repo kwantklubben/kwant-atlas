@@ -29,7 +29,9 @@ The practical objective: the **bivariate normal CDF $M(a,b;\rho)$** is the new m
 
 #### 2.1 The bivariate normal primitive
 
-$$M(a,b;\rho)=\mathbb{P}(X\le a,\,Y\le b),\qquad (X,Y)\sim N\!\Big(0,\begin{pmatrix}1&\rho\\\rho&1\end{pmatrix}\Big)=\int_{-\infty}^{a}\varphi(x)\,N\!\Big(\frac{b-\rho x}{\sqrt{1-\rho^2}}\Big)\,dx.$$
+$$
+M(a,b;\rho)=\mathbb{P}(X\le a,\,Y\le b),\qquad (X,Y)\sim N\!\Big(0,\begin{pmatrix}1&\rho\\\rho&1\end{pmatrix}\Big)=\int_{-\infty}^{a}\varphi(x)\,N\!\Big(\frac{b-\rho x}{\sqrt{1-\rho^2}}\Big)\,dx.
+$$
 
 This one-dimensional integral form is exactly how it is computed here (adaptive Simpson) — no external library needed. Haug recommends the Genz algorithm for production accuracy (§13.3.1); the integral form reproduces all anchors to 3–4 dp.
 
@@ -37,7 +39,9 @@ This one-dimensional integral form is exactly how it is computed here (adaptive 
 
 For a **put-on-call** (eq 4.29, verified): the critical level $I$ solves $c_{BSM}(I,X_1,T_2-t_1)=X_2$ (the spot at which the underlying call is worth the compound strike $X_2$), and
 
-$$p_{call}=X_1 e^{-rT_2}M(z_2,-y_2;-\rho)-S e^{(b-r)T_2}M(z_1,-y_1;-\rho)+X_2 e^{-r t_1}N(-y_2),$$
+$$
+p_{call}=X_1 e^{-rT_2}M(z_2,-y_2;-\rho)-S e^{(b-r)T_2}M(z_1,-y_1;-\rho)+X_2 e^{-r t_1}N(-y_2),
+$$
 
 with $z_1,z_2$ (function of $X_1$, $T_2$), $y_1,y_2$ (function of $I$, $t_1$), $\rho=\sqrt{t_1/T_2}$. Compound-option **put–call parity** (Haug eqs 4.32–4.33): $c_{call}+X_2 e^{-r t_1}=p_{call}+c_{BSM}(S,X_1,T_2)$.
 
@@ -45,7 +49,9 @@ with $z_1,z_2$ (function of $X_1$, $T_2$), $y_1,y_2$ (function of $I$, $t_1$), $
 
 **Simple chooser** — at $t_1$ you pick a call *or* put (both strike $X$, expiry $T_2$). Cleanest verified form is the **decomposition** (the literal transcription's last-term exponent is ambiguous in the source; the decomposition reproduces the book's $6.1071$):
 
-$$\text{chooser}=c(S,X,T_2)+e^{(b-r)(T_2-t_1)}\,p\big(S,\;X e^{-b(T_2-t_1)},\;t_1\big).$$
+$$
+\text{chooser}=c(S,X,T_2)+e^{(b-r)(T_2-t_1)}\,p\big(S,\;X e^{-b(T_2-t_1)},\;t_1\big).
+$$
 
 **Complex chooser** — at $t_1$ you choose between a call $(X_c,T_c)$ and a put $(X_p,T_p)$; four bivariate-normal terms with correlations $\rho_1=\sqrt{t_1/T_c}$, $\rho_2=\sqrt{t_1/T_p}$, and a critical level $I$ solving $c_{BSM}(I,X_c,T_c-t_1)=p_{BSM}(I,X_p,T_p-t_1)$.
 
@@ -59,7 +65,9 @@ $$\text{chooser}=c(S,X,T_2)+e^{(b-r)(T_2-t_1)}\,p\big(S,\;X e^{-b(T_2-t_1)},\;t_
 
 **Quanto** (fixed-rate foreign equity, Derman–Karasinski–Wecker / Reiner): payoff in domestic currency of a foreign asset, struck at a fixed exchange rate $E_p$:
 
-$$c=E_p\Big[S^*\,e^{(r_f-r-q-\rho\sigma_S\sigma_E)T}N(d_1)-X^*\,e^{-rT}N(d_2)\Big],\qquad d_1=\frac{\ln(S^*/X^*)+(r_f-q-\rho\sigma_S\sigma_E+\tfrac12\sigma_S^2)T}{\sigma_S\sqrt T}.$$
+$$
+c=E_p\Big[S^*\,e^{(r_f-r-q-\rho\sigma_S\sigma_E)T}N(d_1)-X^*\,e^{-rT}N(d_2)\Big],\qquad d_1=\frac{\ln(S^*/X^*)+(r_f-q-\rho\sigma_S\sigma_E+\tfrac12\sigma_S^2)T}{\sigma_S\sqrt T}.
+$$
 
 The term $-\rho\sigma_S\sigma_E$ is the **quanto adjustment** — it shifts the foreign drift by the covariance of the asset with the FX rate. **Foreign equity struck in domestic currency** (Reiner) instead uses the *combined* vol $\sigma_{ES}=\sqrt{\sigma_S^2+\sigma_E^2+2\rho\sigma_E\sigma_S}$ with $d_1=[\ln(ES^*/X)+(r-q+\tfrac12\sigma_{ES}^2)T]/(\sigma_{ES}\sqrt T)$ and $c=ES^*e^{-qT}N(d_1)-Xe^{-rT}N(d_2)$.
 

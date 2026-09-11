@@ -34,19 +34,25 @@ Three "aha"s:
 
 **The discrete recursion — everything starts here.** On a binomial lattice with node value $v_k(x)$ at time $k$ and payoff $g(x)=\max(K-x,0)$ for a put, the American value obeys (Shreve I §5.1):
 
-$$v_k(x)=\max\Big\{\underbrace{\tfrac{1}{1+r}\big[\tilde p\,v_{k+1}(ux)+\tilde q\,v_{k+1}(dx)\big]}_{\text{continuation}},\;\; \underbrace{g(x)}_{\text{exercise now}}\Big\},\qquad v_n(x)=g(x).$$
+$$
+v_k(x)=\max\Big\{\underbrace{\tfrac{1}{1+r}\big[\tilde p\,v_{k+1}(ux)+\tilde q\,v_{k+1}(dx)\big]}_{\text{continuation}},\;\; \underbrace{g(x)}_{\text{exercise now}}\Big\},\qquad v_n(x)=g(x).
+$$
 
 At every node you simply compare **continuation** with **intrinsic**. Exercise where intrinsic wins. This is the *whole* algorithm — trees, finite differences and Monte Carlo LSM are all refinements of this single line.
 
 **Worked example (Shreve I, Ex 5.1).** $S_0=4$, $u=2$, $d=\tfrac12$, $r=\tfrac14$, $n=2$, $K=5$, $\tilde p=\tilde q=\tfrac12$. Terminal payoffs: $v_2(16)=0,\ v_2(4)=1,\ v_2(1)=4$. Rolling back:
 
-$$v_1(8)=\tfrac45\big[\tfrac12\cdot0+\tfrac12\cdot1\big]=0.40,\qquad v_1(2)=\max\big\{\tfrac45\big[\tfrac12\cdot1+\tfrac12\cdot4\big],\,3\big\}=\max\{2,\,3\}=3.$$
+$$
+v_1(8)=\tfrac45\big[\tfrac12\cdot0+\tfrac12\cdot1\big]=0.40,\qquad v_1(2)=\max\big\{\tfrac45\big[\tfrac12\cdot1+\tfrac12\cdot4\big],\,3\big\}=\max\{2,\,3\}=3.
+$$
 
 At the down node $S=2$ the intrinsic $3$ **beats** the continuation $2$ — that is early exercise, visible in a one-line computation. At the root, $v_0(4)=\max\{\tfrac45[\tfrac12(0.40)+\tfrac12(3)],\,1\}=\max\{1.36,1\}=1.36$. **The freedom to stop at $t=1$ raised the value from the European value $0.96$ (the same recursion without the max), while the *intrinsic* at the root is $1$.** The overhang $1.36-0.96=0.40$ is the early-exercise premium.
 
 **Continuous-time version.** Replace the recursion by the optimal-stopping value (Shreve II §8.1)
 
-$$V(t)=\operatorname*{max}_{\tau\in\mathcal{T},\ \tau\ge t}\ \widetilde{\mathbb E}\!\left[e^{-r(\tau-t)}\,g(S_\tau)\,\Big|\,\mathcal{F}(t)\right],$$
+$$
+V(t)=\operatorname*{max}_{\tau\in\mathcal{T},\ \tau\ge t}\ \widetilde{\mathbb E}\!\left[e^{-r(\tau-t)}\,g(S_\tau)\,\Big|\,\mathcal{F}(t)\right],
+$$
 
 and the payoff/continuation comparison becomes the **free-boundary** statement: choose $\tau$ = first time $S$ hits the boundary. The boundary is continuous in time and never known in advance.
 

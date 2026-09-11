@@ -22,9 +22,15 @@ This is the **complete closed-form lookup page** for vanilla European options. T
 
 #### 2.1 The Generalized Black–Scholes–Merton formula (Haug §1.1.6)
 
-$$\boxed{\;c = S\,e^{(b-r)T}N(d_1) - X\,e^{-rT}N(d_2)\;}$$
-$$\boxed{\;p = X\,e^{-rT}N(-d_2) - S\,e^{(b-r)T}N(-d_1)\;}$$
-$$d_1=\frac{\ln(S/X)+\left(b+\tfrac12\sigma^2\right)T}{\sigma\sqrt T},\qquad d_2=d_1-\sigma\sqrt T=\frac{\ln(S/X)+\left(b-\tfrac12\sigma^2\right)T}{\sigma\sqrt T}.$$
+$$
+\boxed{\;c = S\,e^{(b-r)T}N(d_1) - X\,e^{-rT}N(d_2)\;}
+$$
+$$
+\boxed{\;p = X\,e^{-rT}N(-d_2) - S\,e^{(b-r)T}N(-d_1)\;}
+$$
+$$
+d_1=\frac{\ln(S/X)+\left(b+\tfrac12\sigma^2\right)T}{\sigma\sqrt T},\qquad d_2=d_1-\sigma\sqrt T=\frac{\ln(S/X)+\left(b-\tfrac12\sigma^2\right)T}{\sigma\sqrt T}.
+$$
 
 **Cost-of-carry dictionary** — the entire menu is one variable $b$:
 
@@ -38,13 +44,17 @@ $$d_1=\frac{\ln(S/X)+\left(b+\tfrac12\sigma^2\right)T}{\sigma\sqrt T},\qquad d_2
 
 #### 2.2 Put–Call Parity (Haug §1.2; Shreve II 4.5.29; Hull 18.1) — model-free
 
-$$c-p = S\,e^{(b-r)T}-X\,e^{-rT} = e^{-rT}\left(S\,e^{bT}-X\right).$$
+$$
+c-p = S\,e^{(b-r)T}-X\,e^{-rT} = e^{-rT}\left(S\,e^{bT}-X\right).
+$$
 
 Special cases: stock $c-p=S-Xe^{-rT}$; continuous yield $c-p=Se^{-qT}-Xe^{-rT}$; futures $c-p=(F-X)e^{-rT}$; currency $c-p=Se^{-r_fT}-Xe^{-rT}$. *Parity is a pure no-arbitrage identity — it holds regardless of volatility and even for non-lognormal dynamics.*
 
 #### 2.3 Price bounds (Hull 17, 18)
 
-$$c\ge\max\left(S\,e^{(b-r)T}-X\,e^{-rT},\,0\right),\qquad p\ge\max\left(X\,e^{-rT}-S\,e^{(b-r)T},\,0\right).$$
+$$
+c\ge\max\left(S\,e^{(b-r)T}-X\,e^{-rT},\,0\right),\qquad p\ge\max\left(X\,e^{-rT}-S\,e^{(b-r)T},\,0\right).
+$$
 
 #### 2.4 Interpretation
 

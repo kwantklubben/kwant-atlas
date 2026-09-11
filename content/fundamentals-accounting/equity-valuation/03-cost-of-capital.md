@@ -33,7 +33,9 @@ The essential discipline: **the discount rate must match the cash flow.** Equity
 
 #### 2.1 CAPM and the cost of equity
 
-$$k_e=r_f+\beta\,(\text{ERP}),\qquad \beta=\frac{\operatorname{Cov}(R_i,R_m)}{\operatorname{Var}(R_m)}.$$
+$$
+k_e=r_f+\beta\,(\text{ERP}),\qquad \beta=\frac{\operatorname{Cov}(R_i,R_m)}{\operatorname{Var}(R_m)}.
+$$
 
 Three inputs, three estimation problems (Damodaran Ch 7–8):
 - $r_f$: the **default-free** rate matched to the valuation horizon (a 10-year government bond for a 10-year cash-flow horizon).
@@ -42,17 +44,23 @@ Three inputs, three estimation problems (Damodaran Ch 7–8):
 
 **Bottom-up beta (re-levering):** with unlevered (asset) beta $\beta_U$, tax rate $t$ and target debt-to-equity $D/E$,
 
-$$\beta_L=\beta_U\Big[1+(1-t)\frac{D}{E}\Big].$$
+$$
+\beta_L=\beta_U\Big[1+(1-t)\frac{D}{E}\Big].
+$$
 
 #### 2.2 Cost of debt and the tax shield
 
-$$k_d(1-t)=\text{pre-tax borrowing rate}\times(1-\text{marginal tax rate}).$$
+$$
+k_d(1-t)=\text{pre-tax borrowing rate}\times(1-\text{marginal tax rate}).
+$$
 
 For a rated firm the pre-tax rate is the risk-free rate plus a default spread implied by the rating; for an unrated firm, use the **interest-coverage ratio** to synthesise a rating.
 
 #### 2.3 WACC
 
-$$K_c=k_e\frac{E}{D+E}+k_d(1-t)\frac{D}{D+E}.$$
+$$
+K_c=k_e\frac{E}{D+E}+k_d(1-t)\frac{D}{D+E}.
+$$
 
 Weights are **market values, not book values** (book weights undervalue equity and distort the blend). Note the circularity: WACC needs market values of E and D, but the valuation *produces* the value of E. The standard resolutions are to iterate to a fixed point, or to use target/industry weights (Damodaran Ch 15, "Market Value Weights and Circular Reasoning").
 

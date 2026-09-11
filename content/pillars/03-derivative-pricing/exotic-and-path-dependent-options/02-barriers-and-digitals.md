@@ -26,19 +26,37 @@ Barrier notation (Haug §4.17): **down** = barrier below spot ($S>H$), **up** = 
 
 With $\phi=+1$ call / $-1$ put, $\eta=+1$ down / $-1$ up, and the scaling exponents
 
-$$\mu=\frac{b-\tfrac12\sigma^2}{\sigma^2},\qquad \lambda=\sqrt{\mu^2+\frac{2r}{\sigma^2}},$$
+$$
+\mu=\frac{b-\tfrac12\sigma^2}{\sigma^2},\qquad \lambda=\sqrt{\mu^2+\frac{2r}{\sigma^2}},
+$$
 
-$$x_1=\frac{\ln(S/X)}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,\; x_2=\frac{\ln(S/H)}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,$$
-$$y_1=\frac{\ln(H^2/(SX))}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,\; y_2=\frac{\ln(H/S)}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,\; z=\frac{\ln(H/S)}{\sigma\sqrt T}+\lambda\sigma\sqrt T,$$
+$$
+x_1=\frac{\ln(S/X)}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,\; x_2=\frac{\ln(S/H)}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,
+$$
+$$
+y_1=\frac{\ln(H^2/(SX))}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,\; y_2=\frac{\ln(H/S)}{\sigma\sqrt T}+(1+\mu)\sigma\sqrt T,\; z=\frac{\ln(H/S)}{\sigma\sqrt T}+\lambda\sigma\sqrt T,
+$$
 
 the six blocks are
 
-$$A=\phi S e^{(b-r)T}N(\phi x_1)-\phi X e^{-rT}N(\phi x_1-\phi\sigma\sqrt T)$$
-$$B=\phi S e^{(b-r)T}N(\phi x_2)-\phi X e^{-rT}N(\phi x_2-\phi\sigma\sqrt T)$$
-$$C=\phi S e^{(b-r)T}\big(\tfrac HS\big)^{2(\mu+1)}N(\eta y_1)-\phi X e^{-rT}\big(\tfrac HS\big)^{2\mu}N(\eta y_1-\eta\sigma\sqrt T)$$
-$$D=\phi S e^{(b-r)T}\big(\tfrac HS\big)^{2(\mu+1)}N(\eta y_2)-\phi X e^{-rT}\big(\tfrac HS\big)^{2\mu}N(\eta y_2-\eta\sigma\sqrt T)$$
-$$E=K e^{-rT}\big[N(\eta x_2-\eta\sigma\sqrt T)-\big(\tfrac HS\big)^{2\mu}N(\eta y_2-\eta\sigma\sqrt T)\big]$$
-$$F=K\big[\big(\tfrac HS\big)^{\mu+\lambda}N(\eta z)+\big(\tfrac HS\big)^{\mu-\lambda}N(\eta z-2\eta\lambda\sigma\sqrt T)\big]$$
+$$
+A=\phi S e^{(b-r)T}N(\phi x_1)-\phi X e^{-rT}N(\phi x_1-\phi\sigma\sqrt T)
+$$
+$$
+B=\phi S e^{(b-r)T}N(\phi x_2)-\phi X e^{-rT}N(\phi x_2-\phi\sigma\sqrt T)
+$$
+$$
+C=\phi S e^{(b-r)T}\big(\tfrac HS\big)^{2(\mu+1)}N(\eta y_1)-\phi X e^{-rT}\big(\tfrac HS\big)^{2\mu}N(\eta y_1-\eta\sigma\sqrt T)
+$$
+$$
+D=\phi S e^{(b-r)T}\big(\tfrac HS\big)^{2(\mu+1)}N(\eta y_2)-\phi X e^{-rT}\big(\tfrac HS\big)^{2\mu}N(\eta y_2-\eta\sigma\sqrt T)
+$$
+$$
+E=K e^{-rT}\big[N(\eta x_2-\eta\sigma\sqrt T)-\big(\tfrac HS\big)^{2\mu}N(\eta y_2-\eta\sigma\sqrt T)\big]
+$$
+$$
+F=K\big[\big(\tfrac HS\big)^{\mu+\lambda}N(\eta z)+\big(\tfrac HS\big)^{\mu-\lambda}N(\eta z-2\eta\lambda\sigma\sqrt T)\big]
+$$
 
 Combination table (call; puts analogous):
 

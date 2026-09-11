@@ -21,13 +21,13 @@ This folder is the **ergodicity & statistical-mechanics toolbox** for the Atlas.
 
 1. **Ensemble average $\ne$ time average unless a system is ergodic** — and compounding wealth is *not* ergodic. → [[foundations/ergodicity-and-statistical-mechanics/02-ensemble-vs-time-averages|02 · Ensemble vs Time Averages]].
 2. **Multiplicative growth adds in the log**, so the growth rate is $\mathbb{E}[\ln(1+R)]$, not $\mathbb{E}[R]$. The gap is the **volatility drag** $\tfrac12\sigma^2$. → [[foundations/ergodicity-and-statistical-mechanics/03-multiplicative-growth|03 · Multiplicative Growth]].
-3. **Maximising $\mathbb{E}[\ln W]$ is the growth-optimal objective** — the Kelly criterion — and it has a unique optimum $f^\*$. → [[foundations/ergodicity-and-statistical-mechanics/04-kelly-criterion|04 · The Kelly Criterion]].
-4. **Beyond $f^\*$ there is a critical fraction $f_c$ past which ruin is certain**, and even full Kelly has a fixed, large drawdown law. → [[foundations/ergodicity-and-statistical-mechanics/05-ruin-and-drawdown|05 · Ruin & Drawdown]].
+3. **Maximising $\mathbb{E}[\ln W]$ is the growth-optimal objective** — the Kelly criterion — and it has a unique optimum $f^*$. → [[foundations/ergodicity-and-statistical-mechanics/04-kelly-criterion|04 · The Kelly Criterion]].
+4. **Beyond $f^*$ there is a critical fraction $f_c$ past which ruin is certain**, and even full Kelly has a fixed, large drawdown law. → [[foundations/ergodicity-and-statistical-mechanics/05-ruin-and-drawdown|05 · Ruin & Drawdown]].
 5. **In the real world the parameters are estimated**, so overbetting is the dominant risk — which is why practice uses *fractional* Kelly. → [[foundations/ergodicity-and-statistical-mechanics/06-advanced-extensions|06 · Advanced Extensions]].
 
 This page is the hub: it gives the fast **formula and growth-law lookup** below, then routes you to six sub-pages built from first principles, with working code and failure modes.
 
-> **The one-sentence essence.** "An investor does not hold an average of paths, they hold *one* path; when wealth multiplies, the typical path drifts toward extinction even as the ensemble mean explodes — so the correct objective is the growth rate of the typical path, $\mathbb{E}[\ln W]$, and the correct bet size is Kelly's $f^\*$."
+> **The one-sentence essence.** "An investor does not hold an average of paths, they hold *one* path; when wealth multiplies, the typical path drifts toward extinction even as the ensemble mean explodes — so the correct objective is the growth rate of the typical path, $\mathbb{E}[\ln W]$, and the correct bet size is Kelly's $f^*$."
 
 ---
 
@@ -45,13 +45,13 @@ This page is the hub: it gives the fast **formula and growth-law lookup** below,
 | Geometric growth rate | $g=\lim_{N\to\infty}\frac1N\ln(W_N/W_0)$ | coin $1.5/0.6$: $g=-0.052680$ |
 | **Time average of compounding** | $g=\mathbb{E}[\ln(1+R)]=\overline{\ln(1+R)}$ | ensemble mean $\ne$ time avg |
 | Net growth rate (post-drag) | $g\approx\mathbb{E}[R]-\tfrac12\mathrm{Var}(R)$ | $0.11-0.01125=0.098750$ (drag $=\tfrac12\mathrm{Var}(R)=0.01125$) |
-| Continuous growth | $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ | at $f^\*=2.2\overline2$: $0.115556$ |
-| **Kelly, even money** | $f^\*=p-q$ | $p=0.53\Rightarrow0.06$ |
-| **Kelly, win $b$** | $f^\*=\dfrac{bp-q}{b}$ | — |
-| **Kelly, win $b$ / lose $a$** | $f^\*=\dfrac{bp-aq}{ab}=\dfrac{m}{ab}$ | — |
-| **Kelly, continuous** | $f^\*=\dfrac{m-r}{s^2}$ | $0.05/0.0225=2.2222$ |
-| Growth at Kelly | $g_\infty(f^\*)=\dfrac{(m-r)^2}{2s^2}+r=\dfrac{S^2}{2}+r$ | $0.115556$ |
-| **Critical (ruin) fraction** | $f_c>f^\*$ solves $g(f_c)=0$ | $f_c=0.119712$ |
+| Continuous growth | $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ | at $f^*=2.2\overline2$: $0.115556$ |
+| **Kelly, even money** | $f^*=p-q$ | $p=0.53\Rightarrow0.06$ |
+| **Kelly, win $b$** | $f^*=\dfrac{bp-q}{b}$ | — |
+| **Kelly, win $b$ / lose $a$** | $f^*=\dfrac{bp-aq}{ab}=\dfrac{m}{ab}$ | — |
+| **Kelly, continuous** | $f^*=\dfrac{m-r}{s^2}$ | $0.05/0.0225=2.2222$ |
+| Growth at Kelly | $g_\infty(f^*)=\dfrac{(m-r)^2}{2s^2}+r=\dfrac{S^2}{2}+r$ | $0.115556$ |
+| **Critical (ruin) fraction** | $f_c>f^*$ solves $g(f_c)=0$ | $f_c=0.119712$ |
 | **Ruin / drawdown law** | $\mathbb{P}(\text{ever}\le x)=x^{2g_\infty/\mathrm{Var}(G_\infty)}$ | sim $0.2355$ vs $x^a=0.2365$ |
 | Full Kelly, $r{=}0$ | exponent $=1\Rightarrow\mathbb{P}(\text{ever}\le x)=x$ | $\mathbb{P}(\le\tfrac12)=\tfrac12$ |
 | Half Kelly, $r{=}0$ | exponent $=3\Rightarrow\mathbb{P}(\text{ever}\le x)=x^3$ | $\mathbb{P}(\le\tfrac12)=\tfrac18$ |
@@ -120,8 +120,8 @@ The ensemble mean ($131.5$) and the typical outcome ($0.005$) are **four orders 
 Hub signposts — the folder's failure analysis lives in the sub-pages. In one line each:
 
 1. **The arithmetic-mean trap.** Ranking strategies by $\mathbb{E}[R]$ instead of $\mathbb{E}[\ln(1+R)]$ rewards volatility; high-mean/high-variance strategies look best right before they go extinct (pages 02–03).
-2. **Full-Kelly overbetting on estimated parameters.** $f^\*$ computed from an *estimated* edge is systematically too large because $\mathbb{E}[\hat m]>m$ under mean reversion; production funds run $0.25f^\*$–$0.5f^\*$ (pages 04, 06).
-3. **The certain-ruin boundary $f_c$.** Betting $f\ge 2f^\*$ (and always past $f_c$) makes ruin almost sure even with a positive edge — a positive Kelly edge is *not* a licence to lever freely (page 04).
+2. **Full-Kelly overbetting on estimated parameters.** $f^*$ computed from an *estimated* edge is systematically too large because $\mathbb{E}[\hat m]>m$ under mean reversion; production funds run $0.25f^*$–$0.5f^*$ (pages 04, 06).
+3. **The certain-ruin boundary $f_c$.** Betting $f\ge 2f^*$ (and always past $f_c$) makes ruin almost sure even with a positive edge — a positive Kelly edge is *not* a licence to lever freely (page 04).
 4. **Drawdowns are first-class, not noise.** Full Kelly's median max-drawdown over 30 years is $\sim71\%$; investors quit, and quits are indistinguishable from ruin (page 05).
 5. **Fat tails break the Gaussian growth law.** Real returns have excess kurtosis (Tsay Table 1.2); the log-diffusion model behind these formulas understates jump risk, so the practical hedge is *fractional* Kelly (pages 05–06).
 
@@ -130,7 +130,7 @@ Hub signposts — the folder's failure analysis lives in the sub-pages. In one l
 ### 5. Canonical Literature & Study References
 
 - **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4):917–926 (1956) — the source: maximising $\mathbb{E}\log V$ makes capital grow at the channel information rate $G=\lim\frac1N\log_2(V_N/V_0)$. *Corpus-verified.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market*, in *Handbook of Asset and Liability Management* Vol. 1 (Zenios & Ziemba eds., 2006) — the definitive practical treatment: $g(f)=p\ln(1+f)+q\ln(1-f)$, $f^\*=p-q$, $f_c$, Theorem 1 (growth-optimality), fractional Kelly, the drawdown/doubling formulas (7.10)–(7.13). *Corpus-verified; the formula-authoritative source for this folder.*
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market*, in *Handbook of Asset and Liability Management* Vol. 1 (Zenios & Ziemba eds., 2006) — the definitive practical treatment: $g(f)=p\ln(1+f)+q\ln(1-f)$, $f^*=p-q$, $f_c$, Theorem 1 (growth-optimality), fractional Kelly, the drawdown/doubling formulas (7.10)–(7.13). *Corpus-verified; the formula-authoritative source for this folder.*
 - **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion: Theory and Practice* (World Scientific, 2011) — the anthology (Kelly, Breiman, Thorp, MacLean–Ziemba "good/bad properties").
 - **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019) — the multiplicative-vs-additive non-ergodicity critique; the ensemble/time-average framing used throughout.
 - **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016) — the "ergodicity economics" formalisation: maximise the time-average growth rate of the dynamic.

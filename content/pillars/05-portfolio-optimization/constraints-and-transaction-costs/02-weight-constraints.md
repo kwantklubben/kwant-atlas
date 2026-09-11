@@ -31,30 +31,42 @@ The practical objective of this page is to make the *cost* of a constraint preci
 
 **The box-constrained QP.** The standard solved problem is
 
-$$\max_{w}\ \mu^\top w-\tfrac\delta2\,w^\top\Sigma w
-\qquad\text{s.t.}\qquad \mathbf 1^\top w=1,\quad w_{\min}\le w\le w_{\max},\quad Aw\le b .$$
+$$
+\max_{w}\ \mu^\top w-\tfrac\delta2\,w^\top\Sigma w
+\qquad\text{s.t.}\qquad \mathbf 1^\top w=1,\quad w_{\min}\le w\le w_{\max},\quad Aw\le b .
+$$
 
 **KKT / shadow price.** For a binding constraint $a_j^\top w=b_j$ with multiplier $\lambda_j\ge0$, stationarity reads
 
-$$\mu-\delta\Sigma w-\nu\mathbf 1-\sum_j\lambda_j a_j\mp\zeta=0,$$
+$$
+\mu-\delta\Sigma w-\nu\mathbf 1-\sum_j\lambda_j a_j\mp\zeta=0,
+$$
 
 where $\nu$ is the budget multiplier and $\zeta\ge0$ the box multipliers ($\zeta_i>0$ only when $w_i=w_{\min}$ or $w_{\max}$). By the envelope theorem the multiplier is the marginal value of the constraint:
 
-$$\boxed{\ \lambda_j=-\frac{\partial V^\star}{\partial b_j}\ },\qquad V^\star=\max_{w\in\mathcal C}\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w .$$
+$$
+\boxed{\ \lambda_j=-\frac{\partial V^\star}{\partial b_j}\ },\qquad V^\star=\max_{w\in\mathcal C}\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w .
+$$
 
 So $\lambda_j$ is *the certainty-equivalent return you forgo per unit of tightness*. It is the right currency for arguing about constraints.
 
 **The group-cap ⇔ alpha-haircut theorem.** Suppose the only additional constraint is a group cap $\sum_{i\in\mathcal G} w_i\le g$ with multiplier $\lambda_{\mathcal G}$. Stationarity over the group members is
 
-$$\mu_i-\delta(\Sigma w)_i-\nu-\lambda_{\mathcal G}=0\quad(i\in\mathcal G).$$
+$$
+\mu_i-\delta(\Sigma w)_i-\nu-\lambda_{\mathcal G}=0\quad(i\in\mathcal G).
+$$
 
 Compare this with the *unconstrained-in-group* problem whose alphas have been **reduced** by $\lambda_{\mathcal G}$:
 
-$$\tilde\mu_i=\mu_i-\lambda_{\mathcal G}\quad(i\in\mathcal G).$$
+$$
+\tilde\mu_i=\mu_i-\lambda_{\mathcal G}\quad(i\in\mathcal G).
+$$
 
 The first-order conditions are identical. Therefore:
 
-$$w^\star\big(\text{group cap }g\big)\;=\;w^\star\big(\text{uncapped, alphas }\mu-\lambda_{\mathcal G}\mathbf 1_{\mathcal G}\big),$$
+$$
+w^\star\big(\text{group cap }g\big)\;=\;w^\star\big(\text{uncapped, alphas }\mu-\lambda_{\mathcal G}\mathbf 1_{\mathcal G}\big),
+$$
 
 for the value of $\lambda_{\mathcal G}$ that makes the group sum exactly $g$. **A group/sector cap is nothing but a uniform alpha haircut on the group** — which is why sector-neutralising a signal and capping sector exposure give nearly the same portfolio. §3 verifies the identity numerically.
 

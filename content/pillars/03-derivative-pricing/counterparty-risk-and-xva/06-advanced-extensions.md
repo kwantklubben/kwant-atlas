@@ -30,11 +30,15 @@ Three ideas structure the page:
 
 The default-risk (IRB) capital charge is the familiar $RC=EAD\times LGD\times(PD_{99.9\%}-PD)\times MA$ (Gregory Eq 13.1, the Vasicek large-homogeneous-pool / Gordy form). The **CVA capital charge** is separate and capitalises CVA *volatility*. The **BA-CVA** (basic) reduced form (Eq 13.3):
 
-$$K_{reduced}=\sqrt{\rho\Big(\sum_c SCVA_c\Big)^2+(1-\rho^2)\sum_c SCVA_c^2},\qquad SCVA_c=\frac1\alpha RW_c\sum_{NS} M_{NS}EAD_{NS}DF_{NS},$$
+$$
+K_{reduced}=\sqrt{\rho\Big(\sum_c SCVA_c\Big)^2+(1-\rho^2)\sum_c SCVA_c^2},\qquad SCVA_c=\frac1\alpha RW_c\sum_{NS} M_{NS}EAD_{NS}DF_{NS},
+$$
 
 with supervisory correlation $\rho=50\%$, $\alpha=1.4$, risk weights $RW_c$ by sector/rating bucket, and $DF_{NS}$ a maturity discount. **Crucial diversification property**: for $n$ equal counterparties (Gregory Eq 13.23–13.24),
 
-$$K_{\text{per cpty}}=SCVA\cdot\sqrt{\rho^2+\tfrac{1-\rho^2}{n}}\;\xrightarrow[n\to\infty]{}\;SCVA\cdot\rho,$$
+$$
+K_{\text{per cpty}}=SCVA\cdot\sqrt{\rho^2+\tfrac{1-\rho^2}{n}}\;\xrightarrow[n\to\infty]{}\;SCVA\cdot\rho,
+$$
 
 so diversification is only *half-rewarded* (capital floors at 50% of the gross sum, never zero) — Basel does not let you diversify away CVA risk. **SA-CVA** (the FRTB-style standardised version) is sensitivity-based: per-bucket $K_b=\sqrt{\sum_k WS_k^2+\sum_{k\ne l}\rho_{kl}WS_kWS_l+R\sum_k[WS_k^{Hdg}]^2}$ then $\sqrt{\sum_b K_b^2+\sum_{b\ne c}\gamma_{bc}K_bK_c}$ scaled by $m_{CVA}$ (Eqs 13.10–13.12); the hedging disallowance $R=0.01$ (√R = 10% of gross hedge sensitivities) stops perfect hedging.
 
@@ -49,7 +53,9 @@ Three approaches:
 
 The desk prices incremental xVA, hedges it (manage xVA like an option book), and *explains* its P&L. The P&L explain identity (Gregory Eq 21.1 / Table 21.8):
 
-$$\delta xVA = \frac{\partial xVA}{\partial S}\Delta S + \frac{\partial xVA}{\partial E}\Delta E + \frac{\partial xVA}{\partial t}\Delta t + \frac{\partial^2 xVA}{\partial S\partial E}\Delta S\Delta E,$$
+$$
+\delta xVA = \frac{\partial xVA}{\partial S}\Delta S + \frac{\partial xVA}{\partial E}\Delta E + \frac{\partial xVA}{\partial t}\Delta t + \frac{\partial^2 xVA}{\partial S\partial E}\Delta S\Delta E,
+$$
 
 where the cross-gamma term (joint moves in exposure and credit — e.g. Brexit: rates down, spreads wider) is typically **unhedgeable**. The desk's P&L reconciles theta (time decay) + deltas + gamma + defaults + funding/capital costs to the traded P&L. **KVA vs MVA trade-off** (Gregory §20.4): posting IM raises MVA but lowers KVA; the optimum is *below* full regulatory IM because KVA relief under SA-CCR has diminishing returns.
 

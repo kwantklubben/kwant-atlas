@@ -32,11 +32,15 @@ The practical objective: understand why the **immediate price impact of a shock 
 
 A dealer with capital $E$ and CARA (or mean-variance) risk aversion $\gamma$ absorbs $q$ shares of an asset with return variance $\sigma^2$. To hold the position it requires an expected excess return per share that compensates its risk:
 
-$$\text{required return}\;\;=\;\gamma\,\sigma^2\,\frac{q}{E}.$$
+$$
+\text{required return}\;\;=\;\gamma\,\sigma^2\,\frac{q}{E}.
+$$
 
 Equivalently, the price must fall by the present-value of that concession. Taking a flat-discount approximation, the **price concession** (impact) is
 
-$$\boxed{\;p(q,E)=\frac{\gamma\,\sigma^2}{E}\,q\;}$$
+$$
+\boxed{\;p(q,E)=\frac{\gamma\,\sigma^2}{E}\,q\;}
+$$
 
 Two immediate consequences: **impact is linear in the shock size $q$** (a small-capital dealer faces a *linear* impact, not the square-root law of a deep book), and **impact is inversely proportional to capital $E$**. Double the dealer's capital and you halve the impact. The product $p\cdot E=\gamma\sigma^2 q$ is the invariant: the **dollar risk premium** required is fixed by the position size and risk, so a thinner balance sheet must pay a proportionally larger *price* concession.
 
@@ -44,11 +48,15 @@ Two immediate consequences: **impact is linear in the shock size $q$** (a small-
 
 Capital does not arrive instantly. Let available intermediary capital evolve toward a long-run level $E_\infty$ with time constant $T$ (search for capital, recapitalisation delay):
 
-$$E(t)=E_0+\bigl(E_\infty-E_0\bigr)\bigl(1-e^{-t/T}\bigr).$$
+$$
+E(t)=E_0+\bigl(E_\infty-E_0\bigr)\bigl(1-e^{-t/T}\bigr).
+$$
 
 Because $p\propto1/E$, the impact path is
 
-$$p(t)=\frac{\gamma\sigma^2 q}{E(t)}\;\xrightarrow[\;t\to\infty\;]{}\;\frac{\gamma\sigma^2 q}{E_\infty}.$$
+$$
+p(t)=\frac{\gamma\sigma^2 q}{E(t)}\;\xrightarrow[\;t\to\infty\;]{}\;\frac{\gamma\sigma^2 q}{E_\infty}.
+$$
 
 The defining signature is: **sharp initial impact at $E_0$, then a gradual reversal to the small steady-state level as $E(t)\uparrow E_\infty$.** Duffie (2010) documents exactly this shape in the CDS-bond basis, the 2005 General Motors/Ford index-arbitrage episode, catastrophe reinsurance, and convertible-bond arbitrage.
 

@@ -34,7 +34,9 @@ The recurring culprits, in one line each:
 
 Let a hot path have a baseline cost and, with small probability $p$, a "hiccup" of size $H$ (a GC pause, a page fault, a scheduler preemption). The quantile at tail probability $p$ is
 
-$$Q_{1-p} \approx \text{baseline} + H,$$
+$$
+Q_{1-p} \approx \text{baseline} + H,
+$$
 
 so the **p99.9** — the statistic that decides close races — is baseline $+\,H$ whenever $p \gtrsim 10^{-3}$. **Reducing the baseline does nothing to the tail; removing the hiccup removes the tail in one step.** This is why "profile the mean, optimize the mean" is the wrong loop for HFT.
 

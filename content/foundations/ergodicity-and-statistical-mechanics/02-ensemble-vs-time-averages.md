@@ -35,8 +35,10 @@ A process is **ergodic** when the two coincide almost surely. Wealth is not ergo
 
 For a stochastic process $x(t)$:
 
-$$\langle x(t)\rangle=\int x\,d\mathbb{P}(x)\quad\text{(ensemble)},\qquad
-\overline{x}=\lim_{T\to\infty}\frac1T\int_0^T x(t)\,dt\quad\text{(time)}.$$
+$$
+\langle x(t)\rangle=\int x\,d\mathbb{P}(x)\quad\text{(ensemble)},\qquad
+\overline{x}=\lim_{T\to\infty}\frac1T\int_0^T x(t)\,dt\quad\text{(time)}.
+$$
 
 **Ergodic (for the mean):** $\langle x(t)\rangle=\overline{x}$ almost surely. Birkhoff's **ergodic theorem** guarantees the time average exists and equals the ensemble average when the process is stationary and ergodic.
 
@@ -44,7 +46,9 @@ $$\langle x(t)\rangle=\int x\,d\mathbb{P}(x)\quad\text{(ensemble)},\qquad
 
 Let $X_i$ be i.i.d. with mean $\mu<\infty$. Then $S_N=\sum_{i=1}^N X_i$ satisfies, by the strong law of large numbers,
 
-$$\overline{X}=\lim_{N\to\infty}\frac{S_N}{N}=\mathbb{E}[X_i]=\mu\quad\text{a.s.}$$
+$$
+\overline{X}=\lim_{N\to\infty}\frac{S_N}{N}=\mathbb{E}[X_i]=\mu\quad\text{a.s.}
+$$
 
 The time average of the *increments* equals the ensemble mean of the increments. A random walk's level wanders (its own time average may not converge), but the **increment rate** is ergodic. Additive accumulation has no ensemble/time split in the growth *rate*.
 
@@ -52,13 +56,17 @@ The time average of the *increments* equals the ensemble mean of the increments.
 
 Let returns $R_i$ be i.i.d. and $W_N=W_0\prod_{i=1}^N(1+R_i)$. The two "average growth rates" differ:
 
-$$\underbrace{\frac1N\ln\frac{W_N}{W_0}\xrightarrow{\text{a.s.}}\mathbb{E}[\ln(1+R)]=g}_{\text{time-average (typical) growth}},
+$$
+\underbrace{\frac1N\ln\frac{W_N}{W_0}\xrightarrow{\text{a.s.}}\mathbb{E}[\ln(1+R)]=g}_{\text{time-average (typical) growth}},
 \qquad
-\underbrace{\frac1N\ln\mathbb{E}\!\left[\frac{W_N}{W_0}\right]=\ln\mathbb{E}[1+R]}_{\text{ensemble growth}}.$$
+\underbrace{\frac1N\ln\mathbb{E}\!\left[\frac{W_N}{W_0}\right]=\ln\mathbb{E}[1+R]}_{\text{ensemble growth}}.
+$$
 
 By **Jensen's inequality** $\mathbb{E}[\ln(1+R)]\le\ln\mathbb{E}[1+R]$, with strict inequality whenever $R$ is non-degenerate. So:
 
-$$\boxed{\;\text{ensemble growth rate}\;\ge\;\text{time-average growth rate}\;}$$
+$$
+\boxed{\;\text{ensemble growth rate}\;\ge\;\text{time-average growth rate}\;}
+$$
 
 and the gap is precisely the variance penalty of page 03. When $\mathbb{E}[1+R]>1$ but $\mathbb{E}[\ln(1+R)]<0$ the process is *positively expected yet almost surely decaying* — the coin game of page 01, and the object lesson of non-ergodicity.
 

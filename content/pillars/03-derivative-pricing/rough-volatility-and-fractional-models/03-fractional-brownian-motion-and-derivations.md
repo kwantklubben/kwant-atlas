@@ -27,12 +27,16 @@ The practical objective: derive $\mathbb E[(W^H_{t+\Delta}-W^H_t)^2]=\Delta^{2H}
 
 fBm is the Gaussian, self-similar process with stationary increments whose autocovariance is (Mandelbrot–Van Ness 1968)
 
-$$\boxed{\;\mathbb E[W^H_tW^H_s]=\frac12\big(|t|^{2H}+|s|^{2H}-|t-s|^{2H}\big),\qquad H\in(0,1)\;}$$
+$$
+\boxed{\;\mathbb E[W^H_tW^H_s]=\frac12\big(|t|^{2H}+|s|^{2H}-|t-s|^{2H}\big),\qquad H\in(0,1)\;}
+$$
 
 **Stationary increments** mean $W^H_{t+\Delta}-W^H_t\stackrel{d}{=}W^H_\Delta$; **self-similarity** means $W^H_{ct}\stackrel{d}{=}c^HW^H_t$. From the covariance,
 
-$$\mathbb E\big[(W^H_{t+\Delta}-W^H_t)^2\big]
-=\mathbb E[(W^H_{t+\Delta})^2]-2\mathbb E[W^H_{t+\Delta}W^H_t]+\mathbb E[(W^H_t)^2]=\Delta^{2H},$$
+$$
+\mathbb E\big[(W^H_{t+\Delta}-W^H_t)^2\big]
+=\mathbb E[(W^H_{t+\Delta})^2]-2\mathbb E[W^H_{t+\Delta}W^H_t]+\mathbb E[(W^H_t)^2]=\Delta^{2H},
+$$
 
 which is the exact scaling law that GJR estimate on log-volatility as $\nu^2\Delta^{2H}$.
 
@@ -54,14 +58,18 @@ Self-similarity has a striking consequence (GJR §3.4): over an observation scal
 
 For a forward-variance model the order-1 ATMF skew is (Bergomi ch 8, [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/04-stochastic-vol-dynamics|04 · SV Dynamics]])
 
-$$S_T=\frac{1}{2\hat\sigma_T^3T^2}C^{x\xi}(T),\qquad
-C^{x\xi}(T)=\int_0^T\!dt\int_t^T\!du\,\frac{\mathbb E[dx_t\,d\xi_t(u)]}{dt}.$$
+$$
+S_T=\frac{1}{2\hat\sigma_T^3T^2}C^{x\xi}(T),\qquad
+C^{x\xi}(T)=\int_0^T\!dt\int_t^T\!du\,\frac{\mathbb E[dx_t\,d\xi_t(u)]}{dt}.
+$$
 
 For a power-law covariance kernel $g(u-t)=(u-t)^{H-\frac12}$ (the rBergomi kernel) the inner double integral is computable in closed form:
 
-$$\int_0^T\!dt\int_t^T\!du\,(u-t)^{H-\frac12}\,du\,dt
+$$
+\int_0^T\!dt\int_t^T\!du\,(u-t)^{H-\frac12}\,du\,dt
 =\int_0^T\frac{(T-t)^{H+\frac12}}{H+\frac12}\,dt
-=\frac{T^{H+\frac32}}{(H+\frac12)(H+\frac32)},$$
+=\frac{T^{H+\frac32}}{(H+\frac12)(H+\frac32)},
+$$
 
 so $S_T\propto T^{H-\frac12}$. **This is the derivation of the rough-vol skew power law** — one boxed integral, no numerics needed, verified to 5 digits in [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/02-the-rough-bergomi-model|02 · The rBergomi Model]] §3.
 

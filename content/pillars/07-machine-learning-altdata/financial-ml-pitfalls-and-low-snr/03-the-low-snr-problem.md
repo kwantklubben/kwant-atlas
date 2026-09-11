@@ -20,7 +20,9 @@ Two facts do most of the work:
 
 1. **The IC ceiling.** A quantitative edge is measured by its Information Coefficient (IC) — the rank correlation between your forecast and the realized return. Across documented, rigorous studies (e.g., Gu–Kelly–Xiu 2020), the OOS IC of daily cross-sectional models is roughly $0.03$–$0.05$. Because $R^2\le\mathrm{IC}^2$ for a well-calibrated forecast, the *best possible* OOS $R^2$ is about $0.05^2=0.25\%$. Any model claiming double-digit OOS $R^2$ on daily returns is leaking.
 2. **The effective sample size.** "I have 20 years of daily data = 5,000 observations" is an illusion. Financial series autocorrelate (volatility clustering, momentum, overlapping labels), so the *independent* information content is far smaller. For an AR(1) series with lag-1 autocorrelation $\rho$, only
-$$N_{\text{eff}}=T\,\frac{1-\rho}{1+\rho}$$
+$$
+N_{\text{eff}}=T\,\frac{1-\rho}{1+\rho}
+$$
 rows are effectively independent. With $\rho=0.9$, 1,000 daily rows collapse to $\approx53$ effective observations. Fewer effective samples means a flexible model overfits faster (see [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/01-from-zero-intuition|01 · From Zero]]).
 
 > **The one-line takeaway.** "The signal is so weak ($R^2\le0.25\%$) and the independent samples so few ($N_{\text{eff}}\ll T$) that a flexible model's job is not to 'find the pattern' but to avoid mistaking noise for one."
@@ -31,25 +33,35 @@ rows are effectively independent. With $\rho=0.9$, 1,000 daily rows collapse to 
 
 **Signal-to-noise decomposition.** Write the return as a signal plus independent noise,
 
-$$r_t = s_t + \varepsilon_t,\qquad s_t\sim\mathcal{N}(0,\sigma_s^2),\quad \varepsilon_t\sim\mathcal{N}(0,\sigma_\varepsilon^2).$$
+$$
+r_t = s_t + \varepsilon_t,\qquad s_t\sim\mathcal{N}(0,\sigma_s^2),\quad \varepsilon_t\sim\mathcal{N}(0,\sigma_\varepsilon^2).
+$$
 
 The signal-to-noise ratio is $\mathrm{SNR}=\sigma_s/\sigma_\varepsilon$. Since $\mathrm{Var}(r_t)=\sigma_s^2+\sigma_\varepsilon^2$, the fraction of variance explained by a *perfect* forecast of $s_t$ is
 
-$$R^2=\frac{\sigma_s^2}{\sigma_s^2+\sigma_\varepsilon^2}=\frac{\mathrm{SNR}^2}{1+\mathrm{SNR}^2}.$$
+$$
+R^2=\frac{\sigma_s^2}{\sigma_s^2+\sigma_\varepsilon^2}=\frac{\mathrm{SNR}^2}{1+\mathrm{SNR}^2}.
+$$
 
 **The IC ceiling.** Define the IC as the correlation between forecast and realized return. For a properly scaled forecast, $\mathrm{IC}=\sigma_s/\sqrt{\sigma_s^2+\sigma_\varepsilon^2}$, so
 
-$$R^2=\mathrm{IC}^2.$$
+$$
+R^2=\mathrm{IC}^2.
+$$
 
 An OOS IC of $0.05$ therefore caps OOS $R^2$ at $0.0025=0.25\%$. This is the single most important number in the pillar: **it is a mathematical guarantee that big OOS $R^2$ on asset returns means leakage.** (Note the distinction between $R^2$ — variance explained — and the IC; the Sharpe ratio of the resulting strategy depends on how you convert the IC into positions, and even a tiny IC can be monetized at scale.)
 
 **Effective sample size.** For a stationary AR(1) series with autocorrelation $\rho$, the variance of the sample mean is (summing the geometric autocovariance decay)
 
-$$\operatorname{Var}(\bar x)=\frac{\sigma_x^2}{T}\,\frac{1+\rho}{1-\rho},$$
+$$
+\operatorname{Var}(\bar x)=\frac{\sigma_x^2}{T}\,\frac{1+\rho}{1-\rho},
+$$
 
 so the number of *independent* observations with the same standard error is
 
-$$N_{\text{eff}}=T\,\frac{1-\rho}{1+\rho}.$$
+$$
+N_{\text{eff}}=T\,\frac{1-\rho}{1+\rho}.
+$$
 
 For $\rho=0.9$, $N_{\text{eff}}\approx0.053\,T$ — you have ~5% as much independent information as the row count suggests. Overlapping forward-return labels cause a *further* reduction ([[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/02-why-finance-is-different|02 · Why Finance Is Different]]), which is why AFML Ch. 4 computes label "uniqueness" rather than counting rows.
 

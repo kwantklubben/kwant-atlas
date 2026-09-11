@@ -36,7 +36,9 @@ Three steps, three "aha"s:
 
 **Where the exaggeration comes from — arithmetic, not psychology.** Let the $N$ trials' estimated Sharpe ratios be $\{\widehat{SR}_n\}$, drawn around a true mean of zero (no skill) with cross-trial variance $V[\{\widehat{SR}_n\}]$. The reported statistic is $M=\max_n\widehat{SR}_n$. Order statistics tell us its *expected* value is **positive and increasing in $N$**, even though the truth is zero:
 
-$$\mathbb{E}[M]>0\quad\text{strictly, and}\quad \mathbb{E}[M]\uparrow\infty \text{ as } N\to\infty.$$
+$$
+\mathbb{E}[M]>0\quad\text{strictly, and}\quad \mathbb{E}[M]\uparrow\infty \text{ as } N\to\infty.
+$$
 
 The precise size of that drift is the subject of [[pillars/01-quantitative-research/backtesting-hygiene/03-the-multiple-testing-problem|03 · The Multiple-Testing Problem]], and the deflation it demands is [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · The Deflated Sharpe Ratio]].
 

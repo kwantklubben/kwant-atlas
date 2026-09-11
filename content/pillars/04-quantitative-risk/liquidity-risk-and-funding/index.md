@@ -37,9 +37,9 @@ This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b
 |---|---|---|
 | **Quoted spread** (absolute / relative) | $S=a-b,\quad s=\dfrac{a-b}{m},\quad m=\dfrac{a+b}{2}$ | Foucault eq. (2.1) |
 | **Price impact (linear)** | $\Delta p=\lambda q,\qquad 1/\lambda=D$ = depth | Foucault eq. (2.8); Hasbrouck Ch 7 |
-| **Impact half-move (VWAP)** | $\text{LC}_{\text{impact}}=\dfrac{Q^2}{2D}=\dfrac{\lambda Q^2}{2}$ | $Q{=}10^5,D{=}2{\times}10^5\Rightarrow \$25{,}000$ |
-| **Exogenous spread cost** | $\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right)$ | $V{=}10^7,S{=}20\text{bp}\Rightarrow\$15{,}816$ |
-| **Liquidity-adjusted VaR** | $\mathrm{LVaR}_\alpha=\mathrm{VaR}_\alpha+\text{LC}_{\text{exog}}+\text{LC}_{\text{impact}}$ | $465{,}270+15{,}816+25{,}000=\$506{,}085$ |
+| **Impact half-move (VWAP)** | $\text{LC}_{\text{impact}}=\dfrac{Q^2}{2D}=\dfrac{\lambda Q^2}{2}$ | $Q{=}10^5,D{=}2{\times}10^5\Rightarrow $\$25{,}000 |
+| **Exogenous spread cost** | $\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right)$ | $V{=}10^7,S{=}20\text{bp}\Rightarrow$\$15{,}816 |
+| **Liquidity-adjusted VaR** | $\mathrm{LVaR}_\alpha=\mathrm{VaR}_\alpha+\text{LC}_{\text{exog}}+\text{LC}_{\text{impact}}$ | $465{,}270+15{,}816+25{,}000= $\$506{,}085 |
 | **Liquidation horizon** | $T_{\text{liq}}=\dfrac{Q}{\text{ADV}\cdot\alpha}$ ($\alpha$ = participation cap) | $10^5/(2{\times}10^6{\cdot}0.2)=0.25$ day |
 | **Horizon scaling (i.i.d.)** | $\mathrm{VaR}_T=\mathrm{VaR}_1\sqrt{T}$ | $T{=}10\Rightarrow\times3.162$ |
 | **Margin constraint** | $P\le \dfrac{N}{m}\quad\Longleftrightarrow\quad L=\dfrac{P}{N}\le\dfrac1m$ | $m{=}20\%\Rightarrow L\le5\times$ |
@@ -50,14 +50,18 @@ This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b
 
 **The margin recursion (Brunnermeier–Pedersen 2009).** A leveraged trader with equity $N_t$, position $P_t$, and margin $m_t=N_t^{\text{req}}/P_t$ is forced to sell whenever the constraint binds. One stress round is:
 
-$$m_{t+1}=m_0+\beta\,\text{Vol}_t,\qquad P_t^{\max}=\frac{N_t}{m_{t+1}},\qquad \text{Sale}_t=\left(P_t-P_t^{\max}\right)^+,\qquad
-N_{t+1}=N_t-\underbrace{P_t\,g\!\left(\frac{\text{Sale}_t}{\text{ADV}}\right)}_{\text{fire-sale impact loss}}.$$
+$$
+m_{t+1}=m_0+\beta\,\text{Vol}_t,\qquad P_t^{\max}=\frac{N_t}{m_{t+1}},\qquad \text{Sale}_t=\left(P_t-P_t^{\max}\right)^+,\qquad
+N_{t+1}=N_t-\underbrace{P_t\,g\!\left(\frac{\text{Sale}_t}{\text{ADV}}\right)}_{\text{fire-sale impact loss}}.
+$$
 
 Two multiplicative forces hit the constraint at once: $N_t$ falls in the numerator (loss spiral) *and* $m_{t+1}$ rises in the denominator (margin spiral). Neither alone closes the firm; together they do.
 
 **Regulatory definitions (BCBS).** Funding-liquidity risk is regulated in two ratios:
-$$\text{LCR}=\frac{\text{HQLA}}{\text{Net cash outflows over 30 days}}\ge100\%,\qquad
-\text{NSFR}=\frac{\text{Available stable funding}}{\text{Required stable funding}}\ge100\%.$$
+$$
+\text{LCR}=\frac{\text{HQLA}}{\text{Net cash outflows over 30 days}}\ge100\%,\qquad
+\text{NSFR}=\frac{\text{Available stable funding}}{\text{Required stable funding}}\ge100\%.
+$$
 LCR is a 30-day survival test (BCBS 2013, d238); NSFR is a one-year structural funding test (BCBS 2014, d295). Both are *funding*-liquidity rules — they do not constrain the market liquidity of the assets, which is the other half of the spiral.
 
 ---
@@ -92,7 +96,7 @@ market-impact LC     = $25,000  (25.00 bp)
 L-VaR (all-in)       = $506,085   (+8.77% over VaR)
 ```
 
-> **The point of the check.** The two liquidation costs together add $\$40{,}816$ — $8.77\%$ — to a VaR that a standard risk engine would report as the whole story. On an illiquid book the impact term dominates and can exceed the market-risk term outright.
+> **The point of the check.** The two liquidation costs together add \$40{,}816 — $8.77\%$ — to a VaR that a standard risk engine would report as the whole story. On an illiquid book the impact term dominates and can exceed the market-risk term outright.
 
 ---
 

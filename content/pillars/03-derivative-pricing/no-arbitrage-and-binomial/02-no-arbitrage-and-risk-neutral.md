@@ -32,11 +32,15 @@ The practical objective: be able to move freely between "expected payoff", "mart
 
 With $\tilde p,\tilde q$ from [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/01-from-zero|01]], the one-step recursion $V_k=\frac{1}{1+r}[\tilde pV_{k+1}(H)+\tilde qV_{k+1}(T)]$ rearranges to
 
-$$V_k=(1+r)^k\,\widetilde{\mathbb E}\!\left[\frac{V_m}{(1+r)^m}\,\Big|\,F_k\right]\qquad\text{(risk-neutral valuation, Shreve §3.4)}$$
+$$
+V_k=(1+r)^k\,\widetilde{\mathbb E}\!\left[\frac{V_m}{(1+r)^m}\,\Big|\,F_k\right]\qquad\text{(risk-neutral valuation, Shreve §3.4)}
+$$
 
 and in particular, applied to the stock itself,
 
-$$\widetilde{\mathbb E}\!\left[\frac{S_{k+1}}{(1+r)^{k+1}}\,\Big|\,F_k\right]=\frac{S_k}{(1+r)^k}\qquad\Longleftrightarrow\qquad \tilde pu+\tilde qd=1+r .$$
+$$
+\widetilde{\mathbb E}\!\left[\frac{S_{k+1}}{(1+r)^{k+1}}\,\Big|\,F_k\right]=\frac{S_k}{(1+r)^k}\qquad\Longleftrightarrow\qquad \tilde pu+\tilde qd=1+r .
+$$
 
 **The discounted stock — not the stock — is the $\widetilde{\mathbb P}$-martingale.** (Under the *physical* measure, $S_k$ is a martingale only if $pu+qd=1$; here $pu+qd\ne1+r$ in general, which is exactly why the real measure cannot price.) This single fact is the discrete statement of "$dS=rS\,dt+\sigma S\,d\widetilde W$" in [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · 02]].
 
@@ -44,7 +48,9 @@ $$\widetilde{\mathbb E}\!\left[\frac{S_{k+1}}{(1+r)^{k+1}}\,\Big|\,F_k\right]=\f
 
 A portfolio process $\Delta=(\Delta_0,\dots,\Delta_{n-1})$ with each $\Delta_k$ $F_k$-measurable (no inside information) is **self-financing** if wealth evolves as (Shreve §3.3)
 
-$$X_{k+1}=\Delta_kS_{k+1}+(1+r)\big(X_k-\Delta_kS_k\big)=(1+r)X_k+\Delta_k\big(S_{k+1}-(1+r)S_k\big).$$
+$$
+X_{k+1}=\Delta_kS_{k+1}+(1+r)\big(X_k-\Delta_kS_k\big)=(1+r)X_k+\Delta_k\big(S_{k+1}-(1+r)S_k\big).
+$$
 
 The bracketed term is a $\widetilde{\mathbb P}$-martingale increment, so **$X_k/(1+r)^k$ is a $\widetilde{\mathbb P}$-martingale** for every self-financing, adapted strategy. Discounted prices are martingales; that is the whole content of the measure.
 
@@ -52,15 +58,21 @@ The bracketed term is a $\widetilde{\mathbb P}$-martingale increment, so **$X_k/
 
 Define
 
-$$\boxed{\;\zeta(\omega)=\frac{\widetilde{\mathbb P}(\omega)}{1+r}\;}$$
+$$
+\boxed{\;\zeta(\omega)=\frac{\widetilde{\mathbb P}(\omega)}{1+r}\;}
+$$
 
 Then $\sum_\omega\zeta(\omega)=\frac{1}{1+r}$ (the bond) and $\sum_\omega\zeta(\omega)S_1(\omega)=S_0$ (the stock) — the two traded assets are *reproduced* by the state-price system. Any claim is priced by
 
-$$V_0=\sum_\omega\zeta(\omega)\,f(\omega).$$
+$$
+V_0=\sum_\omega\zeta(\omega)\,f(\omega).
+$$
 
 Equivalently, writing $Z(\omega)=d\widetilde{\mathbb P}/d\mathbb P$ (the Radon–Nikodym derivative) and $\zeta=\frac{Z}{1+r}$, the price is a *physical*-measure expectation
 
-$$V_0=\mathbb E^{\mathbb P}\!\left[\zeta\,f\right].$$
+$$
+V_0=\mathbb E^{\mathbb P}\!\left[\zeta\,f\right].
+$$
 
 $Z$ is the **stochastic discount factor / state-price density** (Björk Prop 3.18, $\Pi(0;X)=\mathbb E^{\mathbb P}[\Lambda X]$ with $\Lambda=\frac{1}{1+R}\frac{dQ}{dP}$; Shreve Vol I Ch 9, $\zeta_k=(1+r)^{-k}Z_k$). Crucially $\zeta$ *depends on the physical measure* while $V_0$ **does not** — the same price is recovered for every $\mathbb P$ consistent with the same $\widetilde{\mathbb P}$.
 

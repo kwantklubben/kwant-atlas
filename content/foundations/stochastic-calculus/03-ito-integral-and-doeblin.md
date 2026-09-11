@@ -25,7 +25,9 @@ Practical objective: by the end of this page you can (1) define $\int\Delta\,dW$
 #### 2.1 Construction (Shreve II §4.2–4.3; Björk Ch 4)
 1. **Simple integrands** $\Delta(t)=\Delta_j$ (constant on $[t_j,t_{j+1})$): define $I(t)=\sum_j \Delta_j\big(W(t_{j+1})-W(t_j)\big)$ — the *forward* increment. It is a **martingale**, has mean $0$, and its quadratic variation is $\sum_j\Delta_j^2\Delta t$.
 2. **General integrands** with $\mathbb E\int_0^T\Delta^2(t)\,dt<\infty$: approximate $\Delta$ by simple integrands and pass to the $L^2$ limit. The **Itô isometry** (Thm 4.2.2) makes this well-defined:
-$$\mathbb E\Big[\Big(\int_0^t\Delta\,dW\Big)^2\Big]=\mathbb E\Big[\int_0^t\Delta^2(u)\,du\Big].$$
+$$
+\mathbb E\Big[\Big(\int_0^t\Delta\,dW\Big)^2\Big]=\mathbb E\Big[\int_0^t\Delta^2(u)\,du\Big].
+$$
 
 **Three invariants** (Shreve II Thms 4.2.1–4.2.3):
 - **Martingale:** $I(t)=\int_0^t\Delta\,dW$ is a martingale, $\mathbb E[I(t)\mid\mathcal F(s)]=I(s)$, $\mathbb E[I(t)]=0$.
@@ -34,18 +36,26 @@ $$\mathbb E\Big[\Big(\int_0^t\Delta\,dW\Big)^2\Big]=\mathbb E\Big[\int_0^t\Delta
 
 #### 2.2 Itô–Doeblin formula (Shreve II Thm 4.4.1 & 4.4.6; Björk Thm 4.10)
 For $f\in C^{1,2}$, integral form
-$$f(T,W(T))=f(0,W(0))+\int_0^T f_t\,dt+\int_0^T f_x\,dW+\tfrac12\int_0^T f_{xx}\,dt.$$
+$$
+f(T,W(T))=f(0,W(0))+\int_0^T f_t\,dt+\int_0^T f_x\,dW+\tfrac12\int_0^T f_{xx}\,dt.
+$$
 For an Itô process $dX(t)=\Theta(t)dt+\Delta(t)dW(t)$ (Shreve II Thm 4.4.6):
-$$\boxed{\;df(t,X)=f_t\,dt+f_x\,dX+\tfrac12 f_{xx}\,(dX)^2,\qquad (dX)^2=\Delta^2(t)\,dt.\;}$$
+$$
+\boxed{\;df(t,X)=f_t\,dt+f_x\,dX+\tfrac12 f_{xx}\,(dX)^2,\qquad (dX)^2=\Delta^2(t)\,dt.\;}
+$$
 *Why the $\tfrac12$ term?* Taylor-expand to second order; terms with $(dt)^2,dt\,dW\to0$, but $(dW)^2=dt$ survives, contributing $\tfrac12 f_{xx}\Delta^2 dt$. **Itô product rule** (Cor 4.6.3): $d(XY)=X\,dY+Y\,dX+dX\,dY$.
 
 #### 2.3 Application: GBM (Shreve I §15.3; Ex 4.4.8)
 The solution of $dS=\mu S\,dt+\sigma S\,dW$ is
-$$S(t)=S(0)\exp\Big\{\sigma W(t)+\Big(\mu-\tfrac12\sigma^2\Big)t\Big\}.$$
+$$
+S(t)=S(0)\exp\Big\{\sigma W(t)+\Big(\mu-\tfrac12\sigma^2\Big)t\Big\}.
+$$
 Check: apply Itô–Doeblin to $f(t,x)=S(0)e^{\sigma x+(\mu-\tfrac12\sigma^2)t}$; the $-\tfrac12\sigma^2$ in the exponent cancels the $\tfrac12\sigma^2$ from $f_{xx}$, so the total $dt$-coefficient is exactly $\mu S$. **Without the correction you would get $\mu+\tfrac12\sigma^2$, a pure QV artifact.** With $\mu=0$, $S(t)=S(0)+\int_0^t\sigma S\,dW$ is a martingale.
 
 #### 2.4 The canonical integral (Shreve I p-167; Shreve II §4.2)
-$$\int_0^T W(u)\,dW(u)=\tfrac12 W(T)^2-\tfrac12 T.$$
+$$
+\int_0^T W(u)\,dW(u)=\tfrac12 W(T)^2-\tfrac12 T.
+$$
 The $-\tfrac12T$ is the Itô correction: naive $\tfrac12 W(T)^2$ comes from treating $dW$ as $C^1$. This example is the audit test for any stochastic-calculus implementation.
 
 ---

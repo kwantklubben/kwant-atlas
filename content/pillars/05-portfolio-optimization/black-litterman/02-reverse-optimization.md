@@ -29,27 +29,41 @@ Three intuitions:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Forward Markowitz.** Maximizing risk-adjusted expected return
-$$U(w) = w^T\mu - \tfrac{\delta}{2}w^T\Sigma w,$$
+$$
+U(w) = w^T\mu - \tfrac{\delta}{2}w^T\Sigma w,
+$$
 the first-order condition is $\nabla_w U = \mu - \delta\Sigma w = 0$, i.e. the optimal weight vector satisfies
-$$w^\* = \tfrac{1}{\delta}\Sigma^{-1}\mu.$$
+$$
+w^* = \tfrac{1}{\delta}\Sigma^{-1}\mu.
+$$
 
-**Reverse optimization.** We observe $w_{mkt}$ (market-cap weights) but not $\mu$. Postulate that an investor with risk-aversion $\delta$ *does* hold $w_{mkt}$ as optimal, so $w^\* = w_{mkt}$. Invert the first-order condition:
-$$\underbrace{\Pi}_{\text{implied returns}} = \delta\,\Sigma\,w_{mkt}.$$
+**Reverse optimization.** We observe $w_{mkt}$ (market-cap weights) but not $\mu$. Postulate that an investor with risk-aversion $\delta$ *does* hold $w_{mkt}$ as optimal, so $w^* = w_{mkt}$. Invert the first-order condition:
+$$
+\underbrace{\Pi}_{\text{implied returns}} = \delta\,\Sigma\,w_{mkt}.
+$$
 The **defining identity** is that re-solving forward with $\Pi$ recovers the market exactly:
-$$\tfrac{1}{\delta}\Sigma^{-1}\Pi = w_{mkt}.$$
+$$
+\tfrac{1}{\delta}\Sigma^{-1}\Pi = w_{mkt}.
+$$
 
 **Why $r_f$ sits inside $\Pi$ (and never re-enters the weights).** Write the FOC with excess returns, $\mu-r_f\mathbf{1}=\delta\Sigma w_{mkt}$: the implied returns are $\Pi=r_f\mathbf{1}+\delta\Sigma w_{mkt}$, i.e. $\Pi$ is a *total*-return vector whose excess part $\Pi-r_f\mathbf{1}=\delta\Sigma w_{mkt}$ is exactly what reverse-optimizes. When you re-solve forward you must therefore use the **excess-return tangency form**
-$$w_{\text{tan}}=\frac{\Sigma^{-1}(\Pi-r_f\mathbf{1})}{\mathbf{1}^T\Sigma^{-1}(\Pi-r_f\mathbf{1})}
+$$
+w_{\text{tan}}=\frac{\Sigma^{-1}(\Pi-r_f\mathbf{1})}{\mathbf{1}^T\Sigma^{-1}(\Pi-r_f\mathbf{1})}
 =\frac{\Sigma^{-1}(\delta\Sigma w_{mkt})}{\mathbf{1}^T\Sigma^{-1}(\delta\Sigma w_{mkt})}
-=\frac{w_{mkt}}{\mathbf{1}^Tw_{mkt}}=w_{mkt}.$$
+=\frac{w_{mkt}}{\mathbf{1}^Tw_{mkt}}=w_{mkt}.
+$$
 The $\delta$ and $r_f$ cancel; the equilibrium is recovered **exactly**. The folklore "drop $r_f$" is precise in this sense: $r_f$ lives in $\Pi$ but drops out of the *weights*.
 
 **Calibrating $\delta$.** Multiply the identity by $w_{mkt}^T$: $w_{mkt}^T\Pi = \delta\, w_{mkt}^T\Sigma w_{mkt}$. The LHS is the market's excess expected return $\mu_{mkt}$, the last term the market variance $\sigma_{mkt}^2$, giving
-$$\delta = \frac{\mu_{mkt}}{\sigma_{mkt}^2}\qquad(\mu_{mkt}=w_{mkt}^T\Pi\text{ is already the \emph{excess} return, since }\Pi=\delta\Sigma w_{mkt}\text{ is the excess vector}).$$
+$$
+\delta = \frac{\mu_{mkt}}{\sigma_{mkt}^2}\qquad(\mu_{mkt}=w_{mkt}^T\Pi\text{ is already the \emph{excess} return, since }\Pi=\delta\Sigma w_{mkt}\text{ is the excess vector}).
+$$
 Requiring the model to price the market at its own observed Sharpe pins $\delta$ down, removing the entirely free dial.
 
 **The prior.** Returns are modeled as random with *mean* $\Pi$ and covariance $\tau\Sigma$:
-$$r \sim \mathcal{N}\big(\Pi,\ \tau\Sigma\big).$$
+$$
+r \sim \mathcal{N}\big(\Pi,\ \tau\Sigma\big).
+$$
 The $\tau$ (typically $\approx0.02$–$0.10$) scales the *estimate* uncertainty of the prior mean far below the assets' own variances — the prior is confident about *where* returns sit on average, not about their realized dispersion.
 
 ---
@@ -100,7 +114,7 @@ Pi re-calibrated   = [0.06625 0.04725 0.0465 ]
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **$\delta$ is not free** — it rescales *both* $\Pi$ and the final $w^\*$. Fix $\delta$ by requiring the model to price the market at its own observed Sharpe (here $\delta=\mu_{mkt}^\text{excess}/\sigma_{mkt}^2=2.5$, recovering the given value) — a poorly chosen $\delta$ rescales every implied return; see [[pillars/05-portfolio-optimization/black-litterman/06-advanced-extensions|06 · Advanced Extensions]] for the consequence.
+1. **$\delta$ is not free** — it rescales *both* $\Pi$ and the final $w^*$. Fix $\delta$ by requiring the model to price the market at its own observed Sharpe (here $\delta=\mu_{mkt}^\text{excess}/\sigma_{mkt}^2=2.5$, recovering the given value) — a poorly chosen $\delta$ rescales every implied return; see [[pillars/05-portfolio-optimization/black-litterman/06-advanced-extensions|06 · Advanced Extensions]] for the consequence.
 2. **$w_{mkt}$ must be investable and observable.** If you use a proxy index with poor coverage, or weights that include illiquid positions, the "equilibrium" you invert is garbage. Reverse optimization is only as clean as its inputs.
 3. **Equilibrium is an assumption.** The identity $\tfrac1\delta\Sigma^{-1}\Pi=w_{mkt}$ is *constructed* to hold, not derived from data. If the market is not efficient, $\Pi$ is the return a *model with wrong beliefs* would price, not the true opportunity set.
 

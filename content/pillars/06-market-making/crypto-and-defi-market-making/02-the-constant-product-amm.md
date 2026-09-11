@@ -18,7 +18,9 @@ This page states the **constant-product AMM** precisely: its trading function, i
 
 The constant-product rule is deceptively simple — the pool maintains
 
-$$x\,y = k$$
+$$
+x\,y = k
+$$
 
 after every trade. Three consequences fall out, and each is a market-making fact:
 
@@ -34,11 +36,15 @@ after every trade. Three consequences fall out, and each is a market-making fact
 
 Reserves $(x,y)$ with $xy=k$. A trader sends $\Delta x$ of $X$ in; the pool must return $\Delta y$ of $Y$ so that the product is preserved:
 
-$$(x+\Delta x)(y-\Delta y)=k \quad\Rightarrow\quad \Delta y = y - \frac{k}{x+\Delta x} = \frac{y\,\Delta x}{x+\Delta x} .$$
+$$
+(x+\Delta x)(y-\Delta y)=k \quad\Rightarrow\quad \Delta y = y - \frac{k}{x+\Delta x} = \frac{y\,\Delta x}{x+\Delta x} .
+$$
 
 The **marginal price** the trader pays, $\Delta y/\Delta x$, is *worse* than the current $p=y/x$ (a full $\Delta x$ in gets less than $y\Delta x/x$ out), which is the slippage. The marginal price of the *next* infinitesimal unit is
 
-$$p' = \frac{y-\Delta y}{x+\Delta x},$$
+$$
+p' = \frac{y-\Delta y}{x+\Delta x},
+$$
 
 and repeated trades move the pool along the curve. This is the entire micro-price model of the AMM — no order book, no queue, no priority; depth is the derivative of the curve.
 
@@ -46,26 +52,36 @@ and repeated trades move the pool along the curve. This is the entire micro-pric
 
 On the curve, $y=px$ and $xy=k$, so $x=\sqrt{k/p}$ and $y=\sqrt{kp}$. The pool's value in numeraire $Y$ is
 
-$$V(p)=x\,p+y=\sqrt{k/p}\,p+\sqrt{kp}=2\sqrt{kp}.$$
+$$
+V(p)=x\,p+y=\sqrt{k/p}\,p+\sqrt{kp}=2\sqrt{kp}.
+$$
 
 **Divergence loss.** Deposit $(x_0,y_0)$ at price $p_0=y_0/x_0$, value $V_0=2\sqrt{kp_0}$. The *passive-hold* benchmark keeps the same two tokens regardless of price:
 
-$$V_{\text{hold}}(p)=x_0\,p + y_0 .$$
+$$
+V_{\text{hold}}(p)=x_0\,p + y_0 .
+$$
 
 The LP's realized value is the curve value $2\sqrt{kp}$. The divergence-loss fraction is the relative shortfall:
 
-$$\mathrm{DL}(p)=1-\frac{V(p)}{V_{\text{hold}}(p)}
-=1-\frac{2\sqrt{kp}}{x_0p+y_0}.$$
+$$
+\mathrm{DL}(p)=1-\frac{V(p)}{V_{\text{hold}}(p)}
+=1-\frac{2\sqrt{kp}}{x_0p+y_0}.
+$$
 
 Substitute $x_0=\sqrt{k/p_0}$, $y_0=\sqrt{kp_0}$, and multiply through by $\sqrt{p_0}/\sqrt{k}$:
 
-$$\mathrm{DL}(p)=1-\frac{2\sqrt{p}}{\sqrt{p/p_0}+\sqrt{p_0/p}}.$$
+$$
+\mathrm{DL}(p)=1-\frac{2\sqrt{p}}{\sqrt{p/p_0}+\sqrt{p_0/p}}.
+$$
 
 Let $a=p/p_0$ and $r=\sqrt a$. Then $\sqrt{p/p_0}=r$, $\sqrt{p_0/p}=1/r$, so
 
-$$\boxed{\;\mathrm{DL}(a)=1-\frac{2r}{r^2+1}
+$$
+\boxed{\;\mathrm{DL}(a)=1-\frac{2r}{r^2+1}
 =1-\frac{2\sqrt a}{1+a}
-=\frac{(\sqrt a-1)^2}{1+a}\;} .$$
+=\frac{(\sqrt a-1)^2}{1+a}\;} .
+$$
 
 **Properties.** $\mathrm{DL}(1)=0$; symmetry $\mathrm{DL}(a)=\mathrm{DL}(1/a)$; monotone to $1$ as $a\to\infty$; and the small-move expansion (letting $a=e^{s}$, $s$ small) is $\mathrm{DL}\approx s^2/8$ — the seed of the $\tfrac18\sigma^2$ LVR rate of [[pillars/06-market-making/crypto-and-defi-market-making/05-failure-modes-and-practice|05]].
 

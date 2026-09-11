@@ -27,21 +27,29 @@ The objective: see that **the right aggregation is a *model of a shared economy*
 
 **Countercyclical capital buffer (BCBS 2010; the credit-gap rule).** Let $g_t$ be the credit-to-GDP gap (credit ratio minus its trend). The CCyB add-on is
 
-$$\text{buffer}_t = 0.3125\cdot\max(g_t-2,\,0)\quad\text{(i.e. }0\%\text{ at a 2pp gap, }2.5\%\text{ at }10\text{pp, capped at }2.5\%\text{),}$$
+$$
+\text{buffer}_t = 0.3125\cdot\max(g_t-2,\,0)\quad\text{(i.e. }0\%\text{ at a 2pp gap, }2.5\%\text{ at }10\text{pp, capped at }2.5\%\text{),}
+$$
 
 so the buffer *rises as credit outgrows the trend* — before the bust — and *releases* as the gap shrinks, feeding capital back into the system during the downcycle. This is the anti-procyclical mirror of the VaR-target loop in §05: it removes the *need* to delever in the bust because capital was pre-positioned.
 
 **Macro-factor credit link (Vasicek / Bellini CLE).** Let a single macro factor $Z\sim N(0,1)$ drive every borrower's default probability through a logistic link
 
-$$\text{PD}(Z) = \frac{1}{1+e^{-(\alpha+\beta Z)}}.$$
+$$
+\text{PD}(Z) = \frac{1}{1+e^{-(\alpha+\beta Z)}}.
+$$
 
 Borrowers are independent *given* $Z$, so the portfolio default count for $N$ loans is, conditional on $Z$,
 
-$$L^{\text{credit}} = \frac{1}{N}\sum_{i=1}^{N}\mathbf{1}_{U_i \le \text{PD}(Z)}.$$
+$$
+L^{\text{credit}} = \frac{1}{N}\sum_{i=1}^{N}\mathbf{1}_{U_i \le \text{PD}(Z)}.
+$$
 
 Now add the bank's market (trading) book as a *function of the same $Z$*, $L^{\text{market}} = c + bZ + \xi$. The **integrated loss** is
 
-$$L^{\text{tot}}(Z) = w_m\,L^{\text{market}}(Z) + w_c\,L^{\text{credit}}(Z),$$
+$$
+L^{\text{tot}}(Z) = w_m\,L^{\text{market}}(Z) + w_c\,L^{\text{credit}}(Z),
+$$
 
 and the bank's integrated expected shortfall is $\text{ES}_\alpha(L^{\text{tot}})$ over scenarios $Z\sim N(0,1)$ — a single number that commits the market and credit books to *the same* macro scenario. This is Bellini's core move: **aggregate by joint scenario, not by adding separately-estimated marginal capitals.** The resulting integrated ES is *different from* (and in §3 below, *below*) the naive sum of the two standalone ES, because a single scenario can't simultaneously trigger each book's own idiosyncratic tail — and that "un-achievable" sum is exactly the subadditivity slack of §04.
 

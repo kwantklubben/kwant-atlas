@@ -35,7 +35,9 @@ This folder is a *hub*. It (a) gives the **fast lookup tables** below (job #1 of
 
 **Notation:** $f$ clock frequency (Hz), $c$ memory latency in **cycles**, $t$ latency in **time**. The conversion is one line:
 
-$$t = \frac{c}{f}, \qquad f = 4.0\ \text{GHz} \;\Rightarrow\; 1\ \text{cycle} = 0.25\ \text{ns}.$$
+$$
+t = \frac{c}{f}, \qquad f = 4.0\ \text{GHz} \;\Rightarrow\; 1\ \text{cycle} = 0.25\ \text{ns}.
+$$
 
 | Tier | Approx. latency (cycles) | Approx. time @ 4 GHz |
 |---|---|---|
@@ -46,25 +48,35 @@ $$t = \frac{c}{f}, \qquad f = 4.0\ \text{GHz} \;\Rightarrow\; 1\ \text{cycle} = 
 
 **The stall inequality (why layout is everything).** For a working set of $N$ records of size $s$ bytes scanning one field, the number of 64-byte lines touched is
 
-$$L = \left|\left\{\left\lfloor \tfrac{\text{offset}(k)}{64}\right\rfloor\right\}\right|,$$
+$$
+L = \left|\left\{\left\lfloor \tfrac{\text{offset}(k)}{64}\right\rfloor\right\}\right|,
+$$
 
 and the effective per-field traffic is $W = 64L/N$ bytes. For the 24-byte order record of §3 (Array-of-Structures) the arithmetic collapses to a clean ratio:
 
-$$\frac{L_{\text{AoS}}}{L_{\text{SoA}}} = \frac{3N/8}{N/8} = 3 \quad\Rightarrow\quad \text{AoS fetches } 24\ \text{B per used } 8\text{-B field}.$$
+$$
+\frac{L_{\text{AoS}}}{L_{\text{SoA}}} = \frac{3N/8}{N/8} = 3 \quad\Rightarrow\quad \text{AoS fetches } 24\ \text{B per used } 8\text{-B field}.
+$$
 
 **Latency–throughput separation (Little's law).** Throughput and latency are different quantities; concurrency is the bridge:
 
-$$\text{in-flight work} = \text{arrival rate} \times \text{latency},\qquad \text{ceiling} = \frac{1}{t_{\text{work}}}.$$
+$$
+\text{in-flight work} = \text{arrival rate} \times \text{latency},\qquad \text{ceiling} = \frac{1}{t_{\text{work}}}.
+$$
 
 A 2.00 µs tick-to-trade budget gives a *pipelined* ceiling of $1/2.00\,\text{µs} = 500{,}000$ msg/s — but a single **reaction** still pays the full 2.00 µs of decay.
 
 **Alpha decay model** (why every microsecond counts): if short-horizon edge halves every $h$ microseconds, the fraction surviving $t$ µs of reaction delay is
 
-$$\text{edge}(t) = 2^{-t/h}.$$
+$$
+\text{edge}(t) = 2^{-t/h}.
+$$
 
 **Allocation / growth cost (amortised ≠ bounded).** Appending $N$ elements to a doubling vector copies
 
-$$C = \sum_{k} 2^{k} = N - 1 \text{ copies (element-count)} \quad\text{— amortised } O(1),\ \text{but one spike copies } \tfrac{N}{2}.$$
+$$
+C = \sum_{k} 2^{k} = N - 1 \text{ copies (element-count)} \quad\text{— amortised } O(1),\ \text{but one spike copies } \tfrac{N}{2}.
+$$
 
 | Quantity | Value (verified) |
 |---|---|

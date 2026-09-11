@@ -35,20 +35,32 @@ In the generalized-Roll notation, the **total half-spread is $c+\lambda$**: $c$ 
 
 Glosten & Harris specify the efficient price and trade price with trade-size-dependent components ($V_t$ = trade volume; $\lambda_0+\lambda_1 V_t$ adverse selection, $c_0+c_1 V_t$ order processing):
 
-$$m_t = m_{t-1} + u_t + q_t\,(\lambda_0+\lambda_1 V_t),$$
-$$p_t = m_t + q_t\,(c_0+c_1 V_t).$$
+$$
+m_t = m_{t-1} + u_t + q_t\,(\lambda_0+\lambda_1 V_t),
+$$
+$$
+p_t = m_t + q_t\,(c_0+c_1 V_t).
+$$
 
 Taking differences, the observed price change decomposes into a **permanent** (information) piece $\lambda q_t$ and a **transitory** (order-processing) piece $c(q_t-q_{t-1})$:
 
-$$\Delta p_t = u_t + q_t(\lambda_0+\lambda_1 V_t) + \underbrace{c_0(q_t-q_{t-1})+c_1(q_t V_t-q_{t-1}V_{t-1})}_{\text{transitory}}.$$
+$$
+\Delta p_t = u_t + q_t(\lambda_0+\lambda_1 V_t) + \underbrace{c_0(q_t-q_{t-1})+c_1(q_t V_t-q_{t-1}V_{t-1})}_{\text{transitory}}.
+$$
 
 #### 2.2 The generalized Roll (Hasbrouck Ch 8) — the simplest estimable form
 
 With constant $c,\lambda$ and efficient innovation $w_t=\lambda q_t+u_t$:
 
-$$p_t=m_t+c\,q_t,\qquad m_t=m_{t-1}+\lambda q_t+u_t,$$
-$$\Delta p_t = c\,(q_t-q_{t-1}) + \lambda q_t + u_t,$$
-$$\gamma_0 = c^2+(c+\lambda)^2+\sigma_u^2,\qquad \gamma_1 = -c\,(c+\lambda).$$
+$$
+p_t=m_t+c\,q_t,\qquad m_t=m_{t-1}+\lambda q_t+u_t,
+$$
+$$
+\Delta p_t = c\,(q_t-q_{t-1}) + \lambda q_t + u_t,
+$$
+$$
+\gamma_0 = c^2+(c+\lambda)^2+\sigma_u^2,\qquad \gamma_1 = -c\,(c+\lambda).
+$$
 
 **Total spread is $2(c+\lambda)$.** The autocovariance now captures the *product* of the two costs. Regression on trade direction separates them: $c$ is the coefficient on $q_t-q_{t-1}$ (the order-processing/transitory part), $\lambda$ on $q_t$ (the adverse-selection/permanent part). Note $\sigma_w^2=\lambda^2+\sigma_u^2=\gamma_0+2\gamma_1$ is identified, but $\{c,\lambda,\sigma_u^2\}$ individually are **not** from autocovariances alone (2 moments, 3 unknowns) — hence the need for trade-direction data. This is the identification lesson that motivates the whole decomposition literature.
 
@@ -72,7 +84,9 @@ Stoll relates the squared quoted spread to two serial covariances (transaction r
 
 Huang & Stoll put order-processing, inventory, and adverse-selection in **one** framework (the general approach). Their structural model yields the trade-by-trade price change
 
-$$\Delta p_t = \frac{S}{2}(q_t-q_{t-1}) + \lambda\,\frac{S}{2}\,q_{t-1} + u_t,$$
+$$
+\Delta p_t = \frac{S}{2}(q_t-q_{t-1}) + \lambda\,\frac{S}{2}\,q_{t-1} + u_t,
+$$
 
 where $\tfrac{S}{2}(q_t-q_{t-1})$ is the transitory (order-processing) part and $\lambda \tfrac{S}{2}q_{t-1}$ is the adverse-selection + inventory part driven by the *previous* trade's direction (the dealer reacts to the last trade). By restricting $\lambda$ and adding inventory terms, Huang–Stoll show how to identify the three components separately. The **two-way** (order-processing vs information) split is their baseline; the inventory piece is the refinement.
 
@@ -120,7 +134,7 @@ total quoted spread 2(c+l) = 0.0700   (true 0.0700)
 adverse-selection share   = 42.8%
 ```
 
-The regression cleanly separates the transitory (order-processing) half-spread $c=\$0.02$ from the permanent (adverse-selection) half-spread $\lambda=\$0.015$. Almost 43% of the maker's half-spread is expected to be given back to informed flow — exactly the kind of number a quoting desk needs.
+The regression cleanly separates the transitory (order-processing) half-spread $c= $ \$0.02 from the permanent (adverse-selection) half-spread \lambda= \$0.015. Almost 43% of the maker's half-spread is expected to be given back to informed flow — exactly the kind of number a quoting desk needs.
 
 ---
 

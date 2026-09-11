@@ -47,7 +47,9 @@ The single most important comparison in all of computational finance: **Monte Ca
 
 **Lookup 2 — the finite-difference schemes.** Writing the one-factor parabolic operator as $\mathcal L u$ and the $\theta$-method weight on the new time level (Duffy eqs. 6.17–6.19, 7.4):
 
-$$\frac{U^{n+1}-U^n}{k} = \theta\,\mathcal L U^{n+1} + (1-\theta)\,\mathcal L U^{n}, \qquad \theta\in[0,1].$$
+$$
+\frac{U^{n+1}-U^n}{k} = \theta\,\mathcal L U^{n+1} + (1-\theta)\,\mathcal L U^{n}, \qquad \theta\in[0,1].
+$$
 
 | Scheme | $\theta$ | Time order | Stability (heat / BS) | Solve per step |
 |---|---|---|---|---|
@@ -59,17 +61,21 @@ $$\frac{U^{n+1}-U^n}{k} = \theta\,\mathcal L U^{n+1} + (1-\theta)\,\mathcal L U^
 
 Von Neumann amplification factor (Duffy eqs. 8.35, 8.38, 8.39), with $\lambda = ak/h^2$ and frequency $\xi$:
 
-$$\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\tfrac\xi2,\qquad
+$$
+\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\tfrac\xi2,\qquad
 \rho_{\text{impl}}(\xi)=\frac{1}{1+4\lambda\sin^2\frac\xi2},\qquad
-\rho_{\text{CN}}(\xi)=\frac{1-2\lambda\sin^2\frac\xi2}{1+2\lambda\sin^2\frac\xi2}.$$
+\rho_{\text{CN}}(\xi)=\frac{1-2\lambda\sin^2\frac\xi2}{1+2\lambda\sin^2\frac\xi2}.
+$$
 
 The **triangle** that governs everything (Duffy Defs. 8.1–8.4 + Thm 8.1): *consistency* (truncation error $\to0$) $+$ *stability* ($\|Q^n\|\le K$) $\iff$ *convergence* — the **Lax equivalence theorem**.
 
 **Lookup 3 — the Monte Carlo estimator and its error** (Glasserman eqs. 1.1–1.8):
 
-$$\hat\alpha_n=\frac1n\sum_{i=1}^n f(U_i),\qquad
+$$
+\hat\alpha_n=\frac1n\sum_{i=1}^n f(U_i),\qquad
 \hat\alpha_n-\alpha \approx \mathcal N\!\left(0,\frac{\sigma_f}{\sqrt n}\right),\qquad
-s_f=\sqrt{\tfrac{1}{n-1}\sum_i (f(U_i)-\hat\alpha_n)^2}.$$
+s_f=\sqrt{\tfrac{1}{n-1}\sum_i (f(U_i)-\hat\alpha_n)^2}.
+$$
 
 | Variance-reduction method | Estimator / parameter | Variance factor |
 |---|---|---|

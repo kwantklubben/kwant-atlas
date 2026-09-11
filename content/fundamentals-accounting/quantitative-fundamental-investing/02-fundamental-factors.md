@@ -29,31 +29,41 @@ The objective is to see these not as unrelated tricks but as **four independent 
 
 **Value.** With *BE* book equity, *ME* market equity, *NI* net income:
 
-$$\text{B/M} = \frac{\text{BE}}{\text{ME}}, \qquad \text{E/P} = \frac{\text{NI}}{\text{ME}}.$$
+$$
+\text{B/M} = \frac{\text{BE}}{\text{ME}}, \qquad \text{E/P} = \frac{\text{NI}}{\text{ME}}.
+$$
 
 **Profitability.** With *ROE* return on equity, and Novy-Marx's gross profitability $GP/A$:
 
-$$\text{ROE} = \frac{\text{NI}}{\text{BVE}}, \qquad
-\frac{GP}{A} = \frac{S - \text{COGS}}{\text{TA}}.$$
+$$
+\text{ROE} = \frac{\text{NI}}{\text{BVE}}, \qquad
+\frac{GP}{A} = \frac{S - \text{COGS}}{\text{TA}}.
+$$
 
 Gross profitability is deliberately *pre* every cost layer except direct cost — the rawest possible measure of the business's pricing power. Novy-Marx (2013) shows it predicts returns with roughly the same power as book-to-market, but *orthogonal* to it — a profitable firm can be expensive on B/M yet still earn more.
 
 **Investment.** Let $g_A$ be one-year growth in total assets:
 
-$$g_A = \frac{\text{TA}_t - \text{TA}_{t-1}}{\text{TA}_{t-1}}.$$
+$$
+g_A = \frac{\text{TA}_t - \text{TA}_{t-1}}{\text{TA}_{t-1}}.
+$$
 
 The premium is **negative**: Fama–French (2015) show *conservative* (low $g_A$) firms earn more than *aggressive* (high $g_A$) firms. The q-theory logic (Hou, Xue & Zhang 2015): a firm invests when its marginal cost of capital is low, so high-investment firms are precisely the ones whose future returns are *low*.
 
 **Quality — the Piotroski F-score.** Nine binary signals summed to a 0–9 score (profitability, leverage/liquidity, operating efficiency); detailed on [[fundamentals-accounting/quantitative-fundamental-investing/04-quality-and-fscores|04 · Quality & F-scores]]. And the **accruals** factor (Sloan 1996): because
 
-$$\text{NI} = \text{CFO} + \text{Accruals},$$
+$$
+\text{NI} = \text{CFO} + \text{Accruals},
+$$
 
 high-accrual (low-cash) earnings are *less persistent* and earn *lower* subsequent returns — the "quality" dark-side factor.
 
 **Portfolio-sort construction (the shared skeleton).** Rank $N$ firms on characteristic $c_i$, split into $K$ portfolios by rank, equal-weight:
 
-$$\overline{r}_k = \frac{1}{N_k}\sum_{i\in k} r_i, \qquad
-\text{premium} = \overline{r}_K - \overline{r}_1.$$
+$$
+\overline{r}_k = \frac{1}{N_k}\sum_{i\in k} r_i, \qquad
+\text{premium} = \overline{r}_K - \overline{r}_1.
+$$
 
 Every factor above is exactly this estimator with a different $c_i$ — keep that single shape in mind and the factor catalog stops being a list and becomes one repeated thought.
 

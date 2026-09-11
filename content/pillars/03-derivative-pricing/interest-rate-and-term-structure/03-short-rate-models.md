@@ -28,41 +28,57 @@ The key structural idea that has no analogue in a constant-$r$ BSM world: **bond
 
 Let $dr=\mu(t,r)dt+\sigma(t,r)d\bar W$ under $\mathbb{P}$. A portfolio of a $S$-bond and a $T$-bond kills the $dW$ term, which forces the market price of risk to be *the same for all maturities*:
 
-$$\frac{\alpha_T(t)-r(t)}{\sigma_T(t)}=\lambda(t)\quad\forall T\qquad\text{(Björk Prop 23.1)}.$$
+$$
+\frac{\alpha_T(t)-r(t)}{\sigma_T(t)}=\lambda(t)\quad\forall T\qquad\text{(Björk Prop 23.1)}.
+$$
 
 $F(t,r;T)=P(t,T)$ then satisfies the **term-structure equation** (Björk Prop 23.2):
 
-$$F_t+(\mu-\lambda\sigma)F_r+\tfrac12\sigma^2F_{rr}-rF=0,\qquad F(T,r;T)=1.$$
+$$
+F_t+(\mu-\lambda\sigma)F_r+\tfrac12\sigma^2F_{rr}-rF=0,\qquad F(T,r;T)=1.
+$$
 
 Under the risk-neutral measure the $r$-dynamics become $dr=(\mu-\lambda\sigma)dt+\sigma dW$ and (Björk Prop 23.3)
 
-$$P(t,T)=\mathbb{E}^{\mathbb{Q}}_{t,r}\!\left[e^{-\int_t^T r_s ds}\right].$$
+$$
+P(t,T)=\mathbb{E}^{\mathbb{Q}}_{t,r}\!\left[e^{-\int_t^T r_s ds}\right].
+$$
 
 **$\lambda$ is exogenous** — not pinned by the model, but calibrated to (or assumed for) the market. It is the single lever connecting real-world and risk-neutral drift.
 
 #### 2.2 Vasicek (BM Ch3; Björk Prop 24.3; Hull Ch31)
 
-$$dr=a(b-r)dt+\sigma dW .$$
+$$
+dr=a(b-r)dt+\sigma dW .
+$$
 
 Gaussian, mean-reverting to $b$ with speed $a$. The affine bond price $P(t,T)=A(t,T)e^{-B(t,T)r}$ has closed forms
 
-$$B(t,T)=\frac{1-e^{-a(T-t)}}{a},\qquad A(t,T)=\exp\!\left\{\frac{(B-(T-t))(a^2b-\frac12\sigma^2)}{a^2}-\frac{\sigma^2B^2}{4a}\right\}.$$
+$$
+B(t,T)=\frac{1-e^{-a(T-t)}}{a},\qquad A(t,T)=\exp\!\left\{\frac{(B-(T-t))(a^2b-\frac12\sigma^2)}{a^2}-\frac{\sigma^2B^2}{4a}\right\}.
+$$
 
 **Flaw:** $r$ is Gaussian, so $\mathbb{P}(r<0)>0$ — nominal rates can go negative.
 
 #### 2.3 Cox–Ingersoll–Ross (BM Ch3; Björk Prop 24.6; Shreve Ch31)
 
-$$dr=a(b-r)dt+\sigma\sqrt r\,dW .$$
+$$
+dr=a(b-r)dt+\sigma\sqrt r\,dW .
+$$
 
 The square-root diffusion keeps $r\ge0$; the **Feller condition** $2ab\ge\sigma^2$ makes $r>0$ strictly and $r$ unattainable at 0. Closed-form bond (Björk Prop 24.6, $h=\sqrt{a^2+2\sigma^2}$):
 
-$$B(t,T)=\frac{2(e^{h\tau}-1)}{(h+a)(e^{h\tau}-1)+2h},\qquad A(t,T)=\left[\frac{2he^{(a+h)\tau/2}}{(h+a)(e^{h\tau}-1)+2h}\right]^{\frac{2ab}{\sigma^2}},\quad \tau=T-t.$$
+$$
+B(t,T)=\frac{2(e^{h\tau}-1)}{(h+a)(e^{h\tau}-1)+2h},\qquad A(t,T)=\left[\frac{2he^{(a+h)\tau/2}}{(h+a)(e^{h\tau}-1)+2h}\right]^{\frac{2ab}{\sigma^2}},\quad \tau=T-t.
+$$
 
 $r(t)$ has a **non-central chi-square** transition density; the stationary density is Gamma (Shreve Ch31).
 
 #### 2.4 Hull–White extended Vasicek (BM Ch3 3.33–3.34; Björk Prop 24.8; Hull Ch32; Shreve Ch30)
 
-$$dr=[\theta(t)-ar]dt+\sigma dW,\qquad \theta(t)=\frac{\partial}{\partial T}f^{M}(0,t)+a f^{M}(0,t)+\frac{\sigma^2}{2a}\left(1-e^{-2at}\right).$$
+$$
+dr=[\theta(t)-ar]dt+\sigma dW,\qquad \theta(t)=\frac{\partial}{\partial T}f^{M}(0,t)+a f^{M}(0,t)+\frac{\sigma^2}{2a}\left(1-e^{-2at}\right).
+$$
 
 The time-dependent drift $\theta(t)$ is chosen so the model **reproduces today's market forward curve exactly** (no yield-curve inversion — this is why HW is the workhorse). With constant $a,\sigma$, $r$ is Gaussian (Shreve Ch30), $\int_0^T r\,dt$ is normal, and bond prices and bond-options have closed forms. Ho-Lee is the $a=0$ special case; a two-factor Hull–White adds a second process for the humped vol structure.
 
@@ -70,7 +86,9 @@ The time-dependent drift $\theta(t)$ is chosen so the model **reproduces today's
 
 If $\mu(t,r)=\alpha(t)r+\beta(t)$ and $\sigma^2(t,r)=\gamma(t)r+\delta(t)$ (affine drift & variance), then $P=A(t,T)e^{-B(t,T)r}$ with $B,A$ solving Riccati ODEs:
 
-$$B_t+\alpha B-\tfrac12\gamma B^2=-1,\quad B(T,T)=0;\qquad A_t=\beta B-\tfrac12\delta B^2,\quad A(T,T)=0.$$
+$$
+B_t+\alpha B-\tfrac12\gamma B^2=-1,\quad B(T,T)=0;\qquad A_t=\beta B-\tfrac12\delta B^2,\quad A(T,T)=0.
+$$
 
 All of Vasicek, CIR, Ho-Lee, Hull–White are affine; Dothan and Black-Derman-Toy are not.
 

@@ -28,7 +28,9 @@ The objective is not cynicism: it is knowing *which* of your numbers can quietly
 
 **The Roll failure.** Roll (1984) recovers the half-spread as $c=\sqrt{-\operatorname{cov}(\Delta p_t,\Delta p_{t-1})}$. The estimator is only valid when the autocovariance is *negative* (the bid-ask bounce). If instead price changes are positively autocorrelated,
 
-$$\operatorname{cov}(\Delta p_t,\Delta p_{t-1})>0 \;\Longrightarrow\; \sqrt{-(\text{positive})}\;\text{is undefined},$$
+$$
+\operatorname{cov}(\Delta p_t,\Delta p_{t-1})>0 \;\Longrightarrow\; \sqrt{-(\text{positive})}\;\text{is undefined},
+$$
 
 and implementations clamp to $0$ — reporting an asset as perfectly liquid when it is anything but. Positive autocovariance arises whenever the fundamental price trends (momentum) or when inventory effects are weak relative to news, i.e. precisely when the Roll assumptions fail.
 

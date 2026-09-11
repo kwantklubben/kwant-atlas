@@ -27,22 +27,28 @@ The corporate-finance theory under the leverage ratios is Modigliani–Miller's 
 
 **Liquidity.** With *CA* current assets, *CL* current liabilities, *Inv* inventory:
 
-$$\text{Current ratio}=\frac{\text{CA}}{\text{CL}}, \qquad
-\text{Quick ratio}=\frac{\text{CA}-\text{Inv}}{\text{CL}}.$$
+$$
+\text{Current ratio}=\frac{\text{CA}}{\text{CL}}, \qquad
+\text{Quick ratio}=\frac{\text{CA}-\text{Inv}}{\text{CL}}.
+$$
 
 The quick ratio removes inventory — the least liquid current asset — on the theory that inventory may not convert to cash before obligations come due. Both are *static, point-in-time* solvency measures: they say nothing about *timing* of cash inflows within the period.
 
 **Leverage & coverage.** With *TD* total debt, *BVE* book value of equity, *EBITDA* $=$ EBIT $+$ D&A, *EBIT* operating income, *Interest* interest expense:
 
-$$\text{Debt/Equity}=\frac{\text{TD}}{\text{BVE}}, \qquad
+$$
+\text{Debt/Equity}=\frac{\text{TD}}{\text{BVE}}, \qquad
 \text{Net Debt/EBITDA}=\frac{\text{TD}-\text{Cash}}{\text{EBITDA}}, \qquad
-\text{Interest coverage}=\frac{\text{EBIT}}{\text{Interest}}.$$
+\text{Interest coverage}=\frac{\text{EBIT}}{\text{Interest}}.
+$$
 
 Net Debt/EBITDA is the working-analyst standard: it measures **years of operating cash flow needed to clear the debt** (net of cash on hand), with EBITDA as the rough cash-flow proxy. Interest coverage measures the *cushion* of operating profit over the interest bill — how many times over interest is earned.
 
 **Penman's sharper leverage measures (Ch 9).** The naive D/E confounds financing debt with operating liabilities. Penman defines net financial obligations NFO $=$ (financing debt) $-$ (financial assets), and operating liability leverage OLLEV $=$ (operating liabilities / net operating assets). Financial leverage FLEV $=$ NFO/CSE. His decomposition of the return then reads
 
-$$\text{ROCE} = \text{RNOA} + \big[\text{FLEV}\times(\text{RNOA}-\text{NBC})\big],$$
+$$
+\text{ROCE} = \text{RNOA} + \big[\text{FLEV}\times(\text{RNOA}-\text{NBC})\big],
+$$
 
 so leverage adds to shareholder return **only while** the operating spread (RNOA minus net borrowing cost) is positive — the exact accounting statement of the M&M "leverage amplifies, it does not create" principle.
 

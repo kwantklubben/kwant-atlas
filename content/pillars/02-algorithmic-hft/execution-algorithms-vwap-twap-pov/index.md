@@ -16,7 +16,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-An institution that decides to buy $\\$50{,}000{,}000$ of a mid-cap stock holds a **parent order**: a block far larger than anything the market would accept at one price. Sweeping it into the book at once detonates the price; trickling it out too slowly leaves it exposed to drift. Execution algorithms **chop the parent into child orders** distributed over time, each one tiny relative to prevailing liquidity, so that the realized average price is close to a chosen **benchmark** — the volume-weighted average price (VWAP), the time-weighted average price (TWAP), a constant participation rate (POV), or the decision-time arrival price (implementation shortfall).
+An institution that decides to buy $\\$50{,}000{,}000 of a mid-cap stock holds a **parent order**: a block far larger than anything the market would accept at one price. Sweeping it into the book at once detonates the price; trickling it out too slowly leaves it exposed to drift. Execution algorithms **chop the parent into child orders** distributed over time, each one tiny relative to prevailing liquidity, so that the realized average price is close to a chosen **benchmark** — the volume-weighted average price (VWAP), the time-weighted average price (TWAP), a constant participation rate (POV), or the decision-time arrival price (implementation shortfall).
 
 This folder is the **execution-algorithms topic-folder** for Pillar 2. It is a *hub*: it gives you the **(a) fast algorithm-comparison table** below (job #1), the **(b) core benchmark formulas**, and **(c) routes you to six sub-pages** that climb from zero-knowledge intuition through the three workhorse schedules, implementation shortfall, scheduling and volume profiles, failure modes / gaming, and the benchmark-aware extensions.
 
@@ -40,15 +40,21 @@ This folder is the **execution-algorithms topic-folder** for Pillar 2. It is a *
 | **Implementation-shortfall (arrival)** | schedule from impact model (AC curve) | decision-time price $m_0$ | flexible urgency | when PM cares about *decision*, not a day benchmark | model mis-calibrated impact |
 
 **VWAP benchmark (Foucault eq 2.7).** The market's day VWAP is the volume-weighted mean of transaction prices,
-$$\\text{VWAP} = \\sum_{k=1}^K w_k\\,p_k ,\\qquad w_k = \\frac{v_k}{\\sum_{k=1}^K v_k},$$
+$$
+\\text{VWAP} = \\sum_{k=1}^K w_k\\,p_k ,\\qquad w_k = \\frac{v_k}{\\sum_{k=1}^K v_k},
+$$
 equivalently over buckets $\\text{VWAP}=\\sum_{t=1}^B \\phi_t\\,p_t$ when $\\phi_t$ is realized volume share. **Key flaw (Hasbrouck Ch 14; Foucault):** VWAP depends on your *own* realized volume — a broker that handles a large share of the day sets the benchmark and "always wins." It is **gameable** (Harris 2003).
 
 **VWAP slippage / tracking error.** The engine's target. Its average execution price $\\bar p = \\sum_t w_t^{\\text{exec}} p_t$ (weights = child shares) beats the benchmark when $\\bar p < \\text{VWAP}$ for a buy. The schedule's **tracking error** is the RMS deviation of its child-allocation weights from realized volume shares,
-$$\\text{TE} = \\sqrt{\\textstyle\\sum_{t=1}^B \\left(w_t^{\\text{exec}} - \\phi_t\\right)^2}.$$
+$$
+\\text{TE} = \\sqrt{\\textstyle\\sum_{t=1}^B \\left(w_t^{\\text{exec}} - \\phi_t\\right)^2}.
+$$
 TWAP's weights are flat, so $\\text{TE}_{\\text{TWAP}}>0$ whenever the profile is U-shaped; a perfect VWAP engine has $\\text{TE}_{\\text{VWAP}}=0$.
 
 **Implementation shortfall (Perold 1988; Foucault eq 2.29).** With $\\kappa$ the fraction of the desired order filled at average price $\\bar p$, between decision price $m_0$ and terminal price $m_t$:
-$$\\boxed{\\;\\text{IS} = \\kappa\\,q\\,(\\bar p - m_0) + (1-\\kappa)\\,q\\,(m_t - m_0)\\;}= \\underbrace{\\text{execution cost}}_{\\text{filled at bad price}} + \\underbrace{\\text{opportunity cost}}_{\\text{unfilled, price ran}}.$$
+$$
+\\boxed{\\;\\text{IS} = \\kappa\\,q\\,(\\bar p - m_0) + (1-\\kappa)\\,q\\,(m_t - m_0)\\;}= \\underbrace{\\text{execution cost}}_{\\text{filled at bad price}} + \\underbrace{\\text{opportunity cost}}_{\\text{unfilled, price ran}}.
+$$
 
 ---
 

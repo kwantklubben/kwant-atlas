@@ -31,7 +31,9 @@ The two halves feel different to a beginner, and should:
 
 The annual event count is modelled as $N\sim\text{Poisson}(\lambda)$:
 
-$$\mathbb{P}(N=n)=\frac{e^{-\lambda}\lambda^{n}}{n!},\qquad \mathbb{E}[N]=\text{Var}(N)=\lambda.$$
+$$
+\mathbb{P}(N=n)=\frac{e^{-\lambda}\lambda^{n}}{n!},\qquad \mathbb{E}[N]=\text{Var}(N)=\lambda.
+$$
 
 The single parameter is estimated by the method of moments / MLE alike: $\hat\lambda=\bar n$ (sample mean events per year). The Poisson assumption embeds two strong premises — events arrive independently and at a constant rate — both of which are *violated* in stress (the failure-mode bridge to [[pillars/04-quantitative-risk/operational-risk/05-failure-modes-and-practice|05 · Failure Modes]]). Generalizations (negative binomial, which adds a dispersion parameter) exist precisely to loosen these.
 
@@ -39,11 +41,15 @@ The single parameter is estimated by the method of moments / MLE alike: $\hat\la
 
 $X\sim\text{Lognormal}(\mu,\sigma)$ means $\ln X\sim N(\mu,\sigma^2)$, with
 
-$$\mathbb{E}[X]=e^{\mu+\sigma^2/2},\qquad \text{Var}(X)=e^{2\mu+\sigma^2}\big(e^{\sigma^2}-1\big).$$
+$$
+\mathbb{E}[X]=e^{\mu+\sigma^2/2},\qquad \text{Var}(X)=e^{2\mu+\sigma^2}\big(e^{\sigma^2}-1\big).
+$$
 
 **Fitting (method of moments):** given sample mean $m$ and sample variance $v$ of the observed losses, solve
 
-$$\sigma^2=\ln\!\Big(1+\frac{v}{m^2}\Big),\qquad \mu=\ln m-\tfrac12\sigma^2.$$
+$$
+\sigma^2=\ln\!\Big(1+\frac{v}{m^2}\Big),\qquad \mu=\ln m-\tfrac12\sigma^2.
+$$
 
 Because $\ln X$ is normal, the exact MLE is also available (sample mean/var of the logged data); the two agree closely for reasonable samples.
 
@@ -51,13 +57,17 @@ Because $\ln X$ is normal, the exact MLE is also available (sample mean/var of t
 
 $X\sim\text{Pareto}(x_m,\xi)$, survival function
 
-$$1-F_X(x)=\Big(\frac{x_m}{x}\Big)^{\xi},\qquad x\ge x_m,\ \xi>0.$$
+$$
+1-F_X(x)=\Big(\frac{x_m}{x}\Big)^{\xi},\qquad x\ge x_m,\ \xi>0.
+$$
 
 First moment: $\mathbb{E}[X]=\xi x_m/(\xi-1)$ for $\xi>1$, infinite otherwise. The exponent $\xi$ is the **tail index**; the smaller $\xi$, the fatter the tail and the larger the extreme quantiles.
 
 **The Hill estimator** estimates $\xi$ from the $k$ largest order statistics $x_{(n)}\ge\cdots\ge x_{(n-k+1)}$:
 
-$$\hat\xi=\frac{k}{\displaystyle\sum_{i=0}^{k-1}\ln x_{(n-i)}-k\ln x_{(n-k)}},$$
+$$
+\hat\xi=\frac{k}{\displaystyle\sum_{i=0}^{k-1}\ln x_{(n-i)}-k\ln x_{(n-k)}},
+$$
 
 i.e., the reciprocal of the average log-excess of the top $k$ observations above the $(k{+}1)$-th largest. Choosing $k$ is a bias–variance trade; small $k$ is low-bias but high-variance ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]]).
 
@@ -65,7 +75,9 @@ i.e., the reciprocal of the average log-excess of the top $k$ observations above
 
 Given fitted $\hat\lambda$ and severity law with $\hat{\mathbb{E}}[X]$,
 
-$$\text{EL}=\mathbb{E}[S]=\lambda\,\mathbb{E}[X],$$
+$$
+\text{EL}=\mathbb{E}[S]=\lambda\,\mathbb{E}[X],
+$$
 
 the (cheap) central-tendency anchor that LDA later scales to a tail number.
 

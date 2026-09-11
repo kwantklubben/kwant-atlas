@@ -32,7 +32,9 @@ Also in this layer: **vectorbt**, the numpy/numba-accelerated vectorized backtes
 
 **Vectorization's memory price (the production limit).** A grid search over $K$ parameter combos on a $T$-bar series, done vectorized, materializes a $K\times T$ matrix per intermediate:
 
-$$\text{RAM} \approx K \cdot T \cdot 8\ \text{bytes},$$
+$$
+\text{RAM} \approx K \cdot T \cdot 8\ \text{bytes},
+$$
 
 so $10^5$ combos × $10^5$ bars × 8 B = **80 GB** — past what most research boxes have. This is the concrete reason the "vectorize everything" rule has an edge, and why huge backtests either chunk, stream (Arrow/lazy), or move to compiled/C++.
 

@@ -41,15 +41,21 @@ The single most important fact about this family is a **timing** fact: each has 
 
 **Net insider flow and the cluster signal.** For a window $[t_0, t_1]$, with transactions $i$ carrying code $c_i \in \{P, S, A, M, \dots\}$, shares $n_i$, price $p_i$:
 
-$$\text{NetInsiderFlow} = \sum_{i:\,c_i = P} n_i p_i \ - \ \sum_{i:\,c_i = S} n_i p_i .$$
+$$
+\text{NetInsiderFlow} = \sum_{i:\,c_i = P} n_i p_i \ - \ \sum_{i:\,c_i = S} n_i p_i .
+$$
 
 The **cluster buy** signal is a *count* condition, not a dollar condition — the theory being that several insiders independently choosing to buy open-market ($P$) in a short window carries more information than one large purchase:
 
-$$\#\{\text{distinct insiders with a } P\text{ inside a 30-day window}\} \ \ge\ 3 \ \Longrightarrow\ \text{cluster buy}.$$
+$$
+\#\{\text{distinct insiders with a } P\text{ inside a 30-day window}\} \ \ge\ 3 \ \Longrightarrow\ \text{cluster buy}.
+$$
 
 **Ownership concentration.** With $k$ reporting institutions holding $n_j$ shares and $N$ shares outstanding:
 
-$$\text{InstitutionalOwnership} = \frac{\sum_{j=1}^{k} n_j}{N}, \qquad \text{Concentration (HHI)} = \sum_j \left(\frac{n_j}{N}\right)^2 .$$
+$$
+\text{InstitutionalOwnership} = \frac{\sum_{j=1}^{k} n_j}{N}, \qquad \text{Concentration (HHI)} = \sum_j \left(\frac{n_j}{N}\right)^2 .
+$$
 
 **The critical trap — codes carry opposite meanings.** $A$ (grant/award) and $M$ (option exercise) are *compensation events*; only $P$ (open-market purchase) is a discretionary open-market buy. Counting $A$ and $M$ as "insider buying" is the single most common error in this dataset — and aggregators exist largely to let you exclude them.
 

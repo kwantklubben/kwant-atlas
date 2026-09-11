@@ -32,15 +32,21 @@ The practical objective: a reader should be able to take any trading decision ("
 
 An MDP is the tuple $(\mathcal{S},\mathcal{A},P,R,\gamma)$ with transition kernel $P(s'\mid s,a)$ and expected reward $R(s,a)=\mathbb{E}[R_{t+1}\mid S_t=s,A_t=a]$. The **state-value** and **action-value** functions under policy $\pi$ are
 
-$$V^\pi(s)=\mathbb{E}_\pi[G_t\mid S_t=s],\qquad Q^\pi(s,a)=\mathbb{E}_\pi[G_t\mid S_t=s,A_t=a].$$
+$$
+V^\pi(s)=\mathbb{E}_\pi[G_t\mid S_t=s],\qquad Q^\pi(s,a)=\mathbb{E}_\pi[G_t\mid S_t=s,A_t=a].
+$$
 
 Expanding $G_t=R_{t+1}+\gamma G_{t+1}$ gives the **Bellman expectation equation**
 
-$$V^\pi(s)=\sum_{a}\pi(a\mid s)\Big[R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\,V^\pi(s')\Big],$$
+$$
+V^\pi(s)=\sum_{a}\pi(a\mid s)\Big[R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\,V^\pi(s')\Big],
+$$
 
 and, taking the max over actions, the **Bellman optimality equation**
 
-$$\boxed{\;V^*(s)=\max_{a}\Big[R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\,V^*(s')\Big]\;}.$$
+$$
+\boxed{\;V^*(s)=\max_{a}\Big[R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\,V^*(s')\Big]\;}.
+$$
 
 The optimal action-value satisfies $Q^*(s,a)=R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\max_{a'}Q^*(s',a')$ and the optimal policy is greedy, $\pi^*(s)=\arg\max_a Q^*(s,a)$.
 

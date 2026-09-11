@@ -31,7 +31,9 @@ Three steps, three "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **A hash is a many-to-one map with astronomically rare collisions.** A SHA-256 digest maps an arbitrary byte string to $\mathbf h\in\{0,1\}^{256}$. If two *different* datasets $D_1\ne D_2$ produced the same digest, we call it a collision; for a cryptographically strong hash the best attack still costs ~$2^{128}$ evaluations, so the chance of an accidental collision on two real datasets is effectively
-$$\Pr[\text{collision}]\approx 2^{-256}\approx 8.6\times10^{-78}.$$
+$$
+\Pr[\text{collision}]\approx 2^{-256}\approx 8.6\times10^{-78}.
+$$
 That number is why a checksum is treated as *proof* of integrity, not a heuristic.
 
 **Hashing is linear in length.** Digesting a dataset of byte length $L$ costs $O(L)$ time and $O(1)$ memory (the running state is fixed at 256 bits). This is what makes checksums cheap enough to run on every block of every pipeline.
@@ -39,7 +41,9 @@ That number is why a checksum is treated as *proof* of integrity, not a heuristi
 **Floating-point is not an exact arithmetic.** IEEE-754 doubles keep about 16 significant decimal digits. When you sum values of very different magnitude, the small term can be *absorbed* — $1e16 + 1 = 1e16$ in double precision because the unit-in-the-last-place of $10^{16}$ is $2$. The **order of a reduction therefore changes the result**, and a parallel framework that reorders a sum can change the answer. This is not a bug in the math; it is the physics of finite precision, and reproducibility tooling must pin the order.
 
 **The reproducibility contract.** Output $O$ is reproducible iff the triple (data version $D$, code commit $C$, environment lockfile $E$) is pinned:
-$$O = f(D, C, E).$$
+$$
+O = f(D, C, E).
+$$
 Change any one of the three inputs and you have, by definition, a *different* computation — even if it "looks the same."
 
 ---

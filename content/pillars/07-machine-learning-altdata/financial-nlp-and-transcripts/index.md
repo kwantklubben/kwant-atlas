@@ -34,19 +34,27 @@ This folder is the **hub**. It (a) gives the fast **bag-of-words → TF-IDF → 
 
 **TF–IDF weight** (the standard feature rescaling that tames ubiquitous words):
 
-$$\text{tf-idf}(t,d)=\frac{x_{d,t}}{\sum_{t'} x_{d,t'}}\times\Big(\log\frac{N+1}{df_t+1}+1\Big).$$
+$$
+\text{tf-idf}(t,d)=\frac{x_{d,t}}{\sum_{t'} x_{d,t'}}\times\Big(\log\frac{N+1}{df_t+1}+1\Big).
+$$
 
 **Cosine similarity** (the Loughran–McDonald/Tetlock workhorse for "how similar are two documents", and the basis of the Cohen–Malloy–Nguyen linguistic-change metric):
 
-$$\text{cos}(\mathbf{v}_d,\mathbf{v}_{d'})=\frac{\mathbf{v}_d\cdot\mathbf{v}_{d'}}{\|\mathbf{v}_d\|\,\|\mathbf{v}_{d'}\|}.$$
+$$
+\text{cos}(\mathbf{v}_d,\mathbf{v}_{d'})=\frac{\mathbf{v}_d\cdot\mathbf{v}_{d'}}{\|\mathbf{v}_d\|\,\|\mathbf{v}_{d'}\|}.
+$$
 
 **Net sentiment / tone score** (the single most-used text feature):
 
-$$\text{tone}(d)=\frac{\#\text{positive words}-\#\text{negative words}}{\text{total words}},\qquad \text{neg-frac}(d)=\frac{\#\text{LM-negative words}}{\text{total words}}.$$
+$$
+\text{tone}(d)=\frac{\#\text{positive words}-\#\text{negative words}}{\text{total words}},\qquad \text{neg-frac}(d)=\frac{\#\text{LM-negative words}}{\text{total words}}.
+$$
 
 **Text-to-signal regression** (the pricing of the feature):
 
-$$y_d=\beta_0+\beta_1\,\text{tone}(d)+\varepsilon_d,\qquad \text{$y_d$ = forward return (or a label)}.$$
+$$
+y_d=\beta_0+\beta_1\,\text{tone}(d)+\varepsilon_d,\qquad \text{$y_d$ = forward return (or a label)}.
+$$
 
 | Quantity | Formula | Verified check (this folder's runs) |
 |---|---|---|

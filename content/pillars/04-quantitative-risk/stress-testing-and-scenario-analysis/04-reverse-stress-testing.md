@@ -20,7 +20,9 @@ The intuition: every portfolio has an **Achilles' heel** — a direction in fact
 
 Formally (for a linear factor portfolio): we want the smallest shock vector $z$ (in standardized, Mahalanobis units) whose P&L reaches the fatal loss $-C$:
 
-$$\min_{z}\; z^T\Sigma^{-1}z \qquad \text{s.t.}\quad \beta^T z \le -C.$$
+$$
+\min_{z}\; z^T\Sigma^{-1}z \qquad \text{s.t.}\quad \beta^T z \le -C.
+$$
 
 The "smallest" is measured by $z^T\Sigma^{-1}z$ — the number of *combined standard deviations* (Mahalanobis distance) the scenario represents, respecting the correlations among factors. The optimizer will naturally push the shock toward the factors where the portfolio has the largest exposure *per unit of their risk*, and along the most correlated direction.
 
@@ -32,12 +34,16 @@ The "smallest" is measured by $z^T\Sigma^{-1}z$ — the number of *combined stan
 
 **Setup.** Let factors be standardized (each $\sim N(0,1)$, correlation matrix $\Sigma$), and $\beta=(\beta_1,\dots,\beta_K)$ be sensitivities in dollars per one-standard-deviation move of each factor. Portfolio P&L is linear:
 
-$$\Delta V(z)=\beta^T z.$$
+$$
+\Delta V(z)=\beta^T z.
+$$
 
 **The reverse-stress optimization.** Minimize the Mahalanobis norm $z^T\Sigma^{-1}z$ subject to $\beta^T z\le -C$. The constraint is linear and the objective is a convex quadratic (positive-definite $\Sigma^{-1}$), so the optimum is unique and given by the KKT first-order condition. Writing the Lagrangian $L=z^T\Sigma^{-1}z+\lambda(\beta^T z+C)$ and setting $\nabla_z L=2\Sigma^{-1}z+\lambda\beta=0$ gives $z=-\tfrac{\lambda}{2}\Sigma\beta$. Substituting into the binding constraint $\beta^T z=-C$ yields $\tfrac{\lambda}{2}=\tfrac{C}{\beta^T\Sigma\beta}$, hence:
 
-$$z^*=-\frac{C}{\beta^T\Sigma\beta}\,\Sigma\beta, \qquad 
-\sqrt{z^{*T}\Sigma^{-1}z^*}=\frac{C}{\sqrt{\beta^T\Sigma\beta}}.$$
+$$
+z^*=-\frac{C}{\beta^T\Sigma\beta}\,\Sigma\beta, \qquad
+\sqrt{z^{*T}\Sigma^{-1}z^*}=\frac{C}{\sqrt{\beta^T\Sigma\beta}}.
+$$
 
 So the **fatal scenario is a scalar multiple of $\Sigma\beta$** — the "worst direction" is not the biggest beta, but the direction found by rotating the beta vector through the covariance: factors that are *correlated with* a large-exposure factor contribute even when their own beta is small (because they move with it). The **distance to ruin** is $C/\sqrt{\beta^T\Sigma\beta}$ combined standard deviations.
 
@@ -49,7 +55,7 @@ So the **fatal scenario is a scalar multiple of $\Sigma\beta$** — the "worst d
 
 ### 3. Computational Implementation — analytic reverse stress test
 
-Stdlib only. Three factors (equity, credit, rates) with sensitivities in M\$ per 1σ and a $30M capital line. The optimal fatal shock and its distance to ruin are computed in closed form — first under normal correlations, then under stressed correlations (→0.8).
+Stdlib only. Three factors (equity, credit, rates) with sensitivities in M$$\$ per 1σ and a $30M capital line. The optimal fatal shock and its distance to ruin are computed in closed form — first under normal correlations, then under stressed correlations (→0.8).
 
 ```python
 import math

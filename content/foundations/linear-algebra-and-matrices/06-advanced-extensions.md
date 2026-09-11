@@ -25,13 +25,17 @@ The practical objective: (1) quantify ill-conditioning via the condition number 
 
 **Condition number & perturbation bound.** For solving $Ax=b$, the 2-norm condition number is $\kappa_2(A)=\sigma_{\max}/\sigma_{\min}$. A perturbation bound says
 
-$$\frac{\|\delta x\|}{\|x\|}\;\le\;\kappa_2(A)\,\frac{\|\delta A\|}{\|A\|},$$
+$$
+\frac{\|\delta x\|}{\|x\|}\;\le\;\kappa_2(A)\,\frac{\|\delta A\|}{\|A\|},
+$$
 
 so relative error in the solution can be $\kappa_2$ times larger than relative error in the inputs. $\kappa_2=10^7$ means a "perfectly computed" answer can be wrong in the 7th significant digit from a *machine-precision* input perturbation. The Hilbert matrix $H_{ij}=1/(i+j+1)$ is the canonical ill-conditioned example: $\kappa_2(H_8)\approx1.3\times10^7$.
 
 **Marchenko–Pastur (Bai 2010; Laloux–Cizeau–Bouchaud 1999).** Let $X$ be $T\times N$ with iid entries of variance $\sigma^2$, and let $\hat\Sigma=\frac1T X'X$ be the sample covariance. As $T,N\to\infty$ with ratio $c=N/T$ fixed, the empirical eigenvalue distribution of $\hat\Sigma$ converges to the **Marchenko–Pastur law**, supported on
 
-$$\Big[\sigma^2\big(1-\sqrt{c}\big)^2,\ \ \sigma^2\big(1+\sqrt{c}\big)^2\Big],$$
+$$
+\Big[\sigma^2\big(1-\sqrt{c}\big)^2,\ \ \sigma^2\big(1+\sqrt{c}\big)^2\Big],
+$$
 
 with density $p(\lambda)=\frac{1}{2\pi c\lambda}\sqrt{\big((1+\sqrt c)^2-\lambda/\sigma^2\big)\big(\lambda/\sigma^2-(1-\sqrt c)^2\big)}$ and a point mass at $0$ if $c>1$ ($N>T$). **Consequences:** (a) even *pure* noise produces a spread of eigenvalues up to $\sigma^2(1+\sqrt c)^2$ — call anything above that *signal*; (b) when $N>T$, $c>1$ forces a fraction $1-1/c$ of eigenvalues to be exactly zero; (c) the top noise eigenvalue is bounded — so a *real* factor must clear the MP edge. This is the principled alternative to guessing the number of factors from a scree plot (Tsay §9.4.1; Connor–Korajczyk and Bai–Ng criteria).
 

@@ -51,7 +51,9 @@ Weighting these four elements is itself a modelling decision (AMA ¶669(f)): dat
 
 **Why the taxonomy enters the math.** A compound Poisson aggregate over a *single* pool assumes one $\lambda$ and one severity law $F_X$. Splitting into $m$ cells gives $m$ independent compound-Poisson processes $(N^{(j)},X^{(j)})$ with aggregate loss $S^{(j)}$, and total risk measured on
 
-$$S_{\text{total}}=\sum_{j=1}^{m} S^{(j)},$$
+$$
+S_{\text{total}}=\sum_{j=1}^{m} S^{(j)},
+$$
 
 with the caveat that summing the *capital* (quantiles) of the cells overstates total capital unless correlations are modelled (Basel allows internal correlations across estimates, AMA ¶669(d)). This cell decomposition is exactly the granularity requirement turned into algebra.
 

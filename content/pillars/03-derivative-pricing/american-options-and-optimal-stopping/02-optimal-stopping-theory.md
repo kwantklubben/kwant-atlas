@@ -28,7 +28,9 @@ Why supermartingales? A discounted price process under $\mathbb Q$ is a martinga
 
 A random time $\tau\in\{0,\dots,n\}$ is a **stopping time** if $\{\tau=k\}\in\mathcal F_k$ for all $k$ — the decision uses no look-ahead (Shreve I §5.2). The American value is (Shreve II §8.1; Björk §21.2)
 
-$$V_k=(1+r)^k\operatorname*{max}_{\tau\in\mathcal T_k}\widetilde{\mathbb E}\!\left[(1+r)^{-\tau}G_\tau\,\Big|\,\mathcal F_k\right],$$
+$$
+V_k=(1+r)^k\operatorname*{max}_{\tau\in\mathcal T_k}\widetilde{\mathbb E}\!\left[(1+r)^{-\tau}G_\tau\,\Big|\,\mathcal F_k\right],
+$$
 
 where $\mathcal T_k$ is the set of stopping times with $\tau\ge k$. For a continuous-time diffusion with reward $\Phi$, the value is $V(t,x)=\sup_\tau \mathbb E_{t,x}[\Phi(\tau,X_\tau)]$.
 
@@ -40,7 +42,9 @@ where $\mathcal T_k$ is the set of stopping times with $\tau\ge k$. For a contin
 
 The **backward recursion** that computes all of this is exactly the tree step from [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/01-from-zero-intuition|01 · From Zero]]:
 
-$$V_n=G_n,\qquad V_k=\max\big\{G_k,\ \mathbb E[V_{k+1}\mid\mathcal F_k]\big\}\quad\text{(undiscounted form, Björk Prop 21.7)}.$$
+$$
+V_n=G_n,\qquad V_k=\max\big\{G_k,\ \mathbb E[V_{k+1}\mid\mathcal F_k]\big\}\quad\text{(undiscounted form, Björk Prop 21.7)}.
+$$
 
 #### 2.3 The drift test and the convexity test (Björk Props 21.2–21.5)
 

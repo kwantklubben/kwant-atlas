@@ -36,7 +36,9 @@ The practical objective: build the Jones and Modified Jones machinery from scrat
 
 **The decomposition.** Start from total accruals scaled by lagged total assets, $TA_t$. A model of the *nondiscretionary* component lets you split them:
 
-$$\text{TA}_t = \underbrace{\text{NDA}_t}_{\text{model says this is normal}} + \underbrace{\text{DA}_t}_{\text{the residual = "management"}}.$$
+$$
+\text{TA}_t = \underbrace{\text{NDA}_t}_{\text{model says this is normal}} + \underbrace{\text{DA}_t}_{\text{the residual = "management"}}.
+$$
 
 **Model 1 — Healy (1985).** Nondiscretionary accruals are a **constant** (the average total accruals of the estimation period). Simple, and appropriate if accruals are white noise around a stable mean.
 
@@ -44,23 +46,31 @@ $$\text{TA}_t = \underbrace{\text{NDA}_t}_{\text{model says this is normal}} + \
 
 **Model 3 — the Jones (1991) model.** Relaxes "constant" by explicitly modelling *economic circumstances*:
 
-$$\text{NDA}_t = \alpha_1\!\left(\frac{1}{A_{t-1}}\right) + \alpha_2\!\left(\frac{\Delta REV_t}{A_{t-1}}\right) + \alpha_3\!\left(\frac{PPE_t}{A_{t-1}}\right), \tag{6}$$
+$$
+\text{NDA}_t = \alpha_1\!\left(\frac{1}{A_{t-1}}\right) + \alpha_2\!\left(\frac{\Delta REV_t}{A_{t-1}}\right) + \alpha_3\!\left(\frac{PPE_t}{A_{t-1}}\right), \tag{6}
+$$
 
 where $\Delta REV_t$ is the revenue change, $PPE_t$ is gross property/plant/equipment, $A_{t-1}$ is lagged total assets, and the $(1/A_{t-1})$ term is a scaling control. The firm-specific parameters are estimated by OLS **in an estimation period** free of hypothesised management:
 
-$$\frac{TA_t}{A_{t-1}} = a_1\!\left(\frac{1}{A_{t-1}}\right) + a_2\!\left(\frac{\Delta REV_t}{A_{t-1}}\right) + a_3\!\left(\frac{PPE_t}{A_{t-1}}\right) + \nu_t.$$
+$$
+\frac{TA_t}{A_{t-1}} = a_1\!\left(\frac{1}{A_{t-1}}\right) + a_2\!\left(\frac{\Delta REV_t}{A_{t-1}}\right) + a_3\!\left(\frac{PPE_t}{A_{t-1}}\right) + \nu_t.
+$$
 
 Jones reports the model explains about **a quarter** of the variation in total accruals.
 
 **Model 4 — the Modified Jones model (Dechow, Sloan & Sweeney's recommendation).** The flaw in Jones: it assumes *revenue is nondiscretionary*, so a manager who stuffs revenue at year-end inflates $\Delta REV$, the model *attributes* that rise to "normal," and the manipulation is subtracted away — the estimate of DA is **biased toward zero**. The fix: in the **event period only**, adjust the revenue change for the change in receivables:
 
-$$\boxed{\;\text{NDA}_t = \alpha_1\!\left(\frac{1}{A_{t-1}}\right) + \alpha_2\!\left(\frac{\Delta REV_t - \Delta REC_t}{A_{t-1}}\right) + \alpha_3\!\left(\frac{PPE_t}{A_{t-1}}\right)\;} \tag{7}$$
+$$
+\boxed{\;\text{NDA}_t = \alpha_1\!\left(\frac{1}{A_{t-1}}\right) + \alpha_2\!\left(\frac{\Delta REV_t - \Delta REC_t}{A_{t-1}}\right) + \alpha_3\!\left(\frac{PPE_t}{A_{t-1}}\right)\;} \tag{7}
+$$
 
 Parameters come from the **original** Jones estimation. The logic: it is easier to manage earnings through **credit sales** than cash sales, and a credit sale raises receivables. Subtracting $\Delta REC$ removes the receivable-side inflation from the "normal" benchmark, so the managed revenue stays in the residual where it belongs. The model's *assumption* is the reverse of Jones's: **all** change in credit sales in the event period is treated as management.
 
 **Model 5 — the Industry model (Dechow & Sloan 1991).** Nondiscretionary accruals track the industry median rather than the firm's own revenue/PPE:
 
-$$\text{NDA}_t = \gamma_1 + \gamma_2\,\text{median}_{industry}\!\left(\frac{TA_t}{A_{t-1}}\right).$$
+$$
+\text{NDA}_t = \gamma_1 + \gamma_2\,\text{median}_{industry}\!\left(\frac{TA_t}{A_{t-1}}\right).
+$$
 
 Good when industry factors dominate; bad when a firm's circumstances diverge from its peers, and dangerous when a manipulation is *common across an industry* (it hides in the median).
 

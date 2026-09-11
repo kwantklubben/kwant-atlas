@@ -23,13 +23,19 @@ The practical claim (Ang & Timmermann 2012; Kritzman, Page & Turkington 2012): r
 ### 2. Mathematical Ground Truth & Derivations
 
 **Regime-conditional risk.** In a 2-regime world the unconditional return distribution is the regime-weighted mixture
-$$f(y_t)=\pi_1 N(\mu_1,\sigma_1^2)+\pi_2 N(\mu_2,\sigma_2^2),$$
+$$
+f(y_t)=\pi_1 N(\mu_1,\sigma_1^2)+\pi_2 N(\mu_2,\sigma_2^2),
+$$
 so the unconditional variance mixes the two volatilities *and* the squared mean gap:
-$$\operatorname{Var}(y)=\pi_1\sigma_1^2+\pi_2\sigma_2^2+\pi_1\pi_2(\mu_1-\mu_2)^2 .$$
+$$
+\operatorname{Var}(y)=\pi_1\sigma_1^2+\pi_2\sigma_2^2+\pi_1\pi_2(\mu_1-\mu_2)^2 .
+$$
 The last term is the **volatility of the regime itself** — the reason regime models explain fat tails and vol clustering that a single Gaussian cannot (Ang & Timmermann's survey frames this as the economics of regime switches).
 
 **Allocation policy.** A natural regime-aware rule: hold equity weight $w_{\text{high}}$ when the filtered bull probability exceeds a threshold, $w_{\text{low}}$ otherwise,
-$$w_t=\begin{cases}w_{\text{high}} & \hat\xi_{t\mid t,1}>\tau\\[2pt] w_{\text{low}} & \text{otherwise}\end{cases}$$
+$$
+w_t=\begin{cases}w_{\text{high}} & \hat\xi_{t\mid t,1}>\tau\\[2pt] w_{\text{low}} & \text{otherwise}\end{cases}
+$$
 using the *one-period-lagged* filtered probability (only causal information). This is exactly the Ang–Timmermann portfolio-choice setting: the conditional mean/variance used in a mean-variance (or risk-parity) objective is regime-weighted, so the optimizer's inputs — and hence its weights — move with the filtered state.
 
 **Estimation frontier — MCMC (Tsay Ch 12, verified).** EM gives point estimates; the Bayesian alternative samples the full posterior. The pieces (all verified against tsay_ch10-12.md):

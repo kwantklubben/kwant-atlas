@@ -29,7 +29,9 @@ The router's decision hierarchy — the order in which the terms matter — is:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The routing objective.** For a marketable parent order of $Q$ shares, choose allocations $q_i\ge0$ to
-$$\boxed{\;\min_{\{q_i\}}\;\sum_i q_i\,\hat p_i,\qquad \hat p_i=p_i+f_i+\phi(L_i)+k\,\theta_i,\qquad\text{s.t.}\quad\sum_i q_i=Q,\;\;q_i\le S_i.\;}$$
+$$
+\boxed{\;\min_{\{q_i\}}\;\sum_i q_i\,\hat p_i,\qquad \hat p_i=p_i+f_i+\phi(L_i)+k\,\theta_i,\qquad\text{s.t.}\quad\sum_i q_i=Q,\;\;q_i\le S_i.\;}
+$$
 The objective is **linear and separable** in the $q_i$, and the constraints are a simple capacity-plus-equality system. The solution is the greedy rule:
 
 > Sort venues by $\hat p_i$ ascending; set $q_i=S_i$ for the cheapest, then the next, until the residual $Q-\sum q_i$ is absorbed.

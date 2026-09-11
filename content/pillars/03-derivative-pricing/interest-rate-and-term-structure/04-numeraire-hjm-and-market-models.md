@@ -33,11 +33,15 @@ Two structural ideas, both with no constant-$r$ analogue:
 
 A numeraire is any strictly positive asset. **Fact One (BM Ch2):** price/numeraire is a martingale under that numeraire's measure; **Fact Two:** the risk-neutral price is invariant under change of numeraire. The Radon–Nikodym derivative between bank-account ($\mathbb{Q}$) and forward ($\mathbb{Q}^T$) measures is
 
-$$\frac{d\mathbb{Q}^T}{d\mathbb{Q}}=\frac{P(T,T)/B(T)}{P(0,T)/B(0)}=\frac{1}{B(T)P(0,T)}.$$
+$$
+\frac{d\mathbb{Q}^T}{d\mathbb{Q}}=\frac{P(T,T)/B(T)}{P(0,T)/B(0)}=\frac{1}{B(T)P(0,T)}.
+$$
 
 Pricing a $T$-payoff $X$:
 
-$$\Pi_t(X)=B(t)\mathbb{E}^{\mathbb{Q}}\!\left[\frac{X}{B(T)}\right]=P(t,T)\,\mathbb{E}^{\mathbb{Q}^T}\left[X\right].$$
+$$
+\Pi_t(X)=B(t)\mathbb{E}^{\mathbb{Q}}\!\left[\frac{X}{B(T)}\right]=P(t,T)\,\mathbb{E}^{\mathbb{Q}^T}\left[X\right].
+$$
 
 The **Girsanov kernel between two numeraires is their volatility difference**: for numeraires $S_0,S_1$ the kernel is $\varphi^1_0(t)=\sigma_1(t)-\sigma_0(t)$ (Björk eq. 26.20). Crucially, the instantaneous forward $f(t,T)$ is a $\mathbb{Q}^T$-martingale, and the forward LIBOR $L(t;T,S)$ is a $\mathbb{Q}^S$-martingale (numeraire $P(t,S)$) — different maturity indices (Björk Lemma 26.10; BM Prop 2.5.1).
 
@@ -47,11 +51,15 @@ The **Girsanov kernel between two numeraires is their volatility difference**: f
 
 Model the forward curve directly:
 
-$$df(t,T)=\alpha(t,T)dt+\sigma(t,T)dW(t),\qquad f(0,T)=f^{M}(0,T).$$
+$$
+df(t,T)=\alpha(t,T)dt+\sigma(t,T)dW(t),\qquad f(0,T)=f^{M}(0,T).
+$$
 
 No-arbitrage forces the **drift condition** (Björk Prop 25.2):
 
-$$\alpha(t,T)=\sigma(t,T)\int_t^T\sigma(t,s)ds .$$
+$$
+\alpha(t,T)=\sigma(t,T)\int_t^T\sigma(t,s)ds .
+$$
 
 The drift is *completely determined by volatility* — no freedom remains. With this, the bond satisfies $dP=rP\,dt-\sigma^*(t,T)P\,dW$ with accumulated vol $\sigma^*(t,T)=\int_t^T\sigma(t,s)ds$. **Musiela parametrization** ($x=T-t$, $r(t,x)=f(t,t+x)$) turns this into an infinite-dimensional SDE (Björk §25.3). One-factor HJM with mean-reverting vol $\sigma e^{-a(T-t)}$ **is** the Hull–White model (BM Ch5 headline).
 
@@ -63,19 +71,27 @@ Take $\sigma(t,T)=\sigma f(t,T)$. Then $\sigma^*(t,T)=\sigma\int_t^T f(t,u)du$ a
 
 Forward LIBOR $F_k(t)=L(t;T_{k-1},T_k)$ is a **martingale under its own forward measure** $\mathbb{Q}^{T_k}$. The LFM postulates
 
-$$dF_k(t)=\sigma_k(t)F_k(t)\,dZ_k(t)\quad\text{under }\mathbb{Q}^{T_k}.$$
+$$
+dF_k(t)=\sigma_k(t)F_k(t)\,dZ_k(t)\quad\text{under }\mathbb{Q}^{T_k}.
+$$
 
 The **caplet** is then priced *exactly* by Black's formula (BM Prop 6.4.1; Björk Def 27.2):
 
-$$Cpl_i(t)=P(t,T_i)\,\tau_i\Big[F_i(t)N(d_1)-K N(d_2)\Big],\quad d_1=\frac{\ln(F_i/K)+\tfrac12 v_i^2}{v_i},\quad v_i^2=\int_t^{T_{i-1}}\sigma_i^2(s)\,ds\ \text{(vol accumulated to the reset }T_{i-1}\text{)}.$$
+$$
+Cpl_i(t)=P(t,T_i)\,\tau_i\Big[F_i(t)N(d_1)-K N(d_2)\Big],\quad d_1=\frac{\ln(F_i/K)+\tfrac12 v_i^2}{v_i},\quad v_i^2=\int_t^{T_{i-1}}\sigma_i^2(s)\,ds\ \text{(vol accumulated to the reset }T_{i-1}\text{)}.
+$$
 
 Under a *single* common measure (e.g. terminal/spot-LIBOR $\mathbb{Q}^d$), the rates carry **drift terms** summing over other rates (BM Prop 6.3.3):
 
-$$dF_k=\sigma_kF_k\Big[\sum_{j=\beta}^{k}\frac{\rho_{kj}\tau_j\sigma_jF_j}{1+\tau_jF_j}\Big]dt+\sigma_kF_k\,dZ^d_k .$$
+$$
+dF_k=\sigma_kF_k\Big[\sum_{j=\beta}^{k}\frac{\rho_{kj}\tau_j\sigma_jF_j}{1+\tau_jF_j}\Big]dt+\sigma_kF_k\,dZ^d_k .
+$$
 
 The forward **swap rate** $R_{\alpha,\beta}$ is a martingale under the **annuity (swap) measure** $\mathbb{Q}^{\alpha,\beta}$ (numeraire $C_{\alpha,\beta}(t)=\sum\tau_iP(t,T_i)$), giving the **Black swaption** formula (BM Prop 6.7.1):
 
-$$PS^{Black}(0)=C_{\alpha,\beta}(0)\Big[R(0)N(d_1)-K N(d_2)\Big].$$
+$$
+PS^{Black}(0)=C_{\alpha,\beta}(0)\Big[R(0)N(d_1)-K N(d_2)\Big].
+$$
 
 ---
 

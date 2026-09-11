@@ -43,7 +43,9 @@ DD and PD are defined through $(\ln(V/D),\sigma_V)$, but we *solve* for $V,\sigm
 #### 2.3 Failure 4 — correlation is the whole portfolio story
 
 For a portfolio of $n$ loans with PDs $p_i$ and pairwise default correlation $\rho$, the unexpected loss satisfies (Bluhm 2010, eq. 1.13)
-$$\mathrm{UL}^2=\sum_i p_i(1-p_i)+2\rho\sqrt{p_1(1-p_1)\,p_2(1-p_2)}\quad(\text{2 loans}),$$
+$$
+\mathrm{UL}^2=\sum_i p_i(1-p_i)+2\rho\sqrt{p_1(1-p_1)\,p_2(1-p_2)}\quad(\text{2 loans}),
+$$
 and in general $\mathrm{UL}^2=\sum_{i,j}\rho_{ij}\sqrt{p_i(1-p_i)\,p_j(1-p_j)}$. When $\rho=0$ risk diversifies to $\sum p_i(1-p_i)$; when $\rho=1$ the portfolio behaves as **one obligor with $n$-fold intensity** — pure concentration risk. A single-name model has no $\rho$ in it at all; that is why portfolio credit risk needs the factor model of page 06.
 
 ---
@@ -103,7 +105,9 @@ Merton credit-spread puzzle (T=1, r=5%):
 Two first-principles failures in numbers: PD rises **super-linearly** with equity vol (a $1\%$ input error becomes a $\sim9\%$ PD error), and the model's credit spread is under **$1$ bp** for a firm the market would charge $100{+}$ bp — Merton (1974) famously under-predicts short-maturity spreads because it forces default to the maturity date.
 
 **Experiment 2 — jump-to-default.** Add an independent Poisson(λ) collapse on top of the Merton diffusion. Default now arrives either as a jump or as a diffusion breach at $T$, giving the closed form
-$$\mathrm{PD}_{\text{jump}}=\big(1-e^{-\lambda T}\big)+e^{-\lambda T}N(-d_2).$$
+$$
+\mathrm{PD}_{\text{jump}}=\big(1-e^{-\lambda T}\big)+e^{-\lambda T}N(-d_2).
+$$
 
 ```python
 import math, random

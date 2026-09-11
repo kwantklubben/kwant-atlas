@@ -37,7 +37,9 @@ The practical objective: know which driver to use for which product, know the tw
 
 Take Bergomi's forward-variance model ([[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/06-advanced-extensions|Heston & SABR · 06]], §2.2) as the driver:
 
-$$d\zeta_t^T=2\nu\,\alpha_\theta\,\zeta_t^T\big[(1-\theta)e^{-k_1(T-t)}dW^1+\theta e^{-k_2(T-t)}dW^2\big],\qquad dS_t=(r-q)S_tdt+\sigma(t,S_t)\sqrt{\zeta_t^t}S_tdW^S_t.$$
+$$
+d\zeta_t^T=2\nu\,\alpha_\theta\,\zeta_t^T\big[(1-\theta)e^{-k_1(T-t)}dW^1+\theta e^{-k_2(T-t)}dW^2\big],\qquad dS_t=(r-q)S_tdt+\sigma(t,S_t)\sqrt{\zeta_t^t}S_tdW^S_t.
+$$
 
 Three properties make this the workhorse:
 
@@ -51,11 +53,15 @@ Three properties make this the workhorse:
 
 Add a compound-Poisson spot jump to the LSV diffusion:
 
-$$dS_t=\sqrt{v_t}\,\sigma(t,S_t)S_tdW^S_t+(e^J-1)S_tdN_t,\qquad J\sim\mathcal N(\mu_J,\delta_J^2),$$
+$$
+dS_t=\sqrt{v_t}\,\sigma(t,S_t)S_tdW^S_t+(e^J-1)S_tdN_t,\qquad J\sim\mathcal N(\mu_J,\delta_J^2),
+$$
 
 and try to calibrate the leverage to the market smile. The naive step is to write
 
-$$\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)-\lambda_J\mathbb E[(e^J-1)^2]}{m(t,S)}\qquad\text{(WRONG)}$$
+$$
+\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)-\lambda_J\mathbb E[(e^J-1)^2]}{m(t,S)}\qquad\text{(WRONG)}
+$$
 
 using the identity "Dupire local variance $=$ diffusive variance $+$ jump quadratic variation". **That identity is false.** Dupire's formula presupposes a *diffusion*; applied to a jump-diffusion's prices it returns a quantity that mixes the diffusion coefficient with the jump operator, is *not* the conditional quadratic-variation rate, and is maturity-dependent. The demonstration is in §3: with no jumps Dupire returns $\sigma^2_{diff}=0.022500$ to nine decimals, but with jumps it returns $0.024213$ at $T{=}0.005$ and $0.035077$ at $T{=}1$ against a constant quadratic-variation rate of $0.035633$. The right treatment is to *model* the jump part explicitly (with its parameters calibrated to the short-dated skew) and extract the leverage from the **diffusive** part of the local variance — either by inverting Dupire for a jump-diffusion with the jump parameters fixed, or by a Fourier-based local variance (Guyon–Henry-Labordère's "local-stochastic volatility with jumps" construction).
 
@@ -83,7 +89,9 @@ This is the *good* kind of dimensionality: richer dynamics without an intractabl
 
 In the LIBOR/swap market the tradable backbone is the **LMM** (Hagan et al. 2002, *Managing smile risk*; Ren–Madan–Qian 2007), whose state is a set of forward rates rather than a single spot. The LSV-LMM construction embeds a local-volatility multiplier $\sigma(t,\mathbf{x})$ into the LMM diffusion,
 
-$$dF_k(t)=\sigma(t,\mathbf F_t)\,F_k(t)\,\lambda_k(t)\,dW^k_t,$$
+$$
+dF_k(t)=\sigma(t,\mathbf F_t)\,F_k(t)\,\lambda_k(t)\,dW^k_t,
+$$
 
 and calibrates $\sigma$ so that the *swaption* marginals match the market. The formal structure is identical to §2.3 — leverage times a stochastic driver, matched by conditional expectation — but three things differ:
 

@@ -16,7 +16,9 @@ tags:
 
 Once you have inverted equity into firm value and asset volatility, default probability is one step away — but the step contains the field's most important distinction. **Distance to default** (DD) is the number of asset-volatility standard deviations between today's firm value and the default point:
 
-$$\mathrm{DD}=\frac{\ln(V/D)+(\mu-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.$$
+$$
+\mathrm{DD}=\frac{\ln(V/D)+(\mu-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.
+$$
 
 It answers the practitioner's question directly: *how far is this firm from the wall, measured in the units in which the firm actually moves?* Two firms with the same leverage are not equally risky — the one with the more volatile assets is closer to default in the only metric that matters.
 
@@ -32,23 +34,31 @@ The subtlety: **which drift $\mu$?** Use the risk-neutral drift $r$ and $\mathrm
 
 Under the physical measure the firm value has drift $\mu$; under the risk-neutral measure it has drift $r$. The probability the firm defaults is $\mathbb{P}(V_T<D)$ in each world, and both are $N(-\text{DD})$ with the appropriate drift:
 
-$$\mathrm{DD}^{\text{RN}}=\frac{\ln(V/D)+(r-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}=d_2,\qquad
-\mathrm{DD}^{\mathbb{P}}=\frac{\ln(V/D)+(\mu-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.$$
+$$
+\mathrm{DD}^{\text{RN}}=\frac{\ln(V/D)+(r-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}=d_2,\qquad
+\mathrm{DD}^{\mathbb{P}}=\frac{\ln(V/D)+(\mu-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.
+$$
 
 So $\mathbb{Q}(\text{default})=N(-d_2)$ **exactly**, while the real-world $\mathrm{PD}=N(-\mathrm{DD}^{\mathbb{P}})$. Because risky assets have a risk premium, $\mu>r$, hence $\mathrm{DD}^{\mathbb{P}}>\mathrm{DD}^{\text{RN}}$ and
-$$\underbrace{N(-d_2)}_{\text{risk-neutral}} \;>\; \underbrace{N(-\mathrm{DD}^{\mathbb{P}})}_{\text{real-world}}\quad\text{for a risk-averse market.}$$
+$$
+\underbrace{N(-d_2)}_{\text{risk-neutral}} \;>\; \underbrace{N(-\mathrm{DD}^{\mathbb{P}})}_{\text{real-world}}\quad\text{for a risk-averse market.}
+$$
 (Hull §24.5: risk-neutral PDs exceed historical PDs; the gap is the risk premium. The real-world PD is the one to compare with S&P/Moody's historical default tables.)
 
 #### 2.2 The KMV default point (Crosbie–Bohn empirical refinement)
 
 Plain Merton sets the barrier at *total* debt $D$. Moody's KMV found empirically that firms default when assets fall below
-$$D^{*}=\text{short-term debt}+\tfrac12\,\text{long-term debt},$$
+$$
+D^{*}=\text{short-term debt}+\tfrac12\,\text{long-term debt},
+$$
 because long-term debt does not come due immediately. Substituting $D^{*}$ for $D$ in $\ln(V/D)$ raises DD for long-dated-debt-heavy firms and is the practical form used by EDF vendors. (Bluhm §1.2.3 refers to this as the calibrated *default point* of the asset-value model.)
 
 #### 2.3 From PD to credit spread (Merton eq. 14)
 
 The spread is not $N(-d_2)$ scaled — it is the *risky yield minus $r$* obtained from the debt value:
-$$R(t)-r=-\frac1t\ln\Big\{\Phi[h_2]+\tfrac1d\Phi[h_1]\Big\},\qquad d=D e^{-rt}/V,\quad R(t)=-\frac1t\ln\!\frac{F}{D}.$$
+$$
+R(t)-r=-\frac1t\ln\Big\{\Phi[h_2]+\tfrac1d\Phi[h_1]\Big\},\qquad d=D e^{-rt}/V,\quad R(t)=-\frac1t\ln\!\frac{F}{D}.
+$$
 For a firm at the money (large $\sigma_V$, high leverage) this is the price of the put the shareholders hold; for a safe firm it collapses to a fraction of a basis point — which is exactly where the model fails empirically (page 05).
 
 #### 2.4 The DD → PD map in practice

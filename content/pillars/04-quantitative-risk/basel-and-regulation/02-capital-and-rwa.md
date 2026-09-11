@@ -23,9 +23,13 @@ The denominator is where the action is. **RWA is a common currency for risk**: a
 ### 2. Mathematical Ground Truth & Derivations
 
 **The capital ratio.** With total RWA over risk categories $c\in\{\text{credit, market, operational}\}$,
-$$\mathrm{RWA}=\sum_c \mathrm{RWA}_c=\sum_c \sum_{i\in c} E_i\,rw_i,$$
+$$
+\mathrm{RWA}=\sum_c \mathrm{RWA}_c=\sum_c \sum_{i\in c} E_i\,rw_i,
+$$
 and the headline ratios are
-$$\text{CET1 ratio}=\frac{\mathrm{CET1}}{\mathrm{RWA}},\qquad \text{Tier 1 ratio}=\frac{\mathrm{CET1}+\mathrm{AT1}}{\mathrm{RWA}},\qquad \text{Total ratio}=\frac{T1+T2}{\mathrm{RWA}},$$
+$$
+\text{CET1 ratio}=\frac{\mathrm{CET1}}{\mathrm{RWA}},\qquad \text{Tier 1 ratio}=\frac{\mathrm{CET1}+\mathrm{AT1}}{\mathrm{RWA}},\qquad \text{Total ratio}=\frac{T1+T2}{\mathrm{RWA}},
+$$
 with minima $4.5\%$, $6.0\%$, $8.0\%$ respectively (BCBS 2010). The $8\%$ rule is equivalent to $\mathrm{RWA}=12.5\times$ capital, which is why $12.5=\tfrac18$ appears everywhere downstream.
 
 **The capital-quality ladder.**
@@ -34,7 +38,9 @@ with minima $4.5\%$, $6.0\%$, $8.0\%$ respectively (BCBS 2010). The $8\%$ rule i
 - **Tier 2:** subordinated debt and general provisions; absorbs losses in wind-down, not going-concern.
 
 **The buffer stack (Basel III).** Above the 4.5% CET1 minimum sit buffers that must be met with CET1:
-$$\text{CET1 requirement}=4.5\%+\underbrace{2.5\%}_{\text{capital conservation}}+\underbrace{0\text{–}2.5\%}_{\text{countercyclical, CCyB}}+\underbrace{1\text{–}3.5\%}_{\text{G-SIB}}.$$
+$$
+\text{CET1 requirement}=4.5\%+\underbrace{2.5\%}_{\text{capital conservation}}+\underbrace{0\text{–}2.5\%}_{\text{countercyclical, CCyB}}+\underbrace{1\text{–}3.5\%}_{\text{G-SIB}}.
+$$
 The **MDA (Maximum Distributable Amount)** restricts dividends and buybacks once a bank dips into the conservation-buffer band — the concrete teeth of the stack.
 
 **Why RWA is a *model*.** Every $rw_i$ is a regulatory assumption about loss in stress. The sensitivity is stark: re-weighting one \$500 exposure from 100% to 20% cuts RWA by \$400 and lifts the ratio by several points *without changing a single underlying asset*. That is the arbitrage surface ([[pillars/04-quantitative-risk/basel-and-regulation/05-failure-modes-and-practice|05]]).

@@ -39,13 +39,17 @@ This page builds the *why* of concurrency with **no prior concurrency background
 
 **Amdahl's law — the ceiling on parallelism.** If a fraction $f$ of the work is unavoidably serial (locks, coordination, I/O serialisation) and the rest $(1-f)$ is perfectly parallel, the speedup with $P$ processors is
 
-$$S(P) = \frac{1}{f + \frac{1-f}{P}}.$$
+$$
+S(P) = \frac{1}{f + \frac{1-f}{P}}.
+$$
 
 Take $P\to\infty$: $S\to 1/f$. **Even 5% serial work caps you at 20x**, and 20% serial work caps you at 5x — the last dozens of cores buy almost nothing. This is why removing *serialisation*, not adding threads, is the first move: a lock is serial work, so every lock you eliminate raises the ceiling.
 
 **Little's law — concurrency as the bridge between latency and throughput.** For a stable system, work-in-process $L$, throughput $\lambda$ and latency $W$ satisfy
 
-$$L = \lambda\,W.$$
+$$
+L = \lambda\,W.
+$$
 
 You can hide latency with concurrency (more in-flight work), but throughput is separately capped by $1/\mathbb{E}[S]$ per serial stage. The lock is exactly such a serial stage.
 

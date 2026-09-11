@@ -40,11 +40,15 @@ The objective: given a live model, fill in the budget $\Delta V=\Delta_{\text{fo
 | Correct model, inappropriate use | misuse | *use* | usage inventory, limits, "effective challenge" |
 
 **The budget, first order.** Let $V_\theta$ be the model value and $\theta=(\sigma,r,q,\dots)$ its calibrated parameters. A first-order (delta/gamma) expansion gives
-$$\Delta V=\underbrace{\big(V_{\theta^\star}-V^\star\big)}_{\text{form}}-\underbrace{\sum_i \frac{\partial V}{\partial\theta_i}\,\Delta\theta_i}_{\text{parameter}}\;+\;\underbrace{\mathcal{O}\big(\|\Delta\theta\|^2\big)}_{\text{convexity}}+\underbrace{\varepsilon_{\text{impl}}}_{\text{implementation}},$$
+$$
+\Delta V=\underbrace{\big(V_{\theta^\star}-V^\star\big)}_{\text{form}}-\underbrace{\sum_i \frac{\partial V}{\partial\theta_i}\,\Delta\theta_i}_{\text{parameter}}\;+\;\underbrace{\mathcal{O}\big(\|\Delta\theta\|^2\big)}_{\text{convexity}}+\underbrace{\varepsilon_{\text{impl}}}_{\text{implementation}},
+$$
 where $\Delta\theta_i$ is the *calibration error* in parameter $i$ and $\varepsilon_{\text{impl}}$ the discretisation/bug term. The parameter channel is dominated by the **Greeks**: $\Delta_{\text{param}}V\approx\sum_i G_i\,\Delta\theta_i$ with $G_i=\partial V/\partial\theta_i$ (e.g. vega for $\sigma$, rho for $r$).
 
 **Adding channels.** If the channels are approximately independent, the total model-risk standard deviation adds in **quadrature**:
-$$\sigma_{\text{total}}=\sqrt{\sigma_{\text{form}}^2+\sigma_{\text{param}}^2+\sigma_{\text{impl}}^2+\sigma_{\text{use}}^2}.$$
+$$
+\sigma_{\text{total}}=\sqrt{\sigma_{\text{form}}^2+\sigma_{\text{param}}^2+\sigma_{\text{impl}}^2+\sigma_{\text{use}}^2}.
+$$
 Two consequences worth stating: (i) a channel you have **not measured is not zero** — the budget is a *lower* bound on ignorance; (ii) the largest channel dominates the sum, so effort belongs on the biggest term, not on the smallest "bug".
 
 **Error sensitivity as a scale.** The parameter channel scales **linearly** in the calibration error (vega × 1 vol-point), while form error is a *model-level* jump that no amount of calibration removes. Empirically, for a vanilla option the ordering is often form > parameter > implementation — which is why "we recalibrated daily" answers the wrong question.

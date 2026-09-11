@@ -30,7 +30,9 @@ This folder is the **colocation-and-clock-synchronization topic-folder** for Pil
 
 **The latency budget decomposition (job #1).** Total tick-to-trade latency is
 
-$$\boxed{\;T_{\text{T2T}} = T_{\text{prop}} + T_{\text{nw}} + T_{\text{mach}}\;}$$
+$$
+\boxed{\;T_{\text{T2T}} = T_{\text{prop}} + T_{\text{nw}} + T_{\text{mach}}\;}
+$$
 
 - $T_{\text{prop}} = d/v$ — **propagation**, the genuinely physics-limited term. Light crosses ~1 km in **3.34 µs (air)** / **5.00 µs (fiber)**. You cannot beat it; you can only move closer or choose a straighter/air path.
 - $T_{\text{nw}}$ — NIC/DMA + parse + strategy + serialize. Colocated software budget ≈ **3.5 µs** (see §3); kernel-bypass + FPGA pushes this toward ~tens of ns.
@@ -54,11 +56,13 @@ $$\boxed{\;T_{\text{T2T}} = T_{\text{prop}} + T_{\text{nw}} + T_{\text{mach}}\;}
 | PTP/4-timestamp offset estimate | $\theta = \tfrac12[(t_1-t_0)+(t_2-t_3)]$, bias $(d_f-d_r)/2$ | §3 code |
 | 50 ppm oscillator drift | 2 µs in **40 ms** (must re-sync ~40 ms) | §3 code |
 
-**The arms-race rent (Budish–Cramton–Shim).** A continuous limit-order book processes messages serially, so *someone is always first*; the race to be first converts the arbitrage rent into purely technical speed investment. In a **Tullock contest** with $N$ symmetric fast firms and per-period rent $V$, each invests $x^\*=\tfrac{N-1}{N^2}V$ and the fraction of the rent destroyed is
+**The arms-race rent (Budish–Cramton–Shim).** A continuous limit-order book processes messages serially, so *someone is always first*; the race to be first converts the arbitrage rent into purely technical speed investment. In a **Tullock contest** with $N$ symmetric fast firms and per-period rent $V$, each invests $x^*=\tfrac{N-1}{N^2}V$ and the fraction of the rent destroyed is
 
-$$\boxed{\;\frac{\text{wasted}}{V}=\frac{N-1}{N}\;\to\;1\ \text{as}\ N\to\infty.}$$
+$$
+\boxed{\;\frac{\text{wasted}}{V}=\frac{N-1}{N}\;\to\;1\ \text{as}\ N\to\infty.}
+$$
 
-With $V\approx \$75$M/yr (ES–SPY, BCS), the whole pool is re-spent on speed.
+With $V\approx $\$75M/yr (ES–SPY, BCS), the whole pool is re-spent on speed.
 
 **Batch-auction compression (BCS §5).** Under a batch interval $\tau$, a $\delta$ speed advantage is only $\tfrac{\delta}{\tau}$ as valuable, and a fast trader is exposed to sniping for only a $\tfrac{\delta}{2\tau}$ fraction of each interval. For $\delta=100\,\mu$s, $\tau=1$ s: $\tfrac{\delta}{\tau}=10^{-4}$, $\tfrac{\delta}{2\tau}=5\times10^{-5}$.
 

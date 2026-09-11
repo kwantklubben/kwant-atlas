@@ -29,7 +29,9 @@ The three failures, in one line each:
 
 For demeaned returns $X\in\mathbb{R}^{T\times N}$, the sample covariance $S=\tfrac1T X^\top X$ has $\operatorname{rank}(S)\le\min(N,T-1)$. So:
 
-$$N>T\ \Rightarrow\ \operatorname{rank}(S)<N\ \Rightarrow\ S\text{ is singular};\qquad \lambda_{\min}(S)\to0,\quad \kappa(S)\to\infty .$$
+$$
+N>T\ \Rightarrow\ \operatorname{rank}(S)<N\ \Rightarrow\ S\text{ is singular};\qquad \lambda_{\min}(S)\to0,\quad \kappa(S)\to\infty .
+$$
 
 There is no "true" inverse to compute: the standard estimator does not exist in the parameter regime where most equity universes actually live ($N=500$ stocks, $T=60$ months). The fix is not better numerics (pseudo-inverses, ridge on the fly) but a **better-conditioned estimator**, because the problem is statistical, not numerical.
 
@@ -37,7 +39,9 @@ There is no "true" inverse to compute: the standard estimator does not exist in 
 
 In the eigenbasis $S=\sum_i\lambda_iq_iq_i^\top$, the min-variance weights are $w\propto\sum_i\lambda_i^{-1}(q_i^\top\mathbf 1)q_i$. Perturbing one eigenvalue by $\Delta\lambda_i$ at fixed eigenvector perturbs the weights by $O(\Delta\lambda_i/\lambda_i^2)$. Since sample eigenvalues of the *smallest* directions are biased downward and noisiest,
 
-$$\frac{\Delta\lambda_i}{\lambda_i^2}\ \text{is largest exactly where }\lambda_i\ \text{is smallest} \;\Rightarrow\; \text{weights blow up in the noise subspace}.$$
+$$
+\frac{\Delta\lambda_i}{\lambda_i^2}\ \text{is largest exactly where }\lambda_i\ \text{is smallest} \;\Rightarrow\; \text{weights blow up in the noise subspace}.
+$$
 
 Shrinkage bounds this: after shrinkage, $\lambda_i^{\text{shr}}=\delta\mu+(1-\delta)\lambda_i\ge\delta\mu>0$, so the reciprocal term is bounded and the condition number is bounded in probability (Ledoit & Wolf 2004, Thm 3.5).
 
@@ -45,7 +49,9 @@ Shrinkage bounds this: after shrinkage, $\lambda_i^{\text{shr}}=\delta\mu+(1-\de
 
 If you estimate $\hat\Sigma$ on window $[0,T]$ and then compute the in-sample min-variance variance $\hat w^\top\hat\Sigma\hat w$, you are minimizing a *biased* criterion: the optimizer exploits errors *in the same $\hat\Sigma$*. Formally, with $w^\star=\arg\min w^\top\Sigma w$,
 
-$$\underbrace{\hat w^\top\hat\Sigma\hat w}_{\text{reported}}\;\le\;\underbrace{\hat w^\top\Sigma\hat w}_{\text{realized}}\quad\text{generically, and often}\quad \hat w^\top\Sigma\hat w\;\gg\;w^{\star\top}\Sigma w^\star .$$
+$$
+\underbrace{\hat w^\top\hat\Sigma\hat w}_{\text{reported}}\;\le\;\underbrace{\hat w^\top\Sigma\hat w}_{\text{realized}}\quad\text{generically, and often}\quad \hat w^\top\Sigma\hat w\;\gg\;w^{\star\top}\Sigma w^\star .
+$$
 
 Page 01 measured exactly this: reported $0.0216$ vs realized $0.1752$, versus a true optimum of $0.0694$. **The gap is the estimation error made visible.**
 

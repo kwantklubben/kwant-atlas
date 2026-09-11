@@ -29,26 +29,36 @@ The key insight this page delivers: **the sign of the gamma determines the direc
 **The two models (Hull §22.5, eq. 22.6–22.8).**
 
 - **Linear (delta-normal):** with exposure vector $b$, factor covariance $\Sigma$, and horizon $h$,
-$$\Delta V=b^\top\Delta f,\qquad \mathrm{VaR}_\alpha=z_\alpha\sqrt{b^\top\Sigma b}\quad\bigl(=z_\alpha\,|\delta|\,\sigma S\sqrt h\ \text{for one equity factor}\bigr).$$
+$$
+\Delta V=b^\top\Delta f,\qquad \mathrm{VaR}_\alpha=z_\alpha\sqrt{b^\top\Sigma b}\quad\bigl(=z_\alpha\,|\delta|\,\sigma S\sqrt h\ \text{for one equity factor}\bigr).
+$$
 Assumes the P&L is **normal**, i.e. that the portfolio is **linear** in the factors. It is exactly a *sensitivity* method: it needs only deltas.
 
 - **Quadratic (delta–gamma):** with the Hessian $H$ (gamma and cross-gamma),
-$$\Delta V=b^\top\Delta f+\tfrac12\Delta f^\top H\Delta f .$$
+$$
+\Delta V=b^\top\Delta f+\tfrac12\Delta f^\top H\Delta f .
+$$
 For a single equity factor with $\Delta S=\sigma S Z,\ Z\sim N(0,1)$, this is a **quadratic form in a normal**:
-$$\Delta V=aZ+bZ^2,\qquad a=\delta\,\sigma S,\quad b=\tfrac12\gamma\,\sigma^2S^2 .$$
+$$
+\Delta V=aZ+bZ^2,\qquad a=\delta\,\sigma S,\quad b=\tfrac12\gamma\,\sigma^2S^2 .
+$$
 
 **Exact moments of $aZ+bZ^2$** (derived from $\mathbb{E}[Z^2]=1,\ \mathbb{E}[Z^4]=3,\ \mathbb{E}[Z^6]=15$):
 
-$$\mathbb{E}[\Delta V]=b,\quad \operatorname{Var}(\Delta V)=a^2+2b^2,\quad
+$$
+\mathbb{E}[\Delta V]=b,\quad \operatorname{Var}(\Delta V)=a^2+2b^2,\quad
 \gamma_1=\frac{6a^2b+8b^3}{(a^2+2b^2)^{3/2}},\quad
-\gamma_2^{\text{ex}}=\frac{3a^4+60a^2b^2+60b^4}{(a^2+2b^2)^2}-3 .$$
+\gamma_2^{\text{ex}}=\frac{3a^4+60a^2b^2+60b^4}{(a^2+2b^2)^2}-3 .
+$$
 
 Note the pure-gamma limit ($a=0$): $\gamma_1=2\sqrt2\approx2.83$ and $\gamma_2^{\text{ex}}=12$ — the moments of a $\chi^2_1$, as they must be. **A gamma-only position is a chi-square, not a normal**, and calling it normal is a modelling error with a known, computable size.
 
 **The Cornish–Fisher quantile correction.** The true quantile of a skewed, fat-tailed distribution is approximated from the normal quantile $z$:
 
-$$z^{\text{CF}}_\alpha=z+\frac{(z^2-1)}{6}\gamma_1+\frac{(z^3-3z)}{24}\gamma_2-\frac{(2z^3-5z)}{36}\gamma_1^2,\qquad
-\mathrm{VaR}^{\Delta\gamma}_\alpha=-\mathbb{E}[\Delta V]+\sqrt{\operatorname{Var}}\;z^{\text{CF}}_{\alpha}\bigl(-\,\gamma_1,\gamma_2\bigr),$$
+$$
+z^{\text{CF}}_\alpha=z+\frac{(z^2-1)}{6}\gamma_1+\frac{(z^3-3z)}{24}\gamma_2-\frac{(2z^3-5z)}{36}\gamma_1^2,\qquad
+\mathrm{VaR}^{\Delta\gamma}_\alpha=-\mathbb{E}[\Delta V]+\sqrt{\operatorname{Var}}\;z^{\text{CF}}_{\alpha}\bigl(-\,\gamma_1,\gamma_2\bigr),
+$$
 
 with the skewness sign flipped because VaR is a quantile of the **loss** $L=-\Delta V$.
 
@@ -56,10 +66,10 @@ with the skewness sign flipped because VaR is a quantile of the **loss** $L=-\De
 
 | Limit type | Unit | Measures | Failure it prevents |
 |---|---|---|---|
-| Delta limit | shares / $\$$ notional | directional exposure | concentrated directional bets |
+| Delta limit | shares / \$ notional | directional exposure | concentrated directional bets |
 | Gamma limit | $\Delta$-change per $1\%$ move | convexity / realised-vs-implied | being short the crash convexity |
-| Vega limit | $\$$ per vol point, **bucketed by expiry** | vol exposure | unhedged surface shape |
-| Theta limit | $\$$ per day | carry bleed | slow insolvency of a long-gamma book |
+| Vega limit | \$ per vol point, **bucketed by expiry** | vol exposure | unhedged surface shape |
+| Theta limit | \$ per day | carry bleed | slow insolvency of a long-gamma book |
 | **VaR / ES limit** | currency, one-day or ten-day | the aggregate | the whole |
 | Stress limit | currency, per scenario | non-linearity beyond the model | the tail the model cannot see |
 

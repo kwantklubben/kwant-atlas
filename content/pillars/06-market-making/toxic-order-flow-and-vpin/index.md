@@ -31,7 +31,9 @@ This folder is the **toxic-order-flow-and-VPIN** topic-folder for Pillar 6 (Mark
 
 Over a sample, informed orders arrive at total rate $\alpha\mu$; uninformed at rate $2\epsilon$ (one Poisson stream of intensity $\epsilon$ per side). **PIN is the informed fraction of the flow**:
 
-$$\boxed{\;\mathrm{PIN}=\frac{\alpha\mu}{\alpha\mu+2\epsilon}\in[0,1]\;}$$
+$$
+\boxed{\;\mathrm{PIN}=\frac{\alpha\mu}{\alpha\mu+2\epsilon}\in[0,1]\;}
+$$
 
 - Only the product $\alpha\mu$ is identified — $\alpha$ and $\mu$ individually are imprecise, PIN is stable/estimable (Hasbrouck Ch 6).
 - $\mathrm{PIN}=0$ with no informed traders; $\mathrm{PIN}\to1$ as informed flow dominates.
@@ -41,7 +43,9 @@ $$\boxed{\;\mathrm{PIN}=\frac{\alpha\mu}{\alpha\mu+2\epsilon}\in[0,1]\;}$$
 
 Divide the tape into equal-volume buckets of $V$ shares each; in bucket $\tau$, classify buy-volume $V_\tau^B$ and sell-volume $V_\tau^S$ (so $V=V_\tau^B+V_\tau^S$). Over a rolling window of $n$ buckets:
 
-$$\boxed{\;\mathrm{VPIN}=\frac{\sum_{\tau=1}^{n}\left|V_\tau^S-V_\tau^B\right|}{n\,V}\;\approx\;\frac{\alpha\mu}{\alpha\mu+2\epsilon}\;}$$
+$$
+\boxed{\;\mathrm{VPIN}=\frac{\sum_{\tau=1}^{n}\left|V_\tau^S-V_\tau^B\right|}{n\,V}\;\approx\;\frac{\alpha\mu}{\alpha\mu+2\epsilon}\;}
+$$
 
 - Because $E[\,|V^S-V^B|\,]\approx\alpha\mu$ and $E[V^B+V^S]=\alpha\mu+2\epsilon$, VPIN estimates exactly the PIN ratio — in volume time (ELO eq. 9).
 - Balanced noise flow ($V^B\approx V^S$) → VPIN → 0; one-sided panic (all sells) → VPIN → 1.

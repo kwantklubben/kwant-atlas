@@ -33,7 +33,9 @@ Given data \(x=(x_1,\dots,x_n)\), draw \(B\) **resamples** \(x^{*b}=(x^*_{b1},\d
 
 #### 2.2 Bootstrap error estimators (ESL §7.11, eqs 7.55–7.61)
 The apparent error \(\widehat{\mathrm{err}}\) on training data is optimistic. The bootstrap corrects it using **out-of-bag (OOB)** points:
-$$\widehat{\mathrm{err}}_{\text{boot}}=\frac1B\sum_{b=1}^B\frac{1}{|C_{-b}|}\sum_{i\in C_{-b}}\mathcal L\!\left(y_i,\hat f^{*b}(x_i)\right),\qquad \widehat{\mathrm{err}}_{.632}=0.368\,\widehat{\mathrm{err}}+0.632\,\widehat{\mathrm{err}}_{\text{boot}}.$$
+$$
+\widehat{\mathrm{err}}_{\text{boot}}=\frac1B\sum_{b=1}^B\frac{1}{|C_{-b}|}\sum_{i\in C_{-b}}\mathcal L\!\left(y_i,\hat f^{*b}(x_i)\right),\qquad \widehat{\mathrm{err}}_{.632}=0.368\,\widehat{\mathrm{err}}+0.632\,\widehat{\mathrm{err}}_{\text{boot}}.
+$$
 (A bootstrap sample omits a fraction \(1-1/e\approx0.368\) of the points; the .632 weights the optimistic training error by exactly that fraction.) Variants: the leave-one-out bootstrap and the **.632+** estimator, which down-weights overfitting models.
 
 #### 2.3 Asymptotics in one place (C&B §7.4; Glasserman §1.1)
@@ -44,7 +46,9 @@ $$\widehat{\mathrm{err}}_{\text{boot}}=\frac1B\sum_{b=1}^B\frac{1}{|C_{-b}|}\sum
 
 #### 2.4 Backtest statistics: the best-of-\(N\) problem (White 2000; Harvey–Liu–Zhu 2016)
 Testing \(N\) strategies with zero true skill, the maximum \(t\)-statistic obeys
-$$\mathbb E\Big[\max_{1\le j\le N} t_j\Big]\approx\sqrt{2\log N},\qquad P\Big(\max_j t_j>\sqrt{2\log N}\Big)\to1,$$
+$$
+\mathbb E\Big[\max_{1\le j\le N} t_j\Big]\approx\sqrt{2\log N},\qquad P\Big(\max_j t_j>\sqrt{2\log N}\Big)\to1,
+$$
 so a naive \(1.96\) threshold "finds alpha" with probability \(\to1\) as \(N\) grows. The **White Reality Check** bootstraps the joint null distribution of the \(N\) performance statistics (resampling returns *in time*, preserving cross-strategy dependence) and compares the observed best against that null. The **deflated Sharpe ratio** scales the observed Sharpe by the expected maximum under the null, i.e. it subtracts the multiplicity tax.
 
 ---

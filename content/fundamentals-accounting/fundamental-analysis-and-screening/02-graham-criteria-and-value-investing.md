@@ -28,9 +28,13 @@ Three ideas organize everything Graham wrote:
 
 **The defensive criteria (The Intelligent Investor, Ch 14).** A defensive stock satisfies *all* of:
 
-$$S \ge 100 \ (\text{sales, \$M}), \quad \frac{CA}{CL}\ge 2, \quad LTD \le CA-CL, \quad \#\{\text{profitable yrs}\}_{10}=10,$$
+$$
+S \ge 100 \ (\text{sales, millions}), \quad \frac{CA}{CL}\ge 2, \quad LTD \le CA-CL, \quad \#\{\text{profitable yrs}\}_{10}=10,
+$$
 
-$$\text{div\_yrs}\ge 20, \quad \frac{EPS_{\text{now}}}{EPS_{\text{10y ago}}}\ge \frac{4}{3}, \quad \frac{P}{\overline{EPS}_{3y}}\le 15, \quad \frac{P}{BVPS}\le\frac{3}{2}, \quad \frac{P}{\overline{EPS}_{3y}}\cdot\frac{P}{BVPS}\le\frac{45}{2}.$$
+$$
+\text{div\_yrs}\ge 20, \quad \frac{EPS_{\text{now}}}{EPS_{\text{10y ago}}}\ge \frac{4}{3}, \quad \frac{P}{\overline{EPS}_{3y}}\le 15, \quad \frac{P}{BVPS}\le\frac{3}{2}, \quad \frac{P}{\overline{EPS}_{3y}}\cdot\frac{P}{BVPS}\le\frac{45}{2}.
+$$
 
 The last two are Graham's paired price caps; their product gives the **Graham Number** ceiling $P_{\max}=\sqrt{22.5\,EPS\cdot BVPS}$ derived on [[fundamentals-accounting/fundamental-analysis-and-screening/01-from-zero-intuition|01]].
 
@@ -38,13 +42,17 @@ The last two are Graham's paired price caps; their product gives the **Graham Nu
 
 **Asset-value floor — the net-current-asset (net-net) rule (Security Analysis).** Define net current asset value per share as current assets minus **all** liabilities (including long-term debt), over shares:
 
-$$\text{NCAV/share}=\frac{CA - \text{Total Liabilities}}{\#\text{shares}}, \qquad \text{buy if } P \le \tfrac{2}{3}\,\text{NCAV/share}.$$
+$$
+\text{NCAV/share}=\frac{CA - \text{Total Liabilities}}{\#\text{shares}}, \qquad \text{buy if } P \le \tfrac{2}{3}\,\text{NCAV/share}.
+$$
 
 The logic is a **liquidation floor**: if the company were wound up, current assets alone might cover the price several times over, so the operating business comes "for free" — the purest margin of safety Graham ever wrote down.
 
 **Earnings-power value (EPV).** When there is no asset floor, capitalise *normalized* (mid-cycle) earnings at the required return:
 
-$$V_{\text{EPV}}=\frac{\overline{\text{Earnings}}_{\text{normalised}}}{r},$$
+$$
+V_{\text{EPV}}=\frac{\overline{\text{Earnings}}_{\text{normalised}}}{r},
+$$
 
 where $r$ is the cost of capital. EPV is the value of the business *as it is now*, with no growth assumed — the conservative anchor Greenwald later formalized.
 
@@ -80,7 +88,7 @@ Price 9.00 vs NCAV/share 9.00: asset floor below price
 Enterprising test: P/E=7.5<=10:True  P/B=1.29<=1.5:True
 ```
 
-The three answers *disagree*, and that is the lesson: the stock **passes the enterprising multiple caps** (P/E 7.5, P/B 1.29) but is **not a net-net** (price \$9.00 equals NCAV, above the two-thirds floor of \$6.00), while **EPV of \$18/share** says the *business* — no growth assumed — is worth twice the price. A mechanical net-net screen would reject it; an earnings-power analysis would flag it as cheap. Graham's mature view (Greenwald's "three buckets") is exactly this: **asset value, earnings power, and franchise value are separate estimates, and you take the most conservative one that applies.**
+The three answers *disagree*, and that is the lesson: the stock **passes the enterprising multiple caps** (P/E 7.5, P/B 1.29) but is **not a net-net** (price $$\$9.00 equals NCAV, above the two-thirds floor of \$6.00), while **EPV of \$18/share** says the *business* — no growth assumed — is worth twice the price. A mechanical net-net screen would reject it; an earnings-power analysis would flag it as cheap. Graham's mature view (Greenwald's "three buckets") is exactly this: **asset value, earnings power, and franchise value are separate estimates, and you take the most conservative one that applies.**
 
 ---
 

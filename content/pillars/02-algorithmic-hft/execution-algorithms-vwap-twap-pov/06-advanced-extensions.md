@@ -30,14 +30,18 @@ Why this order: benchmarks frame the *objective*; arrival-price gives you an *op
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**2.1 Benchmark choice is a scheduling decision.** On a day with upward drift and $\\phi_t$ the volume profile, a VWAP engine executes near $\\text{VWAP}=\\sum_t\\phi_t p_t$, an **IS/arrival** engine trying to minimize $\\mathbb{E}[(\\bar p-m_0)]$ should **front-load** (buy early, before the drift). Formally, Perold's IS with a full fill is $\\bar p - m_0$; its variance-minimizing trajectory under drift points decisively early, while the VWAP objective is clock-agnostic to drift. **Same order, opposite direction.**
+**2.1 Benchmark choice is a scheduling decision.** On a day with upward drift and $\phi_t$ the volume profile, a VWAP engine executes near $\text{VWAP}=\sum_t\phi_t p_t$, an **IS/arrival** engine trying to minimize $\mathbb{E}[(\bar p-m_0)]$ should **front-load** (buy early, before the drift). Formally, Perold's IS with a full fill is $\bar p - m_0$; its variance-minimizing trajectory under drift points decisively early, while the VWAP objective is clock-agnostic to drift. **Same order, opposite direction.**
 
 **2.2 Arrival-price = the Almgren–Chriss curve (the bridge).** The IS-optimal child schedule is exactly the AC trajectory
-$$x_t = X\\,\\frac{\\sinh\\big(\\kappa\\,(T-t)\\big)}{\\sinh(\\kappa T)},\\qquad \\kappa=\\sqrt{\\frac{\\lambda\\sigma^2}{\\eta}},$$
+$$
+x_t = X\,\frac{\sinh\big(\kappa\,(T-t)\big)}{\sinh(\kappa T)},\qquad \kappa=\sqrt{\frac{\lambda\sigma^2}{\eta}},
+$$
 from [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/03-the-almgren-chriss-model|03 - The Almgren–Chriss Model]] — an exponentially-decaying, front-loaded curve (heavy at the open, light at the close), which is precisely the arrival-price flavor. VWAP/TWAP are the *limit* cases where you instruct "match volume (VWAP)" or "match clock (TWAP)" instead of "follow the impact-risk map (IS)."
 
-**2.3 POV = the profile-immune schedule.** With live volume $v_t^{\\text{live}}$ arriving and participation rate $\\rho$,
-$$q_t = \\rho\\,v_t^{\\text{live}},\\qquad \\Rightarrow\\quad w_t^{\\text{exec}} = \\phi_t^{\\text{realized}} \\;\\Rightarrow\\; \\text{TE}=0 .$$
+**2.3 POV = the profile-immune schedule.** With live volume $v_t^{\text{live}}$ arriving and participation rate $\rho$,
+$$
+q_t = \rho\,v_t^{\text{live}},\qquad \Rightarrow\quad w_t^{\text{exec}} = \phi_t^{\text{realized}} \;\Rightarrow\; \text{TE}=0 .
+$$
 POV does not *predict* the profile; it *follows* it, so on a news day (page 05 failure 2) POV stays matched to realized volume by construction — at the cost of fully accepting whatever adverse selection that volume carries.
 
 ---
@@ -92,13 +96,13 @@ late volume spike (3x in bucket 10 of 13)
     shrinking when volume dries up - immune to profile misestimation.
 ```
 
-**Read the numbers.** On the rising day, the VWAP engine executes at the VWAP ($+84.1$ bps of IS vs the decision price) while the front-loaded arrival-price engine buys early and lands at $+65.67$ bps — **$18.4$ bps cheaper** precisely *because* it ignored the day benchmark and followed the drift instead. That $18.4$ bps is the value of picking the right benchmark (IS on a trend) and the whole point of benchmark-aware scheduling. Second, on a late volume spike the fixed VWAP engine sizes its child from the *forecast* profile, which allots $8.9\\%$ of the parent to a bucket that then *realizes* $22.8\\%$ of the day — under-participating the spike and carrying residual size into the thin close — while POV sizes its child to the actual arriving volume share ($\\sim8{,}000$ scrip scaled to live volume) and never over-commits.
+**Read the numbers.** On the rising day, the VWAP engine executes at the VWAP ($+84.1$ bps of IS vs the decision price) while the front-loaded arrival-price engine buys early and lands at $+65.67$ bps — **$18.4$ bps cheaper** precisely *because* it ignored the day benchmark and followed the drift instead. That $18.4$ bps is the value of picking the right benchmark (IS on a trend) and the whole point of benchmark-aware scheduling. Second, on a late volume spike the fixed VWAP engine sizes its child from the *forecast* profile, which allots $8.9\%$ of the parent to a bucket that then *realizes* $22.8\%$ of the day — under-participating the spike and carrying residual size into the thin close — while POV sizes its child to the actual arriving volume share ($\sim8{,}000$ scrip scaled to live volume) and never over-commits.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Benchmark mismatch is the silent alpha leak.** Run a VWAP algo on a trending day and every broker report says "great, +0.0 bps vs VWAP" while IS says you left $\\sim$18 bps against the decision. The report is honest to the wrong benchmark.
+1. **Benchmark mismatch is the silent alpha leak.** Run a VWAP algo on a trending day and every broker report says "great, +0.0 bps vs VWAP" while IS says you left $\sim$18 bps against the decision. The report is honest to the wrong benchmark.
 2. **POV robust ≠ POV optimal.** Following realized volume eliminates profile risk but buys full exposure to whatever volume arrives — including every informed move. POV trades control of *when* for the removal of *what-if*.
 3. **Adaptive re-solving adds its own risk.** Re-solver feedback can chase noise, overtrade into micro-spikes, and (in a worst case) become its own detectable pattern. Production systems damp the control and randomize the updates.
 4. **Hybrids inherit both families' failure modes.** A blend of IS-start → POV-volume → smart-routing must be *tuned*, not bolted: the IS component is drift-sensitive, the POV component trend-adverse, the routing component venue-selective. Every layer has a failure; the stack is defense-in-depth (page 05).

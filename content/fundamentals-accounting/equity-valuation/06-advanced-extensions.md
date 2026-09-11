@@ -29,9 +29,13 @@ This page (a) derives each multiple from the DCF so you know what it *embeds*, (
 
 Dividing the stable-growth DCF by the relevant denominator gives the **fundamental** multiple:
 
-$$\text{PE}=\frac{\text{Payout}(1+g_n)}{k_e-g_n},\quad \text{PBV}=\frac{\text{ROE}\cdot\text{Payout}(1+g_n)}{k_e-g_n},\quad \text{PS}=\frac{\text{Margin}\cdot\text{Payout}(1+g_n)}{k_e-g_n},$$
+$$
+\text{PE}=\frac{\text{Payout}(1+g_n)}{k_e-g_n},\quad \text{PBV}=\frac{\text{ROE}\cdot\text{Payout}(1+g_n)}{k_e-g_n},\quad \text{PS}=\frac{\text{Margin}\cdot\text{Payout}(1+g_n)}{k_e-g_n},
+$$
 
-$$\frac{V_0}{\text{FCFF}_1}=\frac{1}{K_c-g_n},\qquad \text{EV/EBITDA}\ \text{and}\ \text{EV/EBIT}\ \text{follow from the same FCFF identity}.$$
+$$
+\frac{V_0}{\text{FCFF}_1}=\frac{1}{K_c-g_n},\qquad \text{EV/EBITDA}\ \text{and}\ \text{EV/EBIT}\ \text{follow from the same FCFF identity}.
+$$
 
 This is the *why* behind the "companion variable": each multiple has a **dominant fundamental driver** — growth + risk for P/E, ROE for P/BV, margin for P/S, reinvestment/ROIC for EV multiples. Two firms with the same P/E are *not* equally cheap if their growth or ROE differs.
 
@@ -45,7 +49,9 @@ This is the *why* behind the "companion variable": each multiple has a **dominan
 
 Because value is very sensitive to $g$ and $K_c$ (page 05), the professional output is a **range**:
 
-$$V_{\text{lower}}\le V\le V_{\text{upper}}\quad\text{from a }\pm\text{range on each driver (scenario / sensitivity grid)},$$
+$$
+V_{\text{lower}}\le V\le V_{\text{upper}}\quad\text{from a }\pm\text{range on each driver (scenario / sensitivity grid)},
+$$
 
 or, treating the drivers as random, a **Monte Carlo** distribution: draw $g_1,g_n,K_c,\text{reinvestment}$ from distributions, recompute the DCF, and read the percentiles. The point is not a better number — it is an honest *band* and a probability of being below price.
 
@@ -102,8 +108,8 @@ MC per-share: mean=12.28 p5=6.48 p50=11.31 p95=21.08
 Read the results:
 
 - **The fundamentals-implied P/E is $8.40$**, not some market-average $15$–$20$. A firm with $40\%$ payout, $5\%$ growth and a $10\%$ cost of equity *should* trade at $\approx8.4\times$; a P/E of $14.5$ for that firm would embed either faster growth or lower risk.
-- **The two comps disagree by $70\%$** ($\$58.00$ vs $\$34.25$). This is not a bug — different multiples capture different fundamentals (earnings vs operating cash), and a small, mismatched peer set can't resolve which is right. Relative valuation is only as good as the peer set.
-- **The Monte Carlo reframes the "value"**: median $\$11.31$ but a $5$–$95$ band of $\$6.48$–$\$21.08$. **The range is three times wide around the median** — a $\$11.29$ point estimate is a fiction; the honest output is "roughly $\$6$–$\$21$, central $\approx\$11$".
+- **The two comps disagree by $70\%$** (\$58.00 vs \$34.25). This is not a bug — different multiples capture different fundamentals (earnings vs operating cash), and a small, mismatched peer set can't resolve which is right. Relative valuation is only as good as the peer set.
+- **The Monte Carlo reframes the "value"**: median \$11.31 but a $5$–$95$ band of $ $\$6.48–\21.08. **The range is three times wide around the median** — a \$11.29 point estimate is a fiction; the honest output is "roughly \$6–\$21, central $\approx$\$11".
 
 ---
 
@@ -114,7 +120,7 @@ Read the results:
 3. **Linear-multiple fallacy.** PEG and similar shortcuts assume P/E is *linear* in growth; the DCF shows it is not (it is convex and blows up as $g\to k_e$).
 4. **Multiples inside a DCF.** Using an exit multiple for terminal value smuggles relative assumptions into an absolute model — the two philosophies silently conflict (page 04).
 5. **False precision via a beautiful model.** More line items and a Monte Carlo around *wrong* distributions still produce a wrong range. The distribution inputs are as much a judgment as the point estimate; document them.
-6. **No cross-check.** Absolute and relative valuation should be run *together*: a DCF that says $\$11$ and comps that say $\$58$ is a signal to find the disagreement — usually in growth or risk assumptions — not to average them blindly.
+6. **No cross-check.** Absolute and relative valuation should be run *together*: a DCF that says \$11 and comps that say \$58 is a signal to find the disagreement — usually in growth or risk assumptions — not to average them blindly.
 
 ---
 

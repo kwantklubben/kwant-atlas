@@ -37,15 +37,21 @@ Three candidate explanations (Chan, Jegadeesh & Lakonishok 2006 sharpen exactly 
 
 **Hypothesis 1 — differential persistence.** The naive model constrains both components to revert at the same rate:
 
-$$E_{t+1} = c_0 + \alpha_1 E_t + v_{t+1}. \tag{4}$$
+$$
+E_{t+1} = c_0 + \alpha_1 E_t + v_{t+1}. \tag{4}
+$$
 
 The correctly specified model frees them:
 
-$$E_{t+1} = \gamma_0 + \gamma_1\,ACC_t + \gamma_2\,CF_t + v_{t+1}, \qquad \boxed{\gamma_1 < \gamma_2}. \tag{5}$$
+$$
+E_{t+1} = \gamma_0 + \gamma_1\,ACC_t + \gamma_2\,CF_t + v_{t+1}, \qquad \boxed{\gamma_1 < \gamma_2}. \tag{5}
+$$
 
 Sloan's pooled estimates: $\alpha_1 = 0.841$ (earnings are mean-reverting but slow, far from a random walk), and
 
-$$\gamma_1 = 0.765 \quad (\text{accruals}), \qquad \gamma_2 = 0.855 \quad (\text{cash flow}).$$
+$$
+\gamma_1 = 0.765 \quad (\text{accruals}), \qquad \gamma_2 = 0.855 \quad (\text{cash flow}).
+$$
 
 An $F$-test rejects $\gamma_1=\gamma_2$ at $F=614$. Industry-by-industry, $\gamma_1<\gamma_2$ in 86% of industries. Using decile **ranks** instead of raw values (to kill outlier influence) the gap widens: $0.565$ vs $0.838$.
 

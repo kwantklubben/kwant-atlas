@@ -18,11 +18,15 @@ tags:
 
 The leverage formula
 
-$$\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{\mathbb E[v_t\,|\,S_t=S]}$$
+$$
+\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{\mathbb E[v_t\,|\,S_t=S]}
+$$
 
 looks like an explicit solution. It is not. The expectation in the denominator is taken **under the LSV model**, and the LSV model's law depends on $\sigma$. Writing it out,
 
-$$\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{\mathbb E^{\sigma}[v_t\,|\,S_t=S]},$$
+$$
+\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{\mathbb E^{\sigma}[v_t\,|\,S_t=S]},
+$$
 
 the unknown appears on both sides. This is a **McKean–Vlasov** (nonlinear) stochastic differential equation: a diffusion whose coefficients depend on its own law. There is no closed form for the general case; there are two ways to solve it:
 
@@ -48,7 +52,9 @@ The practical objective: be able to implement the particle method from scratch (
 
 Write the LSV model in the "self-consistent" form. With $\rho=\mathrm{corr}(W^S,W^v)$ and the driver $(v_t)$,
 
-$$dS_t=(r-q)S_t\,dt+\sigma(t,S_t)\sqrt{v_t}\,S_t\,dW^S_t,\qquad \sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{\displaystyle\int v\,\rho^{\sigma}_t(S,v)\,dv\Big/\int \rho^{\sigma}_t(S,v)\,dv},$$
+$$
+dS_t=(r-q)S_t\,dt+\sigma(t,S_t)\sqrt{v_t}\,S_t\,dW^S_t,\qquad \sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{\displaystyle\int v\,\rho^{\sigma}_t(S,v)\,dv\Big/\int \rho^{\sigma}_t(S,v)\,dv},
+$$
 
 where $\rho^{\sigma}_t$ is the joint density of $(S_t,v_t)$ *under the model with leverage $\sigma$*. The map $\sigma\mapsto\rho^{\sigma}$ is the nonlinearity. The **existence and uniqueness** question for such McKean–Vlasov calibrations is a genuine analysis problem (the literature establishes local well-posedness and gives conditions for global solvability; the practitioner's evidence is that the iteration below converges for market-grade inputs).
 
@@ -56,13 +62,17 @@ where $\rho^{\sigma}_t$ is the joint density of $(S_t,v_t)$ *under the model wit
 
 Discretise the leverage on a grid $\{t_n\}\times\{k_j\}$ in time and log-moneyness. The **particle-method map** is
 
-$$\sigma^2_{n+1}(t_n,k_j)=\frac{\sigma^2_{loc}(t_n,k_j)}{m_n(t_n,k_j)},\qquad m_n(t_n,k_j)=\frac{\sum_{i\in \text{bin}(j)}v^{(i)}_{t_n}}{\#\text{bin}(j)},$$
+$$
+\sigma^2_{n+1}(t_n,k_j)=\frac{\sigma^2_{loc}(t_n,k_j)}{m_n(t_n,k_j)},\qquad m_n(t_n,k_j)=\frac{\sum_{i\in \text{bin}(j)}v^{(i)}_{t_n}}{\#\text{bin}(j)},
+$$
 
 where $v^{(i)}$ are the simulated variance paths under leverage $\sigma_n$. At the fixed point, $m$ is the model's true conditional variance, the model's local variance is $\sigma^2_{loc}$, and by Dupire's theorem the model prices every vanilla. Convergence of this map is a contraction in practice for market-calibrated inputs; the iteration count is typically $3$–$10$.
 
 In continuous form the same statement is: the LSV marginal density $\rho$ satisfies the *linear* Fokker–Planck equation
 
-$$\partial_t\rho=\tfrac12\partial^2_{SS}\!\left(\sigma^2_{loc}(t,S)S^2\rho\right)$$
+$$
+\partial_t\rho=\tfrac12\partial^2_{SS}\!\left(\sigma^2_{loc}(t,S)S^2\rho\right)
+$$
 
 with the *nonlinear* closure $\sigma^2_{loc}(t,S)=\sigma^2(t,S)m(t,S)$ and $m$ computed from $\rho$. This is the bridge to §04.
 
@@ -80,7 +90,9 @@ with the *nonlinear* closure $\sigma^2_{loc}(t,S)=\sigma^2(t,S)m(t,S)$ and $m$ c
 
 Consider the two candidate estimands:
 
-$$\underbrace{\xi_0^t=\mathbb E[v_t]}_{\text{unconditional: forward variance}}\qquad\text{vs}\qquad\underbrace{m(t,S)=\mathbb E[v_t\,|\,S_t=S]}_{\text{conditional: what the projection needs}}.$$
+$$
+\underbrace{\xi_0^t=\mathbb E[v_t]}_{\text{unconditional: forward variance}}\qquad\text{vs}\qquad\underbrace{m(t,S)=\mathbb E[v_t\,|\,S_t=S]}_{\text{conditional: what the projection needs}}.
+$$
 
 With $\rho<0$, low-$S$ states come with high $v$ — the crash wing has *more* variance than average, the upside wing *less*. On the Heston test of §3 the ratio $m(1,S)/\xi_0^1$ runs from $5.6$ in the crash wing to $0.32$ in the upside wing. Using the unconditional value therefore mis-states the local variance by those factors, the model is *over-levered* in the wings, and the resulting smile is *more* skewed than the raw Heston smile — the opposite of the intent. This is not a numerical detail; it is the mathematical content of the projection.
 

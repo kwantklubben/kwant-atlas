@@ -24,19 +24,25 @@ The deepest principle is the same one [[fundamentals-accounting/data-sources-and
 
 **Backfill bias.** A vendor assigns missing early history a value that was unknown at the time ("backfilling"), or overwrites it with a later correction ("reinstatement") — AFML §2.2.1. Let the as-originally-known value be $x^{\text{pit}}_{t}$ and the backfilled value $x^{\text{bf}}_{t}=x^{\text{pit}}_{t}+c_{t}$, where the correction $c_t$ is *informed* by the outcome $y_t$ (that is what a correction is). Then
 
-$$\text{IC}_{\text{bf}}=\operatorname{corr}(x^{\text{pit}}+c,\,y)>\operatorname{corr}(x^{\text{pit}},\,y)=\text{IC}_{\text{pit}}\qquad\text{because } \operatorname{cov}(c,y)>0.$$
+$$
+\text{IC}_{\text{bf}}=\operatorname{corr}(x^{\text{pit}}+c,\,y)>\operatorname{corr}(x^{\text{pit}},\,y)=\text{IC}_{\text{pit}}\qquad\text{because } \operatorname{cov}(c,y)>0.
+$$
 
 **The inflation is largest in the oldest data** — exactly where backfill is strongest and where a long backtest "proves" the signal.
 
 **Survivorship bias.** Let the true universe average be over all entities that existed at $t$, $\bar r=\frac1N\sum_{i=1}^N r_i$, and the vendor universe average be over today's survivors, $\bar r_{\text{surv}}=\frac1M\sum_{i\in\text{live}} r_i$ with $M<N$:
 
-$$\text{Bias}_{\text{surv}}=\bar r_{\text{surv}}-\bar r>0,$$
+$$
+\text{Bias}_{\text{surv}}=\bar r_{\text{surv}}-\bar r>0,
+$$
 
 strictly positive because the delisted firms are, on average, the losers. For alt-data this bites *twice*: the entity universe may be survivor-filtered, and **the panel itself** (which stores a vendor covers) is survivor-selected.
 
 **Panel / coverage drift.** A card panel's observed spend is $S^{\text{obs}}_t = \alpha_t\,S^{\text{true}}_t$ where $\alpha_t$ = the panel's *coverage share*. If an issuing bank leaves at $t^\star$, $\alpha$ drops discontinuously yet $S^{\text{true}}$ is unchanged, so the signal reads
 
-$$\frac{S^{\text{obs}}_{t^\star+1}}{S^{\text{obs}}_{t^\star}}=\frac{\alpha_{t^\star+1}}{\alpha_{t^\star}}\approx0.7 \;(\text{a fake }-30\%\text{ "collapse"}),$$
+$$
+\frac{S^{\text{obs}}_{t^\star+1}}{S^{\text{obs}}_{t^\star}}=\frac{\alpha_{t^\star+1}}{\alpha_{t^\star}}\approx0.7 \;(\text{a fake }-30\%\text{ "collapse"}),
+$$
 
 i.e. **vendor attrition masquerades as a demand shock** — and it is the single most famous alt-data false signal. The fix: model the *share* (relative to a control) or normalize by panel size each period.
 

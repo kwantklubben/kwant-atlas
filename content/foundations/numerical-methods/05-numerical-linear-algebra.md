@@ -33,14 +33,18 @@ This page is the *numerical* counterpart to the conceptual [[foundations/linear-
 - **Cholesky** for SPD $A$: $A=LL^\top$, $L$ lower-triangular. Half the work of LU and provably stable without pivoting. **If Cholesky fails your matrix was not PSD** — the diagnostic behind every covariance-matrix repair (see [[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]).
 - **Special structures pay huge dividends.** A **tridiagonal** system — the form of every 1-D finite-difference scheme — is solved by the **Thomas algorithm** in $O(n)$ instead of $O(n^3)$:
 
-  $$c'_1=\frac{c_1}{b_1},\quad c'_i=\frac{c_i}{b_i-a_ic'_{i-1}},\quad
-  d'_i=\frac{d_i-a_id'_{i-1}}{b_i-a_ic'_{i-1}},\qquad x_n=d'_n,\ x_i=d'_i-c'_ix_{i+1}.$$
+$$
+c'_1=\frac{c_1}{b_1},\quad c'_i=\frac{c_i}{b_i-a_ic'_{i-1}},\quad
+d'_i=\frac{d_i-a_id'_{i-1}}{b_i-a_ic'_{i-1}},\qquad x_n=d'_n,\ x_i=d'_i-c'_ix_{i+1}.
+$$
 
   This is what makes implicit time-stepping affordable: one $O(n)$ solve per step instead of one $O(n^3)$ solve.
 
 **Conditioning — the accuracy ceiling.** The relative error obeys
 
-$$\frac{\|\delta x\|}{\|x\|}\;\le\;\kappa(A)\,\frac{\|\delta b\|}{\|b\|},\qquad \kappa(A)=\|A\|\,\|A^{-1}\|=\frac{\sigma_{\max}}{\sigma_{\min}}.$$
+$$
+\frac{\|\delta x\|}{\|x\|}\;\le\;\kappa(A)\,\frac{\|\delta b\|}{\|b\|},\qquad \kappa(A)=\|A\|\,\|A^{-1}\|=\frac{\sigma_{\max}}{\sigma_{\min}}.
+$$
 
 Loss of accuracy is roughly $\log_{10}\kappa$ digits. For SPD $A$, $\kappa=L/\mu$ (largest/smallest eigenvalue), which is exactly the number that governs gradient descent (page 04) — **conditioning is one theme seen from three angles**.
 
@@ -49,8 +53,10 @@ Loss of accuracy is roughly $\log_{10}\kappa$ digits. For SPD $A$, $\kappa=L/\mu
 - **Jacobi / Gauss–Seidel / SOR.** Split $A=D+L+U$; iterate $x^{(k+1)}=D^{-1}(b-(L+U)x^{(k)})$. **Gauss–Seidel** uses the newest values; **SOR** over-relaxes with $\omega$, $x^{(k+1)}=(D+\omega L)^{-1}(\omega b-(\omega U+(\omega-1)D)x^{(k)})$. Convergence: Jacobi/GS converge when $A$ is **diagonally dominant** or SPD; **SOR converges iff $0<\omega<2$** for SPD $A$ (Duffy Thm 29.1). The projected version **PSOR** handles the complementarity constraints of American-option-style problems (Duffy eq. 29.11).
 - **Conjugate gradient (CG)** — for SPD $A$, converges in at most $n$ steps in exact arithmetic, faster when $\kappa$ is small:
 
-  $$\alpha_k=\frac{r_k^\top r_k}{p_k^\top Ap_k},\quad x_{k+1}=x_k+\alpha_kp_k,\quad
-  r_{k+1}=r_k-\alpha_kAp_k,\quad p_{k+1}=r_{k+1}+\frac{r_{k+1}^\top r_{k+1}}{r_k^\top r_k}p_k.$$
+$$
+\alpha_k=\frac{r_k^\top r_k}{p_k^\top Ap_k},\quad x_{k+1}=x_k+\alpha_kp_k,\quad
+r_{k+1}=r_k-\alpha_kAp_k,\quad p_{k+1}=r_{k+1}+\frac{r_{k+1}^\top r_{k+1}}{r_k^\top r_k}p_k.
+$$
 
   Krylov iteration (CG, GMRES, BiCGStab) is *the* tool for the sparse systems industry uses; **preconditioning** ($M^{-1}A\approx I$) is what makes it fast.
 

@@ -31,15 +31,21 @@ The five failures, in one line each:
 
 **Where the break-even lives.** The LP's net P&L (in numeraire, ignoring fees already described by the divergence-loss of [[pillars/06-market-making/crypto-and-defi-market-making/02-the-constant-product-amm|02]]) is
 
-$$\text{net} = \text{fee income} - \text{LVR},$$
+$$
+\text{net} = \text{fee income} - \text{LVR},
+$$
 
 where LVR is the divergence loss *as a running, path-dependent cost* (Milionis et al. 2022), and fee income $=f\times$ (traded volume). Providing liquidity is profitable iff
 
-$$\boxed{\;f \times \text{volume} \;>\; \mathrm{LVR}\;} .$$
+$$
+\boxed{\;f \times \text{volume} \;>\; \mathrm{LVR}\;} .
+$$
 
 **The instantaneous LVR rate.** Milionis, Moallemi, Roughgarden & Zhang (2022) prove that for a constant-product AMM the instantaneous rate of LVR is
 
-$$\frac{d\mathrm{LVR}}{dt} = \tfrac18\,\sigma^2\,V,$$
+$$
+\frac{d\mathrm{LVR}}{dt} = \tfrac18\,\sigma^2\,V,
+$$
 
 with $V$ the pool value in numeraire and $\sigma$ the volatility of the price process — the same $\tfrac18\sigma^2$ that the small-move expansion of divergence loss ($\mathrm{DL}\approx s^2/8$) in [[pillars/06-market-making/crypto-and-defi-market-making/02-the-constant-product-amm|02]] seeded. Over a finite horizon the expected total LVR is $V_0(1-e^{-\sigma^2T/8})\approx \tfrac18\sigma^2V_0T$ for small $\sigma^2T$. **Since fee income scales with volume (roughly $\propto\sigma$) but LVR scales with $\sigma^2$, the required fee tier grows with volatility** — high-vol pools need high fee tiers and high turnover to break even, which is precisely why volatile tokens shed liquidity.
 

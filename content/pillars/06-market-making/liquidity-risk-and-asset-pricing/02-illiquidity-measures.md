@@ -32,11 +32,15 @@ The unifying idea: **illiquidity is the response of price to order flow** (Kyle'
 
 **Roll (1984) estimator.** If trades bounce between bid and ask, successive *transaction-price changes* carry negative autocovariance whose magnitude is the half-spread squared:
 
-$$\operatorname{cov}(\Delta p_t,\Delta p_{t-1})=-c^2 \quad\Longrightarrow\quad S_R = 2\sqrt{-\operatorname{cov}(\Delta p_t,\Delta p_{t-1})}.$$
+$$
+\operatorname{cov}(\Delta p_t,\Delta p_{t-1})=-c^2 \quad\Longrightarrow\quad S_R = 2\sqrt{-\operatorname{cov}(\Delta p_t,\Delta p_{t-1})}.
+$$
 
 **Amihud (2002) ILLIQ.** The average absolute price change per dollar of volume:
 
-$$\text{ILLIQ}_{iy}=\frac{1}{D_{iy}}\sum_{t=1}^{D_{iy}}\frac{|R_{iyt}|}{\text{VOLD}_{iyt}}.$$
+$$
+\text{ILLIQ}_{iy}=\frac{1}{D_{iy}}\sum_{t=1}^{D_{iy}}\frac{|R_{iyt}|}{\text{VOLD}_{iyt}}.
+$$
 
 It is a **Kyle-lambda-like price-impact** measure built from daily data — the slope of price response to order flow, averaged over days. More illiquid ⇒ larger ILLIQ.
 

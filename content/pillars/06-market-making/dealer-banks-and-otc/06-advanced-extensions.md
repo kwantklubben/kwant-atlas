@@ -30,11 +30,15 @@ This page is the launchpad from the core OTC search model to its three most impo
 
 Let $W_{ij}$ be dealer $i$'s gross exposure to dealer $j$. Total **gross** system exposure is $\sum_{i,j}W_{ij}$. A CCP interposes itself and each dealer faces only its **net** position:
 
-$$n_i=\sum_j W_{ij}-\sum_j W_{ji},\qquad \text{net system exposure}=\frac12\sum_i|n_i|.$$
+$$
+n_i=\sum_j W_{ij}-\sum_j W_{ji},\qquad \text{net system exposure}=\frac12\sum_i|n_i|.
+$$
 
 The **netting benefit** is the ratio
 
-$$\text{NB}=\frac{\sum_{i,j}W_{ij}}{\tfrac12\sum_i|n_i|}.$$
+$$
+\text{NB}=\frac{\sum_{i,j}W_{ij}}{\tfrac12\sum_i|n_i|}.
+$$
 
 In a **complete** network with balanced random exposures, cross-terms cancel and $n_i\to0$: the benefit grows without bound as density $\to1$. This is the formal statement of "the CCP becomes the single counterparty."
 
@@ -42,7 +46,9 @@ In a **complete** network with balanced random exposures, cross-terms cancel and
 
 A CCP reduces *bilateral* contagion but concentrates risk. Model the CCP as a node with its own capital $C_{\text{ccp}}$ (a **default fund**) and compute expected system loss under two regimes:
 
-$$L_{\text{bilat}}=\mathbb{E}\bigl[\text{cascade loss in the bilateral network}\bigr],\qquad L_{\text{ccp}}=\mathbb{E}\bigl[\text{loss to the CCP default fund}\bigr].$$
+$$
+L_{\text{bilat}}=\mathbb{E}\bigl[\text{cascade loss in the bilateral network}\bigr],\qquad L_{\text{ccp}}=\mathbb{E}\bigl[\text{loss to the CCP default fund}\bigr].
+$$
 
 Clearing is beneficial when $L_{\text{bilat}}>L_{\text{ccp}}$, which holds when: (i) exposures are numerous and offsetting (high NB), (ii) dealers are heterogeneous in risk (netting removes most cross-risk), and (iii) the CCP's own cover-2/cover-1 default-fund sizing is adequate. Clearing is *harmful* when exposures are concentrated in a few large dealers who would otherwise be monitored bilaterally, or when the CCP's default fund is thin relative to member risk.
 

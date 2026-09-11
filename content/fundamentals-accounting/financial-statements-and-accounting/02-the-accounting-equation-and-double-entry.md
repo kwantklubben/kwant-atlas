@@ -38,15 +38,21 @@ Every account lives on one side of the ledger. **Assets and expenses** are *debi
 
 **The double-entry constraint.** For every transaction, the total of all debit postings **equals** the total of all credit postings:
 
-$$\sum \text{debits} = \sum \text{credits} \qquad \text{(per transaction, and therefore in total)}$$
+$$
+\sum \text{debits} = \sum \text{credits} \qquad \text{(per transaction, and therefore in total)}
+$$
 
 Because every transaction is balanced, the whole ledger is balanced, and the balance sheet equation is *derived*, not assumed:
 
-$$\text{Assets} = \text{Liabilities} + \text{Owners' equity}$$
+$$
+\text{Assets} = \text{Liabilities} + \text{Owners' equity}
+$$
 
 **How the income statement fits in.** Revenue and expenses are *temporary* equity accounts — revenue is a credit-normal (it grows equity), expenses are debit-normal (they shrink equity). Closing them at period end into retained earnings is what connects the income statement to the balance sheet:
 
-$$\Delta \text{Retained earnings} = \text{Net income} - \text{Dividends},\qquad \text{NI}=\text{Revenue}-\text{Expenses}$$
+$$
+\Delta \text{Retained earnings} = \text{Net income} - \text{Dividends},\qquad \text{NI}=\text{Revenue}-\text{Expenses}
+$$
 
 So the "two effects" of every operating transaction are really *one asset/liability effect and one equity effect through earnings* — which is exactly why recognizing revenue without receiving cash creates a receivable, and why an uncollectible receivable eventually hits an expense.
 

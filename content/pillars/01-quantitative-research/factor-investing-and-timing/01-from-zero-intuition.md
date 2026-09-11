@@ -36,22 +36,32 @@ Start with the dumbest question: *if markets are efficient, why would "buy cheap
 ### 2. Mathematical Ground Truth & Derivations
 
 **From CAPM to the cross-section.** The CAPM says expected excess returns are proportional to market beta:
-$$\mathbb{E}[R_i]-R_f=\beta_i\big(\mathbb{E}[R_m]-R_f\big),\qquad \beta_i=\frac{\mathrm{Cov}(R_i,R_m)}{\mathrm{Var}(R_m)}.$$
+$$
+\mathbb{E}[R_i]-R_f=\beta_i\big(\mathbb{E}[R_m]-R_f\big),\qquad \beta_i=\frac{\mathrm{Cov}(R_i,R_m)}{\mathrm{Var}(R_m)}.
+$$
 Fama and French (1992) tested this and found the relation is *flat*: "when the tests allow for variation in $\beta$ that is unrelated to size, the relation between market $\beta$ and average return is flat, even when $\beta$ is the only explanatory variable." What *does* line up with the cross-section is size and book-to-market:
-$$\mathbb{E}[R_i]-R_f=\beta_i\,MKT+\beta_{i,SMB}\,SMB+\beta_{i,HML}\,HML.$$
+$$
+\mathbb{E}[R_i]-R_f=\beta_i\,MKT+\beta_{i,SMB}\,SMB+\beta_{i,HML}\,HML.
+$$
 The factors are built by sorting ([[pillars/01-quantitative-research/fundamental-multi-factor-models/03-factor-construction|03 · Factor Construction]] in the sibling folder); here we take them as given and ask how to *use* them.
 
 **A sort is a cross-sectional regression.** Sort the $N$ stocks on characteristic $C_i$ into $J$ equally weighted bins, and read the mean return of the top bin minus the bottom bin. Cochrane (2011, §II.B) points out that **portfolio sorts are nonparametric cross-sectional regressions using non-overlapping histogram weights**: the "slope" of a regression $\mathbb{E}[R^e\mid C]=a+bC$ and the "1–10 spread" of a sort estimate the same object with different weighting functions. As the number of bins grows, the sort converges to the (nonparametric) conditional mean function.
 
 **The information coefficient.** Define the standardized characteristic $z_{it}=(C_{it}-\bar C_t)/\sigma_{C,t}$. The IC at time $t$ is the cross-sectional correlation
-$$IC_t=\mathrm{corr}_i(z_{it},\,R_{i,t+1}).$$
+$$
+IC_t=\mathrm{corr}_i(z_{it},\,R_{i,t+1}).
+$$
 If we form a portfolio with weights $w_i\propto z_i$ (a long-short characteristic portfolio), the expected return of that portfolio is $\mathbb{E}[R_w]=IC\cdot\sigma_{\text{cross-sectional return}}\cdot\sqrt{N_{\text{effective}}}$ in magnitude — the precise statement of "breadth amplifies a weak signal." The **fundamental law of active management** (Grinold 1989) makes this an information ratio:
-$$IR\approx IC\times\sqrt{\text{breadth}}.$$
+$$
+IR\approx IC\times\sqrt{\text{breadth}}.
+$$
 
 **Worked numbers.** For a factor with IC $=0.045$ and breadth $=12\times 300=3600$ independent stock-months per year, $IR\approx0.045\times\sqrt{3600}=0.045\times60=2.7$ — close to the 2.05 measured in §3 (the gap is the imperfect independence of the bets and the decile-truncation loss). This is the *entire* reason factor investing exists: the signal is weak, the cross-section is wide.
 
 **Why the same law kills factor timing.** Factor timing makes *one bet per month* on the factor itself. Its breadth is $\approx12$. To achieve an IR of 0.5 — a modest active strategy — you would need
-$$IC_{\text{timing}}=\frac{0.5}{\sqrt{12}}\approx0.14,$$
+$$
+IC_{\text{timing}}=\frac{0.5}{\sqrt{12}}\approx0.14,
+$$
 an information coefficient nearly *three times* as strong as a good stock-selection signal, applied to a single, highly volatile bet. That is why the standard practitioner verdict (Ilmanen) is: "Let us not move from the extreme of no market timing to the other extreme of thinking it is easy."
 
 ---

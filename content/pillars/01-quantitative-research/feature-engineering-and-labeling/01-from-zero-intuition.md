@@ -31,21 +31,29 @@ The resolution has three moves. First, engineer features that are **stationary b
 
 **The fixed-horizon label and its flaw.** The textbook target is
 
-$$y_t=\operatorname{sgn}\Big(\ln\frac{P_{t+h}}{P_t}\Big),\qquad r_{t,t+h}=\ln\frac{P_{t+h}}{P_t}.$$
+$$
+y_t=\operatorname{sgn}\Big(\ln\frac{P_{t+h}}{P_t}\Big),\qquad r_{t,t+h}=\ln\frac{P_{t+h}}{P_t}.
+$$
 
 For a geometric random walk, $\operatorname{sgn}$ of a zero-mean increment is a fair coin — but the *information content* of the label is not the issue; the issue is that the label answers a question no strategy asks. A strategy with a stop at $-pt\cdot\sigma$ and a target at $+pt\cdot\sigma$ would have exited at the first touch, not at $t+h$. Define the first touch time
 
-$$t_{i,1}=\min\Big(t_{i,0}+h,\ \inf\{t>t_{i,0}:P_t\ge P_{i,0}(1+pt\,\sigma_{t_{i,0}})\ \lor\ P_t\le P_{i,0}(1-sl\,\sigma_{t_{i,0}})\}\Big).$$
+$$
+t_{i,1}=\min\Big(t_{i,0}+h,\ \inf\{t>t_{i,0}:P_t\ge P_{i,0}(1+pt\,\sigma_{t_{i,0}})\ \lor\ P_t\le P_{i,0}(1-sl\,\sigma_{t_{i,0}})\}\Big).
+$$
 
 The **triple-barrier label** is then
 
-$$y_i=\begin{cases}+1 & \text{upper barrier touched first}\\ -1 & \text{lower barrier touched first}\\ \operatorname{sgn}(r_{i,0,t_1}) & \text{vertical barrier (time) touched first.}\end{cases}$$
+$$
+y_i=\begin{cases}+1 & \text{upper barrier touched first}\\ -1 & \text{lower barrier touched first}\\ \operatorname{sgn}(r_{i,0,t_1}) & \text{vertical barrier (time) touched first.}\end{cases}
+$$
 
 **Why this matters numerically.** Consider a symmetric random walk with $H=20$ bars and 1-bar vol $\sigma=2\%$, with barriers at $0.5\sigma\sqrt H$. The fixed-horizon sign and the triple-barrier label disagree on a large fraction of paths — because the times the path *touched* a barrier dominate the time it *ended*. In the folder's run, the disagreement rate is **19.7%** at these settings (see §3), and the disagreement is systematic: the fixed-horizon label says "held, ended down"; the triple-barrier label says "stopped out at −4.5%".
 
 **Features: stationary without being memoryless.** Integer differencing, $(1-B)^d$ with $d=1$, gives returns — stationary but with almost no correlation to the price level. Zero differencing keeps all memory but is non-stationary. Fractional $d\in(0,1)$ interpolates:
 
-$$(1-B)^d=\sum_{k=0}^{\infty}(-1)^k\binom{d}{k}B^k,\qquad w_k=-w_{k-1}\frac{d-k+1}{k},\quad w_0=1.$$
+$$
+(1-B)^d=\sum_{k=0}^{\infty}(-1)^k\binom{d}{k}B^k,\qquad w_k=-w_{k-1}\frac{d-k+1}{k},\quad w_0=1.
+$$
 
 For $d=1$ the weights collapse to $\{1,-1,0,\dots\}$ (a pure difference); for $d\to0^+$ they decay very slowly and preserve long memory. Find the smallest $d^*$ whose differentiated series passes a unit-root test — that is the minimal memory loss needed to buy stationarity.
 

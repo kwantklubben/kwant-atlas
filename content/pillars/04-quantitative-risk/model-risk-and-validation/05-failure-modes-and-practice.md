@@ -28,13 +28,17 @@ The validation machinery of [[pillars/04-quantitative-risk/model-risk-and-valida
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 Selection bias (the expected maximum).** Suppose you screen $M$ genuinely skill-less models, each giving an estimate $\hat t_i\sim N(0,1)$ (a $t$-statistic under the null). If you keep the best, its reported statistic is $\max_i\hat t_i$, whose expectation grows like
-$$\mathbb{E}\!\left[\max_{i\le M}\hat t_i\right]\;\approx\;\sqrt{2\ln M}\;-\;\frac{\ln\ln M+\ln 4\pi}{2\sqrt{2\ln M}}\;\xrightarrow{M\uparrow}\;+\infty .$$
+$$
+\mathbb{E}\!\left[\max_{i\le M}\hat t_i\right]\;\approx\;\sqrt{2\ln M}\;-\;\frac{\ln\ln M+\ln 4\pi}{2\sqrt{2\ln M}}\;\xrightarrow{M\uparrow}\;+\infty .
+$$
 So "the best of $M$" is *by construction* large even when *nothing is real*. Equivalently, to keep a family-wise error rate $\alpha$ you must compare against the **Bonferroni threshold** $z^\star=\Phi^{-1}(1-\alpha/M)$, which exceeds the naive $\Phi^{-1}(1-\alpha)=1.96$ by a widening margin.
 
 **2.2 The deflated Sharpe ratio.** Bailey & López de Prado convert 2.1 into a corrected significance test. With $T$ observations and $M$ trials, the sharpest $t$-statistic must beat $\sqrt{2\ln M}$ (the expected maximum *under the null*) before it is evidence at all. The **probability of backtest overfitting** is the rate at which the in-sample best fails out-of-sample; it rises with $M$ and falls with $T$.
 
 **2.3 Calibration slippage under drift.** If the model is calibrated on a period with volatility $\sigma_0$ but the world moves to $\sigma_1> \sigma_0$, the true exception rate becomes
-$$\pi_1=\Phi\!\left(-\frac{\sigma_0}{\sigma_1}\,z_{1-p}\right)\quad\big(\text{for normal tails, } z_{1-p}=\Phi^{-1}(1-p)\big).$$
+$$
+\pi_1=\Phi\!\left(-\frac{\sigma_0}{\sigma_1}\,z_{1-p}\right)\quad\big(\text{for normal tails, } z_{1-p}=\Phi^{-1}(1-p)\big).
+$$
 For $p=0.01$, $z_{0.99}=2.326$: at $\sigma_1=2\sigma_0$, $\pi_1=\Phi(-1.163)=0.122\to$ the expected exception rate is $\approx12\%$ — a $12\times$ breach with **no change in the code**. This is exactly the number measured in the drift demonstration below.
 
 **2.4 The estimator's own error.** A $99\%$ VaR estimated from $n$ observations carries density-quantile standard error $\mathrm{se}\approx\frac{1}{f(q)}\sqrt{\alpha(1-\alpha)/n}$, which shrinks only as $n^{-1/2}$ ($\approx0.23\sigma$ at $n=250$, per the [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR hub]]). Both the reported VaR *and* the backtest that grades it are randomised by this — an under-appreciated source of spurious green zones.

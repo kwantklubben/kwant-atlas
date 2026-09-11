@@ -31,19 +31,25 @@ Start with the dumbest question: *why would anyone spend millions to shave a mic
 
 **The additive budget.** Model the path as a chain of stages. Total latency is the sum:
 
-$$T_{\text{T2T}} = \sum_{i=1}^{n} T_i = T_{\text{wire}}+T_{\text{NIC}}+T_{\text{stack}}+T_{\text{parse}}+T_{\text{strategy}}+T_{\text{serialize}}+T_{\text{gateway}}+T_{\text{TX}}.$$
+$$
+T_{\text{T2T}} = \sum_{i=1}^{n} T_i = T_{\text{wire}}+T_{\text{NIC}}+T_{\text{stack}}+T_{\text{parse}}+T_{\text{strategy}}+T_{\text{serialize}}+T_{\text{gateway}}+T_{\text{TX}}.
+$$
 
 **Two consequences follow immediately, and they organize the whole field.**
 
 **(A) The mean is a sum; the extremes are a max.** If you condition on the *worst* hop being slow — a context switch, a page fault, a cache miss on a cold structure — the total cost is set by the maximum single hiccup, not by the sum of hops. The relevant statistics are therefore **percentiles, not averages**. Define the tail ratio
 
-$$R = \frac{Q_{0.99}}{Q_{0.50}},$$
+$$
+R = \frac{Q_{0.99}}{Q_{0.50}},
+$$
 
 where $Q_p$ is the $p$-th percentile of end-to-end latency. For a real trading path $R$ is comfortably above 2: the p99 (the number that decides close races) is *not* the median.
 
 **(B) A "fast" stage can still lose.** A single-threaded handler is a queue. For an M/M/1-style server with arrival rate $\lambda$, mean service $\mathbb{E}[S]$, utilization $\rho=\lambda\mathbb{E}[S]$, the waiting time in queue is
 
-$$W_q = \frac{\rho}{1-\rho}\,\mathbb{E}[S]\qquad(\text{M/M/1}),$$
+$$
+W_q = \frac{\rho}{1-\rho}\,\mathbb{E}[S]\qquad(\text{M/M/1}),
+$$
 
 which diverges as $\rho\to1$. A handler at 90 % utilization waits ten times longer than one at 50 % — even though its individual instructions are identical. **Load, not just speed, sets latency.** (General service-time jitter is handled by the Pollaczek–Khinchine formula on the hub.)
 

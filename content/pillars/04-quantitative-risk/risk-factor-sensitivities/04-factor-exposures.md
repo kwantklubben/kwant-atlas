@@ -31,29 +31,39 @@ Two decompositions are used, and they answer different questions:
 
 **The linear factor model.** Write each position's return as exposures to $K$ common factors plus a residual:
 
-$$r_i=\sum_{k=1}^{K}\beta_{ik}f_k+\varepsilon_i,\qquad \mathbb{E}[\varepsilon_i]=0,\quad \operatorname{Cov}(\varepsilon_i,f_k)=0,\quad \operatorname{Cov}(\varepsilon_i,\varepsilon_j)=0\ (i\ne j).$$
+$$
+r_i=\sum_{k=1}^{K}\beta_{ik}f_k+\varepsilon_i,\qquad \mathbb{E}[\varepsilon_i]=0,\quad \operatorname{Cov}(\varepsilon_i,f_k)=0,\quad \operatorname{Cov}(\varepsilon_i,\varepsilon_j)=0\ (i\ne j).
+$$
 
 With position vector $w$ (currency exposures), the portfolio return is $r_p=w^\top r$, and the **portfolio factor exposure** is the dollar-beta vector
 
-$$b=\beta^\top w,\qquad b_k=\sum_i w_i\beta_{ik}\quad(\text{currency per unit of factor }k).$$
+$$
+b=\beta^\top w,\qquad b_k=\sum_i w_i\beta_{ik}\quad(\text{currency per unit of factor }k).
+$$
 
 **Variance decomposition.** With factor covariance $\Sigma_f$ and specific variances $D=\operatorname{diag}(\sigma_{\varepsilon,1}^2,\dots)$,
 
-$$\boxed{\ \sigma_p^2=b^\top\Sigma_f\,b\;+\;w^\top D w\ },\qquad R^2=\frac{b^\top\Sigma_f b}{\sigma_p^2}.$$
+$$
+\boxed{\ \sigma_p^2=b^\top\Sigma_f\,b\;+\;w^\top D w\ },\qquad R^2=\frac{b^\top\Sigma_f b}{\sigma_p^2}.
+$$
 
 The full position covariance implied by the model is $\Sigma=B\Sigma_f B^\top+D$ — which is **positive semi-definite by construction** and requires only $K(K+1)/2+K$ parameters instead of $N(N+1)/2$. That parameter collapse is the whole point: with $N=500$ and $K=8$ it is $36+8=44$ numbers instead of $125{,}250$.
 
 **Euler (marginal contribution) decomposition.** Because $\sigma_p$ is homogeneous of degree 1 in the exposures, Euler's theorem gives an *exact* additive allocation:
 
-$$\sigma_p=\sum_k b_k\frac{\partial\sigma_p}{\partial b_k}+\sum_i \sigma_{\varepsilon,i}\frac{\partial\sigma_p}{\partial \sigma_{\varepsilon,i}},\qquad
-\frac{\partial\sigma_p}{\partial b_k}=\frac{(\Sigma_f b)_k}{\sigma_p},\qquad \frac{\partial\sigma_p}{\partial\sigma_{\varepsilon,i}}=\frac{w_i^2\sigma_{\varepsilon,i}}{\sigma_p}.$$
+$$
+\sigma_p=\sum_k b_k\frac{\partial\sigma_p}{\partial b_k}+\sum_i \sigma_{\varepsilon,i}\frac{\partial\sigma_p}{\partial \sigma_{\varepsilon,i}},\qquad
+\frac{\partial\sigma_p}{\partial b_k}=\frac{(\Sigma_f b)_k}{\sigma_p},\qquad \frac{\partial\sigma_p}{\partial\sigma_{\varepsilon,i}}=\frac{w_i^2\sigma_{\varepsilon,i}}{\sigma_p}.
+$$
 
 The **component volatility** of factor $k$ is therefore $b_k(\Sigma_f b)_k/\sigma_p$, and of the residual of asset $i$ is $w_i^2\sigma_{\varepsilon,i}^2/\sigma_p$. These sum **exactly** to $\sigma_p$ — which is what makes them usable as a risk allocation (a "risk budget") rather than merely descriptive.
 
 **Two equivalent readings.** Because $b_k(\Sigma_f b)_k/\sigma_p \big/ \sigma_p = b_k(\Sigma_f b)_k/\sigma_p^2$, the **Euler share of volatility equals the share of variance**. So the same percentages can be quoted either way, as long as it is stated which total they are a share *of*.
 
 **Marginal contribution to risk (MCTR).** For a general covariance matrix, the position-level analogue is
-$$\text{MCTR}_i=\frac{(\Sigma w)_i}{\sigma_p},\qquad \text{Contribution}_i=w_i\,\text{MCTR}_i,\qquad \sum_i w_i\text{MCTR}_i=\sigma_p .$$
+$$
+\text{MCTR}_i=\frac{(\Sigma w)_i}{\sigma_p},\qquad \text{Contribution}_i=w_i\,\text{MCTR}_i,\qquad \sum_i w_i\text{MCTR}_i=\sigma_p .
+$$
 This is the number used to charge a desk for its marginal use of firm risk, and it is the linear-algebra core of risk-budgeted portfolio construction ([[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Portfolio Risk Constraints]]).
 
 ---
@@ -116,7 +126,7 @@ Euler (component-volatility) allocation:
   SUM = 2,282.44
 ```
 
-**Read the decomposition.** The book's $\$240{,}000$ of notional collapses to **two dollar-betas** — $\$194{,}000$ on factor 1 and $\$60{,}000$ on factor 2. The Euler allocation adds *exactly* to the $\$2{,}282.44$ portfolio volatility — the printed **SUM** line is the numerical verification of Euler's theorem. It says something the raw exposures do not: **factor 1 alone is $77.6\%$ of the risk** — more than its exposure share would suggest, because it is the factor every asset is loaded on and it is correlated with factor 2. Meanwhile the three specific risks together are only $12.6\%$ of variance ($R^2=0.874$): **a factor model sees $87\%$ of this book's risk, and the remaining $13\%$ cannot be hedged with factor instruments at all** — it diversifies away only by trading the individual names.
+**Read the decomposition.** The book's \$240{,}000 of notional collapses to **two dollar-betas** — \$194{,}000 on factor 1 and \$60{,}000 on factor 2. The Euler allocation adds *exactly* to the \$2{,}282.44 portfolio volatility — the printed **SUM** line is the numerical verification of Euler's theorem. It says something the raw exposures do not: **factor 1 alone is $77.6\%$ of the risk** — more than its exposure share would suggest, because it is the factor every asset is loaded on and it is correlated with factor 2. Meanwhile the three specific risks together are only $12.6\%$ of variance ($R^2=0.874$): **a factor model sees $87\%$ of this book's risk, and the remaining $13\%$ cannot be hedged with factor instruments at all** — it diversifies away only by trading the individual names.
 
 ---
 

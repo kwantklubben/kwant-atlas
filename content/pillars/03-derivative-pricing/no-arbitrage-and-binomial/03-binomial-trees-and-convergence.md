@@ -28,21 +28,29 @@ The practical objective of this page is the **Cox–Ross–Rubinstein (CRR) reci
 
 With $\Delta t=T/n$, choose the up/down factors to match the *volatility* of geometric Brownian motion:
 
-$$\boxed{\;u=e^{\sigma\sqrt{\Delta t}},\qquad d=\frac1u=e^{-\sigma\sqrt{\Delta t}}\;}$$
+$$
+\boxed{\;u=e^{\sigma\sqrt{\Delta t}},\qquad d=\frac1u=e^{-\sigma\sqrt{\Delta t}}\;}
+$$
 
 so the log-increment per step is $\pm\sigma\sqrt{\Delta t}$ and the per-step log-variance is $4\sigma^2\Delta t\,p(1-p)\approx\sigma^2\Delta t$ for $p\approx\tfrac12$ — matching GBM's $\sigma^2\Delta t$. The tree is **recombining**: an up-then-down equals a down-then-up, so after $n$ steps there are $n+1$ nodes (not $2^n$), with
 
-$$S_{j,i}=S\,u^{i}d^{\,j-i}\quad\text{at step }j\text{ after }i\text{ up-moves},\qquad \#\text{paths}=\binom{j}{i}.$$
+$$
+S_{j,i}=S\,u^{i}d^{\,j-i}\quad\text{at step }j\text{ after }i\text{ up-moves},\qquad \#\text{paths}=\binom{j}{i}.
+$$
 
 The risk-neutral probability is the same bracket-derived expression as before, with $e^{b\Delta t}$ the per-step growth of the underlying's carry ($b=r$ stock, $b=r-q$ index/continuous yield):
 
-$$\boxed{\;p=\frac{e^{b\Delta t}-d}{u-d}\;}\qquad\text{(Hull 13.17)}$$
+$$
+\boxed{\;p=\frac{e^{b\Delta t}-d}{u-d}\;}\qquad\text{(Hull 13.17)}
+$$
 
 #### 2.2 European closed form (CRR sum) and the efficient truncation
 
 Because the terminal distribution is binomial, a European claim has a *finite sum* over terminal nodes (Haug eq. 7.1):
 
-$$V_0=e^{-rT}\sum_{i=0}^{n}\binom{n}{i}p^{i}(1-p)^{n-i}\max\!\big(Su^{i}d^{\,n-i}-X,\,0\big).$$
+$$
+V_0=e^{-rT}\sum_{i=0}^{n}\binom{n}{i}p^{i}(1-p)^{n-i}\max\!\big(Su^{i}d^{\,n-i}-X,\,0\big).
+$$
 
 Only nodes with $Su^id^{\,n-i}>X$ contribute, so one starts the sum at the smallest integer $i$ with $Su^{i}d^{\,n-i}>X$, i.e. $i>\big(\ln(X/S)-n\ln d\big)/\ln(u/d)$ — the standard speed-up from $O(n^2)$ backward induction to $O(n)$ for European claims (Haug eq. 7.3–7.4).
 
@@ -50,7 +58,9 @@ Only nodes with $Su^id^{\,n-i}>X$ contribute, so one starts the sum at the small
 
 For an American contract the holder compares continuation with intrinsic value at **every** node:
 
-$$\boxed{\;P_{j,i}=\max\!\Big(X-Su^{i}d^{\,j-i},\;\;e^{-r\Delta t}\big[p\,P_{j+1,i+1}+(1-p)\,P_{j+1,i}\big]\Big)\;}$$
+$$
+\boxed{\;P_{j,i}=\max\!\Big(X-Su^{i}d^{\,j-i},\;\;e^{-r\Delta t}\big[p\,P_{j+1,i+1}+(1-p)\,P_{j+1,i}\big]\Big)\;}
+$$
 
 The tree is the natural American engine: no free boundary to solve, the exercise region is discovered node by node. (Full treatment on [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/06-advanced-extensions|06 · Advanced Extensions]].)
 

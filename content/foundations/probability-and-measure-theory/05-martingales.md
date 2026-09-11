@@ -24,21 +24,29 @@ The practical objective: understand the *three linked faces* — (1) the marting
 
 #### 2.1 Martingales, super-, sub- (Shreve I §2.4)
 With filtration $\mathcal F_0\subseteq\cdots\subseteq\mathcal F_n$ and adapted integrable $\{M_k\}$:
-$$\text{martingale: }\mathbb E[M_{k+1}\mid\mathcal F_k]=M_k;\quad \text{super-}: \le;\quad \text{sub-}: \ge.$$
+$$
+\text{martingale: }\mathbb E[M_{k+1}\mid\mathcal F_k]=M_k;\quad \text{super-}: \le;\quad \text{sub-}: \ge.
+$$
 Binomial consequences (Shreve I §2.4): if $\mathbb E[S_{k+1}\mid\mathcal F_k]=(pu+qd)S_k$, then $(pu+qd)=1$ ⇒ martingale, $>1$ ⇒ submartingale, $<1$ ⇒ supermartingale.
 
 #### 2.2 The discounted stock is the risk-neutral martingale (Shreve I §3.3; Glasserman §1.2)
 Under the risk-neutral measure $\widetilde{\mathbb P}$, the **discounted** stock and every discounted self-financing wealth process are martingales (Shreve I §3.3, verified):
-$$\widetilde{\mathbb E}\Big[\tfrac{S_{k+1}}{(1+r)^{k+1}}\;\Big|\;\mathcal F_k\Big]=\frac{S_k}{(1+r)^k},$$
+$$
+\widetilde{\mathbb E}\Big[\tfrac{S_{k+1}}{(1+r)^{k+1}}\;\Big|\;\mathcal F_k\Big]=\frac{S_k}{(1+r)^k},
+$$
 equivalently $\widetilde{\mathbb E}[S_{k+1}\mid\mathcal F_k]=(1+r)S_k$. This is the cornerstone pricing equation in continuous time, $V(0)=\widetilde{\mathbb E}[e^{-rT}V(T)]$ (Glasserman eq. 1.39). Pricing under $\mathbb P$ would depend on the drift $\mu$; under $\widetilde{\mathbb P}$ it depends only on $r$ and $\sigma$.
 
 #### 2.3 Exponential martingale (Shreve II Thm 3.6.1; Shreve I Thm 9.41)
-$$Z(t)=e^{\sigma W(t)-\frac12\sigma^2t}\ \Rightarrow\ \mathbb E[Z(t)\mid\mathcal F(s)]=Z(s).$$
+$$
+Z(t)=e^{\sigma W(t)-\frac12\sigma^2t}\ \Rightarrow\ \mathbb E[Z(t)\mid\mathcal F(s)]=Z(s).
+$$
 *Proof:* factor $Z(s)$, condition on the independent increment $W(t)-W(s)$, use its MGF $\mathbb E e^{\sigma\Delta W}=e^{\frac12\sigma^2(t-s)}$ to cancel the correction. This process is the seed of the change of measure — and of Girsanov ([[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|Stochastic Calculus 05 · Girsanov]]).
 
 #### 2.4 Change of measure = Radon–Nikodym (Shreve II Thm 1.6.1; Shreve I Ch 9)
 Let $Z\ge0$ a.s. with $\mathbb E Z=1$; define $\widetilde{\mathbb P}(A)=\int_A Z\,d\mathbb P$. Then $\widetilde{\mathbb P}$ is a probability measure, $\widetilde{\mathbb P}\ll\mathbb P$, and if $Z>0$ a.s. the measures are **equivalent** (mutually absolutely continuous). Change of expectation:
-$$\widetilde{\mathbb E}X=\mathbb E[XZ],\qquad \mathbb E Y=\widetilde{\mathbb E}[Y/Z].$$
+$$
+\widetilde{\mathbb E}X=\mathbb E[XZ],\qquad \mathbb E Y=\widetilde{\mathbb E}[Y/Z].
+$$
 On the finite market (Shreve I Ex 9.1) with physical $p=\frac13,q=\frac23$ and risk-neutral $\widetilde p=\widetilde q=\frac12$, the density is $Z(\omega)=\widetilde{\mathbb P}(\omega)/\mathbb P(\omega)$ with $Z(HH)=\frac94, Z(HT)=Z(TH)=\frac98, Z(TT)=\frac9{16}$, and $Z_k=\mathbb E[Z\mid\mathcal F_k]$ is a $\mathbb P$-martingale. The state-price density is $\zeta_k=(1+r)^{-k}Z_k$ (Shreve I Ch 9).
 
 #### 2.5 The normal-recentering preview of Girsanov (Shreve II Ex 1.6.x)

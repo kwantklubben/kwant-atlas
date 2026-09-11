@@ -35,21 +35,29 @@ The practical objective: be able to compute the log-signature from the signature
 
 The signature $S=S(X)\in T((\mathbb R^d))$ is an element with constant term $1$. Its **log-signature** is
 
-$$\ell(X)=\log S(X)=\sum_{n\ge1}\frac{(-1)^{n+1}}{n}(S-1)^{\otimes n},$$
+$$
+\ell(X)=\log S(X)=\sum_{n\ge1}\frac{(-1)^{n+1}}{n}(S-1)^{\otimes n},
+$$
 
 where $\otimes$ is the *concatenation* (tensor) product and $\log$ is the formal power-series logarithm of an associative algebra with unit. Truncated at level 3, the components are
 
-$$\ell^{i}=S^{i},\qquad \ell^{ij}=S^{ij}-\tfrac12 S^iS^j,\qquad \ell^{ijk}=S^{ijk}-\tfrac12\big(S^iS^{jk}+S^{ij}S^k\big)+\tfrac13 S^iS^jS^k,$$
+$$
+\ell^{i}=S^{i},\qquad \ell^{ij}=S^{ij}-\tfrac12 S^iS^j,\qquad \ell^{ijk}=S^{ijk}-\tfrac12\big(S^iS^{jk}+S^{ij}S^k\big)+\tfrac13 S^iS^jS^k,
+$$
 
 with all sums over *prefix/suffix* splits of the word (the tensor-algebra structure — see §3). Level 2 gives the **Lévy area matrix**, which is *antisymmetric*:
 
-$$\ell^{ij}=\tfrac12\big(S^{ij}-S^{ji}\big),\qquad \ell^{ij}=-\ell^{ji}.$$
+$$
+\ell^{ij}=\tfrac12\big(S^{ij}-S^{ji}\big),\qquad \ell^{ij}=-\ell^{ji}.
+$$
 
 #### 2.2 Why the log-signature is a Lie element
 
 A fundamental structural result (Lyons; Reutenauer) is that $\ell(X)$ is a **primitive / Lie element**: each level-$k$ piece lies in the degree-$k$ part of the **free Lie algebra** $\mathrm{Lie}(\mathbb R^d)$. Concretely, for $d=2$ and degree 3, the free Lie algebra has the left-nested bracket basis
 
-$$[1,[1,2]]=e_{112}-2e_{121}+e_{211},\qquad [2,[1,2]]=2e_{212}-e_{221}-e_{122},$$
+$$
+[1,[1,2]]=e_{112}-2e_{121}+e_{211},\qquad [2,[1,2]]=2e_{212}-e_{221}-e_{122},
+$$
 
 so a degree-3 tensor is a Lie element **iff** it is in the span of these two — a set of linear coefficient relations that can be checked numerically (and is, in §3). The content of this structure: the log-signature is the *minimal* non-redundant summary — all shuffle products of lower terms have been removed, so its components are genuinely independent. The number of independent degree-$k$ components of the log-signature (dimension of the free Lie algebra) is, by Witt's formula, $\frac1k\sum_{d'|k}\mu(d')\,d^{k/d'}$ — far smaller than $d^k$.
 

@@ -33,7 +33,9 @@ This folder is the **asset-pricing** view. The sibling folder [[pillars/04-quant
 
 **The amortization identity (Amihud–Mendelson 1986).** Suppose the one-way cost of trading asset $i$ is a fraction $s_i$ of its value (the **relative half-spread**, the standard Foucault convention). A round trip (buy then sell) costs $2s_i$; over a holding period of $h$ years that is roughly $2s_i/h$ per year — which the literature usually writes as $s/h$ with $s$ instead denoting the **relative spread** (so $s=2\times$ the one-way cost). Here $s_i$ is the one-way cost. To make the asset competitive with a liquid asset returning $r$, its gross required return must be
 
-$$R_i \simeq r + \frac{s_i}{h},$$
+$$
+R_i \simeq r + \frac{s_i}{h},
+$$
 
 where the precise constant depends on how the two sides of the cost are counted (Foucault et al. §9; a common form quotes the premium as $s/h$ with $s$ the one-way relative cost). **The premium shrinks as the holding period grows** — long-horizon investors can amortize a fixed cost over more time, so they demand less compensation. This is the classic rationale for why long-horizon (pension) money tolerates illiquid assets.
 

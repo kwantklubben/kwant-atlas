@@ -25,7 +25,9 @@ The practical objective: understand the complete toolkit that (a) proves a condi
 
 #### 2.1 Radon–Nikodym & change of measure (Shreve II Thm 1.6.1; Shreve I Ch 9)
 $\widetilde{\mathbb P}$ is **absolutely continuous** w.r.t. $\mathbb P$ ($\widetilde{\mathbb P}\ll\mathbb P$) if $\mathbb P(A)=0\Rightarrow\widetilde{\mathbb P}(A)=0$. Then there is a nonnegative $Z$ with
-$$\widetilde{\mathbb P}(A)=\int_A Z\,d\mathbb P\quad\forall A\in\mathcal F,\qquad Z=\frac{d\widetilde{\mathbb P}}{d\mathbb P}.$$
+$$
+\widetilde{\mathbb P}(A)=\int_A Z\,d\mathbb P\quad\forall A\in\mathcal F,\qquad Z=\frac{d\widetilde{\mathbb P}}{d\mathbb P}.
+$$
 **Equivalence** ($\widetilde{\mathbb P}\sim\mathbb P$) iff $Z>0$ a.s.; then $1/Z$ is the RN derivative of $\mathbb P$ w.r.t. $\widetilde{\mathbb P}$ and $\mathbb E Y=\widetilde{\mathbb E}[Y/Z]$ (Shreve II Thm 1.6.1; Shreve I Ch 9). **Existence of conditional expectation as a corollary** (Shreve I §9.5): for $X\ge0$ with $\int X\,d\mathbb Q=1$, define $\mathbb P'(A)=\int_A X\,d\mathbb Q$ on a sub-$\sigma$-algebra $\mathcal G$; the RN derivative of $\mathbb P'$ w.r.t. $\mathbb Q$ restricted to $\mathcal G$ is $\mathcal G$-measurable and has the partial-averaging property, so it *is* $\mathbb E[X\mid\mathcal G]$.
 
 On the finite market (Shreve I Ex 9.1), $Z(\omega)=\widetilde{\mathbb P}(\omega)/\mathbb P(\omega)$ gives $Z(HH)=\frac94,\ Z(HT)=Z(TH)=\frac98,\ Z(TT)=\frac9{16}$ (verified), and $Z_k=\mathbb E[Z\mid\mathcal F_k]$ is a $\mathbb P$-martingale; the **state-price density** is $\zeta_k=(1+r)^{-k}Z_k$ with $\zeta_jV_j$ a $\mathbb P$-martingale and European value $V_0=\mathbb E[\zeta_kC_k]$ (Shreve I Ch 9).

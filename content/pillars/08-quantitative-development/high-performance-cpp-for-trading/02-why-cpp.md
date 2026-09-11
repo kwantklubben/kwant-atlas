@@ -39,7 +39,9 @@ Three "aha"s:
 
 Let $T$ be per-request latency with cumulative distribution $F$. The *percentile* $t_p$ is the value with $F(t_p) = p$. The **mean** is
 
-$$\mathbb{E}[T] = \int_0^\infty \big(1 - F(t)\big)\,dt,$$
+$$
+\mathbb{E}[T] = \int_0^\infty \big(1 - F(t)\big)\,dt,
+$$
 
 a single integral that *smooths* the tail: a rare 400 µs pause contributes $\approx 0.01 \times 400 = 4$ µs to the mean (negligible) while *being* the number the market charges you for. This is why quoting $\mathbb{E}[T]$ is malpractice. **A GC pause does not change your mean; it changes your p99.99 by 100×, and the strategy only ever trades at its worst moments.**
 
@@ -51,7 +53,9 @@ If a collector pauses for $t_{\text{pause}}$ with probability $q$ per request, t
 
 An allocation is not a constant. Its cost is
 
-$$\mathbb{E}[t_{\text{alloc}}] = \underbrace{t_{\text{fast-path}}}_{\text{thread-cache pop}} + q_{\text{lock}}\,\underbrace{t_{\text{lock}}}_{\text{allocator lock}} + q_{\text{page}}\,\underbrace{t_{\text{mmap}}}_{\text{kernel page fault}},$$
+$$
+\mathbb{E}[t_{\text{alloc}}] = \underbrace{t_{\text{fast-path}}}_{\text{thread-cache pop}} + q_{\text{lock}}\,\underbrace{t_{\text{lock}}}_{\text{allocator lock}} + q_{\text{page}}\,\underbrace{t_{\text{mmap}}}_{\text{kernel page fault}},
+$$
 
 with $t_{\text{fast-path}} \sim 20\text{–}80$ ns (the number §3 measures in a Python proxy), $t_{\text{lock}}$ ~ hundreds of ns under contention, and $t_{\text{mmap}}$ ~ microseconds. The *mean* is dominated by the fast path; the *tail* is dominated by the rare kernel fault. The engineering rule follows directly: **do the allocation before the hot path** (pre-allocate, pool, `reserve`), so every $q \to 0$ and only the deterministic fast path remains.
 
@@ -59,7 +63,9 @@ with $t_{\text{fast-path}} \sim 20\text{–}80$ ns (the number §3 measures in a
 
 Copying a container of $n$ elements costs $O(n)$ (element-wise copies). A **move** — transferring ownership of the internal pointer — costs $O(1)$ regardless of $n$:
 
-$$\text{cost}(\text{copy}_n) = n\,c_{\text{elem}}, \qquad \text{cost}(\text{move}_n) = c_{\text{ptr}} \text{ (a few pointer writes)}.$$
+$$
+\text{cost}(\text{copy}_n) = n\,c_{\text{elem}}, \qquad \text{cost}(\text{move}_n) = c_{\text{ptr}} \text{ (a few pointer writes)}.
+$$
 
 Move semantics (C++11) is the mechanism that lets RAII *and* cheap transfer coexist: return-by-value is no longer a copy, it is a pointer handoff, so the compiler can elide or cheaply move even large buffers.
 

@@ -28,12 +28,16 @@ The baseline story — "LP fees, LVR, gas, protocol risk" — has a rich set of 
 
 Divergence loss depends only on the initial and final prices; **LVR** (Milionis, Moallemi, Roughgarden & Zhang 2022) is the trade-by-trade, path-dependent analogue that measures what arbitrageurs actually extract. For a constant-product AMM the instantaneous rate is
 
-$$\boxed{\;\frac{d\mathrm{LVR}}{dt}=\tfrac18\,\sigma^2\,V\;}$$
+$$
+\boxed{\;\frac{d\mathrm{LVR}}{dt}=\tfrac18\,\sigma^2\,V\;}
+$$
 
 with $V$ the pool value and $\sigma$ the price volatility. Over a finite horizon, under geometric Brownian motion,
 
-$$\mathbb{E}[\mathrm{LVR}]=\int_0^T \tfrac18\sigma^2\mathbb{E}[V_t]\,dt
-=V_0\left(1-e^{-\sigma^2T/8}\right)\;\approx\;\tfrac18\sigma^2V_0T \quad (\sigma^2T\text{ small}).$$
+$$
+\mathbb{E}[\mathrm{LVR}]=\int_0^T \tfrac18\sigma^2\mathbb{E}[V_t]\,dt
+=V_0\left(1-e^{-\sigma^2T/8}\right)\;\approx\;\tfrac18\sigma^2V_0T \quad (\sigma^2T\text{ small}).
+$$
 
 Two structural facts make this an options statement. First, the $\tfrac18\sigma^2V$ coefficient is exactly the expected cost of a short straddle of notional $V$ — the Clark (2020) replication from [[pillars/06-market-making/crypto-and-defi-market-making/02-the-constant-product-amm|02]] made quantitative. Second, because LVR is a running cost while divergence loss is a terminal one, a price path that round-trips has **zero divergence loss but positive LVR** — the arbitrageur profited throughout even though the terminal mark is unchanged. The LP's net, in expectation, is fees minus LVR; the entire business of DeFi market making is engineering that difference positive.
 

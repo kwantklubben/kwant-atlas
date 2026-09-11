@@ -31,7 +31,9 @@ The intuition in three steps:
 **Cointegration (Tsay §8.5).** For a $k$-dimensional $I(1)$ series with $h$ unit roots: **cointegration exists iff $0<h<k$**, with $k-h$ cointegrating factors; the cointegrating vectors are the columns of $\beta$ with $\beta'x_t$ stationary. Example: $y_{1t}=x_{1t}-2x_{2t}$ stationary while each component is $I(1)$.
 
 **Error-correction form (Engle–Granger, Tsay eq. 8.33–8.34).**
-$$\nabla x_t=\alpha\beta' x_{t-1}+\sum\Phi_i^*\,\nabla x_{t-i}+a_t-\sum\Theta_j a_{t-j},$$
+$$
+\nabla x_t=\alpha\beta' x_{t-1}+\sum\Phi_i^*\,\nabla x_{t-i}+a_t-\sum\Theta_j a_{t-j},
+$$
 with $\alpha\beta'=\Phi_p+\dots+\Phi_1-I=-\Phi(1)$. The term $\beta'x_{t-1}$ (the lagged *spread*) is the "compensation" that avoids over-differencing. Rank of $\Pi=\alpha\beta'$: $0$ ⇒ no cointegration; $k$ ⇒ $x_t$ is $I(0)$; $m$ with $0<m<k$ ⇒ $m$ cointegrating vectors and $k-m$ common stochastic trends $y_t=\alpha'_\perp x_t$.
 
 **Engle–Granger two-step.** (1) Regress $Y_t$ on $X_t$, get $\hat\beta$ and residual $\hat z_t=Y_t-\hat\beta X_t$. (2) ADF-test $\hat z_t$: stationary ⇒ cointegrated. Then the ECM regresses $\Delta Y_t$ on the lagged residual with a negative "speed-of-adjustment" coefficient $\gamma$ (mean reversion toward $\beta X+\mu$).

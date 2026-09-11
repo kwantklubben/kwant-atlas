@@ -30,13 +30,17 @@ The objective is to be able to:
 
 **A. MDI — Mean Decrease Impurity (ESL 10.42, AFML §8.3.1).** Sum, over internal nodes, the impurity decrease attributable to each feature, averaged across trees:
 
-$$\text{MDI}_\ell=\frac1M\sum_{m=1}^M\sum_{t=1}^{|T_m|-1}\hat\imath_t^2\,\mathbb 1(v(t)=\ell),\qquad \sum_\ell \text{MDI}_\ell=1 .$$
+$$
+\text{MDI}_\ell=\frac1M\sum_{m=1}^M\sum_{t=1}^{|T_m|-1}\hat\imath_t^2\,\mathbb 1(v(t)=\ell),\qquad \sum_\ell \text{MDI}_\ell=1 .
+$$
 
 Fast and in-sample; **biased** toward high-cardinality/continuous features and diluted by substitute features.
 
 **B. MDA — Mean Decrease Accuracy / permutation (AFML §8.3.2).**
 
-$$\text{MDA}_j=\mathrm{Score}_{\text{OOS}}-\mathrm{Score}_{\text{OOS},\,\pi_j}.$$
+$$
+\text{MDA}_j=\mathrm{Score}_{\text{OOS}}-\mathrm{Score}_{\text{OOS},\,\pi_j}.
+$$
 
 Out-of-sample (can declare all features irrelevant) but inherits **substitution effects**: two near-duplicate features cover for each other, so permuting either alone barely moves the score and *both* look weak. Fix: permute correlated clusters together.
 

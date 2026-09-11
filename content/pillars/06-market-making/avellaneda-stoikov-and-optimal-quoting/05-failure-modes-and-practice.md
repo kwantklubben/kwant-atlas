@@ -34,7 +34,9 @@ The four failures, in one line each:
 
 **Failure (A1) in numbers.** Suppose a fraction $p$ of fills are *informed*: the mid-price subsequently jumps adversely by $J$. Each fill then carries an expected adverse cost $pJ$ that the AS spread does **not** cover. The break-even condition is
 
-$$\underbrace{\tfrac12\gamma\sigma^2(T-t)+\tfrac{1}{\gamma}\ln\!\left(1+\tfrac{\gamma}{k}\right)}_{\text{AS half-spread per fill}} \;\ge\; \underbrace{pJ}_{\text{adverse cost per fill}} ,$$
+$$
+\underbrace{\tfrac12\gamma\sigma^2(T-t)+\tfrac{1}{\gamma}\ln\!\left(1+\tfrac{\gamma}{k}\right)}_{\text{AS half-spread per fill}} \;\ge\; \underbrace{pJ}_{\text{adverse cost per fill}} ,
+$$
 
 so the model loses money once $pJ$ exceeds the AS half-spread. There is **no knob inside AS** to widen the spread for information — you need an explicit adverse-selection term (Glosten–Milgrom, VPIN-gated quoting, or the Cartea–Jaimungal–Penalva extension in [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/06-advanced-extensions|06]]).
 
@@ -46,7 +48,7 @@ so the model loses money once $pJ$ exceeds the AS half-spread. There is **no kno
 
 ### 3. Computational Implementation — the adverse-selection failure
 
-We add *informed* flow to the [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/04-inventory-and-risk-aversion|04]] simulation: after a passive fill, with probability $p_{\text{tox}}$ the mid-price jumps adversely by $\$2$ (a pick-off). The AS strategy prices **no** compensation for this, so its P&L should bleed as $p_{\text{tox}}$ rises.
+We add *informed* flow to the [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/04-inventory-and-risk-aversion|04]] simulation: after a passive fill, with probability $p_{\text{tox}}$ the mid-price jumps adversely by $ $\$2 (a pick-off). The AS strategy prices **no** compensation for this, so its P&L should bleed as p_{\text{tox}}$ rises.
 
 ```python
 import numpy as np

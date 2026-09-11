@@ -25,15 +25,21 @@ The practical objective: understand the *three linked faces* of a distribution �
 
 #### 2.1 Random variables, laws, densities (Shreve II Def 1.2.3; Shreve I Ch 11)
 $X:\Omega\to\mathbb R$ is a random variable if $X^{-1}(B)\in\mathcal F$ for every Borel $B$. Its **law** (distribution measure) is
-$$\mu_X(B)=\mathbb P\{X\in B\}=\mathbb P\{X^{-1}(B)\}.$$
+$$
+\mu_X(B)=\mathbb P\{X\in B\}=\mathbb P\{X^{-1}(B)\}.
+$$
 $X$ has a **density** $f_X:\mathbb R\to[0,\infty)$ iff $\mu_X(B)=\int_B f_X(x)\,dx$, i.e. iff $\mu_X\ll\text{Leb}$ (absolutely continuous w.r.t. Lebesgue); $f_X$ is the Radon–Nikodym derivative $d\mu_X/dx$ (Shreve I Ch 11). Two random variables sharing a law are *different objects* — "the RV and its distribution are distinct" (Shreve II Def 1.2.3).
 
 #### 2.2 Expectation via the standard machine (Shreve II §1.4; Shreve I Thm 3.32)
-$$\mathbb E[h(X)]=\int_\Omega h(X)\,d\mathbb P=\int_{\mathbb R}h(x)\,d\mu_X(x)=\int_{\mathbb R}h(x)f_X(x)\,dx.$$
+$$
+\mathbb E[h(X)]=\int_\Omega h(X)\,d\mathbb P=\int_{\mathbb R}h(x)\,d\mu_X(x)=\int_{\mathbb R}h(x)f_X(x)\,dx.
+$$
 The construction is inductive: indicator $\to$ simple $\to$ nonnegative $\to$ general (monotone convergence for the nonnegative step), and the limit theorems (MCT, Fatou, DCT) make passing limits through expectations legal.
 
 #### 2.3 Inverse-transform sampling (Glasserman §2.2, eq. 2.13–2.14)
-$$X=F^{-1}(U),\qquad F^{-1}(u)=\inf\{x: F(x)\ge u\},\qquad U\sim\text{Unif}[0,1].$$
+$$
+X=F^{-1}(U),\qquad F^{-1}(u)=\inf\{x: F(x)\ge u\},\qquad U\sim\text{Unif}[0,1].
+$$
 This needs exactly **one uniform per sample** (minimal dimension — key for QMC) and gives $X=-\theta\log(1-U)\sim\text{Exp}(\theta)$ for the exponential, $\sin^2(U\pi/2)$ for the arcsine, etc. (Glasserman eqs. 2.13–2.14, p-070).
 
 #### 2.4 Independence: sets, $\sigma$-algebras, variables (Shreve II §2.2)

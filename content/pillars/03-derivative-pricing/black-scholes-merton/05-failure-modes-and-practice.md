@@ -35,7 +35,9 @@ Every BSM result rests on four interlocking assumptions (Hull Ch 15; Shreve II C
 
 The gamma–theta identity is the *mathematical* statement of how (A2) fails:
 
-$$\tfrac12\Gamma S^2\sigma^2 = -\Theta_{\text{driftless}} .$$
+$$
+\tfrac12\Gamma S^2\sigma^2 = -\Theta_{\text{driftless}} .
+$$
 
 Over a rebalance interval the hedged short-call P&L residual is approximately $\tfrac12\Gamma S^2\left[\left(\frac{\Delta S}{S}\right)^2-\sigma^2\Delta t\right]$ — zero in expectation under $\mathbb{Q}$, but realized with variance proportional to $\Gamma^2S^4$. **This is the irreducible hedging error**: the more the market moves, the more gamma bleed.
 

@@ -35,15 +35,21 @@ The only math this page needs is the definition that makes "contribution to risk
 
 Let $w=(w_1,\dots,w_N)$ be the weights (fractions of capital, summing to 1) and $\Sigma$ the covariance matrix of the assets' returns ($\Sigma_{ii}=\sigma_i^2$, $\Sigma_{ij}=\rho_{ij}\sigma_i\sigma_j$). The portfolio's volatility is
 
-$$\sigma(w)=\sqrt{w^\top\Sigma w}.$$
+$$
+\sigma(w)=\sqrt{w^\top\Sigma w}.
+$$
 
 Because $\sigma$ is **homogeneous of degree 1** — scaling every weight by $\lambda$ scales the volatility by $\lambda$: $\sigma(\lambda w)=\lambda\,\sigma(w)$ — Euler's homogeneous-function theorem guarantees the total risk splits exactly into $N$ per-asset pieces:
 
-$$\sigma(w)=\sum_{i=1}^{N} \underbrace{w_i\,\frac{(\Sigma w)_i}{\sigma(w)}}_{=:\;RC_i}.$$
+$$
+\sigma(w)=\sum_{i=1}^{N} \underbrace{w_i\,\frac{(\Sigma w)_i}{\sigma(w)}}_{=:\;RC_i}.
+$$
 
 Each $RC_i$ is the **risk contribution of asset $i$** — the slice of total volatility attributable to that position. This decomposition is *not* an approximation and *does not* require any assumption about returns: it is a property of the quadratic form. **Risk parity / ERC** simply asks for the weights that make all the $RC_i$ equal:
 
-$$RC_1=RC_2=\cdots=RC_N=\frac{\sigma(w)}{N}.$$
+$$
+RC_1=RC_2=\cdots=RC_N=\frac{\sigma(w)}{N}.
+$$
 
 Everything else in the folder — the closed forms, the convex programs, the failure modes — hangs off these two sentences.
 

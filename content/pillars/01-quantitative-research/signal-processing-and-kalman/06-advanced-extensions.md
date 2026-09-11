@@ -29,9 +29,15 @@ This page covers both: the **Rauch–Tung–Striebel (RTS) smoother** (the offli
 
 The filter runs forward producing $(s_{t\mid t},\Sigma_{t\mid t})$ and $(s_{t\mid t-1},\Sigma_{t\mid t-1})$. The smoother then runs **backward**, using the future to sharpen each estimate:
 
-$$C_t=\Sigma_{t\mid t}T_t^\top\Sigma_{t+1\mid t}^{-1}\quad(\text{smoother gain})$$
-$$s_{t\mid T}=s_{t\mid t}+C_t\big(s_{t+1\mid T}-s_{t+1\mid t}\big)$$
-$$\Sigma_{t\mid T}=\Sigma_{t\mid t}+C_t\big(\Sigma_{t+1\mid T}-\Sigma_{t+1\mid t}\big)C_t^\top .$$
+$$
+C_t=\Sigma_{t\mid t}T_t^\top\Sigma_{t+1\mid t}^{-1}\quad(\text{smoother gain})
+$$
+$$
+s_{t\mid T}=s_{t\mid t}+C_t\big(s_{t+1\mid T}-s_{t+1\mid t}\big)
+$$
+$$
+\Sigma_{t\mid T}=\Sigma_{t\mid t}+C_t\big(\Sigma_{t+1\mid T}-\Sigma_{t+1\mid t}\big)C_t^\top .
+$$
 
 Because it conditions on *more* data, $\Sigma_{t\mid T}\preceq\Sigma_{t\mid t}$ always — smoothing can only reduce uncertainty. Tsay §11.1.1 defines the smoothing problem ($\mu_{t\mid T}$ for $T>t$); the backward recursion above is the standard RTS form. The smoother is what you use to (i) *look back* at the latent state, and (ii) run the **EM algorithm** for maximum-likelihood parameter estimation in state-space models (E-step = smoother).
 
@@ -39,7 +45,9 @@ Because it conditions on *more* data, $\Sigma_{t\mid T}\preceq\Sigma_{t\mid t}$ 
 
 In the stochastic-volatility model the observation is a *non-linear* function of the log-variance state:
 
-$$h_{t+1}=\mu+\phi(h_t-\mu)+\eta_t,\quad \eta_t\sim N(0,\sigma_\eta^2);\qquad y_t=\exp(h_t/2)\,\epsilon_t,\quad \epsilon_t\sim N(0,1).$$
+$$
+h_{t+1}=\mu+\phi(h_t-\mu)+\eta_t,\quad \eta_t\sim N(0,\sigma_\eta^2);\qquad y_t=\exp(h_t/2)\,\epsilon_t,\quad \epsilon_t\sim N(0,1).
+$$
 
 The measurement density $p(y_t\mid h_t)=\frac{1}{\sqrt{2\pi}}e^{-h_t/2}\exp(-\tfrac12 y_t^2 e^{-h_t})$ is non-Gaussian in $h_t$, and a single daily return is genuinely weak information about $h_t$ — *which is exactly why volatility is hard to measure*. Linearizing (extended Kalman filter) is biased here; the right tool is to represent the whole posterior with **weighted samples**.
 

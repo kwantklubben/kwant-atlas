@@ -22,7 +22,9 @@ Every risk model has two halves. The first is the **marginals** — how risky is
 
 The word for that separate choice is a **copula**. A copula is the mathematical object that glues fixed margins into a joint distribution, and one theorem — **Sklar's (1959)** — says this decomposition is always possible and (for continuous margins) unique:
 
-$$F(x_1,\dots,x_d)=C\big(F_1(x_1),\dots,F_d(x_d)\big).$$
+$$
+F(x_1,\dots,x_d)=C\big(F_1(x_1),\dots,F_d(x_d)\big).
+$$
 
 This folder is the model topic-folder for the Kwant-Atlas build. It is a *hub*: it (a) gives the **fast formula lookup** below (job #1 of this pillar), covering Sklar's theorem, the Gaussian, $t$, Gumbel and Clayton copulas, rank correlation, tail dependence, and the Vašíček one-factor / Gaussian-copula portfolio-credit layer, and (b) routes you to six sub-pages that walk from raw intuition through the theorem, the 2008 Gaussian-copula episode, tail dependence, the practice of fitting and its failure modes, and the Archimedean / portfolio-credit extensions.
 

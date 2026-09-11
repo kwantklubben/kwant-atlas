@@ -33,19 +33,25 @@ Crowding is the *dynamic* face of the same coin. Ilmanen (2011) states the mecha
 ### 2. Mathematical Ground Truth & Derivations
 
 **Square-root market impact.** The empirical regularity (Almgren et al. 2005; Bouchaud et al.; Grinold & Kahn) is that the price impact of trading a quantity $Q$ against average daily volume $ADV$ scales as the *square root* of participation:
-$$\text{impact}\;\propto\;\sigma_{\text{daily}}\sqrt{\frac{Q}{ADV}}.$$
+$$
+\text{impact}\;\propto\;\sigma_{\text{daily}}\sqrt{\frac{Q}{ADV}}.
+$$
 Write it with an explicit coefficient $\lambda$ (calibrated so that trading 1% of ADV costs ~10 bps): $\text{impact}_{\text{one-way}}=\lambda\,\sigma_{\text{daily}}\sqrt{Q/ADV}$.
 
 **Net alpha and capacity.** Let the factor have gross alpha $g$ per year and turnover $\tau$ round-trips per year. At scale $A$, the daily traded notional is $A\tau/252$, so participation $=A\tau/(252\cdot ADV)$, and paying impact on both sides of each round-trip gives
-$$g_{\text{net}}(A)=g-\tau\cdot 2\,\lambda\,\sigma_{\text{daily}}\sqrt{\frac{A\,\tau/252}{ADV}}.$$
+$$
+g_{\text{net}}(A)=g-\tau\cdot 2\,\lambda\,\sigma_{\text{daily}}\sqrt{\frac{A\,\tau/252}{ADV}}.
+$$
 Three structural facts follow immediately:
 
 1. **Concavity.** $g_{\text{net}}$ is concave in $A$: the first billion is nearly free, the thousandth is ruinous. Capacity has *diminishing* marginal cost, which is why a factor can support one small manager or many tiny ones but not one enormous one.
 2. **Capacity scales with ADV and with $g^2$.** Setting $g_{\text{net}}=0$ and solving, the break-even scales as $A^\star\propto ADV\cdot g^2/(\lambda\sigma)^2$ — a factor with *half* the gross alpha has *one quarter* the capacity. Weak factors are small business, not small versions of big business.
-3. **Capacity scales as $1/\tau^3$.** From $A^\star\propto ADV\,g^2/(\lambda\sigma)^2$ with $g_{\text{net}}=g-2\tau\lambda\sigma\sqrt{A\tau/(252\,ADV)}$, solving $g_{\text{net}}=0$ gives $A^\star\propto1/\tau^3$ — so a 4× higher-turnover version of the same factor has 64× less capacity (verified: $\tau{=}2\Rightarrow\$630$bn, $\tau{=}8\Rightarrow\$9.84$bn, ratio $64.0$). This is the quantitative reason short-horizon alphas are capacity-starved relative to value.
+3. **Capacity scales as $1/\tau^3$.** From $A^\star\propto ADV\,g^2/(\lambda\sigma)^2$ with $g_{\text{net}}=g-2\tau\lambda\sigma\sqrt{A\tau/(252\,ADV)}$, solving $g_{\text{net}}=0$ gives $A^\star\propto1/\tau^3$ — so a 4× higher-turnover version of the same factor has 64× less capacity (verified: $\tau{=}2\Rightarrow$ \$630bn, \tau{=}8\Rightarrow\$9.84bn, ratio $64.0$). This is the quantitative reason short-horizon alphas are capacity-starved relative to value.
 
 **Crowding as a correlated-flow shock.** Suppose $K$ managers each hold the factor with weight $w_j$ and, in a deleveraging episode, each must cut a fraction $\varphi$ of its book over a short window. The aggregate forced flow is
-$$Q_{\text{forced}}=\varphi\sum_j w_j A_j,$$
+$$
+Q_{\text{forced}}=\varphi\sum_j w_j A_j,
+$$
 and by the same square-root law the induced price move is $\propto\sigma\sqrt{Q_{\text{forced}}/ADV}$ — but now the direction is *one-sided* for everyone. The factor risk model $\Sigma=B\Omega B'+D$ assigns the factor its *historical average* volatility and treats flows as independent noise. It therefore **understates the tail** by construction: the model has no term for "everyone sells at once." The correct practitioner response is a *stress* overlay (scenario impact, liquidity-adjusted VaR), not a higher volatility input.
 
 **Measuring crowding.** The observable proxies are: (i) **valuation spread** — how stretched the factor's long-vs-short valuation gap is versus its own history (a wide spread means the trade is consensus and cheap-vs-expensive is priced in); (ii) **factor volatility** — crowded factors have elevated realized vol not explained by fundamentals; (iii) **correlation of previously distinct factors** — crowding merges them into one trade (this is how "value" and "quality" can suddenly correlate 0.9); (iv) **short interest / positioning data** on the short leg.

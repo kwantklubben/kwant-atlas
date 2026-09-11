@@ -26,7 +26,9 @@ The objective of this page is to demonstrate cause #1 so concretely that you nev
 
 **The two ingredients of label leakage.** A classifier trained on $(X_t,Y_t)$ is asked to predict $Y_{t+1}$ from $X_{t+1}$. It scores correctly *even when $X$ is irrelevant* when both near-equalities hold:
 
-$$X_t \approx X_{t+1} \qquad\text{(serial correlation)}, \qquad Y_t \approx Y_{t+1} \qquad\text{(overlapping label windows)}.$$
+$$
+X_t \approx X_{t+1} \qquad\text{(serial correlation)}, \qquad Y_t \approx Y_{t+1} \qquad\text{(overlapping label windows)}.
+$$
 
 López de Prado (AFML §7.3) is explicit: leakage requires the *pair* $(X_i,Y_i)\approx(X_j,Y_j)$. $X_i\approx X_j$ alone, or $Y_i\approx Y_j$ alone, is not enough — the model must be able to map a near-duplicate feature to a near-duplicate label.
 

@@ -31,13 +31,17 @@ The objective of this page is one idea: **a document is a vector, and the counts
 
 **The bag-of-words representation.** A document $d$ is mapped to a count vector over a fixed vocabulary:
 
-$$\mathbf{x}_d=\big(x_{d,1},\,x_{d,2},\,\dots,\,x_{d,|V|}\big),\qquad x_{d,t}=\#\{\text{occurrences of term }t\text{ in }d\}.$$
+$$
+\mathbf{x}_d=\big(x_{d,1},\,x_{d,2},\,\dots,\,x_{d,|V|}\big),\qquad x_{d,t}=\#\{\text{occurrences of term }t\text{ in }d\}.
+$$
 
 Order is discarded ("bag"), so "results beat estimates" and "estimates beat results" produce the *same* vector — the cheapness that makes bag-of-words scale to millions of documents, and the approximation embeddings will later fix ([[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/04-embeddings-and-transformers|04]]).
 
 **From counts to a score.** With a sentiment lexicon (a set $P$ of positive, $N$ of negative terms) the natural feature is the net-tone fraction:
 
-$$\text{tone}(d)=\frac{\sum_{t\in P}x_{d,t}\;-\;\sum_{t\in N}x_{d,t}}{\sum_{t} x_{d,t}}.$$
+$$
+\text{tone}(d)=\frac{\sum_{t\in P}x_{d,t}\;-\;\sum_{t\in N}x_{d,t}}{\sum_{t} x_{d,t}}.
+$$
 
 This is the feature Tetlock regressed on returns and the feature the whole dictionary track of financial NLP is built on. Its statistical content: a *fraction*, so document length cancels — a 5-page and a 50-page filing are comparable.
 

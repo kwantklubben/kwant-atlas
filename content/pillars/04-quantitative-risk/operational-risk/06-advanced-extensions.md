@@ -28,7 +28,9 @@ Two extensions that take LDA into the real world:
 
 **Step 1 — Business Indicator (BI):** a three-year average proxy of op-risk exposure,
 
-$$\text{BI}=\text{ILDC}+\text{SC}+\text{FC},$$
+$$
+\text{BI}=\text{ILDC}+\text{SC}+\text{FC},
+$$
 
 where (bars denote 3-year averages):
 - $\text{ILDC}=\min\!\big[\;|\overline{\text{InterestIncome}-\text{InterestExpense}}|;\ 2.25\%\cdot\overline{\text{InterestEarningAssets}}\;\big]+\overline{\text{DividendIncome}}$,
@@ -47,15 +49,21 @@ where (bars denote 3-year averages):
 
 **Step 3 — Loss Component (LC) and Internal Loss Multiplier (ILM):**
 
-$$\text{LC}=15\times(\text{average annual op losses over previous 10 years}),$$
+$$
+\text{LC}=15\times(\text{average annual op losses over previous 10 years}),
+$$
 
-$$\text{ILM}=\ln\!\Big[e-1+\Big(\frac{\text{LC}}{\text{BIC}}\Big)^{0.8}\Big].$$
+$$
+\text{ILM}=\ln\!\Big[e-1+\Big(\frac{\text{LC}}{\text{BIC}}\Big)^{0.8}\Big].
+$$
 
 The ILM equals 1 when $\text{LC}=\text{BIC}$; it is bounded below by $\ln(e-1)\approx0.541$ and grows slowly (log) with loss experience, so banks with better loss records hold less capital and vice-versa.
 
 **Step 4 — capital:**
 
-$$\text{ORC}=\text{BIC}\cdot\text{ILM},\qquad \text{RWA}=12.5\cdot\text{ORC}.$$
+$$
+\text{ORC}=\text{BIC}\cdot\text{ILM},\qquad \text{RWA}=12.5\cdot\text{ORC}.
+$$
 
 For bucket-1 banks ($\text{BI}\le1$bn) the ILM is set to 1 and ORC $=0.12\,\text{BI}$ — no loss data used.
 
@@ -63,7 +71,9 @@ For bucket-1 banks ($\text{BI}\le1$bn) the ILM is set to 1 and ORC $=0.12\,\text
 
 An **aggregate stop-loss** with attachment $A$ and limit $L$ makes the insurer pay $\min\big[\max(S-A,0),\;L-A\big]$, so the *net* annual loss is
 
-$$S_{\text{net}}=S-\min\big[\max(S-A,0),\;L-A\big] = \begin{cases}S,& S\le A\\ A,& A<S\le L\\ S-(L-A),& S>L.\end{cases}$$
+$$
+S_{\text{net}}=S-\min\big[\max(S-A,0),\;L-A\big] = \begin{cases}S,& S\le A\\ A,& A<S\le L\\ S-(L-A),& S>L.\end{cases}
+$$
 
 Because op-risk tail risk is *aggregate* (many events stacking in one year), risk transfer that targets the **total** (stop-loss) is far more effective than per-event caps — the code below shows a 26.5% VaR reduction from a stop-loss versus ~2% from a per-event cap.
 

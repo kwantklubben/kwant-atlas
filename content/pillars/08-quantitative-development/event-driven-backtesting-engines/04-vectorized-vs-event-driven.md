@@ -28,23 +28,31 @@ The objective of this page is the number that separates them. We run *one* signa
 
 **The vectorized backtest, formally.** With weights $w_t$ (measurable at $t$ in a correct backtest) and simple returns $r_t$:
 
-$$\Pi_T^{\text{vec}}=\prod_{t=1}^{T}\big(1+w_t\,r_t\big),\qquad w_t=\mathbf{1}\{S_{t-1}>\overline{S}_{t-21}\}.$$
+$$
+\Pi_T^{\text{vec}}=\prod_{t=1}^{T}\big(1+w_t\,r_t\big),\qquad w_t=\mathbf{1}\{S_{t-1}>\overline{S}_{t-21}\}.
+$$
 
 The whole computation is a Hadamard product and a product. There is no clock, no queue, no fill — the assumption set is implicit in the absence of any term representing cost, delay, or size.
 
 **The event-driven backtest, formally.** There is no closed form; there is a recursion over the event stream. Let the engine state be
 
-$$\sigma_t=\big(q_t,\ c_t,\ \mathcal{W}_t,\ \mathcal{P}_t\big)\quad(\text{position, cash, working orders, pending fills}),$$
+$$
+\sigma_t=\big(q_t,\ c_t,\ \mathcal{W}_t,\ \mathcal{P}_t\big)\quad(\text{position, cash, working orders, pending fills}),
+$$
 
 and let the loop advance it by
 
-$$\sigma_{t_{k+1}}=\mathcal{F}\big(\sigma_{t_k},\ e^*\big),\qquad e^*=\arg\min_{e\in\mathcal{Q}} t(e),$$
+$$
+\sigma_{t_{k+1}}=\mathcal{F}\big(\sigma_{t_k},\ e^*\big),\qquad e^*=\arg\min_{e\in\mathcal{Q}} t(e),
+$$
 
 where $\mathcal{F}$ dispatches on `kind`. The P&L is a *functional of the entire path* — orders only fill if a future event satisfies a price/size condition, which itself depends on the orders already resting. The recursion is the engine.
 
 **Where the gap comes from.** The distance between the three numbers is fully attributable, and each term is one of the folder's failure modes:
 
-$$\underbrace{\Pi^{\text{naive}}}_{\text{look-ahead}}\;\longrightarrow\;\underbrace{\Pi^{\text{honest}}}_{\text{shift}(1)}\;\longrightarrow\;\underbrace{\Pi^{\text{event}}}_{\text{spread}+\text{delay}+\text{capacity}}.$$
+$$
+\underbrace{\Pi^{\text{naive}}}_{\text{look-ahead}}\;\longrightarrow\;\underbrace{\Pi^{\text{honest}}}_{\text{shift}(1)}\;\longrightarrow\;\underbrace{\Pi^{\text{event}}}_{\text{spread}+\text{delay}+\text{capacity}}.
+$$
 
 The first arrow removes the off-by-one-bar index error of [[pillars/08-quantitative-development/event-driven-backtesting-engines/01-from-zero-intuition|01]]; the second removes the execution fictions of [[pillars/08-quantitative-development/event-driven-backtesting-engines/05-failure-modes-and-practice|05]]. Decomposed on the numbers below: look-ahead is worth **$3.50\to0.55$ Sharpe** and the execution fictions are worth **$0.55\to0.03$**.
 
@@ -52,7 +60,9 @@ The first arrow removes the off-by-one-bar index error of [[pillars/08-quantitat
 
 **The Sharpe identity.** Both engines are scored the same way — annualised Sharpe of the equity curve's returns:
 
-$$\widehat{SR}=\sqrt{252}\;\frac{\hat\mu}{\hat\sigma},\qquad r_t=\frac{E_t-E_{t-1}}{E_{t-1}},$$
+$$
+\widehat{SR}=\sqrt{252}\;\frac{\hat\mu}{\hat\sigma},\qquad r_t=\frac{E_t-E_{t-1}}{E_{t-1}},
+$$
 
 so the comparison is apples-to-apples: same signal, same data, same metric.
 

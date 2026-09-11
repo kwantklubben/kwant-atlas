@@ -16,7 +16,9 @@ tags:
 
 Almost every latency-sensitive trading system, from a two-person prop shop to a top-tier HFT, is the same **three-stage pipeline**:
 
-$$\underbrace{\text{Feed Handler}}_{\text{decode market data}}\;\longrightarrow\;\underbrace{\text{Strategy}}_{\text{decide}}\;\longrightarrow\;\underbrace{\text{Order Gateway}}_{\text{encode \& send orders}}.$$
+$$
+\underbrace{\text{Feed Handler}}_{\text{decode market data}}\;\longrightarrow\;\underbrace{\text{Strategy}}_{\text{decide}}\;\longrightarrow\;\underbrace{\text{Order Gateway}}_{\text{encode \& send orders}}.
+$$
 
 The stages are connected by **one-way message channels** (in practice, ring buffers — [[pillars/02-algorithmic-hft/low-latency-systems-architecture/04-lock-free-and-ring-buffers|04]]). The objective of this page is to understand the architecture **as a queueing system**, because that is the only rigorous way to answer the questions that actually matter:
 
@@ -44,13 +46,17 @@ The guiding principle throughout is **one thread, one job, one direction of data
 
 Treat each stage as a single server. Arrivals are message events; the service time is the stage's processing cost. The canonical results (**Kendall notation $M/M/1$**, i.e. Poisson arrivals, exponential service, one server):
 
-$$L = \lambda W \quad(\text{Little's law}),\qquad W_q = \frac{\rho}{1-\rho}\,\mathbb{E}[S],\qquad \rho=\lambda\,\mathbb{E}[S].$$
+$$
+L = \lambda W \quad(\text{Little's law}),\qquad W_q = \frac{\rho}{1-\rho}\,\mathbb{E}[S],\qquad \rho=\lambda\,\mathbb{E}[S].
+$$
 
 The mean *time in system* is $W = W_q + \mathbb{E}[S] = \dfrac{\mathbb{E}[S]}{1-\rho}$. **At $\rho=0.5$, $W=2\,\mathbb{E}[S]$; at $\rho=0.9$, $W=10\,\mathbb{E}[S]$; at $\rho=0.99$, $W=100\,\mathbb{E}[S]$.** A stage that looks "twice as fast as needed" is not wasting half its capacity — it is buying a **5x reduction in mean sojourn time** (a **9x** cut in queueing delay proper, $W_q$).
 
 For general service-time variability the **Pollaczek–Khinchine** formula generalises this:
 
-$$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)},\qquad C_s = \frac{\operatorname{std}(S)}{\mathbb{E}[S]}.$$
+$$
+W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)},\qquad C_s = \frac{\operatorname{std}(S)}{\mathbb{E}[S]}.
+$$
 
 Two design laws follow directly:
 

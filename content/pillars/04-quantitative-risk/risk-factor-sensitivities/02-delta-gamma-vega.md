@@ -19,14 +19,18 @@ Pillar 3 *derives* the Greeks so that it can replicate an option and price it. H
 
 The practical objective of this page is to make the **aggregation** step concrete. Sensitivities are *linear in position size*: if you hold $q$ options, your exposure is $q$ times the per-option Greek. Therefore
 
-$$\Delta_{\text{book}}=\sum_i q_i\,\Delta_i,\quad \Gamma_{\text{book}}=\sum_i q_i\,\Gamma_i,\quad \nu_{\text{book}}=\sum_i q_i\,\nu_i,\ \dots$$
+$$
+\Delta_{\text{book}}=\sum_i q_i\,\Delta_i,\quad \Gamma_{\text{book}}=\sum_i q_i\,\Gamma_i,\quad \nu_{\text{book}}=\sum_i q_i\,\nu_i,\ \dots
+$$
 
 **The book has one delta even though it has forty trades.** That collapse — from a book of instruments to a vector of risk factors — is the whole trick, and it is also where the danger lives: the sum hides the *distribution* of curvature across strikes and maturities.
 
 The two relations to internalise:
 
 - **Gamma–theta (the carry identity).** A delta-hedged option earns $\tfrac12\Gamma(\Delta S)^2$ when the market moves and pays $\Theta\,\Delta t$ for the passage of time; risk-neutrally they cancel exactly:
-$$\tfrac12\Gamma S^2\sigma^2=-\Theta_{\text{driftless}}\qquad(\text{Haug §2.15}).$$
+$$
+\tfrac12\Gamma S^2\sigma^2=-\Theta_{\text{driftless}}\qquad(\text{Haug §2.15}).
+$$
 Being long gamma is being long **realised variance** and short **implied variance**. This single sentence is the P&L of every option desk.
 - **Delta-neutral P&L (Hull eq. 19.3).** $\Delta\Pi\approx\Theta\,\Delta t+\tfrac12\Gamma(\Delta S)^2$ — the local expansion that every risk report is built on.
 
@@ -48,7 +52,9 @@ Being long gamma is being long **realised variance** and short **implied varianc
 
 **The key identities (Haug §2.15, §2.3.3).**
 
-$$\Gamma=-\frac{2\Theta_{\text{driftless}}}{S^2\sigma^2},\qquad \nu=\Gamma\,\sigma S^2 T,\qquad \text{Vanna}=\frac{\partial\Delta}{\partial\sigma}=-e\,n(d_1)\frac{d_2}{\sigma},\qquad \text{Volga}=\frac{\partial^2V}{\partial\sigma^2}=\nu\frac{d_1d_2}{\sigma}.$$
+$$
+\Gamma=-\frac{2\Theta_{\text{driftless}}}{S^2\sigma^2},\qquad \nu=\Gamma\,\sigma S^2 T,\qquad \text{Vanna}=\frac{\partial\Delta}{\partial\sigma}=-e\,n(d_1)\frac{d_2}{\sigma},\qquad \text{Volga}=\frac{\partial^2V}{\partial\sigma^2}=\nu\frac{d_1d_2}{\sigma}.
+$$
 
 Vanna is the sensitivity of *delta* to vol — the reason a delta-hedged book acquires delta when the vol surface shifts. Volga is the convexity in vol — the reason long-dated wings pay so well in a vol spike. Both are **cross-Greeks**, and both live in the second-order matrix $H$ of [[pillars/04-quantitative-risk/risk-factor-sensitivities/05-failure-modes-and-practice|05 · Failure Modes]].
 

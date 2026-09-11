@@ -30,16 +30,20 @@ Start with the dumbest question: *what makes a market maker afraid?* A market ma
 
 **The volume clock.** Instead of slicing time into equal *intervals*, slice the tape into equal *volume buckets* of size $V$. Each bucket $\tau$ accumulates exactly $V$ shares, so each bucket carries a comparable amount of trading activity:
 
-$$V_\tau^B+V_\tau^S=V\qquad\forall\,\tau.$$
+$$
+V_\tau^B+V_\tau^S=V\qquad\forall\,\tau.
+$$
 
 Within bucket $\tau$, split the volume into buys $V_\tau^B$ and sells $V_\tau^S$. The **order-flow imbalance** is the absolute difference $|V_\tau^S-V_\tau^B|$ — zero when flow is balanced, $V$ when flow is one-sided.
 
 **Why imbalance proxies for informed trading.** Write $\alpha\mu$ for the expected informed order flow and $2\epsilon$ for the expected uninformed flow (rates introduced properly in [[pillars/06-market-making/toxic-order-flow-and-vpin/03-the-ekop-model|03 · The EKOP Model]]). Because informed traders always trade on the *same* side, they show up as imbalance, while uninformed traders arrive symmetrically and cancel:
 
-$$E\!\left[|V^S-V^B|\right]\approx\alpha\mu,\qquad
+$$
+E\!\left[|V^S-V^B|\right]\approx\alpha\mu,\qquad
 E\!\left[V^S+V^B\right]=\alpha\mu+2\epsilon
 \;\Longrightarrow\;
-\frac{E[|V^S-V^B|]}{E[V^S+V^B]}\approx\frac{\alpha\mu}{\alpha\mu+2\epsilon}=\mathrm{PIN}.$$
+\frac{E[|V^S-V^B|]}{E[V^S+V^B]}\approx\frac{\alpha\mu}{\alpha\mu+2\epsilon}=\mathrm{PIN}.
+$$
 
 **The flash-crash chain.** On May 6, 2010 a large, one-sided institutional sell program overwhelmed the E-mini S&P 500 order book. Market makers detected rising flow toxicity (imbalance) and withdrew liquidity rather than be picked off; with no liquidity to absorb the imbalance, prices cascaded ~9% in minutes (Easley, López de Prado & O'Hara 2011). The lesson: toxicity is the *predictable* precursor — it builds in the order flow *before* the price collapse, which is what makes a real-time toxicity gauge valuable.
 

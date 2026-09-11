@@ -34,7 +34,9 @@ Three "aha"s:
 
 For each tier, latency in time is $t_i = c_i / f$ with clock $f$. The gaps are what make the hierarchy matter:
 
-$$\frac{t_{\text{DRAM}}}{t_{\text{L1}}} \approx \frac{250}{4} \approx 60\times, \qquad \frac{t_{\text{L3}}}{t_{\text{L1}}} \approx \frac{45}{4} \approx 11\times.$$
+$$
+\frac{t_{\text{DRAM}}}{t_{\text{L1}}} \approx \frac{250}{4} \approx 60\times, \qquad \frac{t_{\text{L3}}}{t_{\text{L1}}} \approx \frac{45}{4} \approx 11\times.
+$$
 
 | Tier | Cycles | Time @ 4 GHz |
 |---|---|---|
@@ -49,24 +51,34 @@ $$\frac{t_{\text{DRAM}}}{t_{\text{L1}}} \approx \frac{250}{4} \approx 60\times, 
 
 Let a record have size $s$ bytes, and let the loop access one field at byte-offset $o$ within each record. For $N$ records laid out contiguously (AoS), the accessed offsets are $\{o + k s : k = 0 \dots N-1\}$ and the number of distinct $64$-byte lines touched is
 
-$$L_{\text{AoS}} = \left|\left\{\left\lfloor \frac{o + ks}{64} \right\rfloor : k = 0 \dots N-1\right\}\right|.$$
+$$
+L_{\text{AoS}} = \left|\left\{\left\lfloor \frac{o + ks}{64} \right\rfloor : k = 0 \dots N-1\right\}\right|.
+$$
 
 The **effective bytes fetched per useful field** is $W = 64 L / N$. This is the number that governs performance:
 
 - **AoS** (24-byte order, accessing the 8-byte price): since $\gcd(24,64)=8$, the pattern repeats with period $\text{lcm}(24,64)=192$ bytes $=3$ lines containing $8$ records. Hence
-$$L_{\text{AoS}} = \frac{3}{8}N = 375{,}000\ \text{lines for } N=10^6, \qquad W_{\text{AoS}} = \frac{64 \cdot \tfrac38 N}{N} = 24\ \text{B per price}.$$
+$$
+L_{\text{AoS}} = \frac{3}{8}N = 375{,}000\ \text{lines for } N=10^6, \qquad W_{\text{AoS}} = \frac{64 \cdot \tfrac38 N}{N} = 24\ \text{B per price}.
+$$
 - **SoA** (prices packed, 8 bytes each): $8$ prices per line, so
-$$L_{\text{SoA}} = \frac{N}{8} = 125{,}000\ \text{lines}, \qquad W_{\text{SoA}} = \frac{64 \cdot \tfrac18 N}{N} = 8\ \text{B per price}.$$
+$$
+L_{\text{SoA}} = \frac{N}{8} = 125{,}000\ \text{lines}, \qquad W_{\text{SoA}} = \frac{64 \cdot \tfrac18 N}{N} = 8\ \text{B per price}.
+$$
 
 The ratio is exact and layout-determined, not machine-dependent:
 
-$$\boxed{\ \frac{L_{\text{AoS}}}{L_{\text{SoA}}} = \frac{3N/8}{N/8} = 3\ } \quad\Longrightarrow\quad \text{AoS moves } 3\times \text{ the memory for the same scan.}$$
+$$
+\boxed{\ \frac{L_{\text{AoS}}}{L_{\text{SoA}}} = \frac{3N/8}{N/8} = 3\ } \quad\Longrightarrow\quad \text{AoS moves } 3\times \text{ the memory for the same scan.}
+$$
 
 #### 2.3 SoA enables SIMD (vectorisation)
 
 Once prices are contiguous 8-byte values, one 256-bit AVX register holds $4$ doubles ($\mathbf{256/64 = 4}$) or a 512-bit register holds $8$ — so a single instruction compares or adds that many prices at once. Vector width $W_v$ and per-value bytes $b$ give the lanes per instruction:
 
-$$\text{lanes} = \frac{W_v}{b}, \qquad b=8\ \text{B} \Rightarrow \text{lanes} = \frac{512}{64}=8 \ (\text{AVX-512}).$$
+$$
+\text{lanes} = \frac{W_v}{b}, \qquad b=8\ \text{B} \Rightarrow \text{lanes} = \frac{512}{64}=8 \ (\text{AVX-512}).
+$$
 
 SoA is *what makes SIMD possible*: a strided AoS layout cannot be loaded into a vector register with one aligned load. The flat overview page at [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]] works through the AoS-vs-SoA line-count arithmetic that makes the point — the C++ side of this arithmetic.
 
@@ -74,7 +86,9 @@ SoA is *what makes SIMD possible*: a strided AoS layout cannot be loaded into a 
 
 Two variables $A$ and $B$ written by different cores share a line whenever $\lfloor \text{addr}(A)/64 \rfloor = \lfloor \text{addr}(B)/64 \rfloor$. The MESI cache-coherence protocol then bounces the line between cores; each write invalidates the other core's copy, turning an $O(1)$ store into a cross-core coherence transaction (~40–100 ns). The remedy is to pad the variable to a full **cache line**:
 
-$$\text{struct alignas(64)}\ \{\ \text{std::atomic<uint64_t> counter};\ \text{char pad}[64 - 8];\ \};$$
+$$
+\text{struct alignas(64)}\ \{\ \text{std::atomic<uint64_t> counter};\ \text{char pad}[64 - 8];\ \};
+$$
 
 so that no two independently-written fields ever co-reside in one line.
 

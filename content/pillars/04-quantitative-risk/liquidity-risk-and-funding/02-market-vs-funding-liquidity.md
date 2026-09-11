@@ -38,23 +38,33 @@ Market and funding liquidity are the pair that interact; monetary liquidity is t
 - **Quoted/relative spread** (Foucault eq. 2.1): $S=a-b$, $s=(a-b)/m$.
 - **Effective half-spread** (eq. 2.3): $S_e = d\,(p-m)$, $d=\pm1$ the trade direction — the *actual* cost of a trade relative to the prevailing midquote, capturing price improvement.
 - **Price impact / Kyle lambda** (eq. 2.8; Hasbrouck Ch 7):
-$$\Delta m_t=\lambda q_t+\varepsilon_t,\qquad \frac1\lambda = \text{market depth}.$$
+$$
+\Delta m_t=\lambda q_t+\varepsilon_t,\qquad \frac1\lambda = \text{market depth}.
+$$
   Stoll (2000), cited in Foucault: $\lambda>0$ for 98% of stocks and significant for 63%; the price impact of a unit order is ~0.75% for the smallest NYSE/AMEX caps vs ~0.52% for the largest.
 - **Amihud illiquidity ratio** (Amihud 2002; Foucault eq. 2.9):
-$$I_t=\frac{|r_t|}{\text{Vol}_t}\quad\text{(price move per currency traded)},$$
+$$
+I_t=\frac{|r_t|}{\text{Vol}_t}\quad\text{(price move per currency traded)},
+$$
   with the **Amivest liquidity ratio** its reciprocal $L_t=\text{Vol}_t/|r_t|$ (eq. 2.10).
 - **Roll spread estimator** (Foucault eq. 2.18; Hasbrouck Ch 3): from the negative autocovariance induced by bid–ask bounce,
-$$S_R=2\sqrt{-\operatorname{cov}(\Delta p_{t+1},\Delta p_t)}.$$
+$$
+S_R=2\sqrt{-\operatorname{cov}(\Delta p_{t+1},\Delta p_t)}.
+$$
 - **Resiliency**: the speed at which these costs decay after a trade — the third leg of Hasbrouck's depth/breadth/resiliency triad.
 
 **2.2 Measuring funding liquidity (the haircut).**
 
 A secured lender advances $P(1-m)$ against collateral worth $P$, so the borrower's equity is $mP$ and the constraint is $P\le N/m$. Setting the haircut from the collateral's VaR at confidence $\alpha$ over the *margin period of risk* (MPOR, the liquidation delay in the event of default) gives the risk-based rule
-$$m=z_\alpha\,\sigma_{\text{MPOR}}=z_\alpha\,\sigma\sqrt{\Delta t_{\text{MPOR}}}.$$
+$$
+m=z_\alpha\,\sigma_{\text{MPOR}}=z_\alpha\,\sigma\sqrt{\Delta t_{\text{MPOR}}}.
+$$
 This is why a vol spike *automatically* tightens funding: both $z_\alpha\sigma$ and the MPOR itself lengthen in stress.
 
 **2.3 The return premium: market liquidity is priced.** Foucault eq. (9.6) shows the **gross expected return** required on an illiquid asset:
-$$R\simeq r+\frac{s}{h},\qquad h=\text{expected holding period},$$
+$$
+R\simeq r+\frac{s}{h},\qquad h=\text{expected holding period},
+$$
 so an asset with spread $s$ must earn an extra $s/h$ per period; the Amihud–Mendelson clientele logic and the liquidity-adjusted CAPM of Acharya–Pedersen (2005) generalise this into four liquidity betas (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/06-advanced-extensions|06 · Advanced Extensions]]). Estimated cross-sectionally (Foucault Ch 9), $R_i=0.0036+0.00672\,\beta_i+0.211\,s_i$ — the spread term is economically large.
 
 ---

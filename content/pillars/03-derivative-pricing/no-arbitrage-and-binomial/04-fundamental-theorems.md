@@ -33,15 +33,21 @@ The practical objective: know the **three cases** a market can be in, and know w
 
 #### 2.2 The theorems
 
-$$\boxed{\textbf{FT1:}\quad\text{market is arbitrage-free}\iff\widetilde{\mathbb P}\text{ exists}}$$
+$$
+\boxed{\textbf{FT1:}\quad\text{market is arbitrage-free}\iff\widetilde{\mathbb P}\text{ exists}}
+$$
 
-$$\boxed{\textbf{FT2:}\quad\text{market is complete}\iff\widetilde{\mathbb P}\text{ is unique}}$$
+$$
+\boxed{\textbf{FT2:}\quad\text{market is complete}\iff\widetilde{\mathbb P}\text{ is unique}}
+$$
 
 Shreve II proves FT1 as Thm 5.4.7 and FT2 as Thm 5.4.9; Björk states both for the finite-state one-period model in Ch 3 (no-arbitrage ⟺ existence of strictly positive state prices, via **Farkas' lemma**; completeness ⟺ $\mathrm{Ker}[D]=0$).
 
 **The operator form.** In Björk's one-period $M$-state, $N$-asset market with normalized prices $Z$, a portfolio $h\in\mathbb R^N$ costs $hZ_0$ and pays $hD^Z$ (the $M\times N$ payoff matrix, first row all ones). No-arbitrage says: no $h$ with $hZ_0\le0$ and $hD^Z>0$. Farkas' lemma converts that statement about *portfolios* into the existence of a positive vector $q$ with
 
-$$Z_0=D^Zq,\qquad q_j>0,\quad \textstyle\sum_jq_j=1 .$$
+$$
+Z_0=D^Zq,\qquad q_j>0,\quad \textstyle\sum_jq_j=1 .
+$$
 
 Completeness is the dual statement $\mathrm{Im}[D^{*}]=\mathbb R^M$ — enough independent assets to span *every* state. **Two faces of one theorem: prices exist iff the payoff matrix is spanned; prices are unique iff it is spanned exactly.**
 
@@ -49,7 +55,9 @@ Completeness is the dual statement $\mathrm{Im}[D^{*}]=\mathbb R^M$ — enough i
 
 For $m$ stocks and $d$ Brownian drivers, $dS_i=\alpha_iS_i\,dt+S_i\sum_j\sigma_{ij}dW_j$, the EMM is built from $\Theta$ solving (Shreve II eq. 5.4.18)
 
-$$\alpha_i(t)-R(t)=\sum_{j=1}^{d}\sigma_{ij}(t)\,\Theta_j(t),\qquad i=1,\dots,m .$$
+$$
+\alpha_i(t)-R(t)=\sum_{j=1}^{d}\sigma_{ij}(t)\,\Theta_j(t),\qquad i=1,\dots,m .
+$$
 
 These are **$m$ equations in $d$ unknowns** — one unknown per *source of randomness*, not per stock:
 

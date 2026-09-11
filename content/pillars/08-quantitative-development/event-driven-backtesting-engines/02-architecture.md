@@ -34,28 +34,40 @@ The objective is to internalise one sentence: **each arrow in that table is a ty
 
 **The event type.** An event is a 4-tuple with a total order defined on it:
 
-$$e=(t,\;p,\;\text{kind},\;\text{payload}),\qquad e_1\prec e_2\iff (t_1,p_1,s_1) <_{\text{lex}} (t_2,p_2,s_2),$$
+$$
+e=(t,\;p,\;\text{kind},\;\text{payload}),\qquad e_1\prec e_2\iff (t_1,p_1,s_1) <_{\text{lex}} (t_2,p_2,s_2),
+$$
 
 where $s$ is a monotonically increasing arrival counter. The third key exists for one reason: **determinism**. If two events share a timestamp and a priority, something must break the tie, and it must break it the *same way on every run* — otherwise your backtest is not reproducible and your results are not a fact.
 
 **The priority lattice.** The four kinds are ranked so that a market update is always processed before the orders it triggers, and orders before the fills they cause:
 
-$$\text{MARKET}(0) \prec \text{SIGNAL}(1) \prec \text{ORDER}(2) \prec \text{FILL}(3).$$
+$$
+\text{MARKET}(0) \prec \text{SIGNAL}(1) \prec \text{ORDER}(2) \prec \text{FILL}(3).
+$$
 
 This ordering is what makes the trace below legible: at any timestamp $t$, all market data for $t$ is handled first, then the strategy's reaction, then the portfolio's order, then fills.
 
 **The loop invariant.** The single most important property of the whole engine:
 
-$$\forall\,e\ \text{popped at time }t_e:\quad e.\text{payload is a function only of events with timestamp}\le t_e.$$
+$$
+\forall\,e\ \text{popped at time }t_e:\quad e.\text{payload is a function only of events with timestamp}\le t_e.
+$$
 
 Every component contract exists to preserve this invariant. Break it once — let Strategy peek at `bars[t+1]`, let the ExecutionHandler fill at the mid of the bar that *generated* the order — and the entire backtest becomes fiction.
 
 **The component signatures** (the arrows of the table, as functions):
 
-$$\textsc{DataHandler}\to\texttt{MARKET}(t,S^{\text{bid}},S^{\text{ask}},V),$$
-$$\textsc{Strategy}:\texttt{MARKET}\to\texttt{SIGNAL}(t,q^*),\qquad
-\textsc{Portfolio}:\texttt{SIGNAL}\to\texttt{ORDER}(t,\operatorname{sgn}(\Delta q),|\Delta q|),$$
-$$\textsc{ExecutionHandler}:\texttt{ORDER}\to\texttt{FILL}(t+\tau,q_{\text{fill}},P_{\text{fill}}).$$
+$$
+\text{DataHandler}\to\texttt{MARKET}(t,S^{\text{bid}},S^{\text{ask}},V),
+$$
+$$
+\text{Strategy}:\texttt{MARKET}\to\texttt{SIGNAL}(t,q^*),\qquad
+\text{Portfolio}:\texttt{SIGNAL}\to\texttt{ORDER}(t,\operatorname{sgn}(\Delta q),|\Delta q|),
+$$
+$$
+\text{ExecutionHandler}:\texttt{ORDER}\to\texttt{FILL}(t+\tau,q_{\text{fill}},P_{\text{fill}}).
+$$
 
 Note that the strategy emits a **target position** $q^*$, never an order. The mapping from target to order (the delta, and the netting of working orders) belongs to the Portfolio — which is exactly why the naive engine in [[pillars/08-quantitative-development/event-driven-backtesting-engines/03-the-event-loop|03]] double-submits if you forget it.
 

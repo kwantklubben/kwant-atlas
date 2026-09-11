@@ -30,7 +30,9 @@ The objective: compute a Kyle equilibrium, recover its price-impact and impoundi
 
 $v\sim N(p_0,\Sigma_0)$; informed demand $x=\frac{v-p_0}{2\lambda}=\beta(v-p_0)$; noise $u\sim N(0,\sigma_u^2)$; market maker sees total flow $y=x+u$ and posts
 
-$$p=\lambda y+\mu,\qquad \lambda=\tfrac12\sqrt{\tfrac{\Sigma_0}{\sigma_u^2}},\qquad \beta=\sqrt{\sigma_u^2/\Sigma_0},\qquad \mu=p_0.$$
+$$
+p=\lambda y+\mu,\qquad \lambda=\tfrac12\sqrt{\tfrac{\Sigma_0}{\sigma_u^2}},\qquad \beta=\sqrt{\sigma_u^2/\Sigma_0},\qquad \mu=p_0.
+$$
 
 **Kyle's lambda** $\lambda$ is the price impact per unit order flow; depth is $1/\lambda$. Magnitudes: $Var[v\mid p]=Var[v\mid y]=\Sigma_0/2$ — **half the private information is impounded, independent of noise intensity** — and informed profit $\mathbb{E}\pi=\frac{(v-p_0)^2}{2}\sqrt{\sigma_u^2/\Sigma_0}$ rises with the squared value divergence and with noise-trading variance (camouflage). Multi-period: the insider "slices and dices," $\Delta x_n=\beta_n(v-p_{n-1})\Delta t$, each round pricing in a further sliver (Hasbrouck Ch 7 §7.2). Price impact model in practice: $\Delta P=\lambda\,Q$ — the market-impact workhorse.
 
@@ -38,7 +40,9 @@ $$p=\lambda y+\mu,\qquad \lambda=\tfrac12\sqrt{\tfrac{\Sigma_0}{\sigma_u^2}},\qq
 
 On each of many days an information event occurs with probability $\alpha$; when it does, informed traders arrive at intensity $\mu$ and always trade on the right side; uninformed arrive on both sides at intensity $\epsilon$. Daily buys $b\sim Poisson$, sells $s\sim Poisson$, so over $D$ days the likelihood is a Poisson-mixture of textbooks (eq 6.3) whose model parameters $\alpha,\mu,\epsilon$ are estimated by MLE, giving
 
-$$\mathrm{PIN}=\frac{\alpha\mu}{\alpha\mu+2\epsilon}\in[0,1].$$
+$$
+\mathrm{PIN}=\frac{\alpha\mu}{\alpha\mu+2\epsilon}\in[0,1].
+$$
 
 The *product* $\alpha\mu$ is identified (so PIN is stable/estimable even though $\alpha,\mu$ separately are imprecise — Hasbrouck Ch 6). PIN is the empirical estimate of the GM informed-fraction and of order-flow toxicity.
 

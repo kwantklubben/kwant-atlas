@@ -30,7 +30,9 @@ Every failure mode in this folder has a *tool* that fixes it. This page is the *
 
 Under the null of zero skill, the *expected maximum* in-sample Sharpe of $N$ independently tried strategies is $\approx\sqrt{2\ln N}$ (in units scaled by track length). The DSR measures whether a reported Sharpe $\hat{\mathrm{SR}}$ exceeds that luck floor. For returns with per-period estimated Sharpe $\hat{\mathrm{SR}}$, skewness $\gamma_3$, excess-kurtosis-corrected $\gamma_4$, and $n$ per-period observations, the deflated probability is
 
-$$\mathrm{DSR}=\Phi\!\left[\frac{(\hat{\mathrm{SR}}-\mathrm{SR}_0)\sqrt{n-1}}{\sqrt{1-\gamma_3\hat{\mathrm{SR}}+\frac{\gamma_4-1}{4}\hat{\mathrm{SR}}^2}}\right],$$
+$$
+\mathrm{DSR}=\Phi\!\left[\frac{(\hat{\mathrm{SR}}-\mathrm{SR}_0)\sqrt{n-1}}{\sqrt{1-\gamma_3\hat{\mathrm{SR}}+\frac{\gamma_4-1}{4}\hat{\mathrm{SR}}^2}}\right],
+$$
 
 where $\mathrm{SR}_0=\sqrt{2\ln N}/\sqrt{n}$ is the expected-maximum benchmark. For Normal returns ($\gamma_3=0,\ \gamma_4=3$) the denominator is $\sqrt{1+\tfrac12\hat{\mathrm{SR}}^2}$. The DSR is the probability that the true Sharpe exceeds the best of $N$ pure-luck strategies — the honest, selection-bias-corrected score.
 
@@ -38,7 +40,9 @@ where $\mathrm{SR}_0=\sqrt{2\ln N}/\sqrt{n}$ is the expected-maximum benchmark. 
 
 A price is $I(1)$; differencing once ($d=1$) makes it stationary but wipes out memory. The fractional difference with order $0<d<1$ uses weights
 
-$$w_k=(-1)^k\binom{d}{k},\qquad \binom{d}{k}=\prod_{i=1}^{k}\frac{d-i+1}{i},\qquad X_t^{(d)}=\sum_{k=0}^{l}w_k X_{t-k}.$$
+$$
+w_k=(-1)^k\binom{d}{k},\qquad \binom{d}{k}=\prod_{i=1}^{k}\frac{d-i+1}{i},\qquad X_t^{(d)}=\sum_{k=0}^{l}w_k X_{t-k}.
+$$
 
 Because $|w_k|$ decays like $k^{-d-1}$ (unlike the sharp $d=1$ truncation), a fractionally-differenced series stays stationary while retaining long-memory dependence — the exact tradeoff AFML calls *stationarity with maximum memory preservation*.
 

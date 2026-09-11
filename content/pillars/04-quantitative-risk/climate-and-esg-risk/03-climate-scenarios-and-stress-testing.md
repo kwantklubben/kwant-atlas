@@ -33,26 +33,34 @@ The practical objective of this page is to assemble those narratives into a **pr
 
 A scenario set is a finite probability space $(\Omega_s,\mathcal F_s,\mathbb Q)$ with $\Omega_s=\{1,\dots,N\}$, $\mathbb Q(\{k\})=q_k>0$, $\sum_k q_k=1$. Each scenario $k$ carries a shock triple $(\Delta p_k,\Delta T_k,m_k)$ — carbon price, warming, market return — and each holding $i$ has exposures $(b^c_i,b^p_i,\beta_i)$. The portfolio scenario return is the bottom-up identity
 
-$$\boxed{\ R_k=\sum_i w_i\left(b^c_i\frac{\Delta p_k}{100}+b^p_i\,\Delta T_k+\beta_i\,m_k\right),\qquad L_k=-R_k\ }$$
+$$
+\boxed{\ R_k=\sum_i w_i\left(b^c_i\frac{\Delta p_k}{100}+b^p_i\,\Delta T_k+\beta_i\,m_k\right),\qquad L_k=-R_k\ }
+$$
 
 The loss distribution is then the discrete law $\mathbb Q\circ L^{-1}$, and the measures are the *same* functionals used for market risk — the discretisation changes, not the mathematics:
 
-$$\mathrm{VaR}_\alpha(L)=\inf\{l:\mathbb Q(L>l)\le1-\alpha\},\qquad
-\mathrm{ES}_\alpha(L)=\frac{1}{1-\alpha}\int_\alpha^1\mathrm{VaR}_u(L)\,du .$$
+$$
+\mathrm{VaR}_\alpha(L)=\inf\{l:\mathbb Q(L>l)\le1-\alpha\},\qquad
+\mathrm{ES}_\alpha(L)=\frac{1}{1-\alpha}\int_\alpha^1\mathrm{VaR}_u(L)\,du .
+$$
 
 For a discrete law the quantile integral must be computed on the *probability-mass grid* (the boundary correction that the VaR folder warns about), i.e. $\mathrm{ES}_\alpha=\frac{1}{1-\alpha}\sum_k L_k\,\big[\text{mass of }L_k\text{ beyond }\alpha\big]$.
 
 #### 2.2 The resolution limit of a finite scenario set
 
 Let $p_{\max}=\max_k q_k$ be the largest scenario weight and $L_{\max}$ the worst loss. The quantile is identified by the scenarios for $\alpha\le 1-p_{\max}$, but for
-$$\alpha>1-p_{\max}:\qquad \mathrm{VaR}_\alpha(L)=L_{\max}$$
+$$
+\alpha>1-p_{\max}:\qquad \mathrm{VaR}_\alpha(L)=L_{\max}
+$$
 because the mass strictly beyond every interior scenario point already exceeds $1-\alpha$. In the code below $p_{\max}=0.20$, so **every confidence level above $80\%$ collapses onto the worst scenario** — $\mathrm{VaR}_{80\%}=20.64\%$ (interior) but $\mathrm{VaR}_{90\%}=\mathrm{ES}_{90\%}=28.02\%=L_{\max}$. A scenario stress test inherits a **hard ceiling on the confidence level it can express**, and a risk report quoting a $99\%$ climate VaR from six scenarios is quoting its worst narrative with a probability label attached.
 
 #### 2.3 Re-introducing the tail: the transition-jump mixture
 
 Return-based risk and scenario risk are reconciled by a **mixture**: most days are ordinary, and with probability $q$ the transition narrative lands as a jump,
 
-$$L=(1-\textstyle\sum q_j)\,\mathcal N(0,\sigma^2)+\sum_j q_j\,\delta_{J_j},$$
+$$
+L=(1-\textstyle\sum q_j)\,\mathcal N(0,\sigma^2)+\sum_j q_j\,\delta_{J_j},
+$$
 
 i.e. an $\varepsilon$-contamination model. Its closed-form ES is a mass-weighted average of the components' tail integrals, so a jump that barely moves the $99\%$ *quantile* moves the $99\%$ *average* substantially — the same asymmetry, and the same tail-blindness lesson, as the VaR folder ([[pillars/04-quantitative-risk/var-and-expected-shortfall/05-failure-modes-and-practice|VaR/ES · 05 · §3]]). That asymmetry is the theoretical reason supervisors moved market-risk capital onto **Expected Shortfall at $97.5\%$** under FRTB (BCBS, 2019): a measure that prices the size of the shock, not just its frequency.
 

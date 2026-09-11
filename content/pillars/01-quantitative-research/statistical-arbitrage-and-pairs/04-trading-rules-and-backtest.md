@@ -27,7 +27,9 @@ The standard deviation is the natural unit because the OU spread is Gaussian in 
 
 Rolling on the formation window (or an expanding window), estimate $\mu_z,\sigma_z$ of the spread $z_t=y_t-\hat\beta x_t$, and define
 
-$$Z_t=\frac{z_t-\mu_z}{\sigma_z}.$$
+$$
+Z_t=\frac{z_t-\mu_z}{\sigma_z}.
+$$
 
 **Canonical rule** (the flat-file convention, made precise):
 
@@ -44,15 +46,19 @@ The stop is not arbitrary: under a correct model, $\lvert Z\rvert\ge3.5$ should 
 
 Avellaneda & Lee define the dimensionless **s-score** from the OU parameters over a 60-day window,
 
-$$s_i=\frac{X_i(t)-m_i}{\sigma_{\text{eq},i}},\qquad \sigma_{\text{eq},i}=\sqrt{\frac{\operatorname{Var}(\zeta)}{1-b^2}},$$
+$$
+s_i=\frac{X_i(t)-m_i}{\sigma_{\text{eq},i}},\qquad \sigma_{\text{eq},i}=\sqrt{\frac{\operatorname{Var}(\zeta)}{1-b^2}},
+$$
 
 and trade: **open short if $s>+1.25$**, **open long if $s<-1.25$**, **close short at $s<+0.75$**, **close long at $s>-0.50$.** Including the drift $\alpha_i$ gives the "modified s-score" $s_{\text{mod},i}=s_i-\alpha_i\tau_i/\sigma_{\text{eq},i}$, which just shifts the thresholds by $\approx0.3$ in practice — the built-in momentum term.
 
 #### 2.3 The P&L identity (why pairs trading is "free" of the market)
 
-Long \$1 of $y$, short \$\hat\beta of $x$. In log-price space the one-period portfolio return is
+Long $$\$1 of $y$, short $\$\hat\beta$ of $x$. In log-price space the one-period portfolio return is
 
-$$r_{p,t+1}=\Delta\ln y_{t+1}-\hat\beta\,\Delta\ln x_{t+1}=\Delta z_{t+1}.$$
+$$
+r_{p,t+1}=\Delta\ln y_{t+1}-\hat\beta\,\Delta\ln x_{t+1}=\Delta z_{t+1}.
+$$
 
 So the cumulative P&L is the change in the spread between entry and exit, and the market factor cancels to first order. Over the holding period from entry at level $z_{\text{in}}$ to exit at $z_{\text{out}}$ the gross P&L is $z_{\text{in}}-z_{\text{out}}$ (for a short-spread position), i.e. $\propto$ the number of standard deviations captured.
 
@@ -60,7 +66,9 @@ So the cumulative P&L is the change in the spread between entry and exit, and th
 
 With per-period returns $r_{p,t}$, the annualised Sharpe is
 
-$$\text{SR}=\frac{\bar r_p}{\hat\sigma(r_p)}\sqrt{252}.$$
+$$
+\text{SR}=\frac{\bar r_p}{\hat\sigma(r_p)}\sqrt{252}.
+$$
 
 Transaction costs enter as $c\cdot\lvert\Delta\text{position}\rvert$ per change with $c\approx5$ bp **per leg** (10 bp round-trip for the two-leg book), and borrow cost on the short leg accrues daily. A pairs strategy's gross Sharpe is high; the net Sharpe is a *cost-and-turnover* phenomenon, which is exactly why the half-life matters (fast reversion → shorter holding → more turnover).
 

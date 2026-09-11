@@ -34,7 +34,9 @@ The ladder, intuitively:
 
 **Scenario matrix = tensor of factor states.** A two-factor matrix is the outer product of shock sets $\{\Delta F_1^{(i)}\}\times\{\Delta F_2^{(j)}\}$, evaluated at each cell:
 
-$$\Delta V_{ij}=\beta_1\Delta F_1^{(i)}+\beta_2\Delta F_2^{(j)}+\beta_{12}\,\Delta F_1^{(i)}\Delta F_2^{(j)}+\dots$$
+$$
+\Delta V_{ij}=\beta_1\Delta F_1^{(i)}+\beta_2\Delta F_2^{(j)}+\beta_{12}\,\Delta F_1^{(i)}\Delta F_2^{(j)}+\dots
+$$
 
 The $\beta_{12}$ cross term captures statistical interaction; the worked example below uses $\beta_{12}=0$, so its dominating cell is the *joint-occurrence* corner where both factors move badly together — exactly the correlation-breakdown the matrix exists to expose (the example demonstrates simultaneity, not curvature).
 

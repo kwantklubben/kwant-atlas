@@ -41,7 +41,9 @@ Gregory (Table 17.7) splits WWR into two kinds:
 
 The independent CVA formula uses $\text{EPE}(t,t_i)$, the *unconditional* expected exposure. WWR replaces it with the exposure **conditional on default at that date**:
 
-$$\text{CVA}^{\text{WWR}}=-\text{LGD}\sum_i \text{EPE}\!\left(t,t_i \mid t_i=\tau_C\right)\text{PD}(t_{i-1},t_i).$$
+$$
+\text{CVA}^{\text{WWR}}=-\text{LGD}\sum_i \text{EPE}\!\left(t,t_i \mid t_i=\tau_C\right)\text{PD}(t_{i-1},t_i).
+$$
 
 A single dependence parameter drives a conditional-EPE formula (Gregory Appendix 17F): at a correlation of $+50\%$ the conditional EPE roughly **doubles**; at $-50\%$ it at least **halves**. The critical and counter-intuitive result: **WWR increases as counterparty credit quality improves** — the default of a strong name is a bigger shock, so a portfolio of *AAA* counterparties can carry the largest relative WWR.
 
@@ -50,7 +52,9 @@ A single dependence parameter drives a conditional-EPE formula (Gregory Appendix
 Strong empirical support for jumps (Gregory §17.6.4): implied quanto jumps in CDS markets of **83% for AAA** and **27% for BBB** sovereigns (Levy–Levin 1999); euro-crisis EUR/USD jumps of 9–25% for Greece/Italy/Spain/Germany; Chung–Gregory (2019) financials 13.5%, non-financials 8%, sovereign 38.4%. Pure intensity models **cannot** reproduce this (Ehlers–Schönbucher 2006) — the exposure must be allowed to *gap*, not just diffuse, on the default event.
 
 **Jump-to-default P&L** for a hedged book (Gregory Eq 21.2):
-$$\text{JTD P\&L}=-\underbrace{\text{current exposure}\times\text{LGD}}_{\text{loss on default}}+\underbrace{\text{CDS notional}\times\text{CDS LGD}}_{\text{hedge payoff}}-\underbrace{\text{current CVA contribution}}_{}.$$
+$$
+\text{JTD P\&L}=-\underbrace{\text{current exposure}\times\text{LGD}}_{\text{loss on default}}+\underbrace{\text{CDS notional}\times\text{CDS LGD}}_{\text{hedge payoff}}-\underbrace{\text{current CVA contribution}}_{}.
+$$
 A CDS hedge of the *wrong maturity* leaves JTD risk; buying short-dated protection is the (rarely available) fix.
 
 #### 2.4 Why collateral fails against WWR

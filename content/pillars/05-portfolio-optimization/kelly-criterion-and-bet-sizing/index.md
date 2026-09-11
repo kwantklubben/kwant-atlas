@@ -16,9 +16,9 @@ tags:
 
 The Kelly criterion answers the one question Markowitz deliberately leaves open: *how much* to bet on an edge, not just *what* to hold. Given a strategy with a positive expected edge, there is a **unique fraction of capital** that maximises the long-run **growth rate** $g=\mathbb{E}[\ln W]$ — the compounded, time-average return you actually live with. Bet too little and you leave growth on the table; bet too much and the **volatility drag** $-\tfrac12\sigma^2f^2$ turns compounding negative; past a critical fraction **ruin becomes almost sure even with a genuine edge**.
 
-Layered on the mean-variance machinery of this pillar: every Sharpe ratio $S$ is worth $S^2/2$ of growth, and the *continuous* Kelly fraction $f^\*=(m-r)/s^2$ is, in exact form, the **tangency (maximum-Sharpe) portfolio scaled by risk** — so Kelly is the growth-optimal objective that MPT's quadratic utility approximates. This folder is the pillar's **deployment layer**: it takes a validated edge and sizes the position safely.
+Layered on the mean-variance machinery of this pillar: every Sharpe ratio $S$ is worth $S^2/2$ of growth, and the *continuous* Kelly fraction $f^*=(m-r)/s^2$ is, in exact form, the **tangency (maximum-Sharpe) portfolio scaled by risk** — so Kelly is the growth-optimal objective that MPT's quadratic utility approximates. This folder is the pillar's **deployment layer**: it takes a validated edge and sizes the position safely.
 
-> **The one-sentence essence.** "Maximise $\mathbb{E}[\ln W]$, not $\mathbb{E}[W]$: the full-Kelly fraction $f^\*$ is the unique growth-optimiser, and because $f^\*$ is estimated — and overbetting is punished far more severely than underbetting — practice sizes at a *fraction* of Kelly."
+> **The one-sentence essence.** "Maximise $\mathbb{E}[\ln W]$, not $\mathbb{E}[W]$: the full-Kelly fraction $f^*$ is the unique growth-optimiser, and because $f^*$ is estimated — and overbetting is punished far more severely than underbetting — practice sizes at a *fraction* of Kelly."
 
 ---
 
@@ -30,17 +30,17 @@ Layered on the mean-variance machinery of this pillar: every Sharpe ratio $S$ is
 
 | Quantity | Formula | Verified check |
 |---|---|---|
-| Discrete even-money Kelly | $f^\* = p - q$ | $p{=}0.55 \Rightarrow f^\*{=}0.1000$, $g(f^\*){=}0.005008$ |
-| Discrete unequal-payoff Kelly | $f^\*=m/(ab),\ m=bp-aq$ | $b{=}2,a{=}1,p{=}0.4 \Rightarrow f^\*{=}0.1000$ |
+| Discrete even-money Kelly | $f^* = p - q$ | $p{=}0.55 \Rightarrow f^*{=}0.1000$, $g(f^*){=}0.005008$ |
+| Discrete unequal-payoff Kelly | $f^*=m/(ab),\ m=bp-aq$ | $b{=}2,a{=}1,p{=}0.4 \Rightarrow f^*{=}0.1000$ |
 | Discrete growth rate | $g(f)=p\ln(1+bf)+q\ln(1-af)$ | at $f{=}0.20,p{=}0.55$: $g{=-}0.00014$ |
 | Critical fraction (ruin) | solves $g(f_c)=0$ | $p{=}0.55 \Rightarrow f_c{=}0.198668$ |
-| **Continuous Kelly** | $\boxed{f^\*=\dfrac{m-r}{s^2}}$ | $m{=}.11,s{=}.15,r{=}.06 \Rightarrow f^\*{=}2.2222$ |
-| Continuous growth rate | $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ | $g_\infty(f^\*) = 0.115556$ |
-| Max growth via Sharpe | $g_\infty(f^\*)=\dfrac{S^2}{2}+r$ | $S{=}0.3333 \Rightarrow 0.115556$ |
+| **Continuous Kelly** | $\boxed{f^*=\dfrac{m-r}{s^2}}$ | $m{=}.11,s{=}.15,r{=}.06 \Rightarrow f^*{=}2.2222$ |
+| Continuous growth rate | $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ | $g_\infty(f^*) = 0.115556$ |
+| Max growth via Sharpe | $g_\infty(f^*)=\dfrac{S^2}{2}+r$ | $S{=}0.3333 \Rightarrow 0.115556$ |
 | Critical fraction (continuous) | solves $g_\infty(f_c)=0$ | $f_c{=}5.427$ (upper root) |
-| **Fractional Kelly** | $f=cf^\*$; $g(cf^\*)/g(f^\*)=c(2-c)$ *(exact when $r{=}0$; with a riskless rate the ratio holds only on the excess-growth part)* | half-Kelly $c{=}0.5$: keeps $0.75\,g^\*$ at half risk |
+| **Fractional Kelly** | $f=cf^*$; $g(cf^*)/g(f^*)=c(2-c)$ *(exact when $r{=}0$; with a riskless rate the ratio holds only on the excess-growth part)* | half-Kelly $c{=}0.5$: keeps $0.75\,g^*$ at half risk |
 
-> **The asymmetry that justifies fractional Kelly.** Half Kelly ($c=\tfrac12$) keeps $c(2-c)=\tfrac34$ of the growth rate with **half** the volatility — give up 25% of growth to halve risk. Because the growth function is *concave* and asymmetric around $f^\*$, an overbet of $\Delta f$ costs more than an underbet of the same size, and overbetting past $f_c$ destroys the account (see [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/04-fractional-kelly-and-ruin|04 · Fractional Kelly & Ruin]]).
+> **The asymmetry that justifies fractional Kelly.** Half Kelly ($c=\tfrac12$) keeps $c(2-c)=\tfrac34$ of the growth rate with **half** the volatility — give up 25% of growth to halve risk. Because the growth function is *concave* and asymmetric around $f^*$, an overbet of $\Delta f$ costs more than an underbet of the same size, and overbetting past $f_c$ destroys the account (see [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/04-fractional-kelly-and-ruin|04 · Fractional Kelly & Ruin]]).
 
 ---
 
@@ -77,17 +77,17 @@ g_inf(f*) = 0.115556   (= S^2/2 + r = 0.115556)
 
 Hub signposts — the folder's failure-mode analysis lives in [[pillars/05-portfolio-optimization/kelly-criterion-and-bet-sizing/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
-1. **Parameter error → overbetting ruin.** $f^\*$ is computed from *estimated* $p,m,s$; if the edge or variance is mis-estimated, the "optimal" fraction is already an overbet. In the worked example, a $+1\sigma$ error in $p$ flips a growing strategy into a 73%-ruin losing one — the practitioner's #1 reason to use fractional Kelly.
+1. **Parameter error → overbetting ruin.** $f^*$ is computed from *estimated* $p,m,s$; if the edge or variance is mis-estimated, the "optimal" fraction is already an overbet. In the worked example, a $+1\sigma$ error in $p$ flips a growing strategy into a 73%-ruin losing one — the practitioner's #1 reason to use fractional Kelly.
 2. **Log-utility is the only correct objective.** Maximising $\mathbb{E}[W]$ means "bet everything", which maximises expected wealth and guarantees ruin. Kelly maximises $\mathbb{E}[\ln W]$ precisely to avoid that trap.
-3. **Fat tails break the Gaussian formula.** $gpprox f\mu-	frac12\sigma^2f^2$ understates the tail; a heavy-loss outcome makes the exact log-optimal $f^\*$ *smaller* than the Gaussian approximation, so sizing on the Gaussian number overbets.
-4. **The discrete/continuous divide.** $f^\*=p-q$ assumes even-money, win-or-lose-all; leverage/unbalanced payout requires $f^\*=(m-r)/s^2$ or $m/(ab)$. Mixing the two mis-sizes badly when $f^\*>1$ (borrowable).
+3. **Fat tails break the Gaussian formula.** $g\approx f\mu-	frac12\sigma^2f^2$ understates the tail; a heavy-loss outcome makes the exact log-optimal $f^*$ *smaller* than the Gaussian approximation, so sizing on the Gaussian number overbets.
+4. **The discrete/continuous divide.** $f^*=p-q$ assumes even-money, win-or-lose-all; leverage/unbalanced payout requires $f^*=(m-r)/s^2$ or $m/(ab)$. Mixing the two mis-sizes badly when $f^*>1$ (borrowable).
 
 ---
 
 ### 5. Canonical Literature & Study References
 
 - **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4):917–926 (1956) — the source: maximise $\mathbb{E}\log V$; growth rate equals information rate. *Corpus-verified.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006; repr. in MacLean–Thorp–Ziemba 2011) — §2 (coin-toss $f^\*=p-q$, $g(f)$, $f_c$), §7.1 (continuous $f^\*=(m-r)/s^2$, $g_\infty$, $S^2/2$), §7.3 (the case for fractional Kelly). *The formula source for this folder.*
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006; repr. in MacLean–Thorp–Ziemba 2011) — §2 (coin-toss $f^*=p-q$, $g(f)$, $f_c$), §7.1 (continuous $f^*=(m-r)/s^2$, $g_\infty$, $S^2/2$), §7.3 (the case for fractional Kelly). *The formula source for this folder.*
 - **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion: Theory and Practice* (World Scientific, 2011) — the anthology of the key results incl. the "good and bad properties of Kelly" survey.
 - **MacLean, Ziemba & Blazenko**: "Growth versus Security in Dynamic Investment Analysis" (Management Science 1992) — the formal fractional-Kelly growth/security trade-off.
 - **Breiman, L.**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961) — asymptotic dominance and time-optimality proofs.

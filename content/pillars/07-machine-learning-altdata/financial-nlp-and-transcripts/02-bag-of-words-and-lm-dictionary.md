@@ -29,13 +29,17 @@ The objective is one sentence: **you need term weights that survive contact with
 
 **TF–IDF.** For document $d$ and term $t$ with count $x_{d,t}$:
 
-$$\text{tf-idf}(t,d)=\underbrace{\frac{x_{d,t}}{\sum_{t'}x_{d,t'}}}_{\text{term frequency (normalized)}}\times\underbrace{\Big(\log\frac{N+1}{df_t+1}+1\Big)}_{\text{inverse document frequency (smoothed)}},$$
+$$
+\text{tf-idf}(t,d)=\underbrace{\frac{x_{d,t}}{\sum_{t'}x_{d,t'}}}_{\text{term frequency (normalized)}}\times\underbrace{\Big(\log\frac{N+1}{df_t+1}+1\Big)}_{\text{inverse document frequency (smoothed)}},
+$$
 
 with $N$ documents and $df_t$ = number of documents containing $t$. The smoothing $+1$ keeps the IDF positive for a term in every document (so rare-vs-common ranking stays stable) and matches the classic implementation (Jurafsky & Martin Ch 6; sklearn's `TfidfTransformer`). **Intuition:** a term scores high only if it is *frequent in this document* *and* *unusual across the corpus* — "impairment" in one 10-K among a hundred that never mention it is exactly the kind of term that should spike.
 
 **The document-distance view.** With term vectors $\mathbf{v}_d=\big(\text{tf-idf}(t,d)\big)_{t}$, two documents are compared by cosine similarity
 
-$$\text{cos}(\mathbf{v}_d,\mathbf{v}_{d'})=\frac{\mathbf{v}_d\cdot\mathbf{v}_{d'}}{\|\mathbf{v}_d\|\|\mathbf{v}_{d'}\|},$$
+$$
+\text{cos}(\mathbf{v}_d,\mathbf{v}_{d'})=\frac{\mathbf{v}_d\cdot\mathbf{v}_{d'}}{\|\mathbf{v}_d\|\|\mathbf{v}_{d'}\|},
+$$
 
 which is the primitive behind both the Cohen–Malloy–Nguyen "did the firm change its language?" metric ($1-\cos$) and nearest-neighbor retrieval on filings.
 

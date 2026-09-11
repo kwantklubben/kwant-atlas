@@ -40,7 +40,9 @@ Three "aha"s:
 
 **The mid-price is a fair-coin walk.** As in Avellaneda–Stoikov, model the reference price as arithmetic Brownian motion with no drift,
 
-$$dS_u=\sigma\,dW_u,$$
+$$
+dS_u=\sigma\,dW_u,
+$$
 
 no drift because the maker has *no view* on direction — neutrality is the whole point.
 
@@ -48,7 +50,9 @@ no drift because the maker has *no view* on direction — neutrality is the whol
 
 **The cure: quote around the reservation price.** The dealer's personal fair value at inventory $I$ and remaining horizon $\tau$ is
 
-$$r(I)=\bar S-\gamma\sigma^2 I\,\tau,$$
+$$
+r(I)=\bar S-\gamma\sigma^2 I\,\tau,
+$$
 
 a position-dependent price. Long ($I>0$) ⇒ $r<\bar S$ — shade *both* quotes down to encourage sells and discourage buys, pulling inventory back to zero. Short ⇒ shade up. The wedge $\gamma\sigma^2\tau$ is the price of one share of inventory risk for horizon $\tau$; the skew is $I$ times that. This one line is the entire intuition of **quote skewing**, and it is the same object Avellaneda–Stoikov call the reservation price.
 

@@ -31,11 +31,15 @@ The NIC is a stage you **configure**, not just read. **RSS** (receive-side scali
 
 **Per-core capacity.** A core at frequency $f$ (≈3 GHz) spends $c$ *cycles* per packet:
 
-$$\Theta_{\text{core}}=\frac{f}{c}\ \text{pkt/s}.$$
+$$
+\Theta_{\text{core}}=\frac{f}{c}\ \text{pkt/s}.
+$$
 
 Kernel path $c\approx2600$ cycles (≈870 ns) ⇒ ~1.15 M pkt/s; bypass $c\approx160$ cycles (≈53 ns) ⇒ ~18.75 M pkt/s. Sustaining 10GbE line rate (14.88 M pkt/s, 84 B min frames) needs
 
-$$n_{\text{cores}}=\frac{R}{\Theta_{\text{core}}} = \frac{14.88\times10^6}{f/c}.$$
+$$
+n_{\text{cores}}=\frac{R}{\Theta_{\text{core}}} = \frac{14.88\times10^6}{f/c}.
+$$
 
 That is **~12.9 cores on the kernel path vs ~0.79 of one core bypassed** — the whole business case in one division. (A misconfigured bypass — polling core on the wrong NUMA node, $c\approx380$ cycles — still needs ~1.9 cores; NUMA matters even bypassed.)
 

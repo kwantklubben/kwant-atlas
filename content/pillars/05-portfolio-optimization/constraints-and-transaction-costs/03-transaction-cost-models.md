@@ -34,17 +34,23 @@ The practical objective is to know which term dominates at your size — and it 
 The linear coefficient $c$ is not a free parameter — it is the *spread*, and microstructure gives it a structural decomposition.
 
 - **Roll (1984), Hasbrouck Ch 3.** With an efficient price $m_t=m_{t-1}+u_t$ and a round-trip transactional cost $c$, trade prices are $p_t=m_t+q_tc$ with $q_t=\pm1$. Then $\gamma_0\equiv\operatorname{Var}(\Delta p_t)=2c^2+\sigma_u^2$ and $\gamma_1\equiv\operatorname{Cov}(\Delta p_{t-1},\Delta p_t)=-c^2$, so
-$$c=\sqrt{-\gamma_1},\qquad \text{spread}=2c .$$
+$$
+c=\sqrt{-\gamma_1},\qquad \text{spread}=2c .
+$$
 - **Glosten–Milgrom (1985), Hasbrouck Ch 5.** With a symmetric value prior ($\delta=\tfrac12$) and fraction $\mu$ of informed traders, the zero-profit spread is $A-B=(V_H-V_L)\mu$ — the *adverse-selection* component.
 - **Generalized Roll (Hasbrouck Ch 8).** Split the cost into a non-informational part $c$ and an adverse-selection/price-impact part $\lambda$: $m_t=m_{t-1}+\lambda q_t+u_t$, $p_t=m_t+cq_t$, so
-$$\boxed{\ \text{spread}=2(c+\lambda)\ },\qquad \gamma_0=c^2+(c+\lambda)^2+\sigma_u^2,\quad \gamma_1=-c(c+\lambda),$$
+$$
+\boxed{\ \text{spread}=2(c+\lambda)\ },\qquad \gamma_0=c^2+(c+\lambda)^2+\sigma_u^2,\quad \gamma_1=-c(c+\lambda),
+$$
 with only $\sigma_w^2=\lambda^2+\sigma_u^2=\gamma_0+2\gamma_1$ identified from two autocovariances. **Kyle (1985), Hasbrouck Ch 7** supplies the equilibrium price impact $\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}$ as a function of value uncertainty $\Sigma_0$ and noise-trading variance $\sigma_u^2$, with $1/\lambda$ the *market depth*. **Amihud's illiquidity ratio** $I_t=\lvert r_t\rvert/\text{Vol}_t$ is the standard empirical proxy for $\lambda$ (Hasbrouck Ch 9.9).
 
 #### 2.2 Quadratic impact (convex)
 
 Model per-trade impact cost with a diagonal matrix $\Lambda=\operatorname{diag}(\eta_1,\dots,\eta_N)$ reflecting each asset's depth:
 
-$$C_{\text{impact}}(\Delta w)=\tfrac12\,\Delta w^\top\Lambda\,\Delta w=\tfrac12\sum_i\eta_i\,(\Delta w_i)^2 .$$
+$$
+C_{\text{impact}}(\Delta w)=\tfrac12\,\Delta w^\top\Lambda\,\Delta w=\tfrac12\sum_i\eta_i\,(\Delta w_i)^2 .
+$$
 
 This is the time-integrated version of the Almgren–Chriss *permanent + temporary* impact model ([[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Pillar 2]]), compressed into one rebalance. Convexity is the whole point: the optimization stays a QP and the answer is unique and computable.
 
@@ -54,12 +60,16 @@ Empirically $C_{\text{impact},i}\propto\sigma_i\,\lvert\Delta w_i\rvert^{3/2}$ (
 
 #### 2.4 The cost-aware portfolio problem
 
-$$\boxed{\ \max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w\;-\;\mathbf c^\top\lvert w-w_0\rvert\;-\;\tfrac12(w-w_0)^\top\Lambda(w-w_0)\ }$$
+$$
+\boxed{\ \max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w\;-\;\mathbf c^\top\lvert w-w_0\rvert\;-\;\tfrac12(w-w_0)^\top\Lambda(w-w_0)\ }
+$$
 
 The **no-trade region** (derived in [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/01-from-zero-intuition|01]]) is the defining feature: for a single asset the optimal action is
 
-$$w^\star=\begin{cases}w_0 & \bigl\lvert w_0-w^\ast\bigr\rvert\le\theta,\\ w^\ast\mp\theta & \text{otherwise},\end{cases}\qquad
-\theta=\frac{c}{\delta\sigma^2},\quad w^\ast=\frac{\mu}{\delta\sigma^2}.$$
+$$
+w^\star=\begin{cases}w_0 & \bigl\lvert w_0-w^\ast\bigr\rvert\le\theta,\\ w^\ast\mp\theta & \text{otherwise},\end{cases}\qquad
+\theta=\frac{c}{\delta\sigma^2},\quad w^\ast=\frac{\mu}{\delta\sigma^2}.
+$$
 
 Written for a portfolio, the $i$-th asset moves only if the alpha gain *in the direction of the trade* exceeds the per-unit cost — which is why the cost-aware solution below leaves two of six weights *exactly* at their current values.
 
@@ -165,7 +175,7 @@ Four verified readings:
 
 1. **Assuming static linear costs.** Treating cost as a constant $c$ in basis points is right at the touch and wrong the moment size matters. In illiquid names or at open/close, the convex and concave regimes dominate and the linear-only solution over-trades by a wide margin.
 2. **Ignoring impact *additivity*.** Summing per-asset impact $\tfrac12\sum_i\eta_i\Delta w_i^2$ assumes your own names are independent. In reality trades share a factor: selling eight correlated names at once is *one* large market-wide trade, and the joint impact is larger than the sum of the parts (a cross-impact matrix $\Lambda$ with off-diagonal entries is the correct object; see [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/06-advanced-extensions|06]]).
-3. **Using one $c$ for the whole universe.** Frontline names and small-caps differ by an order of magnitude in spread. A scalar $c$ makes the optimizer over-trade the expensive names and under-trade the cheap ones — precisely backwards. Hasbrouck's Ch 3 finding that the quoted spread ranged $\$0.01$–$\$0.49$ *within one stock over one month* is the empirical warning.
+3. **Using one $c$ for the whole universe.** Frontline names and small-caps differ by an order of magnitude in spread. A scalar $c$ makes the optimizer over-trade the expensive names and under-trade the cheap ones — precisely backwards. Hasbrouck's Ch 3 finding that the quoted spread ranged \$0.01–\$0.49 *within one stock over one month* is the empirical warning.
 4. **Forgetting that the cost model is a forecast, not a measurement.** $\eta$ and $c$ are estimated from past executions under past conditions. Underestimating them by a factor of two is the single most common cause of a strategy that backtests well and loses money live — quantified in [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/05-failure-modes-and-practice|05]].
 
 ---

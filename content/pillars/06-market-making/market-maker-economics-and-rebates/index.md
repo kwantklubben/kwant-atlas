@@ -26,18 +26,18 @@ This folder is the **economic capstone of Pillar 6**. It is a *hub*: (a) the **f
 
 **Quick-Reference Lookup (job #1).** Formulas below are from Stoll (1978), Grossman & Miller (1988), Colliard & Foucault (2012, RFS 25(11)), Malinova & Park (2015, JF 70(2)), and Hasbrouck (2007) Ch 11–12, with the verified empirical anchors from those papers. Every number in the check column was **re-executed and reproduced exactly** (§3 and the sub-pages).
 
-**Notation:** $h$ quoted half-spread (\$/share), $r=|f_m|\ge0$ maker rebate, $f_t$ take fee, $f_m$ make fee ($f_m=-r$ under a rebate), $\lambda$ expected adverse-selection loss per share, $c_{\text{inv}}$ inventory cost per share, $S^{\text{raw}}$ raw quoted spread, $S^{\text{cum}}$ cum-fee spread, $N$ number of competing makers, $C$ fixed desk cost, $Q$ maker-side annual volume, $\tau$ tick size.
+**Notation:** $h$ quoted half-spread ($ $\$/share), r=|f_m|\ge0 maker rebate, $f_t$ take fee, $f_m$ make fee ($f_m=-r$ under a rebate), $\lambda$ expected adverse-selection loss per share, $c_{\text{inv}}$ inventory cost per share, $S^{\text{raw}}$ raw quoted spread, $S^{\text{cum}}$ cum-fee spread, $N$ number of competing makers, $C$ fixed desk cost, $Q$ maker-side annual volume, $\tau$ tick size.
 
 | Quantity | Formula | Verified anchor |
 |---|---|---|
 | **MM P&L per share** | $\pi = h + r - \lambda - c_{\text{inv}} - f_{\text{take}}\cdot\mathbb{1}[\text{taker}]$ | §3 (Page 02) reproduces $\pi=0.005$ from $h{=}.010,r{=}.002,\lambda{=}.006,c_{\text{inv}}{=}.001$ |
 | Break-even half-spread | $h^{\star} = \lambda + c_{\text{inv}} - r$ | — |
 | **Rebate-adjusted raw half-spread** | $h^{\text{raw}} = h^{\text{net}} - r$ (competitive neutrality) | CF 2012 Prop. 1: breakdown neutral at fixed total fee |
-| Exchange net fee per share | $f_{\text{net}} = f_t + f_m = f_t - r$ | NYSE Arca 2012: $0.30 - \$0.21 = \$0.09$/round lot |
+| Exchange net fee per share | $f_{\text{net}} = f_t + f_m = f_t - r$ | NYSE Arca 2012: $0.30 - $ \$0.21 = \0.09/round lot |
 | Cum-fee spread (round trip, taker) | $S^{\text{cum}} = S^{\text{raw}} + 2 f_t$ | $0.020+2(0.003)=0.026$ |
 | Maker's net spread | $S^{\text{net}} = S^{\text{raw}} - 2 f_m = S^{\text{raw}} + 2r$ | — |
 | **Neutrality identity** | $S^{\text{cum}} = S^{\text{net}} + 2 f_{\text{net}}$ | $0.020 + 2(0.003)=0.026$ both ways |
-| Competitive break-even maker count | $N^{\star} = \dfrac{e\,Q}{C}$ with edge $e=h+r$ | Page 04: $N^\star=7$ at $e{=}\$.014$, $Q{=}10^9$, $C{=}\$2\text{M}$ |
+| Competitive break-even maker count | $N^{\star} = \dfrac{e\,Q}{C}$ with edge $e=h+r$ | Page 04: $N^\star=7$ at $e{=}$ \$.014, Q{=}10^9$, $C{=}\$2\text{M} |
 | **Tick floor on the race to zero** | residual $= \tau/2 + r - \lambda$ | Page 04: $\tau{=}.01,r{=}.002,\lambda{=}.006 \Rightarrow +0.001$ |
 | Minimum viable tick | $\tau^{\min} = 2(\lambda - r)$ | $\lambda{=}.006,r{=}.002 \Rightarrow \tau^{\min}=0.008$ |
 | Max sustainable PFOF | $p^{\star} = h^{\text{eff}} - \lambda_{\text{retail}} - c_{\text{other}}$ | Page 06: $p^\star=0.005$ at $h^{\text{eff}}{=}.008$ |

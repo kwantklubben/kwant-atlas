@@ -35,11 +35,15 @@ The discipline is one sentence: **measure the tail continuously, alarm when it d
 
 **Control-chart detection.** To alarm on drift you compare the monitored statistic (e.g. per-window p99) against a baseline. An **EWMA control chart** smooths the series,
 
-$$E_t=\alpha\,x_t+(1-\alpha)\,E_{t-1},$$
+$$
+E_t=\alpha\,x_t+(1-\alpha)\,E_{t-1},
+$$
 
 and alarms when $E_t$ deviates more than $k$ "EWMA sigma" from baseline:
 
-$$|E_t-\mu_0|>k\,\sigma_0\sqrt{\frac{\alpha}{2-\alpha}}.$$
+$$
+|E_t-\mu_0|>k\,\sigma_0\sqrt{\frac{\alpha}{2-\alpha}}.
+$$
 
 Here $\mu_0,\sigma_0$ are the baseline mean/std, and $\sigma_0\sqrt{\alpha/(2-\alpha)}$ is the steady-state EWMA standard deviation (so the test compares the EWMA statistic against a multiple of *its own* volatility). Tuned well, it alarms *quickly after* a real drift while staying quiet in the clean regime — the §3 model detects a 4.48→~12 µs p99 drift within one monitoring interval with zero false alarms on the clean prefix.
 

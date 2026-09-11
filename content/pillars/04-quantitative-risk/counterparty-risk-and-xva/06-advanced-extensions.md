@@ -17,7 +17,9 @@ tags:
 
 Counterparty risk is only the first cost of trading derivatives. A firm also **funds** the position, posts **initial margin**, and holds **regulatory capital** against it. Each of these has a price, and each gets its own adjustment. Together they are the **xVA** family:
 
-$$\text{Actual value}=\text{Base value}+\text{ColVA}-\text{CVA}+\text{DVA}-\text{FVA}-\text{MVA}-\text{KVA}.$$
+$$
+\text{Actual value}=\text{Base value}+\text{ColVA}-\text{CVA}+\text{DVA}-\text{FVA}-\text{MVA}-\text{KVA}.
+$$
 
 The practical objective is to see that **all the xVAs are the same integral shape** — an expected *usage profile* against a *cost curve* — so CVA is a template, not a special case:
 
@@ -39,11 +41,17 @@ The practical objective is to see that **all the xVAs are the same integral shap
 
 Funding value adjustment mirrors CVA but replaces the counterparty's credit spread with **your own funding spread** $FS$, and the exposure with the **expected future value** EFV (Gregory §18.2):
 
-$$\text{FVA}=-\sum_{i=1}^{m}\text{EFV}(t_i)\,\text{FS}(t_{i-1},t_i)\,(t_i-t_{i-1})=\text{FCA}+\text{FBA},\tag{18.3}$$
-$$\text{FCA}=-\sum_i \text{EPE}(t_i)\,\text{FS}\,\Delta t,\qquad \text{FBA}=-\sum_i \text{ENE}(t_i)\,\text{FS}\,\Delta t.\tag{18.4}$$
+$$
+\text{FVA}=-\sum_{i=1}^{m}\text{EFV}(t_i)\,\text{FS}(t_{i-1},t_i)\,(t_i-t_{i-1})=\text{FCA}+\text{FBA},\tag{18.3}
+$$
+$$
+\text{FCA}=-\sum_i \text{EPE}(t_i)\,\text{FS}\,\Delta t,\qquad \text{FBA}=-\sum_i \text{ENE}(t_i)\,\text{FS}\,\Delta t.\tag{18.4}
+$$
 
 Positive value (an asset) must be funded → **FCA** cost; negative value (a liability) is a funding source → **FBA** benefit. The **Burgard–Kjær** integral form makes the analogy exact:
-$$\text{FCA}(t)=-\int_t^\infty \text{FS}(t,u)\,D_{r+\lambda_P+\lambda_C}(t,u)\,\text{EPE}(t,u)\,du.\tag{18.5}$$
+$$
+\text{FCA}(t)=-\int_t^\infty \text{FS}(t,u)\,D_{r+\lambda_P+\lambda_C}(t,u)\,\text{EPE}(t,u)\,du.\tag{18.5}
+$$
 
 #### 2.2 The DVA/FBA double-count — the one thing to get right
 
@@ -59,7 +67,9 @@ Never `CVA + DVA + FCA + FBA`.
 #### 2.3 MVA
 
 Initial margin must be posted, segregated (non-rehypothecable), and funded. Its cost is
-$$\text{MVA}=-\int_0^\infty \mathbb{E}[\text{IM}(u)]\,\text{FS}(u)\,du\approx\sum_{i}\text{EIM}(t_i)\,\text{FS}(t_{i-1},t_i)\,(t_i-t_{i-1}).\tag{20.1}$$
+$$
+\text{MVA}=-\int_0^\infty \mathbb{E}[\text{IM}(u)]\,\text{FS}(u)\,du\approx\sum_{i}\text{EIM}(t_i)\,\text{FS}(t_{i-1},t_i)\,(t_i-t_{i-1}).\tag{20.1}
+$$
 
 Key facts (§20.2–20.4): MVA is **asymmetric** (segregation means it is a cost only, never a benefit); the EIM profile can be **non-monotonic** (a large offsetting trade ageing out can *raise* future IM); and MVA is **not** trivially computed alongside CVA — future SIMM sensitivities are needed. **MVA and KVA are not mutually exclusive** (§20.4): posting more IM *raises* MVA but can *lower* KVA (less capital), and the optimum bilateral IM posting is generally **below** the full regulatory requirement.
 

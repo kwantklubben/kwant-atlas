@@ -24,7 +24,9 @@ The practical objective: understand the four faces — (1) partial averaging as 
 
 #### 2.1 Partial averaging definition (Shreve II Def 2.3.1; Shreve I §2.3)
 Given sub-$\sigma$-algebra $\mathcal G\subseteq\mathcal F$, $\mathbb E[X\mid\mathcal G]$ is the unique (up to a.s.) random variable that is $\mathcal G$-measurable and satisfies
-$$\int_A \mathbb E[X\mid\mathcal G]\,d\mathbb P=\int_A X\,d\mathbb P \qquad \forall A\in\mathcal G.$$
+$$
+\int_A \mathbb E[X\mid\mathcal G]\,d\mathbb P=\int_A X\,d\mathbb P \qquad \forall A\in\mathcal G.
+$$
 Existence is a corollary of the Radon–Nikodym theorem (Shreve I §9.5). On a finite space with atoms, $\mathbb E[X\mid\mathcal F_k](\omega)=$ average of $X$ over the atom containing $\omega$.
 
 #### 2.2 The five properties (Shreve II Thm 2.3.2, eqs 2.3.18–2.3.22)
@@ -38,7 +40,9 @@ Property (ii) is what lets you pull a known stock price out of a conditional pri
 
 #### 2.3 Conditional densities & the bivariate normal (Shreve I Ch 11)
 With joint density $f_{X,Y}$ and marginal $f_Y$, the conditional density is $f_{X\mid Y}(x\mid y)=f_{X,Y}(x,y)/f_Y(y)$ and $\mathbb E[h(X)\mid Y]=g(Y)$ with $g(y)=\int h(x)f_{X\mid Y}(x\mid y)\,dx$. For $(X,Y)$ bivariate normal (Shreve I Ex 11.1):
-$$X\mid Y=y \sim N\!\Big(\rho\tfrac{\sigma_1}{\sigma_2}\,y,\ (1-\rho^2)\sigma_1^2\Big)\ \Rightarrow\ \mathbb E[X\mid Y]=\rho\frac{\sigma_1}{\sigma_2}Y.$$
+$$
+X\mid Y=y \sim N\!\Big(\rho\tfrac{\sigma_1}{\sigma_2}\,y,\ (1-\rho^2)\sigma_1^2\Big)\ \Rightarrow\ \mathbb E[X\mid Y]=\rho\frac{\sigma_1}{\sigma_2}Y.
+$$
 This is the **best linear/unbiased square-error estimator** of $X$ from $Y$ (Shreve I §11, verified p-129/130).
 
 #### 2.4 $L^2$ projection & the regression function (Shreve II Def 2.3.1; ESL Ch 2)

@@ -33,39 +33,53 @@ Three "aha"s before the formal section:
 
 **The derivative as a limit.**
 
-$$f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}.$$
+$$
+f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}.
+$$
 
 The fraction on the right is the *slope of a secant line* through $(x,f(x))$ and $(x+h,f(x+h))$. As $h\to0$ the secant pivots toward the tangent; its limit $f'(x)$ is the tangent slope. Rearranged, this gives the **local linear approximation**
 
-$$f(x+h)\ \approx\ f(x)+f'(x)\,h\quad\text{for small }h,\qquad f(x+h)-f(x)-f'(x)h=o(h).$$
+$$
+f(x+h)\ \approx\ f(x)+f'(x)\,h\quad\text{for small }h,\qquad f(x+h)-f(x)-f'(x)h=o(h).
+$$
 
 Bernstein's *Calculus for Mathematicians* makes the local-linearity definition primary (the **Carathéodory** form): $f$ is differentiable at $c$ iff there is a function $f_1$, continuous at $c$, with
 
-$$f(x)=f(c)+(x-c)\,f_1(x),\qquad\text{and then } f'(c)=f_1(c).$$
+$$
+f(x)=f(c)+(x-c)\,f_1(x),\qquad\text{and then } f'(c)=f_1(c).
+$$
 
 This is equivalent to the limit definition and is the cleanest parent of the multivariable total derivative on [[foundations/calculus-and-optimization/03-multivariable-calculus|03 · Multivariable Calculus]].
 
 **The derivative is linear (the rules).** From the definition follow the sum, product, quotient and **chain rules**:
 
-$$(f+g)'=f'+g',\qquad (fg)'=f'g+fg',\qquad \left(\tfrac{f}{g}\right)'=\frac{f'g-fg'}{g^2},\qquad (f\circ g)'=(f'\circ g)\cdot g'.$$
+$$
+(f+g)'=f'+g',\qquad (fg)'=f'g+fg',\qquad \left(\tfrac{f}{g}\right)'=\frac{f'g-fg'}{g^2},\qquad (f\circ g)'=(f'\circ g)\cdot g'.
+$$
 
 The chain rule is the mathematical engine of finance: if the option value is $V(S)$ and the stock follows $S(t)$, then $\frac{dV}{dt}=V'(S(t))\,S'(t)$ — sensitivities compose. It is what makes "the derivative of the payoff with respect to spot" computable at all.
 
-**Why a flat point is an optimum (Fermat).** If $f'(x^\*)>0$ then a small step left decreases $f$; if $f'(x^\*)<0$ a small step right decreases it. Hence at an interior minimum (or maximum) of a differentiable $f$:
+**Why a flat point is an optimum (Fermat).** If $f'(x^*)>0$ then a small step left decreases $f$; if $f'(x^*)<0$ a small step right decreases it. Hence at an interior minimum (or maximum) of a differentiable $f$:
 
-$$\boxed{\,f'(x^\*)=0\,}\qquad\text{(first-order condition).}$$
+$$
+\boxed{\,f'(x^*)=0\,}\qquad\text{(first-order condition).}
+$$
 
-This is **necessary, not sufficient**: $f(x)=x^3$ has $f'(0)=0$ at a point that is neither max nor min. Sufficiency needs the second derivative — $f''(x^\*)>0$ for a min, $f''(x^\*)<0$ for a max — which is the one-variable case of the Hessian test on page 03.
+This is **necessary, not sufficient**: $f(x)=x^3$ has $f'(0)=0$ at a point that is neither max nor min. Sufficiency needs the second derivative — $f''(x^*)>0$ for a min, $f''(x^*)<0$ for a max — which is the one-variable case of the Hessian test on page 03.
 
 **The mean value theorem (the workhorse).** For $f$ continuous on $[b,c]$ and differentiable on $(b,c)$, there is an $x\in(b,c)$ with
 
-$$f(c)-f(b)=f'(x)(c-b).$$
+$$
+f(c)-f(b)=f'(x)(c-b).
+$$
 
 It converts a statement about a *change in values* into a statement about a *derivative*, and it is the reason finite-difference approximations of derivatives have a controlled error: the secant slope equals the tangent slope at *some* intermediate point.
 
 **Integration and the FTC.** The definite integral $\int_b^c f$ is the limit of Riemann sums over finer and finer tagged divisions. Its centrepiece is the **Fundamental Theorem of Calculus**: for differentiable $f$,
 
-$$\int_b^c f'(x)\,dx=f(c)-f(b).$$
+$$
+\int_b^c f'(x)\,dx=f(c)-f(b).
+$$
 
 Differentiation and integration are inverse operations. In finance this identity is why a *density* integrates to a *probability* and why discounted expected payoffs are well-defined integrals.
 
@@ -110,7 +124,7 @@ centred difference  (f(2+h)-f(2-h))/(2h) :
   h=   1e-10  approx=12.000000992884  error=9.93e-07
 ```
 
-**Read the table.** The forward difference's error falls linearly in $h$ (halving $h$ halves the error) until round-off takes over at $h\approx10^{-8}$; at $h=10^{-16}$ the subtraction $f(2+h)-f(2)$ cancels to nothing and the estimate is pure noise. The **centred** difference is second-order (error $\sim h^2$), reaching $\sim2\times10^{-10}$ at $h=10^{-5}$ — then *rising again* as round-off, $\sim\epsilon/h$, dominates. There is an optimal $h^\*$ where truncation meets round-off; shrinking past it makes the answer worse. That is a *first-principles* fact about floating point, not a coding bug, and it is why every practical Greek is computed with a *sensibly-sized* bump, not an infinitesimal one.
+**Read the table.** The forward difference's error falls linearly in $h$ (halving $h$ halves the error) until round-off takes over at $h\approx10^{-8}$; at $h=10^{-16}$ the subtraction $f(2+h)-f(2)$ cancels to nothing and the estimate is pure noise. The **centred** difference is second-order (error $\sim h^2$), reaching $\sim2\times10^{-10}$ at $h=10^{-5}$ — then *rising again* as round-off, $\sim\epsilon/h$, dominates. There is an optimal $h^*$ where truncation meets round-off; shrinking past it makes the answer worse. That is a *first-principles* fact about floating point, not a coding bug, and it is why every practical Greek is computed with a *sensibly-sized* bump, not an infinitesimal one.
 
 Second, the local linear model in action:
 

@@ -28,14 +28,16 @@ This page is the *hub*: it gives the **fast formula lookup** (job #1) and routes
 $\mu=\begin{bmatrix}0.08\\0.12\\0.16\end{bmatrix}$, $\Sigma=\begin{bmatrix}0.100&0.040&0.016\\0.040&0.180&0.032\\0.016&0.032&0.250\end{bmatrix}$, $r_f=0.04$. ($\Sigma$ from annual volatilities 0.10/0.18/0.25 with correlations 0.30, 0.10, 0.15.) All numbers below were **re-run and reproduced exactly** (see §3).
 
 **Merton scalars** ($\mathbf{1}$ the ones-vector, $\Sigma^{-1}$ the inverse covariance):
-$$A=\mathbf{1}^T\Sigma^{-1}\mu,\quad B=\mu^T\Sigma^{-1}\mu,\quad C=\mathbf{1}^T\Sigma^{-1}\mathbf{1},\quad D=BC-A^2>0.$$
+$$
+A=\mathbf{1}^T\Sigma^{-1}\mu,\quad B=\mu^T\Sigma^{-1}\mu,\quad C=\mathbf{1}^T\Sigma^{-1}\mathbf{1},\quad D=BC-A^2>0.
+$$
 Worked values: $A=1.53150,\ B=0.18447,\ C=14.48325,\ D=0.32622$.
 
 | Quantity | Formula | Verified numbers |
 |---|---|---|
 | Frontier variance (parabola) | $\sigma^2(\mu)=\dfrac{C\mu^2-2A\mu+B}{D}$ | at $\mu{=}0.14$: $\sigma^2{=}0.12115$, $\sigma{=}0.3481$ |
 | Min-variance portfolio | $\mu_{\text{mv}}=\dfrac{A}{C},\quad \sigma^2_{\text{mv}}=\dfrac{1}{C},\quad w_{\text{mv}}=\dfrac{\Sigma^{-1}\mathbf{1}}{\mathbf{1}^T\Sigma^{-1}\mathbf{1}}$ | $w_{\text{mv}}{=}[0.569,0.219,0.212]$, $\mu{=}0.10574$, $\sigma{=}0.26276$ |
-| Generic frontier portfolio | $w^{\text{f}}(\mu^\*)=\Sigma^{-1}(\lambda\mathbf{1}+\gamma\mu)$, $\lambda,\gamma$ solve $\begin{bmatrix}C&A\\A&B\end{bmatrix}\begin{bmatrix}\lambda\\\gamma\end{bmatrix}=\begin{bmatrix}1\\\mu^\*\end{bmatrix}$ | $\mu^\*{=}0.12 \Rightarrow [0.354,0.292,0.354]$, $\sigma{=}0.2794$ |
+| Generic frontier portfolio | $w^{\text{f}}(\mu^*)=\Sigma^{-1}(\lambda\mathbf{1}+\gamma\mu)$, $\lambda,\gamma$ solve $\begin{bmatrix}C&A\\A&B\end{bmatrix}\begin{bmatrix}\lambda\\\gamma\end{bmatrix}=\begin{bmatrix}1\\\mu^*\end{bmatrix}$ | $\mu^*{=}0.12 \Rightarrow [0.354,0.292,0.354]$, $\sigma{=}0.2794$ |
 | **Tangency portfolio** (max Sharpe) | $w_{\text{tan}}=\dfrac{\Sigma^{-1}(\mu-r_f\mathbf{1})}{\mathbf{1}^T\Sigma^{-1}(\mu-r_f\mathbf{1})}$ | $w_{\text{tan}}{=}[0.2124,0.3402,0.4474]$, $\sigma{=}0.30641$ |
 | Max Sharpe ratio | $\text{SR}_{\max}^2=C r_f^2-2A r_f+B=\dfrac{(\mu_t-r_f)^2}{\sigma_t^2}$ | $\text{SR}{=}0.29176$, ${}^2{=}0.085121$ |
 | Capital market line | $\mu = r_f + \text{SR}_{\max}\,\sigma$ | slope $0.29176$ through $(0.3064,0.1294)$ |

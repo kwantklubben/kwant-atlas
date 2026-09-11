@@ -29,15 +29,21 @@ The practical objective is to answer three questions precisely:
 
 **2.1 The state, exactly.** Index resting orders by $i$. In full generality (L3),
 
-$$\mathcal{B}_t=\big\{\,i:\ \text{order } i \text{ is resting at time } t\,\big\},\qquad i\mapsto(\text{side}_i,\ p_i,\ q_i,\ t^{\text{arr}}_i,\ \text{id}_i).$$
+$$
+\mathcal{B}_t=\big\{\,i:\ \text{order } i \text{ is resting at time } t\,\big\},\qquad i\mapsto(\text{side}_i,\ p_i,\ q_i,\ t^{\text{arr}}_i,\ \text{id}_i).
+$$
 
 Aggregating by price gives the **depth functions** — the probabilistic content that most models use:
 
-$$D^b_t(p)=\sum_{i:\,\text{buy},\,p_i=p} q_i,\qquad D^a_t(p)=\sum_{i:\,\text{sell},\,p_i=p} q_i,\qquad p\in \delta\mathbb{Z},$$
+$$
+D^b_t(p)=\sum_{i:\,\text{buy},\,p_i=p} q_i,\qquad D^a_t(p)=\sum_{i:\,\text{sell},\,p_i=p} q_i,\qquad p\in \delta\mathbb{Z},
+$$
 
-on a tick grid $\delta$ (e.g.\ $\delta=\$0.01$). The best levels and the standard summaries are then pure functionals:
+on a tick grid $\delta$ (e.g.\ $\delta= $\$0.01). The best levels and the standard summaries are then pure functionals:
 
-$$b_t=\max\{p:D^b_t(p)>0\},\quad a_t=\min\{p:D^a_t(p)>0\},\quad s_t=a_t-b_t,\quad m_t=\tfrac12(a_t+b_t).$$
+$$
+b_t=\max\{p:D^b_t(p)>0\},\quad a_t=\min\{p:D^a_t(p)>0\},\quad s_t=a_t-b_t,\quad m_t=\tfrac12(a_t+b_t).
+$$
 
 **2.2 The data levels are nested projections.**
 
@@ -54,16 +60,20 @@ The nesting matters because **queue position is not a function of L2**. Two book
 - **Book imbalance** (a size-weighted touch signal): $\displaystyle I_t=\frac{q^b_t-q^a_t}{q^b_t+q^a_t}\in[-1,1]$.
 - **Microprice** (the size-weighted touch, which leans *away* from the heavier side because that side will likely be consumed):
 
-$$m^{\text{micro}}_t=\frac{q^b_t\,a_t+q^a_t\,b_t}{q^b_t+q^a_t}.$$
+$$
+m^{\text{micro}}_t=\frac{q^b_t\,a_t+q^a_t\,b_t}{q^b_t+q^a_t}.
+$$
 
   If the bid is large ($q^b_t\uparrow$) the microprice rises toward $a_t$: heavy resting demand signals upward pressure. Empirically $m^{\text{micro}}$ forecasts the next mid change better than $m_t$ — it is the simplest "micro-price".
 - **Depth profile / book shape:** the cumulative function $p\mapsto\sum_{p'\le p}D^b_t(p')$; its curvature is an empirical object (§2.4).
 
 **2.4 The book as a stochastic process.** Model the grid as a state vector $\mathbf{x}_t=(D_t(p_k))_{k}$; the book evolves by a superposition of events, each a random state transition:
 
-$$\mathbf{x}\xrightarrow{\ \text{limit add at }(p,\eta)\ }\mathbf{x}+\eta\,e_p,\qquad
+$$
+\mathbf{x}\xrightarrow{\ \text{limit add at }(p,\eta)\ }\mathbf{x}+\eta\,e_p,\qquad
 \mathbf{x}\xrightarrow{\ \text{cancel/execute }(p,\eta)\ }\mathbf{x}-\eta\,e_p,\qquad
-\mathbf{x}\xrightarrow{\ \text{market order}\ }\text{deplete best levels}.$$
+\mathbf{x}\xrightarrow{\ \text{market order}\ }\text{deplete best levels}.
+$$
 
 Cont, Stoikov & Talreja (2010) formalise this: the book is a **continuous-time Markov chain** in the queue sizes, with arrival intensities that depend on the price's *distance from the touch*. That distance dependence is the empirical key (Bouchaud, Mézard & Potters 2002): **limit-deposit and cancellation rates are roughly independent of price-level index**, so cumulative depth grows approximately linearly in the number of levels — a **concave, roughly linear-in-distance book shape**. Far from the touch, the book is a nearly homogeneous "reservoir"; at the touch it is the thin, contested layer that sets the price.
 

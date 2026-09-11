@@ -30,7 +30,9 @@ The *hedge ratio* is the bridge: the distance method's "buy one, sell one" is th
 
 Let $P^i_t$ be the normalised cumulative total-return index of stock $i$ over the formation window (start $=1$). For every candidate pair $(i,j)$,
 
-$$D_{ij}=\sum_{t=1}^{M}\big(P^i_t-P^j_t\big)^2 .$$
+$$
+D_{ij}=\sum_{t=1}^{M}\big(P^i_t-P^j_t\big)^2 .
+$$
 
 Rank all pairs by $D_{ij}$ and trade the top $n$ (GGR study the top 5 and top 20, plus pairs 101–120 as a control). Matching in normalised price space is equivalent to assuming a cointegrating vector with two nonzero coordinates and unit scale — "the sum or difference of scaled prices will be reverting to zero" (GGR §1.4). The **danger flagged by GGR itself**: normalisation is not a test, and spuriously correlated prices will pass.
 
@@ -38,11 +40,15 @@ Rank all pairs by $D_{ij}$ and trade the top $n$ (GGR study the top 5 and top 20
 
 If we accept the cointegrating model $y_t=\mu+\beta x_t+z_t$, the OLS estimate is
 
-$$\hat\beta=\frac{\widehat{\operatorname{Cov}}(y,x)}{\widehat{\operatorname{Var}}(x)},\qquad \hat\mu=\bar y-\hat\beta\bar x .$$
+$$
+\hat\beta=\frac{\widehat{\operatorname{Cov}}(y,x)}{\widehat{\operatorname{Var}}(x)},\qquad \hat\mu=\bar y-\hat\beta\bar x .
+$$
 
-The **market-neutral portfolio** (long \$1 of $y$, short \$\hat\beta of $x$) has return equal to the idio residual:
+The **market-neutral portfolio** (long \$1 of $y$, short $\$\hat\beta$ of $x$) has return equal to the idio residual:
 
-$$r_{p,t+1}=r^{y}_{t+1}-\hat\beta\,r^{x}_{t+1}\approx \Delta z_{t+1},$$
+$$
+r_{p,t+1}=r^{y}_{t+1}-\hat\beta\,r^{x}_{t+1}\approx \Delta z_{t+1},
+$$
 
 so its exposure to any factor $F$ loading $\beta^y_F,\beta^x_F$ cancels when $\hat\beta=\beta^y_F/\beta^x_F$. In log-price space, $\Delta z_{t+1}=\Delta\ln y_{t+1}-\hat\beta\,\Delta\ln x_{t+1}$ is the portfolio return of the dollar-neutral book.
 
@@ -50,7 +56,9 @@ so its exposure to any factor $F$ loading $\beta^y_F,\beta^x_F$ cancels when $\h
 
 Pairs trading is the two-asset case of a broader **statistical arbitrage**: decompose each stock's return against systematic factors,
 
-$$R_i=\sum_{j=1}^{m}\beta_{ij}F_j+\tilde R_i,$$
+$$
+R_i=\sum_{j=1}^{m}\beta_{ij}F_j+\tilde R_i,
+$$
 
 and trade the idiosyncratic residual $\tilde R_i$. The factors $F_j$ can be **sector ETFs** (each stock regressed on its peers' ETF, $\beta_{ij}=\operatorname{Cov}(R_i,R_{I_j})/\operatorname{Var}(R_{I_j})$) or **PCA eigenportfolios** (eigenvectors of the return correlation matrix; weights $Q^{(j)}_i=v^{(j)}_i/\sigma_i$). A portfolio $\{Q_i\}$ is market-neutral iff $\sum_i\beta_{ij}Q_i=0$ for all $j$; the first eigenportfolio is the market, higher eigenportfolios are interpretable long–short sector bets ("coherence").
 

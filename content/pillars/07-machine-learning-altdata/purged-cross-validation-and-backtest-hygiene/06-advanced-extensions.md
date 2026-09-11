@@ -28,7 +28,9 @@ Walk-forward (WF) trains on a trailing window and forecasts the next block, whic
 2. **It is regime-dependent.** The training window fixes the mixture of regimes (a rally-then-selloff vs selloff-then-rally span the same sample in two orders and train two very different strategies).
 3. **Decisions use unequal data.** With a warm-up of $t_0$ observations, decision $\tau$ (for $\tau=t_0{+}1,\dots,T$) trains on $\tau{-}1$ points, so early decisions run on far less data than late ones:
 
-$$\text{avg. train points per decision} = \frac{1}{T-t_0}\sum_{\tau=t_0+1}^{T}(\tau-1).$$
+$$
+\text{avg. train points per decision} = \frac{1}{T-t_0}\sum_{\tau=t_0+1}^{T}(\tau-1).
+$$
 
 The first half of decisions use only a small fraction of the sample, so a few early observations carry disproportionate weight on the final Sharpe — inflating its variance (AFML §12.2, §12.5).
 
@@ -36,7 +38,9 @@ The first half of decisions use only a small fraction of the sample, so a few ea
 
 CPCV's answer is a $\varphi$-path Sharpe *distribution* with sample-mean variance (AFML §12.5)
 
-$$\sigma^2[\mu_i]=\varphi^{-1}\sigma_i^2\big[1+(\varphi-1)\bar\rho_i\big],\qquad \varphi^{-1}\sigma_i^2\le\sigma^2[\mu_i]<\sigma_i^2.$$
+$$
+\sigma^2[\mu_i]=\varphi^{-1}\sigma_i^2\big[1+(\varphi-1)\bar\rho_i\big],\qquad \varphi^{-1}\sigma_i^2\le\sigma^2[\mu_i]<\sigma_i^2.
+$$
 
 The Deflated Sharpe Ratio (DSR, [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]) then answers the final question: is the CPCV mean Sharpe distinguishable from the best of $N$ *trials* of a null strategy, after correcting for non-normality? Purging fixes *leakage*; CPCV fixes *single-path variance*; DSR fixes *selection bias*. **They are three orthogonal costs of overfitting, and a defensible pipeline pays all three.**
 

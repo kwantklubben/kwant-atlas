@@ -29,13 +29,17 @@ The four failures, one line each:
 
 **2.1 Concave impact — the square-root law (Almgren 2003).** Replace the linear temporary cost $h(v)=\eta v$ with a power law
 
-$$h(v) = \eta\,v^{\alpha},\qquad 0<\alpha<1\ (\text{empirically }\alpha\approx\tfrac12),$$
+$$
+h(v) = \eta\,v^{\alpha},\qquad 0<\alpha<1\ (\text{empirically }\alpha\approx\tfrac12),
+$$
 
 so the per-period cost becomes $\sum_k n_k h(n_k/\tau)=\eta\,\tau^{-\alpha}\sum_k n_k^{1+\alpha}$, a **concave per-share** cost. The objective is still convex in $n$ (the exponent $1+\alpha>1$), so a unique optimum exists, but the Euler-Lagrange equation is nonlinear and the $\sinh$ trajectory is only an approximation. Almgren derives closed forms in terms of a **characteristic time** $T_\star$ that *now depends on portfolio size*, $T_\star\propto X^{(\alpha-1)/(\alpha+1)}$ — so the clean "half-life is size-independent" property of the linear model **fails**. A linear model calibrated to average conditions systematically mis-paces large orders.
 
 **2.2 Risk-aversion error.** The utility is $U=E+\lambda V$; if the desk uses $\hat\lambda$ but the true preference is $\lambda$, the realized excess utility is
 
-$$\Delta U = U_{\lambda}\!\big(x(\hat\lambda)\big)-U_{\lambda}\!\big(x(\lambda)\big) \ge 0,$$
+$$
+\Delta U = U_{\lambda}\!\big(x(\hat\lambda)\big)-U_{\lambda}\!\big(x(\lambda)\big) \ge 0,
+$$
 
 which grows quadratically in the relative parameter error (a second-order loss near the optimum). Because $\theta=1/\kappa\propto1/\sqrt\lambda$, a *first-order* error in $\lambda$ is only a *second-order* error in cost — the reassuring half of this failure — but the **timing** shift is first-order linear in $\sqrt{1/\lambda}$.
 

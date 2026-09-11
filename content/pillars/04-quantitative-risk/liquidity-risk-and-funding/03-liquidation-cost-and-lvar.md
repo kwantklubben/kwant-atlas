@@ -16,7 +16,9 @@ tags:
 
 Value at Risk is built on a lie of convenience: **it assumes you can liquidate the whole position in zero time at the mid price.** Neither clause is true. This page removes them, one at a time, and rebuilds VaR into a **liquidity-adjusted VaR (L-VaR)**:
 
-$$\text{L-VaR}\;=\;\underbrace{\text{VaR}_{\text{market}}}_{\text{price risk over the horizon}}\;+\;\underbrace{\text{LC}_{\text{exogenous}}}_{\text{spread you cross}}\;+\;\underbrace{\text{LC}_{\text{impact}}}_{\text{price you move by selling}}.$$
+$$
+\text{L-VaR}\;=\;\underbrace{\text{VaR}_{\text{market}}}_{\text{price risk over the horizon}}\;+\;\underbrace{\text{LC}_{\text{exogenous}}}_{\text{spread you cross}}\;+\;\underbrace{\text{LC}_{\text{impact}}}_{\text{price you move by selling}}.
+$$
 
 The objective is the decomposition itself: know which component dominates, because the fix differs. If spread dominates, trade smaller/patiently; if impact dominates, the position is simply too large for the market and must be split over days.
 
@@ -30,21 +32,29 @@ Three ideas carry the page:
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 Exogenous liquidation cost (spread).** Selling realises the half-spread plus a *worsening of the spread itself* in the tail. With relative spread $s$ and spread volatility $\sigma_s$, the $\alpha$-confidence liquidation cost on value $V$ is
-$$\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right).$$
+$$
+\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right).
+$$
 The first term is the mechanical cost of crossing a normal quarter-spread; the second prices the realistic possibility that **when you are forced to sell, the spread is wider than usual** — the cost and the tail are correlated. This is the pillar's established L-VaR form (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|the flat liquidity note]] for the same formula in $\sum_i P_iQ_i$ form).
 
 **2.2 Endogenous liquidation cost (market impact).** With linear price impact $\Delta p=\lambda q$ (Foucault eq. 2.8) and depth $D=1/\lambda$ shares to move the price by one unit, liquidating $Q$ shares moves the price by $Q/D$. The **volume-weighted** execution price sits at the mid of the impact, so the shortfall per share is $\tfrac12 Q/D$ and
-$$\boxed{\ \text{LC}_{\text{impact}}=\frac{Q^2}{2D}=\frac{\lambda Q^2}{2}\ }$$
+$$
+\boxed{\ \text{LC}_{\text{impact}}=\frac{Q^2}{2D}=\frac{\lambda Q^2}{2}\ }
+$$
 The $Q^2$ is the whole story: doubling the position **quadruples** the impact cost. Equivalently, in return terms the impact drag is $\tfrac{\lambda Q}{2}$ per unit of value traded.
 
 > **Reality check on the exponent.** Real impact is closer to **square-root** (Almgren–Chriss 2000 temporary impact; Bouchaud et al. 2009 "How Markets Slowly Digest Changes in Supply and Demand": impact $\propto \sigma\,(Q/V)^{1/2}$). The linear model is the *conservative-for-reasoning* baseline used in risk-adjusted measures because (i) it is closed-form and (ii) at the sizes at which L-VaR matters, the quadratic overstates less than the linear-per-share model understates. Square-root impact is treated in [[pillars/04-quantitative-risk/liquidity-risk-and-funding/06-advanced-extensions|06 · Advanced Extensions]] and in the Pillar 6 microstructure refs.
 
 **2.3 The liquidation horizon.** If the order may not exceed a fraction $\alpha$ of average daily volume,
-$$T_{\text{liq}}=\frac{Q}{\text{ADV}\cdot\alpha}\quad(\text{days}).$$
+$$
+T_{\text{liq}}=\frac{Q}{\text{ADV}\cdot\alpha}\quad(\text{days}).
+$$
 The **horizon-matched** market VaR is then $\mathrm{VaR}_T=z_\alpha\,\sigma_{\text{daily}}\sqrt{T_{\text{liq}}}\,V$ under i.i.d. scaling (Hull §22.4) — and the L-VaR must be evaluated at that horizon, not at 1 day. The FRTB makes this explicit: each risk factor gets a **liquidity horizon** (10/20/40/60/120 days) and the ES is computed on the scaled shock $\sigma\sqrt{LH/10}$.
 
 **2.4 The combined measure.**
-$$\mathrm{LVaR}_\alpha=\mathrm{VaR}_{\text{market}}(\sigma,\,T_{\text{liq}})+\tfrac12 V\!\left(S+z_\alpha\sigma_S\right)+\frac{Q^2}{2D}.$$
+$$
+\mathrm{LVaR}_\alpha=\mathrm{VaR}_{\text{market}}(\sigma,\,T_{\text{liq}})+\tfrac12 V\!\left(S+z_\alpha\sigma_S\right)+\frac{Q^2}{2D}.
+$$
 
 ---
 

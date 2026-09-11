@@ -31,7 +31,9 @@ Both answer "how high does the bar go?", and they agree in spirit: the bar rises
 #### 2.1 Family-wise error rate (FWER)
 
 With $N$ independent tests at level $\alpha$,
-$$\text{FWER}=1-(1-\alpha)^N\approx N\alpha\ \ (\alpha\ \text{small}).$$
+$$
+\text{FWER}=1-(1-\alpha)^N\approx N\alpha\ \ (\alpha\ \text{small}).
+$$
 So $\alpha{=}0.05$: $N{=}10\Rightarrow0.401$, $N{=}100\Rightarrow0.994$, $N{=}1000\Rightarrow1.000$. **Bonferroni** controls FWER by inflating each $p$: $p^{\text{Bonf}}_{(i)}=\min\{Np_{(i)},1\}$; **Holm** applies the same idea sequentially, $p^{\text{Holm}}_{(i)}=\min\{1,\max_{j\le i}[(N-j+1)p_{(j)}]\}$, and is uniformly more powerful. For thousands of tests FWER is too conservative, and the **false-discovery-rate** (Benjamini–Hochberg) controls instead the *proportion* of false rejections among the rejected (Harvey & Liu §"multiple testing framework").
 
 #### 2.2 Expected maximum Sharpe under $N$ null trials
@@ -39,20 +41,28 @@ So $\alpha{=}0.05$: $N{=}10\Rightarrow0.401$, $N{=}100\Rightarrow0.994$, $N{=}10
 Let $\{\widehat{SR}_n\}$ be $N$ i.i.d. trial Sharpe estimates with mean $\mu$ and variance $V[\{\widehat{SR}_n\}]=\sigma^2$ (in per-period units). Standardize: $Z_n=(\widehat{SR}_n-\mu)/\sigma$. The expected maximum of $N$ standard normals has two standard forms:
 
 **EVT approximation** (loose, ubiquitous):
-$$\mathbb{E}\big[\max_n Z_n\big]\approx\sqrt{2\ln N}+\frac{\gamma}{\sqrt{2\ln N}},\qquad \gamma\approx0.5772.$$
+$$
+\mathbb{E}\big[\max_n Z_n\big]\approx\sqrt{2\ln N}+\frac{\gamma}{\sqrt{2\ln N}},\qquad \gamma\approx0.5772.
+$$
 
 **Exact order-statistic form** (used by the DSR):
-$$\mathbb{E}\big[\max_n Z_n\big]=(1-\gamma)\,\Phi^{-1}\!\Big(1-\tfrac1N\Big)+\gamma\,\Phi^{-1}\!\Big(1-\tfrac1{Ne}\Big).$$
+$$
+\mathbb{E}\big[\max_n Z_n\big]=(1-\gamma)\,\Phi^{-1}\!\Big(1-\tfrac1N\Big)+\gamma\,\Phi^{-1}\!\Big(1-\tfrac1{Ne}\Big).
+$$
 
 The selection threshold in Sharpe units is then
-$$\widehat{SR}_0=\mu+\sigma\cdot\mathbb{E}\big[\max_n Z_n\big],\qquad \text{under } H_0:\ \mu=0\Rightarrow \widehat{SR}_0=\sqrt{V[\{\widehat{SR}_n\}]}\cdot\mathbb{E}\big[\max_n Z_n\big].$$
+$$
+\widehat{SR}_0=\mu+\sigma\cdot\mathbb{E}\big[\max_n Z_n\big],\qquad \text{under } H_0:\ \mu=0\Rightarrow \widehat{SR}_0=\sqrt{V[\{\widehat{SR}_n\}]}\cdot\mathbb{E}\big[\max_n Z_n\big].
+$$
 
 **The approximation is not innocent.** The crude EVT form *overstates* the true expected maximum by ~28% at $N{=}100$ (3.225 vs 2.531) — using it makes you over-penalise a good strategy. Monte Carlo settles which is right (see §3). The order-statistic version is the one to use.
 
 #### 2.3 The Harvey–Liu haircut
 
 Transform Sharpe to a $t$-statistic, $t=\widehat{SR}\cdot\sqrt T$ (net of any factor adjustment, $SR$ non-annualized). Compute the single-test two-sided $p$-value $p_S=\Pr(|r_{T-1}|>t)$. Under $N$ independent tests the multiple-testing $p$-value is
-$$p_M=1-(1-p_S)^N.$$
+$$
+p_M=1-(1-p_S)^N.
+$$
 The **haircut Sharpe** $HSR$ is found by equating a *single* test's $p$-value to $p_M$: solve $\Pr(|r_{T-1}|>t^\ast)=p_M$ and set $HSR=t^\ast/\sqrt T$. Because $p_M\gg p_S$, $HSR\ll\widehat{SR}$. Harvey & Liu's rule: the haircut is **non-linear** — very high Sharpes are barely penalised, marginal ones are heavily penalised (a flat 50% is wrong in both directions).
 
 #### 2.4 How many trials are *optimal*? The 1/e-law
@@ -62,7 +72,9 @@ Since each added trial raises the false-positive floor, there is an optimal stop
 #### 2.5 Independent vs effective $N$
 
 $N$ is the count of **independent** trials. If you ran $M$ correlated trials with average off-diagonal correlation $\widehat\rho$, the implied independent count is
-$$\widehat N\approx\widehat\rho\,(M-1)+1.$$
+$$
+\widehat N\approx\widehat\rho\,(M-1)+1.
+$$
 Using raw $M$ overstates the threshold; treating correlated trials as independent understates it. **Report the full sweep $M$ and an estimate of $\widehat\rho$** — a strategy found among 1,000 correlated variants is often really ~10 independent bets (Bailey & López de Prado §A.3).
 
 ---

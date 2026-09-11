@@ -18,7 +18,9 @@ tags:
 ### 1. Intuition & Practical Objective
 
 An SDE is a *definition of a stochastic process by its differential*:
-$$dX_t=\mu(t,X_t)\,dt+\sigma(t,X_t)\,dW_t,$$
+$$
+dX_t=\mu(t,X_t)\,dt+\sigma(t,X_t)\,dW_t,
+$$
 read rigorously as an integral equality $X_t=X_0+\int_0^t\mu\,ds+\int_0^t\sigma\,dW$. The **Drift** $\mu$ sets the expected growth; **Diffusion** $\sigma$ sets the random spread *and* (because then $(dX)^2=\sigma^2dt$) feeds back into Itô–Doeblin computations.
 
 Practical objective: three workhorse SDEs drive all of quantitative finance —
@@ -33,19 +35,29 @@ The whole point of this page: know **which SDEs have exact transitions** (simula
 ### 2. Mathematical Ground Truth & Derivations
 
 #### 2.1 GBM — closed-form solution (Shreve I §15.3; Björk Prop 5.2; Glasserman §3.2)
-$$dS_t=\mu S_t\,dt+\sigma S_t\,dW_t\;\Longrightarrow\;S_t=S_0e^{\sigma W_t+\left(\mu-\tfrac12\sigma^2\right)t},\qquad\mathbb E[S_t]=S_0e^{\mu t}.$$
+$$
+dS_t=\mu S_t\,dt+\sigma S_t\,dW_t\;\Longrightarrow\;S_t=S_0e^{\sigma W_t+\left(\mu-\tfrac12\sigma^2\right)t},\qquad\mathbb E[S_t]=S_0e^{\mu t}.
+$$
 **Exact transition** (Glasserman eq 3.20–3.22), correct on every grid point with *no* discretization error:
-$$S(t_{i+1})=S(t_i)\,e^{\left(\mu-\tfrac12\sigma^2\right)\Delta t+\sigma\sqrt{\Delta t}\,Z_{i+1}},\quad Z_{i+1}\sim N(0,1).$$
+$$
+S(t_{i+1})=S(t_i)\,e^{\left(\mu-\tfrac12\sigma^2\right)\Delta t+\sigma\sqrt{\Delta t}\,Z_{i+1}},\quad Z_{i+1}\sim N(0,1).
+$$
 The **Euler–Maruyama** scheme $S_{i+1}=S_i(1+\mu\Delta t+\sigma\sqrt{\Delta t}\,Z)$ has an easier-to-see but *biased* form, especially for coarse $\Delta t$ — the "simulate exact, not Euler, whenever possible" rule.
 
 #### 2.2 Vasicek — Gaussian, closed form (Shreve II Ex 4.4.10; Glasserman §3.3)
-$$dR_t=\kappa(\theta-R_t)\,dt+\sigma\,dW_t\;\Longrightarrow\;R_t=e^{-\kappa t}R_0+\theta\Big(1-e^{-\kappa t}\Big)+\sigma e^{-\kappa t}\!\int_0^t e^{\kappa s}dW_s.$$
+$$
+dR_t=\kappa(\theta-R_t)\,dt+\sigma\,dW_t\;\Longrightarrow\;R_t=e^{-\kappa t}R_0+\theta\Big(1-e^{-\kappa t}\Big)+\sigma e^{-\kappa t}\!\int_0^t e^{\kappa s}dW_s.
+$$
 As a Gaussian process: mean $e^{-\kappa t}R_0+\theta\left(1-e^{-\kappa t}\right)$, variance $\frac{\sigma^2}{2\kappa}\left(1-e^{-2\kappa t}\right)\to\frac{\sigma^2}{2\kappa}$. **Exact transition** (Glasserman eq 3.43–3.45):
-$$R_{t_{i+1}}\sim N\Big(e^{-\kappa\Delta t}R_{t_i}+\theta\big(1-e^{-\kappa\Delta t}\big),\ \tfrac{\sigma^2}{2\kappa}\big(1-e^{-2\kappa\Delta t}\big)\Big).$$
+$$
+R_{t_{i+1}}\sim N\Big(e^{-\kappa\Delta t}R_{t_i}+\theta\big(1-e^{-\kappa\Delta t}\big),\ \tfrac{\sigma^2}{2\kappa}\big(1-e^{-2\kappa\Delta t}\big)\Big).
+$$
 Long-run mean $\theta$; **can go negative** (unlike CIR).
 
 #### 2.3 CIR — no closed form, nonnegative (Shreve II Ex 4.4.11; Glasserman §3.4)
-$$dR_t=\kappa(\theta-R_t)\,dt+\sigma\sqrt{R_t}\,dW_t.$$
+$$
+dR_t=\kappa(\theta-R_t)\,dt+\sigma\sqrt{R_t}\,dW_t.
+$$
 Expectation **identical to Vasicek** $\mathbb E[R_t]=e^{-\kappa t}R_0+\theta\left(1-e^{-\kappa t}\right)$; the variance grows to $\theta\sigma^2/(2\kappa)$. The diffusion $\sigma\sqrt R\to0$ at the origin, so with $\theta>0$ the drift pushes back up — **stays nonnegative**. **Feller condition** $2\kappa\theta\ge\sigma^2$ ⇒ strictly positive (Glasserman §3.4).
 
 Because there is no closed-form transition, CIR simulation uses **exact noncentral-$\chi^2$ sampling** (Glasserman eq 3.105: $d\equiv\tfrac{4\kappa\theta}{\sigma^2}$ "degrees of freedom", $c\equiv\tfrac{\sigma^2(1-e^{-\kappa\Delta t})}{4\kappa}$, noncentrality $\lambda\equiv\tfrac{R_{t_i}e^{-\kappa\Delta t}}{c}$) *or* a well-behaved **Milstein** scheme; plain Euler undershoots below zero.

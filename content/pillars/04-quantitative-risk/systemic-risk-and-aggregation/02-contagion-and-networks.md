@@ -31,7 +31,9 @@ The headline empirical pattern (Gai–Kapadia 2010) is **robust-yet-fragile**: m
 
 **The cascade in matrix form (Eisenberg–Noe 2001 picture).** Let $e_i$ be bank $i$'s external/net capital, $L_{ij}$ interbank claims, and $\bar x_i = \sum_j L_{ij}$ its total claims. In a clearance round, bank $i$'s *value after payments* satisfies, for a default-absorbing allocation,
 
-$$V_i = e_i + \sum_j L_{ij}\,\mathbf{1}_{\{V_j \ge \bar x_j\}} \,+\, \sum_j \frac{L_{ij}}{\sum_k L_{kj}}\, V_j\,\mathbf{1}_{\{V_j<\bar x_j\}},$$
+$$
+V_i = e_i + \sum_j L_{ij}\,\mathbf{1}_{\{V_j \ge \bar x_j\}} \,+\, \sum_j \frac{L_{ij}}{\sum_k L_{kj}}\, V_j\,\mathbf{1}_{\{V_j<\bar x_j\}},
+$$
 
 where a defaulting $j$ pays creditors proportionally to its remaining value $V_j$ (a clearing condition). The default of one bank reduces other banks' assets through the second term, which can push them negative, which changes *their* payments, etc. — a fixed-point problem. The simple **sequential/cascade** version (what we compute) drops the proportional-recoveries subtlety and treats a default as a full write-off, which is conservative and standard for first-pass contagion analysis.
 

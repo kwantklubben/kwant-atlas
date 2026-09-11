@@ -31,11 +31,15 @@ The practical objective: build factors with an autoencoder, and know exactly how
 
 With encoder $E:\mathbb R^d\to\mathbb R^k$ and decoder $D:\mathbb R^k\to\mathbb R^d$, the reconstruction loss over $n$ samples is
 
-$$\boxed{\;\mathcal L(E,D)=\frac1n\sum_{i=1}^{n}\big\|x_i-D\big(E\,x_i\big)\big\|_2^2\;}$$
+$$
+\boxed{\;\mathcal L(E,D)=\frac1n\sum_{i=1}^{n}\big\|x_i-D\big(E\,x_i\big)\big\|_2^2\;}
+$$
 
 For a **linear** autoencoder, $E\in\mathbb R^{k\times d}$, $D\in\mathbb R^{d\times k}$, and (absorbing the optimum) $DE$ is the orthogonal projector onto a $k$-dimensional subspace. The optimal subspace is given by the SVD. Write the centred data matrix $X=U\Sigma V^\top$ (economy SVD). Then the **Eckart–Young theorem** says the best rank-$k$ approximation is
 
-$$\hat X_k=U_k\Sigma_k V_k^\top,$$
+$$
+\hat X_k=U_k\Sigma_k V_k^\top,
+$$
 
 attained when $E=V_k^\top$ (rows $=$ top-$k$ right singular vectors, the principal directions) and $D=V_k$. Hence:
 

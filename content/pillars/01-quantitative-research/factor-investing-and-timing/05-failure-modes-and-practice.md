@@ -33,13 +33,19 @@ The six failures, in one line each:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Failure 1 — the diversification illusion, quantified.** Take $N$ factor strategies, each with expected alpha $\mu$ and residual volatility $\sigma$. Their *residuals* are not independent: suppose the average pairwise residual correlation is $\rho$. Then an equal-weighted portfolio of the $N$ strategies has alpha $\mu$ and volatility
-$$\sigma_{\text{port}}=\sigma\sqrt{\rho+\frac{1-\rho}{N}},$$
+$$
+\sigma_{\text{port}}=\sigma\sqrt{\rho+\frac{1-\rho}{N}},
+$$
 so its **appraisal ratio** (information ratio) is
-$$IR_{\text{port}}=IR_1\sqrt{\frac{N}{1+(N-1)\rho}},\qquad IR_1=\frac{\mu}{\sigma}.$$
+$$
+IR_{\text{port}}=IR_1\sqrt{\frac{N}{1+(N-1)\rho}},\qquad IR_1=\frac{\mu}{\sigma}.
+$$
 Two limits matter. As $\rho\to0$, $IR_{\text{port}}\to IR_1\sqrt N$ — the diversification we hope for. As $\rho\to1$, $IR_{\text{port}}\to IR_1$ *regardless of $N$* — twenty factors become one. This is why Cochrane insisted that covariance, not the mean, is the central object: "if the value firms decline, they all decline together."
 
 **Failure 2 — crowding, the flow-shock term the risk model omits.** A standard risk model writes $\Sigma=B\Omega B'+D$ with $D$ diagonal, i.e. it treats idiosyncratic and flow-driven moves as *independent noise*. In a crowded unwind they are perfectly aligned: everyone sells the same names. The correct structure has an extra term for the common flow shock,
-$$\Sigma_{\text{crowded}}=B\Omega B'+D+\zeta\,ss^\top,\qquad s=\text{the crowded bet's direction},$$
+$$
+\Sigma_{\text{crowded}}=B\Omega B'+D+\zeta\,ss^\top,\qquad s=\text{the crowded bet's direction},
+$$
 and $\zeta$ is *time-varying* — it is small in normal times and enormous in a deleveraging. No historical covariance matrix captures that, so the mitigation is a **stress overlay**, not a bigger $\sigma$: scenario impact, participation caps, liquidity-adjusted VaR.
 
 **Failure 3 — decay, restated as a half-life.** If a premium decays exponentially at rate $\lambda$, $g_t=g_0e^{-\lambda t}$, the half-life is $t_{1/2}=\ln2/\lambda$. McLean–Pontiff's ~35% post-publication decline over their post-publication window implies a long but finite half-life; the practitioner's rule is to **apply a haircut of roughly $1-\hat d_{\text{post}}$ to every backtested alpha before evaluating it.** With a 35% haircut, an in-sample 5%/yr is worth 3.25%/yr — and if the factor is liquid and low-idio-risk, haircut more (their cheap-to-arbitrage group decayed ~49%).

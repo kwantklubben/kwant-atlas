@@ -30,7 +30,9 @@ Three mechanical facts to internalise:
 
 Your order of size $L$ at position $x$ fills against cumulative outflow $\xi$ (trades plus cancels ahead) as
 
-$$\text{Filled} = (\xi - x)^+ - (\xi - x - L)^+ .$$
+$$
+\text{Filled} = (\xi - x)^+ - (\xi - x - L)^+ .
+$$
 
 If $L$ is "one unit" (the empirical convention, Cont–Stoikov–Talreja take unit order size), this is simply the indicator $\mathbf 1\{\xi\ge x\}$.
 
@@ -38,7 +40,9 @@ If $L$ is "one unit" (the empirical convention, Cont–Stoikov–Talreja take un
 
 Under pro-rata, when an incoming market order of size $V$ meets resting size at the price, each resting order $i$ gets
 
-$$\text{Fill}_i = V \times \frac{q_i}{\sum_j q_j}.$$
+$$
+\text{Fill}_i = V \times \frac{q_i}{\sum_j q_j}.
+$$
 
 Consequence: **size buys priority**. A trader who posts a *large* order late can out-fill a small order posted early. Queue position $x$ (in orders) matters less than *relative size* — which is why pro-rata books reward over-posting and why FIFO is the cleaner model for queue-position economics.
 
@@ -52,11 +56,15 @@ Let $x_t$ be your position (orders ahead). In a small interval $dt$:
 
 The expected position obeys the linear ODE
 
-$$\boxed{\;\frac{dx}{dt} = -\big(\mu + \theta x\big)\;}\qquad\Longrightarrow\qquad x(t) = \Big(x_0 + \frac{\mu}{\theta}\Big)e^{-\theta t} - \frac{\mu}{\theta}.$$
+$$
+\boxed{\;\frac{dx}{dt} = -\big(\mu + \theta x\big)\;}\qquad\Longrightarrow\qquad x(t) = \Big(x_0 + \frac{\mu}{\theta}\Big)e^{-\theta t} - \frac{\mu}{\theta}.
+$$
 
 So the queue position decays exponentially toward the *trade-driven floor* $\mu/\theta$; with trades alone it crosses zero at the deterministic first-passage time
 
-$$t^\star = \frac{1}{\theta}\ln\!\Big(1 + \frac{\theta x_0}{\mu}\Big),$$
+$$
+t^\star = \frac{1}{\theta}\ln\!\Big(1 + \frac{\theta x_0}{\mu}\Big),
+$$
 
 while **cancel-only** decay ($\mu=0$) is $x(t)=x_0 e^{-\theta t}$, which never reaches zero in finite mean — pure cancellations can only *halve* your wait, they never guarantee a fill. This is the analytic backbone of the birth–death view formalised on page 04.
 

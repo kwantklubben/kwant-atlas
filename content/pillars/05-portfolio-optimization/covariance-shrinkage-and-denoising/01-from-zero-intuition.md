@@ -33,23 +33,31 @@ Three steps, three "aha"s:
 
 **The mean–variance problem, written so the covariance's role is visible.** Minimize $w^\top\Sigma w$ subject to $w^\top\mathbf 1=1$ (fully invested). The Lagrangian gives
 
-$$w=\frac{\Sigma^{-1}\mathbf 1}{\mathbf 1^\top\Sigma^{-1}\mathbf 1},$$
+$$
+w=\frac{\Sigma^{-1}\mathbf 1}{\mathbf 1^\top\Sigma^{-1}\mathbf 1},
+$$
 
 the global minimum-variance portfolio. The solution *only* involves $\Sigma^{-1}$. In the eigenbasis $\Sigma=\sum_i\lambda_i q_iq_i^\top$,
 
-$$w\ \propto\ \sum_i\frac{1}{\lambda_i}\,(q_i^\top\mathbf 1)\,q_i .$$
+$$
+w\ \propto\ \sum_i\frac{1}{\lambda_i}\,(q_i^\top\mathbf 1)\,q_i .
+$$
 
 **The sensitivity is $1/\lambda_i$.** Each direction contributes in proportion to *one over* its eigenvalue. So an eigen-direction whose sample eigenvalue is half its true value gets *twice* the weight it deserves; a direction that is pure noise (sample eigenvalue decaying toward zero) gets essentially unbounded weight. This is the algebraic statement of error maximization (Michaud 1989; Best & Grauer 1991).
 
 **The dimensional mismatch, precisely.** $S$ has $N(N+1)/2$ free parameters and is computed from $NT$ numbers. The information per parameter is
 
-$$\frac{NT}{N(N+1)/2}=\frac{2T}{N+1}\xrightarrow[\ N\approx T\ ]{}\ 2 .$$
+$$
+\frac{NT}{N(N+1)/2}=\frac{2T}{N+1}\xrightarrow[\ N\approx T\ ]{}\ 2 .
+$$
 
 When $N$ is comparable to $T$, there are *two* observations per parameter (the one-observation regime is $N/T\approx\tfrac12$). The regime is parameterized by $q=N/T$, the ratio that governs everything on the following pages.
 
 **Bias–variance in one line.** The shrinkage objective is
 
-$$\mathbb{E}\|\hat\Sigma-\Sigma\|_F^2 \;=\; \underbrace{\|\,\mathbb{E}\hat\Sigma-\Sigma\,\|_F^2}_{\text{bias}^2}+\underbrace{\mathbb{E}\|\hat\Sigma-\mathbb{E}\hat\Sigma\|_F^2}_{\text{variance}} .$$
+$$
+\mathbb{E}\|\hat\Sigma-\Sigma\|_F^2 \;=\; \underbrace{\|\,\mathbb{E}\hat\Sigma-\Sigma\,\|_F^2}_{\text{bias}^2}+\underbrace{\mathbb{E}\|\hat\Sigma-\mathbb{E}\hat\Sigma\|_F^2}_{\text{variance}} .
+$$
 
 The sample matrix has **zero bias and maximal variance**; the identity-like target $\mu I$ has **zero variance and large bias**. A convex combination tuned by one scalar beats both — that is the entire content of `03-linear-shrinkage`.
 

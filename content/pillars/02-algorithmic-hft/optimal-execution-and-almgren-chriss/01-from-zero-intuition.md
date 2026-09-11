@@ -35,15 +35,21 @@ Everything else in this folder is the mathematics of that third point.
 **The two cost curves.** For a constant-rate ("TWAP") liquidation of $X$ shares over a horizon $T$:
 
 - **Impact cost** is paid on the trade *rate*. Total expected cost falls as $1/T$:
-  $$E_{\text{impact}}(T) \approx \frac{\eta X^2}{T} + \tfrac12\gamma X^2,$$
+$$
+E_{\text{impact}}(T) \approx \frac{\eta X^2}{T} + \tfrac12\gamma X^2,
+$$
   where $\eta$ is the temporary-impact coefficient, $\gamma$ the permanent one, and $\tfrac12\gamma X^2$ is a constant that **does not depend on the schedule at all** (it is paid whichever way you trade).
 
 - **Risk** is the standard deviation of the trading revenue, driven by holding inventory $x_t \approx X(1-t/T)$:
-  $$V(T) = \sigma^2\!\int_0^T x_t^2\,dt \approx \frac{\sigma^2 X^2 T}{3},\qquad \operatorname{sd}(T)\approx \frac{\sigma X\sqrt T}{\sqrt 3}.$$
+$$
+V(T) = \sigma^2\!\int_0^T x_t^2\,dt \approx \frac{\sigma^2 X^2 T}{3},\qquad \operatorname{sd}(T)\approx \frac{\sigma X\sqrt T}{\sqrt 3}.
+$$
 
 **Choosing a horizon.** With risk aversion $\lambda$ (dollars of variance you will pay to save a dollar of expected cost), minimize $U(T)=E(T)+\lambda V(T)$:
 
-$$\frac{dU}{dT} = -\frac{\eta X^2}{T^2} + \frac{\lambda\sigma^2 X^2}{3}=0 \quad\Longrightarrow\quad \boxed{\;T^\star=\sqrt{\frac{3\eta}{\lambda\sigma^2}}=\sqrt3\,\theta\;},\qquad \theta\equiv\sqrt{\frac{\eta}{\lambda\sigma^2}}=\frac1\kappa .$$
+$$
+\frac{dU}{dT} = -\frac{\eta X^2}{T^2} + \frac{\lambda\sigma^2 X^2}{3}=0 \quad\Longrightarrow\quad \boxed{\;T^\star=\sqrt{\frac{3\eta}{\lambda\sigma^2}}=\sqrt3\,\theta\;},\qquad \theta\equiv\sqrt{\frac{\eta}{\lambda\sigma^2}}=\frac1\kappa .
+$$
 
 The quantity $\theta$ is the **half-life of the trade** (time to deplete the position by a factor $e$) and $\kappa=1/\theta$ is the **urgency**. Note what does *not* appear: $X$ and $T$ itself. With linear impact, **every basket of the same stock is liquidated on the same intrinsic time scale** — a counter-intuitive but exact consequence of cost and variance both scaling as $X^2$ (Almgren–Chriss 2000, §2.3).
 

@@ -38,14 +38,18 @@ The two concrete tools this page delivers:
 
 **Theorem (Sklar 1959).** Let $F$ be a joint CDF with margins $F_1,\dots,F_d$. Then there is a copula $C$ with
 
-$$F(x_1,\dots,x_d)=C\big(F_1(x_1),\dots,F_d(x_d)\big),\qquad\text{and}\qquad
-C(u_1,\dots,u_d)=F\big(F_1^{\leftarrow}(u_1),\dots,F_d^{\leftarrow}(u_d)\big),$$
+$$
+F(x_1,\dots,x_d)=C\big(F_1(x_1),\dots,F_d(x_d)\big),\qquad\text{and}\qquad
+C(u_1,\dots,u_d)=F\big(F_1^{\leftarrow}(u_1),\dots,F_d^{\leftarrow}(u_d)\big),
+$$
 
 where $F_i^{\leftarrow}(u)=\inf\{x:F_i(x)\ge u\}$. If the margins are continuous, $C$ is unique; otherwise it is unique only on $\mathrm{Ran}\,F_1\times\cdots\times\mathrm{Ran}\,F_d$.
 
 **Proof sketch (continuous case).** Set $U_i=F_i(X_i)$. The probability transform gives $U_i\sim U(0,1)$, and $F_i^{\leftarrow}(U_i)=X_i$ a.s. Then
 
-$$F(x)=\Pr[X_1\le x_1,\dots,X_d\le x_d]=\Pr[U_1\le F_1(x_1),\dots,U_d\le F_d(x_d)]=C\big(F_1(x_1),\dots,F_d(x_d)\big).$$
+$$
+F(x)=\Pr[X_1\le x_1,\dots,X_d\le x_d]=\Pr[U_1\le F_1(x_1),\dots,U_d\le F_d(x_d)]=C\big(F_1(x_1),\dots,F_d(x_d)\big).
+$$
 
 The converse: given any copula $C$ and margins $F_i$, the function $C(F_1(x_1),\dots,F_d(x_d))$ is a valid joint CDF with those margins — take $\mathbf U\sim C$ and set $X_i:=F_i^{\leftarrow}(U_i)$.
 
@@ -60,10 +64,12 @@ The converse: given any copula $C$ and margins $F_i$, the function $C(F_1(x_1),\
 - **Countermonotonicity** $W(u_1,u_2)=\max(u_1+u_2-1,0)$: joint CDF of $(U,1-U)$; exists only in $d=2$.
 - **Gaussian copula** (implicit, from $N_d(0,P)$):
 
-$$C^{Ga}_P(u)=\Phi_P\!\big(\Phi^{-1}(u_1),\dots,\Phi^{-1}(u_d)\big),\qquad
+$$
+C^{Ga}_P(u)=\Phi_P\!\big(\Phi^{-1}(u_1),\dots,\Phi^{-1}(u_d)\big),\qquad
 C^{Ga}_\varrho(u,v)=\Phi_2\!\big(\Phi^{-1}(u),\Phi^{-1}(v);\varrho\big)=
 \int_{-\infty}^{\Phi^{-1}(u)}\!\!\int_{-\infty}^{\Phi^{-1}(v)}\!\frac{1}{2\pi\sqrt{1-\varrho^2}}
-\exp\!\Big(-\frac{s_1^2-2\varrho s_1s_2+s_2^2}{2(1-\varrho^2)}\Big)\,ds_1ds_2 .$$
+\exp\!\Big(-\frac{s_1^2-2\varrho s_1s_2+s_2^2}{2(1-\varrho^2)}\Big)\,ds_1ds_2 .
+$$
 - **$t$ copula** (implicit, from $t_d(\nu,0,P)$): $C^t_{\nu,P}(u)=t_{\nu,P}\big(t_\nu^{-1}(u_1),\dots,t_\nu^{-1}(u_d)\big)$.
 
 **Simulation (Algorithm 7.11).** Generate $\mathbf Z\sim N_d(0,P)$; return $\mathbf U=(\Phi(Z_1),\dots,\Phi(Z_d))$. The $t$ copula adds a chi-square mixing: $\mathbf X=\mathbf Z\sqrt{\nu/W}$ with $W\sim\chi^2_\nu$, then $U_i=t_\nu(X_i)$.
@@ -74,12 +80,18 @@ C^{Ga}_\varrho(u,v)=\Phi_2\!\big(\Phi^{-1}(u),\Phi^{-1}(v);\varrho\big)=
 
 Neither Kendall's $\tau$ nor Spearman's $\rho_S$ sees anything but the copula:
 
-$$\rho_\tau(X_1,X_2)=\mathbb{E}\big[\mathrm{sign}((X_1-\tilde X_1)(X_2-\tilde X_2))\big]=4\!\iint_{[0,1]^2}C\,dC-1,$$
-$$\rho_S(X_1,X_2)=12\!\iint_{[0,1]^2}\big(C(u_1,u_2)-u_1u_2\big)\,du_1du_2=\rho\big(F_1(X_1),F_2(X_2)\big)\ \ (\text{linear corr.\ of the copula}).$$
+$$
+\rho_\tau(X_1,X_2)=\mathbb{E}\big[\mathrm{sign}((X_1-\tilde X_1)(X_2-\tilde X_2))\big]=4\!\iint_{[0,1]^2}C\,dC-1,
+$$
+$$
+\rho_S(X_1,X_2)=12\!\iint_{[0,1]^2}\big(C(u_1,u_2)-u_1u_2\big)\,du_1du_2=\rho\big(F_1(X_1),F_2(X_2)\big)\ \ (\text{linear corr.\ of the copula}).
+$$
 
 Both are $0$ under independence, $\pm1$ under (counter)monotonicity, and invariant under strictly increasing transforms — exactly what Pearson correlation fails to be. For the **Gaussian copula** they have closed forms:
 
-$$\boxed{\ \rho_\tau=\frac{2}{\pi}\arcsin\varrho\ },\qquad \boxed{\ \rho_S=\frac{6}{\pi}\arcsin\!\Big(\frac{\varrho}{2}\Big)\ },$$
+$$
+\boxed{\ \rho_\tau=\frac{2}{\pi}\arcsin\varrho\ },\qquad \boxed{\ \rho_S=\frac{6}{\pi}\arcsin\!\Big(\frac{\varrho}{2}\Big)\ },
+$$
 
 so a Gaussian copula can be calibrated by inverting an empirical rank correlation: $\varrho=\sin(\pi\rho_\tau/2)$.
 

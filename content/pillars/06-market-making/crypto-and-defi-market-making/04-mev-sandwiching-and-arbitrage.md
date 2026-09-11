@@ -35,7 +35,9 @@ A victim submits a swap to buy $X$ (spend $\Delta y$ of $Y$). The attacker inser
 
 The pool math (from [[pillars/06-market-making/crypto-and-defi-market-making/02-the-constant-product-amm|02]]): swapping $\Delta y$ of $Y$ in returns
 
-$$\Delta x = x - \frac{xy}{y+\Delta y} = \frac{x\,\Delta y}{y+\Delta y}$$
+$$
+\Delta x = x - \frac{xy}{y+\Delta y} = \frac{x\,\Delta y}{y+\Delta y}
+$$
 
 of $X$ out. The price the victim pays is $\Delta y/\Delta x$, strictly worse than the pre-swap marginal $p=y/x$ — and worse still when the attacker's front-run has already raised $p$. The sandwich is profitable iff the attacker's back-run proceeds exceed his front-run cost plus gas.
 
@@ -54,7 +56,9 @@ The AMM's price is only "fair" because **arbitrageurs link it to the CEX price**
 
 Ethereum-style settlement uses a **priority fee** (tip above the base fee, EIP-1559): inclusion and ordering are auctioned by tip, so the sandwich attacker bids a higher tip to front-run, and the victim bids to defend. The attack is viable only if
 
-$$\text{extracted value} - \text{gas costs} - \text{priority fees} > 0 .$$
+$$
+\text{extracted value} - \text{gas costs} - \text{priority fees} > 0 .
+$$
 
 Gas is a *fixed* cost per action, so it is a **deflationary tax on small-scale market making**: rebalancing a concentrated position ([[pillars/06-market-making/crypto-and-defi-market-making/03-concentrated-liquidity-and-uniswap-v3|03]]), migrating liquidity, and posting/removing orders all cost gas, which a low-margin maker may not recover. MEV also creates the fee-tier threshold of [[pillars/06-market-making/crypto-and-defi-market-making/05-failure-modes-and-practice|05]]: a pool is attackable whenever the extractable value exceeds the swap fee it would have to pay, which is why the deepest pools are exactly the ones arbitrageurs target.
 

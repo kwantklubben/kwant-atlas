@@ -31,26 +31,34 @@ Three levels of resolution, in increasing honesty:
 
 **Price, duration, convexity.** For a set of cash flows $C_i$ at times $t_i$ discounted at zero rates $y_i$,
 
-$$V=\sum_i C_i(1+y_i)^{-t_i},\qquad
+$$
+V=\sum_i C_i(1+y_i)^{-t_i},\qquad
 D_{\text{mod}}=-\frac{1}{V}\frac{\partial V}{\partial y}=\frac{1}{V}\sum_i t_i\,C_i(1+y_i)^{-t_i-1},\qquad
-\mathcal{C}=\frac{1}{V}\frac{\partial^2V}{\partial y^2}.$$
+\mathcal{C}=\frac{1}{V}\frac{\partial^2V}{\partial y^2}.
+$$
 
 For a **parallel shift** $\Delta y$, the second-order expansion is
 
-$$\Delta V\approx -\underbrace{D_{\text{mod}}V\,\Delta y}_{\text{DV01}\times\Delta y\text{ in basis points}}+\underbrace{\tfrac12\mathcal{C}V(\Delta y)^2}_{\text{convexity correction}} .$$
+$$
+\Delta V\approx -\underbrace{D_{\text{mod}}V\,\Delta y}_{\text{DV01}\times\Delta y\text{ in basis points}}+\underbrace{\tfrac12\mathcal{C}V(\Delta y)^2}_{\text{convexity correction}} .
+$$
 
 Convexity is **always favourable to a long bond position**: the price rises more than duration predicts on a rally and falls less than duration predicts on a selloff. That asymmetry is a real, priced asset — and it is exactly the second-order sensitivity term this folder keeps returning to.
 
 **Key-rate durations (the canonical definitions).** Let the curve be parameterised by node rates $y_1,\dots,y_n$ (zero rates, or par swap rates — the choice is a convention, but *fixed before* the ladder is computed). Then
 
-$$KRD_i=-\frac{\partial V}{\partial y_i}\times10^{-4}\approx-\frac{V(y_i+h)-V(y_i-h)}{2}\quad(\text{per }1\text{bp},\ h=10^{-4}),\qquad
-\sum_i KRD_i=\text{DV01}_{\text{parallel}} .$$
+$$
+KRD_i=-\frac{\partial V}{\partial y_i}\times10^{-4}\approx-\frac{V(y_i+h)-V(y_i-h)}{2}\quad(\text{per }1\text{bp},\ h=10^{-4}),\qquad
+\sum_i KRD_i=\text{DV01}_{\text{parallel}} .
+$$
 
 The **summation identity** is the fundamental consistency check of any rate-risk system: *the key-rate ladder must sum to the parallel DV01.* When it does not, the curve interpolation or the bump convention is inconsistent with the parallel-shift convention.
 
 **Portfolio aggregation.** Because the ladder is a vector, books aggregate **node by node**:
 
-$$KRD^{\text{book}}_i=\sum_{\text{desks}} KRD_i^{\text{desk}} .$$
+$$
+KRD^{\text{book}}_i=\sum_{\text{desks}} KRD_i^{\text{desk}} .
+$$
 
 Two desks can each have large DV01 and cancel exactly in the ladder — the classic "matched book" — while their *convexities* add rather than cancel. That mismatch is the origin of the "convexity book" and of the P&L that appears when the curve does not move in parallel (see also [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/03-scenario-construction|03 · Scenario Construction]] for twist/bowing scenarios).
 
@@ -123,7 +131,7 @@ parallel +200bp: actual=-24.135169  dur-only=-26.183108  dur+conv=-23.996433
 
 1. **The ladder is the risk.** The book's DV01 is $0.130916$, but it is *not* spread evenly: the 5-year bond's final coupon/principal node carries $0.043467$ ($33\%$ of the total) and the 10-year's carries $0.068206$ ($52\%$). The **intermediate nodes carry almost nothing** ($\approx0.003$ each). A parallel-shift hedge is therefore a poor hedge against almost any actual curve move — the classic pain trade of a coupon-bond book.
 2. **The summation identity holds to machine precision** ($\text{diff}=1.42\times10^{-14}$). This is the check that a risk system's curve parameterisation and its bump are mutually consistent.
-3. **Convexity is a real correction, not trivia.** On a $+100$bp parallel move, duration alone predicts $-13.09$ against an actual $-12.56$ — a $\$0.53$ error on a $\$212.56$ book ($+4.2\%$ of the loss). At $+200$bp the error is $\$2.05$ ($8.5\%$). The sign is favourable (long convexity cushions a selloff) and it is *symmetric* — the same convexity term helps on a rally, which is exactly what makes convexity a priced asset.
+3. **Convexity is a real correction, not trivia.** On a $+100$bp parallel move, duration alone predicts $-13.09$ against an actual $-12.56$ — a $ $\$0.53 error on a \212.56 book ($+4.2\%$ of the loss). At $+200$bp the error is $ $\$2.05 (8.5\%$). The sign is favourable (long convexity cushions a selloff) and it is *symmetric* — the same convexity term helps on a rally, which is exactly what makes convexity a priced asset.
 
 ---
 

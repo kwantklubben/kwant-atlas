@@ -34,7 +34,9 @@ The practical objective: know the size of the proxy error and of the binning err
 
 Define the proxy $\hat m(t,S)=\xi_0^t=\mathbb E[v_t]$ and the truth $m(t,S)=\mathbb E[v_t|S_t=S]$. Then
 
-$$\frac{m}{\xi_0^t}-1=\text{relative error in the model's local standard deviation},\qquad \frac{\sigma_{proxy}}{\sigma_{true}}-1=\sqrt{\frac{\xi_0^t}{m}}-1=\text{relative error in the leverage}.$$
+$$
+\frac{m}{\xi_0^t}-1=\text{relative error in the model's local standard deviation},\qquad \frac{\sigma_{proxy}}{\sigma_{true}}-1=\sqrt{\frac{\xi_0^t}{m}}-1=\text{relative error in the leverage}.
+$$
 
 Because local variance $=\sigma^2m$, substituting the proxy for $m$ leaves the local variance multiplied by $m/\xi_0^t$ — *not* unity. The proxy is exact only when $v_t$ is independent of $S_t$ (the LV limit, or $\rho=0$ with a deterministic driver).
 
@@ -49,11 +51,15 @@ That last fact is worth stating plainly: **an LSV implementation that uses the f
 
 From $\sigma^2=\sigma^2_{loc}/m$, log-differentiate:
 
-$$\boxed{\;\delta\ln\sigma=\tfrac12\left(\delta\ln\sigma^2_{loc}-\delta\ln m\right)\;}$$
+$$
+\boxed{\;\delta\ln\sigma=\tfrac12\left(\delta\ln\sigma^2_{loc}-\delta\ln m\right)\;}
+$$
 
 So a $1\%$ error in $m$ is a $0.5\%$ error in $\sigma$. In the particle method the estimator is a bin mean, so
 
-$$\mathrm{SE}\big(\hat m\big)\simeq\sqrt{\frac{\mathrm{Var}(v_t\,|\,S_t)}{n_{bin}}},$$
+$$
+\mathrm{SE}\big(\hat m\big)\simeq\sqrt{\frac{\mathrm{Var}(v_t\,|\,S_t)}{n_{bin}}},
+$$
 
 with the conditional variance estimated inside the bin. Note the $n_{bin}$: doubling the accuracy in the wings requires *four times* the paths *per bin*, and the bins that matter most (the far wings, which set the wing skew) are exactly the ones with the fewest paths. This is the dimensional curse of the particle method: the number of bins grows with the richness of the leverage surface one wants to represent, while the paths are spread over the whole spot range.
 
@@ -61,11 +67,15 @@ with the conditional variance estimated inside the bin. Note the $n_{bin}$: doub
 
 Consider a forward-variance driver $\zeta^u_t$ and the LSV spot process
 
-$$dS_t=(r-q)S_tdt+\sigma(t,S_t)\sqrt{\zeta_t^t}\,S_tdW^S_t.$$
+$$
+dS_t=(r-q)S_tdt+\sigma(t,S_t)\sqrt{\zeta_t^t}\,S_tdW^S_t.
+$$
 
 Apply the transformation
 
-$$\zeta^u\to\varphi^u\zeta^u\quad(\varphi^u>0\ \text{constant in }u),\qquad \sigma(u,S)\to\frac{\sigma(u,S)}{\sqrt{\varphi^u}}.$$
+$$
+\zeta^u\to\varphi^u\zeta^u\quad(\varphi^u>0\ \text{constant in }u),\qquad \sigma(u,S)\to\frac{\sigma(u,S)}{\sqrt{\varphi^u}}.
+$$
 
 The instantaneous variance is $\sigma(t,S_t)^2\zeta_t^t\to(\sigma^2/\varphi^t)(\varphi^t\zeta_t^t)=\sigma(t,S_t)^2\zeta_t^t$: **invariant**. Hence the spot process, and every vanilla price, is unchanged — the transformation is a **gauge redundancy**. Its consequence is that the leverage function is only defined up to this family: the "level" of $\sigma$ has no invariant meaning, only the product $\sigma^2\zeta$ does. Fixing the gauge (e.g. requiring $\zeta^u_0$ to equal the market variance-swap curve) is a *modelling convention*, not a derivation.
 
@@ -73,7 +83,9 @@ The instantaneous variance is $\sigma(t,S_t)^2\zeta_t^t\to(\sigma^2/\varphi^t)(\
 
 Fix the hedge instruments: the spot and a set of vanilla option prices $\{O_i\}$. A pricing function $P$ is **usable** if the P&L of a delta- and vega-hedged position, expanded to second order in the instrument variations and first order in $\delta t$, reads as a pure gamma/theta carry plus a hedge covariance term — with no residual dependence on the *model-specific* state variables. With $x=(S,\{O_i\},\{\lambda_k\})$, $\lambda_k$ the SV state variables, the condition is
 
-$$\boxed{\;\frac{\partial P}{\partial \lambda_k}\bigg|_{S,\{O_i\}}=0\quad\forall k\;}$$
+$$
+\boxed{\;\frac{\partial P}{\partial \lambda_k}\bigg|_{S,\{O_i\}}=0\quad\forall k\;}
+$$
 
 If it fails, the hedged P&L contains terms like $\tfrac12\frac{\partial^2P}{\partial\lambda_k\partial\lambda_l}(\delta\lambda_k\delta\lambda_l-\hat a_{kl}\delta t)$ and $\frac{\partial P}{\partial\lambda_k}\delta\lambda_k$ that "have no financial significance" and cannot be hedged away, since hedge instrument prices do not depend on $\lambda_k$. Bergomi's verdict is blunt: **"most local-stochastic volatility models are not usable models."**
 

@@ -35,27 +35,37 @@ Hasbrouck (Ch 2) gives the taxonomy that has survived three decades of electroni
 
 **Consolidation and the NBBO.** With venues $v=1,\dots,V$ each quoting $(b_v,a_v)$, the consolidated National Best Bid and Offer is
 
-$$b^\text{NBBO}=\max_v b_v,\qquad a^\text{NBBO}=\min_v a_v,\qquad m^\text{NBBO}=\tfrac12\big(b^\text{NBBO}+a^\text{NBBO}\big).$$
+$$
+b^\text{NBBO}=\max_v b_v,\qquad a^\text{NBBO}=\min_v a_v,\qquad m^\text{NBBO}=\tfrac12\big(b^\text{NBBO}+a^\text{NBBO}\big).
+$$
 
 A market is **locked** if $b^\text{NBBO}\ge a^\text{NBBO}$ and **crossed** if strict — both are transient arbitrage states that SOR and latency arbitrage exist to exploit or prevent.
 
 **Smart order routing as an allocation problem.** To buy $Q$ at minimum cost across venues with ask schedules $\{(p^a_{v,j},q_{v,j})\}$, SOR solves
 
-$$\min_{\{x_{v,j}\ge0\}}\ \sum_{v,j}x_{v,j}\,p^a_{v,j}\quad\text{s.t.}\quad\sum_{v,j}x_{v,j}=Q,$$
+$$
+\min_{\{x_{v,j}\ge0\}}\ \sum_{v,j}x_{v,j}\,p^a_{v,j}\quad\text{s.t.}\quad\sum_{v,j}x_{v,j}=Q,
+$$
 
 a simple *greedy* fill of the globally cheapest levels (a concave/linear program with a trivial level-merging solution) — but one that *ignores* queue position, fees, and information leakage, which is why real SOR is a heuristic, not this optimum.
 
 **Fees and the all-in price.** For $N$ shares at price $p$ on a maker-taker venue with maker rebate $r_m$ and taker fee $t_a$:
 
-$$\text{cost}=\underbrace{N p}_{\text{principal}}+\underbrace{N f}_{\text{access}},\qquad f=\begin{cases}-r_m & \text{you were the maker}\\ +t_a & \text{you were the taker}\end{cases}.$$
+$$
+\text{cost}=\underbrace{N p}_{\text{principal}}+\underbrace{N f}_{\text{access}},\qquad f=\begin{cases}-r_m & \text{you were the maker}\\ +t_a & \text{you were the taker}\end{cases}.
+$$
 
 On an **inverted** venue the roles reverse (makers pay, takers earn). The *effective* spread you capture is therefore the quoted spread **plus** the fee differential:
 
-$$S^\text{eff}=S^\text{quoted}+(f_\text{taker}-f_\text{maker}).$$
+$$
+S^\text{eff}=S^\text{quoted}+(f_\text{taker}-f_\text{maker}).
+$$
 
 **Dark-pool midpoint economics.** A dark order that executes at $m^\text{NBBO}$ avoids crossing the spread: versus a taker paying $a^\text{NBBO}$, the saving is
 
-$$a^\text{NBBO}-m^\text{NBBO}=\tfrac12\big(a^\text{NBBO}-b^\text{NBBO}\big)=\tfrac12 S^\text{NBBO}.$$
+$$
+a^\text{NBBO}-m^\text{NBBO}=\tfrac12\big(a^\text{NBBO}-b^\text{NBBO}\big)=\tfrac12 S^\text{NBBO}.
+$$
 
 The saving is exactly half the NBBO spread — the entire allure of dark trading, offset by a lower fill probability and by the adverse selection of whoever *chooses* to trade dark.
 

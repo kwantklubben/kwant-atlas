@@ -198,3 +198,43 @@ that it yields ~1040 edges — an unreadable hairball against the curated 255.
 - **Build:** `npx quartz build` (fails loudly on a bad YAML title — no backslashes in `title:`).
   `_legacy/` is excluded via `quartz.config.ts` `ignorePatterns: ["**/_legacy/**"]`; a bare `_legacy`
   is a no-op because globby matches full paths.
+
+
+---
+
+## Math rendering (2026-09-11)
+
+The published site had two long-standing math defects, both rooted in how `remark-math`
+splits delimiters — the corpus itself was not wrong, the *delimiter form* was.
+
+**1. Display equations rendered inline.** `remark-math` only creates a display equation
+when both `$$` delimiters sit on their own lines. A single-line `$$a=b$$` is parsed as
+*inline* math, so ~2,200 equations were set at text size inside the sentence flow.
+Only 6 equations on the whole site were rendering as display.
+
+**2. `$$` with content on a delimiter line produced a parse error.** Roughly 250 blocks
+wrote `$$a=...,` / `...b$$`; the parser read a stray `$` and KaTeX threw, leaving
+**215 pages showing raw red error text** instead of an equation.
+
+Fixed by normalising every `$$` block to delimiters-on-their-own-lines (`corpus/tools`
+has no script for this — it was a one-shot migration; the rule is enforced from now on by
+`check_math.mjs`).
+
+Follow-on KaTeX failures, all repaired:
+- `\*` (KaTeX has no `\*`) -> `*` — 96 spans
+- `&` inside `\text{...}` -> `\&`; `%` -> `\%` (a comment char to KaTeX)
+- `\nicefrac` -> `\tfrac`, `\shuffle` -> `\sqcup`, `\textsc` -> `\text`, `\@cdots` -> `\cdots`
+- `psmallmatrix` (Obsidian/MathJax-only) -> `pmatrix`
+- a raw BEL byte where `\a` had been mangled
+- `\$` inside math: `remark-math` ends the span at that `$`, leaving a dangling
+  backslash. The dollar must live *outside* the math span (`$-$ \$0.19816`), not inside it.
+  `\text{\$}` does **not** work — the `$` still terminates the span.
+- 11 files whose math was uniformly double-escaped (`\\hat`) — halved
+- one-off repairs: `\text{(ridge / $\ell...}`, `(56.95$ vs $60.30$)`, `\text{$ \$Vol}_t`
+
+Result: display equations **6 -> 2,449**; KaTeX errors **288 -> 16**; affected pages
+**215 -> 11**. The residue is idiosyncratic one-off LaTeX, not a systematic class.
+
+**Gate:** `node corpus/tools/check_math.mjs` validates every math span (both modes)
+against the same KaTeX the site builds with. Exits 1 on any span that fails to render.
+Run it after editing content; it catches the delimiter-form class before it ships.

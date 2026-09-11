@@ -32,37 +32,49 @@ Pages 01–05 treated the book mechanically: a state and a deterministic engine.
 
 **2.1 The Markovian queueing model (Cont, Stoikov & Talreja 2010).** Represent the book as queue sizes $Q_i$ at price levels $i$ on both sides. The process is a continuous-time Markov chain driven by three event types, with intensities that depend on the level's **distance from the touch**:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \text{limit add at }(i,\eta):&\quad \lambda^{\text{lim}}_i(p)\ \text{rate, jump } Q_i\to Q_i+\eta,\\
 \text{cancel at }(i,\eta):&\quad \lambda^{\text{can}}_i(p),\ \text{jump } Q_i\to Q_i-\eta,\\
 \text{market order of size }\eta:&\quad \lambda^{\text{mkt}}(p),\ \text{consume best levels.}
-\end{aligned}$$
+\end{aligned}
+$$
 
 Because the intensities are functions of *distance* rather than absolute price, the chain is (approximately) translation-invariant, and one can solve for the joint distribution of the spread, the next price move, and the book's depth. The empirical anchor — that deposit/cancel rates are nearly flat in distance (Bouchaud, Mézard & Potters 2002) — is what makes the model tractable and the book approximately "linear in distance" away from the touch.
 
 **2.2 Order Flow Imbalance and the price-impact law (Cont, Kukanov & Stoikov 2014).** Define the per-event bid/ask contribution
 
-$$I^b_t=\begin{cases} q^b_t, & b_t>b_{t-1}\\ q^b_t-q^b_{t-1}, & b_t=b_{t-1}\\ -q^b_{t-1}, & b_t<b_{t-1}\end{cases}
+$$
+I^b_t=\begin{cases} q^b_t, & b_t>b_{t-1}\\ q^b_t-q^b_{t-1}, & b_t=b_{t-1}\\ -q^b_{t-1}, & b_t<b_{t-1}\end{cases}
 \qquad
-I^a_t=\begin{cases} -q^a_t, & a_t>a_{t-1}\\ q^a_t-q^a_{t-1}, & a_t=a_{t-1}\\ q^a_{t-1}, & a_t<a_{t-1}\end{cases}$$
+I^a_t=\begin{cases} -q^a_t, & a_t>a_{t-1}\\ q^a_t-q^a_{t-1}, & a_t=a_{t-1}\\ q^a_{t-1}, & a_t<a_{t-1}\end{cases}
+$$
 
-$$\text{OFI}_t=I^b_t-I^a_t,\qquad \Delta m_t=\beta\,\text{OFI}_t+\varepsilon_t ,$$
+$$
+\text{OFI}_t=I^b_t-I^a_t,\qquad \Delta m_t=\beta\,\text{OFI}_t+\varepsilon_t ,
+$$
 
 with the slope **inversely proportional to depth** — the deeper the book, the smaller the price move per unit of imbalance. Cont et al. document an almost perfect linear fit empirically; OFI is the pillar's core micro-price signal ([[pillars/06-market-making/limit-order-book-mechanics|LOB Mechanics & L3 Data]]). The size-weighted touch, the **microprice**
 
-$$m^{\text{micro}}_t=\frac{q^b_t a_t+q^a_t b_t}{q^b_t+q^a_t},$$
+$$
+m^{\text{micro}}_t=\frac{q^b_t a_t+q^a_t b_t}{q^b_t+q^a_t},
+$$
 
 is the static counterpart of the same idea: it prices the *weights*, not the level.
 
 **2.3 Queue-reactive dynamics (Huang, Lehalle & Rosenbaum).** The refined short-horizon model: at the touch, queue sizes are **mean-reverting** to empirical, state-dependent targets $\bar q^\pm$; price changes occur when a touch queue is depleted or improves. This reproduces the empirical fact that *imbalance at the touch forecasts the next move* — which is exactly what a market maker monetises. The transition probability takes the form
 
-$$P(\text{up-tick}\mid q^b,q^a)=\Phi\!\left(\frac{q^b-\bar q^b}{\theta^b}\right)\cdot\Psi\!\left(\frac{\bar q^a-q^a}{\theta^a}\right),$$
+$$
+P(\text{up-tick}\mid q^b,q^a)=\Phi\!\left(\frac{q^b-\bar q^b}{\theta^b}\right)\cdot\Psi\!\left(\frac{\bar q^a-q^a}{\theta^a}\right),
+$$
 
 rising with bid-heavy and ask-light queues.
 
 **2.4 Self-exciting (Hawkes) order flow.** Trade and cancel arrivals cluster in time. A Hawkes process captures this:
 
-$$\lambda(t)=\mu+\sum_{t_i<t}\phi(t-t_i),\qquad \phi\ge0,\qquad n=\int_0^\infty\phi(s)\,ds<1,$$
+$$
+\lambda(t)=\mu+\sum_{t_i<t}\phi(t-t_i),\qquad \phi\ge0,\qquad n=\int_0^\infty\phi(s)\,ds<1,
+$$
 
 where $n$ is the **branching ratio** (the average number of offspring events per event). $n\to1$ means near-critical, clustered flow; $n$ estimated empirically is high and time-varying, which is *why* volatility clusters and why impact estimates drift. This is the natural bridge to [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] and to market-impact models.
 

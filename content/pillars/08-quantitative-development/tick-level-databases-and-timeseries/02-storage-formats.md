@@ -31,22 +31,29 @@ The objective of this page is to make the *file format itself* legible: Parquet 
 
 **AoS vs SoA (the in-memory half).** For $N$ records of width $s=\sum_j s_j$, scanning one field of width $s_c$ touches
 
-$$W_{\text{AoS}} = N s, \qquad W_{\text{SoA}} = N s_c, \qquad
-L_{\text{AoS}} = \left\lceil \frac{Ns}{64} \right\rceil, \quad L_{\text{SoA}} = \left\lceil \frac{N s_c}{64} \right\rceil .$$
+$$
+W_{\text{AoS}} = N s, \qquad W_{\text{SoA}} = N s_c, \qquad
+L_{\text{AoS}} = \left\lceil \frac{Ns}{64} \right\rceil, \quad L_{\text{SoA}} = \left\lceil \frac{N s_c}{64} \right\rceil .
+$$
 
 The ratio $s/s_c$ (here $6$) is **structural**: no predicate, index, or SIMD instruction recovers bytes never laid out contiguously.
 
 **Partition pruning.** With the table split into $D$ equal day-partitions — each self-contained with its own header and statistics — a single-day predicate reads
 
-$$B_{\text{pruned}} = \frac{B_{\text{table}}}{D} \quad\Longrightarrow\quad \text{I/O reduction} = D.$$
+$$
+B_{\text{pruned}} = \frac{B_{\text{table}}}{D} \quad\Longrightarrow\quad \text{I/O reduction} = D.
+$$
 
 **Zone maps (min/max pushdown).** A row group of $R$ rows keeps, per column, a $(min,max)$ pair (16 B). For an equality/range predicate known to select a fraction $f$ of the value domain, an engine that reads only the groups whose $[min,max]$ overlaps the predicate reads approximately
 
-$$G_{\text{read}} \approx \lceil f\,G \rceil \quad\text{groups instead of } G = \left\lceil \frac{R_{\text{day}}}{R} \right\rceil,$$
+$$
+G_{\text{read}} \approx \lceil f\,G \rceil \quad\text{groups instead of } G = \left\lceil \frac{R_{\text{day}}}{R} \right\rceil,
+$$
 
 with a metadata overhead of only
 
-$$\text{overhead} = \frac{16\,\lvert\text{cols}\rvert}{R\,s}\ \text{fraction of the day's bytes}$$ (equivalently $\frac{16\lvert\text{cols}\rvert G}{R_{\text{day}}s}$, with $G=R_{\text{day}}/R$ groups).
+$$
+\text{overhead} = \frac{16\,\lvert\text{cols}\rvert}{R\,s}\ \text{fraction of the day's bytes}$$ (equivalently $\frac{16\lvert\text{cols}\rvert G}{R_{\text{day}}s}$, with $G=R_{\text{day}}/R$ groups).
 
 This is why a *sorted* table is cheap to filter: sorting co-locates values, so each group's $[min,max]$ band is narrow and few groups are needed.
 

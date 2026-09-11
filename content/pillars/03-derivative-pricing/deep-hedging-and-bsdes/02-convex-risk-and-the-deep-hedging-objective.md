@@ -44,15 +44,19 @@ The practical objective: be able to write down and distinguish the three risk me
 
 A *convex risk measure* on a space of bounded random variables is a map $\rho:\mathcal X\to\mathbb R$ with
 
-$$\text{(monotone) } X\le Y\Rightarrow\rho(X)\le\rho(Y);\quad
+$$
+\text{(monotone) } X\le Y\Rightarrow\rho(X)\le\rho(Y);\quad
 \text{(cash-additive) } \rho(X+c)=\rho(X)+c;\quad
-\text{(convex) } \rho(\lambda X+(1-\lambda)Y)\le\lambda\rho(X)+(1-\lambda)\rho(Y).$$
+\text{(convex) } \rho(\lambda X+(1-\lambda)Y)\le\lambda\rho(X)+(1-\lambda)\rho(Y).
+$$
 
 Cash-additivity makes $\rho(X)$ read as "the capital that must be added to $X$ to make it acceptable", which is exactly the desk meaning: the premium. Adding sub-additivity ($\rho(X+Y)\le\rho(X)+\rho(Y)$) upgrades *convex* to *coherent* (Artzner–Delbaen–Eber–Heath 1999) — the CVaR/ES family qualifies, the entropic family does not (it is convex but not coherent; it is *not* positively homogeneous).
 
 The universal dual object is the **robust representation**
 
-$$\boxed{\ \rho(X)=\sup_{\mathbb Q\in\mathcal Q}\Big(\mathbb E_{\mathbb Q}[-X]-\alpha(\mathbb Q)\Big)\ }$$
+$$
+\boxed{\ \rho(X)=\sup_{\mathbb Q\in\mathcal Q}\Big(\mathbb E_{\mathbb Q}[-X]-\alpha(\mathbb Q)\Big)\ }
+$$
 
 with $\mathcal Q$ a set of probability measures and $\alpha$ a penalty function (Föllmer–Schied). This is what turns "minimise a convex risk measure" into "minimise a worst case over a family of models" — the source of the distributionally-robust hedging of [[pillars/03-derivative-pricing/deep-hedging-and-bsdes/06-advanced-extensions|06]].
 
@@ -60,25 +64,35 @@ with $\mathcal Q$ a set of probability measures and $\alpha$ a penalty function 
 
 **(i) Variance (quadratic).** $\rho(X)=\mathrm{Var}(X)=\mathbb E[(X-\mathbb E X)^2]$. It is *not* monotone (it ignores the mean), so in deep hedging it is used in the mean-demeaned form $\rho(R(\delta))$ with $R=\delta\Delta S-H$ — the residual already absorbs the mean. The optimal hedge is the regression
 
-$$\delta^\star=\frac{\mathrm{Cov}(\Delta S,H)}{\mathrm{Var}(\Delta S)} .$$
+$$
+\delta^\star=\frac{\mathrm{Cov}(\Delta S,H)}{\mathrm{Var}(\Delta S)} .
+$$
 
 **(ii) CVaR (expected shortfall).** With confidence $\alpha$,
 
-$$\boxed{\ \mathrm{CVaR}_\alpha(X)=\inf_{t\in\mathbb R}\Big\{t+\frac{1}{1-\alpha}\mathbb E\big[(X-t)^+\big]\Big\}=\frac{1}{1-\alpha}\int_\alpha^1\mathrm{VaR}_u(X)\,du=\mathbb E\big[-X\,\big|\,-X\ge\mathrm{VaR}_\alpha\big]\ }$$
+$$
+\boxed{\ \mathrm{CVaR}_\alpha(X)=\inf_{t\in\mathbb R}\Big\{t+\frac{1}{1-\alpha}\mathbb E\big[(X-t)^+\big]\Big\}=\frac{1}{1-\alpha}\int_\alpha^1\mathrm{VaR}_u(X)\,du=\mathbb E\big[-X\,\big|\,-X\ge\mathrm{VaR}_\alpha\big]\ }
+$$
 
 (Rockafellar–Uryasev 2000). It is coherent, and its robust representation uses the *absolutely continuous* set
 
-$$\mathcal Q_{\mathrm{CVaR}}=\Big\{\mathbb Q\ll\mathbb P:\ \frac{d\mathbb Q}{d\mathbb P}\le\frac{1}{1-\alpha}\Big\},\qquad \rho(X)=\sup_{\mathbb Q\in\mathcal Q_{\mathrm{CVaR}}}\mathbb E_{\mathbb Q}[-X].$$
+$$
+\mathcal Q_{\mathrm{CVaR}}=\Big\{\mathbb Q\ll\mathbb P:\ \frac{d\mathbb Q}{d\mathbb P}\le\frac{1}{1-\alpha}\Big\},\qquad \rho(X)=\sup_{\mathbb Q\in\mathcal Q_{\mathrm{CVaR}}}\mathbb E_{\mathbb Q}[-X].
+$$
 
 For $X\sim N(0,1)$ there is a closed form: $\mathrm{CVaR}_\alpha(X)=\varphi(z_\alpha)/(1-\alpha)$ with $z_\alpha=\Phi^{-1}(\alpha)$ — the check used in §3.
 
 **(iii) Entropic risk.** For $\gamma>0$,
 
-$$\boxed{\ \rho_\gamma(X)=\frac1\gamma\ln\mathbb E\big[e^{\gamma X}\big]\ }$$
+$$
+\boxed{\ \rho_\gamma(X)=\frac1\gamma\ln\mathbb E\big[e^{\gamma X}\big]\ }
+$$
 
 which is monotone, cash-additive and convex, with $X\sim N(m,s^2)\Rightarrow\rho_\gamma(X)=m+\tfrac{\gamma}{2}s^2$ **exactly**. Its robust representation is the "reverse" one over *all* measures,
 
-$$\rho_\gamma(X)=\sup_{\mathbb Q\ll\mathbb P}\Big(\mathbb E_{\mathbb Q}[-X]-\tfrac1\gamma H(\mathbb Q\|\mathbb P)\Big),\qquad H=\text{relative entropy},$$
+$$
+\rho_\gamma(X)=\sup_{\mathbb Q\ll\mathbb P}\Big(\mathbb E_{\mathbb Q}[-X]-\tfrac1\gamma H(\mathbb Q\|\mathbb P)\Big),\qquad H=\text{relative entropy},
+$$
 
 which is the Girsanov log-density in the diffusion case — the exact reason it produces a *BSDE with a quadratic driver* (§03).
 
@@ -86,12 +100,16 @@ which is the Girsanov log-density in the diffusion case — the exact reason it 
 
 Let $U(x)=-e^{-\gamma x}$ (CARA) and consider a seller of a liability $H$. The *indifference price* $p$ is the cash making her indifferent between selling (and hedging optimally) and not:
 
-$$\sup_\delta\mathbb E\big[U\big(p+X_T^\delta-H\big)\big]=\sup_\delta\mathbb E\big[U\big(X_T^\delta\big)\big].$$
+$$
+\sup_\delta\mathbb E\big[U\big(p+X_T^\delta-H\big)\big]=\sup_\delta\mathbb E\big[U\big(X_T^\delta\big)\big].
+$$
 
 In the zero-hedge / complete-market case this collapses to
 
-$$-e^{-\gamma p}\mathbb E\big[e^{\gamma H}\big]=-1\quad\Longrightarrow\quad
-\boxed{\ p^{\mathrm{ind}}=\frac1\gamma\ln\mathbb E\big[e^{\gamma H}\big]=\rho_\gamma(H)\ } .$$
+$$
+-e^{-\gamma p}\mathbb E\big[e^{\gamma H}\big]=-1\quad\Longrightarrow\quad
+\boxed{\ p^{\mathrm{ind}}=\frac1\gamma\ln\mathbb E\big[e^{\gamma H}\big]=\rho_\gamma(H)\ } .
+$$
 
 **The indifference price *is* the entropic risk measure of the liability.** This identity is the entire justification for calling the risk-measure-minimising hedge "utility-based", and it is what makes the entropic case solvable by a BSDE rather than by brute-force learning.
 
@@ -99,9 +117,11 @@ $$-e^{-\gamma p}\mathbb E\big[e^{\gamma H}\big]=-1\quad\Longrightarrow\quad
 
 Expand the entropic transform in small risk aversion:
 
-$$\ln\mathbb E[e^{-\gamma\xi}]=-\gamma\mathbb E[\xi]+\frac{\gamma^2}{2}\mathrm{Var}(\xi)+O(\gamma^3)
+$$
+\ln\mathbb E[e^{-\gamma\xi}]=-\gamma\mathbb E[\xi]+\frac{\gamma^2}{2}\mathrm{Var}(\xi)+O(\gamma^3)
 \quad\Longrightarrow\quad
-\boxed{\ Y_0=-\frac1\gamma\ln\mathbb E[e^{-\gamma\xi}]=\mathbb E[\xi]-\frac{\gamma}{2}\mathrm{Var}(\xi)+O(\gamma^2)\ } .$$
+\boxed{\ Y_0=-\frac1\gamma\ln\mathbb E[e^{-\gamma\xi}]=\mathbb E[\xi]-\frac{\gamma}{2}\mathrm{Var}(\xi)+O(\gamma^2)\ } .
+$$
 
 So **quadratic (variance-optimal) hedging is the $\gamma\to0$ limit of the entropic/BSDE problem**. This is why the Föllmer–Sondermann projection of page 01 is not a *different* theory from the BSDE one — it is its first-order approximation, and the two agree exactly in the limit. For a Gaussian terminal it is exact: $\xi\sim N(m,s^2)\Rightarrow Y_0=m-\tfrac{\gamma}{2}s^2$ (§03 check C confirms this numerically).
 
@@ -109,7 +129,9 @@ So **quadratic (variance-optimal) hedging is the $\gamma\to0$ limit of the entro
 
 Costs enter the objective, not the model: with proportional cost $\kappa$ on traded notional, the static one-period problem becomes
 
-$$\min_{c,\delta}\ \mathrm{Var}\big(c+\delta\Delta S-H\big)+\underbrace{\kappa\,|\delta|\,S_0}_{\text{cost}} ,$$
+$$
+\min_{c,\delta}\ \mathrm{Var}\big(c+\delta\Delta S-H\big)+\underbrace{\kappa\,|\delta|\,S_0}_{\text{cost}} ,
+$$
 
 whose solution is $\delta^\star(\kappa)=\big(\mathrm{Cov}(\Delta S,H)-\tfrac{\kappa S_0}{2}\big)/\mathrm{Var}(\Delta S)$ — the hedge **shrinks** linearly in $\kappa$. Multi-period, the cost term is $\kappa\sum_i|\delta_{t_i}-\delta_{t_{i-1}}|S_{t_i}$: a *path* functional, so the objective is no longer a function of a single number and the deep-hedging formulation becomes unavoidable. §05 quantifies both effects (the optimum frequency, and Leland's asymptotic correction in §06).
 

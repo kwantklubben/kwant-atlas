@@ -29,7 +29,9 @@ This folder is the model topic-folder for the quantitative-risk build. It is a *
 **Notation:** $X$ a loss/return variable, $F$ its CDF, $u$ a high threshold, $N_u$ the number of exceedances of $u$ out of $n$ observations, $\xi$ the *shape parameter* (extreme value index, tail index $\alpha = 1/\xi$), $\beta>0$ a scale, $\mu$ a location.
 
 **The three extreme-value laws (Fisher–Tippett–Gnedenko, de Haan §1.1).** For i.i.d. $X_i$ with normalized maxima converging to a non-degenerate $G$, $G$ must be the **Generalized Extreme Value (GEV)** family:
-$$G_\xi(x)=\exp\Big\{-\big(1+\xi x\big)^{-1/\xi}\Big\},\qquad \xi\neq 0;\qquad G_0(x)=e^{-e^{-x}}.$$
+$$
+G_\xi(x)=\exp\Big\{-\big(1+\xi x\big)^{-1/\xi}\Big\},\qquad \xi\neq 0;\qquad G_0(x)=e^{-e^{-x}}.
+$$
 $\xi>0$ Fréchet (heavy/power-law tails) · $\xi=0$ Gumbel (light/exponential tails) · $\xi<0$ Weibull (bounded support). **Financial losses sit in $\xi>0$.**
 
 | Quantity | Formula | Verified check |

@@ -31,29 +31,39 @@ The unifying idea: **allocation is a conditional object.** The un-conditional op
 
 **Regime-conditional allocation.** Let the market be in regime $s_t\in\{1,\dots,S\}$ (detected, e.g., by a hidden-Markov model on returns/vol). The allocation solves the MV problem *inside* the regime:
 
-$$w^\star(s)=\operatorname*{arg\,max}_{w}\;\frac{w^\top\mu_s-r_f}{\sqrt{w^\top\Sigma_s w}},\qquad \text{or}\qquad w_{\text{GMV}}(s)=\frac{\Sigma_s^{-1}\mathbf1}{\mathbf1^\top\Sigma_s^{-1}\mathbf1}.$$
+$$
+w^\star(s)=\operatorname*{arg\,max}_{w}\;\frac{w^\top\mu_s-r_f}{\sqrt{w^\top\Sigma_s w}},\qquad \text{or}\qquad w_{\text{GMV}}(s)=\frac{\Sigma_s^{-1}\mathbf1}{\mathbf1^\top\Sigma_s^{-1}\mathbf1}.
+$$
 
 The deployable portfolio is the probability-weighted blend across the *belief* over regimes, $\pi_t(s)=P(s_t=s\mid\mathcal F_t)$:
 
-$$\bar w_t=\sum_s \pi_t(s)\,w^\star(s).$$
+$$
+\bar w_t=\sum_s \pi_t(s)\,w^\star(s).
+$$
 
 This soft (belief-weighted) form is far more robust than a hard switch, because it does not fully commit to a noisy regime label.
 
 **Trend overlay.** A moving-average / time-series-momentum signal $g_{i,t}=\mathrm{sign}(\bar r_{i,t-L\to t})$ scales each sleeve:
 
-$$w_{i,t}\propto w^{\text{base}}_{i}\cdot\frac{1+g_{i,t}}{2},$$
+$$
+w_{i,t}\propto w^{\text{base}}_{i}\cdot\frac{1+g_{i,t}}{2},
+$$
 
 de-risking assets in downtrends. Cross-asset trend is the classic crisis-alpha source because it is *long volatility* in a downturn.
 
 **Volatility targeting.** Choose gross exposure $g$ so realised portfolio volatility hits a target $\sigma^\star$:
 
-$$g_t=\min\!\Big(\frac{\sigma^\star}{\hat\sigma_t},\ g_{\max}\Big),\qquad \hat\sigma_t^2=\text{EWMA of portfolio variance},$$
+$$
+g_t=\min\!\Big(\frac{\sigma^\star}{\hat\sigma_t},\ g_{\max}\Big),\qquad \hat\sigma_t^2=\text{EWMA of portfolio variance},
+$$
 
 then $w_t=g_t\,\bar w_t$. This replaces the discrete risk *budget* implied by $1/N$ with an explicit one.
 
 **Risk budgeting (the general form).** Rather than equalise dollars, equalise (or budget) *risk contributions*: choose $w$ with
 
-$$\frac{w_i(\Sigma w)_i}{w^\top\Sigma w}=b_i,\qquad \sum_i b_i=1,\quad \sum_i w_i=1,$$
+$$
+\frac{w_i(\Sigma w)_i}{w^\top\Sigma w}=b_i,\qquad \sum_i b_i=1,\quad \sum_i w_i=1,
+$$
 
 the equal-risk-contribution (ERC) / risk-parity family — the "all-weather multi-asset" idea, fully developed in [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]].
 

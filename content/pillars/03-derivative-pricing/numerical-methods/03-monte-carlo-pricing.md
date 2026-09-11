@@ -16,7 +16,9 @@ tags:
 
 Monte Carlo prices an option by *manufacturing the risk-neutral expectation one path at a time*. Draw a path of $S$ under $\mathbb{Q}$, evaluate the discounted payoff, repeat $n$ times, average. Its justification is the strong law; its error is the central limit theorem:
 
-$$\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i)\ \xrightarrow{\text{a.s.}}\ \alpha,\qquad \hat\alpha_n-\alpha\ \approx\ \mathcal N\!\Big(0,\frac{\sigma_f^2}{n}\Big).$$
+$$
+\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i)\ \xrightarrow{\text{a.s.}}\ \alpha,\qquad \hat\alpha_n-\alpha\ \approx\ \mathcal N\!\Big(0,\frac{\sigma_f^2}{n}\Big).
+$$
 
 The practical objectives are three: (i) build the estimator and always attach a standard error; (ii) sample paths *exactly* when possible — for GBM the transition is lognormal so the simulation is exact, with **zero** discretisation bias; (iii) recognise the two structural costs — the $O(n^{-1/2})$ rate (four times the work per halving) and the fact that a payoff average is a *path functional* whose sampling requires care (Brownian bridge, monitoring dates).
 
@@ -32,19 +34,25 @@ Three "aha"s:
 
 **The pricing identity** (Glasserman eq. 1.39, the same as Feynman–Kac's integral form):
 
-$$V(0)=\mathbb{E}_\beta\!\left[\frac{V(T)}{\beta(T)}\right]=e^{-rT}\,\mathbb{E}^{\mathbb{Q}}[\text{payoff}(S_T)] .$$
+$$
+V(0)=\mathbb{E}_\beta\!\left[\frac{V(T)}{\beta(T)}\right]=e^{-rT}\,\mathbb{E}^{\mathbb{Q}}[\text{payoff}(S_T)] .
+$$
 
 Simulate the **risk-neutral** dynamics — the drift is $r$, never $\mu$; the volatility is unchanged by the change of measure (Glasserman eq. 1.42: only the drift shifts under Girsanov).
 
 **The path sampler.** For GBM the exact grid-point transition is
 
-$$S(t_{i+1})=S(t_i)\exp\!\Big[\big(r-\tfrac12\sigma^2\big)(t_{i+1}-t_i)+\sigma\sqrt{t_{i+1}-t_i}\,Z_{i+1}\Big],$$
+$$
+S(t_{i+1})=S(t_i)\exp\!\Big[\big(r-\tfrac12\sigma^2\big)(t_{i+1}-t_i)+\sigma\sqrt{t_{i+1}-t_i}\,Z_{i+1}\Big],
+$$
 
 and for a Gaussian short rate the exact transition is likewise available (Glasserman eq. 3.43–3.45). *Nothing is discretised at the grid points* for these models.
 
 **The Brownian bridge** (Glasserman eq. 3.7–3.8) — the tool that makes a path's intermediate values cheap and, later, makes barriers correct. Given $W(u)=x$ and $W(t)=y$ with $u<s<t$:
 
-$$\mathbb E[W(s)\mid\cdot]=\frac{(t-s)x+(s-u)y}{t-u},\qquad \mathrm{Var}[W(s)\mid\cdot]=\frac{(s-u)(t-s)}{t-u}.$$
+$$
+\mathbb E[W(s)\mid\cdot]=\frac{(t-s)x+(s-u)y}{t-u},\qquad \mathrm{Var}[W(s)\mid\cdot]=\frac{(s-u)(t-s)}{t-u}.
+$$
 
 Two properties matter: (i) the conditional variance depends **only on the interval lengths**, not on the endpoint values — so bridge refinement is numerically stable; (ii) the *first* (coarsest) normal drives the largest share of path variance, which is why the bridge ordering is the standard dimension-reduction device for QMC (page 06).
 
@@ -56,8 +64,10 @@ Two properties matter: (i) the conditional variance depends **only on the interv
 
 **The MSE framework** (Glasserman §1.1.3) — the honest budget statement. With bias $b\delta^\beta$, per-path cost $c\delta^{-\eta}$ and $n$ paths,
 
-$$\mathrm{MSE}=\underbrace{\text{bias}^2}_{O(\delta^{2\beta})}+\underbrace{\text{variance}}_{O(1/n)},\qquad
-\mathrm{RMSE}=O\!\big(s^{-\beta/(2\beta+\eta)}\big),$$
+$$
+\mathrm{MSE}=\underbrace{\text{bias}^2}_{O(\delta^{2\beta})}+\underbrace{\text{variance}}_{O(1/n)},\qquad
+\mathrm{RMSE}=O\!\big(s^{-\beta/(2\beta+\eta)}\big),
+$$
 
 where $s$ is the work budget; unbiased simulation ($\beta\to\infty$) recovers $s^{-1/2}$, and the discretisation-aware case is page 04's (§2 efficiency rule) $s^{-\beta/(2\beta+1)}$.
 

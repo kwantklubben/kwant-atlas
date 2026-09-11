@@ -35,23 +35,31 @@ Let firm $i$ return be $r_i$, the system (market) return be $R$, and let $\alpha
 
 **MES (Acharya–Pedersen–Philippon–Richardson).** In expected-shortfall form, the system's ES is a value-weighted sum of member MESes:
 
-$$\text{ES}_\alpha(R) = \sum_i w_i\,\mathbb{E}[\,r_i \mid R \le \text{VaR}_\alpha(R)\,] \equiv \sum_i w_i\,\text{MES}_{i,\alpha}.$$
+$$
+\text{ES}_\alpha(R) = \sum_i w_i\,\mathbb{E}[\,r_i \mid R \le \text{VaR}_\alpha(R)\,] \equiv \sum_i w_i\,\text{MES}_{i,\alpha}.
+$$
 
 Intuitively each firm contributes to system tail risk in proportion to *its own expected return inside the system's tail*. A firm that is *spread-hurting-but-small* can have large MES even if its weight $w_i$ is modest.
 
 **CoVaR (Adrian–Brunnermeier).** CoVaR is the VaR of the system *conditional on firm $i$ being at its own VaR*:
 
-$$\Pr\!\Big(X^{\text{system}} \le \text{CoVaR}_i^{\alpha} \;\Big|\; X^i = \text{VaR}_i^{\alpha} \Big) = \alpha,$$
+$$
+\Pr\!\Big(X^{\text{system}} \le \text{CoVaR}_i^{\alpha} \;\Big|\; X^i = \text{VaR}_i^{\alpha} \Big) = \alpha,
+$$
 
 and the **ΔCoVaR** is the *contribution* — how much worse the system's tail is when firm $i$ is distressed than in its median state:
 
-$$\Delta\text{CoVaR}_i = \text{CoVaR}_i^{\alpha} - \text{CoVaR}_i^{50\%},$$
+$$
+\Delta\text{CoVaR}_i = \text{CoVaR}_i^{\alpha} - \text{CoVaR}_i^{50\%},
+$$
 
 (the textbook baseline is the firm's median state $\text{VaR}_i^{50\%}$; the common practical simplification — used by this page's code and the hub — takes the *unconditional system VaR* as the baseline, which is the figure quoted below). Note it is a *difference of conditional quantiles*, not a sensitivity/derivative — ΔCoVaR is *not* a calculus gradient, a point often muddled in practice.
 
 **SRISK (Brownlees–Engle).** A crisis scenario (cumulative market loss over some horizon ≥ threshold). Each firm's capital shortfall is
 
-$$\text{SRISK}_i = \mathbb{E}\big[\,k\,A_i - E_i \mid \text{crisis}\,\big]_+,$$
+$$
+\text{SRISK}_i = \mathbb{E}\big[\,k\,A_i - E_i \mid \text{crisis}\,\big]_+,
+$$
 
 where $A_i$ = assets, $E_i$ = equity, $k$ = required capital ratio (≈8% post-crisis). SRISK is the amount of fresh capital firm $i$ would need to keep ratio $k$ in the crisis — an *economic-resources* measure rather than a tail-quantile one, and the one regulators most directly convert into "systemically important" designations.
 

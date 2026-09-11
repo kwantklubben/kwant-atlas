@@ -29,23 +29,31 @@ This page assembles the folder into a **pipeline**: raw ticks arrive, land in a 
 
 **Bitemporal selection.** A row is keyed by $(v, k)$ — *valid time* $v$ (the period the value describes) and *knowable-at* $k$ (when that vintage became available). The point-in-time value for period $p$ as of date $t$ is
 
-$$V(p, t) = \Big\{v : k_p \le t \ \text{and}\ k_p = \max\{k \le t\}\Big\},$$
+$$
+V(p, t) = \Big\{v : k_p \le t \ \text{and}\ k_p = \max\{k \le t\}\Big\},
+$$
 
 i.e. the **latest vintage filed on or before the as-of date** — one as-of join over the `knowable_at` axis. A naive join that ignores $k$ returns $\max\{k\}$ for every $t$ and leaks the future ([[pillars/08-quantitative-development/tick-level-databases-and-timeseries/05-failure-modes-and-practice|05]]).
 
 **Pipeline latency.** Total intraday-queryable latency is the sum of stage latencies:
 
-$$T_{\text{ingest}} = \sum_s T_s, \qquad \text{throughput ceiling} = \frac{1}{T_{\text{ingest}}}\ \text{(pipelined)}.$$
+$$
+T_{\text{ingest}} = \sum_s T_s, \qquad \text{throughput ceiling} = \frac{1}{T_{\text{ingest}}}\ \text{(pipelined)}.
+$$
 
 **End-of-day flush.** Splaying $N$ rows into an immutable, time-sorted, date-partitioned store at write rate $\lambda$ takes $T_{\text{flush}} = N/\lambda$.
 
 **Storage growth.** With $R$ rows/day, $d$ trading days/year, and $w$ bits/row encoded,
 
-$$B(Y) = \frac{R\,d\,Y\,w}{8}\ \text{bytes}, \qquad \text{raw/compressed} = \frac{\sum_i s_i}{w}.$$
+$$
+B(Y) = \frac{R\,d\,Y\,w}{8}\ \text{bytes}, \qquad \text{raw/compressed} = \frac{\sum_i s_i}{w}.
+$$
 
 **Partition-slice size.** Date-partitioned with $D$ days and $S$ symbols parted within:
 
-$$\text{single-symbol day-slice} = \frac{1}{D \cdot S}\ \text{of the table by construction}.$$
+$$
+\text{single-symbol day-slice} = \frac{1}{D \cdot S}\ \text{of the table by construction}.
+$$
 
 ---
 

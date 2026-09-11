@@ -34,11 +34,15 @@ Three steps, three "aha"s:
 
 **The double auction as an optimization.** Take a set of buy limit orders $\{(p_i,q_i)\}$ and sell limit orders $\{(p_j,q_j)\}$. Define, at a candidate price $P$,
 
-$$\text{Demand}(P)=\sum_{i:\,p_i\ge P} q_i,\qquad \text{Supply}(P)=\sum_{j:\,p_j\le P} q_j.$$
+$$
+\text{Demand}(P)=\sum_{i:\,p_i\ge P} q_i,\qquad \text{Supply}(P)=\sum_{j:\,p_j\le P} q_j.
+$$
 
 A **uniform-price batch auction** (the mechanism used for opens, closes, and intraday fixings) picks the price that maximizes executed volume,
 
-$$P^\star=\arg\max_{P}\ \min\big(\text{Demand}(P),\ \text{Supply}(P)\big),\qquad V^\star=\min\big(\text{Demand}(P^\star),\text{Supply}(P^\star)\big),$$
+$$
+P^\star=\arg\max_{P}\ \min\big(\text{Demand}(P),\ \text{Supply}(P)\big),\qquad V^\star=\min\big(\text{Demand}(P^\star),\text{Supply}(P^\star)\big),
+$$
 
 and executes $V^\star$ at the single price $P^\star$. This is the *discrete ancestor* of the continuous book: a continuous market is what you get when you run this auction one order at a time instead of all at once.
 

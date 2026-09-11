@@ -16,7 +16,9 @@ tags:
 
 The sample covariance is unbiased but high-variance (page 01). A structured target — the simplest being a scaled identity $\mu I$, which says "assume all assets are equal and independent" — has the opposite defect: low variance, large bias. **Linear shrinkage takes a convex combination of the two:**
 
-$$\hat\Sigma=\delta F+(1-\delta)S,\qquad \delta\in[0,1],$$
+$$
+\hat\Sigma=\delta F+(1-\delta)S,\qquad \delta\in[0,1],
+$$
 
 and asks one question: *what single number $\delta$ minimizes the expected squared distance $\mathbb{E}\|\hat\Sigma-\Sigma\|_F^2$?* Ledoit & Wolf (2004) answered it in closed form, without any distributional assumption and without the user tuning anything. The practical objective of this page: derive that $\delta$, implement the estimator from scratch (about 10 lines), and *verify* that it lowers both the Frobenius risk and the portfolio's out-of-sample variance versus the sample matrix — and versus $1/N$.
 
@@ -32,15 +34,21 @@ The deep reason this works is the **James–Stein** phenomenon: an estimator tha
 
 Estimate $\Sigma$ by $\hat\Sigma=\delta F+(1-\delta)S$ with nonrandom $F$. The Frobenius risk is
 
-$$R(\delta)=\mathbb{E}\bigl\|\delta F+(1-\delta)S-\Sigma\bigr\|_F^2 .$$
+$$
+R(\delta)=\mathbb{E}\bigl\|\delta F+(1-\delta)S-\Sigma\bigr\|_F^2 .
+$$
 
 Expanding and using $\mathbb{E}[S]=\Sigma$:
 
-$$R(\delta)=\delta^2\|F-\Sigma\|_F^2+(1-\delta)^2\,\mathbb{E}\|S-\Sigma\|_F^2 \;+\;2\delta(1-\delta)\,\mathbb{E}\langle F-\Sigma,\,S-\Sigma\rangle .$$
+$$
+R(\delta)=\delta^2\|F-\Sigma\|_F^2+(1-\delta)^2\,\mathbb{E}\|S-\Sigma\|_F^2 \;+\;2\delta(1-\delta)\,\mathbb{E}\langle F-\Sigma,\,S-\Sigma\rangle .
+$$
 
 Continuing as in Ledoit & Wolf (2004, Thm 2.1) the optimum collapses to a single ratio. Writing $\gamma=\|F-S\|_F^2$ and, with the two total-error terms,
 
-$$\boxed{\ \delta^*=\frac{\pi-\rho}{\gamma}\cdot\frac1T\ },\qquad \delta^*=\operatorname{clip}\!\big(\delta^*,[0,1]\big),$$
+$$
+\boxed{\ \delta^*=\frac{\pi-\rho}{\gamma}\cdot\frac1T\ },\qquad \delta^*=\operatorname{clip}\!\big(\delta^*,[0,1]\big),
+$$
 
 where the three population scalars are
 
@@ -50,7 +58,9 @@ where the three population scalars are
 
 For the **identity-type target** $F=\mu I$ with $\mu=\operatorname{tr}(S)/N$, every off-diagonal $f_{ij}=0$, so the cross terms drop and
 
-$$\rho=\sum_{i=1}^N\pi_{ii}\quad(\text{identity target only}).$$
+$$
+\rho=\sum_{i=1}^N\pi_{ii}\quad(\text{identity target only}).
+$$
 
 For the **constant-correlation target** $F$ (all pairwise correlations equal to their sample average), $\rho$ carries additional terms $\rho_{ij}\propto\bar r_{ij}\bigl(\sqrt{s_{jj}/s_{ii}}\,\vartheta_{ii,ij}+\sqrt{s_{ii}/s_{jj}}\,\vartheta_{jj,ij}\bigr)$ — tedious to write, straightforward to estimate; this is the estimator with the best reported out-of-sample performance in Ledoit & Wolf (2004, *J. Portfolio Management*). Both targets share the identical *form* $\hat\Sigma=\delta F+(1-\delta)S$.
 
@@ -58,11 +68,15 @@ For the **constant-correlation target** $F$ (all pairwise correlations equal to 
 
 In Ledoit & Wolf (2004, *J. Multivariate Anal.*) the optimum is written as a **bias–variance ratio**. With
 
-$$\alpha^2=\|\Sigma-\mu I\|_F^2\ (\text{population}\to\text{estimated}),\qquad \beta^2=\mathbb{E}\|S-\Sigma\|_F^2,\qquad \delta^2:=\alpha^2+\beta^2=\mathbb{E}\|S-\mu I\|_F^2 ,$$
+$$
+\alpha^2=\|\Sigma-\mu I\|_F^2\ (\text{population}\to\text{estimated}),\qquad \beta^2=\mathbb{E}\|S-\Sigma\|_F^2,\qquad \delta^2:=\alpha^2+\beta^2=\mathbb{E}\|S-\mu I\|_F^2 ,
+$$
 
 the optimal combination is $\hat\Sigma=\dfrac{\beta^2}{\delta^2}\mu I+\dfrac{\alpha^2}{\delta^2}S$, i.e.
 
-$$\delta^*=\frac{\beta^2}{\alpha^2+\beta^2}=\frac{\text{total error of }S}{\text{dispersion of }S\text{ around the target}} .$$
+$$
+\delta^*=\frac{\beta^2}{\alpha^2+\beta^2}=\frac{\text{total error of }S}{\text{dispersion of }S\text{ around the target}} .
+$$
 
 Interpretation: if $S$ is relatively accurate ($\beta^2$ small), shrink little; if $S$ is inaccurate ($\beta^2$ large), shrink a lot. The percentage relative improvement in average loss (PRIAL) over $S$ equals the intensity $\beta^2/\delta^2$ itself — so $\delta^*$ is simultaneously "how much to shrink" and "how much you gain."
 

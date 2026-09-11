@@ -45,30 +45,40 @@ A competitive, risk-neutral market maker posts quotes that yield **zero expected
 
 The arrival-law of a Buy order:
 
-$$\mathbb{P}(B\mid V_H)=\pi\cdot 1+(1-\pi)\tfrac12=\tfrac{1+\pi}{2},\qquad
-\mathbb{P}(B\mid V_L)=\pi\cdot 0+(1-\pi)\tfrac12=\tfrac{1-\pi}{2}.$$
+$$
+\mathbb{P}(B\mid V_H)=\pi\cdot 1+(1-\pi)\tfrac12=\tfrac{1+\pi}{2},\qquad
+\mathbb{P}(B\mid V_L)=\pi\cdot 0+(1-\pi)\tfrac12=\tfrac{1-\pi}{2}.
+$$
 
 Bayes' rule moves the belief $\theta_t$:
 
-$$\theta_t^{+}\equiv\mathbb{P}(V_H\mid B_t)
+$$
+\theta_t^{+}\equiv\mathbb{P}(V_H\mid B_t)
 =\frac{\tfrac{1+\pi}{2}\,\theta_{t-1}}{\tfrac{1+\pi}{2}\theta_{t-1}+\tfrac{1-\pi}{2}(1-\theta_{t-1})}>\theta_{t-1},
 \qquad
 \theta_t^{-}\equiv\mathbb{P}(V_H\mid S_t)
-=\frac{\tfrac{1-\pi}{2}\,\theta_{t-1}}{\tfrac{1-\pi}{2}\theta_{t-1}+\tfrac{1+\pi}{2}(1-\theta_{t-1})}<\theta_{t-1}.$$
+=\frac{\tfrac{1-\pi}{2}\,\theta_{t-1}}{\tfrac{1-\pi}{2}\theta_{t-1}+\tfrac{1+\pi}{2}(1-\theta_{t-1})}<\theta_{t-1}.
+$$
 
 **Zero-profit quotes** ("regret-free"): the ask is the expected value *given a buy just hit it*; the bid the expected value *given a sell just hit it*:
 
-$$A_t=\mathbb{E}[V\mid B_t]=V_L+\theta_t^{+}(V_H-V_L),\qquad B_t=\mathbb{E}[V\mid S_t]=V_L+\theta_t^{-}(V_H-V_L).$$
+$$
+A_t=\mathbb{E}[V\mid B_t]=V_L+\theta_t^{+}(V_H-V_L),\qquad B_t=\mathbb{E}[V\mid S_t]=V_L+\theta_t^{-}(V_H-V_L).
+$$
 
 **Bid-ask spread** (Foucault eq. 3.12–3.15). As the belief extremes ($s_a^t,\,s_b^t$) straddle $\mu_{t-1}$:
 
-$$S_t=A_t-B_t=s_a^t+s_b^t,\qquad
+$$
+S_t=A_t-B_t=s_a^t+s_b^t,\qquad
 s_a^t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\,\theta_{t-1}+(1-\pi)\tfrac12}(V_H-V_L),\qquad
-s_b^t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\,(1-\theta_{t-1})+(1-\pi)\tfrac12}(V_H-V_L).$$
+s_b^t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\,(1-\theta_{t-1})+(1-\pi)\tfrac12}(V_H-V_L).
+$$
 
 **Symmetry at $\theta_{t-1}=\tfrac12$** (the deep, testable special case):
 
-$$\boxed{\;S=(\pi)(V_H-V_L)\;}$$
+$$
+\boxed{\;S=(\pi)(V_H-V_L)\;}
+$$
 
 - **First-trade spread at $\theta_0=\tfrac12$:** $S_1=\pi(V_H-V_L)$ (Foucault eq. 3.12).
 - Spread is largest at maximal uncertainty ($\theta=\tfrac12$) and shrinks to $0$ as the maker learns ($\theta\to1$ or $0$). **Below a single informed trader ($\pi=0$) the spread collapses to zero even with no processing/inventory cost** — the pure information result of GM (Hasbrouck Ch 5; also Copeland–Galai's "short a put and a call").

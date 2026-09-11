@@ -34,7 +34,9 @@ The four failures, in one line each:
 - **(A4) No systematic arbitrage against the factors** — otherwise the premium crowds away.
 
 **Multicollinearity, quantified.** With two near-collinear regressors, the variance of the OLS slope is
-$$\text{Var}(\hat\beta_j)=\frac{\sigma^2}{(n)\,(1-R_j^2)\cdot \text{Var}(x_j)},$$
+$$
+\text{Var}(\hat\beta_j)=\frac{\sigma^2}{(n)\,(1-R_j^2)\cdot \text{Var}(x_j)},
+$$
 where $R_j^2$ is the $R^2$ of regressing factor $j$ on the other factors. As two factors become identical ($R_j^2\to1$), the denominator $\to0$ and the slope standard error $\to\infty$ — *while the joint fit is unchanged.* This is the exact mechanism behind "betas swing wildly."
 
 **Crowding, in portfolio terms.** If all managers hold the same long-short factor portfolio $f$, then the factor's return is driven by flows, not fundamentals. A forced unwind $\Delta$ in $f$ moves every crowded asset the same direction; because everyone is on the same side, there is no counterparty — the factor's realized volatility spikes even though its *modeled* beta-risk is low. The modeled $\Sigma=X\Omega X'+D$ systematically **understates** this tail because the model assumes independent flow-driven shocks.

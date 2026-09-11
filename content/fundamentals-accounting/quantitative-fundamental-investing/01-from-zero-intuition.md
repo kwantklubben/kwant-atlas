@@ -31,20 +31,26 @@ Three steps, three "aha"s:
 
 **The value characteristic — book-to-market.** Let *BE* be the book value of common equity and *ME* the market value of equity (price $\times$ shares). The value factor sorts on
 
-$$\text{B/M} = \frac{\text{BE}}{\text{ME}}.$$
+$$
+\text{B/M} = \frac{\text{BE}}{\text{ME}}.
+$$
 
 The intuition is direct: *BE* is the accounting capital the shareholders actually put in and retained; *ME* is what the market currently prices it at. A high B/M (cheap) means the market prices the firm at little more than its book capital — Graham's bargain. A low B/M (dear) means the market is paying for future growth far above book. Fama–French 1992's central finding was that **high-B/M firms earned higher average returns than low-B/M firms**, and that this ordering survived controlling for beta.
 
 **The sort-and-compare estimator.** With $N$ firms, rank them on the characteristic $c_i$, split into $K$ portfolios by rank, and compare equal-weighted average returns:
 
-$$\overline{r}_k \;=\; \frac{1}{N_k}\sum_{i\,\in\,\text{portfolio }k} r_i, \qquad
-\text{factor spread} \;=\; \overline{r}_K - \overline{r}_1.$$
+$$
+\overline{r}_k \;=\; \frac{1}{N_k}\sum_{i\,\in\,\text{portfolio }k} r_i, \qquad
+\text{factor spread} \;=\; \overline{r}_K - \overline{r}_1.
+$$
 
 If the characteristic is a *priced* factor, the spread $\overline{r}_K-\overline{r}_1$ is reliably positive over many re-balancing periods. This is the single estimator every construction in the folder reduces to — a fact worth remembering before any exotic factor design.
 
 **Why earnings yield is value in disguise.** Book-to-market and earnings yield are two lenses on the same "cheapness" idea:
 
-$$\text{E/P} = \frac{\text{NI}}{\text{ME}} = \frac{1}{\text{P/E}},$$
+$$
+\text{E/P} = \frac{\text{NI}}{\text{ME}} = \frac{1}{\text{P/E}},
+$$
 
 and Basu (1983) showed high-E/P (low P/E) firms earn more. Both ask "is the price cheap relative to a fundamental?" — the fundamental is book value in one case, earnings in the other.
 

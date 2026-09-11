@@ -23,22 +23,28 @@ The intuition: the posterior $\bar\mu$ is only half the BL output. The other hal
 ### 2. Mathematical Ground Truth & Derivations
 
 **The posterior covariance (uncertainty in the mean, not in returns).** From §03:
-$$M = \big[(\tau\Sigma)^{-1}+P^T\Omega^{-1}P\big]^{-1}.$$
+$$
+M = \big[(\tau\Sigma)^{-1}+P^T\Omega^{-1}P\big]^{-1}.
+$$
 $M$ is the covariance of the *estimate* $\bar\mu$ — how much the posterior mean itself is uncertain. Two distinct risk objects then coexist:
 
 - **$M$**: estimation/parameter risk (Shrink toward views reduces it).
 - **$\Sigma$**: the assets' own forward-return covariance (the risk BL does not optimize away).
 
 The **combined (total) covariance** many implementations use for the portfolio-optimization step is
-$$\Sigma_{total} = \Sigma + M,$$
+$$
+\Sigma_{total} = \Sigma + M,
+$$
 capturing both market risk and the residual uncertainty you still face after views. Idzorek / Meucci treat this combination explicitly.
 
 **Views on covariance.** $P$ need not only pick returns. A view of the form "the variance of asset $i$ will be $v$" or "the correlation of $i,j$ will be $\rho$" is expressed by choosing $P,\Omega$ to constrain the appropriate entries of $\Sigma$, then updating $\Sigma\to\Sigma_{BL}$ much as returns are updated. The machinery generalizes: **BL is really "a prior jointly over $(\mu,\Sigma)$ updated by linear views."**
 
 **The unified (block) Master form.** Stacking return views and covariance views, the update reads
-$$\begin{bmatrix} \bar\mu \\ \mathrm{vech}\,\bar\Sigma_{BL} \end{bmatrix}
+$$
+\begin{bmatrix} \bar\mu \\ \mathrm{vech}\,\bar\Sigma_{BL} \end{bmatrix}
 = \begin{bmatrix} \Pi \\ \mathrm{vech}\,\tau\Sigma\end{bmatrix}
-+ \mathrm{Gain}\;\big[Q - P\,\mathrm{vech}(\mathcal{X})\big],$$
++ \mathrm{Gain}\;\big[Q - P\,\mathrm{vech}(\mathcal{X})\big],
+$$
 where $\mathrm{Gain}$ collapses the same Kalman-gain structure onto both the mean and covariance blocks. In the pure return-view case this collapses exactly to the scalar Master formula of §03 — the block form is the "master formula" generalized.
 
 **Factor / structural views.** If returns load on factors $r=Bf+\eta$, views can be written on the factors ($f$) rather than the assets, shrinking the effective $P$ to $P_fB$ and making BL scale to hundreds of assets. Meucci (Risk and Asset Allocation, Ch 9) and Black–Litterman-adjacent factor models formalize this.

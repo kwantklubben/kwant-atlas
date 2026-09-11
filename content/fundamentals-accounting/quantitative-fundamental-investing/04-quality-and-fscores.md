@@ -26,7 +26,9 @@ The deeper quality factor behind the F-score is **accruals**. Because earnings a
 
 **The accrual identity — where quality lives.** Net income and operating cash flow differ by accruals:
 
-$$\text{NI} = \text{CFO} + \text{Accruals}.$$
+$$
+\text{NI} = \text{CFO} + \text{Accruals}.
+$$
 
 High accruals mean earnings outrun cash — income that is *recognized* but not *collected*. Sloan (1996) shows such earnings revert; the accrual component is less persistent than the cash component. The **accruals factor** is therefore long low-accrual, short high-accrual firms.
 
@@ -44,7 +46,9 @@ High accruals mean earnings outrun cash — income that is *recognized* but not 
 | Operating efficiency | F_AMARGIN | $\Delta$ gross margin $> 0$ |
 | | F_ATURN | $\Delta$ asset turnover $> 0$ |
 
-$$F = \sum_{i=1}^{9} \mathbf{1}[\text{signal}_i\ \text{good}], \qquad F \in \{0,\dots,9\}.$$
+$$
+F = \sum_{i=1}^{9} \mathbf{1}[\text{signal}_i\ \text{good}], \qquad F \in \{0,\dots,9\}.
+$$
 
 Piotroski applies it *inside* the high-B/M universe (the conditioning is the point): high-$F$ (7–9) firms are the financially strong cheap firms; low-$F$ (0–4) firms are the distressed ones to avoid or short. This is value + quality as one mechanical screen.
 

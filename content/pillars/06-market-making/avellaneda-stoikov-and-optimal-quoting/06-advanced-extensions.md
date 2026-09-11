@@ -27,7 +27,9 @@ Every defect of the baseline AS model motivates an extension. This page is the *
 
 Guéant, Lehalle & Fernandez-Tapia (2013) re-solve the market-making problem *with the constraints the original paper left open*. Under intensities $\lambda^{a}(\delta)=Ae^{-k\delta}$ and $\lambda^{b}(\delta)=Ae^{-k\delta}$, a change of variables turns the HJB system into a system of **linear ODEs** for the functions $v_q(t)$:
 
-$$\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\big(v_{q-1}(t)+v_{q+1}(t)\big),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\left(1+\tfrac{\gamma}{k}\right)^{-(1+k/\gamma)},$$
+$$
+\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\big(v_{q-1}(t)+v_{q+1}(t)\big),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\left(1+\tfrac{\gamma}{k}\right)^{-(1+k/\gamma)},
+$$
 
 (boundary states drop the out-of-range neighbour: $\dot v_Q=\alpha Q^2v_Q-\eta v_{Q-1}$, $\dot v_{-Q}=\alpha Q^2v_{-Q}-\eta v_{-Q+1}$.)
 

@@ -17,7 +17,9 @@ Closed forms run out fast. The BSM formula prices a European call. It does **not
 
 Start with the single most important structural fact from [[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|the Feynman–Kac page]]: the price is *simultaneously*
 
-$$V(t,S)=\underbrace{\text{solution of a parabolic PDE}}_{\text{differential form}}\;=\;\underbrace{e^{-r(T-t)}\,\mathbb{E}^{\mathbb{Q}}[\text{payoff}\mid S_t=S]}_{\text{integral form}}.$$
+$$
+V(t,S)=\underbrace{\text{solution of a parabolic PDE}}_{\text{differential form}}\;=\;\underbrace{e^{-r(T-t)}\,\mathbb{E}^{\mathbb{Q}}[\text{payoff}\mid S_t=S]}_{\text{integral form}}.
+$$
 
 Each form gives you a numerical method, and nothing else is needed:
 
@@ -37,21 +39,27 @@ Three "aha"s:
 
 **The PDE to discretise** (Duffy eq. 3.5/8.5, the same object as the BSM PDE from the sibling folder):
 
-$$\frac{\partial V}{\partial t}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}+rS\frac{\partial V}{\partial S}-rV=0 .$$
+$$
+\frac{\partial V}{\partial t}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}+rS\frac{\partial V}{\partial S}-rV=0 .
+$$
 
 With $\tau=T-t$ this is a *forward* parabolic problem in $\tau$ with initial datum $V(0,S)=\text{payoff}(S)$ — the form every solver actually uses.
 
 **The expectation to sample** (Glasserman eqs. 1.39, 3.20–3.22): under $\mathbb{Q}$,
 
-$$S(t_{i+1})=S(t_i)\exp\!\Big[\big(r-\tfrac12\sigma^2\big)\Delta t+\sigma\sqrt{\Delta t}\,Z_{i+1}\Big],\qquad Z\sim\mathcal N(0,1),$$
+$$
+S(t_{i+1})=S(t_i)\exp\!\Big[\big(r-\tfrac12\sigma^2\big)\Delta t+\sigma\sqrt{\Delta t}\,Z_{i+1}\Big],\qquad Z\sim\mathcal N(0,1),
+$$
 
 and $V(0)=e^{-rT}\mathbb{E}^{\mathbb{Q}}[\text{payoff}(S_T)]$. This transition is **exact** for GBM — no discretisation error at all (only sampling error).
 
 **The divided differences** (Duffy eqs. 6.2–6.10) — every FDM scheme is built from these four lines:
 
-$$f'(a)\approx\frac{f(a+h)-f(a-h)}{2h}=O(h^2),\qquad
+$$
+f'(a)\approx\frac{f(a+h)-f(a-h)}{2h}=O(h^2),\qquad
 f'(a)\approx\frac{f(a+h)-f(a)}{h}=O(h),\qquad
-f''(a)\approx\frac{f(a-h)-2f(a)+f(a+h)}{h^2}=O(h^2).$$
+f''(a)\approx\frac{f(a-h)-2f(a)+f(a+h)}{h^2}=O(h^2).
+$$
 
 Centred differences are second-order but need $f\in C^3$; one-sided are first-order but make *upwinding* possible (essential when the drift term dominates). Duffy's printed second-derivative error term carries a typographical $h^4$ (eq. 6.10) — the Taylor expansion and the stated $O(h^2)$ force $h^2$.
 

@@ -29,21 +29,28 @@ Forecasting is where valuation stops being elegant and starts being hard: revenu
 
 #### 2.1 The two definitions (Damodaran Ch 14–15)
 
-$$\text{FCFF}=\text{EBIT}(1-t)+\text{Dep}-\text{CapEx}-\Delta\text{NWC}$$
+$$
+\text{FCFF}=\text{EBIT}(1-t)+\text{Dep}-\text{CapEx}-\Delta\text{NWC}
+$$
 
-$$\text{FCFE}=N\!I-(\text{CapEx}-\text{Dep})-\Delta\text{NWC}+(\text{New Debt Issued}-\text{Debt Repaid})$$
+$$
+\text{FCFE}=N\!I-(\text{CapEx}-\text{Dep})-\Delta\text{NWC}+(\text{New Debt Issued}-\text{Debt Repaid})
+$$
 
 Note the design: FCFF starts *above* the interest line and **excludes interest tax shields** — those are already captured in the after-tax cost of debt inside WACC. Including them again would double-count.
 
 > **The $\Delta\text{NWC}$ formula.** Working capital enters *only* as a **change**, and only for *non-cash* items:
-> $$\Delta\text{NWC}=\big[(\text{Receivables}+\text{Inventory}+\text{Other CA})-(\text{Payables}+\text{Accruals})\big]_{t}-\big[\cdots\big]_{t-1}.$$
+> $$\Delta\text{NWC}=\big[(\text{Receivables}+\text{Inventory}+\text{Other CA})-(\text{Payables}+\text{Accruals})\big]_{t}-\big[\cdots\big]_{t-1}.
+$$
 > Cash and short-term debt are excluded. Growing firms *absorb* cash as $\Delta\text{NWC}>0$, which is why fast growth often shows negative FCFE.
 
 #### 2.2 The fixed-financing (δ) shortcut for FCFE
 
 If net capital expenditure and working-capital changes are financed with a constant debt fraction $\delta$, then
 
-$$\text{FCFE}=N\!I-(\text{CapEx}-\text{Dep})(1-\delta)-\Delta\text{NWC}(1-\delta).$$
+$$
+\text{FCFE}=N\!I-(\text{CapEx}-\text{Dep})(1-\delta)-\Delta\text{NWC}(1-\delta).
+$$
 
 The debt-issuance term vanishes because repayments are (by assumption) refinanced to hold the debt ratio fixed. This **smooths** volatile annual FCFE and is the standard forecasting form when you value equity directly with a target debt ratio.
 
@@ -51,7 +58,9 @@ The debt-issuance term vanishes because repayments are (by assumption) refinance
 
 Growth is not free: to grow operating income at $g$ the firm must reinvest $\text{RR}=g/\text{ROC}$ of its NOPAT, so
 
-$$\text{FCFF}=\text{EBIT}(1-t)\,(1-\text{RR})=\text{NOPAT}\Big(1-\frac{g}{\text{ROC}}\Big).$$
+$$
+\text{FCFF}=\text{EBIT}(1-t)\,(1-\text{RR})=\text{NOPAT}\Big(1-\frac{g}{\text{ROC}}\Big).
+$$
 
 A firm's **reinvestment = net CapEx + $\Delta$NWC**, so a forecast is internally consistent only if $\text{net\,CapEx}+\Delta\text{NWC}=\text{NOPAT}\times \text{RR}$. If you assume high growth *and* low reinvestment, you are silently promising a free lunch.
 
@@ -98,7 +107,7 @@ Both reproduce Damodaran exactly: FCFF $=212.2$ (Rs mn), and the Home Depot year
 1. **Intangible "cash flow" that ignores reinvestment.** Using EBITDA as a cash flow assumes zero taxes, zero capital expenditure, and net disinvestment over time — a firm with an infinite life cannot do that. FCFF must charge for taxes and reinvestment (Damodaran Table 15.1).
 2. **Working-capital errors.** Including *cash* in working capital, or dropping the *change* in favour of the level, injects a large spurious cash flow. $\Delta\text{NWC}$ (non-cash) is the only correct term; a perpetually negative $\Delta$NWC is a fantasy that pushes working capital to minus-infinity.
 3. **Inconsistent growth and reinvestment.** Assuming $10\%$ growth at a $5\%$ reinvestment rate implies an impossible ROC. Derive the reinvestment rate from $g/\text{ROC}$ so the forecast is internally coherent.
-4. **Mixing the two flows.** Forecasting FCFE (post-interest) but discounting at WACC (pre-debt) double-counts the interest tax shield and over-values equity — the very error the index page quantifies at $+\$175$.
+4. **Mixing the two flows.** Forecasting FCFE (post-interest) but discounting at WACC (pre-debt) double-counts the interest tax shield and over-values equity — the very error the index page quantifies at $+ $\$175.
 5. **FCFE negativity misread as distress.** Growth absorbs working capital; young firms routinely show negative FCFE while building value. Negative FCFE ≠ bad business; it means the business is *investing*.
 
 ---

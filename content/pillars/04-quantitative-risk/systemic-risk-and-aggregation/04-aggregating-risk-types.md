@@ -29,7 +29,9 @@ The objective: see **why no neutral "add them up" exists**, and why copula/scena
 
 **Why the naive sum is "safe-but-wrong".** For any dependence, $\text{ES}_\alpha$ is subadditive,
 
-$$\text{ES}_\alpha(X_1+X_2) \le \text{ES}_\alpha(X_1) + \text{ES}_\alpha(X_2),$$
+$$
+\text{ES}_\alpha(X_1+X_2) \le \text{ES}_\alpha(X_1) + \text{ES}_\alpha(X_2),
+$$
 
 with equality **only** in perfect comonotonicity (one's tail *is* the other's). So summing the marginal ES (the regulator's simple approach) can only *overstate* — it keeps you solvent at the price of holding too much capital. The Basel formula for operational risk add-ons is a cousin of this: add risk types with a fixed "correlation" coefficient instead of measuring it.
 
@@ -37,7 +39,9 @@ with equality **only** in perfect comonotonicity (one's tail *is* the other's). 
 
 **Copula aggregation (Sklar).** A copula $C$ joins marginals and carries *only the dependence*:
 
-$$F_{X_1,\dots,X_n}(x_1,\dots,x_n) = C\big(F_{X_1}(x_1),\dots,F_{X_n}(x_n)\big).$$
+$$
+F_{X_1,\dots,X_n}(x_1,\dots,x_n) = C\big(F_{X_1}(x_1),\dots,F_{X_n}(x_n)\big).
+$$
 
 The **Gaussian copula** (one-factor form, Vasicek's model) is the industry default and encodes **zero upper-tail dependence**: two Gaussian-copula variables *asymptotically never* crash together. The **Student-t copula** (with low df) adds **tail dependence** — joint extremes are more likely. Choosing between them is not cosmetic: it decides the size of the aggregated tail capital.
 

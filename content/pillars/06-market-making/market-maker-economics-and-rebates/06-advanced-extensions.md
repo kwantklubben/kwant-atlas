@@ -27,7 +27,9 @@ The practical objective: given a proposed rule change, predict which term of the
 #### 2.1 Access-fee cap
 
 US equity venues may charge no more than the **access fee cap** on a per-share basis for NMS stocks priced at or above \$1.00 — historically **\$0.0030/share** (SEC Rule 610, Reg NMS). This directly bounds the take fee in the cum-fee spread:
-$$f_t \le f_t^{\max} = \$0.0030.$$
+$$
+f_t \le f_t^{\max} = $\$0.0030.
+$$
 Two consequences follow from Page 03's identity $S^{\text{cum}}=S^{\text{net}}+2f_{\text{net}}$:
 
 - Because the cap binds only on the **take** side, a venue can still pay an arbitrarily large maker rebate $r$ — but only by charging takers up to the cap, so $f_{\text{net}}\ge f_t^{\max}-r$, i.e. a large rebate forces a *positive* net fee.
@@ -40,16 +42,20 @@ The tick $\tau$ sets the finest quote and therefore the floor on the realised ed
 - **Coarse tick** ($\tau$ large): $e_{\min}$ high; competition cannot erode maker rents; **spreads are wide but liquidity is deep and stable**.
 - **Fine tick** ($\tau$ small): $e_{\min}$ low; competition drives spreads down toward the cost floor ($\lambda+c_{\text{inv}}$); **spreads are tight but depth at the touch thins** and makers may exit if $\tau<\tau^{\min}=2(\lambda-r)$.
 
-The empirical testbed is the **SEC Tick Size Pilot (2016–2018)**: a randomized program that widened the tick to **\$0.05** for a set of small-cap (low-capitalization, low-volume) stocks, with control groups, precisely to test whether a wider tick improved liquidity provision. The theory above predicts the mechanism: a coarse tick raises $e_{\min}$ and the residual rent $R_\tau$, encouraging quoting.
+The empirical testbed is the **SEC Tick Size Pilot (2016–2018)**: a randomized program that widened the tick to **$$\$0.05** for a set of small-cap (low-capitalization, low-volume) stocks, with control groups, precisely to test whether a wider tick improved liquidity provision. The theory above predicts the mechanism: a coarse tick raises $e_{\min}$ and the residual rent $R_\tau$, encouraging quoting.
 
 #### 2.3 Payment for order flow (PFOF)
 
 PFOF is a payment from a **wholesaler / market maker** to a **retail broker** for the right to execute the broker's order flow. It is economically distinct from maker-taker fees (which flow **exchange → maker**), but it lands on the same P&L statement, from the wholesaler's side:
-$$\pi_{\text{wholesaler}} = \underbrace{h^{\text{eff}}}_{\text{effective half-spread}} \;-\; \underbrace{p}_{\text{PFOF to broker}} \;-\; \underbrace{\lambda_{\text{retail}}}_{\text{adverse selection}} \;-\; \underbrace{c_{\text{other}}}_{\text{tech, clearing, reg.}},$$
+$$
+\pi_{\text{wholesaler}} = \underbrace{h^{\text{eff}}}_{\text{effective half-spread}} \;-\; \underbrace{p}_{\text{PFOF to broker}} \;-\; \underbrace{\lambda_{\text{retail}}}_{\text{adverse selection}} \;-\; \underbrace{c_{\text{other}}}_{\text{tech, clearing, reg.}},
+$$
 where $h^{\text{eff}}$ is the effective spread the wholesaler captures on the internalised trade.
 
 The economics turn on **$\lambda_{\text{retail}}$ being small**: retail flow is famously *uninformed* (it does not systematically trade on news), so a wholesaler is willing to pay real money for it — the payment is essentially the price of acquiring low-adverse-selection flow. Setting $\pi_{\text{wholesaler}}=0$ gives the **maximum sustainable PFOF**:
-$$\boxed{\;p^{\star} = h^{\text{eff}} - \lambda_{\text{retail}} - c_{\text{other}}.\;}$$
+$$
+\boxed{\;p^{\star} = h^{\text{eff}} - \lambda_{\text{retail}} - c_{\text{other}}.\;}
+$$
 PFOF grew to dominate US retail execution: by 2009, **internalised trades accounted for about 17% of total US equity trading volume** (SEC 2010, cited in Colliard & Foucault 2012, fn. 4), and the share has risen since. It is the single largest structural feature distinguishing US equity market making from most others.
 
 #### 2.4 The unit economics of an HFT maker (Menkveld 2013)

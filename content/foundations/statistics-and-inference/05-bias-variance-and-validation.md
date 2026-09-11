@@ -30,24 +30,32 @@ Why does a model that fits the training data *perfectly* often predict *terribly
 
 #### 2.1 The bias–variance decomposition (ESL eq 2.25 two-term; eq 2.46 / 7.9 three-term)
 For a target \(Y=f(X)+\varepsilon\) with \(\mathbb E[\varepsilon]=0\), \(\mathrm{Var}\,\varepsilon=\sigma^2_\varepsilon\), and an estimator \(\hat f\) fit on a random training set \(T\):
-$$\underbrace{\mathbb E_{T,Y}\big[(Y-\hat f(x_0))^2\big]}_{\text{expected test MSE}}=\underbrace{\sigma^2_\varepsilon}_{\text{irreducible}}+\underbrace{\big(\mathbb E_T[\hat f(x_0)]-f(x_0)\big)^2}_{\text{Bias}^2}+\underbrace{\mathbb E_T\big[(\hat f(x_0)-\mathbb E_T[\hat f(x_0)])^2\big]}_{\text{Variance}}.$$
+$$
+\underbrace{\mathbb E_{T,Y}\big[(Y-\hat f(x_0))^2\big]}_{\text{expected test MSE}}=\underbrace{\sigma^2_\varepsilon}_{\text{irreducible}}+\underbrace{\big(\mathbb E_T[\hat f(x_0)]-f(x_0)\big)^2}_{\text{Bias}^2}+\underbrace{\mathbb E_T\big[(\hat f(x_0)-\mathbb E_T[\hat f(x_0)])^2\big]}_{\text{Variance}}.
+$$
 (The noise-free two-term form ESL eq 2.25 drops \(\sigma^2_\varepsilon\); the full three-term form with irreducible error is ESL eq 2.46 / 7.9.) Increasing complexity typically **lowers bias\(^2\) and raises variance**; the sum is U-shaped.
 
 #### 2.2 In-sample optimism (ESL §7.2–7.4)
 Training error *always* decreases with complexity and is therefore a **biased-down** estimate of test error. For a linear model with \(d\) parameters,
-$$\mathbb E[\text{err}_{\text{in}}]\approx\text{err}_{\text{out}}-\frac{2d}{n}\sigma^2_\varepsilon,\qquad \text{(optimism }\approx\tfrac{2d}{n}\sigma^2_\varepsilon\text{)}.$$
+$$
+\mathbb E[\text{err}_{\text{in}}]\approx\text{err}_{\text{out}}-\frac{2d}{n}\sigma^2_\varepsilon,\qquad \text{(optimism }\approx\tfrac{2d}{n}\sigma^2_\varepsilon\text{)}.
+$$
 The **effective degrees of freedom** of a linear smoother \(\hat y=Sy\) is \(\mathrm{df}=\operatorname{tr}(S)\) (ESL eq 7.32) — not the raw parameter count.
 
 #### 2.3 Cross-validation (ESL §7.10, eq 7.48)
 **\(K\)-fold CV** splits the data into \(K\) folds; for each fold \(k\) fit on the other \(K-1\) folds and score on fold \(k\):
-$$\mathrm{CV}_{(K)}=\frac1K\sum_{k=1}^K\frac{1}{|C_k|}\sum_{i\in C_k}\mathcal L\!\left(y_i,\ \hat f^{(-k)}(x_i)\right).$$
+$$
+\mathrm{CV}_{(K)}=\frac1K\sum_{k=1}^K\frac{1}{|C_k|}\sum_{i\in C_k}\mathcal L\!\left(y_i,\ \hat f^{(-k)}(x_i)\right).
+$$
 - \(K=n\) is **leave-one-out**: low bias, high variance, expensive.
 - \(K=5\) or \(10\) is the recommended compromise.
 - **One-standard-error rule:** among models within one SE of the minimum CV error, pick the simplest.
 
 #### 2.4 Penalised criteria (ESL eqs 7.29/7.35; Tsay eq 2.16)
 Trade fit against complexity without a validation set:
-$$\text{AIC}=-2\log L+2k\qquad(\text{ESL }-\tfrac2N\log L+\tfrac{2d}N),\qquad \text{BIC}=-2\log L+k\log n\qquad(\text{ESL }-\tfrac2N\log L+\tfrac{\log N\,d}{N}).$$
+$$
+\text{AIC}=-2\log L+2k\qquad(\text{ESL }-\tfrac2N\log L+\tfrac{2d}N),\qquad \text{BIC}=-2\log L+k\log n\qquad(\text{ESL }-\tfrac2N\log L+\tfrac{\log N\,d}{N}).
+$$
 BIC penalises complexity harder (\(\log n\) vs \(2\)) and is asymptotically consistent, so it selects simpler models than AIC at finite \(n\).
 
 #### 2.5 The wrong way to cross-validate (ESL §7.10.2)

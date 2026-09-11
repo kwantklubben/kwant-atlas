@@ -34,37 +34,49 @@ Three "aha"s:
 
 **The unconstrained problem and its closed form.** With expected returns $\mu$, covariance $\Sigma$, risk-aversion $\delta>0$ and budget $\mathbf 1^\top w=1$,
 
-$$\max_{w\in\mathbb R^N}\ \mu^\top w-\tfrac\delta2\,w^\top\Sigma w,\qquad w^\star=\tfrac1\delta\,\Sigma^{-1}\mu .$$
+$$
+\max_{w\in\mathbb R^N}\ \mu^\top w-\tfrac\delta2\,w^\top\Sigma w,\qquad w^\star=\tfrac1\delta\,\Sigma^{-1}\mu .
+$$
 
 **The constrained problem (what you actually solve).** Add the feasible set $\mathcal C$:
 
-$$\max_{w}\ \mu^\top w-\tfrac\delta2\,w^\top\Sigma w\quad\text{s.t.}\quad w\in\mathcal C,\qquad
-\mathcal C=\Big\{w:\ \mathbf 1^\top w=1,\ \ w_{\min}\le w\le w_{\max},\ \ A w\le b\Big\}.$$
+$$
+\max_{w}\ \mu^\top w-\tfrac\delta2\,w^\top\Sigma w\quad\text{s.t.}\quad w\in\mathcal C,\qquad
+\mathcal C=\Big\{w:\ \mathbf 1^\top w=1,\ \ w_{\min}\le w\le w_{\max},\ \ A w\le b\Big\}.
+$$
 
 Long-only is $w_{\min}=0$; a position cap is $w_{\max}$; group/sector limits are the rows of $A w\le b$. $\mathcal C$ is a convex polytope and the resulting problem is a **quadratic program (QP)** — solvable in milliseconds at $N$ in the hundreds.
 
 **The turnover definition.** With current weights $w_0$, the trade is $\Delta w=w-w_0$ and turnover is the $\ell_1$ mass moved:
 
-$$\mathrm{TO}(w)=\tfrac12\lVert w-w_0\rVert_1=\tfrac12\sum_{i=1}^N\lvert w_i-w_{0,i}\rvert
-\qquad(\text{one-way; sell-side}=\text{buy-side by the budget constraint}).$$
+$$
+\mathrm{TO}(w)=\tfrac12\lVert w-w_0\rVert_1=\tfrac12\sum_{i=1}^N\lvert w_i-w_{0,i}\rvert
+\qquad(\text{one-way; sell-side}=\text{buy-side by the budget constraint}).
+$$
 
 **The cost-augmented objective.** Transaction costs come in two families (developed in [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/03-transaction-cost-models|03 · Transaction-Cost Models]]):
 
-$$C(\Delta w)=\underbrace{\mathbf c^\top\lvert\Delta w\rvert}_{\text{linear: spread}+\text{fees}}
+$$
+C(\Delta w)=\underbrace{\mathbf c^\top\lvert\Delta w\rvert}_{\text{linear: spread}+\text{fees}}
 \;+\;\underbrace{\tfrac12\,\Delta w^\top\Lambda\,\Delta w}_{\text{quadratic market impact}},
-\qquad \Lambda=\operatorname{diag}(\eta_1,\dots,\eta_N),$$
+\qquad \Lambda=\operatorname{diag}(\eta_1,\dots,\eta_N),
+$$
 
 so the *net* optimization is
 
-$$\boxed{\ \max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w-\mathbf c^\top\lvert w-w_0\rvert-\tfrac12 (w-w_0)^\top\Lambda(w-w_0)\ }$$
+$$
+\boxed{\ \max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w-\mathbf c^\top\lvert w-w_0\rvert-\tfrac12 (w-w_0)^\top\Lambda(w-w_0)\ }
+$$
 
 **Why the kink matters (first principles).** Consider one asset with mean $\mu$, variance $\sigma^2$, risk-aversion $\delta$ and a linear cost $c$ per unit traded. The problem $\max_w\ \mu w-\tfrac\delta2\sigma^2 w^2-c\lvert w-w_0\rvert$ has first-order conditions that split into three cases:
 
-$$w^\star=\begin{cases}
+$$
+w^\star=\begin{cases}
 \dfrac{\mu-c}{\delta\sigma^2} & w_0<\dfrac{\mu-c}{\delta\sigma^2}\\[2mm]
 w_0 & \Big\lvert w_0-\dfrac{\mu}{\delta\sigma^2}\Big\rvert\le\dfrac{c}{\delta\sigma^2}\\[2mm]
 \dfrac{\mu+c}{\delta\sigma^2} & w_0>\dfrac{\mu+c}{\delta\sigma^2}
-\end{cases}$$
+\end{cases}
+$$
 
 i.e. a **no-trade region of half-width $\theta=\dfrac{c}{\delta\sigma^2}$** around the frictionless target $w^\ast=\mu/(\delta\sigma^2)$. The width scales *linearly* in the cost and *inversely* in risk-aversion and variance: cheap, volatile, high-conviction assets are re-traded; expensive, calm, low-conviction ones are left alone. [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/03-transaction-cost-models|03 · Transaction-Cost Models]] confirms this numerically, and [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/04-turnover-and-multi-period|04]] turns the idea into a usable policy.
 

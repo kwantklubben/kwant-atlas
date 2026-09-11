@@ -30,31 +30,41 @@ Three "aha"s:
 
 **The trading function.** A constant-product AMM holds reserves $x$ of token $X$ and $y$ of token $Y$ subject to the invariant
 
-$$x\,y = k .$$
+$$
+x\,y = k .
+$$
 
 The **marginal price** of $X$ in units of $Y$ is the slope of the curve,
 
-$$p = \frac{y}{x},$$
+$$
+p = \frac{y}{x},
+$$
 
 so the curve is literally a one-dimensional price ladder: at each point the pool "quotes" $p=y/x$, and a trade moves the pool along $xy=k$ to a new point with a new price. Because $x,y>0$ always, **the pool always has a quote** — it can absorb arbitrarily large trades (at an ever-worse price). That infinite shelf of quotes is the market-maker role; the worsening price is the **price impact / slippage**.
 
 **The LP's value.** In numeraire $Y$, the pool is worth
 
-$$V(p) = x\,p + y = 2\sqrt{kp},$$
+$$
+V(p) = x\,p + y = 2\sqrt{kp},
+$$
 
 using $x=\sqrt{k/p}$, $y=\sqrt{kp}$ on the curve.
 
 **Divergence loss from scratch.** Deposit $(x_0,y_0)$ at $p_0=y_0/x_0$; the value deposited is $V_0 = x_0p_0+y_0 = 2\sqrt{kp_0}$. Now let the price move to $p$ and *hold the deposit instead*: the "hold" value is the linear portfolio $x_0 p + y_0$. The LP's realized value is the curve value $2\sqrt{kp}$. The **divergence-loss fraction** is how much the LP underperforms holding:
 
-$$\mathrm{DL}(p) = 1-\frac{2\sqrt{kp}}{x_0p+y_0}
+$$
+\mathrm{DL}(p) = 1-\frac{2\sqrt{kp}}{x_0p+y_0}
 = 1-\frac{2\sqrt{kp}}{\sqrt{k/p_0}\,p + \sqrt{kp_0}}
-= 1-\frac{2\sqrt{p}}{\sqrt{p/p_0}+\sqrt{p_0/p}} .$$
+= 1-\frac{2\sqrt{p}}{\sqrt{p/p_0}+\sqrt{p_0/p}} .
+$$
 
 Writing the multiplier $a=p/p_0$ and $r=\sqrt{a}$ (so $\sqrt{p/p_0}=r$, $\sqrt{p_0/p}=1/r$):
 
-$$\boxed{\;\mathrm{DL}(a)=1-\frac{2r}{r^2+1}
+$$
+\boxed{\;\mathrm{DL}(a)=1-\frac{2r}{r^2+1}
 =1-\frac{2\sqrt a}{1+a}
-=\frac{(\sqrt a-1)^2}{1+a}\;} .$$
+=\frac{(\sqrt a-1)^2}{1+a}\;} .
+$$
 
 At $a=1$ it is $0$; it is symmetric in $a\leftrightarrow 1/a$ (a halving and a doubling hurt equally, $5.72\%$ each); it grows monotonically to $1$ as $a\to\infty$ ($20.0\%$ at $a=4$, $42.5\%$ at $a=10$). This is the closed form the sub-pages verify numerically.
 

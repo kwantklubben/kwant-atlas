@@ -16,7 +16,7 @@ tags:
 
 This page builds the *why* of stress testing with **no prior risk knowledge needed**. The objective is one idea: **a risk number computed from a probability distribution cannot tell you what happens in the tail you have not observed — so you must instead decide the tail yourself, on purpose, and measure its impact.** That deliberate decision is a *scenario*; applying it to your positions is a *stress test*.
 
-Start with the dumbest question: *if VaR says we lose at most $X with 99% confidence, why is the firm still at risk?* Because "99% confidence" is a statement *about a model fitted to history*. It says: *within the window I looked at, losses worse than $X happened less than 1% of the time.* It says nothing about:
+Start with the dumbest question: *if VaR says we lose at most $X with 99\% confidence, why is the firm still at risk?* Because "99\% confidence" is a statement *about a model fitted to history*. It says: *within the window I looked at, losses worse than $X happened less than 1% of the time.* It says nothing about:
 
 1. a shock **bigger than anything in the window** (a 100-year flood the window never contained),
 2. a shock that is ordinary in size but **hits several books at once** (correlations rising to 1), and
@@ -36,7 +36,9 @@ Three steps, three "aha"s:
 
 **The factor P&L model.** Map the portfolio to $K$ risk factors with linear sensitivities (deltas) $\beta_k$ — the dollar change in portfolio value per unit move in factor $k$ (equity %, credit bps, rate bps, …). Under a shock vector $\Delta F$ the P&L is, to first order,
 
-$$\Delta V \;=\; \sum_{k=1}^{K} \beta_k\,\Delta F_k .$$
+$$
+\Delta V \;=\; \sum_{k=1}^{K} \beta_k\,\Delta F_k .
+$$
 
 This is exactly the **linear/delta mapping** of Hull *OFOD* Ch 22 (eq. 22.6, $\Delta P=\sum S_i\delta_i\,\Delta x_i$). A stress scenario is simply a *chosen* vector $\Delta F^*$; the stressed loss is $\Delta V^*=\beta^T\Delta F^*$. Second-order terms (options, convexity) add $\tfrac12\gamma(\Delta S)^2$ and cross-gammas, but the machinery is identical — stress still feeds a deterministic shock through the P&L.
 

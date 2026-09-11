@@ -29,15 +29,19 @@ The practical objective: make each failure quantitative, then state the desk-lev
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Gaming: the fixed-schedule concession.** Let a TWAP engine ship a fixed child $X/B$ at deterministic 60-second intervals. A sniper who has reverse-engineered the heartbeat buys $h$ shares just before each child, pushing the quote up by $\\Delta$; the engine's child then fills $\\Delta$ worse. Per child the engine pays an extra $\\tfrac{X}{B}\\Delta$, so over the parent:
-$$\\text{extra cost} = \\sum_{t=1}^B \\tfrac{X}{B}\\,\\Delta = X\\Delta.$$
-The fix is randomization (Foucault: VWAP "can be gamed by slow trickling") — child size, timing, and venue all get bounded noise, so the schedule is *not* a reproducible linear prediction. This is why the anti-gaming $\\varepsilon_t$ in page 01/02 is not decoration.
+**Gaming: the fixed-schedule concession.** Let a TWAP engine ship a fixed child $X/B$ at deterministic 60-second intervals. A sniper who has reverse-engineered the heartbeat buys $h$ shares just before each child, pushing the quote up by $\Delta$; the engine's child then fills $\Delta$ worse. Per child the engine pays an extra $\tfrac{X}{B}\Delta$, so over the parent:
+$$
+\text{extra cost} = \sum_{t=1}^B \tfrac{X}{B}\,\Delta = X\Delta.
+$$
+The fix is randomization (Foucault: VWAP "can be gamed by slow trickling") — child size, timing, and venue all get bounded noise, so the schedule is *not* a reproducible linear prediction. This is why the anti-gaming $\varepsilon_t$ in page 01/02 is not decoration.
 
 **Misestimation: tracking-error magnification.** From page 04, a VWAP schedule with weights $w=q/V$ faces tracking error
-$$\\text{TE} = \\sqrt{\\textstyle\\sum_t \\left(w_t - \\phi_t^{\\text{real}}\\right)^2},$$
+$$
+\text{TE} = \sqrt{\textstyle\sum_t \left(w_t - \phi_t^{\text{real}}\right)^2},
+$$
 which jumps from $O(0.01)$ on a clean day to $O(0.07)$ on a news day. The *consequence* is slippage: because the engine under-weights the early heavy buckets and over-weights the close, its average price disconnects from the realized VWAP *and it is forced to liquidate remaining size into the thinnest, least-predictable tape of the day.*
 
-**Adverse selection: the price ladder.** If the true value moves in a trend while an informed buyer accumulates, the average price paid by a slow, schedule-driven buyer rises monotonically. The cost of being late by one ladder step $\\delta$ on the unfilled remainder is $(1-\\kappa)\\,q\\,\\delta$ in IS (from page 03's opportunity-cost term) — a purely informational penalty that no amount of impact-taming avoids.
+**Adverse selection: the price ladder.** If the true value moves in a trend while an informed buyer accumulates, the average price paid by a slow, schedule-driven buyer rises monotonically. The cost of being late by one ladder step $\delta$ on the unfilled remainder is $(1-\kappa)\,q\,\delta$ in IS (from page 03's opportunity-cost term) — a purely informational penalty that no amount of impact-taming avoids.
 
 ---
 
@@ -92,7 +96,7 @@ print(f"    extra cost of slow participation = ${late_fill-early_fill:,.0f}"
     extra cost of slow participation = $148,000  (370 bps)
 ```
 
-**Read the numbers.** (1) A sniper forcing just $\\$0.02$ of extra concession per share (2 cents!) on a deterministic TWAP costs the parent a clean $2{,}000 / 2$ bps — pure transfer to the adversary, avoided by randomization. (2) On an open-announcement day the schedule puts only $5.26\\%$ of size at the open when $12.57\\%$ of the volume landed there — a tracking-error blow-up to $0.0762$ that forces a close dump. (3) Being slow on an informed buy costs $148{,}000$, or **370 bps** — an order of magnitude worse than any impact the schedule was built to avoid. The schedule won the impact battle and lost the information war.
+**Read the numbers.** (1) A sniper forcing just $$$$\$ \$0.02 of extra concession per share (2 cents!) on a deterministic TWAP costs the parent a clean 2{,}000 / 2$ bps — pure transfer to the adversary, avoided by randomization. (2) On an open-announcement day the schedule puts only $5.26\\%$ of size at the open when $12.57\\%$ of the volume landed there — a tracking-error blow-up to $0.0762$ that forces a close dump. (3) Being slow on an informed buy costs $148{,}000$, or **370 bps** — an order of magnitude worse than any impact the schedule was built to avoid. The schedule won the impact battle and lost the information war.
 
 ---
 

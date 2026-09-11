@@ -31,11 +31,15 @@ The three traps, in one line each:
 
 **The copy semantics (root cause).** In pandas, `df[mask]` selects rows via a *boolean mask* — and, like NumPy boolean/fancy indexing, the result is a fresh frame (a copy in the current default mode). Writing `df[mask]["col"] = v` therefore mutates the temporary and never touches `df`:
 
-$$\underbrace{df[\texttt{mask}]}_{\text{copy}}\;[\texttt{"col"}]\;=\;v \qquad\Rightarrow\qquad \text{write lands on an unnamed temporary, } df \text{ unchanged.}$$
+$$
+\underbrace{df[\texttt{mask}]}_{\text{copy}}\;[\texttt{"col"}]\;=\;v \qquad\Rightarrow\qquad \text{write lands on an unnamed temporary, } df \text{ unchanged.}
+$$
 
 The correct single-step form routes through `.loc` so the mask indexes the *original* object on both axes:
 
-$$df.\texttt{loc}[\texttt{mask},\ \texttt{"col"}] = v \qquad\Rightarrow\qquad \text{write lands on } df \text{ itself.}$$
+$$
+df.\texttt{loc}[\texttt{mask},\ \texttt{"col"}] = v \qquad\Rightarrow\qquad \text{write lands on } df \text{ itself.}
+$$
 
 **`object`-dtype performance.** A numeric column stored as `float64` is one contiguous typed buffer: `s + 1.0` is a C pass. Stored as `object`, the column is an array of *pointers to Python objects*, so `s + 1.0` must dispatch `__add__` per element — reintroducing the $N\cdot c_{\text{py}}$ cost. Memory scales from $N\times 8$ bytes (contiguous floats) to $N\times 8$ (pointers) **plus** a full Python object per cell. The §3 benchmark measures the slowdown (~47×) and the memory inflation (~4×).
 

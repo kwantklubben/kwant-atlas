@@ -37,7 +37,9 @@ The key empirical fact (Koijen, Moskowitz, Pedersen & Vrugt, "Carry," 2018): **c
 
 **Carry as a conditional expectation.** Let $S_t$ be the spot and $P_t(T)$ the price of a claim on $S_T$. Define carry as the return under the assumption the *term structure stays unchanged*:
 
-$$c_t=\frac{P_t(T)-S_t}{S_t}+\underbrace{\frac{\text{income}}{S_t}}_{\text{coupon/dividend}}\quad\text{(futures form: }c_t=\Big(\frac{S_t-F_t}{F_t}\Big)\text{)}.$$
+$$
+c_t=\frac{P_t(T)-S_t}{S_t}+\underbrace{\frac{\text{income}}{S_t}}_{\text{coupon/dividend}}\quad\text{(futures form: }c_t=\Big(\frac{S_t-F_t}{F_t}\Big)\text{)}.
+$$
 
 Equivalently, in a one-factor term-structure model where the future spot equals today's forward, the expected excess return under unchanged prices is exactly the carry.
 
@@ -45,7 +47,9 @@ Equivalently, in a one-factor term-structure model where the future spot equals 
 
 **Carry as a cross-sectional factor.** Standardise carry within the cross-section and go long the top, short the bottom:
 
-$$w_t\propto \text{rank}(c_t)-\overline{\text{rank}},\qquad r^{\text{carry}}_{t+1}=\sum_i w_{i,t}\,r_{i,t+1}.$$
+$$
+w_t\propto \text{rank}(c_t)-\overline{\text{rank}},\qquad r^{\text{carry}}_{t+1}=\sum_i w_{i,t}\,r_{i,t+1}.
+$$
 
 This is the *same* construction as a value or momentum factor, which is why carry slots directly into a factor-allocation framework (page 03): compute the factor covariance $\Sigma_f$, then optimise or risk-balance across value / momentum / carry / defensive.
 

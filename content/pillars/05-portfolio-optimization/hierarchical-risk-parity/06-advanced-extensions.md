@@ -34,11 +34,15 @@ Cut the dendrogram at $K$ clusters, i.e. perform only the first $N-K$ merges; th
 
 **Within a cluster** $\mathcal C_k$, solve the ERC problem: find $w^{(k)}>0,\ \mathbf 1^\top w^{(k)}=1$ such that every asset contributes equal risk,
 
-$$RC_i = w_i^{(k)}\,\frac{(\Sigma_{\mathcal C_k}w^{(k)})_i}{\sqrt{w^{(k)\top}\Sigma_{\mathcal C_k}w^{(k)}}}=\frac{\sigma(w^{(k)})}{|\mathcal C_k|}\quad\forall i\in\mathcal C_k .$$
+$$
+RC_i = w_i^{(k)}\,\frac{(\Sigma_{\mathcal C_k}w^{(k)})_i}{\sqrt{w^{(k)\top}\Sigma_{\mathcal C_k}w^{(k)}}}=\frac{\sigma(w^{(k)})}{|\mathcal C_k|}\quad\forall i\in\mathcal C_k .
+$$
 
 **Across clusters**, allocate by inverse cluster risk (naive risk parity at the cluster level), using each cluster's ERC portfolio variance $V_k=w^{(k)\top}\Sigma_{\mathcal C_k}w^{(k)}$:
 
-$$\beta_k=\frac{1/V_k}{\sum_{l}1/V_l},\qquad w_i = \beta_{k(i)}\,w_i^{(k(i))}.$$
+$$
+\beta_k=\frac{1/V_k}{\sum_{l}1/V_l},\qquad w_i = \beta_{k(i)}\,w_i^{(k(i))}.
+$$
 
 The difference from HRP is precise: HRP's cluster risk $V_{\mathcal C}$ is the variance of the **inverse-variance** portfolio; HERC's $V_k$ is the variance of the **ERC** portfolio. ERC weights differ from inverse-variance whenever intra-cluster correlations are non-constant, so the two allocators genuinely diverge.
 
@@ -46,13 +50,17 @@ The difference from HRP is precise: HRP's cluster risk $V_{\mathcal C}$ is the v
 
 Ward's method merges the pair whose fusion increases within-cluster sum of squares the least. Its Lance–Williams coefficients (with $n_i$ the size of cluster $i$ and $k$ the other cluster) are
 
-$$\alpha_i=\frac{n_i+n_k}{n_i+n_j+n_k},\quad
+$$
+\alpha_i=\frac{n_i+n_k}{n_i+n_j+n_k},\quad
 \alpha_j=\frac{n_j+n_k}{n_i+n_j+n_k},\quad
-\beta=\frac{-n_k}{n_i+n_j+n_k},\quad \gamma=0,$$
+\beta=\frac{-n_k}{n_i+n_j+n_k},\quad \gamma=0,
+$$
 
 so
 
-$$d(u,k)=\frac{(n_i+n_k)d(i,k)+(n_j+n_k)d(j,k)-n_k\,d(i,j)}{n_i+n_j+n_k}.$$
+$$
+d(u,k)=\frac{(n_i+n_k)d(i,k)+(n_j+n_k)d(j,k)-n_k\,d(i,j)}{n_i+n_j+n_k}.
+$$
 
 Ward produces compact, equal-sized clusters and, on many equity universes, higher cophenetic correlation than single/complete (see §03). It is the standard alternative when single-linkage chaining is a concern — but it is *not* a silver bullet; validate on the cophenetic correlation and out-of-sample risk.
 
@@ -60,8 +68,10 @@ Ward produces compact, equal-sized clusters and, on many equity universes, highe
 
 NCO (López de Prado, *AFML* Ch. 16) uses the same tree but computes, at each cluster, the **mean–variance (or min-variance) weights** of that cluster, then treats each cluster's portfolio as a "super-asset" and solves a small MV problem across clusters. Formally, for cluster $\mathcal C_k$ with expected returns $\mu_{\mathcal C_k}$,
 
-$$w^{(k)}=\frac{\Sigma_{\mathcal C_k}^{-1}\mu_{\mathcal C_k}}{\mathbf 1^\top\Sigma_{\mathcal C_k}^{-1}\mu_{\mathcal C_k}},\qquad
-\text{then across clusters: } \beta=\frac{\Sigma_{\text{cl}}^{-1}\mu_{\text{cl}}}{\mathbf 1^\top\Sigma_{\text{cl}}^{-1}\mu_{\text{cl}}},$$
+$$
+w^{(k)}=\frac{\Sigma_{\mathcal C_k}^{-1}\mu_{\mathcal C_k}}{\mathbf 1^\top\Sigma_{\mathcal C_k}^{-1}\mu_{\mathcal C_k}},\qquad
+\text{then across clusters: } \beta=\frac{\Sigma_{\text{cl}}^{-1}\mu_{\text{cl}}}{\mathbf 1^\top\Sigma_{\text{cl}}^{-1}\mu_{\text{cl}}},
+$$
 
 where $\Sigma_{\text{cl}}$ and $\mu_{\text{cl}}$ are the covariance/means of the $K$ cluster portfolios. The key benefit: the matrices inverted are size $|\mathcal C_k|\times|\mathcal C_k|$ and $K\times K$ — **small and well-conditioned** — never the $N\times N$ sample covariance. NCO therefore reintroduces return forecasts (fixing HRP's structural blindness to alpha) while retaining the dimensionality reduction that makes the inversion safe.
 

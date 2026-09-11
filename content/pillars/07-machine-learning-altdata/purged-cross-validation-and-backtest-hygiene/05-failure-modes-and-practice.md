@@ -28,13 +28,17 @@ The objective is the discipline of *quantifying* all three before trusting a bac
 
 **Sample loss from purging.** With label horizon $h_{label}$, embargo $h$, and $T$ observations, an interior test block of length $b$ purges roughly the $h_{label}$ labels on each side that overlap it, plus an embargo buffer $h$. Across $k$ contiguous folds the discarded fraction is on the order of
 
-$$\frac{\text{discarded}}{\text{available}}\;\approx\;\frac{2\,h_{label}+h}{T}.$$
+$$
+\frac{\text{discarded}}{\text{available}}\;\approx\;\frac{2\,h_{label}+h}{T}.
+$$
 
 This is a **bias–variance tradeoff** (ESL Ch. 7): purging removes bias from leakage at the cost of higher variance from a smaller training set. The longer the label horizon, the steeper the price (Fig. from §3).
 
 **Single-path variance vs CPCV distribution.** A walk-forward or plain-CV backtest produces one Sharpe estimate $\widehat{SR}_i$. Even a *perfectly honest* single path has sampling variance. CPCV replaces it with $\varphi$ paths whose sample-mean variance (AFML §12.5) is
 
-$$\sigma^2[\mu_i]=\varphi^{-1}\sigma_i^2\big[1+(\varphi-1)\bar\rho_i\big],$$
+$$
+\sigma^2[\mu_i]=\varphi^{-1}\sigma_i^2\big[1+(\varphi-1)\bar\rho_i\big],
+$$
 
 with $\varphi^{-1}\sigma_i^2\le\sigma^2[\mu_i]<\sigma_i^2$. The $\varphi=1$ case (CV/WF) sits at the top of that range — the *most* volatile estimate — and the whole point of CPCV is to walk $\sigma^2[\mu_i]$ down toward $\varphi^{-1}\sigma_i^2$ by adding independent paths.
 

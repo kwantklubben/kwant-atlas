@@ -40,23 +40,33 @@ The practical objective: know that vanilla smiles barely constrain the exotic bo
 
 Bergomi rewrites Heston in terms of the **variance curve** $\xi_t^T=\mathbb E_t[v_T]$:
 
-$$\xi_t^T=\bar v+e^{-\lambda(T-t)}(v_t-\bar v),\qquad \hat\sigma_T^2(t)=\bar v+\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}(v_t-\bar v),$$
+$$
+\xi_t^T=\bar v+e^{-\lambda(T-t)}(v_t-\bar v),\qquad \hat\sigma_T^2(t)=\bar v+\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}(v_t-\bar v),
+$$
 
 and as a forward-variance SDE $d\xi_t^T=\eta e^{-\lambda(T-t)}\sqrt{\xi_t^t}\,dZ_t$ — **driftless**, which is why variance-swap implied vols stay fixed under perturbations. The price of this elegance is a hard constraint on the initial curve,
 
-$$\frac{d\xi_0^T}{dT}=-\lambda(\xi_0^T-\bar v)\qquad(\text{6.2}),$$
+$$
+\frac{d\xi_0^T}{dT}=-\lambda(\xi_0^T-\bar v)\qquad(\text{6.2}),
+$$
 
 so **Heston cannot fit a general variance-swap term structure and an ATM term structure simultaneously** — the curve has one free parameter ($\bar v$) and one exponent ($\lambda$). Its vol-of-vol term structure for a flat VS curve is fixed (6.9):
 
-$$\mathrm{vol}(\hat\sigma_T)\propto\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}\ \text{(short }T: \to1;\ \text{long }T:\propto1/(T-t)).$$
+$$
+\mathrm{vol}(\hat\sigma_T)\propto\frac{1-e^{-\lambda(T-t)}}{\lambda(T-t)}\ \text{(short }T: \to1;\ \text{long }T:\propto1/(T-t)).
+$$
 
 Heston's **ATMF skew** at order one in $\eta$ (6.17b, flat curve 6.20):
 
-$$\mathcal S_T=\frac{1}{\hat\sigma_T^3T^2}\frac{\rho\eta}{2}\int_0^T V_\tau\,\frac{1-e^{-\lambda(T-\tau)}}{\lambda}d\tau\ \ \xrightarrow{\ \text{flat}\ }\ \ \frac{\rho\eta}{2\sqrt{\bar v}}\frac{\lambda T+e^{-\lambda T}-1}{(\lambda T)^2},$$
+$$
+\mathcal S_T=\frac{1}{\hat\sigma_T^3T^2}\frac{\rho\eta}{2}\int_0^T V_\tau\,\frac{1-e^{-\lambda(T-\tau)}}{\lambda}d\tau\ \ \xrightarrow{\ \text{flat}\ }\ \ \frac{\rho\eta}{2\sqrt{\bar v}}\frac{\lambda T+e^{-\lambda T}-1}{(\lambda T)^2},
+$$
 
 with the two exact limits
 
-$$\mathcal S_T\to\frac{\rho\eta}{4\sqrt{\bar v}}\ (T\to0)\qquad\text{and}\qquad\mathcal S_T\to\frac{\rho\eta}{2\sqrt{\bar v}}\frac{1}{\lambda T}\ (T\to\infty).$$
+$$
+\mathcal S_T\to\frac{\rho\eta}{4\sqrt{\bar v}}\ (T\to0)\qquad\text{and}\qquad\mathcal S_T\to\frac{\rho\eta}{2\sqrt{\bar v}}\frac{1}{\lambda T}\ (T\to\infty).
+$$
 
 The $1/T$ long-maturity decay is Heston's signature — and the reason it is a **Type I** model.
 
@@ -64,23 +74,33 @@ The $1/T$ long-maturity decay is Heston's signature — and the reason it is a *
 
 The skew stickiness ratio measures the co-movement of implied vol with spot, normalised by the skew,
 
-$$R_T=\frac{1}{\mathcal S_T}\frac{\mathbb E\big[d\ln S\;d\hat\sigma_{F_T(S)T}\big]}{\mathbb E\big[(d\ln S)^2\big]}$$
+$$
+R_T=\frac{1}{\mathcal S_T}\frac{\mathbb E\big[d\ln S\;d\hat\sigma_{F_T(S)T}\big]}{\mathbb E\big[(d\ln S)^2\big]}
+$$
 
 ($R_T=1$ sticky-strike, $R_T=0$ sticky-delta). At lowest non-trivial order, for a time-homogeneous model with covariance kernel $\mu$ on a flat curve,
 
-$$R_T=\frac{\int_0^T\mu(t)dt}{\int_0^T(1-t/T)\mu(t)dt}.$$
+$$
+R_T=\frac{\int_0^T\mu(t)dt}{\int_0^T(1-t/T)\mu(t)dt}.
+$$
 
 For monotone-decaying $\mu$ this yields the **model-independent range**
 
-$$\boxed{\;R_T\in[1,2]\;}\qquad\text{with}\qquad R_0=2\ \text{(the same short-end limit as local volatility).}$$
+$$
+\boxed{\;R_T\in[1,2]\;}\qquad\text{with}\qquad R_0=2\ \text{(the same short-end limit as local volatility).}
+$$
 
 Classifying models by the decay exponent $\mu(t)\propto t^{-\gamma}$:
 
-$$\text{Type I }(\gamma>1):\ \mathcal S_T\propto\frac1T,\ R_\infty=1;\qquad \text{Type II }(\gamma<1):\ \mathcal S_T\propto T^{-\gamma},\ R_\infty=2-\gamma;\qquad \mathcal S_T\propto T^{-(2-R_\infty)} .$$
+$$
+\text{Type I }(\gamma>1):\ \mathcal S_T\propto\frac1T,\ R_\infty=1;\qquad \text{Type II }(\gamma<1):\ \mathcal S_T\propto T^{-\gamma},\ R_\infty=2-\gamma;\qquad \mathcal S_T\propto T^{-(2-R_\infty)} .
+$$
 
 Heston ($\mu$ exponential) is **Type I**, $R_T\to1$; local volatility gives $R_T\to(2-\gamma)/(1-\gamma)$ (e.g. $3$ for $\gamma=\tfrac12$) — i.e. LV and SV start at the same $R_0=2$ and go in **opposite directions**. The data say Type II ($\gamma\approx\tfrac12$, $R_\infty\approx1.5$), so **neither** pure LV nor Heston is right, and the two-factor model is built to be Type II over a practical range:
 
-$$\mathcal S_T=\frac{\omega}{2}\sum_iw_i\rho_{iS}\frac{k_iT-1+e^{-k_iT}}{(k_iT)^2},\qquad R_T=\frac{\sum_iw_i\rho_{iS}(1-e^{-k_iT})/(k_iT)}{\sum_iw_i\rho_{iS}(k_iT-(1-e^{-k_iT}))/(k_iT)^2}\ \text{(9.16a,b)}.$$
+$$
+\mathcal S_T=\frac{\omega}{2}\sum_iw_i\rho_{iS}\frac{k_iT-1+e^{-k_iT}}{(k_iT)^2},\qquad R_T=\frac{\sum_iw_i\rho_{iS}(1-e^{-k_iT})/(k_iT)}{\sum_iw_i\rho_{iS}(k_iT-(1-e^{-k_iT}))/(k_iT)^2}\ \text{(9.16a,b)}.
+$$
 
 **Pricing consequence (Bergomi §9):** for a long spot/vol cross-gamma book, *local volatility* is the conservative (higher-$R$) choice; for a short cross-gamma book, *SV* is. Same smile, opposite prices — that is the whole point of this chapter.
 
@@ -88,31 +108,47 @@ $$\mathcal S_T=\frac{\omega}{2}\sum_iw_i\rho_{iS}\frac{k_iT-1+e^{-k_iT}}{(k_iT)^
 
 Write the pricing equation as $\partial_tP+H_tP=0$ with $H_t=H_t^0+\varepsilon W_t^1+\varepsilon^2W_t^2$, where $\varepsilon$ scales the vol-of-vol ($\mu\to\varepsilon\mu$, $\nu\to\varepsilon^2\nu$, then $\varepsilon=1$). Because forward variances are **driftless**, VS implied vols are *unchanged* by $\varepsilon$ — so the expansion perturbs the smile without shifting the level. The price expansion is (8.18)
 
-$$P=\Big[1+\varepsilon\frac{C_0^{x\xi}}{2}(\partial_x^3-\partial_x^2)+\varepsilon^2\Big(\frac{C_0^{\xi\xi}}{8}(\partial_x^2-\partial_x)^2+\frac{(C_0^{x\xi})^2}{8}(\partial_x^3-\partial_x)^2+\frac{D_0}{2}(\partial_x^3-\partial_x)^2\Big)\Big]P_0,$$
+$$
+P=\Big[1+\varepsilon\frac{C_0^{x\xi}}{2}(\partial_x^3-\partial_x^2)+\varepsilon^2\Big(\frac{C_0^{\xi\xi}}{8}(\partial_x^2-\partial_x)^2+\frac{(C_0^{x\xi})^2}{8}(\partial_x^3-\partial_x)^2+\frac{D_0}{2}(\partial_x^3-\partial_x)^2\Big)\Big]P_0,
+$$
 
 with the **three dimensionless model-dependent constants**
 
-$$C_t^{x\xi}=\!\int_t^T\!\!d\tau\!\int_\tau^T\!\!du\,\mu(\tau,u)=\!\int_t^T\!(T-\tau)\big\langle d\ln S_\tau\,d\hat\sigma_T^2(\tau)\big\rangle,$$
+$$
+C_t^{x\xi}=\!\int_t^T\!\!d\tau\!\int_\tau^T\!\!du\,\mu(\tau,u)=\!\int_t^T\!(T-\tau)\big\langle d\ln S_\tau\,d\hat\sigma_T^2(\tau)\big\rangle,
+$$
 
-$$C_t^{\xi\xi}=\!\int_t^T\!\!d\tau\!\int_\tau^T\!\!du\!\int_\tau^T\!\!du'\,\nu(\tau,u,u')=\!\int_t^T\!(T-\tau)^2\big\langle d\hat\sigma_T^2(\tau)\,d\hat\sigma_T^2(\tau)\big\rangle,$$
+$$
+C_t^{\xi\xi}=\!\int_t^T\!\!d\tau\!\int_\tau^T\!\!du\!\int_\tau^T\!\!du'\,\nu(\tau,u,u')=\!\int_t^T\!(T-\tau)^2\big\langle d\hat\sigma_T^2(\tau)\,d\hat\sigma_T^2(\tau)\big\rangle,
+$$
 
-$$D_t=\!\int_t^T\!\!d\tau\!\int_\tau^T\!\!du\,\mu(\tau,u)\frac{\delta C_\tau^{x\xi}}{\delta\xi^u},$$
+$$
+D_t=\!\int_t^T\!\!d\tau\!\int_\tau^T\!\!du\,\mu(\tau,u)\frac{\delta C_\tau^{x\xi}}{\delta\xi^u},
+$$
 
 so the whole smile at order 2 is a function of $(C^{x\xi},C^{\xi\xi},D)$ — the *skew* functional, the *vol-of-vol* functional, and the *term-structure* functional. The implied-vol expansion (8.20–8.21) is
 
-$$\hat\sigma(K,T)=\hat\sigma_{F_TT}+S_T\ln(K/F_T)+\frac{C_T}{2}\ln^2(K/F_T)+O(\varepsilon^3),$$
+$$
+\hat\sigma(K,T)=\hat\sigma_{F_TT}+S_T\ln(K/F_T)+\frac{C_T}{2}\ln^2(K/F_T)+O(\varepsilon^3),
+$$
 
-$$S_T=\hat\sigma_T\frac{\varepsilon\,C^{x\xi}}{2Q^2}\Big\{1+O(\varepsilon)\Big\},\qquad Q=\hat\sigma_T^2T,\qquad \hat\sigma_{F_TT}=\hat\sigma_T+\frac{Q}{2}S_T .$$
+$$
+S_T=\hat\sigma_T\frac{\varepsilon\,C^{x\xi}}{2Q^2}\Big\{1+O(\varepsilon)\Big\},\qquad Q=\hat\sigma_T^2T,\qquad \hat\sigma_{F_TT}=\hat\sigma_T+\frac{Q}{2}S_T .
+$$
 
 **The order-1 skew is *exactly* the local-volatility formula (2.89).** With $\mu$ the instantaneous spot/VS-vol covariance,
 
-$$S_T=\frac{1}{2\hat\sigma_T^3T}\int_0^T\frac{T-\tau}{T}\big\langle d\ln S_\tau\,d\hat\sigma_T^2(\tau)\big\rangle_0d\tau,$$
+$$
+S_T=\frac{1}{2\hat\sigma_T^3T}\int_0^T\frac{T-\tau}{T}\big\langle d\ln S_\tau\,d\hat\sigma_T^2(\tau)\big\rangle_0d\tau,
+$$
 
 i.e. **the ATMF skew is the (weighted) average of the instantaneous spot/vol covariance over the residual maturity** — a statement first derived for local volatility and now shown to be *model-independent at order 1*. That is the cleanest form of the "skew is the covariance of spot with implied vol" mantra.
 
 Short-maturity limit ($T\to0$, order 2, $\mu_0\equiv\mu(0,0,\xi_0^0)$, $\nu_0\equiv\nu(0,0,0,\xi_0^0)$):
 
-$$C^{x\xi}=\frac{T^2\mu_0}{2},\quad C^{\xi\xi}=\frac{T^3\nu_0}{3},\quad D=\frac{T^3\mu_0\,d\mu_0/d\xi_0^0}{6},\qquad S_0=\frac{\mu_0}{4(\xi_0^0)^{3/2}},\quad S_0=\frac{1}{2\hat\sigma_0^2}\frac{\langle d\ln S\,d\hat\sigma_0\rangle}{dt},$$
+$$
+C^{x\xi}=\frac{T^2\mu_0}{2},\quad C^{\xi\xi}=\frac{T^3\nu_0}{3},\quad D=\frac{T^3\mu_0\,d\mu_0/d\xi_0^0}{6},\qquad S_0=\frac{\mu_0}{4(\xi_0^0)^{3/2}},\quad S_0=\frac{1}{2\hat\sigma_0^2}\frac{\langle d\ln S\,d\hat\sigma_0\rangle}{dt},
+$$
 
 which reproduces (8.39)–(8.44): SABR $S_0=\rho\nu/2$, Heston $S_0=\rho\eta/(4\sqrt{V_0})$, vanishing correlation $S_0=0$ (all verified in [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/03-sabr-and-asymptotics|03 · SABR & Asymptotics]]).
 
@@ -122,7 +158,9 @@ which reproduces (8.39)–(8.44): SABR $S_0=\rho\nu/2$, Heston $S_0=\rho\eta/(4\
 
 With $\omega_t=\hat\sigma_T^2(t)$ and $Q=e^{-rt}P_{BS}$,
 
-$$P=P_{BS}(0,S_0,\hat\sigma_T^2(0))+\mathbb E\Big[\int_0^Te^{-rt}\Big(\frac{\partial^2P_{BS}}{\partial S\partial\hat\sigma_T^2}dS_t\,d\hat\sigma_T^2(t)+\frac12\frac{\partial^2P_{BS}}{\partial(\hat\sigma_T^2)^2}d\hat\sigma_T^2(t)d\hat\sigma_T^2(t)\Big)\Big],$$
+$$
+P=P_{BS}(0,S_0,\hat\sigma_T^2(0))+\mathbb E\Big[\int_0^Te^{-rt}\Big(\frac{\partial^2P_{BS}}{\partial S\partial\hat\sigma_T^2}dS_t\,d\hat\sigma_T^2(t)+\frac12\frac{\partial^2P_{BS}}{\partial(\hat\sigma_T^2)^2}d\hat\sigma_T^2(t)d\hat\sigma_T^2(t)\Big)\Big],
+$$
 
 whose order-1 truncation shows the **materialising payoff for the spot/vol cross-gamma is $\ln^2(S_T/S_0)$** — a log-contract-like position with (signed) replication density $\rho(K)=\frac{2}{K}(1-\ln(K/S_0))$ (positive for $K\ll S_0$). This makes the implied integrated spot/vol covariance a **model-free read-off** from the market price of $\ln^2$, and it is the theoretical basis of the synthetic-skew trade (Bergomi §9.10: cross-gamma/theta P&L $=S\hat\sigma_0^2\frac{d^2\Pi}{dSd\hat\sigma_0}(R_T^{r,\text{short}}-2)\delta t$).
 
@@ -130,19 +168,27 @@ whose order-1 truncation shows the **materialising payoff for the spot/vol cross
 
 Model $(S_t,\{\xi_t^T\})$ directly, with the pricing equation (7.4)
 
-$$\frac{\partial P}{\partial t}+(r-q)S\frac{\partial P}{\partial S}+\frac{\xi_t^t}{2}S^2\frac{\partial^2P}{\partial S^2}+\frac12\iint\nu\,\frac{\delta^2P}{\delta\xi^u\delta\xi^{u'}}+\int\mu\,S\frac{\delta^2P}{\partial S\,\delta\xi^u}=rP,$$
+$$
+\frac{\partial P}{\partial t}+(r-q)S\frac{\partial P}{\partial S}+\frac{\xi_t^t}{2}S^2\frac{\partial^2P}{\partial S^2}+\frac12\iint\nu\,\frac{\delta^2P}{\delta\xi^u\delta\xi^{u'}}+\int\mu\,S\frac{\delta^2P}{\partial S\,\delta\xi^u}=rP,
+$$
 
 subject to the **cardinal rule** that the break-even spot vol equals the instantaneous VS vol, $\sigma(t,S,\xi)^2=\xi_t^t$ (no free theta). A **Markov representation** exists if and only if $\omega(u)=\omega e^{-ku}$, i.e. forward variances are driven by OU processes:
 
-$$\xi_t^T=\xi_0^T\exp\Big(\omega e^{-k(T-t)}X_t-\frac{\omega^2}{2}e^{-2k(T-t)}\mathbb E[X_t^2]\Big),\qquad dX_t=-kX_tdt+dW_t,$$
+$$
+\xi_t^T=\xi_0^T\exp\Big(\omega e^{-k(T-t)}X_t-\frac{\omega^2}{2}e^{-2k(T-t)}\mathbb E[X_t^2]\Big),\qquad dX_t=-kX_tdt+dW_t,
+$$
 
 which is **exactly simulable**. The two-factor workhorse (7.28–7.39) generalises this with two well-separated time scales and gives the vol-of-vol term structure
 
-$$\nu_T(t)=\nu\alpha_\theta\sqrt{\textstyle\sum_{ij}w_iw_j\rho_{ij}I(k_i(T-t))I(k_j(T-t))},\qquad I(x)=\frac{1-e^{-x}}{x},$$
+$$
+\nu_T(t)=\nu\alpha_\theta\sqrt{\textstyle\sum_{ij}w_iw_j\rho_{ij}I(k_i(T-t))I(k_j(T-t))},\qquad I(x)=\frac{1-e^{-x}}{x},
+$$
 
 against the empirical **power-law benchmark** (7.40)
 
-$$\nu_T(t)=\sigma_0\Big(\frac{\tau_0}{T-t}\Big)^{\alpha},\qquad \alpha\approx0.4,\ \tau_0=3\text{m}.$$
+$$
+\nu_T(t)=\sigma_0\Big(\frac{\tau_0}{T-t}\Big)^{\alpha},\qquad \alpha\approx0.4,\ \tau_0=3\text{m}.
+$$
 
 This is the desk-grade answer to LV's missing forward skew: a model that fits the VS term structure *by construction* and controls the vol-of-vol term structure with one or two extra factors. Note also the structural difference from Heston: $\xi_t^T$ is **lognormal** (so short vol is lognormal, not normal — the empirically preferred $\beta(v)\sim\sqrt v$ scaling).
 

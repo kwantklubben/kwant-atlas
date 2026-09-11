@@ -25,7 +25,9 @@ The intellectual move mirrors the CLT: the CLT says sums of i.i.d. finite-varian
 #### 2.1 Fisher–Tippett–Gnedenko (de Haan §1.1)
 
 **Theorem.** Let $X_1,\dots,X_n$ be i.i.d. and $M_n=\max(X_1,\dots,X_n)$. If there exist sequences $a_n>0$, $b_n$ such that $(M_n-b_n)/a_n$ converges in distribution to a non-degenerate $G$, then
-$$G_\xi(x)=\exp\Big\{-\big(1+\xi x\big)^{-1/\xi}\Big\},\qquad 1+\xi x>0,$$
+$$
+G_\xi(x)=\exp\Big\{-\big(1+\xi x\big)^{-1/\xi}\Big\},\qquad 1+\xi x>0,
+$$
 with $G_0(x)=e^{-e^{-x}}$ for $\xi=0$. This is the **GEV** family. The parent $F$ is said to be in the maximum domain of attraction of $G_\xi$, written $F\in\text{MDA}(G_\xi)$.
 
 - $\xi>0$: Fréchet (heavy tails, $1-F(x)=x^{-1/\xi}L(x)$ slowly varying) — **the financial case**.
@@ -39,11 +41,15 @@ With location $\mu$ and scale $\sigma$ inserted: $G_{\xi,\mu,\sigma}(x)=G_\xi((x
 For $\xi>0$, $1-F(x)=x^{-1/\xi}L(x)$; the quantity $\alpha=1/\xi$ is the *tail index*. Estimating $\xi$ means using the largest order statistics. Let $X_{(1)}\ge X_{(2)}\ge\dots\ge X_{(k)}\ge X_{(k+1)}$ be the $k$ largest observations above an intermediate threshold.
 
 **Hill estimator (de Haan §3.2.2, eq. 3.2.2; Hill 1975).** Estimates $\gamma=\xi$ from the mean of the log-spacings in the tail:
-$$\hat\gamma_H=\frac1k\sum_{i=1}^{k}\log\frac{X_{(i)}}{X_{(k+1)}},$$
+$$
+\hat\gamma_H=\frac1k\sum_{i=1}^{k}\log\frac{X_{(i)}}{X_{(k+1)}},
+$$
 so $\hat\alpha=\dfrac{k}{\sum_{i=1}^{k}\log(X_{(i)}/X_{(k+1)})}$. Hill is **consistent only for $\xi>0$** (de Haan Thm 3.2.2) — it is the estimator of choice for fat-tailed financial data.
 
 **Pickands estimator (de Haan §3.3.1, eq. 3.3.1; Pickands 1975).** Works for *any* real $\xi$:
-$$\hat\gamma_P=\frac{1}{\log 2}\log\frac{X_{(n-k)}-X_{(n-2k)}}{X_{(n-2k)}-X_{(n-4k)}},$$
+$$
+\hat\gamma_P=\frac{1}{\log 2}\log\frac{X_{(n-k)}-X_{(n-2k)}}{X_{(n-2k)}-X_{(n-4k)}},
+$$
 where $X_{(n-k)}$ is the $(k{+}1)$-th largest, etc. It estimates $\gamma$ via *quantiles* of the limiting GEV, in contrast to Hill's moment-of-the-tail approach (de Haan Remark 3.3.4). Its virtue is validity for all $\xi$; its cost is **high variance for $\xi>0$** (de Haan §3.3, compare of asymptotic variances §3.4) — precisely the regime of interest.
 
 > **Rule of thumb from de Haan §3.4.** For heavy tails ($\xi>0$) the Hill estimator has the lowest asymptotic variance among these; the MLE of the GPD ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/04-peaks-over-threshold|04 · Peaks Over Threshold]]) and the "negative Hill" estimator of Falk are even more efficient, while the Pickands estimator is the most variable. Use Hill for $\xi>0$; use Pickands only when you cannot assume heavy tails.

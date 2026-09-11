@@ -26,19 +26,27 @@ This page gives the **full, honest derivation** of the BSM PDE (delta-neutral re
 
 Underlying follows GBM under physical measure $\mathbb{P}$:
 
-$$dS_t = \mu S_t\,dt + \sigma S_t\,dW_t .$$
+$$
+dS_t = \mu S_t\,dt + \sigma S_t\,dW_t .
+$$
 
 Let $V(t,S)$ be the derivative price. By Itô–Doeblin (Shreve II Thm 4.4.6; Hull eq. 14.12):
 
-$$dV = \left(\frac{\partial V}{\partial t}+\mu S\frac{\partial V}{\partial S}+\frac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}\right)dt + \sigma S\frac{\partial V}{\partial S}\,dW .$$
+$$
+dV = \left(\frac{\partial V}{\partial t}+\mu S\frac{\partial V}{\partial S}+\frac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}\right)dt + \sigma S\frac{\partial V}{\partial S}\,dW .
+$$
 
 Form $\Pi=V-\Delta S$, the hedged portfolio. Substituting and choosing $\Delta=\partial V/\partial S$ kills the $dW$ term:
 
-$$d\Pi = \left(\frac{\partial V}{\partial t}+\frac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}\right)dt .$$
+$$
+d\Pi = \left(\frac{\partial V}{\partial t}+\frac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}\right)dt .
+$$
 
 A riskless portfolio must earn the risk-free rate (Shreve II §4.5; Björk Prop 7.6 — "only one short rate on an arbitrage-free market"): $d\Pi = r(V-\Delta S)dt$. Equating and rearranging gives the **BSM PDE**:
 
-$$\boxed{\;\frac{\partial V}{\partial t}+rS\frac{\partial V}{\partial S}+\frac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}-rV=0\;}\qquad (0\le t<T,\; S\ge0).$$
+$$
+\boxed{\;\frac{\partial V}{\partial t}+rS\frac{\partial V}{\partial S}+\frac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}-rV=0\;}\qquad (0\le t<T,\; S\ge0).
+$$
 
 **Terminal & boundary conditions** (Shreve II 4.5.14):
 - Terminal payoff: $V(T,S)=\max(S-K,0)$ (call), $\max(K-S,0)$ (put).
@@ -51,24 +59,34 @@ The drift $\mu$ is absent — **volatility (not drift) is the pricing parameter*
 
 Shreve II Ch 5 and Björk Ch 7. Define the money-market account $D(t)=e^{-\int_0^t R\,ds}$ and the **market price of risk** $\Theta(t)=(\alpha(t)-R(t))/\sigma(t)$. Girsanov's theorem (Shreve II Thm 5.2.3) builds the equivalent measure $\mathbb{Q}$ via the Radon–Nikodym derivative
 
-$$Z(t)=\exp\!\Big\{-\!\int_0^t\Theta(u)\,dW(u)-\tfrac12\!\int_0^t\Theta^2(u)\,du\Big\},$$
+$$
+Z(t)=\exp\!\Big\{-\!\int_0^t\Theta(u)\,dW(u)-\tfrac12\!\int_0^t\Theta^2(u)\,du\Big\},
+$$
 
 under which $\widetilde W(t)=W(t)+\int_0^t\Theta(u)du$ is a Brownian motion. Under $\mathbb{Q}$ the stock becomes
 
-$$dS = R\,S\,dt+\sigma S\,d\widetilde W,$$
+$$
+dS = R\,S\,dt+\sigma S\,d\widetilde W,
+$$
 
 and the **discounted stock $D(t)S(t)$ is a $\mathbb{Q}$-martingale**. The risk-neutral pricing formula (Shreve II 5.2.30/31) is then
 
-$$V(t)=\widetilde{\mathbb{E}}\!\left[e^{-\int_t^T R(u)du}\,V(T)\,\Big|\,F(t)\right].$$
+$$
+V(t)=\widetilde{\mathbb{E}}\!\left[e^{-\int_t^T R(u)du}\,V(T)\,\Big|\,F(t)\right].
+$$
 
 For constant $r,\sigma$ and payoff $(S_T-K)^+$, this expectation has a closed form — the BSM formula (next page). Crucially, the change of measure changes the **mean rate** ($\alpha\to r$) but **not the volatility or the paths**.
 
 #### 2.3 The Feynman–Kac Bridge (Björk Props 5.5/5.6; Shreve II §4.5)
 
 **Theorem.** If $F(t,x)$ solves the parabolic PDE
-$$F_t+\mu F_x+\tfrac12\sigma^2F_{xx}-rF=0,\qquad F(T,x)=\Phi(x),$$
+$$
+F_t+\mu F_x+\tfrac12\sigma^2F_{xx}-rF=0,\qquad F(T,x)=\Phi(x),
+$$
 for the SDE $dX=\mu\,dt+\sigma\,dW$, then
-$$F(t,x)=e^{-r(T-t)}\,\mathbb{E}_{t,x}\!\left[\Phi(X_T)\right].$$
+$$
+F(t,x)=e^{-r(T-t)}\,\mathbb{E}_{t,x}\!\left[\Phi(X_T)\right].
+$$
 
 Applying it to the BSM PDE ($\mu=r$, the $\mathbb{Q}$-drift) says exactly: *the PDE solution equals the discounted risk-neutral expectation of the payoff.* The two routes in §2.1 and §2.2 are the same number by construction.
 

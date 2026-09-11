@@ -35,7 +35,9 @@ Classical learning theory bounds generalisation error by model complexity over s
 
 Worse, the **effective** sample size is much smaller than the calendar count, because financial observations are serially correlated. If the lag-$1$ autocorrelation is $\rho$, the effective size is roughly
 
-$$N_{\text{eff}}\approx N\,\frac{1-\rho}{1+\rho}.$$
+$$
+N_{\text{eff}}\approx N\,\frac{1-\rho}{1+\rho}.
+$$
 
 A daily return series with $\rho=0.1$ over $N=2500$ days has $N_{\text{eff}}\approx2045$; a 1-minute series with heavy overlap can lose an order of magnitude. This is why the binding constraint is *not* architecture: it is how many genuinely independent, informative observations exist.
 

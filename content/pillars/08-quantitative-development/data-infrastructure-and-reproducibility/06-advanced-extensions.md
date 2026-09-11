@@ -30,11 +30,15 @@ Three extensions of the discipline:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Parallel reduction is where reproducibility breaks first.** When a computation is split across workers (threads, cores, GPU blocks) and results are summed, the **order of aggregation becomes an input to the result**. IEEE-754 doubles have ~16 significant digits; adding a small term after a huge one absorbs it. Formally, two different reduction orders over partial sums $\{s_0,\dots,s_{K-1}\}$ can yield
-$$R_A=\sum\nolimits_{\text{order A}}s_i \;\ne\; R_B=\sum\nolimits_{\text{order B}}s_i,$$
+$$
+R_A=\sum\nolimits_{\text{order A}}s_i \;\ne\; R_B=\sum\nolimits_{\text{order B}}s_i,
+$$
 with the difference up to the magnitude of the absorbed low-order terms. A nondeterministic scheduler (whichever thread finishes first) therefore breaks reproducibility even with all inputs pinned — the canonical reason frameworks expose a *fixed* reduction order or a pairwise/tree reduction.
 
 **Experiment tracking is a function, not a log.** Each run is a point in input space mapping to an output:
-$$\text{run}: (D,C,E,\theta)\;\mapsto\; O,\qquad O = f(D,C,E,\theta).$$
+$$
+\text{run}: (D,C,E,\theta)\;\mapsto\; O,\qquad O = f(D,C,E,\theta).
+$$
 "Reproducing a result" = recovering the recorded input tuple and re-evaluating $f$. Versioning the tuple (data hash, commit, lockfile, config) is what makes the mapping *invertible* — the mathematical content of an experiment tracker.
 
 **The research-to-production gap as a difference of triples.** Research runs on $(D_r,C_r,E_r)$, production on $(D_p,C_p,E_p)$. The gap is $\|\text{distance}\big((D_r,C_r,E_r),(D_p,C_p,E_p)\big)\|$: every nonzero component is a source of divergence that pinning removes. Container images + lockfiles drive each component to zero by construction.

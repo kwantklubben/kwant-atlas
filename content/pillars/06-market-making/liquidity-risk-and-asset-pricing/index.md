@@ -47,7 +47,9 @@ This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b
 
 **The Acharya–Pedersen liquidity-adjusted CAPM.** Required excess return = expected illiquidity cost + four covariance terms (each $\times\lambda_t$, the market risk premium):
 
-$$E_t(r^i_{t+1}) = r^f + E_t(c^i_{t+1}) + \lambda_t\left[\frac{\operatorname{cov}_t(r^i,r^M)}{\operatorname{var}(r^M-c^M)}+\frac{\operatorname{cov}_t(c^i,c^M)}{\operatorname{var}(r^M-c^M)}-\frac{\operatorname{cov}_t(r^i,c^M)}{\operatorname{var}(r^M-c^M)}-\frac{\operatorname{cov}_t(c^i,r^M)}{\operatorname{var}(r^M-c^M)}\right].$$
+$$
+E_t(r^i_{t+1}) = r^f + E_t(c^i_{t+1}) + \lambda_t\left[\frac{\operatorname{cov}_t(r^i,r^M)}{\operatorname{var}(r^M-c^M)}+\frac{\operatorname{cov}_t(c^i,c^M)}{\operatorname{var}(r^M-c^M)}-\frac{\operatorname{cov}_t(r^i,c^M)}{\operatorname{var}(r^M-c^M)}-\frac{\operatorname{cov}_t(c^i,r^M)}{\operatorname{var}(r^M-c^M)}\right].
+$$
 
 > **Sign convention (the subtle part).** An asset whose *illiquidity* co-moves with *market illiquidity* ($\beta_1>0$) is bad to hold → requires a **higher** return. An asset whose *return* is high when the market is illiquid ($\beta_2>0$), or that stays *liquid* when the market falls ($\beta_3>0$), is good to hold → commands a **lower** return.
 

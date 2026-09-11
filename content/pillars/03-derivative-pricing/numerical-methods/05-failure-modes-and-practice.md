@@ -30,24 +30,32 @@ The discipline: measure the error against a benchmark you trust (a closed form, 
 
 **The discrete maximum principle is what "no ringing" means.** For a two-level scheme $U^{n+1}=QU^n$, if $Q$ has non-negative entries and rows summing to at most one, then positivity of the input implies positivity of the output (Duffy Def 9.1, Lemma 11.1). Crank–Nicolson violates this at high frequency: its symbol is
 
-$$\rho_{\mathrm{CN}}(\xi)=\frac{1-2\lambda\sin^2(\xi/2)}{1+2\lambda\sin^2(\xi/2)}\ \longrightarrow\ -1 \quad (\text{high frequency}),$$
+$$
+\rho_{\mathrm{CN}}(\xi)=\frac{1-2\lambda\sin^2(\xi/2)}{1+2\lambda\sin^2(\xi/2)}\ \longrightarrow\ -1 \quad (\text{high frequency}),
+$$
 
 so the highest modes flip sign every step and decay only slowly. *An unconditionally stable scheme can still be a ringing scheme.* The Richardson/Cooney cure is the extrapolated implicit-Euler scheme
 
-$$V(t+k)=2\,U_{k/2}^{(2)}-U_{k}^{(1)},\qquad U^{(1)}=(I+kA)^{-1}V,\quad U^{(2)}=(I+\tfrac k2A)^{-2}V,$$
+$$
+V(t+k)=2\,U_{k/2}^{(2)}-U_{k}^{(1)},\qquad U^{(1)}=(I+kA)^{-1}V,\quad U^{(2)}=(I+\tfrac k2A)^{-2}V,
+$$
 
 which is second-order *and* positive (Duffy eq. 6.36); the industrial variant is **Rannacher's method**: two fully implicit steps, then CN.
 
 **The explicit stability bound in financial coordinates** (Duffy eqs. 12.15–12.18). For the BSM operator with a grid of step $h$ and $S_{\max}$ large,
 
-$$k\ \le\ \frac{h^2}{\sigma^2S_{\max}^2}\qquad(\text{equivalently }h\le\sigma^2S_j/r,\ \ k\le 1/(\sigma^2j^2+r)).$$
+$$
+k\ \le\ \frac{h^2}{\sigma^2S_{\max}^2}\qquad(\text{equivalently }h\le\sigma^2S_j/r,\ \ k\le 1/(\sigma^2j^2+r)).
+$$
 
 The bound scales with $h^2$ but *inversely with $S_{\max}^2$*: the further out you truncate the domain to control failure mode 4, the more time steps failure mode 2 demands. That is the explicit scheme's trap.
 
 **The MC bias budget** (Glasserman §6.1–6.3): Euler's weak order is $1$ — bias $\approx c\,h$ — while the sampling error is $\sigma/\sqrt n$. Balancing them with a work budget $s$ gives $h^*\propto s^{-1/(2\beta+1)}$ and $\sqrt{\mathrm{MSE}}\propto s^{-\beta/(2\beta+1)}$ (eqs. 6.47–6.48): for Euler ($\beta=1$) the achievable rate is $s^{-1/3}$, strictly worse than the unbiased $s^{-1/2}$. For running extrema/barriers the Euler-on-maximum scheme is only weak order $\le\tfrac12$ — bias removal requires **Brownian interpolation**:
 
-$$\hat M_i=\frac{\hat X_{i+1}+\hat X_i+\sqrt{(\hat X_{i+1}-\hat X_i)^2-2b_i^2h\log U_i}}{2},\qquad
-\hat p_i=\mathbb P(\hat M_i\le B\mid\hat X_i,\hat X_{i+1})=1-\exp\!\left(-\frac{2(B-\hat X_i)(B-\hat X_{i+1})}{b(\hat X_i)^2h}\right).$$
+$$
+\hat M_i=\frac{\hat X_{i+1}+\hat X_i+\sqrt{(\hat X_{i+1}-\hat X_i)^2-2b_i^2h\log U_i}}{2},\qquad
+\hat p_i=\mathbb P(\hat M_i\le B\mid\hat X_i,\hat X_{i+1})=1-\exp\!\left(-\frac{2(B-\hat X_i)(B-\hat X_{i+1})}{b(\hat X_i)^2h}\right).
+$$
 
 **Truncation boundary conditions.** The call's far-field condition $V(S_{\max},t)=S_{\max}-Ke^{-r(T-t)}$ is exact only in the limit. Duffy's own warning (Ch 4): "specifying boundary conditions for the Black–Scholes equation is somewhat of a black art"; his remedies are far-field truncation at a multiple of $K$, the transformation $x=S/(S+K)$ onto $(0,1)$ (coefficients vanish at the endpoints, so *no* boundary condition is needed), or the linearity condition $\partial^2V/\partial S^2=0$ (Hull eq. 21.x, Duffy B3).
 

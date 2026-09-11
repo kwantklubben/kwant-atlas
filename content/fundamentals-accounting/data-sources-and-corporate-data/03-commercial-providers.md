@@ -32,13 +32,17 @@ There is also the **free scraped aggregator** (Yahoo `quoteSummary`): fast, univ
 
 **The standardization map.** A provider is a function from filer tags to a fixed contract:
 
-$$\text{provider}: \ \{\text{us-gaap tags}\} \longrightarrow \{\text{provider fields}\}, \qquad \Phi_{\text{Sharadar}} \neq \Phi_{\text{Compustat}} \neq \Phi_{\text{Bloomberg}}.$$
+$$
+\text{provider}: \ \{\text{us-gaap tags}\} \longrightarrow \{\text{provider fields}\}, \qquad \Phi_{\text{Sharadar}} \neq \Phi_{\text{Compustat}} \neq \Phi_{\text{Bloomberg}}.
+$$
 
 Because the maps differ, the *same economically identical firm-period* yields different displayed values. The honest response is **triangulation**: report a central value plus a spread, and document the basis of each contributor.
 
 **The point-in-time distinction, stated as a database property.** Let $\mathcal{D}(t)$ be the vendor's database as it stood on date $t$:
 
-$$\text{PIT} \iff \mathcal{D}(t) \ \text{is retrievable for historical}\ t \qquad\text{vs.}\qquad \text{``restated''} \iff \text{only } \mathcal{D}(t_{\text{now}}).$$
+$$
+\text{PIT} \iff \mathcal{D}(t) \ \text{is retrievable for historical}\ t \qquad\text{vs.}\qquad \text{``restated''} \iff \text{only } \mathcal{D}(t_{\text{now}}).
+$$
 
 The default Compustat product (and Yahoo, and Damodaran's snapshots) exposes only $\mathcal{D}(t_{\text{now}})$: *today's* restated values. Backtesting a screen on that is backtesting on information that did not exist at the time — the inflation is not hypothetical (§3 and [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|05]] both measure it).
 

@@ -33,11 +33,15 @@ The awkwardness is the free boundary $S^*(t)$. On the "continue" region the valu
 
 Let $\mathcal L$ be the BSM operator, $\mathcal L V = \tfrac{\partial V}{\partial t}+rS\tfrac{\partial V}{\partial S}+\tfrac12\sigma^2S^2\tfrac{\partial^2 V}{\partial S^2}-rV$. On the continuation region $\mathcal C=\{(t,S):V(t,S)>$ intrinsic$\}$:
 
-$$\mathcal L V=0\quad\text{in }\mathcal C,\qquad V(t,S)=\text{intrinsic on }\partial\mathcal C,\qquad V(T,S)=\text{intrinsic}.$$
+$$
+\mathcal L V=0\quad\text{in }\mathcal C,\qquad V(t,S)=\text{intrinsic on }\partial\mathcal C,\qquad V(T,S)=\text{intrinsic}.
+$$
 
 The boundary $\partial\mathcal C$ is the free boundary $S^*(t)$ (a curve rising to $K$ at $t=T$ for the put). Two conditions hold **across** it:
 
-$$\underbrace{V(t,S^*)=K-S^*}_{\text{value matching}},\qquad \underbrace{\frac{\partial V}{\partial S}(t,S^*)=-1}_{\text{smooth pasting}}.$$
+$$
+\underbrace{V(t,S^*)=K-S^*}_{\text{value matching}},\qquad \underbrace{\frac{\partial V}{\partial S}(t,S^*)=-1}_{\text{smooth pasting}}.
+$$
 
 $V$ and $V_S$ are continuous across $\partial\mathcal C$; $V_{SS}$ **jumps**. Only $C^1$ regularity is required — smooth pasting is a *choice* (the "smooth fit" heuristic) that the correct solution satisfies, not an assumption.
 
@@ -45,7 +49,9 @@ $V$ and $V_S$ are continuous across $\partial\mathcal C$; $V_{SS}$ **jumps**. On
 
 In the perpetual put the three conditions combine into a single statement with $\mathcal LV := rV-rSV_S-\tfrac12\sigma^2S^2V_{SS}$ (the **negative** of the BSM operator):
 
-$$\text{(i) }V(x)\ge (K-x)^+\ \forall x;\qquad \text{(ii) }\mathcal LV(x)\ge0\ \forall x;\qquad \text{(iii) at each }x\text{, equality holds in (i) or (ii)}.$$
+$$
+\text{(i) }V(x)\ge (K-x)^+\ \forall x;\qquad \text{(ii) }\mathcal LV(x)\ge0\ \forall x;\qquad \text{(iii) at each }x\text{, equality holds in (i) or (ii)}.
+$$
 
 The unique bounded $C^1$ function satisfying all three is the value $v_{L^*}$ of [[pillars/03-derivative-pricing/american-options-and-optimal-stopping/03-analytic-approximations|03]]. In the continuation region $\mathcal LV=0$; in the exercise region $V'=V''=0$, $V=K-x$ so $\mathcal LV=rK>0$. The probabilistic twin (Shreve II Thm 8.3.5, Cor 8.3.6): $e^{-rt}v_{L^*}(S_t)$ is a **supermartingale**, and is a **martingale** when stopped at the first hitting time $T_{L^*}$.
 
@@ -53,11 +59,15 @@ The unique bounded $C^1$ function satisfying all three is the value $v_{L^*}$ of
 
 For a finite-maturity American put on a grid, conditions (i)–(iii) become, at every node $(t_i,S_j)$:
 
-$$\boxed{\ \min\!\Big(V(t_i,S_j)-\text{intrinsic}(S_j),\ \ \mathcal LV(t_i,S_j)\Big)=0\ }$$
+$$
+\boxed{\ \min\!\Big(V(t_i,S_j)-\text{intrinsic}(S_j),\ \ \mathcal LV(t_i,S_j)\Big)=0\ }
+$$
 
 or equivalently the complementarity system
 
-$$V\ge g,\qquad \mathcal LV\ge 0,\qquad (V-g)\cdot(\mathcal LV)=0.$$
+$$
+V\ge g,\qquad \mathcal LV\ge 0,\qquad (V-g)\cdot(\mathcal LV)=0.
+$$
 
 Discretise $\mathcal L$ (implicit Euler / Crank–Nicolson) and you get, at each time step, an algebraically messy linear system $AV\ge b$, $V\ge g$, with complementarity $(V-g)^{\!\top}(AV-b)=0$ — solved by **PSOR** (projected SOR) or by a **penalty method** (Duffy Ch 27–29). This is precisely the "1-factor American" row of the numerical-methods scheme table — the implementation detail lives in [[pillars/03-derivative-pricing/numerical-methods/02-finite-difference-methods|Numerical Methods · FDM]]; this page owns the *formulation*.
 

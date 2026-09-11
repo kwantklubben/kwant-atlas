@@ -45,12 +45,14 @@ Three ideas the whole folder rests on:
 | Effective half-spread | $\text{Se}=d\,(p-m)$, $d=+1$ buy $/-1$ sell | $0.013$ at $Q=1000$ *(page 02's book, $m=100.00$)* |
 | Order Flow Imbalance | $\text{OFI}_t=I^b_t-I^a_t$ (see [[pillars/06-market-making/limit-order-book-mechanics\|03 page]]) | $\text{OFI}=-50$ |
 | Microprice | $m^{\text{micro}}_t=\dfrac{q^b_t\,a_t+q^a_t\,b_t}{q^b_t+q^a_t}$ (size-weighted touch) | falls between $b_t,a_t$ |
-| Toxic-fill EV | $\mathbb{E}[\pi]=h-\pi J$ (half-spread $h$, adverse move $J$, informed share $\pi$) | break-even $\pi^\*=h/J=0.20$ |
+| Toxic-fill EV | $\mathbb{E}[\pi]=h-\pi J$ (half-spread $h$, adverse move $J$, informed share $\pi$) | break-even $\pi^*=h/J=0.20$ |
 | Expected wait to fill | $\mathbb{E}[T]\approx (Q_0+s)/\mu$ ($\mu$ = lots/s executed at the touch) | $10.5$ s at $Q_0=1000$ |
 
 **Price-time priority (formal).** With FIFO, a resting order $i$ at price $p$ on side $S$ is matched before order $j$ iff
 
-$$(p_i \succ_S p_j)\ \text{or}\ \big(p_i=p_j\ \text{and}\ t_i<t_j\big),$$
+$$
+(p_i \succ_S p_j)\ \text{or}\ \big(p_i=p_j\ \text{and}\ t_i<t_j\big),
+$$
 
 where "$\succ_S$" ranks higher bids first for buys and lower asks first for sells. The **best** orders form the touch; the matching engine always consumes the lexicographic minimum of $(\text{price penalty},\ \text{arrival time})$. Pro-rata venues replace the second criterion with a size-proportional split at each price level.
 

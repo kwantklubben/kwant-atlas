@@ -18,7 +18,9 @@ ARCH and GARCH answer a single question: **how should yesterday's shock enter to
 
 The economic reading of GARCH(1,1),
 
-$$\sigma_t^2=\underbrace{\alpha_0}_{\text{floor}}+\underbrace{\alpha_1 a_{t-1}^2}_{\text{news from yesterday}}+\underbrace{\beta_1\sigma_{t-1}^2}_{\text{memory of the past}},$$
+$$
+\sigma_t^2=\underbrace{\alpha_0}_{\text{floor}}+\underbrace{\alpha_1 a_{t-1}^2}_{\text{news from yesterday}}+\underbrace{\beta_1\sigma_{t-1}^2}_{\text{memory of the past}},
+$$
 
 is a **weighted, exponentially-decaying average of past squared shocks with a floor**. It is *exactly* the same object as RiskMetrics' EWMA, but with two differences that make it a proper statistical model: an intercept $\alpha_0$ restoring mean reversion, and estimated (not fixed) coefficients. Because the recursion feeds back, a single large shock propagates forward for many days — the model *generates* clustering rather than being told about it.
 
@@ -29,30 +31,46 @@ The practical payoff: a **one-line, closed-form, one-step-ahead variance forecas
 ### 2. Mathematical Ground Truth & Derivations
 
 **ARCH($q$).** With $a_t=\sigma_t\varepsilon_t$, $\varepsilon_t\overset{iid}{\sim}N(0,1)$,
-$$\sigma_t^2=\alpha_0+\sum_{i=1}^{q}\alpha_i a_{t-i}^2,\qquad \alpha_0>0,\quad \alpha_i\ge0.$$
+$$
+\sigma_t^2=\alpha_0+\sum_{i=1}^{q}\alpha_i a_{t-i}^2,\qquad \alpha_0>0,\quad \alpha_i\ge0.
+$$
 Taking unconditional expectations, $\mathbb{E}[\sigma_t^2]=\alpha_0+\big(\sum\alpha_i\big)\mathbb{E}[a_{t}^2]$, and $\mathbb{E}[\sigma_t^2]=\operatorname{Var}(a_t)$, so
-$$\operatorname{Var}(a_t)=\frac{\alpha_0}{1-\sum_{i=1}^q\alpha_i},\qquad\text{finite iff }\sum\alpha_i<1.$$
+$$
+\operatorname{Var}(a_t)=\frac{\alpha_0}{1-\sum_{i=1}^q\alpha_i},\qquad\text{finite iff }\sum\alpha_i<1.
+$$
 ARCH($1$) is already fat-tailed: its unconditional excess kurtosis is $3(1-\alpha_1^2)/(1-3\alpha_1^2)-3>0$ whenever $3\alpha_1^2<1$ (Tsay §3.4.1). Fat tails emerge **without** fat-tailed shocks — the clustering does it.
 
 **GARCH($p,q$).**
-$$\sigma_t^2=\alpha_0+\sum_{i=1}^{q}\alpha_i a_{t-i}^2+\sum_{j=1}^{p}\beta_j\sigma_{t-j}^2.$$
+$$
+\sigma_t^2=\alpha_0+\sum_{i=1}^{q}\alpha_i a_{t-i}^2+\sum_{j=1}^{p}\beta_j\sigma_{t-j}^2.
+$$
 **Stationarity** requires $\sum_{i=1}^{\max(p,q)}(\alpha_i+\beta_i)<1$ (set $\alpha_i=0$ for $i>q$, $\beta_j=0$ for $j>p$). Then the **unconditional variance** is
-$$\operatorname{Var}(a_t)=\frac{\alpha_0}{1-\sum_i\alpha_i-\sum_j\beta_j}.$$
+$$
+\operatorname{Var}(a_t)=\frac{\alpha_0}{1-\sum_i\alpha_i-\sum_j\beta_j}.
+$$
 *Derivation:* take unconditional expectations of the recursion: $\mathbb{E}[\sigma_t^2]=\alpha_0+\sum\alpha_i\mathbb{E}[a_{t-i}^2]+\sum\beta_j\mathbb{E}[\sigma_{t-j}^2]$; stationarity gives both $\mathbb{E}[a_t^2]$ and $\mathbb{E}[\sigma_t^2]$ equal to a common $\bar\sigma^2$, so $\bar\sigma^2=\alpha_0+(\sum\alpha_i+\sum\beta_j)\bar\sigma^2$.
 
 **GARCH(1,1) — the workhorse.**
-$$\boxed{\ \sigma_t^2=\alpha_0+\alpha_1 a_{t-1}^2+\beta_1\sigma_{t-1}^2\ },\qquad \pi\equiv\alpha_1+\beta_1<1,\qquad \operatorname{Var}(a_t)=\frac{\alpha_0}{1-\alpha_1-\beta_1}.$$
+$$
+\boxed{\ \sigma_t^2=\alpha_0+\alpha_1 a_{t-1}^2+\beta_1\sigma_{t-1}^2\ },\qquad \pi\equiv\alpha_1+\beta_1<1,\qquad \operatorname{Var}(a_t)=\frac{\alpha_0}{1-\alpha_1-\beta_1}.
+$$
 
 **ARMA($1,1$) representation.** Substituting $\sigma_{t-1}^2=a_{t-1}^2-\eta_{t-1}$ (with $\eta_t\equiv a_t^2-\sigma_t^2$ a martingale difference) gives
-$$a_t^2=\alpha_0+(\alpha_1+\beta_1)a_{t-1}^2+\eta_t-\beta_1\eta_{t-1}.$$
+$$
+a_t^2=\alpha_0+(\alpha_1+\beta_1)a_{t-1}^2+\eta_t-\beta_1\eta_{t-1}.
+$$
 So $a_t^2$ is an **ARMA(1,1)**, and the persistence $\pi=\alpha_1+\beta_1$ is its autoregressive root. This is the bridge that lets ARMA theory (stationarity, ACF decay, forecasting) transfer to the variance world — and it is why GARCH(1,1), not high-order GARCH, is usually enough: a low-order ARMA captures most of the dynamics.
 
 **Forecasting.** $\mathbb{E}_t[a_{t+1}^2]=\sigma_{t+1}^2$ is known, and for $\ell\ge2$,
-$$\sigma_h^2(\ell)=\alpha_0+\pi\,\sigma_h^2(\ell-1)\ \longrightarrow\ \frac{\alpha_0}{1-\pi}\quad(\ell\to\infty).$$
+$$
+\sigma_h^2(\ell)=\alpha_0+\pi\,\sigma_h^2(\ell-1)\ \longrightarrow\ \frac{\alpha_0}{1-\pi}\quad(\ell\to\infty).
+$$
 The forecast decays geometrically from the current level to the unconditional variance — the "volatility term structure". The **half-life** of a shock is $\ln\tfrac12/\ln\pi$; for $\pi=0.98$, $\approx34$ days.
 
 **Estimation.** With $\varepsilon_t\sim N(0,1)$, the Gaussian log-likelihood is
-$$\ln L=-\tfrac12\sum_{t=1}^{T}\Big[\ln 2\pi+\ln\sigma_t^2+\frac{a_t^2}{\sigma_t^2}\Big],$$
+$$
+\ln L=-\tfrac12\sum_{t=1}^{T}\Big[\ln 2\pi+\ln\sigma_t^2+\frac{a_t^2}{\sigma_t^2}\Big],
+$$
 maximised numerically (the recursion is not linear in the parameters). Method-of-moments / ARMA estimation of the $a_t^2$ series gives a starting point; MLE is the standard.
 
 ---

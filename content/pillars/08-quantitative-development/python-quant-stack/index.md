@@ -38,13 +38,17 @@ This folder is a *hub*. It (a) gives the **stack lookup table** below (job #1 of
 
 **Why vectorization wins — the speedup model.** An elementwise operation on an array of length $N$ costs, per element, either *interpreted Python* overhead $c_{\text{py}}$ (a few hundred nanoseconds: bytecode dispatch, boxing, attribute lookups) or *C-loop* overhead $c_C$ (a few nanoseconds). The theoretical vectorization speedup for a homogeneous array operation is
 
-$$\text{speedup} = \frac{N \cdot c_{\text{py}}}{N \cdot c_C + C_{\text{setup}}} \;\approx\; \frac{c_{\text{py}}}{c_C},$$
+$$
+\text{speedup} = \frac{N \cdot c_{\text{py}}}{N \cdot c_C + C_{\text{setup}}} \;\approx\; \frac{c_{\text{py}}}{c_C},
+$$
 
 where $C_{\text{setup}}$ is the one-time dispatch cost (negligible for large $N$). Because $c_{\text{py}}/c_C$ is typically 50–150×, a well-vectorized expression is **1–2 orders of magnitude faster than the equivalent Python loop** — confirmed by the verified runs below.
 
 **Vectorization for backtests (the financial payoff).** A vectorized backtest treats the whole price path as an array and the strategy as a sequence of whole-array transforms: returns $r_t = p_t/p_{t-1}-1$, a signal $s_t$ computed by rolling window, positions $w_t = f(s_t)$, then equity $E_t = E_{t-1}(1 + w_{t-1} r_t)$. Computing the compounded equity from position-adjusted returns $r^\star_t = w_{t-1} r_t$:
 
-$$E_T = E_0 \prod_{t=1}^{T}\big(1 + r^\star_t\big) \;\equiv\; E_0 \exp\Big(\textstyle\sum_{t=1}^{T} \ln(1 + r^\star_t)\Big),$$
+$$
+E_T = E_0 \prod_{t=1}^{T}\big(1 + r^\star_t\big) \;\equiv\; E_0 \exp\Big(\textstyle\sum_{t=1}^{T} \ln(1 + r^\star_t)\Big),
+$$
 
 which is a single `np.log1p` + `cumsum` + `exp` chain — a handful of C-level passes over the data instead of a bar-by-bar Python loop run in the interpreter.
 

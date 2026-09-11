@@ -30,11 +30,15 @@ Three ideas:
 
 **What JIT actually removes.** Consider the dot product over $N$ elements,
 
-$$s = \sum_{i=1}^{N} x_i\, y_i .$$
+$$
+s = \sum_{i=1}^{N} x_i\, y_i .
+$$
 
 A pure-Python loop pays per element the interpreter overhead $c_{\text{py}}$ (bytecode dispatch, boxing, attribute lookup). Numba removes *all* of it: after type inference it emits the equivalent of a compiled `for` loop with raw pointer loads and fused multiply-add — each element ~$c_C$. Hence
 
-$$\text{speedup} = \frac{N\,c_{\text{py}}}{N\,c_C} \approx \frac{c_{\text{py}}}{c_C},$$
+$$
+\text{speedup} = \frac{N\,c_{\text{py}}}{N\,c_C} \approx \frac{c_{\text{py}}}{c_C},
+$$
 
 the same ratio as vectorization ([[pillars/08-quantitative-development/python-quant-stack/02-numpy-vectorization|02]]), because *both* remove the same per-element Python overhead — one by batching, one by compiling the loop itself. Numba's advantage is generality: it handles loops broadcasting can't express.
 

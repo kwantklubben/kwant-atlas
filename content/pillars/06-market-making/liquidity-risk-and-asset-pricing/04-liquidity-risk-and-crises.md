@@ -28,17 +28,21 @@ The objective: understand *why* liquidity risk cannot be hedged by diversificati
 
 **Commonality in liquidity.** Regress stock $i$'s illiquidity innovation on the market's:
 
-$$\Delta \text{ILLIQ}_{i,t}=\alpha_i+\beta_i\,\Delta \text{ILLIQ}_{M,t}+\varepsilon_{i,t}.$$
+$$
+\Delta \text{ILLIQ}_{i,t}=\alpha_i+\beta_i\,\Delta \text{ILLIQ}_{M,t}+\varepsilon_{i,t}.
+$$
 
 The $R^2$ (and average $\beta_i$) measures how much of each stock's liquidity variation is a *systematic* market-wide shock. Chordia et al. find a large common component; the practical consequence is that liquidity risk is largely undiversifiable.
 
 **The Acharya–Pedersen liquidity-adjusted CAPM.** Define $r^i$ = return, $c^i$ = relative illiquidity cost, $r^M$ = market return, $c^M$ = market illiquidity. The required excess return is
 
-$$E_t(r^i_{t+1})=r^f+E_t(c^i_{t+1})+\lambda_t\left[
+$$
+E_t(r^i_{t+1})=r^f+E_t(c^i_{t+1})+\lambda_t\left[
 \frac{\operatorname{cov}_t(r^i,r^M)}{\operatorname{var}(r^M-c^M)}
 +\frac{\operatorname{cov}_t(c^i,c^M)}{\operatorname{var}(r^M-c^M)}
 -\frac{\operatorname{cov}_t(r^i,c^M)}{\operatorname{var}(r^M-c^M)}
--\frac{\operatorname{cov}_t(c^i,r^M)}{\operatorname{var}(r^M-c^M)}\right],$$
+-\frac{\operatorname{cov}_t(c^i,r^M)}{\operatorname{var}(r^M-c^M)}\right],
+$$
 
 where the four betas share the same denominator (the variance of the *net* market return $r^M-c^M$). The three liquidity-risk betas:
 

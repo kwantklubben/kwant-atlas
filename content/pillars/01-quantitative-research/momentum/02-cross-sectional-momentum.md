@@ -28,14 +28,20 @@ The verified US facts: winners decile (a *decile* = one tenth of the cross-secti
 ### 2. Mathematical Ground Truth & Derivations
 
 **Signal.** For asset $i$ with monthly returns $r_{i,t}$, the $12\text{-}1$ cumulative signal is
-$$R_i^{(12\text{-}1)}=\prod_{k=2}^{12}\big(1+r_{i,t-k}\big)-1.$$
+$$
+R_i^{(12\text{-}1)}=\prod_{k=2}^{12}\big(1+r_{i,t-k}\big)-1.
+$$
 
 **Rank-to-weight map.** Rank assets by $R_i$ (1-indexed, best = $N$). Set
-$$w_i=\frac{\text{rank}_i-\frac{N+1}{2}}{\sum_{j=1}^N\big|\text{rank}_j-\frac{N+1}{2}\big|}.$$
+$$
+w_i=\frac{\text{rank}_i-\frac{N+1}{2}}{\sum_{j=1}^N\big|\text{rank}_j-\frac{N+1}{2}\big|}.
+$$
 Because ranks run $1\ldots N$, the raw weights $(\text{rank}_i-\frac{N+1}{2})$ are symmetric about zero: the portfolio is **dollar-neutral** ($\sum_i w_i=0$) and **100% gross** ($\sum_i|w_i|=1$). The next-period WML return is $r^{\text{WML}}_{t+1}=\sum_i w_i\, r_{i,t+1}$.
 
 **Why it earns (decomposition).** Moskowitz–Ooi–Pedersen (2012) decompose the expected cross-sectional momentum profit as
-$$\mathbb{E}\big[r^{\text{XS}}_{t,t+1}\big]=\frac{\operatorname{tr}(\Omega)}{N}-\frac{\mathbf{1}'\Omega\mathbf{1}}{N^2}+12\sigma_m^2, \qquad \Omega=\mathbb{E}\big[(R_{t-12,t}-12\mu)(R_{t,t+1}-\mu)'\big],$$
+$$
+\mathbb{E}\big[r^{\text{XS}}_{t,t+1}\big]=\frac{\operatorname{tr}(\Omega)}{N}-\frac{\mathbf{1}'\Omega\mathbf{1}}{N^2}+12\sigma_m^2, \qquad \Omega=\mathbb{E}\big[(R_{t-12,t}-12\mu)(R_{t,t+1}-\mu)'\big],
+$$
 where $\sigma_m^2$ is the cross-sectional variance of mean returns. The three channels:
 1. **Own autocovariance** $\operatorname{tr}(\Omega)$ — time-series predictability (this is the TSMOM channel; *not* required for XSMOM).
 2. **Cross-serial covariances** $-\mathbf{1}'\Omega\mathbf{1}$ — temporal lead-lag across assets (a past move in one asset predicts another's next return). *Negative* cross-serial covariances alone can generate XSMOM profits with *no* own autocorrelation (Lewellen 2002).

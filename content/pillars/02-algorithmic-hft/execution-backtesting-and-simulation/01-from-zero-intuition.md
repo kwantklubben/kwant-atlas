@@ -40,20 +40,26 @@ Three "aha"s:
 
 The Sharpe ratios are the same denominator $\sigma\sqrt H$; the cost terms subtract **expected value only**. So
 
-$$\text{SR}_{\text{signal}}=\frac{\alpha_H}{\sigma\sqrt H},\qquad
-\text{SR}_{\text{exec}}=\frac{\alpha_H-s-2h}{\sigma\sqrt H},$$
+$$
+\text{SR}_{\text{signal}}=\frac{\alpha_H}{\sigma\sqrt H},\qquad
+\text{SR}_{\text{exec}}=\frac{\alpha_H-s-2h}{\sigma\sqrt H},
+$$
 
 and the whole game is the *sign and size of $s+2h$ relative to $\alpha_H$*.
 
 **Perold's implementation shortfall** (Hasbrouck Ch 14, eq 14.1) is the accounting identity that makes the omission precise. With $n_0$=initial position, $v$=desired position, $n_1$=final position, decision/arrival price $\pi_0$, terminal price $\pi_1$:
 
-$$\text{IS}=\underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution cost}}+\underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity cost}},$$
+$$
+\text{IS}=\underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution cost}}+\underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity cost}},
+$$
 
 A signal backtest that assumes you always trade the full size at $\pi_0$ forces **both** terms to zero. An execution backtest must simulate $p$ (the realised fill price, from the book) *and* $n_1$ (the realised filled quantity, from the queue).
 
 **Effective vs realized cost** (Hasbrouck Ch 14, eq 14.2) splits what you paid into spread and impact:
 
-$$p_t-m_t=\underbrace{\big(p_t-m_{t+5}\big)}_{\text{realized cost}}+\underbrace{\big(m_{t+5}-m_t\big)}_{\text{price impact}}.$$
+$$
+p_t-m_t=\underbrace{\big(p_t-m_{t+5}\big)}_{\text{realized cost}}+\underbrace{\big(m_{t+5}-m_t\big)}_{\text{price impact}}.
+$$
 
 A backtest that records only $p_t$ still misses the $m_{t+5}-m_t$ impact term — the part of the move that is *yours*.
 

@@ -34,30 +34,42 @@ They are equal (with no wrong-way risk), but the **direct method converges far f
 
 Let $\tau$ be the default time, $\text{LGD}=1-R$, and $V(\tau)^+$ the exposure at default. The **direct (unilateral) CVA** is
 
-$$\text{UCVA}(t)=-\mathbb{E}\!\left[\mathbf{1}_{\{\tau\le T\}}\,V(t,\tau)^+\;\text{LGD}\right].\tag{Gregory 17.1}$$
+$$
+\text{UCVA}(t)=-\mathbb{E}\!\left[\mathbf{1}_{\{\tau\le T\}}\,V(t,\tau)^+\;\text{LGD}\right].\tag{Gregory 17.1}
+$$
 
 Writing the expectation as an integral over the default-intensity (survival) curve gives the **path-wise integral form**:
 
-$$\boxed{\;\text{UCVA}(t)=-\text{LGD}\!\int_t^\infty \lambda_C\,D_{r+\lambda_C}(t,u)\,\text{EPE}(t,u)\,du\;}\tag{17.2}$$
+$$
+\boxed{\;\text{UCVA}(t)=-\text{LGD}\!\int_t^\infty \lambda_C\,D_{r+\lambda_C}(t,u)\,\text{EPE}(t,u)\,du\;}\tag{17.2}
+$$
 
 with $D_{r+\lambda_C}(t,u)=\exp\!\big(-\int_t^u(r+\lambda_C)\,ds\big)$ the **risky discount factor** and $\text{EPE}(t,u)=\mathbb{E}[V(t,u)^+]$. Discretising the integral over a grid:
 
-$$\text{UCVA}(t)\approx-\text{LGD}\sum_{i=1}^{m}\text{EPE}(t,t_i)\;\text{PD}(t_{i-1},t_i).\tag{17.3}$$
+$$
+\text{UCVA}(t)\approx-\text{LGD}\sum_{i=1}^{m}\text{EPE}(t,t_i)\;\text{PD}(t_{i-1},t_i).\tag{17.3}
+$$
 
 **This is the product-of-market-and-credit identity.** Exposure (market risk) multiplies default probability (credit risk); with independence, everything else is bookkeeping.
 
 #### 2.2 The hazard comes from the CDS spread
 
 For a flat spread $s$ and LGD, the risk-neutral hazard is (Hull, Eq 24.2)
-$$\lambda=\frac{s}{\text{LGD}},\qquad \text{PD}(t_{i-1},t_i)=e^{-\lambda t_{i-1}}-e^{-\lambda t_i}.$$
+$$
+\lambda=\frac{s}{\text{LGD}},\qquad \text{PD}(t_{i-1},t_i)=e^{-\lambda t_{i-1}}-e^{-\lambda t_i}.
+$$
 Substituting into (17.3) and using $e^{-x}\approx1-x$ gives the **spread form**
-$$\text{UCVA}\approx-\overline{\text{EPE}}\times s\tag{17.4}$$
+$$
+\text{UCVA}\approx-\overline{\text{EPE}}\times s\tag{17.4}
+$$
 — CVA quoted as a *spread in basis points*, the desk's natural unit. (Gregory Table 17.1: for a 10-year swap the recursive "CVA of the CVA" spread is $-1.96$bp, the risky-annuity estimate $-1.92$bp, and the EPE approximation $-2.01$bp.)
 
 #### 2.3 The LGD-adjusted form
 
 Keeping the two LGDs separate:
-$$\text{UCVA}(t)=-\text{LGD}_{\text{actual}}\sum_{i=1}^{m}\text{EPE}(t,t_i)\left[e^{-s_{i-1}t_{i-1}/\text{LGD}_{\text{mkt}}}-e^{-s_i t_i/\text{LGD}_{\text{mkt}}}\right].\tag{17.5}$$
+$$
+\text{UCVA}(t)=-\text{LGD}_{\text{actual}}\sum_{i=1}^{m}\text{EPE}(t,t_i)\left[e^{-s_{i-1}t_{i-1}/\text{LGD}_{\text{mkt}}}-e^{-s_i t_i/\text{LGD}_{\text{mkt}}}\right].\tag{17.5}
+$$
 
 When $\text{LGD}_{\text{actual}}=\text{LGD}_{\text{mkt}}$ the LGD factors cancel — the practical reason (17.4) contains no LGD.
 
@@ -65,11 +77,17 @@ When $\text{LGD}_{\text{actual}}=\text{LGD}_{\text{mkt}}$ the LGD factors cancel
 
 Accounting (FAS 157 / IFRS 13) requires **own** credit risk in the value of liabilities. That is **DVA**, and the bilateral pair is
 
-$$\text{BCVA}=\text{CVA}+\text{DVA}\tag{17.7a}$$
-$$\text{CVA}(t)=-\text{LGD}_C\!\int_t^\infty\!\lambda_C\,D_{r+\lambda_C+\lambda_P}(t,u)\,\text{EPE}(t,u)\,du,\quad \text{DVA}(t)=-\text{LGD}_P\!\int_t^\infty\!\lambda_P\,D_{r+\lambda_C+\lambda_P}(t,u)\,\text{ENE}(t,u)\,du.$$
+$$
+\text{BCVA}=\text{CVA}+\text{DVA}\tag{17.7a}
+$$
+$$
+\text{CVA}(t)=-\text{LGD}_C\!\int_t^\infty\!\lambda_C\,D_{r+\lambda_C+\lambda_P}(t,u)\,\text{EPE}(t,u)\,du,\quad \text{DVA}(t)=-\text{LGD}_P\!\int_t^\infty\!\lambda_P\,D_{r+\lambda_C+\lambda_P}(t,u)\,\text{ENE}(t,u)\,du.
+$$
 
 The joint discount factor $D_{r+\lambda_C+\lambda_P}$ is the **first-to-default** survival of *both* parties. In discrete form (17.8a/b) each term carries the *other* party's survival probability $[1-\text{PD}_{\text{other}}(0,t_{i-1})]$. Because $\text{ENE}\le0$, **DVA $\ge0$ is a benefit opposing CVA** — "my CVA is your DVA". And when EPE ≈ −ENE,
-$$\text{BCVA}\approx-\overline{\text{EPE}}\times(s_C-s_P)\text{: the weaker credit pays the stronger.}$$
+$$
+\text{BCVA}\approx-\overline{\text{EPE}}\times(s_C-s_P)\text{: the weaker credit pays the stronger.}
+$$
 
 **DVA is derecognised from regulatory capital** (BCBS 2011d) even though accounting demands it — a genuine conflict discussed in §4.
 

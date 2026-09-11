@@ -41,17 +41,25 @@ Standard $K$-fold CV shuffles observations and holds out a random test fold. On 
 
 Build the $T\times N$ matrix $M$ of the $N$ trials' performance series (columns = trials, rows = synchronous observations). Partition rows into $S$ (even) equal blocks; take all $\binom{S}{S/2}$ combinations, each half used as IS *and* (its complement) as OOS.
 - For each combination $c$: pick the IS-best strategy $n^*$, find its **OOS relative rank** $\bar\omega_c=\bar r_{n^*}/(N+1)\in(0,1)$, and form the logit
-$$\lambda_c=\ln\!\frac{\bar\omega_c}{1-\bar\omega_c}.$$
+$$
+\lambda_c=\ln\!\frac{\bar\omega_c}{1-\bar\omega_c}.
+$$
 - Collecting $\{\lambda_c\}$ gives an empirical distribution; the **PBO** is the probability the IS-best underperforms the OOS median:
-$$\text{PBO}=\Pr[\lambda<0]=\int_{-\infty}^{0} f(\lambda)\,d\lambda.$$
+$$
+\text{PBO}=\Pr[\lambda<0]=\int_{-\infty}^{0} f(\lambda)\,d\lambda.
+$$
 **Interpretation:** $\text{PBO}\to0.5$ means the selection is *no better than random* (the IS winner is coin-flip-ranked OOS); $\text{PBO}\ll0.5$ means IS ranking carries genuine OOS information. PBO is non-parametric and works for any performance statistic (Sharpe, Sortino, drawdown ratio).
 
 #### 2.3 White's Reality Check (bootstrap data-snooping test)
 
 Given $l$ candidate models and a benchmark, let $f_k$ be model $k$'s performance differential vs the benchmark. The null is *no model beats the benchmark*:
-$$H_0:\ \max_{k=1,\dots,l}\mathbb{E}[f_k^{\ast}]\le0.$$
+$$
+H_0:\ \max_{k=1,\dots,l}\mathbb{E}[f_k^{\ast}]\le0.
+$$
 The test statistic is $V=\max_k \sqrt{n}\,\bar f_k$. Its null distribution is unknown analytically, so it is bootstrapped (Politis–Romano **stationary bootstrap** — blocks of geometrically-distributed length preserve dependence). With resampled series,
-$$V^{\ast}=\max_{k}\ \sqrt{n}\,(\bar f_k^{\ast}-\bar f_k),$$
+$$
+V^{\ast}=\max_{k}\ \sqrt{n}\,(\bar f_k^{\ast}-\bar f_k),
+$$
 and the **Reality Check $p$-value** is the fraction of bootstrap draws with $V^{\ast}\ge V$. A small $p$ means the best model's edge survives the search; a large $p$ means it is a data-snooping artifact. **SPA** (Hansen 2005) sharpens this by recentring the dominated models.
 
 ---

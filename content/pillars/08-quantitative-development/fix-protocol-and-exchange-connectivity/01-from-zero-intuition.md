@@ -32,25 +32,35 @@ Three "aha"s, in order:
 
 **The message as a tuple of fields.** A FIX message is an ordered sequence of $(t_i, v_i)$ pairs — tag, value — terminated by the checksum:
 
-$$\text{msg} = \big[(t_1,v_1),\dots,(t_n,v_n)\big].$$
+$$
+\text{msg} = \big[(t_1,v_1),\dots,(t_n,v_n)\big].
+$$
 
 Every wire byte is either **payload** (a tag, an `=`, or a value) or **framing** (the SOH separators plus the `=` signs). The framing overhead is the ratio of pure syntax to total length:
 
-$$\text{overhead} = \frac{\#\{=\} + \#\{\text{SOH}\}}{\text{len}(\text{msg})}.$$
+$$
+\text{overhead} = \frac{\#\{=\} + \#\{\text{SOH}\}}{\text{len}(\text{msg})}.
+$$
 
 **Bandwidth.** A link carries messages at a rate fixed by capacity and message size. For capacity $C$ (bit/s) and size $s$ (bytes):
 
-$$R_{\max} = \frac{C}{8s}\ \text{msg/s}.$$
+$$
+R_{\max} = \frac{C}{8s}\ \text{msg/s}.
+$$
 
 **The conversation, in round trips.** A single order's life is at least a round trip (send order → ack) and usually two (send → ack → fill). If each leg costs $\bar t$, the *minimum* time from decision to confirmed fill is
 
-$$T_{\text{confirm}} \ge 2\bar t,$$
+$$
+T_{\text{confirm}} \ge 2\bar t,
+$$
 
 which is why connectivity latency is measured in round trips, not in bandwidth. This is the number that colocation buys down (see [[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/index|Colocation & Clock Synchronization]]).
 
 **The integrity check.** A FIX trailer adds a checksum so that a corrupted message is *detected*, not silently acted upon:
 
-$$\texttt{10} = \Big(\sum_i b_i\Big) \bmod 256,$$
+$$
+\texttt{10} = \Big(\sum_i b_i\Big) \bmod 256,
+$$
 
 where $b_i$ are the ASCII byte values of everything from `8=FIX.4.2` up to (but not including) `10=`. Corruption that changes any byte changes the sum with high probability.
 

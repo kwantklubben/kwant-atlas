@@ -32,7 +32,9 @@ Three "aha"s:
 
 Stock $S_0>0$, factors $0<d<u$, money market $1\to(1+r)$, so $S_1(H)=uS_0$, $S_1(T)=dS_0$ (Shreve eq. 1.1). The model is arbitrage-free **iff**
 
-$$\boxed{\;d<1+r<u\;}$$
+$$
+\boxed{\;d<1+r<u\;}
+$$
 
 - If $1+r\le u$: the bond weakly dominates the stock in the up state, so nobody holds stock — the model is economically degenerate (Shreve §1.1).
 - If $d\ge 1+r$: borrow at rate $r$, buy one share; you owe $(1+r)S_0$ and hold at least $dS_0\ge(1+r)S_0$ in every state, strictly more when the stock rises. That is arbitrage.
@@ -43,15 +45,21 @@ This is the discrete ancestor of every "no free lunch" condition in the pillar, 
 
 Sell a claim with unknown price $V_0$; hedge with $\Delta_0$ shares financed by $V_0-\Delta_0S_0$ in the money market. Require the portfolio to reproduce the payoff in both states (Shreve 1.3–1.4):
 
-$$V_1(H)=\Delta_0S_1(H)+(1+r)(V_0-\Delta_0S_0),\qquad V_1(T)=\Delta_0S_1(T)+(1+r)(V_0-\Delta_0S_0).$$
+$$
+V_1(H)=\Delta_0S_1(H)+(1+r)(V_0-\Delta_0S_0),\qquad V_1(T)=\Delta_0S_1(T)+(1+r)(V_0-\Delta_0S_0).
+$$
 
 Subtract — the bond term cancels and the unknown price drops out — leaving the **replicating delta**:
 
-$$\boxed{\;\Delta_0=\frac{V_1(H)-V_1(T)}{S_1(H)-S_1(T)}=\frac{f_u-f_d}{S_0(u-d)}\;}\qquad(1.6)$$
+$$
+\boxed{\;\Delta_0=\frac{V_1(H)-V_1(T)}{S_1(H)-S_1(T)}=\frac{f_u-f_d}{S_0(u-d)}\;}\qquad(1.6)
+$$
 
 Substituting back gives the **arbitrage price** with the risk-neutral weights
 
-$$\tilde p=\frac{1+r-d}{u-d},\qquad \tilde q=\frac{u-1-r}{u-d}=1-\tilde p,\qquad V_0=\frac{1}{1+r}\big[\tilde p f_u+\tilde q f_d\big].\qquad(1.8\text{–}1.9)$$
+$$
+\tilde p=\frac{1+r-d}{u-d},\qquad \tilde q=\frac{u-1-r}{u-d}=1-\tilde p,\qquad V_0=\frac{1}{1+r}\big[\tilde p f_u+\tilde q f_d\big].\qquad(1.8\text{–}1.9)
+$$
 
 By the bracket, $\tilde p,\tilde q\in(0,1)$ and $\tilde p+\tilde q=1$: they are a legitimate probability measure $\widetilde{\mathbb P}$ — the **risk-neutral measure** — *derived* from (1.3)–(1.4), with no relation to the real coin-toss probabilities.
 
@@ -59,9 +67,13 @@ By the bracket, $\tilde p,\tilde q\in(0,1)$ and $\tilde p+\tilde q=1$: they are 
 
 The same argument repeats at every node. At time 1 in state $\omega_1$ the hedger holds $\Delta_1(\omega_1)$ shares and wealth $X_1(\omega_1)=\Delta_0S_1(\omega_1)+(1+r)(V_0-\Delta_0S_0)$. Working backwards from $V_2=(S_2-K)^+$:
 
-$$V_1(H)=\frac{\tilde pV_2(HH)+\tilde qV_2(HT)}{1+r},\quad V_1(T)=\frac{\tilde pV_2(TH)+\tilde qV_2(TT)}{1+r},\quad V_0=\frac{\tilde pV_1(H)+\tilde qV_1(T)}{1+r},$$
+$$
+V_1(H)=\frac{\tilde pV_2(HH)+\tilde qV_2(HT)}{1+r},\quad V_1(T)=\frac{\tilde pV_2(TH)+\tilde qV_2(TT)}{1+r},\quad V_0=\frac{\tilde pV_1(H)+\tilde qV_1(T)}{1+r},
+$$
 
-$$\Delta_1(\omega_1)=\frac{V_2(\omega_1,H)-V_2(\omega_1,T)}{S_2(\omega_1,H)-S_2(\omega_1,T)}.$$
+$$
+\Delta_1(\omega_1)=\frac{V_2(\omega_1,H)-V_2(\omega_1,T)}{S_2(\omega_1,H)-S_2(\omega_1,T)}.
+$$
 
 This is **backward induction / dynamic replication**: rebalance the hedge at each step so the portfolio lands on the payoff at maturity. It is the discrete template of BSM's continuous delta-hedge ([[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|BSM · 04 Greeks & Hedging]]).
 

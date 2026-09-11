@@ -29,16 +29,22 @@ Together with the risk-based ratio these form **four constraints a bank must sat
 ### 2. Mathematical Ground Truth & Derivations
 
 **Liquidity (BCBS 2013, d238; 2014, d295).**
-$$\boxed{\;\mathrm{LCR}=\frac{\text{Stock of HQLA}}{\text{Net cash outflows over 30 calendar days}}\ge100\%\;}\qquad
-\boxed{\;\mathrm{NSFR}=\frac{\text{Available stable funding (ASF)}}{\text{Required stable funding (RSF)}}\ge100\%\;}$$
+$$
+\boxed{\;\mathrm{LCR}=\frac{\text{Stock of HQLA}}{\text{Net cash outflows over 30 calendar days}}\ge100\%\;}\qquad
+\boxed{\;\mathrm{NSFR}=\frac{\text{Available stable funding (ASF)}}{\text{Required stable funding (RSF)}}\ge100\%\;}
+$$
 HQLA is tiered (Level 1: cash/central-bank reserves/high-grade sovereigns, no haircut; Level 2A ~15%; Level 2B 25–50%), and stressed inflows are capped at $75\%$ of stressed outflows so a bank cannot net its way to a healthy ratio. ASF/RSF weight funding and assets by stability (retail deposits stable; wholesale short-term unstable; loans illiquid; HQLA liquid).
 
 **Leverage ratio (BCBS 2010, d189).**
-$$\boxed{\;\text{Leverage ratio}=\frac{\text{Tier 1 capital}}{\text{Total exposure measure}}\ge3\%\;}$$
+$$
+\boxed{\;\text{Leverage ratio}=\frac{\text{Tier 1 capital}}{\text{Total exposure measure}}\ge3\%\;}
+$$
 This is the ratio that ignores risk weights. It exists because a bank can hold a huge book of low/zero-weighted assets (sovereigns, cash) with a fat risk-based ratio and yet be terrifyingly levered.
 
 **Output floor (BCBS 2017, d424).**
-$$\boxed{\;\mathrm{RWA}_{\text{used}}=\max\!\big(\mathrm{RWA}_{\text{internal}},\ 72.5\%\times\mathrm{RWA}_{\text{SA}}\big)\;}$$
+$$
+\boxed{\;\mathrm{RWA}_{\text{used}}=\max\!\big(\mathrm{RWA}_{\text{internal}},\ 72.5\%\times\mathrm{RWA}_{\text{SA}}\big)\;}
+$$
 phased in from $50\%$ (2022) to $72.5\%$ (1 January 2027). It is the direct legislative countermeasure to the model gap: however clever the internal model, at least $72.5\%$ of the standardised RWA counts.
 
 > **Why four, not one.** Risk-based capital answers "is the book *risky*?"; leverage answers "is the book *big*?"; LCR answers "can you *survive a month of stress*?"; NSFR answers "is your funding *structurally sound*?" Each is blind to what the others see.

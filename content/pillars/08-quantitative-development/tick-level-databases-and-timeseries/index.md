@@ -35,21 +35,29 @@ This folder is a *hub*. It (a) gives the **fast lookup tables** below (job #1 of
 
 **Traffic: row vs column.** A single-column scan of $N$ rows touches
 
-$$W_{\text{row}} = N s, \qquad W_{\text{col}} = N s_c \quad\Longrightarrow\quad \frac{W_{\text{row}}}{W_{\text{col}}} = \frac{s}{s_c}.$$
+$$
+W_{\text{row}} = N s, \qquad W_{\text{col}} = N s_c \quad\Longrightarrow\quad \frac{W_{\text{row}}}{W_{\text{col}}} = \frac{s}{s_c}.
+$$
 
 For iso-ts/sym/price/size $=8{+}4{+}8{+}4$, $s=24$: querying `SUM(size)` reads $24\,\text{B}$ per row from a row store but $4\,\text{B}$ from a column store — $6\times$ less traffic, before compression.
 
 **Compression ratio.** With per-column encoded width $w_i$ bits/row,
 
-$$\rho = \frac{8s}{\sum_i w_i}, \qquad B_{\text{day}} = \frac{N_{\text{day}}}{8}\sum_i w_i\ \text{bytes}.$$
+$$
+\rho = \frac{8s}{\sum_i w_i}, \qquad B_{\text{day}} = \frac{N_{\text{day}}}{8}\sum_i w_i\ \text{bytes}.
+$$
 
 **Partition pruning.** With $D$ equal day-partitions, a single-day predicate reads a fraction $1/D$ of the table:
 
-$$\text{I/O reduction} = D \quad(\text{252 day-partitions} \Rightarrow 252\times).$$
+$$
+\text{I/O reduction} = D \quad(\text{252 day-partitions} \Rightarrow 252\times).
+$$
 
 **As-of join complexity.** A merge/as-of join over sorted keys is
 
-$$O(N + M) \quad\text{vs the naive } O(NM)\ \text{linear rescan (and } O(NM)\text{ for unsorted input).}$$
+$$
+O(N + M) \quad\text{vs the naive } O(NM)\ \text{linear rescan (and } O(NM)\text{ for unsorted input).}
+$$
 
 **Lookup tables.** All figures below are order-of-magnitude or *measured* by the runnable models in §3 and the sub-pages.
 

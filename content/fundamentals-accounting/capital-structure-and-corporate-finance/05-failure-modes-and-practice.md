@@ -29,17 +29,23 @@ The working rules are the *control* instruments: debt as discipline, payout as a
 
 **The death-spiral feedback.** With asset value $A$, debt $D$, operating return on assets $a$, and interest rate $r_d$:
 
-$$\text{EBIT} = aA, \qquad \text{Interest} = r_d D, \qquad \text{covered iff } aA \ge r_d D.$$
+$$
+\text{EBIT} = aA, \qquad \text{Interest} = r_d D, \qquad \text{covered iff } aA \ge r_d D.
+$$
 
 When $aA < r_d D$, the firm must sell assets at fire-sale price $f < 1$ (cents on the dollar) to meet the shortfall:
 
-$$\Delta A = \frac{r_d D - aA}{f}, \qquad r_d \text{ rises with distress}.$$
+$$
+\Delta A = \frac{r_d D - aA}{f}, \qquad r_d \text{ rises with distress}.
+$$
 
 Because $f < 1$, each dollar of shortfall destroys $1/f > 1$ dollars of assets; because $r_d$ rises, the *next* period's shortfall is larger. The loop $A \downarrow \Rightarrow aA \downarrow, r_d \uparrow \Rightarrow \text{shortfall} \uparrow \Rightarrow \Delta A \uparrow$ is the death spiral. Equity is the residual and is wiped out *before* the creditors — the seniority ladder of [[fundamentals-accounting/capital-structure-and-corporate-finance/03-debt-equity-and-seniority|03]] made this inevitable.
 
 **Agency cost of free cash flow (Jensen 1986).** Free cash flow $FCF$ = cash flow in excess of that required to fund all positive-NPV projects. Investing $FCF$ at return $g$ when the cost of capital is $\rho > g$:
 
-$$\text{Value destroyed} = FCF - \underbrace{\frac{FCF \cdot g}{\rho}}_{\text{PV of the weak reinvestment}} > 0.$$
+$$
+\text{Value destroyed} = FCF - \underbrace{\frac{FCF \cdot g}{\rho}}_{\text{PV of the weak reinvestment}} > 0.
+$$
 
 The *agency* framing: managers retain the cash (growing their empire) when shareholders would be better off receiving it. **Debt disciplines this** — a debt-service obligation forces cash out (Jensen's "debt as a control device") — and buybacks/dividends ([[fundamentals-accounting/capital-structure-and-corporate-finance/04-dilution-and-buybacks|04]]) return the cash when ROIC < cost of capital.
 

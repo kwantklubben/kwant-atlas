@@ -48,7 +48,9 @@ The mental model is a pyramid. At the tip: the CPU working on data it already ha
 
 The tick-to-trade budget is additive (§hub). With log-normal stage costs $T_i\sim\text{LN}(\ln m_i,\sigma_i)$, the total has a **skewed** distribution: even if every $\sigma_i$ is small, the sum inherits the largest $\sigma$ and its mean sits *above* its median. Formally, for the sum of independent log-normals no closed form exists, but the tail is governed by the heaviest stage:
 
-$$\operatorname{Var}(T) = \sum_i \operatorname{Var}(T_i), \qquad \text{skew}(T) \approx \frac{\sum_i \text{skew}(T_i)\,\sigma_i^3}{\left(\sum_i\sigma_i^2\right)^{3/2}}.$$
+$$
+\operatorname{Var}(T) = \sum_i \operatorname{Var}(T_i), \qquad \text{skew}(T) \approx \frac{\sum_i \text{skew}(T_i)\,\sigma_i^3}{\left(\sum_i\sigma_i^2\right)^{3/2}}.
+$$
 
 Practical rule: **a fat-tailed stage is a tail-source for the entire path.** In HFT the fat-tailed stage is almost always the kernel/network path ($\sigma$ large, because a packet can wait behind a softirq, a scheduling decision, or a syscall). Removing it (kernel bypass) does not just lower the mean — it removes the *skew*.
 

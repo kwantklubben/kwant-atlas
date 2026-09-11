@@ -25,11 +25,15 @@ The objective is one "aha": **fitting the negative gradient of a loss is just "f
 
 **A. Boosting as forward stagewise additive modelling (ESL 10.2–10.7).** Build an additive model one term at a time, never revisiting earlier terms:
 
-$$F_M(x)=\sum_{m=1}^M \nu\, h_m(x),\qquad F_m(x)=F_{m-1}(x)+\nu\,h_m(x),$$
+$$
+F_M(x)=\sum_{m=1}^M \nu\, h_m(x),\qquad F_m(x)=F_{m-1}(x)+\nu\,h_m(x),
+$$
 
 where $h_m$ is a small tree (the *base learner*) that best fits the current pseudo-residual of the loss $L$:
 
-$$r_{im}=-\left[\frac{\partial L(y_i,F(x_i))}{\partial F(x_i)}\right]_{F=F_{m-1}}.$$
+$$
+r_{im}=-\left[\frac{\partial L(y_i,F(x_i))}{\partial F(x_i)}\right]_{F=F_{m-1}}.
+$$
 
 For squared error $L=\tfrac12(y-F)^2$, the pseudo-residual is literally $r_{im}=y_i-F_{m-1}(x_i)$ — the residual. For logistic loss (AdaBoost's cousin) the pseudo-residual is $y_i-p_i$, the classification error direction.
 
@@ -37,15 +41,21 @@ For squared error $L=\tfrac12(y-F)^2$, the pseudo-residual is literally $r_{im}=
 
 **C. The XGBoost (Chen & Guestrin, 2016) second-order view.** Rather than the gradient alone, use a second-order Taylor expansion of the loss around the current prediction, with an explicit complexity penalty:
 
-$$\mathcal L^{(t)}\approx\sum_{i=1}^N\Big[g_i f_t(x_i)+\tfrac12 h_i f_t^2(x_i)\Big]+\Omega(f_t),\qquad
-g_i=\partial_{\hat y}L,\quad h_i=\partial^2_{\hat y}L,$$
+$$
+\mathcal L^{(t)}\approx\sum_{i=1}^N\Big[g_i f_t(x_i)+\tfrac12 h_i f_t^2(x_i)\Big]+\Omega(f_t),\qquad
+g_i=\partial_{\hat y}L,\quad h_i=\partial^2_{\hat y}L,
+$$
 
-$$\Omega(f)=\gamma\,|T|+\tfrac12\lambda\sum_{j=1}^{|T|}w_j^2 .$$
+$$
+\Omega(f)=\gamma\,|T|+\tfrac12\lambda\sum_{j=1}^{|T|}w_j^2 .
+$$
 
 For a fixed tree structure, the optimal leaf weight and the resulting gain are closed-form:
 
-$$w_j^{*}=-\,\frac{G_j}{H_j+\lambda},\qquad
-\text{Gain}=\tfrac12\!\left[\frac{G_L^2}{H_L+\lambda}+\frac{G_R^2}{H_R+\lambda}-\frac{(G_L+G_R)^2}{H_L+H_R+\lambda}\right]-\gamma .$$
+$$
+w_j^{*}=-\,\frac{G_j}{H_j+\lambda},\qquad
+\text{Gain}=\tfrac12\!\left[\frac{G_L^2}{H_L+\lambda}+\frac{G_R^2}{H_R+\lambda}-\frac{(G_L+G_R)^2}{H_L+H_R+\lambda}\right]-\gamma .
+$$
 
 This is why XGBoost is fast and regularisable: **every split is scored by a one-line formula, and $\lambda,\gamma$ directly penalise leaf weights and tree size.** LightGBM's contribution (Ke et al., 2017) is *leaf-wise* growth with histogram-based split finding; CatBoost's (Prokhorenkova et al., 2018) is *ordered* boosting to remove target leakage from categorical encodings.
 

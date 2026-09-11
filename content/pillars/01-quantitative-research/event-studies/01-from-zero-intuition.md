@@ -32,17 +32,23 @@ Three steps, three "aha"s:
 
 **The return decomposition** (Kothari–Warner 2007, eq. 1–2). Write the observed return as a normal component plus an abnormal component:
 
-$$R_{it} = K_{it} + e_{it},$$
+$$
+R_{it} = K_{it} + e_{it},
+$$
 
 where $K_{it}$ is the expected (normal) return under a given model and $e_{it}$ is the abnormal return. Equivalently,
 
-$$e_{it} = R_{it} - K_{it},$$
+$$
+e_{it} = R_{it} - K_{it},
+$$
 
 the difference between the return *conditional on the event* and the expected return *unconditional on the event*.
 
 **Mean-adjusted model** (Brown–Warner 1980/85, eq. 1–2). The normal return is the stock's own estimation-window average:
 
-$$K_{it} = \bar R_i = \frac{1}{L}\sum_{k}R_{ik}, \qquad AR_{it} = R_{it} - \bar R_i,$$
+$$
+K_{it} = \bar R_i = \frac{1}{L}\sum_{k}R_{ik}, \qquad AR_{it} = R_{it} - \bar R_i,
+$$
 
 over an estimation window (BW use days $-244$ to $-6$, ~239 observations) chosen *before* the event so it cannot be contaminated by the event itself.
 

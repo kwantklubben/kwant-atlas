@@ -25,13 +25,17 @@ The idea in one sentence: split the data into $N$ contiguous groups, hold out ev
 
 **Number of splits.** A test set of $k$ groups out of $N$ gives
 
-$$\binom{N}{k}=\prod_{i=0}^{k-1}\frac{N-i}{k!}$$
+$$
+\binom{N}{k}=\prod_{i=0}^{k-1}\frac{N-i}{k!}
+$$
 
 possible train/test splits, each training on the $N-k$ remaining groups (a fraction $\theta=1-k/N$ of the data) and testing on $k$ groups.
 
 **Number of backtest paths.** Because all $\binom{N}{k}$ combinations are enumerated, the tested groups are **uniformly distributed** across the $N$ groups. Each group therefore belongs to exactly $\varphi[N,k]$ test sets, where
 
-$$\varphi[N,k]=\frac{k}{N}\binom{N}{k}=\prod_{i=1}^{k-1}\frac{N-i}{(k-1)!}.$$
+$$
+\varphi[N,k]=\frac{k}{N}\binom{N}{k}=\prod_{i=1}^{k-1}\frac{N-i}{(k-1)!}.
+$$
 
 $\varphi$ is the number of backtest paths: each path stitches together, observation by observation, the out-of-sample forecasts for which that observation's group was in the test set (AFML §12.4.1, Figs. 12.1–12.2).
 
@@ -42,11 +46,15 @@ $\varphi$ is the number of backtest paths: each path stitches together, observat
 
 **Why it beats a single path (AFML §12.5).** The variance of the sample-mean Sharpe across $\varphi$ CPCV paths is
 
-$$\sigma^2[\mu_i]=\varphi^{-1}\,\sigma_i^2\big[1+(\varphi-1)\bar\rho_i\big],$$
+$$
+\sigma^2[\mu_i]=\varphi^{-1}\,\sigma_i^2\big[1+(\varphi-1)\bar\rho_i\big],
+$$
 
 where $\sigma_i^2$ is the variance of the Sharpe across paths and $\bar\rho_i$ the average off-diagonal correlation among the $\varphi$ paths. Since $\bar\rho_i<1$,
 
-$$\varphi^{-1}\sigma_i^2\;\le\;\sigma^2[\mu_i]\;<\;\sigma_i^2,$$
+$$
+\varphi^{-1}\sigma_i^2\;\le\;\sigma^2[\mu_i]\;<\;\sigma_i^2,
+$$
 
 and $\sigma^2[\mu_i]\to\bar\rho_i\,\sigma_i^2$ as $\varphi\to\infty$ (subject to the upper bound $\varphi\le\varphi[T,T/2]$) — it falls to zero only when the paths are independent ($\bar\rho_i=0$), otherwise a positive floor $\bar\rho_i\sigma_i^2$ survives (page 06's $\bar\rho=0.8$ case: little reduction). More, less-correlated paths $\Rightarrow$ less volatile (hence less overfit-prone) backtest.
 

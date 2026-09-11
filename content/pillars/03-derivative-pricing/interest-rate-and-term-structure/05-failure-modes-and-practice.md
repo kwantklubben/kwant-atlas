@@ -31,13 +31,17 @@ The failures, in one line each:
 
 **The one-factor correlation trap (BM Ch4).** In any one-factor short-rate model $dr=a(b-r)dt+\sigma dW$, every forward rate of every maturity is a deterministic function of the same $r$. At any instant all forward rates are driven by the same $dW$, so
 
-$$\text{corr}\big(f(t,T_1),f(t,T_2)\big)=1\quad\forall T_1,T_2 .$$
+$$
+\text{corr}\big(f(t,T_1),f(t,T_2)\big)=1\quad\forall T_1,T_2 .
+$$
 
 Real curves move by level/slope/curvature (~3 PCA factors). The structural fix is a two-factor model: G2++ (BM Ch4) writes $r=x+y+\phi$ with two mean-reverting Gaussians of different speeds, giving non-perfect maturity correlation and the ability to fit correlation-sensitive products like European swaptions.
 
 **The negative-rate / lognormal collapse.** Black's caplet is $P(0,T_i)\tau[F N(d_1)-K N(d_2)]$ with $d_1\propto\ln(F/K)$. If $F\le0$ or $K\le0$, $\ln$ is undefined. In the EUR/JPY 2015–2021 regime, forwards and strikes crossed zero; the market moved to the **Bachelier (normal)** model, where a caplet is
 
-$$Cpl=P\tau\Big[(F-K)N(d)+\sigma_N\sqrt T\,\phi(d)\Big],\qquad d=\frac{F-K}{\sigma_N\sqrt T},$$
+$$
+Cpl=P\tau\Big[(F-K)N(d)+\sigma_N\sqrt T\,\phi(d)\Big],\qquad d=\frac{F-K}{\sigma_N\sqrt T},
+$$
 
 (here $\tau\equiv1$ is the year fraction, so the demo block drops it; the `P·τ` multiplier is the accrual factor for general tenors.)
 

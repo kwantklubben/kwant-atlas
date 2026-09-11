@@ -54,7 +54,9 @@ Crucially, G4/G5 check the **post-trade** state, not the current state: a guard 
 
 A token bucket $(B, R)$ — capacity $B$ tokens, refill rate $R$ tokens/second — satisfies, at time $t$ since the last refill,
 
-$$b_t = \min\big(B,\; b_{t^-} + R\,\Delta t\big),\qquad \text{approve iff } b_t \ge 1,\ \text{then } b_t \leftarrow b_t - 1.$$
+$$
+b_t = \min\big(B,\; b_{t^-} + R\,\Delta t\big),\qquad \text{approve iff } b_t \ge 1,\ \text{then } b_t \leftarrow b_t - 1.
+$$
 
 Its properties are what make it the right primitive for market access:
 

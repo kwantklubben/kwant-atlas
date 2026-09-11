@@ -32,24 +32,32 @@ Three mechanisms must be in the model, and each is a distinct source of error if
 
 Under price-time priority, a resting order of size $L$ at queue position $x$ (shares ahead) receives, from a cumulative outflow $\xi$ (trades $+$ cancels ahead),
 
-$$\boxed{\;\text{Filled}(x,L,\xi)=(\xi-x)^+-(\xi-x-L)^+,\qquad (z)^+=\max(z,0)\;}$$
+$$
+\boxed{\;\text{Filled}(x,L,\xi)=(\xi-x)^+-(\xi-x-L)^+,\qquad (z)^+=\max(z,0)\;}
+$$
 
 You start filling once $\xi>x$ and finish once $\xi>x+L$. The **fill fraction** is $\mathbb E[\text{Filled}]/L$, and the **fill probability** (any fill) is $\mathbb P(\xi\ge x)$.
 
 #### 2.2 Fill probability and fill time
 
 - **Poisson trades** at rate $\mu$ (share volume), $N_S=\mu T$: $\xi(T)\sim\text{Poisson}(\mu T)$, so the fill probability is the Poisson upper tail
-  $$\mathbb P(\xi(T)\ge x)=1-\sum_{k<\,x}\frac{(\mu T)^k e^{-\mu T}}{k!}.$$
+$$
+\mathbb P(\xi(T)\ge x)=1-\sum_{k<\,x}\frac{(\mu T)^k e^{-\mu T}}{k!}.
+$$
 - **Binomial trades** (per-tick probability $p$, trade size $s$): $\xi=s\cdot\text{Bin}(T,p)$; the exact expected fill is a finite sum
-  $$\mathbb E[\text{Filled}]=\sum_{k=0}^{T}\binom{T}{k}p^k(1-p)^{T-k}\min\!\big((ks-x)^+,L\big).$$
+$$
+\mathbb E[\text{Filled}]=\sum_{k=0}^{T}\binom{T}{k}p^k(1-p)^{T-k}\min\!\big((ks-x)^+,L\big).
+$$
 - **Fill time** at the front (unit size): the waiting time to the $x$-th trade is negative-binomial, **mean $x/\mu$**.
 
 #### 2.3 Exponential-outflow closed form (Cont–Kukanov)
 
 If the outflow over the horizon is exponential, $\xi\sim\text{Exp}(\text{mean }m)$, then
 
-$$\mathbb E\big[(\xi-Q)^+\big]=m\,e^{-Q/m},\qquad
-\mathbb E[\text{filled}]=m\big(e^{-Q/m}-e^{-(Q+L)/m}\big),$$
+$$
+\mathbb E\big[(\xi-Q)^+\big]=m\,e^{-Q/m},\qquad
+\mathbb E[\text{filled}]=m\big(e^{-Q/m}-e^{-(Q+L)/m}\big),
+$$
 
 the tractable primitive a Monte Carlo fill engine is built on.
 
@@ -57,7 +65,9 @@ the tractable primitive a Monte Carlo fill engine is built on.
 
 For a resting **buy** limit at price $b$: any trade printed at a price $p<b$ means the matching engine had already exhausted every bid at price $\ge p$, hence your bid at $b$ was hit. Formally,
 
-$$\big(\exists\text{ trade at price }p<b\big)\;\Longrightarrow\;\text{filled with probability }1.$$
+$$
+\big(\exists\text{ trade at price }p<b\big)\;\Longrightarrow\;\text{filled with probability }1.
+$$
 
 So trade-through is a **guaranteed-fill lower bound**. For a sweep of size $S$ through a level of total depth $D$, $\mathbb P(\text{guaranteed fill})=\mathbb P(S\ge D)$ — a heavy-tailed quantity that matters exactly in the fast markets a naive model handles worst.
 
@@ -65,7 +75,9 @@ So trade-through is a **guaranteed-fill lower bound**. For a sweep of size $S$ t
 
 Conditioned on a passive fill, the subsequent mid move is negative:
 
-$$\mathbb E[\Delta M_T\mid\text{filled}]<0<\mathbb E[\Delta M_T\mid\text{not filled}],$$
+$$
+\mathbb E[\Delta M_T\mid\text{filled}]<0<\mathbb E[\Delta M_T\mid\text{not filled}],
+$$
 
 so the true per-fill edge is $\text{edge}=\tfrac12 s-\text{AS}-(\text{fees}+\text{impact})$.
 

@@ -24,11 +24,15 @@ Page 05 established *why* raw MVO is an estimation-error maximizer. This page is
 ### 2. Mathematical Ground Truth & Derivations
 
 **Shrinkage estimation (Ledoit & Wolf 2004).** Replace the sample covariance $S$ with a convex blend of $S$ and a structural target $F$ (diagonal of variances, or constant-correlation matrix):
-$$\hat\Sigma(\delta)=(1-\delta)\,S+\delta\,F,\qquad \delta\in[0,1].$$
-Ledoit–Wolf choose $\delta^\*$ to minimize expected Frobenius loss $\mathbb{E}\|(1-\delta)S+\delta F-\Sigma\|_F^2$, yielding a closed-form optimal shrinkage intensity that depends only on $S$ and $F$. The effect on the *portfolio* is immediate: the smallest eigenvalues of $\hat\Sigma$ are lifted, so $(\hat\Sigma)^{-1}$ no longer explodes. This is the same regularization spirit as ridge regression in [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]/ESL (21st-century) Ch 3–4.
+$$
+\hat\Sigma(\delta)=(1-\delta)\,S+\delta\,F,\qquad \delta\in[0,1].
+$$
+Ledoit–Wolf choose $\delta^*$ to minimize expected Frobenius loss $\mathbb{E}\|(1-\delta)S+\delta F-\Sigma\|_F^2$, yielding a closed-form optimal shrinkage intensity that depends only on $S$ and $F$. The effect on the *portfolio* is immediate: the smallest eigenvalues of $\hat\Sigma$ are lifted, so $(\hat\Sigma)^{-1}$ no longer explodes. This is the same regularization spirit as ridge regression in [[foundations/linear-algebra-and-matrices/index|Linear Algebra]]/ESL (21st-century) Ch 3–4.
 
 **Robust MVO (Goldfarb & Iyengar 2003).** Instead of a point estimate, place the uncertain parameters in a bounded **uncertainty set** $\mathcal{U}=\{\,(\mu,\Sigma):\|\Delta\mu\|\le\varepsilon,\ \text{etc.}\,\}$ and optimize the *worst case*:
-$$\max_w \min_{(\mu,\Sigma)\in\mathcal{U}}\big(w^T\mu-\tfrac12\lambda\, w^T\Sigma w\big),$$
+$$
+\max_w \min_{(\mu,\Sigma)\in\mathcal{U}}\big(w^T\mu-\tfrac12\lambda\, w^T\Sigma w\big),
+$$
 which stays a tractable second-order-cone program (SOCP). The robust optimum deliberately foregoes the extreme weights that live on small-eigenvalue directions — it is *conservative by construction*.
 
 **Resampling (Michaud 1998).** Simulate many draws of $(\hat\mu,\hat\Sigma)$ from the sampling distribution, re-optimize each, and **average the resulting weights** to build a "resampled frontier." The average is far more stable than the single optimum because extreme weights cancel across draws.
@@ -98,7 +102,7 @@ The mechanism, in numbers: at $\delta{=}0$ (raw sample) the condition number is 
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Shrinkage bias is real.** $\hat\Sigma(\delta)$ is biased toward $F$; if $F$ is a poor model (e.g. ignoring genuine factor structure), $\delta$ too large throws away real signal. Ledoit–Wolf's *data-driven* $\delta^\*$ is the guardrail; hand-picking $\delta$ is guesswork.
+1. **Shrinkage bias is real.** $\hat\Sigma(\delta)$ is biased toward $F$; if $F$ is a poor model (e.g. ignoring genuine factor structure), $\delta$ too large throws away real signal. Ledoit–Wolf's *data-driven* $\delta^*$ is the guardrail; hand-picking $\delta$ is guesswork.
 2. **Denoising ≠ true structure.** Lifting small eigenvalues removes sampling noise but can also remove genuine low-risk strategies; RMT thresholds (Marchenko–Pastur) trade off keeping vs. discarding those directions ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]]).
 3. **Robust/resampling are not free.** Worst-case optimization can be too conservative (gives up alpha), and resampling averages away the very extreme weights that index-type strategies might want; both are *judgment calls* about the uncertainty set / sampling model, not objective facts.
 4. **Everything still needs a model of $\mu$.** Black–Litterman fixes *weight instability* by feeding equilibrium-imposed means, but the views and their confidence are inputs; garbage views in, garbage posterior out.

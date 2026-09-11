@@ -40,20 +40,26 @@ Three "aha"s:
 
 **Two cost models, one capacity formula.** Let a core run at clock $f$ (≈3 GHz ⇒ $3\times10^9$ ns of work per second). Each packet costs $c$ nanoseconds of that core to process. Per-core capacity is
 
-$$\Theta_{\text{core}} = \frac{f}{c}\ \text{packets/s}.$$
+$$
+\Theta_{\text{core}} = \frac{f}{c}\ \text{packets/s}.
+$$
 
 The kernel path costs $c_{\text{kernel}} \approx 3{,}000$ ns/packet (interrupt entry, protocol processing, two copies, wakeup amortised) giving $\Theta \approx 1.0$ M pkt/s/core. A bypass path costs $c_{\text{bypass}} \approx 150$ ns/packet (poll, pointer swap, no copy) giving $\Theta \approx 20$ M pkt/s/core — a **20× per-core gain**.
 
 **Cores required** to sustain a target rate $R$:
 
-$$n_{\text{cores}} = \frac{R \cdot c}{f} = \frac{R}{\Theta_{\text{core}}}.$$
+$$
+n_{\text{cores}} = \frac{R \cdot c}{f} = \frac{R}{\Theta_{\text{core}}}.
+$$
 
 At $R = 14.88$ M pkt/s (10GbE line rate, minimum-size frames), this is **14.88 cores** on the kernel path versus **0.74 cores** bypassed. That difference is the whole business case: it turns a 15-core networking problem into a fraction of one core, freeing the rest for strategy.
 
 **Line-rate ceiling.** The wire cannot deliver more than
 
-$$R_{\max} = \frac{R_{\text{link}}}{8B}\ \text{packets/s},\qquad
-R_{\max} = 14.88\ (10\text{GbE}),\ 37.20\ (25\text{GbE}),\ 148.81\ (100\text{GbE})\ \text{M pkt/s}$$
+$$
+R_{\max} = \frac{R_{\text{link}}}{8B}\ \text{packets/s},\qquad
+R_{\max} = 14.88\ (10\text{GbE}),\ 37.20\ (25\text{GbE}),\ 148.81\ (100\text{GbE})\ \text{M pkt/s}
+$$
 
 for an 84-byte minimum frame. **A NIC faster than this ceiling buys nothing** for latency-sensitive small-message traffic.
 

@@ -26,15 +26,21 @@ The core intuition: **a curve and a set of forward rates are the same informatio
 
 The **zero-coupon bond** $P(t,T)$, $P(T,T)=1$, is the primitive. Its continuously-compounded spot rate, yield, instantaneous forward, and simple forward are:
 
-$$R(t,T)=-\frac{\ln P(t,T)}{T-t},\qquad f(t,T)=-\frac{\partial}{\partial T}\ln P(t,T),\qquad P(t,T)=e^{-\int_t^T f(t,s)ds},$$
+$$
+R(t,T)=-\frac{\ln P(t,T)}{T-t},\qquad f(t,T)=-\frac{\partial}{\partial T}\ln P(t,T),\qquad P(t,T)=e^{-\int_t^T f(t,s)ds},
+$$
 
-$$L(t;T,S)=\frac{1}{S-T}\left(\frac{P(t,T)}{P(t,S)}-1\right)\qquad\text{with }1+(S-T)L(t;T,S)=\frac{P(t,T)}{P(t,S)}.$$
+$$
+L(t;T,S)=\frac{1}{S-T}\left(\frac{P(t,T)}{P(t,S)}-1\right)\qquad\text{with }1+(S-T)L(t;T,S)=\frac{P(t,T)}{P(t,S)}.
+$$
 
 The **LIBOR rate** is the simple rate on Actual/360; forward LIBOR over $[T,S]$ is exactly $L(t;T,S)$. The **short rate** is the zero-horizon forward: $r(t)=f(t,t)$.
 
 **Coupon bond** = static portfolio of ZCBs (Björk eq. 22.13):
 
-$$p^{cb}(t)=K\,P(t,T_n)+\sum_{i=1}^{n} c_i\,P(t,T_i),$$
+$$
+p^{cb}(t)=K\,P(t,T_n)+\sum_{i=1}^{n} c_i\,P(t,T_i),
+$$
 
 and a **floating-rate note** is worth par at issue ("always trades at par", BM Ch1) — its floating leg is exactly the locked-in forwards.
 
@@ -42,7 +48,9 @@ and a **floating-rate note** is worth par at issue ("always trades at par", BM C
 
 The fixed rate that makes an IRS worth zero. For a swap from $T_\alpha$ to $T_\beta$ with annuity $C_{\alpha,\beta}(t)=\sum_{i=\alpha+1}^{\beta}\tau_i P(t,T_i)$:
 
-$$R_{\alpha,\beta}(t)=\frac{P(t,T_\alpha)-P(t,T_\beta)}{C_{\alpha,\beta}(t)}.$$
+$$
+R_{\alpha,\beta}(t)=\frac{P(t,T_\alpha)-P(t,T_\beta)}{C_{\alpha,\beta}(t)}.
+$$
 
 On a *flat* curve this collapses to the flat rate (see §3). The **forward swap rate** is the martingale under the annuity (swap) numeraire $\mathbb{Q}^{\alpha,\beta}$ — the key fact that powers swaption pricing ([[pillars/03-derivative-pricing/interest-rate-and-term-structure/04-numeraire-hjm-and-market-models|04 · Numeraire, HJM & Market Models]]).
 
@@ -50,7 +58,9 @@ On a *flat* curve this collapses to the flat rate (see §3). The **forward swap 
 
 A **cap** is a portfolio of *caplets*; each caplet is a European call on a forward LIBOR. Under Black's model (forward LIBOR lognormal), the caplet value is
 
-$$Cpl(0)=P(0,T_i)\,\tau_i\,Bl(K,F_i(0),v_i),\qquad Bl=F N(d_1)-K N(d_2),\quad d_1=\frac{\ln(F/K)+\frac12 v^2 T_{i-1}}{v\sqrt{T_{i-1}}}.$$
+$$
+Cpl(0)=P(0,T_i)\,\tau_i\,Bl(K,F_i(0),v_i),\qquad Bl=F N(d_1)-K N(d_2),\quad d_1=\frac{\ln(F/K)+\frac12 v^2 T_{i-1}}{v\sqrt{T_{i-1}}}.
+$$
 
 A **floor** is the corresponding put portfolio; a **collar** is long cap + short floor. **Put–call parity for caps:** $\text{cap}=\text{floor}+\text{swap(receive-float, pay-fixed }K)$ — a model-free identity (Hull Ch29; verified in §3).
 

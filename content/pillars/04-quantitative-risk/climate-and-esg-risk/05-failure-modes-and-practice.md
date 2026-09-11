@@ -35,11 +35,11 @@ Any reported climate metric $m$ is a function $m=m(\mathcal B;\mathcal R;\mathca
 
 | Axis | Defensible range | Swing in the reported number | Verified (§) |
 |---|---|---|---|
-| **Boundary** (Scope 1+2 vs 1+2+3), same firm/year | both standards-compliant | intensity $16.0\to216.0$ tCO2e per $\$1$m = **$13.5\times$** | 01 §3 |
+| **Boundary** (Scope 1+2 vs 1+2+3), same firm/year | both standards-compliant | intensity $16.0\to216.0$ tCO2e per $ $\$1m = **13.5\times$** | 01 §3 |
 | **Boundary** in temperature alignment | same holdings | $\mathrm{ITR}=1.98^\circ$C $\to$ beyond the $3.2^\circ$C benchmark | 05 §3(B) |
 | **Rater** (weights + indicator choice) | three mainstream methodologies | mean rank correlation **$+0.439$**; largest rank move **$5.5$** places; top-5 overlap **$3/5$** | 04 §3(A), 05 §3(A) |
 | **Vintage** (retroactive restatement) | one historical revision | **$1$ of $5$** top-5 names changes | 05 §3(A) |
-| **Economic parameter** (pass-through $\lambda$) | $\lambda\in[0,0.8]$ | $\$30$/t shock: $-15.33\%\to-3.07\%$ = **$5.0\times$** | hub §3 |
+| **Economic parameter** (pass-through $\lambda$) | $\lambda\in[0,0.8]$ | $ $\$30/t shock: -15.33\%\to-3.07\%$ = **$5.0\times$** | hub §3 |
 | **Economic parameter** (damage $\theta$) | disclosure-dependent | physical loss is **linear in $\theta$** — the parameter *is* the answer | 02 §3(B) |
 | **Scenario count** $N$ | 6 archetypes, $p_{\max}=0.20$ | confidence ceiling $\alpha\le1-p_{\max}=0.80$ | 03 §3 |
 
@@ -49,20 +49,26 @@ Read the last two rows against the first three: the *model* parameters are the o
 
 For a universe of $n$ names scored by raters $A$ and $B$ with ranks $r^A_f,r^B_f$, define the **rank-instability rate** and the **top-$k$ overlap**:
 
-$$\boxed{\ R_k=\frac{1}{n}\#\{f:\ |r^A_f-r^B_f|\ge k\},\qquad O_k=\frac{|\mathrm{Top}_k(A)\cap\mathrm{Top}_k(B)|}{k}\ }$$
+$$
+\boxed{\ R_k=\frac{1}{n}\#\{f:\ |r^A_f-r^B_f|\ge k\},\qquad O_k=\frac{|\mathrm{Top}_k(A)\cap\mathrm{Top}_k(B)|}{k}\ }
+$$
 
 Both are computed from ranks only, so they are invariant to the raters' scales — the correct way to compare incommensurable scores. A **restatement** is a third rank vector $r^{A'}_f$ (the same rater's history after revision); the exposure to it is $|\mathrm{Top}_k(A)\setminus\mathrm{Top}_k(A')|/k$. **Point-in-time rule:** a backtest of any ESG signal must use the *as-of-vintage* score $R_{f,k,t}$, not the as-of-today history $R_{f,k,T}$; otherwise the vendor's revisions leak tomorrow's information into yesterday's portfolio ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene|Purged CV & Backtest Hygiene]]).
 
 #### 2.3 Parameter drift
 
 For a climate risk model with parameter vector $\theta$ (e.g. a carbon beta $b$), define the **drift** between an in-sample fit and an out-of-sample evaluation
-$$\delta=\frac{\hat\theta_{\mathrm{OOS}}}{\hat\theta_{\mathrm{IS}}}-1 .$$
+$$
+\delta=\frac{\hat\theta_{\mathrm{OOS}}}{\hat\theta_{\mathrm{IS}}}-1 .
+$$
 A model used as a hedge ratio requires $|\delta|$ small. A model used as a *risk measure* only needs the correct sign — which is why the honest use of a carbon beta is scenario conditioning, not hedging ([[pillars/04-quantitative-risk/climate-and-esg-risk/06-advanced-extensions|06 · §2]]).
 
 #### 2.4 Greenwashing as a data-quality failure, formally
 
 Let a claim be a statement about the true sustainability attribute $S_f$ (e.g. true financed emissions). A pipeline produces an estimate $\hat S_f=s(\mathcal B,\mathcal R,\mathcal V)$. The **greenwashing gap** for a portfolio $P$ is a statement-level quantity,
-$$\mathrm{GG}=\Big|\hat S_P-\mathbb E[S_P\mid \mathcal B,\mathcal V]\Big|,$$
+$$
+\mathrm{GG}=\Big|\hat S_P-\mathbb E[S_P\mid \mathcal B,\mathcal V]\Big|,
+$$
 i.e. the divergence between what the label asserts and what the *same pipeline, honestly bounded*, would support. Note the definition deliberately holds $\mathcal B$ and $\mathcal V$ fixed: the failure is not picking a wide boundary (that is legal and disclosed), it is asserting a claim at a boundary or vintage the pipeline does not support. This is why **disclosure harmonisation** — not more sophisticated mathematics — is the regulatory response (IOSCO's ESG ratings and data-products work; the EU's sustainable-finance disclosure framework), and why the divergence literature (Berg et al. 2022) frames the issue as one of *data generation*, not of statistical technique.
 
 ---

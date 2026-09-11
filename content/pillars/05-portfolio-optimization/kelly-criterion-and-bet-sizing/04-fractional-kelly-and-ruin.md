@@ -19,11 +19,11 @@ Page 03 proved full Kelly is growth-optimal. This page confronts the cost: **ful
 
 Three facts drive practice:
 
-1. **The $c(2-c)$ law.** Half Kelly ($c=\tfrac12$) keeps $\tfrac34$ of the growth rate at half the volatility. The first 25% of growth you give up buys a **50% cut in risk** — an extraordinary asymmetry in the *risk* dimension even though growth is symmetric around $f^\*$.
-2. **Overbetting risk is not symmetric.** Because $g(f)$ is concave and flat near the top, betting $f^\*+\delta$ costs more growth than betting $f^\*-\delta$, and the *drawdown* cost of overbetting compounds with quadratic volatility. Past the critical fraction $f_c$ the growth rate goes *negative*: ruin is near-certain with a positive edge.
+1. **The $c(2-c)$ law.** Half Kelly ($c=\tfrac12$) keeps $\tfrac34$ of the growth rate at half the volatility. The first 25% of growth you give up buys a **50% cut in risk** — an extraordinary asymmetry in the *risk* dimension even though growth is symmetric around $f^*$.
+2. **Overbetting risk is not symmetric.** Because $g(f)$ is concave and flat near the top, betting $f^*+\delta$ costs more growth than betting $f^*-\delta$, and the *drawdown* cost of overbetting compounds with quadratic volatility. Past the critical fraction $f_c$ the growth rate goes *negative*: ruin is near-certain with a positive edge.
 3. **Ruin and drawdown have quantitative laws.** Any fixed-fraction bettor runs a constant-proportional-betting random walk, so drawdowns follow an explicit distribution (Thorp §6; the ergodicity folder's ruin page); full Kelly has a large, fixed drawdown law that the median investor finds unacceptable.
 
-> **Takeaway.** Fractional Kelly is not a hedge against being *wrong* about $f^\*$ — it is the rational response to the asymmetry that overbetting is punished far harder than underbetting, in a world where $p,m,s$ are estimated. The standard practitioner rule: bet at **half Kelly ($c=0.5$)** to start, de-rate further when parameter uncertainty is high.
+> **Takeaway.** Fractional Kelly is not a hedge against being *wrong* about $f^*$ — it is the rational response to the asymmetry that overbetting is punished far harder than underbetting, in a world where $p,m,s$ are estimated. The standard practitioner rule: bet at **half Kelly ($c=0.5$)** to start, de-rate further when parameter uncertainty is high.
 
 ---
 
@@ -31,16 +31,18 @@ Three facts drive practice:
 
 #### 2.1 The fractional-Kelly growth and risk
 
-With $f=cf^\*$:
+With $f=cf^*$:
 
-$$\frac{g_\infty(cf^\*)-r}{g_\infty(f^\*)-r}=c(2-c)\qquad(\text{exact for the excess growth; the raw ratio equals }c(2-c)\text{ only when }r=0),\qquad
-\frac{\mathrm{SD}(G_\infty(cf^\*))}{\mathrm{SD}(G_\infty(f^\*))}=c.$$
+$$
+\frac{g_\infty(cf^*)-r}{g_\infty(f^*)-r}=c(2-c)\qquad(\text{exact for the excess growth; the raw ratio equals }c(2-c)\text{ only when }r=0),\qquad
+\frac{\mathrm{SD}(G_\infty(cf^*))}{\mathrm{SD}(G_\infty(f^*))}=c.
+$$
 
-Growth is a *quadratic* that is flat at the top; risk is *linear* in $c$. Hence half Kelly: $g/g^\*=0.75$, risk $=0.5$. Double Kelly ($c=2$): $g/g^\*=0$, risk $=2$. **The ratio of return to risk is monotonically worse the further you scale above $c=1$.**
+Growth is a *quadratic* that is flat at the top; risk is *linear* in $c$. Hence half Kelly: $g/g^*=0.75$, risk $=0.5$. Double Kelly ($c=2$): $g/g^*=0$, risk $=2$. **The ratio of return to risk is monotonically worse the further you scale above $c=1$.**
 
 #### 2.2 The critical fraction and certain ruin
 
-For the even-money game ($p=0.55$), $f_c=0.1987$ solves $g(f_c)=0$, i.e. $\mathbb{E}[\ln(1+R(f))]=0$. For $f>f_c$ the log-growth is negative, and by the law of large numbers the *time-average* wealth drifts to zero almost surely. Because $f_c\approx2\times f^\*$, a **$2\times$ sizing error turns a profitable edge into a guaranteed-loss strategy** — not a riskier one, a losing one.
+For the even-money game ($p=0.55$), $f_c=0.1987$ solves $g(f_c)=0$, i.e. $\mathbb{E}[\ln(1+R(f))]=0$. For $f>f_c$ the log-growth is negative, and by the law of large numbers the *time-average* wealth drifts to zero almost surely. Because $f_c\approx2\times f^*$, a **$2\times$ sizing error turns a profitable edge into a guaranteed-loss strategy** — not a riskier one, a losing one.
 
 #### 2.3 Drawdown law (continuous)
 
@@ -86,10 +88,10 @@ The pattern is unmistakable. **Double Kelly** ($c=2$, right at the critical $f_c
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"Kelly says bet 22%."** On an estimated edge, $f^\*$ is a fiction; betting the *estimated* full Kelly on a slightly-wrong $p$ lands you at $2\times$ the true optimum — straddling $f_c$ with double-Kelly ruin probabilities (see the page 05 overbetting demo).
+1. **"Kelly says bet 22%."** On an estimated edge, $f^*$ is a fiction; betting the *estimated* full Kelly on a slightly-wrong $p$ lands you at $2\times$ the true optimum — straddling $f_c$ with double-Kelly ruin probabilities (see the page 05 overbetting demo).
 2. **Treating drawdown as a nuisance.** Full Kelly's ~99% max drawdown is not a bug — it *is* the growth-optimal risk profile. Funds and individuals almost universally de-rate because the median path of full Kelly is brutally volatile.
-3. **Believing $c=2$ "geometrically" doubles returns.** The growth curve is concave: beyond $f^\*$ you gain *nothing* and lose *risk*. There is no compensation for overbetting.
-4. **Ignoring the continuous/leverage case.** In securities, $f^\*=(m-r)/s^2$ can exceed 1 (leverage); fractional Kelly then governs *how much leverage*, and over-leverage near $f_c$ in the continuous case means forced liquidation at drawdowns, compounding the ruin.
+3. **Believing $c=2$ "geometrically" doubles returns.** The growth curve is concave: beyond $f^*$ you gain *nothing* and lose *risk*. There is no compensation for overbetting.
+4. **Ignoring the continuous/leverage case.** In securities, $f^*=(m-r)/s^2$ can exceed 1 (leverage); fractional Kelly then governs *how much leverage*, and over-leverage near $f_c$ in the continuous case means forced liquidation at drawdowns, compounding the ruin.
 
 ---
 

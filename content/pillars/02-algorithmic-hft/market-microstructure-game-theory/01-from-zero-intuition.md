@@ -41,28 +41,40 @@ We need the smallest model that contains the game. Two possible values, one type
 
 **Setup.** $V\in\{V_L,V_H\}$ with $V_L<V_H$; the maker's prior is $\theta=\mathbb{P}(V=V_H)$. A trader arrives. With probability $\pi$ it is an **informed** trader who buys iff $V=V_H$ and sells iff $V=V_L$. With probability $1-\pi$ it is a **noise** trader who buys or sells with probability $\tfrac12$ each, independent of $V$. Therefore the *buy-arrival laws* are
 
-$$\mathbb{P}(B\mid V_H)=\pi\cdot 1+(1-\pi)\cdot\tfrac12=\frac{1+\pi}{2},\qquad \mathbb{P}(B\mid V_L)=\pi\cdot 0+(1-\pi)\cdot\tfrac12=\frac{1-\pi}{2}.$$
+$$
+\mathbb{P}(B\mid V_H)=\pi\cdot 1+(1-\pi)\cdot\tfrac12=\frac{1+\pi}{2},\qquad \mathbb{P}(B\mid V_L)=\pi\cdot 0+(1-\pi)\cdot\tfrac12=\frac{1-\pi}{2}.
+$$
 
 **The maker's problem.** She posts quotes before seeing the trader. By Bayes' rule the break-even (zero-expected-profit) quotes are conditional expectations:
 
-$$A=\mathbb{E}[V\mid B]=\frac{V_H(1+\pi)\theta+V_L(1-\pi)(1-\theta)}{(1+\pi)\theta+(1-\pi)(1-\theta)},\qquad B=\mathbb{E}[V\mid S]=\frac{V_H(1-\pi)\theta+V_L(1+\pi)(1-\theta)}{(1-\pi)\theta+(1+\pi)(1-\theta)}.$$
+$$
+A=\mathbb{E}[V\mid B]=\frac{V_H(1+\pi)\theta+V_L(1-\pi)(1-\theta)}{(1+\pi)\theta+(1-\pi)(1-\theta)},\qquad B=\mathbb{E}[V\mid S]=\frac{V_H(1-\pi)\theta+V_L(1+\pi)(1-\theta)}{(1-\pi)\theta+(1+\pi)(1-\theta)}.
+$$
 
 At $\theta=\tfrac12$ each denominator is 1 and the spread collapses to the textbook form
 
-$$\boxed{\;A-B=\pi\,(V_H-V_L)\;}$$
+$$
+\boxed{\;A-B=\pi\,(V_H-V_L)\;}
+$$
 
 so the spread is **linear in the informed share and in the value range** — no fudge factors, no inventory, no fixed-cost story. It is purely the price of ignorance.
 
 **Why a mid-quoting maker loses.** Put $p_0=\tfrac12(V_H+V_L)$. A maker who quotes $p_0$ on both sides sells on buy-arrivals and buys on sell-arrivals, earning
-$$\mathbb{E}[\text{P\&L}\mid B]=p_0-A,\qquad \mathbb{E}[\text{P\&L}\mid S]=B-p_0,$$
+$$
+\mathbb{E}[\text{P\&L}\mid B]=p_0-A,\qquad \mathbb{E}[\text{P\&L}\mid S]=B-p_0,
+$$
 and since buy- and sell-arrivals each occur with probability $\tfrac12$,
-$$\mathbb{E}[\text{P\&L}]=\tfrac12\big[(p_0-A)+(B-p_0)\big]=\tfrac12\big[B-A\big]=-\tfrac12\,\pi(V_H-V_L).$$
+$$
+\mathbb{E}[\text{P\&L}]=\tfrac12\big[(p_0-A)+(B-p_0)\big]=\tfrac12\big[B-A\big]=-\tfrac12\,\pi(V_H-V_L).
+$$
 **A mid-quoting maker loses exactly half the equilibrium spread per trade.** Verified numerically below at every $\pi$.
 
 **Why the quotes must be state-dependent.** $A$ and $B$ depend on $\theta$, and $\theta$ changes after every trade. The spread is *widest at maximum uncertainty and vanishes at the extremes* — because near $\theta\to1$ both sides of the book converge on $V_H$ and there is nothing left to be selected on. A constant spread equal to the average of $A(\theta)-B(\theta)$ is therefore **wrong on every single trade**, even though it is right on average.
 
 **The martingale property (the punchline).** Because $A$ and $B$ are conditional expectations,
-$$\mathbb{E}[P_{t+1}\mid\mathcal{F}_t]=\mathbb{P}(B\mid\mathcal{F}_t)\,A_t+\mathbb{P}(S\mid\mathcal{F}_t)\,B_t=P_t.$$
+$$
+\mathbb{E}[P_{t+1}\mid\mathcal{F}_t]=\mathbb{P}(B\mid\mathcal{F}_t)\,A_t+\mathbb{P}(S\mid\mathcal{F}_t)\,B_t=P_t.
+$$
 **The quoted price is a martingale.** Prices are unpredictable *by construction* — not as an empirical accident, but because the maker's quotes are Bayesian. This is the single most important structural consequence of putting the game first, and it is what every "impact" and "alpha" conversation downstream is really arguing about.
 
 ---

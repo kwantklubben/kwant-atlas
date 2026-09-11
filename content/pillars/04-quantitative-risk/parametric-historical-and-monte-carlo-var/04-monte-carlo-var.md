@@ -31,7 +31,9 @@ The cost is raw compute: $m$ scenarios × (revaluation cost per portfolio), so a
 
 **The MC VaR estimator.** Let $L_i=-\Delta V_i$ be the portfolio loss under scenario $i$, where scenario $i$ draws a factor move $\Delta S_i$ from the chosen model and revalues the portfolio. Sort the losses and take the $\alpha$-quantile of the *empirical* distribution:
 
-$$\widehat{\text{VaR}}_\alpha^{(MC)}=L_{(\lceil m(1-\alpha)\rceil)},$$
+$$
+\widehat{\text{VaR}}_\alpha^{(MC)}=L_{(\lceil m(1-\alpha)\rceil)},
+$$
 
 exactly the HS quantile formula of [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/03-historical-simulation|03]] — the difference is *where the scenarios come from* (simulated vs replayed-from-the-past).
 
@@ -42,7 +44,9 @@ exactly the HS quantile formula of [[pillars/04-quantitative-risk/parametric-his
 - **Partial (delta/delta–gamma):** approximate $\Delta V\approx\delta^T\Delta S+\tfrac12\Delta S^T\Gamma\Delta S$, faster but biased for options. Glasserman Ch 9 uses the delta–gamma *both* as a control variate and as the sampling engine for importance sampling (twist the quadratic, revalue the true portfolio).
 
 **The quantile's sampling error (Glasserman Ch 9 §9.1).** Same honest formula as HS:
-$$\sqrt m\,(\widehat x_p-x_p)\Rightarrow N\!\Big(0,\tfrac{p(1-p)}{f(x_p)^2}\Big),\quad p=1-\alpha.$$
+$$
+\sqrt m\,(\widehat x_p-x_p)\Rightarrow N\!\Big(0,\tfrac{p(1-p)}{f(x_p)^2}\Big),\quad p=1-\alpha.
+$$
 To halve the *absolute* uncertainty in the VaR you need $4\times$ the scenarios — the $\sigma/\sqrt m$ law. And since $f(x_p)$ is small in the tail, $f(x_p)^2$ in the denominator makes **tail quantiles diverge slowly** — exactly where variance reduction pays. Antithetic variates (the Glasserman Ch 4 Ch 4 §4.2) and importance sampling for rare tails (Ch 9 §9.2) attack exactly this.
 
 ---

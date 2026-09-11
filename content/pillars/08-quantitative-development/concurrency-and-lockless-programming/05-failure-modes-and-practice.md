@@ -30,13 +30,17 @@ The five canonical failures, in one line each:
 
 **The lost-update mechanism.** `count += 1` is three steps: `LOAD count` → `ADD 1` → `STORE count`. If thread A loads `v`, then thread B does its full `+= 1` (so `count = v+1`), then A stores `v+1` back, the increment is lost: `count` ends at `v+1` instead of `v+2`. With $K$ increments per thread over a *shared* (non-atomic) variable, each interleaving that lands a stale store after a newer one loses exactly that update, so the final value satisfies
 
-$$\text{final} \le 2K,$$
+$$
+\text{final} \le 2K,
+$$
 
 with the shortfall equal to the number of overwritten stores. It is a *race*: whether and how many are lost depends on scheduling, so the same code may run correctly a thousand times and wrong once — which is why it survives naive testing.
 
 **The missing-edge mechanism.** Correctness requires the producer's payload write to be ordered *before* its index store, and the consumer's index load *before* its payload read. In terms of the memory model:
 
-$$\text{payload}\ \xrightarrow{\text{release}}\ \text{tail-store}\ \xrightarrow{\text{sync-with}}\ \text{tail-load}\ \xrightarrow{\text{acquire}}\ \text{payload read}.$$
+$$
+\text{payload}\ \xrightarrow{\text{release}}\ \text{tail-store}\ \xrightarrow{\text{sync-with}}\ \text{tail-load}\ \xrightarrow{\text{acquire}}\ \text{payload read}.
+$$
 
 Drop any link (use `relaxed`, or reorder) and the chain breaks: the consumer can legally observe the new index and the old payload. This is a **correctness** failure, and it is non-deterministic on weakly-ordered hardware — it can be one-in-a-million.
 

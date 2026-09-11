@@ -30,15 +30,21 @@ Fix a maker and a fill index $i$. Let $\text{side}_i=+1$ if the maker **sold** (
 
 The maker's position after the fill is $-\text{side}_i$ (he sold $\Rightarrow$ short). Marking the position to the terminal mid:
 
-$$\underbrace{\text{spread}_i = h}_{\text{half-spread earned}}, \qquad
-\underbrace{\text{move}_i = (-\text{side}_i)\,\Delta m_i}_{\text{mid P\&L on the inventory}}.$$
+$$
+\underbrace{\text{spread}_i = h}_{\text{half-spread earned}}, \qquad
+\underbrace{\text{move}_i = (-\text{side}_i)\,\Delta m_i}_{\text{mid P\&L on the inventory}}.
+$$
 
 So the **per-fill P&L** is
-$$\pi_i = h + \text{side}_i\text{-dependent rebate} - \text{side}_i\,\Delta m_i - c_{\text{inv}} - f_{\text{take}}\cdot\mathbb{1}[\text{taker}].$$
+$$
+\pi_i = h + \text{side}_i\text{-dependent rebate} - \text{side}_i\,\Delta m_i - c_{\text{inv}} - f_{\text{take}}\cdot\mathbb{1}[\text{taker}].
+$$
 
 Averaging over fills, and writing $\lambda \equiv \mathbb{E}[\,\text{side}_i\,\Delta m_i\,]$, the **systematic** part of the mid move is the adverse-selection cost (the maker's fills are *selected*): for a maker who sells, the mid tends to rise; for one who buys, to fall — so $\mathbb{E}[\text{side}_i\Delta m_i]>0$ and it enters as a **cost**:
 
-$$\boxed{\;\mathbb{E}[\pi] \;=\; \underbrace{h}_{\text{spread}} + \underbrace{r}_{\text{rebate}} - \underbrace{\lambda}_{\text{adverse sel.}} - \underbrace{c_{\text{inv}}}_{\text{inventory}} - \underbrace{\mathbb{E}[f_{\text{take}}]}_{\text{access fees}}\;}$$
+$$
+\boxed{\;\mathbb{E}[\pi] \;=\; \underbrace{h}_{\text{spread}} + \underbrace{r}_{\text{rebate}} - \underbrace{\lambda}_{\text{adverse sel.}} - \underbrace{c_{\text{inv}}}_{\text{inventory}} - \underbrace{\mathbb{E}[f_{\text{take}}]}_{\text{access fees}}\;}
+$$
 
 #### 2.2 The two "inextricable" terms, separated
 
@@ -101,9 +107,9 @@ fills simulated                : 500,000
 
 **Three solid numbers to carry forward:**
 
-- Net P&L $= +\$0.0050$/share with the rebate, $+\$0.0030$ without — the rebate is **40%** of net.
+- Net P&L $= + $ \$0.0050/share with the rebate, + \$0.0030 without — the rebate is **40%** of net.
 - The simulated adverse-selection term is $-0.005979$ vs the analytic $\lambda=\delta=0.006$ — a **0.4%** sampling gap over $5\times10^5$ draws, i.e. the decomposition is tight.
-- The **headline** spread is $2h=\$0.020$; the true take is $\$0.0050$ — the spread **overstates** the maker's margin by 4×.
+- The **headline** spread is $2h= $ \$0.020; the true take is \0.0050 — the spread **overstates** the maker's margin by 4×.
 
 ---
 

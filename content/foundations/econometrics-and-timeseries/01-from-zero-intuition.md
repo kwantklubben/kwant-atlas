@@ -33,7 +33,9 @@ The third idea, previewed here and built in [[foundations/econometrics-and-times
 **Return definitions (Tsay Ch 1, eq. 1.1–1.7).**
 
 Simple one-period return: $R_t=\dfrac{P_t}{P_{t-1}}-1$. Continuously-compounded (log) return: $r_t=\ln(1+R_t)=p_t-p_{t-1}$, where $p_t=\ln P_t$. Multi-period log return = sum of one-period log returns:
-$$r_t[k]=p_t-p_{t-k}=\sum_{j=0}^{k-1}r_{t-j}.$$
+$$
+r_t[k]=p_t-p_{t-k}=\sum_{j=0}^{k-1}r_{t-j}.
+$$
 Portfolio simple return is the *weighted average* of constituents' simple returns (log returns are only *approximately* so — Tsay eq. 1.7).
 
 **Why the log.** Over one step $\ln(P_t/P_{t-1})\approx R_t$ for small moves, but over many steps log returns *exactly add* while simple returns multiply. And under geometric Brownian motion (see [[foundations/stochastic-calculus/index|Stochastic Calculus]]), $p_t$ is Gaussian, so returns are lognormal-consistent.
@@ -46,7 +48,9 @@ Portfolio simple return is the *weighted average* of constituents' simple return
 3. $\mathrm{Cov}(x_t,x_{t-k})=\gamma(k)$ depends only on the *lag* $k$, not on $t$.
 
 Strict stationarity requires the *entire joint distribution* to be time-invariant. For Gaussian processes the two coincide (Tsay §2.1). The autocorrelation function (ACF) is
-$$\rho_k=\frac{\gamma(k)}{\gamma(0)}.$$
+$$
+\rho_k=\frac{\gamma(k)}{\gamma(0)}.
+$$
 For a weakly stationary series the ACF is a function of lag only — which is precisely the object all of linear time-series modeling studies.
 
 ---

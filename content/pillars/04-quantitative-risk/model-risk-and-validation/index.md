@@ -34,7 +34,9 @@ This folder is a *hub*: it holds the **fast lookup** for validation statistics a
 
 **(a) The model-risk error decomposition.** The gap between a model's output and the "true" value is a **sum of independent error channels**, each separately quantifiable to first order:
 
-$$\underbrace{\Delta V}_{\text{total model error}}\;\approx\;\underbrace{\Delta_{\text{form}}V}_{\text{wrong model}}\;+\;\underbrace{\sum_i \frac{\partial V}{\partial\theta_i}\Delta\theta_i}_{\text{parameter/calibration}}\;+\;\underbrace{\Delta_{\text{impl}}V}_{\text{discretisation, bugs, day-count}}\;+\;\underbrace{\Delta_{\text{use}}V}_{\text{misuse}}.$$
+$$
+\underbrace{\Delta V}_{\text{total model error}}\;\approx\;\underbrace{\Delta_{\text{form}}V}_{\text{wrong model}}\;+\;\underbrace{\sum_i \frac{\partial V}{\partial\theta_i}\Delta\theta_i}_{\text{parameter/calibration}}\;+\;\underbrace{\Delta_{\text{impl}}V}_{\text{discretisation, bugs, day-count}}\;+\;\underbrace{\Delta_{\text{use}}V}_{\text{misuse}}.
+$$
 
 For small independent errors the channels add in **quadrature**: $\sigma_{\text{total}}=\sqrt{\sum_j\sigma_j^2}$. This is what converts "model risk" from a worry into a *budget*.
 

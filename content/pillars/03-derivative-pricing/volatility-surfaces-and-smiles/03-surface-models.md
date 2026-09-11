@@ -32,9 +32,13 @@ Three building blocks:
 #### 2.1 SVI (Gatheral 2004, eq 3.20)
 
 For a single maturity, with $k=\ln(K/F)$ log-strike,
-$$\boxed{\;w(k)=\sigma_{BS}^2(k)\,T=a+b\!\left[\rho\,(k-m)+\sqrt{(k-m)^2+s^2}\right]\;}$$
+$$
+\boxed{\;w(k)=\sigma_{BS}^2(k)\,T=a+b\!\left[\rho\,(k-m)+\sqrt{(k-m)^2+s^2}\right]\;}
+$$
 with parameters $a,b,\rho,s,m$ ($b\ge0$, $|\rho|<1$, $s>0$). As $|k|\to\infty$ the slice is asymptotically linear in $|k|$ with slopes $b(1\pm\rho)$ — matching **Roger Lee's** regularity bound (implied variance grows at most linearly in $|k|$, with the gradients tied to the maximal finite moments of $S_T$; Gatheral §7.7, model-independent). The **ATM variance skew** is
-$$\left.\frac{\partial w}{\partial k}\right|_{k=0}=b\!\left(\rho+\frac{-m}{\sqrt{m^2+s^2}}\right)\xrightarrow[m=0]{}b\rho.$$
+$$
+\left.\frac{\partial w}{\partial k}\right|_{k=0}=b\!\left(\rho+\frac{-m}{\sqrt{m^2+s^2}}\right)\xrightarrow[m=0]{}b\rho.
+$$
 The ATM **level** is $w(0)=a+b(\rho(-m)+\sqrt{m^2+s^2})$.
 
 #### 2.2 Sticky rules and the minimum-variance delta
@@ -45,27 +49,39 @@ Two benchmark behaviors of the surface as $S$ moves:
 - **Sticky-delta (sticky-moneyness):** $\sigma_{BS}=f(\ln(K/S))$ — the smile translates with the spot; each fixed log-moneyness keeps its vol.
 
 The **skew stickiness ratio** $R_T$ interpolates them,
-$$R_T=\frac{1}{\mathcal S_T}\frac{d\hat\sigma_{F_TT}}{d\ln S_0},\qquad R_T=1:\ \text{sticky-strike},\quad R_T=0:\ \text{sticky-delta}$$
+$$
+R_T=\frac{1}{\mathcal S_T}\frac{d\hat\sigma_{F_TT}}{d\ln S_0},\qquad R_T=1:\ \text{sticky-strike},\quad R_T=0:\ \text{sticky-delta}
+$$
 (Bergomi eq 2.61–2.62). The practical consequence is Hull's **minimum-variance delta**: because vol moves with the spot,
-$$\Delta_{MV}=\Delta_{BSM}+V_{BSM}\,\frac{\partial\,\mathbb{E}[\sigma_{imp}]}{\partial S}<\Delta_{BSM},$$
+$$
+\Delta_{MV}=\Delta_{BSM}+V_{BSM}\,\frac{\partial\,\mathbb{E}[\sigma_{imp}]}{\partial S}<\Delta_{BSM},
+$$
 i.e. the naive BS delta *over-hedges* a short option position when the skew is downward-sloping (Hull §20.5).
 
 #### 2.3 Term structure and total variance (calendar no-arbitrage)
 
 The surface's maturity axis obeys the **convex-order condition** — total implied variance must increase with maturity at fixed moneyness (Bergomi eq 2.14/2.15):
-$$T_1\le T_2\ \Longrightarrow\ T_1\hat\sigma^2(k,T_1)\le T_2\hat\sigma^2(k,T_2)\quad\text{for all fixed }k.$$
+$$
+T_1\le T_2\ \Longrightarrow\ T_1\hat\sigma^2(k,T_1)\le T_2\hat\sigma^2(k,T_2)\quad\text{for all fixed }k.
+$$
 Equivalently, in $(y,T)$ coordinates the *total-variance profiles must not cross*. Slices are interpolated in $T$ by a monotone spline on $w$ (Gatheral uses Stineman monotonic).
 
 #### 2.4 Variance swaps, log contracts and forward variance
 
 A variance swap pays realized variance; its fair strike is replicated by a **log contract** $f(S)=-2\ln S$. The weight $\rho(K)\propto1/K^2$ is exactly the density whose vega is spot-independent ($\rho(K)K\phi(S/K)$ constant; Bergomi eq 3.5). In any *diffusive* model calibrated to the smile,
-$$\hat\sigma_{VS,T}=\hat\sigma_T\qquad\text{(log-contract and VS implied vols coincide)}$$
+$$
+\hat\sigma_{VS,T}=\hat\sigma_T\qquad\text{(log-contract and VS implied vols coincide)}
+$$
 (Bergomi eq 5.13/5.14). The practical evaluation is a **weighted integral of the smile** (Gatheral/Chriss–Morokoff; Bergomi eq 4.21/5.17):
-$$\boxed{\;\hat\sigma_{VS,T}^2=\int_{-\infty}^{\infty}\frac{dy}{\sqrt{2\pi}}e^{-y^2/2}\,\sigma_{BS}^2\!\big(K(y),T\big),\qquad y(K)=\frac{\ln(K/F_T)}{\sigma_{KT}\sqrt T}-\frac{\sigma_{KT}\sqrt T}{2}\;}$$
+$$
+\boxed{\;\hat\sigma_{VS,T}^2=\int_{-\infty}^{\infty}\frac{dy}{\sqrt{2\pi}}e^{-y^2/2}\,\sigma_{BS}^2\!\big(K(y),T\big),\qquad y(K)=\frac{\ln(K/F_T)}{\sigma_{KT}\sqrt T}-\frac{\sigma_{KT}\sqrt T}{2}\;}
+$$
 For a **flat** smile this is *exactly* $\sigma_0^2$; for a skewed/convex smile the VS vol exceeds the ATM vol — a **skew/convexity premium**. Only in non-diffusive (jump/Lévy) models does $\hat\sigma_{VS,T}\ne\hat\sigma_T$; the gap measures implied short-return skewness, $\hat\sigma_{VS,T}^2-\hat\sigma_T^2\simeq-\tfrac13\lambda\langle J^3\rangle$ (Bergomi eq 5.28/5.29).
 
 **Forward variance** is the tradable state variable:
-$$\xi_t^T=\frac{d}{dT}\big[(T-t)\hat\sigma_{VS,T}^2(t)\big],\qquad d\xi_t^T=\lambda_t^T\,dW_t^T\quad(\text{driftless}),$$
+$$
+\xi_t^T=\frac{d}{dT}\big[(T-t)\hat\sigma_{VS,T}^2(t)\big],\qquad d\xi_t^T=\lambda_t^T\,dW_t^T\quad(\text{driftless}),
+$$
 with the universal constraint $\xi_t^t=\sigma_t^2$: **the short end of the forward-variance curve is the instantaneous variance** (Bergomi eq 5.6, 4.30). This is the foundation of forward-variance / Bergomi models (page 06).
 
 ---

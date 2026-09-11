@@ -29,25 +29,35 @@ The practical objective of this page: build the cost-and-risk objective as a **r
 
 **Definition (Perold 1988; Hasbrouck Ch 14, eq 14.1).** Let $n_0$ be the initial (actual) holdings, $v$ the *desired* ("paper") target, $n_1$ the realized final holdings, and $\pi_0,\pi_1$ the initial and terminal benchmark prices. Then
 
-$$IS = (v-n_1)'\pi_1 = \underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution cost}} \;+\; \underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity cost}},$$
+$$
+IS = (v-n_1)'\pi_1 = \underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution cost}} \;+\; \underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity cost}},
+$$
 
 where $p$ is the average realized execution price. **Execution costs are zero-sum across users sharing the benchmark** $\pi_0$ — one trader's slippage is another's gain — while opportunity cost is not a transfer; it is the tracking error of a partially-filled program.
 
 **Effective vs realized cost (Hasbrouck eq 14.2).** With the benchmark midquote $m_t$:
-$$\text{effective cost} = p_t - m_t,\qquad \text{realized cost} = p_t - m_{t+5}, \qquad p_t - m_t = (p_t-m_{t+5}) + (m_{t+5}-m_t),$$
+$$
+\text{effective cost} = p_t - m_t,\qquad \text{realized cost} = p_t - m_{t+5}, \qquad p_t - m_t = (p_t-m_{t+5}) + (m_{t+5}-m_t),
+$$
 and the second term $m_{t+5}-m_t$ is exactly the **price-impact estimate**. SEC Rule 605 (the old "dash-five") mandates this reporting — it is the regulatory shadow of implementation shortfall.
 
 **The AC objective as a random variable (AC eqs 3-5).** For a liquidation $x_0=X,\dots,x_N=0$ with linear impact, the total shortfall is
 
-$$\text{IS}(x) = \underbrace{\sum_{k=1}^N \tau\,x_k\,g\!\left(\tfrac{n_k}{\tau}\right) + \sum_{k=1}^N n_k\,h\!\left(\tfrac{n_k}{\tau}\right)}_{E[x]\ \text{(deterministic)}} \;+\; \underbrace{\sigma\sum_{k=1}^N\sqrt\tau\,\xi_k\,x_k}_{\text{random}}.$$
+$$
+\text{IS}(x) = \underbrace{\sum_{k=1}^N \tau\,x_k\,g\!\left(\tfrac{n_k}{\tau}\right) + \sum_{k=1}^N n_k\,h\!\left(\tfrac{n_k}{\tau}\right)}_{E[x]\ \text{(deterministic)}} \;+\; \underbrace{\sigma\sum_{k=1}^N\sqrt\tau\,\xi_k\,x_k}_{\text{random}}.
+$$
 
 With $g(v)=\gamma v$ and $h(v)=\varepsilon+\eta v/\tau$ the deterministic part evaluates to
 
-$$E[x] = \tfrac12\gamma X^2 + \varepsilon\sum|n_k| + \frac{\tilde\eta}{\tau}\sum n_k^2,\qquad \tilde\eta=\eta-\tfrac12\gamma\tau,$$
+$$
+E[x] = \tfrac12\gamma X^2 + \varepsilon\sum|n_k| + \frac{\tilde\eta}{\tau}\sum n_k^2,\qquad \tilde\eta=\eta-\tfrac12\gamma\tau,
+$$
 
 and because the $\xi_k$ are independent with unit variance and the loading on $\xi_k$ is $\sigma\sqrt\tau\,x_k$,
 
-$$V[x] = \sigma^2\sum_{k=1}^N \tau\,x_k^2 .$$
+$$
+V[x] = \sigma^2\sum_{k=1}^N \tau\,x_k^2 .
+$$
 
 The critical structural fact: **IS is (approximately) Gaussian**, since it is a sum of many independent increments; this is why "mean + variance" is a complete description and why the AC frontier (next pages) is exactly a mean-variance frontier. The permanent-impact term $\tfrac12\gamma X^2$ is *schedule-independent*; only $\frac{\tilde\eta}{\tau}\sum n_k^2$ (temporary) and $V[x]$ (risk) move with the schedule.
 
@@ -100,7 +110,7 @@ errors: mean 741 (0.12%)   sd 6,156 (0.50%)
 
 The Monte Carlo reproduces the closed forms to within sampling error ($O(1/\sqrt{n_{\text{paths}}})$; Hasbrouck's Ch 14-15 formulas are confirmed as descriptors of the realized shortfall).
 
-**Decomposition check.** The $\varepsilon X=\$20{,}000$ fixed cost and $\tfrac12\gamma X^2=\$125{,}000$ permanent impact account for \$145,000 of the \$644,500; the remaining \$499,500 is temporary impact $\frac{\tilde\eta}{\tau}\sum n_k^2=\tilde\eta X^2/T$ — the part a schedule can actually reduce.
+**Decomposition check.** The $\varepsilon X= $ \$20{,}000 fixed cost and \tfrac12\gamma X^2= \$125{,}000 permanent impact account for \$145,000 of the \$644,500; the remaining \$499,500 is temporary impact $\frac{\tilde\eta}{\tau}\sum n_k^2=\tilde\eta X^2/T$ — the part a schedule can actually reduce.
 
 ---
 

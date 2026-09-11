@@ -16,7 +16,9 @@ tags:
 
 The **Markov-switching (MS) model** (Hamilton 1989) is the workhorse of regime detection. The idea: the parameters of a time-series model are the outcome of a discrete-state Markov process you do *not* observe. Concretely, model returns as
 
-$$y_t=\mu_{s_t}+\sigma_{s_t}\,\varepsilon_t,\qquad \varepsilon_t\sim N(0,1),$$
+$$
+y_t=\mu_{s_t}+\sigma_{s_t}\,\varepsilon_t,\qquad \varepsilon_t\sim N(0,1),
+$$
 
 where the regime $s_t\in\{0,1\}$ follows a first-order Markov chain with transition probabilities $P_{ij}$. This one specification does two jobs at once: **(a)** it estimates the regime parameters ($\mu_j,\sigma_j$) and the persistence matrix $P$ by maximum likelihood, and **(b)** it produces, as a byproduct of the same recursion, the filtered probability of being in each regime *right now* — a live, objective bull/bear gauge.
 
@@ -30,11 +32,15 @@ Hamilton's 1989 paper is the canonical template. Applied to quarterly US real GN
 
 **The Markov chain.** Transition matrix $P_{ij}=\mathbb{P}[s_t=j\mid s_{t-1}=i]$ with rows summing to $1$. In Hamilton's GNP application the states are ordered so state $1$ = fast growth: $p\equiv P_{11}=\mathbb{P}[\text{grow}\mid\text{grow}]$, $q\equiv P_{00}$. Two quantities matter throughout:
 
-$$\pi_0=\frac{1-P_{11}}{2-P_{00}-P_{11}}\ \text{(stationary prob.)}, \qquad \mathbb{E}[\text{stay in }i]=\frac{1}{1-P_{ii}} \ \text{(expected duration).}$$
+$$
+\pi_0=\frac{1-P_{11}}{2-P_{00}-P_{11}}\ \text{(stationary prob.)}, \qquad \mathbb{E}[\text{stay in }i]=\frac{1}{1-P_{ii}} \ \text{(expected duration).}
+$$
 
 **The likelihood.** Marginalizing over the unobserved regimes, the sample likelihood is (Hamilton §4.2):
 
-$$\ln L(\theta)=\sum_{t=1}^{T}\ln\Big[\sum_{j\in\{0,1\}} f(y_t\mid s_t=j,\theta)\,\mathbb{P}[s_t=j\mid y_{1:t-1},\theta]\Big],$$
+$$
+\ln L(\theta)=\sum_{t=1}^{T}\ln\Big[\sum_{j\in\{0,1\}} f(y_t\mid s_t=j,\theta)\,\mathbb{P}[s_t=j\mid y_{1:t-1},\theta]\Big],
+$$
 
 with $f(y_t\mid s_t=j)=N(y_t;\mu_j,\sigma_j^2)$. This is *not* a product of independent Gaussian densities — the predictive probabilities couple adjacent observations through the chain.
 
@@ -50,9 +56,11 @@ Starting the filter from the stationary distribution $\pi$ gives probabilities t
 
 - **E-step:** run forward–backward to get responsibilities $\gamma_t(j)=\mathbb{P}[s_t=j\mid y_{1:T}]$.
 - **M-step:** re-estimate, weighted by responsibilities,
-$$\mu_j=\frac{\sum_t\gamma_t(j)y_t}{\sum_t\gamma_t(j)},\qquad
+$$
+\mu_j=\frac{\sum_t\gamma_t(j)y_t}{\sum_t\gamma_t(j)},\qquad
 \sigma_j^2=\frac{\sum_t\gamma_t(j)(y_t-\mu_j)^2}{\sum_t\gamma_t(j)},\qquad
-P_{ij}\propto\sum_{t<T}\gamma_t(i)P_{ij}f(y_{t+1}\mid j).$$
+P_{ij}\propto\sum_{t<T}\gamma_t(i)P_{ij}f(y_{t+1}\mid j).
+$$
 
 **Cross-check against Hamilton (Tsay Ch 4, verified).** Tsay's Markov-switching application to US real GNP (via EM/Hamilton and MCMC/Gibbs) finds **contraction ≈ 3.7 quarters, expansion ≈ 11.3 quarters** — the same structure Hamilton got with a different estimator, reinforcing the result's robustness.
 

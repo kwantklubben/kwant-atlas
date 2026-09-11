@@ -40,25 +40,33 @@ Three steps, three "aha"s:
 
 **Order of accuracy.** A method has order $p$ if its error $E(h)=O(h^p)$, i.e. $\lim_{h\to0}E(h)/h^p$ is finite and non-zero. Concretely: **halving $h$ divides the error by $2^p$.** So an $O(h)$ method gains one binary digit per halving, an $O(h^2)$ method gains two. The Taylor expansion is the engine:
 
-$$f(a+h)=f(a)+hf'(a)+\tfrac{h^2}{2!}f''(a)+\tfrac{h^3}{3!}f'''(a)+\cdots$$
+$$
+f(a+h)=f(a)+hf'(a)+\tfrac{h^2}{2!}f''(a)+\tfrac{h^3}{3!}f'''(a)+\cdots
+$$
 
 (Duffy eq. 6.6), so any difference formula is the exact derivative *plus* a remainder whose leading power is the order.
 
 **The central limit/consistency/stability triangle.** For discretising a well-posed differential problem the governing theorem (Duffy Thm 8.1) is:
 
-$$\underbrace{\text{consistency}}_{\text{truncation error}\to0}\;+\;\underbrace{\text{stability}}_{\|Q^n\|\le K\text{, uniformly}}\;\Longleftrightarrow\;\underbrace{\text{convergence}}_{\|U^n-u\|\to0}.$$
+$$
+\underbrace{\text{consistency}}_{\text{truncation error}\to0}\;+\;\underbrace{\text{stability}}_{\|Q^n\|\le K\text{, uniformly}}\;\Longleftrightarrow\;\underbrace{\text{convergence}}_{\|U^n-u\|\to0}.
+$$
 
 **Lax equivalence:** a *consistent* scheme converges **iff** it is *stable*. Consistency is usually easy (Taylor); **stability is the hard part**, and it depends on the mesh, not just the stencil.
 
 **Conditioning vs stability — keep them apart.** Conditioning $\kappa$ is a property of the *problem*: for $Ax=b$,
 
-$$\frac{\|\delta x\|}{\|x\|}\;\le\;\kappa(A)\,\frac{\|\delta b\|}{\|b\|},\qquad \kappa(A)=\|A\|\,\|A^{-1}\|.$$
+$$
+\frac{\|\delta x\|}{\|x\|}\;\le\;\kappa(A)\,\frac{\|\delta b\|}{\|b\|},\qquad \kappa(A)=\|A\|\,\|A^{-1}\|.
+$$
 
 A large $\kappa$ means the answer is *inherently* sensitive; no algorithm can beat it. Stability is a property of the *algorithm* — whether errors introduced during computation stay bounded. **An algorithm can be numerically stable on an ill-conditioned problem and still return few correct digits** (the digits were destroyed by the conditioning, page 05).
 
 **Round-off vs truncation — the optimal step.** For a difference with truncation $C_1 h^p$ and round-off $C_2\epsilon/h^m$:
 
-$$E(h)\;\approx\;C_1h^p+\frac{C_2\epsilon}{h^m}\quad\Longrightarrow\quad h^*\sim \epsilon^{1/(p+m)},\qquad E(h^*)\sim\epsilon^{\,p/(p+m)}.$$
+$$
+E(h)\;\approx\;C_1h^p+\frac{C_2\epsilon}{h^m}\quad\Longrightarrow\quad h^*\sim \epsilon^{1/(p+m)},\qquad E(h^*)\sim\epsilon^{\,p/(p+m)}.
+$$
 
 For the centred difference ($p=2$ truncation, $m=1$ round-off) this gives $h^*\sim\epsilon^{1/3}\approx6\times10^{-6}$, matching the §3 experiment (floor near $h\approx10^{-5}$); a *one-sided* (first-order, $p=1$) difference would give the larger step $h^*\sim\sqrt{\epsilon}\sim10^{-8}$. For the second difference Conte & de Boor quote $h\approx0.0033$ — the empirical optimum.
 

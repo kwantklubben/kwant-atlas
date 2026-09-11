@@ -28,15 +28,21 @@ The pivot is one substitution: **$\mathrm{VaR}_{99\%}\ \longrightarrow\ \mathrm{
 #### 2.1 The 1996 regime (Basel II market risk)
 
 Per BCBS (1996), capital is
-$$\text{Capital}=\max\!\Big(\mathrm{VaR}_{t-1},\; m\cdot \tfrac1{60}\!\sum_{i=1}^{60}\mathrm{VaR}_{t-i}\Big),\qquad m\ge3,$$
+$$
+\text{Capital}=\max\!\Big(\mathrm{VaR}_{t-1},\; m\cdot \tfrac1{60}\!\sum_{i=1}^{60}\mathrm{VaR}_{t-i}\Big),\qquad m\ge3,
+$$
 with $\mathrm{VaR}$ the **99th percentile, one-tailed, 10-trading-day** measure, observation period $\ge1$ year, and $m$ **plus** an add-on of $0$–$1$ based on backtesting exceptions. RWA $=12.5\times$ capital.
 
 #### 2.2 FRTB: standardised approach (SA)
 
 The SA has three charges, added:
-$$\text{SA}=\text{SBM}+\text{DRC}+\text{RRAO}.$$
+$$
+\text{SA}=\text{SBM}+\text{DRC}+\text{RRAO}.
+$$
 - **SBM (sensitivities-based method):** for each risk class (GIRR, equity, FX, commodity, credit-spread), compute risk-weighted **delta**, **vega**, and **curvature** positions, aggregate within buckets then across buckets by a square-root-of-sum-of-squares correlation formula, and combine
-$$\text{SBM}=\sqrt{\big(\text{delta charge}\big)^2+\big(\text{vega charge}\big)^2+\big(\text{curvature charge}\big)^2}.$$
+$$
+\text{SBM}=\sqrt{\big(\text{delta charge}\big)^2+\big(\text{vega charge}\big)^2+\big(\text{curvature charge}\big)^2}.
+$$
 - **DRC (default risk charge):** jump-to-default capital.
 - **RRAO (residual risk add-on):** for exotic risks not captured above.
 
@@ -45,19 +51,29 @@ $$\text{SBM}=\sqrt{\big(\text{delta charge}\big)^2+\big(\text{vega charge}\big)^
 **(a) Confidence and base horizon (MAR33.2–33.3).** ES is computed **daily** at the **97.5th percentile**, one-tailed. The base liquidity horizon is $T=10$ days.
 
 **(b) Liquidity-horizon scaling (MAR33.4).** ES is computed on the 10-day base and scaled per position along the prescribed liquidity horizons $LH_j\in\{10,20,40,60,120\}$ days:
-$$\boxed{\;\mathrm{ES}=\sqrt{\;\mathrm{ES}_T(P)^2+\sum_{j\ge2}\Big(\mathrm{ES}_T(P,j)\cdot\sqrt{\tfrac{LH_j-LH_{j-1}}{T}}\Big)^2\;}\;}$$
+$$
+\boxed{\;\mathrm{ES}=\sqrt{\;\mathrm{ES}_T(P)^2+\sum_{j\ge2}\Big(\mathrm{ES}_T(P,j)\cdot\sqrt{\tfrac{LH_j-LH_{j-1}}{T}}\Big)^2\;}\;}
+$$
 where $\mathrm{ES}_T(P)$ is total portfolio ES at horizon $T$ over *all* risk factors, and $\mathrm{ES}_T(P,j)$ is ES over only the subset $Q(p_i,j)$ of risk factors with liquidity horizon $\ge LH_j$ (all others held constant). Illiquid risk factors therefore inflate capital through the later $j$ terms.
 
 **(c) Stressed calibration (MAR33.5–33.7).** ES is calibrated to a 12-month stress period (the worst since 2007) using a reduced set of risk factors:
-$$\mathrm{ES}=\mathrm{ES}_{R,S}\times\max\!\Big(1,\ \tfrac{\mathrm{ES}_{F,C}}{\mathrm{ES}_{R,C}}\Big),$$
+$$
+\mathrm{ES}=\mathrm{ES}_{R,S}\times\max\!\Big(1,\ \tfrac{\mathrm{ES}_{F,C}}{\mathrm{ES}_{R,C}}\Big),
+$$
 where $R,S$ = reduced set / stressed observations, $F,C$ = full set / current observations. The ratio is **floored at 1** so stress cannot reduce capital.
 
 **(d) Aggregation and multiplier (MAR33.15, 33.41).** The bank-wide modellable charge mixes the unconstrained and constrained (per-risk-class) ES:
-$$\mathrm{IMCC}=\rho\,\mathrm{IMCC}(C)+(1-\rho)\sum_{i}\mathrm{IMCC}(C_i),\qquad \rho=0.5,$$
+$$
+\mathrm{IMCC}=\rho\,\mathrm{IMCC}(C)+(1-\rho)\sum_{i}\mathrm{IMCC}(C_i),\qquad \rho=0.5,
+$$
 and the eligible-desk capital is
-$$C_A=\max\!\big(\mathrm{IMCC}_{t-1}+\mathrm{SES}_{t-1},\; m_c\cdot\overline{\mathrm{IMCC}}+\overline{\mathrm{SES}}\big),\qquad m_c\ge1.5,$$
+$$
+C_A=\max\!\big(\mathrm{IMCC}_{t-1}+\mathrm{SES}_{t-1},\; m_c\cdot\overline{\mathrm{IMCC}}+\overline{\mathrm{SES}}\big),\qquad m_c\ge1.5,
+$$
 with $m_c=1.5$ plus a $0$–$0.5$ backtesting add-on, plus a separate **SES** charge for non-modellable risk factors (NMRFs), a **DRC** model (99.9%, one-year VaR), and the PLA-test surcharge for amber-zone desks. The eligible total is
-$$\mathrm{IMAG}_A=C_A+\mathrm{DRC},\qquad \text{then}\quad \mathrm{RWA}=12.5\times\text{capital}.$$
+$$
+\mathrm{IMAG}_A=C_A+\mathrm{DRC},\qquad \text{then}\quad \mathrm{RWA}=12.5\times\text{capital}.
+$$
 
 > **Reading the two regimes together.** 1996: capital $=3\times$ a 99%/10-day VaR. FRTB: capital $=1.5\times$ a 97.5% ES *stretched along liquidity horizons and stress-calibrated*. The multiplier looks smaller, but the horizon scaling and stress calibration more than make up for it — the model is *more* conservative where granularity is poor.
 
@@ -139,7 +155,7 @@ SA total (SBM+DRC) = 8,217,887  ->  RWA 102,723,582
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Tail blindness under VaR.** A 99% VaR is one quantile: change the worst loss from $\$3$ to $\$15$ and VaR does not move ([[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]]). Replacing it with ES is the direct fix; the 97.5% level keeps the scale comparable.
+1. **Tail blindness under VaR.** A 99% VaR is one quantile: change the worst loss from \$3 to \$15 and VaR does not move ([[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]]). Replacing it with ES is the direct fix; the 97.5% level keeps the scale comparable.
 2. **A 10-day VaR is too short for illiquid positions.** You cannot exit a credit or structured position in two weeks without moving the market. FRTB's liquidity-horizon scaling assigns 20–120 days by risk-factor category precisely to embed this — the $j\ge2$ terms are the illiquidity tax.
 3. **Backtesting is necessary but not sufficient.** A model can pass daily backtests and still fail a crisis; the 2008 lesson drove the **PLA test** (green/amber/red desk classification), the $0$–$0.5$ backtesting add-on, and the mandatory **stress calibration**. Passing the test is a floor, not a guarantee.
 4. **NMRFs are unavoidable.** Risk factors without enough real price observations cannot be modelled, so they get a punitive stress-scenario charge (SES). A book heavy in esoteric risk factors faces SA-like capital regardless of IMA approval — the granularity limit is real.

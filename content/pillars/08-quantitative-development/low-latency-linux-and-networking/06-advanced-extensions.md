@@ -32,7 +32,9 @@ Three "aha"s:
 
 **Estimator bias from timer overhead.** A single-shot timing of a $\mu$-latency operation wrapped by a timer of cost $\epsilon$ reports $\hat t=\mu+\epsilon$. When $\mu\sim$ tens of ns and $\epsilon\sim$ tens of ns, you measured the clock, not the work. **Batching $B$ operations inside one timed region amortises it:**
 
-$$\hat t_B=\mu+\frac{\epsilon}{B}\xrightarrow[B\to\infty]{}\mu.$$
+$$
+\hat t_B=\mu+\frac{\epsilon}{B}\xrightarrow[B\to\infty]{}\mu.
+$$
 
 **Histogram binning error.** A histogram with bin width $b$ estimates a quantile only to within $b/2$ (the midpoint of the containing bin). The p99.9 of a distribution with a long tail is the most sensitive: for bin width $b$, the worst-case p99.9 error is $b/2$. From the §3 run: 100 ns bins give ~11 ns p99.9 error; 1 000 ns bins give ~61 ns — **coarse bins bias the tail more than the median.**
 

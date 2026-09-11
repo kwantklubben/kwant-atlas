@@ -25,7 +25,9 @@ The one table that frames everything is **in-sample vs out-of-sample Sharpe** ac
 
 **The overfitting gap.** Define the *shrinkage of realized performance* as the drop from in-sample to out-of-sample Sharpe,
 
-$$\Delta\mathrm{SR}=\mathrm{SR}_{\text{in}}^{(T)}-\mathrm{SR}_{\text{out}} .$$
+$$
+\Delta\mathrm{SR}=\mathrm{SR}_{\text{in}}^{(T)}-\mathrm{SR}_{\text{out}} .
+$$
 
 The optimizer maximizes $\mathrm{SR}_{\text{in}}$ by construction, so $\Delta\mathrm{SR}$ is non-negative in expectation and grows as $N/T$ grows. Regularization/robustness is any modification that **reduces the *optimism* of $\mathrm{SR}_{\text{in}}$-based selection** (better generalization) at the cost of a small bias. In bias–variance language (ESL eq. 2.46/7.9) it trades $\mathrm{Bias}^2\uparrow$ for $\mathrm{Var}\downarrow$, netting lower test error.
 
@@ -106,7 +108,7 @@ The scoreboard, read honestly:
 - **Overfitting:** naive MVO's in-sample Sharpe ($1.926$) collapses to $0.630$ out-of-sample — a $\Delta\mathrm{SR}=1.30$ optimism gap, the largest in the table.
 - **Shrinking the covariance helps most here:** $\mathrm{SR}_{\text{out}}=0.776$, because the small-$T$ sample covariance was the most ill-conditioned input. It even *lowers* the in-sample number ($1.926\to1.787$) — a healthy sign that you are no longer fitting noise.
 - **Robustness helps, and stacking helps more:** ellipsoidal robust ($0.623$) barely improves on naive on Sharpe *but* cuts volatility $0.770\to0.592$; combining covariance shrinkage with robustness ($0.751$, gross $7.97$) beats either alone.
-- **Constraints buy survival, not Sharpe:** long-only lands at $0.665$ with $\sim\nicefrac{1}{7}$ the leverage and $\sim\nicefrac{1}{7}$ the volatility. It does not beat naive on Sharpe — but it delivers a deployable portfolio instead of a $77\%$-volatility monster.
+- **Constraints buy survival, not Sharpe:** long-only lands at $0.665$ with $\sim\tfrac{1}{7}$ the leverage and $\sim\tfrac{1}{7}$ the volatility. It does not beat naive on Sharpe — but it delivers a deployable portfolio instead of a $77\%$-volatility monster.
 
 ---
 

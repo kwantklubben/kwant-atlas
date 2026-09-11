@@ -25,25 +25,33 @@ The deepest principle: **a dataset is a function of when you looked at it.** Tod
 
 **Survivorship bias.** Let the true universe return be the average over *all* firms that existed at time $t$, $\bar r = \frac{1}{N}\sum_{i=1}^{N} r_i$, and the survivorship-filtered average be over the sub-universe that still exists today, $\bar r_{\text{surv}} = \frac{1}{M}\sum_{i \in \text{live}} r_i$ with $M < N$. The bias is
 
-$$\text{Bias}_{\text{surv}} = \bar r_{\text{surv}} - \bar r = \frac{1}{M}\sum_{i \in \text{live}} r_i - \frac{1}{N}\sum_{i=1}^{N} r_i \ > 0 ,$$
+$$
+\text{Bias}_{\text{surv}} = \bar r_{\text{surv}} - \bar r = \frac{1}{M}\sum_{i \in \text{live}} r_i - \frac{1}{N}\sum_{i=1}^{N} r_i \ > 0 ,
+$$
 
 strictly positive because the delisted firms are, on average, the losers. It is largest for value and distress screens — the very strategies whose premise is that some firms *do not survive*.
 
 **Point-in-time / look-ahead bias.** With $\mathcal{D}(t)$ the vendor's database as of $t$, an honest signal is a function only of the past:
 
-$$\text{honest: } \sigma_t = f\big(\mathcal{D}(t)\big) \qquad\text{vs.}\qquad \text{leaky: } \sigma_t = f\big(\mathcal{D}(t_{\text{now}})\big).$$
+$$
+\text{honest: } \sigma_t = f\big(\mathcal{D}(t)\big) \qquad\text{vs.}\qquad \text{leaky: } \sigma_t = f\big(\mathcal{D}(t_{\text{now}})\big).
+$$
 
 Any strategy that replaces $\mathcal{D}(t)$ with $\mathcal{D}(t_{\text{now}})$ has substituted the restated, backfilled, survivor-filtered record for what was actually knowable — the arithmetic cost of which is precisely the restatement gap in [[fundamentals-accounting/data-sources-and-corporate-data/01-from-zero-intuition|01 §2]].
 
 **Restatement gap.** For a line item $x$ with as-filed value $x_f$ and final restated value $x_r$,
 
-$$\text{gap} = \frac{x_r - x_f}{x_f}, \qquad\text{and the sign of the gap is not random:}$$
+$$
+\text{gap} = \frac{x_r - x_f}{x_f}, \qquad\text{and the sign of the gap is not random:}
+$$
 
 restatements cluster on the *downside* (write-offs, revenue reversals), so a backtest built only on restated $x_r$ overstates how bad things looked in real time and, symmetrically, overstates how predictable the trouble was.
 
 **API / coverage arithmetic.** Pulling a universe of $N$ firms one request at a time at the SEC's advised ceiling $r = 10$ req/s costs at least $N / r$ seconds:
 
-$$t_{\min} = \frac{N}{r} = \frac{5000}{10} = 500\ \text{s} \approx 8.3\ \text{minutes}\quad\text{before throttling, retries, or backoff.}$$
+$$
+t_{\min} = \frac{N}{r} = \frac{5000}{10} = 500\ \text{s} \approx 8.3\ \text{minutes}\quad\text{before throttling, retries, or backoff.}
+$$
 
 The bulk/frames route collapses that to a handful of downloads — the practical difference between a pipeline and a denial-of-service against yourself.
 

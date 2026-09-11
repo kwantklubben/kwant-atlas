@@ -34,7 +34,9 @@ The workhorse of a trading engine is the **SPSC ring buffer**: one producer, one
 
 **The ring and its invariants.** Array $B$ of capacity $C=2^k$ (power of two ⇒ wrapping is a bit-mask, no division), monotonic unsigned counters `head` (consumer) and `tail` (producer):
 
-$$\text{head} \le \text{tail}, \qquad \text{occupancy} = \text{tail}-\text{head} \le C, \qquad \text{slot} = \text{index}\ \&\ (C-1).$$
+$$
+\text{head} \le \text{tail}, \qquad \text{occupancy} = \text{tail}-\text{head} \le C, \qquad \text{slot} = \text{index}\ \&\ (C-1).
+$$
 
 Monotonic counters never wrap, so "full" ($\text{tail}-\text{head}=C$) and "empty" ($\text{tail}=\text{head}$) are distinguishable without wasting a slot. Correctness requires **release/acquire** ordering: the producer must publish the payload *before* the atomic store of `tail` (store-release), and the consumer must load `tail` with acquire semantics *before* reading the payload — otherwise a weakly-ordered CPU may make the consumer see the new `tail` before the payload bytes, reading garbage.
 

@@ -28,17 +28,23 @@ The objective is three ideas:
 
 **Count-based embeddings = SVD of a co-occurrence matrix.** The classical route (Mikolov-adjacent; formalized as the PMI–SVD equivalence by Levy & Goldberg, 2014). From a corpus build the word–context co-occurrence matrix $M\in\mathbb{R}^{V\times V}$, then the **positive pointwise mutual information (PPMI)** matrix
 
-$$\text{PPMI}(t,c)=\max\Big(0,\ \log\frac{P(t,c)}{P(t)P(c)}\Big),$$
+$$
+\text{PPMI}(t,c)=\max\Big(0,\ \log\frac{P(t,c)}{P(t)P(c)}\Big),
+$$
 
 which up-weights pairs that co-occur more than chance. The truncated SVD
 
-$$M \approx U_k \Sigma_k V_k^\top,\qquad \mathbf{v}_t = \big(U_k\Sigma_k\big)_{t,:}\in\mathbb{R}^k,$$
+$$
+M \approx U_k \Sigma_k V_k^\top,\qquad \mathbf{v}_t = \big(U_k\Sigma_k\big)_{t,:}\in\mathbb{R}^k,
+$$
 
 gives each word a $k$-dimensional vector. Words with similar contexts land near each other because they share rows of $M$. This is the *learned* ancestor of today's word2vec/fastText vectors, and it runs on numpy alone — no training loop.
 
 **Attention (the transformer primitive).** For tokens with query/key/value matrices $Q=W_QX$, $K=W_KX$, $V=W_VX$,
 
-$$\text{Attention}(Q,K,V)=\text{softmax}\Big(\frac{QK^\top}{\sqrt{d_k}}\Big)V,$$
+$$
+\text{Attention}(Q,K,V)=\text{softmax}\Big(\frac{QK^\top}{\sqrt{d_k}}\Big)V,
+$$
 
 so each token's output is a *context-weighted* sum of all tokens' values — the weights $\propto e^{(q_i\cdot k_j)/\sqrt{d_k}}$ are large exactly where token $i$ "matches" token $j$. This is how a contextual representation of a word is formed: its vector depends on the whole sentence, which is precisely what the static bag/embedding cannot do. (Full formal treatment: Vaswani et al. 2017; Jurafsky & Martin Ch 11.)
 

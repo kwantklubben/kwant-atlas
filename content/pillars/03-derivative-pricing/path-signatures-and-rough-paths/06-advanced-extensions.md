@@ -40,7 +40,9 @@ The practical objective: know the expected signature and its uniqueness property
 
 For a random path $X$ (a stochastic process over $[0,T]$), the **expected signature** is
 
-$$\mathbb E\big[S(X)\big]=\Big(\mathbb E[S^{w}(X)]\Big)_{w},\qquad \mathbb E[S^w(X)]=\int S^w(x)\,d\mu(x),$$
+$$
+\mathbb E\big[S(X)\big]=\Big(\mathbb E[S^{w}(X)]\Big)_{w},\qquad \mathbb E[S^w(X)]=\int S^w(x)\,d\mu(x),
+$$
 
 where $\mu$ is the law of $X$. For a 1D Brownian motion, because $S^{1^k}=B_T^k/k!$, the expected signature is determined by the Gaussian moments: odd levels vanish and $\mathbb E[S^{11}]=T/2$, $\mathbb E[S^{1111}]=T^2/8$ — the exact values the §3 Monte Carlo reproduces. The central result (Chevyrev–Lyons 2016) is that, under mild moment conditions, **the expected signature characterises the law**: $\mathbb E[S(X)]=\mathbb E[S(Y)]\Rightarrow X\triangleq Y$ (the laws are equal). It is the path-space analogue of "the moment generating function determines the distribution" — and it is why the expected signature, not ad hoc summary statistics, is the *right* description of a path ensemble for pricing and hedging.
 
@@ -48,7 +50,9 @@ where $\mu$ is the law of $X$. For a 1D Brownian motion, because $S^{1^k}=B_T^k/
 
 For two paths $X,Y$, the **signature kernel** is the inner product of their truncated-or-full signatures:
 
-$$\boxed{\;K(X,Y)=\langle S(X),S(Y)\rangle=\sum_{w} S^w(X)\,S^w(Y)\;}$$
+$$
+\boxed{\;K(X,Y)=\langle S(X),S(Y)\rangle=\sum_{w} S^w(X)\,S^w(Y)\;}
+$$
 
 The sum runs over all words $w$ (in practice truncated at some level $N$). It is symmetric and **positive semi-definite** (it is a Gram-matrix of the signature feature map), so it is a valid kernel; §3 verifies the Cauchy–Schwarz inequality numerically. Because the signature is *reparametrisation-invariant* and *complete*, $K$ is a natural similarity between paths — two paths are close iff their ordered geometry (increments *and* areas *and* higher shape) is close. Computationally the kernel avoids materialising the (huge) truncated signature explicitly: it is evaluated recursively in $\mathcal O(T_1 T_2)$ time (Kiraly–Oberhauser 2019). This is the practical enabler for kernel methods on thousands of paths.
 

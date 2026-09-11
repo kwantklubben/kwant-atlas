@@ -34,7 +34,9 @@ The through-line is the same "do less work" law from [[pillars/02-algorithmic-hf
 
 A two-socket box has two memory controllers. A core on socket 0 accessing memory attached to socket 1 crosses the interconnect (QPI/UPI), costing roughly $+40$–$80$ ns per access *in addition* to the ~60–100 ns DRAM cost. If a fraction $f$ of a thread's accesses are remote, the effective memory latency is
 
-$$\mathbb{E}[\text{lat}] \approx (1-f)\,(60\text{--}100\,\text{ns}) + f\,(100\text{--}180\,\text{ns}).$$
+$$
+\mathbb{E}[\text{lat}] \approx (1-f)\,(60\text{--}100\,\text{ns}) + f\,(100\text{--}180\,\text{ns}).
+$$
 
 At $f=1$ the tax is ~80 % on *every* load — as large as moving a struct from L3 to DRAM. The fix is threefold: **pin the thread** (`sched_setaffinity`/`numactl`) to a core on the NIC's socket, **allocate the hot-path memory on that node** (`numactl --membind`/`mbind`), and make sure the two agree. Verify with `/sys/devices/system/node/node*/numastat` and per-node counters.
 

@@ -30,7 +30,9 @@ The five failures, in one line each:
 
 **Bulk classification error, quantified.** BVC assigns $V_\tau^B=\sum Z(\Delta P_i/\sigma_{\Delta P})$. If a bucket's price change $\Delta P_i$ is *not* driven by informed flow but by volatility or a mechanical trend, the classification reads it as imbalance:
 
-$$|V_\tau^S-V_\tau^B|=\left|\sum_i\left(1-2Z\!\left(\tfrac{\Delta P_i}{\sigma_{\Delta P}}\right)\right)\right|,$$
+$$
+|V_\tau^S-V_\tau^B|=\left|\sum_i\left(1-2Z\!\left(\tfrac{\Delta P_i}{\sigma_{\Delta P}}\right)\right)\right|,
+$$
 
 which grows as $|\Delta P_i|/\sigma_{\Delta P}$ grows. **Any** large price move — informed or not — inflates the measured imbalance and hence VPIN.
 

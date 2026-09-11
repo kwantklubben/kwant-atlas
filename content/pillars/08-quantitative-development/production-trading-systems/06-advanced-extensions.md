@@ -35,11 +35,15 @@ The correct framing is a **trade-off surface**, not a binary "HA on/off": you ch
 
 With mean time between failures MTBF and mean time to repair/reprovision MTTR (same units),
 
-$$A = \frac{\text{MTBF}}{\text{MTBF}+\text{MTTR}}, \qquad \text{downtime per year} = (1-A)\cdot 8760\ \text{h}.$$
+$$
+A = \frac{\text{MTBF}}{\text{MTBF}+\text{MTTR}}, \qquad \text{downtime per year} = (1-A)\cdot 8760\ \text{h}.
+$$
 
 For $N$ replicas whose failures are *statistically independent*, availability is the parallel-redundancy product:
 
-$$A_N = 1 - (1-A)^N.$$
+$$
+A_N = 1 - (1-A)^N.
+$$
 
 The "nines" translation: $A=0.999$ is ~8.8 h/yr down; $A=0.9999$ is ~53 min/yr; $A=0.99999$ is ~5.3 min/yr.
 
@@ -47,7 +51,9 @@ The "nines" translation: $A=0.999$ is ~8.8 h/yr down; $A=0.9999$ is ~53 min/yr; 
 
 Independence is the lie in $A_N$. Let a fraction $f$ of outage-causing failures be **common cause** (a bug that affects both replicas; a shared dependency like an exchange gateway or a DNS provider; a config push; a correlated market-data outage). Such outages are *not* reduced by redundancy, so
 
-$$\text{downtime}_N \approx (1-A)\Big[f + (1-f)(1-A)^{N-1}\Big].$$
+$$
+\text{downtime}_N \approx (1-A)\Big[f + (1-f)(1-A)^{N-1}\Big].
+$$
 
 As $f\to1$ the redundancy does nothing. Empirically, common causes dominate: this is why real shops spend as much effort on *blast-radius* reduction (independent gateways, staggered deploys, circuit breakers) as on replica count. **Redundancy is a defence against hardware, not against software.**
 
@@ -59,15 +65,21 @@ The only sound way to prevent split brain is a **majority quorum** for leadershi
 
 With heartbeat interval $h$ and a "declare the peer dead after $k$ consecutive missed beats" policy, the timeout is $\tau = kh$ and the expected **detection** time for a failure occurring uniformly in the beat cycle is
 
-$$\mathbb{E}[\text{detect}] = \frac{\tau}{2} + \frac{h}{2}.$$
+$$
+\mathbb{E}[\text{detect}] = \frac{\tau}{2} + \frac{h}{2}.
+$$
 
 Total recovery is detection plus **promotion** (fence the old primary, replay the journal, warm caches, reconnect the sessions, reconcile):
 
-$$\text{RTO} = \mathbb{E}[\text{detect}] + t_{\text{promote}},$$
+$$
+\text{RTO} = \mathbb{E}[\text{detect}] + t_{\text{promote}},
+$$
 
 and the state loss is bounded by the replication lag:
 
-$$\text{RPO} \le \max(\text{replication lag},\ \text{journal flush interval}).$$
+$$
+\text{RPO} \le \max(\text{replication lag},\ \text{journal flush interval}).
+$$
 
 The tension is explicit in $\tau=kh$: a *small* $\tau$ gives a small RTO but raises the **false-failover rate** (a GC pause or a transient network stall looks like death), and a false failover means a second primary — precisely the split brain that fencing exists to survive. The standard resolution is a heartbeat timeout tuned to $\sim$3–5 missed beats *plus* an independent failure detector (a gossip/quorum view) rather than a single peer's timeout.
 

@@ -25,13 +25,17 @@ The practical objective of this page is threefold: (1) *diagonalize* a covarianc
 
 **Spectral theorem (Strang Ch 6; Horn & Johnson Thm 2.5.6).** If $\Sigma=\Sigma'$ is real symmetric, then there exists an orthogonal $Q$ ($Q'Q=I$) and a diagonal $\Lambda=\text{diag}(\lambda_1,\dots,\lambda_n)$ such that
 
-$$\Sigma=Q\Lambda Q'=\sum_{i=1}^n \lambda_i\,q_i q_i'.$$
+$$
+\Sigma=Q\Lambda Q'=\sum_{i=1}^n \lambda_i\,q_i q_i'.
+$$
 
 Three consequences: (a) all eigenvalues are real; (b) eigenvectors of *distinct* eigenvalues are orthogonal; (c) the $q_i$ can be chosen orthonormal. For covariance: $\lambda_i\ge0$ and $w'\Sigma w=\sum_i\lambda_i(w'q_i)^2$.
 
 **PSD as "no negative-variance portfolio".** Because $\text{Var}(w'R)=w'\Sigma w$, and variance can't be negative:
 
-$$w'\Sigma w\ge0\ \ \forall w \iff \lambda_i\ge0\ \ \forall i \iff \Sigma\ \text{positive semidefinite}.$$
+$$
+w'\Sigma w\ge0\ \ \forall w \iff \lambda_i\ge0\ \ \forall i \iff \Sigma\ \text{positive semidefinite}.
+$$
 
 If any $\lambda_i<0$, some weight vector has negative "variance" — a mathematical impossibility — which makes optimizers diverge and Cholesky fail ([[foundations/linear-algebra-and-matrices/03-linear-systems-and-decompositions|03]]).
 

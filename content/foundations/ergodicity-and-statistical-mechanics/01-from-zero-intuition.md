@@ -21,17 +21,23 @@ Imagine a coin game. Heads: your money is multiplied by $1.5$. Tails: multiplied
 
 Do the arithmetic the textbook way — the **ensemble average** across many players after one round:
 
-$$\mathbb{E}[W_1/W_0] = \tfrac12(1.5) + \tfrac12(0.6) = 0.75 + 0.30 = 1.05.$$
+$$
+\mathbb{E}[W_1/W_0] = \tfrac12(1.5) + \tfrac12(0.6) = 0.75 + 0.30 = 1.05.
+$$
 
 A $+5\%$ expected gain per round. Positive edge. Play it, right?
 
 Now play it **once**, as one person, and repeat. Half the time you multiply by $1.5$; half the time by $0.6$. Over $N$ rounds your money is
 
-$$W_N = W_0\,(1.5)^{H}(0.6)^{T}, \qquad H+T=N.$$
+$$
+W_N = W_0\,(1.5)^{H}(0.6)^{T}, \qquad H+T=N.
+$$
 
 Take logs and divide by $N$ — the **time average** growth rate of your actual money:
 
-$$g = \lim_{N\to\infty}\frac1N\ln\frac{W_N}{W_0} = \tfrac12\ln 1.5 + \tfrac12\ln 0.6 \approx -0.0527.$$
+$$
+g = \lim_{N\to\infty}\frac1N\ln\frac{W_N}{W_0} = \tfrac12\ln 1.5 + \tfrac12\ln 0.6 \approx -0.0527.
+$$
 
 **That is $-5.27\%$ per round: a guaranteed, near-sure march toward zero.** Same game. Positive ensemble return, negative individual experience. That gap *is* ergodicity breaking.
 
@@ -57,15 +63,21 @@ The process is **ergodic** (for the mean) iff $\langle x(t)\rangle = \overline{x
 
 **Why money spoils it.** Wealth compounds: $W_N = W_0\prod_{i=1}^N (1+R_i)$. The additive object is $\ln W_N = \ln W_0 + \sum_i \ln(1+R_i)$ — *that* sum is additive, so *it* obeys the law of large numbers:
 
-$$\frac1N\ln\frac{W_N}{W_0} \xrightarrow{\text{a.s.}} \mathbb{E}[\ln(1+R)] = g \quad\text{(the time-average growth rate).}$$
+$$
+\frac1N\ln\frac{W_N}{W_0} \xrightarrow{\text{a.s.}} \mathbb{E}[\ln(1+R)] = g \quad\text{(the time-average growth rate).}
+$$
 
 But the ensemble average of wealth is a different animal, governed by the **arithmetic** return:
 
-$$\mathbb{E}[W_N/W_0] = \prod_i \mathbb{E}[1+R_i] = \mathbb{E}[1+R]^{\,N} = e^{N\ln\mathbb{E}[1+R]}.$$
+$$
+\mathbb{E}[W_N/W_0] = \prod_i \mathbb{E}[1+R_i] = \mathbb{E}[1+R]^{\,N} = e^{N\ln\mathbb{E}[1+R]}.
+$$
 
 So the ensemble grows at rate $\ln\mathbb{E}[1+R]$ while the typical path grows at rate $\mathbb{E}[\ln(1+R)]$, and **Jensen's inequality** forces
 
-$$\mathbb{E}[\ln(1+R)] \;\le\; \ln\mathbb{E}[1+R],$$
+$$
+\mathbb{E}[\ln(1+R)] \;\le\; \ln\mathbb{E}[1+R],
+$$
 
 with equality iff $R$ is constant. The gap is exactly the "volatility drag" of [[foundations/ergodicity-and-statistical-mechanics/03-multiplicative-growth|page 03]]. The process $W_t$ is thus **non-ergodic whenever returns are random.**
 

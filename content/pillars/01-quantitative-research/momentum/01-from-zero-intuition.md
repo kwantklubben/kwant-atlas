@@ -29,9 +29,13 @@ A first "aha": the one-month and 12-month horizons are **opposite** trades. The 
 ### 2. Mathematical Ground Truth & Derivations
 
 **Return continuation as positive autocorrelation.** Consider a stationary return process with first-order autocorrelation $\rho_1>0$:
-$$r_t = \mu + \rho_1(r_{t-1}-\mu) + \varepsilon_t, \qquad \varepsilon_t\sim\text{iid}(0,\sigma^2).$$
+$$
+r_t = \mu + \rho_1(r_{t-1}-\mu) + \varepsilon_t, \qquad \varepsilon_t\sim\text{iid}(0,\sigma^2).
+$$
 The conditional expectation of tomorrow's return given today's deviation is
-$$\mathbb{E}[r_{t+1}\mid r_t] = \mu + \rho_1(r_t-\mu).$$
+$$
+\mathbb{E}[r_{t+1}\mid r_t] = \mu + \rho_1(r_t-\mu).
+$$
 When $\rho_1>0$, an above-average past return raises the expected *future* return — continuation. A simple long-short bet $+\text{sign}(r_t-\mu)$ earns $\mathbb{E}[\text{sign}(r_t-\mu)(r_{t+1}-\mu)] = \rho_1\,\mathbb{E}|r_t-\mu| > 0$ per period, provided $\rho_1>0$.
 
 **The horizon structure.** Empirical autocorrelation is not constant:
@@ -42,9 +46,13 @@ When $\rho_1>0$, an above-average past return raises the expected *future* retur
 So the exploitable signal is a *band-passed* version of the past — include months 2–12, **exclude month 1**.
 
 **Cross-sectional ranking signal.** For a universe of $N$ assets, define the skip-month cumulative return
-$$R_i^{(12\text{-}1)} = \prod_{k=2}^{12}\big(1+r_{i,t-k}\big) - 1,$$
+$$
+R_i^{(12\text{-}1)} = \prod_{k=2}^{12}\big(1+r_{i,t-k}\big) - 1,
+$$
 then rank and map ranks to dollar-neutral weights
-$$w_i = \frac{\text{rank}_i-\frac{N+1}{2}}{\sum_j\big|\text{rank}_j-\frac{N+1}{2}\big|}, \qquad \text{with}\ \sum_i w_i = 0,\ \ \sum_i |w_i|=1.$$
+$$
+w_i = \frac{\text{rank}_i-\frac{N+1}{2}}{\sum_j\big|\text{rank}_j-\frac{N+1}{2}\big|}, \qquad \text{with}\ \sum_i w_i = 0,\ \ \sum_i |w_i|=1.
+$$
 The zero-sum weights make the portfolio **dollar-neutral** (no net market exposure by construction) and unit-gross (100% gross leverage). The sub-page [[pillars/01-quantitative-research/momentum/02-cross-sectional-momentum|02 · Cross-Sectional Momentum]] works this machinery, and [[pillars/01-quantitative-research/momentum/03-time-series-momentum|03 · Time-Series Momentum]] builds the absolute/own-asset version.
 
 ---

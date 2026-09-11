@@ -31,14 +31,20 @@ The practical objective of this page: the exact delta–gamma math, a clean demo
 **Delta-normal (linear, Hull Ch 22 eq. 22.6).** For $N$ factors, $\Delta P\approx\sum_i S_i\delta_i\Delta x_i = \delta^T\Delta S$, $a_i=S_i\delta_i$. Suitable only when the portfolio is delta-linear in the factors.
 
 **Delta–gamma (quadratic, Hull Ch 22 eq. 22.7/22.8; Glasserman Ch 9 eq. 9.2).** Add the curvature:
-$$\Delta V \approx \frac{\partial V}{\partial t}\Delta t + \delta^T\Delta S + \tfrac12\Delta S^T\Gamma\Delta S,$$
+$$
+\Delta V \approx \frac{\partial V}{\partial t}\Delta t + \delta^T\Delta S + \tfrac12\Delta S^T\Gamma\Delta S,
+$$
 $\delta_i=\partial V/\partial S_i$, $\Gamma_{ij}=\partial^2V/\partial S_i\partial S_j$ (the cross-gammas matter). For one factor this is the familiar
-$$\Delta V\approx\Theta\Delta t + \delta\,\Delta S + \tfrac12\gamma\,(\Delta S)^2.$$
+$$
+\Delta V\approx\Theta\Delta t + \delta\,\Delta S + \tfrac12\gamma\,(\Delta S)^2.
+$$
 
 The *point*: $\gamma>0$ (long options) means the P&L bends, so a **linear** delta-normal VaR systematically misstates the risk — it ignores that the position gains/loses convexly as the move grows.
 
 **Diagonalizing to a sum of quadratic forms (Glasserman Ch 9 §9.2).** Write $\Delta S=CZ$, $CC^T=\Sigma$, and diagonalize $-\tfrac12C^T\Gamma C=\Lambda=\text{diag}(\lambda_1,\dots,\lambda_m)$. Then the loss is a quadratic in independent normals
-$$L\approx Q=a+\sum_{j=1}^{m}\big(b_jZ_j+\lambda_jZ_j^2\big),\qquad a=-\Theta\Delta t.$$
+$$
+L\approx Q=a+\sum_{j=1}^{m}\big(b_jZ_j+\lambda_jZ_j^2\big),\qquad a=-\Theta\Delta t.
+$$
 Its moment-generating function is closed form, which (i) gives a fast VaR via inversion, and (ii) is the *exact* sampling engine for importance sampling in the tail (Glasserman §9.2; Table 9.1: CV≈2–5×, IS≈7–27×, stratified-IS up to ~173× variance reduction for tail probabilities).
 
 **Where it helps / where it doesn't.** For mild convexity (a near-ATM FX put, one day), delta-gamma reproduces full-revaluation VaR almost exactly; delta-only is off a few percent. For **delta-neutral, gamma-heavy** positions (a long straddle: $\delta\approx0$ but big $\gamma$), delta-only claims "no risk" while the realized tail risk is real — exactly the case full revaluation and delta–gamma exist to catch (see the failure mode in 05/Reference).
@@ -46,11 +52,15 @@ Its moment-generating function is closed form, which (i) gives a fast VaR via in
 #### 2.2 Backtesting VaR — Kupiec POF and Christoffersen independence
 
 **Kupiec (1995) Proportion-of-Failures (POF).** Let $x$ be breaches ($L_t>\text{VaR}_\alpha$) over $T$ days, expected rate $p=1-\alpha$ under $H_0$. The likelihood-ratio statistic
-$$\text{LR}_{\text{POF}}=-2\ln\!\Big[\tfrac{(1-p)^{T-x}p^{x}}{(1-\hat p)^{T-x}\hat p^{x}}\Big]\sim\chi^2_1,\qquad \hat p=\tfrac{x}{T}.$$
+$$
+\text{LR}_{\text{POF}}=-2\ln\!\Big[\tfrac{(1-p)^{T-x}p^{x}}{(1-\hat p)^{T-x}\hat p^{x}}\Big]\sim\chi^2_1,\qquad \hat p=\tfrac{x}{T}.
+$$
 Reject at 5% if $\text{LR}_{\text{POF}}>3.841$ (the $\chi^2_1$ 95% point). This only checks the *rate* — it is blind to ordering.
 
 **Christoffersen (1998) independence.** A model can pass Kupiec yet have its breaches **clustered** (all in one crash week) — the worst failure mode there is. Build the $2\times2$ transition count matrix $\{n_{ij}\}$ of the violation sequence ($0\to0,0\to1,1\to0,1\to1$). Let $p_0=n_{01}/(n_{00}+n_{01})$, $p_1=n_{11}/(n_{10}+n_{11})$, and overall $p=(n_{01}+n_{11})/(n_{00}+n_{01}+n_{10}+n_{11})$. The independence LR
-$$\text{LR}_{\text{ind}}=-2\Big[(n_{00}+n_{10})\log(1-p)+(n_{01}+n_{11})\log p-\;n_{00}\log(1-p_0)-n_{01}\log p_0-n_{10}\log(1-p_1)-n_{11}\log p_1\Big]\sim\chi^2_1.$$
+$$
+\text{LR}_{\text{ind}}=-2\Big[(n_{00}+n_{10})\log(1-p)+(n_{01}+n_{11})\log p-\;n_{00}\log(1-p_0)-n_{01}\log p_0-n_{10}\log(1-p_1)-n_{11}\log p_1\Big]\sim\chi^2_1.
+$$
 Reject at 5% if $>3.841$. Combined **(conditional) coverage = $\text{LR}_{\text{POF}}+\text{LR}_{\text{ind}}\sim\chi^2_2$** catches both wrong-rate *and* clustering.
 
 **Regulatory reading (BCBS 1996).** Supervisors grade internal-models VaR by breaches: green (≤4 exceptions in 250) to red (≥10) with escalating capital multipliers — the frequency test mapped to a capital add-on. Modern FRTB (2019) moves market-risk capital from 99% VaR to **97.5% Expected Shortfall** for that exact reason (VaR's non-subadditivity and tail blindness) — see [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]].

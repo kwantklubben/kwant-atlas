@@ -31,17 +31,23 @@ Two distinct problems get conflated and must be separated:
 
 **Regime shift as a broken linear relationship.** Suppose in regime A the target follows
 
-$$y_t = \beta_A\,x_t + \varepsilon_t,\qquad \varepsilon_t\sim\mathcal{N}(0,\sigma_A^2),$$
+$$
+y_t = \beta_A\,x_t + \varepsilon_t,\qquad \varepsilon_t\sim\mathcal{N}(0,\sigma_A^2),
+$$
 
 and after a structural break at time $\tau$ the relationship becomes $y_t=\beta_B x_t+\varepsilon_t$ with $\beta_B\neq\beta_A$ (a sign flip is $\beta_B=-\beta_A$) and possibly $\sigma_B^2\neq\sigma_A^2$ (volatility break). A model fit on $t<\tau$ has test error on $t\ge\tau$ of
 
-$$\mathbb{E}\big[(y_t-\hat\beta_A x_t)^2\big]=\sigma_B^2+(\beta_A-\beta_B)^2\,\mathbb{E}[x_t^2],$$
+$$
+\mathbb{E}\big[(y_t-\hat\beta_A x_t)^2\big]=\sigma_B^2+(\beta_A-\beta_B)^2\,\mathbb{E}[x_t^2],
+$$
 
 so even a *perfectly* fit in-sample model carries a $(\beta_A-\beta_B)^2\mathbb{E}[x_t^2]$ misspecification term out-of-sample. **A sign flip turns a formerly predictive model into an actively anti-predictive one.**
 
 **Non-stationarity of the level.** Prices and log-prices are random walks (I(1)): their variance grows linearly with time, so no model trained on the level generalizes. This is why features must be constructed on *stationary* transforms. The clean solution is **fractional differentiation** (AFML Ch. 5): instead of the harsh integer difference $d=1$ (which destroys long memory by wiping out the level's persistence), apply a fractional difference $0<d<1$ that removes just enough non-stationarity to reach stationarity while keeping the maximum amount of memory. The differencing weights are
 
-$$w_k=(-1)^k\binom{d}{k},\qquad \binom{d}{k}=\prod_{i=1}^{k}\frac{d-i+1}{i},$$
+$$
+w_k=(-1)^k\binom{d}{k},\qquad \binom{d}{k}=\prod_{i=1}^{k}\frac{d-i+1}{i},
+$$
 
 giving the fractionally-differenced feature $X_t^{(d)}=\sum_{k=0}^{l}w_k X_{t-k}$. With $d=0$ nothing is removed (raw, non-stationary); with $d=1$ we recover full differencing (stationary but memoryless). The sweet spot sits between.
 

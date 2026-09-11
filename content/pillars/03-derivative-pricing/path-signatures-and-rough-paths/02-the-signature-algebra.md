@@ -35,19 +35,25 @@ The practical objective: be able to (a) state Chen's identity and the shuffle id
 
 Let $X^{(1)}$ and $X^{(2)}$ be two paths, and $X=X^{(1)}\ast X^{(2)}$ their concatenation (run $X^{(1)}$, then $X^{(2)}$ shifted to start where $X^{(1)}$ ended). Then, in the tensor algebra $T((\mathbb R^d))$,
 
-$$\boxed{\;S(X^{(1)}\ast X^{(2)})=S(X^{(1)})\otimes S(X^{(2)})\;}$$
+$$
+\boxed{\;S(X^{(1)}\ast X^{(2)})=S(X^{(1)})\otimes S(X^{(2)})\;}
+$$
 
 i.e. for every word $w$,
 
-$$S^w(X^{(1)}\ast X^{(2)})=\sum_{uv=w} S^{u}(X^{(1)})\,S^{v}(X^{(2)}),$$
+$$
+S^w(X^{(1)}\ast X^{(2)})=\sum_{uv=w} S^{u}(X^{(1)})\,S^{v}(X^{(2)}),
+$$
 
 where the sum runs over all *splits* of $w$ into a prefix $u$ and a suffix $v$ (both possibly empty). The proof is a one-liner: the region $0<t_1<\cdots<t_k<T$ splits, relative to the join point, into a "front part" where some $t$'s lie in $X^{(1)}$'s time and the rest in $X^{(2)}$'s time; the letters in the front part form the prefix $u$ and those in the back part the suffix $v$, and the double region integral separates. Chen's identity is why "compute the signature of a whole path" is never done brute-force: it is assembled from the signatures of its segments (the `S_word` method in §3 is exactly this).
 
 #### 2.2 The shuffle product identity
 
-The **shuffle** of two words $u=i_1\cdots i_a$ and $v=j_1\cdots j_b$, written $u\shuffle v$, is the multiset of all length-$(a+b)$ words that interleave $u$ and $v$ while preserving the internal order of each — so it has $\binom{a+b}{a}$ terms. The second structural law is that *ordinary products of signature coefficients are signature coefficients over shuffles*:
+The **shuffle** of two words $u=i_1\cdots i_a$ and $v=j_1\cdots j_b$, written $u\sqcup v$, is the multiset of all length-$(a+b)$ words that interleave $u$ and $v$ while preserving the internal order of each — so it has $\binom{a+b}{a}$ terms. The second structural law is that *ordinary products of signature coefficients are signature coefficients over shuffles*:
 
-$$\boxed{\;S^u(X)\,S^v(X)=\sum_{w\in\,u\shuffle v}S^{w}(X)\;}$$
+$$
+\boxed{\;S^u(X)\,S^v(X)=\sum_{w\in\,u\sqcup v}S^{w}(X)\;}
+$$
 
 It follows from Fubini: for geometric (Stratonovich / rough-path) integrals the product of two iterated integrals equals the integral over the product of the ordered simplexes, which decomposes into the disjoint ordered regions indexed by the shuffles. Its practical content: the algebra of signature *features* under pointwise multiplication is closed — a fact with a name, *universality* (the linear span is a dense algebra of continuous functionals, §06).
 

@@ -36,7 +36,9 @@ A `T2`-caplet resetting at `T1` pays $\tau(F(T_1;T_1,T_2)-K)^+$ and prices as $P
 
 The implied density is recovered by **Breeden–Litzenberger** (BM eq. 9.4):
 
-$$\frac{\partial^2}{\partial K^2}Cpl^{MKT}(0,T_1,T_2,K)=P(0,T_2)\,\tau\, p_2(K),$$
+$$
+\frac{\partial^2}{\partial K^2}Cpl^{MKT}(0,T_1,T_2,K)=P(0,T_2)\,\tau\, p_2(K),
+$$
 
 so the smile *is* a statement about a non-lognormal implied density. Six families can reproduce it (BM §9.2): local-volatility (LVM), stochastic-volatility (SVM), jump-diffusion (JDM), market models of implied vol (MMIV), Lévy-driven (LDM), and **uncertain-parameter models (UPM)**. Only LVM/SVM/UPM are treated in the book for tractability.
 
@@ -54,7 +56,9 @@ General SVM: $dF_j=a_j\phi(F_j)V^{\gamma}dZ_j$, $dV=a_V dt+b_V dW$. **Zero rate-
 
 UPM = volatility is a random *variable*, not a diffusion: $dF_t=\sigma F_t\,dZ_t$ with $\sigma$ drawn $\sigma_1..\sigma_N$ w.p. $\lambda_1..\lambda_N$ just after time 0. The caplet is a **mixture of adjusted Black prices** (BM eq. 12.7):
 
-$$Cpl=\sum_i\lambda_i\,Bl\big(K+\alpha_j^i,\ F_j(0)+\alpha_j^i,\ V_j^i\big),$$
+$$
+Cpl=\sum_i\lambda_i\,Bl\big(K+\alpha_j^i,\ F_j(0)+\alpha_j^i,\ V_j^i\big),
+$$
 
 producing a smile with minimum at $F_0$; a shift $\alpha$ adds skew. The swaption is likewise a mixture under the annuity measure (BM eq. 12.8).
 

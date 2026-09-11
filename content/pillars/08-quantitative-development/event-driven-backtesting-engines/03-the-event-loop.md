@@ -25,39 +25,53 @@ This page builds the loop from first principles as a **discrete-event simulation
 
 **The next-event time advance.** A discrete-event simulation does not tick. It maintains a clock $t$ and an event set $\mathcal{Q}$, and repeatedly jumps:
 
-$$t_{k+1}=\min\{t(e)\;:\;e\in\mathcal{Q}\},\qquad \mathcal{Q}\leftarrow\mathcal{Q}\setminus\{e^*\},\qquad \text{process}(e^*),\qquad \mathcal{Q}\leftarrow\mathcal{Q}\cup\big(\text{events emitted by }e^*\big).$$
+$$
+t_{k+1}=\min\{t(e)\;:\;e\in\mathcal{Q}\},\qquad \mathcal{Q}\leftarrow\mathcal{Q}\setminus\{e^*\},\qquad \text{process}(e^*),\qquad \mathcal{Q}\leftarrow\mathcal{Q}\cup\big(\text{events emitted by }e^*\big).
+$$
 
 The engine's clock is *always exactly the timestamp of the event being processed* — it never takes an intermediate value. That is what "the engine cannot see the future" means operationally: at any moment the clock equals the latest information processed, and nothing else exists.
 
 **Event population.** For a run of $B$ bars with $n_s$ signal transitions, $n_o$ orders, and $n_f$ fills, the loop performs
 
-$$E = B + n_s + n_o + n_f \quad\text{iterations},$$
+$$
+E = B + n_s + n_o + n_f \quad\text{iterations},
+$$
 
 each costing $O(\log N)$ where $N=|\mathcal{Q}|$ is the live queue size. The whole backtest is $O(E\log N)$ — for the 1500-bar engine of page 04 that is a few thousand pops, microseconds in C++ and milliseconds in Python.
 
 **The scheduling of an order.** An order written at simulation time $t_s$ is *not* processed immediately. The ExecutionHandler computes an **activation time**
 
-$$t_{\text{act}}=t_s+\tau,\qquad \tau=\underbrace{1}_{\text{structural}}+\underbrace{\tau_{\text{wire}}}_{\text{network}}+\underbrace{\tau_{\text{queue}}}_{\text{venue}} ,$$
+$$
+t_{\text{act}}=t_s+\tau,\qquad \tau=\underbrace{1}_{\text{structural}}+\underbrace{\tau_{\text{wire}}}_{\text{network}}+\underbrace{\tau_{\text{queue}}}_{\text{venue}} ,
+$$
 
 and the order can fill only at the first market event with $t\ge t_{\text{act}}$:
 
-$$t_{\text{fill}}=\min\{t(e)\ :\ e\in\mathcal{Q}_{\text{MARKET}},\ t(e)\ge t_{\text{act}}\}.$$
+$$
+t_{\text{fill}}=\min\{t(e)\ :\ e\in\mathcal{Q}_{\text{MARKET}},\ t(e)\ge t_{\text{act}}\}.
+$$
 
 The **structural bar is irreducible** and it is the most under-appreciated term in backtesting. A signal computed from the completed bar $t$ is only *known* at the end of $t$; the earliest event that can act on it is $t+1$. So even a hypothetical zero-latency engine has
 
-$$t_{\text{fill}}\ \ge\ t_s+1 \quad\text{bars — }\textit{always}.$$
+$$
+t_{\text{fill}}\ \ge\ t_s+1 \quad\text{bars — }\textit{always}.
+$$
 
 Every backtest that trades at the signal bar's own price has quietly set $\tau_{\text{struct}}=0$ and is arithmetically impossible.
 
 **Adverse price move over the delay.** Over a delay of $\tau$ years on a driftless arithmetic walk of volatility $\sigma$, the expected absolute move is
 
-$$\mathbb{E}\lvert\Delta S\rvert=\sigma S\sqrt{\frac{2\tau}{\pi}}.$$
+$$
+\mathbb{E}\lvert\Delta S\rvert=\sigma S\sqrt{\frac{2\tau}{\pi}}.
+$$
 
 Taking $\sigma=20\%$, $S=100$, $\tau=1/252$ (one trading day): $\sigma S\sqrt{2\tau/\pi}=1.0052$. A Monte Carlo with $5\times10^5$ paths gives $1.0066$ — a $0.14\%$ agreement, confirming the formula. This is the *magnitude* of the price risk your order is exposed to while it waits; the **shortfall** of the hub lookup is the *signed, realised* version of it.
 
 **Determinism as an equation.** The ordering key is a triple. With $\mathcal{Q}$ as a heap on $(t,p,s)$ and $s$ a strictly increasing counter, the pop sequence is a deterministic function of the input data alone:
 
-$$\text{trace}=f(\text{data}),\qquad \frac{\partial\,\text{trace}}{\partial\,\text{wall-clock}}=0.$$
+$$
+\text{trace}=f(\text{data}),\qquad \frac{\partial\,\text{trace}}{\partial\,\text{wall-clock}}=0.
+$$
 
 Any engine whose ordering depends on dictionary iteration order, thread timing, or floating-point accumulation order violates this and cannot reproduce its own results.
 
@@ -146,7 +160,9 @@ The trace reads exactly as the lattice dictates: at $t=3$, `MARKET0` (priority 0
 
 **The order lifecycle FSM** the loop must implement, in the FIX vocabulary:
 
-$$\text{PENDING\_NEW}\xrightarrow{\text{accepted}}\text{OPEN}\xrightarrow{\text{partial}}\text{PARTIALLY\_FILLED}\xrightarrow{\text{complete}}\text{FILLED},\qquad \text{OPEN}\xrightarrow{\text{terminal bar}}\text{CANCELLED}/\text{EXPIRED}.$$
+$$
+\text{PENDING\_NEW}\xrightarrow{\text{accepted}}\text{OPEN}\xrightarrow{\text{partial}}\text{PARTIALLY\_FILLED}\xrightarrow{\text{complete}}\text{FILLED},\qquad \text{OPEN}\xrightarrow{\text{terminal bar}}\text{CANCELLED}/\text{EXPIRED}.
+$$
 
 Skipping `PENDING_NEW → OPEN` (the latency gap) or the `CANCELLED` branch is how a backtest acquires phantom fills.
 

@@ -34,31 +34,39 @@ The bridge between them is the **carbon price**. An explicit price is charged (e
 
 A firm's value is exposed to climate through two channels only (TCFD, 2017, Figure 1):
 
-$$\underbrace{\Delta V/V_{\text{physical}}}_{\text{damage}\ \to\ \text{assets, costs, revenue}}\quad+\quad\underbrace{\Delta V/V_{\text{transition}}}_{\text{policy, tech, preference}\ \to\ \text{costs, demand, valuation}}.$$
+$$
+\underbrace{\Delta V/V_{\text{physical}}}_{\text{damage}\ \to\ \text{assets, costs, revenue}}\quad+\quad\underbrace{\Delta V/V_{\text{transition}}}_{\text{policy, tech, preference}\ \to\ \text{costs, demand, valuation}}.
+$$
 
 Both are ultimately cash-flow shocks; both are **cumulative and non-stationary**, which is why neither can be mimicked by adding a stationary risk factor to a return model ([[pillars/04-quantitative-risk/climate-and-esg-risk/01-from-zero-intuition|01 · §4]]).
 
 #### 2.2 Carbon pricing: explicit price, shadow price, pass-through
 
 Let a firm emit $E_i$ tCO2e on revenue $R_i$, so its intensity is $I_i=E_i/R_i$. A carbon price step $\Delta p$ (\$/tCO2e) creates a gross cost
-$$C_i=\Delta p\cdot E_i=\Delta p\,I_i\,R_i .$$
-With pass-through $\lambda_i\in[0,1]$ (the fraction the firm can put into its own selling prices), the retained cost is $(1-\lambda_i)C_i$, i.e. a margin hit of $(1-\lambda_i)I_i\Delta p$ on every unit of revenue. The **shadow carbon price** is the same formula with $\lambda=0$ and $\Delta p$ set to a policy corridor rather than a market price — the canonical external corridor being the High-Level Commission on Carbon Prices (Stern & Stiglitz, 2017): **$\$40$–$\$80$/tCO2e by 2020, $\$50$–$\$100$/tCO2e by 2030**, consistent with the Paris Agreement objective.
+$$
+C_i=\Delta p\cdot E_i=\Delta p\,I_i\,R_i .
+$$
+With pass-through $\lambda_i\in[0,1]$ (the fraction the firm can put into its own selling prices), the retained cost is $(1-\lambda_i)C_i$, i.e. a margin hit of $(1-\lambda_i)I_i\Delta p$ on every unit of revenue. The **shadow carbon price** is the same formula with $\lambda=0$ and $\Delta p$ set to a policy corridor rather than a market price — the canonical external corridor being the High-Level Commission on Carbon Prices (Stern & Stiglitz, 2017): **\$40–\$80/tCO2e by 2020, \$50–\$100/tCO2e by 2030**, consistent with the Paris Agreement objective.
 
-Pass-through is the crux and it is *heterogeneous*: a regulated utility with a cost-of-service tariff passes most of a carbon price through; a commodity chemicals producer facing import competition passes almost none. A single portfolio-level $\lambda$ is therefore a strong — and strongly consequential — assumption (hub §3: a $\$30$/t shock is $-15.33\%$ at $\lambda=0$ and $-3.07\%$ at $\lambda=0.8$).
+Pass-through is the crux and it is *heterogeneous*: a regulated utility with a cost-of-service tariff passes most of a carbon price through; a commodity chemicals producer facing import competition passes almost none. A single portfolio-level $\lambda$ is therefore a strong — and strongly consequential — assumption (hub §3: a \$30/t shock is $-15.33\%$ at $\lambda=0$ and $-3.07\%$ at $\lambda=0.8$).
 
 #### 2.3 Stranded assets: the break-even carbon price
 
-For asset $i$ with a break-even net margin $m_i$ (\$/unit of fuel) and an emission factor $\mathrm{EF}$ (tCO2e per unit of fuel), the carbon cost per unit is $\mathrm{EF}\cdot p$. The asset is **uneconomic** when
-$$\boxed{\ p^*=\frac{m_i}{\mathrm{EF}}\quad\text{equivalently}\quad \mathrm{EF}\cdot p>m_i\ }$$
+For asset $i$ with a break-even net margin $m_i$ ($ $\$/unit of fuel) and an emission factor \mathrm{EF} (tCO2e per unit of fuel), the carbon cost per unit is $\mathrm{EF}\cdot p$. The asset is **uneconomic** when
+$$
+\boxed{\ p^*=\frac{m_i}{\mathrm{EF}}\quad\text{equivalently}\quad \mathrm{EF}\cdot p>m_i\ }
+$$
 so for a reserve base $\{(v_i,m_i)\}$ the **stranded fraction** at carbon price $p$ is
-$$\mathrm{SF}(p)=\frac{\sum_{i:\,m_i<\mathrm{EF}\,p} v_i}{\sum_i v_i}.$$
+$$
+\mathrm{SF}(p)=\frac{\sum_{i:\,m_i<\mathrm{EF}\,p} v_i}{\sum_i v_i}.
+$$
 $\mathrm{SF}$ is a *cumulative distribution function of break-even margins*, rescaled — the classic "cost curve" used by PACTA-style alignment tools and by Carbon Tracker's unburnable-carbon framing. It is monotone, bounded in $[0,1]$, and its derivative is the reserve density at the margin. Crucially it is **not** a probability: it is a scenario-conditional fraction.
 
 #### 2.4 Physical risk: from cumulative emissions to damage
 
 The physical channel has a defensible three-link chain (IPCC AR5, WG1 Ch. 12):
 
-1. **Emissions → warming.** The *transient climate response to cumulative carbon emissions* (TCRE) is approximately linear in cumulative CO2: $\Delta T\approx \mathrm{TCRE}\times(\text{cumulative GtCO}_2/1000)$, with the AR5 *likely* range $0.8$–$2.5\,^\circ$C per 1000 PgC, i.e. $\approx0.2$–$0.7\,^\circ$C per 1000 GtCO2.
+1. **Emissions → warming.** The *transient climate response to cumulative carbon emissions* (TCRE) is approximately linear in cumulative CO2: $\Delta T\approx \mathrm{TCRE}\times(\text{cumulative GtCO}_2/1000)$, with the AR5 *likely* range $0.8$–$2.5^\circ$C per 1000 PgC, i.e. $\approx0.2$–$0.7^\circ$C per 1000 GtCO2.
 2. **Warming → damage.** Integrated-assessment damage functions are conventionally **convex** in $\Delta T$: $D(\Delta T)=\theta\,\Delta T^2$ (the DICE-family functional form). The convexity is the substantive claim: each additional degree costs more than the last.
 3. **Damage → value.** $V\mapsto V\,(1-D(\Delta T))$, applied to the exposed asset base rather than the whole portfolio.
 
@@ -110,9 +118,9 @@ for dt in (1.5, 2.0, 3.0, 4.0):
     warming +4.0C -> cumulative value loss  9.60%
 ```
 
-Two readings. First, the stranded fraction is **violently convex in the carbon price**: $0\%\to14.4\%\to64.4\%\to92.2\%$ across $\$0\to\$150$/t. A portfolio's "stranding risk" is therefore not a number but a *curve*, and reporting a single point on it is a hidden assumption about the policy path. Second, the physical drag at $+3^\circ$C ($5.40\%$) is the same order as the transition hit — **the two families are comparable in magnitude, and in a hot-house scenario you pay the physical one instead of the transition one, not instead of both.**
+Two readings. First, the stranded fraction is **violently convex in the carbon price**: $0\%\to14.4\%\to64.4\%\to92.2\%$ across $ $\$0\to\150/t. A portfolio's "stranding risk" is therefore not a number but a *curve*, and reporting a single point on it is a hidden assumption about the policy path. Second, the physical drag at $+3^\circ$C ($5.40\%$) is the same order as the transition hit — **the two families are comparable in magnitude, and in a hot-house scenario you pay the physical one instead of the transition one, not instead of both.**
 
-Cross-check against the earlier identity: at $p=\$100$/t the threshold is $\mathrm{EF}\cdot p=0.43\times100=\$43$/bbl, so $\$43$ separates economic from stranded reserves — which is exactly the $64.4\%$ cut in the table.
+Cross-check against the earlier identity: at $p= $ \$100/t the threshold is \mathrm{EF}\cdot p=0.43\times100= \$43/bbl, so \$43 separates economic from stranded reserves — which is exactly the $64.4\%$ cut in the table.
 
 ---
 
@@ -130,7 +138,7 @@ Cross-check against the earlier identity: at $p=\$100$/t the threshold is $\math
 ### 5. Canonical Literature & Study References
 
 - **TCFD**, *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, 2017), Figure 1 — the physical/transition risk taxonomy and the recommended metrics (WACI, carbon footprint). *Primary source.*
-- **High-Level Commission on Carbon Prices** (Stern, N. & Stiglitz, J., chairs), *Report of the High-Level Commission on Carbon Prices* (World Bank, 2017) — the explicit shadow-price corridor ($\$40$–$\$80$ by 2020; $\$50$–$\$100$ by 2030).
+- **High-Level Commission on Carbon Prices** (Stern, N. & Stiglitz, J., chairs), *Report of the High-Level Commission on Carbon Prices* (World Bank, 2017) — the explicit shadow-price corridor (\$40–\$80 by 2020; \$50–\$100 by 2030).
 - **World Bank**, *Shadow Price of Carbon in Economic Analysis — Guidance Note* (2017) — how shadow prices enter project appraisal.
 - **IPCC**, *Climate Change 2013: The Physical Science Basis* (AR5, WG1 Ch. 12) — TCRE and its likely range; *Global Warming of 1.5 °C* (SR1.5, 2018, Ch. 2) — the remaining carbon budget.
 - **Carbon Tracker Initiative**, *Unburnable Carbon: Are the World's Financial Markets Carrying a Carbon Bubble?* (2011) — the origin of the stranded-asset framing.

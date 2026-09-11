@@ -31,7 +31,9 @@ This page names four failure modes and — because the discipline rewards demons
 
 The estimator of $\text{VaR}_{0.999}$ from $T$ years of data uses the $\lceil0.999T\rceil$-th order statistic. Its variance scales like
 
-$$\text{Var}\big(\widehat{\text{VaR}}_{0.999}\big)\;\propto\;\frac{\big(f_S^{-1}\text{-slope}\big)}{T}\approx\frac{\big(q_{0.999}\big)^2}{\xi^2\,T}\ \ \text{(heavy tail)},$$
+$$
+\text{Var}\big(\widehat{\text{VaR}}_{0.999}\big)\;\propto\;\frac{\big(f_S^{-1}\text{-slope}\big)}{T}\approx\frac{\big(q_{0.999}\big)^2}{\xi^2\,T}\ \ \text{(heavy tail)},
+$$
 
 because near the $99.9\%$ quantile the density is $f_S(q_{0.999})\sim \xi/q_{0.999}$ for a power tail $1-F_S(s)\sim s^{-\xi}$. Compared to a light tail, the *relative* standard error of the VaR estimator is inflated by roughly a factor $1/\xi+1$ relative to a light tail — about $1.7\times$ at $\xi{=}1.5$ in the relative-error sense (the simulated ratio is much larger because the tail density, not just the index, enters). That is the first principle: **the fatter the tail, the less precisely any sample pins the quantile**, and the more of your data lives where the answer lives least.
 
@@ -39,7 +41,9 @@ because near the $99.9\%$ quantile the density is $f_S(q_{0.999})\sim \xi/q_{0.9
 
 The compound-Poisson variance $\text{Var}(S)=\lambda\mathbb{E}[X^2]$ assumes iid arrivals. Under *clustering* the true count has $\text{Var}(N)>\lambda$ (e.g. negative binomial), giving
 
-$$\text{Var}(S)=\mathbb{E}[N]\,\mathbb{E}[X^2]+\text{Var}(N)\,(\mathbb{E}[X])^2>\lambda\,\mathbb{E}[X^2].$$
+$$
+\text{Var}(S)=\mathbb{E}[N]\,\mathbb{E}[X^2]+\text{Var}(N)\,(\mathbb{E}[X])^2>\lambda\,\mathbb{E}[X^2].
+$$
 
 The extra term — pure dependence contribution — is absent from the LDA formula and inflates the true tail exactly when capital is needed most. The failure mode is *structural*: the clean convolution of [[pillars/04-quantitative-risk/operational-risk/04-aggregate-loss-and-lda|04 · Aggregate Loss]] is built on an independence premise the real world violates in stress.
 

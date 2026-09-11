@@ -33,7 +33,9 @@ The practical objective: know the size of the model-risk exposure of a learned h
 
 A parametric model calibrated to today's vanillas is constrained: its parameters are pinned by hundreds of liquid quotes, and its mis-specification is *observable* as a residual. A deep hedge has neither property. Formally, the strategy is
 
-$$\delta^\star=\arg\min_{\delta}\mathbb E^{\mathbb P^{\text{sim}}}\Big[\rho\big(L_T^\delta\big)\Big],$$
+$$
+\delta^\star=\arg\min_{\delta}\mathbb E^{\mathbb P^{\text{sim}}}\Big[\rho\big(L_T^\delta\big)\Big],
+$$
 
 so $\delta^\star$ is a functional of the *simulation measure* $\mathbb P^{\text{sim}}$. If the true world is $\mathbb P^{\text{true}}\ne\mathbb P^{\text{sim}}$, the realised risk is $\rho^{\text{true}}(L_T^{\delta^\star})$, which is bounded below only by $\min_\delta\rho^{\text{true}}(L_T^\delta)$ — and the gap can be arbitrarily large. This is not a numerical artifact; it is the same "model risk dwarfs parameter risk" statement as [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/05-failure-modes-and-practice|Heston/SABR · 05]], but with no market price to detect it. The defence is not more data but **robustification**: minimise the worst case over an uncertainty set ([[pillars/03-derivative-pricing/deep-hedging-and-bsdes/06-advanced-extensions|06]]), which is exactly the robust representation of the risk measure in §02.
 
@@ -41,19 +43,27 @@ so $\delta^\star$ is a functional of the *simulation measure* $\mathbb P^{\text{
 
 For a discretely rebalanced delta hedge of a European claim, the hedging error over $\Delta t$ steps is the sum of the *unhedged* gamma terms. A second-order expansion of the hedged P&L gives the classical Boyle–Emanuel / Bertsimas–Kogan–Lo result:
 
-$$\text{P\&L}\ \approx\ \sum_{i}\tfrac12\Gamma_{t_i}S_{t_i}^2\Big[\big(\tfrac{\Delta S_i}{S_{t_i}}\big)^2-\sigma^2\Delta t\Big],$$
+$$
+\text{P\&L}\ \approx\ \sum_{i}\tfrac12\Gamma_{t_i}S_{t_i}^2\Big[\big(\tfrac{\Delta S_i}{S_{t_i}}\big)^2-\sigma^2\Delta t\Big],
+$$
 
 whose terms are i.i.d. mean-zero with variance $O(\Delta t)$, so over $N=T/\Delta t$ steps
 
-$$\boxed{\ \mathrm{SD}\big[\text{hedging error}\big]\ \propto\ \sqrt{\Delta t}=\frac{1}{\sqrt N}\ } .$$
+$$
+\boxed{\ \mathrm{SD}\big[\text{hedging error}\big]\ \propto\ \sqrt{\Delta t}=\frac{1}{\sqrt N}\ } .
+$$
 
 The law is *universal* (independent of the payoff to leading order, because in all cases the residual is a sum of $N$ martingale differences of size $\sqrt{\Delta t}$), and it is the reason the table in §3 shows $\mathrm{SD}\cdot\sqrt{N}$ roughly constant. The cost side is different: with proportional cost $\kappa$,
 
-$$\text{cost}=\kappa\sum_i\big|\delta_{t_{i+1}}-\delta_{t_i}\big|S_{t_i}\ \sim\ \kappa\,\mathbb E\Big[\sum_i|\Delta\delta|\Big]\ \sim\ \kappa\,C\sqrt{N}\quad(\text{sublinear in }N\text{ but growing}),$$
+$$
+\text{cost}=\kappa\sum_i\big|\delta_{t_{i+1}}-\delta_{t_i}\big|S_{t_i}\ \sim\ \kappa\,\mathbb E\Big[\sum_i|\Delta\delta|\Big]\ \sim\ \kappa\,C\sqrt{N}\quad(\text{sublinear in }N\text{ but growing}),
+$$
 
 so the cost-aware objective
 
-$$\boxed{\ \min_N\ \underbrace{\frac{c_1}{\sqrt N}}_{\text{hedging error}}+\underbrace{c_2\kappa\sqrt N}_{\text{cost}}\ }$$
+$$
+\boxed{\ \min_N\ \underbrace{\frac{c_1}{\sqrt N}}_{\text{hedging error}}+\underbrace{c_2\kappa\sqrt N}_{\text{cost}}\ }
+$$
 
 has an **interior optimum** $N^\star\propto1/\kappa^{2/3}$-ish — finite, and large only when costs are negligible. This is the discrete-time face of the same trade-off that Almgren–Chriss solve continuously ([[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]).
 
@@ -61,7 +71,9 @@ has an **interior optimum** $N^\star\propto1/\kappa^{2/3}$-ish — finite, and l
 
 The Deep BSDE/Deep hedging loss is an expectation of a squared error, so its *sample* version is a sum of squares and the SGD update is a contraction only if
 
-$$\mathrm{lr}<\frac{2}{\lambda_{\max}\big(\mathbb E[\Phi^{\!\top}\Phi]\big)},$$
+$$
+\mathrm{lr}<\frac{2}{\lambda_{\max}\big(\mathbb E[\Phi^{\!\top}\Phi]\big)},
+$$
 
 where $\Phi$ is the design matrix of features (including the Brownian increments — whose scale is $\sqrt{\Delta t}$, so the critical learning rate depends on the *time discretisation* as well as the architecture). Above the threshold, the linearised iteration has a spectral radius exceeding one and the weights grow geometrically; with a quadratic loss the growth is *finite-time blow-up* (the iterates escape in finitely many steps), which is exactly the $\sim10^{121}$ seen in §3. The practical consequences: (i) the learning rate is not transferable between discretisations; (ii) "loss stopped improving" and "loss exploded" can look identical for the first few iterations; (iii) reproducibility requires fixing both the seed *and* the schedule, because the escape time depends on both.
 

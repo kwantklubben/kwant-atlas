@@ -41,7 +41,9 @@ For $H<\tfrac12$, fBm increments are *anti-correlated* and the autocovariance is
 
 For a one-factor OU (Heston-like) vol-of-vol kernel $g(u-t)=e^{-\kappa(u-t)}$, the Bergomi–Guyon skew functional gives
 
-$$S_T^{OU}=\frac{1}{2\hat\sigma_T^3T^2}C^{x\xi},\qquad C^{x\xi}\propto\int_0^T\int_t^T e^{-\kappa(u-t)}dudt=\frac{\kappa T-1+e^{-\kappa T}}{\kappa^2},$$
+$$
+S_T^{OU}=\frac{1}{2\hat\sigma_T^3T^2}C^{x\xi},\qquad C^{x\xi}\propto\int_0^T\int_t^T e^{-\kappa(u-t)}dudt=\frac{\kappa T-1+e^{-\kappa T}}{\kappa^2},
+$$
 
 so $S_T^{OU}\to\frac12$ (bounded) as $T\to0$. For the rough kernel $(u-t)^{H-\frac12}$, $S_T\propto T^{H-\frac12}\to\infty$. **This is the structural failure**: no finite-factor Markovian model can produce an ATMF skew that blows up at short maturity, yet the SPX data demand $\psi(T)\propto T^{-0.44}$. The comparison is quantified in §3.
 
@@ -49,7 +51,9 @@ so $S_T^{OU}\to\frac12$ (bounded) as $T\to0$. For the rough kernel $(u-t)^{H-\fr
 
 From [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/02-the-rough-bergomi-model|02]]:
 
-$$\psi(T)=\frac{\rho\eta\sqrt{2H}}{2(H+\tfrac12)(H+\tfrac32)}T^{H-\frac12}.$$
+$$
+\psi(T)=\frac{\rho\eta\sqrt{2H}}{2(H+\tfrac12)(H+\tfrac32)}T^{H-\frac12}.
+$$
 
 The parameters enter as **products**: $\rho\eta\sqrt{2H}$ (level) and $H-\tfrac12$ (exponent). From one short-time skew you can read the *exponent* $H$ (the slope) but only the *product* $\rho\eta\sqrt{2H}$ (the level) — you cannot separate $\eta$ from $\rho$ without the wings or additional maturities, and $\rho$ must come from the spot/vol correlation. Three parameters, but the short-time vanillas see them as ~2 independent directions.
 

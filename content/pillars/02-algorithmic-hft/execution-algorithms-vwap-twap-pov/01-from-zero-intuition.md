@@ -29,12 +29,17 @@ Three truths, three "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The impact non-linearity (Almgren–Chriss temporary impact).** In the AC model the temporary impact paid on a block traded at rate $v$ is linear:
-$$h(v) = \\varepsilon + \\frac{\\eta}{\\tau}\\,v \\quad\\text{(per share)},$$ so the *total* cost of trading $n$ shares in one interval is $n\\cdot h(n/\\tau)$ — and the key fact is that this **grows quadratically in the slice size**. The temporary-impact contribution to expected cost is
-$$\\frac{\\tilde\\eta}{\\tau}\\sum_{t=1}^N n_t^2, \\qquad \\text{so if you split into } N \\text{ equal slices, it becomes } \\frac{\\tilde\\eta}{\\tau}\\,\\frac{X^2}{N}.$$
-**Splitting into $N$ equal parts divides the temporary-impact term by $N$** — not by $\\sqrt N$, exactly by $N$. That is the cleanest number in the field: *why slicing is not optional.*
+$$
+h(v) = \varepsilon + \frac{\eta}{\tau}\,v \quad\text{(per share)},$$ so the *total* cost of trading $n$ shares in one interval is $n\\cdot h(n/\\tau)$ — and the key fact is that this **grows quadratically in the slice size**. The temporary-impact contribution to expected cost is
+$$
+\frac{\tilde\eta}{\tau}\sum_{t=1}^N n_t^2, \qquad \text{so if you split into } N \text{ equal slices, it becomes } \frac{\tilde\eta}{\tau}\,\frac{X^2}{N}.
+$$
+**Splitting into $N$ equal parts divides the temporary-impact term by $N$** — not by $\sqrt N$, exactly by $N$. That is the cleanest number in the field: *why slicing is not optional.*
 
 **What slicing costs you instead.** The risk (variance of shortfall) is
-$$V = \\sigma^2\\sum_{t=1}^N \\tau\\,x_t^2,$$
+$$
+V = \sigma^2\sum_{t=1}^N \tau\,x_t^2,
+$$
 which shrinks as you trade *faster* (lower $x_t$ inventory) — the exact reverse of impact. Setting these two against each other is the Almgren–Chriss frontier ([[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/02-the-execution-problem|02 · The Execution Problem]]). For this page the message is structural: **impact wants you slow and even; risk wants you fast and done; the schedule is your position on that line.**
 
 ---
@@ -63,21 +68,21 @@ reduction by slicing                        = $24,500,000
 per-share: sweep 2502.00 bps   twap 52.00 bps
 ```
 
-**Read the number.** The fixed $\\varepsilon X = \\$20{,}000$ cost is identical in both — it is schedule-independent. The rest is the quadratic term, and it collapses by a factor of $50$ because the temporary-impact cost scales as $\\sum n_t^2$. Sweeping a $5\\text{-}day$ parent order in one shot would cost the desk ~$2500$ bps of pure impact *before any price drift*; slicing brings it under $100$ bps. This is why the practice exists.
+**Read the number.** The fixed $\varepsilon X = $ \$20{,}000 cost is identical in both — it is schedule-independent. The rest is the quadratic term, and it collapses by a factor of 50$ because the temporary-impact cost scales as $\\sum n_t^2$. Sweeping a $5\\text{-}day$ parent order in one shot would cost the desk ~$2500$ bps of pure impact *before any price drift*; slicing brings it under $100$ bps. This is why the practice exists.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"Slicing always helps" is false — it always helps *impact* but loads *risk*.** The intermediate slices you didn't have to trade (had you gone all-at-once) sit exposed to $\\sigma\\sqrt{\\tau}$ drift each period. The sweep's $\\tfrac12\\gamma X^2$ permanent impact in AC is *schedule-independent*, but its temporary and risk terms are not; there is no free lunch, only a dial.
-2. **The fixed-cost trap.** If $\\varepsilon$ (half-spread + fees) dominates, extra slicing adds *more* fixed costs than it saves in impact — the optimum is then not "slice as much as possible." This is precisely why real desks solve for $N^*$, not $N=\\infty$.
+1. **"Slicing always helps" is false — it always helps *impact* but loads *risk*.** The intermediate slices you didn't have to trade (had you gone all-at-once) sit exposed to $\sigma\sqrt{\tau}$ drift each period. The sweep's $\tfrac12\gamma X^2$ permanent impact in AC is *schedule-independent*, but its temporary and risk terms are not; there is no free lunch, only a dial.
+2. **The fixed-cost trap.** If $\varepsilon$ (half-spread + fees) dominates, extra slicing adds *more* fixed costs than it saves in impact — the optimum is then not "slice as much as possible." This is precisely why real desks solve for $N^*$, not $N=\infty$.
 3. **Impact is not the only cost.** A slow, gentle TWAP has the lowest impact *and* can be the most expensive execution if the market trends against you — which is the seed of adverse selection addressed in [[pillars/02-algorithmic-hft/execution-algorithms-vwap-twap-pov/05-failure-modes-and-practice|05 · Failure Modes]].
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Almgren, Robert & Chriss, Neil** — "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5–40 (2000). *Where the $\\sum n_t^2$ temporary-impact term and the sweep-vs-slice math come from.*
+- **Almgren, Robert & Chriss, Neil** — "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5–40 (2000). *Where the $\sum n_t^2$ temporary-impact term and the sweep-vs-slice math come from.*
 - **Hasbrouck, Joel** — *Empirical Market Microstructure* (2007), Ch 14 (trading-cost decomposition, motivation for splitting) and Ch 15 (order splitting, eq 15.4). *Verified in corpus `hasbrouck_ch11-15.md`.*
 - **Kissell, Glantz & Malamut** — *Optimal Trading Strategies* (2003) — the practitioner's framework for why and how to slice.
 

@@ -31,12 +31,16 @@ The five primitives all have a **breaking point**: Monte Carlo's $n^{-1/2}$ is s
 
 **2.1 Quasi-Monte Carlo** (Glasserman Ch 5). Formulate the integral as over $[0,1)^d$ and average over **deterministic** low-discrepancy points:
 
-$$\alpha\approx\frac1n\sum_{i=1}^n f(x_i),\qquad
-D(x_1,\dots,x_n;A)=\sup_A\Big|\frac{\#\{x_i\in A\}}{n}-\mathrm{vol}(A)\Big|.$$
+$$
+\alpha\approx\frac1n\sum_{i=1}^n f(x_i),\qquad
+D(x_1,\dots,x_n;A)=\sup_A\Big|\frac{\#\{x_i\in A\}}{n}-\mathrm{vol}(A)\Big|.
+$$
 
 The error is governed by the **Koksma–Hlawka inequality**:
 
-$$\Big|\frac1n\sum_i f(x_i)-\int f\Big|\le V_{\text{HK}}(f)\cdot D^*(x_1,\dots,x_n),$$
+$$
+\Big|\frac1n\sum_i f(x_i)-\int f\Big|\le V_{\text{HK}}(f)\cdot D^*(x_1,\dots,x_n),
+$$
 
 where $V_{\text{HK}}(f)$ is the Hardy–Krause variation and $D^*$ the star discrepancy. The **van der Corput** radical inverse $\psi_b(k)=\sum_j a_j(k)/b^{j+1}$ (digit reversal) is the 1-D seed; **Halton** takes $x_k=(\psi_{b_1}(k),\dots,\psi_{b_d}(k))$ with the first $d$ primes; **Sobol'** (base 2) is built from primitive polynomials and is generated one point at a time by a Gray-code XOR: $x_{k+1}=x_k\oplus v_\ell$; a **rank-1 lattice** is $x_k=\{k v/n\bmod1\}$ and is optimal for smooth periodic integrands. Error for good point sets: $O((\log n)^d/n)$ — asymptotically **faster than $n^{-1/2}$** for smooth $f$. **Randomized QMC** (a random shift $\{x_i+U\bmod1\}$ or Owen scrambling) restores unbiasedness and error bars, with scrambled-net variance $O(n^{-(3-\varepsilon)})$ for smooth $f$ — *faster* than plain MC.
 
@@ -44,7 +48,9 @@ where $V_{\text{HK}}(f)$ is the Hardy–Krause variation and $D^*$ the star disc
 
 - **Metropolis–Hastings.** Propose $\theta^*\sim J(\theta^*|\theta_{t-1})$, accept with
 
-  $$r=\frac{\pi(\theta^*)J(\theta_{t-1}|\theta^*)}{\pi(\theta_{t-1})J(\theta^*|\theta_{t-1})},\qquad \text{accept w.p. }\min(r,1).$$
+$$
+r=\frac{\pi(\theta^*)J(\theta_{t-1}|\theta^*)}{\pi(\theta_{t-1})J(\theta^*|\theta_{t-1})},\qquad \text{accept w.p. }\min(r,1).
+$$
 
   For a **symmetric** proposal this simplifies to $r=\pi(\theta^*)/\pi(\theta_{t-1})$ (**Metropolis**).
 - **Gibbs sampling.** Cycle through coordinates, drawing each from its **full conditional** $\pi(\theta_i|\theta_{-i},X)$ — no rejection, and after a burn-in of $m$ draws the remaining $\theta_{i,j}$ are (approximately) a posterior sample; the point estimate is $\bar\theta_i=\frac{1}{n-m}\sum_{j=m+1}^n\theta_{i,j}$.
@@ -54,16 +60,22 @@ Every MCMC output is **autocorrelated**; the effective sample size, not the raw 
 
 **2.3 State-space models and the Kalman filter** (Tsay Ch 11). A linear Gaussian state-space model is
 
-$$s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad y_t=c_t+Z_t s_t+e_t,\qquad
-\eta_t\sim\mathcal N(0,Q_t),\ e_t\sim\mathcal N(0,H_t).$$
+$$
+s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad y_t=c_t+Z_t s_t+e_t,\qquad
+\eta_t\sim\mathcal N(0,Q_t),\ e_t\sim\mathcal N(0,H_t).
+$$
 
 The **Kalman filter** is the exact recursive posterior; in its one-step-ahead form:
 
-$$v_t=y_t-c_t-Z_t s_{t|t-1},\quad V_t=Z_t\Sigma_{t|t-1}Z_t^\top+H_t,\quad
-K_t=T_t\Sigma_{t|t-1}Z_t^\top V_t^{-1},$$
+$$
+v_t=y_t-c_t-Z_t s_{t|t-1},\quad V_t=Z_t\Sigma_{t|t-1}Z_t^\top+H_t,\quad
+K_t=T_t\Sigma_{t|t-1}Z_t^\top V_t^{-1},
+$$
 
-$$s_{t+1|t}=d_t+T_t s_{t|t-1}+K_tv_t,\qquad
-\Sigma_{t+1|t}=T_t\Sigma_{t|t-1}L_t^\top+R_tQ_tR_t^\top,\quad L_t=T_t-K_tZ_t.$$
+$$
+s_{t+1|t}=d_t+T_t s_{t|t-1}+K_tv_t,\qquad
+\Sigma_{t+1|t}=T_t\Sigma_{t|t-1}L_t^\top+R_tQ_tR_t^\top,\quad L_t=T_t-K_tZ_t.
+$$
 
 Parameters are estimated by **maximum likelihood** via the prediction-error decomposition, $\ln L=-\frac T2\ln2\pi-\frac12\sum_t[\ln V_t+v_t^2/V_t]$ (Tsay eq. 11.25) — a numerical optimisation (page 04) over the parameters. In steady state the Riccati recursion for $\Sigma$ converges to a constant, giving a fixed gain.
 
@@ -72,16 +84,22 @@ Parameters are estimated by **maximum likelihood** via the prediction-error deco
 - **Curse of dimensionality.** A full grid costs $O(N^d)$; FDM is practical only for $d\lesssim3$. Beyond that use **operator splitting / ADI** (turn a $d$-dimensional solve into $d$ one-dimensional solves per step; Duffy Ch 19–20), **sparse grids**, or **Monte Carlo**, which is dimension-free (page 03).
 - **SDE discretisation** (Glasserman Ch 6). For $dX=a(X)dt+b(X)dW$ the **Euler–Maruyama** scheme is
 
-  $$\hat X_{i+1}=\hat X_i+a(\hat X_i)h+b(\hat X_i)\sqrt h\,Z_{i+1},$$
+$$
+\hat X_{i+1}=\hat X_i+a(\hat X_i)h+b(\hat X_i)\sqrt h\,Z_{i+1},
+$$
 
   with **strong order $\tfrac12$** and **weak order $1$**; the **Milstein** refinement adds $\tfrac12 b'b\,h(Z^2-1)$ for **strong order 1**. Pricing needs only the *weak* order (only conditional moments of the increments matter). **Richardson/extrapolation** $2\,\mathbb E[f(\hat X^{h/2})]-\mathbb E[f(\hat X^{h})]$ upgrades Euler to weak order 2 — the practical benchmark.
 - **MSE balancing** (Glasserman §6.3.3). Bias $\propto\delta^\beta$, variance $\propto1/n$, work $\propto n/\delta$: the optimal split gives
 
-  $$\text{RMSE}=O\big(s^{-\beta/(2\beta+1)}\big)\quad(\beta=1\Rightarrow s^{-1/3},\ \beta=2\Rightarrow s^{-2/5}).$$
+$$
+\text{RMSE}=O\big(s^{-\beta/(2\beta+1)}\big)\quad(\beta=1\Rightarrow s^{-1/3},\ \beta=2\Rightarrow s^{-2/5}).
+$$
 
 **2.5 Sensitivities without differencing** (Glasserman Ch 7). Differentiate the *path* (**pathwise / IPA**), or the *density* (**likelihood ratio**):
 
-$$\dot\alpha=\mathbb E[\dot Y],\qquad \hat\alpha'=\frac1n\sum_i Y(X_i)\frac{\dot g_\theta(X_i)}{g_\theta(X_i)}.$$
+$$
+\dot\alpha=\mathbb E[\dot Y],\qquad \hat\alpha'=\frac1n\sum_i Y(X_i)\frac{\dot g_\theta(X_i)}{g_\theta(X_i)}.
+$$
 
 Pathwise is unbiased for Lipschitz payoffs and is essentially free (no re-simulation) but gives a *zero, uninformative* derivative for discontinuous payoffs (digitals, barriers) and for second derivatives; the likelihood ratio handles those but has higher variance (growing with the number of time steps). Finite differences, if used, obey $\text{RMSE}=O(n^{-\beta/(2\beta+\eta)})$ with the optimal $h$, and need **common random numbers** to keep the variance small.
 

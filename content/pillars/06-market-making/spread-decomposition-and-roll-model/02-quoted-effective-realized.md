@@ -32,10 +32,14 @@ Under the generalized Roll model the three measures relate to two parameters: th
 - **Quoted:** $S_q=2(c+\lambda)$ — the full bid-ask width (order-processing $c$ **plus** the adverse-selection component $\lambda$; Hasbrouck eq. 8.3).
 - **Effective:** a trade at the ask ($q_t=+1$) prices at $p_t=m_t+(c+\lambda)$, so $2q_t(p_t-m_t)=2(c+\lambda)$; at the bid likewise. **$S_e=2(c+\lambda)$.** The effective spread equals the quoted spread when trades print exactly at the touch.
 - **Realized:** after the trade the midquote is revised by the information content ($m_{t+\Delta}=m_t+\lambda q_t$ plus public noise), so
-  $$S_r = 2q_t\big(p_t-m_{t+\Delta}\big)=2(c+\lambda)-2\lambda=2c,$$
+$$
+S_r = 2q_t\big(p_t-m_{t+\Delta}\big)=2(c+\lambda)-2\lambda=2c,
+$$
   so **$S_r=2c$** (the maker keeps the order-processing half-spread). The loss to informed flow is the **price impact**:
 
-$$S_e - S_r = 2\lambda,$$
+$$
+S_e - S_r = 2\lambda,
+$$
 
 and with $\lambda>0$ the ordering $S_q \ge S_e \ge S_r$ holds (the middle equality is approximate when fills are at the touch; with price improvement $S_e<S_q$).
 

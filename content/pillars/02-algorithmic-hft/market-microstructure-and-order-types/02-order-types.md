@@ -35,11 +35,15 @@ The practical objective: be able to read any fill report and decompose it into *
 
 **The limit-order book and the walk.** The book is two sorted lists of resting limit orders,
 
-$$\mathcal{B}_t=\{(p_i^b,q_i^b)\}_{i=1}^{K_b}\ (p_1^b>p_2^b>\dots),\qquad \mathcal{A}_t=\{(p_j^a,q_j^a)\}_{j=1}^{K_a}\ (p_1^a<p_2^a<\dots),$$
+$$
+\mathcal{B}_t=\{(p_i^b,q_i^b)\}_{i=1}^{K_b}\ (p_1^b>p_2^b>\dots),\qquad \mathcal{A}_t=\{(p_j^a,q_j^a)\}_{j=1}^{K_a}\ (p_1^a<p_2^a<\dots),
+$$
 
 with $p_1^b<p_1^a$ (no cross). A market buy of $Q$ shares **walks the book**: it consumes levels in price order until $Q$ is filled, so its average price is
 
-$$\bar p(Q)=\frac{1}{Q}\Big(\sum_{j<k} q_j^a p_j^a+\big(Q-\!\sum_{j<k}q_j^a\big)p_k^a\Big),\qquad k=\min\Big\{m:\sum_{j\le m}q_j^a\ge Q\Big\},$$
+$$
+\bar p(Q)=\frac{1}{Q}\Big(\sum_{j<k} q_j^a p_j^a+\big(Q-\!\sum_{j<k}q_j^a\big)p_k^a\Big),\qquad k=\min\Big\{m:\sum_{j\le m}q_j^a\ge Q\Big\},
+$$
 
 a **step-linear, convex** function of size. The gap between $\bar p(Q)$ and the best ask is the *slippage*; it is zero only for $Q\le q_1^a$.
 
@@ -49,12 +53,16 @@ a **step-linear, convex** function of size. The gap between $\bar p(Q)$ and the 
 
 **Adverse selection of a resting limit order.** A passive order at $p$ fills when a counterpart leaves the queue *at your price*. Conditioned on a fill, the conditional expected mid-revision is negative:
 
-$$\mathbb{E}\big[\Delta m \,\big|\, \text{fill at bid}\big] < 0 \quad (\text{Glosten–Milgrom; Hasbrouck Ch 5}),$$
+$$
+\mathbb{E}\big[\Delta m \,\big|\, \text{fill at bid}\big] < 0 \quad (\text{Glosten–Milgrom; Hasbrouck Ch 5}),
+$$
 
 so the *realized* spread $S_r=d_t(p_t-m_{t+\Delta})$ is smaller than the *effective* spread $S_e=d_t(p_t-m_t)$; the difference *is* the adverse-selection cost.
 
 **Effective and realized spread (Foucault eq 2.3–2.5).** For a trade at price $p$, mid $m$, direction $d$:
-$$S_e=d\,(p-m),\qquad S_r=d\,(p-m_{t+\Delta}).$$
+$$
+S_e=d\,(p-m),\qquad S_r=d\,(p-m_{t+\Delta}).
+$$
 A taker's *implementation cost* is $S_e$ (immediate); a maker's *net revenue* is $S_r$ (after the market moves). The quoted half-spread $S/2$ is what a naive backtest assumes; $S_e\ge S/2$ on average because market orders sweep.
 
 ---

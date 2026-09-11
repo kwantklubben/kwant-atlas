@@ -25,7 +25,9 @@ The theme of every failure mode: **a forgiving assumption applied at a place whe
 #### 2.1 The Sharpe cost drag (why a few basis points flip a verdict)
 
 If the strategy turns over fraction $\tau$ of its book **per year** and faces round-trip cost $c$ (proportional spread + fees), the annual cost drag is $\tau c$, so the net Sharpe is
-$$\widehat{SR}_{\text{net}}=\widehat{SR}_{\text{gross}}-\frac{\tau c}{\sigma_{\text{ann}}}\quad\text{(annualized, } \sigma_{\text{ann}}\text{ as annual vol).}$$
+$$
+\widehat{SR}_{\text{net}}=\widehat{SR}_{\text{gross}}-\frac{\tau c}{\sigma_{\text{ann}}}\quad\text{(annualized, } \sigma_{\text{ann}}\text{ as annual vol).}
+$$
 The **drag scales as $\tau/\sigma_{\text{ann}}$**: high-frequency, low-vol strategies are crushed by costs that are irrelevant to slow, high-vol ones. This is *not* a modelling nicety — it is the single most common reason a Sharpe-2.0 backtest becomes a Sharpe-0.7 live strategy. Market impact adds a **square-root** term $\propto (\text{size}/\text{ADV})^{1/2}$ that makes the drag size-dependent (Almgren–Chriss); a flat "5 bps" assumption is itself a failure mode.
 
 #### 2.2 Effective $N$ and the non-independence trap
@@ -35,7 +37,9 @@ Trials produced by tweaking one base signal are correlated; the selection thresh
 #### 2.3 The decision gate
 
 A defensible gate combines three independent corrections, all of which must pass:
-$$\underbrace{\text{DSR}\ge0.95}_{\text{selection bias + non-normality}}\ \wedge\ \underbrace{\widehat{SR}_{\text{net}}>0\ \text{after full costs}}_{\text{accounting}}\ \wedge\ \underbrace{T\ge\text{MinTRL}}_{\text{sample sufficiency}}\ \wedge\ \underbrace{\text{PBO}\ll0.5\ (\text{e.g.}\le0.05)}_{\text{selection robustness (page 06).}}$$
+$$
+\underbrace{\text{DSR}\ge0.95}_{\text{selection bias + non-normality}}\ \wedge\ \underbrace{\widehat{SR}_{\text{net}}>0\ \text{after full costs}}_{\text{accounting}}\ \wedge\ \underbrace{T\ge\text{MinTRL}}_{\text{sample sufficiency}}\ \wedge\ \underbrace{\text{PBO}\ll0.5\ (\text{e.g.}\le0.05)}_{\text{selection robustness (page 06).}}
+$$
 Note the recursion: computing DSR needs $N$, which needs the search to have been *logged* — so the protocol must be enforced **during** research, not audited after.
 
 #### 2.4 The order of operations (hygiene checklist)

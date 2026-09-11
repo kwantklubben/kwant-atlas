@@ -28,18 +28,24 @@ The objective is to be able to answer the real question — *"what should this f
 
 **Trade-off theory.** Firm value as a function of debt $D$:
 
-$$V_L(D) = V_U + \tau D - E[\text{distress}(D)] - E[\text{agency}(D)].$$
+$$
+V_L(D) = V_U + \tau D - E[\text{distress}(D)] - E[\text{agency}(D)].
+$$
 
 The tax shield $\tau D$ is linear and *increasing*; the expected distress/agency cost is *convex increasing* in leverage (each incremental dollar of debt adds more to the probability and severity of distress). The first-order condition for the optimum:
 
-$$\frac{\partial V_L}{\partial D} = \tau - \frac{\partial\, E[\text{distress}]}{\partial D} = 0
-\quad\Longrightarrow\quad \tau = \frac{\partial\, E[\text{distress}]}{\partial D}.$$
+$$
+\frac{\partial V_L}{\partial D} = \tau - \frac{\partial\, E[\text{distress}]}{\partial D} = 0
+\quad\Longrightarrow\quad \tau = \frac{\partial\, E[\text{distress}]}{\partial D}.
+$$
 
 At $D^*$, the **marginal tax shield equals the marginal expected distress cost**; beyond it, distress dominates and value falls. This is the interior optimum that the pure MM-with-tax result ($V_L = V_U + \tau D$, no upper bound) fails to deliver — which is why the pure $\tau D$ story can't be the whole answer (every firm would be 100% debt).
 
 **Pecking order (Myers–Majluf 1984).** Because of asymmetric information, external financing is ordered by *information sensitivity*: **internal cash (none) → debt (mild) → equity (severest, signals overvaluation)**. Formally, the firm issues only if the wealth transfer to new shareholders does not exceed the project's NPV. If the true value is $V$, market price $p < V/n$, and the firm must raise $need$ by issuing $m = need/p$ shares, the wealth transfer to new holders is
 
-$$\text{transfer} = m\left(\frac{V'}{n+m} - p\right), \qquad V' = V + need + NPV.$$
+$$
+\text{transfer} = m\left(\frac{V'}{n+m} - p\right), \qquad V' = V + need + NPV.
+$$
 
 If $\text{transfer} > NPV$, old shareholders are *worse off* by investing, so the firm **passes up a positive-NPV project** — underinvestment driven purely by the financing signal. The pecking order is the behavioral prediction: firms arrange their capital structure to *avoid ever having to issue equity at a bargain*.
 

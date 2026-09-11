@@ -47,15 +47,21 @@ The practical objective: write down both loss functions, implement the Deep BSDE
 
 Discretise $[0,T]$ into $N$ steps, $0=t_0<\dots<t_N=T$, $\Delta t=T/N$, $\Delta W_i=W_{t_{i+1}}-W_{t_i}$. Parametrise
 
-$$Z_i^\theta=\varphi_i\big(X_{t_i};\theta_i\big),\qquad Y_0^\theta=\theta_0\ (\text{a scalar}),$$
+$$
+Z_i^\theta=\varphi_i\big(X_{t_i};\theta_i\big),\qquad Y_0^\theta=\theta_0\ (\text{a scalar}),
+$$
 
 and **define $Y$ by the forward recursion** (this is the whole trick — the backward SDE is turned into a forward one by treating $Y_0$ as the unknown):
 
-$$\boxed{\ Y_{i+1}^\theta=Y_i^\theta+f\big(t_i,Y_i^\theta,Z_i^\theta\big)\Delta t+Z_i^\theta\,\Delta W_i,\qquad i=0,\dots,N-1\ }$$
+$$
+\boxed{\ Y_{i+1}^\theta=Y_i^\theta+f\big(t_i,Y_i^\theta,Z_i^\theta\big)\Delta t+Z_i^\theta\,\Delta W_i,\qquad i=0,\dots,N-1\ }
+$$
 
 and train by the *only* loss available,
 
-$$\boxed{\ \theta^\star=\arg\min_\theta\ \mathbb E\Big[\big(\xi-Y_N^\theta\big)^2\Big]\ }$$
+$$
+\boxed{\ \theta^\star=\arg\min_\theta\ \mathbb E\Big[\big(\xi-Y_N^\theta\big)^2\Big]\ }
+$$
 
 (E–Han–Jentzen 2017; E–Han–Jentzen 2018, PNAS). Why this is legitimate:
 
@@ -68,7 +74,9 @@ $$\boxed{\ \theta^\star=\arg\min_\theta\ \mathbb E\Big[\big(\xi-Y_N^\theta\big)^
 
 Parametrise the value directly, $u_\theta(t,x)$, and minimise the **PDE residual** on collocation points plus a terminal penalty,
 
-$$\boxed{\ \mathcal L(\theta)=\underbrace{\big\|\partial_tu_\theta+Lu_\theta+f\big(t,u_\theta,\sigma^{\!\top}\nabla u_\theta\big)\big\|^2_{\text{collocation}}}_{\text{interior equation}}+\lambda\underbrace{\big\|u_\theta(T,\cdot)-g\big\|^2_{\text{boundary}}}_{\text{terminal condition}}\ }$$
+$$
+\boxed{\ \mathcal L(\theta)=\underbrace{\big\|\partial_tu_\theta+Lu_\theta+f\big(t,u_\theta,\sigma^{\!\top}\nabla u_\theta\big)\big\|^2_{\text{collocation}}}_{\text{interior equation}}+\lambda\underbrace{\big\|u_\theta(T,\cdot)-g\big\|^2_{\text{boundary}}}_{\text{terminal condition}}\ }
+$$
 
 (Sirignano–Spiliopoulos 2018). Because the residual is evaluated by sampling $(\Omega\times[0,T])$, the method needs **no mesh** — the same reason Monte Carlo beats finite differences in high dimension — but it demands second derivatives of the network ($Lu$ contains $\nabla^2u$), which are available by autodiff but noisy, and it must be trained to satisfy the terminal condition *and* the interior simultaneously (a balance that the weight $\lambda$ controls).
 
@@ -76,9 +84,11 @@ $$\boxed{\ \mathcal L(\theta)=\underbrace{\big\|\partial_tu_\theta+Lu_\theta+f\b
 
 Before either method there was **least-squares Monte Carlo** (Longstaff–Schwartz 2001 for American options; Gobet–Lemor–Warin 2005 for BSDEs):
 
-$$\widehat Y_{t_i}=\mathbb E\big[Y_{t_{i+1}}\mid X_{t_i}\big]+f\,\Delta t\ \ \text{estimated by regressing }Y_{t_{i+1}}\text{ on a basis of }X_{t_i},
+$$
+\widehat Y_{t_i}=\mathbb E\big[Y_{t_{i+1}}\mid X_{t_i}\big]+f\,\Delta t\ \ \text{estimated by regressing }Y_{t_{i+1}}\text{ on a basis of }X_{t_i},
 \qquad
-\widehat Z_{t_i}=\mathbb E\Big[Y_{t_{i+1}}\frac{\Delta W_i}{\Delta t}\ \Big|\ X_{t_i}\Big] .$$
+\widehat Z_{t_i}=\mathbb E\Big[Y_{t_{i+1}}\frac{\Delta W_i}{\Delta t}\ \Big|\ X_{t_i}\Big] .
+$$
 
 The $Z$-estimator is exact for the *discretised* problem: since $\Delta W_i\perp\mathcal F_{t_i}$ and $\mathbb E[\Delta W_i^2]=\Delta t$, the martingale representation of $Y$ gives $\mathbb E[Y_{t_{i+1}}\Delta W_i/\Delta t\mid\mathcal F_{t_i}]=Z_{t_i}+O(\Delta t)$. The three methods then differ only in **the function class** used for the conditional expectation:
 

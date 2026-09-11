@@ -27,19 +27,29 @@ The objective: replace a single point estimate with a **range** whose width is t
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 Bayesian model averaging.** With candidate models $\mathcal M_i$, Bayesian posterior weights are $w_i=\mathbb P(\mathcal M_i\mid\mathcal D)\propto \mathbb P(\mathcal D\mid\mathcal M_i)\,\mathbb P(\mathcal M_i)$. A practical, BIC-based approximation (ESL eq. 7.35) is
-$$w_i=\frac{e^{-\frac12\Delta\mathrm{BIC}_i}}{\sum_j e^{-\frac12\Delta\mathrm{BIC}_j}},\qquad \Delta\mathrm{BIC}_i=\mathrm{BIC}_i-\min_j\mathrm{BIC}_j,$$
+$$
+w_i=\frac{e^{-\frac12\Delta\mathrm{BIC}_i}}{\sum_j e^{-\frac12\Delta\mathrm{BIC}_j}},\qquad \Delta\mathrm{BIC}_i=\mathrm{BIC}_i-\min_j\mathrm{BIC}_j,
+$$
 and the BMA estimate and its model-selection variance are
-$$\bar V=\sum_i w_iV_i,\qquad \sigma_{\text{model}}^2=\sum_i w_i\,(V_i-\bar V)^2.$$
+$$
+\bar V=\sum_i w_iV_i,\qquad \sigma_{\text{model}}^2=\sum_i w_i\,(V_i-\bar V)^2.
+$$
 $\sigma_{\text{model}}$ is the model risk *made explicit*: it is large precisely when the models disagree, and it shrinks automatically when the evidence concentrates.
 
 **2.2 Relative entropy (KL divergence).** The information distance from model $Q$ to model $P$ is
-$$D_{\mathrm{KL}}(P\|Q)=\int p(x)\ln\frac{p(x)}{q(x)}\,dx\ \ge 0,$$
+$$
+D_{\mathrm{KL}}(P\|Q)=\int p(x)\ln\frac{p(x)}{q(x)}\,dx\ \ge 0,
+$$
 finite and closed-form for Gaussians:
-$$D_{\mathrm{KL}}\!\big(\mathcal N(\mu_P,\sigma_P)\|\mathcal N(\mu_Q,\sigma_Q)\big)=\ln\frac{\sigma_Q}{\sigma_P}+\frac{\sigma_P^2+(\mu_P-\mu_Q)^2}{2\sigma_Q^2}-\frac12 .$$
+$$
+D_{\mathrm{KL}}\!\big(\mathcal N(\mu_P,\sigma_P)\|\mathcal N(\mu_Q,\sigma_Q)\big)=\ln\frac{\sigma_Q}{\sigma_P}+\frac{\sigma_P^2+(\mu_P-\mu_Q)^2}{2\sigma_Q^2}-\frac12 .
+$$
 It is **asymmetric** (it is not a metric) and *quadratic* in the mean gap but only logarithmically sensitive to scale differences — matching the intuition that a small shift in the mean of a forecast is worse than a small shift in its width.
 
 **2.3 Entropy-robust value bounds.** Let $X$ be a payoff and $P$ the reference (pricing) measure. Define the ambiguity set $\mathcal U_\varepsilon=\{Q\ \text{model}: D_{\mathrm{KL}}(Q\|P)\le\varepsilon\}$. The worst-case value is a *dual* object whose second-order expansion is
-$$\sup_{Q\in\mathcal U_\varepsilon}\mathbb E_Q[X]\;=\;\mathbb E_P[X]+\sqrt{2\varepsilon\,\operatorname{Var}_P(X)}\;+\;\mathcal O(\varepsilon),$$
+$$
+\sup_{Q\in\mathcal U_\varepsilon}\mathbb E_Q[X]\;=\;\mathbb E_P[X]+\sqrt{2\varepsilon\,\operatorname{Var}_P(X)}\;+\;\mathcal O(\varepsilon),
+$$
 obtained by exponential tilting $dQ/dP\propto e^{\theta X}$ with $\theta=\theta(\varepsilon)$ set by the entropy budget. The right-hand side is the **model-risk add-on**: a non-negative premium that vanishes as $\varepsilon\to0$, grows with the payoff's dispersion, and is *robust* — it does not require knowing which alternative model is true, only how far any alternative is allowed to be. Cont's program (model uncertainty and the pricing of derivatives) is the systematic version of this.
 
 **2.4 Reading the three together.** BMA gives a *weighted ensemble* (prediction), KL gives a *distance* (diagnostic), and the robust bound gives a *worst case* (capital). A complete advanced model-risk report states all three: the central estimate, the inter-model disagreement, and the entropy-budgeted bound.
@@ -97,7 +107,7 @@ for eps in (0.001, 0.01, 0.05):
   eps=0.050: base=10.4733  robust bound=15.1048  add-on=4.6315
 ```
 
-Reading it: the three models span $10.45\to11.40$, a $\pm5\%$ range; BIC weighting pulls the BMA to $10.6179$ with a **model-selection sd of $0.2903$** (about $2.8\%$ of value). The KL divergences quantify *how far* the alternative views are: shifting the mean by $0.05$ and widening by $10\%$ costs only $0.0096$ nats, whereas a $0.20$ shift and $40\%$ widening costs $0.102$ nats — an order of magnitude more. The robust bounds then turn the entropy budget into a price: with the payoff variance from the reference model, allowing $\varepsilon=0.001$ nats of model deviation adds $+\$0.655$ to the value, $\varepsilon=0.01$ adds $+\$2.071$, and $\varepsilon=0.05$ adds $+\$4.632$ — **a monotone, defensible model-risk add-on**. (The base uses a Monte Carlo reference expectation $\approx10.4733$; the small gap from the analytic $10.4506$ is simulation noise.)
+Reading it: the three models span $10.45\to11.40$, a $\pm5\%$ range; BIC weighting pulls the BMA to $10.6179$ with a **model-selection sd of $0.2903$** (about $2.8\%$ of value). The KL divergences quantify *how far* the alternative views are: shifting the mean by $0.05$ and widening by $10\%$ costs only $0.0096$ nats, whereas a $0.20$ shift and $40\%$ widening costs $0.102$ nats — an order of magnitude more. The robust bounds then turn the entropy budget into a price: with the payoff variance from the reference model, allowing $\varepsilon=0.001$ nats of model deviation adds $+ $ \$0.655 to the value, \varepsilon=0.01$ adds $+ $ $\$2.071, and \varepsilon=0.05$ adds $+ $ $\$4.632 — **a monotone, defensible model-risk add-on**. (The base uses a Monte Carlo reference expectation \approx10.4733$; the small gap from the analytic $10.4506$ is simulation noise.)
 
 ---
 

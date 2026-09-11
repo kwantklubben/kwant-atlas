@@ -30,33 +30,45 @@ The economics, in one line each:
 
 **Inventory risk is variance.** If the reference price follows $dS=\sigma\,dW$ over horizon $\tau$, a fixed position of $I$ shares has terminal wealth $I\cdot S_T$ with variance
 
-$$\mathrm{Var}(I S_T)=I^2\sigma^2\tau, \qquad \text{std}=\lvert I\rvert\sigma\sqrt\tau.$$
+$$
+\mathrm{Var}(I S_T)=I^2\sigma^2\tau, \qquad \text{std}=\lvert I\rvert\sigma\sqrt\tau.
+$$
 
 This is the *directional* risk you take by being a dealer instead of a pure spread collector: linear in $|I|$, linear in $\sigma$, square-root in time.
 
 **The certainty-equivalent cost.** Under CARA utility $u(W)=-e^{-\gamma W}$, holding a position with P&L variance $V$ and zero mean is worth $-e^{-\gamma\cdot(\text{CE})}$ where the certainty equivalent satisfies
 
-$$\mathbb{E}[-e^{-\gamma I S_T}]=-e^{-\gamma\big(0-\frac{\gamma}{2}I^2\sigma^2\tau\big)},$$
+$$
+\mathbb{E}[-e^{-\gamma I S_T}]=-e^{-\gamma\big(0-\frac{\gamma}{2}I^2\sigma^2\tau\big)},
+$$
 
 so the dealer's personal valuation of a share at inventory $I$ is the **reservation price**
 
-$$\boxed{\;r(I)=\bar S-\gamma\sigma^2 I\,\tau\;}$$
+$$
+\boxed{\;r(I)=\bar S-\gamma\sigma^2 I\,\tau\;}
+$$
 
 and the total cost of the position, in certainty-equivalent dollars, is $\tfrac12\gamma\sigma^2I^2\tau$. Differentiating in $I$:
 
-$$\frac{\partial}{\partial I}\Big(\tfrac12\gamma\sigma^2I^2\tau\Big)=\gamma\sigma^2I\tau$$
+$$
+\frac{\partial}{\partial I}\Big(\tfrac12\gamma\sigma^2I^2\tau\Big)=\gamma\sigma^2I\tau
+$$
 
 — the marginal cost of the $I$-th share is the skew. This is the linear reservation price of [[pillars/06-market-making/inventory-management-and-quote-skewing/03-ho-stoll-model|03 · The Ho–Stoll Model]].
 
 **The optimal inventory position.** The dealer maximizes expected CARA utility of terminal wealth. Over a horizon with no drift the objective reduces to
 
-$$\mathbb{E}[W]-\frac{\gamma}{2}\mathrm{Var}(W)=\text{spread revenue}-\tfrac12\gamma\sigma^2\,\mathbb{E}[I^2]\tau.$$
+$$
+\mathbb{E}[W]-\frac{\gamma}{2}\mathrm{Var}(W)=\text{spread revenue}-\tfrac12\gamma\sigma^2\,\mathbb{E}[I^2]\tau.
+$$
 
 Because spread revenue does not require holding a position (you earn it round-trip), the variance penalty is minimized at $\mathbb{E}[I^2]=0$, i.e. **$I^\ast=0$**. Any forecast $\mu$ pulls the target away from zero: with drift, the optimal position shifts to $I^\ast=\tfrac{\mu}{\gamma\sigma^2}$ (risk-adjusted trade of return vs. variance).
 
 **Inventory mean-reversion.** An unmanaged position is a random walk: $q_{t+1}=q_t+\varepsilon_t$ with $\mathrm{Var}(q_T)\propto T$. Quote skewing injects a *restoring drift*: the probability of the inventory-reducing trade rises with $|q|$, so the position satisfies an Ornstein–Uhlenbeck-type equation
 
-$$dq_t=-\kappa\,q_t\,dt+\text{flow noise},$$
+$$
+dq_t=-\kappa\,q_t\,dt+\text{flow noise},
+$$
 
 where the reversion speed $\kappa$ is set by the skew strength $\gamma\sigma^2\tau$ and the fill elasticity $k$. The optimal *liquidation* of a large position is the controlled version of this mean reversion ([[pillars/06-market-making/inventory-management-and-quote-skewing/06-advanced-extensions|06 · Advanced Extensions]]).
 

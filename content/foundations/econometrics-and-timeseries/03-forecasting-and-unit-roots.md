@@ -27,7 +27,9 @@ The intuition in three lines:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Forecasting (Tsay §2.6).** The MSE-optimal $h$-step forecast is $x_{t+h\mid t}=\mathbb{E}[x_{t+h}\mid\mathcal{F}_t]$. Via the MA($\infty$) representation, the forecast-error variance is
-$$\mathrm{Var}[e_h(\ell)]=\left(1+\psi_1^2+\dots+\psi_{\ell-1}^2\right)\sigma_a^2.$$
+$$
+\mathrm{Var}[e_h(\ell)]=\left(1+\psi_1^2+\dots+\psi_{\ell-1}^2\right)\sigma_a^2.
+$$
 
 - **AR(p) forecast → mean.** As $\ell\to\infty$ the forecast converges to the unconditional mean $\phi_0/(1-\sum\phi_i)$. For AR(1) the half-life to revert half-way to the mean is $\ell=\dfrac{\ln(0.5)}{\ln\lvert\phi_1\rvert}$.
 - **MA(q) forecast → mean after $q$ steps.** Once all the past *shocks* have cleared, the forecast is exactly the mean.
@@ -38,7 +40,9 @@ $$\mathrm{Var}[e_h(\ell)]=\left(1+\psi_1^2+\dots+\psi_{\ell-1}^2\right)\sigma_a^
 **Differencing.** The first difference $\nabla x_t=(1-B)x_t=x_t-x_{t-1}$ removes one unit root; $x_t$ is **integrated of order 1**, $I(1)$, if $\nabla x_t$ is stationary. An ARIMA(p,1,q) model is one where $(1-B)x_t$ is stationary ARMA(p,q).
 
 **Augmented Dickey–Fuller test (Tsay eq. 2.38–2.40).** Fit
-$$\nabla x_t = c_t + \beta_c\,x_{t-1} + \sum_{i=1}^p\phi_i\,\nabla x_{t-i} + e_t,$$
+$$
+\nabla x_t = c_t + \beta_c\,x_{t-1} + \sum_{i=1}^p\phi_i\,\nabla x_{t-i} + e_t,
+$$
 and test $H_0:\beta_c=0$ (unit root, since $\beta_c=\phi_1-1$) against $H_1:\beta_c<0$. The statistic $\mathrm{DF}=(\hat\phi_1-1)/\mathrm{std}(\hat\phi_1)$ does **not** follow a Student-$t$; it follows the **Dickey–Fuller distribution** (critical values $\approx-3.43,-2.86,-2.57$ at 1%,5%,10% with a constant). The lagged $\nabla x_{t-i}$ terms absorb serial correlation so the test is valid for ARMA errors.
 
 **Spurious regression (Granger & Newbold 1974).** Two independent $I(1)$ series $Y_t,X_t$ regressed as $Y_t=\alpha+\beta X_t+\eta_t$ produce $t$-stats exceeding 10 and $R^2>0.8$ asymptotically despite being unrelated. The residual is itself $I(1)$ — it does **not** mean-revert.

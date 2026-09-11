@@ -32,19 +32,25 @@ The methodological lesson (Kothari–Warner §4): for **long-horizon** event stu
 
 **Standardized unexpected earnings (SUE).** The earnings surprise scaled by its standard deviation — the cross-sectional regressor for information-content tests:
 
-$$SUE_{it} = \frac{AEPS_{it} - \mathbb{E}[AEPS_{it}]}{\sigma(\Delta AEPS_i)},$$
+$$
+SUE_{it} = \frac{AEPS_{it} - \mathbb{E}[AEPS_{it}]}{\sigma(\Delta AEPS_i)},
+$$
 
 where $AEPS$ is the change in earnings per share and the expectation is from a model (e.g. seasonal random walk: expected $\Delta$EPS = last year's $\Delta$EPS). Positive SUE = good news.
 
 **Cross-sectional regression (information content).** For a sample of $N$ event firms,
 
-$$AR_i = a + b\,SUE_i + u_i,$$
+$$
+AR_i = a + b\,SUE_i + u_i,
+$$
 
 with $b>0$ if the surprise is priced — a direct measure of the *information content* of the announcement. This is the classic Sefcik–Thompson (1986) / Kothari–Warner §3.7 cross-sectional test.
 
 **Post-announcement drift (PEAD).** If the market underreacts, the event-window abnormal return captures only part of the information; the rest arrives as drift in the direction of $SUE$:
 
-$$AR_{i,t} = f(SUE_i) + \varepsilon_{i,t}, \qquad t > 0,$$
+$$
+AR_{i,t} = f(SUE_i) + \varepsilon_{i,t}, \qquad t > 0,
+$$
 
 with $\partial AR_t/\partial SUE > 0$ persisting for weeks after the announcement. Under efficiency, $\mathbb{E}[AR_{i,t}]=0$ for all $t>0$; PEAD is the empirical violation.
 
@@ -52,7 +58,9 @@ with $\partial AR_t/\partial SUE > 0$ persisting for weeks after the announcemen
 - **BHAR** (matched-firm): $BHAR_i = \prod(1+R_i) - \prod(1+R_B)$.
 - **Jensen alpha / calendar-time portfolio**: form a portfolio each calendar month of all firms that had the event within the prior $T$ months, then regress
 
-$$R_{pt}-R_{ft} = a_p + b_p(R_{mt}-R_{ft}) + s_p\,SMB_t + h_p\,HML_t + m_p\,UMD_t + e_{pt},$$
+$$
+R_{pt}-R_{ft} = a_p + b_p(R_{mt}-R_{ft}) + s_p\,SMB_t + h_p\,HML_t + m_p\,UMD_t + e_{pt},
+$$
 
 and read $a_p$ (average monthly abnormal performance) off the intercept. This is the Fama–French–Carhart four-factor event test (Kothari–Warner §4.3.2).
 

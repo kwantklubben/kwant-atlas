@@ -30,9 +30,11 @@ Concretely: a stock with arithmetic mean return $\mu$ and volatility $\sigma$ co
 
 For a one-period simple return $R_t$, the log return is $r_t=\ln(1+R_t)$. A multi-period product becomes a sum:
 
-$$1+R_t[k]=\prod_{j=0}^{k-1}(1+R_{t-j})
+$$
+1+R_t[k]=\prod_{j=0}^{k-1}(1+R_{t-j})
 \quad\Longrightarrow\quad
-r_t[k]=\sum_{j=0}^{k-1}r_{t-j}.$$
+r_t[k]=\sum_{j=0}^{k-1}r_{t-j}.
+$$
 
 So **log returns are additive across time**, restoring the ergodic structure of page 02. The **geometric mean return** is $\exp(\overline{r})-1$, where $\overline{r}=\frac1k\sum r_{t-j}$ is the time average of log returns — the $g$ of page 01.
 
@@ -40,17 +42,23 @@ So **log returns are additive across time**, restoring the ergodic structure of 
 
 Let $R$ have mean $\mu$ and variance $\sigma^2$, small enough that $|R|<1$. Expand
 
-$$\ln(1+R)=R-\tfrac12R^2+\tfrac13R^3-\cdots
+$$
+\ln(1+R)=R-\tfrac12R^2+\tfrac13R^3-\cdots
 \quad\Longrightarrow\quad
-\mathbb{E}[\ln(1+R)]=\mu-\tfrac12(\mu^2+\sigma^2)+\cdots$$
+\mathbb{E}[\ln(1+R)]=\mu-\tfrac12(\mu^2+\sigma^2)+\cdots
+$$
 
 Collecting terms, to second order,
 
-$$\boxed{\;g=\mathbb{E}[\ln(1+R)]\;\approx\;\ln(1+\mu)-\frac{\sigma^2}{2(1+\mu)^2}\;\approx\;\mu-\frac{\sigma^2}{2}\;}$$
+$$
+\boxed{\;g=\mathbb{E}[\ln(1+R)]\;\approx\;\ln(1+\mu)-\frac{\sigma^2}{2(1+\mu)^2}\;\approx\;\mu-\frac{\sigma^2}{2}\;}
+$$
 
 The ensemble growth rate is $\ln\mathbb{E}[1+R]=\ln(1+\mu)$, so the **drag** separating typical from ensemble growth is exactly
 
-$$\ln(1+\mu)-g\;\approx\;\frac{\sigma^2}{2(1+\mu)^2}.$$
+$$
+\ln(1+\mu)-g\;\approx\;\frac{\sigma^2}{2(1+\mu)^2}.
+$$
 
 This is the Jensen gap of page 02, now quantified: **volatility, not direction, determines how far the typical path lags the average.**
 
@@ -58,12 +66,16 @@ This is the Jensen gap of page 02, now quantified: **volatility, not direction, 
 
 For $dS=\mu S\,dt+\sigma S\,dW$, Itô gives $S_t=S_0\exp\!\big((\mu-\tfrac12\sigma^2)t+\sigma W_t\big)$, so
 
-$$\mathbb{E}[S_t]=S_0e^{\mu t}\quad\text{(ensemble)},\qquad
-\mathrm{med}(S_t)=S_0e^{(\mu-\frac12\sigma^2)t}\quad\text{(typical)},$$
+$$
+\mathbb{E}[S_t]=S_0e^{\mu t}\quad\text{(ensemble)},\qquad
+\mathrm{med}(S_t)=S_0e^{(\mu-\frac12\sigma^2)t}\quad\text{(typical)},
+$$
 
 and the time-average growth rate is $g_\infty=\mu-\tfrac12\sigma^2$. With a risky fraction $f$ and riskless rate $r$, the continuous growth rate is the **Kelly growth function**
 
-$$g_\infty(f)=r+f(m-r)-\tfrac12 s^2 f^2 .$$
+$$
+g_\infty(f)=r+f(m-r)-\tfrac12 s^2 f^2 .
+$$
 
 This is a downward parabola in $f$, concave, with a unique maximum — the object maximised on [[foundations/ergodicity-and-statistical-mechanics/04-kelly-criterion|page 04]]. The quadratic penalty $-\tfrac12s^2f^2$ is the volatility drag made lever-aware.
 
@@ -123,7 +135,7 @@ The ensemble mean ($27.11\times$) and the geometric mean / median ($19.35\times$
 ### 5. Canonical Literature & Study References
 
 - **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.), Ch 1 — return definitions, the geometric vs arithmetic mean (Eq 1.1–1.7), and the empirical fat tails (high excess kurtosis, Table 1.2) that make the drag worse than Gaussian. *Verified in the corpus.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §7.1 — the continuous growth function $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ (eq. 7.2), its log-normal diffusion limit, and $g_\infty(f^\*)=(m-r)^2/2s^2+r$. *Corpus-verified.*
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §7.1 — the continuous growth function $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ (eq. 7.2), its log-normal diffusion limit, and $g_\infty(f^*)=(m-r)^2/2s^2+r$. *Corpus-verified.*
 - **Shreve, Steven E.**: *Stochastic Calculus for Finance I*, Ch 15 (Thm 15.3) — GBM and the $\tfrac12\sigma^2$ Itô correction: $S_t=S_0e^{\sigma W_t+(\mu-\frac12\sigma^2)t}$. *Math-verified.*
 - **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15 (2019) — the log-growth/volatility-drag reading of multiplicative dynamics.
 

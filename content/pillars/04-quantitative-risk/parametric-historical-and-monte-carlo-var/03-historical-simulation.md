@@ -25,7 +25,9 @@ Its great strengths: it is **non-parametric** (it reproduces whatever fat tails,
 
 **Filtered Historical Simulation (FHS, Hull & White 1998; McNeil & Frey 2000)** fixes the "yesterday = 3 years ago volatility" naivety by *scaling* each historical return by the ratio of today's (conditional GARCH) vol to the vol on that historical day:
 
-$$r^*_{i,t}=r_{i,t}\cdot\frac{\sigma_{i,\text{today}}}{\sigma_{i,t}},$$
+$$
+r^*_{i,t}=r_{i,t}\cdot\frac{\sigma_{i,\text{today}}}{\sigma_{i,t}},
+$$
 
 so recent history reflects *current* market volatility while keeping the empirical tail shape. It is the bridge from this folder to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]] (McNeil & Frey fuse a GARCH filter with a generalized-Pareto tail).
 
@@ -35,7 +37,9 @@ so recent history reflects *current* market volatility while keeping the empiric
 
 **The empirical CDF and its quantile.** Let $\{L_1,\dots,L_n\}$ be the $n$ hypothetical portfolio *losses* (or, equivalently, rank the P&L). The empirical distribution function assigns mass $1/n$ to each observation; the HS VaR at confidence $\alpha$ is the empirical $\alpha$-quantile. Rank the losses ascending: $L_{(1)}\le\cdots\le L_{(n)}$ ($L_{(n)}$ = worst). Then
 
-$$\widehat{\text{VaR}}_\alpha^{(HS)}=L_{(\lceil n(1-\alpha)\rceil)}$$
+$$
+\widehat{\text{VaR}}_\alpha^{(HS)}=L_{(\lceil n(1-\alpha)\rceil)}
+$$
 
 — e.g. $n=500,\ \alpha=0.99 \Rightarrow$ rank $\lceil 500\cdot0.01\rceil=5$, the 5th-worst loss. (Hull's 501-day/5th-worst convention and RiskMetrics variants differ by interpolation convention; that is immaterial vs the method's real limits.)
 
@@ -47,7 +51,9 @@ $$\widehat{\text{VaR}}_\alpha^{(HS)}=L_{(\lceil n(1-\alpha)\rceil)}$$
 - **(H3) Full revaluation is affordable** — every historical scenario revalues every position (HS gets expensive with many options; a delta/moment shortcut loses the richness it's valued for).
 
 **The empirical-quantile sampling error (Glasserman Ch 9 §9.1).** The HS VaR estimate has asymptotic variance
-$$\sqrt n\,\big(\widehat x_p-x_p\big)\Rightarrow N\!\Big(0,\tfrac{p(1-p)}{f(x_p)^2}\Big),$$
+$$
+\sqrt n\,\big(\widehat x_p-x_p\big)\Rightarrow N\!\Big(0,\tfrac{p(1-p)}{f(x_p)^2}\Big),
+$$
 with $p=1-\alpha$. The density $f(x_p)^2$ in the denominator **magnifies the noise exactly in the far tail** — the rarer the exceedance you ask about, the noisier the estimate, because few observations live there. This is the formal reason 99.9% HS VaR is unstable.
 
 ---

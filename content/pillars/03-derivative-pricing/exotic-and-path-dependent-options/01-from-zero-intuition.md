@@ -28,7 +28,9 @@ The practical objective of this page: build the intuition for *why* this change 
 
 **The shared object: a path-functional.** Under the risk-neutral measure the stock is
 
-$$dS = b\,S\,dt + \sigma S\,dW^{\mathbb{Q}},$$
+$$
+dS = b\,S\,dt + \sigma S\,dW^{\mathbb{Q}},
+$$
 
 and every exotic here is $V(0)=e^{-rT}\,\mathbb{E}^{\mathbb{Q}}\big[f(\text{path})\big]$ for a different functional $f$:
 

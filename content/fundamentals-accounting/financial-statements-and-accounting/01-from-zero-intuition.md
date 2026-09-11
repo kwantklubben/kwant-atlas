@@ -40,7 +40,9 @@ Why does this matter for investing? Because everything an analyst, quant, or val
 
 The single most important mental habit is the **accounting equation**, which is just conservation of value:
 
-$$\boxed{\;\text{Assets} = \text{Liabilities} + \text{Owners' equity}\;}$$
+$$
+\boxed{\;\text{Assets} = \text{Liabilities} + \text{Owners' equity}\;}
+$$
 
 An **asset** is something expected to generate future payoffs (cash, inventory, equipment). A **liability** is a claim by someone other than the owners (a bank loan, money owed to suppliers). **Owners' equity** is the *residual* — what is left for the owners after subtracting everyone else's claims. That is why it is sometimes called *net assets*. If assets rise without new liabilities, equity rises — and the only way that happens from running the business is profit.
 

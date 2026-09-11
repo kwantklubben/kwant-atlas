@@ -30,20 +30,26 @@ The theme of every failure mode is the same: **a decision made with information 
 A feature $x_{t}$ is **legal** iff $x_t\in\mathcal F_t=\sigma(\{(\text{data})_s:s\le t\})$. The three standard leaks:
 
 - **Look-ahead in the label's parameters.** Barrier widths set from a full-sample volatility, $\sigma_{\text{all}}=\operatorname{sd}(\{r_s\}_{s=1}^{T})$, depend on the whole sample. The legal version uses $\sigma_{t_{i,0}}$ from data $\le t_{i,0}$:
-$$\text{leak: }\ \pm pt\,\sigma_{\text{all}}\quad\text{vs}\quad \text{legal: }\ \pm pt\,\sigma_{t_{i,0}},\qquad \sigma_t^2=\lambda\sigma_{t-1}^2+(1-\lambda)r_{t-1}^2.$$
+$$
+\text{leak: }\ \pm pt\,\sigma_{\text{all}}\quad\text{vs}\quad \text{legal: }\ \pm pt\,\sigma_{t_{i,0}},\qquad \sigma_t^2=\lambda\sigma_{t-1}^2+(1-\lambda)r_{t-1}^2.
+$$
 - **Look-ahead in preprocessing.** Full-sample standardisation $\bar x_{\text{all}},\operatorname{sd}(x_{\text{all}})$ (page 02) and any scaler fit on all data.
 - **Look-ahead in joins.** Point-in-time (as-of) merges on fundamentals, index membership, or vendor-restated values.
 
 #### 2.2 Non-stationarity and the over-differencing trap
 
 Two competing errors. **Under-differencing** leaves a unit root: a series with a stochastic trend has a sample mean and variance that do not converge, so any "level" feature is regime-dependent. **Over-differencing** ($d=1$) removes the trend but also removes the memory that carries alpha. The right amount is the **minimum differencing order** $d^*$ that makes the series stationary:
-$$d^*=\min\{d\ge0:\ \text{ADF/DF}(X^{(d)})\ \text{rejects the unit root at level }\alpha\},\qquad X^{(d)}_t=\sum_{k\ge0}w_k X_{t-k}.$$
+$$
+d^*=\min\{d\ge0:\ \text{ADF/DF}(X^{(d)})\ \text{rejects the unit root at level }\alpha\},\qquad X^{(d)}_t=\sum_{k\ge0}w_k X_{t-k}.
+$$
 For integer $d$ this is augmented-Dickey–Fuller testing; for fractional $d$ it is fractional integration (page 06). The cost of over-differencing is measurable: the correlation of $X^{(d)}$ with the price level.
 
 #### 2.3 Overlap, concurrency and the effective sample
 
 Two labels $y_i,y_j$ are **concurrent at $t$** when both are functions of the same return $r_t$. Define
-$$c_t=\sum_i \mathbf 1\{[t_{i,0},t_{i,1}]\ni t\},\qquad \bar u_i=\frac{1}{t_{i,1}-t_{i,0}+1}\sum_{t=t_{i,0}}^{t_{i,1}}\frac{1}{c_t}.$$
+$$
+c_t=\sum_i \mathbf 1\{[t_{i,0},t_{i,1}]\ni t\},\qquad \bar u_i=\frac{1}{t_{i,1}-t_{i,0}+1}\sum_{t=t_{i,0}}^{t_{i,1}}\frac{1}{c_t}.
+$$
 $\bar u_i\in(0,1]$ is the **average uniqueness** of label $i$; its sum $\sum_i\bar u_i$ is the **effective number of independent outcomes**, which is what the sample really contains. Two consequences: (i) the raw count $I$ overstates the sample (behaviour below), and (ii) standard $k$-fold CV leaks because a test-fold return is *inside* a training-fold label — the fix is **purging** (drop training labels whose span overlaps the test span) plus an **embargo** (drop the next few observations after the test set), LdP Ch 7.
 
 #### 2.4 Class imbalance

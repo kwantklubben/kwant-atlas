@@ -32,19 +32,25 @@ The protocol, in order (each step can veto the dataset):
 
 **The Information Coefficient.** For each period $p$ with $N$ names,
 
-$$\text{IC}_p=\operatorname{corr}\big(x_i^{(p)},\,y_i^{(p)}\big),\qquad
-\text{rank-IC}_p=\operatorname{Pearson}\big(\operatorname{rank}(x^{(p)}),\operatorname{rank}(y^{(p)})\big)\ \ (\text{Spearman}).$$
+$$
+\text{IC}_p=\operatorname{corr}\big(x_i^{(p)},\,y_i^{(p)}\big),\qquad
+\text{rank-IC}_p=\operatorname{Pearson}\big(\operatorname{rank}(x^{(p)}),\operatorname{rank}(y^{(p)})\big)\ \ (\text{Spearman}).
+$$
 
 **Consistency: ICIR and $t$-stat.** Over $P$ periods, with $\overline{\text{IC}}$ the mean and $\sigma_{\text{IC}}$ the standard deviation,
 
-$$\text{ICIR}=\frac{\overline{\text{IC}}}{\sigma_{\text{IC}}},\qquad
-t=\text{ICIR}\sqrt{P}=\frac{\overline{\text{IC}}}{\sigma_{\text{IC}}}\sqrt{P}.$$
+$$
+\text{ICIR}=\frac{\overline{\text{IC}}}{\sigma_{\text{IC}}},\qquad
+t=\text{ICIR}\sqrt{P}=\frac{\overline{\text{IC}}}{\sigma_{\text{IC}}}\sqrt{P}.
+$$
 
 Under iid periods, $\text{IC}_p$ has standard error $\approx1/\sqrt{N}$ *within* a period and $\sigma_{\text{IC}}/\sqrt P$ *across* periods; with overlapping forward returns you need a **Newey–West** correction to $t$ (López de Prado, AFML Ch. 8, on the deflated Sharpe / multiple testing).
 
 **Decay estimation by log-linear regression.** If $\text{IC}(h)=\text{IC}_0 e^{-\lambda h}$ then
 
-$$\ln \text{IC}(h)=\ln\text{IC}_0-\lambda h,$$
+$$
+\ln \text{IC}(h)=\ln\text{IC}_0-\lambda h,
+$$
 
 so an OLS of $\ln\text{IC}(h)$ on $h$ gives $\hat\lambda$ (slope) and $\widehat{\text{IC}_0}=e^{\text{intercept}}$; the half-life is $t_{1/2}=\ln 2/\hat\lambda$. **Estimate $\lambda$ on *smoothed, positive* ICs and report the fit quality** — the exponential is a first-order model.
 

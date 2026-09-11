@@ -26,11 +26,15 @@ The three failures, in one line each:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Tail blindness (exact).** VaR is the $\alpha$-quantile. Changing the loss in *any* outcome already beyond $\mathrm{VaR}_\alpha$ leaves VaR **exactly unchanged**, because the quantile depends only on the *ordering* up to rank $\alpha$, not on the values past it. Concretely, with a $300$-observation sample the $99\%$ VaR is the $298$th order statistic (index $297$ in a 0-based sort) sorted loss: the $298$th, $299$th, $300$th (the truly catastrophic days) do not enter. ES *does* enter them:
-$$\frac{\partial\,\mathrm{ES}_\alpha}{\partial(\text{worst loss})}=\frac{1}{k},\qquad k=\lceil (1-\alpha)\,n\rceil.$$
+$$
+\frac{\partial\,\mathrm{ES}_\alpha}{\partial(\text{worst loss})}=\frac{1}{k},\qquad k=\lceil (1-\alpha)\,n\rceil.
+$$
 So a single worst-day escalation from $-3$ to $-15$ moves a $99\%$ ES (over $3$ tail points) by $(15-3)/3=4$, and moves VaR by $0$. **That asymmetry is the definition of tail blindness.**
 
 **Estimation error (organisation).** For a sample of size $n$, the density-quantile standard error of $\mathrm{VaR}_\alpha$ is
-$$\mathrm{se}(\widehat{\mathrm{VaR}}_\alpha)\approx\frac{1}{f_L(\mathrm{VaR}_\alpha)}\sqrt{\frac{\alpha(1-\alpha)}{n}}.$$
+$$
+\mathrm{se}(\widehat{\mathrm{VaR}}_\alpha)\approx\frac{1}{f_L(\mathrm{VaR}_\alpha)}\sqrt{\frac{\alpha(1-\alpha)}{n}}.
+$$
 It shrinks like $n^{-1/2}$ — *slowly*. In the normal case at $\alpha=0.99$ we measured $\approx0.23\sigma$ at $n=250$, $\approx0.12\sigma$ at $n=1000$, $\approx0.04\sigma$ at $n=10^4$. ES averages the tail and is **noisier still** in small samples, because $F_L(\mathrm{VaR}_\alpha)$ — and hence $1/f$ and the effective tail count — is exactly what is hard to estimate.
 
 **Window truncation.** Historical-simulation VaR over a fixed window assigns **zero probability** to any loss larger than the window's maximum. A $250$-day window drawn from a calm period reports a VaR *lower* than the true tail admits, and there is no data point to correct it. This is the same pathology as [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT's threshold problem]] seen from the other side.

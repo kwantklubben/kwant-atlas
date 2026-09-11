@@ -29,7 +29,9 @@ The practical objective:
 
 With $a_1=[\ln(S/S_{min})+(b+\tfrac12\sigma^2)T]/(\sigma\sqrt T)$, $a_2=a_1-\sigma\sqrt T$, for $b\neq0$:
 
-$$c=S\,e^{(b-r)T}N(a_1)-S_{min}\,e^{-rT}N(a_2)+S\,e^{-rT}\frac{\sigma^2}{2b}\Big[\Big(\frac{S}{S_{min}}\Big)^{-2b/\sigma^2}N\Big(-a_1+\frac{2b\sqrt T}{\sigma}\Big)-e^{bT}N(-a_1)\Big].$$
+$$
+c=S\,e^{(b-r)T}N(a_1)-S_{min}\,e^{-rT}N(a_2)+S\,e^{-rT}\frac{\sigma^2}{2b}\Big[\Big(\frac{S}{S_{min}}\Big)^{-2b/\sigma^2}N\Big(-a_1+\frac{2b\sqrt T}{\sigma}\Big)-e^{bT}N(-a_1)\Big].
+$$
 
 **Critical sign:** the two terms in the square bracket **add** (the book value confirms the `+`). Flip it and you get $21.35$ instead of $25.35$. Shreve's derivation is the reflection principle on the running max $Y(t)=\max S$, with the smooth-pasting condition $v_y(t,y,y)=0$ and the "not a dt-term" subtlety that the running max increases only on a Lebesgue-null set yet is not a $dt$-term (Shreve II §7.4). The dimension reduction $v(t,x,y)=y\cdot u(t,x/y)$ (Thm 7.4.3) is what makes the closed form tractable.
 
@@ -37,7 +39,9 @@ $$c=S\,e^{(b-r)T}N(a_1)-S_{min}\,e^{-rT}N(a_2)+S\,e^{-rT}\frac{\sigma^2}{2b}\Big
 
 The geometric average $G=\exp\big(\tfrac1T\int_0^T\ln S_t\,dt\big)$ is lognormal, so the geometric Asian prices as a **plain BSM option with adjusted parameters**:
 
-$$\sigma_A=\frac{\sigma}{\sqrt3},\qquad b_A=\tfrac12\Big(b-\frac{\sigma^2}{6}\Big),$$
+$$
+\sigma_A=\frac{\sigma}{\sqrt3},\qquad b_A=\tfrac12\Big(b-\frac{\sigma^2}{6}\Big),
+$$
 
 then $c=S e^{(b_A-r)T}N(d_1)-X e^{-rT}N(d_2)$, $p=X e^{-rT}N(-d_2)-S e^{(b_A-r)T}N(-d_1)$ with the usual $d_1,d_2$ in terms of $\sigma_A,b_A$. Because it is a clean BSM, the geometric Asian is the **natural control variate** for the arithmetic Asian under MC (Glasserman Ch 3, Ch 4).
 

@@ -17,11 +17,13 @@ tags:
 The greedy SOR of page 03 minimizes $\sum_i q_i(p_i+f_i)$ — price plus fee. Production routers minimize a **richer** effective price that also prices the two risks the basic objective ignores: **latency** (the quote may move before you arrive) and **toxicity** (the counterparty on the other side may be informed). This page builds the full objective, solves it, and shows how latency alone flips the optimal venue.
 
 The advanced objective replaces the naive per-share cost with
-$$\hat p_i \;=\; p_i+f_i+\underbrace{\sigma\sqrt{L_i}}_{\text{latency/adverse-move}}+\underbrace{k\,\theta_i}_{\text{toxicity}},$$
+$$
+\hat p_i \;=\; p_i+f_i+\underbrace{\sigma\sqrt{L_i}}_{\text{latency/adverse-move}}+\underbrace{k\,\theta_i}_{\text{toxicity}},
+$$
 where $L_i$ is the venue's latency in ms, $\sigma$ the per-$\sqrt{\text{ms}}$ price diffusion, $\theta_i$ the venue's toxic-flow measure (e.g. VPIN or a realized-spread proxy), and $k$ a risk aversion. Three consequences follow:
 
 1. **A cheaper quote can be a worse route.** If a venue's price advantage is smaller than its $\sigma\sqrt{L_i}$ penalty, the router must skip it — routing *away* from the toxic or too-slow quote.
-2. **There is a crossover latency.** For any two venues there exists an $L^\*$ below which the better-quoted venue wins and above which the faster venue does; the router should know it.
+2. **There is a crossover latency.** For any two venues there exists an $L^*$ below which the better-quoted venue wins and above which the faster venue does; the router should know it.
 3. **Toxicity is venue-specific and time-varying.** Lit venues, inverted venues, and dark pools carry different $\theta_i$; SOR blends price, fee, latency, and toxicity dynamically.
 
 > **The one-sentence essence.** "A production SOR minimizes quote + fee + $\sigma\sqrt{L}$ + toxicity, so it will deliberately route away from the venue displaying the best price when that venue is too slow or too toxic to be worth it."
@@ -31,17 +33,23 @@ where $L_i$ is the venue's latency in ms, $\sigma$ the per-$\sqrt{\text{ms}}$ pr
 ### 2. Mathematical Ground Truth & Derivations
 
 **The latency-aware objective.**
-$$\boxed{\;\min_{\{q_i\}}\;\sum_i q_i\big[\,p_i+f_i+\sigma\sqrt{L_i}\,\big]\quad\text{s.t.}\quad\sum_i q_i=Q,\;\;0\le q_i\le S_i,\;}$$
+$$
+\boxed{\;\min_{\{q_i\}}\;\sum_i q_i\big[\,p_i+f_i+\sigma\sqrt{L_i}\,\big]\quad\text{s.t.}\quad\sum_i q_i=Q,\;\;0\le q_i\le S_i,\;}
+$$
 a linear program solved by the same **greedy merge** as page 03, but now on the latency-adjusted effective price. The $\sigma\sqrt{L_i}$ term is the expected adverse move over $L_i$ ms (Brownian scaling from pages 05–06).
 
 **Crossover latency.** Venue $i$ (better quote) vs venue $j$ (faster). Equal effective price when
-$$p_i+f_i+\sigma\sqrt{L_i}=p_j+f_j+\sigma\sqrt{L_j}\;\Longrightarrow\;\sqrt{L_j}=\frac{p_i+f_i-p_j-f_j}{\sigma}+\sqrt{L_i},$$
-so if $j$'s quoted advantage is $\Delta=p_i+f_i-(p_j+f_j)>0$ (per share, $i$ worse), venue $j$ is preferable for any $L_j<L^\*$. Below the crossover the fast venue wins *even though its quote is worse*.
+$$
+p_i+f_i+\sigma\sqrt{L_i}=p_j+f_j+\sigma\sqrt{L_j}\;\Longrightarrow\;\sqrt{L_j}=\frac{p_i+f_i-p_j-f_j}{\sigma}+\sqrt{L_i},
+$$
+so if $j$'s quoted advantage is $\Delta=p_i+f_i-(p_j+f_j)>0$ (per share, $i$ worse), venue $j$ is preferable for any $L_j<L^*$. Below the crossover the fast venue wins *even though its quote is worse*.
 
 **Toxicity term.** Let $\theta_i$ be a venue's flow-toxicity (probability the counterparty is informed). The cost of taking liquidity is the expected adverse move conditional on trading against informed flow, $\theta_i\,(E[\text{adverse}\mid \text{informed}])$; a common one-parameter reduction is $k\theta_i$ with $k$ the conditional adverse move. VPIN and realized-spread are the standard empirical $\theta_i$ estimates ([[pillars/06-market-making/toxic-order-flow-and-vpin/index|Toxic Order Flow & VPIN]]).
 
 **Limit vs market: the fill-probability term.** A maker route replaces $+f_t$ with $-f_m$ (a rebate) but multiplies the gain by the fill probability $\pi_\text{fill}$:
-$$\mathbb{E}[\text{maker cost}]=-f_m\,\pi_\text{fill}+\text{adverse-selection cost}\times\pi_\text{fill}+\text{opportunity cost}\times(1-\pi_\text{fill}),$$
+$$
+\mathbb{E}[\text{maker cost}]=-f_m\,\pi_\text{fill}+\text{adverse-selection cost}\times\pi_\text{fill}+\text{opportunity cost}\times(1-\pi_\text{fill}),
+$$
 so rebate-chasing requires $\pi_\text{fill}$ to justify it — the link to [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]].
 
 **Cointegration/uniqueness underpinning.** The objective is well-posed because venue prices are cointegrated to one efficient price (Hasbrouck Ch 10); the cross-venue basis is stationary, so the "best" venue is a well-defined, estimable quantity rather than an artifact.

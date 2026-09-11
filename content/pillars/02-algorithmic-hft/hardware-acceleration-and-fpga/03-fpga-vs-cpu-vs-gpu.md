@@ -36,8 +36,10 @@ Three "aha"s:
 
 **The triangle, formalised.** Model a workload by two numbers: its *latency sensitivity* (cost per ns of delay) and its *parallelism* (independent elements $P$). For a substrate with serial latency $\ell$, per-element work $w$, and $W$ parallel workers:
 
-$$T_{\text{latency}} \approx \ell + w \quad(\text{one item, pipeline latency}),\qquad
-\Theta_{\text{throughput}} \approx \frac{W \cdot \kappa}{w}\ \text{items/s},$$
+$$
+T_{\text{latency}} \approx \ell + w \quad(\text{one item, pipeline latency}),\qquad
+\Theta_{\text{throughput}} \approx \frac{W \cdot \kappa}{w}\ \text{items/s},
+$$
 
 where $\kappa$ is the fraction of peak utilisation. CPU: small $W$ (8–64 cores, plus a 4–16-wide SIMD $\kappa$ boost), small $\ell$. FPGA: small $W$ in *time* but $W$ large in *space* (many parallel pipelines), smallest $\ell$. GPU: $W \sim 10^3$–$10^4$ lanes, largest $\ell$ (host↔device + kernel launch), largest $\Theta$.
 
@@ -50,13 +52,17 @@ where $\kappa$ is the fraction of peak utilisation. CPU: small $W$ (8–64 cores
 
 **GPU/CPU throughput model (the SIMD argument).** For a branch-free vector kernel over an $N$-element grid:
 
-$$T = \frac{N \cdot f}{W \cdot \text{ipc}_{\text{vec}}},$$
+$$
+T = \frac{N \cdot f}{W \cdot \text{ipc}_{\text{vec}}},
+$$
 
 with $W$ lanes and $\text{ipc}_{\text{vec}}$ vector width. A GPU with $W\approx10^4$ lanes versus a CPU with $W=8$ cores × 16-wide SIMD $=128$ effective lanes gives $\thickapprox 78\times$ raw lane advantage — realised as **400×** in the risk example below once both are at realistic utilisation, because the CPU is memory-bound and the GPU hides latency with occupancy.
 
 **The economic model.** An accelerator is a capital decision. With fixed development cost $C$, daily alpha capture $A$, and payload only realised in the latency window:
 
-$$T_{\text{payback}} = \frac{C}{A},\qquad C_{\text{per ns saved}} = \frac{C}{\Delta_{\text{ns}}}.$$
+$$
+T_{\text{payback}} = \frac{C}{A},\qquad C_{\text{per ns saved}} = \frac{C}{\Delta_{\text{ns}}}.
+$$
 
 FPGA is worth it iff $T_{\text{payback}}$ is short relative to the strategy's decay half-life. Below the capture threshold the correct answer is **do nothing**.
 

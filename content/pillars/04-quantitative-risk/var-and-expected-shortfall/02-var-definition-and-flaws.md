@@ -26,11 +26,15 @@ The fault is not estimation sloppiness — it is structural. VaR is a *quantile*
 
 For a loss $L=-\Delta V$ over a horizon and confidence $\alpha\in(0,1)$:
 
-$$\mathrm{VaR}_\alpha(L)=\inf\{l\in\mathbb{R}:\mathbb{P}(L>l)\le 1-\alpha\}=F_L^{-1}(\alpha).$$
+$$
+\mathrm{VaR}_\alpha(L)=\inf\{l\in\mathbb{R}:\mathbb{P}(L>l)\le 1-\alpha\}=F_L^{-1}(\alpha).
+$$
 
 Artzner's net-worth form makes the *capital* interpretation explicit: for a future net worth $X$ and reference return $r$ (usually $r=1$ over a short horizon),
 
-$$\mathrm{VaR}_\alpha(X)=-\inf\{x\in\mathbb{R}:\mathbb{P}(X\le x\,r)>\alpha\}.$$
+$$
+\mathrm{VaR}_\alpha(X)=-\inf\{x\in\mathbb{R}:\mathbb{P}(X\le x\,r)>\alpha\}.
+$$
 
 **The quantile trap (Artzner Def. 3.2).** Define the left/right quantiles $q^-_\alpha=\inf\{x:\mathbb{P}(X\le x)\ge\alpha\}$ and $q^+_\alpha=\inf\{x:\mathbb{P}(X\le x)>\alpha\}$. These differ on at most countably many $\alpha$ (where the CDF has a flat spot or a jump). VaR is pinned to $q^+_\alpha$. With **discrete** loss distributions (defaults, options, integer positions) the flat spots are common, and the choice of $q^-$ vs $q^+$ changes the number — a real reconciliation headache between desks.
 
@@ -46,12 +50,14 @@ The consequence Artzner stresses: **the set of acceptable net worths is not conv
 #### 2.3 When does VaR *look* subadditive? (Artzner §3.3, Remark 1)
 
 If all prices are **jointly normal** and exceedance probabilities are below $0.5$, then
-$$\mathrm{VaR}_\alpha(X)=-\big(\mathbb{E}_P[X]+\Phi^{-1}(\alpha)\sigma_P(X)\big),$$
+$$
+\mathrm{VaR}_\alpha(X)=-\big(\mathbb{E}_P[X]+\Phi^{-1}(\alpha)\sigma_P(X)\big),
+$$
 and $\sigma_{X+Y}\le\sigma_X+\sigma_Y$ (standard deviation is subadditive) so VaR *is* subadditive. **This is a trap**: it makes VaR look fine in Gaussian textbooks, while the failure appears precisely in the fat-tailed, discrete, and option-heavy portfolios that dominate real books. (Rockafellar–Uryasev: "VaR is coherent only when it is based on the standard deviation of normal distributions.")
 
 #### 2.4 Two more first-principles failures (Artzner §3.3)
 
-- **Concentration blindness (credit).** With zero base rate, $2\%$ bond spreads, $1\%$ independent default probability, the $5\%$ VaR of a $\$1$m single-name position is $-\$20{,}000$ (apparently riskless). Spreading across $100$ names makes $\mathbb{P}(\ge2\text{ defaults})>0.18$, so the same money has a $>5\%$ chance of negative net worth: **diversification increased the VaR.** Meanwhile the pile-up in one name went undetected.
+- **Concentration blindness (credit).** With zero base rate, $2\%$ bond spreads, $1\%$ independent default probability, the $5\%$ VaR of a $ $\$1m single-name position is -\$20{,}000 (apparently riskless). Spreading across $100$ names makes $\mathbb{P}(\ge2\text{ defaults})>0.18$, so the same money has a $>5\%$ chance of negative net worth: **diversification increased the VaR.** Meanwhile the pile-up in one name went undetected.
 - **Bad risk allocation.** VaR can prefer a Pareto-dominated allocation of risks across two agents (Artzner's $3$-state example): a capital level "found sufficient" for $X$ is "more than sufficient" after a risk exchange that all risk-averse agents dislike — VaR does not encourage sensible risk sharing.
 
 ---

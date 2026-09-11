@@ -28,23 +28,31 @@ This page builds the standard machinery: an **aggregate liquidity factor**, its 
 
 **Step 2 — aggregate liquidity.** Equal-weight the per-stock measures into a market-wide series:
 
-$$\hat\gamma_t=\frac{1}{N_t}\sum_{i=1}^{N_t}\hat\gamma_{i,t}, \qquad \Delta\hat\gamma_t=\hat\gamma_t-\hat\gamma_{t-1} .$$
+$$
+\hat\gamma_t=\frac{1}{N_t}\sum_{i=1}^{N_t}\hat\gamma_{i,t}, \qquad \Delta\hat\gamma_t=\hat\gamma_t-\hat\gamma_{t-1} .
+$$
 
 **Step 3 — the innovation.** Because the *level* of liquidity may be forecastable (and expected changes would contaminate risk measures), Pástor–Stambaugh extract innovations by regressing the change on its own lag and the lagged deviation from trend:
 
-$$\Delta\hat\gamma_t = a+b\,\Delta\hat\gamma_{t-1}+c\left(\frac{m_{t-1}}{m_1}\right)\hat\gamma_{t-1}+u_t,$$
+$$
+\Delta\hat\gamma_t = a+b\,\Delta\hat\gamma_{t-1}+c\left(\frac{m_{t-1}}{m_1}\right)\hat\gamma_{t-1}+u_t,
+$$
 
 then define the **liquidity innovation** $L_t=\tfrac{1}{100}\hat u_t$ (the $\tfrac1{100}$ is just scaling).
 
 **Step 4 — the liquidity beta.** For stock $i$, regress its return on the innovation:
 
-$$r^i_t=\alpha^i+\beta^i_L\,L_t+\varepsilon^i_t, \qquad \beta^i_L=\frac{\operatorname{cov}(r^i_t,L_t)}{\operatorname{var}(L_t)}.$$
+$$
+r^i_t=\alpha^i+\beta^i_L\,L_t+\varepsilon^i_t, \qquad \beta^i_L=\frac{\operatorname{cov}(r^i_t,L_t)}{\operatorname{var}(L_t)}.
+$$
 
 A high (more positive) $\beta^i_L$ means the stock's return tends to rise when aggregate liquidity improves and fall when it dries up — it is *exposed to liquidity risk*.
 
 **Step 5 — the price.** Cross-sectionally, expected return increases in $\beta^i_L$:
 
-$$E[r^i]=\alpha+\lambda\,\beta^i_L+\cdots$$
+$$
+E[r^i]=\alpha+\lambda\,\beta^i_L+\cdots
+$$
 
 with $\lambda>0$: bearing liquidity risk is compensated. Pástor–Stambaugh measure the spread between high- and low-liquidity-beta deciles at roughly 7.5% annually *after* controlling for market, size, value and momentum.
 

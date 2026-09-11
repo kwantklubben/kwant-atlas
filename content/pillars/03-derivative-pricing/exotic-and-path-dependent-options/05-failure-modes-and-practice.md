@@ -27,13 +27,17 @@ The closed forms in this folder are beautiful, and *three of their assumptions b
 
 **Discrete vs continuous monitoring.** The continuously-monitored down-and-out value $v_c$ uses the first-hitting-time density of the Brownian bridge. A discretely-monitored contract (grid $\Delta t$) only sees the path at grid points, so the knock-out probability is smaller and the value $v_d>v_c$. Broadie–Glasserman–Kou (1995) restore agreement to $O(\Delta t)$ by pricing the **continuous** formula at the *shifted* barrier
 
-$$H_D = H\,e^{\pm\beta\sigma\sqrt{\Delta t}},\qquad \beta=\frac{\zeta(1/2)}{\sqrt{2\pi}}\approx 0.5826,$$
+$$
+H_D = H\,e^{\pm\beta\sigma\sqrt{\Delta t}},\qquad \beta=\frac{\zeta(1/2)}{\sqrt{2\pi}}\approx 0.5826,
+$$
 
 `+` when the barrier is above spot, `−` when below (Haug §5.6). This is the single most-used "dirty fix" in the exotic-options playbook.
 
 **Pathwise vs likelihood-ratio Greeks (Glasserman Ch 7).** For a digital $Y=e^{-rT}K\mathbf 1\{S_T>X\}$, the pathwise derivative $dY/dS_0$ exists a.s. but equals **zero** — the indicator is flat almost everywhere, and the genuine delta comes from the strike-crossing that pathwise differentiation misses. The likelihood-ratio method differentiates the *density* instead: for lognormal $S_T$, the score is $Z/(S_0\sigma\sqrt T)$, and the LR delta estimator is
 
-$$\widehat{\Delta}_{LR}=e^{-rT}K\,\mathbf 1\{S_T>X\}\cdot\frac{Z}{S_0\sigma\sqrt T},\qquad\text{with }\mathbb{E}[\widehat{\Delta}_{LR}]=K e^{-rT}\frac{\varphi(d_2)}{S_0\sigma\sqrt T}.$$
+$$
+\widehat{\Delta}_{LR}=e^{-rT}K\,\mathbf 1\{S_T>X\}\cdot\frac{Z}{S_0\sigma\sqrt T},\qquad\text{with }\mathbb{E}[\widehat{\Delta}_{LR}]=K e^{-rT}\frac{\varphi(d_2)}{S_0\sigma\sqrt T}.
+$$
 
 The rule of thumb (Glasserman §7.2.2): pathwise applies when the payoff is **continuous (Lipschitz)** in the parameter — which *excludes* digitals, barriers, and 2nd derivatives.
 

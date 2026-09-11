@@ -35,33 +35,49 @@ The practical objective of this page is to make both games computable. For preda
 **2.1 Predation: the price path and who pays for it.**
 
 **Setup.** Price is linear in cumulative *signed* flow, with a sign convention where **selling pushes the price down**:
-$$P_k=P_0-\kappa\sum_{j\le k}\bigl(n_j+m_j\bigr),$$
+$$
+P_k=P_0-\kappa\sum_{j\le k}\bigl(n_j+m_j\bigr),
+$$
 where $n_k$ = victim's sales and $m_k$ = predator's sales (negative = the predator buys). Both face a temporary cost $\eta$ per unit sold (the concession needed to trade now). Execution at step $k$ happens at the *previous* mid, so the victim receives $P_{k-1}-\eta n_k$ per share and the predator's cash flow is $m_k(P_{k-1}-\eta m_k)$.
 
 **The predator must round-trip**: $\sum_k m_k=0$. Its objective is
-$$\Pi=\sum_k m_k\bigl(P_{k-1}-\eta m_k\bigr),\qquad P_{k-1}=P_0-\kappa\sum_{j<k}(n_j+m_j).$$
+$$
+\Pi=\sum_k m_k\bigl(P_{k-1}-\eta m_k\bigr),\qquad P_{k-1}=P_0-\kappa\sum_{j<k}(n_j+m_j).
+$$
 Substitute and write $A_k=\sum_{j<k}n_j$ (the victim's cumulative sales, the predator's only state variable):
-$$\Pi=\underbrace{P_0\textstyle\sum_k m_k}_{=0}-\kappa\sum_k m_k A_k-\kappa\sum_k m_k\!\!\sum_{j<k}\!\!m_j-\eta\sum_k m_k^2 .$$
+$$
+\Pi=\underbrace{P_0\textstyle\sum_k m_k}_{=0}-\kappa\sum_k m_k A_k-\kappa\sum_k m_k\!\!\sum_{j<k}\!\!m_j-\eta\sum_k m_k^2 .
+$$
 Using the identity $\sum_k m_k\sum_{j<k}m_j=-\tfrac12\sum_k m_k^2$ (valid whenever $\sum m_k=0$),
-$$\Pi=-\kappa\sum_k m_kA_k-\Bigl(\eta-\frac{\kappa}{2}\Bigr)\sum_k m_k^2 .$$
+$$
+\Pi=-\kappa\sum_k m_kA_k-\Bigl(\eta-\frac{\kappa}{2}\Bigr)\sum_k m_k^2 .
+$$
 This is **concave** iff $\eta>\kappa/2$ — the interior-solution condition. Maximising with a multiplier for $\sum m_k=0$:
-$$\frac{\partial\Pi}{\partial m_k}=-\kappa A_k-2\Bigl(\eta-\frac\kappa2\Bigr)m_k-\mu=0\;\Longrightarrow\;\boxed{\;m_k=\frac{\kappa\,(\bar A-A_k)}{2\eta-\kappa}\;},\qquad \bar A=\frac1N\sum_k A_k .$$
+$$
+\frac{\partial\Pi}{\partial m_k}=-\kappa A_k-2\Bigl(\eta-\frac\kappa2\Bigr)m_k-\mu=0\;\Longrightarrow\;\boxed{\;m_k=\frac{\kappa\,(\bar A-A_k)}{2\eta-\kappa}\;},\qquad \bar A=\frac1N\sum_k A_k .
+$$
 
 **Read the sign.** $A_k$ is increasing in $k$ (the victim is selling), so $\bar A-A_k>0$ early and $<0$ late: **$m_k>0$ early (the predator sells) and $m_k<0$ late (it buys back).** The predator front-runs. This is the Brunnermeier–Pedersen mechanism in closed form, and it falls out of nothing but a concave quadratic.
 
 **How much damage?** Writing $\Delta_P$ for the victim's revenue loss relative to the no-predator benchmark, we will find numerically (§3) that
-$$\Delta_P>\Pi>0:$$
+$$
+\Delta_P>\Pi>0:
+$$
 the victim loses **more** than the predator gains, the difference being the deadweight cost of the predator's own round trip through the temporary-impact term $\eta\sum m_k^2$. Predation is not a pure transfer — it destroys liquidity.
 
 **The victim's counter.** Because $\bar A-A_k$ depends on the *shape* of the victim's schedule, the victim can reduce $m_k$ by making $A_k$ as flat as possible relative to the remaining volume — i.e. by **front-loading**. Speeding up reduces both the predator's informational advantage and the time over which permanent impact can be harvested. This is BP's practical prescription, and the model reproduces it (§3).
 
 **2.2 Competing liquidators: the Nash game.** Now no predator: $J$ agents each liquidating $X/J$ against **one** liquidity pool. Agent $i$'s cost is
-$$C_i=\frac{\eta}{\tau}\sum_{k=1}^{N}n^i_k\bigl(n^i_k+n^j_k\bigr)+\lambda_{\text{risk}}\sigma^2\tau\sum_{k=1}^{N}\bigl(x^i_k\bigr)^2,\qquad \sum_{k=1}^N n^i_k=\frac{X}{J},$$
+$$
+C_i=\frac{\eta}{\tau}\sum_{k=1}^{N}n^i_k\bigl(n^i_k+n^j_k\bigr)+\lambda_{\text{risk}}\sigma^2\tau\sum_{k=1}^{N}\bigl(x^i_k\bigr)^2,\qquad \sum_{k=1}^N n^i_k=\frac{X}{J},
+$$
 where the first term is the shared temporary impact — **if both trade at step $k$, each pays for the aggregate flow $n^i_k+n^j_k$** — and the second is the standard inventory-risk penalty from Almgren–Chriss. This is a convex quadratic game, so the Nash equilibrium exists, is unique, and is found by solving each agent's first-order condition holding the other fixed.
 
 In symmetric equilibrium $n^i=n^j=n$, the marginal temporary cost is $\eta(2n_k+n_k)/\tau=3\eta n_k/\tau$, versus $2\eta n_k/\tau$ for a single agent. Hence
 
-$$\boxed{\;\eta_{\text{eff}}=\tfrac{3}{2}\eta\;\Longrightarrow\;\kappa_{\text{eff}}=\sqrt{\lambda_{\text{risk}}\sigma^2/\eta_{\text{eff}}}=\sqrt{\tfrac23}\,\kappa_1\;}$$
+$$
+\boxed{\;\eta_{\text{eff}}=\tfrac{3}{2}\eta\;\Longrightarrow\;\kappa_{\text{eff}}=\sqrt{\lambda_{\text{risk}}\sigma^2/\eta_{\text{eff}}}=\sqrt{\tfrac23}\,\kappa_1\;}
+$$
 
 where $\kappa_1$ is the single-agent Almgren–Chriss urgency. **The market-wide liquidation is slower under competition than it would be for a monopolist facing only its own impact** ($0.4906$/day vs $0.6008$/day on the numbers below), because trading alongside a rival is expensive and each agent waits for the other. This is the exact opposite of the folk intuition "everyone rushes for the exit", and it is a genuine equilibrium effect: the rush happens in *impact*, not in *individual* speed.
 

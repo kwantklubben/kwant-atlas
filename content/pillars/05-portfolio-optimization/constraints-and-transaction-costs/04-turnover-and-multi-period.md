@@ -30,37 +30,49 @@ Turnover is the *rate* at which you convert an alpha model into trading. Everyth
 
 **Penalty form.** Add $\lambda\lVert w-w_0\rVert_1$ to the objective:
 
-$$\max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w-\lambda\,\lVert w-w_0\rVert_1 .$$
+$$
+\max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w-\lambda\,\lVert w-w_0\rVert_1 .
+$$
 
 By the envelope logic of [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/02-weight-constraints|02]], $\lambda$ *is* the model's assumed cost per unit of trading. Choosing $\lambda$ therefore means choosing a cost forecast — and §3 shows that the certainty-equivalent-optimal $\lambda$ lands exactly on the true cost, which is the cleanest possible statement of "price your trades honestly."
 
 **Budget form.** Instead cap the $\ell_1$ distance:
 
-$$\max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w\quad\text{s.t.}\quad \lVert w-w_0\rVert_1\le\tau .$$
+$$
+\max_{w\in\mathcal C}\ \ \mu^\top w-\tfrac\delta2 w^\top\Sigma w\quad\text{s.t.}\quad \lVert w-w_0\rVert_1\le\tau .
+$$
 
 This is *convex*, needs no cost estimate, and is the form a risk committee is happy to mandate ("no more than $20\%$ turnover per rebalance"). The price of the budget is its shadow price — exactly the $\lambda$ that the penalty form would have used.
 
 **The trade-off frontier.** Sweep either control and plot the pairs $(\text{turnover},\ \text{net alpha})$:
 
-$$\text{net }\alpha_{\text{ann}}(\lambda)=\underbrace{12\,\mu^\top w(\lambda)}_{\text{gross}}-\underbrace{12\,c_{\text{true}}\lVert w(\lambda)-w_0\rVert_1}_{\text{realized cost}} .$$
+$$
+\text{net }\alpha_{\text{ann}}(\lambda)=\underbrace{12\,\mu^\top w(\lambda)}_{\text{gross}}-\underbrace{12\,c_{\text{true}}\lVert w(\lambda)-w_0\rVert_1}_{\text{realized cost}} .
+$$
 
 #### 2.2 The multi-period problem and partial adjustment
 
 Over $H$ periods, ignoring the path is a mistake. The canonical tracking problem is
 
-$$\min_{\{w_t\}}\ \sum_{t=1}^{H}\Big[\tfrac\rho2\,(w_t-w^\ast)^\top\Sigma\,(w_t-w^\ast)\;+\;\tfrac\kappa2\,(w_t-w_{t-1})^\top\Lambda\,(w_t-w_{t-1})\Big],$$
+$$
+\min_{\{w_t\}}\ \sum_{t=1}^{H}\Big[\tfrac\rho2\,(w_t-w^\ast)^\top\Sigma\,(w_t-w^\ast)\;+\;\tfrac\kappa2\,(w_t-w_{t-1})^\top\Lambda\,(w_t-w_{t-1})\Big],
+$$
 
 a **tracking-error penalty on $w_t$** plus a **cost penalty on the move**. In the scalar case this is a tridiagonal linear system whose solution is a monotone ramp to the target, and its asymptotic behaviour is *geometric*:
 
-$$w_t-w^\ast\;\approx\;G^{\,t}\,(w_0-w^\ast),\qquad G=1+\tfrac{a}{2}-\sqrt{a+\tfrac{a^2}{4}},\quad a=\frac{\rho\sigma^2}{\kappa\eta}.$$
+$$
+w_t-w^\ast\;\approx\;G^{\,t}\,(w_0-w^\ast),\qquad G=1+\tfrac{a}{2}-\sqrt{a+\tfrac{a^2}{4}},\quad a=\frac{\rho\sigma^2}{\kappa\eta}.
+$$
 
 - **Cheap trading ($\kappa$ small, $a$ large) ⇒ $G\to0$:** jump to the target at once.
 - **Expensive trading ($\kappa$ large, $a$ small) ⇒ $G\to1$:** creep toward it; over a finite horizon you may never arrive.
 
 **The Gârleanu–Pedersen aim (preview of [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/06-advanced-extensions|06]]).** With predictable returns and *proportional* costs, the optimal policy is
 
-$$\boxed{\ x_t=x_{t-1}+(I+\kappa\Sigma)^{-1}\big(\text{aim}_t-x_{t-1}\big)\ },\qquad
-\text{aim}=(I+\kappa\Sigma)^{-1}\big(\delta\Sigma\big)^{-1}\mu,$$
+$$
+\boxed{\ x_t=x_{t-1}+(I+\kappa\Sigma)^{-1}\big(\text{aim}_t-x_{t-1}\big)\ },\qquad
+\text{aim}=(I+\kappa\Sigma)^{-1}\big(\delta\Sigma\big)^{-1}\mu,
+$$
 
 i.e. trade a **matrix fraction** $(I+\kappa\Sigma)^{-1}$ of the gap between the aim portfolio and the current book — not all of it. The matrix is non-diagonal, so a signal in one name moves several weights: cross-asset cost coupling (verified in [[pillars/05-portfolio-optimization/constraints-and-transaction-costs/06-advanced-extensions|06]]).
 

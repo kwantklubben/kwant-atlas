@@ -35,7 +35,9 @@ Alerting is the *policy* layer on top: which of those signals deserves to wake a
 
 Let a metric be sampled at interval $\Delta t$, giving $n = T/\Delta t$ samples per day per metric. Under the in-control (normal, standardised) model, a two-sided threshold at $k$ standard deviations fires with probability $p_k = 2\big(1-\Phi(k)\big)$, where $\Phi$ is the standard normal CDF. The expected number of false alarms per day is
 
-$$\mathbb{E}[\,\text{FA}\,] = n\,p_k\,M \quad\text{for } M \text{ metrics monitored at once.}$$
+$$
+\mathbb{E}[\,\text{FA}\,] = n\,p_k\,M \quad\text{for } M \text{ metrics monitored at once.}
+$$
 
 Because $n$ is large (a 10-second scrape over a trading day is $n\approx 8{,}640$ per metric) and $M$ grows with every service you instrument, **the fleet-wide false-alarm rate grows linearly in $M$ and it is brutal at small $k$.** The only two levers are $k$ (raise it) and $M_{\text{effective}}$ (aggregate many metrics into few alerts). Practically: alert on a small number of *composite* conditions, not on every raw series.
 
@@ -45,11 +47,15 @@ The other standard fix is to stop treating a single sample as evidence: require 
 
 Replace the raw series $x_t$ with the exponentially-weighted moving average
 
-$$z_t = \lambda x_t + (1-\lambda) z_{t-1}, \qquad 0<\lambda\le1,$$
+$$
+z_t = \lambda x_t + (1-\lambda) z_{t-1}, \qquad 0<\lambda\le1,
+$$
 
 whose in-control standard deviation is
 
-$$\sigma_z = \sigma_x\sqrt{\frac{\lambda}{2-\lambda}}.$$
+$$
+\sigma_z = \sigma_x\sqrt{\frac{\lambda}{2-\lambda}}.
+$$
 
 The control limit is set at $L = \mu_x + k\sigma_z$ (a $k$-sigma band on the *smoothed* signal). The choice $\lambda$ is the classic bias/variance knob:
 
@@ -58,11 +64,15 @@ The control limit is set at $L = \mu_x + k\sigma_z$ (a $k$-sigma band on the *sm
 
 For a step of size $\Delta$ injected at time $t_0$, the EWMA's distance from the in-control mean grows as
 
-$$\mathbb{E}[z_{t_0+m}]-\mu_x = \Delta\left(1-(1-\lambda)^m\right),$$
+$$
+\mathbb{E}[z_{t_0+m}]-\mu_x = \Delta\left(1-(1-\lambda)^m\right),
+$$
 
-so the **detection delay** $m^\*$ satisfies $\Delta\big(1-(1-\lambda)^{m^\*}\big) = k\sigma_z$:
+so the **detection delay** $m^*$ satisfies $\Delta\big(1-(1-\lambda)^{m^*}\big) = k\sigma_z$:
 
-$$m^\* = \frac{\ln\!\left(1 - \dfrac{k\sigma_x}{\Delta}\sqrt{\dfrac{\lambda}{2-\lambda}}\right)}{\ln(1-\lambda)}.$$
+$$
+m^* = \frac{\ln\!\left(1 - \dfrac{k\sigma_x}{\Delta}\sqrt{\dfrac{\lambda}{2-\lambda}}\right)}{\ln(1-\lambda)}.
+$$
 
 This is the quantitative version of "you cannot have both a quiet alarm and a fast one": lowering the limit $k$ (quieter) *increases* detection delay, and vice versa. Every alert threshold is a point on this curve.
 
@@ -70,7 +80,9 @@ This is the quantitative version of "you cannot have both a quiet alarm and a fa
 
 For a latency distribution $F$, the useful numbers are the quantiles:
 
-$$p_{99}=\inf\{x: F(x)\ge0.99\},\qquad p_{99.9}=\inf\{x: F(x)\ge0.999\}.$$
+$$
+p_{99}=\inf\{x: F(x)\ge0.99\},\qquad p_{99.9}=\inf\{x: F(x)\ge0.999\}.
+$$
 
 A system can have a perfect mean and an unusable tail (see [[pillars/08-quantitative-development/high-performance-cpp-for-trading/05-failure-modes-and-practice|High-Performance C++ · 05 · Failure Modes]], where a GC pause gives a $96\times$ p99.99 blow-up). Tails are where money is lost, and tails are *not* visible in an average. Monitor quantiles, and monitor them as *distributions over rolling windows*, not as gauges.
 
@@ -78,7 +90,9 @@ A system can have a perfect mean and an unusable tail (see [[pillars/08-quantita
 
 The single most informative early-warning signal in a live trading system is the **reconciliation break count** together with the **order acknowledgement rate**:
 
-$$\text{ack rate} = \frac{\#\{\text{orders acknowledged}\}}{\#\{\text{orders sent}\}}, \qquad \text{break count} = \#\{i : |q_i^{\text{int}}-q_i^{\text{ext}}|>\epsilon\}.$$
+$$
+\text{ack rate} = \frac{\#\{\text{orders acknowledged}\}}{\#\{\text{orders sent}\}}, \qquad \text{break count} = \#\{i : |q_i^{\text{int}}-q_i^{\text{ext}}|>\epsilon\}.
+$$
 
 A drop in ack rate or a non-zero break count precedes almost every catastrophic failure — the loss is just the cost of finding out, and monitoring's job is to find out for free.
 

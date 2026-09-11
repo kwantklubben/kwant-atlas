@@ -33,15 +33,21 @@ The core argument, due to Budish, Cramton & Shim (2015, QJE):
 
 **Tullock contest model of the race.** Let $N$ symmetric, risk-neutral, fast firms each invest $x_i$ in speed to win a rent $V$ per period with success probability
 
-$$p_i = \frac{x_i}{\sum_{j=1}^N x_j} .$$
+$$
+p_i = \frac{x_i}{\sum_{j=1}^N x_j} .
+$$
 
 Firm $i$'s objective: $\pi_i = p_i V - x_i$. First-order condition $\partial\pi_i/\partial x_i = 0$ gives $V\frac{\sum_{j\neq i}x_j}{(\sum_j x_j)^2}=1$. Symmetric equilibrium $x_i=x$ with $\sum x_j = Nx$:
 
-$$x^\* = \frac{N-1}{N^2}\,V , \qquad \text{total investment} = Nx^\* = \frac{N-1}{N}\,V,$$
+$$
+x^* = \frac{N-1}{N^2}\,V , \qquad \text{total investment} = Nx^* = \frac{N-1}{N}\,V,
+$$
 
 and the fraction of the rent **destroyed** (spent, not earned) is
 
-$$\boxed{\;\frac{\text{wasted}}{V}=\frac{N-1}{N}\;\xrightarrow[]{N\to\infty} 1.}$$
+$$
+\boxed{\;\frac{\text{wasted}}{V}=\frac{N-1}{N}\;\xrightarrow[]{N\to\infty} 1.}
+$$
 
 Each firm's *retained* profit collapses to $V/N^2 \to 0$. Every firm invests, and (in the aggregate) the whole rent evaporates into computers, cables, and microwave towers.
 
@@ -53,7 +59,7 @@ Each firm's *retained* profit collapses to $V/N^2 \to 0$. Every firm invests, an
 
 ### 3. Computational Implementation — the rent-dissipation simulator
 
-Runs on the **standard library only**. It computes the Tullock equilibrium for the BCS ES–SPY rent ($V=\$75$M/yr) and shows the entry dynamics that turn the rent into waste.
+Runs on the **standard library only**. It computes the Tullock equilibrium for the BCS ES–SPY rent ($V= $\$75M/yr) and shows the entry dynamics that turn the rent into waste.
 
 ```python
 import math

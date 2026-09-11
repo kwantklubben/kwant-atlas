@@ -29,7 +29,9 @@ Two ideas drive everything:
 
 For a portfolio value $V(t)\sim N(\mu,\sigma)$ at horizon $t$, with $z=\mu/\sigma$:
 
-$$EFV(t)=\mu,\qquad PFE_\alpha(t)=\mu+\sigma\Phi^{-1}(\alpha),\qquad EPE(t)=\sigma\phi(z)+\mu\Phi(z),\qquad ENE(t)=\sigma\phi(z)-\mu\Phi(-z).$$
+$$
+EFV(t)=\mu,\qquad PFE_\alpha(t)=\mu+\sigma\Phi^{-1}(\alpha),\qquad EPE(t)=\sigma\phi(z)+\mu\Phi(z),\qquad ENE(t)=\sigma\phi(z)-\mu\Phi(-z).
+$$
 
 - **PFE** is the $\alpha$-quantile of $V$ — *exactly* a Value-at-Risk number (Gregory 2.6; Hull 24.7). PFE(99%) is exceeded with probability $\le1\%$.
 - **EPE** averages all values with negatives set to zero; **ENE** averages the negatives (it is your counterparty's positive exposure).
@@ -39,7 +41,9 @@ $$EFV(t)=\mu,\qquad PFE_\alpha(t)=\mu+\sigma\Phi^{-1}(\alpha),\qquad EPE(t)=\sig
 
 Under one netting agreement the exposure is on the *net* value, so for a netting set with trades $j$:
 
-$$EPE^{NS}(t) = E\!\left[\max\!\Big(\sum_j V^j(t),\,0\Big)\right] \le \sum_j EPE^j(t).$$
+$$
+EPE^{NS}(t) = E\!\left[\max\!\Big(\sum_j V^j(t),\,0\Big)\right] \le \sum_j EPE^j(t).
+$$
 
 Netting benefit grows with correlation: two offsetting trades (opposite sign) have a *large* netting reduction; directional trades have a small one. Netting is what makes CVA a **netting-set-level** quantity — you cannot sum standalone trade CVAs and get the right portfolio CVA (Gregory 17.4; the standalone sum $\ge$ netting-set CVA, Eq 17.10).
 
@@ -49,11 +53,15 @@ Netting benefit grows with correlation: two offsetting trades (opposite sign) ha
 
 **Credit support amount** (two-way VM, Gregory Eq 7.3):
 
-$$CSA = \max(V-K_C,0)-\max(-V-K_P,0)-C,$$
+$$
+CSA = \max(V-K_C,0)-\max(-V-K_P,0)-C,
+$$
 
 where $K_C,K_P$ are the two parties' thresholds and $C$ the margin already held. **The MPoR model** (Gregory Eq 15.3) — the residual exposure is the value *minus the margin that was posted a full MPoR ago*:
 
-$$\text{Exposure}_t = \max\!\big(V_t - C_{t-MPoR},\,0\big),$$
+$$
+\text{Exposure}_t = \max\!\big(V_t - C_{t-MPoR},\,0\big),
+$$
 
 with $C$ positive if you *receive* margin, negative if you post it. Two reasons margin can't eliminate exposure: (i) threshold undercollateralisation, and (ii) the MPoR/MTA discrete tracking error (Gregory §7.3.7). Regulatory MPoR: **5 days** centrally cleared / repos, **10 days** bilateral OTC (Gregory Ch 9; Hull 24.7).
 
@@ -61,7 +69,9 @@ with $C$ positive if you *receive* margin, negative if you post it. Two reasons 
 
 The variance-covariance IM (Gregory §9.4.3) is a parametric VaR:
 
-$$IM_{\alpha,\tau} = \Phi^{-1}(\alpha)\,\sqrt{\tau}\,\sigma_P,$$
+$$
+IM_{\alpha,\tau} = \Phi^{-1}(\alpha)\,\sqrt{\tau}\,\sigma_P,
+$$
 
 with $\Phi^{-1}(0.99)=2.33$, $\sqrt{10/252}=0.1992$. Regulatory IM must cover a **99% one-tailed, 10-day horizon using data incorporating a significant stress period** (BCBS–IOSCO 2015). The ISDA **SIMM** generalises this to a nested sequence of variance-covariance calculations over six risk classes (IR, credit-qualifying, credit-non-qualifying, equity, commodity, FX), with weighted sensitivities $WS=RW\times s\times CR$ (risk weight × net sensitivity × concentration factor) aggregated within a class by correlations — e.g. two-tenor delta margin $\sqrt{WS_1^2+WS_2^2+2\rho\,WS_1 WS_2}$ (Gregory Table 9.7). The standardised schedule is far more conservative (Gregory §9.4.1: >\$8trn of schedule-based margin estimated for the in-scope population), which is why SIMM was built.
 

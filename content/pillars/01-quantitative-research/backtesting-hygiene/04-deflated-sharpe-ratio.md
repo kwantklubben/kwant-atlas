@@ -28,17 +28,25 @@ The practical objective: turn a strategy's reported Sharpe, sample length, skew/
 #### 2.1 The Probabilistic Sharpe Ratio (single trial)
 
 The Sharpe estimator's variance under non-normal returns (Lo 2002; Bailey & López de Prado 2012) is
-$$\widehat{\mathrm{Var}}[\widehat{SR}]=\frac{1-\hat\gamma_3\widehat{SR}+\frac{\hat\gamma_4-1}{4}\widehat{SR}^2}{T-1},$$
+$$
+\widehat{\mathrm{Var}}[\widehat{SR}]=\frac{1-\hat\gamma_3\widehat{SR}+\frac{\hat\gamma_4-1}{4}\widehat{SR}^2}{T-1},
+$$
 where $\hat\gamma_3$ is skewness and $\hat\gamma_4$ is **Pearson** kurtosis ($=3$ for normal). Hence, against a user-chosen benchmark $\widehat{SR}^{\ast}$,
-$$\text{PSR}(\widehat{SR}^{\ast})=\Phi\!\left(\frac{(\widehat{SR}-\widehat{SR}^{\ast})\sqrt{T-1}}{\sqrt{1-\hat\gamma_3\widehat{SR}+\frac{\hat\gamma_4-1}{4}\widehat{SR}^2}}\right).$$
+$$
+\text{PSR}(\widehat{SR}^{\ast})=\Phi\!\left(\frac{(\widehat{SR}-\widehat{SR}^{\ast})\sqrt{T-1}}{\sqrt{1-\hat\gamma_3\widehat{SR}+\frac{\hat\gamma_4-1}{4}\widehat{SR}^2}}\right).
+$$
 Note the **non-normality penalty**: negative skew *inflates* the denominator (raises the bar); fat tails (kurtosis $>3$) do the same. Two strategies with identical Sharpe but different higher moments get different PSRs.
 
 #### 2.2 The Deflated Sharpe Ratio
 
 Replace the arbitrary benchmark by the **expected maximum under the null** of $N$ trials: $\widehat{SR}^{\ast}\to\widehat{SR}_0$ with
-$$\boxed{\ \widehat{SR}_0=\sqrt{V[\{\widehat{SR}_n\}]}\cdot\Big[(1-\gamma)\,\Phi^{-1}\!\Big(1-\tfrac1N\Big)+\gamma\,\Phi^{-1}\!\Big(1-\tfrac1{Ne}\Big)\Big]\ }$$
+$$
+\boxed{\ \widehat{SR}_0=\sqrt{V[\{\widehat{SR}_n\}]}\cdot\Big[(1-\gamma)\,\Phi^{-1}\!\Big(1-\tfrac1N\Big)+\gamma\,\Phi^{-1}\!\Big(1-\tfrac1{Ne}\Big)\Big]\ }
+$$
 and define
-$$\boxed{\ \text{DSR}=\Phi\!\left(\frac{(\widehat{SR}-\widehat{SR}_0)\sqrt{T-1}}{\sqrt{1-\hat\gamma_3\widehat{SR}+\frac{\hat\gamma_4-1}{4}\widehat{SR}^2}}\right).\ }$$
+$$
+\boxed{\ \text{DSR}=\Phi\!\left(\frac{(\widehat{SR}-\widehat{SR}_0)\sqrt{T-1}}{\sqrt{1-\hat\gamma_3\widehat{SR}+\frac{\hat\gamma_4-1}{4}\widehat{SR}^2}}\right).\ }
+$$
 Everything is in **non-annualized (per-period) units** — DSR is scale-invariant only if $T$ matches the return frequency and $\widehat{SR}$, $\widehat{SR}_0$ share the period.
 
 **What DSR adds over a raw Sharpe** — five extra inputs, each of which can only *lower* significance:
@@ -50,7 +58,9 @@ Everything is in **non-annualized (per-period) units** — DSR is scale-invarian
 #### 2.3 Minimum Track Record Length
 
 Inverting DSR $=1-\alpha$ for the required sample length (PSR threshold) gives the **MinTRL**:
-$$\text{MinTRL}=1+\Big[1-\hat\gamma_3\widehat{SR}+\tfrac{\hat\gamma_4-1}{4}\widehat{SR}^2\Big]\left(\frac{\Phi^{-1}(1-\alpha)}{\widehat{SR}}\right)^2.$$
+$$
+\text{MinTRL}=1+\Big[1-\hat\gamma_3\widehat{SR}+\tfrac{\hat\gamma_4-1}{4}\widehat{SR}^2\Big]\left(\frac{\Phi^{-1}(1-\alpha)}{\widehat{SR}}\right)^2.
+$$
 It answers "how long must this track record be before it is significant?" — and it *grows* with negative skew and fat tails, the empirical signature of option-selling and carry strategies.
 
 ---

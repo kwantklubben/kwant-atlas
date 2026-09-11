@@ -34,11 +34,15 @@ Start from the dumbest possible question. A stock has a price because it is a cl
 
 Entering a forward costs nothing, so its **payoff *is* its profit and loss**:
 
-$$\text{long forward: }S_T-K,\qquad \text{short forward: }K-S_T.$$
+$$
+\text{long forward: }S_T-K,\qquad \text{short forward: }K-S_T.
+$$
 
 Compare with an option, where the buyer pays a premium $c$ up front:
 
-$$\text{long call net P\&L: }\max(S_T-K,0)-c .$$
+$$
+\text{long call net P\&L: }\max(S_T-K,0)-c .
+$$
 
 The $\max(\cdot,0)$ is the **kink** that makes options non-linear. A forward payoff is a straight line through zero; a call payoff is flat at zero and then a $45°$ line. Everything interesting follows from that kink.
 
@@ -51,7 +55,9 @@ Suppose a non-dividend stock trades at $S_0$, the risk-free rate is $r$, and the
 
 The cash-and-carry strategy costs $0$ today and pays $S_T-F_0$ at time $T$ after repaying $S_0e^{rT}$. For no arbitrage the terminal payoff must be zero:
 
-$$\boxed{\,F_0=S_0e^{rT}\,}\qquad\text{(no income; Hull eq. 5.1)}.$$
+$$
+\boxed{\,F_0=S_0e^{rT}\,}\qquad\text{(no income; Hull eq. 5.1)}.
+$$
 
 So the forward price is *not a forecast* — it is the **cost of carrying** the asset to $T$. If it trades anywhere else, the difference is a free lunch (the reverse cash-and-carry, or a short sale for the other direction).
 
@@ -59,7 +65,9 @@ So the forward price is *not a forecast* — it is the **cost of carrying** the 
 
 Once the market moves, an old forward becomes an asset or a liability. The standard argument: contract to buy at $K$ today is equivalent to entering a *new* forward at $F_0$ **plus** the certainty of receiving $F_0-K$, so
 
-$$f=(F_0-K)e^{-rT}\;=\;S_0-Ke^{-rT}\quad\text{(no income)}.$$
+$$
+f=(F_0-K)e^{-rT}\;=\;S_0-Ke^{-rT}\quad\text{(no income)}.
+$$
 
 This is the whole use of forwards in hedging: the contract's mark-to-market is the present value of the price move, *not* the price move itself. (For a **futures** contract the same total accrues, but it arrives in **daily instalments** — Hull Ch 2 — because futures are marked to market every day.)
 

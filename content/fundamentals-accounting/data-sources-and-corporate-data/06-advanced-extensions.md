@@ -31,21 +31,29 @@ The design rule that keeps it honest: **layers 1–3 are append-only and immutab
 
 **The immutable panel record.** Each row is a vintage-stamped observation:
 
-$$\text{row} = \big(\text{ticker},\ \text{concept},\ \text{fiscal\_period},\ t_{\text{filed}},\ \text{value},\ \text{unit},\ \text{source},\ \text{fetch\_stamp}\big).$$
+$$
+\text{row} = \big(\text{ticker},\ \text{concept},\ \text{fiscal\_period},\ t_{\text{filed}},\ \text{value},\ \text{unit},\ \text{source},\ \text{fetch\_stamp}\big).
+$$
 
 **The as-of query.** Every signal is defined against an as-of date $\tau$, and only vintages knowable by then are eligible:
 
-$$\text{value}(f, y \mid \tau) = \operatorname*{arg\,max}_{t_{\text{filed}} \le \tau} \ \text{value}(f, y, t_{\text{filed}}),$$
+$$
+\text{value}(f, y \mid \tau) = \operatorname*{arg\,max}_{t_{\text{filed}} \le \tau} \ \text{value}(f, y, t_{\text{filed}}),
+$$
 
 i.e. **the latest vintage filed on or before $\tau$** — the heart of point-in-time correctness. Setting $\tau = t_{\text{now}}$ recovers "the restated world"; setting $\tau$ to a past date recovers "what the screen actually saw."
 
 **The tracker's averaging view.** For $n \in \{3, 5, 7\}$ years, the smoothed metric that suppresses single-year noise:
 
-$$\overline{m}^{(n)}_{f,y} = \frac{1}{n}\sum_{k=0}^{n-1} m_{f,\,y-k}, \qquad m = \text{net margin},\ \text{ROE},\ \dots$$
+$$
+\overline{m}^{(n)}_{f,y} = \frac{1}{n}\sum_{k=0}^{n-1} m_{f,\,y-k}, \qquad m = \text{net margin},\ \text{ROE},\ \dots
+$$
 
 and the multi-year growth as a CAGR:
 
-$$\text{CAGR}_n = \left(\frac{\text{Rev}_{y}}{\text{Rev}_{y-n}}\right)^{1/n} - 1 .$$
+$$
+\text{CAGR}_n = \left(\frac{\text{Rev}_{y}}{\text{Rev}_{y-n}}\right)^{1/n} - 1 .
+$$
 
 The 3/5/7 ladder exists because a single year confounds trend with cycle: a 3-year average reads the recent regime, a 7-year average reads the structural one, and the **spread between them is the trend signal** — "expanding" if the 3-yr sits above the 7-yr.
 

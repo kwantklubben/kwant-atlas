@@ -27,7 +27,9 @@ On nonempty $\Omega$, a family $\mathcal F$ of subsets is a $\sigma$-algebra if:
 
 #### 2.2 Probability measure & countable additivity (Shreve II Def 1.1.2)
 $\mathbb P:\mathcal F\to[0,1]$ with $\mathbb P(\Omega)=1$ and, for disjoint $A_n$,
-$$\mathbb P\Big(\bigcup_{n}A_n\Big)=\sum_n\mathbb P(A_n).$$
+$$
+\mathbb P\Big(\bigcup_{n}A_n\Big)=\sum_n\mathbb P(A_n).
+$$
 Finite additivity and $P(A^c)=1-P(A)$ follow. On $[0,1]$, uniform/Lebesgue measure starts from $\mathbb P(a,b]=b-a$ on intervals and extends to Borel sets by countable additivity (Shreve II Ex 1.1.3).
 
 #### 2.3 The generated $\sigma$-algebra: what does a random variable "reveal"? (Shreve I §2.2; Shreve II §2.1)

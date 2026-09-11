@@ -30,20 +30,26 @@ And the practice discipline: **buy well below intrinsic value**, because intrins
 
 **Where the errors enter.** Value is a *ratio-like* function of its drivers, so small input errors compound:
 
-$$V_0=\frac{\text{FCFF}_1}{K_c-g},\qquad \text{FCFF}_1=\text{Revenue}\times\text{Margin}\times(1-t)\times(1-\text{RR}).$$
+$$
+V_0=\frac{\text{FCFF}_1}{K_c-g},\qquad \text{FCFF}_1=\text{Revenue}\times\text{Margin}\times(1-t)\times(1-\text{RR}).
+$$
 
 Two structural facts:
 
 - **The denominator amplifies.** $\dfrac{\partial V}{\partial g}=\dfrac{\text{FCFF}_1}{(K_c-g)^2}$ and $\dfrac{\partial V}{\partial K_c}=-\dfrac{\text{FCFF}_1}{(K_c-g)^2}$. A $1\%$ change in *either* moves value by roughly $\dfrac{0.01}{K_c-g}\approx 9\%$ at $K_c-g=0.106$ — and *non-linearly as $g\to K_c$*.
 - **Terminal share.** For an explicit window $n$ and perpetuity,
 
-$$\text{TV share}=\frac{\text{PV}(\text{TV})}{\text{PV}(\text{explicit})+\text{PV}(\text{TV})},$$
+$$
+\text{TV share}=\frac{\text{PV}(\text{TV})}{\text{PV}(\text{explicit})+\text{PV}(\text{TV})},
+$$
 
 which for a growing firm approaches $1$ quickly. The model is *mostly* a statement about the stable state.
 
 **The margin of safety (Graham).** If intrinsic value $\hat V$ is an estimate, the rational response is to require a buffer before buying:
 
-$$\text{buy if }P\le(1-m)\,\hat V,\qquad m\in[20\%,40\%].$$
+$$
+\text{buy if }P\le(1-m)\,\hat V,\qquad m\in[20\%,40\%].
+$$
 
 The margin converts valuation uncertainty into a *decision rule*: you are paid for being approximately right and protected against being precisely wrong.
 
@@ -112,9 +118,9 @@ Read the numbers: a **$2$-point margin** swing ($18\%\to22\%$) moves the value *
 1. **GIGO forecasts.** Revenue growth, margins, and reinvestment are the model's real inputs. Sensitivity tables (above) should accompany every DCF; a single point estimate is dishonest about how little is known.
 2. **Terminal-value dominance.** $70$–$80\%$ of value is the perpetuity; the five-year detail is largely theatre. Test $g_n$ and $K_c$ specifically, cap $g_n$ at $r_f$, and never let $g_n\to K_c$.
 3. **Wrong cost of capital.** Using WACC for equity flows (or a beta/ERP not matched to the cash flow) shifts value $13$–$16\%$ with no visible sign in the model. Match cash flow to discount rate *mechanically*.
-4. **Precision illusion.** Reporting $\$11.29$ to the cent implies accuracy that the inputs do not support. Report a range; the margin of safety is the engineered response to that uncertainty.
+4. **Precision illusion.** Reporting \$11.29 to the cent implies accuracy that the inputs do not support. Report a range; the margin of safety is the engineered response to that uncertainty.
 5. **Anchoring to price.** The most common real-world failure is not mathematical but psychological: reverse-engineering assumptions until the model "confirms" the current market price. Intrinsic value must be estimated *independently* of price.
-6. **Ignoring the decision rule.** A valuation with no buy rule is trivia. The output of the exercise is "buy below $\$9.03$", not "fair value is $\$11.29$".
+6. **Ignoring the decision rule.** A valuation with no buy rule is trivia. The output of the exercise is "buy below \$9.03", not "fair value is \$11.29".
 
 ---
 

@@ -30,7 +30,9 @@ ERC is a beautiful *static* object built on one input: the covariance matrix $\S
 
 **Failure-mechanism 2 — leverage.** A risk-balanced portfolio is intentionally *low-volatility* in capital terms (the low-risk leg carries most of the *risk* share but little of the *capital* share). To match a conventional 60/40 volatility or return, one must lever the whole book:
 
-$$w^{\text{levered}} = L\times w^{\text{parity}},\qquad \sigma_{\text{book}}=L\,\sigma_{\text{parity}}.$$
+$$
+w^{\text{levered}} = L\times w^{\text{parity}},\qquad \sigma_{\text{book}}=L\,\sigma_{\text{parity}}.
+$$
 
 Leverage makes risk linear in a *loan* — and a loan does not forgive a correlation that turns against you. Faith in leverage is the difference between risk parity as a theory and risk parity as a 2022-style casualty.
 

@@ -29,15 +29,19 @@ Every sensitivity is a **local** statement. This page is about the ways the loca
 
 **The full Taylor map, and what each block means.**
 
-$$V(f+\Delta f)-V(f)
+$$
+V(f+\Delta f)-V(f)
 =\underbrace{b^\top\Delta f}_{\text{delta / DV01}}
 +\underbrace{\tfrac12\Delta f^\top H\,\Delta f}_{\text{gamma, cross-gamma, convexity}}
 +\underbrace{\tfrac16\sum_{ijk}\partial_{ijk}V\,\Delta f_i\Delta f_j\Delta f_k}_{\text{third order / "speed"}}
-+\cdots$$
++\cdots
+$$
 
 For a single equity factor with $\Delta S$ and $\Delta\sigma$, writing $\Gamma=\partial^2V/\partial S^2,\ \nu=\partial V/\partial\sigma,\ \mathcal{V}=\partial^2V/\partial\sigma^2$ (volga) and $\text{Vanna}=\partial^2V/\partial S\partial\sigma$:
 
-$$\Delta V\approx\Delta\,\Delta S+\nu\,\Delta\sigma+\tfrac12\Gamma(\Delta S)^2+\text{Vanna}\,\Delta S\,\Delta\sigma+\tfrac12\mathcal{V}(\Delta\sigma)^2+\Theta\,\Delta t .$$
+$$
+\Delta V\approx\Delta\,\Delta S+\nu\,\Delta\sigma+\tfrac12\Gamma(\Delta S)^2+\text{Vanna}\,\Delta S\,\Delta\sigma+\tfrac12\mathcal{V}(\Delta\sigma)^2+\Theta\,\Delta t .
+$$
 
 **The five terms are not equally important, and the ranking is empirical:**
 
@@ -53,7 +57,9 @@ $$\Delta V\approx\Delta\,\Delta S+\nu\,\Delta\sigma+\tfrac12\Gamma(\Delta S)^2+\
 
 **The gamma–theta identity restated as a P&L decomposition.** For a delta-hedged position over a step $\Delta t$,
 
-$$\text{P\&L}\approx\tfrac12\Gamma S^2\left[\left(\frac{\Delta S}{S}\right)^2-\sigma^2\Delta t\right]$$
+$$
+\text{P\&L}\approx\tfrac12\Gamma S^2\left[\left(\frac{\Delta S}{S}\right)^2-\sigma^2\Delta t\right]
+$$
 
 — the realised-variance minus implied-variance trade. Its **expectation under $\mathbb{Q}$ is zero**; its **variance is $\tfrac12\Gamma^2S^4\sigma^4\Delta t^2$** per step (accumulating to $\tfrac12\Gamma^2S^4\sigma^4\,T\Delta t$ over horizon $T$), which is why the *risk* of a delta-hedged book is proportional to $\Gamma^2$, and why short-gamma positions (selling options) have a P&L distribution with a fat left tail and a thin right one: many small gains, rare large losses.
 

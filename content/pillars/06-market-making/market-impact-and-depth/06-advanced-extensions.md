@@ -29,7 +29,9 @@ The linear and square-root models are *static*: impact appears instantly and eit
 
 The **Bouchaud propagator** (and Gatheral's "JG model") writes the impact of a continuous execution strategy $X$ as a convolution:
 
-$$S_t=S_0+\int_0^t h\big(\dot X_s\big)\,G(t-s)\,ds,$$
+$$
+S_t=S_0+\int_0^t h\big(\dot X_s\big)\,G(t-s)\,ds,
+$$
 
 where $h$ is the instantaneous impact function (linear $h(x)=cx$, or concave $h(x)=c|x|^\delta\mathrm{sgn}(x)$) and $G$ is the **decay kernel** (the "propagator"). The discrete version applies a price move $h(\xi_{t_k})G(t_n-t_k)$ at each trade time $t_k$. The three headline results:
 
@@ -41,7 +43,9 @@ where $h$ is the instantaneous impact function (linear $h(x)=cx$, or concave $h(
 
 Gatheral (2010) imposes that **no round-trip strategy can extract a riskless profit from its own price impact**. For $h(x)=c|x|^\delta\mathrm{sgn}(x)$ and $G(\tau)=\tau^{-\gamma}$:
 
-$$\boxed{\ \text{price manipulation exists}\iff \gamma+\delta<1\ }.$$
+$$
+\boxed{\ \text{price manipulation exists}\iff \gamma+\delta<1\ }.
+$$
 
 Two structural consequences that every production impact model must satisfy:
 

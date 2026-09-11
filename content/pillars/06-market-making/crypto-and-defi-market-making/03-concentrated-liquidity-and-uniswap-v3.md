@@ -33,8 +33,10 @@ The three ideas:
 
 A v3 position inside $[P_a,P_b]$ acts like a constant-product pool with **virtual reserves** $x_v,y_v$ ($x_v y_v = L^2$) offset so that the real, spendable balances hit zero exactly at the bounds. The real token amounts held at price $P$ are (Uniswap v3 Core, §6):
 
-$$x(P) = L\left(\frac{1}{\sqrt P}-\frac{1}{\sqrt{P_b}}\right),\qquad
-y(P) = L\left(\sqrt P-\sqrt{P_a}\right),$$
+$$
+x(P) = L\left(\frac{1}{\sqrt P}-\frac{1}{\sqrt{P_b}}\right),\qquad
+y(P) = L\left(\sqrt P-\sqrt{P_a}\right),
+$$
 
 valid for $P\in[P_a,P_b]$; at $P\le P_a$ the position is all $X$ with $x = L\big(\tfrac1{\sqrt{P_a}}-\tfrac1{\sqrt{P_b}}\big)$; at $P\ge P_b$ it is all $Y$ with $y = L(\sqrt{P_b}-\sqrt{P_a})$. Here $L$ is fixed when the position is opened. The marginal price is still $p=y_v/x_v$, and the depth at any in-range price scales with $L$.
 
@@ -42,12 +44,16 @@ valid for $P\in[P_a,P_b]$; at $P\le P_a$ the position is all $X$ with $x = L\big
 
 The position value in numeraire $Y$ is
 
-$$V(P) = x(P)\,P + y(P).$$
+$$
+V(P) = x(P)\,P + y(P).
+$$
 
 Differentiating twice in-range gives a **negative** second derivative (concavity / short gamma); the magnitude of the concavity grows as the range narrows (concentration multiplies gamma per dollar). Crucially, **outside the range $V$ is linear in $P$** (position is a single token), so the second difference vanishes — the short optionality is *truncated at the strikes* $P_a,P_b$:
 
-$$\frac{d^2V}{dP^2}<0 \quad \text{for } P\in(P_a,P_b), \qquad
-\frac{d^2V}{dP^2}=0 \quad \text{for } P\notin[P_a,P_b].$$
+$$
+\frac{d^2V}{dP^2}<0 \quad \text{for } P\in(P_a,P_b), \qquad
+\frac{d^2V}{dP^2}=0 \quad \text{for } P\notin[P_a,P_b].
+$$
 
 This is the exact signature of a **short strangle**: concave (short) convexity between the strikes, no convexity outside. Compared with a *full-range* pool funded by the same initial deposit, the concentrated position carries more divergence loss per dollar in-range (more leverage) but the loss is *capped* — once price exits, no further divergence loss accrues, only directional exposure in the remaining token.
 

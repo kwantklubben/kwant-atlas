@@ -15,7 +15,9 @@ tags:
 
 ERC equalizes — but an allocator rarely wants *equal* slices of risk. A pension fund may want to give equities 40% of the *risk* budget, bonds 30%, commodities 20%, credit 10%. **Risk budgeting** generalizes ERC in one move: pick a vector of risk budgets $b=(b_1,\dots,b_N)$ with $\sum b_i=1$, and find the weights $w$ whose contributions match them:
 
-$$RC_i(w)=b_i\,\sigma(w)\quad\text{for all }i.$$
+$$
+RC_i(w)=b_i\,\sigma(w)\quad\text{for all }i.
+$$
 
 ERC is simply the special case $b_i=1/N$. The objective of this page: (1) state the risk-budgeting program, (2) show it is solved by the *same* convex machinery as ERC (just with a weighted log-barrier), (3) verify arbitrary budgets land exactly, and (4) explain the discipline's second name — **risk budgets as a pre-commitment device**, made credible by Qian (2006)'s proof that budgets do add up and track actual losses.
 
@@ -29,17 +31,23 @@ Why is this a *management* tool and not just an optimization trick? Because a bu
 
 **The program.** Find $w>0$, $\sum_i w_i=1$, such that
 
-$$RC_i(w)\equiv \frac{w_i(\Sigma w)_i}{\sigma(w)}=b_i\,\sigma(w),\qquad \sum_{i=1}^N b_i=1.$$
+$$
+RC_i(w)\equiv \frac{w_i(\Sigma w)_i}{\sigma(w)}=b_i\,\sigma(w),\qquad \sum_{i=1}^N b_i=1.
+$$
 
 Divide the $i$-th equation by $\sigma(w)$ and use $w_i(\Sigma w)_i=\text{RC}_i\,\sigma(w)$:
 
-$$RC_i(w)=b_i\,\sigma(w)\ \Longleftrightarrow\ \frac{w_i(\Sigma w)_i}{\sigma(w)^2}=b_i\ \Longleftrightarrow\ w_i(\Sigma w)_i\propto b_i.$$
+$$
+RC_i(w)=b_i\,\sigma(w)\ \Longleftrightarrow\ \frac{w_i(\Sigma w)_i}{\sigma(w)^2}=b_i\ \Longleftrightarrow\ w_i(\Sigma w)_i\propto b_i.
+$$
 
 So the condition is **weight-times-portfolio-covariance proportional to the budget** — the natural extension of the ERC condition ($b_i\propto1$).
 
 **Convex embedding (extension of page 03).** Weighted log-barrier with the budget active:
 
-$$\min_{w>0}\ \tfrac12\,w^\top\Sigma w \quad\text{s.t.}\quad \textstyle\sum_i b_i\ln w_i\;\ge\;c.$$
+$$
+\min_{w>0}\ \tfrac12\,w^\top\Sigma w \quad\text{s.t.}\quad \textstyle\sum_i b_i\ln w_i\;\ge\;c.
+$$
 
 KKT stationarity: $(\Sigma w)_i=\lambda\,b_i/w_i\Rightarrow w_i(\Sigma w)_i=\lambda b_i$ — proportional to $b_i$ as required. In practice one minimizes the unconstrained barrier $f(w)=\tfrac12 w^\top\Sigma w-\textstyle\sum_i b_i\ln w_i$ at a fixed barrier weight and renormalizes the optimum to $\sum w=1$; the contribution *ratios* are scale-invariant so normalization does not disturb the budgets.
 

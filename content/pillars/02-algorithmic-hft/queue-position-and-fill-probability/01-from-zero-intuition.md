@@ -36,23 +36,31 @@ Three steps, three "aha"s:
 
 **Pure-trade model (the minimal one).** Discretise time into ticks; each tick a trade unit arrives with probability $p$. The number of trade units by time $T$ is $\text{Bin}(T,p)$, so
 
-$$\boxed{\;\mathbb{P}(\text{filled by }T) = \mathbb{P}\big(\text{Bin}(T,p)\ge x\big) = \sum_{k=x}^{T}\binom{T}{k}p^{k}(1-p)^{T-k}\;}$$
+$$
+\boxed{\;\mathbb{P}(\text{filled by }T) = \mathbb{P}\big(\text{Bin}(T,p)\ge x\big) = \sum_{k=x}^{T}\binom{T}{k}p^{k}(1-p)^{T-k}\;}
+$$
 
 i.e. the **time to fill is negative-binomial**, $\text{NegBin}(x,p)$, and its mean is the clean rule of thumb
 
-$$\mathbb{E}[\text{time to fill}] = \frac{x}{\mu}\quad(\text{queue position} \;/\; \text{arrival rate}).$$
+$$
+\mathbb{E}[\text{time to fill}] = \frac{x}{\mu}\quad(\text{queue position} \;/\; \text{arrival rate}).
+$$
 
 **Wait longer, don't wait smarter.** Because the trade process is memoryless, the per-tick fill hazard *once you are next in line* is just $p$ — waiting a long time without filling tells you nothing except that $x$ was large. Survival is a statement about the queue, not about "luck."
 
 **Cancellations flatter the estimate.** Real queues also shrink from cancellations. If a cancel arrives with probability $pc$ per tick and removes a **uniformly random** live order from a total depth $Q$, then
 
-$$\mathbb{P}(\text{the cancel was ahead of you}) = \frac{x}{Q},$$
+$$
+\mathbb{P}(\text{the cancel was ahead of you}) = \frac{x}{Q},
+$$
 
 so cancellations count toward your fill only in proportion to how far back you are. This is why fills are *faster than trade volume alone suggests* — and why they are *adverse*: cancels surge exactly when the market turns.
 
 **Adverse selection, in one line.** Over a fixed horizon $T$, conditioned on being filled,
 
-$$\mathbb{E}\big[\Delta M_T \mid \text{filled}\big] < 0 \qquad\text{while}\qquad \mathbb{E}\big[\Delta M_T \mid \text{not filled}\big] > 0 .$$
+$$
+\mathbb{E}\big[\Delta M_T \mid \text{filled}\big] < 0 \qquad\text{while}\qquad \mathbb{E}\big[\Delta M_T \mid \text{not filled}\big] > 0 .
+$$
 
 Fills coincide with aggressive flow in one direction; that same flow pushes the mid against your position.
 

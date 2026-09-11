@@ -34,22 +34,32 @@ Where this folder sits in the ML map:
 
 **GMM (independent mixture)** — likelihood and EM (Dempster–Laird–Rubin 1977; ESL Ch 14.3):
 
-$$p(x_t)=\sum_{k=1}^{K}\pi_k\,\mathcal{N}(x_t;\mu_k,\Sigma_k),\qquad
-\gamma_t(k)=\frac{\pi_k\mathcal{N}(x_t;\mu_k,\Sigma_k)}{\sum_{j}\pi_j\mathcal{N}(x_t;\mu_j,\Sigma_j)},$$
+$$
+p(x_t)=\sum_{k=1}^{K}\pi_k\,\mathcal{N}(x_t;\mu_k,\Sigma_k),\qquad
+\gamma_t(k)=\frac{\pi_k\mathcal{N}(x_t;\mu_k,\Sigma_k)}{\sum_{j}\pi_j\mathcal{N}(x_t;\mu_j,\Sigma_j)},
+$$
 
-$$N_k=\sum_t\gamma_t(k),\qquad \pi_k=\frac{N_k}{T},\qquad
+$$
+N_k=\sum_t\gamma_t(k),\qquad \pi_k=\frac{N_k}{T},\qquad
 \mu_k=\frac{1}{N_k}\sum_t\gamma_t(k)x_t,\qquad
-\Sigma_k=\frac{1}{N_k}\sum_t\gamma_t(k)(x_t-\mu_k)(x_t-\mu_k)^{\!\top}.$$
+\Sigma_k=\frac{1}{N_k}\sum_t\gamma_t(k)(x_t-\mu_k)(x_t-\mu_k)^{\!\top}.
+$$
 
 **HMM (Markov-persistent mixture)** — forward–backward (Rabiner 1989; ESL Ch 14):
-$$\alpha_1(i)=\pi_i\mathcal{N}(y_1;\mu_i,\sigma_i^2),\quad
+$$
+\alpha_1(i)=\pi_i\mathcal{N}(y_1;\mu_i,\sigma_i^2),\quad
 \alpha_t(j)=\mathcal{N}(y_t;\mu_j,\sigma_j^2)\sum_i\alpha_{t-1}(i)A_{ij},\qquad
-\beta_T(i)=1,\quad \beta_t(i)=\sum_j A_{ij}\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\beta_{t+1}(j),$$
-$$\gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\sum_j\alpha_t(j)\beta_t(j)},\qquad
-\xi_t(i,j)=\frac{\alpha_t(i)A_{ij}\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\beta_{t+1}(j)}{\sum_{a,b}\alpha_t(a)A_{ab}\mathcal{N}(y_{t+1};\mu_b,\sigma_b^2)\beta_{t+1}(b)},$$
-$$A_{ij}=\frac{\sum_{t<T}\xi_t(i,j)}{\sum_{t<T}\gamma_t(i)},\qquad
+\beta_T(i)=1,\quad \beta_t(i)=\sum_j A_{ij}\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\beta_{t+1}(j),
+$$
+$$
+\gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\sum_j\alpha_t(j)\beta_t(j)},\qquad
+\xi_t(i,j)=\frac{\alpha_t(i)A_{ij}\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\beta_{t+1}(j)}{\sum_{a,b}\alpha_t(a)A_{ab}\mathcal{N}(y_{t+1};\mu_b,\sigma_b^2)\beta_{t+1}(b)},
+$$
+$$
+A_{ij}=\frac{\sum_{t<T}\xi_t(i,j)}{\sum_{t<T}\gamma_t(i)},\qquad
 \mu_j=\frac{\sum_t\gamma_t(j)y_t}{\sum_t\gamma_t(j)},\qquad
-\sigma_j^2=\frac{\sum_t\gamma_t(j)(y_t-\mu_j)^2}{\sum_t\gamma_t(j)}.$$
+\sigma_j^2=\frac{\sum_t\gamma_t(j)(y_t-\mu_j)^2}{\sum_t\gamma_t(j)}.
+$$
 
 | Quantity | Formula | Verified check (this folder's runs) |
 |---|---|---|

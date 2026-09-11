@@ -35,27 +35,33 @@ This folder is the *routing-and-fragmentation* topic of Pillar 2. It is a *hub*:
 
 | Input you have | Routing rule | Objective term |
 |---|---|---|
-| **Best price** across venues | sort by $p_i$; the NBBO ask is $p^\*=\min_i p_i$ | $p_i$ |
+| **Best price** across venues | sort by $p_i$; the NBBO ask is $p^*=\min_i p_i$ | $p_i$ |
 | **Available size** at that price | fill $S_i$ at venue $i$, then go to the next-best price | $q_i\le S_i$ |
 | **Fees** (take/make) | replace $p_i$ with the **all-in** $p_i+f_i$ | $+f_i$ |
 | **Latency** (quote staleness) | add expected adverse move $\sigma\sqrt{L_i}$ | $+\sigma\sqrt{L_i}$ |
 | **Toxicity** (informed flow) | add $k\,\theta_i$ (VPIN-weighted) | $+k\,\theta_i$ |
 | **Trade-through rule** | never fill at a price worse than any *protected* quote elsewhere | hard constraint |
 
-**Notation.** $a_i,b_i$ venue best ask/bid; NBBO $a^\*=\min_i a_i$, $b^\*=\max_i b_i$; mid $m=(a^*+b^*)/2$; $q_i\ge0$ routed size; $Q$ parent size; direction $d\in\{+1,-1\}$.
+**Notation.** $a_i,b_i$ venue best ask/bid; NBBO $a^*=\min_i a_i$, $b^*=\max_i b_i$; mid $m=(a^*+b^*)/2$; $q_i\ge0$ routed size; $Q$ parent size; direction $d\in\{+1,-1\}$.
 
 **NBBO and the consolidated tape.** The NBBO is the cross-sectional extreme of venue quotes,
-$$a^\*=\min_{i}a_i,\qquad b^\*=\max_{i}b_i,\qquad S^\*=a^\*-b^\*.$$
+$$
+a^*=\min_{i}a_i,\qquad b^*=\max_{i}b_i,\qquad S^*=a^*-b^*.
+$$
 A consolidated tape weights each venue's trades into one volume series; a common **fragmentation index** is the Herfindahl of venue volume shares, $\text{HHI}=\sum_i s_i^2$ with $s_i=\text{vol}_i/\sum_j\text{vol}_j$, so the *effective number of venues* is $1/\text{HHI}$.
 
 **The routing objective (the central object of this folder).** Choose allocations $q_i$ to minimize the total all-in cost of a marketable parent order:
-$$\boxed{\;\min_{\{q_i\}}\;\sum_i q_i\,\underbrace{\big[\,p_i+f_i+\phi(L_i)+k\,\theta_i\,\big]}_{\text{effective price }\hat p_i}\quad\text{s.t.}\quad \sum_i q_i=Q,\;\;0\le q_i\le S_i.\;}$$
+$$
+\boxed{\;\min_{\{q_i\}}\;\sum_i q_i\,\underbrace{\big[\,p_i+f_i+\phi(L_i)+k\,\theta_i\,\big]}_{\text{effective price }\hat p_i}\quad\text{s.t.}\quad \sum_i q_i=Q,\;\;0\le q_i\le S_i.\;}
+$$
 Because the objective is **linear and separable**, the optimum is the greedy **water-filling** solution: sort venues by $\hat p_i$ ascending and fill $S_i$ from the cheapest. With $\phi(L_i)=\sigma\sqrt{L_i}$ (Brownian scaling of the adverse move over latency $L_i$), the objective automatically penalizes slow venues.
 
 **Trade-through rule.** Regulation NMS Rule 611 forbids executing at a price worse than a *protected* quote displayed elsewhere. In routing terms it is the feasibility constraint $\hat p_i\le \hat p_{j}$ for any venue $j$ with better protected price — i.e. you must sweep the best protected prices in order.
 
 **Fee identity and the cum-fee spread (Colliard & Foucault 2012).** A maker–taker venue charges takers $f_t>0$ and pays makers a make fee $f_m$ (a rebate if $f_m<0$). Holding the **total** fee $f=f_t+f_m$ fixed, the **cum-fee bid–ask spread** (what traders actually pay) is
-$$S_{\text{cum}}=S_{\text{raw}}+2f_t,$$
+$$
+S_{\text{cum}}=S_{\text{raw}}+2f_t,
+$$
 and it is *invariant to the make/take split*: moving $f_t$ only moves the raw spread $S_{\text{raw}}$ in the opposite direction, leaving $S_{\text{cum}}$ unchanged. Only a change in the **total** $f$ moves the all-in trading cost.
 
 ---

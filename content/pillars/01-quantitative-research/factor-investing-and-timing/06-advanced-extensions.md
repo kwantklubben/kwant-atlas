@@ -36,21 +36,31 @@ The two canonical, *tradable* timing signals are:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Setup.** Let $f_t$ be the factor's long-short return, with a *time-varying* conditional mean $m_t=\mathbb{E}_{t-1}[f_t]$ and constant conditional volatility $\sigma_f$. Assume $m_t$ is a linear function of a small set of state variables $z_{t-1}$:
-$$f_t=\alpha+\beta^\top z_{t-1}+\sigma_f\varepsilon_t,\qquad \varepsilon_t\sim(0,1),$$
+$$
+f_t=\alpha+\beta^\top z_{t-1}+\sigma_f\varepsilon_t,\qquad \varepsilon_t\sim(0,1),
+$$
 where $z_{t-1}$ are known at $t-1$ (the spread and the trend, typically standardized). The timing signal has **predictive IC** $IC=\mathrm{corr}(z_{t-1},f_t)$.
 
 **The timed strategy.** Define weights proportional to the standardized signal, capped for risk management:
-$$w_t=\mathrm{clip}(\kappa\,z_{t-1},\ \pm w_{\max}),\qquad f^{\text{timed}}_t=w_t f_t .$$
+$$
+w_t=\mathrm{clip}(\kappa\,z_{t-1},\ \pm w_{\max}),\qquad f^{\text{timed}}_t=w_t f_t .
+$$
 The capped weight matters: an unclipped signal can lever the factor arbitrarily in extreme spreads, which is a first-order risk failure, not a second-order refinement.
 
 **The information ratio of timing.** Apply the fundamental law to a strategy with one bet per period:
-$$IR_{\text{timing}}\approx IC_{\text{timing}}\times\sqrt{\text{breadth}},\qquad \text{breadth}=12\text{ for monthly timing}.$$
+$$
+IR_{\text{timing}}\approx IC_{\text{timing}}\times\sqrt{\text{breadth}},\qquad \text{breadth}=12\text{ for monthly timing}.
+$$
 To obtain $IR_{\text{timing}}=0.5$ you need
-$$IC_{\text{timing}}=\frac{0.5}{\sqrt{12}}\approx0.14.$$
+$$
+IC_{\text{timing}}=\frac{0.5}{\sqrt{12}}\approx0.14.
+$$
 For context, a *good* cross-sectional stock-selection signal has an IC of 0.03–0.05 ([[pillars/01-quantitative-research/factor-investing-and-timing/01-from-zero-intuition|01 · From Zero]]). **Timing therefore requires a signal two to four times as strong as a strong stock-selection signal** — and it must be strong on a single, highly volatile bet. This is why timing is hard, stated as arithmetic rather than opinion.
 
 **Why expected factor returns vary: the valuation-spread identity.** Decompose the factor's price as a claim on the ratio of the long and short baskets. If the long basket trades at $P_L$ and the short at $P_S$, the *valuation spread* $V_t=\ln(P_L/P_S)$ mean-reverts. A simple present-value relation says the expected log return of the factor over the next year is approximately
-$$\mathbb{E}[\Delta V]\;+\;\text{carry},$$
+$$
+\mathbb{E}[\Delta V]\;+\;\text{carry},
+$$
 and if $V$ mean-reverts toward its own long-run mean with speed $\varphi$, then $\mathbb{E}[\Delta V]\approx-\varphi\,(V_t-\bar V)$ — so *a below-average spread predicts a rise* in the factor's relative price, i.e. higher future factor returns. Hence the sign convention: **high valuation spread (factor cheap) → higher expected factor return.**
 
 **Volatility targeting / risk-managed factors.** A separate and more defensible extension: scale the factor's exposure inversely to its own recent volatility, $w_t=\tau/\hat\sigma_{t-1}$. Because factor returns are volatility-clustered and fat-tailed, capping exposure in high-vol regimes raises the Sharpe ratio — this is the mechanism behind Barroso & Santa-Clara's "momentum has its moments" (momentum's crashes are almost entirely volatility events) and Daniel & Moskowitz's momentum-crash analysis. It is not *timing the premium*; it is *timing the risk*, and it is far more robust.

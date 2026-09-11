@@ -30,7 +30,9 @@ The main failures, in one line each:
 
 **Non-synchronous trading bias.** When the security and the market index are measured over different intervals (a thin stock doesn't trade every day), OLS estimates of the market-model $\beta$ are biased and inconsistent (Scholes–Williams 1977, p. 324; Dimson 1979, p. 197; Brown–Warner 1985 §2.2). With daily data the bias "can be severe." The **Scholes–Williams** correction adds one-lagged and one-led market betas:
 
-$$\hat\beta_{SW} = \frac{\hat\beta_{-1} + \hat\beta_0 + \hat\beta_{+1}}{1 + 2\hat\rho_m},$$
+$$
+\hat\beta_{SW} = \frac{\hat\beta_{-1} + \hat\beta_0 + \hat\beta_{+1}}{1 + 2\hat\rho_m},
+$$
 
 where $\hat\beta_0$ is the contemporaneous OLS beta, $\hat\beta_{-1},\hat\beta_{+1}$ are the betas from regressing the security's return on the *lagged* and *led* market returns, and $\hat\rho_m$ is the market's first-order autocorrelation.
 

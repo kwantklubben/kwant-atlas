@@ -35,7 +35,9 @@ Plus the transversals: **VaR isn't subadditive**, and **every VaR must be backte
 - **Monte Carlo:** uses a *chosen* model density $g$; VaR = quantile of simulated $g$-losses. Its failure is **modeling error** (wrong $g$) plus **simulation error** $\propto\sqrt{p/f(x_p)^2}$.
 
 **The tail-quantile variance is common to all three (Glasserman Ch 9 §9.1).**
-$$\sqrt n\big(\hat x_p-x_p\big)\Rightarrow N\!\Big(0,\tfrac{p(1-p)}{f(x_p)^2}\Big),\qquad p=1-\alpha.$$
+$$
+\sqrt n\big(\hat x_p-x_p\big)\Rightarrow N\!\Big(0,\tfrac{p(1-p)}{f(x_p)^2}\Big),\qquad p=1-\alpha.
+$$
 The $f(x_p)^2$ in the denominator means **the rarer the event, the noisier the estimate** — no method escapes this, it just moves on.
 
 **The ghost effect, formally.** Historical VaR at rank $k=\lceil n(1-\alpha)\rceil$ depends only on the $k$ worst days in the window. A single disaster day $L_{(k)}$ *is* the VaR until a newer loss displaces it or it ages out of the window; a calm stretch then drops VaR steeply. This is an *estimator artifact* — it is not tracking risk, it is tracking "when did the last bad day happen."

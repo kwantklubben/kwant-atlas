@@ -29,7 +29,9 @@ The practical objective of the ML-for-portfolio discipline is to stop treating t
 
 Let $x_t$ be features and $y_{t+1}$ the forward return. The full chain is:
 
-$$x_t \;\xrightarrow{\;\text{model }g\;}\; \hat y_{t+1|t} \;\xrightarrow{\;\text{position rule }p\;}\; w_t \;\xrightarrow{\;\text{market}\;}\; r_{t+1} = w_t^\top y_{t+1}.$$
+$$
+x_t \;\xrightarrow{\;\text{model }g\;}\; \hat y_{t+1|t} \;\xrightarrow{\;\text{position rule }p\;}\; w_t \;\xrightarrow{\;\text{market}\;}\; r_{t+1} = w_t^\top y_{t+1}.
+$$
 
 Three errors enter here, and they **multiply** rather than add:
 
@@ -39,7 +41,9 @@ Three errors enter here, and they **multiply** rather than add:
 
 The realized PnL error is, to first order, the sum of the *products* of these, because the position and the realized return both carry estimation error:
 
-$$r_{t+1} - w_t^\top \mathbb{E}[y_{t+1}] = \underbrace{p(\hat y)^\top e^g}_{\text{forecast error}\times\text{leverage}} + \underbrace{(w - p(\hat y))^\top y}_{\text{position error}} + \dots$$
+$$
+r_{t+1} - w_t^\top \mathbb{E}[y_{t+1}] = \underbrace{p(\hat y)^\top e^g}_{\text{forecast error}\times\text{leverage}} + \underbrace{(w - p(\hat y))^\top y}_{\text{position error}} + \dots
+$$
 
 This is why the discipline exists: each stage's error is **amplified** by the next stage's gain (leverage, notional). A 1% forecast error on a 5× levered book is a 5% PnL error, before the optimizer adds its own.
 
@@ -47,7 +51,9 @@ This is why the discipline exists: each stage's error is **amplified** by the ne
 
 For a model $\hat f$ trained to approximate $y = f(x) + \varepsilon$ (López de Prado AFML Ch 6; ESL §7.3):
 
-$$\mathbb{E}\big[(y - \hat f(x))^2\big] = \big(\mathbb{E}[\hat f] - f\big)^2 + \mathrm{Var}(\hat f) + \sigma_\varepsilon^2.$$
+$$
+\mathbb{E}\big[(y - \hat f(x))^2\big] = \big(\mathbb{E}[\hat f] - f\big)^2 + \mathrm{Var}(\hat f) + \sigma_\varepsilon^2.
+$$
 
 - **Bias** — the model is too simple to see real structure (underfit).
 - **Variance** — the model is so sensitive that small training changes produce wildly different forecasts (overfit).

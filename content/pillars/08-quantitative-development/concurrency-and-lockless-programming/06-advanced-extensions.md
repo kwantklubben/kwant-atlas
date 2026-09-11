@@ -29,7 +29,9 @@ Once the SPSC ring is correct and fast, the next question is *throughput*. Two p
 
 **Batching amortises the handshake.** Let each message cost `base` ns of work and each *publish* (regardless of how many messages it carries) cost `handshake` ns. Pushing $N$ messages in batches of $B$ gives $N/B$ publishes, so total time and throughput:
 
-$$T(B) = N\cdot\text{base} + \frac{N}{B}\cdot\text{handshake}, \qquad \lambda(B) = \frac{N}{T(B)} = \frac{1}{\text{base} + \frac{\text{handshake}}{B}}.$$
+$$
+T(B) = N\cdot\text{base} + \frac{N}{B}\cdot\text{handshake}, \qquad \lambda(B) = \frac{N}{T(B)} = \frac{1}{\text{base} + \frac{\text{handshake}}{B}}.
+$$
 
 The per-message overhead $\text{handshake}/B$ shrinks linearly in $B$ until it is negligible against `base`. For `base=20` ns and `handshake=100` ns: at $B=1$ the handshake is 5x the work; at $B=64$ it is down to 1.6 ns — a ~5.6x throughput gain from scheduling alone.
 

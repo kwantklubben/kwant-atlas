@@ -27,15 +27,21 @@ Regimes are rarely the end goal — they are the **condition** under which a tra
 ### 2. Mathematical Ground Truth & Derivations
 
 **Supervised labeling.** With a proxy label $z_t\in\{0,1\}$ and features $x_t$, logistic regression models
-$$\mathbb{P}(z_t{=}1\mid x_t)=\sigma(w^{\!\top}x_t)=\frac{1}{1+e^{-w^{\!\top}x_t}},$$
+$$
+\mathbb{P}(z_t{=}1\mid x_t)=\sigma(w^{\!\top}x_t)=\frac{1}{1+e^{-w^{\!\top}x_t}},
+$$
 fit by maximum likelihood (gradient ascent on the cross-entropy). The fitted probabilities $\hat p_t$ are the regime membership used downstream. (This is the ESL Ch 4 linear-classifier view; the tree/boosted version is [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting]].)
 
 **Regime-conditional forecast.** Split the training data by regime, fit $\hat f_0$ on $\{(x_t,y_t):z_t{=}0\}$ and $\hat f_1$ on $\{z_t{=}1\}$, then predict
-$$\hat y_t^{\text{cond}}=\mathbb{1}[z_t{=}0]\,\hat f_0(x_t)+\mathbb{1}[z_t{=}1]\,\hat f_1(x_t).$$
+$$
+\hat y_t^{\text{cond}}=\mathbb{1}[z_t{=}0]\,\hat f_0(x_t)+\mathbb{1}[z_t{=}1]\,\hat f_1(x_t).
+$$
 If the two regimes have *opposite* relationships (momentum in calm, mean-reversion in stress), a single pooled $\hat f$ averages them toward zero — a **biased** predictor in both regimes — while the conditional model nails each.
 
 **Soft mixture (regime-weighted).** Replace the hard indicator with the regime posterior:
-$$\hat y_t^{\text{soft}}=\mathbb{P}(z_t{=}0\mid x_t)\,\hat f_0(x_t)+\mathbb{P}(z_t{=}1\mid x_t)\,\hat f_1(x_t).$$
+$$
+\hat y_t^{\text{soft}}=\mathbb{P}(z_t{=}0\mid x_t)\,\hat f_0(x_t)+\mathbb{P}(z_t{=}1\mid x_t)\,\hat f_1(x_t).
+$$
 This is the finite-mixture / mixture-of-experts predictor (ESL Ch 14; Jacobs et al. 1991), and it is robust to label error: a mislabeled hard switch applies the *wrong sign* model, whereas the soft weight merely down-weights the less-certain expert. This is the same logic that makes the HMM's **filtered** probability ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/04-hmm-regimes|04]]) the correct object to feed a live strategy rather than a hard decoded state.
 
 ---

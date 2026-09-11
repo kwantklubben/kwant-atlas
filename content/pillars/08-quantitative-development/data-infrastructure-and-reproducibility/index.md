@@ -34,7 +34,9 @@ This folder is the topic *hub*. It (a) gives the **fast lookup table** below (jo
 **Notation.** $m$ data rows, $w_i$ bits per serialized row, dataset byte-length $L = \sum_i w_i/8$, block size $B$.
 
 **The reproducibility triangle** (each leg is necessary; the guarantee only holds when all three are pinned):
-$$\underbrace{\text{data version}}_{\text{pinned}} \times \underbrace{\text{code commit}}_{\text{pinned}} \times \underbrace{\text{env lockfile}}_{\text{pinned}} \;\Longrightarrow\; \text{same output.}$$
+$$
+\underbrace{\text{data version}}_{\text{pinned}} \times \underbrace{\text{code commit}}_{\text{pinned}} \times \underbrace{\text{env lockfile}}_{\text{pinned}} \;\Longrightarrow\; \text{same output.}
+$$
 
 **Checksum arithmetic (SHA-256).** Hashing $L$ bytes costs $O(L)$ and yields a $256$-bit digest $\mathbf h\in\{0,1\}^{256}$. The probability that two *different* datasets collide is $\approx 2^{-256}\approx 8.6\times 10^{-78}$ — effectively zero, which is why a checksum is the gold-standard integrity check. A Merkle-style *block* hash splits the dataset into $K=\lceil L/B\rceil$ blocks; a single corrupted block changes exactly one leaf hash, so a tree hash locates the damage in $O(\log K)$ comparisons.
 

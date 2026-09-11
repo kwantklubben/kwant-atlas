@@ -29,30 +29,36 @@ The three examples below are deliberately the ones a quant meets in week one: a 
 
 **Convex sets and functions.** A set $C\subseteq\mathbb R^n$ is **convex** if $x,y\in C\Rightarrow\theta x+(1-\theta)y\in C$ for all $\theta\in[0,1]$. A function $f$ is **convex** if its domain is convex and
 
-$$f(\theta x+(1-\theta)y)\ \le\ \theta f(x)+(1-\theta)f(y).$$
+$$
+f(\theta x+(1-\theta)y)\ \le\ \theta f(x)+(1-\theta)f(y).
+$$
 
 For $C^2$ functions on a convex domain there is a computable test: **$f$ convex $\iff \nabla^2 f(x)\succeq0$ for all $x$.** A **convex optimisation problem** is $\min f_0(x)$ s.t. $f_i(x)\le0$ ($f_i$ convex), $h_j(x)=0$ ($h_j$ affine). The two facts that make convex problems tractable:
 
-- **Every local minimum is global.** (If $x^\*$ is locally optimal and $y$ is feasible with $f(y)<f(x^\*)$, convexity along the segment contradicts local optimality.)
+- **Every local minimum is global.** (If $x^*$ is locally optimal and $y$ is feasible with $f(y)<f(x^*)$, convexity along the segment contradicts local optimality.)
 - **KKT is sufficient** (and, with Slater's condition, necessary): any KKT point is globally optimal with zero duality gap (Boyd §5.5.3).
 
 **Strong convexity** ($\nabla^2 f\succeq mI$, Boyd eq. 9.7) additionally makes the minimiser *unique* and gives the linear rate of page 05.
 
 **Lagrangian duality.** For $\min f_0(x)$ s.t. $f_i(x)\le0,\ h_j(x)=0$, the **Lagrangian** is $\mathcal L(x,\lambda,\nu)=f_0(x)+\sum_i\lambda_i f_i(x)+\sum_j\nu_j h_j(x)$ with $\lambda\ge0$, and the **dual function** is $g(\lambda,\nu)=\inf_x\mathcal L(x,\lambda,\nu)$. The **dual problem** is $\max_{\lambda\ge0,\nu}g$. Two facts:
 
-- **Weak duality always:** $g(\lambda,\nu)\le p^\*$ for every feasible dual $(\lambda,\nu)$ — the dual gives a *lower bound* on the primal optimum, i.e. a certificate.
-- **Strong duality for convex problems** (Slater): $d^\*=p^\*$ — the bound is tight and the dual optimum can be found instead of the primal.
+- **Weak duality always:** $g(\lambda,\nu)\le p^*$ for every feasible dual $(\lambda,\nu)$ — the dual gives a *lower bound* on the primal optimum, i.e. a certificate.
+- **Strong duality for convex problems** (Slater): $d^*=p^*$ — the bound is tight and the dual optimum can be found instead of the primal.
 
-**The envelope theorem / shadow prices.** Differentiating $p^\*(b)$ where $b$ is the constraint level: $\dfrac{dp^\*}{db}=\nu^\*$ (Simon & Blume §19.2). In the Markowitz problem, differentiating $\sigma^2(r_0)$ along the efficient frontier: the *derivative of the frontier* is the dual variable of the return constraint. The frontier is convex (concave in return–variance space), and its slope is the price of risk implied by the constraints.
+**The envelope theorem / shadow prices.** Differentiating $p^*(b)$ where $b$ is the constraint level: $\dfrac{dp^*}{db}=\nu^*$ (Simon & Blume §19.2). In the Markowitz problem, differentiating $\sigma^2(r_0)$ along the efficient frontier: the *derivative of the frontier* is the dual variable of the return constraint. The frontier is convex (concave in return–variance space), and its slope is the price of risk implied by the constraints.
 
 **Regularisation as constrained optimisation.** Elastic-net / lasso (ESL §3.4):
 
-$$\hat\beta=\arg\min_\beta\ \tfrac12\|y-X\beta\|_2^2+\lambda\|\beta\|_1
-\qquad\text{(lagrangian form of }\min\tfrac12\|y-X\beta\|_2^2\ \text{s.t. }\|\beta\|_1\le t\text{)}.$$
+$$
+\hat\beta=\arg\min_\beta\ \tfrac12\|y-X\beta\|_2^2+\lambda\|\beta\|_1
+\qquad\text{(lagrangian form of }\min\tfrac12\|y-X\beta\|_2^2\ \text{s.t. }\|\beta\|_1\le t\text{)}.
+$$
 
 For an **orthonormal design** ($X^\top X=I$) the solution is the **soft-threshold** operator, and it is read directly off the KKT conditions:
 
-$$\hat\beta_j=S(z_j,\lambda)=\operatorname{sign}(z_j)\,(|z_j|-\lambda)_+,\qquad z=X^\top y,$$
+$$
+\hat\beta_j=S(z_j,\lambda)=\operatorname{sign}(z_j)\,(|z_j|-\lambda)_+,\qquad z=X^\top y,
+$$
 
 because the first-order condition $0\in\hat\beta_j-z_j+\lambda\,\partial|\hat\beta_j|$ has the subdifferential $\partial|\beta|=\operatorname{sign}(\beta)$ for $\beta\ne0$ and $[-1,1]$ at $\beta=0$. **Ridge** is the $L_2$ analogue: $\hat\beta=(X^\top X+\lambda I)^{-1}X^\top y$ (ESL eq. 3.44), the shrinkage factor $d_j^2/(d_j^2+\lambda)$ on the SVD direction (eq. 3.47) — a smooth, differentiable, convex problem, the clean case; the lasso is convex but *non-smooth*, which is exactly why its solution is sparse (it can sit exactly at $0$).
 
@@ -122,14 +128,14 @@ print(f"    coordinate descent betas = {[round(b,6) for b in betas]}  (expected 
     coordinate descent betas = [0.4, -0.1]  (expected [0.4, -0.1])
 ```
 
-**Read the output.** (A) The convex objective converges to the *same* point $0$ from every start — global uniqueness in action. The non-convex $x^4-3x^2+x$ has **two basins**: starts at $-2$ and $-1.5$ land at $-1.300840$, starts at $1$ and $2$ land at $+1.130901$. Same code, same objective, different answers depending on the start — the failure mode convexity is there to prevent. (B) The best dual value equals the primal optimum $1.0$ to six decimals (gap $0$), so strong duality holds; and the envelope theorem's $\lambda^\*=2$ is exactly the numeric $dV/dc$. (C) The soft-threshold estimate has a **KKT residual of exactly zero** — it *is* the optimum, read off the first-order condition — and coordinate descent reproduces it. Here both $|z_j|>\!>\lambda$, so both coefficients are merely shrunk ($0.7\to0.4$ and $-0.4\to-0.1$); had a $|z_j|$ fallen below $\lambda=0.3$, soft-thresholding would have set that coefficient to **exactly zero**. That sparsity is a consequence of the **non-smooth** $L_1$ penalty (the KKT condition has a whole interval $[-1,1]$ of subgradients at $0$), not of any explicit selection rule.
+**Read the output.** (A) The convex objective converges to the *same* point $0$ from every start — global uniqueness in action. The non-convex $x^4-3x^2+x$ has **two basins**: starts at $-2$ and $-1.5$ land at $-1.300840$, starts at $1$ and $2$ land at $+1.130901$. Same code, same objective, different answers depending on the start — the failure mode convexity is there to prevent. (B) The best dual value equals the primal optimum $1.0$ to six decimals (gap $0$), so strong duality holds; and the envelope theorem's $\lambda^*=2$ is exactly the numeric $dV/dc$. (C) The soft-threshold estimate has a **KKT residual of exactly zero** — it *is* the optimum, read off the first-order condition — and coordinate descent reproduces it. Here both $|z_j|>\!>\lambda$, so both coefficients are merely shrunk ($0.7\to0.4$ and $-0.4\to-0.1$); had a $|z_j|$ fallen below $\lambda=0.3$, soft-thresholding would have set that coefficient to **exactly zero**. That sparsity is a consequence of the **non-smooth** $L_1$ penalty (the KKT condition has a whole interval $[-1,1]$ of subgradients at $0$), not of any explicit selection rule.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Convexity is a guarantee you can lose in one constraint.** Experiment (A) is the whole point: "at most $k$ names," fixed costs, or a non-convex risk measure make the objective multi-basin, and every gradient method becomes start-dependent. Report the *basin*, not just the answer.
-2. **Weak duality is not strong duality.** For a non-convex problem the dual only gives a lower bound; the gap $p^\*-d^\*$ can be strictly positive, so a dual solution is *not* a primal optimum. Always confirm convexity (or Slater) before treating the dual as the answer.
+2. **Weak duality is not strong duality.** For a non-convex problem the dual only gives a lower bound; the gap $p^*-d^*$ can be strictly positive, so a dual solution is *not* a primal optimum. Always confirm convexity (or Slater) before treating the dual as the answer.
 3. **KKT at a local optimum is not a global certificate.** KKT holds at every local min of a smooth problem. It is the *convexity* that upgrades it to a global statement — the conditions alone do not.
 4. **Shadow prices change sign and meaning with the constraint's direction.** A "$\ge$" floor and a "$\le$" cap on the same quantity have opposite-signed multipliers; and a multiplier of zero means *slack*, not *irrelevant*. Misreading a dual from a solver is a classic and expensive bug.
 5. **$L_1$ regularisation is non-smooth.** The gradient does not exist at $\beta_j=0$; plain gradient descent cannot handle it (use subgradient, proximal/soft-threshold, or coordinate descent). Conversely the ridge problem is smooth and convex — the reason it has a closed form and lasso does not.

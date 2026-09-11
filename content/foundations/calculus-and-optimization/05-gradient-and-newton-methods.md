@@ -31,36 +31,50 @@ The objective is to understand *when each wins*, in quantitative terms: the grad
 
 **Strong convexity and smoothness (the two constants).** Assume for all $x$ in the region of interest
 
-$$mI\ \preceq\ \nabla^2 f(x)\ \preceq\ MI\qquad\text{(Boyd eq. 9.7 and its upper analogue)}.$$
+$$
+mI\ \preceq\ \nabla^2 f(x)\ \preceq\ MI\qquad\text{(Boyd eq. 9.7 and its upper analogue)}.
+$$
 
 $m$ bounds the *minimum* curvature (strong convexity), $M$ the *maximum* (Lipschitz gradient). Two consequences are used constantly (Boyd §9.1.2):
 
-$$f(y)\ge f(x)+\nabla f(x)^\top(y-x)+\tfrac{m}{2}\|y-x\|_2^2,\qquad
-\|\nabla f(x)\|_2^2\ \ge\ 2m\,(f(x)-p^\*),$$
+$$
+f(y)\ge f(x)+\nabla f(x)^\top(y-x)+\tfrac{m}{2}\|y-x\|_2^2,\qquad
+\|\nabla f(x)\|_2^2\ \ge\ 2m\,(f(x)-p^*),
+$$
 
-where $p^\*$ is the optimal value.
+where $p^*$ is the optimal value.
 
 **Gradient descent with exact line search (Boyd §9.3.1).** With step $t=1/M$ the quadratic upper bound (eq. 9.17) gives
 
-$$f(x^+)\le f(x)-\tfrac{1}{2M}\|\nabla f(x)\|_2^2,$$
+$$
+f(x^+)\le f(x)-\tfrac{1}{2M}\|\nabla f(x)\|_2^2,
+$$
 
 and combining with the strong-convexity bound yields the **linear convergence** result
 
-$$\boxed{\,f(x^{(k)})-p^\*\ \le\ c^k\big(f(x^{(0)})-p^\*),\qquad c=1-\frac{m}{M}\,}\qquad\text{(Boyd eq. 9.18).}$$
+$$
+\boxed{\,f(x^{(k)})-p^*\ \le\ c^k\big(f(x^{(0)})-p^*),\qquad c=1-\frac{m}{M}\,}\qquad\text{(Boyd eq. 9.18).}
+$$
 
 The iteration count to reach accuracy $\epsilon$ is therefore
 
-$$k\ \ge\ \frac{\log\!\big((f(x^{(0)})-p^\*)/\epsilon\big)}{\log(1/c)}\qquad\text{(Boyd eq. 9.19)},$$
+$$
+k\ \ge\ \frac{\log\!\big((f(x^{(0)})-p^*)/\epsilon\big)}{\log(1/c)}\qquad\text{(Boyd eq. 9.19)},
+$$
 
 and since $\log(1/c)\approx m/M$ for large $M/m$, the count grows **linearly in the condition number** $M/m=\kappa$. This is the entire reason ill-conditioned problems are slow: the level sets are thin ellipses, and a first-order step oscillates across the valley while barely advancing along it.
 
 **Newton's method (Boyd §9.5).** The **Newton step** is
 
-$$\Delta x_{\text{nt}}=-\nabla^2 f(x)^{-1}\nabla f(x).$$
+$$
+\Delta x_{\text{nt}}=-\nabla^2 f(x)^{-1}\nabla f(x).
+$$
 
 It minimises the second-order Taylor model $\hat f(x+d)=f(x)+\nabla f(x)^\top d+\tfrac12 d^\top\nabla^2 f(x)d$ exactly. If $\nabla^2 f(x)\succ0$ then
 
-$$\nabla f(x)^\top\Delta x_{\text{nt}}=-\lambda(x)^2<0,\qquad \lambda(x)^2=\nabla f(x)^\top\nabla^2 f(x)^{-1}\nabla f(x),$$
+$$
+\nabla f(x)^\top\Delta x_{\text{nt}}=-\lambda(x)^2<0,\qquad \lambda(x)^2=\nabla f(x)^\top\nabla^2 f(x)^{-1}\nabla f(x),
+$$
 
 so it is a descent direction; $\lambda(x)$ is the **Newton decrement**, and $f(x)-\inf_d\hat f(x+d)=\tfrac12\lambda(x)^2$ estimates the suboptimality (a natural stopping criterion). Equivalent expressions: $\lambda(x)=(\Delta x_{\text{nt}}^\top\nabla^2 f(x)\Delta x_{\text{nt}})^{1/2}$ (eq. 9.29) and $\nabla f^\top\Delta x_{\text{nt}}=-\lambda^2$ (eq. 9.30).
 
@@ -68,7 +82,7 @@ Three properties make Newton special:
 
 1. **Affine invariance.** Under $x=Ty$, the Newton step transforms as $\Delta y_{\text{nt}}=T^{-1}\Delta x_{\text{nt}}$ — the method is independent of the coordinate system, unlike gradient descent.
 2. **Exact on quadratics.** For $f=\tfrac12x^\top Ax-b^\top x$, Newton reaches the minimiser in **one** step, because the quadratic model is the function.
-3. **Quadratic convergence near $x^\*$.** In the *pure Newton phase* ($t=1$) the error satisfies $\|x^{(k+1)}-x^\*\|\le C\|x^{(k)}-x^\*\|^2$ — the number of correct digits roughly doubles per iteration. The **damped** (backtracking) version adds a line search so it also converges from far away: a "damped Newton phase" at linear rate, then a quadratic phase, with a total bound roughly $\log\log(1/\epsilon)$-flavoured (Boyd §9.5.3).
+3. **Quadratic convergence near $x^*$.** In the *pure Newton phase* ($t=1$) the error satisfies $\|x^{(k+1)}-x^*\|\le C\|x^{(k)}-x^*\|^2$ — the number of correct digits roughly doubles per iteration. The **damped** (backtracking) version adds a line search so it also converges from far away: a "damped Newton phase" at linear rate, then a quadratic phase, with a total bound roughly $\log\log(1/\epsilon)$-flavoured (Boyd §9.5.3).
 
 **The cost.** Newton needs $\nabla^2 f$ and a solve ($O(n^3)$ dense, or the structure of the Hessian). Quasi-Newton methods (BFGS, L-BFGS) build a cheap Hessian approximation from gradient differences — the practical compromise when $n$ is large.
 
@@ -134,7 +148,7 @@ for i in range(5):
     iter 4: |x-x*| = 5.551e-17
 ```
 
-**Read the output.** (A) Gradient descent takes $122$ iterations to reach $f-f^\*<10^{-6}$ on a condition-number-$20$ problem — far more than Newton's *one*, and already in the regime where the exact method counts (the bound of $269$ — computed for an assumed $10^6$ initial-gap ratio; the experiment's own $5.25\times10^6$ ratio gives $\approx302$, so $269$ is a touch optimistic — is worst-case, so the measured count is *better* than the guarantee, but the order of magnitude — "hundreds of cheap steps versus one expensive solve" — is the real comparison). (B) Newton lands exactly on $x^\*=(1,1)$ in a single step, because for a quadratic the model *is* the function. (C) On a non-quadratic, Newton's error sequence is $3.5\times10^{-1},\,1.8\times10^{-2},\,4.4\times10^{-5},\,2.6\times10^{-10},\,5.6\times10^{-17}$ — each iteration squares the previous error (roughly: $1.8\times10^{-2}\to(1.8\times10^{-2})^2\approx3\times10^{-4}\to$ and so on down), i.e. **quadratic convergence**, reaching machine precision in four steps.
+**Read the output.** (A) Gradient descent takes $122$ iterations to reach $f-f^*<10^{-6}$ on a condition-number-$20$ problem — far more than Newton's *one*, and already in the regime where the exact method counts (the bound of $269$ — computed for an assumed $10^6$ initial-gap ratio; the experiment's own $5.25\times10^6$ ratio gives $\approx302$, so $269$ is a touch optimistic — is worst-case, so the measured count is *better* than the guarantee, but the order of magnitude — "hundreds of cheap steps versus one expensive solve" — is the real comparison). (B) Newton lands exactly on $x^*=(1,1)$ in a single step, because for a quadratic the model *is* the function. (C) On a non-quadratic, Newton's error sequence is $3.5\times10^{-1},\,1.8\times10^{-2},\,4.4\times10^{-5},\,2.6\times10^{-10},\,5.6\times10^{-17}$ — each iteration squares the previous error (roughly: $1.8\times10^{-2}\to(1.8\times10^{-2})^2\approx3\times10^{-4}\to$ and so on down), i.e. **quadratic convergence**, reaching machine precision in four steps.
 
 ---
 

@@ -32,7 +32,9 @@ The failures, in one line each:
 
 The HRP operations are: (i) $d_{ij}=\sqrt{\tfrac12(1-\rho_{ij})}$, (ii) a combinatorial merge on distances, (iii) $\tilde w_{\mathcal C}\propto\operatorname{diag}(\Sigma_{\mathcal C})^{-1}$ and $V_{\mathcal C}=\tilde w_{\mathcal C}^\top\Sigma_{\mathcal C}\tilde w_{\mathcal C}$. None requires $\Sigma^{-1}$. So when $N>T$ and $\operatorname{rank}(S)=T-1<N$:
 
-$$S\ \text{singular}\;\Longrightarrow\;S^{-1}\ \text{does not exist},\qquad\text{but}\quad \operatorname{diag}(S)>0\ \text{and}\ \rho_{ij}\in[-1,1]\ \text{still exist}.$$
+$$
+S\ \text{singular}\;\Longrightarrow\;S^{-1}\ \text{does not exist},\qquad\text{but}\quad \operatorname{diag}(S)>0\ \text{and}\ \rho_{ij}\in[-1,1]\ \text{still exist}.
+$$
 
 HRP is therefore *defined* where min-variance is not. The pseudo-inverse "fixes" the arithmetic — but at the cost of an **arbitrary** regularization (it silently truncates the null space), so the portfolio you get is a choice the solver made for you. HRP makes no such hidden choice.
 
@@ -42,7 +44,9 @@ What *does* degrade as $N$ grows relative to $T$: the sample correlations $\hat\
 
 For a tree built on a window of length $T$, two assets with true distance $d$ are ordered correctly with probability increasing in $T$ and decreasing in the noise in $\hat\rho$. A practical diagnostic: **bootstrap the return rows, rebuild the tree, and measure**
 
-$$\text{agreement}=\frac{1}{N^2}\sum_{i,j}\mathbf 1\!\left[M^{\text{boot}}_{ij}=M^{\text{base}}_{ij}\right],$$
+$$
+\text{agreement}=\frac{1}{N^2}\sum_{i,j}\mathbf 1\!\left[M^{\text{boot}}_{ij}=M^{\text{base}}_{ij}\right],
+$$
 
 where $M$ is the $K$-cluster **co-membership matrix** ($M_{ij}=1$ if $i,j$ share a cluster). Agreement near $1$ means the clustering is stable; agreement drifting toward the baseline $1/K$ means the tree is fitting noise. Section 3 measures both this and the induced *weight* dispersion.
 

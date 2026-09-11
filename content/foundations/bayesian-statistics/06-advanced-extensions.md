@@ -28,14 +28,18 @@ This is **shrinkage**, and it is the same phenomenon as ridge (§04) applied to 
 
 **The two-stage (hierarchical) model (C&B §4.4; BDA3 Ch 5).**
 
-$$\theta_j\mid\mu,\tau^2\;\sim\;N(\mu,\tau^2),\qquad y_{ij}\mid\theta_j\;\sim\;N(\theta_j,\sigma^2),\qquad \mu\sim N(\mu_0,A),\quad \tau^2\sim\mathrm{InvGamma}(\alpha,\beta).$$
+$$
+\theta_j\mid\mu,\tau^2\;\sim\;N(\mu,\tau^2),\qquad y_{ij}\mid\theta_j\;\sim\;N(\theta_j,\sigma^2),\qquad \mu\sim N(\mu_0,A),\quad \tau^2\sim\mathrm{InvGamma}(\alpha,\beta).
+$$
 
 C&B Example 4.4.1 (the Poisson–Binomial egg model) is the classical discrete case; the normal–normal case above is the workhorse. A **mixture distribution** arises from the hierarchy by marginalizing the latent $\theta_j$: $y_{ij}$ is a scale mixture, and the extra variance beyond $\sigma^2$ is exactly $\tau^2$.
 
 **The shrinkage formula (the whole point).** With $\sigma^2$ known and $\tau^2,\mu$ fixed, the posterior conditional mean of a group mean is
 
-$$\mathbb E[\theta_j\mid y,\mu,\tau^2]=(1-B_j)\,\bar y_j+B_j\,\mu,\qquad
-\boxed{\,B_j=\frac{\sigma^2/n_j}{\sigma^2/n_j+\tau^2}=\frac{\sigma^2}{\sigma^2+n_j\tau^2}\,}.$$
+$$
+\mathbb E[\theta_j\mid y,\mu,\tau^2]=(1-B_j)\,\bar y_j+B_j\,\mu,\qquad
+\boxed{\,B_j=\frac{\sigma^2/n_j}{\sigma^2/n_j+\tau^2}=\frac{\sigma^2}{\sigma^2+n_j\tau^2}\,}.
+$$
 
 - **$B_j$ is the shrinkage factor** — the fraction of the way from the raw group mean pulled to the population mean. It is the *ratio of within-group noise to total variance* — a reliability weight.
 - Small $n_j$ or small $\tau^2$ $\Rightarrow$ **strong pooling** ($B_j\to1$, the group mean is pulled onto $\mu$); large $n_j$ or large $\tau^2$ (genuine between-group spread) $\Rightarrow$ **little shrinkage** ($B_j\to0$, the group mean is trusted).
@@ -43,11 +47,15 @@ $$\mathbb E[\theta_j\mid y,\mu,\tau^2]=(1-B_j)\,\bar y_j+B_j\,\mu,\qquad
 
 **Full conditionals (the Gibbs steps).** With the priors above, all updates are conjugate (this is why MCMC, §05, is the right tool):
 
-$$\theta_j\mid\mu,\tau^2,y\sim N\!\Big(\frac{n_j\bar y_j/\sigma^2+\mu/\tau^2}{n_j/\sigma^2+1/\tau^2},\;\frac{1}{n_j/\sigma^2+1/\tau^2}\Big),$$
+$$
+\theta_j\mid\mu,\tau^2,y\sim N\!\Big(\frac{n_j\bar y_j/\sigma^2+\mu/\tau^2}{n_j/\sigma^2+1/\tau^2},\;\frac{1}{n_j/\sigma^2+1/\tau^2}\Big),
+$$
 
-$$\mu\mid\theta,\tau^2\sim N\!\Big(\frac{\mu_0/A+\sum_j\theta_j/\tau^2}{1/A+J/\tau^2},\;\frac{1}{1/A+J/\tau^2}\Big),
+$$
+\mu\mid\theta,\tau^2\sim N\!\Big(\frac{\mu_0/A+\sum_j\theta_j/\tau^2}{1/A+J/\tau^2},\;\frac{1}{1/A+J/\tau^2}\Big),
 \qquad
-\tau^2\mid\theta,\mu\sim\mathrm{InvGamma}\!\Big(\alpha+\tfrac J2,\;\beta+\tfrac12\textstyle\sum_j(\theta_j-\mu)^2\Big).$$
+\tau^2\mid\theta,\mu\sim\mathrm{InvGamma}\!\Big(\alpha+\tfrac J2,\;\beta+\tfrac12\textstyle\sum_j(\theta_j-\mu)^2\Big).
+$$
 
 **Empirical Bayes (type-II / marginal MLE).** Instead of sampling $\tau^2$, maximize the **marginal likelihood** $\int\prod_j f(y_j\mid\theta_j)\prod_j p(\theta_j\mid\mu,\tau^2)\,d\theta_1\cdots d\theta_J$, which is closed-form for the normal–normal model. This "learns the prior from the data" and is the theoretical justification for cross-validated shrinkage ($\lambda$ in §04). It understates uncertainty because $\tau^2$ is treated as known.
 

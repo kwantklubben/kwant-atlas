@@ -31,34 +31,46 @@ Every number below was reproduced exactly by the ledger engine in §3; the Dell 
 
 **The Balance Sheet — a stock at a point in time** (Penman eq. 2.1; Dell: assets \$6,877m, liabilities \$4,556m, equity \$2,321m):
 
-$$\boxed{\;\text{Assets} = \text{Liabilities} + \text{Shareholders' equity}\;}\qquad \text{equity} = \text{assets}-\text{liabilities} = \text{net assets}$$
+$$
+\boxed{\;\text{Assets} = \text{Liabilities} + \text{Shareholders' equity}\;}\qquad \text{equity} = \text{assets}-\text{liabilities} = \text{net assets}
+$$
 
 **The Income Statement — a flow over the period** (Penman eq. 2.2a; Dell: revenue \$18,243m, COGS \$14,137m, gross margin \$4,106m):
 
-$$\text{Net income} = \text{Revenues}-\text{Expenses}$$
-$$\text{Gross margin} = \text{Net revenue}-\text{COGS},\quad \text{EBIT} = \text{Gross margin}-\text{Operating expenses},\quad \text{Net income} = \text{EBIT}-\text{Interest}-\text{Tax}$$
+$$
+\text{Net income} = \text{Revenues}-\text{Expenses}
+$$
+$$
+\text{Gross margin} = \text{Net revenue}-\text{COGS},\quad \text{EBIT} = \text{Gross margin}-\text{Operating expenses},\quad \text{Net income} = \text{EBIT}-\text{Interest}-\text{Tax}
+$$
 
 **The Cash Flow Statement — a flow over the period** (Penman eq. 2.3; Dell: CFO \$2,436m, CFI \$−1,414m, CFF \$−812m, Δcash \$200m after a \$10m FX effect, i.e. CFO+CFI+CFF = \$210m before that line):
 
-$$\text{CFO}+\text{CFI}+\text{CFF}=\text{Change in cash}$$
+$$
+\text{CFO}+\text{CFI}+\text{CFF}=\text{Change in cash}
+$$
 
 **Articulation — how the statements chain** (Penman eq. 2.4, "stocks and flows" for equity):
 
-$$\text{Ending equity} = \text{Beginning equity} + \text{Comprehensive income} - \text{Net payout to shareholders}$$
+$$
+\text{Ending equity} = \text{Beginning equity} + \text{Comprehensive income} - \text{Net payout to shareholders}
+$$
 
 **The accrual bridge — earnings vs cash** (Penman eq. 5.1, 5.2):
 
-$$\text{Earnings} = \text{Cash flow from operations} + \text{Accruals},\qquad \text{Accruals} = \Delta\text{AR}+\Delta\text{Inventory}-\Delta\text{AP}-\text{Depreciation}+\dots$$
+$$
+\text{Earnings} = \text{Cash flow from operations} + \text{Accruals},\qquad \text{Accruals} = \Delta\text{AR}+\Delta\text{Inventory}-\Delta\text{AP}-\text{Depreciation}+\dots
+$$
 
 **Quick-reference table (this folder's lemonade-stand example, §3):**
 
 | Statement | Key identity | Verified check |
 |---|---|---|
-| Balance sheet | $A = L+E$ | \$15,800 $=$ \$5,000 $+$ \$10,800 ✓ |
-| Income stmt | $\text{NI}=\text{Rev}-\text{Exp}$ | \$800 $=$ \$7,000 $-$ \$6,200 ✓ |
-| Cash flow | $\text{CFO}+\text{CFI}+\text{CFF}=\Delta\text{Cash}$ | $1{,}500-6{,}000+15{,}000=\$10{,}500$ ✓ |
-| Articulation | $\Delta\text{cash}=\text{CFO}+\text{CFI}+\text{CFF}$ | ending cash \$10,500 $=$ beginning 0 $+$ \$10,500 ✓ |
-| Accrual bridge | $\text{Earnings}=\text{CFO}+\text{Accruals}$ | \$800 $=$ \$1,500 $+$ (−\$700) ✓ |
+| Balance sheet | $A = L+E$ | $ $\$15,800 = \5,000 + \$10,800 ✓ |
+| Income stmt | $\text{NI}=\text{Rev}-\text{Exp}$ | $ $\$800 = \7,000 -\$6,200 ✓ |
+| Cash flow | $\text{CFO}+\text{CFI}+\text{CFF}=\Delta\text{Cash}$ | $1{,}500-6{,}000+15{,}000= $\$10{,}500 ✓ |
+| Articulation | $\Delta\text{cash}=\text{CFO}+\text{CFI}+\text{CFF}$ | ending cash $ $\$10,500 = beginning 0 $+ $\$10,500 ✓ |
+| Accrual bridge | $\text{Earnings}=\text{CFO}+\text{Accruals}$ | $ $\$800 = \1,500 +$ (−$\$700) ✓ |
 
 ---
 

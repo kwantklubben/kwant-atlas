@@ -29,23 +29,31 @@ The page's payoff is one demonstration: **build the tone feature, then regress n
 
 **The sentiment feature.** With positive set $P$ and negative set $N$ (from a lexicon, LM for finance):
 
-$$\text{tone}(d)=\frac{\sum_{t\in P}x_{d,t}-\sum_{t\in N}x_{d,t}}{\sum_t x_{d,t}},\qquad \text{neg-frac}(d)=\frac{\sum_{t\in N}x_{d,t}}{\sum_t x_{d,t}}.$$
+$$
+\text{tone}(d)=\frac{\sum_{t\in P}x_{d,t}-\sum_{t\in N}x_{d,t}}{\sum_t x_{d,t}},\qquad \text{neg-frac}(d)=\frac{\sum_{t\in N}x_{d,t}}{\sum_t x_{d,t}}.
+$$
 
 Both are length-normalized so documents of different size are comparable; $\text{neg-frac}$ is Tetlock's original scalar.
 
 **The regression.** Let $y_d$ be the forward return after document $d$'s release. The signal is *linear* in the text feature:
 
-$$y_d=\beta_0+\beta_1\,\text{tone}(d)+\varepsilon_d.$$
+$$
+y_d=\beta_0+\beta_1\,\text{tone}(d)+\varepsilon_d.
+$$
 
 OLS estimates $\beta$ by minimizing $\sum_d (y_d-\beta_0-\beta_1\text{tone}_d)^2$; the closed form in slope-intercept coordinates is
 
-$$\hat\beta_1=\frac{\sum_d(\text{tone}_d-\overline{\text{tone}})(y_d-\bar y)}{\sum_d(\text{tone}_d-\overline{\text{tone}})^2},\qquad \hat\beta_0=\bar y-\hat\beta_1\overline{\text{tone}}.$$
+$$
+\hat\beta_1=\frac{\sum_d(\text{tone}_d-\overline{\text{tone}})(y_d-\bar y)}{\sum_d(\text{tone}_d-\overline{\text{tone}})^2},\qquad \hat\beta_0=\bar y-\hat\beta_1\overline{\text{tone}}.
+$$
 
 A positive, *stable* $\hat\beta_1$ — not a one-off — is the quantitative claim "tone is priced." $R^2$ is the fraction of return variance explained; on single text features it is routinely tiny (a few percent or less), which is *expected* and not a failure — the alpha is in the residual the market leaves ([[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|low-SNR regime]]).
 
 **Readability (Fog index)** — the canonical proxy for "how hard is this to read," used in earnings-quality research:
 
-$$\text{Fog}=0.4\Big(\underbrace{\tfrac{\text{words}}{\text{sentences}}}_{\text{avg sentence length}}+\underbrace{100\cdot\tfrac{\text{complex words}}{\text{words}}}_{\text{complex-word fraction}}\Big).$$
+$$
+\text{Fog}=0.4\Big(\underbrace{\tfrac{\text{words}}{\text{sentences}}}_{\text{avg sentence length}}+\underbrace{100\cdot\tfrac{\text{complex words}}{\text{words}}}_{\text{complex-word fraction}}\Big).
+$$
 
 Higher Fog = harder text; large year-over-year increases in a 10-K's Fog are the obfuscation signal Loughran–McDonald and earnings-quality work exploit.
 

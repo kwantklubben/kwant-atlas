@@ -28,18 +28,24 @@ A firm with heavy debt has a low P/E but a normal EV/EBITDA, because P/E ignores
 
 **Notation.** *MV* market value of equity, *BVE* book value of equity, *NI* net income, *NetDebt* $=$ TotalDebt $-$ Cash, *EBITDA* $=$ EBIT $+$ D&A, *FCF* free cash flow, *EV* $=$ MV $+$ NetDebt.
 
-$$\text{P/E}=\frac{\text{MV}}{\text{NI}}, \qquad
+$$
+\text{P/E}=\frac{\text{MV}}{\text{NI}}, \qquad
 \text{Earnings yield}=\frac{\text{NI}}{\text{MV}}=\frac{1}{\text{P/E}}, \qquad
-\text{FCF yield}=\frac{\text{FCF}}{\text{MV}},$$
+\text{FCF yield}=\frac{\text{FCF}}{\text{MV}},
+$$
 
-$$\text{P/B}=\frac{\text{MV}}{\text{BVE}}, \qquad
-\text{EV/EBITDA}=\frac{\text{MV}+\text{NetDebt}}{\text{EBITDA}}.$$
+$$
+\text{P/B}=\frac{\text{MV}}{\text{BVE}}, \qquad
+\text{EV/EBITDA}=\frac{\text{MV}+\text{NetDebt}}{\text{EBITDA}}.
+$$
 
 **The inverse-yield identity.** P/E and earnings yield are reciprocals by construction: $\text{Earnings yield}\equiv\frac{1}{\text{P/E}}$. This is not an empirical finding — it is a definitional identity (and the machine-verification §3 checks it). Framing the *same* number as "a multiple of 17.1" vs. "a yield of 5.8%" changes the intuition, not the data.
 
 **Why EV/EBITDA is the capital-structure-neutral multiple.** Note
 
-$$\text{EV} = \text{MV}+\text{NetDebt} = \text{MV}+(\text{TD}-\text{Cash}),$$
+$$
+\text{EV} = \text{MV}+\text{NetDebt} = \text{MV}+(\text{TD}-\text{Cash}),
+$$
 
 so the denominator must be a *pre-interest* (pre-financing) cash-flow proxy — EBITDA — for the ratio to be internally consistent. Matching an equity numerator with an enterprise denominator, or vice-versa, is a category error (see Failure Modes #1).
 

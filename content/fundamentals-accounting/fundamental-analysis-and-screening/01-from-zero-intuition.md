@@ -31,23 +31,31 @@ Three steps, three "aha"s:
 
 **Value from a price and an earnings stream — the two ratios that started it all.** The two cheapest definitions of "am I paying too much?" are:
 
-$$\text{P/E} = \frac{P}{EPS}, \qquad \text{P/B} = \frac{P}{BVPS},$$
+$$
+\text{P/E} = \frac{P}{EPS}, \qquad \text{P/B} = \frac{P}{BVPS},
+$$
 
 where $P$ is the price, $EPS$ earnings per share, and $BVPS$ book value (net assets) per share. A P/E of 10 means you pay \$10 for every \$1 of annual earnings — a rough "payback period" of ten years. A P/B of 1 means you pay \$1 for every \$1 of accounting net worth.
 
 **Graham's two price ceilings, combined.** Graham's defensive rule caps the multiple of earnings at 15 and the multiple of book at 1.5. Multiply the two inequalities and a single price ceiling falls out:
 
-$$\frac{P}{EPS} \le 15 \quad\text{and}\quad \frac{P}{BVPS} \le 1.5 \quad\Longrightarrow\quad P^2 \le 22.5 \cdot EPS \cdot BVPS,$$
+$$
+\frac{P}{EPS} \le 15 \quad\text{and}\quad \frac{P}{BVPS} \le 1.5 \quad\Longrightarrow\quad P^2 \le 22.5 \cdot EPS \cdot BVPS,
+$$
 
 so the highest price consistent with *both* caps — the **Graham Number** — is
 
-$$\boxed{\,P_{\max} = \sqrt{22.5 \cdot EPS \cdot BVPS}\,}.$$
+$$
+\boxed{\,P_{\max} = \sqrt{22.5 \cdot EPS \cdot BVPS}\,}.
+$$
 
 This is the mathematical heart of the page: a price ceiling derived from *two independent* fundamental anchors, so that a stock is not "cheap on earnings but expensive on assets" — it must satisfy both.
 
 **Margin of safety.** If $\hat{V}$ is your estimate of value (here, the Graham Number), require buying only at a discount:
 
-$$\text{buy if } P \le (1 - m)\,\hat{V}, \qquad m \in [20\%, 40\%].$$
+$$
+\text{buy if } P \le (1 - m)\,\hat{V}, \qquad m \in [20\%, 40\%].
+$$
 
 Graham's aggressive version is buying at two-thirds of value — sometimes stated as requiring value $\ge 1.5 \times$ price.
 

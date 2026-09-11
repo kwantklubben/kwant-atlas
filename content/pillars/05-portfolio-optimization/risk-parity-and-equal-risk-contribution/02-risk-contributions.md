@@ -15,7 +15,9 @@ tags:
 
 Before we can *equalize* risk contributions we have to define them sharply. This page builds the exact, unambiguous decomposition of portfolio risk into per-asset pieces — the same object used by risk teams under the label **risk budgeting**. The objective is three well-defined quantities:
 
-$$\underbrace{\text{MRC}_i}_{\text{marginal}} \xrightarrow{\times w_i} \underbrace{RC_i}_{\text{total}} \xrightarrow{\div \sigma(w)} \underbrace{RC_i/\sigma(w)}_{\text{percentage}}$$
+$$
+\underbrace{\text{MRC}_i}_{\text{marginal}} \xrightarrow{\times w_i} \underbrace{RC_i}_{\text{total}} \xrightarrow{\div \sigma(w)} \underbrace{RC_i/\sigma(w)}_{\text{percentage}}
+$$
 
 1. **Marginal risk contribution (MRC$_i$):** if you add a *tiny* amount more of asset $i$ (say one more basis-point of weight, financed by cash), by how much does the portfolio's volatility change? This is simply the partial derivative $\partial\sigma/\partial w_i$.
 2. **Total risk contribution (RC$_i$):** the slice of the portfolio's total volatility that is *attributable to* holding asset $i$ — holding $w_i$ of an asset whose marginal effect is MRC$_i$. RC$_i = w_i \times \text{MRC}_i$.
@@ -29,32 +31,42 @@ The practical payoff: once risk is decomposable, ETFs, pension books and hedge f
 
 **Setup.** Portfolio weights $w$ (summing to 1), covariance matrix $\Sigma$, portfolio variance $w^\top\Sigma w$ and volatility
 
-$$\sigma(w)=\sqrt{w^\top\Sigma w}.$$
+$$
+\sigma(w)=\sqrt{w^\top\Sigma w}.
+$$
 
 Verify the homogeneity claim first: $\sigma(\lambda w)=\sqrt{(\lambda w)^\top\Sigma(\lambda w)}=\lambda\sqrt{w^\top\Sigma w}=\lambda\,\sigma(w)$, a homogeneous function of degree 1.
 
 **Marginal risk contribution.**
 
-$$\text{MRC}_i=\frac{\partial\sigma}{\partial w_i}
+$$
+\text{MRC}_i=\frac{\partial\sigma}{\partial w_i}
 =\frac{1}{2\sqrt{w^\top\Sigma w}}\cdot 2(\Sigma w)_i
 =\frac{(\Sigma w)_i}{\sqrt{w^\top\Sigma w}}
-=\frac{(\Sigma w)_i}{\sigma(w)},$$
+=\frac{(\Sigma w)_i}{\sigma(w)},
+$$
 
 where $(\Sigma w)_i$ is the $i$-th entry of the vector $\Sigma w$ — i.e. $\text{cov}(r_i, w^\top r)$, the covariance of asset $i$ with the whole portfolio. **This is a beautiful object:** the marginal risk of an asset is *not* its own volatility but its **covariance with the portfolio**.
 
 **Total risk contribution & the Euler decomposition.** Euler's theorem for an $\mathbb{R}$-homogeneous-function-of-degree-1 says $\sigma(w)=\sum_i w_i\,\tfrac{\partial\sigma}{\partial w_i}$, hence
 
-$$\boxed{\;\sigma(w)=\sum_{i=1}^N RC_i,\qquad RC_i:=w_i\,\frac{(\Sigma w)_i}{\sigma(w)}\;}$$
+$$
+\boxed{\;\sigma(w)=\sum_{i=1}^N RC_i,\qquad RC_i:=w_i\,\frac{(\Sigma w)_i}{\sigma(w)}\;}
+$$
 
 **Percentage contribution.** Dividing through by $\sigma(w)$ gives $1=\sum_i \tfrac{RC_i}{\sigma(w)}$. Each term $RC_i/\sigma(w)$ is the fraction of total risk from asset $i$. Two equivalent formulas for it (both useful):
 
-$$\frac{RC_i}{\sigma(w)}=\frac{w_i(\Sigma w)_i}{\sigma(w)^2}=\frac{\text{cov}(r_i,\, w^\top r)}{\text{var}(w^\top r)},$$
+$$
+\frac{RC_i}{\sigma(w)}=\frac{w_i(\Sigma w)_i}{\sigma(w)^2}=\frac{\text{cov}(r_i,\, w^\top r)}{\text{var}(w^\top r)},
+$$
 
 which is exactly the **beta** of asset $i$ against the portfolio: the $N$ betas sum to 1, and the percentage risk contribution of asset $i$ is its portfolio-beta. This beta-reading is the cleanest way to *see* why a 60/40 stock/bond portfolio is ~90% equity risk — the equity leg's beta to the whole is ~0.9.
 
 **What does RC actually mean? (Qian 2006).** RC is not a gratuitous decomposition. For a portfolio that suffers a loss $L$, the expected fraction of that loss attributable to asset $i$ is, under normality (Qian App. A):
 
-$$c_i=\frac{\mathbb{E}[w_i r_i \mid w^\top r=L]}{L}=p_i+\frac{D_i}{L},\qquad D_i=w_i\mu_i-p_i\,\mu_R,\quad \mu_R=\sum_j w_j\mu_j,$$
+$$
+c_i=\frac{\mathbb{E}[w_i r_i \mid w^\top r=L]}{L}=p_i+\frac{D_i}{L},\qquad D_i=w_i\mu_i-p_i\,\mu_R,\quad \mu_R=\sum_j w_j\mu_j,
+$$
 
 i.e. $c_i\approx p_i$ (the risk budget) **plus a correction that vanishes** for (a) zero expected returns, (b) mean-variance-optimal portfolios, or (c) large losses $L$ relative to the sub-optimality term. In words: **the risk contribution is a good predictor of the loss contribution, and it gets better as the loss gets large** — exactly when it matters. Risk teams can therefore budget risk *before* the loss and be confident it tracks who pays after.
 

@@ -33,23 +33,29 @@ Three steps, three "aha"s:
 
 **Profitability — how hard the capital worked.** Relate a profit flow to the stock of capital that earned it:
 
-$$\text{ROE} = \frac{\text{Net Income}}{\text{avg Common Equity}}, \qquad
+$$
+\text{ROE} = \frac{\text{Net Income}}{\text{avg Common Equity}}, \qquad
 \text{ROA} = \frac{\text{Net Income}}{\text{avg Total Assets}}, \qquad
-\text{ROIC} = \frac{\text{NOPAT}}{\text{avg Invested Capital}}.$$
+\text{ROIC} = \frac{\text{NOPAT}}{\text{avg Invested Capital}}.
+$$
 
 The trick lives in the denominators: ROE uses equity only; ROA uses everything (and so "forgets" leverage); ROIC uses *operating* capital (debt + equity − cash) so the financing noise is removed. Penman's key distinction — equity vs. operating base — is exactly the difference between ROCE and RNOA/ROIC.
 
 **Valuation multiples — price against a fundamental.** Relate the *market price* (a stock) to a fundamental flow:
 
-$$\text{P/E}=\frac{\text{MV}}{\text{NI}}, \qquad \text{P/B}=\frac{\text{MV}}{\text{BVE}}, \qquad \text{EV/EBITDA}=\frac{\text{MV}+\text{NetDebt}}{\text{EBITDA}}, \qquad \text{FCF yield}=\frac{\text{FCF}}{\text{MV}}.$$
+$$
+\text{P/E}=\frac{\text{MV}}{\text{NI}}, \qquad \text{P/B}=\frac{\text{MV}}{\text{BVE}}, \qquad \text{EV/EBITDA}=\frac{\text{MV}+\text{NetDebt}}{\text{EBITDA}}, \qquad \text{FCF yield}=\frac{\text{FCF}}{\text{MV}}.
+$$
 
 The deep point (Penman Ch 2, Ch 6): each multiple answers "what is the market paying per unit of this fundamental?" A high P/B means the market is paying for *growth* — intrinsic value above book — while a low P/B anchors value on the book itself.
 
 **Liquidity & leverage — how the balance sheet stands up.**
 
-$$\text{Current}=\frac{\text{CA}}{\text{CL}}, \quad \text{Quick}=\frac{\text{CA}-\text{Inv}}{\text{CL}}, \quad
+$$
+\text{Current}=\frac{\text{CA}}{\text{CL}}, \quad \text{Quick}=\frac{\text{CA}-\text{Inv}}{\text{CL}}, \quad
 \text{D/E}=\frac{\text{Total Debt}}{\text{BVE}}, \quad \text{IntCoverage}=\frac{\text{EBIT}}{\text{Interest}}, \quad
-\text{NetDebt/EBITDA}=\frac{\text{TD}-\text{Cash}}{\text{EBITDA}}.$$
+\text{NetDebt/EBITDA}=\frac{\text{TD}-\text{Cash}}{\text{EBITDA}}.
+$$
 
 The first two ask "can the firm meet what comes due?"; the last three ask "how much of the capital is borrowed, and how comfortably is the interest covered?"
 

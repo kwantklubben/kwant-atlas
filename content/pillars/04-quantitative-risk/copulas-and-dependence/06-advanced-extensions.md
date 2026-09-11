@@ -31,12 +31,18 @@ The Gaussian and $t$ copulas are *elliptical*: built from multivariate normal/$t
 
 An Archimedean copula is built from a **generator** $\psi:[0,\infty)\to(0,1]$, $\psi(0)=1$, $\psi(\infty)=0$ (the Laplace transform of a positive frailty $V$):
 
-$$C(u_1,\dots,u_d)=\psi\!\big(\psi^{-1}(u_1)+\cdots+\psi^{-1}(u_d)\big).$$
+$$
+C(u_1,\dots,u_d)=\psi\!\big(\psi^{-1}(u_1)+\cdots+\psi^{-1}(u_d)\big).
+$$
 
 - **Clayton:** $\psi(s)=(1+s)^{-1/\theta}$, i.e. $C^{Cl}_\theta(u,v)=\big(u^{-\theta}+v^{-\theta}-1\big)^{-1/\theta}$, $\theta\in(0,\infty)$; frailty $V\sim\Gamma(1/\theta,1)$. Lower tail dependence
-$$\lambda_l^{Cl}=2^{-1/\theta}\qquad(\theta>0).$$
+$$
+\lambda_l^{Cl}=2^{-1/\theta}\qquad(\theta>0).
+$$
 - **Gumbel:** $\psi(s)=\exp(-s^{1/\theta})$, i.e. $C^{Gu}_\theta(u,v)=\exp\!\big(-[(-\ln u)^\theta+(-\ln v)^\theta]^{1/\theta}\big)$, $\theta\in[1,\infty)$; frailty $V$ positive-stable$(1/\theta)$. Upper tail dependence
-$$\lambda_u^{Gu}=2-2^{1/\theta}\qquad(\theta>1).$$
+$$
+\lambda_u^{Gu}=2-2^{1/\theta}\qquad(\theta>1).
+$$
 
 Both interpolate between independence ($\theta\to\theta_{\min}$) and comonotonicity ($\theta\to\infty$). The **exchangeability** property $C(u,v)=C(v,u)$ and the single parameter are their strength (simplicity) and weakness (no per-pair heterogeneity, no asymmetry *between* pairs).
 
@@ -44,7 +50,9 @@ Both interpolate between independence ($\theta\to\theta_{\min}$) and comonotonic
 
 The frailty representation makes simulation trivial. Draw $V$ from the mixing distribution, then i.i.d. $E_i\sim\mathrm{Exp}(1)$, and set
 
-$$U_i=\psi\!\Big(\frac{E_i}{V}\Big).$$
+$$
+U_i=\psi\!\Big(\frac{E_i}{V}\Big).
+$$
 
 The shared $V$ induces the dependence: when $V$ is small, all $U_i$ are pushed toward the extremes together — a **common shock**. This is the same mechanism as the $t$ copula's shared chi-square, and it is the intuition behind all joint-extreme models: *extremes co-occur because the frailty spikes*.
 

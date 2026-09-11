@@ -32,11 +32,15 @@ The four failures, in one line each:
 
 **Correlation is not constant.** Model the joint return as a mixture of a calm regime $\Sigma_{\text{calm}}$ and a crisis regime $\Sigma_{\text{crisis}}$, with crisis covariance exhibiting a **single dominant factor** (everything loads on the stress factor). Then
 
-$$\sigma_p^2=w^\top\Sigma w \quad\text{with}\quad \Sigma\in\{\Sigma_{\text{calm}},\ \Sigma_{\text{crisis}}\},$$
+$$
+\sigma_p^2=w^\top\Sigma w \quad\text{with}\quad \Sigma\in\{\Sigma_{\text{calm}},\ \Sigma_{\text{crisis}}\},
+$$
 
 and the *effective number of bets* — a measure of how many independent risks the portfolio truly holds — is the **participation ratio** of the correlation matrix's eigenvalues,
 
-$$N_{\text{eff}}=\frac{\Big(\sum_k\lambda_k\Big)^2}{\sum_k\lambda_k^2},\qquad \lambda_k=\text{eigenvalues of the correlation matrix}.$$
+$$
+N_{\text{eff}}=\frac{\Big(\sum_k\lambda_k\Big)^2}{\sum_k\lambda_k^2},\qquad \lambda_k=\text{eigenvalues of the correlation matrix}.
+$$
 
 When one factor dominates the correlation structure, one eigenvalue captures most of the total $N=\sum_k\lambda_k$ and $N_{\text{eff}}\to1$. In the numbers below, $N_{\text{eff}}$ drops from **$3.17$ to $2.20$** and the equal-weight portfolio's volatility rises **$1.19\times$**.
 

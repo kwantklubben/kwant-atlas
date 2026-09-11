@@ -30,7 +30,9 @@ This folder is the **hardware-acceleration topic-folder** for Pillar 2. It is a 
 
 **Notation.** $\tau_{\text{NIC}}$ network-interface receive/DMA, $\tau_{\text{stack}}$ kernel or bypass networking, $\tau_{\text{parse}}$ feed decode, $\tau_{\text{model}}$ strategy decision, $\tau_{\text{ser}}$ serialize, $\tau_{\text{TX}}$ transmit. Total **tick-to-trade** latency:
 
-$$T_{\text{T2T}} \;=\; \tau_{\text{NIC}} + \tau_{\text{stack}} + \tau_{\text{parse}} + \tau_{\text{model}} + \tau_{\text{ser}} + \tau_{\text{TX}} .$$
+$$
+T_{\text{T2T}} \;=\; \tau_{\text{NIC}} + \tau_{\text{stack}} + \tau_{\text{parse}} + \tau_{\text{model}} + \tau_{\text{ser}} + \tau_{\text{TX}} .
+$$
 
 The physical floor is the **speed of light in the medium**: $c_{\text{fiber}} \approx 0.2\ \text{m/ns}$ (index of refraction $\approx 1.5$) and $c_{\text{air}} \approx 0.2997\ \text{m/ns}$. So $1\ \mu\text{s}$ of latency $\equiv$ **200 m of fiber** or **300 m of air** — the reason colocation, not clever code, buys the first microseconds.
 
@@ -47,13 +49,17 @@ The physical floor is the **speed of light in the medium**: $c_{\text{fiber}} \a
 
 **Winner-take-all.** If two firms race to the same exchange with latencies $L_A\sim\mathcal N(\mu_A,\sigma^2)$ and $L_B\sim\mathcal N(\mu_B,\sigma^2)$ independent, the faster firm wins with probability
 
-$$\mathbb P(L_B < L_A) \;=\; \Phi\!\left(\frac{\mu_A-\mu_B}{\sigma\sqrt2}\right),\qquad \Phi(z)=\tfrac12\big(1+\operatorname{erf}(z/\sqrt2)\big),$$
+$$
+\mathbb P(L_B < L_A) \;=\; \Phi\!\left(\frac{\mu_A-\mu_B}{\sigma\sqrt2}\right),\qquad \Phi(z)=\tfrac12\big(1+\operatorname{erf}(z/\sqrt2)\big),
+$$
 
 where $\mu_A-\mu_B$ is the **mean-latency gap**. Speed is not linear in edge: at equal jitter it saturates *fast* (see the table in §3) — a 100 ns gap is worth 99% of the race, a 905 ns gap is worth 100%. This is the mathematical reason the arms race is a *cliff*, not a slope.
 
 **Throughput vs latency (the other half).** For a pipeline of $S$ stages each taking $L$:
 
-$$T_{\text{lat}} = S\cdot L \quad(\text{end-to-end}),\qquad \Theta = \frac{1}{L}\ \text{packets/ns}\quad(\text{steady-state throughput}).$$
+$$
+T_{\text{lat}} = S\cdot L \quad(\text{end-to-end}),\qquad \Theta = \frac{1}{L}\ \text{packets/ns}\quad(\text{steady-state throughput}).
+$$
 
 Pipelining multiplies throughput by $S$ **at constant latency** — while a non-pipelined (serial) implementation is limited to $\Theta = 1/(SL)$ and collapses into unbounded queues whenever the arrival rate exceeds it.
 

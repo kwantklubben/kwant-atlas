@@ -33,11 +33,15 @@ The practice that ties these together is **reconciliation**: the periodic compar
 
 Let $q_i^{\text{int}}$ be the internal signed position in instrument $i$ as of a common as-of time $T$, and $q_i^{\text{ext}}$ the corresponding position from the external (clearing / drop-copy / broker) record. Define the **break**
 
-$$b_i = q_i^{\text{int}} - q_i^{\text{ext}}.$$
+$$
+b_i = q_i^{\text{int}} - q_i^{\text{ext}}.
+$$
 
 The reconciliation rule is a tolerance test per instrument:
 
-$$\text{break}_i \iff |b_i| > \epsilon_{\text{pos}},$$
+$$
+\text{break}_i \iff |b_i| > \epsilon_{\text{pos}},
+$$
 
 but the *classification* is what makes it useful. Let $\mathcal{P}_i$ be the net quantity of trades in $i$ that the internal system knows about but which are legitimately not yet reflected externally (in-flight / unsettled / post-cutoff). Then
 
@@ -53,8 +57,10 @@ A **timing break** is a false alarm caused by as-of mismatch — the most common
 
 Aggregate sanity checks catch what per-instrument tolerances let through:
 
-$$\text{(A1) unexplained net: }\sum_i b_i \neq 0 \ \Rightarrow \text{investigate}, \qquad
-\text{(A2) breaks allowed at most } K \text{ instruments}.$$
+$$
+\text{(A1) unexplained net: }\sum_i b_i \neq 0 \ \Rightarrow \text{investigate}, \qquad
+\text{(A2) breaks allowed at most } K \text{ instruments}.
+$$
 
 (A1) matters because a pair of offsetting breaks can each sit inside a per-name tolerance while hiding a genuine problem.
 
@@ -62,11 +68,15 @@ $$\text{(A1) unexplained net: }\sum_i b_i \neq 0 \ \Rightarrow \text{investigate
 
 Cash is the second book that must agree. Starting from the previous day's reconciled cash $C_{-1}$, the internal expectation for today's cash is
 
-$$C^{\text{int}}_{\text{expected}} = C_{-1} - \sum_{i} \big(P_i^{\text{fill}} q_i^{\text{fill}}\big) - \text{fees} + \text{financing} \pm \text{corporate actions},$$
+$$
+C^{\text{int}}_{\text{expected}} = C_{-1} - \sum_{i} \big(P_i^{\text{fill}} q_i^{\text{fill}}\big) - \text{fees} + \text{financing} \pm \text{corporate actions},
+$$
 
 where the sum is over signed fills (buys negative cash, sells positive), fees are commissions/venue fees, and financing is margin/borrow. The residual is
 
-$$r = C^{\text{ext}} - C^{\text{int}}_{\text{expected}},\qquad \text{break} \iff |r| > \epsilon_{\text{cash}}.$$
+$$
+r = C^{\text{ext}} - C^{\text{int}}_{\text{expected}},\qquad \text{break} \iff |r| > \epsilon_{\text{cash}}.
+$$
 
 The cash residual is a **powerful, low-dimensional check**: positions can look right while a fee is double-charged, a corporate action (split, dividend, merger) is unaccounted, or a synthetic fill is fabricated. A cash break with clean positions almost always means *fees, financing, or corporate actions* — and a position break with clean cash usually means *timing*.
 
@@ -74,7 +84,9 @@ The cash residual is a **powerful, low-dimensional check**: positions can look r
 
 Let $N$ be the number of instruments reconciled and $K_t$ the number of real breaks at reconciliation $t$. Under a healthy system $K_t=0$ almost surely, so the useful monitored quantity is not $\mathbb{E}[K_t]$ but the **age of the last clean reconciliation** $A_t = t - t_{\text{last clean}}$ and the *fraction of reconciliations that completed*,
 
-$$\rho = \frac{\#\{\text{reconciliations completed}\}}{\#\{\text{reconciliations attempted}\}}.$$
+$$
+\rho = \frac{\#\{\text{reconciliations completed}\}}{\#\{\text{reconciliations attempted}\}}.
+$$
 
 $\rho<1$ means the control itself is broken — a **silent failure** — and it is *the* signature to alert on. Concretely: an alert on `last_successful_reconciliation_age > 2 × interval` fires on the *absence* of the signal, which is the only way to catch a monitor that stopped monitoring.
 
@@ -82,7 +94,9 @@ $\rho<1$ means the control itself is broken — a **silent failure** — and it 
 
 If a stale position goes undetected for $D$ minutes and the market moves at volatility $\sigma_{\text{ann}}$, the size of the error in your computed risk is on the order of
 
-$$\Delta_{\text{risk}} \sim \sigma_{\text{ann}}\sqrt{\frac{D}{T_{\text{year}}}}\cdot Q_{\text{stale}}\cdot P,$$
+$$
+\Delta_{\text{risk}} \sim \sigma_{\text{ann}}\sqrt{\frac{D}{T_{\text{year}}}}\cdot Q_{\text{stale}}\cdot P,
+$$
 
 i.e. **the undetected time $D$ directly multiplies your exposure error.** Reconciliation frequency is therefore a *risk* parameter: reconciling every 15 minutes instead of hourly cuts the worst-case blind window by $4\times$.
 

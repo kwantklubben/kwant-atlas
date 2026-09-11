@@ -25,17 +25,23 @@ The one idea to hold onto: **a sequence number is a receipt for a message the se
 
 **The two counters.** Each side maintains:
 
-$$N_{\text{out}} = \text{the MsgSeqNum to stamp on its next outbound message} \quad(\text{starts at }1),$$
-$$N_{\text{in}} = \text{the MsgSeqNum it next expects to receive} \quad(\text{starts at }1).$$
+$$
+N_{\text{out}} = \text{the MsgSeqNum to stamp on its next outbound message} \quad(\text{starts at }1),
+$$
+$$
+N_{\text{in}} = \text{the MsgSeqNum it next expects to receive} \quad(\text{starts at }1).
+$$
 
 On sending, $N_{\text{out}} \leftarrow N_{\text{out}} + 1$. The receiver's rule on receiving `MsgSeqNum = M` is the core of the whole protocol:
 
-$$\text{action} =
+$$
+\text{action} =
 \begin{cases}
 \text{accept and process},\quad N_{\text{in}} \leftarrow M + 1, & M = N_{\text{in}},\\[3pt]
 \text{send ResendRequest}(7{=}N_{\text{in}},\ 16{=}M-1), & M > N_{\text{in}},\\[3pt]
 \text{ignore as duplicate}, & M < N_{\text{in}}.
-\end{cases}$$
+\end{cases}
+$$
 
 The **gap size** is $g = M - N_{\text{in}}$: exactly $g$ messages are missing, and the request covers $[N_{\text{in}},\,M-1]$.
 
@@ -43,16 +49,26 @@ The **gap size** is $g = M - N_{\text{in}}$: exactly $g$ messages are missing, a
 
 **SequenceReset in two modes** — a critical distinction:
 
-$$\texttt{4}\ (123{=}Y,\ \texttt{gap-fill}) :\ \text{advance } N_{\text{in}} \to 36,\ \text{silently skip admin msgs};$$
-$$\texttt{4}\ (123{=}N,\ \texttt{reset}) :\ \text{hard reset } N_{\text{in}} \to 36,\ \text{**discard everything in between** (dangerous)}.$$
+$$
+\texttt{4}\ (123{=}Y,\ \texttt{gap-fill}) :\ \text{advance } N_{\text{in}} \to 36,\ \text{silently skip admin msgs};
+$$
+$$
+\texttt{4}\ (123{=}N,\ \texttt{reset}) :\ \text{hard reset } N_{\text{in}} \to 36,\ \text{**discard everything in between** (dangerous)}.
+$$
 
 A bare reset is the mechanism by which missed orders are *forgotten* — intentionally, during a session "resynchronisation", and dangerously if used to paper over a bug.
 
 **Heartbeats and the liveness contract.** With `HeartBtInt = H` seconds:
 
-$$\text{send Heartbeat}(35{=}0)\ \text{if no message sent in } H;$$
-$$\text{send TestRequest}(35{=}1)\ \text{if no message received in } H;$$
-$$\text{disconnect if no reply (or any data) within } H \text{ afterwards.}$$
+$$
+\text{send Heartbeat}(35{=}0)\ \text{if no message sent in } H;
+$$
+$$
+\text{send TestRequest}(35{=}1)\ \text{if no message received in } H;
+$$
+$$
+\text{disconnect if no reply (or any data) within } H \text{ afterwards.}
+$$
 
 The `TestRequest` demands a `Heartbeat` bearing the same `TestReqID(112)`; no reply means the peer is dead and the session must be torn down rather than left half-open.
 

@@ -24,17 +24,23 @@ The deepest principle: **a screen selects on observed characteristics, but retur
 
 **The value trap, stated precisely.** Let intrinsic value $V_t$ follow a declining path because the business is deteriorating, while price $P_t$ falls faster. The apparent "cheapness" $P/V$ looks favourable, but the *expected return* is not $V/P-1$ — it is the return to a shrinking $V$:
 
-$$V_{t+1}=V_t(1+g), \quad g<0 \quad\Longrightarrow\quad \text{you can lose money at any P/E.}$$
+$$
+V_{t+1}=V_t(1+g), \quad g<0 \quad\Longrightarrow\quad \text{you can lose money at any P/E.}
+$$
 
 The low multiple is not a discount; it is **the market correctly pricing the decline.** The signal that separates a trap from a bargain is therefore *not* the level of cheapness but the **direction and quality of the fundamentals**:
 
-$$\text{trap if } \big(\text{cheap}\big) \ \wedge\ \big(\text{F-score low} \ \vee\ \Delta\text{ROA}<0 \ \vee\ \tfrac{\text{CFO}}{\text{NI}}<1\big).$$
+$$
+\text{trap if } \big(\text{cheap}\big) \ \wedge\ \big(\text{F-score low} \ \vee\ \Delta\text{ROA}<0 \ \vee\ \tfrac{\text{CFO}}{\text{NI}}<1\big).
+$$
 
 This is exactly the Piotroski (2000) insight: **within high book-to-market (cheap) firms, the F-score splits the winners from the losers** — cheapness *conditioned on* fundamental strength is the signal; cheapness alone is not.
 
 **The falling knife.** Even a genuine value can keep falling. Price momentum $\text{mom}_{12}$ is negatively correlated with subsequent short-horizon returns when cheapness is combined with severe drawdowns; the operational guard is a **veto**, not a filter:
 
-$$\text{veto buy if } \text{mom}_{12m} < -k \quad (\text{do not catch a knife; wait for stabilisation}).$$
+$$
+\text{veto buy if } \text{mom}_{12m} < -k \quad (\text{do not catch a knife; wait for stabilisation}).
+$$
 
 **Screening data quality — the four biases.** A screen's output is only as honest as its input data:
 - **Survivorship bias** — testing on today's listed firms excludes the delisted losers, inflating returns.

@@ -34,11 +34,21 @@ The practical objective is to give the practitioner the recursion in a form they
 
 Given $(s_{t\mid t-1},\ \Sigma_{t\mid t-1})$ (the a-priori belief at time $t$), the filter processes $y_t$ and produces $(s_{t+1\mid t},\ \Sigma_{t+1\mid t})$:
 
-$$\textbf{Innovation:}\qquad v_t=y_t-c_t-Z_t s_{t\mid t-1}$$
-$$\textbf{Innovation covariance:}\qquad V_t=Z_t\Sigma_{t\mid t-1}Z_t^\top+H_t$$
-$$\textbf{Kalman gain:}\qquad K_t=T_t\Sigma_{t\mid t-1}Z_t^\top V_t^{-1}$$
-$$\textbf{State update:}\qquad s_{t+1\mid t}=d_t+T_t s_{t\mid t-1}+K_t v_t$$
-$$\textbf{Covariance update:}\qquad \Sigma_{t+1\mid t}=T_t\Sigma_{t\mid t-1}L_t^\top+R_tQ_tR_t^\top,\qquad L_t=T_t-K_tZ_t.$$
+$$
+\textbf{Innovation:}\qquad v_t=y_t-c_t-Z_t s_{t\mid t-1}
+$$
+$$
+\textbf{Innovation covariance:}\qquad V_t=Z_t\Sigma_{t\mid t-1}Z_t^\top+H_t
+$$
+$$
+\textbf{Kalman gain:}\qquad K_t=T_t\Sigma_{t\mid t-1}Z_t^\top V_t^{-1}
+$$
+$$
+\textbf{State update:}\qquad s_{t+1\mid t}=d_t+T_t s_{t\mid t-1}+K_t v_t
+$$
+$$
+\textbf{Covariance update:}\qquad \Sigma_{t+1\mid t}=T_t\Sigma_{t\mid t-1}L_t^\top+R_tQ_tR_t^\top,\qquad L_t=T_t-K_tZ_t.
+$$
 
 (Tsay Eq. 11.64, verified in the corpus.) The gain is a matrix version of the scalar weight $P^{-}/(P^{-}+r)$: $Z_t\Sigma Z_t^\top$ is the predicted observation variance (signal), $V_t$ adds the measurement variance (signal + noise), and $T_t\Sigma Z_t^\top$ maps it back to state space. When the observation is uninformative ($V_t$ large), $K_t\to0$ and the state just follows its prediction.
 
@@ -52,7 +62,9 @@ $$\textbf{Covariance update:}\qquad \Sigma_{t+1\mid t}=T_t\Sigma_{t\mid t-1}L_t^
 
 With $T=Z=R=1$, $d=c=0$, $Q=\sigma_\eta^2$, $H=\sigma_e^2$:
 
-$$v_t=y_t-\mu_{t\mid t-1},\quad V_t=\Sigma_{t\mid t-1}+\sigma_e^2,\quad K_t=\frac{\Sigma_{t\mid t-1}}{V_t},\quad \mu_{t+1\mid t}=\mu_{t\mid t-1}+K_tv_t,\quad \Sigma_{t+1\mid t}=\Sigma_{t\mid t-1}(1-K_t)+\sigma_\eta^2 .$$
+$$
+v_t=y_t-\mu_{t\mid t-1},\quad V_t=\Sigma_{t\mid t-1}+\sigma_e^2,\quad K_t=\frac{\Sigma_{t\mid t-1}}{V_t},\quad \mu_{t+1\mid t}=\mu_{t\mid t-1}+K_tv_t,\quad \Sigma_{t+1\mid t}=\Sigma_{t\mid t-1}(1-K_t)+\sigma_\eta^2 .
+$$
 
 This is the form to verify a matrix implementation against — it is small enough to compute by hand.
 
@@ -64,7 +76,9 @@ For a time-invariant model, the covariance recursion converges: $\Sigma_t\to\Sig
 
 The **prediction-error decomposition** (Tsay Eq. 11.25) gives the exact log-likelihood of the observations as a by-product of the recursion:
 
-$$\ln L=-\frac{T}{2}\ln(2\pi)-\frac12\sum_t\Big[\ln V_t+\frac{v_t^2}{V_t}\Big].$$
+$$
+\ln L=-\frac{T}{2}\ln(2\pi)-\frac12\sum_t\Big[\ln V_t+\frac{v_t^2}{V_t}\Big].
+$$
 
 So parameters $(\sigma_e^2,\sigma_\eta^2,\ldots)$ are estimated by simply maximizing this — no external likelihood machinery, and the innovations $v_t$ double as a model-diagnostic series (page 05).
 

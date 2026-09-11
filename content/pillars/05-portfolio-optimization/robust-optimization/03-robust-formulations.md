@@ -17,7 +17,9 @@ tags:
 
 The estimation-error problem says: *my inputs are noisy.* Robust optimization's answer is to stop pretending otherwise and make the noise an **explicit part of the problem**. Define a set $U$ that you are confident contains the truth — a **box** ("each mean is within $\pm\gamma_i$ of my estimate") or an **ellipsoid** ("the mean vector is within a $\kappa$-radius of my estimate, measured in the metric of the estimator's own covariance"). Then pick the portfolio that is best for the **worst** $\mu$ in $U$:
 
-$$\max_{w}\ \min_{\mu\in U}\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w .$$
+$$
+\max_{w}\ \min_{\mu\in U}\ \mu^\top w-\tfrac\delta2 w^\top\Sigma w .
+$$
 
 This is a **max-min** (worst-case) problem. Its two great virtues:
 
@@ -34,17 +36,23 @@ The single most important structural fact: **the worst-case mean is the nominal 
 
 Two canonical families (Goldfarb & Iyengar 2003, eqs. 2–4):
 
-$$\textbf{Box:}\quad U_{\mathrm{box}}=\{\mu:\lvert\mu_i-\hat\mu_i\rvert\le\gamma_i\ \forall i\},\qquad
-\textbf{Ellipsoidal:}\quad U_{\mathrm{ell}}=\{\mu:(\mu-\hat\mu)^\top\Sigma_\mu^{-1}(\mu-\hat\mu)\le\kappa^2\},$$
+$$
+\textbf{Box:}\quad U_{\mathrm{box}}=\{\mu:\lvert\mu_i-\hat\mu_i\rvert\le\gamma_i\ \forall i\},\qquad
+\textbf{Ellipsoidal:}\quad U_{\mathrm{ell}}=\{\mu:(\mu-\hat\mu)^\top\Sigma_\mu^{-1}(\mu-\hat\mu)\le\kappa^2\},
+$$
 
 where $\Sigma_\mu=\hat\Sigma/T$ is (an estimate of) the covariance of the mean estimator — so $U_{\mathrm{ell}}$ is precisely a **confidence region** for $\mu$ at level set by $\kappa$ (for Gaussian returns, $\kappa$ is a chi-square quantile; GI §5 tie this to regression confidence regions).
 
 #### 2.2 Worst-case mean (the two lemmas)
 
-$$\boxed{\ \min_{\mu\in U_{\mathrm{box}}}\mu^\top w=\hat\mu^\top w-\gamma^\top\lvert w\rvert\ }$$
+$$
+\boxed{\ \min_{\mu\in U_{\mathrm{box}}}\mu^\top w=\hat\mu^\top w-\gamma^\top\lvert w\rvert\ }
+$$
 (the adversary sets $\mu_i=\hat\mu_i-\gamma_i\,\mathrm{sign}(w_i)$; Goldfarb & Iyengar eq. 15), and
 
-$$\boxed{\ \min_{\mu\in U_{\mathrm{ell}}}\mu^\top w=\hat\mu^\top w-\kappa\sqrt{w^\top\Sigma_\mu w}\ }$$
+$$
+\boxed{\ \min_{\mu\in U_{\mathrm{ell}}}\mu^\top w=\hat\mu^\top w-\kappa\sqrt{w^\top\Sigma_\mu w}\ }
+$$
 
 (the adversary picks the support point $\mu=\hat\mu-\kappa\Sigma_\mu w/\sqrt{w^\top\Sigma_\mu w}$). Both are **convex in $w$**, which is what makes the robust problem tractable.
 
@@ -52,17 +60,25 @@ $$\boxed{\ \min_{\mu\in U_{\mathrm{ell}}}\mu^\top w=\hat\mu^\top w-\kappa\sqrt{w
 
 The robust (max-min) mean-variance problem is
 
-$$\max_{w}\ \hat\mu^\top w-\kappa\sqrt{w^\top\Sigma_\mu w}-\tfrac\delta2 w^\top\hat\Sigma w .$$
+$$
+\max_{w}\ \hat\mu^\top w-\kappa\sqrt{w^\top\Sigma_\mu w}-\tfrac\delta2 w^\top\hat\Sigma w .
+$$
 
 Because $\Sigma_\mu\propto\hat\Sigma$ (indeed $\Sigma_\mu=\hat\Sigma/T$), the solution is *exactly a scalar shrink of the naive MVO portfolio*. Setting the gradient to zero,
 
-$$\hat\mu-\kappa\frac{\Sigma_\mu w}{\sqrt{w^\top\Sigma_\mu w}}=\delta\hat\Sigma w .$$
+$$
+\hat\mu-\kappa\frac{\Sigma_\mu w}{\sqrt{w^\top\Sigma_\mu w}}=\delta\hat\Sigma w .
+$$
 
 **Guess $w=s\,w_{\text{naive}}$** with $w_{\text{naive}}=\tfrac1\delta\hat\Sigma^{-1}\hat\mu$. Then $\hat\Sigma w=\tfrac{s}{\delta}\hat\mu$ and, using $\Sigma_\mu=\hat\Sigma/T$,
-$$\sqrt{w^\top\Sigma_\mu w}=\frac{s}{\delta\sqrt T}\sqrt{\hat\mu^\top\hat\Sigma^{-1}\hat\mu}=\frac{s\sqrt a}{\delta T},\qquad a:=\hat\mu^\top\Sigma_\mu^{-1}\hat\mu=T\,\hat\mu^\top\hat\Sigma^{-1}\hat\mu .$$
+$$
+\sqrt{w^\top\Sigma_\mu w}=\frac{s}{\delta\sqrt T}\sqrt{\hat\mu^\top\hat\Sigma^{-1}\hat\mu}=\frac{s\sqrt a}{\delta T},\qquad a:=\hat\mu^\top\Sigma_\mu^{-1}\hat\mu=T\,\hat\mu^\top\hat\Sigma^{-1}\hat\mu .
+$$
 Substituting, the left side becomes $\hat\mu\big(1-\kappa/\sqrt a\big)$ and the right side $s\hat\mu$, giving
 
-$$\boxed{\ w^\star_{\text{rob}}=\Big(1-\frac{\kappa}{\sqrt a}\Big)_{+}\cdot w_{\text{naive}},\qquad a=\hat\mu^\top\Sigma_\mu^{-1}\hat\mu\ }$$
+$$
+\boxed{\ w^\star_{\text{rob}}=\Big(1-\frac{\kappa}{\sqrt a}\Big)_{+}\cdot w_{\text{naive}},\qquad a=\hat\mu^\top\Sigma_\mu^{-1}\hat\mu\ }
+$$
 
 **Read this twice.** Robustness does *not* reroute the portfolio — it **sizes it**, by a factor governed by the *signal-to-noise ratio* $a$ (how far the sample mean sits from the origin in units of its own standard error) versus the uncertainty radius $\kappa$. If your estimate is weak ($a$ small) or your uncertainty is large ($\kappa$ large), the robust portfolio shrinks toward zero; if the estimate is strong, robust and naive nearly agree. This is the clean mathematical expression of "trust the estimate only as far as its confidence region allows."
 
@@ -70,7 +86,9 @@ $$\boxed{\ w^\star_{\text{rob}}=\Big(1-\frac{\kappa}{\sqrt a}\Big)_{+}\cdot w_{\
 
 For the full set of uncertainty structures (also on the factor loadings $V$ and residual covariance $D$ in a factor model $r=\mu+V^\top f+\epsilon$), GI show the robust min-variance, robust max-return and robust max-Sharpe problems
 
-$$\min_{w}\max_{V\in S_v,D\in S_d}\mathrm{Var}[r_w]\ \ \text{s.t.}\ \min_{\mu\in S_m}\mathbb E[r_w]\ge\alpha,\quad\mathbf 1^\top w=1,$$
+$$
+\min_{w}\max_{V\in S_v,D\in S_d}\mathrm{Var}[r_w]\ \ \text{s.t.}\ \min_{\mu\in S_m}\mathbb E[r_w]\ge\alpha,\quad\mathbf 1^\top w=1,
+$$
 
 reformulate as SOCPs. They also treat a **robust VaR** problem (GI §4). The box penalty $\gamma^\top\lvert w\rvert$ is itself an SOC-representable term (an $\ell_1$ penalty under an epigraph), which is why absolute-weight regularization and box-robustness produce the same geometry.
 

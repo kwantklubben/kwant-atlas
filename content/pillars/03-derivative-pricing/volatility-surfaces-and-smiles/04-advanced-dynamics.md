@@ -31,23 +31,33 @@ The practical objective: know that **vanilla smiles barely constrain cliquet/for
 #### 2.1 Skew stickiness ratio in local volatility (Bergomi eq 2.64)
 
 The regression definition is $R_T=\frac{1}{\mathcal S_T}\frac{\langle d\hat\sigma_{F_TT}\,d\ln S_0\rangle}{\langle(d\ln S_0)^2\rangle}$ (Bergomi 2.62), with $R_T=1$ sticky-strike, $R_T=0$ sticky-delta. In **local volatility**
-$$R_T=1+\frac1T\int_0^T\frac{\mathcal S_t}{\mathcal S_T}\,dt,$$
+$$
+R_T=1+\frac1T\int_0^T\frac{\mathcal S_t}{\mathcal S_T}\,dt,
+$$
 and the **$R=2$ rule**: if the skew $\mathcal S$ (equivalently $\alpha$) is maturity-independent, $R_T=2$ for all $T$; moreover $\lim_{T\to0}R_T=2$ for *any* smooth LV (exact, via the backward/forward symmetry $\hat\sigma_{ST}(K)=\hat\sigma_{KT}(S)$, zero rates). For a power-law skew $\mathcal S_T\propto T^{-\gamma}$,
-$$R_T\to\frac{2-\gamma}{1-\gamma}\ (T\to\infty):\quad \gamma=\tfrac12\ (\text{equity})\Rightarrow R_\infty=3;\qquad \gamma=1\Rightarrow R_T\propto\ln T.$$
+$$
+R_T\to\frac{2-\gamma}{1-\gamma}\ (T\to\infty):\quad \gamma=\tfrac12\ (\text{equity})\Rightarrow R_\infty=3;\qquad \gamma=1\Rightarrow R_T\propto\ln T.
+$$
 The **vol-of-vol implied by LV** is $\mathrm{vol}(\hat\sigma_{F_TT})\to2\mathcal S_T$ as $T\to0$ (Bergomi eq 2.85) — a large, structural number.
 
 #### 2.2 Skew dynamics under SV vs LV
 
 - **SV:** future surfaces look like today's — the skew is **time-homogeneous**. The empirical fact that the *skew slope is roughly independent of the volatility level* translates to $\beta(v)\sim\sqrt v$, i.e. **variance is approximately lognormal**, not square-root (Gatheral §8.1).
 - **LV:** future (forward) surfaces are **substantially flatter** than today's, because the forward local skews are flatter: from (2.90)/(2.91) with today's skew $\mathcal S_t=\alpha(t/\tau_0)^{-\gamma}$,
-$$\mathcal S_\theta(\tau)=\mathcal S_{\tau+\theta}-\frac{\tau}{\theta}\!\left(\frac1\theta\int_\tau^{\tau+\theta}\mathcal S_t\,dt-\mathcal S_{\tau+\theta}\right),\qquad \mathcal S_\theta(\tau)\propto\left(\frac{\theta}{\tau}\right)^{\gamma}\mathcal S_\theta\ \ll\ \mathcal S_\theta.$$
+$$
+\mathcal S_\theta(\tau)=\mathcal S_{\tau+\theta}-\frac{\tau}{\theta}\!\left(\frac1\theta\int_\tau^{\tau+\theta}\mathcal S_t\,dt-\mathcal S_{\tau+\theta}\right),\qquad \mathcal S_\theta(\tau)\propto\left(\frac{\theta}{\tau}\right)^{\gamma}\mathcal S_\theta\ \ll\ \mathcal S_\theta.
+$$
 - **Consequence:** a **wrong SV model** (off $\sim1.5\times$ if vol doubles) still beats **LV**, which generates almost *no* forward skew (Gatheral §8.1–8.2). LV sellers of forward-skew products win the deal and lose money (Gatheral ch 8/10).
 
 #### 2.3 Heston skew and term structure
 
 Heston (Gatheral §2.2, §3.4; Bergomi ch 6) with $\lambda'=\lambda-\rho\eta/2$, $\bar v'=\bar v\lambda/\lambda'$:
-$$\hat\sigma_{BS}^2\big|_{K=F_T}=\frac{(\bar v-\bar v')\big(1-e^{-\lambda'T}\big)}{\lambda'T}+\bar v',$$
-$$\sigma_{BS}^2\approx \hat w'_T/T+\rho\eta\,\frac{x_T}{\lambda'T}\!\left(1-\frac{1-e^{-\lambda'T}}{\lambda'T}\right).$$
+$$
+\hat\sigma_{BS}^2\big|_{K=F_T}=\frac{(\bar v-\bar v')\big(1-e^{-\lambda'T}\big)}{\lambda'T}+\bar v',
+$$
+$$
+\sigma_{BS}^2\approx \hat w'_T/T+\rho\eta\,\frac{x_T}{\lambda'T}\!\left(1-\frac{1-e^{-\lambda'T}}{\lambda'T}\right).
+$$
 - **Short-dated ATM skew** $\to\frac{\rho\eta}{2}$ — independent of $\lambda$ and $T$ (confirmed numerically below, $-0.1388$ vs $-0.1389$).
 - **Long-dated ATM skew** $\to\frac{\rho\eta}{\lambda'T}$ — decays as $1/T$.
 - The skew is **independent of the variance level** $v_0,\bar v$ (approximately true even for $v_0\ne\bar v$); increasing $|\rho|$ or $\eta$ steepens it; $\eta$ also sets curvature (kurtosis).
@@ -56,11 +66,17 @@ $$\sigma_{BS}^2\approx \hat w'_T/T+\rho\eta\,\frac{x_T}{\lambda'T}\!\left(1-\fra
 #### 2.4 Jumps and the SABR/SV asymptotics
 
 Adding jumps (Gatheral ch 5, §7.3). For short $\Delta T$,
-$$\sigma_{BS}^2\text{ skew}\big|_{k=0}\approx-2\mu_J,\qquad \mu_J=\lambda\,\mathbb{E}[J-1]\ \text{(compensator)}.$$
+$$
+\sigma_{BS}^2\text{ skew}\big|_{k=0}\approx-2\mu_J,\qquad \mu_J=\lambda\,\mathbb{E}[J-1]\ \text{(compensator)}.
+$$
 Jumps and stochastic vol contribute **additively** to the ATM variance skew at $\tau=0$:
-$$\left.\frac{\partial v_{BS}}{\partial k}\right|_{k=0}\to \rho\,b(\sigma)-2\mu_J.$$
+$$
+\left.\frac{\partial v_{BS}}{\partial k}\right|_{k=0}\to \rho\,b(\sigma)-2\mu_J.
+$$
 The **jump compensator drives the short-expiry skew; the expected jump size drives its decay** (Gatheral §5.4). The **SABR** model
-$$dS_t=\sigma_tS_t^{\beta}dZ_1,\qquad d\sigma_t=\chi\sigma_t\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt$$
+$$
+dS_t=\sigma_tS_t^{\beta}dZ_1,\qquad d\sigma_t=\chi\sigma_t\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt
+$$
 (Hagan et al. 2002) has no mean reversion, so it is a short-expiration tool, but it has an exact $\tau\to0$ smile formula that factorizes: $\sigma_{BS}(k)=\sigma_0\frac{y}{f(y)}\big(1+\tfrac14\rho\chi\sigma_0+\frac{2-3\rho^2}{24}\chi^2\tau+\cdots\big)$ with $y=-\chi k/\sigma_0$ (Gatheral eq 7.7). It implies $\partial_k\sigma_{BS}|_{k=0}=\rho/2$ — the special case of (7.6) — and the **Medvedev–Scaillet** small-time expansion (Gatheral eq 7.4–7.6) reproduces it, proving $\partial_k I|_{k=0}\to\rho b(\sigma)/(2\sigma)$.
 
 **Long expirations (Fouque–Papanicolaou–Sircar):** for log-OU volatility the skew $\partial_x\sigma_{BS}\approx \rho\xi/(\lambda T)$ (Gatheral eq 7.10), matching Heston for large $\lambda T$. The **natural interpolation** between the two limits is Gatheral eq 7.11 (not Bergomi's), which Lewis's small-$\eta$ expansion proves *exact* to $O(\eta)$ (Gatheral §7.6, eq 7.11–7.12). **Extreme strikes:** Lee's moment formula, $\beta^*=g(q^*)$, $g(x)=2-4(\sqrt{x^2+x}-x)$ — model-independent (Gatheral §7.7).

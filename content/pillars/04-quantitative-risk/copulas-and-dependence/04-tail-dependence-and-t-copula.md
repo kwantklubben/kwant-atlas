@@ -31,13 +31,17 @@ The replacement is the **Student-$t$ copula**. It keeps the elliptical, easy-to-
 
 For random variables $X_1,X_2$ with CDFs $F_1,F_2$, the **upper** and **lower tail-dependence coefficients** are
 
-$$\lambda_u=\lim_{q\to1^-}\Pr\!\big(X_2>F_2^{\leftarrow}(q)\ \big|\ X_1>F_1^{\leftarrow}(q)\big),\qquad
-\lambda_l=\lim_{q\to0^+}\Pr\!\big(X_2\le F_2^{\leftarrow}(q)\ \big|\ X_1\le F_1^{\leftarrow}(q)\big).$$
+$$
+\lambda_u=\lim_{q\to1^-}\Pr\!\big(X_2>F_2^{\leftarrow}(q)\ \big|\ X_1>F_1^{\leftarrow}(q)\big),\qquad
+\lambda_l=\lim_{q\to0^+}\Pr\!\big(X_2\le F_2^{\leftarrow}(q)\ \big|\ X_1\le F_1^{\leftarrow}(q)\big).
+$$
 
 They depend **only on the copula** (for continuous margins):
 
-$$\lambda_l=\lim_{q\to0^+}\frac{C(q,q)}{q},\qquad
-\lambda_u=\lim_{q\to0^+}\frac{\hat C(q,q)}{q},$$
+$$
+\lambda_l=\lim_{q\to0^+}\frac{C(q,q)}{q},\qquad
+\lambda_u=\lim_{q\to0^+}\frac{\hat C(q,q)}{q},
+$$
 
 where $\hat C$ is the survival copula, $\hat C(u,v)=u+v-1+C(1-u,1-v)$. For radially symmetric copulas $\lambda_l=\lambda_u$.
 
@@ -45,8 +49,10 @@ where $\hat C$ is the survival copula, $\hat C(u,v)=u+v-1+C(1-u,1-v)$. For radia
 
 Let $(X_1,X_2)\sim N_2(0,P)$ with correlation $\rho$, and write $U_i=\Phi(X_i)$. Conditional on $X_1=x$, $X_2\mid X_1=x\sim N(\rho x,\,1-\rho^2)$, so
 
-$$\lambda=2\lim_{x\to-\infty}\Pr(X_2\le x\mid X_1=x)
-=2\lim_{x\to-\infty}\Phi\!\Big(x\sqrt{\tfrac{1-\rho}{1+\rho}}\Big)=0\qquad(\rho<1).$$
+$$
+\lambda=2\lim_{x\to-\infty}\Pr(X_2\le x\mid X_1=x)
+=2\lim_{x\to-\infty}\Phi\!\Big(x\sqrt{\tfrac{1-\rho}{1+\rho}}\Big)=0\qquad(\rho<1).
+$$
 
 **Result.** For every $\rho<1$, $\lambda_u=\lambda_l=0$. However high the correlation, going far enough into the tail makes the two extremes *independently rare*.
 
@@ -54,11 +60,15 @@ $$\lambda=2\lim_{x\to-\infty}\Pr(X_2\le x\mid X_1=x)
 
 The bivariate $t$ copula is $C^t_{\nu,\rho}(u,v)=t_{\nu,P}(t_\nu^{-1}(u),t_\nu^{-1}(v))$. Conditional on $X_1=x$,
 
-$$\sqrt{\tfrac{\nu+1}{\nu+x^2}}\ \tfrac{X_2-\rho x}{\sqrt{1-\rho^2}}\ \sim t_{\nu+1},$$
+$$
+\sqrt{\tfrac{\nu+1}{\nu+x^2}}\ \tfrac{X_2-\rho x}{\sqrt{1-\rho^2}}\ \sim t_{\nu+1},
+$$
 
 which yields the closed form
 
-$$\boxed{\ \lambda=2\,t_{\nu+1}\!\left(-\sqrt{\frac{(\nu+1)(1-\rho)}{1+\rho}}\right)\ }$$
+$$
+\boxed{\ \lambda=2\,t_{\nu+1}\!\left(-\sqrt{\frac{(\nu+1)(1-\rho)}{1+\rho}}\right)\ }
+$$
 
 for $\rho>-1$. For fixed $\rho$, $\lambda$ increases as $\nu$ decreases; the $t$ copula is asymptotically dependent in **both** tails (radial symmetry). McNeil's Table 7.1:
 

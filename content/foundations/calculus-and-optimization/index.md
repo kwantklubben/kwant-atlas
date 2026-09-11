@@ -39,7 +39,7 @@ This page is the hub: it gives the fast **formula and condition lookup** below, 
 | Object | Definition | Finance reading |
 |---|---|---|
 | Derivative (1-D) | $f'(x)=\lim_{h\to0}\dfrac{f(x{+}h)-f(x)}{h}$ | $\Delta=\partial V/\partial S$ — the delta |
-| Fermat (1-D FOC) | interior extremum $\Rightarrow f'(x^\*)=0$ | the single-variable seed of "$\nabla=0$" |
+| Fermat (1-D FOC) | interior extremum $\Rightarrow f'(x^*)=0$ | the single-variable seed of "$\nabla=0$" |
 | Mean value theorem | $f(c)-f(b)=f'(x)(c-b)$ for some $x$ | basis of finite-difference error bounds (Greeks by bumping) |
 | Taylor (order $n$) | $f(x)=\sum_{k=0}^{n}\dfrac{f^{(k)}(a)}{k!}(x-a)^k+R_n$ | delta–gamma–theta P&L expansion |
 | FTC | $\int_b^c f'=f(c)-f(b)$ | every expectation/payoff integral |
@@ -55,19 +55,21 @@ This page is the hub: it gives the fast **formula and condition lookup** below, 
 
 | Problem | Necessary (interior, CQ holds) | Sufficient |
 |---|---|---|
-| $\min f(x)$ | $\nabla f(x^\*)=0$ | $\nabla^2 f(x^\*)\succ0$ (strict) |
-| $\max f(x)$ | $\nabla f(x^\*)=0$ | $\nabla^2 f(x^\*)\prec0$ |
+| $\min f(x)$ | $\nabla f(x^*)=0$ | $\nabla^2 f(x^*)\succ0$ (strict) |
+| $\max f(x)$ | $\nabla f(x^*)=0$ | $\nabla^2 f(x^*)\prec0$ |
 | $\min f$ s.t. $h_j(x)=0$ | $\nabla f=\sum_j\nu_j\nabla h_j$ | bordered Hessian sign condition (§19.3) |
 | $\min f$ s.t. $g_i\le0,\ h_j=0$ | KKT (below) | KKT $+$ convexity of $f,g_i$, $h_j$ affine |
 
 **The KKT conditions** (Boyd eq. 5.49; Simon & Blume §18.6). For $\min f_0(x)$ s.t. $f_i(x)\le0,\ h_j(x)=0$:
 
-$$f_i(x^\*)\le0,\quad h_j(x^\*)=0,\quad \lambda_i^\*\ge0,\quad \lambda_i^\* f_i(x^\*)=0,\quad
-\nabla f_0(x^\*)+\sum_i\lambda_i^\*\nabla f_i(x^\*)+\sum_j\nu_j^\*\nabla h_j(x^\*)=0.$$
+$$
+f_i(x^*)\le0,\quad h_j(x^*)=0,\quad \lambda_i^*\ge0,\quad \lambda_i^* f_i(x^*)=0,\quad
+\nabla f_0(x^*)+\sum_i\lambda_i^*\nabla f_i(x^*)+\sum_j\nu_j^*\nabla h_j(x^*)=0.
+$$
 
 The four blocks are **primal feasibility · dual feasibility · complementary slackness · stationarity**. Dropping the inequalities leaves exactly the Lagrange system. Under convexity (and Slater), KKT is **necessary and sufficient** (Boyd §5.5.3).
 
-**The multiplier is a shadow price** (Simon & Blume §19.1–19.2, envelope theorem). Perturb the constraint to $h(x)=b$; then $\dfrac{d f^\*}{db}=\nu^\*$ at the optimum. In portfolio terms, $\lambda^\*$ on "$\mu^\top w = r_0$" is the marginal variance bought per unit of extra required return.
+**The multiplier is a shadow price** (Simon & Blume §19.1–19.2, envelope theorem). Perturb the constraint to $h(x)=b$; then $\dfrac{d f^*}{db}=\nu^*$ at the optimum. In portfolio terms, $\lambda^*$ on "$\mu^\top w = r_0$" is the marginal variance bought per unit of extra required return.
 
 **Lookup 3 — convexity decides everything.** A set $C$ is convex if $x,y\in C\Rightarrow\theta x+(1-\theta)y\in C$. $f$ is convex if $f(\theta x+(1-\theta)y)\le\theta f(x)+(1-\theta)f(y)$; for $C^2$ functions this is equivalent to $\nabla^2 f\succeq0$ everywhere. **Convex objective $+$ convex feasible set $\Rightarrow$ every stationary point is a global minimum** — the reason Markowitz, regression and LP are solvable while "pick 10 stocks" is not. *Strong convexity* sharpens the geometry: $\nabla^2 f(x)\succeq mI$ (Boyd eq. 9.7).
 
@@ -76,9 +78,9 @@ The four blocks are **primal feasibility · dual feasibility · complementary sl
 | Method | Iterate | Rate | Needs |
 |---|---|---|---|
 | Gradient descent | $x_{k+1}=x_k-t_k\nabla f(x_k)$ | linear, factor $c=1-m/M$ (Boyd eq. 9.18) | $mI\preceq\nabla^2 f\preceq MI$; step $t\le1/M$ |
-| Newton (damped) | $\Delta x_{\text{nt}}=-\nabla^2 f(x)^{-1}\nabla f(x)$ (Boyd §9.5.1) | **quadratic** near $x^\*$ | $\nabla^2 f\succ0$; one linear solve/step |
+| Newton (damped) | $\Delta x_{\text{nt}}=-\nabla^2 f(x)^{-1}\nabla f(x)$ (Boyd §9.5.1) | **quadratic** near $x^*$ | $\nabla^2 f\succ0$; one linear solve/step |
 
-The condition number $M/m=\kappa$ is the whole story: gradient descent needs $\sim\kappa\log(1/\epsilon)$ iterations (Boyd eq. 9.19), Newton is affine-invariant and independent of $\kappa$ (Newton decrement $\lambda(x)^2=\nabla f^\top\nabla^2f^{-1}\nabla f$ measures suboptimality as $f(x)-p^\*\approx\tfrac12\lambda^2$).
+The condition number $M/m=\kappa$ is the whole story: gradient descent needs $\sim\kappa\log(1/\epsilon)$ iterations (Boyd eq. 9.19), Newton is affine-invariant and independent of $\kappa$ (Newton decrement $\lambda(x)^2=\nabla f^\top\nabla^2f^{-1}\nabla f$ measures suboptimality as $f(x)-p^*\approx\tfrac12\lambda^2$).
 
 ---
 
@@ -144,7 +146,7 @@ print(f"    variance={var:.6f}  shadow price lambda_1={l1:.6f}")
 Hub signposts — the full first-principles analysis lives on the sub-pages. In one line each:
 
 1. **"$\nabla f=0$" is only necessary, not sufficient.** A saddle point satisfies the first-order condition; without a sign check on $\nabla^2 f$ you can report a maximum as a minimum (page 03).
-2. **Constrained optima need a constraint qualification.** If the constraint gradients are linearly dependent at $x^\*$, the Lagrange/KKT multipliers may fail to exist and the first-order system is misleading (Simon & Blume §19.5).
+2. **Constrained optima need a constraint qualification.** If the constraint gradients are linearly dependent at $x^*$, the Lagrange/KKT multipliers may fail to exist and the first-order system is misleading (Simon & Blume §19.5).
 3. **Non-convexity makes the solver's answer a *local* one.** Adding a cardinality cap ("hold at most 10 names") or fixed costs destroys convexity; gradient methods then report a stationary point that depends on where they started (page 06).
 4. **Ill-conditioning kills first-order methods and amplifies second-order ones.** Gradient descent needs $\sim\kappa\log(1/\epsilon)$ iterations; Newton's step solves a system with $\kappa(\nabla^2 f)$ and loses digits to round-off (pages 05, 06).
 5. **Finite differences have a round-off floor.** The centred derivative of $x^3$ at $2$ reaches $\sim2\times10^{-10}$ accuracy at $h\approx10^{-5}$ then *degrades* back to $\sim10^{-6}$ at $h=10^{-10}$ — you cannot out-shrink floating point (page 02).

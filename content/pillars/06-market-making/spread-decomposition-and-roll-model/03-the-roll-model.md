@@ -29,40 +29,56 @@ The trick, again: trades bounce between bid and ask, so consecutive price change
 
 The efficient price follows a random walk with **no drift** (microstructure horizon; drift is negligible):
 
-$$m_t = m_{t-1} + u_t, \qquad u_t \sim \text{i.i.d.}(0,\sigma_u^2).$$
+$$
+m_t = m_{t-1} + u_t, \qquad u_t \sim \text{i.i.d.}(0,\sigma_u^2).
+$$
 
 Trade direction $q_t\in\{-1,+1\}$ is i.i.d. with $\mathbb{P}(q_t=+1)=\mathbb{P}(q_t=-1)=\tfrac12$, independent of $u_t$. The dealer charges a constant half-spread $c$ per trade; the trade price is
 
-$$p_t = m_t + q_t\,c.$$
+$$
+p_t = m_t + q_t\,c.
+$$
 
 So a buy prints at $m_t+c$ (the ask), a sell at $m_t-c$ (the bid), and the **quoted/effective spread is $2c$**. The observed price change is
 
-$$\Delta p_t = u_t + c\,(q_t-q_{t-1}).$$
+$$
+\Delta p_t = u_t + c\,(q_t-q_{t-1}).
+$$
 
 #### 2.2 The moments and the estimator
 
 Take variances and the first autocovariance (Hasbrouck eqs 3.4–3.5):
 
-$$\gamma_0 \equiv \mathrm{Var}(\Delta p_t) = 2c^2+\sigma_u^2,$$
-$$\gamma_1 \equiv \mathrm{Cov}(\Delta p_{t-1},\Delta p_t) = -c^2,$$
-$$\gamma_k = 0 \quad \forall\, k\ge 2.$$
+$$
+\gamma_0 \equiv \mathrm{Var}(\Delta p_t) = 2c^2+\sigma_u^2,
+$$
+$$
+\gamma_1 \equiv \mathrm{Cov}(\Delta p_{t-1},\Delta p_t) = -c^2,
+$$
+$$
+\gamma_k = 0 \quad \forall\, k\ge 2.
+$$
 
 All higher autocovariances vanish because $q_t$ is i.i.d. and independent of $u_t$. Inverting:
 
-$$\boxed{\;c = \sqrt{-\gamma_1}\;, \qquad S = 2\sqrt{-\gamma_1}\;, \qquad \sigma_u^2 = \gamma_0 + 2\gamma_1.}$$
+$$
+\boxed{\;c = \sqrt{-\gamma_1}\;, \qquad S = 2\sqrt{-\gamma_1}\;, \qquad \sigma_u^2 = \gamma_0 + 2\gamma_1.}
+$$
 
 **Interpretation.** The efficient-price innovation variance is $\gamma_0+2\gamma_1$ — because the two-covariance correction removes the bounce variance $2c^2$ from the total return variance, leaving only the true (random-walk) component. This is precisely the univariate random-walk decomposition: Roll splits observed return variance into a permanent part $\sigma_u^2$ and a transitory (bounce) part $2c^2$.
 
 #### 2.3 Empirical calibration anchor (Hasbrouck Ch 3)
 
-For Price Communications Oct 2003, the sample autocovariance was $\hat\gamma_1\approx-0.00029$, giving $c=\$0.017$, spread $=\$0.034$ — close to the time-weighted NYSE average spread of $\$0.032$. A perfect worked example of the formula on real data.
+For Price Communications Oct 2003, the sample autocovariance was $\hat\gamma_1\approx-0.00029$, giving $c= $ \$0.017, spread = \$0.034 — close to the time-weighted NYSE average spread of \$0.032. A perfect worked example of the formula on real data.
 
 #### 2.4 Connection to MA(1) (Hasbrouck Ch 4)
 
 Because only $\gamma_0$ and $\gamma_1$ are nonzero, the differenced series is an **MA(1)**: $\Delta p_t=\varepsilon_t+\theta\varepsilon_{t-1}$ with
 
-$$\gamma_0=(1+\theta^2)\sigma_\varepsilon^2,\qquad \gamma_1=\theta\,\sigma_\varepsilon^2,\qquad
-\theta=\frac{\gamma_0-\sqrt{\gamma_0^2-4\gamma_1^2}}{2\gamma_1}\ \text{(invertible, }|\theta|<1).$$
+$$
+\gamma_0=(1+\theta^2)\sigma_\varepsilon^2,\qquad \gamma_1=\theta\,\sigma_\varepsilon^2,\qquad
+\theta=\frac{\gamma_0-\sqrt{\gamma_0^2-4\gamma_1^2}}{2\gamma_1}\ \text{(invertible, }|\theta|<1).
+$$
 
 The Wold theorem guarantees the MA(1) representation exists, and the Roll model is the structural story underneath that single moving-average parameter. This is the formal bridge to the time-series machinery of [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]].
 

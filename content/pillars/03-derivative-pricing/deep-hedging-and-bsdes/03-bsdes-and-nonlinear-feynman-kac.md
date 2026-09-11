@@ -20,7 +20,9 @@ A forward SDE says: *given where I start, where do I end up?* A **backward** SDE
 
 The classic Feynman–Kac theorem ([[pillars/03-derivative-pricing/black-scholes-merton/02-the-pde-and-derivation|BSM · 02]]) already links a *linear* PDE to an expectation: $u(t,x)=\mathbb E[g(X_T)\mid X_t=x]$. **Pardoux–Peng (1990) removed the linearity.** Replace the expectation by a *backward SDE* with a driver $f$, and the same link survives in a nonlinear form:
 
-$$\partial_tu+Lu+f\big(t,u,\sigma^{\!\top}\nabla u\big)=0\ \Longleftrightarrow\ Y_t=u(t,X_t),\quad Z_t=\sigma^{\!\top}\nabla u(t,X_t).$$
+$$
+\partial_tu+Lu+f\big(t,u,\sigma^{\!\top}\nabla u\big)=0\ \Longleftrightarrow\ Y_t=u(t,X_t),\quad Z_t=\sigma^{\!\top}\nabla u(t,X_t).
+$$
 
 The one-sentence essence:
 
@@ -43,13 +45,17 @@ The practical objective: write down a BSDE, state the conditions for a solution,
 
 Fix a filtered probability space $(\Omega,\mathcal F,(\mathcal F_t)_{t\ge0},\mathbb P)$ carrying a $d$-dimensional Brownian motion $W$, and a **terminal condition** $\xi\in L^2(\mathcal F_T)$. A BSDE is
 
-$$\boxed{\ Y_t=\xi+\int_t^{T}f\big(s,Y_s,Z_s\big)\,ds-\int_t^{T}Z_s\,dW_s,\qquad 0\le t\le T\ }$$
+$$
+\boxed{\ Y_t=\xi+\int_t^{T}f\big(s,Y_s,Z_s\big)\,ds-\int_t^{T}Z_s\,dW_s,\qquad 0\le t\le T\ }
+$$
 
 or, in differential form, $dY_t=-f(t,Y_t,Z_t)\,dt+Z_t\,dW_t$ with $Y_T=\xi$. Two objects are sought: a *value* $Y$ (continuous, adapted) and a *control* $Z$ ($\mathbb R^{1\times d}$-valued, adapted). The minus sign in front of the $Z$-integral is a convention; it makes $Z$ the density in the martingale representation of the "hedging error" and is standard in the financial literature.
 
 **Existence and uniqueness (Pardoux–Peng 1990).** If
 
-$$\xi\in L^2(\mathcal F_T),\qquad f\ \text{is Lipschitz in }(y,z)\ \text{uniformly in }t,\qquad \int_0^T\!\|f(t,0,0)\|^2dt<\infty ,$$
+$$
+\xi\in L^2(\mathcal F_T),\qquad f\ \text{is Lipschitz in }(y,z)\ \text{uniformly in }t,\qquad \int_0^T\!\|f(t,0,0)\|^2dt<\infty ,
+$$
 
 then there is a unique solution $(Y,Z)$ with $Y$ continuous and both in the appropriate $L^2$ spaces. The proof is a fixed-point argument: the *linear* BSDE with driver $f^0=<f> dt$ has the explicit solution $Y_t=\mathbb E[\xi+\int_t^T f^0 ds\mid\mathcal F_t]$ (a Feynman–Kac identity), and the Picard iteration contracts onto that when $f$ is Lipschitz. **The linear case is the one the hub code solves**: with $f\equiv0$, $Y_t=\mathbb E[\xi\mid\mathcal F_t]$ (the price) and $Z_t$ is the martingale-representation density (the hedge). Set $\xi=(S_T-K)^+$ and you have Black–Scholes written as a BSDE.
 
@@ -57,11 +63,15 @@ then there is a unique solution $(Y,Z)$ with $Y$ continuous and both in the appr
 
 Let the forward process be $dX_t=\mu(t,X_t)dt+\sigma(t,X_t)dW_t$ with generator $Lu=\mu\cdot\nabla u+\tfrac12\mathrm{tr}(\sigma\sigma^{\!\top}\nabla^2u)$. Suppose there is a smooth solution $u$ of the **semilinear** equation
 
-$$\boxed{\ \partial_tu+Lu+f\big(t,u,\sigma^{\!\top}\nabla u\big)=0,\qquad u(T,x)=g(x)\ }$$
+$$
+\boxed{\ \partial_tu+Lu+f\big(t,u,\sigma^{\!\top}\nabla u\big)=0,\qquad u(T,x)=g(x)\ }
+$$
 
 Then the BSDE with terminal $\xi=g(X_T)$ and driver $f$ has the *Markovian* solution
 
-$$Y_t=u(t,X_t),\qquad Z_t=\sigma^{\!\top}\nabla u(t,X_t).$$
+$$
+Y_t=u(t,X_t),\qquad Z_t=\sigma^{\!\top}\nabla u(t,X_t).
+$$
 
 This is proved with Itô's lemma on $Y_t=u(t,X_t)$: $dY_t=(\partial_tu+Lu)dt+\nabla u^{\!\top}\sigma\,dW_t=-f\,dt+Z\,dW_t$. Reading it *backwards* is the useful direction in practice: if you can solve the BSDE, you have solved the PDE — and vice versa, which is why Deep BSDE (PDE ⇒ BSDE) and Deep Galerkin (PDE ⇒ residual) are two attacks on the same object.
 
@@ -74,20 +84,28 @@ Two consequences that matter constantly:
 
 Take the driver to be **quadratic in $z$**:
 
-$$f(t,y,z)=-\tfrac{\gamma}{2}|z|^2\qquad(\gamma>0).$$
+$$
+f(t,y,z)=-\tfrac{\gamma}{2}|z|^2\qquad(\gamma>0).
+$$
 
 This is *not* Lipschitz, so Pardoux–Peng does not apply; but the transform
 
-$$U_t:=e^{-\gamma Y_t}$$
+$$
+U_t:=e^{-\gamma Y_t}
+$$
 
 is a *martingale*. Indeed with $dY=\tfrac{\gamma}{2}Z^2dt+Z\,dW$ Itô gives
 
-$$dU_t=-\gamma U_t\,dY_t+\tfrac{\gamma^2}{2}U_t\,d\langle Y\rangle_t
-=-\gamma U_t\Big(\tfrac{\gamma}{2}Z^2dt+Z\,dW_t\Big)+\tfrac{\gamma^2}{2}U_tZ^2dt=-\gamma U_tZ_t\,dW_t ,$$
+$$
+dU_t=-\gamma U_t\,dY_t+\tfrac{\gamma^2}{2}U_t\,d\langle Y\rangle_t
+=-\gamma U_t\Big(\tfrac{\gamma}{2}Z^2dt+Z\,dW_t\Big)+\tfrac{\gamma^2}{2}U_tZ^2dt=-\gamma U_tZ_t\,dW_t ,
+$$
 
 so $U$ is a local martingale, and under exponential integrability a true one. Hence $U_t=\mathbb E[U_T\mid\mathcal F_t]=\mathbb E[e^{-\gamma\xi}\mid\mathcal F_t]$ and
 
-$$\boxed{\ Y_t=-\frac1\gamma\ln\mathbb E\big[e^{-\gamma\xi}\ \big|\ \mathcal F_t\big]\ }$$
+$$
+\boxed{\ Y_t=-\frac1\gamma\ln\mathbb E\big[e^{-\gamma\xi}\ \big|\ \mathcal F_t\big]\ }
+$$
 
 **The quadratic BSDE is the exponential transform of a conditional expectation.** This is *why* entropic risk is the tractable case: the nonlinearity is entirely absorbed by the exponential, and the remaining objects are ordinary conditional expectations. Two immediate corollaries:
 
@@ -98,12 +116,16 @@ $$\boxed{\ Y_t=-\frac1\gamma\ln\mathbb E\big[e^{-\gamma\xi}\ \big|\ \mathcal F_t
 
 Restrict to arithmetic Brownian motion, $dX_t=\sigma\,dW_t$ (so $L=\tfrac{\sigma^2}{2}\partial_x^2$), and take the terminal condition $\xi=X_T^2$ (a *quadratic*, hence unbounded, payoff — deliberately: it shows the method is not confined to bounded claims). With $f(z)=-\tfrac12 z^2$ (i.e. $\gamma=1$), the nonlinear Feynman–Kac equation is
 
-$$\partial_tu+\tfrac{\sigma^2}{2}u_{xx}-\tfrac{\sigma^2}{2}(u_x)^2=0,\qquad u(T,x)=x^2 .$$
+$$
+\partial_tu+\tfrac{\sigma^2}{2}u_{xx}-\tfrac{\sigma^2}{2}(u_x)^2=0,\qquad u(T,x)=x^2 .
+$$
 
 Guess $u(t,x)=a(\tau)+b(\tau)x^2$ with $\tau=T-t$; substituting gives $b'=-2\sigma^2b^2$, $a'=\sigma^2b$, $b(0)=1,\ a(0)=0$. Separating: $b=1/(1+2\sigma^2\tau)$ and $a=\tfrac12\ln(1+2\sigma^2\tau)$. Hence
 
-$$\boxed{\ Y_t=\tfrac12\ln\!\big(1+2\sigma^2\tau\big)+\frac{X_t^2}{1+2\sigma^2\tau},\qquad
-Z_t=\sigma\,\partial_xu=\frac{2\sigma X_t}{1+2\sigma^2\tau},\qquad \tau=T-t\ }$$
+$$
+\boxed{\ Y_t=\tfrac12\ln\!\big(1+2\sigma^2\tau\big)+\frac{X_t^2}{1+2\sigma^2\tau},\qquad
+Z_t=\sigma\,\partial_xu=\frac{2\sigma X_t}{1+2\sigma^2\tau},\qquad \tau=T-t\ }
+$$
 
 Two sanity limits: at $\tau=0$, $Y_T=X_T^2=\xi$ ✓; as $\sigma\to0$, $Y_t\to X_t^2$ ✓ (no randomness, no risk). Everything in §3 checks against these.
 
@@ -111,7 +133,9 @@ Two sanity limits: at $\tau=0$, $Y_T=X_T^2=\xi$ ✓; as $\sigma\to0$, $Y_t\to X_
 
 A driver $g$ (state-independent, $g(t,0,0)=0$) defines the **$g$-expectation** $\mathcal E_g[\xi\mid\mathcal F_t]:=Y_t$ of the BSDE with driver $g$ and terminal $\xi$. Properties follow from the **comparison theorem**:
 
-$$f_1\le f_2\ \text{pointwise and }\ \xi_1\le\xi_2\ \Longrightarrow\ Y^1_t\le Y^2_t\ \text{a.s. for all }t .$$
+$$
+f_1\le f_2\ \text{pointwise and }\ \xi_1\le\xi_2\ \Longrightarrow\ Y^1_t\le Y^2_t\ \text{a.s. for all }t .
+$$
 
 - $g\equiv0$: $\mathcal E_0[\xi\mid\mathcal F_t]=\mathbb E[\xi\mid\mathcal F_t]$ — the ordinary expectation.
 - $g$ convex in $z$: $\mathcal E_g$ is **sublinear** (monotone, translation-invariant, convex) and its dual is a *set* of measures — the BSDE face of the robust representation of §02.

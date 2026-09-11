@@ -19,7 +19,7 @@ Once you accept that the parent order must be sliced (page 01), the next questio
 
 - **TWAP (Time-Weighted Average Price)** — send the *same child size every bucket*, on the clock. No volume data, no forecast, no model. The natural default when you know nothing.
 - **VWAP (Volume-Weighted Average Price)** — send a child *proportional to the expected volume of each bucket*. This is strictly smarter than TWAP when you have a volume forecast, because it aims to *match the market's own pace* and therefore trade where the day's liquidity lives.
-- **POV (Percentage-of-Volume / participation rate)** — send a child equal to a fixed *fraction $\\rho$* of the *live* volume arriving each moment. POV never over-participates; if the market stops trading, POV stops trading.
+- **POV (Percentage-of-Volume / participation rate)** — send a child equal to a fixed *fraction $\rho$* of the *live* volume arriving each moment. POV never over-participates; if the market stops trading, POV stops trading.
 
 The practical objective of this page: build all three schedules from one volume profile, then **simulate them against a realized price path and measure which one actually tracks the VWAP benchmark** — the acceptance test every execution report runs.
 
@@ -30,22 +30,34 @@ The practical objective of this page: build all three schedules from one volume 
 ### 2. Mathematical Ground Truth & Derivations
 
 **The market VWAP (Foucault eq 2.7).** Over $K$ trades the day's benchmark is the volume-weighted mean,
-$$\\text{VWAP} = \\sum_{k=1}^K w_k\\,p_k ,\\qquad w_k=\\frac{v_k}{\\sum v_k} .$$
-Over $B$ buckets with realized volume shares $\\phi_t$, this is $\\text{VWAP}=\\sum_t \\phi_t\\,p_t$. **Any schedule whose child weights $w_t^{\\text{exec}}$ equal the realized shares $\\phi_t$ executes *exactly* at the VWAP** — that is the definition of a "perfect VWAP engine."
+$$
+\text{VWAP} = \sum_{k=1}^K w_k\,p_k ,\qquad w_k=\frac{v_k}{\sum v_k} .
+$$
+Over $B$ buckets with realized volume shares $\phi_t$, this is $\text{VWAP}=\sum_t \phi_t\,p_t$. **Any schedule whose child weights $w_t^{\text{exec}}$ equal the realized shares $\phi_t$ executes *exactly* at the VWAP** — that is the definition of a "perfect VWAP engine."
 
 **TWAP schedule.** Equal child sizes,
-$$q_t = \\frac{V}{B} + \\varepsilon_t,$$
-where $\\varepsilon_t$ is bounded anti-gaming noise. Its weights are flat, $w_t^{\\text{exec}}=1/B$, so it executes at the *time-weighted* average price, $\\bar p_{\\text{TWAP}}=\\frac1B\\sum_t p_t$, which deviates from VWAP by the *covariance between price and volume*,
-$$\\text{VWAP} - \\bar p_{\\text{TWAP}} = \\underbrace{\\text{Cov}_{\\phi}\\left(p,\\, \\phi\\right)}_{\\text{covariance of price with volume share}},$$
+$$
+q_t = \frac{V}{B} + \varepsilon_t,
+$$
+where $\varepsilon_t$ is bounded anti-gaming noise. Its weights are flat, $w_t^{\text{exec}}=1/B$, so it executes at the *time-weighted* average price, $\bar p_{\text{TWAP}}=\frac1B\sum_t p_t$, which deviates from VWAP by the *covariance between price and volume*,
+$$
+\text{VWAP} - \bar p_{\text{TWAP}} = \underbrace{\text{Cov}_{\phi}\left(p,\, \phi\right)}_{\text{covariance of price with volume share}},
+$$
 
-**VWAP schedule.** Proportional to the *forecast* profile $\\phi_t$:
-$$q_t = V\\,\\phi_t + \\varepsilon_t .$$
-If the forecast equals realized volume, the engine's average price *is* the VWAP to within $\\varepsilon$. Its tracking error — the RMS deviation of its allocation from the realized profile — is the quantity every execution report prints:
-$$\\text{TE} = \\sqrt{\\textstyle\\sum_{t=1}^B \\left(w_t^{\\text{exec}} - \\phi_t\\right)^2}.$$
+**VWAP schedule.** Proportional to the *forecast* profile $\phi_t$:
+$$
+q_t = V\,\phi_t + \varepsilon_t .
+$$
+If the forecast equals realized volume, the engine's average price *is* the VWAP to within $\varepsilon$. Its tracking error — the RMS deviation of its allocation from the realized profile — is the quantity every execution report prints:
+$$
+\text{TE} = \sqrt{\textstyle\sum_{t=1}^B \left(w_t^{\text{exec}} - \phi_t\right)^2}.
+$$
 
 **POV schedule.** Track live volume, don't forecast it:
-$$q_t = \\rho \\, v_t^{\\text{live}},\\qquad v_t^{\\text{live}} = \\text{arriving market volume}.$$
-POV has **by construction** $w_t^{\\text{exec}} = \\phi_t^{\\text{realized}}$ (you participate in exactly a constant slice of every unit traded), so its tracking error w.r.t. *realized* volume is $0$ by definition — its downside is that it is fully exposed to *whatever* volume arrives (see page 05).
+$$
+q_t = \rho \, v_t^{\text{live}},\qquad v_t^{\text{live}} = \text{arriving market volume}.
+$$
+POV has **by construction** $w_t^{\text{exec}} = \phi_t^{\text{realized}}$ (you participate in exactly a constant slice of every unit traded), so its tracking error w.r.t. *realized* volume is $0$ by definition — its downside is that it is fully exposed to *whatever* volume arrives (see page 05).
 
 ---
 
@@ -88,7 +100,7 @@ child sizes  VWAP: [5263, 6842, 7895, 8421, 7895, 7368, 6316, 5789, 6316, 7368, 
 child sizes  TWAP: [7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3, 7692.3]
 ```
 
-**Read the numbers.** With volume = forecast, the VWAP engine hits the benchmark to four decimals ($+0.00$ bps) and its tracking error is $0.0000$ by construction. TWAP, spreading equally across a U-shaped day, over-trades the thin midday and under-trades the heavy open/close — a tracking error of $0.0607$ and a $\\approx\\!6$ bps gap vs the VWAP benchmark. The VWAP schedule's children (5,263 … 11,579) trace the smile; TWAP's are flat. **The VWAP engine is not smarter — it is *matched to the day's volume*; TWAP is deliberately volume-blind.**
+**Read the numbers.** With volume = forecast, the VWAP engine hits the benchmark to four decimals ($+0.00$ bps) and its tracking error is $0.0000$ by construction. TWAP, spreading equally across a U-shaped day, over-trades the thin midday and under-trades the heavy open/close — a tracking error of $0.0607$ and a $\approx\!6$ bps gap vs the VWAP benchmark. The VWAP schedule's children (5,263 … 11,579) trace the smile; TWAP's are flat. **The VWAP engine is not smarter — it is *matched to the day's volume*; TWAP is deliberately volume-blind.**
 
 ---
 

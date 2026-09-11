@@ -36,23 +36,31 @@ The payoff is structural: HRP touches only **correlation ranks** (for the tree) 
 
 **Step 1 — the correlation distance.** With returns covariance $\Sigma$, Pearson correlation $\rho_{ij}=\sigma_{ij}/\sqrt{\sigma_{ii}\sigma_{jj}}$, define
 
-$$d_{ij}=\sqrt{\tfrac12\bigl(1-\rho_{ij}\bigr)} .$$
+$$
+d_{ij}=\sqrt{\tfrac12\bigl(1-\rho_{ij}\bigr)} .
+$$
 
 It is a genuine metric: $d_{ii}=0$, $d_{ij}=d_{ji}\ge0$, and the triangle inequality holds. The clean reason is an exact Euclidean embedding. Let $u_i = x_i/\|x_i\|$ be each asset's demeaned return column scaled to unit length. Then
 
-$$\|u_i-u_j\|^2 = 2-2\,\rho_{ij} \quad\Longrightarrow\quad d_{ij}=\frac{\|u_i-u_j\|}{2},$$
+$$
+\|u_i-u_j\|^2 = 2-2\,\rho_{ij} \quad\Longrightarrow\quad d_{ij}=\frac{\|u_i-u_j\|}{2},
+$$
 
 so the "correlation distance" is literally the distance between the assets' unit direction vectors in $\mathbb{R}^T$, rescaled. Whatever single-linkage/complete-linkage do geometrically in that space, they do correctly here.
 
 **Step 2 — the tree.** Agglomerative clustering merges the closest pair $i,j$ into a new cluster $u$, then updates the distances to every other cluster $k$ by the **Lance–Williams** recurrence
 
-$$d(u,k)=\alpha_i\,d(i,k)+\alpha_j\,d(j,k)+\beta\,d(i,j)+\gamma\,|d(i,k)-d(j,k)|,$$
+$$
+d(u,k)=\alpha_i\,d(i,k)+\alpha_j\,d(j,k)+\beta\,d(i,j)+\gamma\,|d(i,k)-d(j,k)|,
+$$
 
 whose coefficients pick the linkage: $(\tfrac12,\tfrac12,0,-\tfrac12)$ gives **single** ($=\min$), $(\tfrac12,\tfrac12,0,+\tfrac12)$ gives **complete** ($=\max$), and $(\tfrac{n_i}{n_i+n_j},\tfrac{n_j}{n_i+n_j},0,0)$ gives **average** (UPGMA). Repeat $N-1$ times; the recorded merge heights are the dendrogram.
 
 **Step 3 — recursive bisection.** Read the tree's leaves in traversal order (the *quasi-diagonalization* $[3,4,2,0,1,7,5,6]$ of snippet 04 — similar assets now sit next to each other). For a cluster with inverse-variance weights $\tilde w_{\mathcal C}\propto\operatorname{diag}(\Sigma_{\mathcal C})^{-1}$, its **variance** is $V_{\mathcal C}=\tilde w_{\mathcal C}^\top\Sigma_{\mathcal C}\tilde w_{\mathcal C}$. Splitting a cluster into halves $\mathcal C_0,\mathcal C_1$, the allocation to the first half is
 
-$$\alpha_0 = 1-\frac{V_0}{V_0+V_1}=\frac{V_1}{V_0+V_1},$$
+$$
+\alpha_0 = 1-\frac{V_0}{V_0+V_1}=\frac{V_1}{V_0+V_1},
+$$
 
 i.e. weight is *inversely proportional to variance*. The final asset weight is the product of the $\alpha$'s on its root-to-leaf path. **Note what is never computed:** no inverse of the full $\Sigma$, no optimizer, no expected returns.
 

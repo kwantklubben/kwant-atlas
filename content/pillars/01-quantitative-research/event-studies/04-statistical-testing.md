@@ -19,7 +19,9 @@ An event study is not finished when it computes a CAR — it must decide whether
 
 The test statistic is the CAR divided by an estimate of its standard deviation (Kothari–Warner eq. 5):
 
-$$J = \frac{CAR(t_1,t_2)}{\sqrt{\sigma^2(t_1,t_2)}}, \qquad \sigma^2(t_1,t_2) = L\,\sigma^2(AR_t),$$
+$$
+J = \frac{CAR(t_1,t_2)}{\sqrt{\sigma^2(t_1,t_2)}}, \qquad \sigma^2(t_1,t_2) = L\,\sigma^2(AR_t),
+$$
 
 where $L=t_2-t_1+1$ and $\sigma^2(AR_t)$ is the variance of the one-period mean abnormal return (estimated from the estimation-window time series). Under the null of zero abnormal performance, $J$ is approximately unit normal. **Two design facts matter more than the formula** (Kothari–Warner §3.6):
 
@@ -32,19 +34,25 @@ where $L=t_2-t_1+1$ and $\sigma^2(AR_t)$ is the variance of the one-period mean 
 
 **The test statistic** (Kothari–Warner eq. 5–6). For the CAR over window $[t_1,t_2]$ with $L$ periods:
 
-$$J = \frac{CAR(t_1,t_2)}{\sqrt{L\,\sigma^2(AR_t)}} \;\sim\; \mathcal{N}(0,1)\ \text{under }H_0.$$
+$$
+J = \frac{CAR(t_1,t_2)}{\sqrt{L\,\sigma^2(AR_t)}} \;\sim\; \mathcal{N}(0,1)\ \text{under }H_0.
+$$
 
 $\sigma^2(AR_t)$ is estimated from the time series of portfolio (mean) abnormal returns in the estimation window, so it automatically captures cross-sectional dependence *across firms* (Brown–Warner 1985 eq. 5 uses the same "portfolio excess return" approach).
 
 **Cross-correlation inflation** (Kothari–Warner eq. 10). If the sample firms' abnormal returns are positively correlated (event-date clustering, common industry), the true SE is larger than the independence-based one by:
 
-$$\frac{\sigma_{AR}(\text{dep})}{\sigma_{AR}(\text{ind})} = \sqrt{1 + (N-1)\rho_{ij}},$$
+$$
+\frac{\sigma_{AR}(\text{dep})}{\sigma_{AR}(\text{ind})} = \sqrt{1 + (N-1)\rho_{ij}},
+$$
 
 where $\rho_{ij}$ is the average pairwise correlation. At $\rho{=}0.02$ and $N{=}100$, this is $\sqrt{1+99\cdot0.02}\approx1.73$ — the t-stat is overstated by ~73%. This is why long-horizon tests that ignore cross-dependence "reject the null far more often than the size of the test" (Kothari–Warner §4.4.2).
 
 **Power.** Power = $P(\text{reject }H_0 \mid H_a \text{ true})$. For a cross-sectional mean abnormal return $\mu$ with SE $\sigma/\sqrt{N}$, the power of a two-sided 5% test is approximately
 
-$$P\Big(|Z| > 1.96 - \tfrac{\mu}{\sigma/\sqrt{N}}\Big).$$
+$$
+P\Big(|Z| > 1.96 - \tfrac{\mu}{\sigma/\sqrt{N}}\Big).
+$$
 
 Power rises with $N$ (sample size) and falls with $\sigma$ (firm volatility). Crucially, power is **high only if abnormal performance is concentrated in a precisely-known window** (Table 2, Kothari–Warner §3.6.1).
 

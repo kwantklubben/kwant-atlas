@@ -30,23 +30,35 @@ Two problems remain after the triple barrier and meta-labeling are in place, and
 #### 2.1 Fractional differentiation and the minimum order $d^*$
 
 The backward-shift operator $B$ satisfies $(1-B)^d$ with the **binomial series**
-$$(1-B)^d=\sum_{k=0}^{\infty}(-1)^k\binom{d}{k}B^k=1-dB+\frac{d(d-1)}{2!}B^2-\frac{d(d-1)(d-2)}{3!}B^3+\dots,$$
+$$
+(1-B)^d=\sum_{k=0}^{\infty}(-1)^k\binom{d}{k}B^k=1-dB+\frac{d(d-1)}{2!}B^2-\frac{d(d-1)(d-2)}{3!}B^3+\dots,
+$$
 so the differentiated series is a dot product $X^{(d)}_t=\sum_{k\ge0}w_k X_{t-k}$ with weights generated **iteratively** (LdP eq. 5.3–5.5):
-$$w_0=1,\qquad w_k=-w_{k-1}\,\frac{d-k+1}{k}.$$
+$$
+w_0=1,\qquad w_k=-w_{k-1}\,\frac{d-k+1}{k}.
+$$
 For $d=1$, $w=\{1,-1,0,0,\dots\}$ — a pure first difference with no memory. For $d\to0^+$ the $w_k$ decay very slowly and memory persists. **Expanding-window** implementation computes each $X^{(d)}_t$ with all $t$ available weights, which injects a negative drift and varies the "memory depth" across the sample. The **fixed-width window (FFD)** drops weights once $|w_k|<\tau$:
-$$\ell^*=\min\{\ell:|w_\ell|<\tau\},\qquad X^{\text{FFD}}_t=\sum_{k=0}^{\ell^*-1}w_k X_{t-k}\quad(t\ge\ell^*),$$
+$$
+\ell^*=\min\{\ell:|w_\ell|<\tau\},\qquad X^{\text{FFD}}_t=\sum_{k=0}^{\ell^*-1}w_k X_{t-k}\quad(t\ge\ell^*),
+$$
 so every estimate uses the *same* $l^*$ weights and the drift vanishes. The **minimum order** is then
-$$d^*=\min\{d\ge0:\ \text{ADF/DF}\big(X^{\text{FFD}(d)}\big)\ \text{rejects the unit root}\}.$$
+$$
+d^*=\min\{d\ge0:\ \text{ADF/DF}\big(X^{\text{FFD}(d)}\big)\ \text{rejects the unit root}\}.
+$$
 $d^*$ quantifies exactly how much memory must be sacrificed for stationarity; $\operatorname{corr}(X^{\text{FFD}(d)},X)$ falls as $d$ rises, and you want the largest correlation among the $d\ge d^*$.
 
 #### 2.2 Sample weights from uniqueness
 
 With concurrency $c_t$ and the indicator matrix $\{1_{t,i}\}$ ($1_{t,i}=1$ if label $i$ spans bar $t$), the **average uniqueness** is (LdP Ch 4)
-$$\bar u_i=\frac{1}{\sum_t 1_{t,i}}\sum_{t:1_{t,i}=1}\frac{1}{c_t},\qquad c_t=\sum_i 1_{t,i},$$
+$$
+\bar u_i=\frac{1}{\sum_t 1_{t,i}}\sum_{t:1_{t,i}=1}\frac{1}{c_t},\qquad c_t=\sum_i 1_{t,i},
+$$
 and the natural **sample weight** is $w_i\propto\bar u_i$ (optionally $\times$ a **time-decay** factor and $\times$ a **return-attribution** factor). The **sequential bootstrap**: draw observations one at a time, and at each step down-weight the observations that overlap those already drawn, so the resulting in-bag set approximates IID sampling. **Return attribution** splits each label's return across the bars it spans (by uniqueness), so that overlapping bars are counted exactly once.
 
 Sample weights enter the training objective as a weighted loss, e.g. weighted cross-entropy
-$$\mathcal L=-\sum_i w_i\big[y_i\ln\hat p_i+(1-y_i)\ln(1-\hat p_i)\big],$$
+$$
+\mathcal L=-\sum_i w_i\big[y_i\ln\hat p_i+(1-y_i)\ln(1-\hat p_i)\big],
+$$
 which is how the "non-IID draws" correction actually reaches the learner.
 
 #### 2.3 Structural breaks

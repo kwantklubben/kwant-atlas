@@ -29,17 +29,23 @@ The critical contrast is with the **buy-and-hold abnormal return (BHAR)** (Kotha
 
 **Cross-sectional mean abnormal return** (Kothari–Warner eq. 3):
 
-$$AR_t = \frac{1}{N}\sum_{i=1}^{N}AR_{it}, \qquad t \in \text{event window}.$$
+$$
+AR_t = \frac{1}{N}\sum_{i=1}^{N}AR_{it}, \qquad t \in \text{event window}.
+$$
 
 **Cumulative abnormal return over $[t_1,t_2]$** (Kothari–Warner eq. 4), horizon $L = t_2-t_1+1$:
 
-$$CAR(t_1,t_2) = \sum_{t=t_1}^{t_2} AR_t.$$
+$$
+CAR(t_1,t_2) = \sum_{t=t_1}^{t_2} AR_t.
+$$
 
 **Interpretation as a portfolio strategy.** Under each aggregation method, the performance measure equals the return to a rule that buys the sample at the start of the window and holds to the end — CAR for a periodically-rebalanced portfolio, BHAR for a buy-and-hold one. When applied to *post*-event windows, a systematically nonzero CAR/BHAR is inconsistent with market efficiency and implies a profitable (pre-cost) trading rule.
 
 **Buy-and-hold abnormal return** (Kothari–Warner eq. 7):
 
-$$BHAR_i(t,T) = \prod_{k=1}^{T}\big(1+R_{ik}\big) - \prod_{k=1}^{T}\big(1+R_{Bk}\big),$$
+$$
+BHAR_i(t,T) = \prod_{k=1}^{T}\big(1+R_{ik}\big) - \prod_{k=1}^{T}\big(1+R_{Bk}\big),
+$$
 
 where $R_B$ is the benchmark (matched-firm or characteristic-portfolio) return. BHAR "better resembles investors' actual investment experience" but is subject to compounding-induced right skewness and cross-correlation at long horizons (Kothari–Warner §4.3.1, §4.4.1).
 

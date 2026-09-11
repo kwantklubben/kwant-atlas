@@ -35,17 +35,23 @@ Start with the dumbest question: *why isn't a return forecast enough?* A supervi
 
 **The decision loop, formally.** At each time step $t$ the agent observes a state $S_t$, picks an action $A_t\sim\pi(\cdot\mid S_t)$, receives reward $R_{t+1}$, and lands in a new state $S_{t+1}$. The agent's goal is to maximize the expected **discounted return**
 
-$$G_t=\sum_{k=0}^{\infty}\gamma^{k}R_{t+k+1},\qquad \gamma\in[0,1).$$
+$$
+G_t=\sum_{k=0}^{\infty}\gamma^{k}R_{t+k+1},\qquad \gamma\in[0,1).
+$$
 
 The discount $\gamma$ is not a technicality — in trading it is the *time value of waiting*: a dollar of P&L realized later is worth less, and for an execution problem $\gamma$ encodes how much you fear the price wandering while your order is unfilled.
 
 **The value of acting — the action-value function.** The natural object is $Q^\pi(s,a)$, the expected return of taking action $a$ in state $s$ and then following policy $\pi$:
 
-$$Q^\pi(s,a)=\mathbb{E}_\pi\!\left[G_t\mid S_t=s,\,A_t=a\right].$$
+$$
+Q^\pi(s,a)=\mathbb{E}_\pi\!\left[G_t\mid S_t=s,\,A_t=a\right].
+$$
 
 A policy is *better* if its $Q$ is larger; the best possible policy obeys the **Bellman optimality equation**
 
-$$Q^*(s,a)=R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\,\max_{a'}Q^*(s',a'),$$
+$$
+Q^*(s,a)=R(s,a)+\gamma\sum_{s'}P(s'\mid s,a)\,\max_{a'}Q^*(s',a'),
+$$
 
 and the optimal action in any state is simply $a^*=\arg\max_a Q^*(s,a)$. **This one equation is the target every value-based method in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/03-value-based-rl|03 · Value-Based RL]] chases.** Policy-gradient methods in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/04-policy-gradient-and-actor-critic|04]] reach the same objective by climbing the gradient of expected return instead.
 

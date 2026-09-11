@@ -26,13 +26,19 @@ The intellectual core: **risk-managing momentum is not just cutting volatility �
 ### 2. Mathematical Ground Truth & Derivations
 
 **Barroso–Santa-Clara vol-managed momentum.** Forecast WML's monthly variance from the trailing 126 daily returns (scaled by 21 to monthly units),
-$$\hat\sigma^2_{t} = 21\,\frac{1}{126}\sum_{j=0}^{125} r^2_{\text{WML},\,d(t-1-j)},$$
+$$
+\hat\sigma^2_{t} = 21\,\frac{1}{126}\sum_{j=0}^{125} r^2_{\text{WML},\,d(t-1-j)},
+$$
 then scale
-$$\text{WML}^*_t = \frac{\sigma_{\text{tgt}}}{\hat\sigma_t}\,\text{WML}_t, \qquad \sigma_{\text{tgt}} = 12\%\ \text{annualized}.$$
+$$
+\text{WML}^*_t = \frac{\sigma_{\text{tgt}}}{\hat\sigma_t}\,\text{WML}_t, \qquad \sigma_{\text{tgt}} = 12\%\ \text{annualized}.
+$$
 Since WML is zero-investment and self-financing, scaling is unconstrained and the strategy stays self-financing (weights on the long and short legs vary in tandem). Because volatility is persistent ($\hat\sigma_t$ is high entering a crash), the scale suppresses exactly the bad months. The *mean* of WML is also higher per unit risk after scaling: risk-managed momentum earns +2.04 pp/year more with 10.58 pp/year less volatility.
 
 **Daniel–Moskowitz optimal dynamic scaling.** To maximize the *unconditional* Sharpe ratio, at each date scale so that the strategy's conditional volatility is proportional to its **conditional Sharpe ratio**. Writing conditional mean $\mu_t$ and vol $\sigma_t$, the optimal position weight is
-$$w_t \ \propto \ \frac{\mu_t}{\sigma_t^2},$$
+$$
+w_t \ \propto \ \frac{\mu_t}{\sigma_t^2},
+$$
 i.e. capital goes where the forecasted return-per-risk is high. In panic states $\mu_t$ collapses (the written-call option-like payoff of losers makes momentum's expected return *negative* in a rebound) and $\sigma_t$ spikes, so $w_t\to0$ — exactly when the static strategy bleeds. This exploits the *forecastability of the mean*, which pure constant-vol scaling ignores, and is why the dynamic version beats the constant-vol version in spanning tests.
 
 **Why the mean is forecastable.** In the panic state the short-loser leg is an out-of-the-money option-like position (loser beta $>3$), so its expected contribution flips sign and its convexity is large — measurable ex-ante from trailing market returns and VIX-type vol. Hence $\mu_t$ is not white noise; it is a function of the observable state.

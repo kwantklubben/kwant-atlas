@@ -30,32 +30,44 @@ Let $V\in\{V_L,V_H\}$, prior $\theta_{t-1}=\mathbb{P}(V=V_H)$, and $\pi$ = proba
 
 **Arrival law of a Buy order:**
 
-$$\mathbb{P}(B\mid V_H)=\pi+(1-\pi)\tfrac12=\tfrac{1+\pi}{2},\qquad
-\mathbb{P}(B\mid V_L)=(1-\pi)\tfrac12=\tfrac{1-\pi}{2}.$$
+$$
+\mathbb{P}(B\mid V_H)=\pi+(1-\pi)\tfrac12=\tfrac{1+\pi}{2},\qquad
+\mathbb{P}(B\mid V_L)=(1-\pi)\tfrac12=\tfrac{1-\pi}{2}.
+$$
 
 **Bayes update** (Hasbrouck eq. 5.1/5.5; Foucault eq. 3.16–3.17):
 
-$$\theta_{t}^{+}=\frac{\tfrac{1+\pi}{2}\,\theta_{t-1}}{\tfrac{1+\pi}{2}\theta_{t-1}+\tfrac{1-\pi}{2}(1-\theta_{t-1})},\qquad
-\theta_{t}^{-}=\frac{\tfrac{1-\pi}{2}\,\theta_{t-1}}{\tfrac{1-\pi}{2}\theta_{t-1}+\tfrac{1+\pi}{2}(1-\theta_{t-1})}.$$
+$$
+\theta_{t}^{+}=\frac{\tfrac{1+\pi}{2}\,\theta_{t-1}}{\tfrac{1+\pi}{2}\theta_{t-1}+\tfrac{1-\pi}{2}(1-\theta_{t-1})},\qquad
+\theta_{t}^{-}=\frac{\tfrac{1-\pi}{2}\,\theta_{t-1}}{\tfrac{1-\pi}{2}\theta_{t-1}+\tfrac{1+\pi}{2}(1-\theta_{t-1})}.
+$$
 
 **Zero-profit (competitive, regret-free) quotes** (Hasbrouck eq. 5.2/5.6; Foucault eq. 3.5/3.7):
 
-$$A_{t}=\mathbb{E}[V\mid B_t]=V_L+\theta_{t}^{+}(V_H-V_L),\qquad
-B_{t}=\mathbb{E}[V\mid S_t]=V_L+\theta_{t}^{-}(V_H-V_L).$$
+$$
+A_{t}=\mathbb{E}[V\mid B_t]=V_L+\theta_{t}^{+}(V_H-V_L),\qquad
+B_{t}=\mathbb{E}[V\mid S_t]=V_L+\theta_{t}^{-}(V_H-V_L).
+$$
 
 **Vanishing spread as learning converges.** With $\theta_0=\tfrac12$ and a value dispersion of $V_H-V_L=2$:
 
-$$S_t=A_t-B_t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\theta_{t-1}+\tfrac{1-\pi}{2}}(2)+\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi(1-\theta_{t-1})+\tfrac{1-\pi}{2}}(2),$$
+$$
+S_t=A_t-B_t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\theta_{t-1}+\tfrac{1-\pi}{2}}(2)+\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi(1-\theta_{t-1})+\tfrac{1-\pi}{2}}(2),
+$$
 
 which at $\theta_{t-1}=\tfrac12$ gives the celebrated **first-trade spread**
 
-$$\boxed{\;S_{\theta=\tfrac12}=\pi(V_H-V_L)\;}.$$
+$$
+\boxed{\;S_{\theta=\tfrac12}=\pi(V_H-V_L)\;}.
+$$
 
 The spread is widest at maximal uncertainty ($\theta=\tfrac12$), shrinks toward $0$ as $\theta\to1$ or $0$ (the maker learns the value), and is **zero for all $\theta$ when $\pi=0$** — adverse selection alone generates the entire spread. Hasbrouck's equivalent formula (with $\delta=\mathbb{P}(V=V_L)$) is $A-B=\dfrac{4(1-\delta)\delta\mu(V_H-V_L)}{1-(1-2\delta)^2\mu^2}$, identical at $\delta=\tfrac12$ to $\pi(V_H-V_L)$.
 
 **Net wealth-transfer identity** (Hasbrouck eq. 5.4): expected gains from uninformed exactly balance expected losses to informed,
 
-$$(A-\mathbb{E}[V\mid U,B])\Pr(U\mid B)=-(A-\mathbb{E}[V\mid I,B])\Pr(I\mid B).$$
+$$
+(A-\mathbb{E}[V\mid U,B])\Pr(U\mid B)=-(A-\mathbb{E}[V\mid I,B])\Pr(I\mid B).
+$$
 
 ---
 

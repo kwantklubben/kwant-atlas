@@ -32,19 +32,27 @@ The practical objective of this folder is then: **choose $g$ (recurrence, attent
 
 **The IID assumption, written down.** Standard supervised learning assumes $(x_t,y_t)$ are i.i.d. draws from a joint $p(x,y)$, so the optimal predictor is the conditional mean/expectation $\mathbb{E}[y\mid x]$ and the joint likelihood factorises:
 
-$$p(x_1,y_1,\dots,x_T,y_T)=\prod_{t=1}^{T}p(x_t,y_t).$$
+$$
+p(x_1,y_1,\dots,x_T,y_T)=\prod_{t=1}^{T}p(x_t,y_t).
+$$
 
 The factorisation is the assumption. For a time series it is false in two ways — through the *inputs* and the *targets*:
 
-$$p(x_1,\dots,x_T)=\prod_{t}p(x_t\mid x_{t-1},x_{t-2},\dots),\qquad p(y_t\mid x_{1:t})\neq p(y_t\mid x_t).$$
+$$
+p(x_1,\dots,x_T)=\prod_{t}p(x_t\mid x_{t-1},x_{t-2},\dots),\qquad p(y_t\mid x_{1:t})\neq p(y_t\mid x_t).
+$$
 
 **The Markov chain (the simplest sequence model).** The cleanest tractable assumption is order-1 Markov:
 
-$$p(x_t\mid x_{1:t-1})=p(x_t\mid x_{t-1}).$$
+$$
+p(x_t\mid x_{1:t-1})=p(x_t\mid x_{t-1}).
+$$
 
 The state is just the previous value; the whole past is summarised by one number. This is already a sequence model, and it is the discrete cousin of the RNN: an RNN generalises "state $=$ previous value" to "state $=$ learned vector $h_{t-1}$", with a *continuous* transition
 
-$$h_t=g_\theta(h_{t-1},x_t),\qquad \hat y_t=f_\phi(h_t),$$
+$$
+h_t=g_\theta(h_{t-1},x_t),\qquad \hat y_t=f_\phi(h_t),
+$$
 
 and parameters $\theta,\phi$ fitted by maximising $\sum_t \log p(y_t\mid h_t)$. The Kalman filter is the special case where $g$ is linear-Gaussian and the state has a closed-form optimal update (see [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Kalman Filtering]]).
 

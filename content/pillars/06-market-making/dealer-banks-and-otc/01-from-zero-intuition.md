@@ -41,21 +41,29 @@ Three steps, three "aha"s:
 
 Suppose an asset will be worth $V$ to the *current* holder at some horizon, but the holder has a **liquidity need** — a pure discount-rate/impatience cost $\delta$ per unit time of holding when they would rather not (Duffie–Gârleanu–Pedersen call low intrinsic type $lo$). If an investor must hold forever, the asset's value to them is the present value of a stream that is penalized by $\delta$:
 
-$$V^{lo}=\int_0^\infty e^{-rt}(1-\delta)\,dt=\frac{1-\delta}{r},\qquad V^{hn}=\int_0^\infty e^{-rt}\,dt=\frac{1}{r}.$$
+$$
+V^{lo}=\int_0^\infty e^{-rt}(1-\delta)\,dt=\frac{1-\delta}{r},\qquad V^{hn}=\int_0^\infty e^{-rt}\,dt=\frac{1}{r}.
+$$
 
 The **gain from trade** between a low-type owner (wants to sell) and a high-type non-owner (wants to buy) is therefore
 
-$$H-L=\frac1r-\frac{1-\delta}{r}=\frac{\delta}{r}.$$
+$$
+H-L=\frac1r-\frac{1-\delta}{r}=\frac{\delta}{r}.
+$$
 
-That gap — the **frictionless fundamental** surplus — is the *maximum* total spread the two sides could ever split; the equilibrium spread $z\delta/D$ is strictly smaller because search frictions discount it (see the hub's $D$). In a frictionless Walrasian world they would jump straight to $P^\*=1/r$ and split the surplus costlessly. **In a search world they cannot**: each side can only trade when a counterparty is *found*.
+That gap — the **frictionless fundamental** surplus — is the *maximum* total spread the two sides could ever split; the equilibrium spread $z\delta/D$ is strictly smaller because search frictions discount it (see the hub's $D$). In a frictionless Walrasian world they would jump straight to $P^*=1/r$ and split the surplus costlessly. **In a search world they cannot**: each side can only trade when a counterparty is *found*.
 
 **Search turns the split into a spread.** Let $\lambda$ be the intensity at which an investor meets *another investor*, and $\rho$ the intensity at which an investor meets a **dealer**. When two investors meet they Nash-bargain and split the surplus with the seller getting $(1-q)$ and buyer $q$:
 
-$$P=(V_{lo}-V_{ln})(1-q)+(V_{ho}-V_{hn})q.$$
+$$
+P=(V_{lo}-V_{ln})(1-q)+(V_{ho}-V_{hn})q.
+$$
 
 When an investor meets a **dealer**, the dealer has an outside option — unloading in the frictionless **interdealer market** at price $M$ — and bargaining power $z$, so:
 
-$$A=zH+(1-z)M,\qquad B=zL+(1-z)M,\qquad\Longrightarrow\qquad A-B=z(H-L).$$
+$$
+A=zH+(1-z)M,\qquad B=zL+(1-z)M,\qquad\Longrightarrow\qquad A-B=z(H-L).
+$$
 
 **This is the whole intuition in one line:** *the OTC bid-ask spread is a fraction $z$ of the fundamental surplus $\delta/r$, where $z$ is how much of the bargaining power the dealer holds.* A dealer with all the power ($z=1$) takes the entire surplus; perfect competition ($z\to0$) closes the spread to zero.
 

@@ -39,7 +39,9 @@ Three "aha"s:
 
 **The mid-price is a fair-coin walk.** AS model the mid-price as *arithmetic* Brownian motion with no drift,
 
-$$dS_u = \sigma\,dW_u, \qquad S_t = s .$$
+$$
+dS_u = \sigma\,dW_u, \qquad S_t = s .
+$$
 
 There is no drift because the dealer has *no view* on direction — the whole point is to be neutral. (AS deliberately choose arithmetic BM over geometric BM so that the exponential utility below stays bounded; see their footnote 1.)
 
@@ -47,7 +49,9 @@ There is no drift because the dealer has *no view* on direction — the whole po
 
 **The cure: quote around the reservation price.** AS show that the optimal dealer posts quotes around
 
-$$r(s,q,t) = s - q\,\gamma\,\sigma^2\,(T-t),$$
+$$
+r(s,q,t) = s - q\,\gamma\,\sigma^2\,(T-t),
+$$
 
 a position-dependent *personal* fair value. When you are long ($q>0$) the reservation price sits **below** the mid — you shade both quotes down to encourage sells and discourage buys, pulling inventory back toward zero. When short, you shade up. This is the entire intuition of **quote skewing**.
 

@@ -31,7 +31,9 @@ The three failure channels, in one line each:
 
 From the DGP closed form, the "fundamental" value is $1/r$ and the traded price is discounted by $(\delta/r)\cdot(\text{ratio})$ with ratio bounded by the meeting intensities. As $\lambda,\rho\to0$ the discount does **not** vanish — it is bounded below by the *no-trade* value:
 
-$$P\;\ge\;\frac{1-\delta}{r}\quad(\text{the low-type holding value is the lower bound}),\qquad \lim_{\lambda,\rho\to0}P=\frac1r-\frac{\delta}{r}\cdot\frac{(1-q)r+\lambda_d}{r+\lambda_d+\lambda_u}.$$
+$$
+P\;\ge\;\frac{1-\delta}{r}\quad(\text{the low-type holding value is the lower bound}),\qquad \lim_{\lambda,\rho\to0}P=\frac1r-\frac{\delta}{r}\cdot\frac{(1-q)r+\lambda_d}{r+\lambda_d+\lambda_u}.
+$$
 
 So a market where nobody can find anybody prices the asset at the limit above (e.g. $17.826$ at the standard parameters, not the low-type value $0$) — the search discount is large but bounded strictly above the no-trade floor $(1-\delta)/r$. The **spread** in that limit is the full surplus $\delta/r$. The failure is not a small widening; it is a step-change to an unreachable-trade regime.
 
@@ -43,7 +45,9 @@ From §4, impact $p=\gamma\sigma^2 q/E$. As the dealer's capital $E$ is exhauste
 
 Model the dealer network as a directed, weighted graph with exposures $W_{ij}$ (how much dealer $i$ is exposed to dealer $j$'s default). Dealer $i$ defaults when its cumulative losses exceed its capital buffer $C_i$:
 
-$$\sum_{j\in\mathcal D} \text{LGD}\cdot W_{ij}\cdot \Theta > C_i\;\;\Longrightarrow\;\;i\text{ defaults},\qquad \mathcal D=\text{set of already-defaulted dealers}.$$
+$$
+\sum_{j\in\mathcal D} \text{LGD}\cdot W_{ij}\cdot \Theta > C_i\;\;\Longrightarrow\;\;i\text{ defaults},\qquad \mathcal D=\text{set of already-defaulted dealers}.
+$$
 
 Iterating this threshold rule generates a **cascade**: defaulted dealers add to $\mathcal D$, imposing losses on their creditors, who may then default. Two structural parameters govern the size of the cascade:
 - **Density** (fraction of dealer pairs with an exposure): more links ⇒ each dealer has more failing counterparties ⇒ bigger cascade.

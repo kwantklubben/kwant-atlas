@@ -55,7 +55,7 @@ This folder is the topic-hub for **production trading systems** in Kwant-Atlas. 
 | Availability | $N$ replicas (independent) | $A_N=1-(1-A)^N$ | $N{=}2 \Rightarrow$ downtime $3799.44$ ms/yr |
 | Availability | Common-cause floor | $(1-A)\big(f+(1-f)(1-A)\big)$ | $f{=}50\% \Rightarrow 1.521$ h/yr (redundancy cannot fix this) |
 | Incident | Cost drag | $\text{drag}=\text{turnover}\times\text{cost (bps)}/10^4$ | $100\times 6\text{bps} = 6.00\%$/yr |
-| Deploy | Canary exposure | $\sum_k w_k h_k$ (weight $\times$ hours) | ramp $1/5/25\%$ then abort: loss $\$7{,}750$ vs $\$100{,}000$ |
+| Deploy | Canary exposure | $\sum_k w_k h_k$ (weight $\times$ hours) | ramp $1/5/25\%$ then abort: loss $ $\$7{,}750 vs \100{,}000 |
 
 > **Critical caveat.** These thresholds are *conventions*, not physics. The correct $G_{\max}$ depends on your capital, your liquidation horizon, and the venue's margin rules; the correct heartbeat $\tau$ trades detection latency against false failovers. The durable results are the **structural** ones: a limit must exist per layer (order, book, P&L, rate, wire), and redundancy without common-cause analysis is a story you tell yourself.
 

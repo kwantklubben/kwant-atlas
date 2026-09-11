@@ -31,7 +31,9 @@ The single organising idea: **speed of convergence is a number.** Two algorithms
 - **Bisection.** Halve a bracketing interval each step: $|e_n|\le(b-a)/2^{n+1}$ — **linear**, exactly one binary digit per iteration, but perfectly robust (only needs a sign change).
 - **Newton–Raphson.**
 
-  $$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)},\qquad |e_{n+1}|\le C\,|e_n|^2\ \text{near a simple root}\ \Rightarrow\ \textbf{quadratic}.$$
+$$
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)},\qquad |e_{n+1}|\le C\,|e_n|^2\ \text{near a simple root}\ \Rightarrow\ \textbf{quadratic}.
+$$
 
   Each iteration roughly **doubles the number of correct digits**. It needs $f'$ (or a finite-difference approximation) and a good start; at a multiple root or $f'\approx0$ it degrades to linear or diverges.
 - **Secant.** Uses a divided-difference slope instead of $f'$; order $\varphi=(1+\sqrt5)/2\approx1.618$ — between linear and quadratic, no derivative needed.
@@ -42,7 +44,9 @@ The single organising idea: **speed of convergence is a number.** Two algorithms
 
 - **Gradient descent.** $x_{k+1}=x_k-\eta\,g(x_k)$. For a quadratic with condition number $\kappa=L/\mu$ (largest/smallest eigenvalue) the error contracts at the rate
 
-  $$\frac{f(x_{k+1})-f^*}{f(x_k)-f^*}\le\Big(\frac{\kappa-1}{\kappa+1}\Big)^2,\qquad \text{stability requires }\eta\le 2/L.$$
+$$
+\frac{f(x_{k+1})-f^*}{f(x_k)-f^*}\le\Big(\frac{\kappa-1}{\kappa+1}\Big)^2,\qquad \text{stability requires }\eta\le 2/L.
+$$
 
   Convergence is **linear**, and **slow when $\kappa$ is large** — the classic zig-zag in an elongated valley.
 - **Newton's method.** $x_{k+1}=x_k-H(x_k)^{-1}g(x_k)$. The second-order Taylor model of a quadratic is *exact*, so Newton solves a quadratic in **one step**; near a minimum it is **quadratically convergent**. Cost: forming/inverting $H$ ($O(d^3)$) per step.

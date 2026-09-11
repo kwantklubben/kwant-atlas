@@ -30,7 +30,8 @@ The through-line: **a quality number is only as good as the question you matched
 
 **The Beneish M-score (1999), 8-variable form.** Each variable is an *index* (current ÷ prior) or a *ratio*, so it is scale-free and comparable across firms. With $t$ = current year and $t-1$ = prior year:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 DSRI &= \frac{AR_t/S_t}{AR_{t-1}/S_{t-1}} && \text{Days Sales in Receivables index — receivables outrunning sales}\\
 GMI &= \frac{GM_{t-1}}{GM_t} && \text{Gross Margin index — margin deteriorating}\\
 AQI &= \frac{1-(CA_t+PPE_t)/TA_t}{1-(CA_{t-1}+PPE_{t-1})/TA_{t-1}} && \text{Asset Quality index — costs capitalised instead of expensed}\\
@@ -39,9 +40,12 @@ DEPI &= \frac{Dep_{t-1}/(Dep_{t-1}+PPE_{t-1})}{Dep_t/(Dep_t+PPE_t)} && \text{Dep
 SGAI &= \frac{SGA_t/S_t}{SGA_{t-1}/S_{t-1}} && \text{SG\&A index — administrative efficiency slipping}\\
 LVGI &= \frac{(LTD_t+CL_t)/TA_t}{(LTD_{t-1}+CL_{t-1})/TA_{t-1}} && \text{Leverage index — covenant pressure}\\
 TATA &= \frac{NI_t - CFO_t}{TA_t} && \text{Total Accruals to Total Assets — the Sloan signal, front and centre}
-\end{aligned}$$
+\end{aligned}
+$$
 
-$$M = -4.84 + 0.920\,DSRI + 0.528\,GMI + 0.404\,AQI + 0.892\,SGI + 0.115\,DEPI - 0.172\,SGAI + 4.679\,TATA - 0.327\,LVGI.$$
+$$
+M = -4.84 + 0.920\,DSRI + 0.528\,GMI + 0.404\,AQI + 0.892\,SGI + 0.115\,DEPI - 0.172\,SGAI + 4.679\,TATA - 0.327\,LVGI.
+$$
 
 Scoring rule: $M > -1.78$ → **likely manipulator**; $M \le -1.78$ → not flagged. The two **largest coefficients** are $TATA$ ($+4.679$) and $DSRI$ ($+0.920$) — i.e. the model is, at its core, **accruals plus receivables growth**, with six contextual amplifiers around them. $SGAI$ and $LVGI$ are the two *negative* coefficients; $SGAI$'s sign is the counter-intuitive one: falling SG&A-per-sales is treated as suspicious (a sign that costs were deferred or revenue inflated), which is counter-intuitive until you remember Beneish estimated it on *actual* enforcement cases.
 

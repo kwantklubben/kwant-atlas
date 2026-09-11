@@ -28,7 +28,9 @@ Asness, Moskowitz & Pedersen (2013) document the premia in **eight markets** —
 ### 2. Mathematical Ground Truth & Derivations
 
 **Combination variance.** Let value and momentum have monthly means $\mu_V,\mu_M$, vols $\sigma_V,\sigma_M$, and correlation $\rho=\operatorname{corr}(r_V,r_M)$. The equal-weight combination $r_C=\tfrac12 r_V+\tfrac12 r_M$ has
-$$\mu_C=\tfrac12\mu_V+\tfrac12\mu_M, \qquad \sigma_C^2=\tfrac14\sigma_V^2+\tfrac14\sigma_M^2+2\cdot\tfrac14\,\rho\,\sigma_V\sigma_M.$$
+$$
+\mu_C=\tfrac12\mu_V+\tfrac12\mu_M, \qquad \sigma_C^2=\tfrac14\sigma_V^2+\tfrac14\sigma_M^2+2\cdot\tfrac14\,\rho\,\sigma_V\sigma_M.
+$$
 With $\rho<0$ the covariance term is *negative*, shrinking $\sigma_C$ below either leg while keeping $\mu_C$ as the average of two positive means. The Sharpe of the combination, $\text{SR}_C=\mu_C/\sigma_C$, can exceed both $\text{SR}_V$ and $\text{SR}_M$ — the hallmark of a genuine diversifier.
 
 **Why is $\rho$ negative?** Intuitively, both strategies are *reversion bets on mispricing* but on opposite timing: value assumes price over-reacts to bad news and will revert (buy the fallen), momentum assumes price under-reacts to good news and will continue (buy the risers). They are the two halves of the behavioral "over-/underreaction" tension (Daniel, Hirshleifer & Subrahmanyam 1998; Barberis, Shleifer & Vishny 1998). Empirically the negative correlation is robust across markets and asset classes (AMP 2013).

@@ -28,18 +28,24 @@ The practical objective: attach a dollar number to each failure, then state the 
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Stale NBBO and the trade-through cost.** Let the router snapshot the NBBO ask $a^\*_{\text{snap}}$ on venue $L$ at time $t_0$ and route there. At execution $t_1$ venue $L$ shows $a_L(t_1)>a^\*_{\text{snap}}$, while a fresh re-read would find $a^\*_{\text{exec}}=\min_i a_i(t_1)$. The per-share loss is
-$$\Delta_{\text{TT}}=a_L(t_1)-a^\*_{\text{exec}}\ \ge0,$$
+**Stale NBBO and the trade-through cost.** Let the router snapshot the NBBO ask $a^*_{\text{snap}}$ on venue $L$ at time $t_0$ and route there. At execution $t_1$ venue $L$ shows $a_L(t_1)>a^*_{\text{snap}}$, while a fresh re-read would find $a^*_{\text{exec}}=\min_i a_i(t_1)$. The per-share loss is
+$$
+\Delta_{\text{TT}}=a_L(t_1)-a^*_{\text{exec}}\ \ge0,
+$$
 positive exactly when the router trades through a venue whose quote is now better. The **Reg NMS Rule 611** constraint forbids this: no execution may occur at a price worse than a *protected* (automated, displayed) quote. A correct SOR re-validates the NBBO atomically at execution, or sweeps the best protected prices in order.
 
 **Latency pick-off.** Suppose the reference price diffuses with per-millisecond scale $\sigma$ and the router/quoters need $L$ ms to react. The expected absolute move over $L$ is
-$$\mathbb{E}\big[|\Delta m|\big]\approx\sigma\sqrt{L}\quad(\text{Brownian scaling}),$$
+$$
+\mathbb{E}\big[|\Delta m|\big]\approx\sigma\sqrt{L}\quad(\text{Brownian scaling}),
+$$
 so the expected loss on $q$ shares is $\approx q\,\sigma\sqrt{L}$ — **sublinear** in latency. This is the key scaling law: the pick-off loss grows like the *square root* of latency, so a 1,000× cut in latency buys ~32× less loss, which is why the arms race has diminishing returns but never stops.
 
 **Latency as an effective-price term.** The router should not rank on $p_i+f_i$ but on $p_i+f_i+\sigma\sqrt{L_i}$ — the **latency-aware effective price** (page 06 develops the full optimizer). A venue with a 1-cent better quote but 8 ms of lag can be strictly worse once $\sigma\sqrt{L}$ is added.
 
 **Fee-driven misrouting.** The per-share misrouting cost is
-$$\Delta_{\text{fee}}=\min_i p_i+\big(\text{fee of the raw-best venue}\big)-\min_i(p_i+f_i),$$
+$$
+\Delta_{\text{fee}}=\min_i p_i+\big(\text{fee of the raw-best venue}\big)-\min_i(p_i+f_i),
+$$
 which is positive whenever the price-gap/fee-gap reorder condition $f_i-f_j=p_j-p_i$ is crossed. Its magnitude scales with the take fee (up to the SEC's $0.0030/share cap).
 
 ---

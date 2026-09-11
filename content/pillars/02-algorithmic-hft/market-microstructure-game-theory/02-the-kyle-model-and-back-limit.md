@@ -34,33 +34,51 @@ The second half of this page is the continuous-time question, and it contains th
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 The single auction.** $v\sim\mathcal N(p_0,\Sigma_0)$, $u\sim\mathcal N(0,\sigma_u^2)$, insider demand $x$, total flow $y=x+u$, linear price $P=p_0+\lambda y$. Makers are competitive, so they earn zero expected profit; by the projection theorem $P=\mathbb{E}[v\mid y]$, which for jointly normal variables is
-$$P=p_0+\frac{\operatorname{Cov}(v,y)}{\operatorname{Var}(y)}\,y\;\Longrightarrow\;\lambda=\frac{\beta\Sigma_0}{\beta^2\Sigma_0+\sigma_u^2}$$
+$$
+P=p_0+\frac{\operatorname{Cov}(v,y)}{\operatorname{Var}(y)}\,y\;\Longrightarrow\;\lambda=\frac{\beta\Sigma_0}{\beta^2\Sigma_0+\sigma_u^2}
+$$
 if the insider uses $x=\beta(v-p_0)$. The insider maximises $\mathbb{E}[(v-P)x]=\beta\Sigma_0-\lambda\beta^2\Sigma_0$; the first-order condition $\Sigma_0=2\lambda\beta\Sigma_0$ gives $\lambda\beta=\tfrac12$, and solving the two equations together:
 
-$$\boxed{\;\beta=\sqrt{\frac{\sigma_u^2}{\Sigma_0}},\qquad \lambda=\frac12\sqrt{\frac{\Sigma_0}{\sigma_u^2}},\qquad \frac1\lambda=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}}\;}$$
+$$
+\boxed{\;\beta=\sqrt{\frac{\sigma_u^2}{\Sigma_0}},\qquad \lambda=\frac12\sqrt{\frac{\Sigma_0}{\sigma_u^2}},\qquad \frac1\lambda=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}}\;}
+$$
 
 Substituting back, the residual variance is
-$$\operatorname{Var}[v\mid P]=\Sigma_0-\frac{\beta^2\Sigma_0^2}{\beta^2\Sigma_0+\sigma_u^2}=\Sigma_0-\frac{\Sigma_0}{\beta^2\Sigma_0/\sigma_u^2+1}=\Sigma_0-\frac{\Sigma_0}{2}=\frac{\Sigma_0}{2}.$$
+$$
+\operatorname{Var}[v\mid P]=\Sigma_0-\frac{\beta^2\Sigma_0^2}{\beta^2\Sigma_0+\sigma_u^2}=\Sigma_0-\frac{\Sigma_0}{\beta^2\Sigma_0/\sigma_u^2+1}=\Sigma_0-\frac{\Sigma_0}{2}=\frac{\Sigma_0}{2}.
+$$
 **Half the information, whatever the noise.** And $\mathbb{E}[\text{profit}]=\beta\Sigma_0-\lambda\beta^2\Sigma_0=\tfrac12\sqrt{\sigma_u^2\Sigma_0}$.
 
 **2.2 The $N$-auction game.** Repeat the auction $N$ times with equal noise variance $\sigma_u^2$ per round and prior variance $\Sigma_{n-1}$. Write $x_n=\beta_n(v-p_{n-1})$, $\Delta_n=v-p_{n-1}\sim\mathcal N(0,\Sigma_{n-1})$. Since $y_n=\beta_n\Delta_n+u_n$,
-$$\lambda_n=\frac{\beta_n\Sigma_{n-1}}{\beta_n^2\Sigma_{n-1}+\sigma_u^2},\qquad \Sigma_n=\Sigma_{n-1}-\frac{\beta_n^2\Sigma_{n-1}^2}{\beta_n^2\Sigma_{n-1}+\sigma_u^2}=\frac{\Sigma_{n-1}\sigma_u^2}{\beta_n^2\Sigma_{n-1}+\sigma_u^2}.$$
+$$
+\lambda_n=\frac{\beta_n\Sigma_{n-1}}{\beta_n^2\Sigma_{n-1}+\sigma_u^2},\qquad \Sigma_n=\Sigma_{n-1}-\frac{\beta_n^2\Sigma_{n-1}^2}{\beta_n^2\Sigma_{n-1}+\sigma_u^2}=\frac{\Sigma_{n-1}\sigma_u^2}{\beta_n^2\Sigma_{n-1}+\sigma_u^2}.
+$$
 Each round the insider again faces $\lambda_n\beta_n=\tfrac12$, so $\beta_n\Sigma_{n-1}=2\lambda_n\beta_n^2\Sigma_{n-1}$ and the recursion collapses to
 
-$$\boxed{\;\beta_n=\sqrt{\frac{\sigma_u^2}{\Sigma_{n-1}}},\qquad \lambda_n=\frac12\sqrt{\frac{\Sigma_{n-1}}{\sigma_u^2}},\qquad \Sigma_n=\frac{\Sigma_{n-1}}{2}=\Sigma_0\,2^{-n},\qquad \mathbb{E}[\text{profit}_n]=\tfrac12\sqrt{\sigma_u^2\Sigma_{n-1}}\;}$$
+$$
+\boxed{\;\beta_n=\sqrt{\frac{\sigma_u^2}{\Sigma_{n-1}}},\qquad \lambda_n=\frac12\sqrt{\frac{\Sigma_{n-1}}{\sigma_u^2}},\qquad \Sigma_n=\frac{\Sigma_{n-1}}{2}=\Sigma_0\,2^{-n},\qquad \mathbb{E}[\text{profit}_n]=\tfrac12\sqrt{\sigma_u^2\Sigma_{n-1}}\;}
+$$
 
 so **information is released geometrically — half per auction — and $\lambda_n$ decays geometrically while $\beta_n$ grows geometrically**. The insider's total expected profit converges to a finite limit:
-$$\sum_{n\ge1}\tfrac12\sqrt{\sigma_u^2\Sigma_0}\,2^{-(n-1)/2}=\frac{1}{2}\sqrt{\sigma_u^2\Sigma_0}\cdot\frac{1}{1-2^{-1/2}}=\boxed{\frac{2+\sqrt2}{2}\sqrt{\sigma_u^2\Sigma_0}} .$$
+$$
+\sum_{n\ge1}\tfrac12\sqrt{\sigma_u^2\Sigma_0}\,2^{-(n-1)/2}=\frac{1}{2}\sqrt{\sigma_u^2\Sigma_0}\cdot\frac{1}{1-2^{-1/2}}=\boxed{\frac{2+\sqrt2}{2}\sqrt{\sigma_u^2\Sigma_0}} .
+$$
 More auctions $\Rightarrow$ more profit, but bounded: $1.707\sqrt{\sigma_u^2\Sigma_0}$ versus the single auction's $0.5\sqrt{\sigma_u^2\Sigma_0}$.
 
 **2.3 Why the naive continuous-time limit is ill-posed.** Fix a horizon $T$, put $N$ auctions of length $\tau=T/N$, and give each round the "correct" noise variance $\sigma_u^2\tau$ (proportional to the clock, so the total noise budget over $[0,T]$ is $\sigma_u^2T$). Then
-$$\lambda_1=\frac12\sqrt{\frac{\Sigma_0}{\sigma_u^2\tau}}=\frac12\sqrt{\frac{\Sigma_0 N}{\sigma_u^2T}}\;\xrightarrow[N\to\infty]{}\;\infty .$$
+$$
+\lambda_1=\frac12\sqrt{\frac{\Sigma_0}{\sigma_u^2\tau}}=\frac12\sqrt{\frac{\Sigma_0 N}{\sigma_u^2T}}\;\xrightarrow[N\to\infty]{}\;\infty .
+$$
 The discrete game **does not converge**: shrinking the auction interval while the insider's information advantage stays fixed makes the first period infinitesimally informative and hence infinitely costly to trade into. Something must give — and what gives, in the correctly posed model, is the *shape of information release*.
 
 **2.4 Back (1992): the correct continuous-time limit.** Let $dU_t=\sigma_u dB_t$ and let the price be $P_t=p_0+\lambda(X_t+U_t)$. The correct equilibrium satisfies $P_t=\mathbb{E}[V\mid\mathcal F_t]$ with
-$$\boxed{\;\Sigma(t)=\Sigma_0\Bigl(1-\frac{t}{T}\Bigr),\qquad \lambda=\sqrt{\frac{\Sigma_0}{\sigma_u^2T}},\qquad \frac1\lambda=\sigma_u\sqrt{\frac{T}{\Sigma_0}}\;}$$
+$$
+\boxed{\;\Sigma(t)=\Sigma_0\Bigl(1-\frac{t}{T}\Bigr),\qquad \lambda=\sqrt{\frac{\Sigma_0}{\sigma_u^2T}},\qquad \frac1\lambda=\sigma_u\sqrt{\frac{T}{\Sigma_0}}\;}
+$$
 **The derivation is a one-line filtering identity, and it is worth internalising.** If $P_t=\mathbb{E}[V\mid\mathcal F_t]$ and the innovation representation is $dP_t=\lambda_t\,dY_t$, then
-$$d\Sigma_t=-\operatorname{Var}(dP_t\mid\mathcal F_{t^-})=-\lambda_t^2\operatorname{Var}(dY_t\mid\mathcal F_{t^-})=-\lambda_t^2\sigma_u^2\,dt,$$
+$$
+d\Sigma_t=-\operatorname{Var}(dP_t\mid\mathcal F_{t^-})=-\lambda_t^2\operatorname{Var}(dY_t\mid\mathcal F_{t^-})=-\lambda_t^2\sigma_u^2\,dt,
+$$
 because the predictable part of $dY_t$ is known and only the noise contributes variance. With $\Sigma(t)=\Sigma_0(1-t/T)$ we have $d\Sigma_t=-\frac{\Sigma_0}{T}dt$, so $\lambda^2\sigma_u^2=\Sigma_0/T$ — **$\lambda$ is constant in $t$**, and equal to $\sqrt{\Sigma_0/(\sigma_u^2T)}$.
 
 Two consequences worth memorising:

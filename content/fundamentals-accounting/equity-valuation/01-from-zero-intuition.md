@@ -34,11 +34,15 @@ Three steps, three "aha"s:
 
 **Present value of an explicit stream.** If the owner expects cash $C_1,C_2,\dots,C_n$ and then a terminal amount $V_n$, then today's value is
 
-$$V_0=\sum_{t=1}^{n}\frac{C_t}{(1+r)^t}+\frac{V_n}{(1+r)^n}.$$
+$$
+V_0=\sum_{t=1}^{n}\frac{C_t}{(1+r)^t}+\frac{V_n}{(1+r)^n}.
+$$
 
 **The growing perpetuity (Gordon) shortcut.** If cash starts at $C_1$ and grows forever at constant $g<r$,
 
-$$V_0=\sum_{t=1}^{\infty}\frac{C_1(1+g)^{t-1}}{(1+r)^t}=\boxed{\dfrac{C_1}{r-g}}.$$
+$$
+V_0=\sum_{t=1}^{\infty}\frac{C_1(1+g)^{t-1}}{(1+r)^t}=\boxed{\dfrac{C_1}{r-g}}.
+$$
 
 This is the algebraic backbone of every terminal value (page 04). Two facts follow immediately and are worth memorising:
 
@@ -47,7 +51,9 @@ This is the algebraic backbone of every terminal value (page 04). Two facts foll
 
 **Where growth creates value.** A firm growing at $g$ must reinvest to fund that growth. With a return on capital $\text{ROC}$, the reinvestment rate is $\text{RR}=g/\text{ROC}$, so the cash flow is
 
-$$\text{FCF}_1=\text{NOPAT}_1\,(1-\text{RR})=\text{NOPAT}_1\Big(1-\frac{g}{\text{ROC}}\Big),\qquad V_0=\frac{\text{NOPAT}_1\,(1-g/\text{ROC})}{r-g}.$$
+$$
+\text{FCF}_1=\text{NOPAT}_1\,(1-\text{RR})=\text{NOPAT}_1\Big(1-\frac{g}{\text{ROC}}\Big),\qquad V_0=\frac{\text{NOPAT}_1\,(1-g/\text{ROC})}{r-g}.
+$$
 
 When $\text{ROC}=r$ this collapses to $V_0=\text{NOPAT}_1/r$ — **growth adds nothing**. When $\text{ROC}>r$ growth adds value; when $\text{ROC}<r$ growth *destroys* it. This is the fundamental growth equation that page 02 makes concrete.
 

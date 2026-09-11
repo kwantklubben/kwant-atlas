@@ -31,12 +31,16 @@ The unifying observation: **the worst-case loss over a finite scenario set is al
 
 Let the loss be a linear function of two factors, $L=b_Mf_M+b_Tf_T$, with factor covariance $\Sigma=\begin{pmatrix}\sigma_M^2 & \rho\sigma_M\sigma_T\\ \rho\sigma_M\sigma_T & \sigma_T^2\end{pmatrix}$, where $f_M$ is a *market-loss* factor and $f_T$ a *transition-shock* factor ($\mathrm{Corr}=\rho>0$: a disorderly transition is a market event too). Then $\sigma_L=\sqrt{\mathbf b^{\top}\Sigma\,\mathbf b}$, and for a zero-mean normal loss
 
-$$\boxed{\ \mathrm{ES}_\alpha=\sigma_L\,k_\alpha,\qquad k_\alpha=\frac{\varphi(z_\alpha)}{1-\alpha},\qquad
-\mathrm{EC}_i=\underbrace{b_i\frac{(\Sigma\mathbf b)_i}{\sigma_L}}_{\text{Euler contribution}}\,\cdot\, k_\alpha,\qquad \sum_i\mathrm{EC}_i=\mathrm{ES}_\alpha\ }$$
+$$
+\boxed{\ \mathrm{ES}_\alpha=\sigma_L\,k_\alpha,\qquad k_\alpha=\frac{\varphi(z_\alpha)}{1-\alpha},\qquad
+\mathrm{EC}_i=\underbrace{b_i\frac{(\Sigma\mathbf b)_i}{\sigma_L}}_{\text{Euler contribution}}\,\cdot\, k_\alpha,\qquad \sum_i\mathrm{EC}_i=\mathrm{ES}_\alpha\ }
+$$
 
 The additivity is Euler's theorem for the positively homogeneous $\sigma_L$; the multiply-by-$k_\alpha$ step works because $\mathrm{ES}$ is positively homogeneous with the same degree ([[pillars/04-quantitative-risk/var-and-expected-shortfall/04-expected-shortfall|VaR/ES · 04 · §2.1]]). Explicitly,
-$$\mathrm{EC}_M=\frac{b_M^2\sigma_M^2+b_Mb_T\rho\sigma_M\sigma_T}{\sigma_L}k_\alpha,\qquad
-\mathrm{EC}_T=\frac{b_T^2\sigma_T^2+b_Mb_T\rho\sigma_M\sigma_T}{\sigma_L}k_\alpha .$$
+$$
+\mathrm{EC}_M=\frac{b_M^2\sigma_M^2+b_Mb_T\rho\sigma_M\sigma_T}{\sigma_L}k_\alpha,\qquad
+\mathrm{EC}_T=\frac{b_T^2\sigma_T^2+b_Mb_T\rho\sigma_M\sigma_T}{\sigma_L}k_\alpha .
+$$
 
 **Three facts fall out of the cross term $b_Mb_T\rho\sigma_M\sigma_T$:**
 
@@ -48,7 +52,9 @@ $$\mathrm{EC}_M=\frac{b_M^2\sigma_M^2+b_Mb_T\rho\sigma_M\sigma_T}{\sigma_L}k_\al
 
 In the structural model, equity is a call on assets $A$ with strike equal to the debt $D$; default occurs if $A_T<D$. The **distance to default** and **default probability** are
 
-$$\boxed{\ \mathrm{DD}=\frac{\ln(A/D)+(\mu-\tfrac12\sigma_A^2)T}{\sigma_A\sqrt T},\qquad \mathrm{PD}=\Phi(-\mathrm{DD})\ }$$
+$$
+\boxed{\ \mathrm{DD}=\frac{\ln(A/D)+(\mu-\tfrac12\sigma_A^2)T}{\sigma_A\sqrt T},\qquad \mathrm{PD}=\Phi(-\mathrm{DD})\ }
+$$
 
 To make it carbon-aware, capitalise the *present value of the firm's future carbon costs* into the liability, $D\mapsto D+C$ — a first-order, transparent and conservative adjustment. Because $\mathrm{DD}$ is concave in $D$ while $\Phi(-\cdot)$ is convex, equal carbon-liability increments produce **increasing PD increments**: the credit channel amplifies a linearly-growing carbon exposure (verified in §3(B)). This is the natural bridge from climate risk to [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]], and it is the mechanism by which a transition scenario becomes loan losses in a supervisory stress test.
 
@@ -124,7 +130,7 @@ for C in (0.0, 5.0, 10.0, 15.0):
 
 **Panel (A).** The contributions sum to the portfolio ES to machine precision ($6.9\times10^{-18}$ for the carbon-heavy book) — the additivity that makes a climate risk *budget* possible. The carbon-heavy book carries $27.6\%$ of its ES from the transition factor despite being only $20\%$ emissions-adjacent in construction; the green-tilted book shows a **negative** transition contribution ($-1.5\%$) and a *lower* total ES ($0.025233$) than the market-only book ($0.025716$) — the hedging result of §2.1, made numeric. Note the green book's market contribution *exceeds* total ES ($101.5\%$): the parts are additive, but an individual contribution may exceed the whole when another contribution is negative — a fact worth stating before someone reports a "negative risk budget" as an error.
 
-**Panel (B).** The carbon liability is concave-in-$\mathrm{DD}$ and convex-in-$\mathrm{PD}$: each $\$5$ increment of capitalised carbon cost raises PD by $7.2$, $8.8$, $9.8$ points — increasing increments from a linear exposure. A transition scenario therefore converts into credit losses **faster than proportionally**, which is why supervisory exercises report both a market-risk and a credit-risk leg of the same scenario.
+**Panel (B).** The carbon liability is concave-in-$\mathrm{DD}$ and convex-in-$\mathrm{PD}$: each $ $\$5 increment of capitalised carbon cost raises PD by 7.2$, $8.8$, $9.8$ points — increasing increments from a linear exposure. A transition scenario therefore converts into credit losses **faster than proportionally**, which is why supervisory exercises report both a market-risk and a credit-risk leg of the same scenario.
 
 ---
 

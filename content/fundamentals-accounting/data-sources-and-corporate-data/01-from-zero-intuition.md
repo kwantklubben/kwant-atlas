@@ -40,25 +40,35 @@ Three steps, three "aha"s:
 
 **The provenance tuple.** Every fundamental observation is
 
-$$\text{obs} = \big(\text{entity},\ \text{concept},\ [\text{period start},\ \text{period end}],\ \text{value},\ \text{unit},\ t_{\text{filed}}\big),$$
+$$
+\text{obs} = \big(\text{entity},\ \text{concept},\ [\text{period start},\ \text{period end}],\ \text{value},\ \text{unit},\ t_{\text{filed}}\big),
+$$
 
 and the operational rule is that the observation is **usable only from** $t_{\text{filed}}$:
 
-$$\text{value is knowable at time } t \iff t_{\text{filed}} \le t.$$
+$$
+\text{value is knowable at time } t \iff t_{\text{filed}} \le t.
+$$
 
 A "point-in-time panel" is one that keeps *every* vintage of `(concept, period)` separately, keyed by $t_{\text{filed}}$, instead of overwriting on restatement:
 
-$$\mathcal{P} = \big\{\,(\text{firm},\ \text{concept},\ \text{period},\ t_{\text{filed}})\ \mapsto\ \text{value}\,\big\}.$$
+$$
+\mathcal{P} = \big\{\,(\text{firm},\ \text{concept},\ \text{period},\ t_{\text{filed}})\ \mapsto\ \text{value}\,\big\}.
+$$
 
 Overwriting on restatement collapses $\mathcal{P}$ to one row per period and destroys the only information that tells you whether a backtest was honest.
 
 **The flow/stock distinction that trips up extraction.** Income-statement and cash-flow facts are *duration* facts (they carry a `start` and an `end`); balance-sheet facts are *instant* facts (they carry only an `end`). Mapping both into one schema without recording which is which is the most common beginner extraction bug:
 
-$$\text{duration: }[\text{start},\text{end}] \qquad\text{vs.}\qquad \text{instant: }\{\text{end}\}.$$
+$$
+\text{duration: }[\text{start},\text{end}] \qquad\text{vs.}\qquad \text{instant: }\{\text{end}\}.
+$$
 
 **The look-ahead arithmetic, exactly.** Let $R_{y}$ be revenue for year $y$ as first reported and $\tilde{R}_{y}$ its eventually-restated value. A restatement of year $y$ changes the *measured growth* of $y+1$ by
 
-$$\Delta\text{growth} = \frac{R_{y+1}}{\tilde{R}_{y}} - \frac{R_{y+1}}{R_{y}} \neq 0,$$
+$$
+\Delta\text{growth} = \frac{R_{y+1}}{\tilde{R}_{y}} - \frac{R_{y+1}}{R_{y}} \neq 0,
+$$
 
 so even a *single* restated denominator silently rewrites every growth number that depends on it — which is why the leak is so easy to miss and so corrosive to a screen (§3 measures it).
 

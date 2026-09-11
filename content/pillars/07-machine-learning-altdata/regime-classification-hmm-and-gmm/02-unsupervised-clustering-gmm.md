@@ -26,18 +26,24 @@ The practical objective: fit the mixture's parameters $(\pi_k,\mu_k,\Sigma_k)$ s
 
 **The model (a finite mixture; ESL Ch 14.3).** The likelihood of the full sample, with $N$ observations $x_t\in\mathbb{R}^d$:
 
-$$p(\mathbf{x}\mid\theta)=\prod_{t=1}^{N}\sum_{k=1}^{K}\pi_k\,\mathcal{N}(x_t;\mu_k,\Sigma_k),\qquad \theta=\{\pi_k,\mu_k,\Sigma_k\}_{k=1}^{K},\ \sum_k\pi_k=1.$$
+$$
+p(\mathbf{x}\mid\theta)=\prod_{t=1}^{N}\sum_{k=1}^{K}\pi_k\,\mathcal{N}(x_t;\mu_k,\Sigma_k),\qquad \theta=\{\pi_k,\mu_k,\Sigma_k\}_{k=1}^{K},\ \sum_k\pi_k=1.
+$$
 
 This has **no closed-form maximum** (the log of the sum does not separate), so we maximize it iteratively via EM ([[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/03-the-em-algorithm|03]]). Define the responsibilities and effective counts:
 
-$$N_k=\sum_{t=1}^{N}\gamma_t(k),\qquad
-\gamma_t(k)=\mathbb{P}(z_t{=}k\mid x_t)=\frac{\pi_k\mathcal{N}(x_t;\mu_k,\Sigma_k)}{\sum_{j}\pi_j\mathcal{N}(x_t;\mu_j,\Sigma_j)}.$$
+$$
+N_k=\sum_{t=1}^{N}\gamma_t(k),\qquad
+\gamma_t(k)=\mathbb{P}(z_t{=}k\mid x_t)=\frac{\pi_k\mathcal{N}(x_t;\mu_k,\Sigma_k)}{\sum_{j}\pi_j\mathcal{N}(x_t;\mu_j,\Sigma_j)}.
+$$
 
 **E-step:** fix $\theta$ and recompute $\gamma_t(k)$. **M-step:** with $\gamma$ fixed, the updates are weighted-averaging closed forms:
 
-$$\pi_k=\frac{N_k}{N},\qquad
+$$
+\pi_k=\frac{N_k}{N},\qquad
 \mu_k=\frac{1}{N_k}\sum_t\gamma_t(k)x_t,\qquad
-\Sigma_k=\frac{1}{N_k}\sum_t\gamma_t(k)(x_t-\mu_k)(x_t-\mu_k)^{\!\top}.$$
+\Sigma_k=\frac{1}{N_k}\sum_t\gamma_t(k)(x_t-\mu_k)(x_t-\mu_k)^{\!\top}.
+$$
 
 In one dimension the covariance update reduces to $\sigma_k^2=\frac{1}{N_k}\sum_t\gamma_t(k)(x_t-\mu_k)^2$. Each M-step **increases** the log-likelihood; EM converges to a *local* maximum of the mixture likelihood (Dempster–Laird–Rubin 1977; the monotonicity proof is [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/03-the-em-algorithm|03]]).
 

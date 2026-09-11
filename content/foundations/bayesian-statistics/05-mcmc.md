@@ -28,15 +28,21 @@ The practical objective is to build and *diagnose* the two workhorse samplers: *
 
 **The target and the idea (Tsay §12.1).** We cannot sample $p(\theta\mid x)\propto g(\theta)=f(x\mid\theta)\pi(\theta)$ directly, but if we build a chain $\theta_0,\theta_1,\dots$ with transition kernel $T(\theta\to\theta')$ satisfying the **detailed-balance** (reversibility) condition with target $p$,
 
-$$p(\theta)\,T(\theta\to\theta')=p(\theta')\,T(\theta'\to\theta),$$
+$$
+p(\theta)\,T(\theta\to\theta')=p(\theta')\,T(\theta'\to\theta),
+$$
 
 then $p$ is *stationary* for the chain: if $\theta_t\sim p$ then $\theta_{t+1}\sim p$. Running the chain long enough (after a **burn-in** $m$) yields approximately iid draws from $p$, and the **ergodic theorem** replaces the intractable integral with a time average:
 
-$$\hat{\mathbb E}[h(\theta)]=\frac{1}{N-m}\sum_{t=m+1}^{N}h(\theta_t)\;\xrightarrow{a.s.}\;\int h(\theta)\,p(\theta\mid x)\,d\theta .$$
+$$
+\hat{\mathbb E}[h(\theta)]=\frac{1}{N-m}\sum_{t=m+1}^{N}h(\theta_t)\;\xrightarrow{a.s.}\;\int h(\theta)\,p(\theta\mid x)\,d\theta .
+$$
 
 **Metropolis–Hastings (Tsay §12.4.1–12.4.2).** Propose $\theta^*$ from a proposal kernel $q(\theta^*\mid\theta_{t-1})$, then accept with probability
 
-$$\alpha=\min\!\left(1,\;\frac{p(\theta^*\mid x)}{p(\theta_{t-1}\mid x)}\cdot\frac{q(\theta_{t-1}\mid\theta^*)}{q(\theta^*\mid\theta_{t-1})}\right).$$
+$$
+\alpha=\min\!\left(1,\;\frac{p(\theta^*\mid x)}{p(\theta_{t-1}\mid x)}\cdot\frac{q(\theta_{t-1}\mid\theta^*)}{q(\theta^*\mid\theta_{t-1})}\right).
+$$
 
 - **Symmetric proposal** ($q$ symmetric, e.g. random walk $\theta^*=\theta_{t-1}+\epsilon$, $\epsilon\sim N(0,s^2)$): the ratio collapses to $\alpha=\min\!\big(1,\,p(\theta^*)/p(\theta_{t-1})\big)$ — this is *Metropolis*.
 - **Asymmetric proposal:** the Hastings correction $q(\theta_{t-1}\mid\theta^*)/q(\theta^*\mid\theta_{t-1})$ restores detailed balance; e.g. independence MH or proposals on a constrained space.
@@ -44,18 +50,24 @@ $$\alpha=\min\!\left(1,\;\frac{p(\theta^*\mid x)}{p(\theta_{t-1}\mid x)}\cdot\fr
 
 **Gibbs sampling (Tsay §12.2).** Partition $\theta=(\theta_1,\dots,\theta_k)$. Iterate: for each block $i$, draw
 
-$$\theta_i^{(t)}\sim p\big(\theta_i\;\big|\;\theta_1^{(t)},\dots,\theta_{i-1}^{(t)},\theta_{i+1}^{(t-1)},\dots,\theta_k^{(t-1)},\,x\big).$$
+$$
+\theta_i^{(t)}\sim p\big(\theta_i\;\big|\;\theta_1^{(t)},\dots,\theta_{i-1}^{(t)},\theta_{i+1}^{(t-1)},\dots,\theta_k^{(t-1)},\,x\big).
+$$
 
 Each **full conditional** is itself a posterior at the block level and is often a *conjugate* family (Normal, Inverse-Gamma, Beta, Dirichlet, …). Gibbs is MH with the full conditional as the proposal, and the acceptance probability is **exactly 1** — no rejections, no tuning. After burn-in $m$, the mean is Tsay eq. (12.3):
 
-$$\bar\theta_i=\frac{1}{N-m}\sum_{t=m+1}^{N}\theta_i^{(t)} .$$
+$$
+\bar\theta_i=\frac{1}{N-m}\sum_{t=m+1}^{N}\theta_i^{(t)} .
+$$
 
 Gibbs needs the full conditionals to be samplable; when one is not (e.g. an MA or GARCH coefficient), one replaces that step with a **Metropolis** or **Griddy Gibbs** update (evaluate the univariate conditional on a grid, invert the CDF numerically — Tsay §12.4.3). MCMC for latent variables is often written as **data augmentation** (Tanner–Wong), with **EM** as its deterministic special case.
 
 **Convergence diagnostics (BDA3 Ch 11).** MCMC gives *correlated* draws, so the naive standard error $\sigma/\sqrt N$ is wrong. Two standard checks:
 
 - **Gelman–Rubin:** run $S$ chains from overdispersed starts; compare between-chain variance $B$ and within-chain variance $W$:
-$$\hat R=\sqrt{\frac{\frac{N-1}{N}W+\frac1N B}{W}},\qquad\text{converged when }\hat R\approx1.0\ (\text{e.g.}<1.01).$$
+$$
+\hat R=\sqrt{\frac{\frac{N-1}{N}W+\frac1N B}{W}},\qquad\text{converged when }\hat R\approx1.0\ (\text{e.g.}<1.01).
+$$
 - **Effective sample size** from the autocorrelation $\rho_k$: $\mathrm{ESS}=N/(1+2\sum_{k\ge1}\rho_k)$ — the number of *independent* draws the chain is worth. Report $N/\mathrm{ESS}$, not $N$.
 
 **Forward-filtering backward-sampling (FFBS; Tsay §12.8).** For state-space / stochastic-volatility models the state path $z_{1:n}$ is drawn *jointly* (a Gibbs step over the whole latent path):

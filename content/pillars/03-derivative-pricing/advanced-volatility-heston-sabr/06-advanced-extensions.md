@@ -36,11 +36,15 @@ The practical objective: know what each extension actually fixes, what it costs 
 
 Add a compound Poisson jump to the spot (Merton), keeping Heston variance — the **SVJ** model:
 
-$$dS=\mu S\,dt+\sqrt v\,S\,dZ_1+(e^{\alpha+\delta Z}-1)S\,dq,\quad Z\sim N(0,1),\qquad dv=-\lambda(v-\bar v)dt+\eta\sqrt v\,dZ_2,$$
+$$
+dS=\mu S\,dt+\sqrt v\,S\,dZ_1+(e^{\alpha+\delta Z}-1)S\,dq,\quad Z\sim N(0,1),\qquad dv=-\lambda(v-\bar v)dt+\eta\sqrt v\,dZ_2,
+$$
 
 with log-jump size $\sim\mathcal N(\alpha,\delta^2)$. The characteristic function **factorises** (Gatheral ch 5):
 
-$$\varphi_T(u)=e^{C(u,T)\bar v+D(u,T)v_0}\,e^{\psi(u)T},\qquad \psi(u)=-\lambda_Jiu\big(e^{\alpha+\delta^2/2}-1\big)+\lambda_J\big(e^{iu\alpha-u^2\delta^2/2}-1\big),$$
+$$
+\varphi_T(u)=e^{C(u,T)\bar v+D(u,T)v_0}\,e^{\psi(u)T},\qquad \psi(u)=-\lambda_Jiu\big(e^{\alpha+\delta^2/2}-1\big)+\lambda_J\big(e^{iu\alpha-u^2\delta^2/2}-1\big),
+$$
 
 so the Heston $C,D$ are untouched and the jump part is a separate, cheap term. Two facts decide how to fit it:
 
@@ -53,17 +57,25 @@ so the Heston $C,D$ are untouched and the jump part is a separate, cheap term. T
 
 Model the curve $\{\xi_t^T\}$ directly. The pricing equation (7.4) plus the cardinal rule $\sigma(t,S,\xi)^2=\xi_t^t$ gives a driftless, exactly-calibratable-to-VS system, with the $N$-factor Markov representation
 
-$$d\xi_t^T=\omega\alpha_w\xi_t^T\sum_iw_ie^{-k_i(T-t)}dW_t^i,\qquad \xi_t^T=\xi_0^T\exp\Big(\omega\sum_iw_ie^{-k_i(T-t)}X_t^i-\frac{\omega^2}{2}\sum_{ij}w_iw_je^{-(k_i+k_j)(T-t)}\mathbb E[X_t^iX_t^j]\Big),$$
+$$
+d\xi_t^T=\omega\alpha_w\xi_t^T\sum_iw_ie^{-k_i(T-t)}dW_t^i,\qquad \xi_t^T=\xi_0^T\exp\Big(\omega\sum_iw_ie^{-k_i(T-t)}X_t^i-\frac{\omega^2}{2}\sum_{ij}w_iw_je^{-(k_i+k_j)(T-t)}\mathbb E[X_t^iX_t^j]\Big),
+$$
 
 with $\omega=2\nu$, $\alpha_w=1/\sqrt{\sum_{ij}w_iw_j\rho_{ij}}$, and the **exact** OU transitions (7.15–7.18)
 
-$$X^i_{\tau_{n+1}}=e^{-k_i\delta\tau}X^i_{\tau_n}+\delta X^i,\quad \mathbb E[\delta X^i\delta X^j]=\rho_{ij}\frac{1-e^{-(k_i+k_j)\delta\tau}}{k_i+k_j},\quad \mathbb E[\delta W^S\delta X^i]=\rho_{iS}\frac{1-e^{-k_i\delta\tau}}{k_i}.$$
+$$
+X^i_{\tau_{n+1}}=e^{-k_i\delta\tau}X^i_{\tau_n}+\delta X^i,\quad \mathbb E[\delta X^i\delta X^j]=\rho_{ij}\frac{1-e^{-(k_i+k_j)\delta\tau}}{k_i+k_j},\quad \mathbb E[\delta W^S\delta X^i]=\rho_{iS}\frac{1-e^{-k_i\delta\tau}}{k_i}.
+$$
 
 Because the transition law is exact, **no time discretisation bias** enters for variance-only payoffs (realized variance, variance swaps, VIX) — a decisive practical advantage over Heston simulation. The stationary vol-of-vol and correlation structures are
 
-$$\nu_T(t)=\nu\alpha_w\sqrt{\textstyle\sum_{ij}w_iw_j\rho_{ij}I(k_i(T-t))I(k_j(T-t))},\quad I(x)=\frac{1-e^{-x}}{x},$$
+$$
+\nu_T(t)=\nu\alpha_w\sqrt{\textstyle\sum_{ij}w_iw_j\rho_{ij}I(k_i(T-t))I(k_j(T-t))},\quad I(x)=\frac{1-e^{-x}}{x},
+$$
 
-$$\omega(T-t)=2\nu\alpha_w\sqrt{\textstyle\sum_{ij}w_iw_j\rho_{ij}e^{-(k_i+k_j)(T-t)}},\qquad \rho_t(\xi^T,\xi^{T'})=\frac{\sum w_iw_j\rho_{ij}e^{-k_i(T-t)}e^{-k_j(T'-t)}}{\sqrt{\cdots}},$$
+$$
+\omega(T-t)=2\nu\alpha_w\sqrt{\textstyle\sum_{ij}w_iw_j\rho_{ij}e^{-(k_i+k_j)(T-t)}},\qquad \rho_t(\xi^T,\xi^{T'})=\frac{\sum w_iw_j\rho_{ij}e^{-k_i(T-t)}e^{-k_j(T'-t)}}{\sqrt{\cdots}},
+$$
 
 and the break-even covariances (7.27a,b) that close the pricing equation. **VIX** is (a scaling of) the variance-swap variance for $T=30$d; VIX futures are $\mathbb E_t[\sqrt{\cdot}\,]$ in this model, priced by two-dimensional quadrature over $(X^1,X^2)$. **Vega hedging caveat (Bergomi §7.3.3):** the $N$-factor structure does *not* justify hedging only $N$ variance swaps — deltas must immunise against **all** deformations $\delta\xi^T$; the factors only fix the *rank* of the break-even covariance matrix.
 
@@ -71,7 +83,9 @@ and the break-even covariances (7.27a,b) that close the pricing equation. **VIX*
 
 LSV multiplies the local-vol component onto the stochastic variance (Bergomi 12.1–12.2):
 
-$$\sigma_t=\sqrt{\zeta_t^t}\,\sigma(t,S_t),\qquad dS_t=(r-q)S_tdt+\sigma(t,S_t)\sqrt{\zeta_t^t}S_tdW^S,\qquad d\zeta_t^T=2\nu\alpha_\theta\zeta_t^T\big[(1-\theta)e^{-k_1(T-t)}dW^1+\theta e^{-k_2(T-t)}dW^2\big]$$
+$$
+\sigma_t=\sqrt{\zeta_t^t}\,\sigma(t,S_t),\qquad dS_t=(r-q)S_tdt+\sigma(t,S_t)\sqrt{\zeta_t^t}S_tdW^S,\qquad d\zeta_t^T=2\nu\alpha_\theta\zeta_t^T\big[(1-\theta)e^{-k_1(T-t)}dW^1+\theta e^{-k_2(T-t)}dW^2\big]
+$$
 
 with the mixed covariance $\mu(t,u,\xi)=2\nu\xi^u\sqrt{\xi^t}\alpha_\theta[\rho_{SX^1}(1-\theta)e^{-k_1(u-t)}+\rho_{SX^2}\theta e^{-k_2(u-t)}]$ (12.4/8.50 — note the radical covers only $\xi^t$). The appeal is obvious: the local part fits the statics exactly, the stochastic part restores forward skew. **The warning is equally clear (Bergomi §12.2.2):** the LSV pricing equation is *not* derived from a replication argument — it is the forward-variance equation with the ansatz $\sqrt{\zeta_t^t}\to\sqrt{\zeta_t^t}\sigma(t,S_t)$. Whether its solution is a *price* (i.e. whether the hedge P&L has the usual gamma/theta form) must be verified *a posteriori*: **"most local-stochastic volatility models are not usable models."** The characterisation of usable LSV, the decomposition of the ATMF skew into its components, and the resulting SSR/vol-of-vol dynamics are Bergomi §12.3–12.4 — a *separate* deep-read from the corpus used here.
 
@@ -79,7 +93,9 @@ with the mixed covariance $\mu(t,u,\xi)=2\nu\xi^u\sqrt{\xi^t}\alpha_\theta[\rho_
 
 Empirically, log realized volatility has Hurst exponent $H\approx0.1$ (Gatheral–Jaisson–Rosenbaum 2018) — far rougher than a diffusion ($H=\tfrac12$), with a power-law autocorrelation of log-vol. Replacing the OU factors by a fractional Brownian motion, $\sigma_t=\exp(X_t)$ with $X$ fBm of Hurst $H$, gives a short-dated ATM skew that scales as
 
-$$\frac{\partial\sigma_{BS}}{\partial k}\sim T^{H-\frac12},$$
+$$
+\frac{\partial\sigma_{BS}}{\partial k}\sim T^{H-\frac12},
+$$
 
 i.e. much steeper than any Markovian SV model permits — precisely the short-end failure flagged in §04/§05, and the same power-law family as Bergomi's benchmark $\nu_T(t)=\sigma_0(\tau_0/(T-t))^{\alpha}$, $\alpha\approx0.4$ (note $\alpha\leftrightarrow\tfrac12-H$ in spirit). The cost is that the model is non-Markovian, harder to simulate, and harder to calibrate jointly to SPX and VIX. This is a **forward pointer** beyond the corpus files used for this folder.
 

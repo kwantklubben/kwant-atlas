@@ -32,7 +32,9 @@ The five lies, in one line each:
 
 **The truth the naive rule replaces.** Under price-time (FIFO) priority, your profit from a resting order of size $L$ at queue position $x$ is a function of the cumulative **outflow ahead** $\xi$:
 
-$$\text{Filled}(x,L,\xi)=(\xi-x)^+-(\xi-x-L)^+,\qquad (z)^+=\max(z,0).$$
+$$
+\text{Filled}(x,L,\xi)=(\xi-x)^+-(\xi-x-L)^+,\qquad (z)^+=\max(z,0).
+$$
 
 The naive rules are special, biased, cases:
 
@@ -46,13 +48,17 @@ The naive rules are special, biased, cases:
 
 **Fill probability.** For Poisson trade arrivals at rate $\mu$, the outflow by time $T$ is $\xi(T)\sim\text{Poisson}(\mu T)$, so an order **at the front** ($x\to0$) is filled by $T$ iff at least one trade arrives, and an order at position $x$ (in shares) satisfies (with $\mu$ the share-volume rate)
 
-$$\mathbb P(\text{reach front by }T)=\mathbb P\!\left(\xi(T)\ge x\right)=1-\sum_{k<\,x}\frac{(\mu T)^k e^{-\mu T}}{k!},$$
+$$
+\mathbb P(\text{reach front by }T)=\mathbb P\!\left(\xi(T)\ge x\right)=1-\sum_{k<\,x}\frac{(\mu T)^k e^{-\mu T}}{k!},
+$$
 
 a Poisson upper-tail (equivalently, the waiting time is negative-binomial with mean $x/\mu$).
 
 **Slippage.** Define slippage per share relative to the arrival (decision) price $\pi_0$ as
 
-$$\text{slip}=\underbrace{\big(p-\pi_0\big)}_{\text{what you paid}}-\underbrace{\big(m_T-\pi_0\big)}_{\text{unavoidable move}},$$
+$$
+\text{slip}=\underbrace{\big(p-\pi_0\big)}_{\text{what you paid}}-\underbrace{\big(m_T-\pi_0\big)}_{\text{unavoidable move}},
+$$
 
 so that a fill at $p=m_{t}$ with no impact gives $\text{slip}=m_t-m_T$ — the adverse post-fill drift that a naive test never charges. Averaged, $\mathbb E[\text{slip}\mid\text{filled}] = \text{AS}>0$ (a cost).
 
@@ -117,7 +123,7 @@ P(fill) under four backtest fill rules (queue ahead 11,500 sh, my size 800 sh):
 per-order expected edge: naive $16.000 vs realistic $1.861  -> naive overstates 8.6x
 ```
 
-Read the table as the anatomy of the illusion: the optimistic rule fills **every** path ($1.0000$); the queue-blind rule also fills every path (my 800 shares are trivially covered by $11{,}500$ shares of flow); the correct FIFO rule fills only **$0.3686$** of paths and, when it does, only **$29\%$** of the size on average. Feeding that into a simple edge model ($\$0.02$ capture, $\$0.012$ adverse selection per share) turns a naive $\$16.00$ per order into a realistic $\$1.86$ — **the edge is overstated by $8.6\times$ before a single other bias is added.**
+Read the table as the anatomy of the illusion: the optimistic rule fills **every** path ($1.0000$); the queue-blind rule also fills every path (my 800 shares are trivially covered by $11{,}500$ shares of flow); the correct FIFO rule fills only **$0.3686$** of paths and, when it does, only **$29\%$** of the size on average. Feeding that into a simple edge model (\$0.02 capture, \$0.012 adverse selection per share) turns a naive \$16.00 per order into a realistic \$1.86 — **the edge is overstated by $8.6\times$ before a single other bias is added.**
 
 ---
 

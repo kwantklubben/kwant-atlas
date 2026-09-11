@@ -40,7 +40,9 @@ No assumption holds cleanly in markets, and each failure is *quantifiable*.
 **Reward hacking, formally.** The agent solves $\max_\theta \mathbb{E}_{\pi_\theta}[\sum_t R^{\text{proxy}}_t]$, which equals the true objective only if $R^{\text{proxy}}=R^{\text{true}}$. A gross-P&L reward omits impact $k v^2$ and holding cost $h x$, so the *optimal* policy under $R^{\text{proxy}}$ is the front-loaded "sell everything immediately" policy — optimal for the proxy, catastrophic for real net P&L.
 
 **Sim-to-real, formally.** Let $P^\star$ be the true market and $P_\theta$ the simulator. The deployed value is $J_{P^\star}(\pi^\ast_{\text{sim}})$, whereas the agent optimized $J_{P_{\text{sim}}}(\cdot)$. The gap is bounded by a *simulator-mismatch* term (analogous to the simulation lemma):
-$$\big|J_{P^\star}(\pi)-J_{P_{\text{sim}}}(\pi)\big|\lesssim\frac{\gamma}{(1-\gamma)^2}\,\big\|P^\star-P_{\text{sim}}\big\|_\infty\,R_{\max},$$
+$$
+\big|J_{P^\star}(\pi)-J_{P_{\text{sim}}}(\pi)\big|\lesssim\frac{\gamma}{(1-\gamma)^2}\,\big\|P^\star-P_{\text{sim}}\big\|_\infty\,R_{\max},
+$$
 so **any** simulator error is amplified by $1/(1-\gamma)^2$. Long-horizon ($\gamma\to1$) execution RL is therefore *extremely* sensitive to getting the impact model right.
 
 **Non-stationarity, formally.** If the reward/transition changes at an unknown time $\tau$ (regime shift), the value function learned for $t<\tau$ carries a **misspecification term** in the new regime of the same form as in [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/04-non-stationarity-and-samples|04 · Non-Stationarity & Samples]]: even a *perfectly* fit policy is wrong by the parameter change. A learned *policy* is a statement about the *current* data-generating process, and its guarantees expire when that process changes.

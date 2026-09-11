@@ -43,22 +43,32 @@ This folder is the quantitative engine layer beneath the accounting-based factor
 **Notation:** $R_{it}$ asset $i$ return at $t$; $R_{ft}$ risk-free rate; $R_{Mt}$ market return; $MKT_t=R_{Mt}-R_{ft}$ market excess; $\text{SMB},\text{HML},\text{RMW},\text{CMA}$ the Fama–French factor returns; $X_t$ the $N\times K$ cross-sectional matrix of standardized factor exposures; $f_t\in\mathbb{R}^K$ factor returns; $\Omega$ factor covariance; $\Delta$ diagonal idiosyncratic covariance; $\alpha_i$ the pricing-error/intercept.
 
 **Fama–French 3-factor time-series regression** (Fama & French 1993; Tsay §9.3.2):
-$$R_{it}-R_{ft}=\alpha_i+\beta_{i,M}\,MKT_t+\beta_{i,\text{SMB}}\,\text{SMB}_t+\beta_{i,\text{HML}}\,\text{HML}_t+\varepsilon_{it}.$$
+$$
+R_{it}-R_{ft}=\alpha_i+\beta_{i,M}\,MKT_t+\beta_{i,\text{SMB}}\,\text{SMB}_t+\beta_{i,\text{HML}}\,\text{HML}_t+\varepsilon_{it}.
+$$
 
 **Fama–French 5-factor model** (FF 2015, eq. 5; add profitability and investment):
-$$R_{it}-R_{ft}=\alpha_i+b_i\,MKT_t+s_i\,\text{SMB}_t+h_i\,\text{HML}_t+r_i\,\text{RMW}_t+c_i\,\text{CMA}_t+\varepsilon_{it},$$
+$$
+R_{it}-R_{ft}=\alpha_i+b_i\,MKT_t+s_i\,\text{SMB}_t+h_i\,\text{HML}_t+r_i\,\text{RMW}_t+c_i\,\text{CMA}_t+\varepsilon_{it},
+$$
 with $RMW$ = robust-minus-weak operating profitability and $CMA$ = conservative-minus-aggressive investment.
 
 **Factor construction by 2×3 independent sorts** (FF 2015; NYSE-only breakpoints): split on median size (S/B), and on 30th/70th percentile B/M → six value-weighted portfolios; then
-$$\text{HML}=\tfrac12\big(R_{SH}+R_{BH}\big)-\tfrac12\big(R_{SL}+R_{BL}\big),\qquad \text{SMB}=\text{small avg}-\text{big avg},$$
+$$
+\text{HML}=\tfrac12\big(R_{SH}+R_{BH}\big)-\tfrac12\big(R_{SL}+R_{BL}\big),\qquad \text{SMB}=\text{small avg}-\text{big avg},
+$$
 and SMB averages the size factors from the B/M, profitability, and investment sorts. *(Verified in §3.)*
 
 **Cross-sectional factor model** (Barra/Axioma; Tsay §9.3.1 eq. 9.1–9.8): each period
-$$r_t=X_t f_t+u_t,\qquad \hat{f}_t=\big(X_t^\top V^{-1}X_t\big)^{-1}X_t^\top V^{-1}r_t\quad (V=\text{diag}\,\sigma^2_{i}),$$
+$$
+r_t=X_t f_t+u_t,\qquad \hat{f}_t=\big(X_t^\top V^{-1}X_t\big)^{-1}X_t^\top V^{-1}r_t\quad (V=\text{diag}\,\sigma^2_{i}),
+$$
 a **WLS/GLS** (Tsay eq. 9.7) with the factor-mimicking portfolio weights $\omega=(X^\top V^{-1}X)^{-1}X^\top V^{-1}$ (Tsay §9.3.1).
 
 **General factor-model covariance** (Tsay eq. 9.1–9.4): if $r_t=\alpha+B f_t+\varepsilon_t$ with $\text{Cov}(f_t)=\Omega$, $\text{Cov}(\varepsilon_t)=D=\text{diag}\{\sigma^2_i\}$,
-$$\Sigma=\text{Cov}(r_t)=B\,\Omega\,B^\top+D,$$
+$$
+\Sigma=\text{Cov}(r_t)=B\,\Omega\,B^\top+D,
+$$
 which replaces the $\tfrac{N(N-1)}{2}$ pairwise covariances with $K\ll N$ factor covariances (the practical point of a risk model).
 
 **Statistical factor model / PCA** (Tsay §9.5; ESL Ch 14): orthogonal-factor model $r_t-\mu=\beta f_t+\varepsilon_t$ with $\text{Cov}(f)=I$, $\text{Cov}(\varepsilon)=D$, so $\Sigma_r=\beta\beta'+D$ (Tsay eq. 9.17); **communality** $c_i^2=\sum_j\beta_{ij}^2$ plus **unique variance** $\sigma_i^2$ splits each asset's variance, and PCA loadings are $\sqrt{\lambda_j}\,e_j$ (Tsay eq. 9.19).

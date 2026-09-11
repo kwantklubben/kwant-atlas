@@ -35,7 +35,9 @@ Three steps, three "aha"s:
 
 **The threshold model of contagion.** Let $N$ banks each hold capital $E$ and interbank claims. Suppose bank $i$ has lent $x_i>0$ to the next bank in a ring. Bank $i$ defaults when cumulative losses $\ge E$. When bank $j$ defaults, its creditor (say $k$) loses its claim $x_k$ on $j$:
 
-$$\text{default}_j \;\Rightarrow\; \text{loss to creditor } k = x_k \;\ge\; E \;\Rightarrow\; \text{default}_k,$$
+$$
+\text{default}_j \;\Rightarrow\; \text{loss to creditor } k = x_k \;\ge\; E \;\Rightarrow\; \text{default}_k,
+$$
 
 which can cascade around the whole ring. The *elasticity* of the cascade to a single external shock $s$ hitting bank 0 is the number of banks that default. For a ring with equal $E$ and equal exposure $x=8>E=5$:
 
@@ -46,7 +48,9 @@ So the same system is *safe for shocks below $E$ and totally destroyed for shock
 
 **The aggregation identity that isn't.** For a portfolio of two loss streams $X_1, X_2$ with any dependence, expected shortfall is subadditive:
 
-$$\text{ES}_\alpha(X_1+X_2) \le \text{ES}_\alpha(X_1) + \text{ES}_\alpha(X_2).$$
+$$
+\text{ES}_\alpha(X_1+X_2) \le \text{ES}_\alpha(X_1) + \text{ES}_\alpha(X_2).
+$$
 
 So the "naive sum" (adding each marginal ES) is an **upper bound** you can *never* actually hit unless the two streams are perfectly comonotonic (one tail = the other tail, $\rho=1$). The lesson in §04: $63.97$ (sum) vs $55.65$ (corr $0.5$) vs $45.85$ (independent). Any aggregation method that doesn't account for dependence is either double-counting (sum) or, worse, *hiding* joint tail risk (treating them as independent when they are tail-linked).
 

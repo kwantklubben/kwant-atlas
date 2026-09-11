@@ -31,13 +31,19 @@ Two ideas carry the page:
 ### 2. Mathematical Ground Truth & Derivations
 
 **From triple-barrier to meta-label.** Given side $s_i\in\{-1,+1\}$ from the primary model at $t_{i,0}$, define the oriented barriers
-$$\text{upper}_i=P_{i,0}\big(1+pt\cdot\sigma_{t_{i,0}}\big),\qquad \text{lower}_i=P_{i,0}\big(1-sl\cdot\sigma_{t_{i,0}}\big),$$
+$$
+\text{upper}_i=P_{i,0}\big(1+pt\cdot\sigma_{t_{i,0}}\big),\qquad \text{lower}_i=P_{i,0}\big(1-sl\cdot\sigma_{t_{i,0}}\big),
+$$
 and the **meta-label** (LdP §3.6, Snippets 3.6–3.7)
-$$y^{\text{meta}}_i=\begin{cases}1 & \text{if the primary bet would have been profitable}\\ 0 & \text{otherwise}\end{cases}\ \in\{0,1\}.$$
+$$
+y^{\text{meta}}_i=\begin{cases}1 & \text{if the primary bet would have been profitable}\\ 0 & \text{otherwise}\end{cases}\ \in\{0,1\}.
+$$
 In code, the label is read off the first barrier touched *relative to the side*: if the upper barrier is first, a long wins and a short loses; if the lower is first, a long loses and a short wins; if the vertical barrier is first, the sign of the return decides. Symmetric barriers correspond to $pt=sl$; asymmetric ones ($pt\ne sl$, e.g. $[1,2]$) encode a directional payoff and are the recommended general choice.
 
 **Precision, recall, F1 (the metrics that matter).** With the confusion matrix over the test set,
-$$\text{Precision}=\frac{TP}{TP+FP},\qquad \text{Recall}=\frac{TP}{TP+FN},\qquad F_1=2\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}.$$
+$$
+\text{Precision}=\frac{TP}{TP+FP},\qquad \text{Recall}=\frac{TP}{TP+FN},\qquad F_1=2\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}.
+$$
 Recall is the analogue of *power* in hypothesis testing; precision is the analogue of $1-$ (false-discovery rate). A primary model tuned for recall accepts many bets and therefore many losers. The secondary model raises precision by **passing** (predicting $0$) on the bets it believes will lose. If the secondary has genuine skill, precision rises at a controlled cost to recall, and the F1 improves where the strategy operates.
 
 **From probability to size.** Once the secondary outputs $\hat p_i=\Pr(y^{\text{meta}}_i=1\mid \mathcal F_t)$, the bet size is a monotone function of $\hat p_i$ — from **0** (pass) below a threshold to a larger allocation above it. This is the interface to bet sizing (LdP Ch 10) and is the reason meta-labeling is described as "learning the size, not the side": the primary's $s_i$ fixes the sign, the secondary's $\hat p_i$ fixes the magnitude.

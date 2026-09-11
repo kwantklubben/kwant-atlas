@@ -29,8 +29,12 @@ The two structural features that make the state-space view worth the notation:
 
 #### 2.1 The general linear-Gaussian form (Tsay 11.26–11.27)
 
-$$s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad \eta_t\sim N(0,Q_t)$$
-$$y_t=c_t+Z_t s_t+e_t,\qquad e_t\sim N(0,H_t).$$
+$$
+s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad \eta_t\sim N(0,Q_t)
+$$
+$$
+y_t=c_t+Z_t s_t+e_t,\qquad e_t\sim N(0,H_t).
+$$
 
 - $s_t\in\mathbb R^m$ is the **state vector**; $T_t$ the **transition matrix** (what the state does when left alone); $Q_t$ the **process-noise covariance** ($R_t$ selects which state components are disturbed).
 - $y_t\in\mathbb R^p$ is the **observation**; $Z_t$ the **observation/design matrix** (how the state is measured); $H_t$ the **measurement-noise covariance**.
@@ -40,7 +44,9 @@ The model is **linear** (observations are linear in the state) and **Gaussian** 
 
 #### 2.2 The local-level model: the smallest useful state-space model
 
-$$y_t=\mu_t+e_t,\quad e_t\sim N(0,\sigma_e^2);\qquad \mu_{t+1}=\mu_t+\eta_t,\quad \eta_t\sim N(0,\sigma_\eta^2).$$
+$$
+y_t=\mu_t+e_t,\quad e_t\sim N(0,\sigma_e^2);\qquad \mu_{t+1}=\mu_t+\eta_t,\quad \eta_t\sim N(0,\sigma_\eta^2).
+$$
 
 State $s_t=\mu_t$ ($m=1$), $T=1$, $Z=1$, $R=1$, $H=\sigma_e^2$, $Q=\sigma_\eta^2$. This is the pure "random-walk signal observed through noise" model of page 01. Despite its size it drives **realized-volatility** filtering, quote smoothing, and — via the equivalence below — the ARIMA(0,1,1) used throughout volatility modeling.
 
@@ -48,11 +54,15 @@ State $s_t=\mu_t$ ($m=1$), $T=1$, $Z=1$, $R=1$, $H=\sigma_e^2$, $Q=\sigma_\eta^2
 
 **ARMA(1,1)** $x_t=\phi x_{t-1}+\theta a_{t-1}+a_t$ has the **companion state** $s_t=(x_t,\ \theta a_t)^\top$ with
 
-$$T=\begin{pmatrix}\phi & 1\\ 0 & 0\end{pmatrix},\quad R=\begin{pmatrix}1\\ \theta\end{pmatrix},\quad Z=\begin{pmatrix}1 & 0\end{pmatrix},\quad Q=\sigma_a^2,\ H=0 .$$
+$$
+T=\begin{pmatrix}\phi & 1\\ 0 & 0\end{pmatrix},\quad R=\begin{pmatrix}1\\ \theta\end{pmatrix},\quad Z=\begin{pmatrix}1 & 0\end{pmatrix},\quad Q=\sigma_a^2,\ H=0 .
+$$
 
 **Local level $\Leftrightarrow$ ARIMA(0,1,1)** (Tsay Eqs. 11.4–11.5). Differencing the local-level model gives an MA(1):
 
-$$(1-B)y_t=(1-\theta B)a_t,\qquad (1+\theta^2)\sigma_a^2=2\sigma_e^2+\sigma_\eta^2,\qquad \theta\sigma_a^2=\sigma_e^2 .$$
+$$
+(1-B)y_t=(1-\theta B)a_t,\qquad (1+\theta^2)\sigma_a^2=2\sigma_e^2+\sigma_\eta^2,\qquad \theta\sigma_a^2=\sigma_e^2 .
+$$
 
 So the *same* two variances $(\sigma_e^2,\sigma_\eta^2)$ can be written as a state-space model (with a latent level) **or** as an ARIMA(0,1,1) (with only observables). The state-space form is the one that *separates* the signal $\mu_t$ from the noise — ARIMA gives you the reduced-form autocovariances but throws the latent level away.
 

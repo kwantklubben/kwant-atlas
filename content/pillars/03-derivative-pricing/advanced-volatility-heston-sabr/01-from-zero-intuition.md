@@ -36,7 +36,9 @@ The practical objective: understand that a stochastic-volatility model is a *dis
 
 Take $X_T=\ln(S_T/F_T)$. With random variance $v$ (independent of the Brownian motion driving $S$),
 
-$$p(x)=\int_0^\infty \mathcal N\!\Big(x\,;\,-\tfrac12 Tv,\;Tv\Big)\,\pi(v)\,dv,\qquad \mathcal N(x;m,s^2)=\frac{1}{s\sqrt{2\pi}}e^{-\frac{(x-m)^2}{2s^2}}.$$
+$$
+p(x)=\int_0^\infty \mathcal N\!\Big(x\,;\,-\tfrac12 Tv,\;Tv\Big)\,\pi(v)\,dv,\qquad \mathcal N(x;m,s^2)=\frac{1}{s\sqrt{2\pi}}e^{-\frac{(x-m)^2}{2s^2}}.
+$$
 
 Its cumulants are the *cumulants of the variance-average*, and the third cumulant (skewness) is exactly zero unless $v$ is correlated with $S$ — the mathematical statement of aha #2. The variance-mixture route is the classic "Taylor/SV" explanation of the smile (Hull ch 20 §20.3 gives the leverage + volatility-feedback + crashophobia trio for equities).
 
@@ -44,7 +46,9 @@ Its cumulants are the *cumulants of the variance-average*, and the third cumulan
 
 Black–Scholes assigns one density. The mixture assigns another. If the two disagree in the wings, **no choice of $\sigma$ can repair it**: the model has one degree of freedom and the mismatch is a *function* of $K$. Concretely, with a two-point variance mixture,
 
-$$C(K,T)=p\,\text{BSM}(F,K,T,\sigma_1)+(1-p)\,\text{BSM}(F,K,T,\sigma_2),$$
+$$
+C(K,T)=p\,\text{BSM}(F,K,T,\sigma_1)+(1-p)\,\text{BSM}(F,K,T,\sigma_2),
+$$
 
 which is an exact closed form (no simulation needed) — the cleanest possible demonstration. Its ATM implied vol is *below* $\sqrt{\mathbb{E}[v]}$ (Jensen: option prices are convex in vol), and its wings rise.
 
@@ -52,7 +56,9 @@ which is an exact closed form (no simulation needed) — the cleanest possible d
 
 Heston replaces "distributed variance" by a concrete, tractable process:
 
-$$dS_t=\sqrt{v_t}\,S_t\,dZ_1,\qquad dv_t=-\lambda(v_t-\bar v)\,dt+\eta\sqrt{v_t}\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt .$$
+$$
+dS_t=\sqrt{v_t}\,S_t\,dZ_1,\qquad dv_t=-\lambda(v_t-\bar v)\,dt+\eta\sqrt{v_t}\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt .
+$$
 
 Failure to produce a smile is *not* an option here: the variance mixture induced by the CIR process $v_t$ **is** the smile generator. The four parameters have one job each — $\bar v$ sets the level, $\lambda$ the term structure, $\eta$ the curvature, $\rho$ the skew (§02–§04). The rest of this folder is spent making that precise, computing it, and finding where it breaks.
 

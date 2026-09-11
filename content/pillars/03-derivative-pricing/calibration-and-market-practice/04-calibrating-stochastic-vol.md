@@ -16,10 +16,10 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Stochastic-volatility models add a *second source of randomness* — the volatility itself moves. Heston: $dv_t=-\\lambda(v_t-\\bar v)\\,dt+\\eta\\sqrt{v_t}\\,dZ_2$. SABR: $d\\sigma_t=\\chi\\sigma_t\\,dZ_2$. Two extra facts make calibration structurally different from local vol:
+Stochastic-volatility models add a *second source of randomness* — the volatility itself moves. Heston: $dv_t=-\lambda(v_t-\bar v)\,dt+\eta\sqrt{v_t}\,dZ_2$. SABR: $d\sigma_t=\chi\sigma_t\,dZ_2$. Two extra facts make calibration structurally different from local vol:
 
-1. **Prices are no longer unique** (the market is *incomplete* — one stock cannot hedge the vol driver), so the model parameters carry a risk-neutral *choice* about the price of vol risk. We work directly under $\\mathbb{Q}$ (set the vol-risk price $\\phi=0$, Gatheral Ch 1) because *we fit to option prices*.
-2. **The parameters fight over the same features of the smile.** The ATMF skew is (to first order) controlled by the *combination* $\\rho\\eta$ (Heston) or $\\rho\\chi$ (SABR), not by $\\rho$ and $\\eta$ separately. Two very different parameter sets can reproduce nearly the same smile.
+1. **Prices are no longer unique** (the market is *incomplete* — one stock cannot hedge the vol driver), so the model parameters carry a risk-neutral *choice* about the price of vol risk. We work directly under $\mathbb{Q}$ (set the vol-risk price $\phi=0$, Gatheral Ch 1) because *we fit to option prices*.
+2. **The parameters fight over the same features of the smile.** The ATMF skew is (to first order) controlled by the *combination* $\rho\eta$ (Heston) or $\rho\chi$ (SABR), not by $\rho$ and $\eta$ separately. Two very different parameter sets can reproduce nearly the same smile.
 
 The practical objective of this page is twofold: **(a)** run a real least-squares fit of SABR to a smile (it works, and recovers the truth), and **(b)** show the **parameter-identification problem** — that the smile fixes *combinations* of parameters, not the parameters themselves — and how a **ridge penalty** stabilizes the choice. This is the calibration subtlety that separates a working desk calibration from a naive one.
 
@@ -27,21 +27,23 @@ The practical objective of this page is twofold: **(a)** run a real least-square
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Heston's fast-calibration structure (Gatheral Ch 3).** In the Heston model the implied-variance skew is, to first order, $\\rho\\eta$-driven: short-dated skew $\\to\\rho\\eta/2$, long-dated skew $\\to\\rho\\eta/(\\lambda'T)$ as $T\\to\\infty$ (Gatheral eq 3.19). This gives the practical recipe: **two expirations fix $\\lambda'$ and $\\rho\\eta$; the ATM term structure fixes $\\bar v$ and $v_0$; the skew curvature separates $\\rho$ from $\\eta$.** But note the *identifiability* issue hidden here: the short- and long-dated skews each only pin the product $\\rho\\eta$ — and since $\\rho$ and $\\eta$ are anticorrelated in effect, they are hard to separate from a single slice.
+**Heston's fast-calibration structure (Gatheral Ch 3).** In the Heston model the implied-variance skew is, to first order, $\rho\eta$-driven: short-dated skew $\to\rho\eta/2$, long-dated skew $\to\rho\eta/(\lambda'T)$ as $T\to\infty$ (Gatheral eq 3.19). This gives the practical recipe: **two expirations fix $\lambda'$ and $\rho\eta$; the ATM term structure fixes $\bar v$ and $v_0$; the skew curvature separates $\rho$ from $\eta$.** But note the *identifiability* issue hidden here: the short- and long-dated skews each only pin the product $\rho\eta$ — and since $\rho$ and $\eta$ are anticorrelated in effect, they are hard to separate from a single slice.
 
-**SABR asymptotics (Gatheral Ch 7, Hagan–Kumar–Lesniewski–Woodward 2002).** For $dS=\\sigma S^\\beta dZ_1,\\ d\\sigma=\\chi\\,\\sigma\\,dZ_2$:
+**SABR asymptotics (Gatheral Ch 7, Hagan–Kumar–Lesniewski–Woodward 2002).** For $dS=\sigma S^\beta dZ_1,\ d\sigma=\chi\,\sigma\,dZ_2$:
 
-$$\\sigma_{\\text{BS}}(k) = \\sigma_0\\,\\frac{y}{f(y)}\\,\\Big(1+\\tfrac14\\rho\\chi\\sigma_0+\\tfrac{2-3\\rho^2}{24}\\chi^2T+O(T^2)\\Big),\\qquad y=-\\chi\\frac{k}{\\sigma_0},\\; f(y)=\\ln\\!\\frac{\\sqrt{1-2\\rho y+y^2}+y-\\rho}{1-\\rho},$$
+$$
+\sigma_{\text{BS}}(k) = \sigma_0\,\frac{y}{f(y)}\,\Big(1+\tfrac14\rho\chi\sigma_0+\tfrac{2-3\rho^2}{24}\chi^2T+O(T^2)\Big),\qquad y=-\chi\frac{k}{\sigma_0},\; f(y)=\ln\!\frac{\sqrt{1-2\rho y+y^2}+y-\rho}{1-\rho},
+$$
 
-with ATM skew $\\partial\\sigma_{\\text{BS}}/\\partial k|_{k=0}=\\rho\\chi/2$. The **skew is set by $\\rho$**; the **curvature (wings) by $\\chi$ (vol-of-vol)**; $\\beta$ controls the backbone (how ATM vol depends on level). Because $\\beta$ and $\\rho$ trade off — a lower $\\beta$ (more normal dynamics) can mimic the effect of a more negative $\\rho$ — the pair is **not identifiable from one slice**: the smile pins the combination, and different $(\\beta,\\rho)$ with adjusted $(\\alpha,\\chi)$ fit equally well.
+with ATM skew $\partial\sigma_{\text{BS}}/\partial k|_{k=0}=\rho\chi/2$. The **skew is set by $\rho$**; the **curvature (wings) by $\chi$ (vol-of-vol)**; $\beta$ controls the backbone (how ATM vol depends on level). Because $\beta$ and $\rho$ trade off — a lower $\beta$ (more normal dynamics) can mimic the effect of a more negative $\rho$ — the pair is **not identifiable from one slice**: the smile pins the combination, and different $(\beta,\rho)$ with adjusted $(\alpha,\chi)$ fit equally well.
 
-**The $\\kappa/\\eta$ ridge.** In Heston-style fitting, the mean-reversion speed $\\lambda$ (or $\\kappa$) and the vol-of-vol $\\eta$ are highly collinear through the skew term $\\rho\\eta$ and the short/long skew ratio; the literature routinely reports that the *speed of mean reversion is poorly identified* from a single snapshot. The first-principles remedy is the same ridge as in **02**: add $+\\lambda\\lVert\\theta-\\theta_0\\rVert^2$ so the optimizer does not wander along the flat (near-degenerate) direction of the objective.
+**The $\kappa/\eta$ ridge.** In Heston-style fitting, the mean-reversion speed $\lambda$ (or $\kappa$) and the vol-of-vol $\eta$ are highly collinear through the skew term $\rho\eta$ and the short/long skew ratio; the literature routinely reports that the *speed of mean reversion is poorly identified* from a single snapshot. The first-principles remedy is the same ridge as in **02**: add $+\lambda\lVert\theta-\theta_0\rVert^2$ so the optimizer does not wander along the flat (near-degenerate) direction of the objective.
 
 ---
 
 ### 3. Computational Implementation — a real SABR fit + the identification problem
 
-Fit the 4-parameter Hagan SABR formula to a smile *generated from a known truth* (so we can see both the recovery and the degeneracy). Then freeze $\\beta$ at different values and refit — if many $\\beta$'s fit equally well, $\\beta$ is not identifiable. Then add a ridge on $\\beta$. Stdlib only (Nelder–Mead least squares).
+Fit the 4-parameter Hagan SABR formula to a smile *generated from a known truth* (so we can see both the recovery and the degeneracy). Then freeze $\beta$ at different values and refit — if many $\beta$'s fit equally well, $\beta$ is not identifiable. Then add a ridge on $\beta$. Stdlib only (Nelder–Mead least squares).
 
 ```python
 import math, random
@@ -115,25 +117,25 @@ SABR free fit: alpha=0.1413 beta=0.5117 rho=-0.2986 nu=0.3962  RMSE=0.00137
   ridge lam=1.0: beta=0.600 rho=-0.312  RMSE=0.00138  (prior beta=0.6)
   ridge lam=5.0: beta=0.600 rho=-0.312  RMSE=0.00138  (prior beta=0.6)
 ```
-Two lessons jump out. **(1) The free fit recovers the truth** ($\\beta{=}0.51,\\rho{=}{-}0.30$ vs true $0.5,{-}0.3$), because the data was generated by SABR. **(2) Non-identifiability:** freezing $\\beta$ at $0.3$, $0.5$, or $1.0$ gives *statistically identical* fits (RMSE 0.00138 / 0.00137 / 0.00141) yet *very different* $\\rho$ ($-0.27,\\ -0.30,\\ -0.37$) and $\\alpha$. The smile cannot tell them apart — but they carry *different hedges*. The ridge is the fix: with $\\lambda{=}1$ the fit pins $\\beta$ to the prior $0.6$ while losing nothing measurable in fit (RMSE 0.00138 vs 0.00137). **You cannot fit your way out of an identification problem — you must regularize it.**
+Two lessons jump out. **(1) The free fit recovers the truth** ($\beta{=}0.51,\rho{=}{-}0.30$ vs true $0.5,{-}0.3$), because the data was generated by SABR. **(2) Non-identifiability:** freezing $\beta$ at $0.3$, $0.5$, or $1.0$ gives *statistically identical* fits (RMSE 0.00138 / 0.00137 / 0.00141) yet *very different* $\rho$ ($-0.27,\ -0.30,\ -0.37$) and $\alpha$. The smile cannot tell them apart — but they carry *different hedges*. The ridge is the fix: with $\lambda{=}1$ the fit pins $\beta$ to the prior $0.6$ while losing nothing measurable in fit (RMSE 0.00138 vs 0.00137). **You cannot fit your way out of an identification problem — you must regularize it.**
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Non-identifiability of $\\beta/\\rho$ (SABR) and $\\kappa/\\eta$ (Heston).** The smile pins products like $\\rho\\eta$, not the parameters. Different sets fit equally but hedge differently. Regularize or fix one parameter (the desk's convention fixes $\\beta$, e.g. $\\beta{=}0.5$ equity, $\\beta{=}1$ FX).
-2. **One-slice blindness.** A single maturity fits $\\rho$ and $\\chi$ but cannot separate mean reversion; term structure (multiple maturities) is required for $\\lambda$, and even then $\\lambda$ is weakly identified. Gatheral's recipe uses the *term structure of skew* to separate parameters.
+1. **Non-identifiability of $\beta/\rho$ (SABR) and $\kappa/\eta$ (Heston).** The smile pins products like $\rho\eta$, not the parameters. Different sets fit equally but hedge differently. Regularize or fix one parameter (the desk's convention fixes $\beta$, e.g. $\beta{=}0.5$ equity, $\beta{=}1$ FX).
+2. **One-slice blindness.** A single maturity fits $\rho$ and $\chi$ but cannot separate mean reversion; term structure (multiple maturities) is required for $\lambda$, and even then $\lambda$ is weakly identified. Gatheral's recipe uses the *term structure of skew* to separate parameters.
 3. **No time-homogeneous SV model fits the market short end.** Gatheral Ch 3: the observed short-dated skew rises faster than Heston allows — a pure diffusion SV model cannot match the far short-end smile; jumps are needed (see [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]]). A calibration that "fits" by contorting parameters there is overfitting.
-4. **Heston's structural deficiencies.** Bergomi Ch 6: Heston hard-wires skew $\\propto 1/\\hat\\sigma$ (inverse to vol level — reality shows the opposite), has a single vol-of-vol time scale $\\propto(1-e^{-kT})/(kT)$, and cannot fit a general variance-swap term structure. Calibrating it to a wide surface forces compromises.
-5. **Incomplete-market pricing choice.** The $\\phi=0$ choice (no vol-risk premium) is a modeling assumption; it affects exotic prices even when the vanilla fit is identical.
+4. **Heston's structural deficiencies.** Bergomi Ch 6: Heston hard-wires skew $\propto 1/\hat\sigma$ (inverse to vol level — reality shows the opposite), has a single vol-of-vol time scale $\propto(1-e^{-kT})/(kT)$, and cannot fit a general variance-swap term structure. Calibrating it to a wide surface forces compromises.
+5. **Incomplete-market pricing choice.** The $\phi=0$ choice (no vol-risk premium) is a modeling assumption; it affects exotic prices even when the vanilla fit is identical.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Gatheral**, *The Volatility Surface*, Ch 1 (SV valuation, $\\phi$ = market price of vol risk), Ch 2 (Heston solution, fast calibration), Ch 3 (skew structure, eq 3.19, why Heston under-fits the short end), Ch 7 (SABR asymptotics, eq 7.7).
+- **Gatheral**, *The Volatility Surface*, Ch 1 (SV valuation, $\phi$ = market price of vol risk), Ch 2 (Heston solution, fast calibration), Ch 3 (skew structure, eq 3.19, why Heston under-fits the short end), Ch 7 (SABR asymptotics, eq 7.7).
 - **Bergomi**, *Stochastic Volatility Modeling*, Ch 6 (Heston as a forward-variance model and its deficiencies, eqs 6.4–6.20), Ch 7 (forward-variance calibration, benchmark vol-of-vol eq 7.40, §7.5). *Math-verified in the corpus.*
-- **Hagan–Kumar–Lesniewski–Woodward (2002)**, "Managing Smile Risk" — the SABR formula and its use in fitting $\\alpha,\\beta,\\rho,\\chi$.
+- **Hagan–Kumar–Lesniewski–Woodward (2002)**, "Managing Smile Risk" — the SABR formula and its use in fitting $\alpha,\beta,\rho,\chi$.
 - **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (volatility smiles, calibration of stochastic vol in practice).
 
 ---

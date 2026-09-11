@@ -28,23 +28,31 @@ The order types and mechanics of the previous pages are the *alphabet*; this pag
 
 **The latency race as a winner-take-most contest.** Let the faster firm's edge be $\Delta$ (its latency advantage) and let reaction times be exponentially distributed with scale $\tau$. The probability the faster firm wins the stale-quote race is
 
-$$P(\text{win})=\Pr[T_\text{slow}-T_\text{fast}>\Delta]\approx e^{-\Delta/\tau}.$$
+$$
+P(\text{win})=\Pr[T_\text{slow}-T_\text{fast}>\Delta]\approx e^{-\Delta/\tau}.
+$$
 
 With value captured per win $V$ and $N$ race events, the faster firm's daily rent is
 
-$$R(\Delta)=N\,V\,e^{-\Delta/\tau}.$$
+$$
+R(\Delta)=N\,V\,e^{-\Delta/\tau}.
+$$
 
 **Key implications:** (i) the *slower* firm's profit is $N\,V\,(1-e^{-\Delta/\tau})$ and it is **negative** once adverse selection dominates — speed is defensive as much as offensive; (ii) $R$ is concave in $\Delta$, so the race's marginal returns vanish yet the spending continues — the classic arms-race signature; (iii) in equilibrium the *social* return to speed can be near zero (the losers just stopped losing), which is the Biais–Foucault–Moinas inefficiency.
 
 **Frequent batch auctions remove the race (Budish–Cramton–Shim).** If all orders arriving in a window $[t,t+\delta]$ are cleared together at a single uniform price with ties broken by *size*, then reaction speed within the window is worthless:
 
-$$\mathbb{E}[\text{speed rent}]=0\quad\text{for any }\Delta<\delta,$$
+$$
+\mathbb{E}[\text{speed rent}]=0\quad\text{for any }\Delta<\delta,
+$$
 
 because whoever arrives marginally earlier in the window loses ties to the larger order and crosses at the same price. This is the formal market-design counterpoint to continuous matching — the modern, high-frequency version of the call auction from [[pillars/02-algorithmic-hft/market-microstructure-and-order-types/04-auctions-and-continuous-trading|04 · Auctions & Continuous Trading]].
 
 **Market-maker net economics.** A passive market maker's per-share profit decomposes as
 
-$$\text{net}=\underbrace{r_m}_{\text{rebate}}+\underbrace{S_r}_{\text{realized spread}}-\underbrace{\text{AS}}_{\text{adverse selection}},$$
+$$
+\text{net}=\underbrace{r_m}_{\text{rebate}}+\underbrace{S_r}_{\text{realized spread}}-\underbrace{\text{AS}}_{\text{adverse selection}},
+$$
 
 so a higher rebate is not "free money" — it is compensation that must cover the adverse-selection term (Hasbrouck Ch 5; the Glosten–Milgrom spread).
 
@@ -88,7 +96,7 @@ no first-mover race -> latency advantage is worthless (sniping profit = $0).
 market-maker net = rebate 0.0020 + spread 0.0050 - adverse 0.0015 = 0.0055 $/share
 ```
 
-**Read the numbers.** The winning probability decays exponentially ($e^{-\Delta/50}$), so a **10 µs** edge keeps **82%** of the $16M/day pot while a **200 µs** edge keeps only **1.8%** — and crucially, the *slower* firm's 18% share at 10 µs is its **losses**, not its profits. The concavity is exactly the arms-race signature: the first 10 µs of speed buy ~$3M/day of rent; the next 190 µs buy a further ~$12.8M more but at vastly higher engineering cost. Batch clearing **zeros** the entire $\Delta$-dependence. Finally, the market maker's **5.5 cents/share** net is *conditional on the adverse-selection term being small* — raise adverse selection above rebate $+$ spread and the strategy is a guaranteed loser.
+**Read the numbers.** The winning probability decays exponentially ($e^{-\Delta/50}$), so a **10 µs** edge keeps **82%** of the $16M/day pot while a **200 µs** edge keeps only **1.8\%** — and crucially, the *slower* firm's 18\% share at 10 µs is its **losses**, not its profits. The concavity is exactly the arms-race signature: the first 10 µs of speed buy ~$3M/day of rent; the next 190 µs buy a further ~$12.8M more but at vastly higher engineering cost. Batch clearing **zeros** the entire $\Delta$-dependence. Finally, the market maker's **5.5 cents/share** net is *conditional on the adverse-selection term being small* — raise adverse selection above rebate $+$ spread and the strategy is a guaranteed loser.
 
 ---
 

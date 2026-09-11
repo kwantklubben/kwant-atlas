@@ -28,7 +28,9 @@ The objective of this page: internalize **Proposition I** (value and WACC are in
 
 **Proposition I.** The market value of any firm is independent of its capital structure, equal to its expected return capitalized at the class rate:
 
-$$V_j = (S_j + D_j) = \frac{X_j}{\rho_k} \quad\Longleftrightarrow\quad \frac{X_j}{V_j} = \rho_k.$$
+$$
+V_j = (S_j + D_j) = \frac{X_j}{\rho_k} \quad\Longleftrightarrow\quad \frac{X_j}{V_j} = \rho_k.
+$$
 
 Equivalently, the **average cost of capital is completely independent of capital structure** and equal to the pure-equity capitalization rate.
 
@@ -36,7 +38,9 @@ Equivalently, the **average cost of capital is completely independent of capital
 
 **Proposition II.** The expected yield on the stock of a levered firm is a linear function of leverage:
 
-$$i_j = \rho_k + (\rho_k - r)\,\frac{D_j}{S_j}.$$
+$$
+i_j = \rho_k + (\rho_k - r)\,\frac{D_j}{S_j}.
+$$
 
 *Derivation.* By definition $i = \frac{X - rD}{S}$; from Proposition I, $X = \rho_k(S + D)$; substituting and simplifying gives (8). The equity-holder's return equals the class rate *plus a premium for financial risk* $(\rho_k - r)D/S$.
 
@@ -44,7 +48,9 @@ $$i_j = \rho_k + (\rho_k - r)\,\frac{D_j}{S_j}.$$
 
 **The corporate-tax extension (MM 1958 §I.C).** Because interest is tax-deductible, the firm's after-tax income to all claimants is $X^\tau = (X - rD)(1 - T) + rD$, where $T$ is the corporate tax rate. The propositions retain their form with $X$ replaced by $X^\tau$, but value is no longer structure-independent:
 
-$$V_L = V_U + \tau D, \qquad \text{WACC} = \rho\left(1 - \tau\frac{D}{V}\right),$$
+$$
+V_L = V_U + \tau D, \qquad \text{WACC} = \rho\left(1 - \tau\frac{D}{V}\right),
+$$
 
 where $V_U = \frac{X(1-\tau)}{\rho}$ is the unlevered (all-equity) value. The **tax shield $\tau D$** is the present value of the interest tax deductions the debt generates — the single mechanism by which capital structure becomes value-relevant in the standard model, and the engine of the trade-off theory in [[fundamentals-accounting/capital-structure-and-corporate-finance/06-advanced-extensions|06]].
 

@@ -31,25 +31,35 @@ All three keep the OU spread at the centre; they differ in how many assets and h
 
 Start from a VAR($p$) in levels and rewrite it in **error-correction** form for a $k$-dimensional $I(1)$ vector $x_t$:
 
-$$\Delta x_t=\Pi x_{t-1}+\sum_{i=1}^{p-1}\Gamma_i\Delta x_{t-i}+a_t,\qquad \Pi=\sum_{i=1}^{p}\Phi_i-I=-\Phi(1).$$
+$$
+\Delta x_t=\Pi x_{t-1}+\sum_{i=1}^{p-1}\Gamma_i\Delta x_{t-i}+a_t,\qquad \Pi=\sum_{i=1}^{p}\Phi_i-I=-\Phi(1).
+$$
 
 The **rank of $\Pi$ is the cointegrating rank** $m$: $\Pi=\alpha\beta'$, with $\beta$ ($k\times m$) the cointegrating vectors and $\alpha$ the adjustment speeds.
 
 **Estimation (the reduced-rank regression).** Run two auxiliary regressions and collect residuals:
 
-$$R_{0t}=\Delta x_t-\text{proj on }(\Delta x_{t-1},\dots),\qquad R_{1t}=x_{t-1}-\text{proj on }(\Delta x_{t-1},\dots).$$
+$$
+R_{0t}=\Delta x_t-\text{proj on }(\Delta x_{t-1},\dots),\qquad R_{1t}=x_{t-1}-\text{proj on }(\Delta x_{t-1},\dots).
+$$
 
 Form the moment matrices $S_{ij}=\tfrac1T\sum_t R_{it}R_{jt}'$, and solve the **generalised eigenvalue problem**
 
-$$\big|\lambda S_{11}-S_{10}S_{00}^{-1}S_{01}\big|=0\;\Longrightarrow\;\hat\lambda_1\ge\dots\ge\hat\lambda_k.$$
+$$
+\big|\lambda S_{11}-S_{10}S_{00}^{-1}S_{01}\big|=0\;\Longrightarrow\;\hat\lambda_1\ge\dots\ge\hat\lambda_k.
+$$
 
 The cointegrating vectors are the eigenvectors, normalised so $e'S_{11}e=I$.
 
 **Tests (H0: rank $=m$).** Two standard statistics, with nonstandard (Brownian-motion) critical values:
 
-$$LR_{\text{tr}}(m)=-(T-p)\sum_{i=m+1}^{k}\ln(1-\hat\lambda_i)\quad\text{(rank}=m\text{ vs }>m),$$
+$$
+LR_{\text{tr}}(m)=-(T-p)\sum_{i=m+1}^{k}\ln(1-\hat\lambda_i)\quad\text{(rank}=m\text{ vs }>m),
+$$
 
-$$LR_{\max}(m)=-(T-p)\ln(1-\hat\lambda_{m+1})\quad\text{(rank}=m\text{ vs }m+1).$$
+$$
+LR_{\max}(m)=-(T-p)\ln(1-\hat\lambda_{m+1})\quad\text{(rank}=m\text{ vs }m+1).
+$$
 
 For $k=2$ with a restricted constant, the 95% critical values are $\approx15.41$ (rank $\le0$) and $\approx3.76$ (rank $\le1$): reject "no cointegration" if the first exceeds $15.41$, and fail to reject rank 1 if the second is below $3.76$.
 
@@ -61,7 +71,9 @@ Trade a stock against a *weighted portfolio* (basket) rather than a single peer.
 
 Model the spread as an OU process and the trade as a **first-passage problem**: enter at level $a$, exit at level $m$ ($a<m$ for a long-spread trade). The cycle time $T=T_1+T_2$ (entry→exit + exit→next entry) is random; the return per cycle is deterministic, $r(a,m,c)=m-a-c$ with cost $c$. By renewal theory the expected return and variance per unit time are
 
-$$\mu(a,m,c)=\frac{r(a,m,c)}{\mathbb{E}[T]},\qquad \sigma^2(a,m,c)=\frac{r^2(a,m,c)\operatorname{Var}(T)}{\mathbb{E}^3[T]},$$
+$$
+\mu(a,m,c)=\frac{r(a,m,c)}{\mathbb{E}[T]},\qquad \sigma^2(a,m,c)=\frac{r^2(a,m,c)\operatorname{Var}(T)}{\mathbb{E}^3[T]},
+$$
 
 and $\mathbb{E}[T],\operatorname{Var}(T)$ come from the **first-passage-time density of the OU process** (Itô-transformed to a dimensionless system). Maximising a Sharpe-type objective over $(a,m)$ yields the optimal thresholds — recovering the fixed $2\sigma$ rule as a special (suboptimal-in-general) case.
 

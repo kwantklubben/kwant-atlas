@@ -32,19 +32,25 @@ The four engines you will actually meet:
 
 **The as-of join.** Given trades at times $\{t_i\}$ and quotes at times $\{q_j\}$, the state observed by trade $i$ is the most recent quote *at or before* it:
 
-$$v_i = \operatorname*{arg\,max}_{q_j \le t_i} \text{Quote}(q_j).$$
+$$
+v_i = \operatorname*{arg\,max}_{q_j \le t_i} \text{Quote}(q_j).
+$$
 
 An equi-join `t.time = q.time` fails because the two event streams never share exact timestamps (the mismatch is nanoseconds), and a "nearest" join (`abs(t-q)` minimal) can pick a *future* quote — an instant look-ahead leak. The as-of join is the only correct primitive.
 
 **Complexity.** With both keys sorted, a single synchronized merge pointer advances monotonically:
 
-$$O(N + M) \quad\text{(merge/as-of)} \qquad\text{vs}\qquad O(NM)\ \text{naive rescan}.$$
+$$
+O(N + M) \quad\text{(merge/as-of)} \qquad\text{vs}\qquad O(NM)\ \text{naive rescan}.
+$$
 
 If the input is **unsorted**, the engine must sort first ($O(N\log N)$) or degrade to a cross product — the failure mode that turns a 1-second query into a 4-hour one (see [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/05-failure-modes-and-practice|05 · Failure Modes]]).
 
 **The `s#` / sorted attribute.** Marking a table sorted by time lets the engine skip the sort and binary-search a window in $O(\log N)$ before a linear scan of the window:
 
-$$\text{window query} = O(\log N + W), \quad W = \text{rows in the window}.$$
+$$
+\text{window query} = O(\log N + W), \quad W = \text{rows in the window}.
+$$
 
 **Partitioned (`parted`) + sorted (`s#`) + grouped (`g#`) attributes** are kdb+'s vocabulary for exactly the layout choices of [[pillars/08-quantitative-development/tick-level-databases-and-timeseries/02-storage-formats|02]]. `aj` is fast *because* the columns are `s#`-sorted and the table `parted` by date.
 

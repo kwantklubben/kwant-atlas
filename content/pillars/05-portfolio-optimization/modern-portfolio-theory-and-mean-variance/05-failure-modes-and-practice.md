@@ -26,13 +26,17 @@ The three failures, in one line each:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The sensitivity formula.** With the budget-only (unconstrained, shortable) tangency/frontier solution $w=\Sigma^{-1}(\lambda\mathbf{1}+\gamma\mu)$, derivative with respect to one mean:
-$$\frac{\partial w}{\partial \mu_j}=\Sigma^{-1}\!\Big[\tfrac{\partial\lambda}{\partial\mu_j}\mathbf{1}+\tfrac{\partial\gamma}{\partial\mu_j}\mu+\gamma\,e_j\Big],$$
+$$
+\frac{\partial w}{\partial \mu_j}=\Sigma^{-1}\!\Big[\tfrac{\partial\lambda}{\partial\mu_j}\mathbf{1}+\tfrac{\partial\gamma}{\partial\mu_j}\mu+\gamma\,e_j\Big],
+$$
 
 the multiplier derivatives $\partial\lambda/\partial\mu_j,\partial\gamma/\partial\mu_j$ come from re-imposing the two budget/return constraints; they are what makes the response *amplified* (the Best–Grauer effect) rather than the bare $\Sigma^{-1}e_j$.
 i.e. **a change in the mean of asset $j$ is pushed through the full leverage matrix $\Sigma^{-1}$**. When $\Sigma$ has small eigenvalues (assets nearly collinear), $\Sigma^{-1}$ has large eigenvalues, and a tiny change in one $\mu_j$ can move many weights by multiples of 100%. This is the mathematical core of "error maximizer."
 
 **Ranking of input damage (Chopra & Ziemba 1993).** In terms of lost value in the MV objective, as sample size grows the cost of an error in **means** stays roughly constant while the cost of errors in **variances/covariances** falls, so for realistic sample sizes:
-$$\text{cost}(\mu\text{ error}) \approx 11\times \text{cost}(\sigma^2 \text{ error}),\qquad\text{cost}(\sigma^2 \text{ error}) \approx 2\times \text{cost}(\text{covariance error}),$$
+$$
+\text{cost}(\mu\text{ error}) \approx 11\times \text{cost}(\sigma^2 \text{ error}),\qquad\text{cost}(\sigma^2 \text{ error}) \approx 2\times \text{cost}(\text{covariance error}),
+$$
 
 (Chopra & Ziemba: errors in means are \~11$\times$ as damaging as variance errors and \~21$\times$ as damaging as covariance errors; the ranking is $\mu > \sigma^2 > \sigma_{ij}$.)
 **Why:** the objective rewards $w^T\mu$ linearly but penalizes $w^T\Sigma w$ quadratically in *weight* — noise in $\mu$ selects extreme weights whose variance cost is then borne fully.

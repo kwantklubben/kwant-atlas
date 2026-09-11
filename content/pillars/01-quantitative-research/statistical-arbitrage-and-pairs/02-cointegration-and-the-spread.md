@@ -32,13 +32,17 @@ The error-correction picture is what makes pairs trading mechanical: if the spre
 
 **Step 1 — the cointegrating regression.** Estimate by OLS the static long-run relation
 
-$$y_t=\mu+\beta x_t+z_t,\qquad \hat\beta=\frac{\widehat{\operatorname{Cov}}(y,x)}{\widehat{\operatorname{Var}}(x)},\quad \hat\mu=\bar y-\hat\beta\bar x,$$
+$$
+y_t=\mu+\beta x_t+z_t,\qquad \hat\beta=\frac{\widehat{\operatorname{Cov}}(y,x)}{\widehat{\operatorname{Var}}(x)},\quad \hat\mu=\bar y-\hat\beta\bar x,
+$$
 
 and form the residual $\hat z_t=y_t-\hat\mu-\hat\beta x_t$.
 
 **Step 2 — test the residual for a unit root.** Run an augmented Dickey–Fuller regression on the residual:
 
-$$\Delta \hat z_t=c+\gamma\,\hat z_{t-1}+\sum_{i=1}^{p}\varphi_i\,\Delta \hat z_{t-i}+e_t,$$
+$$
+\Delta \hat z_t=c+\gamma\,\hat z_{t-1}+\sum_{i=1}^{p}\varphi_i\,\Delta \hat z_{t-i}+e_t,
+$$
 
 and reject "no cointegration" if the $t$-statistic on $\gamma$ is **sufficiently negative**. Because $\hat z_t$ is estimated (a *generated regressor*), the null distribution is **not** the usual Dickey–Fuller distribution; it is more negative. For $N=2$ variables with a constant and no trend, the asymptotic 5% critical value is about $-3.34$ (Engle–Granger 1987; MacKinnon 1991), versus $-2.86$ for an ordinary ADF. Using the wrong table is a classic error.
 
@@ -46,7 +50,9 @@ and reject "no cointegration" if the $t$-statistic on $\gamma$ is **sufficiently
 
 If $y_t,x_t$ are $I(1)$ and cointegrated, then (Tsay Eq. 8.33, in the bivariate pair case)
 
-$$\begin{aligned}\Delta y_t &= \alpha_1\,(z_{t-1}-\mu_z)+\sum_i\gamma^y_i\Delta y_{t-i}+\sum_j\delta^y_j\Delta x_{t-j}+\varepsilon^y_t,\\ \Delta x_t &= \alpha_2\,(z_{t-1}-\mu_z)+\sum_i\gamma^x_i\Delta y_{t-i}+\sum_j\delta^x_j\Delta x_{t-j}+\varepsilon^x_t,\end{aligned}$$
+$$
+\begin{aligned}\Delta y_t &= \alpha_1\,(z_{t-1}-\mu_z)+\sum_i\gamma^y_i\Delta y_{t-i}+\sum_j\delta^y_j\Delta x_{t-j}+\varepsilon^y_t,\\ \Delta x_t &= \alpha_2\,(z_{t-1}-\mu_z)+\sum_i\gamma^x_i\Delta y_{t-i}+\sum_j\delta^x_j\Delta x_{t-j}+\varepsilon^x_t,\end{aligned}
+$$
 
 where $z_t=y_t-\beta x_t$. Cointegration requires $\alpha_1$ and $\alpha_2$ to be **opposite in sign** (at least one adjusts toward equilibrium; Tsay §8.8 Eq. 8.45). The size of $|\alpha_i|$ is the speed at which leg $i$ corrects — the econometric analogue of price discovery / leadership (Hasbrouck Ch 10). If $\alpha_1=\alpha_2=0$, no error correction and hence no cointegration.
 
@@ -54,15 +60,21 @@ where $z_t=y_t-\beta x_t$. Cointegration requires $\alpha_1$ and $\alpha_2$ to b
 
 The continuous-time model of the spread is the Ornstein–Uhlenbeck (OU) process:
 
-$$dz_t=\theta(\mu-z_t)\,dt+\sigma\,dW_t,\qquad \theta>0.$$
+$$
+dz_t=\theta(\mu-z_t)\,dt+\sigma\,dW_t,\qquad \theta>0.
+$$
 
 It is the continuous-time **AR(1)**: the increment has conditional mean $\theta(\mu-z_t)\,dt$ — positive when $z_t<\mu$ (spread too low, expect a rise), negative when $z_t>\mu$. The stationary (equilibrium) distribution is Gaussian with
 
-$$\mathbb{E}[z_t]=\mu,\qquad \operatorname{Var}[z_t]=\frac{\sigma^2}{2\theta}.$$
+$$
+\mathbb{E}[z_t]=\mu,\qquad \operatorname{Var}[z_t]=\frac{\sigma^2}{2\theta}.
+$$
 
 **Discretisation (exact).** Solving the OU SDE over a step $\Delta t$ gives
 
-$$z_{t+1}=m(1-e^{-\theta\Delta t})+e^{-\theta\Delta t}z_t+\eta_{t+1},\qquad \eta\sim N\!\Big(0,\ \tfrac{\sigma^2}{2\theta}(1-e^{-2\theta\Delta t})\Big).$$
+$$
+z_{t+1}=m(1-e^{-\theta\Delta t})+e^{-\theta\Delta t}z_t+\eta_{t+1},\qquad \eta\sim N\!\Big(0,\ \tfrac{\sigma^2}{2\theta}(1-e^{-2\theta\Delta t})\Big).
+$$
 
 So a 1-lag OLS identifies the persistence directly, but **which coefficient depends on which regression you run**:
 
@@ -73,13 +85,17 @@ The two are algebraically identical ($\varphi=1+\beta$); for small $\theta\Delta
 
 **Half-life.** The expected time to close half the gap to equilibrium is
 
-$$\boxed{\ \tau_{1/2}=\frac{\ln 2}{\theta}\ }.$$
+$$
+\boxed{\ \tau_{1/2}=\frac{\ln 2}{\theta}\ }.
+$$
 
 (Equivalently, for the discrete AR(1), $\tau_{1/2}=\ln(2)/\ln(1/b)$ — the Tsay Ch 2 mean-reversion half-life.) A spread with $\tau_{1/2}$ of a few days is tradable with daily data; one with $\tau_{1/2}$ of a year is not.
 
 **Avellaneda–Lee estimation (Appendix).** Using the cumulative residual $X_k=\sum_{j\le k}\tilde R_j$ over a 60-day window and the regression $X_{n+1}=a+bX_n+\zeta_{n+1}$:
 
-$$\kappa=-\log(b)\cdot 252,\qquad m=\frac{a}{1-b},\qquad \sigma_{\text{eq}}=\sqrt{\frac{\operatorname{Var}(\zeta)}{1-b^2}},$$
+$$
+\kappa=-\log(b)\cdot 252,\qquad m=\frac{a}{1-b},\qquad \sigma_{\text{eq}}=\sqrt{\frac{\operatorname{Var}(\zeta)}{1-b^2}},
+$$
 
 with the acceptance filter $\kappa>252/30$ (half-life under ~30 trading days, i.e. $0<b<0.9672$).
 

@@ -31,11 +31,15 @@ Three facts make fees a first-class routing input:
 ### 2. Mathematical Ground Truth & Derivations
 
 **All-in price and routing objective.** For a taker, the effective price at venue $i$ is
-$$\hat p_i=p_i+f_i^{\text{take}},$$
+$$
+\hat p_i=p_i+f_i^{\text{take}},
+$$
 and the router minimizes $\sum_i q_i\hat p_i$ subject to $\sum_i q_i=Q,\ q_i\le S_i$ (page 03). For a **maker**, the effective *received* price is $p_i-f_m$ on the passive side (a rebate improves it), but the fill is probabilistic — rebates trade against fill risk (see [[pillars/02-algorithmic-hft/queue-position-and-fill-probability|Queue Position & Fill Probability]]).
 
 **The cum-fee bid–ask spread (Colliard & Foucault 2012).** Let the displayed spread be $S_{\text{raw}}=a-b$ and the take fee be $f_t$ (dollars per share). The **cum-fee spread** — the spread a round-trip taker actually pays — is
-$$\boxed{\;S_{\text{cum}}=S_{\text{raw}}+2f_t.\;}$$
+$$
+\boxed{\;S_{\text{cum}}=S_{\text{raw}}+2f_t.\;}
+$$
 With make fee $f_m$ and total fee $f=f_t+f_m$, the model's central result is:
 
 - **Invariance:** holding the *total* fee $f$ fixed, any split $(f_t,f_m)$ leaves $S_{\text{cum}}$ unchanged. The raw spread $S_{\text{raw}}=S_{\text{cum}}-2f_t$ moves in the opposite direction to $f_t$, so **raw-spread regressions cannot identify the fee split.**

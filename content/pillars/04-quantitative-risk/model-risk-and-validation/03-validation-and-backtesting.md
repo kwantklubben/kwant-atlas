@@ -30,19 +30,27 @@ The objective: turn each element into a *statistic with a null distribution*, so
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 Unconditional coverage (Kupiec 1995).** The model promises exceptions at rate $p=1-\alpha$. With $x$ exceptions in $n$ trials, the likelihood-ratio test of $H_0:\pi=p$ against the unrestricted $\hat\pi=x/n$ is
-$$LR_{uc}=-2\ln\frac{(1-p)^{\,n-x}p^{\,x}}{(1-\hat\pi)^{\,n-x}\hat\pi^{\,x}}\;\xrightarrow{d}\;\chi^2_1 .$$
+$$
+LR_{uc}=-2\ln\frac{(1-p)^{\,n-x}p^{\,x}}{(1-\hat\pi)^{\,n-x}\hat\pi^{\,x}}\;\xrightarrow{d}\;\chi^2_1 .
+$$
 Passing $LR_{uc}$ means the *frequency* of exceptions matches the promise. It does **not** look at when they happen.
 
 **2.2 Independence / conditional coverage (Christoffersen 1998).** Form the hit sequence $I_t=\mathbf 1\{L_t>\mathrm{VaR}_t\}$ and its first-order transition counts $n_{ij}$ ($i\to j$). The independence statistic compares the Markov alternative $\hat\pi_{01},\hat\pi_{11}$ with the i.i.d. null $\hat\pi$:
-$$LR_{ind}=-2\ln\frac{L_{\text{indep}}(\hat\pi)}{L_{\text{Markov}}(\hat\pi_{01},\hat\pi_{11})}\;\xrightarrow{d}\;\chi^2_1,\qquad LR_{cc}=LR_{uc}+LR_{ind}\;\xrightarrow{d}\;\chi^2_2 .$$
+$$
+LR_{ind}=-2\ln\frac{L_{\text{indep}}(\hat\pi)}{L_{\text{Markov}}(\hat\pi_{01},\hat\pi_{11})}\;\xrightarrow{d}\;\chi^2_1,\qquad LR_{cc}=LR_{uc}+LR_{ind}\;\xrightarrow{d}\;\chi^2_2 .
+$$
 A model that breaches its VaR in **clusters** fails Christoffersen even if the average rate is right — the signature of unmodelled volatility clustering.
 
 **2.3 The traffic light (BCBS 1996).** Rather than a single test, Basel grades the count $x$ into three zones with binomial boundaries: yellow begins at the smallest $x$ with $\mathbb{P}(K\le x\mid99\%)\ge95\%$ (that is $x=5$, $\mathbb{P}=0.9588$), red begins at $\ge99.99\%$ ($x=10$, $\mathbb{P}=0.999946$). The capital multiplier is $k=3+\text{plus}(x)$ with plus rising $0.40\to1.00$ across the yellow zone. *This is a validation rule expressed directly in capital.*
 
 **2.4 Benchmark comparison (loss differential / Diebold–Mariano).** To compare a model with a benchmark, score each forecast with a **consistent, strictly-proper** loss — for a quantile, the asymmetric *pinball* (tick) loss
-$$L_\alpha(y,q)=\alpha\,(y-q)^{+}+(1-\alpha)\,(q-y)^{+},\qquad \text{minimised in } q \text{ at the true } \alpha\text{-quantile}.$$
+$$
+L_\alpha(y,q)=\alpha\,(y-q)^{+}+(1-\alpha)\,(q-y)^{+},\qquad \text{minimised in } q \text{ at the true } \alpha\text{-quantile}.
+$$
 The average loss differential $\bar d=\frac1n\sum_t(d_t^{\text{model}}-d_t^{\text{bench}})$ and its standardised form
-$$DM=\frac{\bar d}{\hat\sigma_d/\sqrt n}\;\xrightarrow{d}\;N(0,1)$$
+$$
+DM=\frac{\bar d}{\hat\sigma_d/\sqrt n}\;\xrightarrow{d}\;N(0,1)
+$$
 is the Diebold–Mariano statistic. **$DM$ near 0 does not mean "benchmark agrees"; it means "we cannot tell them apart"** — which, if the benchmark shares the model's flaw, is exactly how a wrong model gets certified (the benchmark-error failure mode, §4).
 
 **2.5 Calibration error.** For probability forecasts, *reliability* is measured by the gap between forecast and realised frequency across confidence bins: $\mathrm{CE}=\frac1N\sum_i|\,\hat p_i-\mathrm{obs}_i|$ (mean absolute calibration error), or the Brier score $B=\frac1N\sum(\hat p_i-y_i)^2$. For VaR the natural calibration check is the exception rate itself plus the **PIT histogram**: under a correct model the probability-integral transform $F_t(L_t)$ is Uniform$(0,1)$, so a histogram of $F_t(L_t)$ that is U-shaped (mass at both ends) flags a wrong tail.

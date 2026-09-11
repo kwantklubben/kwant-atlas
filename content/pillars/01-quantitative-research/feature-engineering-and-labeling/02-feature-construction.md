@@ -32,23 +32,33 @@ Three jobs, in order of importance:
 #### 2.1 Basis expansion (ESL Ch 2, Ch 5)
 
 The general linear-in-the-parameters model is a **basis expansion**:
-$$f_\theta(x)=\sum_{m=1}^{M}\theta_m\,h_m(x)\qquad\text{(ESL eq. 2.43 / 5.1)},$$
+$$
+f_\theta(x)=\sum_{m=1}^{M}\theta_m\,h_m(x)\qquad\text{(ESL eq. 2.43 / 5.1)},
+$$
 with $h_m$ *fixed* basis functions. A **cubic spline** with knots $\xi_1<\dots<\xi_K$ uses the **truncated-power basis**
-$$h_1=1,\ h_2=x,\ h_3=x^2,\ h_4=x^3,\ h_{4+k}=(x-\xi_k)_+^3\quad(k=1,\dots,K)\qquad\text{(ESL eq. 5.3)},$$
+$$
+h_1=1,\ h_2=x,\ h_3=x^2,\ h_4=x^3,\ h_{4+k}=(x-\xi_k)_+^3\quad(k=1,\dots,K)\qquad\text{(ESL eq. 5.3)},
+$$
 with the $(x-\xi_k)_+=\max(0,x-\xi_k)$ notation. A cubic spline with $K$ interior knots has $K+4$ parameters; imposing linearity beyond the boundary knots gives a **natural cubic spline** with $K$ degrees of freedom (frees 4 df) — the standard bias–variance knob for a smooth nonlinear feature.
 
 #### 2.2 PCA and factor features (ESL Ch 14, Tsay Ch 9)
 
 When many raw columns are collinear, the useful feature is a **low-rank summary**. PCA is the best rank-$q$ linear manifold: with $\mu$ the mean and $V_q$ the top-$q$ eigenvectors of the covariance,
-$$f(\lambda)=\mu+V_q\lambda\qquad\text{(ESL eq. 14.49)},\qquad \min_{\mu,\{V_q\},\lambda_i}\sum_i\|x_i-\mu-V_q\lambda_i\|^2\qquad\text{(eq. 14.50)},$$
+$$
+f(\lambda)=\mu+V_q\lambda\qquad\text{(ESL eq. 14.49)},\qquad \min_{\mu,\{V_q\},\lambda_i}\sum_i\|x_i-\mu-V_q\lambda_i\|^2\qquad\text{(eq. 14.50)},
+$$
 solved by the SVD $X=UDV^{\!\top}$ (eq. 14.54). The variance share of component $i$ is $\lambda_i/\sum_j\lambda_j$ (Tsay §9.4.1). In finance the target of the same machinery is the **factor model** $r_{it}=\alpha_i+\sum_m\beta_{im}f_{mt}+\varepsilon_{it}$ (Tsay eq. 9.1–9.4), giving two families of features: *statistical factors* (PCs of returns) and *fundamental factors* (Fama–French/BARRA style exposures).
 
 #### 2.3 Point-in-time standardization (the leak trap)
 
 The tempting feature is the full-sample z-score
-$$z_t=\frac{x_t-\bar x_{\text{all}}}{\operatorname{sd}(x_{\text{all}})},\qquad \bar x_{\text{all}}=\tfrac1T\sum_{s=1}^{T}x_s,\ \ \operatorname{sd}(x_{\text{all}})=\sqrt{\tfrac1{T}\sum_{s=1}^T(x_s-\bar x_{\text{all}})^2}.$$
+$$
+z_t=\frac{x_t-\bar x_{\text{all}}}{\operatorname{sd}(x_{\text{all}})},\qquad \bar x_{\text{all}}=\tfrac1T\sum_{s=1}^{T}x_s,\ \ \operatorname{sd}(x_{\text{all}})=\sqrt{\tfrac1{T}\sum_{s=1}^T(x_s-\bar x_{\text{all}})^2}.
+$$
 $\bar x_{\text{all}}$ and $\operatorname{sd}(x_{\text{all}})$ depend on data *after* $t$. The correct feature uses an **expanding** or **rolling** estimator:
-$$z_t^{\text{PIT}}=\frac{x_t-\hat\mu_t}{\hat\sigma_t},\qquad \hat\mu_t=\tfrac1t\sum_{s\le t}x_s,\quad \hat\sigma_t=\sqrt{\tfrac1t\sum_{s\le t}(x_s-\hat\mu_t)^2}.$$
+$$
+z_t^{\text{PIT}}=\frac{x_t-\hat\mu_t}{\hat\sigma_t},\qquad \hat\mu_t=\tfrac1t\sum_{s\le t}x_s,\quad \hat\sigma_t=\sqrt{\tfrac1t\sum_{s\le t}(x_s-\hat\mu_t)^2}.
+$$
 The two agree in the large-$t$ limit but are *systematically different* exactly where it matters — at the start of the sample, where the full-sample version already "knows" the whole future shape.
 
 ---

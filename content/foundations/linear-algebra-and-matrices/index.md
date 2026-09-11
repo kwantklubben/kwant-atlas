@@ -44,7 +44,7 @@ This page is a *hub*: it (a) gives the **fast decomposition-and-fact lookup** be
 |---|---|---|
 | Spectral theorem | $\Sigma=Q\Lambda Q'=\sum_{i=1}^n\lambda_i q_i q_i'$, $Q'Q=I$ | $3\times3$ corr $\to$ eig $[1.9342,0.8726,0.1931]$, sum $=3$, $\|Q\Lambda Q'-\Sigma\|=0$ |
 | PSD test | $w'\Sigma w\ge0\ \forall w \iff \lambda_i\ge0\ \forall i$ | $3\times3$ non-PSD corr → one $\lambda<0$ ([[foundations/linear-algebra-and-matrices/06-advanced-extensions|06 · Advanced Extensions (RMT & Numerics)]]) |
-| Cholesky recursion | $L_{ii}=\sqrt{\Sigma_{ii}-\sum_{k<i}L_{ik}^2}$, $L_{ij}=\big(\Sigma_{ij}-\sum_{k<j}L_{ik}L_{jk}\big)/L_{jj}$ | $\Sigma{=}\begin{psmallmatrix}1&.6\\.6&1\end{psmallmatrix}\to L{=}\begin{psmallmatrix}1&0\\.6&.8\end{psmallmatrix}$, $LL'=\Sigma$ exactly |
+| Cholesky recursion | $L_{ii}=\sqrt{\Sigma_{ii}-\sum_{k<i}L_{ik}^2}$, $L_{ij}=\big(\Sigma_{ij}-\sum_{k<j}L_{ik}L_{jk}\big)/L_{jj}$ | $\Sigma{=}\begin{pmatrix}1&.6\\.6&1\end{pmatrix}\to L{=}\begin{pmatrix}1&0\\.6&.8\end{pmatrix}$, $LL'=\Sigma$ exactly |
 | Least squares | $\hat\beta=(X'X)^{-1}X'y$ (ESL 3.6); $\hat y=X(X'X)^{-1}X'y$ (3.7) | $8$-pt data: $\hat\beta=[1.03709,\,1.15027]$, RSS $=0.05345$ |
 | Ridge | $(X'X+\lambda I)^{-1}X'y$ (3.44); $X\hat\beta_{ridge}=\sum_j u_j\frac{d_j^2}{d_j^2+\lambda}u_j'y$ (3.47) | more shrinkage on smaller $d_j$ |
 | PCA | $PC_i=e_i'r$, $\text{Var}=\lambda_i$, prop $=\lambda_i/\sum_j\lambda_j$ (Tsay 9.4.1) | 5-asset factor cov: PC1 prop $0.958$, loadings $\propto\beta$ |

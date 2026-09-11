@@ -32,7 +32,9 @@ Five failures, in one line each:
 
 CRR requires $d<e^{r\Delta t}<u$, i.e. $e^{-\sigma\sqrt{\Delta t}}<e^{r\Delta t}<e^{\sigma\sqrt{\Delta t}}$, i.e.
 
-$$\sigma\sqrt{\Delta t}>r\Delta t\quad\Longleftrightarrow\quad \boxed{\;\sigma>r\sqrt{\Delta t}\;}$$
+$$
+\sigma\sqrt{\Delta t}>r\Delta t\quad\Longleftrightarrow\quad \boxed{\;\sigma>r\sqrt{\Delta t}\;}
+$$
 
 Violate it and $p=\frac{e^{r\Delta t}-d}{u-d}$ leaves $[0,1]$: the "probability measure" is not a measure, the state prices $\zeta=\widetilde{\mathbb P}/(1+r)$ go negative, and a claim's value can be *below* its arbitrage bound. This is not a numerical bug; it is [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|FT1]] failing for the discretized market.
 
@@ -40,13 +42,17 @@ Violate it and $p=\frac{e^{r\Delta t}-d}{u-d}$ leaves $[0,1]$: the "probability 
 
 **American put (and dividend-paying call).** The value satisfies the backward recursion
 
-$$v_k(x)=\max\Big\{\underbrace{\tfrac{1}{1+r}\big[\tilde p\,v_{k+1}(ux)+\tilde q\,v_{k+1}(dx)\big]}_{\text{continuation}},\;\underbrace{g(x)}_{\text{intrinsic}}\Big\},$$
+$$
+v_k(x)=\max\Big\{\underbrace{\tfrac{1}{1+r}\big[\tilde p\,v_{k+1}(ux)+\tilde q\,v_{k+1}(dx)\big]}_{\text{continuation}},\;\underbrace{g(x)}_{\text{intrinsic}}\Big\},
+$$
 
 so $V^{\text{Am}}\ge V^{\text{Eu}}$ always, with a strictly positive **early-exercise premium** whenever the exercise region is non-empty. Applying the European formula is therefore a *lower bound*, not a price.
 
 **American call, no dividend.** For a convex payoff with $g(0)=0$ and $r\ge0$ (Shreve Ch 7, Cor. 2.25) the discounted payoff $(1+r)^{-k}g(S_k)$ is a $\widetilde{\mathbb P}$-submartingale, so by optional sampling
 
-$$\widetilde{\mathbb E}\!\left[(1+r)^{-n}g(S_n)\right]=\max_{\tau}\widetilde{\mathbb E}\!\left[(1+r)^{-\tau}g(S_\tau)\right],$$
+$$
+\widetilde{\mathbb E}\!\left[(1+r)^{-n}g(S_n)\right]=\max_{\tau}\widetilde{\mathbb E}\!\left[(1+r)^{-\tau}g(S_\tau)\right],
+$$
 
 hence $C^{\text{Am}}=c^{\text{BSM}}$ — **never exercise early**. A tree that appears to show otherwise is showing tree error, not economics.
 

@@ -33,12 +33,18 @@ Three "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The spread, precisely (Foucault eq. 2.1).** With best bid $b$, best ask $a$, and midquote $m=(a+b)/2$, the **quoted spread** and its relative version are
-$$S=a-b,\qquad s=\frac{a-b}{m}.$$
+$$
+S=a-b,\qquad s=\frac{a-b}{m}.
+$$
 Selling at the bid realises a **half-spread** cost $\tfrac12 S$ per share — the standard measure of immediacy's price. So the *market-liquidity* cost of liquidating $Q$ shares at mid price $m$ is, to first order,
-$$\text{Cost}_{\text{spread}}=\tfrac12\,S\,Q=\tfrac12\,s\,m\,Q=\tfrac12\,s\,V,\qquad V=mQ.$$
+$$
+\text{Cost}_{\text{spread}}=\tfrac12\,S\,Q=\tfrac12\,s\,m\,Q=\tfrac12\,s\,V,\qquad V=mQ.
+$$
 
 **The margin constraint.** A position of value $P$ financed with equity $N$ and a fractional margin (haircut) $m$ must satisfy, with $L=P/N$ the leverage,
-$$P\le \frac{N}{m}\qquad\Longleftrightarrow\qquad L=\frac{P}{N}\le \frac1m.$$
+$$
+P\le \frac{N}{m}\qquad\Longleftrightarrow\qquad L=\frac{P}{N}\le \frac1m.
+$$
 $m$ is the *only* number in this inequality that the lender sets unilaterally — and $m$ is set from risk: a common rule is $m=z_\alpha\sigma$ (the position's value-at-risk), so **higher volatility mechanically forces lower leverage** (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/02-market-vs-funding-liquidity|02 · Market vs Funding Liquidity]]).
 
 **Why "solvent but dead" is possible.** Solvency is about assets vs liabilities; liquidity is about the *timing* of cash flows. A fund can have $P>P_{\text{debt}}$ (positive net worth) yet be unable to meet a margin call today because its assets cannot be converted to cash at their marked value without a fire-sale discount. Formally, liquidation raises cash $\tfrac12 sV$ *less* than the mark, so a firm that is barely solvent can be made insolvent **by the act of meeting its own margin call**.

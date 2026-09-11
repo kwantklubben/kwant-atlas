@@ -18,7 +18,9 @@ Financial returns are **uncorrelated in level but strongly dependent in magnitud
 
 GARCH-family models make volatility a **deterministic function of the past**. The core declaration is that the return decomposes into a predictable mean and a conditionally Gaussian shock whose *variance itself follows an ARMA-type recursion*:
 
-$$r_t=\mu_t+a_t,\qquad a_t=\sigma_t\varepsilon_t,\qquad \varepsilon_t\overset{iid}{\sim}N(0,1),\qquad \sigma_t^2=\operatorname{Var}(r_t\mid\mathcal{F}_{t-1}).$$
+$$
+r_t=\mu_t+a_t,\qquad a_t=\sigma_t\varepsilon_t,\qquad \varepsilon_t\overset{iid}{\sim}N(0,1),\qquad \sigma_t^2=\operatorname{Var}(r_t\mid\mathcal{F}_{t-1}).
+$$
 
 Everything below is a choice about how $\sigma_t^2$ depends on the filtered past. The point of the whole discipline: **volatility is the one genuinely forecastable quantity in returns**, so it drives risk management (VaR/ES), position sizing (vol targeting), option pricing, and hedging.
 

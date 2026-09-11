@@ -36,7 +36,7 @@ Two limits are worth holding in mind:
 
 The stationary component is *decreasing* in $\gamma$ — a dealer who cares **more** about inventory quotes tighter in this component to trade out faster (a volume/edge trade-off), which partly offsets the elsewhere-increasing inventory-risk term $\gamma\sigma^2(T-t)$. The paper's tables show exactly this: spread $1.33$ at $\gamma=0.01$, $1.29$ at $\gamma=0.1$, $1.15$ at $\gamma=0.5$.
 
-**The skew per unit inventory** is $2\theta_2$ in the $\theta$ language — concretely, moving inventory by one lot shifts the reservation price by $\gamma\sigma^2(T-t)$. With the paper's simulation parameters ($\gamma=0.1,\sigma=2,\tau=1$) that is $\$0.40$ per lot, so a $+10$ lot position shades the quotes $\$4$ down.
+**The skew per unit inventory** is $2\theta_2$ in the $\theta$ language — concretely, moving inventory by one lot shifts the reservation price by $\gamma\sigma^2(T-t)$. With the paper's simulation parameters ($\gamma=0.1,\sigma=2,\tau=1$) that is $ $\$0.40 per lot, so a +10$ lot position shades the quotes $\$4 down.
 
 **Why variance is the right metric.** Under CARA utility $\mathbb{E}[-\exp(-\gamma W)]$, a smaller P&L variance is worth more than a larger mean whenever dispersion is high — a mean–variance proxy is $\mathbb{E}[W]-\tfrac{\gamma}{2}\mathrm{Var}[W]$. The AS strategy deliberately trades a small amount of mean for a large reduction in variance, which is the *correct* trade for a risk-averse dealer.
 
@@ -89,7 +89,7 @@ gamma=0.5   | Inventory : mean P&L= 43.125  std=  4.834  | final-q mean= -1.016 
 ```
 **Reading the numbers.**
 - **$\gamma=0.01$ (near risk-neutral):** the two strategies are nearly identical in mean P&L ($59.97$ vs $60.01$) — the paper's "in the limit $\gamma\to0$ the two strategies coincide". The AS final-inventory std ($5.67$) is about $60\%$ of symmetric ($9.39$).
-- **$\gamma=0.1$:** AS gives up $\sim\$3.3$ of mean P&L ($56.95$ vs $60.30$) and in exchange cuts P&L std from $17.72$ to $5.82$ — a **$3.0\times$** reduction — and terminal-inventory std from $8.97$ to $3.19$ ($2.8\times$). This is AS Table 1's result ($62.94/5.89$ vs $67.21/13.43$ for their 1000-path run; our seed/step-size differ, ratios match).
+- **$\gamma=0.1$:** AS gives up $\sim$ \$3.3 of mean P&L ($56.95$ vs $60.30$) and in exchange cuts P&L std from $17.72$ to $5.82$ — a **$3.0\times$** reduction — and terminal-inventory std from $8.97$ to $3.19$ ($2.8\times$). This is AS Table 1's result ($62.94/5.89$ vs $67.21/13.43$ for their 1000-path run; our seed/step-size differ, ratios match).
 - **$\gamma=0.5$ (very risk-averse):** AS std falls to $4.83$ but mean P&L to $43.13$ — the dealer pays a real price for safety. Terminal inventory std $2.14$ vs symmetric $7.46$.
 
 The qualitative law is exact and reproducible: **AS trades a little mean for a lot of variance.**

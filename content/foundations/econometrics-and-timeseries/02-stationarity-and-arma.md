@@ -29,7 +29,9 @@ That asymmetry (ACF cuts for MA, PACF cuts for AR) is the entire identification 
 ### 2. Mathematical Ground Truth & Derivations
 
 **The Wold decomposition** (Tsay §2.3): any purely-nondeterministic stationary process can be written as a linear combination of current and past white noise:
-$$r_t=\mu+\sum_{i=0}^\infty\psi_i\,a_{t-i},\qquad \psi_0=1,\quad \sum\psi_i^2<\infty,$$
+$$
+r_t=\mu+\sum_{i=0}^\infty\psi_i\,a_{t-i},\qquad \psi_0=1,\quad \sum\psi_i^2<\infty,
+$$
 with the ACF $\rho_\ell=\dfrac{\sum_i\psi_i\psi_{i+\ell}}{\sum_i\psi_i^2}$ and total variance $\sigma_a^2\sum\psi_i^2$.
 
 **AR(1)** $x_t=\phi_0+\phi_1x_{t-1}+a_t$: stationary iff $\lvert\phi_1\rvert<1$; mean $\phi_0/(1-\phi_1)$; variance $\sigma_a^2/(1-\phi_1^2)$; **ACF $\rho_\ell=\phi_1^\ell$** (exponential decay; alternating signs if $\phi_1<0$).
@@ -41,7 +43,9 @@ with the ACF $\rho_\ell=\dfrac{\sum_i\psi_i\psi_{i+\ell}}{\sum_i\psi_i^2}$ and t
 **MA(q)** $x_t=a_t+\sum_{i=1}^q\theta_i a_{t-i}$: always stationary; invertible iff zeros of $\theta(B)=0$ are outside the unit circle ($\lvert\theta_1\rvert<1$ for MA(1)); ACF cuts off after $q$. MA(1): $\rho_1=+\theta_1/(1+\theta_1^2)$ under this $+\theta$ convention ($\rho_\ell=0$ for $\ell>1$).
 
 **ARMA(p,q)** $x_t=\phi_0+\sum_{i=1}^p\phi_ix_{t-i}+a_t+\sum_{j=1}^q\theta_ja_{t-j}$: stationary iff AR roots outside unit circle, invertible iff MA roots outside. **ARMA(1,1)** variance $\dfrac{(1+2\phi\theta+\theta^2)}{1-\phi^2}\sigma_a^2$ and
-$$\rho_1=\frac{(1+\theta\phi)(\phi+\theta)}{1+2\theta\phi+\theta^2},\qquad \rho_\ell=\phi\,\rho_{\ell-1}\ \ (\ell\ge2).$$
+$$
+\rho_1=\frac{(1+\theta\phi)(\phi+\theta)}{1+2\theta\phi+\theta^2},\qquad \rho_\ell=\phi\,\rho_{\ell-1}\ \ (\ell\ge2).
+$$
 The ACF decays *exponentially from lag 2 on* — it does **not** cut off at any finite lag (Tsay §2.3). This "decay starting at lag 2" is the ARMA(1,1) fingerprint.
 
 **Model selection.** AIC $=\ln\tilde\sigma_\ell^2+\dfrac{2\ell}{T}$, BIC $=\ln\tilde\sigma_\ell^2+\dfrac{\ell\ln T}{T}$ (Tsay eq. 2.16). BIC penalizes complexity more ($\ln T>2$ for $T>7$) and is asymptotically consistent; AIC is better for forecasting in finite samples. The residual check is **Ljung–Box** $Q(m)=T(T+2)\sum_{\ell=1}^m\frac{\hat\rho_\ell^2}{T-\ell}\sim\chi^2_{m-g}$ ($g$ fitted ARMA coefficients).

@@ -34,15 +34,21 @@ Two deployment patterns, in increasing order of safety and cost:
 
 Model a bad build as producing a loss at rate $L$ (dollars per hour) whenever it is live at full traffic. If a rollout assigns traffic weight $w(t)\in[0,1]$ over a horizon $[0,T]$, the loss incurred is
 
-$$\mathcal{L} = L\!\int_0^{T} w(t)\,dt = L \cdot \mathcal{E}, \qquad \mathcal{E} = \int_0^T w(t)\,dt \;\;(\text{exposure-hours}).$$
+$$
+\mathcal{L} = L\!\int_0^{T} w(t)\,dt = L \cdot \mathcal{E}, \qquad \mathcal{E} = \int_0^T w(t)\,dt \;\;(\text{exposure-hours}).
+$$
 
 For a **big-bang** deploy, $w(t)=1$ until detection at $t=D$, so $\mathcal{E}=D$. For a **canary** with $K$ stages of weights $w_k$ held for $h_k$ hours,
 
-$$\mathcal{E}_{\text{canary}} = \sum_{k=1}^{K} w_k h_k,$$
+$$
+\mathcal{E}_{\text{canary}} = \sum_{k=1}^{K} w_k h_k,
+$$
 
 and the rollout **aborts** at the first stage where the cumulative loss exceeds the rollback threshold $\Theta$:
 
-$$k^\* = \min\Big\{k : L\sum_{j\le k} w_j h_j \ge \Theta\Big\}.$$
+$$
+k^* = \min\Big\{k : L\sum_{j\le k} w_j h_j \ge \Theta\Big\}.
+$$
 
 The reduction factor $\mathcal{E}_{\text{big}}/\mathcal{E}_{\text{canary}}$ is the entire value proposition of the pattern, and it is *monotone* in how low the first weight is.
 

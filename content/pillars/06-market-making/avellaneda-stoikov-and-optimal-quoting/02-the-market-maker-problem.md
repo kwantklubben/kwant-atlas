@@ -32,8 +32,10 @@ The model has three ingredients:
 
 Consider first an **inactive** dealer who holds $q$ shares to time $T$ and cannot trade. His wealth is $X_T+qS_T = x+qS_T$ (no interest). Since $S_T = s + \sigma(W_T-W_t) \sim \mathcal{N}(s, \sigma^2\tau)$ with $\tau=T-t$,
 
-$$v(x,s,q,t)=\mathbb{E}_t\!\left[-\exp\!\left(-\gamma(x+qS_T)\right)\right]
-=-\exp(-\gamma x)\,\exp(-\gamma q s)\,\exp\!\left(\frac{\gamma^2q^2\sigma^2\tau}{2}\right). \qquad (\text{AS }2.3)$$
+$$
+v(x,s,q,t)=\mathbb{E}_t\!\left[-\exp\!\left(-\gamma(x+qS_T)\right)\right]
+=-\exp(-\gamma x)\,\exp(-\gamma q s)\,\exp\!\left(\frac{\gamma^2q^2\sigma^2\tau}{2}\right). \qquad (\text{AS }2.3)
+$$
 
 The derivation is Gaussian-integral bookkeeping: $\mathbb{E}[-\exp(-\gamma q S_T)] = -\exp(-\gamma qs + \tfrac12\gamma^2q^2\sigma^2\tau)$ because the moment generating function of $\mathcal{N}(s,\sigma^2\tau)$ is $\exp(\gamma q s + \tfrac12\gamma^2q^2\sigma^2\tau)$ evaluated at the right sign.
 
@@ -41,16 +43,22 @@ The derivation is Gaussian-integral bookkeeping: $\mathbb{E}[-\exp(-\gamma q S_T
 
 The **reservation bid** $r^b$ is the price making the dealer indifferent between his current portfolio and his portfolio *plus one share*:
 
-$$v(x-r^b,\,s,\,q+1,\,t) = v(x,\,s,\,q,\,t). \qquad (2.4)$$
+$$
+v(x-r^b,\,s,\,q+1,\,t) = v(x,\,s,\,q,\,t). \qquad (2.4)
+$$
 
 The **reservation ask** $r^a$ solves $v(x+r^a,\,s,\,q-1,\,t)=v(x,\,s,\,q,\,t)$ (2.5). Substituting the closed-form $v$ and cancelling (both sides share $-\exp(-\gamma x)$, and the indifference makes the price independent of $x$):
 
-$$r^a(s,q,t) = s + (1-2q)\frac{\gamma\sigma^2\tau}{2}, \qquad
-r^b(s,q,t) = s + (-1-2q)\frac{\gamma\sigma^2\tau}{2}. \qquad (2.6\text{–}2.7)$$
+$$
+r^a(s,q,t) = s + (1-2q)\frac{\gamma\sigma^2\tau}{2}, \qquad
+r^b(s,q,t) = s + (-1-2q)\frac{\gamma\sigma^2\tau}{2}. \qquad (2.6\text{–}2.7)
+$$
 
 Their **average is the reservation price**
 
-$$\boxed{\;r(s,q,t)=\frac{r^a+r^b}{2}= s - q\,\gamma\,\sigma^2\,(T-t)\;}$$
+$$
+\boxed{\;r(s,q,t)=\frac{r^a+r^b}{2}= s - q\,\gamma\,\sigma^2\,(T-t)\;}
+$$
 
 **Interpretation.** Long $(q>0)$ ⇒ $r<s$ (wants out). Short $(q<0)$ ⇒ $r>s$ (wants in). The wedge $\gamma\sigma^2\tau$ is the price of one unit of inventory risk; the skew is $q$ times that.
 
@@ -58,7 +66,9 @@ $$\boxed{\;r(s,q,t)=\frac{r^a+r^b}{2}= s - q\,\gamma\,\sigma^2\,(T-t)\;}$$
 
 AS assume market buy orders lift the dealer's ask at Poisson rate $\lambda^a(\delta^a)$ and sell orders hit his bid at rate $\lambda^b(\delta^b)$, both decreasing in the distance from the mid. Aggregating the empirical market-order size distribution ($f_Q(x)\propto x^{-1-\alpha}$) with the logarithmic price-impact law ($\Delta p\propto\ln Q$) gives
 
-$$\lambda(\delta)=\Lambda\,\mathbb{P}(\Delta p>\delta)=A\,e^{-k\delta}, \qquad A=\Lambda/\alpha,\;\; k=\alpha K. \qquad (2.11)$$
+$$
+\lambda(\delta)=\Lambda\,\mathbb{P}(\Delta p>\delta)=A\,e^{-k\delta}, \qquad A=\Lambda/\alpha,\;\; k=\alpha K. \qquad (2.11)
+$$
 
 ($A$ = baseline arrival intensity; $k$ = how fast fills die off as you quote further out — the "liquidity density" of the book.)
 
@@ -66,17 +76,23 @@ $$\lambda(\delta)=\Lambda\,\mathbb{P}(\Delta p>\delta)=A\,e^{-k\delta}, \qquad A
 
 With the dealer controlling $\delta^a,\delta^b$, wealth jumps as $dX_t=p^a dN^a_t - p^b dN^b_t$ and inventory is $q_t=N^b_t-N^a_t$. The value function
 
-$$u(s,x,q,t)=\max_{\delta^a,\delta^b}\mathbb{E}_t\!\left[-\exp\!\left(-\gamma(X_T+q_TS_T)\right)\right]$$
+$$
+u(s,x,q,t)=\max_{\delta^a,\delta^b}\mathbb{E}_t\!\left[-\exp\!\left(-\gamma(X_T+q_TS_T)\right)\right]
+$$
 
 solves the HJB equation
 
-$$u_t+\tfrac12\sigma^2u_{ss}
+$$
+u_t+\tfrac12\sigma^2u_{ss}
 +\max_{\delta^b}\lambda^b(\delta^b)\!\left[u(s,x-s+\delta^b,q+1,t)-u(s,x,q,t)\right]
-+\max_{\delta^a}\lambda^a(\delta^a)\!\left[u(s,x+s+\delta^a,q-1,t)-u(s,x,q,t)\right]=0,$$
++\max_{\delta^a}\lambda^a(\delta^a)\!\left[u(s,x+s+\delta^a,q-1,t)-u(s,x,q,t)\right]=0,
+$$
 
 with terminal condition $u(s,x,q,T)=-\exp(-\gamma(x+qs))$. The two "max" terms are simply **the expected gain from a filled bid (inventory $+1$, cash $-p^b$) and a filled ask (inventory $-1$, cash $+p^a$)**, weighted by their arrival intensities. Because utility is exponential, the ansatz
 
-$$u(s,x,q,t)=-\exp(-\gamma x)\,\exp(-\gamma\theta(s,q,t)) \qquad (3.2)$$
+$$
+u(s,x,q,t)=-\exp(-\gamma x)\,\exp(-\gamma\theta(s,q,t)) \qquad (3.2)
+$$
 
 reduces the problem to a scalar equation for $\theta$ (AS eq. 3.3), which is the object the next page solves. Applying Definition 1 to the ansatz gives the clean relations $r^b=\theta(s,q+1,t)-\theta(s,q,t)$ and $r^a=\theta(s,q,t)-\theta(s,q-1,t)$ — the reservation prices are *first differences of $\theta$ in $q$*.
 
@@ -124,7 +140,7 @@ q=-3: rb num=101.0000 vs 101.0000 | ra num=101.4000 vs 101.4000 | r-mid=101.2000
 q=+0: rb num=99.8000 vs 99.8000 | ra num=100.2000 vs 100.2000 | r-mid=100.0000
 q=+4: rb num=98.2000 vs 98.2000 | ra num=98.6000 vs 98.6000 | r-mid=98.4000
 ```
-The numerically-solved indifference prices match eqs. (2.6)–(2.7) to machine precision, and their mean is the reservation price $r=s-q\gamma\sigma^2\tau$. At $q=+4$ the dealer values a share at $\$98.40$, $\$1.60$ below the $\$100$ mid — he is long and wants out.
+The numerically-solved indifference prices match eqs. (2.6)–(2.7) to machine precision, and their mean is the reservation price $r=s-q\gamma\sigma^2\tau$. At $q=+4$ the dealer values a share at $ $\$98.40, \1.60 below the \$100 mid — he is long and wants out.
 
 ---
 

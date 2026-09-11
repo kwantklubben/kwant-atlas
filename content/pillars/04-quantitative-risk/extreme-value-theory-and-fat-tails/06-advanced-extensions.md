@@ -26,7 +26,9 @@ The two real-world defects of textbook EVT — **(a)** extreme returns are depen
 #### 2.1 Filtered / conditional EVT (McNeil & Frey 2000)
 
 Model returns as a heteroscedastic process
-$$X_t=\mu+\sigma_t Z_t,\qquad Z_t \text{ i.i.d. heavy-tailed},$$
+$$
+X_t=\mu+\sigma_t Z_t,\qquad Z_t \text{ i.i.d. heavy-tailed},
+$$
 where $\sigma_t$ follows GARCH(1,1) $\sigma_t^2=\omega+\alpha X_{t-1}^2+\beta\sigma_{t-1}^2$ (Tsay Ch 3). The two-step method:
 1. **Filter:** estimate $\hat\mu,\hat\sigma_t$ (GARCH or EWMA), form standardized residuals $\hat Z_t=(X_t-\hat\mu)/\hat\sigma_t$.
 2. **Tail:** fit a GPD to the residual tail and estimate the residual quantile $\hat z_q$ (the EVT machinery of [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/04-peaks-over-threshold|04 · POT]]).
@@ -39,7 +41,9 @@ where $\sigma_t$ follows GARCH(1,1) $\sigma_t^2=\omega+\alpha X_{t-1}^2+\beta\si
 Univariate EVT answers "how bad can one risk get?" Portfolio risk asks "how likely do *several* risks get bad *together*?" The dependence structure is captured by a **copula** — a function $C:[0,1]^d\to[0,1]$ with uniform margins that couples them. Sklar's theorem: any joint CDF $F$ with margins $F_i$ writes as $F(x_1,\dots,x_d)=C(F_1(x_1),\dots,F_d(x_d))$.
 
 The relevant quantity for joint extremes is the **upper tail dependence coefficient**
-$$\lambda_u=\lim_{q\to1}\mathbb{P}\big(U_1>q\mid U_2>q\big),$$
+$$
+\lambda_u=\lim_{q\to1}\mathbb{P}\big(U_1>q\mid U_2>q\big),
+$$
 the probability that one variable is extreme given another is. Key facts:
 - **Gaussian copula:** $\lambda_u=0$ for $\rho<1$ — extremes are *asymptotically independent* even for strong correlation. This is the theoretical reason a Gaussian-copula risk model says "two assets never crash together" and why it failed in 2008.
 - **$t$-copula (with low dof):** $\lambda_u>0$ — it has genuine tail dependence, which is why it's preferred for portfolio tail risk.

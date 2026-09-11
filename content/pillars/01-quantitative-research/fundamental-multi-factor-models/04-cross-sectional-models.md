@@ -33,17 +33,23 @@ The two regression directions, contrasted:
 #### 2.1 The cross-sectional factor model (Tsay §9.3.1, eqs. 9.1–9.4)
 
 Each period, for all $N$ assets:
-$$r_t=X_t\,f_t+u_t,$$
+$$
+r_t=X_t\,f_t+u_t,
+$$
 where $r_t\in\mathbb{R}^N$ is the vector of returns, $X_t\in\mathbb{R}^{N\times K}$ the matrix of **standardized factor exposures** (z-scores of B/M, momentum, earnings yield, size, etc.), $f_t\in\mathbb{R}^K$ the *realized factor returns*, and $u_t$ the asset-specific residuals with $\text{Cov}(u_t)=D=\text{diag}\{\sigma_1^2,\dots,\sigma_N^2\}$ (the specific-risk matrix).
 
 #### 2.2 WLS/GLS estimation — the two-step Barra recipe (Tsay eq. 9.7–9.8)
 
 Because residuals have unequal variance, use weighted least squares with weights $w_i=1/\sigma_i^2$ (diagonal inverse specific-risk):
-$$\hat f_t=\big(X_t^\top D^{-1}X_t\big)^{-1}X_t^\top D^{-1}\,r_t.$$
+$$
+\hat f_t=\big(X_t^\top D^{-1}X_t\big)^{-1}X_t^\top D^{-1}\,r_t.
+$$
 Equivalently this is GLS with $V=D$. In practice Barra does a **two-step OLS → GLS** refinement (Tsay eq. 9.8): estimate OLS factor returns, use the residuals to estimate specific variances $\sigma_i^2$, then re-run with the inverse-specific-risk weights.
 
 **Factor-mimicking portfolio (Tsay §9.3.1).** The estimator is linear in returns, $\hat f_t=\omega^\top r_t$, with
-$$\omega=\big(X^\top D^{-1}X\big)^{-1}X^\top D^{-1},$$
+$$
+\omega=\big(X^\top D^{-1}X\big)^{-1}X^\top D^{-1},
+$$
 an $N\times K$ matrix whose $k$-th column is the **portfolio of assets that mimics the $k$-th factor's return** — long high-exposure names, short low-exposure ones, optimally tilted by inverse specific risk.
 
 **Industry special case.** If a block of $X$ is industry dummies, the corresponding factor return is (up to weighting) the industry-mean return — OLS recovers exactly the industry-average return (Tsay §9.3.1).
@@ -51,7 +57,9 @@ an $N\times K$ matrix whose $k$-th column is the **portfolio of assets that mimi
 #### 2.3 Covariance factorization — the risk model (Tsay eq. 9.3)
 
 Given factor covariance $\Omega=\text{Cov}(f_t)$ and specific-risk diagonal $D$, the asset covariance is
-$$\Sigma=X\,\Omega\,X^\top + D.$$
+$$
+\Sigma=X\,\Omega\,X^\top + D.
+$$
 This is the entire point of the model: instead of estimating the $\tfrac{N(N-1)}{2}$ pairwise covariances (ill-conditioned when $N$ is large), estimate the $K\times K$ factor covariance $\Omega$ plus $N$ specific variances. A portfolio's factor risk is then $\text{Var}(w^\top r)=w^\top X\Omega X^\top w + w^\top D w$.
 
 #### 2.4 Fama–MacBeth second pass (cross-sectional risk premiums)

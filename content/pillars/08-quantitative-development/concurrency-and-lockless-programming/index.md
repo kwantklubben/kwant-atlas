@@ -34,11 +34,15 @@ This folder is a *hub*: it (a) gives the **fast lookup** below (job #1 — memor
 **Quick-Reference Lookup (job #1).** All numbers below are produced and verified by the runnable models in §3 / the sub-pages (seeded, deterministic).
 
 **Amdahl's law — the ceiling on parallelism.** With $f$ of the work unavoidably serial, the best speedup is
-$$S(P) = \frac{1}{f + (1-f)/P} \;\longrightarrow\; \frac{1}{f} \quad (P\to\infty).$$
+$$
+S(P) = \frac{1}{f + (1-f)/P} \;\longrightarrow\; \frac{1}{f} \quad (P\to\infty).
+$$
 Only 5% serial work caps you at a **20x** speedup no matter how many cores you add. This is the first reason locking — an inherently serial section — caps throughput.
 
 **The lock is a queue (Pollaczek–Khinchine).** A contended critical section is a single-server queue with mean service time $\mathbb{E}[S]$ and utilization $\rho$. Mean queueing time:
-$$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)}.$$
+$$
+W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)}.
+$$
 As $\rho\to1$, $W_q\to\infty$: at 90% utilization a 100 ns critical section costs ~450 ns of queueing (deterministic) or ~900 ns (exponential jitter); at 99% it is ~5–10 µs. **This is the structural reason contention is the enemy — not the lock's own cost.**
 
 **Lock-free handshake.** Passing one message through an SPSC ring costs roughly two atomic stores plus a release/acquire pair (~10–20 ns), independent of the number of other threads — there is no queue, because a thread never blocks. The cost that *remains* is cache coherence: every store to a shared cache line that another core reads causes a transfer of ~40 ns (false sharing multiplies this).

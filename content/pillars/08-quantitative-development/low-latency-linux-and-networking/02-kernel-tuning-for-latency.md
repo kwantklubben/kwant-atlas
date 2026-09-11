@@ -34,15 +34,21 @@ The objective is measurable: **give your critical receive thread a core all to i
 
 **The TLB miss cost (why hugepages are a 5× win).** A 48-bit virtual address maps through $L=\lceil(48-\log_2 P)/9\rceil$ page-table levels:
 
-$$L = 4\ (4\,\text{KB}),\quad 3\ (2\,\text{MB}),\quad 2\ (1\,\text{GB}).$$
+$$
+L = 4\ (4\,\text{KB}),\quad 3\ (2\,\text{MB}),\quad 2\ (1\,\text{GB}).
+$$
 
 A working set of $W$ bytes needs $N=\lceil W/P\rceil$ pages. With a $T$-entry TLB, the fraction of accesses missing the TLB is (when $N>T$)
 
-$$\text{miss}=1-\frac{T}{N},$$
+$$
+\text{miss}=1-\frac{T}{N},
+$$
 
 and the effective address-translation latency is
 
-$$t_{\text{eff}}=(1-\text{miss})\,t_{\text{hit}}+\text{miss}\,(t_{\text{hit}}+L\,t_{\text{walk}}).$$
+$$
+t_{\text{eff}}=(1-\text{miss})\,t_{\text{hit}}+\text{miss}\,(t_{\text{hit}}+L\,t_{\text{walk}}).
+$$
 
 For a 64 MB working set with a 64-entry TLB: 4 KB pages give $N=16{,}384$ (99.6% miss, ~20 ns effective) vs 2 MB pages give $N=32$ (0% miss, ~4 ns). **Hugepages turn a per-packet page-walk into a TLB hit — a 5× cut in address latency on the hot path.**
 

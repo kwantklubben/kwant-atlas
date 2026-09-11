@@ -30,9 +30,13 @@ The two canonical crashes (all verified corpus numbers):
 ### 2. Mathematical Ground Truth & Derivations
 
 **The mechanism: time-varying beta of return-sorted portfolios.** Past-return-sorted portfolios have strongly time-varying exposure to the market (Kothari & Shanken 1992; Grundy & Martin 2001). After a large market decline, the firms that fell with the market were mostly **high-beta**, and those that held up were **low-beta**. So following a decline the momentum portfolio is *long low-beta* (winners) and *short high-beta* (losers):
-$$\text{WML}_t \ \text{is long low-}\beta\ \text{winners, short high-}\beta\ \text{losers after a decline}.$$
+$$
+\text{WML}_t \ \text{is long low-}\beta\ \text{winners, short high-}\beta\ \text{losers after a decline}.
+$$
 Daniel & Moskowitz estimate loser-decile betas can rise **above 3** (winners fall **below 0.5**). The WML monthly return in state $s$ with market return $r_m$ is
-$$r^{\text{WML}}_t\approx \big(\beta^W_t-\beta^L_t\big)\,r_{m,t} + \alpha_t, \qquad \beta^W_t-\beta^L_t<0\ \text{after declines}.$$
+$$
+r^{\text{WML}}_t\approx \big(\beta^W_t-\beta^L_t\big)\,r_{m,t} + \alpha_t, \qquad \beta^W_t-\beta^L_t<0\ \text{after declines}.
+$$
 When the market rebounds, $r_{m,t}\gg0$ and the *negative* beta spread makes $r^{\text{WML}}_t\ll0$ — the crash. In bear markets the up-beta is more than double the down-beta ($-1.51$ vs $-0.70$, $t$-stat 4.5), so the payoff is **asymmetric and option-like**: the short losers behave like a **written call on the market** — little gain when it falls, large loss when it rises.
 
 **Forecastability.** Crashes cluster in a definable "panic state": (a) market down over the trailing ~2 years, (b) high ex-ante volatility, (c) a contemporaneous sharp rebound. This state can be *detected in real time* from trailing market returns and VIX-type volatility — which is exactly what makes the dynamic/volatility-managed strategies of 06 possible.

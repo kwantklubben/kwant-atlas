@@ -24,11 +24,15 @@ Three windows (Brown–Warner 1985; Kothari–Warner 2007):
 
 The **market model** (Sharpe's single-index regression) is the standard expected-return model:
 
-$$R_{it} = \alpha_i + \beta_i R_{mt} + \varepsilon_{it},$$
+$$
+R_{it} = \alpha_i + \beta_i R_{mt} + \varepsilon_{it},
+$$
 
 estimated by OLS in the estimation window. The abnormal return on each event-window day is then the *prediction error*:
 
-$$AR_{it} = R_{it} - \big(\hat\alpha_i + \hat\beta_i R_{mt}\big).$$
+$$
+AR_{it} = R_{it} - \big(\hat\alpha_i + \hat\beta_i R_{mt}\big).
+$$
 
 Because daily expected returns are ~0.05% (Kothari–Warner §4.2), even a substantially misestimated $\beta$ barely changes a short-window abnormal return — which is precisely why short-horizon event studies are robust to the expected-return model (Brown–Warner 1985).
 
@@ -38,15 +42,21 @@ Because daily expected returns are ~0.05% (Kothari–Warner §4.2), even a subst
 
 **The market model.** Under the market model, the firm's return is a linear function of the market return plus an idiosyncratic shock $\varepsilon_{it}$:
 
-$$R_{it} = \alpha_i + \beta_i R_{mt} + \varepsilon_{it}, \qquad \mathbb{E}[\varepsilon_{it}]=0,\ \operatorname{Cov}(\varepsilon_{it}, R_{mt})=0.$$
+$$
+R_{it} = \alpha_i + \beta_i R_{mt} + \varepsilon_{it}, \qquad \mathbb{E}[\varepsilon_{it}]=0,\ \operatorname{Cov}(\varepsilon_{it}, R_{mt})=0.
+$$
 
 OLS in the estimation window gives the prediction for the event window:
 
-$$\hat\beta_i = \frac{\operatorname{Cov}(R_i, R_m)}{\operatorname{Var}(R_m)}, \qquad \hat\alpha_i = \bar R_i - \hat\beta_i \bar R_m.$$
+$$
+\hat\beta_i = \frac{\operatorname{Cov}(R_i, R_m)}{\operatorname{Var}(R_m)}, \qquad \hat\alpha_i = \bar R_i - \hat\beta_i \bar R_m.
+$$
 
 **Abnormal return = prediction error** (Kothari–Warner eq. 1–2; Brown–Warner eq. 4):
 
-$$AR_{it} = R_{it} - \big(\hat\alpha_i + \hat\beta_i R_{mt}\big), \qquad t \in \text{event window}.$$
+$$
+AR_{it} = R_{it} - \big(\hat\alpha_i + \hat\beta_i R_{mt}\big), \qquad t \in \text{event window}.
+$$
 
 **Alternative expected-return models** (Brown–Warner 1985, §3.2):
 - **Mean-adjusted:** $K_{it}=\bar R_i$ (the firm's own estimation-window average) — simplest, robust.
@@ -54,7 +64,9 @@ $$AR_{it} = R_{it} - \big(\hat\alpha_i + \hat\beta_i R_{mt}\big), \qquad t \in \
 
 **Cross-sectional aggregation** (Kothari–Warner eq. 3). The mean abnormal return at event time $t$ across $N$ sample firms:
 
-$$AR_t = \frac{1}{N}\sum_{i=1}^{N}AR_{it}.$$
+$$
+AR_t = \frac{1}{N}\sum_{i=1}^{N}AR_{it}.
+$$
 
 The event window's *length* is a design trade-off: a longer window (say $-10,+10$) captures slow price adjustment and partial anticipation, but admits more noise and contamination; a tight window (say $0,+1$) maximizes power when the announcement date is precise (e.g. earnings announcements — Kothari–Warner §3.6).
 

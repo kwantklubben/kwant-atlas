@@ -36,13 +36,19 @@ The **Triple-Barrier Method** fixes all three at once: place an upper barrier (p
 - **Vertical (expiration):** $t_{i,0}+h$.
 
 The first-touch time and label are
-$$t_{i,1}=\min\Big(t_{i,0}+h,\ \inf\{t>t_{i,0}:\ P_t\ge P_{i,0}(1+pt\,\sigma_{t_{i,0}})\ \lor\ P_t\le P_{i,0}(1-sl\,\sigma_{t_{i,0}})\}\Big),$$
-$$y_i=\begin{cases}+1 & \text{if } P_{t_{i,1}}\ge P_{i,0}(1+pt\,\sigma)\ (\text{upper first})\\[2pt] -1 & \text{if } P_{t_{i,1}}\le P_{i,0}(1-sl\,\sigma)\ (\text{lower first})\\[2pt] \operatorname{sgn}(r_{i,0,t_{i,1}}) & \text{if the vertical barrier is touched first.}\end{cases}$$
+$$
+t_{i,1}=\min\Big(t_{i,0}+h,\ \inf\{t>t_{i,0}:\ P_t\ge P_{i,0}(1+pt\,\sigma_{t_{i,0}})\ \lor\ P_t\le P_{i,0}(1-sl\,\sigma_{t_{i,0}})\}\Big),
+$$
+$$
+y_i=\begin{cases}+1 & \text{if } P_{t_{i,1}}\ge P_{i,0}(1+pt\,\sigma)\ (\text{upper first})\\[2pt] -1 & \text{if } P_{t_{i,1}}\le P_{i,0}(1-sl\,\sigma)\ (\text{lower first})\\[2pt] \operatorname{sgn}(r_{i,0,t_{i,1}}) & \text{if the vertical barrier is touched first.}\end{cases}
+$$
 
 **Barrier configurations (LdP §3.4).** A configuration is a triplet $[pt,sl,t_1]$ with $1$ active / $0$ disabled; the eight cases include three useful ones — $[1,1,1]$ standard, $[0,1,1]$ "exit on time unless stopped", $[1,1,0]$ "profit unless stopped" — and two illogical ones ($[0,1,0]$ aimless, $[0,0,0]$ no label). Never use $[0,1,0]$ or $[0,0,0]$.
 
 **The volatility target must be ex-ante.** $\sigma_{t_{i,0}}$ must be estimated from data $\le t_{i,0}$. A standard choice is the EWMA (RiskMetrics) recursion
-$$\sigma_t^2=\lambda\,\sigma_{t-1}^2+(1-\lambda)\,r_{t-1}^2,\qquad \lambda=1-\tfrac1{\text{span}},$$
+$$
+\sigma_t^2=\lambda\,\sigma_{t-1}^2+(1-\lambda)\,r_{t-1}^2,\qquad \lambda=1-\tfrac1{\text{span}},
+$$
 with $\text{span}\approx 50$–$100$ bars. Equivalently, a trailing realised standard deviation over a look-back window. **Using a full-sample $\sigma$ makes the barrier widths depend on the future — the leak analysed on [[pillars/01-quantitative-research/feature-engineering-and-labeling/05-failure-modes-and-practice|05 · Failure Modes]].**
 
 **Event sampling.** Labels exist *per event*, and events need not occur every bar. Sampling every bar produces massively overlapping labels (one label per return, each used by up to $h$ of them). A **symmetric CUSUM filter** starts a new event only when the cumulative move since the last event exceeds a threshold $\theta$ (often one daily $\sigma$), concentrating sampling where information is (LdP §2.5.2 and the exercises of Ch 3).

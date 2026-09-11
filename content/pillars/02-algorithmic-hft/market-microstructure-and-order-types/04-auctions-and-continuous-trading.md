@@ -29,15 +29,19 @@ The practical objective: compute an auction's clearing price and volume from a s
 
 **Uniform-price double auction.** Suppose buy limit orders with limits and sizes $\{(p^b_i,q^b_i)\}$ and sell orders $\{(p^s_j,q^s_j)\}$. At a candidate clearing price $p$, define
 
-$$D(p)=\sum_i q^b_i\,\mathbf 1\{p^b_i\ge p\},\qquad S(p)=\sum_j q^s_j\,\mathbf 1\{p^s_j\le p\},\qquad E(p)=\min\!\big(D(p),S(p)\big).$$
+$$
+D(p)=\sum_i q^b_i\,\mathbf 1\{p^b_i\ge p\},\qquad S(p)=\sum_j q^s_j\,\mathbf 1\{p^s_j\le p\},\qquad E(p)=\min\!\big(D(p),S(p)\big).
+$$
 
 The **executable volume** $E(p)$ is maximized at the clearing price
 
-$$\boxed{\;p^\*=\arg\max_p\ E(p),\qquad V^\*=E(p^\*)\;}$$
+$$
+\boxed{\;p^*=\arg\max_p\ E(p),\qquad V^*=E(p^*)\;}
+$$
 
-($E$ is unimodal; ties broken by exchange rule, e.g. closest to the previous price). All buy orders with $p^b_i\ge p^\*$ and all sell orders with $p^s_j\le p^\*$ execute, **all at $p^\*$** — buyers do not pay their limits and sellers do not receive theirs. The market is a *single-price* market at the instant of the auction.
+($E$ is unimodal; ties broken by exchange rule, e.g. closest to the previous price). All buy orders with $p^b_i\ge p^*$ and all sell orders with $p^s_j\le p^*$ execute, **all at $p^*$** — buyers do not pay their limits and sellers do not receive theirs. The market is a *single-price* market at the instant of the auction.
 
-**Why uniform pricing is the design.** Because $p^\*$ is common to every fill, no participant is penalized for being early, and the price is an un-manipulable *clearing* price rather than the last of a sequence. This is why fixings (WM/Reuters FX, SOFR, closing benchmarks) are auctions: a benchmark defined as *one* price is hard to move with a single small trade, whereas a *last trade* price is trivial to nudge.
+**Why uniform pricing is the design.** Because $p^*$ is common to every fill, no participant is penalized for being early, and the price is an un-manipulable *clearing* price rather than the last of a sequence. This is why fixings (WM/Reuters FX, SOFR, closing benchmarks) are auctions: a benchmark defined as *one* price is hard to move with a single small trade, whereas a *last trade* price is trivial to nudge.
 
 **Continuous trading for contrast.** Orders execute on arrival under **price-time priority**; the realized prices are a *sequence* $\{p_1,p_2,\dots\}$, and the day's volume-weighted price is $\sum_k v_k p_k/\sum_k v_k$ with $v_k$ the trade size. Continuous gives *immediacy* and a live path but *disperses* prices; the auction gives *one* price at the cost of waiting for the window.
 
@@ -108,14 +112,14 @@ every executed order gets the SAME price -> no price discrimination
 CONTINUOUS: volume 2100, VW price 100.1810, prices ranged 100.10-100.30
 ```
 
-**Read the numbers.** The executable-volume curve peaks at **$p^\*=100.10$ with $V^\*=2000$ shares** — at that single price, 2100 shares of demand and 2000 shares of supply overlap, so 2000 trade and every one of them crosses at $100.10$, whether their limit was $100.10$ or $100.30$. Replayed continuously, the *same order flow* prints **2100 shares at prices ranging from 100.10 to 100.30**, with a volume-weighted average of **100.1810** — early buyers got 100.10, late sellers got 100.30, and price was *discriminated*. The auction delivered one fair price; the continuous book delivered immediacy at the cost of a $\sim 20$-cent price band (100.10 to 100.30).
+**Read the numbers.** The executable-volume curve peaks at **$p^*=100.10$ with $V^*=2000$ shares** — at that single price, 2100 shares of demand and 2000 shares of supply overlap, so 2000 trade and every one of them crosses at $100.10$, whether their limit was $100.10$ or $100.30$. Replayed continuously, the *same order flow* prints **2100 shares at prices ranging from 100.10 to 100.30**, with a volume-weighted average of **100.1810** — early buyers got 100.10, late sellers got 100.30, and price was *discriminated*. The auction delivered one fair price; the continuous book delivered immediacy at the cost of a $\sim 20$-cent price band (100.10 to 100.30).
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Last-instant sniping in the auction.** If the closing time is deterministic, a trader can inject a large order in the final microsecond to *move* $p^\*$. Random stopping times and early deadlines exist precisely to defeat this; a deterministic window is a standing invitation.
-2. **Marking-the-close manipulation.** Because closing prices settle ETFs, index funds, and derivatives, there is real money in nudging $p^\*$. Continuous-only traders underestimate this; the manipulation is in the *auction*, not the tape.
+1. **Last-instant sniping in the auction.** If the closing time is deterministic, a trader can inject a large order in the final microsecond to *move* $p^*$. Random stopping times and early deadlines exist precisely to defeat this; a deterministic window is a standing invitation.
+2. **Marking-the-close manipulation.** Because closing prices settle ETFs, index funds, and derivatives, there is real money in nudging $p^*$. Continuous-only traders underestimate this; the manipulation is in the *auction*, not the tape.
 3. **Assuming the auction price equals the continuous price.** They are different mechanisms and generally give different prices. An execution algorithm benchmarked to the continuous VWAP can look "cheap" or "expensive" at the open/close purely because the auction cleared somewhere else.
 4. **The auction rewards size, the continuous rewards speed.** Under continuous price–time priority, *speed* (arriving first) wins; under a batch auction, ties can be broken by *size* (largest orders fill first), inverting the advantage. A strategy tuned for one mechanism mis-executes in the other.
 

@@ -31,14 +31,20 @@ For a quant this is not academic:
 
 #### 2.1 Intervals by inverting tests (C&B §9.2.1)
 For each \(\theta_0\), let \(A(\theta_0)\) be the acceptance region of a level-\(\alpha\) test of \(H_0:\theta=\theta_0\). Then
-$$C(x)=\{\theta_0: x\in A(\theta_0)\}$$
+$$
+C(x)=\{\theta_0: x\in A(\theta_0)\}
+$$
 is a \(1-\alpha\) confidence set; its **coverage probability** satisfies \(P_\theta(\theta\in C(X))\ge1-\alpha\). The **confidence coefficient** is \(\inf_\theta P_\theta(\theta\in C(X))\) (C&B §9.3.1).
 
 #### 2.2 Pivots (C&B §9.2.2)
 A **pivot** is \(Q(X,\theta)\) whose distribution is independent of all parameters (Def 9.2.1). For normal data, \(T=(\bar X-\mu)/(S/\sqrt n)\sim t_{n-1}\) is a pivot, giving the exact \(t\)-interval
-$$\bar X\pm t_{n-1,\alpha/2}\,\frac{S}{\sqrt n}.$$
+$$
+\bar X\pm t_{n-1,\alpha/2}\,\frac{S}{\sqrt n}.
+$$
 When no pivot exists, the CLT gives an **approximate** interval (C&B §9.4.2): for a statistic \(W\) with \(\widehat{\mathrm{Var}}(W)\),
-$$W\pm z_{\alpha/2}\sqrt{\widehat{\mathrm{Var}}(W)}.$$
+$$
+W\pm z_{\alpha/2}\sqrt{\widehat{\mathrm{Var}}(W)}.
+$$
 For MLEs the likelihood-based interval inverts the (asymptotically normal) pivot \(Q(X,\theta)=\dfrac{\partial_\theta\log L(\theta\mid X)}{\sqrt{-I_n(\theta)}}\sim N(0,1)\) (eq 9.4.1).
 
 #### 2.3 Hypothesis testing: size, power, p-value (C&B §8.3)
@@ -55,7 +61,9 @@ The **p-value** is the smallest \(\alpha\) at which the observed data would be r
 
 #### 2.5 Multiplicity (the finance-critical part)
 Testing \(m\) hypotheses at level \(\alpha\) each inflates the **family-wise error rate** (FWER):
-$$\text{FWER}=P(\ge1\text{ false rejection})\le1-(1-\alpha)^m\approx m\alpha\ \text{(independence, small }\alpha).$$
+$$
+\text{FWER}=P(\ge1\text{ false rejection})\le1-(1-\alpha)^m\approx m\alpha\ \text{(independence, small }\alpha).
+$$
 - **Bonferroni:** use \(\alpha/m\) per test \(\Rightarrow\) FWER \(\le\alpha\).
 - **Benjamini–Hochberg FDR:** sort p-values \(p_{(1)}\le\dots\le p_{(m)}\), reject the largest \(k\) with \(p_{(k)}\le\frac{k}{m}q\); controls the *expected proportion* of false discoveries \(\mathbb E[V/\max(R,1)]\le q\).
 - **Max-statistic correction:** the best of \(N\) independent zero-skill strategies has \(t\)-statistic with \(\mathbb E[\max]\approx\sqrt{2\log N}\) — the deflated Sharpe / White Reality Check threshold.

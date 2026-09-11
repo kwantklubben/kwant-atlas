@@ -28,31 +28,41 @@ Three principles:
 
 **10-year revenue CAGR** — the compound annual growth of the top line:
 
-$$\text{RevCAGR}=\left(\frac{S_{t}}{S_{t-10}}\right)^{1/10}-1.$$
+$$
+\text{RevCAGR}=\left(\frac{S_{t}}{S_{t-10}}\right)^{1/10}-1.
+$$
 
 Using the **compound** rate (not the simple average of annual growth) is essential: it is the single rate that takes $S_{t-10}$ to $S_t$ in ten years, and it is the only correct summary when year-to-year growth varies. A screen requires it *above* a floor (e.g. $\ge 8\%$) to exclude melting ice cubes and prove durable demand.
 
 **Operating margin** — profit from the core business per dollar of sales:
 
-$$\text{OpMargin}=\frac{\text{EBIT}}{S}.$$
+$$
+\text{OpMargin}=\frac{\text{EBIT}}{S}.
+$$
 
 It is the cleanest single measure of pricing power and cost discipline (it excludes interest and tax, so it is comparable across capital structures). Sector-relative by construction.
 
 **Net Debt / EBITDA** — years of operating cash flow needed to clear net debt:
 
-$$\text{ND/EBITDA}=\frac{\text{TotalDebt}-\text{Cash}}{\text{EBITDA}}.$$
+$$
+\text{ND/EBITDA}=\frac{\text{TotalDebt}-\text{Cash}}{\text{EBITDA}}.
+$$
 
 The lower, the safer; a screen typically caps it at $2.0$ (above that, a downturn threatens solvency). It is undefined when EBITDA $\le 0$ — a negative-EBITDA firm is *automatically* excluded, which is correct.
 
 **FCF yield** — cash actually thrown off per dollar of market value:
 
-$$\text{FCFy}=\frac{FCF}{\text{MC}}, \qquad FCF=\text{CFO}-\text{Capex}.$$
+$$
+\text{FCFy}=\frac{FCF}{\text{MC}}, \qquad FCF=\text{CFO}-\text{Capex}.
+$$
 
 The cash counterpart to the earnings yield; a screen floor of ~$3\%$ demands the business converts accounting profit into real cash.
 
 **Composite score (z-score sum).** Because metrics have different units, standardise each before combining. For a metric $x$ across the universe with mean $\mu$ and standard deviation $\sigma$:
 
-$$z_i=\frac{x_i-\mu}{\sigma}, \qquad \text{score}_i = z(\text{CAGR}) + z(\text{OpMgn}) + z(-\text{ND/EBITDA}) + z(\text{FCFy}).$$
+$$
+z_i=\frac{x_i-\mu}{\sigma}, \qquad \text{score}_i = z(\text{CAGR}) + z(\text{OpMgn}) + z(-\text{ND/EBITDA}) + z(\text{FCFy}).
+$$
 
 Sign-flipping leverage (so *lower* debt scores higher) aligns every term so that **higher composite = better**. (This z-score-sum construction is exactly the composite that Piotroski, Altman, and every quantamental screen formalize — see [[fundamentals-accounting/fundamental-analysis-and-screening/06-advanced-extensions|06 · Advanced Extensions]].)
 

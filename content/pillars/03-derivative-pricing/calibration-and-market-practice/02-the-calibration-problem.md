@@ -27,25 +27,31 @@ The practical objective is a single discipline: **you want the fit that is good 
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**The objective function family.** With residuals $r_i(\\theta) = \\text{model}_i(\\theta) - \\text{market}_i$ in implied-vol, price, or relative-price space, the three standard objectives are
+**The objective function family.** With residuals $r_i(\theta) = \text{model}_i(\theta) - \text{market}_i$ in implied-vol, price, or relative-price space, the three standard objectives are
 
-$$\\mathcal{L}_{\\sigma^2} = \\frac{1}{N}\\sum_i \\big(\\hat\\sigma^{\\text{model}}_i - \\hat\\sigma^{\\text{mkt}}_i\\big)^2, \\qquad
-\\mathcal{L}_{C^2} = \\frac{1}{N}\\sum_i \\big(C^{\\text{model}}_i - C^{\\text{mkt}}_i\\big)^2, \\qquad
-\\mathcal{L}_{\\text{rel}} = \\frac{1}{N}\\sum_i \\Big(\\frac{C^{\\text{model}}_i - C^{\\text{mkt}}_i}{C^{\\text{mkt}}_i}\\Big)^2.$$
+$$
+\mathcal{L}_{\sigma^2} = \frac{1}{N}\sum_i \big(\hat\sigma^{\text{model}}_i - \hat\sigma^{\text{mkt}}_i\big)^2, \qquad
+\mathcal{L}_{C^2} = \frac{1}{N}\sum_i \big(C^{\text{model}}_i - C^{\text{mkt}}_i\big)^2, \qquad
+\mathcal{L}_{\text{rel}} = \frac{1}{N}\sum_i \Big(\frac{C^{\text{model}}_i - C^{\text{mkt}}_i}{C^{\text{mkt}}_i}\Big)^2.
+$$
 
-Because price is nonlinear in vol (vega $=S e^{(b-r)T} n(d_1)\\sqrt T$ is largest at ATM), $\\mathcal L_{C^2}$ weights ATM strikes far more than $\\mathcal L_{\\sigma^2}$. **Implied vol is the market unit** (it is what is quoted), so desks almost always fit in vol space — a model that reproduces quoted vols is tradeable; one that merely reproduces some prices may not be.
+Because price is nonlinear in vol (vega $=S e^{(b-r)T} n(d_1)\sqrt T$ is largest at ATM), $\mathcal L_{C^2}$ weights ATM strikes far more than $\mathcal L_{\sigma^2}$. **Implied vol is the market unit** (it is what is quoted), so desks almost always fit in vol space — a model that reproduces quoted vols is tradeable; one that merely reproduces some prices may not be.
 
-**The bias–variance decomposition** (standard statistics, restated for calibration). For a fitted parameter $\\hat\\theta$:
+**The bias–variance decomposition** (standard statistics, restated for calibration). For a fitted parameter $\hat\theta$:
 
-$$\\mathbb{E}\\big[(\\hat\\theta-\\theta^*)^2\\big] = \\underbrace{\\big(\\mathbb{E}[\\hat\\theta]-\\theta^*\\big)^2}_{\\text{bias}^2} + \\underbrace{\\operatorname{Var}(\\hat\\theta)}_{\\text{variance}},$$
+$$
+\mathbb{E}\big[(\hat\theta-\theta^*)^2\big] = \underbrace{\big(\mathbb{E}[\hat\theta]-\theta^*\big)^2}_{\text{bias}^2} + \underbrace{\operatorname{Var}(\hat\theta)}_{\text{variance}},
+$$
 
-where $\\theta^*$ is the "true" (unknowable) market parameter. A rich model reduces bias (fits today) but inflates variance (noisy, unstable tomorrow). **Regularization trades bias for variance**: minimize
+where $\theta^*$ is the "true" (unknowable) market parameter. A rich model reduces bias (fits today) but inflates variance (noisy, unstable tomorrow). **Regularization trades bias for variance**: minimize
 
-$$\\mathcal J(\\theta) = \\mathcal L(\\theta) + \\lambda \\lVert \\theta-\\theta_0\\rVert^2 \\qquad \\text{(ridge / $\\ell_2$),}$$
+$$
+\mathcal J(\theta) = \mathcal L(\theta) + \lambda \lVert \theta-\theta_0\rVert^2 \qquad \text{(ridge / $\ell_2$),}
+$$
 
-pulling $\\hat\\theta$ toward a prior $\\theta_0$ at the cost of a slightly worse fit. In least-squares form with design features, the ridge solution is the classic `$(X^\\top X + \\lambda I)^{-1}X^\\top y$` — adding $\\lambda$ to the diagonal of the (ill-conditioned) normal matrix is *exactly* what stabilizes it.
+pulling $\hat\theta$ toward a prior $\theta_0$ at the cost of a slightly worse fit. In least-squares form with design features, the ridge solution is the classic `$(X^\top X + \lambda I)^{-1}X^\top y$` — adding $\lambda$ to the diagonal of the (ill-conditioned) normal matrix is *exactly* what stabilizes it.
 
-**The overfitting mechanism, made explicit.** Fitting an $n$-th degree polynomial to $N$ noisy smile points: as $n\\to N$, the in-sample residual $\\to0$ (perfect fit) while the *between-point and extrapolated* behavior becomes wild, because the high-degree coefficients are determined by noise. The second derivative (butterfly) swings sign; the extrapolated vol explodes. Ridge shrinks those coefficients.
+**The overfitting mechanism, made explicit.** Fitting an $n$-th degree polynomial to $N$ noisy smile points: as $n\to N$, the in-sample residual $\to0$ (perfect fit) while the *between-point and extrapolated* behavior becomes wild, because the high-degree coefficients are determined by noise. The second derivative (butterfly) swings sign; the extrapolated vol explodes. Ridge shrinks those coefficients.
 
 ---
 
@@ -99,7 +105,7 @@ degree=2: in-sample vol RMSE=0.00818   extrapolated vol @k=+0.6: 0.5689  @k=-0.6
 degree=6: in-sample vol RMSE=0.00169   extrapolated vol @k=+0.6: 1.4161  @k=-0.6: 1.0344
 degree=6 ridge lam=0.02: in-sample RMSE=0.02443 (vs plain 0.00169)   extrapolated @k=+0.6: 0.4181  @k=-0.6: 0.4317
 ```
-The degree-6 polynomial cuts the in-sample RMSE by $5\\times$ (0.0082 → 0.0017) but extrapolates a *vol of 1.42* where the true smile is ~0.35 — the fit is chasing noise. Ridge costs a little in-sample fit (RMSE 0.024) but restores sane extrapolation (0.42). **This is calibration's central trade-off, in numbers.**
+The degree-6 polynomial cuts the in-sample RMSE by $5\times$ (0.0082 → 0.0017) but extrapolates a *vol of 1.42* where the true smile is ~0.35 — the fit is chasing noise. Ridge costs a little in-sample fit (RMSE 0.024) but restores sane extrapolation (0.42). **This is calibration's central trade-off, in numbers.**
 
 ---
 
@@ -107,7 +113,7 @@ The degree-6 polynomial cuts the in-sample RMSE by $5\\times$ (0.0082 → 0.0017
 
 1. **Overfitting the smile.** A parameterization with enough knobs can drive today's residuals to zero while being worthless (or dangerous) elsewhere — the degree-6 extrapolation above is the pathology. The market does not quote far wings densely, so those are where overfit surfaces misbehave most.
 2. **Objective mismatch.** Fitting price-RMSE instead of vol-RMSE silently biases the fit toward ATM and away from the wings; relative-price error blows up on cheap OTM options. State the objective explicitly (see [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]] table).
-3. **Ill-conditioned normal equations.** With collinear parameters the Gram matrix $X^\\top X$ is near-singular; tiny quote noise swings the solution hugely. Ridge ($+\\lambda I$) is the first-principles fix (used directly in **04 · Stochastic Vol** for the $\\kappa/\\eta$ ridge).
+3. **Ill-conditioned normal equations.** With collinear parameters the Gram matrix $X^\top X$ is near-singular; tiny quote noise swings the solution hugely. Ridge ($+\lambda I$) is the first-principles fix (used directly in **04 · Stochastic Vol** for the $\kappa/\eta$ ridge).
 4. **Forgetting that a fit is static.** A parameter set that fits today is not a model of tomorrow. The bias–variance knob you set now determines how much the calibration drifts when the market moves — see [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]].
 
 ---

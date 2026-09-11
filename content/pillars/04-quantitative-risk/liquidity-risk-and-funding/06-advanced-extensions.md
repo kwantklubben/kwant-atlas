@@ -24,15 +24,21 @@ The two immediate extensions of the folder are **(a)** the *endogenous* liquidit
 ### 2. Mathematical Ground Truth & Derivations
 
 **2.1 The endogenous impact coefficient and the bifurcation.** In the partial-equilibrium spiral, $\kappa$ is a constant. Systemically, market depth *falls* as the crowd unwinds — an inverse relation often summarised as $D(D_{\text{agg}})$ with $\partial D/\partial(\text{aggregate selling})<0$. Writing the market-impact coefficient from a square-root impact law (Bouchaud et al. 2009),
-$$\Delta p=\sigma\,Y\sqrt{\frac{Q}{V}},\qquad Y\sim\mathcal{O}(1),$$
+$$
+\Delta p=\sigma\,Y\sqrt{\frac{Q}{V}},\qquad Y\sim\mathcal{O}(1),
+$$
 the coefficient $Y/(V)$ is not a constant: as the stressed volume $V$ shrinks and volatility $\sigma$ rises, **impact per unit sold rises**. Substituting $k(L,\text{stress})=L\,\kappa(\text{stress})$ into $S_{\text{total}}=S_0/(1-k)$, the system crosses from a stable fixed point ($k<1$, finite liquidation) to divergence ($k\ge1$) as stress rises — a **saddle-node/tipping** structure. This is the formal content of "liquidity spirals": the economy has **complementarities** (your selling makes my selling more damaging), hence multiple equilibria and the possibility of a sudden jump between them.
 
 **2.2 The amplification multiplier — exact.** For the geometric feedback where each round's impact causes a further sale $L\kappa\times$ the previous round,
-$$S_{\text{total}}=\sum_{j\ge0}(L\kappa)^j S_0=\frac{S_0}{1-L\kappa},\qquad |L\kappa|<1,$$
+$$
+S_{\text{total}}=\sum_{j\ge0}(L\kappa)^j S_0=\frac{S_0}{1-L\kappa},\qquad |L\kappa|<1,
+$$
 with **amplification** $1/(1-k)$ and a **pole at $k=1$**. The multiplier is the clean analogue, for liquidity, of the money multiplier and the Kahn–Keynes investment multiplier: a small exogenous shock is *leveraged* by the feedback between leverage and price impact.
 
 **2.3 Liquidity-adjusted pricing (Acharya–Pedersen 2005; Foucault Ch 9).** The gross-return premium $R\simeq r+s/h$ (Foucault eq. 9.6) prices the *level* of illiquidity. But the priced risk is the **covariance** of illiquidity with market returns. Acharya–Pedersen's liquidity-adjusted CAPM (Foucault eq. 9.18) has **four betas**:
-$$\mathbb{E}(R_i)-r=\beta_1\,\lambda_{\text{mkt}}+\beta_2\,\lambda_{\text{illiq commonality}}+\beta_3\,\lambda_{\text{return–illiq hedge}}+\beta_4\,\lambda_{\text{illiq–return}},$$
+$$
+\mathbb{E}(R_i)-r=\beta_1\,\lambda_{\text{mkt}}+\beta_2\,\lambda_{\text{illiq commonality}}+\beta_3\,\lambda_{\text{return–illiq hedge}}+\beta_4\,\lambda_{\text{illiq–return}},
+$$
 where $\beta_4$ prices the asset being **liquid when the market is falling** — the deepest failure. Empirically (Foucault Ch 9) the unexplained spread is ~$1.1\%$/yr and is *dominated by $\beta_4$*: what investors pay to avoid is not illiquidity per se but illiquidity **that arrives exactly with market stress**.
 
 **2.4 The search/OTC channel (Duffie–Gârleanu–Pedersen 2005).** For non-exchange assets, market liquidity and funding liquidity are jointly determined by a search-and-bargaining friction (Foucault Ch 9): the spread depends on dealer bargaining power $\phi$, meeting intensity $\psi$, and investor types, e.g. $S=(1+z)c/[2(r+2\psi)+(1-2\psi)\phi(1-z)]$. This is the rigorous bridge to OTC markets (corporate bonds — Bao et al. 2011; CDS) where "market liquidity" is literally a search cost.

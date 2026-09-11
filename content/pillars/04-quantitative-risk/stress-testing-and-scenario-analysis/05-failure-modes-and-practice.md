@@ -29,7 +29,9 @@ The five failures, in one line each:
 
 **Correlation breakdown is a *second-order* stress.** Let two assets have returns $\sigma_1,\sigma_2$, weights $w_1,w_2$, correlation $\rho$. Portfolio variance is
 
-$$\sigma_P^2=w_1^2\sigma_1^2+w_2^2\sigma_2^2+2\rho\,w_1w_2\sigma_1\sigma_2.$$
+$$
+\sigma_P^2=w_1^2\sigma_1^2+w_2^2\sigma_2^2+2\rho\,w_1w_2\sigma_1\sigma_2.
+$$
 
 The diversification benefit is the gap between $\sigma_P$ and the weighted-mean asset vol. As $\rho\to1$, the covariance term $2\rho w_1w_2\sigma_1\sigma_2$ grows and the gap closes — the portfolio becomes as risky as its riskiest asset. A normal-time $\rho=0.3$ says the 50/50 portfolio is ~19% less volatile than either asset; a stressed $\rho=0.9$ says the benefit is ~2.5% (reproduced in §3). **Any risk measure built on the normal-time covariance is built on the assumption that diversification survives — and stress is precisely when it does not.**
 

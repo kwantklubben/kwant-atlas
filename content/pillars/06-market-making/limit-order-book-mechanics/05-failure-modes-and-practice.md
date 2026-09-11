@@ -31,32 +31,44 @@ Everything else (spoofing, fleeting liquidity, feed desync) is a variation on th
 
 **2.1 The toxic-fill identity.** Post a buy limit $h$ below the mid (a passive quote capturing half-spread $h$). A sell order arrives and fills it. Conditional on the fill, the "true" value of the asset has moved by $J>0$ against you with probability $\pi$ (an **informed** counterparty) and not moved otherwise. Your per-fill P&L is
 
-$$\pi_{\text{fill}}=\begin{cases} h, & \text{uninformed (prob }1-\pi),\\ h-J, & \text{informed (prob }\pi),\end{cases}
-\qquad\Longrightarrow\qquad \boxed{\ \mathbb{E}[\pi_{\text{fill}}]=h-\pi J\ } .$$
+$$
+\pi_{\text{fill}}=\begin{cases} h, & \text{uninformed (prob }1-\pi),\\ h-J, & \text{informed (prob }\pi),\end{cases}
+\qquad\Longrightarrow\qquad \boxed{\ \mathbb{E}[\pi_{\text{fill}}]=h-\pi J\ } .
+$$
 
 The quote is profitable only while the informed share is below the **break-even toxicity**
 
-$$\pi^\star=\frac{h}{J}.$$
+$$
+\pi^\star=\frac{h}{J}.
+$$
 
 Note the structure: *more* spread $h$ tolerates *more* toxicity, and *larger* informed moves $J$ require *less*. This is the seed of the entire adverse-selection literature ([[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Glosten–Milgrom]]) and of toxicity metrics like VPIN ([[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]]).
 
 **2.2 Queue position as a race.** Your order sits behind $Q_0$ lots. It clears when aggressive flow has consumed $Q_0$ lots at your price — at execution rate $\mu$, an effective queue-clearing rate $\mu/Q_0$. Meanwhile an adverse price move arrives at rate $\nu$. The two are competing exponential clocks, so
 
-$$P(\text{adverse move before fill})\approx\frac{\nu}{\nu+\mu/Q_0}\ \xrightarrow[\ Q_0\uparrow\ ]{}\ 1 .$$
+$$
+P(\text{adverse move before fill})\approx\frac{\nu}{\nu+\mu/Q_0}\ \xrightarrow[\ Q_0\uparrow\ ]{}\ 1 .
+$$
 
 The **expected wait to fill** (execute $Q_0+s$ lots at rate $\mu$) is
 
-$$\mathbb{E}[T]\approx\frac{Q_0+s}{\mu},$$
+$$
+\mathbb{E}[T]\approx\frac{Q_0+s}{\mu},
+$$
 
 linear in the queue ahead. Combining the two: a deep queue makes you **slow *and* selectively filled** — the worst of both — because long queues clear only during aggressive bursts, which is precisely when the price is moving.
 
 **2.3 Latency as a loss term.** Suppose an adverse signal (a large order, a related-venue move) arrives and predicts aggressive flow at rate $\mu_{\text{mo}}$; you must cancel within your latency $\delta$ before that flow lands. The fill is picked off unless your cancel wins the race:
 
-$$P(\text{picked off})=1-e^{-\mu_{\text{mo}}\delta},$$
+$$
+P(\text{picked off})=1-e^{-\mu_{\text{mo}}\delta},
+$$
 
 so with signal rate $\lambda$ the **loss rate** is
 
-$$\text{Loss}=\lambda\big(1-e^{-\mu_{\text{mo}}\delta}\big)(J-h).$$
+$$
+\text{Loss}=\lambda\big(1-e^{-\mu_{\text{mo}}\delta}\big)(J-h).
+$$
 
 For small $\delta$ this is $\approx\lambda\mu_{\text{mo}}\delta\,(J-h)$ — **linear in latency**, and the multiplicative $J-h$ is why the same latency is cheap in a tight, calm book and ruinous in a wide, fast one. Latency is not "speed for its own sake"; it is the cost of racing for the cancel.
 

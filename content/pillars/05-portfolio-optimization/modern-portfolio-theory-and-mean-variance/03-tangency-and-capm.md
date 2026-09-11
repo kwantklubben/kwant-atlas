@@ -15,7 +15,9 @@ tags:
 ### 1. Intuition & Practical Objective
 
 Once a riskless (or low-risk) asset exists, the investor's decision splits cleanly: **how much to put in cash vs. in one "best" risky portfolio** — and that best risky portfolio is the same for everyone, independent of risk aversion (Tobin's two-fund separation). That portfolio is the **tangency portfolio** $w_{\text{tan}}$: the point where the line from the riskless rate $r_f$ just touches (is tangent to) the risky frontier. It is *by construction* the portfolio with the **maximum Sharpe ratio**
-$$\text{SR}(w)=\frac{w^T\mu-r_f}{\sqrt{w^T\Sigma w}}.$$
+$$
+\text{SR}(w)=\frac{w^T\mu-r_f}{\sqrt{w^T\Sigma w}}.
+$$
 The practical objective: compute $w_{\text{tan}}$, its Sharpe ratio and the **Capital Market Line** $\mu=r_f+\text{SR}_{\max}\sigma$ on which every efficient risky-plus-cash portfolio lies — and then the **CAPM/Security Market Line**, the equilibrium statement that each asset's expected excess return is proportional to its *beta* against the tangency (market) portfolio. The entire CAPM is the frontier machinery read at the tangency point.
 
 ---
@@ -23,15 +25,21 @@ The practical objective: compute $w_{\text{tan}}$, its Sharpe ratio and the **Ca
 ### 2. Mathematical Ground Truth & Derivations
 
 **Tangency = maximum Sharpe (Merton 1972, §IV).** Maximizing SR over the budget line $w^T\mathbf{1}=1$ gives the first-order condition with
-$$\boxed{\;w_{\text{tan}}=\frac{\Sigma^{-1}(\mu-r_f\mathbf{1})}{\mathbf{1}^T\Sigma^{-1}(\mu-r_f\mathbf{1})}\;}$$
+$$
+\boxed{\;w_{\text{tan}}=\frac{\Sigma^{-1}(\mu-r_f\mathbf{1})}{\mathbf{1}^T\Sigma^{-1}(\mu-r_f\mathbf{1})}\;}
+$$
 (Merton eq. 44), valid whenever $r_f<\mu_{\text{mv}}=A/C$ (the tangency portfolio is then efficient; if $r_f\ge A/C$ the tangency lies on the *inefficient* branch and no finite tangency exists in the equilibrium sense — Merton §IV).
 
 **Sharpe and the CML.** Let $\mu_t=w_{\text{tan}}^T\mu$ and $\sigma_t^2=w_{\text{tan}}^T\Sigma w_{\text{tan}}$. Two identities hold exactly:
-$$\text{SR}_{\max}^2=\frac{(\mu_t-r_f)^2}{\sigma_t^2}=C r_f^2-2A r_f+B\qquad\text{and}\qquad \mu_t-r_f=\text{SR}_{\max}\,\sigma_t=\sqrt{C r_f^2-2A r_f+B}\;\sigma_t.$$
+$$
+\text{SR}_{\max}^2=\frac{(\mu_t-r_f)^2}{\sigma_t^2}=C r_f^2-2A r_f+B\qquad\text{and}\qquad \mu_t-r_f=\text{SR}_{\max}\,\sigma_t=\sqrt{C r_f^2-2A r_f+B}\;\sigma_t.
+$$
 So the **Capital Market Line** is $\mu=r_f+\text{SR}_{\max}\,\sigma$, and *every* optimal portfolio is a blend of cash and $w_{\text{tan}}$: $w=\theta w_{\text{tan}}+(1-\theta)\mathbf{0}_{\text{cash}}$, with $\theta$ determined by risk aversion. This is Tobin's separation theorem: **all investors hold the same risky fund, only the cash/risky mix differs.**
 
 **Security Market Line / CAPM (Sharpe 1964; Merton §V, eq. 45–47).** Under the equilibrium that the market portfolio is the tangency portfolio, each asset prices according to its covariance with the market:
-$$\boxed{\;\mu_i-r_f=\beta_i\,(\mu_M-r_f),\qquad \beta_i=\frac{\sigma_{iM}}{\sigma_M^2}=\frac{\Sigma_i\cdot w_M}{\sigma_M^2}\;}$$
+$$
+\boxed{\;\mu_i-r_f=\beta_i\,(\mu_M-r_f),\qquad \beta_i=\frac{\sigma_{iM}}{\sigma_M^2}=\frac{\Sigma_i\cdot w_M}{\sigma_M^2}\;}
+$$
 i.e. CAPM is a *security market line*: expected excess return is linear in $\beta$. Crucially, this holds **identically** for the tangency portfolio given *any* $\mu,\Sigma$ — it's a mathematical identity ($(\mu-r_f\mathbf{1})=D_t\,\Sigma w_t$ collapses to $\beta_i(\mu_M-r_f)$), not an empirical fit. The empirical content lives entirely in the assumption that *observed* prices reflect this equilibrium.
 
 ---

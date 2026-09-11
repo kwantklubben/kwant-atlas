@@ -36,7 +36,9 @@ The practical objective: be able to look at a path and know which *level* of its
 
 Let $X:[0,T]\to\mathbb R^d$ be a path of bounded variation (for now — roughness is handled in §04). Write its coordinates $X^1,\dots,X^d$. The **signature** of $X$ is the collection of all iterated integrals, indexed by *words* $w=i_1\cdots i_k$ over the alphabet $\{1,\dots,d\}$:
 
-$$S^{i_1\cdots i_k}_{0,T}(X)=\int_{0<t_1<\cdots<t_k<T}dX^{i_1}_{t_1}\cdots dX^{i_k}_{t_k},\qquad S^{\emptyset}_{0,T}=1.$$
+$$
+S^{i_1\cdots i_k}_{0,T}(X)=\int_{0<t_1<\cdots<t_k<T}dX^{i_1}_{t_1}\cdots dX^{i_k}_{t_k},\qquad S^{\emptyset}_{0,T}=1.
+$$
 
 Level $k$ (the word has $k$ letters) lives in the $k$-fold tensor power $(\mathbb R^d)^{\otimes k}$; collecting all levels gives an element of the tensor algebra. The ordering $0<t_1<\cdots<t_k$ is what makes the hierarchy *hierarchical*: you integrate level-$k$ information against more of the path to get level $k+1$.
 
@@ -44,7 +46,9 @@ Level $k$ (the word has $k$ letters) lives in the $k$-fold tensor power $(\mathb
 
 Level 1 is immediate: $S^{i}_{0,T}=\int_0^T dX^i_t=X^i_T-X^i_0$ — a single number per coordinate, the endpoint (for a path starting at the origin). Level 2 splits into symmetric and antisymmetric parts:
 
-$$S^{ij}_{0,T}=\underbrace{\tfrac12 S^iS^j}_{\text{symmetric, from level 1}}+\underbrace{\tfrac12\big(S^{ij}-S^{ji}\big)}_{\text{antisymmetric, the area}}.$$
+$$
+S^{ij}_{0,T}=\underbrace{\tfrac12 S^iS^j}_{\text{symmetric, from level 1}}+\underbrace{\tfrac12\big(S^{ij}-S^{ji}\big)}_{\text{antisymmetric, the area}}.
+$$
 
 The **Lévy area** $\tfrac12(S^{ij}-S^{ji})$ is exactly the oriented area swept by the path between coordinates $i$ and $j$ (Green's theorem). It is *not* recoverable from the endpoint — the loop that returns to its start has $S^i=0$ yet carries arbitrary area. This is the cleanest demonstration that the signature is a genuinely higher-order object.
 

@@ -29,9 +29,11 @@ The mechanism kills the race two ways (BCS §1, §6):
 
 **Value compression (BCS §5).** In a continuous book, a trader with a $\delta$ advantage over a rival sees every jump of the signal $y$ first, so the value of the advantage approaches the whole rent $V$. Under batching with interval $\tau$:
 
-$$\text{value of a }\delta\text{ edge under batching} = \frac{\delta}{\tau}\,V , \qquad \text{sniping exposure} = \frac{\delta}{2\tau}.$$
+$$
+\text{value of a }\delta\text{ edge under batching} = \frac{\delta}{\tau}\,V , \qquad \text{sniping exposure} = \frac{\delta}{2\tau}.
+$$
 
-For $\tau = 1$ s and $\delta = 1$ ms, the edge is worth $\tfrac{1}{1000}$ of its continuous value — exactly BCS's headline "1 ms advantage is 1/1000th as valuable" example. With $V=\$75$ M/yr (ES–SPY), a 1 ms edge collapses from ~$75M to ~$75k/yr.
+For $\tau = 1$ s and $\delta = 1$ ms, the edge is worth $\tfrac{1}{1000}$ of its continuous value — exactly BCS's headline "1 ms advantage is 1/1000th as valuable" example. With $V= $ \$75 M/yr (ES–SPY), a 1 ms edge collapses from ~75M to ~$75k/yr.
 
 **Why sniping exposure halves.** A fast trader is snip-able only if a jump occurs in the vulnerable window at the *end* of the interval — of length $\sim \delta$ — and it needs the trader's relative latency jitter ($\le\delta$) to be unlucky; in BCS's minimal model this fraction is $\delta/2\tau$.
 

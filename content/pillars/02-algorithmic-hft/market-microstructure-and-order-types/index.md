@@ -56,7 +56,9 @@ It is a *hub*. It gives you (a) the **fast order-type lookup table** below (job 
 - *Glosten–Milgrom adverse-selection spread (Hasbrouck Ch 5), symmetric prior: $A-B=(V_H-V_L)\,\mu$* — the spread is the *information* cost of facing an informed share $\mu$.
 
 **Fee identity (maker-taker).** For a trade of $N$ shares, the all-in cash cost is
-$$\text{cost}=N\,p+N\,f,\qquad f=\begin{cases}-r_m & \text{maker (rebate)}\\ t_a & \text{taker (access fee)}\end{cases}$$
+$$
+\text{cost}=N\,p+N\,f,\qquad f=\begin{cases}-r_m & \text{maker (rebate)}\\ t_a & \text{taker (access fee)}\end{cases}
+$$
 with $r_m,t_a>0$ at a traditional venue and the signs flipped at an inverted venue.
 
 ---

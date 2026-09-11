@@ -30,7 +30,9 @@ The failure modes, tied to first principles:
 
 **The GIL as a serialization theorem.** CPython's GIL guarantees at most one Python bytecode thread executes at a time. For $K$ threads doing CPU-bound *interpreted* work, wall time obeys
 
-$$T_K \approx K \cdot t_{\text{one}} \qquad\Rightarrow\qquad \text{speedup} \approx 1 \quad\text{(no gain from threads).}$$
+$$
+T_K \approx K \cdot t_{\text{one}} \qquad\Rightarrow\qquad \text{speedup} \approx 1 \quad\text{(no gain from threads).}
+$$
 
 NumPy and Numba release the GIL *while their compiled code runs*, so real parallelism requires either (a) C-level releases (numpy/numba with `nogil=True`), or (b) separate processes (no shared interpreter). The §3 benchmark measures a thread speedup of **~1.0×** versus a process speedup of **~1.9×** on 16 cores — exactly this theorem.
 

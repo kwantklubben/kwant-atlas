@@ -35,11 +35,15 @@ Three "aha"s:
 
 A virtual call traverses: load vptr → load function pointer from vtable → indirect call (often mispredicted, ~15–20 cycles flush) → execute. Its cost is
 
-$$t_{\text{virtual}} = t_{\text{vptr load}} + t_{\text{vtable load}} + t_{\text{mispredict}} \approx 20\text{–}40\ \text{cycles},$$
+$$
+t_{\text{virtual}} = t_{\text{vptr load}} + t_{\text{vtable load}} + t_{\text{mispredict}} \approx 20\text{–}40\ \text{cycles},
+$$
 
 whereas a template instantiation resolves the concrete function at compile time and inlines it:
 
-$$t_{\text{template}} = t_{\text{body}} \quad (\text{the call disappears}).$$
+$$
+t_{\text{template}} = t_{\text{body}} \quad (\text{the call disappears}).
+$$
 
 In a hot loop running $M$ times, the difference is $M \cdot t_{\text{virtual}}$ — pure, avoidable overhead. Templating also unlocks inlining across the call boundary, which is what lets the compiler auto-vectorise ([[pillars/08-quantitative-development/high-performance-cpp-for-trading/03-memory-and-cache|03 · Memory & Cache]], §2.3).
 
@@ -47,15 +51,21 @@ In a hot loop running $M$ times, the difference is $M \cdot t_{\text{virtual}}$ 
 
 Copying a container of $n$ elements of size $s$ costs
 
-$$t_{\text{copy}} = n \cdot c_{\text{elem}}, \qquad c_{\text{elem}} \approx (t_{\text{load}}+t_{\text{store}}) \sim \text{a few cycles},$$
+$$
+t_{\text{copy}} = n \cdot c_{\text{elem}}, \qquad c_{\text{elem}} \approx (t_{\text{load}}+t_{\text{store}}) \sim \text{a few cycles},
+$$
 
 so $t_{\text{copy}} = O(n)$. A **move constructor** transfers the internal pointer, capacity, and size instead:
 
-$$t_{\text{move}} = \underbrace{c_{\text{ptr}} + c_{\text{size}}}_{\text{a handful of writes}} = O(1),$$
+$$
+t_{\text{move}} = \underbrace{c_{\text{ptr}} + c_{\text{size}}}_{\text{a handful of writes}} = O(1),
+$$
 
 independent of $n$. This is why `return big_vector;` is cheap (return-value optimisation and/or move) and why `std::vector<std::vector<double>>` operations are pointer-hops, not data floods. A `shared_ptr` copy is a special trap: it is not $O(n)$ *data*, but it is an **atomic** refcount increment
 
-$$t_{\text{shared\_ptr copy}} = t_{\text{atomic inc}} \sim 10\text{–}20\ \text{cycles} + \text{lock-prefix contention},$$
+$$
+t_{\text{shared\_ptr copy}} = t_{\text{atomic inc}} \sim 10\text{–}20\ \text{cycles} + \text{lock-prefix contention},
+$$
 
 i.e., a hidden synchronisation point on the hot path — prefer `unique_ptr` or, better, value types.
 
@@ -63,11 +73,15 @@ i.e., a hidden synchronisation point on the hot path — prefer `unique_ptr` or,
 
 Appending $N$ elements to a doubling vector triggers reallocations when capacity is exhausted. Element copies total
 
-$$C(N) = \sum_{k=0}^{\lfloor \log_2 N\rfloor} 2^{k} \approx N,$$
+$$
+C(N) = \sum_{k=0}^{\lfloor \log_2 N\rfloor} 2^{k} \approx N,
+$$
 
 so the *amortised* per-append cost is $O(1)$ — but the *worst single* append copies up to $N/2$ elements at an unpredictable moment. Reserve in advance and both terms vanish:
 
-$$C_{\text{reserve}}(N) = 0, \qquad \text{reallocations} = 0.$$
+$$
+C_{\text{reserve}}(N) = 0, \qquad \text{reallocations} = 0.
+$$
 
 The tail paragraph is the point: amortised $O(1)$ and *bounded* $O(1)$ are different guarantees, and the hot path needs the second (this is the theme of [[pillars/08-quantitative-development/high-performance-cpp-for-trading/05-failure-modes-and-practice|05 · Failure Modes]]).
 

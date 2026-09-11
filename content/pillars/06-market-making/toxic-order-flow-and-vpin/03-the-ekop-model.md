@@ -32,17 +32,23 @@ The practical objective: implement the full likelihood, fit it to simulated data
 
 **Poisson probabilities.** A single day with $b$ buys and $s$ sells has probability (Hasbrouck eq. 6.3):
 
-$$\Pr(b,s)=\underbrace{(1-\alpha)\;e^{-\epsilon}\tfrac{\epsilon^b}{b!}\;e^{-\epsilon}\tfrac{\epsilon^s}{s!}}_{\text{no event}}
+$$
+\Pr(b,s)=\underbrace{(1-\alpha)\;e^{-\epsilon}\tfrac{\epsilon^b}{b!}\;e^{-\epsilon}\tfrac{\epsilon^s}{s!}}_{\text{no event}}
 +\underbrace{\tfrac{\alpha}{2}\;e^{-(\mu+\epsilon)}\tfrac{(\mu+\epsilon)^b}{b!}\;e^{-\epsilon}\tfrac{\epsilon^s}{s!}}_{\text{good news}}
-+\underbrace{\tfrac{\alpha}{2}\;e^{-\epsilon}\tfrac{\epsilon^b}{b!}\;e^{-(\mu+\epsilon)}\tfrac{(\mu+\epsilon)^s}{s!}}_{\text{bad news}}.$$
++\underbrace{\tfrac{\alpha}{2}\;e^{-\epsilon}\tfrac{\epsilon^b}{b!}\;e^{-(\mu+\epsilon)}\tfrac{(\mu+\epsilon)^s}{s!}}_{\text{bad news}}.
+$$
 
 **Log-likelihood over $D$ days** (each day independent):
 
-$$\ln\mathcal{L}(\alpha,\mu,\epsilon)=\sum_{d=1}^{D}\ln\Big[\Pr(b_d,s_d)\Big].$$
+$$
+\ln\mathcal{L}(\alpha,\mu,\epsilon)=\sum_{d=1}^{D}\ln\Big[\Pr(b_d,s_d)\Big].
+$$
 
 The parameters are estimated by maximizing $\ln\mathcal{L}$ over $\alpha,\mu,\epsilon$ (grid search is a robust, transparent method for this small three-parameter problem). PIN follows:
 
-$$\boxed{\;\widehat{\mathrm{PIN}}=\frac{\widehat\alpha\,\widehat\mu}{\widehat\alpha\,\widehat\mu+2\widehat\epsilon}\;}.$$
+$$
+\boxed{\;\widehat{\mathrm{PIN}}=\frac{\widehat\alpha\,\widehat\mu}{\widehat\alpha\,\widehat\mu+2\widehat\epsilon}\;}.
+$$
 
 **Why only $\alpha\mu$ is well identified.** The likelihood surface is shallow over the ridge where $\alpha\mu$ is constant — many $(\alpha,\mu)$ pairs give nearly the same fit. The *product* is identified, so $\widehat{\mathrm{PIN}}$ is stable even though $\widehat\alpha,\widehat\mu$ individually bounce around the grid (Hasbrouck Ch 6).
 

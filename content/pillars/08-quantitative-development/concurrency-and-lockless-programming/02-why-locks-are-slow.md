@@ -30,7 +30,9 @@ Every concurrency text says "locks are slow," but *why* deserves precision. The 
 
 **Contention as queueing (Pollaczek–Khinchine).** A contended critical section is a single-server queue with utilization $\rho=\lambda\mathbb{E}[S]$ (arrival rate × mean service time). Mean waiting time:
 
-$$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)}.$$
+$$
+W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)}.
+$$
 
 As $\rho\to1$, $W_q\to\infty$. At $\rho=0.90$ with $\mathbb{E}[S]=100$ ns, a thread waits $450$ ns (deterministic) before even *starting* its 100 ns critical section — 4.5x the work. At $\rho=0.99$ it waits ~5 µs. Jitter (service-time variability $C_s>0$) multiplies the wait by $\frac{1+C_s^2}{2}$.
 

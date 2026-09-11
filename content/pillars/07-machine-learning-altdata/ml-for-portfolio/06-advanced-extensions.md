@@ -31,7 +31,9 @@ The practical objective: know *when* each extension earns its complexity — met
 
 Let the primary model emit a side call $s_t\in\{-1,+1\}$. Define the meta-label $z_t=\mathbb{1}[s_t \text{ is correct}]$, and fit a *secondary* classifier $q(x_t)=P(z_t=1\mid x_t)$ on features (including the primary's confidence) that predict whether the side call will succeed. Size the bet by the probability-mapped position from [[pillars/07-machine-learning-altdata/ml-for-portfolio/02-forecasts-to-positions|02]]:
 
-$$z_t = \frac{q_t-\tfrac12}{\sqrt{q_t(1-q_t)}},\qquad m_t = 2\Phi(z_t)-1\;\in[-1,1],$$
+$$
+z_t = \frac{q_t-\tfrac12}{\sqrt{q_t(1-q_t)}},\qquad m_t = 2\Phi(z_t)-1\;\in[-1,1],
+$$
 
 and hold $m_t\cdot s_t$. The insight: the secondary model is trained on a *much* cleaner target ($z$ is binary, nearly deterministic given good features) than the primary's return forecast, so it can extract reliability structure the primary never uses. Meta-labeling is therefore "predict the *quality* of the primary prediction, then size by that quality."
 
@@ -39,7 +41,9 @@ and hold $m_t\cdot s_t$. The insight: the secondary model is trained on a *much*
 
 Given a sample covariance $\hat\Sigma$ with eigen-decomposition $\hat\Sigma=\sum_i \lambda_i v_iv_i^\top$, the Marchenko–Pastur law bounds the eigenvalues of a pure-noise covariance in $[\lambda_-,\lambda_+]$ (function of $N,T,\sigma^2$). Collapse the $\lambda_i<\lambda_+$ directions to their average and keep only the $>$ band:
 
-$$\hat\Sigma_{\text{den}} = \sum_{\lambda_i>\lambda_+}\lambda_i v_iv_i^\top + \bar\lambda_{\text{noise}}\sum_{\lambda_i\le\lambda_+} v_iv_i^\top .$$
+$$
+\hat\Sigma_{\text{den}} = \sum_{\lambda_i>\lambda_+}\lambda_i v_iv_i^\top + \bar\lambda_{\text{noise}}\sum_{\lambda_i\le\lambda_+} v_iv_i^\top .
+$$
 
 This raises the floor of the spectrum (so $1/\lambda_{\min}^2$ no longer explodes) with almost no loss of structure. It is the modern upgrade of the shrinkage seen in [[pillars/07-machine-learning-altdata/ml-for-portfolio/04-ml-for-covariance-factors|04]]. (Full treatment in [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].)
 
@@ -47,7 +51,9 @@ This raises the floor of the spectrum (so $1/\lambda_{\min}^2$ no longer explode
 
 HRP ([[pillars/05-portfolio-optimization/hierarchical-risk-parity/index|Hierarchical Risk Parity]]) splits each cluster by inverse-variance of sub-variances, $\alpha=1-\frac{\tilde V^{(1)}}{\tilde V^{(1)}+\tilde V^{(2)}}$. **HERC** replaces that with an *equal-risk* bisection: choose $\alpha$ so the two sub-clusters contribute equal *risk* to the portfolio,
 
-$$\text{choose }\alpha :\quad \alpha\, v^{(1)} = (1-\alpha)\, v^{(2)},\qquad v^{(j)}=\sqrt{w^{(j)\top}\Sigma^{(j)}w^{(j)}},$$
+$$
+\text{choose }\alpha :\quad \alpha\, v^{(1)} = (1-\alpha)\, v^{(2)},\qquad v^{(j)}=\sqrt{w^{(j)\top}\Sigma^{(j)}w^{(j)}},
+$$
 
 where $w^{(j)}$ is a risk-based (e.g. inverse-variance or equal-risk) allocation inside each cluster. The result is a tree allocation that equalizes risk contributions *across* the hierarchy rather than inverse-variance-splitting — empirically flatter and more robust than HRP on correlated universes.
 

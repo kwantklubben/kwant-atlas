@@ -17,7 +17,9 @@ tags:
 
 The structural model asks *why* a firm defaults (asset value crosses a barrier). The **reduced-form** model does not ask why at all — it models default as an exogenous *event* that arrives with a time-varying **intensity** (hazard rate) $\lambda_t$:
 
-$$\mathbb{P}(\tau\in(t,t+dt]\mid \tau>t)=\lambda_t\,dt.$$
+$$
+\mathbb{P}(\tau\in(t,t+dt]\mid \tau>t)=\lambda_t\,dt.
+$$
 
 The default time $\tau$ is the first jump of a counting process. This is the model that credit *markets* actually use, for three reasons:
 
@@ -36,14 +38,18 @@ The practical objective: **bootstrap a hazard curve from market spreads and pric
 #### 2.1 Survival probability and the hazard rate
 
 With deterministic intensity $\lambda(t)$, the survival probability to $t$ and the default density are
-$$Q(t)=\mathbb{P}(\tau>t)=\exp\!\Big(-\int_0^t\!\lambda(u)\,du\Big),\qquad
-\mathbb{P}(t_0<\tau\le t_1)=Q(t_0)-Q(t_1).$$
+$$
+Q(t)=\mathbb{P}(\tau>t)=\exp\!\Big(-\int_0^t\!\lambda(u)\,du\Big),\qquad
+\mathbb{P}(t_0<\tau\le t_1)=Q(t_0)-Q(t_1).
+$$
 For **flat** intensity $\lambda$: $Q(t)=e^{-\lambda t}$ and the cumulative default probability is $1-e^{-\lambda t}$.
 
 #### 2.2 Hazard from a credit spread (Hull eq. 24.2)
 
 A risky bond yields $r+\lambda(1-R)$ in the simplest setup (risk-neutral, expected loss $=$ expected excess return), so
-$$\boxed{\;\lambda(T)=\frac{s(T)}{1-R}\;}$$
+$$
+\boxed{\;\lambda(T)=\frac{s(T)}{1-R}\;}
+$$
 where $s(T)$ is the credit spread to maturity $T$ and $R$ the recovery rate ($\mathrm{LGD}=1-R$). Hull §24.4 refines this by *bootstrapping* piecewise-constant hazard rates to match observed bond prices exactly (Examples 24.1–24.2); the flat-intensity formula is the first step of that recursion.
 
 > **Interpretation.** $\lambda$ is the *risk-neutral* default intensity: the market's expected loss rate per unit time, grossed up by risk aversion. Historical (physical) default frequencies are lower — the same $\mathbb{Q}$-vs-$\mathbb{P}$ gap as in page 03.
@@ -52,11 +58,17 @@ where $s(T)$ is the credit spread to maturity $T$ and $R$ the recovery rate ($\m
 
 A **credit default swap** is insurance: the protection buyer pays a periodic premium (spread $s$ times notional, quarterly in arrears) and receives, on a credit event, a payoff of $\mathrm{LGD}=1-R$. For a unit notional and quarterly payments at $t_k=k\,\Delta$:
 - **Premium leg** (PV of premiums while alive + accrual on default):
-$$A+B=\sum_k \Delta\,D(t_k)\,Q(t_k)\;+\;\sum_k \tfrac{\Delta}{2}\,D(t_k)\,[Q(t_{k-1})-Q(t_k)],$$
+$$
+A+B=\sum_k \Delta\,D(t_k)\,Q(t_k)\;+\;\sum_k \tfrac{\Delta}{2}\,D(t_k)\,[Q(t_{k-1})-Q(t_k)],
+$$
 - **Protection leg** (PV of LGD paid at default):
-$$C=\sum_k (1-R)\,D(t_k)\,[Q(t_{k-1})-Q(t_k)].$$
+$$
+C=\sum_k (1-R)\,D(t_k)\,[Q(t_{k-1})-Q(t_k)].
+$$
 The **fair (par) spread** sets the two legs equal:
-$$\boxed{\;s^{*}=\frac{C}{A+B}\;}$$
+$$
+\boxed{\;s^{*}=\frac{C}{A+B}\;}
+$$
 (Hull §25.2, "fair spread $s=C/(A+B)$", Example 25.1). The **mark-to-market** of an existing CDS is PV(protection) − PV(premiums) at the contractual spread. **CDS–bond basis** $=$ CDS spread − bond spread; negative when bonds are cheap relative to CDS (funding/liquidity effects; Gregory §14.3.4).
 
 #### 2.4 The continuous approximation

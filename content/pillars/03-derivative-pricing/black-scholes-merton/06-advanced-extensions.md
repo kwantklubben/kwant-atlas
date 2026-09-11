@@ -26,7 +26,9 @@ Every real-market defect of BSM (the smile, jumps, fat tails, early exercise) mo
 #### 2.1 American options & the early-exercise boundary (Haug Ch 3; Björk §7.8)
 
 An American option adds the right to exercise *before* $T$, giving the free-boundary (variational) problem
-$$V\ge\max(\text{intrinsic},0),\qquad \frac{\partial V}{\partial t}+rS\frac{\partial V}{\partial S}+\tfrac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}-rV\le0,$$
+$$
+V\ge\max(\text{intrinsic},0),\qquad \frac{\partial V}{\partial t}+rS\frac{\partial V}{\partial S}+\tfrac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}-rV\le0,
+$$
 with equality where it is optimal to *continue*. The optimal exercise boundary $S^*(t)$ solves a smooth-pasting condition. Key facts:
 - **American call, no dividends:** never optimal to exercise early, so $C^{\text{Am}}=c^{\text{BSM}}$ (Haug §1.2).
 - **American put / dividend-paying call:** early exercise *is* optimal; no closed form — solve numerically (binomial tree, finite-difference, or analytic approximations like Barone–Adesi–Whaley or Bjerksund–Stensland, all in Haug Ch 3).
@@ -34,10 +36,14 @@ with equality where it is optimal to *continue*. The optimal exercise boundary $
 #### 2.2 Merton (1976) jump-diffusion — the minimal incomplete-market extension
 
 Under $\mathbb{Q}$,
-$$dS_t/S_t=(r-\lambda\kappa)\,dt+\sigma\,dW_t+(J-1)\,dN_t,$$
+$$
+dS_t/S_t=(r-\lambda\kappa)\,dt+\sigma\,dW_t+(J-1)\,dN_t,
+$$
 where $N$ is a Poisson process with intensity $\lambda$, $J$ the multiplicative jump size ($\ln J\sim N(\mu_J,\sigma_J^2)$), and $\kappa=\mathbb{E}[J-1]=e^{\mu_J+\frac12\sigma_J^2}-1$ the compensator that keeps $e^{-rt}S_t$ a martingale. Because a Poisson-mixture of lognormals is lognormal, the call prices in **closed form** as a Poisson-weighted average of BSM calls at inflated vol:
 
-$$C_{\text{Merton}}=\sum_{n=0}^{\infty}\frac{e^{-\lambda' T}(\lambda' T)^n}{n!}\;c_{\text{BSM}}\!\left(S,X,T,r,\sigma_n\right),\qquad \sigma_n=\sqrt{\sigma^2+\frac{n\sigma_J^2}{T}},\qquad \lambda'=\lambda(1+\kappa).$$
+$$
+C_{\text{Merton}}=\sum_{n=0}^{\infty}\frac{e^{-\lambda' T}(\lambda' T)^n}{n!}\;c_{\text{BSM}}\!\left(S,X,T,r,\sigma_n\right),\qquad \sigma_n=\sqrt{\sigma^2+\frac{n\sigma_J^2}{T}},\qquad \lambda'=\lambda(1+\kappa).
+$$
 
 *(Glasserman Ch 3.5, eq. 3.79–3.81, gives the pathwise simulation form.)*
 

@@ -33,13 +33,17 @@ The practical objective: be able to (a) write down the Heston SDE and PDE, (b) s
 
 Under $\mathbb Q$, with $\lambda$ the mean-reversion speed and $\bar v$ the long-run variance:
 
-$$\boxed{\;dS_t=\sqrt{v_t}\,S_t\,dZ_1,\qquad dv_t=-\lambda(v_t-\bar v)\,dt+\eta\sqrt{v_t}\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt\;}$$
+$$
+\boxed{\;dS_t=\sqrt{v_t}\,S_t\,dZ_1,\qquad dv_t=-\lambda(v_t-\bar v)\,dt+\eta\sqrt{v_t}\,dZ_2,\qquad dZ_1dZ_2=\rho\,dt\;}
+$$
 
 (Gatheral 2.1–2.2, with $\alpha=-\lambda(v-\bar v)$, $\beta=1$ in the generic SV SDEs 1.1–1.2; the same SDEs in Bergomi 6.1 with $k\leftrightarrow\lambda$, $\sigma\leftrightarrow\eta$.)
 
 Two risk factors ⇒ hedge the option with $-\Delta$ shares **and** $-\Delta_1$ units of a second (volatility-dependent) traded asset. Killing both $dS$ and $dv$ terms in the generic valuation equation (Gatheral 1.3) and setting the market price of volatility risk to zero (working in $\mathbb Q$) gives the **Heston PDE** (Gatheral 2.3):
 
-$$\frac{\partial V}{\partial t}+\tfrac12vS^2V_{SS}+\rho\eta vS\,V_{vS}+\tfrac12\eta^2v\,V_{vv}+rS\,V_S-rV=\lambda(\bar v-v)V_v .$$
+$$
+\frac{\partial V}{\partial t}+\tfrac12vS^2V_{SS}+\rho\eta vS\,V_{vS}+\tfrac12\eta^2v\,V_{vv}+rS\,V_S-rV=\lambda(\bar v-v)V_v .
+$$
 
 Note the shape: the mixed derivative $\rho\eta vS\,V_{vS}$ is what makes the *skew* appear (it is the coupling between spot and variance), and the quadratic-in-vol-of-vol term $\tfrac12\eta^2vV_{vv}$ is what makes the *wings* lift.
 
@@ -47,7 +51,9 @@ Note the shape: the mixed derivative $\rho\eta vS\,V_{vS}$ is what makes the *sk
 
 For $dv=-\lambda(v-\bar v)dt+\eta\sqrt v\,dZ$, the origin $v=0$ is unattainable (and inaccessible) iff
 
-$$\boxed{\;2\lambda\bar v>\eta^2\;}$$
+$$
+\boxed{\;2\lambda\bar v>\eta^2\;}
+$$
 
 If $2\lambda\bar v\le\eta^2$ the origin is *regular and accessible*: the process hits zero in finite time and reflects. It then stays non-negative — a square-root diffusion **cannot** go negative — but it spends time pinned near zero, and the variance distribution acquires an atom-like pile-up at the origin. Numerical schemes that ignore this produce negative $v$ (see [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/05-failure-modes-and-practice|05 · Failure Modes & Practice]]).
 
@@ -55,29 +61,43 @@ If $2\lambda\bar v\le\eta^2$ the origin is *regular and accessible*: the process
 
 Write $x=\ln(F_{t,T}/K)$ and $\tau=T-t$. Heston's ansatz is
 
-$$C(x,v,\tau)=K\big[e^{x}P_1(x,v,\tau)-P_0(x,v,\tau)\big]$$
+$$
+C(x,v,\tau)=K\big[e^{x}P_1(x,v,\tau)-P_0(x,v,\tau)\big]
+$$
 
 (Gatheral 2.5): the price is "the pseudo-expectation of the final index, in the money" minus "strike $\times$ the pseudo-probability of exercise". Each $P_j$ solves a backward PDE with the same generator and different coefficients $b_j=\lambda-j\rho\eta$ (Gatheral 2.6):
 
-$$-\frac{\partial P_j}{\partial\tau}+\tfrac12v\,P_{j,xx}-(\tfrac12-j)v\,P_{j,x}+\tfrac12\eta^2v\,P_{j,vv}+\rho\eta v\,P_{j,xv}+(a-b_jv)P_{j,v}=0,\qquad a=\lambda\bar v .$$
+$$
+-\frac{\partial P_j}{\partial\tau}+\tfrac12v\,P_{j,xx}-(\tfrac12-j)v\,P_{j,x}+\tfrac12\eta^2v\,P_{j,vv}+\rho\eta v\,P_{j,xv}+(a-b_jv)P_{j,v}=0,\qquad a=\lambda\bar v .
+$$
 
 Fourier-transforming in $x$, $\widetilde P_j=\int e^{-iux}P_j\,dx$, the PDE collapses to a **Riccati ODE system** (Gatheral 2.9–2.11) with
 
-$$\alpha=-\tfrac{u^2}{2}-\tfrac{iu}{2}+iju,\qquad \beta=\lambda-\rho\eta j-\rho\eta iu,\qquad \gamma=\tfrac{\eta^2}{2},$$
+$$
+\alpha=-\tfrac{u^2}{2}-\tfrac{iu}{2}+iju,\qquad \beta=\lambda-\rho\eta j-\rho\eta iu,\qquad \gamma=\tfrac{\eta^2}{2},
+$$
 
-$$\frac{\partial D}{\partial\tau}=\alpha-\beta D+\gamma D^2=\gamma\,(D-r_+)(D-r_-),\qquad \frac{\partial C}{\partial\tau}=\lambda D,\qquad r_\pm=\frac{\beta\pm d}{\eta^2},\quad d=\sqrt{\beta^2-4\alpha\gamma}.$$
+$$
+\frac{\partial D}{\partial\tau}=\alpha-\beta D+\gamma D^2=\gamma\,(D-r_+)(D-r_-),\qquad \frac{\partial C}{\partial\tau}=\lambda D,\qquad r_\pm=\frac{\beta\pm d}{\eta^2},\quad d=\sqrt{\beta^2-4\alpha\gamma}.
+$$
 
 With $D(0)=C(0)=0$ and $g:=r_-/r_+$ (Gatheral 2.12):
 
-$$\boxed{\;D(u,\tau)=\frac{r_-\big(1-e^{-d\tau}\big)}{1-g\,e^{-d\tau}},\qquad C(u,\tau)=\lambda\Big\{r_-\tau-\frac{2}{\eta^2}\ln\frac{1-g\,e^{-d\tau}}{1-g}\Big\}\;}$$
+$$
+\boxed{\;D(u,\tau)=\frac{r_-\big(1-e^{-d\tau}\big)}{1-g\,e^{-d\tau}},\qquad C(u,\tau)=\lambda\Big\{r_-\tau-\frac{2}{\eta^2}\ln\frac{1-g\,e^{-d\tau}}{1-g}\Big\}\;}
+$$
 
 and the pseudo-probabilities are the real integrals (Gatheral 2.13)
 
-$$P_j(x,v,\tau)=\frac12+\frac1\pi\int_0^\infty\mathrm{Re}\Big\{\frac{e^{C_j(u,\tau)\bar v+D_j(u,\tau)v+iux}}{iu}\Big\}du .$$
+$$
+P_j(x,v,\tau)=\frac12+\frac1\pi\int_0^\infty\mathrm{Re}\Big\{\frac{e^{C_j(u,\tau)\bar v+D_j(u,\tau)v+iux}}{iu}\Big\}du .
+$$
 
 **The $j=0$ case is the whole model.** Setting $j=0$ ($\Rightarrow\alpha=-\tfrac{u^2}{2}-\tfrac{iu}{2}$, $\beta=\lambda-\rho\eta iu$) gives precisely the characteristic function of the *forward-measure* log-return $X_T=\ln(S_T/F_T)$:
 
-$$\varphi_T(u)=\mathbb E^{\mathbb Q}\big[e^{iuX_T}\big]=\exp\!\big(C(u,\tau)\bar v+D(u,\tau)v_0\big).$$
+$$
+\varphi_T(u)=\mathbb E^{\mathbb Q}\big[e^{iuX_T}\big]=\exp\!\big(C(u,\tau)\bar v+D(u,\tau)v_0\big).
+$$
 
 Two consequences worth stating as *checks*, because they are the standard way to police an implementation:
 
@@ -90,7 +110,9 @@ The second identity is non-trivial — it fails if you pick the wrong root $r_+$
 
 With $\varphi_T$ in hand, the European call is one real integral. Gatheral's zero-dividend form (5.6), which is exactly Lewis' contour prescription, is
 
-$$\boxed{\;C(F_T,K,T)=F_T-\frac{\sqrt{F_TK}}{\pi}\int_0^\infty\frac{du}{u^2+\tfrac14}\,\mathrm{Re}\Big[e^{-iuk}\varphi_T\!\Big(u-\tfrac i2\Big)\Big],\qquad k=\ln\frac{K}{F_T}\;}$$
+$$
+\boxed{\;C(F_T,K,T)=F_T-\frac{\sqrt{F_TK}}{\pi}\int_0^\infty\frac{du}{u^2+\tfrac14}\,\mathrm{Re}\Big[e^{-iuk}\varphi_T\!\Big(u-\tfrac i2\Big)\Big],\qquad k=\ln\frac{K}{F_T}\;}
+$$
 
 The shift to the contour $\mathrm{Im}\,u=\tfrac12$ makes the integrand decay and removes the $\mathrm{Re}[1/(iu)]$ singularity. A few thousand quadrature nodes suffice. (The equivalent Heston two-probability form $C=K[e^xP_1-P_0]$ uses the same $\varphi$ with $j=1,0$ and must agree — a useful second implementation.)
 

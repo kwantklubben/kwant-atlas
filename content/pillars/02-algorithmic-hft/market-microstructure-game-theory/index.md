@@ -42,41 +42,65 @@ This folder is the **game-theoretic microstructure** topic-folder for Pillar 2. 
 **Notation.** $v$ = fundamental value; $\Sigma_0=\operatorname{Var}[v]$ = prior value variance; $u$ = noise order flow, $\sigma_u^2=\operatorname{Var}[u]$; $x$ = informed demand; $y=x+u$ = total signed order flow; $P$ = price; $\lambda$ = price impact (\"Kyle's lambda\"); $1/\lambda$ = market depth. For the Glosten–Milgrom game: $V\in\{V_L,V_H\}$, belief $\theta_t=\mathbb{P}(V=V_H\mid\mathcal{F}_t)$, $\pi$ = share of traders who are informed. For execution games: $X$ = block to liquidate, $T$ = horizon, $N$ = number of intervals of length $\tau=T/N$, $n_k$ = shares traded in interval $k$, $x_k$ = shares still held, $\eta$ = temporary-impact coefficient, $\gamma$ = permanent-impact coefficient, $\lambda_{\text{risk}}$ = risk aversion.
 
 **2.1 The Glosten–Milgrom game (1985).** Arrivals of buy/sell orders are governed by
-$$\mathbb{P}(B\mid V_H)=\tfrac{1+\pi}{2},\qquad \mathbb{P}(B\mid V_L)=\tfrac{1-\pi}{2},\qquad \mathbb{P}(S\mid\cdot)=1-\mathbb{P}(B\mid\cdot).$$
+$$
+\mathbb{P}(B\mid V_H)=\tfrac{1+\pi}{2},\qquad \mathbb{P}(B\mid V_L)=\tfrac{1-\pi}{2},\qquad \mathbb{P}(S\mid\cdot)=1-\mathbb{P}(B\mid\cdot).
+$$
 A competitive maker quotes **zero expected profit conditional on the direction of the trade**:
-$$A_t=\mathbb{E}[V\mid \text{buy at }t],\qquad B_t=\mathbb{E}[V\mid \text{sell at }t],$$
+$$
+A_t=\mathbb{E}[V\mid \text{buy at }t],\qquad B_t=\mathbb{E}[V\mid \text{sell at }t],
+$$
 which evaluates to
-$$\boxed{\;A_t=\frac{V_H(1+\pi)\theta_t+V_L(1-\pi)(1-\theta_t)}{(1+\pi)\theta_t+(1-\pi)(1-\theta_t)},\qquad B_t=\frac{V_H(1-\pi)\theta_t+V_L(1+\pi)(1-\theta_t)}{(1-\pi)\theta_t+(1+\pi)(1-\theta_t)}\;}$$
+$$
+\boxed{\;A_t=\frac{V_H(1+\pi)\theta_t+V_L(1-\pi)(1-\theta_t)}{(1+\pi)\theta_t+(1-\pi)(1-\theta_t)},\qquad B_t=\frac{V_H(1-\pi)\theta_t+V_L(1+\pi)(1-\theta_t)}{(1-\pi)\theta_t+(1+\pi)(1-\theta_t)}\;}
+$$
 and the Bayesian update after a buy is $\theta_t^{+}=\dfrac{(1+\pi)\theta_t}{(1+\pi)\theta_t+(1-\pi)(1-\theta_t)}$. At $\theta=\tfrac12$ everything collapses to the textbook form
-$$A-B=\pi\,(V_H-V_L).$$
+$$
+A-B=\pi\,(V_H-V_L).
+$$
 **Key structural fact:** the quoted price is a **martingale** — $\mathbb{E}[P_{t+1}\mid\mathcal{F}_t]=P_t$ — exactly because $A$ and $B$ are conditional expectations. Verified to $0.00\times10^{0}$ drift in §3.
 
 **2.2 The Kyle (1985) auction.** Prior $v\sim\mathcal N(p_0,\Sigma_0)$, noise $u\sim\mathcal N(0,\sigma_u^2)$, one strategic insider, competitive linear pricing $P=p_0+\lambda y$. The equilibrium is
-$$\boxed{\;x=\beta\,(v-p_0),\quad \beta=\sqrt{\sigma_u^2/\Sigma_0},\qquad \lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2},\qquad 1/\lambda=2\sqrt{\sigma_u^2/\Sigma_0}\;}$$
+$$
+\boxed{\;x=\beta\,(v-p_0),\quad \beta=\sqrt{\sigma_u^2/\Sigma_0},\qquad \lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2},\qquad 1/\lambda=2\sqrt{\sigma_u^2/\Sigma_0}\;}
+$$
 with $\operatorname{Var}[v\mid P]=\Sigma_0/2$ (**exactly half the private information is impounded**, and the fraction is invariant to $\sigma_u^2$) and $\mathbb{E}[\text{insider profit}]=\tfrac12\sqrt{\sigma_u^2\Sigma_0}$.
 
 **2.3 N-auction Kyle (the discrete game).** Repeat the auction $N$ times with equal noise variance $\sigma_u^2$ per round and prior variance $\Sigma_{n-1}$. The equilibrium is
-$$\boxed{\;\Sigma_n=\tfrac12\Sigma_{n-1}=\Sigma_0\,2^{-n},\qquad \beta_n=\sqrt{\sigma_u^2/\Sigma_{n-1}},\qquad \lambda_n=\tfrac12\sqrt{\Sigma_{n-1}/\sigma_u^2},\qquad \mathbb{E}[\text{profit}_n]=\tfrac12\sqrt{\sigma_u^2\Sigma_{n-1}}\;}$$
+$$
+\boxed{\;\Sigma_n=\tfrac12\Sigma_{n-1}=\Sigma_0\,2^{-n},\qquad \beta_n=\sqrt{\sigma_u^2/\Sigma_{n-1}},\qquad \lambda_n=\tfrac12\sqrt{\Sigma_{n-1}/\sigma_u^2},\qquad \mathbb{E}[\text{profit}_n]=\tfrac12\sqrt{\sigma_u^2\Sigma_{n-1}}\;}
+$$
 so information is released **geometrically** (half per auction) and the insider's total expected profit converges:
-$$\sum_{n\ge1}\tfrac12\sqrt{\sigma_u^2\Sigma_0}\,2^{-(n-1)/2}=\frac{2+\sqrt2}{2}\sqrt{\sigma_u^2\Sigma_0}.$$
+$$
+\sum_{n\ge1}\tfrac12\sqrt{\sigma_u^2\Sigma_0}\,2^{-(n-1)/2}=\frac{2+\sqrt2}{2}\sqrt{\sigma_u^2\Sigma_0}.
+$$
 $N=12$ reproduces this limit to $1.6\%$ (§3).
 
 **2.4 The Kyle–Back continuous-time limit.** You **cannot** get continuous time by simply sending $N\to\infty$ in §2.3 with a fixed total noise budget: with per-period noise variance $\sigma_u^2\tau$ the first-period impact is $\lambda_1=\tfrac12\sqrt{\Sigma_0/(\sigma_u^2\tau)}\to\infty$. The correct continuous-time equilibrium — Kyle (1985, §2) resolved by **Back (1992)** — has a **linear** information release and a **constant** impact coefficient:
-$$\boxed{\;\Sigma(t)=\Sigma_0\Bigl(1-\frac{t}{T}\Bigr),\qquad \lambda=\sqrt{\frac{\Sigma_0}{\sigma_u^2 T}}\;}$$
+$$
+\boxed{\;\Sigma(t)=\Sigma_0\Bigl(1-\frac{t}{T}\Bigr),\qquad \lambda=\sqrt{\frac{\Sigma_0}{\sigma_u^2 T}}\;}
+$$
 with $P_t=p_0+\lambda(X_t+U_t)$, $dU_t=\sigma_u\,dB_t$, and market depth $1/\lambda=\sigma_u\sqrt{T/\Sigma_0}$. **Why the form is forced:** the filtering identity $d\Sigma_t=-\operatorname{Var}(dP_t\mid\mathcal F_{t^-})=-\lambda^2\sigma_u^2\,dt$ combined with $\Sigma(t)=\Sigma_0(1-t/T)$ gives $\lambda^2\sigma_u^2T=\Sigma_0$ identically — and $\int_0^T\lambda^2\sigma_u^2dt=\Sigma_0$ says *all* the information is released by $T$. Two corollaries: half the information is impounded at $t=T/2$ (the continuous analogue of the auction's $\Sigma_0/2$), and $\lambda\propto T^{-1/2}$ (**a longer horizon makes the market deeper**, not shallower).
 
 **2.5 Predatory trading (Brunnermeier–Pedersen 2005).** A distressed trader must liquidate $X$ on a schedule $\{n_k\}$; a predator best-responds to *that public schedule*. With price $P_k=P_0-\kappa\sum_{j\le k}(n_j+m_j)$ (sign convention: selling depresses) and linear temporary cost $\eta$ per unit for everyone, the predator's cash flow is
-$$\Pi=\sum_k m_k\bigl(P_{k-1}-\eta m_k\bigr),\qquad \sum_k m_k=0,$$
+$$
+\Pi=\sum_k m_k\bigl(P_{k-1}-\eta m_k\bigr),\qquad \sum_k m_k=0,
+$$
 which reduces to a concave quadratic. Its maximiser is
-$$\boxed{\;m_k=\frac{\kappa\,(\bar A-A_k)}{2\eta-\kappa},\qquad A_k=\sum_{j<k}n_j,\quad \bar A=\tfrac1N\textstyle\sum_k A_k\;}$$
+$$
+\boxed{\;m_k=\frac{\kappa\,(\bar A-A_k)}{2\eta-\kappa},\qquad A_k=\sum_{j<k}n_j,\quad \bar A=\tfrac1N\textstyle\sum_k A_k\;}
+$$
 with the interior-solution condition $\eta>\kappa/2$. Since $A_k$ is increasing, $m_k$ is **positive early and negative late**: the predator **sells ahead of the victim and buys back afterwards**, collecting the permanent-impact rent it helped create.
 
 **2.6 Execution as a game (Schied–Zhang 2019).** When $J$ strategic liquidators trade the same asset, each minimises its own cost holding the others fixed. In the linear-quadratic case the symmetric Nash equilibrium is *the single-agent Almgren–Chriss solution with an inflated temporary-impact coefficient*: sharing one liquidity pool with a counterpart who trades $n^j_k$ makes agent $i$'s marginal temporary cost $\eta(2n^i_k+n^j_k)$, i.e.
-$$\boxed{\;\eta_{\text{eff}}=\tfrac{3}{2}\eta\quad\text{(two symmetric players)}\;\Longrightarrow\;\kappa_{\text{eff}}=\sqrt{\lambda_{\text{risk}}\sigma^2/\eta_{\text{eff}}}=\sqrt{\tfrac23}\,\kappa\;}$$
+$$
+\boxed{\;\eta_{\text{eff}}=\tfrac{3}{2}\eta\quad\text{(two symmetric players)}\;\Longrightarrow\;\kappa_{\text{eff}}=\sqrt{\lambda_{\text{risk}}\sigma^2/\eta_{\text{eff}}}=\sqrt{\tfrac23}\,\kappa\;}
+$$
 so **competition for liquidity makes each player slower, not faster** — the opposite of the naive intuition, and the reason "everyone liquidates at once" is expensive. Schied & Zhang (2019) and Cordoni & Lillo (2022) show the same structure in continuous time, where the equilibrium can become **unstable** (oscillating strategies, non-existent high-frequency limit) when the temporary-cost parameter is small relative to cross-impact.
 
 **2.7 Competing informed traders (Holden–Subrahmanyam 1992).** Replace the single insider by $K$ insiders with aggregate informed intensity $K\beta$. One round of Bayesian updating gives
-$$\boxed{\;\Sigma'=\frac{\Sigma_0\sigma_u^2}{(K\beta)^2\Sigma_0+\sigma_u^2},\qquad \lambda_K=\frac{K\beta\,\Sigma_0}{(K\beta)^2\Sigma_0+\sigma_u^2}\;}$$
+$$
+\boxed{\;\Sigma'=\frac{\Sigma_0\sigma_u^2}{(K\beta)^2\Sigma_0+\sigma_u^2},\qquad \lambda_K=\frac{K\beta\,\Sigma_0}{(K\beta)^2\Sigma_0+\sigma_u^2}\;}
+$$
 $K=1$ recovers $\Sigma_0/2$ and $\lambda$; $K\to\infty$ drives $\Sigma'\to0$ and $\lambda_K\to0$. More insiders $\Rightarrow$ faster revelation $\Rightarrow$ a **deeper** market.
 
 **Quick-Reference Lookup** — the fast facts of this folder (all reproduced by the stdlib engine in §3):

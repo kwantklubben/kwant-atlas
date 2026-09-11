@@ -29,16 +29,22 @@ The practical objective of this page: **turn a market smile into a local-vol sur
 
 **Dupire in strike/maturity space.** For market call prices $C(K,T)$ the risk-neutral density is $\\partial^2C/\\partial K^2$ (Breeden–Litzenberger), and the local variance is (Bergomi eq 2.3; Gatheral eq 1.4):
 
-$$\\boxed{\\;\\sigma_{\\text{loc}}^2(K,T) = \\frac{2\\Big(\\frac{\\partial C}{\\partial T}+qC+(r-q)K\\frac{\\partial C}{\\partial K}\\Big)}{K^2\\frac{\\partial^2 C}{\\partial K^2}}\\;}.$$
+$$
+\\boxed{\\;\\sigma_{\\text{loc}}^2(K,T) = \\frac{2\\Big(\\frac{\\partial C}{\\partial T}+qC+(r-q)K\\frac{\\partial C}{\\partial K}\\Big)}{K^2\\frac{\\partial^2 C}{\\partial K^2}}\\;}.
+$$
 
 Equivalently, local variance is the risk-neutral expectation of instantaneous variance **conditional on the final spot equalling the strike** (Gatheral eq 1.12; Gyöngy's theorem, Bergomi eq 2.6):
 
-$$\\sigma^2(K,T,S_0) = \\mathbb{E}[v_T \\mid S_T = K].$$
+$$
+\\sigma^2(K,T,S_0) = \\mathbb{E}[v_T \\mid S_T = K].
+$$
 
 **The practitioner form — from implied total variance (Gatheral eq 1.10).** Set log-moneyness $y=\\ln(K/F_T)$ and total implied variance $w(y,T)=\\sigma^2_{\\text{BS}}(K,T)\\,T$. Then, with subscripts denoting partials in $y$,
 
-$$\\boxed{\\;v_L(y,T) = \\frac{\\dfrac{\\partial w}{\\partial T}}
-{1 - \\dfrac{y}{w}w_y + \\dfrac14\\Big(-\\dfrac14-\\dfrac1w+\\dfrac{y^2}{w^2}\\Big)w_y^2 + \\dfrac12 w_{yy}}\\;}.$$
+$$
+\\boxed{\\;v_L(y,T) = \\frac{\\dfrac{\\partial w}{\\partial T}}
+{1 - \\dfrac{y}{w}w_y + \\dfrac14\\Big(-\\dfrac14-\\dfrac1w+\\dfrac{y^2}{w^2}\\Big)w_y^2 + \\dfrac12 w_{yy}}\\;}.
+$$
 
 The numerator is a **calendar spread** (vol rising in time); the denominator's $\\frac12 w_{yy}$ term is the **butterfly** (convexity in strike). The no-arbitrage conditions map onto these: strike arbitrage ⇔ $\\partial^2C/\\partial K^2<0$ (butterfly); maturity arbitrage ⇔ total implied variance $w$ increasing in $T$ at fixed moneyness (Bergomi eq 2.14–2.15).
 

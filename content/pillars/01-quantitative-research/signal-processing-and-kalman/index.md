@@ -30,7 +30,9 @@ This folder is the topic-hub for **signal processing & Kalman filtering** in Kwa
 
 **Linear-Gaussian state-space form** (Tsay 11.26–11.27):
 
-$$s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad \eta_t\sim N(0,Q_t);\qquad y_t=c_t+Z_t s_t+e_t,\qquad e_t\sim N(0,H_t).$$
+$$
+s_{t+1}=d_t+T_t s_t+R_t\eta_t,\qquad \eta_t\sim N(0,Q_t);\qquad y_t=c_t+Z_t s_t+e_t,\qquad e_t\sim N(0,H_t).
+$$
 
 | Quantity | Formula | Verified check |
 |---|---|---|

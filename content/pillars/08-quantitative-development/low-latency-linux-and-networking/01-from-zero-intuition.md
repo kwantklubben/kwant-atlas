@@ -32,13 +32,17 @@ Three steps, three "aha"s:
 
 **The additive latency model.** The tick-to-market-data path is a chain of stages; total latency is their sum:
 
-$$T_{\text{RX}}=T_{\text{wire}}+T_{\text{NIC}}+T_{\text{stack}}+T_{\text{parse}}.$$
+$$
+T_{\text{RX}}=T_{\text{wire}}+T_{\text{NIC}}+T_{\text{stack}}+T_{\text{parse}}.
+$$
 
 Because it is a **sum**, the slowest stage dominates the mean. The median packet is the "usual" one; the packet that decides a race is the one at the 99th percentile, and it is governed by the stage with the largest *variance*, not the largest mean.
 
 **Why the tail is where you lose.** For a latency random variable $X$, the p99.9 quantile $q_{99.9}$ satisfies $\Pr[X\le q_{99.9}]=0.999$. When stage latencies are independent,
 
-$$\operatorname{Var}(T)=\sum_i\operatorname{Var}(X_i),$$
+$$
+\operatorname{Var}(T)=\sum_i\operatorname{Var}(X_i),
+$$
 
 so **a single high-variance stage sets every upper percentile.** Concretely (verified in §3): an end-to-end path whose median is ~8 µs but whose stack occasionally spikes to ~45 µs has p99 ≈ 53 µs and max ≈ 289 µs — the 2% of packets that hit the spike *own* the tail.
 

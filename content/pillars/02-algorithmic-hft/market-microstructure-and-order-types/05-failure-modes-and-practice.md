@@ -30,25 +30,33 @@ The practical objective: attach a dollar number to each failure, then state the 
 
 **Order-type misuse: convex slippage.** From page 02, the market-order average price $\bar p(Q)$ is convex and piecewise-linear in $Q$; the *marginal* cost per share rises at each level boundary. The slippage is
 
-$$\text{slip}(Q)=\bar p(Q)-p_1^a\ \ge0,\qquad \text{slip}=0\iff Q\le q_1^a.$$
+$$
+\text{slip}(Q)=\bar p(Q)-p_1^a\ \ge0,\qquad \text{slip}=0\iff Q\le q_1^a.
+$$
 
 So doubling the size more than doubles the slippage once the best level is exhausted — size and type must be co-chosen.
 
 **Iceberg queue priority.** In a FIFO book, queue position is assigned by arrival time. When an iceberg's visible tip empties, the engine reloads the next tranche — and the reload is a *new* arrival, appended behind everything already queued. If a competitor order $C$ arrived after the iceberg's *original* placement, then after the first reload the order becomes
 
-$$\text{queue}=\big[\underbrace{C}_{\text{behind u at first}},\ \underbrace{\text{iceberg reload}}_{\text{new, back}}\big],$$
+$$
+\text{queue}=\big[\underbrace{C}_{\text{behind u at first}},\ \underbrace{\text{iceberg reload}}_{\text{new, back}}\big],
+$$
 
 so the iceberg now ranks *behind* $C$. Its hidden size is therefore far less likely to fill than if it had shown all of it at the start.
 
 **Latency pick-off.** Suppose a quote's reference price diffuses with per-millisecond scale $\sigma$ and the quoter needs $L$ ms to refresh. Between the price move and the refresh, a fast trader lifts the stale side; the expected adverse move over $L$ is
 
-$$\mathbb{E}\big[|\Delta m|\big]\approx \sigma\sqrt{L}\quad(\text{Brownian scaling}),$$
+$$
+\mathbb{E}\big[|\Delta m|\big]\approx \sigma\sqrt{L}\quad(\text{Brownian scaling}),
+$$
 
 so the expected pick-off loss on $q$ resting shares is $\approx q\,\sigma\sqrt{L}$ — **sublinear** in latency (a 100× latency cut buys ~10× less loss), which is why the arms race has diminishing returns but never stops.
 
 **Hidden liquidity as fill probability.** The probability a midpoint/dark order fills, $\pi_\text{fill}$, is low (no displayed counterparty) but its *conditional* cost when it does fill is high (the counterparty chose to cross). The expected cost is
 
-$$\mathbb{E}[\text{cost}]=\pi_\text{fill}\,S_r+(1-\pi_\text{fill})\,(\text{opportunity cost}),$$
+$$
+\mathbb{E}[\text{cost}]=\pi_\text{fill}\,S_r+(1-\pi_\text{fill})\,(\text{opportunity cost}),
+$$
 
 a trade-off that no static "always dark" or "always lit" rule resolves.
 

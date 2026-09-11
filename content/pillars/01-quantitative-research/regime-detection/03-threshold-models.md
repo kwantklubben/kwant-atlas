@@ -19,11 +19,15 @@ Markov-switching ([[pillars/01-quantitative-research/regime-detection/02-markov-
 Two families (Tsay Ch 4, verified):
 
 1. **SETAR — Self-Exciting Threshold AR.** The AR coefficients switch discontinuously when the delay-$d$ lag $x_{t-d}$ crosses $\gamma$:
-$$x_t=\phi_0^{(j)}+\sum_{i}\phi_i^{(j)}x_{t-i}+a_t^{(j)}\quad\text{if } \gamma_{j-1}\le x_{t-d}<\gamma_j.$$
+$$
+x_t=\phi_0^{(j)}+\sum_{i}\phi_i^{(j)}x_{t-i}+a_t^{(j)}\quad\text{if } \gamma_{j-1}\le x_{t-d}<\gamma_j.
+$$
 The regime is *fully observed* once $x_{t-d}$ is known. This gives threshold models a forecasting advantage Hamilton flags: **when the threshold variable is observed, the next regime is known with certainty** (SETAR is a *single* model at horizon $\le d$); Markov-switching always produces a mixture.
 
 2. **STAR — Smooth Transition AR.** Replaces the hard cut with a smooth transition function $0\le F\le1$ (logistic or exponential):
-$$x_t=c_0+\sum_i\phi_{0,i}x_{t-i}+F\Big[\frac{x_{t-d}-\ell}{s}\Big]\Big(c_1+\sum_i\phi_{1,i}x_{t-i}\Big)+a_t,$$
+$$
+x_t=c_0+\sum_i\phi_{0,i}x_{t-i}+F\Big[\frac{x_{t-d}-\ell}{s}\Big]\Big(c_1+\sum_i\phi_{1,i}x_{t-i}\Big)+a_t,
+$$
 so the conditional mean is a **weighted combination of two linear models** with weight $F$. The logistic transition $F(z)=1/(1+e^{-z})$ is $0$ for very negative $x$, $1$ for very positive, and $1/2$ at the location $\ell$ with slope controlled by $s$.
 
 **Practical objective:** when you can name the switching variable (e.g., vol-level or drawdown state), threshold models estimate the threshold and the per-regime dynamics directly — cleaner than forcing a hidden Markov state. Tsay's threshold-cointegration application (S&P 500 futures basis, Ch 8 §8.7) finds thresholds $\hat\gamma_1=-0.0226,\hat\gamma_2=0.0377$: outside the no-arbitrage band the ECM binds, inside it does not — a classic "regime = active vs inactive" story.
@@ -33,12 +37,16 @@ so the conditional mean is a **weighted combination of two linear models** with 
 ### 2. Mathematical Ground Truth & Derivations
 
 **SETAR($2;d$) ergodicity (Tsay Ch 4, verified).** For a TAR(1) with threshold variable $x_{t-1}$ (delay $d=1$), the two-regime process is ergodic if
-$$\phi_1^{(1)}<1,\qquad \phi_1^{(2)}<1,\qquad \phi_1^{(1)}\cdot\phi_1^{(2)}<1 .$$
+$$
+\phi_1^{(1)}<1,\qquad \phi_1^{(2)}<1,\qquad \phi_1^{(1)}\cdot\phi_1^{(2)}<1 .
+$$
 Note the *product* condition: one regime may have $\phi_1>1$ as long as the other compensates — a key difference from a single linear AR, where $|\phi_1|<1$ is required.
 
 **Estimation (least squares).** For a fixed threshold $\gamma$, each regime is a linear regression on the observations whose $x_{t-d}$ falls on that side; total SSE is the sum over regimes. The threshold is then chosen by **grid search** over the observed values of $x_{t-d}$ (Tsay recommends candidate thresholds in the interior, e.g. the $8\%$–$92\%$ quantiles, to keep enough observations per regime):
 
-$$\hat\gamma=\arg\min_{\gamma}\Big[\;\text{SSE}_1(\gamma)+\text{SSE}_2(\gamma)\Big],\qquad \text{SSE}_j=\sum_{t:\,x_{t-d}\in\text{regime }j}\big(x_t-\hat x_t\big)^2.$$
+$$
+\hat\gamma=\arg\min_{\gamma}\Big[\;\text{SSE}_1(\gamma)+\text{SSE}_2(\gamma)\Big],\qquad \text{SSE}_j=\sum_{t:\,x_{t-d}\in\text{regime }j}\big(x_t-\hat x_t\big)^2.
+$$
 
 **SETAR vs Markov-switching — the forecasting contrast (Tsay, verified).** SETAR: if the horizon $\le d$ and $x_{t-d}$ is observed, the regime is known exactly, so the conditional mean is a *single* linear model. Only beyond horizon $d$ do you average over which regime might be entered. Markov-switching: the state is always latent, so the forecast is *always* a mixture. **Latent vs observed state is a modeling choice with real forecasting consequences.**
 

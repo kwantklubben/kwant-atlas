@@ -29,18 +29,24 @@ Three "aha"s:
 
 **The decay model.** Let the signal's information coefficient at lag $t$ after the event be
 
-$$\text{IC}(t)=\text{IC}_0\,e^{-\lambda t},\qquad \lambda>0 \text{ the decay rate},\qquad \text{Sharpe}(t)=\text{Sharpe}_0\,e^{-\lambda t}.$$
+$$
+\text{IC}(t)=\text{IC}_0\,e^{-\lambda t},\qquad \lambda>0 \text{ the decay rate},\qquad \text{Sharpe}(t)=\text{Sharpe}_0\,e^{-\lambda t}.
+$$
 
 This is the continuous-time version of "the alpha is competed away at rate $\lambda$," and it is what the corpus flat-page states directly: high-frequency datasets decay in hours, quarterly alt-data in one to two years.
 
 **Half-life and the value of speed.** Solving $\text{IC}(t_{1/2})=\tfrac12\text{IC}_0$ gives $\lambda=\ln 2/t_{1/2}$. The total alpha available over all horizons from now is the integral
 
-$$A=\int_0^\infty \text{IC}_0\,e^{-\lambda t}\,dt=\frac{\text{IC}_0}{\lambda}=\frac{\text{IC}_0\,t_{1/2}}{\ln 2}.$$
+$$
+A=\int_0^\infty \text{IC}_0\,e^{-\lambda t}\,dt=\frac{\text{IC}_0}{\lambda}=\frac{\text{IC}_0\,t_{1/2}}{\ln 2}.
+$$
 
 If your pipeline delivers the value only at delay $d$ (vendor lag + your processing), the alpha you can still capture is
 
-$$A(d)=\int_d^\infty \text{IC}_0\,e^{-\lambda t}\,dt=\frac{\text{IC}_0}{\lambda}e^{-\lambda d}
-\quad\Longrightarrow\quad \boxed{\;\frac{A(d)}{A}=e^{-\lambda d}=e^{-(\ln 2)\,d/t_{1/2}}\;}.$$
+$$
+A(d)=\int_d^\infty \text{IC}_0\,e^{-\lambda t}\,dt=\frac{\text{IC}_0}{\lambda}e^{-\lambda d}
+\quad\Longrightarrow\quad \boxed{\;\frac{A(d)}{A}=e^{-\lambda d}=e^{-(\ln 2)\,d/t_{1/2}}\;}.
+$$
 
 **Read the boxed formula twice.** The fraction you keep depends *only* on the ratio of your delay to the signal's half-life, $d/t_{1/2}$. A "slow" pipeline (days) is fatal to a fast signal and irrelevant to a slow one. This is the mathematical reason the whole alt-data industry is organized around *latency* and *exclusivity*, not just data volume.
 

@@ -33,13 +33,17 @@ Three steps, three "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The sampling distribution, formally.** Let \(X_1,\dots,X_n\) be i.i.d. with mean \(\mu\) and variance \(\sigma^2\). The sample mean is
-$$\bar X_n=\frac1n\sum_{i=1}^n X_i,\qquad \mathbb E[\bar X_n]=\mu,\qquad \mathrm{Var}(\bar X_n)=\frac{\sigma^2}{n}.$$
+$$
+\bar X_n=\frac1n\sum_{i=1}^n X_i,\qquad \mathbb E[\bar X_n]=\mu,\qquad \mathrm{Var}(\bar X_n)=\frac{\sigma^2}{n}.
+$$
 So the mean is *unbiased* with variance falling like \(1/n\) — the standard deviation falls like \(1/\sqrt n\).
 
 **Law of Large Numbers (SLLN).** \(\bar X_n\to\mu\) almost surely: the estimate concentrates on the truth (Glasserman §1.1).
 
 **Central Limit Theorem (Lindeberg–Lévy).** Standardising,
-$$\frac{\bar X_n-\mu}{\sigma/\sqrt n}\;\Longrightarrow\;N(0,1)\quad\text{as }n\to\infty,$$
+$$
+\frac{\bar X_n-\mu}{\sigma/\sqrt n}\;\Longrightarrow\;N(0,1)\quad\text{as }n\to\infty,
+$$
 so for large \(n\), \(\bar X_n\approx N\!\left(\mu,\ \sigma^2/n\right)\). The **standard error** is \(\mathrm{SE}=\sigma/\sqrt n\), estimated by \(s/\sqrt n\) with \(s^2=\frac1{n-1}\sum(X_i-\bar X)^2\).
 
 **Rewriting the sums (why this is linear, not magic).** For i.i.d. data \(\bar X_n-\mu=\frac1n\sum(X_i-\mu)\) is a sum of \(n\) independent zero-mean pieces each of order \(\pm\sigma\); the sum has spread \(\sqrt n\,\sigma\), and dividing by \(n\) gives spread \(\sigma/\sqrt n\). That is the entire derivation: **independent errors add in quadrature, then get divided by \(n\).**

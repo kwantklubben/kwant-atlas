@@ -32,11 +32,15 @@ The four frictions, in one line each:
 
 #### 2.1 Basis and the effective hedged price (Hull Ch 3.3)
 
-$$\text{Basis}=S-F \quad(\text{asset price} - \text{futures price of the contract used}).$$
+$$
+\text{Basis}=S-F \quad(\text{asset price} - \text{futures price of the contract used}).
+$$
 
 For a short hedge (you own the asset and will sell it), the effective price received is
 
-$$S_2+F_1-F_2=F_1+b_2,\qquad b_2=S_2-F_2 \text{ (the basis at close).}$$
+$$
+S_2+F_1-F_2=F_1+b_2,\qquad b_2=S_2-F_2 \text{ (the basis at close).}
+$$
 
 So the hedge locks in the **initial futures price plus the terminal basis** — not the initial spot. If the basis were zero at close, the hedge is perfect; the leftover risk is uncertainty in $b_2$, i.e. **basis risk**. Choose the delivery month as close as possible to, but **later than**, the hedge horizon to minimize it (Hull §3.3).
 
@@ -44,11 +48,15 @@ So the hedge locks in the **initial futures price plus the terminal basis** — 
 
 Regress $\Delta S=a+b\,\Delta F+\varepsilon$. The variance-minimising slope is $\rho\,\sigma_S/\sigma_F$, so
 
-$$\boxed{\,h^*=\rho\,\frac{\sigma_S}{\sigma_F}\,}\qquad N^*=h^*\frac{Q_A}{Q_F}.$$
+$$
+\boxed{\,h^*=\rho\,\frac{\sigma_S}{\sigma_F}\,}\qquad N^*=h^*\frac{Q_A}{Q_F}.
+$$
 
 **Hedge effectiveness** $=$ the fraction of variance eliminated $=$ the regression $R^2=\rho^2$. Residual variance
 
-$$\operatorname{Var}(\Delta S-h^*\Delta F)=(1-\rho^2)\sigma_S^2.$$
+$$
+\operatorname{Var}(\Delta S-h^*\Delta F)=(1-\rho^2)\sigma_S^2.
+$$
 
 This is the quantitative version of "a cross-hedge is never exact": even a $\rho=0.928$ hedge (Hull's airline example) removes only $\rho^2=86\%$ of the variance. The **daily-settlement** version regresses *percentage* one-day changes, $h^*=\tilde\rho\,\tilde\sigma_S/\tilde\sigma_F$, $N^*=h^*V_A/V_F$, and **tailing** divides $N^*$ by $(1+r)$ for the interest effect.
 

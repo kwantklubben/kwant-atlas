@@ -37,7 +37,9 @@ The practical objective of this page is the inference lookup: *given a posterior
 
 **Credible intervals (C&B §9.2.4).** A $100(1-\alpha)\%$ credible set $C$ satisfies
 
-$$\mathbb P(\theta\in C\mid x)=\int_C p(\theta\mid x)\,d\theta=1-\alpha .$$
+$$
+\mathbb P(\theta\in C\mid x)=\int_C p(\theta\mid x)\,d\theta=1-\alpha .
+$$
 
 Two standard constructions:
 - **Equal-tailed interval:** $C=[q_{\alpha/2},\,q_{1-\alpha/2}]$ where $q_p$ is the posterior quantile. Easy to compute; can include low-density regions for a skew posterior.
@@ -47,7 +49,9 @@ Two standard constructions:
 
 **Posterior predictive.** For a new observation $\tilde y$, integrate over the posterior:
 
-$$p(\tilde y\mid x)=\int p(\tilde y\mid\theta)\,p(\theta\mid x)\,d\theta .$$
+$$
+p(\tilde y\mid x)=\int p(\tilde y\mid\theta)\,p(\theta\mid x)\,d\theta .
+$$
 
 This is *not* $p(\tilde y\mid\hat\theta)$ — plugging in a point estimate ignores parameter uncertainty and understates predictive spread, especially at small $n$.
 - **Beta–Bernoulli:** with posterior $\mathrm{Beta}(a,b)$, $\mathbb P(\tilde y=1\mid x)=\frac{a}{a+b}$ (the posterior mean of $p$). For $m$ future draws, the count is **beta-binomial** with mean $m\frac{a}{a+b}$.

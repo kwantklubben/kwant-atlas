@@ -39,17 +39,23 @@ And the mechanism shows up in the tape: "post-publication, stocks in characteris
 ### 2. Mathematical Ground Truth & Derivations
 
 **The decay estimator.** Normalize each characteristic's mean return in the post-sample periods by its in-sample mean:
-$$\hat d_{\text{OOS}}=1-\frac{\bar r_{\text{OOS}}}{\bar r_{\text{IS}}},\qquad \hat d_{\text{post}}=1-\frac{\bar r_{\text{post}}}{\bar r_{\text{IS}}}.$$
+$$
+\hat d_{\text{OOS}}=1-\frac{\bar r_{\text{OOS}}}{\bar r_{\text{IS}}},\qquad \hat d_{\text{post}}=1-\frac{\bar r_{\text{post}}}{\bar r_{\text{IS}}}.
+$$
 This normalization is the key design choice: it converts a heterogeneous collection of characteristics — some with 0.2%/month premia, some with 0.8% — into a *common scale* so they can be pooled. The pooled mean is the average survival fraction.
 
 **The pooled regression form.** MP also estimate a specification with returns in levels,
-$$\tilde r_{i,t}=\alpha+\beta_{\text{OOS}}\,\mathbb{1}[\text{post-sample}]+\beta_{\text{post}}\,\mathbb{1}[\text{post-publication}]+\varepsilon,$$
+$$
+\tilde r_{i,t}=\alpha+\beta_{\text{OOS}}\,\mathbb{1}[\text{post-sample}]+\beta_{\text{post}}\,\mathbb{1}[\text{post-publication}]+\varepsilon,
+$$
 where the coefficients, divided by the in-sample mean, are percentage decays. Their headline coefficients correspond to the ~10% / ~35% split, with the post-publication dummy significant at $t\approx-4.9$ and robust to clustering on anomaly, controls for time trends, SSRN posting dates, and — importantly — a **linear** decay in the post-publication months rather than a step.
 
 **The Fama–MacBeth / two-pass structure (why each characteristic is a portfolio).** For characteristic $i$, they form a long-short portfolio each month, scaled by the in-sample means, and run a **Fama–MacBeth cross-sectional regression** of returns on the characteristics each month, then average the monthly slope coefficients. The three windows are compared by the same estimator. A characteristic enters only if its in-sample $t$-statistic exceeds 1.50 (their replication filter; note that 10 of 82 could not be replicated at all).
 
 **The breadth problem (why this result needed 82 characteristics).** A single characteristic's post-publication premium has enormous sampling error: the monthly portfolio volatility (≈3–5%) is an order of magnitude larger than the alpha (≈0.5%). Detecting a 35% decay in one characteristic would take literally centuries of data:
-$$T^\star=\left(\frac{2\sigma}{\alpha\cdot d}\right)^2=\left(\frac{2\times0.03}{0.005\times0.35}\right)^2\approx1176\text{ months}\approx98\text{ years}.$$
+$$
+T^\star=\left(\frac{2\sigma}{\alpha\cdot d}\right)^2=\left(\frac{2\times0.03}{0.005\times0.35}\right)^2\approx1176\text{ months}\approx98\text{ years}.
+$$
 **It is only the breadth across 82 characteristics that makes the decay observable.** This is Grinold's law applied to *research*: the signal is weak, so the sample must be wide.
 
 **Reconciling with risk premia.** A risk-based factor (say, a bond risk premium) is *not* expected to decay on publication — you cannot arbitrage away compensation for bearing risk. MP's finding that the decay is concentrated in low-idiosyncratic-risk, liquid, dividend-paying stocks is precisely the pattern that distinguishes arbitrage-able mispricing from risk compensation: costs of arbitrage are lowest there, so capital arrives fastest.

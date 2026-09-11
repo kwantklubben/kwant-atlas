@@ -25,25 +25,33 @@ The objective is to move from "the engine cannot lie about time" to "the engine 
 
 **Extension 1 — latency is a random variable, and the tail is the cost.** Modelling $\tau$ as a constant is wrong in the direction that flatters the strategy. Real wire latency is heavy-tailed; a service-time interpretation gives a lognormal body with an occasional queueing spike. The right comparison is not the mean but the ratio
 
-$$\frac{\tau_{p99.9}}{\tau_{p50}},$$
+$$
+\frac{\tau_{p99.9}}{\tau_{p50}},
+$$
 
 and the reason it matters is that **execution cost is convex in delay**: the adverse move over $\tau$ scales as $\sigma S\sqrt{\tau}$, so the *marginal* cost of the p99.9 event exceeds its probability-weighted average. Two distributions with the same mean can differ in this ratio by an order of magnitude (measured below: $1.3\times$ vs $12.0\times$).
 
 **Extension 2 — market impact.** A capacity cap alone assumes your order is absorbed at the touch; a large order moves the price. The empirical **square-root law** (Almgren–Chriss, Tóth et al.) is
 
-$$\frac{\Delta P}{P}=Y\,\sigma\sqrt{\frac{Q}{V}},$$
+$$
+\frac{\Delta P}{P}=Y\,\sigma\sqrt{\frac{Q}{V}},
+$$
 
 where $Q$ is the order's participation, $V$ the period volume, $\sigma$ the volatility, and $Y$ an $O(1)$ constant. The engine charges the fill at $P(1+\Delta P/P)$ for buys. The key consequence: **impact is concave in size but the cost $Q\cdot\Delta P\propto Q^{3/2}$ is convex**, so doubling size more than doubles cost — the vectorized backtest, with $\Delta P=0$, never sees this.
 
 **Extension 3 — queue position.** A passive order at the back of a queue does not fill until the $q$ shares ahead of it trade. With trades arriving as a Poisson process of rate $\lambda$ and average trade size $s$, the probability the queue ahead of position $q$ is exhausted within $\tau$ is
 
-$$\Pr(\text{fill}\mid q,\tau)=1-\sum_{k=0}^{\lceil q/s\rceil-1}\frac{(\lambda\tau)^k e^{-\lambda\tau}}{k!},$$
+$$
+\Pr(\text{fill}\mid q,\tau)=1-\sum_{k=0}^{\lceil q/s\rceil-1}\frac{(\lambda\tau)^k e^{-\lambda\tau}}{k!},
+$$
 
 i.e. $1-\Pr(\text{Poisson}(\lambda\tau)<\lceil q/s\rceil)$. This is the model that makes passive strategies honest: an order that is *priced* correctly may still never fill.
 
 **Extension 4 — determinism as an operational property.** For research and production to share one engine, the simulation must be a pure function of (data, seed, parameters):
 
-$$\text{run}=\Phi(\text{data},\ \text{seed},\ \theta),\qquad \Phi\ \text{independent of wall-clock, thread scheduling, and hash order}.$$
+$$
+\text{run}=\Phi(\text{data},\ \text{seed},\ \theta),\qquad \Phi\ \text{independent of wall-clock, thread scheduling, and hash order}.
+$$
 
 The mechanism is **event sourcing**: the engine's state is the fold of the event log, every decision is appended, and a run is reproducible by replaying the log. This is exactly the property that lets NautilusTrader run the *same* strategy code in backtest and live.
 

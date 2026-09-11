@@ -30,13 +30,17 @@ The three inputs that decide the race:
 
 **Per-km latency.** With refractive index $n$:
 
-$$v = \frac{c}{n},\qquad L_{\text{per km}}=\frac{1000}{v}\ \text{µs} \;\Rightarrow\; \begin{cases} \text{fiber }(n\approx1.5):\; 5.00\ \mu\text{s/km},\\ \text{air: }3.34\ \mu\text{s/km}.\end{cases}$$
+$$
+v = \frac{c}{n},\qquad L_{\text{per km}}=\frac{1000}{v}\ \text{µs} \;\Rightarrow\; \begin{cases} \text{fiber }(n\approx1.5):\; 5.00\ \mu\text{s/km},\\ \text{air: }3.34\ \mu\text{s/km}.\end{cases}
+$$
 
 **Two-hop latency with displacement.** If a rival is located $d$ km farther from the engine, you win by $\Delta t = d\cdot L_{\text{per km}}$. Being 1 km closer ≈ **5.0 µs** (fiber) or **3.3 µs** (air) — bigger than a typical colocated T2T budget (≈3.5 µs from the [[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/index|hub]]).
 
 **Round-trip time (RTT)** for a transport of length $d$:
 
-$$\text{RTT}(d) = 2\,\frac{d}{v} .$$
+$$
+\text{RTT}(d) = 2\,\frac{d}{v} .
+$$
 
 The verified anchors (from [[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/index|hub §2]], recomputed in §3):
 

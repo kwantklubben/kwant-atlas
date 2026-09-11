@@ -37,21 +37,29 @@ This folder is the **hub**. It (a) gives the fast **alt-data category lookup** a
 
 **The point-in-time identity** (the single rule that separates a real backtest from a fantasy):
 
-$$\text{usable}(t) = \{\text{records}: t_K \le t\}, \qquad\text{never}\qquad \{\text{records}: t_E \le t\}.$$
+$$
+\text{usable}(t) = \{\text{records}: t_K \le t\}, \qquad\text{never}\qquad \{\text{records}: t_E \le t\}.
+$$
 
 Aligning a record to its **event** date — the way vendors index "the last day of the report period" (AFML §2.2.1) — injects up to one full reporting lag of look-ahead.
 
 **Alpha decay & half-life.** A proprietary edge decays as the data is resold and arbitraged:
 
-$$\text{IC}(t) = \text{IC}_0\,e^{-\lambda t}, \qquad t_{1/2}=\frac{\ln 2}{\lambda}.$$
+$$
+\text{IC}(t) = \text{IC}_0\,e^{-\lambda t}, \qquad t_{1/2}=\frac{\ln 2}{\lambda}.
+$$
 
 **The evaluation statistics** (the "does this dataset have signal?" measures):
 
-$$\text{IC}_p=\operatorname{corr}\big(x^{(p)},y^{(p)}\big),\qquad \text{ICIR}=\frac{\overline{\text{IC}}}{\sigma_{\text{IC}}},\qquad t=\text{ICIR}\sqrt{P}.$$
+$$
+\text{IC}_p=\operatorname{corr}\big(x^{(p)},y^{(p)}\big),\qquad \text{ICIR}=\frac{\overline{\text{IC}}}{\sigma_{\text{IC}}},\qquad t=\text{ICIR}\sqrt{P}.
+$$
 
 **The Fundamental Law of Active Management** (Grinold & Kahn) — why every *unique* signal is worth hunting:
 
-$$\text{IR}=\text{IC}\cdot\sqrt{B}\cdot\text{TC}\quad(\text{TC}=\text{transfer coefficient});\qquad\text{combining }n\text{ alphas, pairwise corr }\rho:\quad \text{IC}_{\text{comb}}=\text{IC}\sqrt{\frac{n}{1+(n-1)\rho}}.$$
+$$
+\text{IR}=\text{IC}\cdot\sqrt{B}\cdot\text{TC}\quad(\text{TC}=\text{transfer coefficient});\qquad\text{combining }n\text{ alphas, pairwise corr }\rho:\quad \text{IC}_{\text{comb}}=\text{IC}\sqrt{\frac{n}{1+(n-1)\rho}}.
+$$
 
 **The alt-data category lookup** (job #1). Categories per AFML §2.2.4 (after Kolanovic & Krishnamachari 2017):
 

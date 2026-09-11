@@ -22,7 +22,9 @@ Two models, two opposite failures, one fix.
 
 **Local-stochastic volatility** is the observation that these two failures are complementary and can be fixed simultaneously with one object:
 
-$$dS_t=(r-q)S_t\,dt+\underbrace{\sigma(t,S_t)}_{\text{leverage function}}\sqrt{v_t}\,S_t\,dW^S_t,\qquad dv_t=\text{(your favourite SV driver)}.$$
+$$
+dS_t=(r-q)S_t\,dt+\underbrace{\sigma(t,S_t)}_{\text{leverage function}}\sqrt{v_t}\,S_t\,dW^S_t,\qquad dv_t=\text{(your favourite SV driver)}.
+$$
 
 The stochastic factor $\sqrt{v_t}$ supplies the **dynamics**. The deterministic multiplier $\sigma(t,S)$ supplies the **level and shape**. You choose $\sigma$ so the model reproduces the market's implied surface; you choose the SV driver so the *unobserved* dynamics — forward skew, skew stickiness, vol-of-vol term structure — look like the market's.
 
@@ -30,7 +32,9 @@ Three "aha"s:
 
 1. **One added function, not added randomness.** The leverage $\sigma(t,S)$ is deterministic. It adds **no** new source of randomness, **no** new state variable, and **no** new hedging instrument — the model still has the same two Brownian motions as the SV driver. What it adds is a *free rescaling of volatility at every point in the $(t,S)$ plane*.
 2. **The rescaling has a unique correct value.** You cannot fit $\sigma$ however you like: the model must match the market's one-dimensional marginals at every date, and the local variance that generates a given marginal is Dupire's. So $\sigma(t,S)^2$ times the model's *conditional* expected variance must equal the Dupire local variance:
-   $$\sigma^2(t,S)\,\mathbb E[v_t\,|\,S_t=S]=\sigma^2_{loc}(t,S).$$
+$$
+\sigma^2(t,S)\,\mathbb E[v_t\,|\,S_t=S]=\sigma^2_{loc}(t,S).
+$$
    Vanillas pin only the **product**. The split between the leverage and the conditional variance is decided by the SV driver — which is exactly the point: the driver, not the smile, controls the dynamics.
 3. **What you get for free is scale, not shape.** Because $\sigma$ is a single *scalar field*, it can shift the level at each point and re-tilt the smile through its spot-dependence; it cannot add a second vol-of-vol or a second time scale. That is why after LSV is in place, the frontier moves on to *which driver* (forward-variance, rough, jumps) — the leverage is settled mathematics.
 
@@ -56,11 +60,15 @@ The LSV trick is to keep the SV driver's *correlation structure* while replacing
 
 Take the LSV spot process. Its Markovian projection ([[pillars/03-derivative-pricing/local-stochastic-volatility-models/02-the-leverage-function-and-markovian-projection|02 · Markovian Projection & the Leverage Function]]) has diffusion coefficient equal to the conditional second moment of the instantaneous volatility,
 
-$$\bar\alpha^2(t,y)=\mathbb E\!\left[\alpha_t^2\,\middle|\,S_t=y\right]=\mathbb E\!\left[\sigma(t,S_t)^2v_t\,\middle|\,S_t=y\right]=\sigma(t,y)^2\,\mathbb E\!\left[v_t\,\middle|\,S_t=y\right].$$
+$$
+\bar\alpha^2(t,y)=\mathbb E\!\left[\alpha_t^2\,\middle|\,S_t=y\right]=\mathbb E\!\left[\sigma(t,S_t)^2v_t\,\middle|\,S_t=y\right]=\sigma(t,y)^2\,\mathbb E\!\left[v_t\,\middle|\,S_t=y\right].
+$$
 
 For the LSV model to reproduce the market's marginals, this projected diffusion must be the local-volatility model of the market, whose coefficient is $\sigma^2_{loc}(t,y)$ by Dupire's theorem. Hence:
 
-$$\boxed{\;\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{m(t,S)},\qquad m(t,S):=\mathbb E[v_t\,|\,S_t=S]\;}$$
+$$
+\boxed{\;\sigma^2(t,S)=\frac{\sigma^2_{loc}(t,S)}{m(t,S)},\qquad m(t,S):=\mathbb E[v_t\,|\,S_t=S]\;}
+$$
 
 This is the **leverage function**. Note what it does *not* contain: the leverage does not appear in the spot measure change, there is no free parameter, and it is not an optimisation output.
 
@@ -68,7 +76,9 @@ This is the **leverage function**. Note what it does *not* contain: the leverage
 
 Write the LSV instantaneous variance as
 
-$$\underbrace{\sigma^2(t,S)}_{\text{you choose}}\cdot\underbrace{m(t,S)}_{\text{from the driver}}=\sigma^2_{loc}(t,S).$$
+$$
+\underbrace{\sigma^2(t,S)}_{\text{you choose}}\cdot\underbrace{m(t,S)}_{\text{from the driver}}=\sigma^2_{loc}(t,S).
+$$
 
 - **Flat in $S$ (as far as vanillas can see):** the *product* is the local variance. Changing how much of it comes from $\sigma$ and how much from $m$ changes nothing observable in vanillas.
 - **Spot-dependent (as far as exotics can see):** everything. If $\sigma$ is large where $S$ is low, the model's volatility *responds* to spot moves — a spot/vol correlation that is on top of the driver's own $\rho$. The hedge ratios and the forward smile both move.

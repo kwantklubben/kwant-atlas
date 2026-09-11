@@ -34,17 +34,23 @@ Three steps, three "aha"s:
 
 **From one trade to a price rule.** Let the asset have a true value $v$ and suppose the market's current best estimate is $p_0$. You submit signed order flow $y$ (positive = you are a net buyer). The simplest possible model of the market's response is *linear*:
 
-$$P = p_0 + \lambda\,y .$$
+$$
+P = p_0 + \lambda\,y .
+$$
 
 The coefficient $\lambda$ has units of dollars per share of order flow, and it is exactly **the price impact of one unit of flow**. Its reciprocal is the **market depth**:
 
-$$\text{depth}=\frac{1}{\lambda}\quad\text{(the signed order flow needed for a \$1 price move).}$$
+$$
+\text{depth}=\frac{1}{\lambda}\quad\text{(the signed order flow needed for a $\$1 price move).}
+$$
 
 **Why should the response be linear?** It need not be in general — empirically it is *concave* (the square-root law, page 04). But linearity is the remarkable, and remarkably robust, prediction at the **short horizon** and for **small/aggregated** flow, and it is what makes the equilibrium model of page 02 exactly solvable. It also matches the empirical finding that the *mid-price change over short intervals is linear in order-flow imbalance* (Cont, Kukanov & Stoikov 2014).
 
 **Where does $\lambda$ come from?** The whole of page 02 is one answer: in a market with an informed trader and noise traders, competitive market makers set $\lambda$ so that **price equals the expected value conditional on the observed flow**, and the resulting closed form is
 
-$$\lambda=\tfrac12\sqrt{\frac{\Sigma_0}{\sigma_u^2}},\qquad \text{depth}=\frac{1}{\lambda}=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}},$$
+$$
+\lambda=\tfrac12\sqrt{\frac{\Sigma_0}{\sigma_u^2}},\qquad \text{depth}=\frac{1}{\lambda}=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}},
+$$
 
 where $\Sigma_0$ is the prior variance of the value (how much private information exists) and $\sigma_u^2$ is the variance of noise trading (how much camouflage exists). Read it economically: **more information in the world $\Rightarrow$ larger $\lambda$ (impact up, depth down); more noise trading $\Rightarrow$ smaller $\lambda$ (impact down, depth up).** The market is liquid when it is noisy and illiquid when it is full of insiders.
 
@@ -52,7 +58,9 @@ where $\Sigma_0$ is the prior variance of the value (how much private informatio
 
 **The two components.** Write the observed price as the sum of two pieces:
 
-$$P = \underbrace{m}_{\text{permanent / efficient}}\, +\, \underbrace{s}_{\text{temporary / transient}},\qquad m_t = m_{t-1} + \lambda q_t + u_t,$$
+$$
+P = \underbrace{m}_{\text{permanent / efficient}}\, +\, \underbrace{s}_{\text{temporary / transient}},\qquad m_t = m_{t-1} + \lambda q_t + u_t,
+$$
 
 where $q_t$ is signed trade direction and $u_t$ is public news. The permanent part ($m$) is the random-walk "efficient price" — once it moves, it does not come back. The transient part ($s$) is the bid/ask bounce and the temporary pressure of your own trading — it decays. Roll's classic model is the degenerate case $P_t = m_t + c\,q_t$ with spread $2c$; the *generalized* Roll adds the permanent-adverse-selection term $\lambda$ (Hasbrouck Ch 8, eq. 8.1).
 
@@ -103,7 +111,7 @@ net flow = +1.227  ->  net price change = +0.6134  (= lambda * net flow)
 one 5-unit buy alone would move the price by 2.50 dollars.
 ```
 
-Read the last line: the price change equals $\lambda$ times the *net* signed flow, and a single 5-unit buy moves the price by $0.50\times5=\$2.50$. **Depth $=1/\lambda=2$ units means two units of net buying is exactly a dollar of price.** That is the whole vocabulary of this folder in one experiment.
+Read the last line: the price change equals $\lambda$ times the *net* signed flow, and a single 5-unit buy moves the price by $0.50\times5= $ $$\$2.50. **Depth =1/\lambda=2$ units means two units of net buying is exactly a dollar of price.** That is the whole vocabulary of this folder in one experiment.
 
 ---
 

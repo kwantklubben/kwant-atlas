@@ -34,17 +34,23 @@ Three "aha"s, mirroring the arc of the folder:
 
 **The overhead model.** For an array operation on $N$ elements, vectorization replaces $N$ interpreted dispatches (each ~$c_{\text{py}}$, a few hundred ns) with one compiled C pass (each element ~$c_C$, a few ns):
 
-$$\text{cost}_{\text{loop}} = N \cdot c_{\text{py}} \qquad \text{vs.} \qquad \text{cost}_{\text{vec}} = N \cdot c_C + C_{\text{setup}}.$$
+$$
+\text{cost}_{\text{loop}} = N \cdot c_{\text{py}} \qquad \text{vs.} \qquad \text{cost}_{\text{vec}} = N \cdot c_C + C_{\text{setup}}.
+$$
 
 For large $N$, $C_{\text{setup}}$ is negligible and the ratio collapses to
 
-$$\text{speedup} \;\approx\; \frac{c_{\text{py}}}{c_C} \;\in\; [50, 150].$$
+$$
+\text{speedup} \;\approx\; \frac{c_{\text{py}}}{c_C} \;\in\; [50, 150].
+$$
 
 That ratio is the number that explains the entire design of the stack. It is also why the stack *fails* in exactly one way: the moment a computation drops back into per-element interpreted Python (an `apply`, a manual `for` over rows, an `object`-dtype column), the $N\cdot c_{\text{py}}$ term returns and the gain evaporates.
 
 **The compounding-of-returns identity** (why a backtest is array math). With position-adjusted log returns, compounded equity satisfies
 
-$$E_T = E_0 \prod_{t=1}^{T}\big(1 + r^\star_t\big) \;=\; E_0 \exp\Big(\textstyle\sum_{t=1}^{T} \ln\big(1 + r^\star_t\big)\Big),$$
+$$
+E_T = E_0 \prod_{t=1}^{T}\big(1 + r^\star_t\big) \;=\; E_0 \exp\Big(\textstyle\sum_{t=1}^{T} \ln\big(1 + r^\star_t\big)\Big),
+$$
 
 so the "portfolio of a lifetime of trades" is `np.exp(np.log1p(rstar).cumsum())` — a constant number of C passes regardless of $T$. This is the mathematical backbone of vectorized backtesting (Hilpisch, *Python for Algorithmic Trading*, ch. on vectorized backtesting).
 

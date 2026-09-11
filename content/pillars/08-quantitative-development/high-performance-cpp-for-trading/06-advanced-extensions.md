@@ -33,11 +33,15 @@ Three "aha"s:
 
 Let the true per-op time be $\mu$ and let the timer/measurement overhead be $\epsilon$ (the cost of reading the clock around the operation). A single-shot estimate is
 
-$$\hat{t} = \mu + \epsilon, \qquad \frac{\hat t}{\mu} = 1 + \frac{\epsilon}{\mu}.$$
+$$
+\hat{t} = \mu + \epsilon, \qquad \frac{\hat t}{\mu} = 1 + \frac{\epsilon}{\mu}.
+$$
 
 When $\mu \sim 20$ ns and $\epsilon \sim 100$ ns, the estimator is inflated by $\approx 6\times$ — you measured the clock, not the work. **Batching $B$ operations inside one timed region** amortises the overhead:
 
-$$\hat t_B = \mu + \frac{\epsilon}{B} \xrightarrow[B \to \infty]{} \mu.$$
+$$
+\hat t_B = \mu + \frac{\epsilon}{B} \xrightarrow[B \to \infty]{} \mu.
+$$
 
 The bias falls as $1/B$; with $B = 10^5$ the overhead term is negligible. §3 measures exactly this: batching shrinks the estimate — proving the single-shot number was mostly clock.
 
@@ -45,7 +49,9 @@ The bias falls as $1/B$; with $B = 10^5$ the overhead term is negligible. §3 me
 
 For a latency sample, the *pth percentile* $t_p$ satisfies $F(t_p) = p$, while the mean integrates the whole tail:
 
-$$\mathbb{E}[T] = \int_0^\infty (1 - F(t))\,dt.$$
+$$
+\mathbb{E}[T] = \int_0^\infty (1 - F(t))\,dt.
+$$
 
 Because $1-F(t)$ is tiny in the tail but the *values* are huge, the mean under-reports the tail by construction. **Rule:** always report $\min$ (the noise floor / best achievable) and $t_{99}, t_{99.9}$ (what the strategy actually experiences). The mean is reported only to compare against the median.
 
@@ -53,7 +59,9 @@ Because $1-F(t)$ is tiny in the tail but the *values* are huge, the mean under-r
 
 Repeated timings $t^{(1)},\dots,t^{(K)}$ have sample variance $s^2 = \frac{1}{K-1}\sum (t^{(i)} - \bar{t})^2$. Scheduler preemption, frequency scaling, and SMT contention inject outliers that inflate $s^2$ without touching $\min$. Hence:
 
-$$\min_k t^{(k)} \approx \text{signal (least noise)}, \qquad \bar t \approx \text{signal} + \text{noise}.$$
+$$
+\min_k t^{(k)} \approx \text{signal (least noise)}, \qquad \bar t \approx \text{signal} + \text{noise}.
+$$
 
 A *stable* micro-benchmark is one where $\min$ is reproducible to a few percent across runs; if $\min$ wanders, the machine (governor, turbo, other tenants) is not under control and no conclusion is valid.
 
@@ -61,7 +69,9 @@ A *stable* micro-benchmark is one where $\min$ is reproducible to a few percent 
 
 For an optimisation changing a stage's time from $t$ to $t'$, Amdahl's law bounds the end-to-end gain by the stage's share:
 
-$$S_{\text{total}} = \frac{1}{(1 - p) + \dfrac{p}{S_{\text{stage}}}},$$
+$$
+S_{\text{total}} = \frac{1}{(1 - p) + \dfrac{p}{S_{\text{stage}}}},
+$$
 
 where $p$ is the fraction of total time in the optimised stage. Optimising a 5%-share stage by $2\times$ yields only $\approx 1.025\times$ end-to-end — **which is why profiling (finding $p$ large) must precede optimisation** ([[pillars/08-quantitative-development/high-performance-cpp-for-trading/05-failure-modes-and-practice|05 · Failure Modes]], §2.5).
 

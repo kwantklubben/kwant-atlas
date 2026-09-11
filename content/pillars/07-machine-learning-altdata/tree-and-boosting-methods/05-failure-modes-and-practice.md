@@ -33,13 +33,17 @@ The five traps, in one line each:
 
 **B. MDI, formally (ESL 10.42–10.43).** For a tree $T$ with internal node $t$ using variable $\ell$ and impurity decrease $\hat\imath_t^2$,
 
-$$I_\ell^2(T)=\sum_{t=1}^{|T|-1}\hat\imath_t^2\,\mathbb 1(v(t)=\ell),\qquad \text{MDI}_\ell=\frac1M\sum_{m=1}^M I_\ell^2(T_m).$$
+$$
+I_\ell^2(T)=\sum_{t=1}^{|T|-1}\hat\imath_t^2\,\mathbb 1(v(t)=\ell),\qquad \text{MDI}_\ell=\frac1M\sum_{m=1}^M I_\ell^2(T_m).
+$$
 
 MDI is computed **in-sample** and, given enough nodes, every feature — including pure noise — receives positive importance. It is also biased toward variables that offer many split points (high cardinality / continuous), because more candidate thresholds means a higher chance of a lucky impurity drop (AFML §8.3.1, Strobl et al. 2007; White & Liu 1994). **MDI is a description of the fitted tree, not evidence of predictive power.**
 
 **C. MDA / permutation importance.** Fit, score on held-out data, then permute column $j$ and re-score:
 
-$$\mathrm{MDA}_j=\mathrm{Score}_{\text{OOS}}-\mathrm{Score}_{\text{OOS},\,\pi_j(X_j)}.$$
+$$
+\mathrm{MDA}_j=\mathrm{Score}_{\text{OOS}}-\mathrm{Score}_{\text{OOS},\,\pi_j(X_j)}.
+$$
 
 MDA is *out-of-sample* (so it can honestly declare all features useless), but it inherits **substitution effects**: with two near-identical features, permuting one leaves the other to carry the signal, so *both* can look small. The remedy is clustered permutations (permute correlated groups together) or orthogonalised features (PCA), AFML §8.3.2.
 

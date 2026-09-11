@@ -27,13 +27,19 @@ Whatever the cause, a symmetric model **understates the volatility clustering af
 ### 2. Mathematical Ground Truth & Derivations
 
 **EGARCH($p,q$) (Nelson 1991).** Model the **log**-variance, so it is positive by construction and negative dependence is allowed:
-$$\ln\sigma_t^2=\omega+\sum_{i=1}^{q}\big[\theta_i z_{t-i}+\gamma_i\big(|z_{t-i}|-\mathbb{E}|z|\big)\big]+\sum_{j=1}^{p}\beta_j\ln\sigma_{t-j}^2,\qquad z_t=\frac{a_t}{\sigma_t}.$$
+$$
+\ln\sigma_t^2=\omega+\sum_{i=1}^{q}\big[\theta_i z_{t-i}+\gamma_i\big(|z_{t-i}|-\mathbb{E}|z|\big)\big]+\sum_{j=1}^{p}\beta_j\ln\sigma_{t-j}^2,\qquad z_t=\frac{a_t}{\sigma_t}.
+$$
 For Gaussian $z$, $\mathbb{E}|z|=\sqrt{2/\pi}=0.7979$. The **weighted innovation** $g(z)=\theta z+\gamma(|z|-\mathbb{E}|z|)$ is crucial: its slope is $\theta+\gamma$ for $z\ge0$ and $\theta-\gamma$ for $z<0$. **Expect $\theta<0$** — then a negative standardized shock has a *larger* effect on $\ln\sigma^2$ than a positive one of the same size. The asymmetry is carried by $\theta$; **this is a different parameterisation from the S-Plus/Tsay form** $\ln\sigma_t^2=\omega+\sum\alpha_i(|a_{t-i}|+\gamma_i a_{t-i})/\sigma_{t-i}+\sum\beta_j\ln\sigma_{t-j}^2$, where leverage is $\gamma_i<0$. Do not mix the two attributions.
 
 **GJR / TGARCH (Glosten–Jagannathan–Runkle 1993; Zakoian 1994).** Keep the GARCH recursion but let negative shocks switch on an extra term:
-$$\sigma_t^2=\alpha_0+\sum_{i=1}^{q}\big(\alpha_i+\gamma_i N_{t-i}\big)a_{t-i}^2+\sum_{j=1}^{p}\beta_j\sigma_{t-j}^2,\qquad N_{t-i}=\begin{cases}1,&a_{t-i}<0\\0,&a_{t-i}\ge0.\end{cases}$$
+$$
+\sigma_t^2=\alpha_0+\sum_{i=1}^{q}\big(\alpha_i+\gamma_i N_{t-i}\big)a_{t-i}^2+\sum_{j=1}^{p}\beta_j\sigma_{t-j}^2,\qquad N_{t-i}=\begin{cases}1,&a_{t-i}<0\\0,&a_{t-i}\ge0.\end{cases}
+$$
 A negative shock gets coefficient $\alpha_i+\gamma_i$; a positive shock gets only $\alpha_i$. **Expect $\gamma_i>0$.** For GJR(1,1):
-$$\sigma_t^2=\alpha_0+\big(\alpha_1+\gamma_1 N_{t-1}\big)a_{t-1}^2+\beta_1\sigma_{t-1}^2,\qquad \operatorname{Var}(a_t)=\frac{\alpha_0}{1-\alpha_1-\tfrac12\gamma_1-\beta_1},$$
+$$
+\sigma_t^2=\alpha_0+\big(\alpha_1+\gamma_1 N_{t-1}\big)a_{t-1}^2+\beta_1\sigma_{t-1}^2,\qquad \operatorname{Var}(a_t)=\frac{\alpha_0}{1-\alpha_1-\tfrac12\gamma_1-\beta_1},
+$$
 (the $\tfrac12\gamma_1$ because $\mathbb{E}[N]=P(a<0)=\tfrac12$ under symmetry). The asymmetric response as a function of the shock is the **news-impact curve**: a kinked, piecewise-quadratic line, steeper on the left.
 
 **Which to use.** EGARCH handles log-variance (no positivity constraints, multiplicative news impact); GJR keeps the familiar quadratic form and is often easier to interpret and to estimate. Both are one extra parameter. The *test* for whether you need either is the **Engle–Ng sign-bias test** (regress $\hat a_t^2$ on a constant, $\hat a_{t-1}^2$, and $\hat a_{t-1}^2\mathbf{1}\{\hat a_{t-1}<0\}$ and test the coefficient on the indicator) — a significant coefficient means symmetric GARCH is mis-specified.

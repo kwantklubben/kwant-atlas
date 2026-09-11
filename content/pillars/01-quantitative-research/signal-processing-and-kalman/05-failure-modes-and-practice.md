@@ -43,7 +43,9 @@ For a scalar random-walk state with observation variance $R$ and process varianc
 
 Divergence occurs when the computed covariance $\hat\Sigma_{t\mid t-1}$ becomes a **systematic underestimate** of the true error covariance. Then the gain is too small, the state estimate stops tracking the truth, the predicted observation stays wrong — and because the *reported* covariance is also too small, the filter never "notices". The classic triggers: (i) $Q$ set to zero or far too small on a series that in fact moves; (ii) finite-precision loss of positive-definiteness; (iii) unmodeled deterministic drift. The tell is the ratio
 
-$$\text{divergence ratio}_t=\frac{|y_t-Z_t s_{t\mid t-1}|}{\sqrt{V_t}}=\frac{|v_t|}{\sqrt{V_t}},$$
+$$
+\text{divergence ratio}_t=\frac{|y_t-Z_t s_{t\mid t-1}|}{\sqrt{V_t}}=\frac{|v_t|}{\sqrt{V_t}},
+$$
 
 the **standardized innovation**. If the model is right, $\{v_t/\sqrt{V_t}\}$ is approximately iid $N(0,1)$. If that series drifts away from unit variance (say its average square $\gg1$) or develops runs, the filter is diverging or misspecified — *even if the estimates look fine*.
 

@@ -30,20 +30,26 @@ The objective: build the inference machinery that the market maker uses every ro
 
 In the GM economy, informed traders buy with probability $1$ when $V=V_H$ and sell with probability $1$ when $V=V_L$; uninformed buy or sell with probability $\tfrac12$. The condition matters: an informed trader buys only in the high state, so
 
-$$\mathbb{P}(B\mid I)=\mathbb{P}(V_H\mid I)=\theta_{t-1},\qquad \mathbb{P}(B\mid U)=\tfrac12,\qquad \mathbb{P}(B)=\pi\,\theta_{t-1}+(1-\pi)\tfrac12 .$$
+$$
+\mathbb{P}(B\mid I)=\mathbb{P}(V_H\mid I)=\theta_{t-1},\qquad \mathbb{P}(B\mid U)=\tfrac12,\qquad \mathbb{P}(B)=\pi\,\theta_{t-1}+(1-\pi)\tfrac12 .
+$$
 
 (Equivalently, conditioned on the *state*, $\mathbb{P}(B\mid V_H)=\pi+(1-\pi)\tfrac12=\tfrac{1+\pi}{2}$ — the arrival law used on [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/03-the-glosten-milgrom-model|03 · The Glosten–Milgrom Model]]. Conditioning on $I$ instead would give $\mathbb{P}(B\mid I)=1$, which is only correct in the degenerate $\theta=1$ case.)
 
 **Probability that a buy came from an informed trader** (Bayes):
 
-$$\mathbb{P}(I\mid B)=\frac{\mathbb{P}(B\mid I)\,\pi}{\mathbb{P}(B)}=\frac{\pi\,\theta_{t-1}}{\pi\theta_{t-1}+\tfrac{1-\pi}{2}}=\boxed{\;\frac{2\pi\,\theta_{t-1}}{2\pi\,\theta_{t-1}+1-\pi}\;},$$
+$$
+\mathbb{P}(I\mid B)=\frac{\mathbb{P}(B\mid I)\,\pi}{\mathbb{P}(B)}=\frac{\pi\,\theta_{t-1}}{\pi\theta_{t-1}+\tfrac{1-\pi}{2}}=\boxed{\;\frac{2\pi\,\theta_{t-1}}{2\pi\,\theta_{t-1}+1-\pi}\;},
+$$
 
 which equals $\pi$ at the symmetric prior $\theta_{t-1}=\tfrac12$ and exceeds it only when $\theta_{t-1}>\tfrac12$. That is the right reading of the model: **at a symmetric prior a buy tells you about $V$, not about whether the trader was informed** ($\mathbb{P}(V_H\mid B)>\theta_{t-1}$ while $\mathbb{P}(I\mid B)=\pi$). The informed-ness becomes visible in the *streak*: after a run of buys the conditional $\theta$ rises, and a further buy is then genuinely more likely to be informed flow. At $\pi=0.1$ and $\theta=\tfrac12$: $\mathbb{P}(I\mid B)=0.100$; at $\theta=0.9$ it is $0.167$.
 
 **Posterior belief that value is high** after observing a buy at prior $\theta_{t-1}$ (the GM update, repeated here explicitly):
 
-$$\theta_t=\mathbb{P}(V_H\mid B_t)
-=\frac{\tfrac{1+\pi}{2}\,\theta_{t-1}}{\tfrac{1+\pi}{2}\theta_{t-1}+\tfrac{1-\pi}{2}(1-\theta_{t-1})}.$$
+$$
+\theta_t=\mathbb{P}(V_H\mid B_t)
+=\frac{\tfrac{1+\pi}{2}\,\theta_{t-1}}{\tfrac{1+\pi}{2}\theta_{t-1}+\tfrac{1-\pi}{2}(1-\theta_{t-1})}.
+$$
 
 For a *run* of $n$ buys the update compounds. A sequence of buys moves $\theta\to1$ (value-revealed as high), a sequence of sells moves it to $0$. The interesting, non-obvious content: the *speed* of learning is driven by $\pi$. Larger $\pi$ ⇒ each buy is more likely informed ⇒ posterior moves faster (Foucault Ch 3; Hasbrouck Ch 5).
 

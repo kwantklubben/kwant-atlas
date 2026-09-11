@@ -30,23 +30,31 @@ This is where the folder's pieces assemble: the LM-calibrated tone ([[pillars/07
 
 **The weighted executive-tone feature.** For a call with Q&A segments $s$, each with word count $w_s$ and net tone $\text{tone}(s)$, the executive-weighted score is
 
-$$\text{ExecTone}=\frac{\sum_{s\in\text{Q&A},\,s\in\{\text{CEO,CFO}\}} w_s\cdot\text{tone}(s)}{\sum_{s\in\text{Q&A},\,s\in\{\text{CEO,CFO}\}} w_s},$$
+$$
+\text{ExecTone}=\frac{\sum_{s\in\text{Q\&A},\,s\in\{\text{CEO,CFO}\}} w_s\cdot\text{tone}(s)}{\sum_{s\in\text{Q\&A},\,s\in\{\text{CEO,CFO}\}} w_s},
+$$
 
 a *word-weighted* average so longer, more substantive answers dominate. Contrast the two summary scalars you would otherwise conflate:
 
-$$\overline{\text{tone}}_{\text{prepared}}=\frac1{|P|}\sum_{s\in P}\text{tone}(s),\qquad \overline{\text{tone}}_{\text{Q&A}}=\frac1{|Q|}\sum_{s\in Q}\text{tone}(s).$$
+$$
+\overline{\text{tone}}_{\text{prepared}}=\frac1{|P|}\sum_{s\in P}\text{tone}(s),\qquad \overline{\text{tone}}_{\text{Q\&A}}=\frac1{|Q|}\sum_{s\in Q}\text{tone}(s).
+$$
 
 A systematic *gap* — scripted optimism vs. guarded Q&A — is itself a signal (the "tone gap" used in the earnings-call literature to flag management holding back).
 
 **The cross-sectional model.** Across $n$ firms, regress post-call drift on executive Q&A tone:
 
-$$y_i=\beta_0+\beta_1\,\text{ExecTone}_i+\varepsilon_i,$$
+$$
+y_i=\beta_0+\beta_1\,\text{ExecTone}_i+\varepsilon_i,
+$$
 
 estimated by OLS (normal equations as in [[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/03-sentiment-and-tone|03]]). A stable positive $\beta_1$ is the claim that Q&A tone is priced.
 
 **Linguistic change as a separate signal.** Using TF–IDF document vectors ([[pillars/07-machine-learning-altdata/financial-nlp-and-transcripts/02-bag-of-words-and-lm-dictionary|02]]):
 
-$$\Delta\text{Text}_t=1-\cos(\mathbf{v}_{t},\mathbf{v}_{t-1}),$$
+$$
+\Delta\text{Text}_t=1-\cos(\mathbf{v}_{t},\mathbf{v}_{t-1}),
+$$
 
 the "Lazy Prices" construction (Cohen–Malloy–Nguyen 2020): *silent* wording changes in a firm's filings — no number changed — forecast underperformance. This is a *structural* text feature orthogonal to sentiment, and it generalizes directly to year-over-year transcript comparison.
 

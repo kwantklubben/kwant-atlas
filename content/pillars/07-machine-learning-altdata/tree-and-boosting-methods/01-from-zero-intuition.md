@@ -32,7 +32,9 @@ Three more intuitions that carry the whole folder:
 
 **What "best" means for one split.** With a single feature $x$ and threshold $s$, a depth-1 tree (a *stump*) partitions the data into $R_1=\{x\le s\}$ and $R_2=\{x>s\}$ and predicts the region mean in each. It is chosen to minimise the total within-region squared error:
 
-$$\min_{s}\Big[\sum_{x_i\le s}\big(y_i-\bar y_{R_1}\big)^2+\sum_{x_i>s}\big(y_i-\bar y_{R_2}\big)^2\Big].$$
+$$
+\min_{s}\Big[\sum_{x_i\le s}\big(y_i-\bar y_{R_1}\big)^2+\sum_{x_i>s}\big(y_i-\bar y_{R_2}\big)^2\Big].
+$$
 
 Because the best constant inside a region is the mean, the inner minimisation is closed-form, and using $SSE=\sum y_i^2-\tfrac1n(\sum y_i)^2$ the objective is a **one-dimensional scan** over sorted $x$ — the reason CART is fast.
 
@@ -40,7 +42,9 @@ Because the best constant inside a region is the mean, the inner minimisation is
 
 **From stump to tree.** Recursion: apply the same split search inside each child region, on whichever feature minimises residual SSE there. Growth stops on a stopping rule (max depth, min samples per leaf, or a complexity penalty $\alpha|T|$, see [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/02-decision-trees|02 · Decision Trees]]). The model is
 
-$$f(x)=\sum_{m=1}^{M}c_m\,\mathbb 1(x\in R_m),\qquad c_m=\mathrm{ave}\{y_i: x_i\in R_m\}.$$
+$$
+f(x)=\sum_{m=1}^{M}c_m\,\mathbb 1(x\in R_m),\qquad c_m=\mathrm{ave}\{y_i: x_i\in R_m\}.
+$$
 
 ---
 

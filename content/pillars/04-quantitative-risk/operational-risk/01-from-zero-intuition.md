@@ -42,7 +42,9 @@ The definition **includes legal risk** (fines, punitive damages) but **excludes 
 
 **The double-randomness structure.** Write the annual loss as
 
-$$S = \sum_{i=1}^{N} X_i,$$
+$$
+S = \sum_{i=1}^{N} X_i,
+$$
 
 where $N$ is the (random) number of loss events in the year and $X_i$ the size of the $i$-th. The two random objects play different roles:
 

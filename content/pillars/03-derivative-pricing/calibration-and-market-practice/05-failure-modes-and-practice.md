@@ -28,13 +28,17 @@ Three structural facts do the damage:
 
 **Ill-posedness of the local-vol inversion (Gatheral 1.10; Bergomi 2.19).** The local variance is
 
-$$v_L(y,T) = \\frac{\\partial w/\\partial T}{1-\\tfrac{y}{w}w_y+\\tfrac14\\big(-\\tfrac14-\\tfrac1w+\\tfrac{y^2}{w^2}\\big)w_y^2+\\tfrac12 w_{yy}},$$
+$$
+v_L(y,T) = \\frac{\\partial w/\\partial T}{1-\\tfrac{y}{w}w_y+\\tfrac14\\big(-\\tfrac14-\\tfrac1w+\\tfrac{y^2}{w^2}\\big)w_y^2+\\tfrac12 w_{yy}},
+$$
 
 which contains $w_{yy}$ — a **second finite difference**. If observed with noise $\\varepsilon$ at grid spacing $dy$, the second difference has error $\\sim \\varepsilon/dy^2$, and the denominator $\\tfrac12w_{yy}$ can be driven to $0$ (or negative, i.e. strike arbitrage / negative butterfly). Near a zero denominator, $v_L\\to\\pm\\infty$. This is the textbook ill-posed inverse problem: the forward map (smile → local vol) is smoothing, so its inverse is unstable.
 
 **Non-identifiability (Bergomi Ch 6, Ch 8; Gatheral Ch 3).** The ATMF skew is, to first order, a *weighted integral of the instantaneous spot/vol covariance*:
 
-$$\\mathcal S_T = \\frac{1}{\\hat\\sigma_T^2T}\\int_0^T\\frac{T-t}{T}\\big\\langle d\\ln S_t\\,d\\hat\\sigma_T(t)\\big\\rangle\\,dt \\qquad \\text{(Bergomi eq 2.89)}.$$
+$$
+\\mathcal S_T = \\frac{1}{\\hat\\sigma_T^2T}\\int_0^T\\frac{T-t}{T}\\big\\langle d\\ln S_t\\,d\\hat\\sigma_T(t)\\big\\rangle\\,dt \\qquad \\text{(Bergomi eq 2.89)}.
+$$
 
 The *combination* is fixed by the smile; how it is split between $\\rho$ and $\\eta$ (or $\\beta$ and $\\rho$) is not. That split changes the **dynamics** ($R_T$, the skew-stickiness ratio) without changing the static fit — hence identical fits with different hedge ratios.
 

@@ -27,22 +27,30 @@ The payoff: **portfolio VaR, risk-parity weights, and hedging ratios that move w
 **The multivariate setup.** With $a_t$ the $k$-vector of shocks, $\Sigma_t=\operatorname{Var}(a_t\mid\mathcal{F}_{t-1})=\mathbb{E}[a_ta_t'\mid\mathcal{F}_{t-1}]$, and $\Sigma_t^{1/2}$ any matrix square root, $a_t=\Sigma_t^{1/2}z_t$, $z_t\overset{iid}{\sim}(0,I_k)$.
 
 **VEC / DVEC and BEKK (the parameter explosion).** The general VEC has each covariance element following its own GARCH-like recursion (via the Hadamard product $\odot$, i.e. DVEC); it does **not guarantee positive definiteness** and allows no clean cross-dependence. **BEKK** (Engle–Kroner 1995),
-$$\Sigma_t=AA'+\sum_{i=1}^{m}A_i(a_{t-i}a_{t-i}')A_i'+\sum_{j=1}^{s}B_j\Sigma_{t-j}B_j',$$
+$$
+\Sigma_t=AA'+\sum_{i=1}^{m}A_i(a_{t-i}a_{t-i}')A_i'+\sum_{j=1}^{s}B_j\Sigma_{t-j}B_j',
+$$
 *is* positive definite almost surely if $AA'$ is, but has $k^2(m+s)+k(k+1)/2$ parameters — for $k=10$ that is hundreds, none individually interpretable. The shocks in the BEKK quadratic term are **raw** innovations $a_{t-i}a_{t-i}'$, *not* standardized.
 
 **Correlation decomposition (the practical route).** Write
-$$\Sigma_t=D_tR_tD_t,\qquad D_t=\operatorname{diag}\{\sqrt{\sigma_{11,t}},\dots,\sqrt{\sigma_{kk,t}}\},\qquad R_t=(\rho_{ij,t}).$$
+$$
+\Sigma_t=D_tR_tD_t,\qquad D_t=\operatorname{diag}\{\sqrt{\sigma_{11,t}},\dots,\sqrt{\sigma_{kk,t}}\},\qquad R_t=(\rho_{ij,t}).
+$$
 Here each $\sigma_{ii,t}$ is a univariate GARCH(1,1) (fast, well-understood) and $R_t$ is the dynamic correlation matrix.
 
 - **CCC (Bollerslev 1990):** $R_t=\bar R$ constant. The log-likelihood separates into $k$ univariate pieces plus a correlation piece — estimation is trivial and consistent, but it ignores that correlations move.
 - **DCC (Engle 2002):** let $\varepsilon_{it}=a_{it}/\sqrt{\sigma_{ii,t}}$ be the standardized shocks, and evolve a pseudo-correlation matrix
-$$Q_t=(1-\theta_1-\theta_2)\bar Q+\theta_1\,\varepsilon_{t-1}\varepsilon_{t-1}'+\theta_2\,Q_{t-1},\qquad R_t=J_tQ_tJ_t,\quad J_t=\operatorname{diag}\{q_{ii,t}^{-1/2}\}.$$
+$$
+Q_t=(1-\theta_1-\theta_2)\bar Q+\theta_1\,\varepsilon_{t-1}\varepsilon_{t-1}'+\theta_2\,Q_{t-1},\qquad R_t=J_tQ_tJ_t,\quad J_t=\operatorname{diag}\{q_{ii,t}^{-1/2}\}.
+$$
 The rescaling $J_tQ_tJ_t$ forces unit diagonal, turning $Q_t$ into the true correlation matrix. **$\theta_1+\theta_2<1$** is the stationarity condition, and the whole model adds just **two** parameters regardless of dimension. Tse–Tsui (2002) is the direct analogue $\rho_t=(1-\theta_1-\theta_2)\bar\rho+\theta_1\rho_{t-1}+\theta_2\psi_{t-1}$.
 
 **Estimation (two-step).** (1) Fit $k$ univariate GARCH(1,1)s → $\hat D_t$, standardized residuals $\hat\varepsilon_t$. (2) Fit $(\theta_1,\theta_2)$ by Gaussian likelihood on $\hat\varepsilon_t$. Consistent under the two-step (Engle 2002); full ML is possible but expensive.
 
 **Portfolio VaR with dynamic correlation.** For a two-asset portfolio,
-$$VaR_{1+2}=\sqrt{VaR_1^2+VaR_2^2+2\rho\,VaR_1VaR_2}.$$
+$$
+VaR_{1+2}=\sqrt{VaR_1^2+VaR_2^2+2\rho\,VaR_1VaR_2}.
+$$
 Tsay §10.7 (Cisco+Intel, \$1M each, 5%) reports **\$57,117 (univariate) < \$57,648 (time-varying corr) < \$58,180 (constant corr)** — the ordering showing that ignoring dynamic correlation *understates* joint risk when correlation rises.
 
 **Forecasting & term structure.** From a fitted GARCH(1,1), the $h$-step variance forecast is $\sigma_h^2(\ell)=\alpha_0+(\alpha_1+\beta_1)\sigma_h^2(\ell-1)$, decaying geometrically to the unconditional variance. The **term structure** (the shape of $\sigma_h^2(\ell)$ vs $\ell$) is upward-sloping when today's vol is *below* the long-run mean and downward-sloping when above — the "volatility cone". For $h$-day VaR, integrate the term structure: $VaR^{(h)}=z_p\sqrt{\sum_{\ell=1}^{h}\sigma_h^2(\ell)}$.

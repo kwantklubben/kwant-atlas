@@ -25,25 +25,33 @@ The one idea: **binary protocols trade recoverability for bytes.** FIX is self-d
 
 **Encoding efficiency.** For a field of value $v$, the FIX ASCII form costs $\text{digits}(v) + \ell_{\text{tag}} + 2$ bytes (tag, `=`, SOH), while a fixed-width binary form costs a constant $w$ bytes. The ratio is the compression:
 
-$$\rho = \frac{\text{len}(\text{ascii field})}{w}, \qquad\text{message ratio } \rho_{\text{msg}} = \frac{s_{\text{FIX}}}{s_{\text{binary}}}.$$
+$$
+\rho = \frac{\text{len}(\text{ascii field})}{w}, \qquad\text{message ratio } \rho_{\text{msg}} = \frac{s_{\text{FIX}}}{s_{\text{binary}}}.
+$$
 
 For a price like `44=150.5250` (11 bytes) vs a 4-byte fixed-point integer, $\rho = 2.75$.
 
 **Fixed-point prices.** Binary feeds do not send floats; they send scaled integers:
 
-$$\text{price}_{\text{wire}} = \text{round}\!\left(p \times 10^{d}\right),\qquad p = \frac{\text{price}_{\text{wire}}}{10^{d}},$$
+$$
+\text{price}_{\text{wire}} = \text{round}\!\left(p \times 10^{d}\right),\qquad p = \frac{\text{price}_{\text{wire}}}{10^{d}},
+$$
 
 with $d$ the venue's price decimal places (ITCH 5.0 uses $d = 4$). This is exact and deterministic — floating point has no place on the wire.
 
 **Delta encoding (FAST).** Instead of the absolute value, transmit the difference from the previous one, so a slowly-moving field costs a few bytes:
 
-$$\delta_i = x_i - x_{i-1},\qquad x_i = x_{i-1} + \delta_i \ \ (\text{decoded}),\qquad \text{first value absolute}.$$
+$$
+\delta_i = x_i - x_{i-1},\qquad x_i = x_{i-1} + \delta_i \ \ (\text{decoded}),\qquad \text{first value absolute}.
+$$
 
 For a price series the deltas are small and clustered near zero, which makes them cheap under a variable-length integer code. **Crucially, delta encoding requires the receiver to have the same previous value** — a lost message corrupts every subsequent delta until a snapshot resynchronises. This is exactly the recovery fragility FIX's sequence numbers exist to prevent.
 
 **Field-count and schema.** A binary message is decoded by a *schema* (tag → offset/width/type). Message size is the sum of field widths plus any header:
 
-$$s_{\text{binary}} = \sum_k w_k \quad(\text{no per-field tags, no SOH}),$$
+$$
+s_{\text{binary}} = \sum_k w_k \quad(\text{no per-field tags, no SOH}),
+$$
 
 versus $s_{\text{FIX}} = \sum_k (\ell_k + |\text{tag}_k| + 2)$.
 

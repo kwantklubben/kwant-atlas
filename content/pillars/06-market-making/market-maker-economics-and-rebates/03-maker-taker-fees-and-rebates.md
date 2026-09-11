@@ -32,23 +32,33 @@ Work with raw quotes: ask $A$, bid $B$, raw spread $S^{\text{raw}}=A-B$, per-sha
 **Who pays what.**
 
 - A **taker** buying pays $A+f_t$; as a taker seller receives $B-f_t$. A **round-trip taker** pays
-  $$S^{\text{cum}} \;=\; (A+f_t)-(B-f_t)\;=\;S^{\text{raw}}+2f_t.$$
+$$
+S^{\text{cum}} \;=\; (A+f_t)-(B-f_t)\;=\;S^{\text{raw}}+2f_t.
+$$
 - A **maker** selling receives $A-f_m=A+r$; a maker buying pays $B+f_m=B-r$. The maker's **net earned spread** is
-  $$S^{\text{net}} \;=\;(A-f_m)-(B+f_m)\;=\;S^{\text{raw}}-2f_m\;=\;S^{\text{raw}}+2r.$$
+$$
+S^{\text{net}} \;=\;(A-f_m)-(B+f_m)\;=\;S^{\text{raw}}-2f_m\;=\;S^{\text{raw}}+2r.
+$$
 - The **exchange's net fee** per share is $f_{\text{net}}=f_t+f_m=f_t-r$.
 
 **The neutrality identity.** Add the two:
-$$S^{\text{cum}} = S^{\text{raw}}+2f_t = S^{\text{net}} + 2f_{\text{net}} = \big(S^{\text{raw}}+2r\big)+2(f_t-r).$$
+$$
+S^{\text{cum}} = S^{\text{raw}}+2f_t = S^{\text{net}} + 2f_{\text{net}} = \big(S^{\text{raw}}+2r\big)+2(f_t-r).
+$$
 The total the taker pays equals **maker compensation + exchange net revenue**. Consequences:
 
 **(a) Breakdown neutrality (Colliard & Foucault 2012, Prop. 1).** If the exchange doubles the rebate $r$ *and* raises the take fee by the same amount so $f_{\text{net}}$ is constant, then competitive makers — who only care about their net compensation $h^{\text{net}}=\lambda+c_{\text{inv}}$ — **narrow the raw quote by exactly $r$**:
-$$h^{\text{raw}} = h^{\text{net}} - r.$$
+$$
+h^{\text{raw}} = h^{\text{net}} - r.
+$$
 The raw spread $S^{\text{raw}}$ shrinks, but $S^{\text{cum}}$ is unchanged. The rebate is a **pure relabelling** of the raw spread when the tick does not bind. This is the Angel–Harris–Spatt (2011) intuition, proved without perfect competition.
 
 **(b) Only the total fee affects taker cost.** Since $S^{\text{cum}}$ depends on the total fee $f_{\text{net}}$, empirical tests of make/take effects **must hold the total fee constant** (CF 2012) — otherwise a fee-breakdown effect is confounded with a fee-*level* effect.
 
 **(c) The tick-size friction (Foucault, Kadan & Kandel 2013).** With finite $\tau$ the raw quote cannot move in arbitrarily small increments: the half-spread is a multiple of $\tau/2$. If $h^{\text{net}}-r$ is **not on the half-tick grid**, the maker **cannot** fully pass the rebate through, and neutrality breaks. The residual is the maker's rent:
-$$\text{pass-through gap} = \text{round-up}\!\left(\frac{h^{\text{net}}-r}{\tau/2}\right)\!\cdot\!\tfrac{\tau}{2} \;-\;(h^{\text{net}}-r)\;\ge\;0.$$
+$$
+\text{pass-through gap} = \text{round-up}\!\left(\frac{h^{\text{net}}-r}{\tau/2}\right)\!\cdot\!\tfrac{\tau}{2} \;-\;(h^{\text{net}}-r)\;\ge\;0.
+$$
 A coarse tick therefore **protects** maker rents against the rebate's competitive erosion — which is exactly why tick size and fee design must be regulated *jointly* (see [[pillars/06-market-making/market-maker-economics-and-rebates/06-advanced-extensions|06 · Advanced Extensions]]).
 
 ---

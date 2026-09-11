@@ -29,11 +29,15 @@ The extensions, in increasing sophistication:
 
 **The Bao $\gamma$ measure.** Decompose a bond's log price into a fundamental component and transitory noise $\eta_t$ (dealer inventory, search frictions, stale quotes):
 
-$$\ln P_t = \ln F_t + \eta_t,\qquad \eta_t=\rho\,\eta_{t-1}+\varepsilon_t,\quad |\rho|<1.$$
+$$
+\ln P_t = \ln F_t + \eta_t,\qquad \eta_t=\rho\,\eta_{t-1}+\varepsilon_t,\quad |\rho|<1.
+$$
 
 The transitory component creates **negative autocovariance** in consecutive log-price changes, whose magnitude measures the transitory price noise = illiquidity:
 
-$$\gamma=-\operatorname{cov}(\Delta\ln P_{t+1},\Delta\ln P_t)\;>\;0.$$
+$$
+\gamma=-\operatorname{cov}(\Delta\ln P_{t+1},\Delta\ln P_t)\;>\;0.
+$$
 
 This is the same identification as Roll, but applied to the *noise* component rather than the bid-ask bounce. Bao, Pan & Wang (2011) find bond $\gamma$ is economically large — substantially bigger than quoted bid-ask spreads — confirming that bonds' illiquidity is not primarily a spread story but a *depth/search/market-making* story. It also shows strong commonality across bonds and a sharp rise during 2007–08 (aggregate $\gamma$ roughly **doubled** by Aug 2007 and **tripled** by Mar 2008).
 

@@ -42,7 +42,9 @@ The mismatch is invisible to the IC: $\mathrm{corr}(\hat f, y)$ and $\mathrm{cor
 
 Combine the forecast error $e=\hat f - y$ and the allocation error (weight miss $\delta w$). One-period PnL error is, to first order,
 
-$$\text{PnL error} \;\approx\; \underbrace{p(\hat f)^\top e}_{\text{forecast error} \times \text{notional}} \;+\; \underbrace{\delta w^\top y}_{\text{allocation error}}.$$
+$$
+\text{PnL error} \;\approx\; \underbrace{p(\hat f)^\top e}_{\text{forecast error} \times \text{notional}} \;+\; \underbrace{\delta w^\top y}_{\text{allocation error}}.
+$$
 
 Both terms scale with *notional/leverage* $\ell$: a $\delta$ fractional error becomes $\ell\,\delta$ PnL error. And the allocation error itself is amplified by the optimizer's instability $\sim 1/\lambda_{\min}^2$ (from [[pillars/07-machine-learning-altdata/ml-for-portfolio/04-ml-for-covariance-factors|04]]). So the *effective* error is the product of three small numbers — forecast error, leverage, and $1/\lambda_{\min}^2$ — each individually "acceptable," together lethal.
 

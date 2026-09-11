@@ -38,22 +38,30 @@ Three steps, three "aha"s:
 
 **The budget.** Total tick-to-trade latency is the sum of stage contributions:
 
-$$T_{\text{T2T}} = \sum_{i} \tau_i = \tau_{\text{NIC}} + \tau_{\text{stack}} + \tau_{\text{parse}} + \tau_{\text{model}} + \tau_{\text{ser}} + \tau_{\text{TX}}.$$
+$$
+T_{\text{T2T}} = \sum_{i} \tau_i = \tau_{\text{NIC}} + \tau_{\text{stack}} + \tau_{\text{parse}} + \tau_{\text{model}} + \tau_{\text{ser}} + \tau_{\text{TX}}.
+$$
 
 Each $\tau_i$ is a *distribution*, not a constant. Practitioners quote the mean; risk lives in the tail. Define the tail ratio $r = p_{99.9}/p_{50}$; software typically has $r \gg 1$, silicon has $r \approx 1$.
 
 **The physical floor.** Distance $d$ in medium with speed $c$ costs $T_{\text{prop}} = d/c$:
 
-$$c_{\text{fiber}} \approx 0.2\ \text{m/ns},\qquad c_{\text{air}} \approx 0.2997\ \text{m/ns}
-\;\Longrightarrow\; 1\ \mu\text{s} = 200\ \text{m fiber} = 300\ \text{m air}.$$
+$$
+c_{\text{fiber}} \approx 0.2\ \text{m/ns},\qquad c_{\text{air}} \approx 0.2997\ \text{m/ns}
+\;\Longrightarrow\; 1\ \mu\text{s} = 200\ \text{m fiber} = 300\ \text{m air}.
+$$
 
 **The race.** For independent latencies $L_A\sim\mathcal N(\mu_A,\sigma^2)$, $L_B\sim\mathcal N(\mu_B,\sigma^2)$, the faster firm wins with probability
 
-$$\boxed{\;\mathbb P(L_B<L_A) = \Phi\!\left(\frac{\mu_A-\mu_B}{\sigma\sqrt2}\right)\;}$$
+$$
+\boxed{\;\mathbb P(L_B<L_A) = \Phi\!\left(\frac{\mu_A-\mu_B}{\sigma\sqrt2}\right)\;}
+$$
 
 since $L_B-L_A \sim \mathcal N(\mu_B-\mu_A,\,2\sigma^2)$. The **marginal** win probability is the normal density,
 
-$$\frac{\partial}{\partial\Delta}\Phi\!\left(\frac{\Delta}{\sigma\sqrt2}\right) = \frac{1}{\sigma\sqrt{2\pi}}\,e^{-\Delta^{2}/(4\sigma^{2})},\qquad \Delta=\mu_A-\mu_B,$$
+$$
+\frac{\partial}{\partial\Delta}\Phi\!\left(\frac{\Delta}{\sigma\sqrt2}\right) = \frac{1}{\sigma\sqrt{2\pi}}\,e^{-\Delta^{2}/(4\sigma^{2})},\qquad \Delta=\mu_A-\mu_B,
+$$
 
 which peaks at $\Delta=0$ and collapses in the tails: **the first nanoseconds are worth the most, and by $\Delta \gtrsim 3\sigma$ more speed is worthless.** This S-curve is the entire economics of the arms race: it explains boom (before saturation) and burn (after).
 

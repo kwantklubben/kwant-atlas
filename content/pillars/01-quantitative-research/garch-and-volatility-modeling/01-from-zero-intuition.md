@@ -32,17 +32,23 @@ Three "aha"s:
 
 **The decomposition.** Write any return as a predictable mean plus an unpredictable shock:
 
-$$r_t=\mu_t+a_t,\qquad \mu_t=\mathbb{E}[r_t\mid\mathcal{F}_{t-1}],\qquad a_t=r_t-\mu_t,\qquad \operatorname{Var}(r_t\mid\mathcal{F}_{t-1})=\mathbb{E}[a_t^2\mid\mathcal{F}_{t-1}]=\sigma_t^2.$$
+$$
+r_t=\mu_t+a_t,\qquad \mu_t=\mathbb{E}[r_t\mid\mathcal{F}_{t-1}],\qquad a_t=r_t-\mu_t,\qquad \operatorname{Var}(r_t\mid\mathcal{F}_{t-1})=\mathbb{E}[a_t^2\mid\mathcal{F}_{t-1}]=\sigma_t^2.
+$$
 
 The shocks $a_t$ form a **martingale difference sequence**: $\mathbb{E}[a_t\mid\mathcal{F}_{t-1}]=0$, so they are *uncorrelated* ($\operatorname{Cov}(a_t,a_{t-s})=0$) — hence ACF(returns)$\approx0$. But they are **not independent**, because their conditional variance varies:
 
-$$a_t=\sigma_t\varepsilon_t,\qquad \varepsilon_t\overset{iid}{\sim}N(0,1).$$
+$$
+a_t=\sigma_t\varepsilon_t,\qquad \varepsilon_t\overset{iid}{\sim}N(0,1).
+$$
 
 **Unconditional vs conditional.** The unconditional (long-run) variance is a single fixed number. The *conditional* variance $\sigma_t^2$ moves. The whole game is the trading-off between them: if $\sigma_t^2$ reverts to a constant mean $\bar\sigma^2$, then forecasting is possible but the forecasts are transient. This mean reversion is precisely what makes volatility "bounded and stationary" (stylized fact 3 of Tsay §3.1).
 
 **The ARCH seed (Engle 1982).** The minimal way to make $\sigma_t^2$ depend on the past is to let it be an autoregression on the **squared shocks**:
 
-$$\sigma_t^2=\alpha_0+\alpha_1 a_{t-1}^2+\alpha_2 a_{t-2}^2+\cdots+\alpha_q a_{t-q}^2,\qquad \alpha_0>0,\ \alpha_i\ge0.$$
+$$
+\sigma_t^2=\alpha_0+\alpha_1 a_{t-1}^2+\alpha_2 a_{t-2}^2+\cdots+\alpha_q a_{t-q}^2,\qquad \alpha_0>0,\ \alpha_i\ge0.
+$$
 
 "Squaring" is what turns a signed shock into a magnitude; the $\alpha_i\ge0$ constraint keeps variance positive. A big $a_{t-1}^2$ (either sign) raises $\sigma_t^2$, which in turn makes $|a_t|$ likely large — that is clustering, generated endogenously. GARCH (Bollerslev 1986) adds autoregressive terms in the *variance itself*, $\beta_j\sigma_{t-j}^2$; the derivation and estimation live in [[pillars/01-quantitative-research/garch-and-volatility-modeling/02-arch-and-garch|02 · ARCH & GARCH]].
 

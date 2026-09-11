@@ -28,13 +28,17 @@ When such statements are compared **across firms** or **across time**, unusual f
 
 **Common-size income statement** (scale = sales $S$):
 
-$$\text{Common-size item}_i = \frac{\text{Item}_i}{S}\times 100\%,\qquad \text{Operating profit margin} = \frac{\text{Operating income}}{S}$$
+$$
+\text{Common-size item}_i = \frac{\text{Item}_i}{S}\times 100\%,\qquad \text{Operating profit margin} = \frac{\text{Operating income}}{S}
+$$
 
 Gross margin and operating margin are the two you quote in a screen or a pitch.
 
 **Common-size balance sheet** (scale = total assets $TA$):
 
-$$\text{Common-size item}_i = \frac{\text{Item}_i}{TA}\times 100\%$$
+$$
+\text{Common-size item}_i = \frac{\text{Item}_i}{TA}\times 100\%
+$$
 
 The asset column sums to 100%; the liability+equity column sums to 100%. Deviations from an industry norm are the signal.
 

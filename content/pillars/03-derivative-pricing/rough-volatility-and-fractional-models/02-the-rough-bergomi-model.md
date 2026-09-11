@@ -33,10 +33,14 @@ The practical objective: be able to write the rBergomi SDE, understand why $E[v_
 
 Under $\mathbb Q$, with $S_0$ scaled to 1 and the forward-variance curve $\xi_0(u)$ given by the market:
 
-$$S_t=\mathcal E\!\Big(\int_0^t\sqrt{v_u}\,d\big(\rho W^1_u+\sqrt{1-\rho^2}W^2_u\big)\Big)_t,\qquad
-v_t=\xi_0(t)\exp\!\Big(\eta W^\alpha_t-\frac{\eta^2}{2}t^{2\alpha+1}\Big),$$
+$$
+S_t=\mathcal E\!\Big(\int_0^t\sqrt{v_u}\,d\big(\rho W^1_u+\sqrt{1-\rho^2}W^2_u\big)\Big)_t,\qquad
+v_t=\xi_0(t)\exp\!\Big(\eta W^\alpha_t-\frac{\eta^2}{2}t^{2\alpha+1}\Big),
+$$
 
-$$W^\alpha_t=\sqrt{2\alpha+1}\int_0^t(t-u)^\alpha\,dW^1_u,\qquad \alpha=H-\tfrac12\in(-\tfrac12,0),$$
+$$
+W^\alpha_t=\sqrt{2\alpha+1}\int_0^t(t-u)^\alpha\,dW^1_u,\qquad \alpha=H-\tfrac12\in(-\tfrac12,0),
+$$
 
 where $W^1,W^2$ are independent Brownian motions and $\mathcal E(\cdot)$ is the stochastic exponential. The Volterra process $W^\alpha$ is a centred, $(\alpha+\tfrac12-\varepsilon)$-Hölder, **non-semimartingale** Gaussian process with $\mathrm{Var}[W^\alpha_t]=t^{2\alpha+1}=t^{2H}$ — "rough" in the precise sense of having $H<\tfrac12$.
 
@@ -44,7 +48,9 @@ where $W^1,W^2$ are independent Brownian motions and $\mathcal E(\cdot)$ is the 
 
 Since $W^\alpha_t$ is Gaussian with variance $t^{2H}$,
 
-$$\mathbb E\Big[e^{\eta W^\alpha_t}\Big]=e^{\frac{\eta^2}{2}t^{2H}},$$
+$$
+\mathbb E\Big[e^{\eta W^\alpha_t}\Big]=e^{\frac{\eta^2}{2}t^{2H}},
+$$
 
 so $\mathbb E[v_t]=\xi_0(t)e^{-\frac{\eta^2}{2}t^{2H}}\cdot e^{\frac{\eta^2}{2}t^{2H}}=\xi_0(t)$. The drift term $-\frac{\eta^2}{2}t^{2H}$ is *exactly* the lognormal compensator — get its sign or the exponent $t^{2H}$ (i.e. the mapping $\alpha=H-\tfrac12$) wrong and the martingale fails. This is the first check on any implementation, verified in §3.
 
@@ -52,15 +58,21 @@ so $\mathbb E[v_t]=\xi_0(t)e^{-\frac{\eta^2}{2}t^{2H}}\cdot e^{\frac{\eta^2}{2}t
 
 For a forward-variance model, the order-1 ATMF skew is (Bergomi ch 8, [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/04-stochastic-vol-dynamics|04 · SV Dynamics]])
 
-$$S_T:=\left.\frac{\partial\sigma_{BS}}{\partial k}\right|_{k=0}=\frac{C^{x\xi}(T)}{2\hat\sigma_T^3T^2},\qquad
-C^{x\xi}(T)=\int_0^T\!dt\int_t^T\!du\ \frac{\mathbb E[dx_t\,d\xi_t(u)]}{dt}.$$
+$$
+S_T:=\left.\frac{\partial\sigma_{BS}}{\partial k}\right|_{k=0}=\frac{C^{x\xi}(T)}{2\hat\sigma_T^3T^2},\qquad
+C^{x\xi}(T)=\int_0^T\!dt\int_t^T\!du\ \frac{\mathbb E[dx_t\,d\xi_t(u)]}{dt}.
+$$
 
 For rBergomi the spot/forward-variance covariance is $\frac{\mathbb E[dx_t\,d\xi_t(u)]}{dt}=\rho\sqrt{\xi_t^t}\,\xi_t(u)\,\eta\sqrt{2H}(u-t)^{H-\frac12}$; on a flat forward-variance curve $\xi_0=\sigma_0^2$ this gives
 
-$$C^{x\xi}(T)=\rho\eta\sqrt{2H}\,\sigma_0^3\int_0^T\!dt\int_t^T\!du\ (u-t)^{H-\frac12}
-=\rho\eta\sqrt{2H}\,\sigma_0^3\,\frac{T^{H+\frac32}}{(H+\frac12)(H+\frac32)},$$
+$$
+C^{x\xi}(T)=\rho\eta\sqrt{2H}\,\sigma_0^3\int_0^T\!dt\int_t^T\!du\ (u-t)^{H-\frac12}
+=\rho\eta\sqrt{2H}\,\sigma_0^3\,\frac{T^{H+\frac32}}{(H+\frac12)(H+\frac32)},
+$$
 
-$$\boxed{\;\psi(T)=|S_T|=\frac{\rho\eta\sqrt{2H}}{2(H+\tfrac12)(H+\tfrac32)}\,T^{H-\frac12}\;}$$
+$$
+\boxed{\;\psi(T)=|S_T|=\frac{\rho\eta\sqrt{2H}}{2(H+\tfrac12)(H+\tfrac32)}\,T^{H-\frac12}\;}
+$$
 
 The double integral is evaluated exactly (§3): $\int_0^T\int_t^T (u-t)^{H-\frac12}dudt=\frac{T^{H+3/2}}{(H+1/2)(H+3/2)}$. The result is the **power-law skew** $\psi(T)\propto T^{H-\frac12}$ with exponent $H-\tfrac12=-0.36$ for $H=0.14$ — the empirically observed $\tau^{-0.44}$ regime, and qualitatively different from the Markovian cap (§05).
 

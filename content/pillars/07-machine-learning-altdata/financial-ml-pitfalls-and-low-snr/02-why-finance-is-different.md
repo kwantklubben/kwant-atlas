@@ -31,7 +31,9 @@ The single most consequential breakage is **overlapping labels**. When your labe
 
 **Overlapping labels destroy independence.** Let daily returns $r_t$ be IID with variance $\sigma^2$. The $h$-day forward label is $y_t=\sum_{i=1}^{h} r_{t+i}$. Two labels offset by $j$ share $h-j$ returns, so
 
-$$\operatorname{Cov}(y_t,\,y_{t+j})=\sigma^2(h-j), \qquad \operatorname{Corr}(y_t,y_{t'})=1-\frac{|t-t'|}{h}\ \ (|t-t'|\le h).$$
+$$
+\operatorname{Cov}(y_t,\,y_{t+j})=\sigma^2(h-j), \qquad \operatorname{Corr}(y_t,y_{t'})=1-\frac{|t-t'|}{h}\ \ (|t-t'|\le h).
+$$
 
 Consecutive labels ($j=1$) have correlation $(h-1)/h\to1$ as $h$ grows. **The rows are not independent, so standard IID K-fold CV is invalid** — this is precisely the failure AFML Ch. 7 documents ("Why K-Fold CV Fails in Finance") and the reason purged & embargoed CV exist.
 

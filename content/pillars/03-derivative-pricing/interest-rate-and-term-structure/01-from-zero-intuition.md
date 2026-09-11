@@ -34,13 +34,17 @@ Start with the dumbest question: *why is there a "term structure" at all?* A dol
 
 **Fact 1 — $P(t,T)$ is an expectation under the risk-neutral measure.** Define the bank account $B(t)=e^{\int_0^t r_s ds}$, the price of rolling $1$ at the short rate. Then (BM Ch2; Shreve Ch28) the no-arbitrage value of a $T$-bond is
 
-$$P(t,T)=\mathbb{E}^{\mathbb{Q}}\!\left[e^{-\int_t^T r_s ds}\,\Big|\,\mathcal{F}_t\right].$$
+$$
+P(t,T)=\mathbb{E}^{\mathbb{Q}}\!\left[e^{-\int_t^T r_s ds}\,\Big|\,\mathcal{F}_t\right].
+$$
 
 This is the fundamental pricing relation. The whole "term-structure equation" and the market price of risk come from asking *which* dynamics of $r$ to use inside this expectation — the drift under $\mathbb{Q}$ is what the model specifies.
 
 **Fact 2 — forwards are the log-slope; rates are linked by identities, not by models.** The relations
 
-$$f(t,T)=-\frac{\partial}{\partial T}\ln P(t,T),\qquad P(t,T)=e^{-\int_t^T f(t,s)ds},\qquad r(t)=f(t,t)$$
+$$
+f(t,T)=-\frac{\partial}{\partial T}\ln P(t,T),\qquad P(t,T)=e^{-\int_t^T f(t,s)ds},\qquad r(t)=f(t,t)
+$$
 
 are *pure definitions*, model-free. So is the simple-forward relation $1+\tau L(t;T,S)=P(t,T)/P(t,S)$. What is *not* model-free is the dynamics of any of these objects — that is what a model pins down.
 
@@ -48,7 +52,9 @@ are *pure definitions*, model-free. So is the simple-forward relation $1+\tau L(
 
 **The risk-free-rate equation for a bond portfolio.** Bond prices satisfy a *term-structure PDE*: writing $P=F(t,r;T)$,
 
-$$F_t+\big(\mu-\lambda\sigma\big)F_r+\tfrac12\sigma^2F_{rr}-rF=0,\qquad F(T,r;T)=1,$$
+$$
+F_t+\big(\mu-\lambda\sigma\big)F_r+\tfrac12\sigma^2F_{rr}-rF=0,\qquad F(T,r;T)=1,
+$$
 
 where $\lambda$ is the **market price of risk** — the excess return per unit of volatility that the market demands for bearing short-rate risk. Different choices of $\lambda$ give different $\mathbb{Q}$ and hence different bond prices (Björk Prop 23.2). This is the exact analogue of the BSM PDE, but with the drift $\mu$ *not* killed — only replaced by the risk-adjusted drift $\mu-\lambda\sigma$.
 

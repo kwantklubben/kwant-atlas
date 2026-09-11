@@ -29,13 +29,17 @@ The three failures, in one line each:
 
 **The breach condition.** Inventory evolves as a random walk with reversion speed $\kappa$ set by the skew strength $\alpha=\gamma\sigma^2\tau$ and fill elasticity $k$. For weak skew ($\alpha\to0$) the position is a pure random walk and the probability of ever reaching $\pm Q$ by time $T$ is
 
-$$\mathbb{P}\!\Big(\max_{0\le t\le T}|q_t|\ge Q\Big)\;\approx\;4\,\Phi\!\Big(-\tfrac{Q}{\sigma_q\sqrt{T}}\Big)$$
+$$
+\mathbb{P}\!\Big(\max_{0\le t\le T}|q_t|\ge Q\Big)\;\approx\;4\,\Phi\!\Big(-\tfrac{Q}{\sigma_q\sqrt{T}}\Big)
+$$
 
 (a reflected-walk / first-passage bound, $\sigma_q^2=$ per-step inventory variance). Stronger skew shrinks $\sigma_q$, and the breach probability collapses. Our simulation confirms this monotone dependence.
 
 **The forced-liquidation cost.** When $|q|=Q$ the desk liquidates at market, paying the half-spread per share:
 
-$$\text{forced-loss per share}\;\approx\;\tfrac12 s_{\text{market}}+\text{adverse move realized at that instant}.$$
+$$
+\text{forced-loss per share}\;\approx\;\tfrac12 s_{\text{market}}+\text{adverse move realized at that instant}.
+$$
 
 The *expected* loss of a forced liquidation is the adverse price move $\mathbb{E}[\Delta S \mid \text{trend},\text{breach time}]$ — which, in a trending market, is large because breaches happen when the trend is running against the position. This is why the tail (P&L std) explodes under a cap without skew.
 
@@ -92,7 +96,7 @@ skew strength alpha | mean P&L    P&L std | breach rate
     0.50             |  50.118    5.206 |      0.00%
     1.00             |  34.955    3.666 |      0.00%
 ```
-**This is the failure made concrete.** With no inventory control ($\alpha=0$) **$91.8\%$ of paths breach the position cap** in the trending market, and the forced-liquidating maker carries P&L std $9.58$ (driven by the realized losses at breach). A modest skew ($\alpha=0.20$) cuts the breach rate to $0.22\%$ and the P&L std to $6.57$, while giving up only $\sim\$2$ of mean ($55.59$ vs $57.73$). Stronger skew ($\alpha=0.50$, $1.0$) drives breaches to zero and P&L std down to $5.21$ and $3.67$ — at a rising cost in mean ($50.12$, $34.96$) because over-skewing forgoes spread flow. **The cap bounds the position; the skew decides how often the cap is ever touched.**
+**This is the failure made concrete.** With no inventory control ($\alpha=0$) **$91.8\%$ of paths breach the position cap** in the trending market, and the forced-liquidating maker carries P&L std $9.58$ (driven by the realized losses at breach). A modest skew ($\alpha=0.20$) cuts the breach rate to $0.22\%$ and the P&L std to $6.57$, while giving up only $\sim$ \$2 of mean (55.59$ vs $57.73$). Stronger skew ($\alpha=0.50$, $1.0$) drives breaches to zero and P&L std down to $5.21$ and $3.67$ — at a rising cost in mean ($50.12$, $34.96$) because over-skewing forgoes spread flow. **The cap bounds the position; the skew decides how often the cap is ever touched.**
 
 ---
 

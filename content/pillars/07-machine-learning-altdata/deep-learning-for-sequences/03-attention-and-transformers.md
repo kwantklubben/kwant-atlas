@@ -16,7 +16,9 @@ tags:
 
 Recurrence compresses the past into **one vector** that is overwritten at each step. Attention does something different and powerful: it keeps **all** past states and lets the model *look back and choose* which ones to use. The mechanism is a **soft dictionary lookup**. Every past position offers a *key* $k_j$ and a *value* $v_j$; the current position issues a *query* $q_i$; the output is the similarity-weighted average of the values:
 
-$$\text{output}_i=\sum_j \underbrace{\frac{\exp(q_i\cdot k_j)}{\sum_{j'}\exp(q_i\cdot k_{j'})}}_{\text{softmax weight (attention)}}\;v_j .$$
+$$
+\text{output}_i=\sum_j \underbrace{\frac{\exp(q_i\cdot k_j)}{\sum_{j'}\exp(q_i\cdot k_{j'})}}_{\text{softmax weight (attention)}}\;v_j .
+$$
 
 Three "aha"s:
 
@@ -34,7 +36,9 @@ The practical objective: read and write the attention formula correctly, and *ne
 
 Given a matrix of $T$ queries $Q\in\mathbb R^{T\times d_k}$, keys $K\in\mathbb R^{T\times d_k}$, values $V\in\mathbb R^{T\times d_v}$:
 
-$$\boxed{\;\operatorname{Attn}(Q,K,V)=\operatorname{softmax}\!\Big(\frac{QK^\top}{\sqrt{d_k}}+M\Big)V\;}$$
+$$
+\boxed{\;\operatorname{Attn}(Q,K,V)=\operatorname{softmax}\!\Big(\frac{QK^\top}{\sqrt{d_k}}+M\Big)V\;}
+$$
 
 where $\operatorname{softmax}$ is applied **row-wise** and $M$ is the mask.
 
@@ -44,7 +48,9 @@ where $\operatorname{softmax}$ is applied **row-wise** and $M$ is the mask.
 
 For an autoregressive / forecasting model,
 
-$$M_{ij}=\begin{cases}-\infty & j>i\\[2pt] 0 & j\le i\end{cases}$$
+$$
+M_{ij}=\begin{cases}-\infty & j>i\\[2pt] 0 & j\le i\end{cases}
+$$
 
 so the pre-softmax logit for any future position is $-\infty$ and $\exp(-\infty)=0$. Position $i$ can attend **only** to $j\le i$. This is the exact attention analogue of the *no-look-ahead* requirement; without it, the model is trained on the answer.
 
@@ -52,8 +58,10 @@ so the pre-softmax logit for any future position is $-\infty$ and $\exp(-\infty)
 
 One attention head computes one similarity notion. **Multi-head** attention runs $h$ heads in parallel subspaces and concatenates:
 
-$$\text{MultiHead}=\operatorname{Concat}(\text{head}_1,\dots,\text{head}_h)\,W^O,\qquad
-\text{head}_m=\operatorname{Attn}(QW_m^Q,KW_m^K,VW_m^V).$$
+$$
+\text{MultiHead}=\operatorname{Concat}(\text{head}_1,\dots,\text{head}_h)\,W^O,\qquad
+\text{head}_m=\operatorname{Attn}(QW_m^Q,KW_m^K,VW_m^V).
+$$
 
 A Transformer block adds residual connections and a position-wise feed-forward net: $z=\operatorname{LayerNorm}(x+\text{MultiHead}(x))$, $y=\operatorname{LayerNorm}(z+\operatorname{FFN}(z))$. Positional encodings (sinusoidal or learned) are added to the inputs, because attention — unlike a recurrence — is permutation-invariant and otherwise cannot tell position $5$ from position $50$.
 

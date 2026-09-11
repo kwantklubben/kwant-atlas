@@ -31,11 +31,15 @@ Where does funding come from? It is literally **value − margin** (Gregory Eq 1
 
 The funding profile is the **EFV** (expected future value) of the transaction. Symmetric FVA (Eq 18.3):
 
-$$FVA = -\sum_{i=1}^{m} EFV(t_i)\times FS(t_{i-1},t_i)\times(t_i-t_{i-1}),$$
+$$
+FVA = -\sum_{i=1}^{m} EFV(t_i)\times FS(t_{i-1},t_i)\times(t_i-t_{i-1}),
+$$
 
 where $FS(t_{i-1},t_i)\approx\frac{FS(0,t_i)t_i-FS(0,t_{i-1})t_{i-1}}{t_i-t_{i-1}}$ is the *forward* funding spread over the valuation (OIS) rate. Because $EPE+ENE=EFV$, FVA splits into
 
-$$FVA = FCA + FBA,\qquad FCA=-\sum_i EPE(t_i)\,FS\,\Delta t,\qquad FBA=-\sum_i ENE(t_i)\,FS\,\Delta t.$$
+$$
+FVA = FCA + FBA,\qquad FCA=-\sum_i EPE(t_i)\,FS\,\Delta t,\qquad FBA=-\sum_i ENE(t_i)\,FS\,\Delta t.
+$$
 
 - **FCA** (Funding Cost Adjustment): cost of funding *positive* exposure.
 - **FBA** (Funding Benefit Adjustment): benefit of *negative* exposure.
@@ -52,7 +56,9 @@ Never both DVA *and* FBA.
 
 Initial margin is segregated, non-rehypothecable, custodian-held, and (for cash IM) remunerated at or below OIS — so it is a **liability, not an asset** (Gregory Table 20.3: cost only, asymmetric, sub-OIS reference). MVA (Eq 20.1):
 
-$$MVA \approx -\sum_{i=1}^{m} EIM(t_i)\times FS(t_{i-1},t_i)\times(t_i-t_{i-1}),$$
+$$
+MVA \approx -\sum_{i=1}^{m} EIM(t_i)\times FS(t_{i-1},t_i)\times(t_i-t_{i-1}),
+$$
 
 where $EIM$ is the discounted **expected initial-margin profile**. IM evolves through portfolio ageing (it can *increase* as offsetting long-dated trades mature), look-back-window roll, and annual SIMM recalibration (Gregory §20.2.3) — which is why MVA is *not* trivially computable alongside CVA.
 

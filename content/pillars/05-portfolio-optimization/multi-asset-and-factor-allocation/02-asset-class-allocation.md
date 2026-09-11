@@ -36,21 +36,29 @@ The **strategic** allocation answers "what should I hold over the next decade?" 
 
 **The mean-variance problem.** Choose weights $w$ to maximise risk-adjusted return:
 
-$$\max_{w}\; \mu^\top w-\tfrac{\lambda}{2}\,w^\top\Sigma w \quad\text{s.t.}\quad \mathbf 1^\top w=1 .$$
+$$
+\max_{w}\; \mu^\top w-\tfrac{\lambda}{2}\,w^\top\Sigma w \quad\text{s.t.}\quad \mathbf 1^\top w=1 .
+$$
 
 **Karush–Kuhn–Tucker with the budget constaint.** With Lagrangian $\mathcal L=\mu^\top w-\tfrac{\lambda}{2}w^\top\Sigma w-\gamma(\mathbf1^\top w-1)$, the first-order condition is $\mu-\lambda\Sigma w-\gamma\mathbf 1=0$, giving the **two-fund structure**
 
-$$w^\star=\frac{1}{\lambda}\Sigma^{-1}(\mu-\gamma\mathbf 1),$$
+$$
+w^\star=\frac{1}{\lambda}\Sigma^{-1}(\mu-\gamma\mathbf 1),
+$$
 
 i.e. any efficient portfolio is a combination of the min-variance portfolio and the tangency portfolio — the two-fund (separation) theorem of Tobin (1958).
 
 **Global minimum-variance portfolio** (the anchor with no return view at all):
 
-$$\boxed{\;w_{\text{GMV}}=\frac{\Sigma^{-1}\mathbf1}{\mathbf1^\top\Sigma^{-1}\mathbf1}\;},\qquad \sigma_{\text{GMV}}=\frac{1}{\sqrt{\mathbf1^\top\Sigma^{-1}\mathbf1}}.$$
+$$
+\boxed{\;w_{\text{GMV}}=\frac{\Sigma^{-1}\mathbf1}{\mathbf1^\top\Sigma^{-1}\mathbf1}\;},\qquad \sigma_{\text{GMV}}=\frac{1}{\sqrt{\mathbf1^\top\Sigma^{-1}\mathbf1}}.
+$$
 
 **Tangency / maximum-Sharpe portfolio** (the anchor that maximises excess return per unit of risk):
 
-$$\boxed{\;w_{\tan}=\frac{\Sigma^{-1}(\mu-r_f\mathbf1)}{\mathbf1^\top\Sigma^{-1}(\mu-r_f\mathbf1)}\;},\qquad \mathrm{SR}=\sqrt{(\mu-r_f\mathbf1)^\top\Sigma^{-1}(\mu-r_f\mathbf1)}.$$
+$$
+\boxed{\;w_{\tan}=\frac{\Sigma^{-1}(\mu-r_f\mathbf1)}{\mathbf1^\top\Sigma^{-1}(\mu-r_f\mathbf1)}\;},\qquad \mathrm{SR}=\sqrt{(\mu-r_f\mathbf1)^\top\Sigma^{-1}(\mu-r_f\mathbf1)}.
+$$
 
 **Reality check on the inputs.** Chopra & Ziemba (1993): errors in **means** dominate errors in covariances by roughly $20\times$ (and errors in variances by $\sim11\times$) in the MV objective. Since $\mu$ is the least estimable input, the *unconstrained* tangency portfolio is the most fragile object in finance. That is why the disciplined version either shrinks $\mu$ (Bayesian priors, reverse optimisation — see [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]]), shrinks $\Sigma$ ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Ledoit–Wolf & RMT]]), constrains the weights (long-only, caps), or simply equal-weights.
 

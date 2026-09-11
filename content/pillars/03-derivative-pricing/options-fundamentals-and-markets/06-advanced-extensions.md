@@ -43,7 +43,9 @@ Any position is a signed sum of the four elementary payoffs. The standard combos
 
 The **box spread** pays the constant $K_2-K_1$ regardless of $S_T$, so it is a **riskless zero-coupon bond**; no-arbitrage forces its price to its present value:
 
-$$\text{value}=e^{-rT}(K_2-K_1).$$
+$$
+\text{value}=e^{-rT}(K_2-K_1).
+$$
 
 Equivalently, a box spread is exactly the cash-and-carry replication used to derive put–call parity — which is why the box relation holds **only for European options** (an American leg can be exercised early and break the identity; Hull Business Snapshot 12.1).
 
@@ -54,7 +56,9 @@ The **butterfly** is the discrete "spike": as $K_2\to K_1$ it approaches a $1$-u
 - **Covered call** = long stock $+$ short call: gives up the upside above $K$ in exchange for the premium.
 - **Protective put** = long put $+$ long stock: floors the downside at $K$ for the premium.
 - By **put–call parity**, the covered call and the protective put are related:
-  $$c+Ke^{-rT}=p+S_0\;\Longrightarrow\; (S_0-p)-(K e^{-rT}-c)=\text{const},$$
+$$
+c+Ke^{-rT}=p+S_0\;\Longrightarrow\; (S_0-p)-(K e^{-rT}-c)=\text{const},
+$$
   so a covered call's payoff is a *shifted* short put's payoff (Hull eq. 12.1). Hedging with options buys a *shape*, and parity says the shapes are two views of one identity.
 
 #### 2.4 How this connects to the rest of the pillar

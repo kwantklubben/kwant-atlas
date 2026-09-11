@@ -33,19 +33,25 @@ Why in this order? Nonlinear impact fixes the *cost function*; resilience fixes 
 
 **2.2 Resilient / transient impact — Obizhaeva–Wang (2013).** Model the book's *state*: the transient impact $a_t$ created by trading decays with a **resilience** rate $\rho$, and the execution price is depressed by the accumulated, still-unreplenished impact:
 
-$$\text{cost}_k = n_k\Big(\tfrac{s}{2}+a_k+\tfrac{n_k}{2q}\Big),\qquad a_{k+1}=(1-\rho)\Big(a_k+\tfrac{n_k}{q}\Big),\qquad q=\text{book depth}.$$
+$$
+\text{cost}_k = n_k\Big(\tfrac{s}{2}+a_k+\tfrac{n_k}{2q}\Big),\qquad a_{k+1}=(1-\rho)\Big(a_k+\tfrac{n_k}{q}\Big),\qquad q=\text{book depth}.
+$$
 
 The optimal schedule is **not** smooth: it is a **discrete block at $t=0$**, a continuous/small-trade middle, and a **discrete block at $T$** — "block-continuous-block". In the risk-neutral limit the two blocks are **exactly equal** ($n_1=n_N$), the Obizhaeva–Wang symmetry. This is the discrete time-value of finite resilience: trading before the book refreshes is expensive, so you wait at the ends and work only when the book has refilled.
 
 **2.3 Transient impact in continuous time — Gatheral (2010, 2013); Gatheral-Schied-Slynko (2012).** Generalize the temporary impact to a **decay kernel** $G(\cdot)$: the price impact of a trade at $u<t$ contributes $G(t-u)\,dX_u$, and the mid-price is
 
-$$S_t = S_0 + \sigma W_t + \int_0^t G(t-u)\,dX_u .$$
+$$
+S_t = S_0 + \sigma W_t + \int_0^t G(t-u)\,dX_u .
+$$
 
 The **no-dynamic-arbitrage** condition (Huberman–Stanzl 2004; Gatheral 2010) requires $G$ to be nonincreasing and convex — this rules out many "natural" models and is the consistency constraint every impact model must satisfy. The optimal execution problem becomes a Fredholm equation; for power-law kernels $G(t)\propto t^{-\gamma}$ the optimal strategy has a characteristic oscillating/decaying profile (Gatheral's Figure 22.2).
 
 **2.4 Dark pools and venue choice (Cartea–Jaimungal–Penalva 2015, Ch 8-9).** A dark venue executes at the midpoint (saving the half-spread) but fills only with probability $p$; unfilled shares must be worked later in the lit book with an adverse-selection penalty. The per-share expected cost of routing to dark is
 
-$$c_{\text{dark}}(p) = (1-p)\big(c_{\text{lit}}+\delta\big),$$
+$$
+c_{\text{dark}}(p) = (1-p)\big(c_{\text{lit}}+\delta\big),
+$$
 
 so dark beats lit iff $p>p^\star=\delta/(c_{\text{lit}}+\delta)$ — a threshold rule on the fill probability. In practice $p$ is estimated per venue per order size, and the strategy becomes a **venue-allocation control**.
 

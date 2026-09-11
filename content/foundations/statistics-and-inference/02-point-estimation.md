@@ -30,31 +30,47 @@ The practical objective is to know **which estimator to trust and why**. "Best" 
 
 #### 2.1 Maximum likelihood (C&B §7.2.2)
 Let \(X_1,\dots,X_n\) be i.i.d. with density/pmf \(f(x\mid\theta)\). The likelihood is \(L(\theta\mid x)=\prod_i f(x_i\mid\theta)\) and the MLE maximises \(\ell(\theta)=\log L(\theta\mid x)\). For a regular model the score is zero at the MLE:
-$$\ell'(\hat\theta\mid x)=\sum_{i=1}^n\frac{\partial}{\partial\theta}\log f(x_i\mid\hat\theta)=0,\qquad \hat\theta=\arg\max_\theta \ell(\theta).$$
+$$
+\ell'(\hat\theta\mid x)=\sum_{i=1}^n\frac{\partial}{\partial\theta}\log f(x_i\mid\hat\theta)=0,\qquad \hat\theta=\arg\max_\theta \ell(\theta).
+$$
 Properties: **invariance** — if \(\hat\theta\) is the MLE of \(\theta\), then \(g(\hat\theta)\) is the MLE of \(g(\theta)\); **consistency** (Thm 7.3.8); and **asymptotic normality/efficiency** (below).
 
 #### 2.2 Method of moments (C&B §7.2.1)
 Equate the first \(k\) population moments to the sample moments and solve for the \(k\) parameters:
-$$\mathbb E_\theta[X^j]=\frac1n\sum_{i=1}^n X_i^j,\quad j=1,\dots,k\;\Longrightarrow\;\hat\theta_{\text{MoM}}.$$
+$$
+\mathbb E_\theta[X^j]=\frac1n\sum_{i=1}^n X_i^j,\quad j=1,\dots,k\;\Longrightarrow\;\hat\theta_{\text{MoM}}.
+$$
 For a two-parameter family this gives two equations in two unknowns; the MoM estimate is often used as the MLE's starting value.
 
 #### 2.3 Bias, variance and mean squared error (C&B §7.3.1)
-$$\boxed{\;\mathbb E_\theta(W-\theta)^2=\mathrm{Var}_\theta\,W+(\mathrm{Bias}_\theta W)^2,\qquad \mathrm{Bias}_\theta W=\mathbb E_\theta W-\theta.\;}$$
+$$
+\boxed{\;\mathbb E_\theta(W-\theta)^2=\mathrm{Var}_\theta\,W+(\mathrm{Bias}_\theta W)^2,\qquad \mathrm{Bias}_\theta W=\mathbb E_\theta W-\theta.\;}
+$$
 If \(W\) is unbiased, MSE \(=\) variance. The classic illustration: for normal data,
-$$\hat\sigma^2_{\text{MLE}}=\frac1n\sum(X_i-\bar X)^2\quad\text{(biased, }\mathbb E=\tfrac{n-1}{n}\sigma^2)\quad\text{vs}\quad S^2=\frac1{n-1}\sum(X_i-\bar X)^2\quad\text{(unbiased)},$$
-$$\mathrm{MSE}(\hat\sigma^2_{\text{MLE}})=\frac{2n-1}{n^2}\sigma^4 \;<\; \frac{2}{n-1}\sigma^4=\mathrm{MSE}(S^2).$$
+$$
+\hat\sigma^2_{\text{MLE}}=\frac1n\sum(X_i-\bar X)^2\quad\text{(biased, }\mathbb E=\tfrac{n-1}{n}\sigma^2)\quad\text{vs}\quad S^2=\frac1{n-1}\sum(X_i-\bar X)^2\quad\text{(unbiased)},
+$$
+$$
+\mathrm{MSE}(\hat\sigma^2_{\text{MLE}})=\frac{2n-1}{n^2}\sigma^4 \;<\; \frac{2}{n-1}\sigma^4=\mathrm{MSE}(S^2).
+$$
 Trading a little bias for less variance *lowers* MSE — the first sighting of the bias–variance tradeoff that [[foundations/statistics-and-inference/05-bias-variance-and-validation|05]] makes central.
 
 #### 2.4 Cramér–Rao lower bound (C&B Thm 7.3.1)
 For any estimator \(W\) with \(\mathbb E_\theta W=\tau(\theta)\),
-$$\mathrm{Var}_\theta W\ge\frac{[\tau'(\theta)]^2}{n\,\mathbb E_\theta\!\left[\left(\frac{\partial}{\partial\theta}\log f(X\mid\theta)\right)^2\right]}=\frac{[\tau'(\theta)]^2}{I_n(\theta)},$$
+$$
+\mathrm{Var}_\theta W\ge\frac{[\tau'(\theta)]^2}{n\,\mathbb E_\theta\!\left[\left(\frac{\partial}{\partial\theta}\log f(X\mid\theta)\right)^2\right]}=\frac{[\tau'(\theta)]^2}{I_n(\theta)},
+$$
 where \(I_n(\theta)=n\,\mathbb E[(\partial_\theta\log f)^2]=n\,\mathrm{Var}(\partial_\theta\log f)\) is the **Fisher information**. Bigger information \(\Rightarrow\) tighter bound \(\Rightarrow\) less uncertainty. An unbiased estimator attaining the bound is **best unbiased (UMVUE)**. Caveat: the bound requires differentiating under the integral, which fails when the support depends on \(\theta\) (the uniform scale example, C&B Ex 7.3.5, beats the bound).
 
 #### 2.5 Asymptotic normality, efficiency and the delta method (C&B §7.4)
 Under regularity conditions, the MLE is **asymptotically efficient**:
-$$\hat\theta\ \approx\ N\!\left(\theta,\ \frac{1}{I_n(\theta)}\right),\qquad \mathrm{Var}\big(h(\hat\theta)\big)\approx\frac{[h'(\theta)]^2}{I_n(\theta)}\approx\frac{[h'(\theta)]^2}{-\ell''(\hat\theta\mid x)}\ \text{(observed information, eq 7.4.1)}.$$
+$$
+\hat\theta\ \approx\ N\!\left(\theta,\ \frac{1}{I_n(\theta)}\right),\qquad \mathrm{Var}\big(h(\hat\theta)\big)\approx\frac{[h'(\theta)]^2}{I_n(\theta)}\approx\frac{[h'(\theta)]^2}{-\ell''(\hat\theta\mid x)}\ \text{(observed information, eq 7.4.1)}.
+$$
 For a smooth function of the sample mean, the **delta method** expands to first order (eq 7.4.5):
-$$\mathrm{Var}\,g(\bar X)\approx[g'(\mu)]^2\,\mathrm{Var}\,\bar X,\qquad \text{multivariate: }\ \sum_i g_i'^2\mathrm{Var}X_i+2\sum_{i<j}g_i'g_j'\mathrm{Cov}(X_i,X_j).$$
+$$
+\mathrm{Var}\,g(\bar X)\approx[g'(\mu)]^2\,\mathrm{Var}\,\bar X,\qquad \text{multivariate: }\ \sum_i g_i'^2\mathrm{Var}X_i+2\sum_{i<j}g_i'g_j'\mathrm{Cov}(X_i,X_j).
+$$
 
 ---
 

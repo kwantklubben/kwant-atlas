@@ -28,11 +28,15 @@ This folder is the **hub**. It (a) gives you the **fast source lookup table** be
 
 **The provenance identity.** A fundamental data point is a four-tuple, not a scalar:
 
-$$\text{value} = \big(\underbrace{\text{concept}}_{\text{e.g. us-gaap:Revenues}},\ \underbrace{\text{period}}_{[\text{start},\text{end}]},\ \underbrace{\text{entity}}_{\text{CIK / ticker}},\ \underbrace{\text{as-of date}}_{\text{when this value became knowable}}\big).$$
+$$
+\text{value} = \big(\underbrace{\text{concept}}_{\text{e.g. us-gaap:Revenues}},\ \underbrace{\text{period}}_{[\text{start},\text{end}]},\ \underbrace{\text{entity}}_{\text{CIK / ticker}},\ \underbrace{\text{as-of date}}_{\text{when this value became knowable}}\big).
+$$
 
 Drop the fourth component and you have a look-ahead leak. The usable-at time is the report's *filing* date, not its *period* end:
 
-$$t_{\text{usable}} = t_{\text{filed}} = t_{\text{period-end}} + \text{lag}, \qquad \text{lag} \in \{0,\ 1,\ 30,\ 45,\ 365\}\ \text{days (by source)}.$$
+$$
+t_{\text{usable}} = t_{\text{filed}} = t_{\text{period-end}} + \text{lag}, \qquad \text{lag} \in \{0,\ 1,\ 30,\ 45,\ 365\}\ \text{days (by source)}.
+$$
 
 **The source lookup table** (the hub deliverable). "PIT" = point-in-time / as-originally-reported capable.
 

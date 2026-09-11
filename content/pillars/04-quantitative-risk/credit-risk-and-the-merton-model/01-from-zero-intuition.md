@@ -20,7 +20,9 @@ This page builds the *why* of credit-risk modelling with **no prior credit knowl
 
 Start with the dumbest question: *why does a bond ever default?* A firm's assets are worth something stochastic, $V$. It owes its creditors a fixed amount $D$ at maturity. If $V_T>D$, the owners pay the debt and keep $V_T-D$. If $V_T\le D$, the owners are *not obligated* to contribute the shortfall — limited liability lets them walk away and hand the firm to the bondholders. So the shareholders' payoff is
 
-$$E_T=\max(V_T-D,\,0),$$
+$$
+E_T=\max(V_T-D,\,0),
+$$
 
 which is exactly the payoff of a European **call option** with underlying $V$, strike $D$, maturing at $T$. The debt's payoff is its complement, $\min(V_T,D)$ — the residual claim.
 
@@ -38,15 +40,23 @@ Three "aha"s:
 
 **The payoff split.** At maturity the total firm value divides without loss,
 
-$$V_T \;=\; E_T + F_T,\qquad E_T=\max(V_T-D,0),\qquad F_T=\min(V_T,D).$$
+$$
+V_T \;=\; E_T + F_T,\qquad E_T=\max(V_T-D,0),\qquad F_T=\min(V_T,D).
+$$
 
 **Equity is a call; debt is riskless-minus-put.** Using put–call parity for a call with underlying $V$ and strike $D$,
-$$E \;=\; V\,N(d_1)-D e^{-rT}N(d_2),$$
+$$
+E \;=\; V\,N(d_1)-D e^{-rT}N(d_2),
+$$
 so the debt value is
-$$F \;=\; V-E \;=\; \underbrace{D\,e^{-rT}}_{\text{risk-free bond}} \;-\; \underbrace{\Big[D\,e^{-rT}N(-d_2)-V\,N(-d_1)\Big]}_{\text{put written to shareholders}}.$$
+$$
+F \;=\; V-E \;=\; \underbrace{D\,e^{-rT}}_{\text{risk-free bond}} \;-\; \underbrace{\Big[D\,e^{-rT}N(-d_2)-V\,N(-d_1)\Big]}_{\text{put written to shareholders}}.
+$$
 
 **The risk-neutral default probability.** In the risk-neutral world $V_T$ is lognormal with drift $r$ and volatility $\sigma_V$, so
-$$\mathbb{Q}(V_T<D)=\mathbb{Q}\!\left(\ln\frac{V_T}{V}<\ln\frac{D}{V}\right)=N(-d_2),\qquad d_2=\frac{\ln(V/D)+(r-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.$$
+$$
+\mathbb{Q}(V_T<D)=\mathbb{Q}\!\left(\ln\frac{V_T}{V}<\ln\frac{D}{V}\right)=N(-d_2),\qquad d_2=\frac{\ln(V/D)+(r-\tfrac12\sigma_V^2)T}{\sigma_V\sqrt T}.
+$$
 This is the exact statement: **the risk-neutral probability of default is the Black–Scholes risk-neutral exercise probability.** (Section 03 separates this from the *real-world* PD, which uses the physical drift $\mu$.)
 
 **Where the model lives.** Merton (1974) derives this directly from his eq. (10) — the PDE satisfied by $f(V,t)$, the equity value — and notes (his words) that it is "identical to the equations for a European call option on a non-dividend-paying common stock where firm value corresponds to stock price and $B$ corresponds to the exercise price."

@@ -33,9 +33,13 @@ For i.i.d. \(X_i\) with \(\mathbb E|X_1|<\infty\), the **strong LLN** gives \(\b
 
 #### 2.2 Central Limit Theorem (Lindeberg–Lévy)
 If \(X_i\) are i.i.d. with mean \(\mu\) and finite variance \(\sigma^2\), then as \(n\to\infty\)
-$$\frac{\bar X_n-\mu}{\sigma/\sqrt n}\;\Longrightarrow\;N(0,1)\quad\Longleftrightarrow\quad \bar X_n\ \approx\ N\!\left(\mu,\ \frac{\sigma^2}{n}\right).$$
+$$
+\frac{\bar X_n-\mu}{\sigma/\sqrt n}\;\Longrightarrow\;N(0,1)\quad\Longleftrightarrow\quad \bar X_n\ \approx\ N\!\left(\mu,\ \frac{\sigma^2}{n}\right).
+$$
 Equivalently \(\sqrt n(\hat\alpha_n-\alpha)\Rightarrow N(0,\sigma_f^2)\), where \(\sigma_f^2=\mathrm{Var}\,f(U)\); the **standard error** is
-$$\mathrm{SE}=\frac{\sigma_f}{\sqrt n},\qquad \widehat{\mathrm{SE}}=\frac{s_f}{\sqrt n},\qquad s_f^2=\frac{1}{n-1}\sum_{i=1}^n(f(U_i)-\hat\alpha_n)^2 .$$
+$$
+\mathrm{SE}=\frac{\sigma_f}{\sqrt n},\qquad \widehat{\mathrm{SE}}=\frac{s_f}{\sqrt n},\qquad s_f^2=\frac{1}{n-1}\sum_{i=1}^n(f(U_i)-\hat\alpha_n)^2 .
+$$
 
 #### 2.3 The rate \(O(n^{-1/2})\) and why it beats quadrature in high dimension (Glasserman §1.1)
 The Monte Carlo error is \(O(\sigma_f/\sqrt n)\) **independent of the dimension \(d\)** of the integral. A product trapezoidal rule is \(O(n^{-2/d})\), which degrades catastrophically as \(d\) grows. The crossover is the whole reason Monte Carlo dominates derivative pricing for path-dependent and high-dimensional payoffs. Practically: **×4 points halves the error; 100× points buys one decimal**.
@@ -45,7 +49,9 @@ The CLT error is bounded: \(\sup_x|P((\bar X_n-\mu)/(\sigma/\sqrt n)\le x)-\Phi(
 
 #### 2.5 Exact finite-sample sampling distributions (C&B Ch 5)
 For normal i.i.d. data \(X_i\sim N(\mu,\sigma^2)\):
-$$\bar X\sim N\!\left(\mu,\tfrac{\sigma^2}{n}\right),\qquad \frac{(n-1)S^2}{\sigma^2}\sim\chi^2_{n-1},\qquad T=\frac{\bar X-\mu}{S/\sqrt n}\sim t_{n-1},$$
+$$
+\bar X\sim N\!\left(\mu,\tfrac{\sigma^2}{n}\right),\qquad \frac{(n-1)S^2}{\sigma^2}\sim\chi^2_{n-1},\qquad T=\frac{\bar X-\mu}{S/\sqrt n}\sim t_{n-1},
+$$
 with \(\bar X\) and \(S^2\) independent. The \(t\)-ratio is a **pivot**: its distribution does not depend on \(\mu\) or \(\sigma\), which is precisely what makes the \(t\)-interval exact. For two samples, the ratio of scaled sample variances gives an \(F\)-distribution, the basis of ANOVA and variance-ratio tests.
 
 ---

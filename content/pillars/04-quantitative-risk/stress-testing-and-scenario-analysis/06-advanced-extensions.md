@@ -34,21 +34,29 @@ Three ideas, in one line each:
 
 **Macro→credit-loss linkage.** Let a loan book have exposure-at-default $\text{EAD}$, loss-given-default $\text{LGD}$, and a base probability of default $\text{PD}_0$. Map the macro scenario to a stressed PD via an exponential/exponential-logit factor model:
 
-$$\text{PD}_{stress}=\text{PD}_0\,\exp\big(a\,\Delta u + b\,|\Delta g|\big),$$
+$$
+\text{PD}_{stress}=\text{PD}_0\,\exp\big(a\,\Delta u + b\,|\Delta g|\big),
+$$
 
 where $\Delta u$ is the unemployment-rate *increase* (percentage points) and $\Delta g$ the GDP *decline* (%). Expected credit loss is then
 
-$$\text{EL}=\text{PD}_{stress}\times\text{LGD}\times\text{EAD}.$$
+$$
+\text{EL}=\text{PD}_{stress}\times\text{LGD}\times\text{EAD}.
+$$
 
 Adding any market/trading loss $\text{L}_{mkt}$ gives total loss $\text{L}_{tot}=\text{EL}+\text{L}_{mkt}$, and post-stress capital and capital ratio follow:
 
-$$\text{CET1}_{post}=\text{CET1}_0-\text{L}_{tot}, \qquad \text{CET1 ratio}_{post}=\frac{\text{CET1}_{post}}{\text{RWA}}.$$
+$$
+\text{CET1}_{post}=\text{CET1}_0-\text{L}_{tot}, \qquad \text{CET1 ratio}_{post}=\frac{\text{CET1}_{post}}{\text{RWA}}.
+$$
 
 The bank "fails" if the post-stress ratio drops below the regulatory minimum (e.g. 4.5% CET1) — the entire point of the supervisory exercise. (This is the structure behind CCAR/DFAST: the Fed publishes the macro scenario, banks project the losses, and the Fed compares projected capital ratios against thresholds. Schuermann 2014.)
 
 **FRTB stressed Expected Shortfall.** Under the Internal Models Approach, the market-risk capital measure is a stressed ES, computed from a reduced set of risk factors $R$ over the most severe 12-month period of stress (back to 2007), then scaled by the ratio of full-factor to reduced-factor current ES (floored at 1) (FRTB §33.6):
 
-$$\mathrm{ES}=\mathrm{ES}_{R,S}\times\frac{\mathrm{ES}_{F,C}}{\mathrm{ES}_{R,C}}, \qquad \frac{\mathrm{ES}_{F,C}}{\mathrm{ES}_{R,C}}\ge 1,$$
+$$
+\mathrm{ES}=\mathrm{ES}_{R,S}\times\frac{\mathrm{ES}_{F,C}}{\mathrm{ES}_{R,C}}, \qquad \frac{\mathrm{ES}_{F,C}}{\mathrm{ES}_{R,C}}\ge 1,
+$$
 
 with ES at a 97.5% one-tailed confidence, daily, and liquidity-horizon-scaled (10–120 days, §33.4). The reduced factor set must explain **≥75%** of the full-model ES variation (§33.5). The math is the *same* stressed-ES machinery as [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & ES]] — the difference is *which window* the ES is calibrated to: the stress period, not the current one.
 
@@ -56,7 +64,7 @@ with ES at a 97.5% one-tailed confidence, daily, and liquidity-horizon-scaled (1
 
 ### 3. Computational Implementation — macro stress: does capital breach?
 
-Stdlib only. A $10B loan book (RWA $8B, CET1 $1.0B, base PD 1.2%, LGD 45%) plus a $200M trading equity book, run under the baseline and the CCAR-style severely-adverse scenario (unemployment +5.9pp, real GDP −7.8%, equity −50%).
+Stdlib only. A $10B loan book (RWA $8B, CET1 $1.0B, base PD 1.2\%, LGD 45\%) plus a $200M trading equity book, run under the baseline and the CCAR-style severely-adverse scenario (unemployment +5.9pp, real GDP −7.8%, equity −50%).
 
 ```python
 import math

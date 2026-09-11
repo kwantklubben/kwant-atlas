@@ -41,7 +41,9 @@ The hard part is not fetching. The hard part is that **XBRL is not a schema, it 
 
 **Tag resolution as a deterministic function.** Because the filer picks the tag, extraction is a *priority search*, not a lookup:
 
-$$\text{field}(f, y) = \text{val}\Big(\arg\max_{\text{tag} \in \text{priority}(f)} \ \mathbb{1}\big[\text{tag has a fact for period } y\big]\Big),$$
+$$
+\text{field}(f, y) = \text{val}\Big(\arg\max_{\text{tag} \in \text{priority}(f)} \ \mathbb{1}\big[\text{tag has a fact for period } y\big]\Big),
+$$
 
 with the priority list fixed *before* you ever touch the data. Making the list ad hoc — "whatever tag I found that year" — is how tag drift silently changes the meaning of a time series. The canonical revenue priority used below is:
 

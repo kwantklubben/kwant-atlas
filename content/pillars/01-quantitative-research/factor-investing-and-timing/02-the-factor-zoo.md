@@ -33,22 +33,30 @@ This page is about that problem, and it has two halves that must be held togethe
 ### 2. Mathematical Ground Truth & Derivations
 
 **The expected false-discovery count.** Consider $M$ independent tests of a true-null characteristic (zero premium). Under the null, the $t$-statistic is standard normal, so the expected number of $|t|>2$ "discoveries" is
-$$\mathbb{E}[\#\text{false discoveries}]=M\times\Pr(|Z|>2)=M\times0.0455.$$
+$$
+\mathbb{E}[\#\text{false discoveries}]=M\times\Pr(|Z|>2)=M\times0.0455.
+$$
 For $M=300$ that is **13.7 spurious factors** — all with no economic content whatsoever.
 
 **The family-wise and false-discovery corrections.**
 - **Bonferroni (FWER $\le\alpha$):** reject only if $|t|>z_{1-\alpha/(2M)}$. For $M=300$, $\alpha=0.05$, this is $|t|>3.76$.
 - **Harvey–Liu–Zhu (2016) rule of thumb:** the factor literature should require $|t|>3$ — a coarser, less conservative hurdle that still eliminates the vast majority of chance discoveries.
 - **Benjamini–Hochberg FDR:** sort the $p$-values $p_{(1)}\le\dots\le p_{(M)}$ and reject the largest $k$ with
-$$p_{(k)}\le\frac{k}{M}q.$$
+$$
+p_{(k)}\le\frac{k}{M}q.
+$$
 Unlike Bonferroni, FDR accepts that a controlled *fraction* of discoveries may be false — the right criterion when you must pick a factor set rather than certify a single signal.
 
 **The "how many are independent?" question.** If the true returns follow a $K$-factor structure,
-$$r_t=\alpha+Bf_t+\varepsilon_t,\qquad \Sigma=B\Omega B^\top+D,$$
+$$
+r_t=\alpha+Bf_t+\varepsilon_t,\qquad \Sigma=B\Omega B^\top+D,
+$$
 then $M\gg K$ candidate characteristics are just noisy functions of the same $K$ factors. The empirical test is whether adding factor $j$ raises the cross-sectional fit *after* controlling for the existing factors — the incremental-$R^2$ / GRS test. Five variants of value do not add five dimensions of expected return; they add one dimension and four units of collinearity (quantified in [[pillars/01-quantitative-research/fundamental-multi-factor-models/05-failure-modes-and-practice|the sibling folder's failure page]]).
 
 **Data-snooping in the presence of a search.** Bailey, Borwein, López de Prado & Zhu (2014) put a number on the search itself. If you try $m$ configurations and keep the best in-sample Sharpe $SR^*$, the *expected maximum* under the null is approximately
-$$\mathbb{E}\big[\max SR\big]\approx\sqrt{2\ln m}\cdot \sigma_{SR},$$
+$$
+\mathbb{E}\big[\max SR\big]\approx\sqrt{2\ln m}\cdot \sigma_{SR},
+$$
 so the best of $m=1000$ null backtests looks like a Sharpe of order $2\text{–}3$ by construction. The **Deflated Sharpe Ratio** discounts exactly this. (See [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]].)
 
 ---

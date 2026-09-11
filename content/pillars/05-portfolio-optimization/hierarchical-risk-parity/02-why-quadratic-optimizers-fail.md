@@ -18,7 +18,9 @@ HRP exists because the standard allocator fails in a *specific, diagnosable* way
 
 The mean–variance / minimum-variance program is a quadratic optimization whose solution is a linear function of an **inverse covariance matrix**:
 
-$$w_{\text{MV}}\propto\Sigma^{-1}\mu,\qquad w_{\text{GMV}}=\frac{\Sigma^{-1}\mathbf 1}{\mathbf 1^\top\Sigma^{-1}\mathbf 1}.$$
+$$
+w_{\text{MV}}\propto\Sigma^{-1}\mu,\qquad w_{\text{GMV}}=\frac{\Sigma^{-1}\mathbf 1}{\mathbf 1^\top\Sigma^{-1}\mathbf 1}.
+$$
 
 Both need $\Sigma^{-1}$. The problem is not that $\Sigma$ is hard to invert numerically — it is that the $\hat\Sigma$ you have is an **estimate**, and the inverse converts estimation *error* into position *size*. The optimizer will, by construction, take its largest long and short positions along the directions where the sample covariance is most wrong. Michaud (1989) named this **"error maximization"**: the very act of optimizing magnifies the noise in the inputs.
 
@@ -37,15 +39,21 @@ HRP's design is a direct answer to (1): if the inverse is the amplifier, **do no
 
 Write the sample covariance in its eigenbasis $\hat\Sigma=\sum_i\lambda_i q_iq_i^\top$. The global minimum-variance weights are
 
-$$w_{\text{GMV}}\propto\sum_i \lambda_i^{-1}\,(q_i^\top\mathbf 1)\,q_i .$$
+$$
+w_{\text{GMV}}\propto\sum_i \lambda_i^{-1}\,(q_i^\top\mathbf 1)\,q_i .
+$$
 
 Perturb one eigenvalue by $\Delta\lambda_i$ while holding its eigenvector fixed. The weight perturbation is
 
-$$\Delta w\;\sim\;-\,\frac{\Delta\lambda_i}{\lambda_i^2}\,(q_i^\top\mathbf 1)\,q_i ,$$
+$$
+\Delta w\;\sim\;-\,\frac{\Delta\lambda_i}{\lambda_i^2}\,(q_i^\top\mathbf 1)\,q_i ,
+$$
 
 so the sensitivity of the weights to a *fixed* estimation error grows like $\lambda_i^{-2}$. Sample eigenvalues of the **smallest** directions are both biased *downward* (Marchenko–Pastur) and statistically noisiest. Therefore
 
-$$\frac{\Delta\lambda_i}{\lambda_i^2}\ \text{is largest exactly where }\lambda_i\ \text{is smallest}\;\Longrightarrow\;\text{the optimizer loads the noise subspace.}$$
+$$
+\frac{\Delta\lambda_i}{\lambda_i^2}\ \text{is largest exactly where }\lambda_i\ \text{is smallest}\;\Longrightarrow\;\text{the optimizer loads the noise subspace.}
+$$
 
 This is the analytic form of "estimation-error maximizer." (Chopra–Ziemba 1993 quantify the priority: errors in **means** hurt $\sim11\times$ more than variances and $\sim21\times$ more than covariances (variances hurt $\sim2\times$ more than covariances) — which is why a *returns-free* allocator like HRP is attractive, but also why covariances still matter.)
 
@@ -53,7 +61,9 @@ This is the analytic form of "estimation-error maximizer." (Chopra–Ziemba 1993
 
 If $\hat\Sigma$ is estimated on a window and the portfolio is scored on the *same* window, the reported risk is optimistically biased:
 
-$$\hat w^\top\hat\Sigma\hat w\;\le\;\hat w^\top\Sigma\hat w\quad\text{generically, and often}\quad \hat w^\top\Sigma\hat w\;\gg\;w^{\star\top}\Sigma w^\star .$$
+$$
+\hat w^\top\hat\Sigma\hat w\;\le\;\hat w^\top\Sigma\hat w\quad\text{generically, and often}\quad \hat w^\top\Sigma\hat w\;\gg\;w^{\star\top}\Sigma w^\star .
+$$
 
 The gap is not a bug in your code; it is the estimation error made visible. Section 3 measures it.
 

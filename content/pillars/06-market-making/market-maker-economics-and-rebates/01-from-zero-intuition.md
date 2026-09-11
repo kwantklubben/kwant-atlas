@@ -31,7 +31,9 @@ Almost every intuition failure in this topic comes from looking only at the firs
 Work per **share**. Let the maker post a two-sided quote around the mid-price $m$: bid $m-h$, ask $m+h$, so the quoted spread is $S=2h$ and $h$ is the **half-spread** the maker captures on each fill (assuming the mid does not move between the two legs).
 
 **Term 1 — Gross spread capture.** Each fill earns the maker $h$ per share.
-$$\text{spread revenue} = h.$$
+$$
+\text{spread revenue} = h.
+$$
 
 **Term 2 — Adverse selection $\lambda$.** Some of the counterparties know something. When an informed buyer lifts your ask, the mid is about to rise; you sold $h$ above the pre-trade mid but the mid *itself* jumps. If the mid moves against your new position by $\lambda$ on average, you lose $\lambda$ per share. (This is the whole content of [[pillars/06-market-making/adverse-selection-and-glosten-milgrom/index|Glosten–Milgrom]]: the winner's curse.)
 
@@ -40,10 +42,14 @@ $$\text{spread revenue} = h.$$
 **Term 4 — Fees and rebates.** If you post a resting order and it is hit, you are a **maker** and the exchange pays you a rebate $r\ge0$ (equivalently a make fee $f_m=-r<0$). If you cross the spread, you are a **taker** and pay $f_t\ge0$.
 
 **The master equation** (per share, maker side):
-$$\boxed{\;\pi \;=\; \underbrace{h}_{\text{spread}} \;+\; \underbrace{r}_{\text{rebate}} \;-\; \underbrace{\lambda}_{\text{adverse selection}} \;-\; \underbrace{c_{\text{inv}}}_{\text{inventory}} \;-\; \underbrace{f_{\text{take}}\cdot\mathbb{1}[\text{taker}]}_{\text{access fee}}\;}$$
+$$
+\boxed{\;\pi \;=\; \underbrace{h}_{\text{spread}} \;+\; \underbrace{r}_{\text{rebate}} \;-\; \underbrace{\lambda}_{\text{adverse selection}} \;-\; \underbrace{c_{\text{inv}}}_{\text{inventory}} \;-\; \underbrace{f_{\text{take}}\cdot\mathbb{1}[\text{taker}]}_{\text{access fee}}\;}
+$$
 
 **Break-even half-spread.** Set $\pi=0$ and solve for the quote that just covers costs:
-$$h^{\star} = \lambda + c_{\text{inv}} - r.$$
+$$
+h^{\star} = \lambda + c_{\text{inv}} - r.
+$$
 
 Two immediate readings, both central to this folder:
 

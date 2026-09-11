@@ -31,11 +31,15 @@ The practical objective of this folder is to make step 3 *impossible*: **purging
 
 **Why labels become near-duplicates.** Let $r_t$ be the per-bar return and define the overlapping label at bar index $t$ by its *evaluation window* $[t+1,\,t+h]$:
 
-$$y_t = \operatorname{sgn}\Big(\sum_{s=t+1}^{t+h} r_s\Big), \qquad y_{t+1} = \operatorname{sgn}\Big(\sum_{s=t+2}^{t+h+1} r_s\Big).$$
+$$
+y_t = \operatorname{sgn}\Big(\sum_{s=t+1}^{t+h} r_s\Big), \qquad y_{t+1} = \operatorname{sgn}\Big(\sum_{s=t+2}^{t+h+1} r_s\Big).
+$$
 
 The two sums share $h-1$ of $h$ terms, so if $r_s$ are iid with $E[r_s]=0$, the correlation between the two *sums* is
 
-$$\rho = \frac{h-1}{h} \;\longrightarrow\; 1 \;\text{ as } h\to\infty.$$
+$$
+\rho = \frac{h-1}{h} \;\longrightarrow\; 1 \;\text{ as } h\to\infty.
+$$
 
 For jointly normal sums, the probability the two *signs* agree is (Sheppard's formula) $\operatorname{P}(y_t{=}y_{t+1}) = \tfrac12 + \tfrac{1}{\pi}\arcsin\rho$, which for $\rho=\tfrac{h-1}{h}$ grows monotonically toward $1$. **Long-horizon labels are the most redundant** — and therefore the most leakage-prone.
 
@@ -43,7 +47,9 @@ For jointly normal sums, the probability the two *signs* agree is (Sheppard's fo
 
 **The formal overlap (preview of page 03).** Two interval labels $Y_i=f\big[t_{i,0},\,t_{i,1}\big]$ and $Y_j=f\big[t_{j,0},\,t_{j,1}\big]$ overlap — hence leak — if any of three sufficient conditions holds:
 
-$$t_{j,0}\le t_{i,0}\le t_{j,1}\qquad\text{or}\qquad t_{j,0}\le t_{i,1}\le t_{j,1}\qquad\text{or}\qquad t_{i,0}\le t_{j,0}\le t_{j,1}\le t_{i,1}.$$
+$$
+t_{j,0}\le t_{i,0}\le t_{j,1}\qquad\text{or}\qquad t_{j,0}\le t_{i,1}\le t_{j,1}\qquad\text{or}\qquad t_{i,0}\le t_{j,0}\le t_{j,1}\le t_{i,1}.
+$$
 
 Purging removes from the training set every $i$ satisfying one of these against the test interval $j$ (AFML §7.4.1, Snippet 7.1).
 

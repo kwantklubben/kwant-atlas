@@ -44,7 +44,9 @@ All three compute *the same number* (the P&L quantile); they disagree because th
 **Backtesting statistics (the "check" that turns a number into a model):**
 
 - **Kupiec (1995) Proportion-of-Failures (POF):** count breaches $x$ of the VaR over $T$ days; under $H_0:p=1-\alpha$,
-$$\text{LR}_{\text{POF}}=-2\ln\!\Big[\tfrac{(1-p)^{T-x}p^{x}}{(1-\hat p)^{T-x}\hat p^{x}}\Big]\sim\chi^2_1,\qquad \hat p=\tfrac{x}{T}.$$
+$$
+\text{LR}_{\text{POF}}=-2\ln\!\Big[\tfrac{(1-p)^{T-x}p^{x}}{(1-\hat p)^{T-x}\hat p^{x}}\Big]\sim\chi^2_1,\qquad \hat p=\tfrac{x}{T}.
+$$
 Reject at 5% if $\text{LR}_{\text{POF}}>3.841$. Verified: 11 breaches / 1000 days of a well-calibrated 99% VaR → `LR=0.098` (accept); an under-stated-vol model with 115 breaches / 1000 → `LR=363.29` (reject).
 - **Christoffersen (1998) independence:** a test that breaches are not *clustered* (which Kupiec misses) via the likelihood ratio over the $0/1$ violation sequence. Verified: same well-calibrated series → `LR=0.245` (accept).
 

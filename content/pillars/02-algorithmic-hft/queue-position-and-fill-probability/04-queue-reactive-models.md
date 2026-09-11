@@ -45,8 +45,10 @@ The CTST constant-rate model is the tractable special case; the state-dependent 
 
 Let the ask queue have $a$ orders ahead and the bid queue have $b$. Let $\sigma_A,\sigma_B$ be their first-passage times to $0$. Then
 
-$$\mathbb{P}(\text{mid moves up})=\mathbb{P}(\sigma_A<\sigma_B),\qquad
-\mathbb{P}(\text{mid moves down})=\mathbb{P}(\sigma_B<\sigma_A).$$
+$$
+\mathbb{P}(\text{mid moves up})=\mathbb{P}(\sigma_A<\sigma_B),\qquad
+\mathbb{P}(\text{mid moves down})=\mathbb{P}(\sigma_B<\sigma_A).
+$$
 
 For the **symmetric** book ($a=b$) this is exactly $1/2$ by exchangeability. For $a>b$ the ask queue is deeper, so the bid empties first and $\mathbb{P}(\text{up})<1/2$. The probability can be obtained either (i) by a **Laplace-transform** inversion of the first-passage density (CTST §4, using continued fractions for $\hat f_{i,i-1}$), or (ii) by **solving the backward equations** on the product chain $(a,b)$ — the method used below, which is exact up to a truncation.
 

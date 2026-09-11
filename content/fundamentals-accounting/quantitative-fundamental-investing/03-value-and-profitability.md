@@ -30,20 +30,26 @@ The practical output is the **combined screen**: rank on value *and* profitabili
 
 **Value characteristics.** With *BE* book equity, *ME* market equity, *NI* net income:
 
-$$\text{B/M} = \frac{\text{BE}}{\text{ME}}, \qquad
-\text{E/P} = \frac{\text{NI}}{\text{ME}} = \frac{1}{\text{P/E}}.$$
+$$
+\text{B/M} = \frac{\text{BE}}{\text{ME}}, \qquad
+\text{E/P} = \frac{\text{NI}}{\text{ME}} = \frac{1}{\text{P/E}}.
+$$
 
 Both ask "is the price cheap relative to a fundamental?" High B/M anchors value on book capital; high E/P anchors it on earnings. Both are *priced*: Fama–French 1992 showed the cross-section is captured by size + B/M, and E/P carries value information of its own.
 
 **Profitability — Novy-Marx's gross profitability.** Let $GP = S - \text{COGS}$ be gross profit and *TA* total assets:
 
-$$\frac{GP}{A} = \frac{S - \text{COGS}}{\text{TA}}.$$
+$$
+\frac{GP}{A} = \frac{S - \text{COGS}}{\text{TA}}.
+$$
 
 Deliberately stripped down to the layer *before* SG&A, R&D, interest and taxes, gross profitability is the purest accounting signal of the business's pricing power — how much of every sales dollar survives the direct cost of goods. Novy-Marx (2013) shows high-$GP/A$ firms earn higher returns *despite* having higher valuation ratios (more expensive) — the empirical wedge that value alone misses.
 
 **The trap and the resolution.** Because high-$GP/A$ firms tend to be *low*-B/M (expensive growth), a single sort on B/M and a single sort on $GP/A$ are two near-independent (in fact mildly negatively correlated) orderings. The two-factorial claim is:
 
-$$\text{good}\;\&\;\text{cheap} = \text{rank}(B/M)\;\cap\;\text{rank}(GP/A),$$
+$$
+\text{good}\;\&\;\text{cheap} = \text{rank}(B/M)\;\cap\;\text{rank}(GP/A),
+$$
 
 and the composite that Fama–French 2015 embeds in the model — **HML (value) + RMW (profitability)** — is precisely this pair, with each roughly neutralized against size.
 

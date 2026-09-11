@@ -28,16 +28,24 @@ The plain Roll model is univariate: prices only. This page is the **launchpad** 
 
 Let the efficient price be driven by both public information $u_t$ and the information content of the trade itself, $\lambda q_t$:
 
-$$p_t = m_t + c\,q_t, \qquad m_t = m_{t-1} + \lambda q_t + u_t.$$
+$$
+p_t = m_t + c\,q_t, \qquad m_t = m_{t-1} + \lambda q_t + u_t.
+$$
 
 Here $c$ = non-informational (order-processing/inventory) cost, $\lambda$ = adverse-selection / price-impact cost. The bid/ask straddles $m_{t-1}+u_t$, and the **spread is $2(c+\lambda)$**. Differencing:
 
-$$\Delta p_t = c\,(q_t-q_{t-1}) + \lambda q_t + u_t,$$
-$$\gamma_0 = c^2 + (c+\lambda)^2 + \sigma_u^2, \qquad \gamma_1 = -c\,(c+\lambda).$$
+$$
+\Delta p_t = c\,(q_t-q_{t-1}) + \lambda q_t + u_t,
+$$
+$$
+\gamma_0 = c^2 + (c+\lambda)^2 + \sigma_u^2, \qquad \gamma_1 = -c\,(c+\lambda).
+$$
 
 **The central identification result:** only two autocovariances are observable, but there are three structural parameters $\{c,\lambda,\sigma_u^2\}$ — so the components are **under-identified from prices alone**. However, the random-walk innovation variance
 
-$$\boxed{\;\sigma_w^2 \equiv \lambda^2+\sigma_u^2 = \gamma_0+2\gamma_1\;}$$
+$$
+\boxed{\;\sigma_w^2 \equiv \lambda^2+\sigma_u^2 = \gamma_0+2\gamma_1\;}
+$$
 
 **is identified**, because it is the permanent component and does not depend on the bounce. This is the economic reason the permanent/transitory split is recoverable while the spread components are not.
 
@@ -45,8 +53,12 @@ $$\boxed{\;\sigma_w^2 \equiv \lambda^2+\sigma_u^2 = \gamma_0+2\gamma_1\;}$$
 
 Any covariance-stationary $\Delta p_t$ is an MA(1) (Wold): $\Delta p_t=\varepsilon_t+\theta\varepsilon_{t-1}$. The Beveridge–Nelson decomposition writes $p_t=m_t+s_t$ where $m_t$ is the random-walk (permanent) component and $s_t$ is the stationary pricing error:
 
-$$\sigma_w^2 = (1+\theta)^2\,\sigma_\varepsilon^2 \qquad\text{(permanent innovation variance)},$$
-$$\sigma_s^2 = \theta^2\,\sigma_\varepsilon^2 \qquad\text{(lower bound on the pricing-error variance)}.$$
+$$
+\sigma_w^2 = (1+\theta)^2\,\sigma_\varepsilon^2 \qquad\text{(permanent innovation variance)},
+$$
+$$
+\sigma_s^2 = \theta^2\,\sigma_\varepsilon^2 \qquad\text{(lower bound on the pricing-error variance)}.
+$$
 
 In the pure Roll case, $\sigma_w^2=\sigma_u^2$ and the *actual* pricing-error variance is $\mathrm{Var}(p_t-m_t)=c^2$, attained by the bound $\theta^2\sigma_\varepsilon^2$ only when $\sigma_u^2=0$ (in Roll, $c^2=\theta\sigma_\varepsilon^2>\theta^2\sigma_\varepsilon^2$). The decomposition is **invariant to the identification** of the MA parameters — a strong robustness property.
 
@@ -54,7 +66,9 @@ In the pure Roll case, $\sigma_w^2=\sigma_u^2$ and the *actual* pricing-error va
 
 The variance ratio compares variances over different horizons:
 
-$$V_{M,N}=\frac{\mathrm{Var}(p_t-p_{t-M})/M}{\mathrm{Var}(p_t-p_{t-N})/N}.$$
+$$
+V_{M,N}=\frac{\mathrm{Var}(p_t-p_{t-M})/M}{\mathrm{Var}(p_t-p_{t-N})/N}.
+$$
 
 With microstructure (bid-ask bounce) inflating the *short* horizon variance, for $M>N$ (longer horizon in numerator) one gets $V_{M,N}<1$, declining toward $1$ as the horizon grows and the transitory component washes out. A ratio below 1 is the signature of a transitory (pricing-error) component in the price.
 
@@ -62,8 +76,12 @@ With microstructure (bid-ask bounce) inflating the *short* horizon variance, for
 
 Stack the price change and trade variables into $y_t=[\Delta p_t,\ x_t']'$ and fit a VAR; the impulse response of $\Delta p$ to a trade-innovation $v_t$ measures $\lambda$ directly. Structural form:
 
-$$q_t = v_t+\beta v_{t-1}\ \ (\text{MA(1) order flow}), \qquad w_t = u_t+\lambda v_t,$$
-$$\Delta p_t = u_t + \lambda v_t + c\,[(v_t+\beta v_{t-1})-(v_{t-1}+\beta v_{t-2})].$$
+$$
+q_t = v_t+\beta v_{t-1}\ \ (\text{MA(1) order flow}), \qquad w_t = u_t+\lambda v_t,
+$$
+$$
+\Delta p_t = u_t + \lambda v_t + c\,[(v_t+\beta v_{t-1})-(v_{t-1}+\beta v_{t-2})].
+$$
 
 The permanent/trade-driven variance splits as $\sigma_w^2=\sigma_u^2+\lambda^2\sigma_v^2$, where $\lambda^2\sigma_v^2$ is the **absolute information content of trade flow** and $\lambda^2\sigma_v^2/\sigma_w^2$ the relative share (≈ $R^2$ of price changes on trades). This is the bridge to [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] and to price discovery across venues.
 

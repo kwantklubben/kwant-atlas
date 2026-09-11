@@ -31,20 +31,30 @@ Every single-name model answers *"will this firm default?"* The question that ac
 #### 2.1 The one-factor Gaussian model (Vašíček 1987/1991; Hull eq. 24.10)
 
 Let obligor $i$'s standardised asset return decompose as
-$$X_i=\sqrt\rho\,Y+\sqrt{1-\rho}\,Z_i,\qquad Y,Z_i\overset{i.i.d.}{\sim}N(0,1),$$
+$$
+X_i=\sqrt\rho\,Y+\sqrt{1-\rho}\,Z_i,\qquad Y,Z_i\overset{i.i.d.}{\sim}N(0,1),
+$$
 where $Y$ is the common systematic factor and $Z_i$ the idiosyncratic shock. Obligor $i$ defaults if $X_i<N^{-1}(p_i)$ (its default threshold). **Conditional on the factor $Y=x$**, defaults are independent with
-$$p_i(x)=N\!\Big(\frac{N^{-1}(p_i)-\sqrt\rho\,x}{\sqrt{1-\rho}}\Big).$$
+$$
+p_i(x)=N\!\Big(\frac{N^{-1}(p_i)-\sqrt\rho\,x}{\sqrt{1-\rho}}\Big).
+$$
 
 For a **large, homogeneous, equal-weighted** portfolio (infinite granularity), the portfolio loss fraction equals the conditional default rate $L=p(x)$, so the stochastic factor *becomes* the loss. Inverting for the loss CDF gives Vašíček's closed form:
-$$\boxed{\,F(\theta)=\Pr[L\le\theta]=N\!\Big(\frac{\sqrt{1-\rho}\,N^{-1}(\theta)-N^{-1}(p)}{\sqrt\rho}\Big)\,}$$
+$$
+\boxed{\,F(\theta)=\Pr[L\le\theta]=N\!\Big(\frac{\sqrt{1-\rho}\,N^{-1}(\theta)-N^{-1}(p)}{\sqrt\rho}\Big)\,}
+$$
 and the loss quantile at confidence $q$ (this is the **Basel IRB form**):
-$$\boxed{\,\theta_q=N\!\Big(\frac{N^{-1}(p)+\sqrt\rho\,N^{-1}(q)}{\sqrt{1-\rho}}\Big).\,}$$
+$$
+\boxed{\,\theta_q=N\!\Big(\frac{N^{-1}(p)+\sqrt\rho\,N^{-1}(q)}{\sqrt{1-\rho}}\Big).\,}
+$$
 The unexpected-loss capital per unit EAD is $\theta_{0.999}-\mathrm{EL}$ with $\mathrm{EL}=p\,\mathrm{LGD}$ (set $\mathrm{LGD}=1$ above). Hull eq. (24.10) is exactly $\theta_q$; the Basel corporate asset correlation is a decreasing function of PD, $\rho_{\text{Basel}}(p)=0.12\,w+0.24\,(1-w)$, $w=(1-e^{-50p})/(1-e^{-50})$.
 
 #### 2.2 Credit ratings & transition matrices (CreditMetrics 1997; Hull §24.9)
 
 Ratings give a **discrete** credit state. A one-year **transition matrix** $M$ collects $\Pr(\text{state }j\mid\text{state }i)$; the default column is the one-year PD for each rating. Because default is an *absorbing* state, multi-year cumulative default probabilities are read from matrix powers:
-$$\mathbb{P}(\text{default by year }n\mid i)=\big(M^{n}\big)_{i,\text{Default}}.$$
+$$
+\mathbb{P}(\text{default by year }n\mid i)=\big(M^{n}\big)_{i,\text{Default}}.
+$$
 CreditMetrics simulates each obligor's asset return against rating-specific thresholds (calibrated so the threshold probabilities reproduce the matrix), correlates the returns with a factor model, and reads the portfolio loss distribution off the simulated rating migrations. It is the discrete, simulation-based sibling of the Vasicek formula.
 
 #### 2.3 CDO tranching and the correlation smile

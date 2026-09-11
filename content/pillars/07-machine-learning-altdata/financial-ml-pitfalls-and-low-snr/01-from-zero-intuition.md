@@ -20,7 +20,9 @@ Start with a dumb question: *why can a computer recognize a cat?* Because a cat 
 
 The classic picture is the **bias–variance tradeoff** (ESL eq. 7.9):
 
-$$\text{MSE} = \underbrace{\sigma_\varepsilon^2}_{\text{irreducible noise}} + \underbrace{\text{Bias}^2}_{\text{rigidity error}} + \underbrace{\text{Var}}_{\text{overfit error}}.$$
+$$
+\text{MSE} = \underbrace{\sigma_\varepsilon^2}_{\text{irreducible noise}} + \underbrace{\text{Bias}^2}_{\text{rigidity error}} + \underbrace{\text{Var}}_{\text{overfit error}}.
+$$
 
 Three ideas, three "aha"s:
 
@@ -34,13 +36,17 @@ Three ideas, three "aha"s:
 
 **The bias–variance decomposition.** For a target $Y=f(X)+\varepsilon$ with $\varepsilon$ independent noise of variance $\sigma_\varepsilon^2$, and an estimator $\hat f$ fit on a training set, the expected squared error at a fixed point $x_0$ is (ESL §2.9 / eq. 7.9):
 
-$$\text{MSE}(x_0)=\sigma_\varepsilon^2+\underbrace{\left(\mathbb{E}[\hat f(x_0)]-f(x_0)\right)^2}_{\text{Bias}^2}+\underbrace{\mathbb{E}\left[\left(\hat f(x_0)-\mathbb{E}[\hat f(x_0)]\right)^2\right]}_{\text{Var}}.$$
+$$
+\text{MSE}(x_0)=\sigma_\varepsilon^2+\underbrace{\left(\mathbb{E}[\hat f(x_0)]-f(x_0)\right)^2}_{\text{Bias}^2}+\underbrace{\mathbb{E}\left[\left(\hat f(x_0)-\mathbb{E}[\hat f(x_0)]\right)^2\right]}_{\text{Var}}.
+$$
 
 The three terms move in *opposite* directions as model complexity grows: complexity lowers Bias but raises Var. In a high-noise problem the Var term grows fast, so the **total MSE is minimized by a deliberately simple model**. This is why the industry default for tabular factor data is shallow gradient-boosted trees with aggressive regularization, not deep networks — deep networks win in high-SNR domains (vision, speech) and lose in low-SNR finance unless heavily regularized.
 
 **Where overfitting shows up in numbers.** For a linear model with $p$ parameters fit on $N$ independent samples, the in-sample error understates the true error by roughly the optimism term (ESL §7.4):
 
-$$\mathbb{E}[\text{Err}_{\text{in}}]\approx\mathbb{E}[\text{Err}_{\text{test}}]-\frac{2p}{N}\sigma_\varepsilon^2.$$
+$$
+\mathbb{E}[\text{Err}_{\text{in}}]\approx\mathbb{E}[\text{Err}_{\text{test}}]-\frac{2p}{N}\sigma_\varepsilon^2.
+$$
 
 With $N$ small and $p$ large, the gap $2p\sigma_\varepsilon^2/N$ is huge — the model can drive in-sample error to zero while test error stays at (or above) the noise floor. In low-SNR finance this gap is the whole story: **the fewer genuinely independent samples you have, the faster a flexible model locks onto noise.**
 

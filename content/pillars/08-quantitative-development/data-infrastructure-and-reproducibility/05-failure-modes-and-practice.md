@@ -28,7 +28,9 @@ This page is the folder's **fault clinic**: the concrete ways honest-looking dat
 ### 2. Mathematical Ground Truth & Derivations
 
 **A z-score gate turns "looks fine" into "measured anomaly."** For a column with sample mean $\mu$ and sample standard deviation $\sigma$,
-$$z_i = \frac{x_i-\mu}{\sigma}.$$
+$$
+z_i = \frac{x_i-\mu}{\sigma}.
+$$
 A genuinely corrupt extreme value (a price `999.99` in a `~100±6` column) drives one z-score far beyond the rest of the column's range. In the demo below the max $|z|$ jumps from $1.74$ to $84.13$ — a threshold like $|z|<6$ (or $|z|<10$ for heavy tails) flags it instantly, even though the *mean* only moved $99.97\to100.06$. **The mean hides outliers; the z-score does not.**
 
 **A checksum catches what statistics miss.** A subtle corruption (one cell scaled by a tiny factor, or a single flipped bit in a large file) may leave every aggregate plausible while changing the stored bytes. Because a checksum hashes *all* bytes, it detects any change with probability $\approx1-2^{-256}$ (see [[pillars/08-quantitative-development/data-infrastructure-and-reproducibility/03-data-versioning-and-lineage|03]]). The two tools are complementary: **z-scores for statistical outliers, checksums for byte-level integrity.**

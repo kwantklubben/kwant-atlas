@@ -48,11 +48,15 @@ The practical objective: understand that incompleteness converts a *pricing* pro
 
 Work in a one-period model: states $k=1,\dots,K$ with physical probabilities $p_k$, a traded stock with returns $\Delta S_k$ and a bond (cash). A payoff $H=(H_k)$ is **replicable** iff there exist $c$ (cash) and $\delta$ (shares) with
 
-$$H_k=c+\delta\,\Delta S_k\quad\text{for every }k=1,\dots,K .$$
+$$
+H_k=c+\delta\,\Delta S_k\quad\text{for every }k=1,\dots,K .
+$$
 
 That is a linear system with **2 unknowns and $K$ equations**. If $K>2$ and the points $(\Delta S_k,H_k)$ are not collinear, the system is inconsistent: **no replicating portfolio exists**. Completeness, in this language, is the elementary statement
 
-$$\boxed{\ \#\text{independent instruments}\ \ge\ \#\text{states}\ }$$
+$$
+\boxed{\ \#\text{independent instruments}\ \ge\ \#\text{states}\ }
+$$
 
 (equivalently: the matrix of instrument payoffs has full column rank $K$).
 
@@ -60,9 +64,11 @@ $$\boxed{\ \#\text{independent instruments}\ \ge\ \#\text{states}\ }$$
 
 The classical substitute (Föllmer–Sondermann 1986; Schweizer 2001) is to project in $L^2$:
 
-$$\min_{c,\delta}\ \mathbb E\big[(H-c-\delta\,\Delta S)^2\big]
+$$
+\min_{c,\delta}\ \mathbb E\big[(H-c-\delta\,\Delta S)^2\big]
 \quad\Longrightarrow\quad
-\boxed{\ \delta^\star=\frac{\mathrm{Cov}(\Delta S,H)}{\mathrm{Var}(\Delta S)},\qquad c^\star=\mathbb E[H]-\delta^\star\mathbb E[\Delta S]\ }$$
+\boxed{\ \delta^\star=\frac{\mathrm{Cov}(\Delta S,H)}{\mathrm{Var}(\Delta S)},\qquad c^\star=\mathbb E[H]-\delta^\star\mathbb E[\Delta S]\ }
+$$
 
 and the residual variance is the *unexplained* part, $\mathrm{Var}(H)-\mathrm{Cov}(\Delta S,H)^2/\mathrm{Var}(\Delta S)=\mathrm{Var}(H)(1-\rho^2_{H,\Delta S})$. The projection is exact **iff** $\rho^2=1$ — the collinearity condition of §2.1. So:
 
@@ -73,11 +79,15 @@ and the residual variance is the *unexplained* part, $\mathrm{Var}(H)-\mathrm{Co
 
 Multi-period, self-financing, zero rates, discretely rebalanced at $0=t_0<\dots<t_N=T$:
 
-$$L_T^{\delta}\;=\;\underbrace{p}_{\text{premium}}+\underbrace{\sum_{i=0}^{N-1}\delta_{t_i}\big(S_{t_{i+1}}-S_{t_i}\big)}_{\text{hedging gains}}\;-\;\underbrace{H}_{\text{liability}} .$$
+$$
+L_T^{\delta}\;=\;\underbrace{p}_{\text{premium}}+\underbrace{\sum_{i=0}^{N-1}\delta_{t_i}\big(S_{t_{i+1}}-S_{t_i}\big)}_{\text{hedging gains}}\;-\;\underbrace{H}_{\text{liability}} .
+$$
 
 The deep-hedging problem is
 
-$$\boxed{\ \inf_{\delta\in\mathcal A}\ \rho\big(L_T^{\delta}\big)\ },\qquad \mathcal A=\{\delta:\ \delta\ \mathcal F_t\text{-adapted, admissible}\},\ \rho\ \text{convex, cash-additive, monotone}.$$
+$$
+\boxed{\ \inf_{\delta\in\mathcal A}\ \rho\big(L_T^{\delta}\big)\ },\qquad \mathcal A=\{\delta:\ \delta\ \mathcal F_t\text{-adapted, admissible}\},\ \rho\ \text{convex, cash-additive, monotone}.
+$$
 
 Three structural remarks that make the whole field work:
 

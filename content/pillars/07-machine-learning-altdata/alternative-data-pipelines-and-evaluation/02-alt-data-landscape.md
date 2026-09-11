@@ -24,26 +24,34 @@ The central reframing: **alt-data rarely raises your IC; it raises your breadth.
 
 **The Fundamental Law.** For a signal with information coefficient IC and $B$ independent bets per period (rebalances × names, adjusted for correlations),
 
-$$\boxed{\;\text{IR}=\text{IC}\cdot\sqrt{B}\cdot\text{TC}\;},$$
+$$
+\boxed{\;\text{IR}=\text{IC}\cdot\sqrt{B}\cdot\text{TC}\;},
+$$
 
 with transfer coefficient $\text{TC}\in[0,1]$ capturing implementation friction (constraints, costs, capacity). Breadth, not IC, is the lever most strategies actually pull — and alt-data is the main way to add breadth because each *unique* dataset is a new, weakly-correlated bet stream.
 
 **Combining $n$ signals with correlation.** Let each of $n$ alphas have standalone IC and let $\rho$ be their common pairwise correlation. An equal-weight composite has IC and IR
 
-$$\text{IC}_{\text{comb}}=\text{IC}\cdot\sqrt{\frac{n}{1+(n-1)\rho}},\qquad
-\text{IR}_{\text{comb}}=\text{IC}\sqrt{\frac{n}{1+(n-1)\rho}}\sqrt{B}.$$
+$$
+\text{IC}_{\text{comb}}=\text{IC}\cdot\sqrt{\frac{n}{1+(n-1)\rho}},\qquad
+\text{IR}_{\text{comb}}=\text{IC}\sqrt{\frac{n}{1+(n-1)\rho}}\sqrt{B}.
+$$
 
 **The two limits are the whole lesson:** as $n\to\infty$ with $\rho=0$, $\text{IC}_{\text{comb}}\sim\text{IC}\sqrt{n}$ (unbounded — every new independent alpha helps); with $\rho>0$, the denominator gives the ceiling $\text{IC}_{\text{comb}}\to\text{IC}/\sqrt{\rho}$, a *finite* wall. **Correlated alt-data saturates; unique alt-data compounds.**
 
 **Required IC vs breadth.** Setting $\text{IR}=1$ (a decent standalone strategy) and reading off IC:
 
-$$\text{IC}^\star=1/\sqrt{B}:\quad B=12\Rightarrow 0.289,\quad B=52\Rightarrow 0.139,\quad B=252\Rightarrow 0.063.$$
+$$
+\text{IC}^\star=1/\sqrt{B}:\quad B=12\Rightarrow 0.289,\quad B=52\Rightarrow 0.139,\quad B=252\Rightarrow 0.063.
+$$
 
 A monthly strategy needs an enormous IC to "work" alone; a daily strategy needs a tiny one. This is why alt-data desks are obsessed with *frequency* and *breadth*.
 
 **Uniqueness (why the margin is in the residual).** If a model already uses a factor $f$, a new signal $s$ contributes only its orthogonal part. Define uniqueness $U=1-R^2$ from regressing $s$ on $f$ (and the existing factor set):
 
-$$U \;=\; 1-R^2,\qquad R^2=\frac{\operatorname{Var}(\hat s)}{\operatorname{Var}(s)},\qquad \hat s = \text{projection of }s\text{ on the existing factors}.$$
+$$
+U \;=\; 1-R^2,\qquad R^2=\frac{\operatorname{Var}(\hat s)}{\operatorname{Var}(s)},\qquad \hat s = \text{projection of }s\text{ on the existing factors}.
+$$
 
 The *marginal* IR contribution of $s$ scales with $\sqrt{U}$, not with its raw IC. A signal with $\text{IC}=0.05$ and $U=0.18$ adds less than a signal with $\text{IC}=0.03$ and $U=0.99$.
 

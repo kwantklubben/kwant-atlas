@@ -38,34 +38,52 @@ The answer produced the single most-used object in microstructure: **Kyle's $\la
 - **Informed trader:** knows $v$ exactly, submits a market order $x(v)$.
 - **Noise ("liquidity") traders:** submit $u\sim\mathcal N(0,\sigma_u^2)$, independent of $v$ and of $x$. This flow is the insider's camouflage.
 - **Market makers:** observe the **total order flow** $y=x+u$ (but not its decomposition), act competitively and risk-neutrally, and set the price equal to the expected value:
-$$P=\mathbb E[v\mid y].$$
+$$
+P=\mathbb E[v\mid y].
+$$
 
 #### 2.2 Solve by conjecture
 
 Suppose the price rule and insider strategy are linear:
 
-$$P=\mu+\lambda y,\qquad x=\alpha+\beta v .$$
+$$
+P=\mu+\lambda y,\qquad x=\alpha+\beta v .
+$$
 
 **Insider's problem.** Given the price rule, the insider's expected profit conditional on $v$ is
-$$\mathbb E[\pi\mid v]=\mathbb E\big[(v-P)x\mid v\big]=(v-\mu-\lambda x)\,x .$$
+$$
+\mathbb E[\pi\mid v]=\mathbb E\big[(v-P)x\mid v\big]=(v-\mu-\lambda x)\,x .
+$$
 This is a concave quadratic in $x$; the first-order condition $v-\mu-2\lambda x=0$ gives
-$$x=\frac{v-\mu}{2\lambda}\;\Longrightarrow\;\boxed{\ \beta=\frac{1}{2\lambda},\qquad \alpha=-\frac{\mu}{2\lambda}\ }.$$
+$$
+x=\frac{v-\mu}{2\lambda}\;\Longrightarrow\;\boxed{\ \beta=\frac{1}{2\lambda},\qquad \alpha=-\frac{\mu}{2\lambda}\ }.
+$$
 
 **Market efficiency.** By the projection theorem for the bivariate normal $(v,y)$,
-$$P=\mathbb E[v\mid y]=p_0+\frac{\mathrm{Cov}(v,y)}{\mathrm{Var}(y)}\big(y-\mathbb E[y]\big).$$
+$$
+P=\mathbb E[v\mid y]=p_0+\frac{\mathrm{Cov}(v,y)}{\mathrm{Var}(y)}\big(y-\mathbb E[y]\big).
+$$
 Now $y=x+u=\alpha+\beta v+u$, so
-$$\mathrm{Cov}(v,y)=\beta\Sigma_0,\qquad \mathrm{Var}(y)=\beta^2\Sigma_0+\sigma_u^2,\qquad \mathbb E[y]=\alpha+\beta p_0 .$$
+$$
+\mathrm{Cov}(v,y)=\beta\Sigma_0,\qquad \mathrm{Var}(y)=\beta^2\Sigma_0+\sigma_u^2,\qquad \mathbb E[y]=\alpha+\beta p_0 .
+$$
 Hence $\lambda=\dfrac{\beta\Sigma_0}{\beta^2\Sigma_0+\sigma_u^2}$ and $\mu=p_0-\lambda\mathbb E[y]$.
 
 **Closing the system.** Substitute $\beta=1/(2\lambda)$ into the $\lambda$ expression:
-$$\lambda=\frac{\beta\Sigma_0}{\beta^2\Sigma_0+\sigma_u^2}\Big|_{\lambda=1/(2\beta)}\;\Longrightarrow\;\beta^2\Sigma_0+\sigma_u^2=2\beta^2\Sigma_0\;\Longrightarrow\;\beta^2=\frac{\sigma_u^2}{\Sigma_0}.$$
+$$
+\lambda=\frac{\beta\Sigma_0}{\beta^2\Sigma_0+\sigma_u^2}\Big|_{\lambda=1/(2\beta)}\;\Longrightarrow\;\beta^2\Sigma_0+\sigma_u^2=2\beta^2\Sigma_0\;\Longrightarrow\;\beta^2=\frac{\sigma_u^2}{\Sigma_0}.
+$$
 Taking the positive root:
 
-$$\boxed{\ \beta=\sqrt{\frac{\sigma_u^2}{\Sigma_0}},\qquad \lambda=\frac{1}{2\beta}=\frac12\sqrt{\frac{\Sigma_0}{\sigma_u^2}},\qquad \mu=p_0,\qquad \alpha=-\tfrac12 p_0\ }$$
+$$
+\boxed{\ \beta=\sqrt{\frac{\sigma_u^2}{\Sigma_0}},\qquad \lambda=\frac{1}{2\beta}=\frac12\sqrt{\frac{\Sigma_0}{\sigma_u^2}},\qquad \mu=p_0,\qquad \alpha=-\tfrac12 p_0\ }
+$$
 
 (the second-order condition $\lambda>0$ rules out the negative root). **Market depth** is
 
-$$\boxed{\ \frac{1}{\lambda}=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}}\ }$$
+$$
+\boxed{\ \frac{1}{\lambda}=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}}\ }
+$$
 
 — the signed order flow needed to move the price by one dollar. Larger noise flow $\sigma_u^2$ and smaller information $\Sigma_0$ both make the market deeper.
 
@@ -74,14 +92,18 @@ $$\boxed{\ \frac{1}{\lambda}=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}}\ }$$
 - **Information revelation.** $\mathrm{Var}[v\mid y]=\Sigma_0-\dfrac{(\beta\Sigma_0)^2}{\beta^2\Sigma_0+\sigma_u^2}=\Sigma_0-\dfrac{\beta^2\Sigma_0^2}{2\sigma_u^2}=\Sigma_0-\dfrac{\Sigma_0}{2}=\dfrac{\Sigma_0}{2}.$
   **Exactly half of the insider's private information is incorporated into the price, no matter how much noise there is.** This is a sharp, testable fingerprint of the model.
 - **Insider profit** (conditional on $v$, using $x=(v-p_0)/2\lambda$):
-$$\mathbb E[\pi\mid v]=(v-p_0)x-\lambda x^2=\frac{(v-p_0)^2}{2\lambda}-\frac{(v-p_0)^2}{4\lambda}=\boxed{\frac{(v-p_0)^2}{2}\sqrt{\frac{\sigma_u^2}{\Sigma_0}}},$$
+$$
+\mathbb E[\pi\mid v]=(v-p_0)x-\lambda x^2=\frac{(v-p_0)^2}{2\lambda}-\frac{(v-p_0)^2}{4\lambda}=\boxed{\frac{(v-p_0)^2}{2}\sqrt{\frac{\sigma_u^2}{\Sigma_0}}},
+$$
 increasing in the squared mispricing and in *noise* variance (more camouflage). Averaging over $v$: $\mathbb E[\pi]=\tfrac12\sqrt{\sigma_u^2\Sigma_0}$. *(This is Hasbrouck Ch 7 eq. 7.5; the conditional-vs-unconditional distinction is the correction flagged in the verified corpus — for a **fixed** $v$ the profit actually *decreases* in $\Sigma_0$.)*
 - **Noise independence.** $\mathrm{Var}[P]=\lambda^2(\beta^2\Sigma_0+\sigma_u^2)=\lambda^2\cdot 2\sigma_u^2$, and the price innovations are driven by order flow, not by $\sigma_u^2$ directly: **the volatility of the price is unaffected by the level of noise trading** (Kyle, §2).
 
 #### 2.4 Multi-period and the continuous limit
 
 Repeat the auction $N$ times with the insider splitting his order ("slicing and dicing"). With $v$ fixed and prior variance $\Sigma_n=\mathrm{Var}[v\mid p_n]$:
-$$\Delta x_n=\beta_n\,(v-p_{n-1})\,\Delta t,\qquad p_n=p_{n-1}+\lambda_n\,(\Delta x_n+\Delta u_n),\qquad \lambda_n=\frac12\sqrt{\frac{\Sigma_n}{\Delta t\,\sigma_u^2}}.$$
+$$
+\Delta x_n=\beta_n\,(v-p_{n-1})\,\Delta t,\qquad p_n=p_{n-1}+\lambda_n\,(\Delta x_n+\Delta u_n),\qquad \lambda_n=\frac12\sqrt{\frac{\Sigma_n}{\Delta t\,\sigma_u^2}}.
+$$
 The insider trades so that **total order flow is serially uncorrelated** (a martingale), and $\Sigma_n$ shrinks predictably. As the time between auctions $\to0$ the sequential equilibrium converges to the **continuous auction equilibrium** $dP_t=\lambda\,dY_t$ with $\lambda$ constant — the origin of the "$\Delta P=\lambda\cdot\text{order flow}$" rule used everywhere on this folder. (Huberman–Stanzl 2004: only *linear* price schedules are manipulation-free, which is why the linear model survives.)
 
 ---

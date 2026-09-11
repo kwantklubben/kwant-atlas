@@ -29,11 +29,15 @@ A regime label is only useful if it is **accurate** and **knowable in real time*
 ### 2. Mathematical Ground Truth & Derivations
 
 **Label switching (first principle: permutation invariance of the likelihood).** The mixture likelihood
-$$\ell(\theta)=\sum_t\log\sum_{k=1}^{K}\pi_k\mathcal{N}(x_t;\mu_k,\Sigma_k)$$
+$$
+\ell(\theta)=\sum_t\log\sum_{k=1}^{K}\pi_k\mathcal{N}(x_t;\mu_k,\Sigma_k)
+$$
 is invariant under any permutation $\sigma$ of the state indices: replacing $(\pi_k,\mu_k,\Sigma_k)$ by $(\pi_{\sigma(k)},\mu_{\sigma(k)},\Sigma_{\sigma(k)})$ leaves $\ell$ **exactly unchanged**. So the maximum is not a single point but a $K!$-fold symmetric set, and an unconstrained optimizer can return any member. The label "state $0$" therefore carries *no* intrinsic meaning. The fix is an **identifiability constraint** — e.g. order states by variance $\sigma_0<\sigma_1<\dots$ or by mean $\mu_0<\mu_1$ — so the returned labels are pinned.
 
 **Overfitting $k$ (first principle: likelihood always rises with parameters).** Adding a state gives the optimizer more degrees of freedom, so the *fitted* log-likelihood is non-decreasing in $K$. The correct model-selection penalty (Schwarz 1978) is the **Bayesian Information Criterion**
-$$\text{BIC}=-2\ell_{\max}+m\log T,$$
+$$
+\text{BIC}=-2\ell_{\max}+m\log T,
+$$
 with $m$ the number of free parameters. For a 1-D GMM, $m=3K-1$ ($K{-}1$ weights $+K$ means $+K$ variances). BIC rewards fit but charges for parameters; the true $K$ minimizes it. (This is the ESL Ch 14 model-selection discipline; the gap statistic §14.3.11 is the clustering analogue.)
 
 **Look-ahead in regime labels (first principle: no future information at time $t$).** The **filtered** posterior $\gamma_t^{\text{filt}}(k)=P(z_t{=}k\mid y_{1:t})$ uses only past data — it is the *live* call. The **smoothed** posterior $\gamma_t^{\text{smooth}}(k)=P(z_t{=}k\mid y_{1:T})$ and the **Viterbi** path use the *whole* sample, including $y_{t+1:T}$. Using smoothed/decoded labels at time $t$ substitutes information that was not knowable then — the exact arithmetic of the look-ahead that any honest backtest must purge ([[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]]).

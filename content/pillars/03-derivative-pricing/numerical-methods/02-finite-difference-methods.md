@@ -18,7 +18,9 @@ A finite-difference solver is a *machine for transporting a payoff backwards in 
 
 The $O(k)$ parameter is $\theta\in[0,1]$ (weight on the **old** time level; the new level carries $1-\theta$):
 
-$$\frac{U^{n+1}-U^n}{k}=(1-\theta)\mathcal L U^{n+1}+\theta\,\mathcal L U^{n},\qquad \mathcal L U_j=\sigma_j\frac{U_{j+1}-2U_j+U_{j-1}}{h^2}+\mu_j\frac{U_{j+1}-U_{j-1}}{2h}+b_jU_j .$$
+$$
+\frac{U^{n+1}-U^n}{k}=(1-\theta)\mathcal L U^{n+1}+\theta\,\mathcal L U^{n},\qquad \mathcal L U_j=\sigma_j\frac{U_{j+1}-2U_j+U_{j-1}}{h^2}+\mu_j\frac{U_{j+1}-U_{j-1}}{2h}+b_jU_j .
+$$
 
 - $\theta=1$: **explicit Euler** — no linear solve, but a hard CFL-style bound on $k$.
 - $\theta=0$: **implicit Euler** — tridiagonal solve, unconditionally stable, first-order in time.
@@ -36,7 +38,9 @@ Three "aha"s:
 
 **The BSM operator in divergence-free form** (Duffy eq. 7.10–7.12, written with $\tau=T-t$):
 
-$$-\frac{\partial u}{\partial t}+\sigma(x)\frac{\partial^2u}{\partial x^2}+\mu(x)\frac{\partial u}{\partial x}+c(x)u=f,\qquad A_j=\frac{\tilde\sigma_j}{h^2}-\frac{\mu_j}{2h},\quad B_j=-\frac{2\tilde\sigma_j}{h^2}+c_j,\quad C_j=\frac{\tilde\sigma_j}{h^2}+\frac{\mu_j}{2h}.$$
+$$
+-\frac{\partial u}{\partial t}+\sigma(x)\frac{\partial^2u}{\partial x^2}+\mu(x)\frac{\partial u}{\partial x}+c(x)u=f,\qquad A_j=\frac{\tilde\sigma_j}{h^2}-\frac{\mu_j}{2h},\quad B_j=-\frac{2\tilde\sigma_j}{h^2}+c_j,\quad C_j=\frac{\tilde\sigma_j}{h^2}+\frac{\mu_j}{2h}.
+$$
 
 The pass from the flow form to the grid form is exactly the divided differences of page 01. The *discretely* important consequences are:
 
@@ -54,21 +58,29 @@ Duffy's printed symbols (8.34)–(8.35) show $4\lambda^2$; the surrounding algeb
 
 For the general explicit convection–diffusion scheme the joint condition is
 
-$$\frac{R^2}{2}\le\lambda\le\frac12,\qquad \lambda=\frac{\nu k}{h^2},\quad R=\frac{ak}{h};$$
+$$
+\frac{R^2}{2}\le\lambda\le\frac12,\qquad \lambda=\frac{\nu k}{h^2},\quad R=\frac{ak}{h};
+$$
 
 one-sided **upwinding in the wrong direction is unconditionally unstable** ($|\rho|\le1$ never satisfied, Duffy eq. 8.42) — the first-principles justification for Il'in/upwind differencing. For the BSM equation specifically the explicit bounds are (Duffy eqs. 12.15–12.18):
 
-$$h\le\frac{2\sigma}{|\mu|},\qquad k\le\frac{1}{2\sigma/h^2-b},\qquad\text{and for BS:}\quad h\le\frac{\sigma^2S_j}{r},\quad k\le\frac{1}{\sigma^2j^2+r}.$$
+$$
+h\le\frac{2\sigma}{|\mu|},\qquad k\le\frac{1}{2\sigma/h^2-b},\qquad\text{and for BS:}\quad h\le\frac{\sigma^2S_j}{r},\quad k\le\frac{1}{\sigma^2j^2+r}.
+$$
 
 **(c) Consequence for option pricing: the fitted scheme.** Replacing the diffusion coefficient by Duffy's **fitting factor** (eq. 11.17)
 
-$$\tilde\sigma_j=\frac{\mu_jh}{2}\coth\!\left(\frac{\mu_jh}{2\sigma_j}\right)$$
+$$
+\tilde\sigma_j=\frac{\mu_jh}{2}\coth\!\left(\frac{\mu_jh}{2\sigma_j}\right)
+$$
 
 makes the eigenvalues real and non-positive for *every* $h$, so the scheme cannot oscillate and converges uniformly as $\sigma\to0$ (Thm 11.1) — the standard cure for convection-dominated ($rS$ large) regions.
 
 **(d) Boundary conditions.** For a European call on a truncated domain (Duffy eqs. 3.10–3.11, 4.12–4.13):
 
-$$V(0,t)=0,\qquad V(S_{\max},t)\approx S_{\max}-Ke^{-r(T-t)} .$$
+$$
+V(0,t)=0,\qquad V(S_{\max},t)\approx S_{\max}-Ke^{-r(T-t)} .
+$$
 
 The second condition is a **truncation approximation** valid only as $S_{\max}\to\infty$; the first is exact (a worthless stock gives a worthless call). Compatibility at corners ($\varphi(0)=g(0)$, Duffy eq. 3.41) is required or the scheme loses an order there.
 

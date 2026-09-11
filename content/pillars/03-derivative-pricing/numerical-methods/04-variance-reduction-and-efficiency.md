@@ -37,37 +37,49 @@ Three "aha"s:
 
 **Control variates** (Glasserman eqs. 4.1–4.4). With $Y$ the payoff and $X$ a control with known $\mathbb E[X]$:
 
-$$\bar Y(b)=\frac1n\sum_{i=1}^n\big(Y_i-b(X_i-\mathbb E[X])\big),\qquad
-\mathrm{Var}[Y_i(b)]=\sigma_Y^2-2b\sigma_X\sigma_Y\rho_{XY}+b^2\sigma_X^2,$$
+$$
+\bar Y(b)=\frac1n\sum_{i=1}^n\big(Y_i-b(X_i-\mathbb E[X])\big),\qquad
+\mathrm{Var}[Y_i(b)]=\sigma_Y^2-2b\sigma_X\sigma_Y\rho_{XY}+b^2\sigma_X^2,
+$$
 
-$$b^*=\frac{\mathrm{Cov}[X,Y]}{\mathrm{Var}[X]}=\rho_{XY}\frac{\sigma_Y}{\sigma_X},\qquad
-\frac{\mathrm{Var}[\bar Y-b^*(X̄-\mathbb E[X])]}{\mathrm{Var}[\bar Y]}=1-\rho_{XY}^2 .$$
+$$
+b^*=\frac{\mathrm{Cov}[X,Y]}{\mathrm{Var}[X]}=\rho_{XY}\frac{\sigma_Y}{\sigma_X},\qquad
+\frac{\mathrm{Var}[\bar Y-b^*(X̄-\mathbb E[X])]}{\mathrm{Var}[\bar Y]}=1-\rho_{XY}^2 .
+$$
 
 Multiple controls: $b^*=\Sigma_X^{-1}\Sigma_{XY}$ (eq. 4.13) and the ratio is $1-R^2$. The coefficient is estimated by the OLS slope $b̂_n=\frac{\sum(X_i-\bar X)(Y_i-\bar Y)}{\sum(X_i-\bar X)^2}$ (eq. 4.5), which biases the *estimator* by only $O(1/n)$ while remaining asymptotically as precise as $b^*$ — quoting a CV price still requires care about the bias, but it is second-order.
 
 **Antithetic variates** (eqs. 4.27–4.30).
 
-$$\hat Y_{\mathrm{AV}}=\frac1n\sum_{i=1}^n\frac{Y_i+\tilde Y_i}{2},\qquad
-\mathrm{Var}\!\left[\frac{Y+\tilde Y}{2}\right]=\frac{\sigma_Y^2}{2}(1+\rho_{Y\tilde Y}),$$
+$$
+\hat Y_{\mathrm{AV}}=\frac1n\sum_{i=1}^n\frac{Y_i+\tilde Y_i}{2},\qquad
+\mathrm{Var}\!\left[\frac{Y+\tilde Y}{2}\right]=\frac{\sigma_Y^2}{2}(1+\rho_{Y\tilde Y}),
+$$
 
 so the gain exists **iff** $\rho_{Y\tilde Y}<0$; a monotone simulation map guarantees it, and a *linear* payoff in $Z$ gives zero variance. Splitting $f=f_0+f_1$ into symmetric/antisymmetric parts shows antithetics kill $\mathrm{Var}[f_1]$ exactly.
 
 **Stratified sampling** (eqs. 4.31–4.44). With strata of probability $p_i$ and allocation $q_i=n_i/n$:
 
-$$\hat Y=\sum_i\frac{p_i}{q_i}\frac{1}{n_i}\sum_jY_{ij},\qquad
+$$
+\hat Y=\sum_i\frac{p_i}{q_i}\frac{1}{n_i}\sum_jY_{ij},\qquad
 \sigma^2(q)=\sum_i\frac{p_i^2}{q_i}\sigma_i^2,\qquad
-q_i^{\text{Neyman}}=\frac{p_i\sigma_i}{\sum_jp_j\sigma_j}\ \ \Big(\text{cost-aware: }\propto p_i\sigma_i/\sqrt{\tau_i}\Big).$$
+q_i^{\text{Neyman}}=\frac{p_i\sigma_i}{\sum_jp_j\sigma_j}\ \ \Big(\text{cost-aware: }\propto p_i\sigma_i/\sqrt{\tau_i}\Big).
+$$
 
 Proportional allocation ($q_i=p_i$) gives $\mathrm{Var}=\sum_ip_i\sigma_i^2\le\sigma^2$ **always** — "stratified sampling can only help" — because
 
-$$\mathrm{Var}[Y]=\underbrace{\mathrm{Var}[\mathbb E[Y\mid\eta]]}_{\text{removed by proportional stratification}}+\underbrace{\mathbb E[\mathrm{Var}[Y\mid\eta]]}_{\text{left}} .$$
+$$
+\mathrm{Var}[Y]=\underbrace{\mathrm{Var}[\mathbb E[Y\mid\eta]]}_{\text{removed by proportional stratification}}+\underbrace{\mathbb E[\mathrm{Var}[Y\mid\eta]]}_{\text{left}} .
+$$
 
 **Latin hypercube** (eqs. 4.55–4.58) stratifies *every* marginal coordinate with $K$ bins: for any square-integrable $f$ and $K\ge2$, $\mathrm{Var}[\hat\alpha_{\text{LHS}}]\le\sigma^2/(K-1)$ (Owen Prop. 3), and asymptotically $\sigma_\varepsilon^2/K$ (Stein) — LHS removes the variance of the **additive part** of $f$. Caveat: it stratifies the *increments* of a Brownian path, not the terminal value; directing that requires the bridge.
 
 **Importance sampling** (eqs. 4.73–4.91). If $g$ dominates $f$,
 
-$$\alpha=\mathbb E[h(X)]=\tilde{\mathbb E}\!\left[h(X)\frac{f(X)}{g(X)}\right],\qquad
-\hat\alpha_g=\frac1n\sum_{i=1}^nh(X_i)\frac{f(X_i)}{g(X_i)},\quad X_i\sim g,$$
+$$
+\alpha=\mathbb E[h(X)]=\tilde{\mathbb E}\!\left[h(X)\frac{f(X)}{g(X)}\right],\qquad
+\hat\alpha_g=\frac1n\sum_{i=1}^nh(X_i)\frac{f(X_i)}{g(X_i)},\quad X_i\sim g,
+$$
 
 with the zero-variance (unusable) choice $g\propto h\,f$. Two practical tilts:
 
@@ -76,7 +88,9 @@ with the zero-variance (unusable) choice $g\propto h\,f$. Two practical tilts:
 
 **The efficiency rule** (Glasserman §1.1.3, §6.3.3): with bias $b\delta^\beta$, cost per path $\propto\delta^{-\eta}$ and work budget $s$,
 
-$$\mathrm{RMSE}=O\!\big(s^{-\beta/(2\beta+\eta)}\big),\qquad\text{discretisation-aware: }\ \delta^*\propto s^{-1/(2\beta+1)},\quad \sqrt{\mathrm{MSE}}\propto s^{-\beta/(2\beta+1)} .$$
+$$
+\mathrm{RMSE}=O\!\big(s^{-\beta/(2\beta+\eta)}\big),\qquad\text{discretisation-aware: }\ \delta^*\propto s^{-1/(2\beta+1)},\quad \sqrt{\mathrm{MSE}}\propto s^{-\beta/(2\beta+1)} .
+$$
 
 For $\beta=1$ (Euler) the budget rate is $s^{-1/3}$ versus $s^{-1/2}$ for an unbiased estimator: **discretisation costs you half the convergence exponent**, which is why exact sampling (page 03) and better schemes are worth more than more paths.
 

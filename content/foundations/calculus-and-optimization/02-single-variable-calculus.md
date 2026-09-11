@@ -28,7 +28,9 @@ The one mental model: **Taylor's theorem says every smooth function is a polynom
 
 **Limits and continuity.** $\lim_{x\to c}f(x)=L$ means $f(x)$ can be made arbitrarily close to $L$ by taking $x$ close enough to $c$. $f$ is **continuous** at $c$ if $\lim_{x\to c}f(x)=f(c)$. The algebra of limits (sums, products, compositions of continuous functions are continuous) lets one compute almost everything without $\epsilon$–$\delta$ arguments. **L'Hôpital's rule** handles the indeterminate $0/0$ form:
 
-$$\text{if } f(c)=g(c)=0 \text{ and } g'(c)\ne0,\qquad \lim_{x\to c}\frac{f(x)}{g(x)}=\frac{f'(c)}{g'(c)},\qquad\text{(iterated if the ratio is still }0/0\text{).}$$
+$$
+\text{if } f(c)=g(c)=0 \text{ and } g'(c)\ne0,\qquad \lim_{x\to c}\frac{f(x)}{g(x)}=\frac{f'(c)}{g'(c)},\qquad\text{(iterated if the ratio is still }0/0\text{).}
+$$
 
 Bernstein's note deliberately defines limits *via* continuity (convergence at a point is "the redefined function is continuous there"), which makes L'Hôpital a corollary of the mean value theorem rather than a separate axiom.
 
@@ -36,31 +38,39 @@ Bernstein's note deliberately defines limits *via* continuity (convergence at a 
 
 **The mean value theorem (MVT).** If $f$ is continuous on $[b,c]$ and differentiable on $(b,c)$, there is $x\in(b,c)$ with
 
-$$f(c)-f(b)=f'(x)(c-b).$$
+$$
+f(c)-f(b)=f'(x)(c-b).
+$$
 
 Its corollaries drive optimisation and numerics: $f'\equiv0$ on an interval $\Rightarrow f$ constant; and the secant slope of a finite-difference scheme equals the true derivative at *some* intermediate point, which is what makes truncation-error bounds possible.
 
 **Fermat, Rolle and the second-order test.**
 
-- **Fermat:** an interior extremum of a differentiable $f$ has $f'(x^\*)=0$.
+- **Fermat:** an interior extremum of a differentiable $f$ has $f'(x^*)=0$.
 - **Rolle:** $f(b)=f(c)$ $\Rightarrow$ some interior point has $f'=0$.
-- **Second-order sufficiency:** if $f'(x^\*)=0$ and $f''(x^\*)>0$, then $x^\*$ is a strict local minimum ($f''<0$ $\Rightarrow$ maximum). If $f''(x^\*)=0$ the test is inconclusive ($x^3$, $x^4$ at $0$).
+- **Second-order sufficiency:** if $f'(x^*)=0$ and $f''(x^*)>0$, then $x^*$ is a strict local minimum ($f''<0$ $\Rightarrow$ maximum). If $f''(x^*)=0$ the test is inconclusive ($x^3$, $x^4$ at $0$).
 
 **Taylor's theorem with remainder.** For $f$ $(n{+}1)$-times differentiable on an interval containing $a$ and $x$, there is $z$ between them with
 
-$$f(x)=\underbrace{\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k}_{P_n(x)\ \text{Taylor polynomial}}+\underbrace{\frac{f^{(n+1)}(z)}{(n+1)!}(x-a)^{n+1}}_{R_n(x)\ \text{remainder}}.$$
+$$
+f(x)=\underbrace{\sum_{k=0}^{n}\frac{f^{(k)}(a)}{k!}(x-a)^k}_{P_n(x)\ \text{Taylor polynomial}}+\underbrace{\frac{f^{(n+1)}(z)}{(n+1)!}(x-a)^{n+1}}_{R_n(x)\ \text{remainder}}.
+$$
 
 The **Lagrange form** of the remainder (Stewart §11.10–11.11; Spivak Part III) is the key to error control: it says the error is "the next term, with the derivative evaluated at some unknown point $z$." For $e^x$ about $0$, $R_n(x)=e^{z}x^{n+1}/(n+1)!$, so on $[0,1]$ the error is bounded by $e/(n{+}1)!$ — a *provable* rate.
 
 The **finance reading**: with $a=S_t$ and $x=S_t+\Delta S$,
 
-$$V(S_t+\Delta S)=V+\Delta\,\Delta S+\tfrac12\Gamma(\Delta S)^2+\tfrac16\text{Speed}(\Delta S)^3+\cdots,$$
+$$
+V(S_t+\Delta S)=V+\Delta\,\Delta S+\tfrac12\Gamma(\Delta S)^2+\tfrac16\text{Speed}(\Delta S)^3+\cdots,
+$$
 
 i.e. the delta–gamma–theta expansion is a Taylor expansion of the pricing function, and truncating at order 1 leaves the gamma term as the *remainder you are exposed to*.
 
 **Integration and the FTC.** The definite integral $\int_b^c f$ is the limit of Riemann sums $\sum f(\xi_i)\Delta x_i$. Linearity and positivity are immediate; the **Fundamental Theorem of Calculus** is
 
-$$\int_b^c f'(x)\,dx=f(c)-f(b).$$
+$$
+\int_b^c f'(x)\,dx=f(c)-f(b).
+$$
 
 Under the Kurzweil–Henstock (gauge) definition used in Bernstein's note, *every* derivative is integrable, so the FTC holds with no extra technical hypotheses — which is why $\mathbb E[f(X)]=\int f\,dF$ always makes sense for the densities finance uses.
 
@@ -139,7 +149,7 @@ int_0^1 x^2 dx  (exact 1/3 = 0.3333333333333333 )
 
 1. **Truncating a Taylor series is a *choice with a price*, given by the remainder.** Delta hedging keeps only the first term; the *dropped* $\tfrac12\Gamma(\Delta S)^2$ is the whole hedging risk. The Lagrange remainder tells you its size — never expand without asking what you threw away.
 2. **The radius of convergence is finite and bites.** As experiment (B) shows, the expansion of $\log(1+x)$ is *exactly* wrong outside $|x|<1$, not merely inaccurate. Local models (delta, duration) are only valid locally; a large move invalidates the expansion, it does not just degrade it.
-3. **Fermat is not sufficient.** $f'(x^\*)=0$ at $x^\*=0$ for $x^3$ (a saddle), $x^4$ (a min) and $-x^4$ (a max). Always run the $f''$ test (and if $f''=0$, higher order) before declaring an optimum.
+3. **Fermat is not sufficient.** $f'(x^*)=0$ at $x^*=0$ for $x^3$ (a saddle), $x^4$ (a min) and $-x^4$ (a max). Always run the $f''$ test (and if $f''=0$, higher order) before declaring an optimum.
 4. **Differentiability can fail at exactly the interesting point.** $\max(S-K,0)$ has no derivative at $S=K$; its second derivative is a Dirac mass there. Inconsistent-looking Greeks and FDM ringing around the strike are the numerical shadow of this kink.
 5. **Integration by quadrature is cursed by dimension.** A left Riemann sum converges at $O(1/n)$ here, the trapezoid at $O(1/n^2)$ — but in $d$ dimensions a tensor-product rule costs $O(n^{-2/d})$, which is why high-dimensional integrals in finance are done by **Monte Carlo** ($O(n^{-1/2})$ in every dimension, Glasserman §1.1) rather than by quadrature.
 6. **A 0/0 limit is not automatically "differentiate top and bottom."** L'Hôpital requires the hypotheses ($f(c)=g(c)=0$, differentiability, $g'\ne0$); on non-indeterminate forms it silently returns nonsense.

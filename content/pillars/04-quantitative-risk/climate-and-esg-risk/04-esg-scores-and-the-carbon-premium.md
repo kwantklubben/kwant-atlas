@@ -33,29 +33,39 @@ The practical objective: build a score, measure its instability, map a portfolio
 
 Following Berg, Kölbel & Rigobon's notation, rater $k$'s rating of firm $f$ is a linear aggregation of category scores $C_{fkj}$ with rater-specific weights $w_{kj}$:
 
-$$\boxed{\ R_{fk}=\sum_{j\in\mathcal C_k} C_{fkj}\,w_{kj},\qquad w_{kj}\ge0\ }$$
+$$
+\boxed{\ R_{fk}=\sum_{j\in\mathcal C_k} C_{fkj}\,w_{kj},\qquad w_{kj}\ge0\ }
+$$
 
 Three divergence channels follow immediately:
-$$\underbrace{\mathcal C_k\ne\mathcal C_{k'}}_{\text{scope}},\qquad \underbrace{C_{fkj}\ne C_{fk'j}\ \text{on the same attribute}}_{\text{measurement}},\qquad \underbrace{w_{kj}\ne w_{k'j}}_{\text{weight}}.$$
+$$
+\underbrace{\mathcal C_k\ne\mathcal C_{k'}}_{\text{scope}},\qquad \underbrace{C_{fkj}\ne C_{fk'j}\ \text{on the same attribute}}_{\text{measurement}},\qquad \underbrace{w_{kj}\ne w_{k'j}}_{\text{weight}}.
+$$
 
 Taking variances of $D^{k,k'}_{f}=R_{fk}-R_{fk'}$ and splitting by an arithmetic decomposition gives the reported shares $(38\%,56\%,6\%)$. **Consequence for a quant:** the rating is a *noisy proxy* whose noise is not independent across the object being measured — hence a rater fixed effect (a "halo") beyond idiosyncratic noise.
 
 **Rank agreement.** Because ratings are ordinal in use, the appropriate agreement statistic is the **Spearman rank correlation**: replace each $R_{fk}$ by its average rank $\bar r_{fk}$ (ties share the mean rank) and take the Pearson correlation of the rank vectors,
-$$\rho_s=\frac{\sum_f(\bar r_{f}-\bar{\bar r})(\bar r'_{f}-\bar{\bar r'})}{\sqrt{\sum_f(\bar r_f-\bar{\bar r})^2}\sqrt{\sum_f(\bar r'_f-\bar{\bar r'})^2}}.$$
+$$
+\rho_s=\frac{\sum_f(\bar r_{f}-\bar{\bar r})(\bar r'_{f}-\bar{\bar r'})}{\sqrt{\sum_f(\bar r_f-\bar{\bar r})^2}\sqrt{\sum_f(\bar r'_f-\bar{\bar r'})^2}}.
+$$
 
 #### 2.2 Implied temperature rise by benchmark-pathway interpolation
 
-Let a portfolio have cumulative emissions intensity $C$ (tCO2e per $\$1$m of revenue over the horizon), and let $\{(T_j,C_j)\}_{j=1}^m$ be a table of benchmark pathways with increasing temperature outcomes and increasing cumulative intensities. The ITR is the piecewise-linear interpolation
+Let a portfolio have cumulative emissions intensity $C$ (tCO2e per $ $\$1m of revenue over the horizon), and let \{(T_j,C_j)\}_{j=1}^m$ be a table of benchmark pathways with increasing temperature outcomes and increasing cumulative intensities. The ITR is the piecewise-linear interpolation
 
-$$\boxed{\ \mathrm{ITR}(C)=T_j+(T_{j+1}-T_j)\frac{C-C_j}{C_{j+1}-C_j}\quad\text{for }C\in[C_j,C_{j+1}],\qquad \mathrm{ITR}=T_1\ \text{for }C\le C_1\ }$$
+$$
+\boxed{\ \mathrm{ITR}(C)=T_j+(T_{j+1}-T_j)\frac{C-C_j}{C_{j+1}-C_j}\quad\text{for }C\in[C_j,C_{j+1}],\qquad \mathrm{ITR}=T_1\ \text{for }C\le C_1\ }
+$$
 
-with **no extrapolation beyond the last benchmark**: a portfolio worse than the worst pathway is reported as "worse than $T_m$", not as a fabricated $4.1^\circ$C. The physical justification for a monotone cumulative-emissions-to-warming map is the TCRE relation (IPCC AR5: $0.8$–$2.5\,^\circ$C per 1000 PgC, i.e. $\approx0.2$–$0.7\,^\circ$C per 1000 GtCO2); the *benchmark table* is a modelling choice, and belongs in the disclosure.
+with **no extrapolation beyond the last benchmark**: a portfolio worse than the worst pathway is reported as "worse than $T_m$", not as a fabricated $4.1^\circ$C. The physical justification for a monotone cumulative-emissions-to-warming map is the TCRE relation (IPCC AR5: $0.8$–$2.5^\circ$C per 1000 PgC, i.e. $\approx0.2$–$0.7^\circ$C per 1000 GtCO2); the *benchmark table* is a modelling choice, and belongs in the disclosure.
 
 #### 2.3 The carbon premium as a cross-sectional regression
 
 The canonical specification regresses realised returns on a measure of emissions exposure with controls:
 
-$$r_f=a+b\,\ln E_f+\mathbf c^{\top}\mathbf X_f+\varepsilon_f,\qquad \hat b=(\mathbf X^{\top}\mathbf X)^{-1}\mathbf X^{\top}\mathbf r,\qquad \widehat{\mathrm{se}}(\hat b_j)=\sqrt{\hat\sigma^2\,[(\mathbf X^{\top}\mathbf X)^{-1}]_{jj}}$$
+$$
+r_f=a+b\,\ln E_f+\mathbf c^{\top}\mathbf X_f+\varepsilon_f,\qquad \hat b=(\mathbf X^{\top}\mathbf X)^{-1}\mathbf X^{\top}\mathbf r,\qquad \widehat{\mathrm{se}}(\hat b_j)=\sqrt{\hat\sigma^2\,[(\mathbf X^{\top}\mathbf X)^{-1}]_{jj}}
+$$
 
 with $\hat\sigma^2=\mathrm{RSS}/(n-k)$. Interpretation:
 - $\hat b>0$ (brown premium): high-emitting firms earned *higher* realised returns, the Bolton–Kacperczyk finding — compensation for transition risk.

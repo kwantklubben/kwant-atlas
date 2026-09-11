@@ -28,15 +28,23 @@ Build it in three "aha"s, from the discrete to the continuous:
 ### 2. Mathematical Ground Truth & Derivations
 
 **From random walk to BM (Shreve I §13.3–13.5).** Let $M_k$ be the symmetric random walk and define the scaled process
-$$W^{(n)}(t)=\frac{1}{\sqrt n}M_{nt}.$$
+$$
+W^{(n)}(t)=\frac{1}{\sqrt n}M_{nt}.
+$$
 The CLT (via MGFs, Shreve I Thm 3.39) gives $M_{nt}/\sqrt{nt}\xrightarrow{d}N(0,1)$; by independence of increments the whole interpolated trajectory converges weakly to BM. BM is defined (Shreve II Def 3.3.1) by
-$$W(0)=0,\quad W\text{ continuous},\quad W(t)-W(s)\sim N(0,\,t-s)\ \text{independent increments}.$$
+$$
+W(0)=0,\quad W\text{ continuous},\quad W(t)-W(s)\sim N(0,\,t-s)\ \text{independent increments}.
+$$
 Key structural facts: covariance $\mathbb E[W(s)W(t)]=\min(s,t)$ (Shreve I §13.6), and $W$ is both a **martingale** and a **Markov** process (Shreve II Thm 3.3.4, §3.5).
 
 **Quadratic variation — the heart.** For any partition $\Pi$ of $[0,T]$,
-$$[W,W](T)=\lim_{\|\Pi\|\to0}\sum_j\big(W(t_{j+1})-W(t_j)\big)^2=T.$$
+$$
+[W,W](T)=\lim_{\|\Pi\|\to0}\sum_j\big(W(t_{j+1})-W(t_j)\big)^2=T.
+$$
 *Why:* each squared increment has mean $t_{j+1}-t_j$ and variance $2(t_{j+1}-t_j)^2$; by a law-of-large-numbers the sum collapses to $\sum(t_{j+1}-t_j)=T$ (Shreve II Thm 3.4.3). The informal bookkeeping is then
-$$(dW)^2=dt,\qquad dW\,dt=0,\qquad dt\,dt=0 \quad\text{(Shreve II eqs 3.4.10–13).}$$
+$$
+(dW)^2=dt,\qquad dW\,dt=0,\qquad dt\,dt=0 \quad\text{(Shreve II eqs 3.4.10–13).}
+$$
 
 **Consequence for the drift of a log-price.** For geometric Brownian motion $S(t)=S(0)e^{\sigma W(t)+\left(\mu-\tfrac12\sigma^2\right)t}$ (Shreve I Thm 15.3), *applying* Itô's lemma recovers $dS=\mu S\,dt+\sigma S\,dW$. The $\tfrac12\sigma^2$ is forced: exponentiate the differential form and the $(dW)^2=dt$ rule generates the correction *backwards* — the answer is consistent only if the exponent carries $-\tfrac12\sigma^2$. Missing it would make $\mathbb E[\log(S_T/S_0)]$ grow with $\tfrac12\sigma^2$, a pure artifact of nonzero quadratic variation, not a real drift.
 

@@ -29,15 +29,21 @@ Having established *why* OTC markets exist, this page maps **how they are organi
 
 **The dealer's two-sided quote and the interdealer price.** Formally, a customer meeting a dealer bargains over a price with the dealer's **outside option** being the interdealer price $M$ (the price at which the position can be recycled frictionlessly). With the customer's gain $L$ from selling and $H$ from buying, and the dealer holding bargaining power $z$:
 
-$$B=zL+(1-z)M,\qquad A=zH+(1-z)M.$$
+$$
+B=zL+(1-z)M,\qquad A=zH+(1-z)M.
+$$
 
 The dealer's **per-trade profit** is the difference between the price he charges the customer and the interdealer price he can recycle at:
 
-$$\pi_A=A-M=z(H-M),\qquad \pi_B=M-B=z(M-L).$$
+$$
+\pi_A=A-M=z(H-M),\qquad \pi_B=M-B=z(M-L).
+$$
 
 In the benchmark equilibrium (Duffie–Gârleanu–Pedersen, Condition 1: the market is on the buyer's side, $\mu_{lo}<\mu_{hn}$), the interdealer price equals the buyer's reservation value, $M=A=H$, so the ask is exactly the buyer's reservation and the spread collapses to
 
-$$A-B=z(H-L).$$
+$$
+A-B=z(H-L).
+$$
 
 **Where does the "interdealer market" enter the *price*?** Through the interdealer price $M$ and, in the general model, through the term $\rho(1-z)$ in the denominator $D$ — the *accessibility of the dealer to the customer*. This is the structural result: **a customer's price is better (spread tighter) when the dealer has more competition** — either because the customer can find another dealer (higher $\rho$ with $z<1$) or because the dealer's own recycling is cheap (higher $M$, i.e. a liquid interdealer market).
 
@@ -45,7 +51,9 @@ $$A-B=z(H-L).$$
 
 **Central clearing as a structural transformation.** Bilateral exposures $\{W_{ij}\}$ are replaced by exposures to a CCP. Each dealer's net position to the CCP is
 
-$$n_i=\sum_j W_{ij}-\sum_j W_{ji},$$
+$$
+n_i=\sum_j W_{ij}-\sum_j W_{ji},
+$$
 
 and multilateral netting reduces total system exposure from the **gross** $\sum_{i,j}W_{ij}$ to the **netted** $\tfrac12\sum_i|n_i|$. In a dense network the reduction is dramatic (see §3) — this is the quantitative case for central clearing, developed in [[pillars/06-market-making/dealer-banks-and-otc/06-advanced-extensions|06 · Advanced Extensions]].
 

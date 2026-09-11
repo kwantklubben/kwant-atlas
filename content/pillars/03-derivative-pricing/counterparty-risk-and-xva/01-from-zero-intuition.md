@@ -47,7 +47,9 @@ Note the identity **EPE + ENE = EFV**: $30 + (-8) = 22$. Positive exposure and n
 
 **From exposure to a CVA number.** The discrete CVA (Gregory Eq 17.3) is
 
-$$CVA(t) \approx -LGD\sum_{i=1}^{m} EPE(t,t_i)\times PD(t_{i-1},t_i).$$
+$$
+CVA(t) \approx -LGD\sum_{i=1}^{m} EPE(t,t_i)\times PD(t_{i-1},t_i).
+$$
 
 The default probability comes from the credit market: if the counterparty's spread is $s$ and $LGD=1-R$, the implied default intensity is $\lambda = s/LGD$ (Hull 24.2; BM 21.25), and the survival probability is $Q(\tau>t)=e^{-\lambda t}$. So CVA is literally **the product of a market quantity (EPE) and a credit quantity (PD × LGD)** — the market-risk and credit-risk halves of the trade.
 

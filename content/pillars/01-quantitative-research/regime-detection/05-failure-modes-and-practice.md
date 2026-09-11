@@ -30,11 +30,15 @@ The three failures, in one line each:
 **Where each failure lives.**
 
 - **Label switching is a symmetry of the likelihood.** For any parameter vector $\theta=(\mu,\sigma,P,\pi)$, the permuted vector $\theta'$ (state $0\leftrightarrow1$ everywhere) gives the *same* marginal likelihood because the sum over states is invariant:
-$$\ln L(\theta)=\sum_{t=1}^{T}\ln\Big[\sum_j f(y_t\mid s_t{=}j)\,\mathbb{P}[s_t{=}j\mid y_{1:t-1}]\Big],$$
+$$
+\ln L(\theta)=\sum_{t=1}^{T}\ln\Big[\sum_j f(y_t\mid s_t{=}j)\,\mathbb{P}[s_t{=}j\mid y_{1:t-1}]\Big],
+$$
 and the inner sum is unchanged when you rename the states. Hamilton (1989 §4.2) states this explicitly ("the decision of which state to call state 0 and which to call state 1 is arbitrary") and fixes it by normalization, e.g. $\mu_1>\mu_0$.
 
 - **Overfitting is the usual bias–variance trade (ESL Ch 7).** A $K$-state HMM has $2K$ mean/vol params plus $K(K-1)$ transition params. The likelihood is non-decreasing in $K$ (a $K$-state model can always mimic a $(K-1)$-state one by duplicating a state with $P_{ii}\to1$). The correction is a complexity penalty:
-$$\text{BIC}=-2\ln\hat L+K_{\text{params}}\ln T,$$
+$$
+\text{BIC}=-2\ln\hat L+K_{\text{params}}\ln T,
+$$
 which, on genuine 2-state data, decisively rejects a spurious third state (verified below).
 
 - **Detection lag is Bayesian by construction.** The filtered probability moves only when evidence accumulates; with overlapping regime densities a single return barely moves it. The expected "time to detect" is proportional to how separable the regimes are ($|\mu_1-\mu_0|/\sigma$). Persistence $P_{ii}$ then interacts: high persistence makes the filter confident (good) but makes false switches costly (a regime that actually changed is not believed for several periods).

@@ -25,7 +25,7 @@ The mental model to hold: **a portfolio is a machine with a handful of input dia
 
 Three steps, three "aha"s:
 
-1. **A sensitivity is a derivative, and a derivative is a local exchange rate.** "Delta $=0.6$" means: *for a small move in the share price, I gain $60$ cents per $\$1$ of move.* It is a rate, not a prediction — it says nothing about which way the price will go.
+1. **A sensitivity is a derivative, and a derivative is a local exchange rate.** "Delta $=0.6$" means: *for a small move in the share price, I gain $60$ cents per \$1 of move.* It is a rate, not a prediction — it says nothing about which way the price will go.
 2. **Sensitivities add across positions but not across factors.** If desk A has delta $100$ and desk B has delta $-40$, the firm has delta $60$ — simple addition. But the *risk* is not the sum of the parts, because factors move together and correlate. That coupling lives in a covariance matrix, not in the sensitivities.
 3. **Every approximation has a remainder, and the remainder is the risk.** A first-order (delta) answer misses the curvature term $\tfrac12\Gamma(\Delta S)^2$. For small moves that is noise. For a crash it is the entire loss.
 
@@ -35,14 +35,18 @@ Three steps, three "aha"s:
 
 **The Taylor map.** Let $V(f_1,\dots,f_n)$ be portfolio value as a function of risk factors $f$. For a move $\Delta f$,
 
-$$V(f+\Delta f)-V(f)=\underbrace{\sum_i\frac{\partial V}{\partial f_i}\Delta f_i}_{\text{sensitivities }\times\text{ moves}}+\underbrace{\tfrac12\sum_{i,j}\frac{\partial^2V}{\partial f_i\partial f_j}\Delta f_i\Delta f_j}_{\text{curvature}}+O(\|\Delta f\|^3).$$
+$$
+V(f+\Delta f)-V(f)=\underbrace{\sum_i\frac{\partial V}{\partial f_i}\Delta f_i}_{\text{sensitivities }\times\text{ moves}}+\underbrace{\tfrac12\sum_{i,j}\frac{\partial^2V}{\partial f_i\partial f_j}\Delta f_i\Delta f_j}_{\text{curvature}}+O(\|\Delta f\|^3).
+$$
 
 The first-order vector $b_i=\partial V/\partial f_i$ is the **exposure vector** (the "Greeks" when the factors are option inputs). The second-order matrix $H_{ij}=\partial^2V/\partial f_i\partial f_j$ is the **gamma/cross-gamma matrix**. *Everything* in sensitivity-based risk management is a decision about how many Taylor terms to keep.
 
 **Bump-and-revalue (Hull §21.8 for Greeks from a grid; the universal production method).** When no closed form exists, measure the derivative numerically by central differences:
 
-$$\frac{\partial V}{\partial f_i}\approx\frac{V(f_i+h)-V(f_i-h)}{2h},\qquad
-\frac{\partial^2 V}{\partial f_i^2}\approx\frac{V(f_i+h)-2V(f_i)+V(f_i-h)}{h^2}.$$
+$$
+\frac{\partial V}{\partial f_i}\approx\frac{V(f_i+h)-V(f_i-h)}{2h},\qquad
+\frac{\partial^2 V}{\partial f_i^2}\approx\frac{V(f_i+h)-2V(f_i)+V(f_i-h)}{h^2}.
+$$
 
 This is *identical in spirit* to what a trading system does: shock each risk factor by a small amount, re-price the book, difference. It works for any instrument and any model, which is why it is the industry default even when formulas exist.
 

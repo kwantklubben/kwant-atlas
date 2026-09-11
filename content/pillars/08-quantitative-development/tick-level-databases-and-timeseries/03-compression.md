@@ -32,26 +32,34 @@ Four codecs carry almost all of it:
 
 **Delta encoding.** For a sequence $x_1,\dots,x_N$ encoded as first value plus differences,
 
-$$\delta_i = x_i - x_{i-1}, \qquad \text{bits} = w(x_1) + \sum_{i\ge2} w(\delta_i),$$
+$$
+\delta_i = x_i - x_{i-1}, \qquad \text{bits} = w(x_1) + \sum_{i\ge2} w(\delta_i),
+$$
 
 where $w(\cdot)$ is the number of bits needed (e.g. zig-zag varint width, or a fixed width $W = \max_i \lceil\log_2(\lvert 2\delta_i\rvert+1)\rceil$ if bit-packing the column). A smooth monotone column turns $64$ bits/row into $O(\log \bar\delta)$.
 
 **Delta-of-delta.** Applied recursively:
 
-$$\epsilon_i = \delta_i - \delta_{i-1}, \qquad \text{bits} = w(\delta_1) + w(\epsilon_1) + \sum_{i\ge3} w(\epsilon_i).$$
+$$
+\epsilon_i = \delta_i - \delta_{i-1}, \qquad \text{bits} = w(\delta_1) + w(\epsilon_1) + \sum_{i\ge3} w(\epsilon_i).
+$$
 
 For a Poisson-like arrival stream with slowly varying rate, $\lvert\epsilon_i\rvert \ll \delta_i$, so this is the canonical choice for **timestamp columns** (it is what Gorilla/InfluxDB and many tick codecs use).
 
 **Dictionary + bit-packing.** With $K$ distinct values and a table costing $T$ bytes,
 
-$$B_{\text{dict}} = T + \frac{N \lceil \log_2 K \rceil}{8}\ \text{bytes},$$
+$$
+B_{\text{dict}} = T + \frac{N \lceil \log_2 K \rceil}{8}\ \text{bytes},
+$$
 
 so the per-row cost collapses from the source width to $\log_2 K$ bits — e.g. $32$ bits → $9$ bits for $K=500$.
 
 **Overall ratio.** With per-column encoded widths $w_i$ against raw widths $s_i$ (bits),
 
-$$\rho = \frac{\sum_i s_i}{\sum_i w_i}, \qquad
-\text{bits/row} = \sum_i w_i .$$
+$$
+\rho = \frac{\sum_i s_i}{\sum_i w_i}, \qquad
+\text{bits/row} = \sum_i w_i .
+$$
 
 ---
 

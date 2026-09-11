@@ -15,7 +15,7 @@ tags:
 
 Start with the dumbest possible question: *if Black–Scholes says an option has one price, why does a desk need a "calibration" step at all?* Because the model has free parameters (volatility, and in fancier models several of them), and the market has already decided the *actual* prices. **Calibration is the act of choosing the parameters so the model agrees with the market.** Everything else on this page is unpacking that sentence.
 
-Think of a model as a machine with dials. You feed it a strike and a maturity and it prints a price. The dials are $\\theta$ (for BSM just $\\sigma$; for Heston $v_0,\\bar v,\\lambda,\\eta,\\rho$; for SABR $\\alpha,\\beta,\\rho,\\nu$). Market quotes are the *answer key*. Calibration turns the dials until the machine's answers match the key.
+Think of a model as a machine with dials. You feed it a strike and a maturity and it prints a price. The dials are $\theta$ (for BSM just $\sigma$; for Heston $v_0,\bar v,\lambda,\eta,\rho$; for SABR $\alpha,\beta,\rho,\nu$). Market quotes are the *answer key*. Calibration turns the dials until the machine's answers match the key.
 
 Three things to un-learn first:
 
@@ -27,13 +27,15 @@ Three things to un-learn first:
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**The calibration problem, written down.** We observe $N$ market quotes $\\{O_i^{\\text{mkt}}\\}$ (option prices, or equivalently implied vols $\\hat\\sigma_i$). We pick a pricing function $P_i(\\theta)$ (model price for quote $i$ under parameters $\\theta$). Calibration is
+**The calibration problem, written down.** We observe $N$ market quotes $\{O_i^{\text{mkt}}\}$ (option prices, or equivalently implied vols $\hat\sigma_i$). We pick a pricing function $P_i(\theta)$ (model price for quote $i$ under parameters $\theta$). Calibration is
 
-$$\\hat\\theta = \\arg\\min_\\theta \\; \\mathcal{L}\\big(P_1(\\theta),\\dots,P_N(\\theta);\\; O_1^{\\text{mkt}},\\dots,O_N^{\\text{mkt}}\\big),$$
+$$
+\hat\theta = \arg\min_\theta \; \mathcal{L}\big(P_1(\theta),\dots,P_N(\theta);\; O_1^{\text{mkt}},\dots,O_N^{\text{mkt}}\big),
+$$
 
-where $\\mathcal L$ is an **objective function** (a distance; the lookup table is on the [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]). For BSM with a single free parameter $\\sigma$, this is a one-dimensional root-finding/minimization: find $\\sigma$ so the model call price equals the market call price.
+where $\mathcal L$ is an **objective function** (a distance; the lookup table is on the [[pillars/03-derivative-pricing/calibration-and-market-practice/index|Index Hub]]). For BSM with a single free parameter $\sigma$, this is a one-dimensional root-finding/minimization: find $\sigma$ so the model call price equals the market call price.
 
-**The single-parameter case is already instructive.** Given one market option, $\\sigma$ is chosen so $P(\\sigma)=O^{\\text{mkt}}$. Invert BSM: this $\\sigma$ is called the **implied volatility** — it is literally the BSM parameter calibrated to that one quote. With several quotes at once (a smile), no single $\\sigma$ fits all, so you must *trade off* which strikes matter most. That trade-off is exactly the choice of objective function.
+**The single-parameter case is already instructive.** Given one market option, $\sigma$ is chosen so $P(\sigma)=O^{\text{mkt}}$. Invert BSM: this $\sigma$ is called the **implied volatility** — it is literally the BSM parameter calibrated to that one quote. With several quotes at once (a smile), no single $\sigma$ fits all, so you must *trade off* which strikes matter most. That trade-off is exactly the choice of objective function.
 
 **Two dangers that appear even here.**
 - *Objective mismatch:* the price-RMSE optimum and the vol-RMSE optimum differ, because price is a nonlinear function of vol (dollar-weighted toward ATM).
@@ -43,7 +45,7 @@ where $\\mathcal L$ is an **objective function** (a distance; the lookup table i
 
 ### 3. Computational Implementation — one dial, two objectives, two answers
 
-Fit a *single* BSM vol $\\sigma$ to the whole market smile, first minimizing **price RMSE**, then **implied-vol RMSE**. The two answers differ — proof that the objective function is a real choice. Stdlib only.
+Fit a *single* BSM vol $\sigma$ to the whole market smile, first minimizing **price RMSE**, then **implied-vol RMSE**. The two answers differ — proof that the objective function is a real choice. Stdlib only.
 
 ```python
 import math
@@ -84,14 +86,14 @@ vol-RMSE-optimal  sigma  = 0.26000   vrmse=0.04318
 price RMSE of the vol-optimal fit = 1.21277
 vol   RMSE of the price-optimal  = 0.04799
 ```
-Price-RMSE picks $\\sigma{=}0.239$ (biased to ATM where prices are largest); vol-RMSE picks $\\sigma{=}0.26$ (spreads error evenly across the smile). **Same market, same model, one free parameter — two calibrations.** That is the seed of the whole folder: calibration is a *decision*, not a computation.
+Price-RMSE picks $\sigma{=}0.239$ (biased to ATM where prices are largest); vol-RMSE picks $\sigma{=}0.26$ (spreads error evenly across the smile). **Same market, same model, one free parameter — two calibrations.** That is the seed of the whole folder: calibration is a *decision*, not a computation.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Treating calibration as "the answer."** A best-fit $\\theta$ is conditional on today's quotes. Recalibrating tomorrow changes it — so any derivative priced on it inherits recalibration drift (see [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]]).
-2. **The residual you can't fit is information.** If a one-$\\sigma$ BSM fit leaves a systematic smile-shaped error, that is not noise to shrug off — it is the model telling you it is structurally wrong (constant vol cannot reach the wings). This is the motivation for local/stochastic vol.
+1. **Treating calibration as "the answer."** A best-fit $\theta$ is conditional on today's quotes. Recalibrating tomorrow changes it — so any derivative priced on it inherits recalibration drift (see [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]]).
+2. **The residual you can't fit is information.** If a one-$\sigma$ BSM fit leaves a systematic smile-shaped error, that is not noise to shrug off — it is the model telling you it is structurally wrong (constant vol cannot reach the wings). This is the motivation for local/stochastic vol.
 3. **Wrong objective ⇒ wrong parameter.** Fitting in price space quietly ignores the wings; fitting in vol space can leave large dollar mispricings at ATM. Choose deliberately and report both.
 4. **More parameters ≠ better.** A richer model (SABR, Heston) fits better but invites non-identifiability and overfitting — the machine has too many dials and many dial-settings print the same prices.
 

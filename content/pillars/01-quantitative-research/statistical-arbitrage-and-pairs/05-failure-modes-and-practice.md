@@ -31,7 +31,9 @@ The discipline is not cynicism; it is knowing exactly where the model is an appr
 
 Suppose the true relationship is $y_t=\mu_t+\beta_t x_t+z_t$ where $\beta_t$ or $\mu_t$ changes at time $\tau$. The estimated residual using the pre-break $\hat\beta_0$ is
 
-$$\hat z_t = y_t-\hat\beta_0 x_t = \underbrace{(\mu+z_t)}_{\text{stationary}} + \underbrace{(\beta_\tau-\hat\beta_0)\,x_t}_{\text{$I(1)$ if }\beta_\tau\neq\hat\beta_0}.$$
+$$
+\hat z_t = y_t-\hat\beta_0 x_t = \underbrace{(\mu+z_t)}_{\text{stationary}} + \underbrace{(\beta_\tau-\hat\beta_0)\,x_t}_{\text{$I(1)$ if }\beta_\tau\neq\hat\beta_0}.
+$$
 
 A break in $\beta$ injects a **nonstationary component** into the "spread" — the residual is no longer $I(0)$, the test loses its meaning, and the z-score grows without bound. The test battery:
 
@@ -145,7 +147,7 @@ PART B — data snooping over a random universe
   same pair, fresh out-of-sample window: ADF t = -0.85 (not significant)
 ```
 
-**Part A** is the catastrophic case: the pair *passes* the cointegration test in-sample ($t=-5.56^{\*}$), then the spread marches to $+16\sigma$ (and $+33\sigma$) out-of-sample. A stop at $3.5\sigma$ fires and the position is closed for a loss; a strategy *without* a stop is ruinous. The ADF test on the full sample would have been polluted by the $I(1)$ break term — you only see the break by re-testing recursively.
+**Part A** is the catastrophic case: the pair *passes* the cointegration test in-sample ($t=-5.56^{*}$), then the spread marches to $+16\sigma$ (and $+33\sigma$) out-of-sample. A stop at $3.5\sigma$ fires and the position is closed for a loss; a strategy *without* a stop is ruinous. The ADF test on the full sample would have been polluted by the $I(1)$ break term — you only see the break by re-testing recursively.
 
 **Part B** is the subtle case: **no pair is cointegrated** (all are independent random walks), yet the best of $200$ shows ADF $t=-4.49$ in-sample — convincingly "cointegrated." On a fresh window the *same* pair gives $t=-0.85$: nothing. The in-sample statistic was pure selection.
 

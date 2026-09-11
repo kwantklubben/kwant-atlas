@@ -16,11 +16,15 @@ tags:
 
 This is the **action page**: how the reservation price becomes a quote. The practical objective is one mechanism — **shift both quotes against the position** — and a quantitative law for how far. The Ho–Stoll / A–S reservation price says the inventory-controlled centre is
 
-$$r(I)=\bar S-\gamma\sigma^2 I\,\tau,$$
+$$
+r(I)=\bar S-\gamma\sigma^2 I\,\tau,
+$$
 
 so the quote skew per unit of inventory is $\alpha=\gamma\sigma^2\tau$. A linear inventory-control rule makes this explicit:
 
-$$\Delta s=-\alpha\,(I-I_{\text{target}}),\qquad \text{bid}=\text{mid}+\Delta s-\frac{s}{2},\quad \text{ask}=\text{mid}+\Delta s+\frac{s}{2}.$$
+$$
+\Delta s=-\alpha\,(I-I_{\text{target}}),\qquad \text{bid}=\text{mid}+\Delta s-\frac{s}{2},\quad \text{ask}=\text{mid}+\Delta s+\frac{s}{2}.
+$$
 
 Long inventory ⇒ both quotes shift **down** (attract sellers, discourage buyers); short ⇒ shift up. This is the same engine as a flat linear skew, and it is exactly A–S quoting around the reservation price.
 
@@ -34,21 +38,29 @@ The headline result of this page: **skewing trades a little mean P&L for a large
 
 **The linear skew law.** With target inventory $I_{\text{target}}$ (usually 0), the mid-quote skew is proportional to the inventory displacement:
 
-$$\Delta s(q)=-\alpha\,(q-I_{\text{target}}),$$
+$$
+\Delta s(q)=-\alpha\,(q-I_{\text{target}}),
+$$
 
 giving inventory-controlled quotes
 
-$$p^{\text{bid}}=\text{mid}+\Delta s-\frac{s}{2},\qquad p^{\text{ask}}=\text{mid}+\Delta s+\frac{s}{2}.$$
+$$
+p^{\text{bid}}=\text{mid}+\Delta s-\frac{s}{2},\qquad p^{\text{ask}}=\text{mid}+\Delta s+\frac{s}{2}.
+$$
 
 From the reservation-price view, $\Delta s(q)=r(q)-\bar S=-\gamma\sigma^2(q-I_{\text{target}})\tau$, so the **optimal skew per share** is
 
-$$\alpha=\gamma\sigma^2\tau.$$
+$$
+\alpha=\gamma\sigma^2\tau.
+$$
 
 It is set by risk aversion, variance, and holding horizon — *not* by taste. Raising $\alpha$ makes the skew fight inventory harder (and, beyond a point, costs edge).
 
 **Nonlinear skew near a hard limit.** When $|q|$ approaches a risk limit $Q$, production engines sharpen the skew quadratically (or pull the accumulating side's quote out of the market):
 
-$$\Delta s(q)=-\alpha\,\mathrm{sign}(q)\left(\frac{|q|}{Q}\right)^2.$$
+$$
+\Delta s(q)=-\alpha\,\mathrm{sign}(q)\left(\frac{|q|}{Q}\right)^2.
+$$
 
 As $|q|\to Q$ the accumulating side is effectively withdrawn (infinite spread) while the unloading side is quoted aggressively to force a fill. This is the continuous version of the hard cap: the **skew encourages** flattening, the **cap guarantees** it.
 
@@ -107,7 +119,7 @@ skew + hard cap  Q=5      |  56.645    5.670 |   2.507      5
 ```
 **Reading the numbers.**
 - **Symmetric quoting** earns the highest mean P&L ($60.30$) but with P&L std $17.72$ and terminal-inventory std $8.97$ — a max position of **48 lots**. An unbounded inventory random walk.
-- **Inventory skew** (the A–S reservation price) gives up $\sim\$3$ of mean ($56.95$) and in exchange cuts P&L std from $17.72$ to $5.82$ (**$3.0\times$**) and terminal-inventory std from $8.97$ to $3.19$ (**$2.8\times$**). This is A–S Table 1's qualitative result.
+- **Inventory skew** (the A–S reservation price) gives up $\sim$ \$3 of mean (56.95$) and in exchange cuts P&L std from $17.72$ to $5.82$ (**$3.0\times$**) and terminal-inventory std from $8.97$ to $3.19$ (**$2.8\times$**). This is A–S Table 1's qualitative result.
 - **Linear skew $\alpha=0.40$** ($=\gamma\sigma^2\tau$) controls inventory hardest: final-q std $0.87$, max position $4$. It pays for that with lower mean ($51.46$) — over-strong for pure inventory control, but exactly the knife-edge $\alpha$ a desk trading off variance picks.
 - **Skew + hard cap $Q=5$** keeps mean P&L near the pure-skew level ($56.65$) *and* hard-bounds the position at $5$ — the production choice.
 

@@ -35,16 +35,24 @@ The practical objective: internalize that the constant-$\sigma$ model is a **quo
 #### 2.1 Implied volatility is a root of a monotone function
 
 Given $C_{\text{mkt}}$, define
-$$f(\sigma)=C_{BS}(S,K,T,r,\sigma)-C_{\text{mkt}}.$$
+$$
+f(\sigma)=C_{BS}(S,K,T,r,\sigma)-C_{\text{mkt}}.
+$$
 Since $C_{BS}$ is strictly increasing in $\sigma$ with derivative (vega)
-$$\nu=\frac{\partial C_{BS}}{\partial\sigma}=S\,n(d_1)\sqrt T>0,$$
+$$
+\nu=\frac{\partial C_{BS}}{\partial\sigma}=S\,n(d_1)\sqrt T>0,
+$$
 $f$ has a unique root for any price inside the no-arbitrage bounds (Hull 20.1; Haug §2.3). **Newton–Raphson** converges quadratically:
-$$\sigma_{n+1}=\sigma_n-\frac{C_{BS}(S,K,T,r,\sigma_n)-C_{\text{mkt}}}{\nu(\sigma_n)}= \sigma_n-\frac{C_{BS}(\sigma_n)-C_{\text{mkt}}}{S\,n(d_1)\sqrt T}.$$
+$$
+\sigma_{n+1}=\sigma_n-\frac{C_{BS}(S,K,T,r,\sigma_n)-C_{\text{mkt}}}{\nu(\sigma_n)}= \sigma_n-\frac{C_{BS}(\sigma_n)-C_{\text{mkt}}}{S\,n(d_1)\sqrt T}.
+$$
 
 #### 2.2 Who cares about the smile? — the risk-neutral density
 
 The smile is not cosmetic; it encodes the distribution. Breeden–Litzenberger (Hull app. 20A; Gatheral §1):
-$$\phi(K,T)=e^{rT}\frac{\partial^2 C(K,T)}{\partial K^2}.$$
+$$
+\phi(K,T)=e^{rT}\frac{\partial^2 C(K,T)}{\partial K^2}.
+$$
 A **skewed** surface (down in strike) means the implied $\phi$ is heavier on the low-$K$ side: a fat left tail. A **symmetric smile** (FX) means heavier tails *both* sides: excess kurtosis. If $\partial^2C/\partial K^2<0$ somewhere, the implied density is negative — a butterfly arbitrage, and the surface is impossible.
 
 #### 2.3 Why one vol cannot fit the smile

@@ -27,20 +27,30 @@ A process $W(t),\,t\ge0$ is **BM** if: $W(0)=0$; paths are continuous; increment
 
 #### 2.2 Martingale property (Shreve II Thm 3.3.4)
 Using independence of the future increment $W(t)-W(s)$ from $\mathcal F(s)$:
-$$\mathbb E[W(t)\mid\mathcal F(s)]=\mathbb E[W(s)+(W(t)-W(s))\mid\mathcal F(s)]=W(s)+0=W(s).$$
+$$
+\mathbb E[W(t)\mid\mathcal F(s)]=\mathbb E[W(s)+(W(t)-W(s))\mid\mathcal F(s)]=W(s)+0=W(s).
+$$
 $W$ is also **Markov**: the only relevant information in $\mathcal F(s)$ is $W(s)$ itself, with transition density $$p(\tau,x,y)=\frac{1}{\sqrt{2\pi\tau}}e^{-\frac{(y-x)^2}{2\tau}},\qquad \mathbb E[f(W(t))\mid\mathcal F(s)]=\int f(y)\,p(t-s,W(s),y)\,dy.$$ (Shreve II §3.5; via the Independence Lemma, Shreve II Lemma 2.3.4.)
 
 #### 2.3 The exponential martingale (Shreve II Thm 3.6.1; Shreve I Thm 9.41)
 For constant $\sigma$,
-$$Z(t)=\exp\Big\{\sigma W(t)-\tfrac12 \sigma^2 t\Big\}\quad\Longrightarrow\quad \mathbb E[Z(t)\mid\mathcal F(s)]=Z(s).$$
+$$
+Z(t)=\exp\Big\{\sigma W(t)-\tfrac12 \sigma^2 t\Big\}\quad\Longrightarrow\quad \mathbb E[Z(t)\mid\mathcal F(s)]=Z(s).
+$$
 *Proof.* Condition, factor $Z(s)$, and use the increment MGF $\mathbb E e^{\sigma(W(t)-W(s))}=e^{\tfrac12\sigma^2(t-s)}$, which exactly cancels the $\tfrac12\sigma^2$ correction. This process is the seed of Girsanov's change of measure ([[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05 · Girsanov]]).
 
 #### 2.4 Quadratic variation & the first-passage time (Shreve II §3.4, §3.6)
-$$[W,W](T)=\lim\sum_j(\Delta W_j)^2=T\quad\Rightarrow\quad(dW)^2=dt.$$
+$$
+[W,W](T)=\lim\sum_j(\Delta W_j)^2=T\quad\Rightarrow\quad(dW)^2=dt.
+$$
 Let $\tau_m=\min\{t\ge0: W(t)=m\}$ ($m>0$). Stopping the exponential martingale at $\tau_m$ and letting $t\to\infty$ via dominated convergence gives (Shreve II Thm 3.6.2):
-$$\mathbb E\big[e^{-\alpha\tau_m}\big]=e^{-m\sqrt{2\alpha}}\quad(\alpha>0),\qquad \mathbb E\tau_m=\infty.$$
+$$
+\mathbb E\big[e^{-\alpha\tau_m}\big]=e^{-m\sqrt{2\alpha}}\quad(\alpha>0),\qquad \mathbb E\tau_m=\infty.
+$$
 So BM *reaches every level with probability 1 but takes, on average, infinitely long* — a striking, exactly-quantified tension. The **reflection principle** (Shreve II eq 3.7.6) turns barrier/threshold probabilities into tail probabilities:
-$$\mathbb P\{M(t)\ge m,\ W(t)\le w\}=\mathbb P\{W(t)\ge 2m-w\},\qquad M(t)=\max_{0\le s\le t}W(s).$$
+$$
+\mathbb P\{M(t)\ge m,\ W(t)\le w\}=\mathbb P\{W(t)\ge 2m-w\},\qquad M(t)=\max_{0\le s\le t}W(s).
+$$
 
 ---
 

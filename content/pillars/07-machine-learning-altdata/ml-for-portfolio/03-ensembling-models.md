@@ -18,7 +18,9 @@ When you run *many* models on the same asset, you have a second, purely statisti
 
 The intuition is precise and quantitative. If $B$ models each have forecast variance $\sigma^2$ and their forecasts are correlated with each other by $\rho$, then the *average* forecast has variance
 
-$$\mathrm{Var}\big(\tfrac1B\textstyle\sum_b \hat f_b\big) = \sigma^2\Big(\rho + \tfrac{1-\rho}{B}\Big).$$
+$$
+\mathrm{Var}\big(\tfrac1B\textstyle\sum_b \hat f_b\big) = \sigma^2\Big(\rho + \tfrac{1-\rho}{B}\Big).
+$$
 
 This is **ESL eq. 15.1** and **AFML Ch 6**. Two regimes jump out:
 
@@ -35,9 +37,11 @@ So ensembling is really a **diversification** operation across models: it works 
 
 Let $\hat f_1,\dots,\hat f_B$ be the predictions of $B$ bagged models at a fixed input, with common variance $\sigma^2$ and common pairwise correlation $\rho$. Then
 
-$$\mathrm{Var}\Big(\frac1B\sum_b \hat f_b\Big)
+$$
+\mathrm{Var}\Big(\frac1B\sum_b \hat f_b\Big)
 = \frac1{B^2}\Big(\sum_b \sigma^2 + \sum_{b\ne c}\rho\sigma^2\Big)
-= \sigma^2\Big(\rho + \frac{1-\rho}{B}\Big).$$
+= \sigma^2\Big(\rho + \frac{1-\rho}{B}\Big).
+$$
 
 **Interpretation.** The $\sigma^2\rho$ term is the *irreducible* variance — the part of each forecast that is shared across members (the signal plus any common bias) and cannot be averaged away. The $(1-\rho)\sigma^2/B$ term is the *diversifiable* variance — the member-specific noise that averaging dilutes by $1/B$. Bagging buys you the second term and pays nothing for the first. This is why random forests also randomly subsample features at each split: it deliberately *lowers $\rho$* to make the $(1-\rho)$ factor bigger (ESL §15.3).
 
@@ -45,7 +49,9 @@ $$\mathrm{Var}\Big(\frac1B\sum_b \hat f_b\Big)
 
 From [[pillars/07-machine-learning-altdata/ml-for-portfolio/01-from-zero-intuition|01 · From Zero]],
 
-$$\mathbb{E}[(y-\hat f)^2] = \mathrm{bias}^2(\hat f) + \mathrm{Var}(\hat f) + \sigma_\varepsilon^2.$$
+$$
+\mathbb{E}[(y-\hat f)^2] = \mathrm{bias}^2(\hat f) + \mathrm{Var}(\hat f) + \sigma_\varepsilon^2.
+$$
 
 Averaging leaves the *bias* and the *noise* alone and acts only on $\mathrm{Var}(\hat f)$. So ensembling is the principled tool when your diagnosed problem is **variance** (overfitting), and it is the wrong tool when the problem is **bias** (underfitting) — that is where *boosting*, which fits models sequentially to the *residuals*, comes in (AFML Ch 6; see [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting Methods]]).
 
@@ -53,7 +59,9 @@ Averaging leaves the *bias* and the *noise* alone and acts only on $\mathrm{Var}
 
 If members differ in reliability, the *optimal* average is weighted, not equal:
 
-$$\hat f = \sum_k w_k \hat f_k,\qquad w_k \propto \frac{1}{\sigma_k^2},\quad \text{(uncorrelated errors)},$$
+$$
+\hat f = \sum_k w_k \hat f_k,\qquad w_k \propto \frac{1}{\sigma_k^2},\quad \text{(uncorrelated errors)},
+$$
 
 or with general weights fit by OLS — which is exactly the Granger–Ramanathan / **stacking** idea from [[pillars/07-machine-learning-altdata/ml-for-portfolio/02-forecasts-to-positions|02]]. The danger repeats: fitting the weights on the same data you evaluate on **overfits the ensemble**, and the empirical combination of $w_k$ (which itself has estimation variance) can undo the diversification benefit. When in doubt, equal-weight or inverse-variance is the robust default.
 

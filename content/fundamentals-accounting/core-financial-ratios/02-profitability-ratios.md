@@ -26,25 +26,33 @@ Penman's discipline (Ch 5, 7, 8) is to make the *base* precise: **ROCE** = compr
 
 **The return ratios.** Let $\tau$ be the tax rate, *NI* net income, *BVE* book value of common equity, *TA* total assets, *NOPAT* $=$ EBIT$(1-\tau)$, *IC* $=$ TotalDebt $+$ BVE $-$ Cash.
 
-$$\text{ROE}=\frac{\text{NI}}{\text{avg BVE}}, \qquad
+$$
+\text{ROE}=\frac{\text{NI}}{\text{avg BVE}}, \qquad
 \text{ROA}=\frac{\text{NI}}{\text{avg TA}}, \qquad
-\text{ROIC} = \frac{\text{NOPAT}}{\text{avg IC}}.$$
+\text{ROIC} = \frac{\text{NOPAT}}{\text{avg IC}}.
+$$
 
 **The margins.** With *S* sales, COGS cost of goods sold:
 
-$$\text{Gross margin}=\frac{S-\text{COGS}}{S}, \qquad
+$$
+\text{Gross margin}=\frac{S-\text{COGS}}{S}, \qquad
 \text{Operating margin}=\frac{\text{EBIT}}{S}, \qquad
-\text{Net margin}=\frac{\text{NI}}{S}.$$
+\text{Net margin}=\frac{\text{NI}}{S}.
+$$
 
 **The DuPont decomposition (Subramanyam; Penman Ch 11).** The headline ROE is not a black box — it *is* the product of three drivers, each independently attackable:
 
-$$\text{ROE} = \underbrace{\frac{\text{NI}}{S}}_{\text{net margin}} \times \underbrace{\frac{S}{\text{avg TA}}}_{\text{asset turnover}} \times \underbrace{\frac{\text{avg TA}}{\text{avg BVE}}}_{\text{equity multiplier}}.$$
+$$
+\text{ROE} = \underbrace{\frac{\text{NI}}{S}}_{\text{net margin}} \times \underbrace{\frac{S}{\text{avg TA}}}_{\text{asset turnover}} \times \underbrace{\frac{\text{avg TA}}{\text{avg BVE}}}_{\text{equity multiplier}}.
+$$
 
 A high ROE is then three different *kinds* of story: **high-margin** (a luxury goods firm), **high-turnover** (a supermarket), or **high-leverage** (a bank). All three produce the same ROE for entirely different reasons — which is why reading only the ROE number tells you almost nothing.
 
 **Penman's operating decomposition (Ch 11).** Even sharper: split ROE into the operating return and the financing leverage effect,
 
-$$\text{ROCE} = \text{RNOA} + \big[\text{FLEV}\times(\text{RNOA}-\text{NBC})\big],$$
+$$
+\text{ROCE} = \text{RNOA} + \big[\text{FLEV}\times(\text{RNOA}-\text{NBC})\big],
+$$
 
 where RNOA $=$ NOPAT/avgNOA, FLEV $=$ NFO/CSE is financial leverage, and NBC is the net borrowing cost (after-tax net financial expense / NFO). The bracket is the *leverage effect*: borrowing adds to ROCE **only when** the operating spread (RNOA − NBC) is positive — the exact accounting expression of the "leverage amplifies, it does not create."
 

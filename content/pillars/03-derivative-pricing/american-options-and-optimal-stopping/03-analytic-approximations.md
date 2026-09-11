@@ -19,7 +19,9 @@ American options have no exact closed form — but they have an **exact closed f
 
 The idea behind every approximation is the same as the structure of the problem. The American value is the European value plus a **premium** for the early-exercise right;
 
-$$V^{\text{Am}}(S)=v^{\text{Eu}}(S)+\text{early-exercise premium}(S).$$
+$$
+V^{\text{Am}}(S)=v^{\text{Eu}}(S)+\text{early-exercise premium}(S).
+$$
 
 The premium is zero deep out-of-the-money, grows as $S$ moves toward the boundary, and is exactly $(S-X)-v^{\text{Eu}}$ at the boundary. Approximations differ only in *how they guess the shape of the premium*. Barone–Adesi–Whaley guesses a single power $A_2(S/S^*)^{q_2}$ and solves a one-dimensional root-find for the boundary $S^*$; Bjerksund–Stensland instead approximates the *exercise boundary itself* as flat (1993) or two-piece (2002), and integrates the resulting payoff analytically.
 
@@ -33,44 +35,64 @@ The premium is zero deep out-of-the-money, grows as $S$ moves toward the boundar
 
 Infinite horizon, $dS=rS\,dt+\sigma S\,dW$ under $\mathbb Q$, payoff $g(x)=(K-x)^+$. The continuation-region ODE $\tfrac12\sigma^2x^2v''+rxv'-rv=0$ has independent solutions $x$ and $x^{-\gamma}$ with
 
-$$\gamma=\frac{2r}{\sigma^2}\qquad(\text{Shreve Eq. 8.3.14; Björk Eq. 21.71}).$$
+$$
+\gamma=\frac{2r}{\sigma^2}\qquad(\text{Shreve Eq. 8.3.14; Björk Eq. 21.71}).
+$$
 
 Boundedness as $x\to\infty$ kills the $x$ solution, leaving $v(x)=Bx^{-\gamma}$. **Value matching** $v(L^*)=K-L^*$ and **smooth pasting** $v'(L^*)=-1$ give the boundary and the value:
 
-$$L^*=\frac{\gamma K}{1+\gamma}=\frac{2rK}{2r+\sigma^2}\qquad(\text{Eq. 8.3.12}),\qquad
-v(x)=\begin{cases}K-x, & 0\le x\le L^*,\\[2pt] (K-L^*)\left(\dfrac{x}{L^*}\right)^{-\gamma}, & x\ge L^*.\end{cases}\tag{8.3.13}$$
+$$
+L^*=\frac{\gamma K}{1+\gamma}=\frac{2rK}{2r+\sigma^2}\qquad(\text{Eq. 8.3.12}),\qquad
+v(x)=\begin{cases}K-x, & 0\le x\le L^*,\\[2pt] (K-L^*)\left(\dfrac{x}{L^*}\right)^{-\gamma}, & x\ge L^*.\end{cases}\tag{8.3.13}
+$$
 
 Checking smooth pasting directly: the right derivative at $L^*$ is $-\gamma(K-L^*)/L^*=-1$ — reproducing $L^*=2rK/(2r+\sigma^2)$ (Shreve Eq. 8.3.14). Note the second derivative *jumps* at $L^*$ ($0$ on the left, positive on the right); only $C^1$ smoothness is required.
 
 #### 2.2 Perpetual options with cost-of-carry $b$ (Haug §3.5)
 
-$$c=\frac{(\gamma_1-1)^{\gamma_1-1}}{\gamma_1^{\gamma_1}}\left(\frac{S}{X}\right)^{\gamma_1}X,\quad
-\gamma_1=\left(\tfrac12-\tfrac{b}{\sigma^2}\right)+\sqrt{\left(\tfrac{b}{\sigma^2}-\tfrac12\right)^2+\tfrac{2r}{\sigma^2}}\qquad(\text{call, }b<r),$$
-$$p=\frac{X}{1-\gamma_2}\left(\frac{\gamma_2-1}{\gamma_2}\cdot\frac{S}{X}\right)^{\gamma_2},\quad
-\gamma_2=\left(\tfrac12-\tfrac{b}{\sigma^2}\right)-\sqrt{\left(\tfrac{b}{\sigma^2}-\tfrac12\right)^2+\tfrac{2r}{\sigma^2}}\qquad(\text{put}).$$
+$$
+c=\frac{(\gamma_1-1)^{\gamma_1-1}}{\gamma_1^{\gamma_1}}\left(\frac{S}{X}\right)^{\gamma_1}X,\quad
+\gamma_1=\left(\tfrac12-\tfrac{b}{\sigma^2}\right)+\sqrt{\left(\tfrac{b}{\sigma^2}-\tfrac12\right)^2+\tfrac{2r}{\sigma^2}}\qquad(\text{call, }b<r),
+$$
+$$
+p=\frac{X}{1-\gamma_2}\left(\frac{\gamma_2-1}{\gamma_2}\cdot\frac{S}{X}\right)^{\gamma_2},\quad
+\gamma_2=\left(\tfrac12-\tfrac{b}{\sigma^2}\right)-\sqrt{\left(\tfrac{b}{\sigma^2}-\tfrac12\right)^2+\tfrac{2r}{\sigma^2}}\qquad(\text{put}).
+$$
 
 #### 2.3 Barone–Adesi–Whaley (1987) (Haug §3.1)
 
 **Call** ($b<r$; else $C=c_{BSM}$):
-$$C(S)=\begin{cases} c_{BSM}(S)+A_2\left(\dfrac{S}{S^*}\right)^{q_2}, & S<S^*,\\[4pt] S-X, & S\ge S^*,\end{cases}
-\quad A_2=\frac{S^*}{q_2}\Big[1-e^{(b-r)T}N\big(d_1(S^*)\big)\Big],$$
-$$q_2=\frac{-(N-1)+\sqrt{(N-1)^2+4M/K}}{2},\quad M=\frac{2r}{\sigma^2},\ N=\frac{2b}{\sigma^2},\ K=1-e^{-rT}.$$
+$$
+C(S)=\begin{cases} c_{BSM}(S)+A_2\left(\dfrac{S}{S^*}\right)^{q_2}, & S<S^*,\\[4pt] S-X, & S\ge S^*,\end{cases}
+\quad A_2=\frac{S^*}{q_2}\Big[1-e^{(b-r)T}N\big(d_1(S^*)\big)\Big],
+$$
+$$
+q_2=\frac{-(N-1)+\sqrt{(N-1)^2+4M/K}}{2},\quad M=\frac{2r}{\sigma^2},\ N=\frac{2b}{\sigma^2},\ K=1-e^{-rT}.
+$$
 
 The critical price $S^*$ solves $S^*-X=c_{BSM}(S^*)+\big(1-e^{(b-r)T}N(d_1(S^*))\big)S^*/q_2$ (Newton–Raphson, tolerance $|LHS-RHS|/X<10^{-5}$). The **put** is symmetric with $q_1=\frac{-(N-1)-\sqrt{(N-1)^2+4M/K}}{2}$, $A_1=-\frac{S^{**}}{q_1}[1-e^{(b-r)T}N(-d_1(S^{**}))]$ and boundary $S^{**}<X$.
 
 #### 2.4 Bjerksund–Stensland 1993 (Haug §3.2)
 
 Model the boundary as a **flat** trigger $I$ and integrate the payoff analytically:
-$$C=\alpha S^\beta-\alpha\,\phi(S,T,\beta,I,I)+\phi(S,T,1,I,I)-\phi(S,T,1,X,I)-X\phi(S,T,0,I,I)+X\phi(S,T,0,X,I),$$
-$$\alpha=(I-X)I^{-\beta},\quad \beta=\left(\tfrac12-\tfrac{b}{\sigma^2}\right)+\sqrt{\left(\tfrac{b}{\sigma^2}-\tfrac12\right)^2+\tfrac{2r}{\sigma^2}},\quad
-\phi(S,T,\gamma,H,I)=e^{\lambda}S^\gamma\left[N(d)-\left(\tfrac{I}{S}\right)^{\kappa}N\!\left(d-\tfrac{2\ln(I/S)}{\sigma\sqrt T}\right)\right],$$
-$$\lambda=\big({-r}+\gamma b+\tfrac12\gamma(\gamma-1)\sigma^2\big)T,\quad d=-\frac{\ln(S/H)+(b+(\gamma-\tfrac12)\sigma^2)T}{\sigma\sqrt T},\quad\kappa=\frac{2b}{\sigma^2}+2\gamma-1.$$
+$$
+C=\alpha S^\beta-\alpha\,\phi(S,T,\beta,I,I)+\phi(S,T,1,I,I)-\phi(S,T,1,X,I)-X\phi(S,T,0,I,I)+X\phi(S,T,0,X,I),
+$$
+$$
+\alpha=(I-X)I^{-\beta},\quad \beta=\left(\tfrac12-\tfrac{b}{\sigma^2}\right)+\sqrt{\left(\tfrac{b}{\sigma^2}-\tfrac12\right)^2+\tfrac{2r}{\sigma^2}},\quad
+\phi(S,T,\gamma,H,I)=e^{\lambda}S^\gamma\left[N(d)-\left(\tfrac{I}{S}\right)^{\kappa}N\!\left(d-\tfrac{2\ln(I/S)}{\sigma\sqrt T}\right)\right],
+$$
+$$
+\lambda=\big({-r}+\gamma b+\tfrac12\gamma(\gamma-1)\sigma^2\big)T,\quad d=-\frac{\ln(S/H)+(b+(\gamma-\tfrac12)\sigma^2)T}{\sigma\sqrt T},\quad\kappa=\frac{2b}{\sigma^2}+2\gamma-1.
+$$
 
 Trigger $I=B_0+(B_\infty-B_0)(1-e^{h(T)})$, $B_\infty=\frac{\beta}{\beta-1}X$, $B_0=\max(X,\frac{r}{r-b}X)$, $h(T)=-(bT+2\sigma\sqrt T)\frac{B_0}{B_\infty-B_0}$; if $S\ge I$, exercise ⇒ $S-X$. The **2002** refinement uses a two-piece boundary (needs the bivariate normal $M(\cdot,\cdot,\rho)$) and is more accurate for long maturities.
 
 #### 2.5 The American put-call transformation (Haug §3.4)
 
-$$P(S,X,T,r,b,\sigma)=C(X,S,T,\;r-b,\;-b,\;\sigma).$$
+$$
+P(S,X,T,r,b,\sigma)=C(X,S,T,\;r-b,\;-b,\;\sigma).
+$$
 
 Every American-put result — perpetual, BAW, BS-1993 — is reused for calls and vice versa, which is why Haug only tabulates one side.
 

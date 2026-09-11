@@ -35,23 +35,31 @@ Three steps, three "aha"s:
 
 **The identity, and where discretion enters.** Accrual accounting means the income statement and the cash-flow statement are *reconciliations* of each other:
 
-$$\text{NI} = \text{CFO} + \underbrace{\text{Accruals}}_{\text{estimates and timing}}.$$
+$$
+\text{NI} = \text{CFO} + \underbrace{\text{Accruals}}_{\text{estimates and timing}}.
+$$
 
 Every line item in Accruals is a management estimate or a timing choice: bad-debt provisions, warranty reserves, inventory write-downs, depreciation lives and methods, revenue-recognition timing, cost capitalisation. Cash has no such freedom. So *the quality of earnings is, mechanically, the size and persistence of the accrual term.*
 
 **The operating-accrual measure (Sloan 1996, from the balance sheet alone).** You do not need the cash-flow statement, which is why this formula works for long historical panels where the statement is absent or inconsistent:
 
-$$\text{Accruals} = (\Delta CA - \Delta Cash) - (\Delta CL - \Delta STD - \Delta TP) - Dep.$$
+$$
+\text{Accruals} = (\Delta CA - \Delta Cash) - (\Delta CL - \Delta STD - \Delta TP) - Dep.
+$$
 
 **Reading the subtractions.** $(\Delta CA - \Delta Cash)$ is the growth in *non-cash* current assets — receivables and inventory, the two places "profit that has not been collected" lands. $(\Delta CL - \Delta STD - \Delta TP)$ is the growth in non-financing operating liabilities; it is subtracted because a rise in payables is a *source* of cash and therefore shrinks the accrual term. $Dep$ is subtracted because depreciation reduced income without touching cash. The result is the part of profit that is neither cash nor financing.
 
 **Scaled for comparison.** Nobody compares raw accruals across firms, so Sloan standardises by average total assets:
 
-$$\text{Accrual component}=\frac{\text{Accruals}}{\text{avg }TA},\qquad \text{Cash-flow component}=\frac{\text{NI}-\text{Accruals}}{\text{avg }TA}, \qquad \text{Accrual} + \text{Cash-flow component}=\frac{\text{NI}}{\text{avg }TA} = \text{ROA}.$$
+$$
+\text{Accrual component}=\frac{\text{Accruals}}{\text{avg }TA},\qquad \text{Cash-flow component}=\frac{\text{NI}-\text{Accruals}}{\text{avg }TA}, \qquad \text{Accrual} + \text{Cash-flow component}=\frac{\text{NI}}{\text{avg }TA} = \text{ROA}.
+$$
 
 That last equality is worth staring at: **the accrual and cash-flow components are a decomposition of ROA**, the same ROA from [[fundamentals-accounting/core-financial-ratios/02-profitability-ratios|Profitability Ratios]]. Accounting quality is therefore not a separate subject bolted onto ratio analysis — it is the *split* of the profitability ratio into its durable and its fragile parts.
 
-$$\boxed{\text{ROA} = \frac{\text{Accruals}}{\text{avg }TA} + \frac{\text{NI}-\text{Accruals}}{\text{avg }TA}}$$
+$$
+\boxed{\text{ROA} = \frac{\text{Accruals}}{\text{avg }TA} + \frac{\text{NI}-\text{Accruals}}{\text{avg }TA}}
+$$
 
 ---
 

@@ -37,7 +37,9 @@ Same two marginals. Same dollars. The $95\%$ VaR of the book goes from **$0$ to 
 
 **Case 1 — independence.** $\mathrm{Var}(A+B)=2$ and $\mathrm{Var}(L)=\tfrac12$, so $L\sim N(0,\tfrac12)$ and
 
-$$\mathrm{VaR}_{0.95}(L)=z_{0.95}/\sqrt2=1.6449/1.4142=1.1631.$$
+$$
+\mathrm{VaR}_{0.95}(L)=z_{0.95}/\sqrt2=1.6449/1.4142=1.1631.
+$$
 
 **Case 2 — comonotone ($B=A$).** $L=-A$, so $L\sim N(0,1)$ and $\mathrm{VaR}_{0.95}=1.6449$.
 
@@ -47,11 +49,15 @@ So with the same marginals the book VaR spans $[\,0,\ 1.6449\,]$. Nothing about 
 
 **The general statement (Fréchet).** For any joint distribution $F$ of $d$ positions with margins $F_i$, writing $u_i=F_i(x_i)$, the copula $C$ that links them is bounded:
 
-$$\max\!\Big(\sum_{i=1}^d u_i+1-d,\ 0\Big)\ \le\ C(u_1,\dots,u_d)\ \le\ \min(u_1,\dots,u_d).$$
+$$
+\max\!\Big(\sum_{i=1}^d u_i+1-d,\ 0\Big)\ \le\ C(u_1,\dots,u_d)\ \le\ \min(u_1,\dots,u_d).
+$$
 
 The lower bound is the **countermonotone** copula $W$ (positions perfectly negatively aligned), the upper bound the **comonotone** copula $M$ (perfectly positively aligned; $M(u)=\min u_i$). Every portfolio risk measure therefore lies in a band whose width is exactly the dependence uncertainty:
 
-$$\text{risk}(W)\ \le\ \text{risk}(C)\ \le\ \text{risk}(M)\quad\text{(for risk measures monotone in the concordance order, e.g. ES; plain VaR is not generally so).}$$
+$$
+\text{risk}(W)\ \le\ \text{risk}(C)\ \le\ \text{risk}(M)\quad\text{(for risk measures monotone in the concordance order, e.g. ES; plain VaR is not generally so).}
+$$
 
 **Why "ranks, not levels".** The copula is invariant under strictly increasing transformations of the margins: if you replace a loss in dollars by its logarithm, or a return by its rank, the copula does not change. Pearson correlation *does* change. That is the first clue that the correct dependence input is a rank quantity.
 

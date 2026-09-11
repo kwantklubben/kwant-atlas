@@ -27,11 +27,15 @@ Every defect of the baseline inventory model motivates an extension. This page i
 
 When a large position must be unwound over horizon $T$, trading it all at once pays full market impact, and dribbling it out leaves price risk. Almgren & Chriss (2000) minimize
 
-$$\mathbb{E}[\text{cost}]+\lambda\,\mathrm{Var}[\text{cost}]$$
+$$
+\mathbb{E}[\text{cost}]+\lambda\,\mathrm{Var}[\text{cost}]
+$$
 
 with temporary impact $\eta$ and permanent impact $\gamma_{\text{perm}}$. The optimal remaining-inventory trajectory is
 
-$$x_t=X\,\frac{\sinh\!\big(\kappa(T-t)\big)}{\sinh(\kappa T)},\qquad \kappa=\sqrt{\frac{\lambda\sigma^2}{\eta}},$$
+$$
+x_t=X\,\frac{\sinh\!\big(\kappa(T-t)\big)}{\sinh(\kappa T)},\qquad \kappa=\sqrt{\frac{\lambda\sigma^2}{\eta}},
+$$
 
 starting at $x_0=X$ and decaying to $x_T=0$ with characteristic time $1/\kappa$ — **this is the controlled mean reversion** of [[pillars/06-market-making/inventory-management-and-quote-skewing/02-the-inventory-problem|02]], and the bridge to the execution pillar. A higher risk aversion $\lambda$ or variance $\sigma^2$ ⇒ faster liquidation (larger $\kappa$, shorter half-life); higher impact $\eta$ ⇒ slower (protect the price).
 
@@ -39,7 +43,9 @@ starting at $x_0=X$ and decaying to $x_T=0$ with characteristic time $1/\kappa$ 
 
 Quote skewing prices *inventory* risk over uninformed flow. Add a fraction $p_{\text{tox}}$ of *informed* fills that move the mid against you by $J$ after you fill. Each fill then carries an adverse cost $p_{\text{tox}}J$ that the skew's spread does not cover. The break-even condition for one side is
 
-$$\underbrace{a^\ast}_{\text{half-spread}} \;=\; c+\frac1k \;\ge\; p_{\text{tox}}J .$$
+$$
+\underbrace{a^\ast}_{\text{half-spread}} \;=\; c+\frac1k \;\ge\; p_{\text{tox}}J .
+$$
 
 Once $p_{\text{tox}}J$ exceeds the half-spread, the maker loses on informed flow no matter how well inventory is controlled. The fix is an *information* term in the spread (Glosten–Milgrom logic, toxicity-gated quoting) — not a bigger skew. This is the direct link to [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] and [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]].
 
@@ -47,7 +53,9 @@ Once $p_{\text{tox}}J$ exceeds the half-spread, the maker loses on informed flow
 
 A real maker quotes $N$ correlated instruments sharing capital and margin. The inventory becomes a vector $\mathbf q$ with covariance $\Sigma$, and the reservation price of asset $i$ generalizes to
 
-$$r_i=\bar S_i-\gamma\,\mathbf e_i^{\!\top}\Sigma\,\mathbf q\,\tau,$$
+$$
+r_i=\bar S_i-\gamma\,\mathbf e_i^{\!\top}\Sigma\,\mathbf q\,\tau,
+$$
 
 so a long in a positively-correlated neighbour counts as (partial) excess inventory in asset $i$, and vice versa. The skew is no longer per-asset but **portfolio-wide**: the risk budget is shared. Ignoring $\Sigma$ double-counts risk and quotes $N$ times the intended position.
 
@@ -55,7 +63,9 @@ so a long in a positively-correlated neighbour counts as (partial) excess invent
 
 Guéant, Lehalle & Fernandez-Tapia (2013) re-solve the market-making problem *with* the inventory cap $|q|\le Q$. Under exponential intensities, a change of variables turns the HJB into a **system of linear ODEs** for $v_q(t)$:
 
-$$\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\big(v_{q-1}(t)+v_{q+1}(t)\big),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\big(1+\tfrac{\gamma}{k}\big)^{-(1+k/\gamma)},$$
+$$
+\dot v_q(t)=\alpha q^2\,v_q(t)-\eta\big(v_{q-1}(t)+v_{q+1}(t)\big),\qquad \alpha=\tfrac{k}{2}\gamma\sigma^2,\qquad \eta=A\big(1+\tfrac{\gamma}{k}\big)^{-(1+k/\gamma)},
+$$
 
 on the $2Q+1$ inventory states, with closed-form asymptotics for the quotes that reduce to the A–S spread plus an inventory-dependent correction. This supplies the **verification theorem** the raw A–S quotes lacked — the formal statement that "the skew encourages flattening, the cap guarantees it" ([[pillars/06-market-making/inventory-management-and-quote-skewing/05-failure-modes-and-practice|05]]).
 

@@ -32,17 +32,23 @@ Penman Ch 18 catalogs the diagnostics (detecting manipulated sales, core expense
 
 **The accrual identity restated as a quality lens** (Penman eq. 5.1; Sloan 1996):
 
-$$\text{Accruals} = \Delta\text{AR} + \Delta\text{Inventory} - \Delta\text{AP} - \text{Depreciation} + \cdots$$
+$$
+\text{Accruals} = \Delta\text{AR} + \Delta\text{Inventory} - \Delta\text{AP} - \text{Depreciation} + \cdots
+$$
 
 High *total* accruals = earnings running far ahead of cash. Two widely used normalizations:
 
-$$\text{Cash conversion} = \frac{\text{CFO}}{\text{Net income}} \qquad \text{Accruals ratio} = \frac{\text{Accruals}}{\text{Average total assets}}$$
+$$
+\text{Cash conversion} = \frac{\text{CFO}}{\text{Net income}} \qquad \text{Accruals ratio} = \frac{\text{Accruals}}{\text{Average total assets}}
+$$
 
 A cash conversion well below 1, or an accruals ratio persistently positive and large, is the classic earnings-quality warning.
 
 **Off-balance-sheet leverage.** When an obligation is not recorded as a liability, reported debt is understated. For an operating lease (pre-ASC 842), the future rent commitment is disclosed in footnotes but not capitalized, so:
 
-$$\text{Reported debt} < \text{Economic debt},\qquad \text{Reported leverage} = \frac{D}{E}\Big|_{\text{reported}} < \frac{D_{\text{incl.\ leases}}}{E}$$
+$$
+\text{Reported debt} < \text{Economic debt},\qquad \text{Reported leverage} = \frac{D}{E}\Big|_{\text{reported}} < \frac{D_{\text{incl.\ leases}}}{E}
+$$
 
 The correction the analyst makes is to **capitalize** the lease: bring the PV of lease payments onto the balance sheet as an asset *and* a liability — which simultaneously lowers reported ROA and raises reported leverage to their true values.
 
@@ -97,7 +103,7 @@ HONEST           NI=   800  CFO= 1,500  Accruals=  -700  Cash conversion (CFO/NI
 CHANNEL-STUFFED  NI= 2,000  CFO=   700  Accruals=+1,300  Cash conversion (CFO/NI)=0.35  Receivables=2,000
 ```
 
-**Read the red flag.** Channel stuffing *doubled* net income (\$800 → \$2,000) while cash from operations *halved* (\$1,500 → \$700). Total accruals swung from **−\$700 to +\$1,300**, and cash conversion collapsed from 1.88 to 0.35. The receivables tell the same story: \$2,000 of sales shipped but unpaid. An analyst scanning for the Sloan accrual signal would flag this firm immediately — the *earnings* look great and the *cash* says the opposite. This is the exact pattern that runs through Schilit's shenanigans, Beneish's M-score, and Dechow–Sloan–Sweeney's detection models.
+**Read the red flag.** Channel stuffing *doubled* net income (\$800 → \$2,000) while cash from operations *halved* (\$1,500 → \$700). Total accruals swung from **−\$700 to + \$1,300**, and cash conversion collapsed from 1.88 to 0.35. The receivables tell the same story: \$2,000 of sales shipped but unpaid. An analyst scanning for the Sloan accrual signal would flag this firm immediately — the *earnings* look great and the *cash* says the opposite. This is the exact pattern that runs through Schilit's shenanigans, Beneish's M-score, and Dechow–Sloan–Sweeney's detection models.
 
 **Experiment 2 — off-balance-sheet leverage.** Two economically identical firms; 20 of debt is an *operating lease* that Firm B keeps off the balance sheet (pre-ASC 842). Same economics, different reported leverage.
 

@@ -29,14 +29,18 @@ Three biases, each a first-principles consequence of how factor research is actu
 
 **Multiple testing — the familywise-error explosion.** Suppose a *null* world with no real alpha. Testing $M$ independent candidate factors, each with a per-test false-positive rate $\alpha$, produces an expected number of false discoveries:
 
-$$\mathbb{E}[\text{false discoveries}] \approx M\alpha, \qquad
-P(\text{at least one false discovery}) \approx 1-(1-\alpha)^M \xrightarrow[M \text{ large}]{} 1.$$
+$$
+\mathbb{E}[\text{false discoveries}] \approx M\alpha, \qquad
+P(\text{at least one false discovery}) \approx 1-(1-\alpha)^M \xrightarrow[M \text{ large}]{} 1.
+$$
 
 With $\alpha=5\%$ and $M=200$, the chance of *some* spurious "premium" is effectively 100%. The standard remedy is the multiple-testing correction — the familywise or false-discovery-rate control that [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] formalizes.
 
 **Look-ahead bias.** If book value is restated (write-downs recognized with hindsight), the *measured* B/M uses information unavailable at the sort date:
 
-$$\text{B/M}_\text{measured} = \frac{\text{BE}_\text{restated}}{\text{ME}} \neq \frac{\text{BE}_\text{as-reported}}{\text{ME}} = \text{B/M}_\text{tradable}.$$
+$$
+\text{B/M}_\text{measured} = \frac{\text{BE}_\text{restated}}{\text{ME}} \neq \frac{\text{BE}_\text{as-reported}}{\text{ME}} = \text{B/M}_\text{tradable}.
+$$
 
 Because restated book values are lower (write-downs), the "cheapest" basket looks even cheaper in hindsight — the value premium measured on restated data is overstated. Point-in-time (as-reported) data is the only unbiased input.
 

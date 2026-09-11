@@ -18,11 +18,15 @@ Credit Value Adjustment (CVA) is the **price of counterparty risk** — it inter
 
 The three questions CVA answers (Gregory 17.2): *Does the counterparty default? What is my exposure then? How much do I lose?* In symbols,
 
-$$CVA(t) \approx -LGD\sum_{i=1}^{m} EPE(t,t_i)\times PD(t_{i-1},t_i),$$
+$$
+CVA(t) \approx -LGD\sum_{i=1}^{m} EPE(t,t_i)\times PD(t_{i-1},t_i),
+$$
 
 which is the discrete form of the continuous integral
 
-$$CVA(t) = -LGD\int_t^{\infty}\lambda_C(u)\,D_{r+\lambda_C}(t,u)\,EPE(t,u)\,du.$$
+$$
+CVA(t) = -LGD\int_t^{\infty}\lambda_C(u)\,D_{r+\lambda_C}(t,u)\,EPE(t,u)\,du.
+$$
 
 Three ideas matter:
 - **It is a product of market risk and credit risk.** EPE is the *market* component (how big is the exposure); PD × LGD is the *credit* component (how likely is default, how much is lost). This is the "market × credit" split that makes CVA both a derivatives problem and a credit problem.
@@ -37,11 +41,15 @@ Three ideas matter:
 
 **Direct form** — simulate the default time $\tau$, value the portfolio once at $\tau$:
 
-$$UCVA(t) = -\mathbb{E}\!\left[\mathbf{1}_{\tau\le T}\,V(t,\tau)^+\,LGD\right].$$
+$$
+UCVA(t) = -\mathbb{E}\!\left[\mathbf{1}_{\tau\le T}\,V(t,\tau)^+\,LGD\right].
+$$
 
 **Path-wise / discrete form** — the workhorse (Eq 17.3):
 
-$$UCVA(t) \approx -LGD\sum_{i=1}^{m} EPE(t,t_i)\times PD(t_{i-1},t_i),$$
+$$
+UCVA(t) \approx -LGD\sum_{i=1}^{m} EPE(t,t_i)\times PD(t_{i-1},t_i),
+$$
 
 where $EPE(t,t_i)=\mathbb{E}[V(t,t_i)^+]$ is the discounted expected positive exposure at date $t_i$ and $PD(t_{i-1},t_i)$ the default probability over that interval (independence ⇒ default enters only via PD). With flat $\lambda$, $PD(a,b)=e^{-\lambda a}-e^{-\lambda b}$.
 
@@ -53,16 +61,24 @@ where $EPE(t,t_i)=\mathbb{E}[V(t,t_i)^+]$ is the discounted expected positive ex
 
 DVA is the own-default side, driven by the **ENE** (your counterparty's positive exposure / your negative exposure):
 
-$$DVA(t) = -LGD_P\int_t^{\infty}\lambda_P(u)\,D_{r+\lambda_C+\lambda_P}(t,u)\,ENE(t,u)\,du.$$
+$$
+DVA(t) = -LGD_P\int_t^{\infty}\lambda_P(u)\,D_{r+\lambda_C+\lambda_P}(t,u)\,ENE(t,u)\,du.
+$$
 
 The bilateral value is
 
-$$BCVA = CVA + DVA,$$
+$$
+BCVA = CVA + DVA,
+$$
 
 with the discrete forms (Eqs 17.8a/b) carrying the *survival probability of the other party* (the "first-to-default" effect):
 
-$$CVA(t) = -LGD_C\sum_{i} EPE(t,t_i)\,PD_C(t_{i-1},t_i)\,[1-PD_P(0,t_{i-1})],$$
-$$DVA(t) = -LGD_P\sum_{i} ENE(t,t_i)\,PD_P(t_{i-1},t_i)\,[1-PD_C(0,t_{i-1})].$$
+$$
+CVA(t) = -LGD_C\sum_{i} EPE(t,t_i)\,PD_C(t_{i-1},t_i)\,[1-PD_P(0,t_{i-1})],
+$$
+$$
+DVA(t) = -LGD_P\sum_{i} ENE(t,t_i)\,PD_P(t_{i-1},t_i)\,[1-PD_C(0,t_{i-1})].
+$$
 
 Key facts:
 - **ENE ≤ 0 ⇒ DVA ≥ 0**: DVA is a *benefit* opposing CVA (your default wipes out the debt you owe).

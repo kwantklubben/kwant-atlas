@@ -40,12 +40,20 @@ At each rebalance (in June, using prior-fiscal-year accounting with a lag to avo
 
 Define $R_{xy}$ as the value-weighted return of the portfolio in size class $x\in\{S,B\}$ and signal class $y$. Then:
 
-$$\text{HML}=\frac{R_{SH}+R_{BH}}{2}-\frac{R_{SL}+R_{BL}}{2}\quad\text{(high B/M minus low B/M, averaged over small \& big),}$$
-$$\text{RMW}=\frac{R_{SR}+R_{BR}}{2}-\frac{R_{SW}+R_{BW}}{2}\quad\text{(robust minus weak profitability),}$$
-$$\text{CMA}=\frac{R_{SC}+R_{BC}}{2}-\frac{R_{SA}+R_{BA}}{2}\quad\text{(conservative minus aggressive investment),}$$
+$$
+\text{HML}=\frac{R_{SH}+R_{BH}}{2}-\frac{R_{SL}+R_{BL}}{2}\quad\text{(high B/M minus low B/M, averaged over small \& big),}
+$$
+$$
+\text{RMW}=\frac{R_{SR}+R_{BR}}{2}-\frac{R_{SW}+R_{BW}}{2}\quad\text{(robust minus weak profitability),}
+$$
+$$
+\text{CMA}=\frac{R_{SC}+R_{BC}}{2}-\frac{R_{SA}+R_{BA}}{2}\quad\text{(conservative minus aggressive investment),}
+$$
 
 and the **size factor** is the average of the three size spreads — one from each of the B/M, OP, and Inv sorts (FF 2015 §4):
-$$\text{SMB}=\frac{\text{SMB}_{B/M}+\text{SMB}_{OP}+\text{SMB}_{Inv}}{3}.$$
+$$
+\text{SMB}=\frac{\text{SMB}_{B/M}+\text{SMB}_{OP}+\text{SMB}_{Inv}}{3}.
+$$
 
 #### 2.2 Why 2×3 and value-weighted? (first-principles design choices)
 

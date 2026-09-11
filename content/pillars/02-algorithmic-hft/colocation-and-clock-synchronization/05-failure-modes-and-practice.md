@@ -28,7 +28,9 @@ The physics and the economics of this topic are *clean*; the failures are *unfor
 
 **Failure 1 — ordering by a skewed clock.** Let the true lead of event $B$ over event $A$ be $\ell>0$ (in the correct order $A$ before $B$). The consolidated clock reads $A$'s time as its true time plus measurement error $\varepsilon_A$, and $B$'s as $\ell+\varepsilon_B$. The order is reconstructed correctly iff
 
-$$\varepsilon_A < \ell + \varepsilon_B \;\Longleftrightarrow\; \ell > \varepsilon_A - \varepsilon_B .$$
+$$
+\varepsilon_A < \ell + \varepsilon_B \;\Longleftrightarrow\; \ell > \varepsilon_A - \varepsilon_B .
+$$
 
 If the two errors are drawn from a window with magnitude comparable to $\ell$, inversions are frequent. Modeled as $P(\text{inversion}) = \min(\text{skew}/L, 1)$ for leads uniform on $[0,L]$, a skew equal to the marginal edge $L$ inverts **100%** of the races it should decide.
 

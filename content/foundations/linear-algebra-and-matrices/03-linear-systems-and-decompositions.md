@@ -18,7 +18,9 @@ Nearly every computation in the toolbox reduces to **solving $Ax=b$** — find t
 
 The single most finance-relevant special case is the **Cholesky factorization** of a covariance matrix (Glasserman §2.2):
 
-$$\Sigma=LL',\qquad X=\mu+LZ,\quad Z\sim N(0,I),$$
+$$
+\Sigma=LL',\qquad X=\mu+LZ,\quad Z\sim N(0,I),
+$$
 
 which is *the* standard way to simulate correlated asset returns: draw independent normals $Z$, then rotate-and-scale by $L$ to get the correct covariance. If your covariance is not positive definite, Cholesky throws an error — which is exactly the signal that the covariance is broken ([[foundations/linear-algebra-and-matrices/06-advanced-extensions|06]]).
 
@@ -28,15 +30,19 @@ which is *the* standard way to simulate correlated asset returns: draw independe
 
 **Gaussian elimination / LU.** Any invertible square matrix can be reduced to an upper-triangular $U$ by row operations encoded in a unit lower-triangular $L$ (with partial pivoting, $PA=LU$). Then $Ax=b$ becomes
 
-$$Ly=Pb,\qquad Ux=y,$$
+$$
+Ly=Pb,\qquad Ux=y,
+$$
 
 two triangular solves — each trivially $O(n^2)$. Flop cost of the factorization is $O(n^3)$.
 
 **Cholesky (Glasserman eqs. 2.29–2.31).** For a symmetric positive definite $\Sigma$, there is a unique lower-triangular $L$ with positive diagonal such that $\Sigma=LL'$. The entries come from the recursion
 
-$$L_{ii}=\sqrt{\Sigma_{ii}-\sum_{k<i}L_{ik}^2},\qquad L_{ij}=\frac{\Sigma_{ij}-\sum_{k<j}L_{ik}L_{jk}}{L_{jj}}\quad (j<i).$$
+$$
+L_{ii}=\sqrt{\Sigma_{ii}-\sum_{k<i}L_{ik}^2},\qquad L_{ij}=\frac{\Sigma_{ij}-\sum_{k<j}L_{ik}L_{jk}}{L_{jj}}\quad (j<i).
+$$
 
-For the $2\times2$ case this is the textbook result $L=\begin{psmallmatrix}\sigma_1 & 0\\ \rho\sigma_2 & \sqrt{1-\rho^2}\,\sigma_2\end{psmallmatrix}$, so $X_2=\mu_2+\sigma_2\rho Z_1+\sigma_2\sqrt{1-\rho^2}Z_2$. Cholesky costs about $\frac13 n^3$ flops — half of LU, because it exploits symmetry. If any $\Sigma_{ii}-\sum_{k<i}L_{ik}^2$ goes non-positive, the matrix is not PD and the recursion hits a square root of a negative number: the *first-principles* failure of Cholesky on a non-PSD covariance.
+For the $2\times2$ case this is the textbook result $L=\begin{pmatrix}\sigma_1 & 0\\ \rho\sigma_2 & \sqrt{1-\rho^2}\,\sigma_2\end{pmatrix}$, so $X_2=\mu_2+\sigma_2\rho Z_1+\sigma_2\sqrt{1-\rho^2}Z_2$. Cholesky costs about $\frac13 n^3$ flops — half of LU, because it exploits symmetry. If any $\Sigma_{ii}-\sum_{k<i}L_{ik}^2$ goes non-positive, the matrix is not PD and the recursion hits a square root of a negative number: the *first-principles* failure of Cholesky on a non-PSD covariance.
 
 **The eigen/PC alternative (Glasserman eq. 2.32).** Instead of $L$, use $\Sigma=V\Lambda V'$ and take $A=V\Lambda^{1/2}$; $A A'=\Sigma$ too. This is the PCA route to the *same* simulation and connects directly to [[foundations/linear-algebra-and-matrices/04-eigenvalues-and-covariance|04]] and [[foundations/linear-algebra-and-matrices/05-svd-pca-and-regression|05]].
 

@@ -23,14 +23,18 @@ The deep lesson: **constraints are what destroy the pretty closed forms.** The u
 ### 2. Mathematical Ground Truth & Derivations
 
 **The min-variance portfolio (Merton 1972, eq. 14).** Minimize $\tfrac12w^T\Sigma w$ subject only to $w^T\mathbf{1}=1$:
-$$\mathcal{L}=\tfrac12w^T\Sigma w-\lambda(w^T\mathbf{1}-1)\;\Rightarrow\;\Sigma w=\lambda\mathbf{1}\;\Rightarrow\;w_{\text{mv}}=\frac{\Sigma^{-1}\mathbf{1}}{\mathbf{1}^T\Sigma^{-1}\mathbf{1}},\qquad \mu_{\text{mv}}=\frac{A}{C},\ \ \sigma^2_{\text{mv}}=\frac{1}{C}.$$
+$$
+\mathcal{L}=\tfrac12w^T\Sigma w-\lambda(w^T\mathbf{1}-1)\;\Rightarrow\;\Sigma w=\lambda\mathbf{1}\;\Rightarrow\;w_{\text{mv}}=\frac{\Sigma^{-1}\mathbf{1}}{\mathbf{1}^T\Sigma^{-1}\mathbf{1}},\qquad \mu_{\text{mv}}=\frac{A}{C},\ \ \sigma^2_{\text{mv}}=\frac{1}{C}.
+$$
 **Crucially there is no $\mu$ left** — the min-var portfolio depends only on covariance. This is why it is the workhorse robust portfolio: covariance estimates are far more stable than mean estimates (a fact Best–Grauer and Chopra–Ziemba exploit).
 
 **The constrained (long-only) frontier.** Add non-negativity and a return floor:
-$$\min_w \tfrac12 w^T\Sigma w \quad \text{s.t.}\quad w^T\mathbf{1}=1,\quad w\ge0,\quad w^T\mu\ge R^\*.$$
+$$
+\min_w \tfrac12 w^T\Sigma w \quad \text{s.t.}\quad w^T\mathbf{1}=1,\quad w\ge0,\quad w^T\mu\ge R^*.
+$$
 The KKT conditions now include complementary slackness $\nu_i w_i=0$ (using $\nu_i$ for the per-asset multipliers to avoid colliding with the budget multiplier $\lambda$ above): whenever a weight wants to be negative, the optimum *pins it at 0* and re-solves on the remaining assets. The efficient long-only set is therefore built from **(a) the min-var portfolio** (if all-majority-positive) **through (b) successive "corner" portfolios** where one asset exits, **up to (c) the single-asset portfolio** of the highest-return asset. At every corner the active set changes, and beyond the highest return only the best asset survives.
 
-**Why the min-var answer is "good enough" so often.** Because $w_{\text{mv}}$ uses only $\Sigma$, it is (i) stable under mean noise, and (ii) frequently already positive for well-separated assets — so long-only doesn't bind near it. The binding happens only as $R^\*$ rises and the optimizer tries to short the low-return assets.
+**Why the min-var answer is "good enough" so often.** Because $w_{\text{mv}}$ uses only $\Sigma$, it is (i) stable under mean noise, and (ii) frequently already positive for well-separated assets — so long-only doesn't bind near it. The binding happens only as $R^*$ rises and the optimizer tries to short the low-return assets.
 
 ---
 
@@ -98,7 +102,7 @@ Read the table: from $R^*=0.08$ to $0.10$ the constraint never binds (min-var is
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Corner solutions are the rule, not the exception.** A $w\ge0$ optimizer coupled with a high $R^\*$ pushes weights to the simplex boundary; the naive habit of reading $[0,0,1]$ as "the model wants one asset" misses that it's an artifact of the constraint plus the target, not a forecast.
+1. **Corner solutions are the rule, not the exception.** A $w\ge0$ optimizer coupled with a high $R^*$ pushes weights to the simplex boundary; the naive habit of reading $[0,0,1]$ as "the model wants one asset" misses that it's an artifact of the constraint plus the target, not a forecast.
 2. **Long-only ≠ no leverage.** Even all-positive weights can still concentrate 100% in a single low-diversifying name — long-only is a *sign* constraint, not a *diversification* constraint. Adding caps ($w_i\le c$) is what actually compels spread.
 3. **The min-var portfolio is myopic:** it ignores returns entirely, so a genuinely informative $\mu$ is wasted, and in crises all correlations rise, degrading its diversification (the correlation-breakdown failure of [[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/01-from-zero-intuition|01 · From Zero]]).
 4. **"More constraints" is not monotone good.** Every additional constraint shrinks the feasible set, raising achievable variance at a given return and pushing weights into corners — the cost of realism is measurable, and sophisticated solvers (SOCP/QP with caps, turnover, impact) are how practitioners manage it ([[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Transaction Costs]]).

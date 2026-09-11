@@ -25,20 +25,28 @@ The practical objective is one idea, stated sharply: **under the risk-neutral (m
 
 #### 2.1 Girsanov, one dimension (Shreve II Thm 5.2.3; Shreve I Thm 1.56; Björk 11.3)
 Let $W(t),\,0\le t\le T$ be BM on $(\Omega,\mathcal F,\mathbb P)$, $\Theta$ an adapted process. Define the **Radon–Nikodym derivative / Doléans–Dade exponential**
-$$Z(t)=\exp\Big\{-\!\int_0^t\Theta(u)\,dW(u)-\tfrac12\!\int_0^t\Theta^2(u)\,du\Big\},$$
+$$
+Z(t)=\exp\Big\{-\!\int_0^t\Theta(u)\,dW(u)-\tfrac12\!\int_0^t\Theta^2(u)\,du\Big\},
+$$
 and the candidate BM $\widetilde W(t)=W(t)+\int_0^t\Theta(u)du$. Set $\tilde{\mathbb P}(A)=\int_A Z(T)\,d\mathbb P$. Then **under $\tilde{\mathbb P}$, $\widetilde W$ is a Brownian motion.** *(Needs the integrability condition $\mathbb E\int_0^T\Theta^2 Z^2du<\infty$, a Novikov-type condition, for $Z$ to be a genuine martingale — Shreve II footnote to (5.2.13).)*
 
 **Properties (verified):** $Z$ is a $\mathbb P$-martingale with $dZ=-\Theta Z\,dW$, $Z(0)=1$, $\mathbb E Z(t)=1$; change-of-expectation $\tilde{\mathbb E}[X]=\mathbb E[Z(T)X]$; Bayes: $\tilde{\mathbb E}[Y\mid\mathcal F(s)]=\tfrac1{Z(s)}\mathbb E[Y Z(t)\mid\mathcal F(s)]$. **"Means change, variances don't":** the QV is unchanged, only the drift/mean rate shifts ($\mu\to r$); paths and $\sigma$ are untouched (Shreve II 5.2.22–23).
 
 #### 2.2 Market price of risk & the risk-neutral stock (Shreve II 5.2.2; Shreve I §17.2; Glasserman §1.2)
 Model $dS=\mu S\,dt+\sigma S\,dW$, discount $D(t)=e^{-\int_0^t R(s)ds}$. With **market price of risk**
-$$\Theta(t)=\frac{\mu(t)-R(t)}{\sigma(t)},$$
+$$
+\Theta(t)=\frac{\mu(t)-R(t)}{\sigma(t)},
+$$
 the Girsanov shift makes $dS=\big(R+\sigma\Theta\,\big)S\,dt+\sigma S\,dW=R S\,dt+\sigma S\,d\widetilde W$, and
-$$d(D S)=\sigma D S\big[\Theta\,dt+dW\big]=\sigma D S\,d\widetilde W$$
+$$
+d(D S)=\sigma D S\big[\Theta\,dt+dW\big]=\sigma D S\,d\widetilde W
+$$
 is a **$\mathbb Q$-martingale** — exactly the definition of a risk-neutral measure (Shreve II Def 5.4.3). $d\widetilde W=\Theta dt+dW$.
 
 #### 2.3 Risk-neutral pricing formula (Shreve II 5.2.30/31; Björk Thm 10.18; Glasserman eq 1.39)
-$$V(t)=\tilde{\mathbb E}\Big[e^{-\int_t^T R(u)du}\,V(T)\,\Big|\,\mathcal F(t)\Big],$$
+$$
+V(t)=\tilde{\mathbb E}\Big[e^{-\int_t^T R(u)du}\,V(T)\,\Big|\,\mathcal F(t)\Big],
+$$
 with the money-market-normalized $\mathcal Q$-expectation the "cornerstone equation" of pricing. For constant $r,\sigma$ and a European payoff, this expectation *is* the Black–Scholes formula (Shreve II §5.2.5; Glasserman eq 1.44).
 
 ---

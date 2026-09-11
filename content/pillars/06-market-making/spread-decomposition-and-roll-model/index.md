@@ -44,17 +44,23 @@ This folder is the measurement hub for Pillar 6. Its job is the market maker's *
 
 **The Roll algebra (why $\gamma_1$ is negative).** From $p_t=m_t+q_t c$ and $m_t=m_{t-1}+u_t$,
 
-$$\Delta p_t = u_t + c\,(q_t-q_{t-1}).$$
+$$
+\Delta p_t = u_t + c\,(q_t-q_{t-1}).
+$$
 
 The only serial overlap between $\Delta p_{t-1}=u_{t-1}+c(q_{t-1}-q_{t-2})$ and $\Delta p_t$ comes through $-q_{t-1}$ in one and $+q_{t-1}$ in the other, giving
 
-$$\gamma_1=\mathrm{Cov}(\Delta p_{t-1},\Delta p_t)=-c^2\,\mathbb{E}[q_{t-1}^2]=-c^2<0,$$
+$$
+\gamma_1=\mathrm{Cov}(\Delta p_{t-1},\Delta p_t)=-c^2\,\mathbb{E}[q_{t-1}^2]=-c^2<0,
+$$
 
 and all higher autocovariances vanish because $q_t$ is i.i.d. and independent of $u_t$. Hence the spread is identified from one number: $S=2c=2\sqrt{-\gamma_1}$.
 
 **Decomposition (Huang–Stoll / generalized Roll).** Writing the efficient-price innovation as $w_t=\lambda q_t+u_t$ (a trade-driven piece plus public info), the generalized Roll model gives
 
-$$\Delta p_t = c\,(q_t-q_{t-1})+\lambda q_t+u_t,\qquad \gamma_1 = -c\,(c+\lambda),\qquad \gamma_0=c^2+(c+\lambda)^2+\sigma_u^2.$$
+$$
+\Delta p_t = c\,(q_t-q_{t-1})+\lambda q_t+u_t,\qquad \gamma_1 = -c\,(c+\lambda),\qquad \gamma_0=c^2+(c+\lambda)^2+\sigma_u^2.
+$$
 
 So the **total spread is $2(c+\lambda)$**: $c$ = order-processing/inventory, $\lambda$ = adverse selection. Because only two autocovariances are observable but three structural parameters $\{c,\lambda,\sigma_u^2\}$ exist, the model is under-identified — this is why the decomposition needs trade-direction data, not just prices (see [[pillars/06-market-making/spread-decomposition-and-roll-model/04-spread-decomposition|04 · Spread Decomposition]]).
 

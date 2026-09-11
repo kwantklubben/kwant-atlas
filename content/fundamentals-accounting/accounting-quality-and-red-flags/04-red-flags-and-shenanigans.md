@@ -39,31 +39,41 @@ The **red-flag archetypes** (the patterns worth memorising, each with its detect
 
 **Days Sales Outstanding — the channel-stuffing instrument.** This is the single best trend ratio in the fraud toolkit:
 
-$$\text{DSO} = \frac{\text{Accounts Receivable}}{\text{Revenue}} \times 365.$$
+$$
+\text{DSO} = \frac{\text{Accounts Receivable}}{\text{Revenue}} \times 365.
+$$
 
 If revenue is real and collected at the normal pace, DSO is roughly stable. If revenue is *booked* but not *collected* — the definition of stuffing — receivables grow faster than revenue and **DSO rises**. When a quarterly DSO jumps 15–20% year over year, the firm is either deteriorating on credit quality or manufacturing sales. The formula generalises to **Days Inventory Outstanding** (inventory/COGS × 365) and **Days Payables Outstanding** (payables/COGS × 365) — the **cash conversion cycle** $\text{DSO} + \text{DIO} - \text{DPO}$ is the whole working-capital story in one number, and every revenue-recognition game distorts at least one of its three terms.
 
 **Cash conversion — the quality score that outranks all others.** The single most robust quality test, and O'Glove's original thesis:
 
-$$\text{cumulative CFO/NI} = \frac{\sum_t \text{CFO}_t}{\sum_t \text{NI}_t}.$$
+$$
+\text{cumulative CFO/NI} = \frac{\sum_t \text{CFO}_t}{\sum_t \text{NI}_t}.
+$$
 
 Over any multi-year window a real, non-fraudulent business must convert **at least** its reported earnings into operating cash — because accruals sum to *zero* over the life of a firm. A cumulative ratio well below 1 over five years means earnings were booked that never became money; a ratio sustained above 1 is the signature of a genuinely cash-generative business. This is more robust than any single-year accrual measure precisely because it uses the reversal property instead of fighting it.
 
 **Serial-acquirer signal.** Compare goodwill growth to revenue growth:
 
-$$\text{acquisition-led} \iff \frac{GW_t}{GW_{t-1}} > \frac{S_t}{S_{t-1}}.$$
+$$
+\text{acquisition-led} \iff \frac{GW_t}{GW_{t-1}} > \frac{S_t}{S_{t-1}}.
+$$
 
 When goodwill compounds faster than revenue, growth is being *purchased* — and purchased growth is fragile in three specific ways: it inflates the revenue base without improving unit economics, it creates an amortisation/depreciation charge that "adjusted" earnings quietly strip out, and it leaves a goodwill balance that will eventually be written down (the only question is when).
 
 **OPM addiction.** Stock-based compensation is a real economic cost that leaves no cash trace:
 
-$$\text{OPM intensity} = \frac{\text{SBC}}{\text{NI}}, \qquad \text{SBC dilution} = \frac{\Delta \text{shares outstanding}}{\text{shares outstanding}}.$$
+$$
+\text{OPM intensity} = \frac{\text{SBC}}{\text{NI}}, \qquad \text{SBC dilution} = \frac{\Delta \text{shares outstanding}}{\text{shares outstanding}}.
+$$
 
 An SBC/NI above ~25% means a quarter or more of "earnings" is being paid to employees in freshly printed shares. GAAP (before ASU 2016-09's option) and, more importantly, *management's* non-GAAP numbers often present this as cost-free. It is not: the dilution is a transfer from shareholders, and it compounds.
 
 **Single-customer concentration.** Straight from the 10-K's concentration disclosure:
 
-$$\text{concentration} = \frac{\text{revenue from largest customer}}{\text{total revenue}}, \qquad \text{red flag at} > 30\%.$$
+$$
+\text{concentration} = \frac{\text{revenue from largest customer}}{\text{total revenue}}, \qquad \text{red flag at} > 30\%.
+$$
 
 The risk is not merely loss of the customer: a dominant customer has pricing power, demands extended terms (**links back to DSO**), and can pull orders forward or push them out — making the *supplier's* reported revenue a function of the *customer's* inventory management.
 

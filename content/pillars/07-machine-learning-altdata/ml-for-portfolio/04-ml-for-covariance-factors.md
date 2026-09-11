@@ -34,7 +34,9 @@ The practical objective: feed the optimizer a $\Sigma$ you trust, or use a metho
 
 For a min-variance allocation, $w \propto \Sigma^{-1}\mathbf 1$. Let $\{\lambda_i, v_i\}$ be the eigenpairs of $\Sigma$. A perturbation $\delta\Sigma$ changes the inverse by roughly
 
-$$\delta(\Sigma^{-1}) \approx -\Sigma^{-1}\,\delta\Sigma\,\Sigma^{-1},$$
+$$
+\delta(\Sigma^{-1}) \approx -\Sigma^{-1}\,\delta\Sigma\,\Sigma^{-1},
+$$
 
 so an error in the direction of a small eigenvalue $\lambda_{\min}$ is amplified by $\sim 1/\lambda_{\min}^2$. The **condition number** $\kappa(\Sigma)=\lambda_{\max}/\lambda_{\min}$ (for the correlation version, $\lambda_{\max}/\lambda_{\min}$ of the correlation matrix) is the single scalar that forecasts how badly inversion will amplify input error. Diagonal correlation → $\kappa=1$ (perfectly stable). Correlated investments → $\kappa$ grows until the inverse is numerically meaningless (AFML Fig 16.1).
 
@@ -42,7 +44,9 @@ so an error in the direction of a small eigenvalue $\lambda_{\min}$ is amplified
 
 Shrink the sample covariance $\hat\Sigma$ toward a low-dimensional target (e.g., its own diagonal, i.e. the variances):
 
-$$\Sigma_s = (1-\alpha)\,\hat\Sigma + \alpha\,\mathrm{diag}(\hat\Sigma), \qquad \alpha\in[0,1].$$
+$$
+\Sigma_s = (1-\alpha)\,\hat\Sigma + \alpha\,\mathrm{diag}(\hat\Sigma), \qquad \alpha\in[0,1].
+$$
 
 This *raises the smallest eigenvalues* (toward the target's spectrum) and *lowers the largest*, crushing the condition number. It trades a little bias for a lot of variance, which is exactly the right trade when the sample is short. On the verified example in §3 the condition number drops from $73.1$ to $17.8$ and the effective number of assets jumps from $3.5$ to $12.2$.
 
@@ -54,7 +58,9 @@ López de Prado's HRP (JPM 2016; AFML Ch 16) replaces inversion with a tree. Thr
 2. **Quasi-diagonalization.** Reorder assets so similar ones sit adjacent — a block-diagonal-looking covariance without a change of basis.
 3. **Recursive bisection.** Allocate top-down: for each cluster split into sub-clusters $L^{(1)},L^{(2)}$, compute each side's variance under inverse-variance sub-weighting $\tilde w^{(j)}\propto \mathrm{diag}(\Sigma^{(j)})^{-1}$, and split the weight by
 
-$$\alpha = 1 - \frac{\tilde V^{(1)}}{\tilde V^{(1)} + \tilde V^{(2)}},\qquad \tilde V^{(j)} = \tilde w^{(j)\top}\Sigma^{(j)}\tilde w^{(j)}.$$
+$$
+\alpha = 1 - \frac{\tilde V^{(1)}}{\tilde V^{(1)} + \tilde V^{(2)}},\qquad \tilde V^{(j)} = \tilde w^{(j)\top}\Sigma^{(j)}\tilde w^{(j)}.
+$$
 
 HRP **never computes $\Sigma^{-1}$** and never solves a quadratic program — it reads only the *diagonal* of sub-blocks of $\Sigma$ and the correlation *ranks*. That makes it well-defined even on a singular covariance ($N>T$) and far less sensitive to estimation error — the property that lets it beat the min-variance optimizer out-of-sample despite min-variance being "optimal" in-sample.
 

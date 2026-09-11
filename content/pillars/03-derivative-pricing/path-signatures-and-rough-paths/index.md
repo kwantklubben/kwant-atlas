@@ -35,7 +35,7 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Notation.** $X=(X^1,\dots,X^d)$ a path in $\mathbb R^d$ over $[0,T]$, $S(X)_{0,T}=(1,S^1,\dots,S^w,\dots)$ its **signature** (a point in the tensor algebra $T((\mathbb R^d))$), $S^w$ the iterated integral indexed by the word $w=i_1\cdots i_k$, $\Delta_k=X_{t_{k+1}}-X_{t_k}$ the increments of a piecewise-linear discretisation, $u\shuffle v$ the shuffle of two words, $\ell=\log S(X)$ the **log-signature**, $[u,v]$ the tensor/Lie bracket, $B$ a Brownian motion, $H$ the Hurst exponent, $K(X,Y)$ the signature kernel.
+**Notation.** $X=(X^1,\dots,X^d)$ a path in $\mathbb R^d$ over $[0,T]$, $S(X)_{0,T}=(1,S^1,\dots,S^w,\dots)$ its **signature** (a point in the tensor algebra $T((\mathbb R^d))$), $S^w$ the iterated integral indexed by the word $w=i_1\cdots i_k$, $\Delta_k=X_{t_{k+1}}-X_{t_k}$ the increments of a piecewise-linear discretisation, $u\sqcup v$ the shuffle of two words, $\ell=\log S(X)$ the **log-signature**, $[u,v]$ the tensor/Lie bracket, $B$ a Brownian motion, $H$ the Hurst exponent, $K(X,Y)$ the signature kernel.
 
 **Quick-Reference Lookup (job #1).** Every formula below is stated in the verified form used throughout the folder, and every number in the check column was **re-executed** (§3 and the sub-pages) with stdlib-only, deterministic code.
 
@@ -46,7 +46,7 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 | **Signature, level 2** (piecewise-linear, explicit sum) | $S^{ij}=\sum_{k<l}\Delta^i_k\Delta^j_l+\tfrac12\sum_k\Delta^i_k\Delta^j_k$ | demo: $S^{11}{=}4.5,\ S^{12}{=}2.5,\ S^{21}{=}3.5,\ S^{22}{=}2.0$ |
 | **Signature, level 3** (piecewise-linear, explicit sum) | $S^{ijk}=\sum_{a<b<c}\Delta^i_a\Delta^j_b\Delta^k_c+\tfrac12\sum_{a<c}\Delta^i_a\Delta^j_a\Delta^k_c+\tfrac12\sum_{a<b}\Delta^i_a\Delta^j_b\Delta^k_b+\tfrac16\sum_a\Delta^i_a\Delta^j_a\Delta^k_a$ | demo: $S^{112}=9.166667$, $S^{122}=4.166667$ |
 | **Chen's identity** (concatenation) | $S^{w}(X^{(1)}\ast X^{(2)})=\displaystyle\sum_{uv=w}S^{u}(X^{(1)})\,S^{v}(X^{(2)})$ | residual **$0$** (lev 2), $8.9\times10^{-16}$ (lev 3) |
-| **Shuffle product identity** | $S^{u}S^{v}=\displaystyle\sum_{w\in\,u\shuffle v}S^{w}$ | lev-2 residual **$0$**; lev-3 $\sim1.8\times10^{-15}$ |
+| **Shuffle product identity** | $S^{u}S^{v}=\displaystyle\sum_{w\in\,u\sqcup v}S^{w}$ | lev-2 residual **$0$**; lev-3 $\sim1.8\times10^{-15}$ |
 | **Log-signature / Lévy area, lev 2** | $\ell^{ij}=S^{ij}-\tfrac12S^iS^j=\tfrac12(S^{ij}-S^{ji})$ (antisymmetric) | $L^{12}{=}{-}0.5,\ L^{21}{=}{+}0.5,\ L^{ij}{+}L^{ji}=0$ |
 | **Reparametrisation invariance** | $S(X\circ\varphi)=S(X)$ for any monotone $\varphi$ | lev-2 err **$0$**; lev-3 $\sim1\times10^{-14}$ |
 | **Lyons uniqueness** | $S(X)=S(Y)\Rightarrow X,Y$ differ by reparametrisation / tree-like path | two non-reparametrised paths $\Rightarrow$ areas $+4.5$ vs $-4.5$ |

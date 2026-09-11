@@ -26,14 +26,20 @@ The organising idea: **fill probability is a first-passage probability.** In the
 
 Trades are a Poisson process of rate $\mu$. Discretise to ticks where a trade unit arrives with probability $p$. The time to fill $x$ units is
 
-$$\tau_x = \text{time to accumulate } x \text{ successes} \sim \text{NegBin}(x,p),\qquad
-\mathbb{P}(\tau_x = k)=\binom{k-1}{x-1}p^{x}(1-p)^{k-x},$$
+$$
+\tau_x = \text{time to accumulate } x \text{ successes} \sim \text{NegBin}(x,p),\qquad
+\mathbb{P}(\tau_x = k)=\binom{k-1}{x-1}p^{x}(1-p)^{k-x},
+$$
 
-$$\mathbb{E}[\tau_x] = \frac{x}{p}=\frac{x}{\mu},\qquad \mathrm{Var}[\tau_x]=\frac{x(1-p)}{p^{2}}.$$
+$$
+\mathbb{E}[\tau_x] = \frac{x}{p}=\frac{x}{\mu},\qquad \mathrm{Var}[\tau_x]=\frac{x(1-p)}{p^{2}}.
+$$
 
 Hence the **fill-probability curve** over a horizon $T$:
 
-$$\boxed{\;\mathbb{P}(\tau_x \le T)=\mathbb{P}\big(\text{Bin}(T,p)\ge x\big)=I_p(x,\,T-x+1)\;}$$
+$$
+\boxed{\;\mathbb{P}(\tau_x \le T)=\mathbb{P}\big(\text{Bin}(T,p)\ge x\big)=I_p(x,\,T-x+1)\;}
+$$
 
 where $I_p$ is the regularised incomplete beta function. Two features matter: it is **steep in $x$** (position dominates), and the **relative dispersion** $\mathrm{sd}/\mathrm{mean}=\sqrt{(1-p)/x}$ *shrinks* with $x$ — deep orders have timely fills that are comparatively predictable, front orders have noisy waits.
 
@@ -41,7 +47,9 @@ where $I_p$ is the regularised incomplete beta function. Two features matter: it
 
 Let cancels arrive with probability $pc$ per tick and remove a uniformly random live order from total depth $Q$. A cancel is ahead of you with probability $x/Q$, so the **effective per-tick outflow coefficient** is
 
-$$\text{outflow rate} = p + pc\cdot\frac{x}{Q}.$$
+$$
+\text{outflow rate} = p + pc\cdot\frac{x}{Q}.
+$$
 
 When $x$ is large (deep in the queue) $\frac{x}{Q}\to1$ and cancels help maximally; when you are near the front ($x\ll Q$) cancels barely help. This *position-dependent cancel benefit* is the tractable signature of the real phenomenon.
 
@@ -49,7 +57,9 @@ When $x$ is large (deep in the queue) $\frac{x}{Q}\to1$ and cancels help maximal
 
 The general statement (Cont & Kukanov 2017): for queue position $x$ ahead, order size $L$, and random outflow $\xi$ with distribution $F$,
 
-$$\boxed{\;\mathbb{E}[\text{filled}] = \int \Big[(\xi-Q)^+ - (\xi-Q-L)^+\Big]\,dF(\xi)\;}$$
+$$
+\boxed{\;\mathbb{E}[\text{filled}] = \int \Big[(\xi-Q)^+ - (\xi-Q-L)^+\Big]\,dF(\xi)\;}
+$$
 
 The **fill ratio** $\mathbb{E}[\text{filled}]/L$ is the quantity a placement algorithm maximises subject to adverse-selection and fee costs. This is what we compute on page 06.
 

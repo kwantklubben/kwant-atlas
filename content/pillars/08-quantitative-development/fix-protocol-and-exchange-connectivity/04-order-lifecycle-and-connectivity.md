@@ -41,8 +41,12 @@ Terminal states — `2` Filled, `4` Canceled, `8` Rejected — admit **no furthe
 
 **The running-quantity invariants** (must hold after *every* report):
 
-$$\texttt{151 LeavesQty} = \texttt{38 OrderQty} - \texttt{14 CumQty}, \qquad \texttt{14 CumQty} = \sum_i \texttt{32 LastQty}_i,$$
-$$\texttt{6 AvgPx} = \frac{\sum_i \texttt{32 LastQty}_i \cdot \texttt{31 LastPx}_i}{\sum_i \texttt{32 LastQty}_i}.$$
+$$
+\texttt{151 LeavesQty} = \texttt{38 OrderQty} - \texttt{14 CumQty}, \qquad \texttt{14 CumQty} = \sum_i \texttt{32 LastQty}_i,
+$$
+$$
+\texttt{6 AvgPx} = \frac{\sum_i \texttt{32 LastQty}_i \cdot \texttt{31 LastPx}_i}{\sum_i \texttt{32 LastQty}_i}.
+$$
 
 These are cheap assertions; a gateway that checks them on every report catches most desyncs at the source rather than at the P&L.
 
@@ -50,7 +54,9 @@ These are cheap assertions; a gateway that checks them on every report catches m
 
 An order gateway is a queue. By Little's law, the in-flight order count is arrival rate times service time, and the stability condition is that service rate exceeds arrival rate:
 
-$$L = \lambda W,\qquad \text{stability: } \lambda < \mu \quad(\lambda = \text{orders/s},\ \mu = \text{gateway capacity}).$$
+$$
+L = \lambda W,\qquad \text{stability: } \lambda < \mu \quad(\lambda = \text{orders/s},\ \mu = \text{gateway capacity}).
+$$
 
 A gateway that persists every message before sending (write-ahead) adds a durable-write latency $w$ per message, so its effective per-order service time is $\frac{1}{c} + w$ where $c$ is the raw processing rate. Throughput collapses when $w$ dominates — the reason low-latency gateways use a **journaled ring buffer** or an NVMe log rather than synchronous `fsync` per order.
 
@@ -58,11 +64,15 @@ A gateway that persists every message before sending (write-ahead) adds a durabl
 
 For a component with mean time between failures MTBF and mean time to repair MTTR, availability is
 
-$$A_1 = \frac{\text{MTBF}}{\text{MTBF}+\text{MTTR}}.$$
+$$
+A_1 = \frac{\text{MTBF}}{\text{MTBF}+\text{MTTR}}.
+$$
 
 $n$ **independent** active/active replicas are all-down only if *every* replica is down:
 
-$$A_n = 1 - (1-A_1)^n.$$
+$$
+A_n = 1 - (1-A_1)^n.
+$$
 
 Expected annual downtime is $(1-A_n)\times 8760$ hours. Independence is the optimistic assumption — a shared switch, power feed, or cluster manager correlates failures, so real availability sits between the single-node and the independent-replica bound.
 

@@ -23,24 +23,36 @@ The intuition is a leveraged weighted average. Your prior says "the market is ri
 ### 2. Mathematical Ground Truth & Derivations
 
 **Setup.** Prior on the (unknown, random) expected-return vector $r$:
-$$r \sim \mathcal{N}(\Pi,\ \tau\Sigma).$$
+$$
+r \sim \mathcal{N}(\Pi,\ \tau\Sigma).
+$$
 Views, expressed as a noisy linear constraint on $r$ (Black–Litterman 1992, Idzorek eq. 5–6):
-$$P\, r = Q + \varepsilon,\qquad \varepsilon \sim \mathcal{N}(0,\ \Omega),$$
+$$
+P\, r = Q + \varepsilon,\qquad \varepsilon \sim \mathcal{N}(0,\ \Omega),
+$$
 where $P$ is $K\times N$, $Q$ is $K$, $\Omega$ is $K\times K$. Each row of $P$ is a view: **absolute** view on asset $i$ has $P_{ki}=1$; **relative** view "$i$ out-returns $j$ by $q$" has $P_{ki}=+1,\ P_{kj}=-1$ and $Q=q$.
 
 **Bayesian posterior (conjugate Gaussian).** By the standard Normal–Normal update (the same machinery as Bayesian linear regression — ESL §3; see [[foundations/bayesian-statistics/02-bayes-theorem-and-priors|Bayes & Priors]]), the posterior is Normal with:
-$$\bar\mu = \Big[(\tau\Sigma)^{-1}+P^T\Omega^{-1}P\Big]^{-1}\Big[(\tau\Sigma)^{-1}\Pi+P^T\Omega^{-1}Q\Big],$$
-$$M = \Big[(\tau\Sigma)^{-1}+P^T\Omega^{-1}P\Big]^{-1}.$$
+$$
+\bar\mu = \Big[(\tau\Sigma)^{-1}+P^T\Omega^{-1}P\Big]^{-1}\Big[(\tau\Sigma)^{-1}\Pi+P^T\Omega^{-1}Q\Big],
+$$
+$$
+M = \Big[(\tau\Sigma)^{-1}+P^T\Omega^{-1}P\Big]^{-1}.
+$$
 Here $(\tau\Sigma)^{-1}$ is the **prior precision**, $P^T\Omega^{-1}P$ the **view precision** projected into asset space, and the posterior precision is their sum. This is a precision-weighted average — exactly like a Bayesian ridge estimate.
 
 **The Master formula (numerically stable).** Directly inverting $(\tau\Sigma)^{-1}$ invites numerical trouble. The Woodbury identity (Sherman–Morrison) transforms the mean into
-$$\bar\mu = \Pi + \tau\Sigma P^T\big[P\,\tau\Sigma\,P^T+\Omega\big]^{-1}\big(Q-P\Pi\big).$$
+$$
+\bar\mu = \Pi + \tau\Sigma P^T\big[P\,\tau\Sigma\,P^T+\Omega\big]^{-1}\big(Q-P\Pi\big).
+$$
 The structure is beautiful: $\Pi$ (market) **plus** the *leverage* $\tau\Sigma P^T$ times the *Kalman gain* $[P\tau\Sigma P^T+\Omega]^{-1}$ times the *view residual* $(Q-P\Pi)$. The gain matrix is only $K\times K$ (small) — that is why it is the workhorse implementation.
 
 **Final weights.** Unconstrained MVO on $\bar\mu$ with risk-aversion $\delta$:
-$$w^\* = \tfrac{1}{\delta}\Sigma^{-1}\bar\mu.$$
+$$
+w^* = \tfrac{1}{\delta}\Sigma^{-1}\bar\mu.
+$$
 
-**Limits (shot through with sanity).** If there are no views ($P=0$), $\bar\mu=\Pi$ and $w^\*=\tfrac1\delta\Sigma^{-1}\Pi=w_{mkt}$ exactly. If a view has $\Omega\to\infty$ (no confidence), the gain $\to0$ and again $\bar\mu\to\Pi$. Both identities are the first thing every implementation should test.
+**Limits (shot through with sanity).** If there are no views ($P=0$), $\bar\mu=\Pi$ and $w^*=\tfrac1\delta\Sigma^{-1}\Pi=w_{mkt}$ exactly. If a view has $\Omega\to\infty$ (no confidence), the gain $\to0$ and again $\bar\mu\to\Pi$. Both identities are the first thing every implementation should test.
 
 ---
 
@@ -108,7 +120,7 @@ Omega->inf  : [0.5 0.3 0.2] == w_mkt True
 
 - **Black & Litterman (1992)**, §The Combined Model — the original posterior derivation.
 - **Satchell & Scowcroft (2000)**, §2 — the cleanest derivation of the posterior and its special cases.
-- **Idzorek (2005)**, §Steps 1–7 — computation of $\bar\mu$ and $w^\*$ step by step.
+- **Idzorek (2005)**, §Steps 1–7 — computation of $\bar\mu$ and $w^*$ step by step.
 - **Bayesian bridge**: the Normal–Normal conjugate update is the same form as Bayesian linear regression — see **Hastie, Tibshirani & Friedman**, *ESL*, §3.3 (Bayesian ridge) in the verified corpus `esl_ch1-5.md`.
 
 ---

@@ -24,23 +24,33 @@ ES is not an isolated fix — it is the most conservative member of a whole fami
 #### 2.1 Spectral risk measures (Acerbi 2002)
 
 A **spectral risk measure** is a weighted average of the VaR quantiles with a fixed, non-decreasing weight function $\varphi:[0,1]\to\mathbb{R}_{\ge0}$:
-$$\boxed{\ M_\varphi(L)=\int_0^1 \varphi(u)\,\mathrm{VaR}_u(L)\,du,\qquad \int_0^1\varphi(u)\,du=1,\quad \varphi\ \text{non-decreasing}.\ }$$
+$$
+\boxed{\ M_\varphi(L)=\int_0^1 \varphi(u)\,\mathrm{VaR}_u(L)\,du,\qquad \int_0^1\varphi(u)\,du=1,\quad \varphi\ \text{non-decreasing}.\ }
+$$
 **Coherence ⇔ non-decreasing $\varphi$.** The monotonicity of $\varphi$ encodes *aversion to tail events*: the worse the quantile (higher $u$), the more weight it receives. A flat $\varphi\equiv1$ gives the mean; a *decreasing* $\varphi$ would reward tail risk and breaks subadditivity.
 
 **ES is the extreme spectral measure.** Take
-$$\varphi_{\mathrm{ES}}(u)=\frac{1}{1-\alpha}\,\mathbf{1}_{\{u>\alpha\}}.$$
+$$
+\varphi_{\mathrm{ES}}(u)=\frac{1}{1-\alpha}\,\mathbf{1}_{\{u>\alpha\}}.
+$$
 This is non-decreasing (a step), integrates to $1$, and gives exactly
-$$M_{\varphi_{\mathrm{ES}}}(L)=\frac{1}{1-\alpha}\int_\alpha^1 \mathrm{VaR}_u(L)\,du=\mathrm{ES}_\alpha(L).$$
+$$
+M_{\varphi_{\mathrm{ES}}}(L)=\frac{1}{1-\alpha}\int_\alpha^1 \mathrm{VaR}_u(L)\,du=\mathrm{ES}_\alpha(L).
+$$
 So ES is the spectral measure that assigns **zero weight to everything below the $\alpha$-quantile and uniform weight above it** — the most tail-concentrated member of the family.
 
 **Kusuoka representation.** Every *law-invariant* coherent risk measure is a mixture (supremum/convolution) of expected shortfalls at different levels:
-$$\rho(L)=\sup_{\mu\in\mathcal{M}}\int_{[0,1]}\mathrm{ES}_\alpha(L)\,d\mu(\alpha),$$
+$$
+\rho(L)=\sup_{\mu\in\mathcal{M}}\int_{[0,1]}\mathrm{ES}_\alpha(L)\,d\mu(\alpha),
+$$
 so **ES is the atomic building block of all law-invariant coherent risk measures** — the theoretical reason it is the canonical replacement for VaR.
 
 #### 2.2 Euler allocation (risk budgeting)
 
 A positively homogeneous (Axiom PH) differentiable measure satisfies **Euler's theorem**:
-$$\rho(L)=\sum_{i=1}^n w_i\,\frac{\partial\rho}{\partial w_i},$$
+$$
+\rho(L)=\sum_{i=1}^n w_i\,\frac{\partial\rho}{\partial w_i},
+$$
 so the terms $\mathrm{EC}_i=w_i\,\partial\rho/\partial w_i$ are **additive risk contributions** ("Euler allocation", "component CVaR", "expected shortfall contribution"). ES — being coherent and PH — admits this decomposition; VaR does **not** generally (its derivative is ill-defined on atoms). This is what lets a firm allocate one firm-wide ES budget down to desks so the parts sum to the whole.
 
 #### 2.3 Basel FRTB: from $99\%$ VaR to $97.5\%$ ES

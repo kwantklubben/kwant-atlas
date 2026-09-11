@@ -27,13 +27,17 @@ Every extension of the 3-factor model answers the same question: **which systema
 #### 2.1 The five-factor model (FF 2015, eq. 5)
 
 Adding profitability and investment to the three-factor regression:
-$$R_{it}-R_{ft}=\alpha_i+b_i\,MKT_t+s_i\,\text{SMB}_t+h_i\,\text{HML}_t+r_i\,\text{RMW}_t+c_i\,\text{CMA}_t+\varepsilon_{it}.$$
+$$
+R_{it}-R_{ft}=\alpha_i+b_i\,MKT_t+s_i\,\text{SMB}_t+h_i\,\text{HML}_t+r_i\,\text{RMW}_t+c_i\,\text{CMA}_t+\varepsilon_{it}.
+$$
 Constructed (as on [[pillars/01-quantitative-research/fundamental-multi-factor-models/03-factor-construction|03 · Factor Construction]]) by 2×3 independent sorts on size × {B/M, OP, Inv}. The paper is *rejected* on the GRS test but is "an acceptable description of average returns for applied purposes"; its main residual failure is **small, low-profitability, high-investment stocks** (which earn lower average returns than the model predicts). FF 2015 stresses the result is **not sensitive to the factor definitions** — 2×3, 2×2, and 2×2×2×2 variants give the same conclusions. Note the dividend-discount-model logic: price is the PV of expected dividends, so high B/M (cheap), high profitability, and low investment all mechanically imply higher expected returns (FF2015 eq. 1–3).
 
 #### 2.2 Statistical factor models via PCA (Tsay §9.4–9.5; ESL Ch 14)
 
 The orthogonal factor model (Tsay eq. 9.16):
-$$r_t-\mu=\beta f_t+\varepsilon_t,\qquad \text{Cov}(f)=I,\quad \text{Cov}(\varepsilon)=D,\quad f\perp\varepsilon,$$
+$$
+r_t-\mu=\beta f_t+\varepsilon_t,\qquad \text{Cov}(f)=I,\quad \text{Cov}(\varepsilon)=D,\quad f\perp\varepsilon,
+$$
 so that (Tsay eq. 9.17) $\Sigma_r=\beta\beta'+D$. **PCA** finds the loadings from the eigen-decomposition of the covariance/correlation matrix: the principal components are $y_i=e_i' r$ (eigenvectors of $\Sigma$), with $\text{Var}(y_i)=\lambda_i$, and loadings $\beta=\sqrt{\lambda_j}\,e_j$ (Tsay eq. 9.19). The **communality** of asset $i$ is $c_i^2=\sum_j\beta_{ij}^2$ and its **unique/specific variance** is $\sigma_i^2$, with $\text{Var}(r_{it})=c_i^2+\sigma_i^2$ (Tsay §9.5). The proportion of variance explained by the first $m$ PCs is $\sum_{j\le m}\lambda_j/\sum_j\lambda_j$ — the metric for choosing how many latent factors.
 
 **Choosing the number of factors:** the **scree/CPV rule** (cumulative proportion of variance), **Connor–Korajczyk** (no significant drop in cross-sectional residual variance as $m\to m+1$), and the **Bai–Ng** information criteria $C_{p1},C_{p2}$ (Tsay §9.6.1). Example (Tsay): 40 stocks, $T{=}36$: CK picks $m{=}1$, Bai–Ng picks $m{=}6$, 6 factors explain ~89.4%.

@@ -42,7 +42,7 @@ This folder is the **execution-backtesting-and-simulation topic-folder** for Pil
 | Latency pick-off | $\mathbb{P}\approx 1-e^{-\rho\ell}$ | $0.05$ ms $\to0.0488$; $10$ ms $\to1.0000$ |
 | Implementation shortfall (Perold) | $\text{IS}=\underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution}}+\underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity}}$ | Hasbrouck Ch 14, eq 14.1 |
 | Effective vs realized cost | $p_t-m_t=(p_t-m_{t+5})+(m_{t+5}-m_t)$ | impact $=m_{t+5}-m_t$ |
-| AC expected cost / impact | $E[x]=\tfrac12\gamma X^2+\varepsilon\textstyle\sum|n_k|+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | temp. impact $\eta X^2/T$: $\$25{,}000\!\to\!\$1{,}250$ |
+| AC expected cost / impact | $E[x]=\tfrac12\gamma X^2+\varepsilon\textstyle\sum|n_k|+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | temp. impact $\eta X^2/T$: $ $\$25{,}000\!\to\!\1{,}250 |
 | Square-root impact law (idealized) | $\Delta P\approx Y\,\sigma\,(Q/V)^{\alpha}$ with $\alpha=\tfrac12$ | toy ln-ln fit exponent $0.4922$, $R^2{=}0.9401$ |
 | Realized-impact exponent (empirical, Almgren et al. 2005) | $\Delta P\approx Y\,\sigma\,(Q/V)^{\alpha}$ with $\alpha\approx0.6$ | the *empirical* exponent is steeper than the idealized $\tfrac12$ — see [[pillars/06-market-making/market-impact-and-depth/index\|Market Impact & Depth]] |
 | Market replay estimate | one path $f(\omega_{\text{recorded}})$ | replay $1.0000$ vs MC mean $0.6384$ CI $[0.6259,0.6509]$ |
@@ -118,10 +118,10 @@ Read it as the whole folder in miniature: the binomial closed form and its Monte
 Hub signposts — the full failure analysis lives in [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
 1. **Optimistic fills (the standing-queue delusion).** Treating "a trade printed at my price" as "I filled" books fills that never happened; measured on [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/05-failure-modes-and-practice|05]] (F1), the naive rule booked **800 shares** where FIFO fills **234** ($3.4\times$ overbooking).
-2. **Ignoring the queue.** The fill condition is $\xi\ge x$, not $\xi\ge 0$; no-queue fills can overstate edge by nearly an order of magnitude ($\$16.00$ vs $\$1.86$ per order).
+2. **Ignoring the queue.** The fill condition is $\xi\ge x$, not $\xi\ge 0$; no-queue fills can overstate edge by nearly an order of magnitude (\$16.00 vs \$1.86 per order).
 3. **Look-ahead in replay.** Deciding the fill from data *after* the cancellation/decision time inflated $P(\text{fill})$ from $0.3301$ to $1.0000$ in the toy replay.
 4. **Latency omission.** Your modeled fill assumes you acted instantly; real quotes are stale for $\ell$ and the fraction of *adverse* fills rises with it ($P\!\approx\!1-e^{-\rho\ell}$).
-5. **Ignoring your own impact.** A backtest that assumes your order does not move the price omits a cost that scales as $\eta X^2/T$ ($\$25{,}000$ on a 1-day 100k-share liquidation — not a rounding error).
+5. **Ignoring your own impact.** A backtest that assumes your order does not move the price omits a cost that scales as $\eta X^2/T$ (\$25{,}000 on a 1-day 100k-share liquidation — not a rounding error).
 
 ---
 

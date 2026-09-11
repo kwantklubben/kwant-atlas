@@ -29,21 +29,31 @@ This page makes three things precise:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The NBBO.** With venue best asks $a_i$ and bids $b_i$,
-$$\boxed{\;a^\*=\min_i a_i,\qquad b^\*=\max_i b_i,\qquad \text{mid } m=\tfrac12(a^\*+b^\*),\qquad \text{spread } S^\*=a^\*-b^\*.}$$
-A **locked** market is $a^\*=b^\*$; a **crossed** market is $a^\*<b^\*$ (some venue's bid exceeds another's ask) — both are transient artifacts of reporting latency across venues.
+$$
+\boxed{\;a^*=\min_i a_i,\qquad b^*=\max_i b_i,\qquad \text{mid } m=\tfrac12(a^*+b^*),\qquad \text{spread } S^*=a^*-b^*.}
+$$
+A **locked** market is $a^*=b^*$; a **crossed** market is $a^*<b^*$ (some venue's bid exceeds another's ask) — both are transient artifacts of reporting latency across venues.
 
 **The consolidated-tape fragmentation index.** Let venue $i$ execute volume $v_i$ over a window, with shares $s_i=v_i/\sum_j v_j$. The **Herfindahl concentration index**
-$$\text{HHI}=\sum_i s_i^2,\qquad \text{effective number of venues}=\frac{1}{\text{HHI}},$$
+$$
+\text{HHI}=\sum_i s_i^2,\qquad \text{effective number of venues}=\frac{1}{\text{HHI}},
+$$
 so HHI $\to1$ is a single monopoly venue and HHI $\to0$ is a perfectly fragmented market. O'Hara & Ye (2011) proxy fragmentation in individual stocks using newly-available **TRF (trade reporting facility)** volumes — trades in off-exchange ATS/dark venues — precisely because that volume is invisible in the lit quotes.
 
 **Effective vs quoted cost — the cost of a fragmented view.** The cost a taker actually pays is measured against the *contemporaneous* mid (Foucault Ch 2):
-$$S_e\equiv d\,(p-m),\qquad d=\begin{cases}+1&\text{buy}\\-1&\text{sell}\end{cases},$$
+$$
+S_e\equiv d\,(p-m),\qquad d=\begin{cases}+1&\text{buy}\\-1&\text{sell}\end{cases},
+$$
 the **effective spread**. If a router buys at venue $i$'s ask $a_i$ while a better ask $a_j<a_i$ rests elsewhere, the excess $a_i-a_j>0$ is pure routing loss — the gap the NBBO exists to eliminate.
 
 **Price discovery across venues (Hasbrouck Ch 10).** Prices of the *same* security on different venues are **cointegrated**: they share one common efficient price $m_t$,
-$$p_t=m_t\,\iota+s_t,\qquad \iota=(1,\dots,1)',$$
+$$
+p_t=m_t\,\iota+s_t,\qquad \iota=(1,\dots,1)',
+$$
 where $s_t$ is stationary (the cross-venue spread/basis). A cointegrated vector moving average is **non-invertible**, so one cannot fit a convergent VAR in first differences; instead fit a **VECM**
-$$\Delta p_t=\phi_1\Delta p_{t-1}+\dots+\beta\,(z_{t-1}-b)+\varepsilon_t,$$
+$$
+\Delta p_t=\phi_1\Delta p_{t-1}+\dots+\beta\,(z_{t-1}-b)+\varepsilon_t,
+$$
 and decompose $\sigma_w^2=[\theta(1)]_1[\theta(1)]_1'$ (the common random-walk variance). Each venue's **information share** is its relative contribution $d_i^2/\sigma_w^2$ to the common efficient-price innovation, reported as a min–max band over the (Cholesky) orderings. This is how you answer *"does the price get discovered on the primary exchange, on the fast ECN, or in the dark?"*
 
 **Empirics (O'Hara & Ye 2011).** Across matched fragmented/consolidated stocks post-Reg NMS: **effective spreads are lower in the fragmented sample by 0.29 cents** (median 0.11 cents), execution speed differs on the order of **7 seconds**, and realized spreads are statistically indistinguishable — i.e. fragmentation lowers the *trading cost* to the taker without changing liquidity suppliers' profit. Fragmentation raises short-term volatility but makes prices *more* efficient (closer to a random walk).

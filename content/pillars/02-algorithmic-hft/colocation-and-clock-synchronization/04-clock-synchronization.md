@@ -30,17 +30,23 @@ Three hard truths:
 
 **The four-timestamp model (NTP / PTP, IEEE 1588).** A slave and a master exchange timestamps: $t_0$ slave sends, $t_1$ master receives, $t_2$ master sends reply, $t_3$ slave receives. Let $O$ be the true offset (master clock − slave clock) and $d_f, d_r$ the forward and reverse one-way transits. In real time:
 
-$$t_1 - t_0 = O + d_f , \qquad t_3 - t_2 = -O + d_r .$$
+$$
+t_1 - t_0 = O + d_f , \qquad t_3 - t_2 = -O + d_r .
+$$
 
 The standard estimate and round-trip delay are
 
-$$\boxed{\;\theta=\frac{(t_1-t_0)+(t_2-t_3)}{2} = O + \frac{d_f-d_r}{2}\;},\qquad \delta=(t_3-t_0)-(t_2-t_1)=d_f+d_r .$$
+$$
+\boxed{\;\theta=\frac{(t_1-t_0)+(t_2-t_3)}{2} = O + \frac{d_f-d_r}{2}\;},\qquad \delta=(t_3-t_0)-(t_2-t_1)=d_f+d_r .
+$$
 
 So the estimate is **exact only when the path is symmetric** ($d_f=d_r$); otherwise it is biased by $\tfrac12(d_f-d_r)$. The offset is recovered because the round-trip delay terms cancel — the price of that cancellation is the symmetry assumption.
 
 **Oscillator drift (skew).** A clock with a fractional-frequency error of $p$ ppm drifts $\Delta t = p\times10^{-6}\,T$ seconds over a window $T$. To keep drift under a hardware edge of $E$ seconds between re-syncs, you need re-sync every
 
-$$T_{\text{sync}} \le \frac{E}{p\times10^{-6}}.$$
+$$
+T_{\text{sync}} \le \frac{E}{p\times10^{-6}}.
+$$
 
 For $p=50$ ppm and $E=2\,\mu$s: $T_{\text{sync}}\le 40$ ms. At the nanosecond regime (1 GHz ticks), only PTP/≤100 ns GPS-disciplined clocks preserve order. This is why exchange *timestamp specs* (CME, Nasdaq, Cboe) are themselves regulatory artefacts — see the [[pillars/02-algorithmic-hft/colocation-and-clock-synchronization/index|hub]] references.
 

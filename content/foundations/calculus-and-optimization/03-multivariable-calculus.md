@@ -30,33 +30,43 @@ The objective is one sentence: **second-order Taylor with a gradient and a Hessi
 
 **Partial derivatives.** Hold all variables but one fixed and differentiate:
 
-$$\frac{\partial f}{\partial x_i}(x)=\lim_{h\to0}\frac{f(x+he_i)-f(x)}{h}.$$
+$$
+\frac{\partial f}{\partial x_i}(x)=\lim_{h\to0}\frac{f(x+he_i)-f(x)}{h}.
+$$
 
 **The total derivative (the local linear map).** $f:\mathbb R^n\to\mathbb R$ is differentiable at $x$ iff there is a vector $g$ with $f(x+d)=f(x)+g^\top d+o(\|d\|)$; then $g=\nabla f(x)$, the **gradient**, whose components are the partials. This is Bernstein's Carathéodory idea lifted to $\mathbb R^n$ (Simon & Blume §14.4): the derivative *is* the best linear approximation.
 
 **Directional derivative and steepest ascent.** For a unit vector $u$,
 
-$$D_u f(x)=\lim_{t\to0}\frac{f(x+tu)-f(x)}{t}=\nabla f(x)^\top u .$$
+$$
+D_u f(x)=\lim_{t\to0}\frac{f(x+tu)-f(x)}{t}=\nabla f(x)^\top u .
+$$
 
 By Cauchy–Schwarz $|D_uf|\le\|\nabla f\|$, with equality when $u\parallel\nabla f$: the gradient points in the direction of **steepest increase**, and its norm is the maximum rate. This is the entire geometric content of gradient descent (page 05).
 
 **Gradient rules.** Linearity $\nabla(af+bg)=a\nabla f+b\nabla g$; product $\nabla(fg)=f\nabla g+g\nabla f$; and the **chain rule along a curve** $x(t)$:
 
-$$\frac{d}{dt}f(x(t))=\nabla f(x(t))^\top x'(t).$$
+$$
+\frac{d}{dt}f(x(t))=\nabla f(x(t))^\top x'(t).
+$$
 
 For a composite with an inner linear map $y=Ax$, $\nabla_x f(Ax)=A^\top\nabla f(Ax)$ — the reason covariance matrices enter through $A^\top$ factors.
 
 **Jacobian (vector-valued maps).** For $F:\mathbb R^n\to\mathbb R^m$, the derivative is the **Jacobian matrix** $J_F(x)\in\mathbb R^{m\times n}$ with $(J_F)_{ij}=\partial F_i/\partial x_j$, and
 
-$$F(x+d)\approx F(x)+J_F(x)\,d .$$
+$$
+F(x+d)\approx F(x)+J_F(x)\,d .
+$$
 
 The **chain rule** in matrix form is $J_{F\circ G}(x)=J_F(G(x))\,J_G(x)$ — matrix multiplication of local sensitivity maps. When $m=n$, $\det J_F$ is the local volume scale factor (the change-of-variables Jacobian in densities).
 
 **Hessian and the second-order Taylor model.** For $f:\mathbb R^n\to\mathbb R$ twice differentiable, the Hessian is the symmetric matrix $H_{ij}=\partial^2 f/\partial x_i\partial x_j$ (symmetry is **Clairaut/Schwarz's theorem**: mixed partials commute for $C^2$ functions). Then
 
-$$f(x_0+d)=f(x_0)+\nabla f(x_0)^\top d+\tfrac12 d^\top H(x_0)\,d+o(\|d\|^2).$$
+$$
+f(x_0+d)=f(x_0)+\nabla f(x_0)^\top d+\tfrac12 d^\top H(x_0)\,d+o(\|d\|^2).
+$$
 
-**The multivariable second-derivative test** (Simon & Blume Ch 16, §17.3): at a stationary point $\nabla f(x^\*)=0$,
+**The multivariable second-derivative test** (Simon & Blume Ch 16, §17.3): at a stationary point $\nabla f(x^*)=0$,
 
 - $H\succ0$ (positive definite, all eigenvalues $>0$) $\Rightarrow$ strict local **minimum**;
 - $H\prec0$ (negative definite) $\Rightarrow$ strict local **maximum**;
@@ -67,7 +77,9 @@ For a $2\times2$ Hessian this is the familiar test: $H_{11}>0$ and $\det H>0$ $\
 
 **Finance reading — the Greeks as a gradient/Hessian.** With $V(S_1,\dots,S_n,t,\sigma)$:
 
-$$dV\approx\sum_i \Delta_i\,dS_i+\Theta\,dt+\mathcal{V}\,d\sigma+\tfrac12\sum_{i,j}\Gamma_{ij}\,dS_i\,dS_j+\cdots,\qquad \Gamma_{ij}=\frac{\partial^2 V}{\partial S_i\partial S_j}.$$
+$$
+dV\approx\sum_i \Delta_i\,dS_i+\Theta\,dt+\mathcal{V}\,d\sigma+\tfrac12\sum_{i,j}\Gamma_{ij}\,dS_i\,dS_j+\cdots,\qquad \Gamma_{ij}=\frac{\partial^2 V}{\partial S_i\partial S_j}.
+$$
 
 The **gamma matrix** $\Gamma$ is exactly the Hessian's asset block; its off-diagonals are **cross-gammas**. And the covariance matrix of a linear portfolio $w^\top R$ is itself a quadratic form $w^\top\Sigma w$ — the same object appearing as curvature.
 

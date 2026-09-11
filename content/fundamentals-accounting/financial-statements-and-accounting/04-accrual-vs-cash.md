@@ -34,23 +34,33 @@ The two presentations of cash flow from operations, and the identity that ties t
 
 **Direct method** — list the actual cash receipts and payments:
 
-$$\text{CFO} = \text{cash from customers} - \text{cash paid to suppliers} - \text{cash paid for expenses}$$
+$$
+\text{CFO} = \text{cash from customers} - \text{cash paid to suppliers} - \text{cash paid for expenses}
+$$
 
 **Indirect method** — start from earnings, add back non-cash expenses, and adjust for working-capital *changes* (this is how public statements present it, Box 10.3):
 
-$$\text{CFO} = \text{Net income} + \text{Depreciation} - \Delta\text{Accounts receivable} - \Delta\text{Inventory} + \Delta\text{Accounts payable}$$
+$$
+\text{CFO} = \text{Net income} + \text{Depreciation} - \Delta\text{Accounts receivable} - \Delta\text{Inventory} + \Delta\text{Accounts payable}
+$$
 
 **The accrual identity** (rearrange the indirect method — Penman eq. 5.1):
 
-$$\boxed{\;\text{Earnings} = \text{Cash flow from operations} + \text{Accruals}\;}$$
+$$
+\boxed{\;\text{Earnings} = \text{Cash flow from operations} + \text{Accruals}\;}
+$$
 
 where the **total accruals** (the non-cash portion of earnings) are
 
-$$\text{Accruals} = \Delta\text{AR} + \Delta\text{Inventory} - \Delta\text{AP} - \text{Depreciation} + \cdots$$
+$$
+\text{Accruals} = \Delta\text{AR} + \Delta\text{Inventory} - \Delta\text{AP} - \text{Depreciation} + \cdots
+$$
 
 and the broader view (Penman eq. 5.2) shows how investment is handled: accrual accounting **adds investment back to free cash flow** by placing it on the balance sheet as an asset, then recognizes its cost later as depreciation:
 
-$$\text{Earnings} = \text{Free cash flow} - \text{Net interest} + \text{Investments} + \text{Accruals}$$
+$$
+\text{Earnings} = \text{Free cash flow} - \text{Net interest} + \text{Investments} + \text{Accruals}
+$$
 
 The sign intuition: an *increase* in receivables means more revenue than cash (positive revenue accrual, lowers CFO relative to earnings); an *increase* in inventory means cash paid but not yet expensed (lowers CFO); depreciation is a non-cash expense (raises CFO relative to earnings).
 
@@ -86,7 +96,7 @@ Accruals       = -700   (dAR +0 + dInv +500 - dAP +0 - Dep -1200)
 Earnings = CFO + Accruals  ->  800 = 1,500 + (-700)  True
 ```
 
-Both methods give the same \$1,500. The accruals are **−\$700**: depreciation (−\$1,200) is a non-cash expense that makes earnings *lower* than cash, while the inventory build (+\$500) made cash *lower* than earnings because the business paid for goods not yet sold. Negative total accruals mean cash flow from operations *exceeded* earnings — a sign of high earnings quality (see [[fundamentals-accounting/financial-statements-and-accounting/05-failure-modes-and-practice|05 · Failure Modes]]).
+Both methods give the same \$1,500. The accruals are **−\$700**: depreciation (−\$1,200) is a non-cash expense that makes earnings *lower* than cash, while the inventory build (+ \$500) made cash *lower* than earnings because the business paid for goods not yet sold. Negative total accruals mean cash flow from operations *exceeded* earnings — a sign of high earnings quality (see [[fundamentals-accounting/financial-statements-and-accounting/05-failure-modes-and-practice|05 · Failure Modes]]).
 
 ---
 

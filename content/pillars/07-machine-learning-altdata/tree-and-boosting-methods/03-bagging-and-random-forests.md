@@ -25,13 +25,17 @@ The objective of this page is to show, with numbers, that (a) averaging tames tr
 
 **Bagging (ESL 8.51–8.52).** Draw $B$ bootstrap samples, fit a tree $\hat f^{*b}$ on each, and average:
 
-$$\hat f_{\text{bag}}(x)=\frac1B\sum_{b=1}^B \hat f^{*b}(x).$$
+$$
+\hat f_{\text{bag}}(x)=\frac1B\sum_{b=1}^B \hat f^{*b}(x).
+$$
 
 At the population level, averaging never increases MSE (ESL 8.52): $\mathbb E[(Y-\tfrac1B\sum_b \hat f_b)^2]\le \mathbb E[(Y-\hat f)^2]$ for the average of identically-distributed but possibly dependent fits. Bagging **does not reduce bias** — it only attacks variance.
 
 **Why the bootstrap breaks correlation.** Bootstrap draws lose roughly $1/e\approx37\%$ of the rows, so each tree is fit on a perturbed sample. The variance of the *average* of $B$ identically-distributed trees with pairwise correlation $\rho$ is (ESL 15.1):
 
-$$\mathrm{Var}\!\left(\frac1B\sum_{b=1}^B \hat f_b\right)=\rho\,\sigma^2+\frac{1-\rho}{B}\,\sigma^2 .$$
+$$
+\mathrm{Var}\!\left(\frac1B\sum_{b=1}^B \hat f_b\right)=\rho\,\sigma^2+\frac{1-\rho}{B}\,\sigma^2 .
+$$
 
 Two consequences: increasing $B$ kills the *second* term but the first ($\rho\sigma^2$) never dies; to reduce it you must reduce $\rho$. Since $\rho$ falls as the trees are forced to differ, **random forests reduce $\rho$ by restricting each split to a random feature subset** of size $m$:
 

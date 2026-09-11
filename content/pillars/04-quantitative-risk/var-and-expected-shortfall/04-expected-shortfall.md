@@ -26,19 +26,29 @@ This page gives the three equivalent definitions of ES (tail mean, quantile inte
 
 For a loss $L$ and confidence level $\alpha\in(0,1)$:
 
-$$\textbf{(Tail mean)}\quad \mathrm{ES}_\alpha(L)=\mathbb{E}\big[L\mid L\ge \mathrm{VaR}_\alpha(L)\big].$$
-$$\textbf{(Quantile integral)}\quad \mathrm{ES}_\alpha(L)=\frac{1}{1-\alpha}\int_\alpha^1 \mathrm{VaR}_u(L)\,du.$$
-$$\textbf{(Rockafellar–Uryasev)}\quad \mathrm{ES}_\alpha(L)=\min_{\beta\in\mathbb{R}}\Big\{\,\beta+\frac{1}{1-\alpha}\,\mathbb{E}\big[(L-\beta)^+\big]\Big\},\quad (t)^+=\max(t,0).$$
+$$
+\textbf{(Tail mean)}\quad \mathrm{ES}_\alpha(L)=\mathbb{E}\big[L\mid L\ge \mathrm{VaR}_\alpha(L)\big].
+$$
+$$
+\textbf{(Quantile integral)}\quad \mathrm{ES}_\alpha(L)=\frac{1}{1-\alpha}\int_\alpha^1 \mathrm{VaR}_u(L)\,du.
+$$
+$$
+\textbf{(Rockafellar–Uryasev)}\quad \mathrm{ES}_\alpha(L)=\min_{\beta\in\mathbb{R}}\Big\{\,\beta+\frac{1}{1-\alpha}\,\mathbb{E}\big[(L-\beta)^+\big]\Big\},\quad (t)^+=\max(t,0).
+$$
 
 The tail mean integrates the loss over the worst $(1-\alpha)$ fraction of outcomes — the region *beyond* VaR. The quantile integral averages VaR across confidence levels $u\in(\alpha,1]$; for continuous distributions these coincide. For **discrete** distributions the tail mean needs a correction, and the quantile integral is the clean definition:
 
-$$\mathrm{ES}_\alpha(L)=\frac{1}{1-\alpha}\Big(\mathbb{E}\big[L\,\mathbf{1}_{\{L\ge \mathrm{VaR}_\alpha\}}\big]-\mathrm{VaR}_\alpha\big(\mathbb{P}(L\ge \mathrm{VaR}_\alpha)-(1-\alpha)\big)\Big).$$
+$$
+\mathrm{ES}_\alpha(L)=\frac{1}{1-\alpha}\Big(\mathbb{E}\big[L\,\mathbf{1}_{\{L\ge \mathrm{VaR}_\alpha\}}\big]-\mathrm{VaR}_\alpha\big(\mathbb{P}(L\ge \mathrm{VaR}_\alpha)-(1-\alpha)\big)\Big).
+$$
 
 #### 2.2 The Rockafellar–Uryasev characterization (2000, Thm. 1)
 
 Define the convex function $F_\alpha(\beta)=\beta+\frac{1}{1-\alpha}\mathbb{E}[(L-\beta)^+]$. Its subgradient is $1-\frac{1}{1-\alpha}\mathbb{P}(L\ge\beta)$. Theorem 1: **$F_\alpha$ is convex, continuously differentiable, minimised at $\beta=\mathrm{VaR}_\alpha$, and its minimum equals $\mathrm{ES}_\alpha$**:
 
-$$\boxed{\ \mathrm{ES}_\alpha=\min_\beta F_\alpha(\beta),\qquad \mathrm{VaR}_\alpha=\text{left endpoint of }\arg\min_\beta F_\alpha(\beta)\ }$$
+$$
+\boxed{\ \mathrm{ES}_\alpha=\min_\beta F_\alpha(\beta),\qquad \mathrm{VaR}_\alpha=\text{left endpoint of }\arg\min_\beta F_\alpha(\beta)\ }
+$$
 
 Consequences: (i) you can compute ES **without first computing VaR**; (ii) minimising ES over a portfolio is a *convex program* (often a plain LP after sampling: $F_\alpha\approx\beta+\frac{1}{q(1-\alpha)}\sum_k (L_k-\beta)^+$ with auxiliary $u_k\ge0$), while VaR minimisation may have multiple local extrema ([[pillars/04-quantitative-risk/var-and-expected-shortfall/02-var-definition-and-flaws|02 · §2.2]]).
 
@@ -49,7 +59,9 @@ Since $F_\alpha(\beta)=\beta+(1-\alpha)^{-1}\mathbb{E}[(L-\beta)^+]$ and $\mathb
 #### 2.4 Closed form and the normal benchmark
 
 For $L\sim\mathcal{N}(\mu,\sigma^2)$ (Hull eq. 22.1):
-$$\mathrm{VaR}_\alpha=\mu+\sigma z_\alpha,\qquad \mathrm{ES}_\alpha=\mu+\sigma\frac{\varphi(z_\alpha)}{1-\alpha},\qquad z_\alpha=\Phi^{-1}(\alpha).$$
+$$
+\mathrm{VaR}_\alpha=\mu+\sigma z_\alpha,\qquad \mathrm{ES}_\alpha=\mu+\sigma\frac{\varphi(z_\alpha)}{1-\alpha},\qquad z_\alpha=\Phi^{-1}(\alpha).
+$$
 At $\alpha=0.975$: $\mathrm{ES}=2.337803$ vs $z_{0.99}=2.326348$ — the reason FRTB's $97.5\%$ ES matches the old $99\%$ VaR in the normal benchmark. Under fat tails (Student-$t$, EVT), the same quantile gives a *much* larger ES ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT §ES]]).
 
 ---

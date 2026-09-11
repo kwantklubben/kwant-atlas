@@ -35,21 +35,29 @@ Three "aha"s take you from "I click buy" to a working mental model:
 
 **The Roll model: decomposing a trade price (Hasbrouck Ch 3).** The simplest formal statement of the idea that the spread is a waiting cost. Let the *efficient* (latent consensus) price follow a random walk, $m_t=m_{t-1}+u_t$ with $\mathrm{Var}(u_t)=\sigma_u^2$, and let a dealer/liquidity supplier charge a half-spread $c$ around it. The observed **trade price** is
 
-$$p_t=m_t+q_t c,\qquad q_t=\begin{cases}+1 & \text{buy}\\-1 & \text{sell}\end{cases},$$
+$$
+p_t=m_t+q_t c,\qquad q_t=\begin{cases}+1 & \text{buy}\\-1 & \text{sell}\end{cases},
+$$
 
 with buys/sells equally likely and serially independent of $u_t$. Define price changes $\Delta p_t=p_t-p_{t-1}$. Then
 
-$$\Delta p_t=c\,(q_t-q_{t-1})+u_t.$$
+$$
+\Delta p_t=c\,(q_t-q_{t-1})+u_t.
+$$
 
 Taking moments (and using $\mathrm{Var}(q_t)=1$, $\mathrm{Cov}(q_t,q_{t-1})=0$):
 
-$$\boxed{\;\gamma_0\equiv\mathrm{Var}(\Delta p_t)=2c^2+\sigma_u^2,\qquad \gamma_1\equiv\mathrm{Cov}(\Delta p_{t-1},\Delta p_t)=-c^2\;}$$
+$$
+\boxed{\;\gamma_0\equiv\mathrm{Var}(\Delta p_t)=2c^2+\sigma_u^2,\qquad \gamma_1\equiv\mathrm{Cov}(\Delta p_{t-1},\Delta p_t)=-c^2\;}
+$$
 
 and all higher autocovariances vanish. This is the *entire* content of the Roll model: the bid-ask **bounce** ($c^2$) creates a *negative* first-order autocorrelation in trade-price changes, while the efficient-price innovation contributes only contemporaneous variance. Inverting:
 
-$$\boxed{\;c=\sqrt{-\gamma_1},\qquad \sigma_u^2=\gamma_0+2\gamma_1,\qquad \text{quoted spread}=2c=2\sqrt{-\gamma_1}.\;}$$
+$$
+\boxed{\;c=\sqrt{-\gamma_1},\qquad \sigma_u^2=\gamma_0+2\gamma_1,\qquad \text{quoted spread}=2c=2\sqrt{-\gamma_1}.\;}
+$$
 
-**Why this matters.** The spread $2c$ is *estimable from trade prices alone* — a pure microstructure signal hidden inside an otherwise near-random-walk price series. Empirically (Hasbrouck Ch 3, PCO Oct 2003) $\hat\gamma_1=-0.0000294$ gives $c=\$0.017$, spread $\$0.034$, close to the observed time-weighted NYSE average of $\$0.032$ — a striking confirmation.
+**Why this matters.** The spread $2c$ is *estimable from trade prices alone* — a pure microstructure signal hidden inside an otherwise near-random-walk price series. Empirically (Hasbrouck Ch 3, PCO Oct 2003) $\hat\gamma_1=-0.0000294$ gives $c= $ \$0.017, spread \0.034, close to the observed time-weighted NYSE average of \$0.032 — a striking confirmation.
 
 **The same spread, from information (Foucault Ch 1; Hasbrouck Ch 5).** The Roll $c$ is a cost of *waiting*; the Glosten–Milgrom spread is a cost of *being picked off*. With informed arrival proportion $\mu$ and value dispersion $(V_H-V_L)$, the symmetric-prior spread is $A-B=(V_H-V_L)\,\mu$ — the model-free intuition that **more adverse selection widens the spread.** Both costs coexist: the quoted spread pays for order processing, inventory, *and* adverse selection at once.
 

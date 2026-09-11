@@ -29,9 +29,13 @@ Start with the dumbest question: *why does the cross-section of stock returns di
 ### 2. Mathematical Ground Truth & Derivations
 
 **The split, in one equation** (the general factor model, Tsay eq. 9.1):
-$$r_{it}=\alpha_i+\beta_{i1}f_{1t}+\dots+\beta_{im}f_{mt}+\varepsilon_{it},$$
+$$
+r_{it}=\alpha_i+\beta_{i1}f_{1t}+\dots+\beta_{im}f_{mt}+\varepsilon_{it},
+$$
 or in matrix form over all assets, $r_t=\alpha+B f_t+\varepsilon_t$ (Tsay eq. 9.2). Its **variance decomposition** (Tsay eq. 9.3–9.4) is the single most useful identity in the folder:
-$$\text{Cov}(r_t)=B\,\text{Cov}(f_t)\,B^\top + D,\qquad D=\text{diag}\{\sigma_1^2,\dots,\sigma_k^2\},$$
+$$
+\text{Cov}(r_t)=B\,\text{Cov}(f_t)\,B^\top + D,\qquad D=\text{diag}\{\sigma_1^2,\dots,\sigma_k^2\},
+$$
 i.e. **asset covariance = (exposures × factor covariance × exposures$^\top$) + idiosyncratic diagonal.** The beta's job is to absorb as much covariance as possible so that the leftover $D$ is nearly diagonal (idiosyncratic noise is roughly uncorrelated across stocks).
 
 **The three factor families** (Tsay §9 intro, citing Connor 1995):

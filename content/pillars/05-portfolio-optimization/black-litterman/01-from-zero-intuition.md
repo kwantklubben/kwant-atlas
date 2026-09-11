@@ -16,7 +16,7 @@ tags:
 
 This page builds the *why* of Black–Litterman with **no portfolio-optimization experience needed beyond the one-line spec of Markowitz**. The objective is one idea: **when you hand a mean-variance optimizer your best-guess expected returns, it doesn't optimize — it amplifies your noise into extreme bets you never meant to make. Black–Litterman's cure is to stop guessing and start from the one portfolio nobody argues with: the market itself.**
 
-Start with the dumbest question: *what expected returns should I feed the optimizer?* Markowitz tells you $w^\* = \tfrac{1}{\delta}\Sigma^{-1}(\mu - r_f\mathbf{1})$. The problem: **you do not know $\mu$.** Sample means are notoriously noisy (estimation error scales like $\sigma/\sqrt{T}$). What the optimizer does with that noise is the crime: because $w^\*$ is *linear in $\Sigma^{-1}$*, any error in $\mu$ is multiplied by the inverse covariance, whose tiny-eigenvalue directions blow up. The result is weights like $[+0.90, -0.30, +0.93]$ that look like a bet on apocalypse.
+Start with the dumbest question: *what expected returns should I feed the optimizer?* Markowitz tells you $w^* = \tfrac{1}{\delta}\Sigma^{-1}(\mu - r_f\mathbf{1})$. The problem: **you do not know $\mu$.** Sample means are notoriously noisy (estimation error scales like $\sigma/\sqrt{T}$). What the optimizer does with that noise is the crime: because $w^*$ is *linear in $\Sigma^{-1}$*, any error in $\mu$ is multiplied by the inverse covariance, whose tiny-eigenvalue directions blow up. The result is weights like $[+0.90, -0.30, +0.93]$ that look like a bet on apocalypse.
 
 Three intuitions (the "aha"s):
 
@@ -29,13 +29,19 @@ Three intuitions (the "aha"s):
 ### 2. Mathematical Ground Truth & Derivations
 
 **The failure of naive MVO.** Feed the optimizer arbitrary sample means $\mu_s$; the weights are
-$$w^\*= \tfrac{1}{\delta}\Sigma^{-1}\mu_s.$$
-The sensitivity to a perturbation $d\mu$ is $dw^\* = \tfrac{1}{\delta}\Sigma^{-1}d\mu$. Because $\Sigma^{-1}$'s eigenvalues are $1/\lambda_i$, small inputs along low-variance directions get amplified. Best & Grauer (1991) prove formally that a **one-percent change in a single asset's mean can drive that asset to its max short** in a 100-asset problem. This is "garbage in, garbage out" with compounding interest.
+$$
+w^*= \tfrac{1}{\delta}\Sigma^{-1}\mu_s.
+$$
+The sensitivity to a perturbation $d\mu$ is $dw^* = \tfrac{1}{\delta}\Sigma^{-1}d\mu$. Because $\Sigma^{-1}$'s eigenvalues are $1/\lambda_i$, small inputs along low-variance directions get amplified. Best & Grauer (1991) prove formally that a **one-percent change in a single asset's mean can drive that asset to its max short** in a 100-asset problem. This is "garbage in, garbage out" with compounding interest.
 
 **The BL prior (sketch).** The market-cap portfolio $w_{mkt}$ is assumed (reverse) optimal. Matching the MVO first-order condition gives the implied returns
-$$\Pi = \delta\,\Sigma\,w_{mkt},$$
+$$
+\Pi = \delta\,\Sigma\,w_{mkt},
+$$
 so that $\tfrac{1}{\delta}\Sigma^{-1}\Pi = w_{mkt}$ **exactly**. Rather than a point estimate of $\mu$, BL treats returns as random *centered on $\Pi$*:
-$$r \sim \mathcal{N}\big(\Pi,\ \tau\Sigma\big),$$
+$$
+r \sim \mathcal{N}\big(\Pi,\ \tau\Sigma\big),
+$$
 where $\tau\Sigma$ is the prior's covariance — the uncertainty in *our knowledge of the mean*, scaled down from $\Sigma$ by $\tau\in(0,1)$. This is the Bayesian prior; §02 derives where $\Pi$ comes from, §03 does the update.
 
 ---

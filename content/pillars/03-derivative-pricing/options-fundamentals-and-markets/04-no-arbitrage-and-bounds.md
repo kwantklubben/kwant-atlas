@@ -31,25 +31,35 @@ The **six inputs** to any European option price are $S_0$, $K$, $T$, $\sigma$, $
 
 **Upper bounds** (Hull 11.1–11.3):
 
-$$c\le S_0,\qquad C\le S_0,\qquad P\le K,\qquad p\le Ke^{-rT}.$$
+$$
+c\le S_0,\qquad C\le S_0,\qquad P\le K,\qquad p\le Ke^{-rT}.
+$$
 
 **Lower bounds** (Hull 11.4–11.5, no dividends):
 
-$$c\ge\max(S_0-Ke^{-rT},\,0),\qquad p\ge\max(Ke^{-rT}-S_0,\,0).$$
+$$
+c\ge\max(S_0-Ke^{-rT},\,0),\qquad p\ge\max(Ke^{-rT}-S_0,\,0).
+$$
 
 The lower bound for a call is *strictly greater* than the intrinsic value $\max(S_0-K,0)$ for a positive rate — you are not obliged to pay $K$ until $T$. This gap is why a deep-ITM American *call* is still never exercised early.
 
 #### 2.2 Put–call parity (Hull 11.6; Haug 1.13)
 
-$$c+Ke^{-rT}=p+S_0.$$
+$$
+c+Ke^{-rT}=p+S_0.
+$$
 
 **Derivation by replication.** Portfolio A: one call $+$ cash $Ke^{-rT}$. Portfolio B: one put $+$ one share. At expiry both are worth $\max(S_T,K)$:
 
-$$A_T=\max(S_T-K,0)+K=\max(S_T,K),\qquad B_T=\max(K-S_T,0)+S_T=\max(S_T,K).$$
+$$
+A_T=\max(S_T-K,0)+K=\max(S_T,K),\qquad B_T=\max(K-S_T,0)+S_T=\max(S_T,K).
+$$
 
 Identical payoffs, identical price today, hence parity. **Generalized form** (Haug 1.18) for any carry $b$:
 
-$$c-p=Se^{(b-r)T}-Xe^{-rT}=e^{-rT}\big(Se^{bT}-X\big),$$
+$$
+c-p=Se^{(b-r)T}-Xe^{-rT}=e^{-rT}\big(Se^{bT}-X\big),
+$$
 
 which specializes to stock ($b=r$): $c-p=S-Xe^{-rT}$; index ($b=r-q$): $c-p=Se^{-qT}-Xe^{-rT}$; futures ($b=0$): $c-p=(F-X)e^{-rT}$; currency ($b=r-r_f$): $c-p=Se^{-r_fT}-Xe^{-rT}$.
 
@@ -60,7 +70,9 @@ which specializes to stock ($b=r$): $c-p=S-Xe^{-rT}$; index ($b=r-q$): $c-p=Se^{
 - **American call, non-dividend stock: never optimal to exercise early**, so $C=c$. Two reasons: exercising destroys the insurance value of the option, and you pay $K$ earlier than necessary, forgoing interest.
 - **American put: early exercise can be optimal** when deep ITM, more attractive as $S_0$ falls, $r$ rises, $\sigma$ falls. Hence $P\ge\max(K-S_0,0)$ and $\max(K-S_0,0)\le P\le K$.
 - **Dividends** change the call story: exercise is optimal only *just before an ex-dividend date*; with known dividends $D$, the bounds and parity become
-  $$c\ge\max(S_0-D-Ke^{-rT},0),\quad p\ge\max(D+Ke^{-rT}-S_0,0),\quad c+D+Ke^{-rT}=p+S_0.$$
+$$
+c\ge\max(S_0-D-Ke^{-rT},0),\quad p\ge\max(D+Ke^{-rT}-S_0,0),\quad c+D+Ke^{-rT}=p+S_0.
+$$
 
 ---
 

@@ -31,22 +31,30 @@ Two facts carry the whole subject:
 
 **Divided differences and their truncation error** (Duffy eqs. 6.2–6.10). With $D_0,D_+,D_-$ the centred, forward and backward operators:
 
-$$D_0 f(a)=\frac{f(a+h)-f(a-h)}{2h},\quad
+$$
+D_0 f(a)=\frac{f(a+h)-f(a-h)}{2h},\quad
 D_+ f(a)=\frac{f(a+h)-f(a)}{h},\quad
-D_- f(a)=\frac{f(a)-f(a-h)}{h},$$
+D_- f(a)=\frac{f(a)-f(a-h)}{h},
+$$
 
-$$D_0 f(a)=f'(a)+\frac{h^2}{6}\cdot\frac{f'''(\eta_+)+f'''(\eta_-)}{2}=f'(a)+O(h^2),\qquad
-D_\pm f(a)=f'(a)\pm\frac{h}{2}f''(\eta)=f'(a)+O(h),$$
+$$
+D_0 f(a)=f'(a)+\frac{h^2}{6}\cdot\frac{f'''(\eta_+)+f'''(\eta_-)}{2}=f'(a)+O(h^2),\qquad
+D_\pm f(a)=f'(a)\pm\frac{h}{2}f''(\eta)=f'(a)+O(h),
+$$
 
-$$D_+D_-f(a)=\frac{f(a-h)-2f(a)+f(a+h)}{h^2}=f''(a)+\frac{h^2}{4!}\big[f^{(4)}(\eta_+)+f^{(4)}(\eta_-)\big]=f''(a)+O(h^2).$$
+$$
+D_+D_-f(a)=\frac{f(a-h)-2f(a)+f(a+h)}{h^2}=f''(a)+\frac{h^2}{4!}\big[f^{(4)}(\eta_+)+f^{(4)}(\eta_-)\big]=f''(a)+O(h^2).
+$$
 
 So: **centred first difference is $O(h^2)$, one-sided is $O(h)$, second difference is $O(h^2)$.** (Duffy's printed (6.10) shows $h^4/4!$ — a typographical error; the Taylor expansion forces $h^2$, as flagged in the corpus.)
 
 **The $\theta$-method** (Duffy eqs. 6.17–6.19, 7.4–7.7). For a semi-discretised system $\dot U=\mathcal L U$, weight the spatial operator between the old and new time levels by $\theta$:
 
-$$\frac{U^{n+1}-U^n}{k}=(1-\theta)\,\mathcal L U^{n}+\theta\,\mathcal L U^{n+1}
+$$
+\frac{U^{n+1}-U^n}{k}=(1-\theta)\,\mathcal L U^{n}+\theta\,\mathcal L U^{n+1}
 \;\Longrightarrow\;
-\big[I-k\theta \mathcal L\big]U^{n+1}=\big[I+k(1-\theta)\mathcal L\big]U^{n}.$$
+\big[I-k\theta \mathcal L\big]U^{n+1}=\big[I+k(1-\theta)\mathcal L\big]U^{n}.
+$$
 
 | $\theta$ on **new** level | Scheme | Order in time | Stability |
 |---|---|---|---|
@@ -58,16 +66,20 @@ $$\frac{U^{n+1}-U^n}{k}=(1-\theta)\,\mathcal L U^{n}+\theta\,\mathcal L U^{n+1}
 
 **Consistency and order** (Duffy Defs. 8.1, 8.3, 8.4). A scheme is *consistent* if, for the exact solution $v$,
 
-$$v^{n+1}=Q v^n + kG^n + k\tau^n,\qquad \|\tau^n\|\to0\ \text{as }h,k\to0;\qquad
-\text{accurate of order }(p,q)\iff \|\tau^n\|=O(h^p)+O(k^q).$$
+$$
+v^{n+1}=Q v^n + kG^n + k\tau^n,\qquad \|\tau^n\|\to0\ \text{as }h,k\to0;\qquad
+\text{accurate of order }(p,q)\iff \|\tau^n\|=O(h^p)+O(k^q).
+$$
 
 $\tau^n$ is the **local truncation error**. **Lax (Thm 8.1):** a consistent two-level scheme for a well-posed linear IVP is **convergent iff stable**.
 
 **Stability — von Neumann/Fourier analysis** (Duffy §8.3). Substituting $u_j^n=\gamma^n e^{ij\beta h}$ gives the **amplification factor** $\rho(\xi)$; stability requires $|\rho(\xi)|\le1$ for all frequencies $\xi$:
 
-$$\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\frac{\xi}{2}\quad(\lambda=ak/h^2),\qquad
+$$
+\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\frac{\xi}{2}\quad(\lambda=ak/h^2),\qquad
 \rho_{\text{impl}}(\xi)=\frac{1}{1+4\lambda\sin^2\frac\xi2},\qquad
-\rho_{\text{CN}}(\xi)=\frac{1-2\lambda\sin^2\frac\xi2}{1+2\lambda\sin^2\frac\xi2}.$$
+\rho_{\text{CN}}(\xi)=\frac{1-2\lambda\sin^2\frac\xi2}{1+2\lambda\sin^2\frac\xi2}.
+$$
 
 Explicit Euler needs $\lambda\le\tfrac12$; implicit Euler and Crank–Nicolson are unconditionally stable ($|\rho|<1$ for all $\lambda>0$). Note $\rho_{\text{CN}}$ goes **negative** for large $\lambda\sin^2(\xi/2)$ — the source of spurious oscillation.
 
@@ -75,13 +87,17 @@ Explicit Euler needs $\lambda\le\tfrac12$; implicit Euler and Crank–Nicolson a
 
 **Richardson extrapolation** (Duffy eqs. 6.28–6.36). If $U_k=W+Mk+O(k^2)$, then
 
-$$V_{k/2}\equiv 2U_{k/2}-U_k=W+O(k^2),$$
+$$
+V_{k/2}\equiv 2U_{k/2}-U_k=W+O(k^2),
+$$
 
 a second-order method built from two first-order implicit-Euler solves — **without Crank–Nicolson's ringing**.
 
 **Exponential fitting** (Duffy eq. 6.54–6.56, 11.17). For the convection–diffusion model, replacing the diffusion coefficient by the **fitting factor**
 
-$$\rho=\frac{\mu h}{2}\coth\!\Big(\frac{\mu h}{2\sigma}\Big)$$
+$$
+\rho=\frac{\mu h}{2}\coth\!\Big(\frac{\mu h}{2\sigma}\Big)
+$$
 
 reproduces the exact solution of the model ODE at the grid points and stays monotone for *any* $h$ — the standard cure for convection-dominated (near-degenerate) problems. Its limit $\sigma\to0$ is automatic upwinding.
 

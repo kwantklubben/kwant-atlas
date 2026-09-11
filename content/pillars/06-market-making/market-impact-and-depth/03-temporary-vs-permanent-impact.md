@@ -32,12 +32,16 @@ Every impact you observe is the sum of two things that behave nothing alike:
 
 Sell $X$ shares in $N$ discrete slices, $n_k$ shares at time $t_k$, so $\sum_k n_k=X$. The price has a **permanent** drift and a **temporary** concession:
 
-$$S_k=S_0+\gamma\sum_{j\le k}n_j\ \ (\text{permanent}),\qquad
-\tilde S_k=S_k+\epsilon\,\mathrm{sgn}(n_k)+\tilde\eta\,\frac{n_k}{\tau}\ \ (\text{temporary execution price}).$$
+$$
+S_k=S_0+\gamma\sum_{j\le k}n_j\ \ (\text{permanent}),\qquad
+\tilde S_k=S_k+\epsilon\,\mathrm{sgn}(n_k)+\tilde\eta\,\frac{n_k}{\tau}\ \ (\text{temporary execution price}).
+$$
 
 Here $g(v)=\gamma v$ is the permanent impact function and $h(v)=\epsilon\,\mathrm{sgn}(v)+\tilde\eta\,v$ the temporary one; $\epsilon$ is the fixed (spread-plus-fee) cost and $\tilde\eta$ the variable concession per unit trade rate. The realized cost of the program is $\sum_k n_k\,\tilde S_k - X S_0$, whose expectation is
 
-$$\boxed{\ \mathbb E[x]=\tfrac12\gamma X^2+\epsilon\sum_k|n_k|+\tilde\eta\sum_k n_k^2\ },\qquad \tilde\eta=\eta-\tfrac12\gamma,$$
+$$
+\boxed{\ \mathbb E[x]=\tfrac12\gamma X^2+\epsilon\sum_k|n_k|+\tilde\eta\sum_k n_k^2\ },\qquad \tilde\eta=\eta-\tfrac12\gamma,
+$$
 
 and whose variance is $\mathrm{Var}[x]=\tfrac12\sigma^2\sum_k\tau_k x_k^2$ (the uncertain future price of the shares you still hold). Two immediate consequences:
 
@@ -46,7 +50,9 @@ and whose variance is $\mathrm{Var}[x]=\tfrac12\sigma^2\sum_k\tau_k x_k^2$ (the 
 
 Trading off expected cost against timing risk yields the **efficient frontier**, and for linear impact the optimal trajectory is the closed form
 
-$$x_j=\frac{\sinh\!\big(\kappa(T-t_j)\big)}{\sinh(\kappa T)}X,\qquad \kappa\approx\sqrt{\frac{\tilde\lambda\sigma^2}{\tilde\eta}}\quad(\text{Gatheral's }\kappa),$$
+$$
+x_j=\frac{\sinh\!\big(\kappa(T-t_j)\big)}{\sinh(\kappa T)}X,\qquad \kappa\approx\sqrt{\frac{\tilde\lambda\sigma^2}{\tilde\eta}}\quad(\text{Gatheral's }\kappa),
+$$
 
 which interpolates between constant-rate (risk-neutral, $\kappa\to0$) and front-loaded (risk-averse, $\kappa\to\infty$) execution. *(The scheduling problem itself is Pillar 2; here the point is the arithmetic of the two components.)*
 
@@ -58,7 +64,9 @@ Define the **transient** pressure $T_n$ as an AR(1)-like decay: $T_n=\rho\,T_{n-
 
 Hasbrouck's generalized Roll model makes the same split *in transaction data*:
 
-$$\Delta p_t=c\,(q_t-q_{t-1})+\lambda\,q_t+u_t,$$
+$$
+\Delta p_t=c\,(q_t-q_{t-1})+\lambda\,q_t+u_t,
+$$
 
 with $q_t\in\{+1,-1\}$ the trade sign, $c$ the **transitory** (order-processing / inventory / bid-ask bounce) component and $\lambda$ the **permanent** (adverse-selection) component. The spread is $2(c+\lambda)$, and the identified random-walk variance is $\sigma_w^2=\lambda^2+\sigma_u^2=\gamma_0+2\gamma_1$. The transitory component is exactly the $q_t-q_{t-1}$ "bounce"; the permanent component is the $\lambda q_t$ that shifts the efficient price. *(Glosten–Harris 1988 estimate the same decomposition with size-dependent $\lambda$; Huang–Stoll 1997 is the three-way ordering/inventory/adverse-selection version.)*
 
@@ -105,7 +113,7 @@ Temporary vs permanent: same size X, different execution speed
 ```
 
 Read the table:
-- **Permanent impact is constant at $-2.0000$** across a fifty-fold speed range — the per-share permanent impact $\gamma X=2\times10^{-6}\times(-10^6)=-\$2$ (in total dollars, $\tfrac12\gamma X^2=-\$1\text{M}$), schedule-independent.
+- **Permanent impact is constant at $-2.0000$** across a fifty-fold speed range — the per-share permanent impact $\gamma X=2\times10^{-6}\times(-10^6)=-$ \$2 (in total dollars, \tfrac12\gamma X^2=-\$1\text{M}), schedule-independent.
 - **Peak (adverse) impact falls from $-7.21$ to $-2.16$** as execution slows: the temporary component $\to0$, and the peak converges on the permanent level.
 - **Realized VWAP impact** is always *between* the two ($-4.41$ down to $-1.16$): it is what you actually pay, and it is the quantity your execution schedule controls.
 

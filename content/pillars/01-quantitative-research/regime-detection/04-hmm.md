@@ -35,33 +35,43 @@ The practical objective: **an HMM is the machinery you use when the regime struc
 
 **Forward pass (filtering).** Define $\alpha_t(j)=f(y_{1:t},s_t{=}j)$, the joint probability of the data up to $t$ *and* being in state $j$ at $t$. It satisfies the recursion (with scaling factor $c_t$ for numerical stability):
 
-$$\alpha_1(j)=\pi_j f(y_1\mid j),\qquad
-\alpha_t(j)=f(y_t\mid j)\sum_{i}\alpha_{t-1}(i)P_{ij}.$$
+$$
+\alpha_1(j)=\pi_j f(y_1\mid j),\qquad
+\alpha_t(j)=f(y_t\mid j)\sum_{i}\alpha_{t-1}(i)P_{ij}.
+$$
 
 The scaled version stores $\hat\alpha_t(j)=\alpha_t(j)/c_t$ with $c_t=\sum_j\alpha_t(j)$; then $\sum_t\ln c_t$ is the log-likelihood.
 
 **Backward pass (smoothing).** Define $\beta_t(j)=f(y_{t+1:T}\mid s_t{=}j)$, computed backward:
 
-$$\beta_T(j)=1,\qquad
-\beta_t(j)=\sum_k P_{jk}f(y_{t+1}\mid k)\beta_{t+1}(k).$$
+$$
+\beta_T(j)=1,\qquad
+\beta_t(j)=\sum_k P_{jk}f(y_{t+1}\mid k)\beta_{t+1}(k).
+$$
 
 **Smoothing** — the marginal posterior probability of state $j$ at time $t$ given *all* data:
 
-$$\gamma_t(j)=\mathbb{P}[s_t{=}j\mid y_{1:T}]\propto \alpha_t(j)\beta_t(j),$$
+$$
+\gamma_t(j)=\mathbb{P}[s_t{=}j\mid y_{1:T}]\propto \alpha_t(j)\beta_t(j),
+$$
 
 normalized over $j$. This is the "smoothed regime probability" — the best answer to "which regime were we in?"
 
 **Decoding (Viterbi).** Instead of the marginal, find the joint-MAP path via dynamic programming:
 
-$$\delta_1(j)=\pi_j f(y_1\mid j),\qquad
-\delta_t(j)=f(y_t\mid j)\max_{i}\big[\delta_{t-1}(i)P_{ij}\big],$$
+$$
+\delta_1(j)=\pi_j f(y_1\mid j),\qquad
+\delta_t(j)=f(y_t\mid j)\max_{i}\big[\delta_{t-1}(i)P_{ij}\big],
+$$
 
 recording the argmax $\psi_t(j)$ at each step and backtracking from $\arg\max_j\delta_T(j)$.
 
 **Learning (Baum–Welch EM).** The E-step computes responsibilities $\gamma_t(j)$ and pairwise transition responsibilities $\xi_t(i,j)\propto\alpha_t(i)P_{ij}f(y_{t+1}\mid j)\beta_{t+1}(j)$; the M-step re-estimates:
-$$\mu_j=\frac{\sum_t\gamma_t(j)y_t}{\sum_t\gamma_t(j)},\quad
+$$
+\mu_j=\frac{\sum_t\gamma_t(j)y_t}{\sum_t\gamma_t(j)},\quad
 \sigma_j^2=\frac{\sum_t\gamma_t(j)(y_t-\mu_j)^2}{\sum_t\gamma_t(j)},\quad
-P_{ij}=\frac{\sum_{t<T}\xi_t(i,j)}{\sum_{t<T}\gamma_t(i)},\quad \pi_j=\gamma_1(j).$$
+P_{ij}=\frac{\sum_{t<T}\xi_t(i,j)}{\sum_{t<T}\gamma_t(i)},\quad \pi_j=\gamma_1(j).
+$$
 Each EM iteration is guaranteed not to decrease the likelihood (ESL Ch 8.5's EM treatment; Tsay Ch 12's MCMC approach is the Bayesian alternative).
 
 ---

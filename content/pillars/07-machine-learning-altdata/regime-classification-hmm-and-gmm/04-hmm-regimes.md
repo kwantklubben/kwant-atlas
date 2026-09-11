@@ -29,26 +29,38 @@ The practical objective: fit the HMM's parameters (transition matrix $A$, initia
 ### 2. Mathematical Ground Truth & Derivations
 
 **The generative model** (Rabiner 1989; ESL Ch 14; Tsay Ch 4). Latent state $z_t\in\{1,\dots,K\}$, Markov in time:
-$$\mathbb{P}(z_t{=}j\mid z_{t-1}{=}i)=A_{ij},\qquad \mathbb{P}(z_1{=}i)=\pi_i,$$
+$$
+\mathbb{P}(z_t{=}j\mid z_{t-1}{=}i)=A_{ij},\qquad \mathbb{P}(z_1{=}i)=\pi_i,
+$$
 with Gaussian emissions $y_t\mid z_t{=}k\sim\mathcal{N}(\mu_k,\sigma_k^2)$.
 
 **Forward–backward (the HMM's E-step).** Define $\alpha_t(j)=p(y_1,\dots,y_t,\,z_t{=}j)$ and $\beta_t(i)=p(y_{t+1},\dots,y_T\mid z_t{=}i)$:
-$$\alpha_1(j)=\pi_j\mathcal{N}(y_1;\mu_j,\sigma_j^2),\qquad
-\alpha_t(j)=\mathcal{N}(y_t;\mu_j,\sigma_j^2)\sum_i\alpha_{t-1}(i)A_{ij},$$
-$$\beta_T(i)=1,\qquad
-\beta_t(i)=\sum_j A_{ij}\,\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\,\beta_{t+1}(j).$$
+$$
+\alpha_1(j)=\pi_j\mathcal{N}(y_1;\mu_j,\sigma_j^2),\qquad
+\alpha_t(j)=\mathcal{N}(y_t;\mu_j,\sigma_j^2)\sum_i\alpha_{t-1}(i)A_{ij},
+$$
+$$
+\beta_T(i)=1,\qquad
+\beta_t(i)=\sum_j A_{ij}\,\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\,\beta_{t+1}(j).
+$$
 The **smoothed** state posterior (responsibility) and the **two-time** transition posterior are
-$$\gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\sum_j\alpha_t(j)\beta_t(j)},\qquad
-\xi_t(i,j)=\frac{\alpha_t(i)A_{ij}\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\beta_{t+1}(j)}{\sum_{a,b}\alpha_t(a)A_{ab}\mathcal{N}(y_{t+1};\mu_b,\sigma_b^2)\beta_{t+1}(b)}.$$
+$$
+\gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{\sum_j\alpha_t(j)\beta_t(j)},\qquad
+\xi_t(i,j)=\frac{\alpha_t(i)A_{ij}\mathcal{N}(y_{t+1};\mu_j,\sigma_j^2)\beta_{t+1}(j)}{\sum_{a,b}\alpha_t(a)A_{ab}\mathcal{N}(y_{t+1};\mu_b,\sigma_b^2)\beta_{t+1}(b)}.
+$$
 
 **Baum–Welch (the M-step) — the EM updates specialized.** Maximizing the expected complete-data log-likelihood $Q=\sum_{i,j}\xi_t(i,j)\log A_{ij}+\sum_{t,k}\gamma_t(k)\log\mathcal{N}(y_t;\mu_k,\sigma_k^2)+\dots$ gives closed forms:
-$$\pi_i=\gamma_1(i),\qquad
+$$
+\pi_i=\gamma_1(i),\qquad
 A_{ij}=\frac{\sum_{t<T}\xi_t(i,j)}{\sum_{t<T}\gamma_t(i)},\qquad
 \mu_j=\frac{\sum_t\gamma_t(j)y_t}{\sum_t\gamma_t(j)},\qquad
-\sigma_j^2=\frac{\sum_t\gamma_t(j)(y_t-\mu_j)^2}{\sum_t\gamma_t(j)}.$$
+\sigma_j^2=\frac{\sum_t\gamma_t(j)(y_t-\mu_j)^2}{\sum_t\gamma_t(j)}.
+$$
 
 **Viterbi (MAP joint path).** Dynamic programming: $\delta_1(j)=\log\pi_j+\log\mathcal{N}(y_1;\mu_j,\sigma_j^2)$ and
-$$\delta_t(j)=\log\mathcal{N}(y_t;\mu_j,\sigma_j^2)+\max_i\big[\delta_{t-1}(i)+\log A_{ij}\big],$$
+$$
+\delta_t(j)=\log\mathcal{N}(y_t;\mu_j,\sigma_j^2)+\max_i\big[\delta_{t-1}(i)+\log A_{ij}\big],
+$$
 keeping the argmax back-pointer at each step, then tracing back from $t{=}T$. This is exact — it finds the single most probable *sequence*, not just per-time marginals. (In practice one uses log-probabilities and optional scaling to avoid underflow on long series.)
 
 ---

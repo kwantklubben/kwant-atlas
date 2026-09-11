@@ -29,13 +29,19 @@ This page makes the discipline concrete. Two things must both hold:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Floating-point reduction is order-dependent.** A double keeps ~16 significant digits. Summing a list in different orders can give different answers because intermediate roundings differ. The canonical absorption example:
-$$s = 10^{16} + 1 - 10^{16}.$$
+$$
+s = 10^{16} + 1 - 10^{16}.
+$$
 In forward order, $10^{16}+1 = 10^{16}$ (the $1$ is absorbed, since the ulp of $10^{16}$ is $2$), then $10^{16}-10^{16}=0$ — the result is $0$. Regrouping the *same* three terms so the $1$ is added last lets it survive:
-$$\underbrace{(10^{16}+1)-10^{16}}_{\text{absorbed}\ \to\ 0} = 0 \quad\text{vs}\quad \underbrace{(10^{16}-10^{16})}_{0}+1 = 1$$
+$$
+\underbrace{(10^{16}+1)-10^{16}}_{\text{absorbed}\ \to\ 0} = 0 \quad\text{vs}\quad \underbrace{(10^{16}-10^{16})}_{0}+1 = 1
+$$
 More precisely, *any* summation $\sum_i x_i$ computed in two different orders can differ by the magnitude of the absorbed low-order terms. A parallel framework that reorders a reduction (map-reduce, GPU block reductions) can therefore change a result. **The fix is not "more precision" but *pinning the order*** — the same aggregation sequence, recorded and reused.
 
 **Reproducibility = frozen inputs.** Formally, output $O$ is a function of the input triple $(D,C,E)$. The reproducible set is the set of *equivalent reruns*:
-$$O^{(1)} = O^{(2)} \iff (D_1,C_1,E_1) = (D_2,C_2,E_2)$$
+$$
+O^{(1)} = O^{(2)} \iff (D_1,C_1,E_1) = (D_2,C_2,E_2)
+$$
 up to the algorithm's own determinism. This is why a lockfile (pinning $E$) and a data version hash (pinning $D$) and a git commit (pinning $C$) are not nice-to-haves — they *are* the definition of reproducibility.
 
 ---

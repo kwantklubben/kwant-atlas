@@ -33,8 +33,10 @@ Let $\omega$ denote a full event path and $g(\omega)$ the execution cost (or fil
 
 - **Replay:** the realised day is a single fixed $\omega_\star$; the estimate is $\hat\theta_{\text{replay}}=g(\omega_\star)$ — a **one-sample** estimator with *zero modelled variance and unbounded unmeasured variance*.
 - **Monte Carlo:** draw $\omega_1,\dots,\omega_N\stackrel{\text{iid}}{\sim}\mathbb P_\theta$; the estimate is
-  $$\hat\theta_{\text{MC}}=\frac1N\sum_{i=1}^N g(\omega_i),\qquad
-  \operatorname{SE}(\hat\theta_{\text{MC}})=\frac{\sigma_g}{\sqrt N},\quad \sigma_g^2=\operatorname{Var}_{\theta}[g(\omega)].$$
+$$
+\hat\theta_{\text{MC}}=\frac1N\sum_{i=1}^N g(\omega_i),\qquad
+\operatorname{SE}(\hat\theta_{\text{MC}})=\frac{\sigma_g}{\sqrt N},\quad \sigma_g^2=\operatorname{Var}_{\theta}[g(\omega)].
+$$
 
 So Monte Carlo's precision is *known and purchasable* (want half the error? run $4\times$ the paths), while replay's precision is *unknown* (you cannot see how unrepresentative your one day was without a model).
 

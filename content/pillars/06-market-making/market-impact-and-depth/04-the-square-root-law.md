@@ -19,7 +19,9 @@ Kyle's linear rule, $P=p_0+\lambda y$, is the correct description of impact at t
 
 This single fact — the **square-root law** — is the most important empirical regularity in execution:
 
-$$I \;\approx\; \sigma\,Y\sqrt{\frac{Q}{V}}\quad(\text{or}\ \propto\sigma\sqrt{\text{participation rate}}),$$
+$$
+I \;\approx\; \sigma\,Y\sqrt{\frac{Q}{V}}\quad(\text{or}\ \propto\sigma\sqrt{\text{participation rate}}),
+$$
 
 where $Q$ is the order size, $V$ the average volume, $\sigma$ the daily volatility, and $Y$ an $O(1)$ constant. It is why execution algorithms are not simply "trade the same fraction forever": they must account for the *concavity* of cost, which changes the optimal schedule, the marginal cost of size, and the answer to "should we even trade this?"
 
@@ -41,7 +43,9 @@ Model the book by its **cumulative liquidity** $L(\ell)$: the number of shares r
 
 - **Flat book** (density $\rho(\ell)=\rho_0$ constant): $L(\ell)=\rho_0\ell$, so absorbing a flow $\Delta V$ needs a move $\ell=\Delta V/\rho_0$ — **linear** impact (Kyle).
 - **Diffusive book** ($\rho(\ell)=\rho_0\ell$, the empirically observed thinning): $L(\ell)=\tfrac12\rho_0\ell^2$, so
-$$\Delta V=\tfrac12\rho_0\ell^2\;\Longrightarrow\;\boxed{\ \ell=\sqrt{\frac{2\,\Delta V}{\rho_0}}\ \propto\ \sqrt{\Delta V}\ }\quad\text{— square-root impact.}$$
+$$
+\Delta V=\tfrac12\rho_0\ell^2\;\Longrightarrow\;\boxed{\ \ell=\sqrt{\frac{2\,\Delta V}{\rho_0}}\ \propto\ \sqrt{\Delta V}\ }\quad\text{— square-root impact.}
+$$
 
 The square-root law, in this picture, is simply a statement about the *shape* of the book. (Order signs are long-memory — autocorrelation $C_\tau\sim\tau^{-\gamma}$ with $\gamma\approx0.5$ — which is what keeps the book diffusive and reproduces the same concavity under a propagator treatment.)
 
@@ -49,12 +53,16 @@ The square-root law, in this picture, is simply a statement about the *shape* of
 
 Fitting power laws $g(v)=c\,|v|^\alpha\mathrm{sgn}(v)$, $h(v)=c'|v|^\beta\mathrm{sgn}(v)$ to real metaorders gives
 
-$$I=\gamma\,\sigma\,\frac{X}{V}\Big(\frac{\Theta}{V}\Big)^{1/4}\quad(\text{permanent}),\qquad
-J=\frac{I}{2}+\mathrm{sgn}(X)\,\eta\,\sigma\Big(\frac{X}{VT}\Big)^{3/5}\quad(\text{realized}),$$
+$$
+I=\gamma\,\sigma\,\frac{X}{V}\Big(\frac{\Theta}{V}\Big)^{1/4}\quad(\text{permanent}),\qquad
+J=\frac{I}{2}+\mathrm{sgn}(X)\,\eta\,\sigma\Big(\frac{X}{VT}\Big)^{3/5}\quad(\text{realized}),
+$$
 
 with $X$ order size, $V$ average daily volume, $\Theta$ shares outstanding, $T$ execution duration in volume time, and fitted coefficients
 
-$$\gamma=0.314\pm0.041,\qquad \eta=0.142\pm0.0062 .$$
+$$
+\gamma=0.314\pm0.041,\qquad \eta=0.142\pm0.0062 .
+$$
 
 Three messages: (i) the **permanent exponent is fixed at $1$** (linear, forced by no-arbitrage — Huberman–Stanzl); (ii) the **temporary exponent is $3/5$**, *not* the square root $1/2$ — the pure square-root model is rejected at 95%; (iii) the residual $R^2$ is under 1% because volatility dominates the *realized* impact of any single order, which is exactly why impact estimation requires averaging over many metaorders.
 
@@ -66,7 +74,9 @@ For a propagator model with order-sign autocorrelation decaying as $C_\tau\sim\t
 
 Concavity cannot be arbitrary, or the market admits **price manipulation**. Gatheral (2010): for a transient-impact model $S_t=S_0+\int_0^t h(\dot X_s)G(t-s)\,ds$ with impact function $h(x)=c|x|^\delta\mathrm{sgn}(x)$ and decay kernel $G(\tau)=\tau^{-\gamma}$,
 
-$$\boxed{\ \text{price manipulation exists}\iff \gamma+\delta<1\ }.$$
+$$
+\boxed{\ \text{price manipulation exists}\iff \gamma+\delta<1\ }.
+$$
 
 Empirically $\delta\approx0.5$ (square-root impact) and $\gamma\approx0.5$ (square-root decay) — sitting *exactly on the boundary*, so observed impact is just barely consistent with no-dynamic-arbitrage. A finite-at-zero kernel such as **exponential decay** combined with any **nonlinear** impact function is ruled out (Prop. 22.14) — the price-impact decay must be *slow* (power-law), a striking theoretical constraint on any "impact decays in seconds" claim.
 

@@ -30,16 +30,22 @@ The objective: **identify the permanent part.** The information component is the
 
 **Hasbrouck's generalized Roll model (Ch 8)** is the cleanest structural statement. Let $m_t$ be the efficient (information) price and the market maker a permanent-plus-transitory cost:
 
-$$p_t=m_t+c\,q_t,\qquad m_t=m_{t-1}+\lambda q_t+u_t,$$
+$$
+p_t=m_t+c\,q_t,\qquad m_t=m_{t-1}+\lambda q_t+u_t,
+$$
 
 where $q_t\in\{-1,+1\}$ is signed order flow, $c$ the per-trade order-processing (transitory) cost, and $\lambda$ the **adverse-selection / price-impact cost** (the permanent informational component). The full spread is $2(c+\lambda)$ and the difference equation is
 
-$$\boxed{\;\Delta p_t=c\,(q_t-q_{t-1})+\lambda q_t+u_t\;}.$$
+$$
+\boxed{\;\Delta p_t=c\,(q_t-q_{t-1})+\lambda q_t+u_t\;}.
+$$
 
 Because $c$ multiplies the *change* in flow (it reverses next period) while $\lambda$ multiplies the *level* of flow (it persists), ordinary least squares on $\Delta p_t$ against $\{q_t,\,q_t-q_{t-1}\}$ separately recovers both — **the spread decomposition.** The moment structure (Hasbrouck eq. 8.3):
 
-$$\gamma_0\equiv Var(\Delta p_t)=c^2+(c+\lambda)^2+\sigma_u^2,\qquad
-\gamma_1\equiv Cov(\Delta p_{t-1},\Delta p_t)=-c(c+\lambda).$$
+$$
+\gamma_0\equiv Var(\Delta p_t)=c^2+(c+\lambda)^2+\sigma_u^2,\qquad
+\gamma_1\equiv Cov(\Delta p_{t-1},\Delta p_t)=-c(c+\lambda).
+$$
 
 The permanent/variance measure $\sigma_w^2=\lambda^2+\sigma_u^2=\gamma_0+2\gamma_1$ is **identified** even though the three structural parameters $\{\lambda,c,\sigma_u^2\}$ individually are not (only two autocovariances). Glosten–Harris (1988) make the same permanent-vs-transitory split and, cross-sectionally, find statistically significant adverse-selection (information) components in NYSE common-stock spreads for 1981–83.
 

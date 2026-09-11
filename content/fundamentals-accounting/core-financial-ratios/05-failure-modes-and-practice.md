@@ -24,15 +24,19 @@ The deepest principle: **a ratio is only as trustworthy as the line items that f
 
 **The accrual identity — where manipulation lives.** Net income and operating cash flow differ by accruals:
 
-$$\text{NI} = \text{CFO} + \text{Accruals}.$$
+$$
+\text{NI} = \text{CFO} + \text{Accruals}.
+$$
 
 Sloan (1996) shows the *accrual component* of earnings is less persistent than the cash component, so **high-accrual (low-cash) earnings are systematically overvalued** — the accruals anomaly. Beneish's M-score operationalizes this as a multivariate screen for likely manipulators. The ratio-level red flag is immediate: *any* profitability ratio (ROE, ROA, margins) is inflated when earnings are accrual-heavy — so pair every earnings ratio with the cash-flow version of the same question (e.g. **FCF yield vs. earnings yield**; **CFO vs. net income**).
 
 **The negative-denominator singularity.** For a loss-making or balance-sheet-damaged firm:
 
-$$\text{P/E}\;\text{undefined or negative}, \qquad
+$$
+\text{P/E}\;\text{undefined or negative}, \qquad
 \text{D/E}\;\text{explodes as BVE}\to0, \qquad
-\text{EV/EBITDA}\;\text{explodes as EBITDA}\to0.$$
+\text{EV/EBITDA}\;\text{explodes as EBITDA}\to0.
+$$
 
 These are *mathematical* singularities in the ratio, not *economic* facts about the firm — the output stops carrying meaning even though the company still exists. The practice rule is to *change the lens* (EV/Sales, book-based anchors, the Z-score) rather than to read the broken ratio literally.
 

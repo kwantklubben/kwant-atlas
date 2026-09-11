@@ -28,23 +28,31 @@ Three consequences follow directly and are the spine of this page: **(1) accrual
 
 **Reversal — why the accrual identity is a difference, not a level.** Accruals sum to zero over the life of the firm (you can defer recognition, never eliminate it). So if firm $F$ injects $X$ of accruals in year 1, year 2 carries $-X$:
 
-$$\text{NI}_1 = \text{CF}_1 + X, \qquad \text{NI}_2 = \text{CF}_2 - X, \qquad \text{NI}_1+\text{NI}_2 = \text{CF}_1+\text{CF}_2.$$
+$$
+\text{NI}_1 = \text{CF}_1 + X, \qquad \text{NI}_2 = \text{CF}_2 - X, \qquad \text{NI}_1+\text{NI}_2 = \text{CF}_1+\text{CF}_2.
+$$
 
 The cumulative *earnings* are unchanged; only the *timing* moved. Therefore the only accrual measure that is robust to reversal timing is the **cumulative** one:
 
-$$\text{cumulative CFO/NI} = \frac{\sum_{t=1}^{T}\text{CFO}_t}{\sum_{t=1}^{T}\text{NI}_t} \;<\; 1 \;\Rightarrow\; \text{earnings were booked that never became cash.}$$
+$$
+\text{cumulative CFO/NI} = \frac{\sum_{t=1}^{T}\text{CFO}_t}{\sum_{t=1}^{T}\text{NI}_t} \;<\; 1 \;\Rightarrow\; \text{earnings were booked that never became cash.}
+$$
 
 A single-year accrual ratio cannot distinguish "manipulating upward this year" from "reversing last year's manipulation" — they have opposite signs and the same cause. This is why the *trend* and the *cumulative* version outrank the level.
 
 **Blindness to cash-side games.** Write the Sloan measure as a sum of differences of balance-sheet changes. Fabricate a *cash* sale of amount $X$: both $\Delta CA$ (via cash) and $\Delta Cash$ rise by $X$, so
 
-$$(\Delta CA - \Delta Cash) \;\text{is unchanged by } X.$$
+$$
+(\Delta CA - \Delta Cash) \;\text{is unchanged by } X.
+$$
 
 The accrual measure is *algebraically incapable* of seeing it. The same cancellation kills the CFO/NI ratio as a detector once the fake cash is booked as operating inflow. **Consequence:** the balance-sheet toolbox detects *timing* manipulation; it does not detect *fabrication*.
 
 **Comparability and the ratio's denominator.** A screen compares this year's ratio to last year's — which assumes the two years are comparable. An acquisition breaks that assumption:
 
-$$\text{CFO}\uparrow \text{ by the acquired firm's cash flows}, \qquad \text{NI}\uparrow \text{ by the acquired firm's earnings}, \qquad \frac{\text{CFO}}{\text{NI}} \text{ reads as "improving quality"}$$
+$$
+\text{CFO}\uparrow \text{ by the acquired firm's cash flows}, \qquad \text{NI}\uparrow \text{ by the acquired firm's earnings}, \qquad \frac{\text{CFO}}{\text{NI}} \text{ reads as "improving quality"}
+$$
 
 even when the acquirer's own operations are deteriorating. The same logic applies to \(\Delta CA\), goodwill, and any balance-sheet stock after a material transaction. The practice rule is mechanical: **flag the year a material acquisition or divestiture occurred, and never read a quality trend straight through it.**
 

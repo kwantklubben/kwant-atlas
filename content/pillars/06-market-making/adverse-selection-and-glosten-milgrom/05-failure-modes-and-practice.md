@@ -30,13 +30,17 @@ The five failures, in one line each:
 
 **The winner's curse quantified.** A competitive maker's *break-even* half-spread equals the adverse-selection half-spread. From the GM model at $\theta=\tfrac12$ the full spread is $\pi(V_H-V_L)$, hence the **break-even half-spread is $h^{\star}=\pi\,\frac{V_H-V_L}{2}$**. A maker who quotes a half-spread $h$ while the *true* informed fraction is $\pi$ earns
 
-$$\mathbb{E}[\text{P&L per trade}]=h-\pi\tfrac{V_H-V_L}{2}\;\Longrightarrow\;\text{loss if } h<\pi\tfrac{V_H-V_L}{2}.$$
+$$
+\mathbb{E}[\text{P\&L per trade}]=h-\pi\tfrac{V_H-V_L}{2}\;\Longrightarrow\;\text{loss if } h<\pi\tfrac{V_H-V_L}{2}.
+$$
 
-With $V_H-V_L=2$ (a $\pm1$ move about the mid) this collapses to $\mathbb{E}[\text{P&L}]=h-\pi$. **Underestimating $\pi$ by $0.2$ means giving up $0.2$ per share on every trade, permanently.** Because informed flow is one-sided, underestimating $\pi$ compounds: the maker keeps *seeing* adverse fills and (in the naive model) keeps quoting, so losses transfer linearly with trade count.
+With $V_H-V_L=2$ (a $\pm1$ move about the mid) this collapses to $\mathbb{E}[\text{P\&L}]=h-\pi$. **Underestimating $\pi$ by $0.2$ means giving up $0.2$ per share on every trade, permanently.** Because informed flow is one-sided, underestimating $\pi$ compounds: the maker keeps *seeing* adverse fills and (in the naive model) keeps quoting, so losses transfer linearly with trade count.
 
 **The spread-widening rule.** At belief $\theta$, the ask-side adverse half-spread is (Foucault eq. 3.15)
 
-$$s_a^t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\theta_{t-1}+(1-\pi)\tfrac12}\,(V_H-V_L),$$
+$$
+s_a^t=\frac{\pi\,\theta_{t-1}(1-\theta_{t-1})}{\pi\theta_{t-1}+(1-\pi)\tfrac12}\,(V_H-V_L),
+$$
 
 which is **maximized at $\theta=\tfrac12$** and vanishes toward $0/1$. So uncertainty *in the maker's belief* directly inflates the required spread — the mechanism behind pre-announcement and post-open widening. A maker quoting a flat spread through rising $\pi$ or rising uncertainty is systematically mispricing information.
 

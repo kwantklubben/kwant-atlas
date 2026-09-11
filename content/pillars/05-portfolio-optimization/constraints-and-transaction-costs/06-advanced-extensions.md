@@ -32,12 +32,16 @@ The four extensions below are what separate a textbook rebalance from an institu
 
 Minimize tracking error plus quadratic impact over one step:
 
-$$\min_{w}\ \tfrac\delta2\,(w-w^\ast)^\top\Sigma\,(w-w^\ast)\;+\;\tfrac\kappa2\,(w-w_{0})^\top\Lambda\,(w-w_{0}).$$
+$$
+\min_{w}\ \tfrac\delta2\,(w-w^\ast)^\top\Sigma\,(w-w^\ast)\;+\;\tfrac\kappa2\,(w-w_{0})^\top\Lambda\,(w-w_{0}).
+$$
 
 Setting the gradient to zero, $\delta\Sigma(w-w^\ast)+\kappa\Lambda(w-w_0)=0$, gives the **aim/target update in closed form**:
 
-$$w^\star=w_0+\underbrace{(\delta\Sigma+\kappa\Lambda)^{-1}\delta\Sigma}_{F}\big(w^\ast-w_0\big),\qquad
-\boxed{\ F=(\delta\Sigma+\kappa\Lambda)^{-1}\delta\Sigma\ }$$
+$$
+w^\star=w_0+\underbrace{(\delta\Sigma+\kappa\Lambda)^{-1}\delta\Sigma}_{F}\big(w^\ast-w_0\big),\qquad
+\boxed{\ F=(\delta\Sigma+\kappa\Lambda)^{-1}\delta\Sigma\ }
+$$
 
 Three properties:
 - **$F$ is not a scalar.** Because $\Sigma$ is not diagonal, a signal in one name moves the weights of *all* names. Only in the special case $\Lambda=\lambda I$ *and* $\Sigma$ diagonal does $F$ reduce to a scalar fraction $\delta\sigma_i^2/(\delta\sigma_i^2+\kappa\lambda)$.
@@ -48,7 +52,9 @@ Three properties:
 
 A fixed charge $K_i$ for touching name $i$ (plus a linear part $c_i$) gives
 
-$$C(\Delta w)=\sum_{i=1}^N\Big[K_i\,\mathbf 1\{\Delta w_i\neq0\}+c_i\lvert\Delta w_i\rvert\Big],$$
+$$
+C(\Delta w)=\sum_{i=1}^N\Big[K_i\,\mathbf 1\{\Delta w_i\neq0\}+c_i\lvert\Delta w_i\rvert\Big],
+$$
 
 which is **discontinuous at zero** and therefore non-convex. Lobo–Fazel–Boyd (2007) relax $\mathbf 1\{\Delta w_i\neq0\}$ by a variable $u_i\in[0,1]$ with $\lvert\Delta w_i\rvert\le M_iu_i$, so the cost becomes $\sum_i\bigl(K_iu_i+c_i\lvert\Delta w_i\rvert\bigr)$ — a **linear program inside the QP**, solvable exactly, whose solution is **bang-bang** in $u_i$: either you trade name $i$ *fully* (up to the position limit $M_i$) or you do not touch it at all. That is the mathematical origin of the "we rebalance a handful of names and leave the rest alone" behaviour in §3(B).
 
@@ -56,7 +62,9 @@ which is **discontinuous at zero** and therefore non-convex. Lobo–Fazel–Boyd
 
 The empirical cost $\kappa_i\lvert\Delta w_i\rvert^{3/2}$ is concave, so its KKT points are not guaranteed global. The standard remedy: at iterate $\Delta w^{(k)}$, **majorize** by the tangent quadratic (a valid convex upper bound),
 
-$$\lvert\Delta w_i\rvert^{3/2}\;\le\;\tfrac32\bigl(\Delta w_i^{(k)}\bigr)^{1/2}\Delta w_i^2-\tfrac12\bigl(\Delta w_i^{(k)}\bigr)^{3/2},$$
+$$
+\lvert\Delta w_i\rvert^{3/2}\;\le\;\tfrac32\bigl(\Delta w_i^{(k)}\bigr)^{1/2}\Delta w_i^2-\tfrac12\bigl(\Delta w_i^{(k)}\bigr)^{3/2},
+$$
 
 and iterate. Each subproblem is a QP; the sequence converges to a local optimum, and the majorant is *tight* at the iterate — the same SCA machinery used for $\ell_p$ regularisation in [[pillars/05-portfolio-optimization/robust-optimization/06-advanced-extensions|robust optimisation]].
 
@@ -64,7 +72,9 @@ and iterate. Each subproblem is a QP; the sequence converges to a local optimum,
 
 Replace the diagonal $\Lambda$ by a full matrix $\Lambda=qq^\top D$ (a common one-factor impact model) so that trading *any* name moves the price of every correlated name. Then
 
-$$C_{\text{impact}}=\tfrac12\,\Delta w^\top\Lambda\,\Delta w=\tfrac12\bigl(q^\top\Delta w\bigr)^\top D\bigl(q^\top\Delta w\bigr),$$
+$$
+C_{\text{impact}}=\tfrac12\,\Delta w^\top\Lambda\,\Delta w=\tfrac12\bigl(q^\top\Delta w\bigr)^\top D\bigl(q^\top\Delta w\bigr),
+$$
 
 i.e. the cost depends on the **factor-level net trade** $q^\top\Delta w$, not on the per-name trades. Selling eight names of the same factor is one large trade, not eight small ones — the diagonal model understates it. A **SOCP reformulation** (introduce $z=D^{1/2}q^\top\Delta w$ and constrain $\lVert z\rVert_2\le t$) keeps the problem tractable at the cost of a second-order cone per factor.
 

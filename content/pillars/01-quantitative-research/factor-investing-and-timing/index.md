@@ -44,25 +44,37 @@ It is a *hub*: it (a) gives the **practitioner lookup** below (premiums, IC, the
 **Notation:** $R_{it}$ asset $i$ return at $t$; $f_t$ a factor's long-short return; $C_{it}$ security $i$'s characteristic (standardized); $N$ cross-section size; $K$ number of candidate factors; $IC_t$ the cross-sectional information coefficient; $S_t$ a factor-timing signal; $A$ assets under management; $Q$ traded quantity; $ADV$ average daily volume.
 
 **The cross-section of expected returns.** The panel-forecasting view (Cochrane 2011, §II):
-$$\mathbb{E}\big[R^e_{t+1}\mid C_t\big]=a+b\,C_t,\qquad C_t=[\text{size},\ \text{bm},\ \text{momentum},\ \text{accruals},\dots].$$
+$$
+\mathbb{E}\big[R^e_{t+1}\mid C_t\big]=a+b\,C_t,\qquad C_t=[\text{size},\ \text{bm},\ \text{momentum},\ \text{accruals},\dots].
+$$
 A **portfolio sort is a nonparametric cross-sectional regression** with non-overlapping histogram weights (Cochrane Fig. 7): sorting on one characteristic and reading the decile-1-to-decile-10 mean spread *is* the slope estimate, just in a different functional form. The 1–10 information ratio equals the Sharpe ratio of the underlying factor, equals the $t$-statistic of the cross-sectional regression coefficient.
 
 **The information coefficient and the fundamental law** (Grinold 1989; Grinold & Kahn). The IC is the cross-sectional correlation between the characteristic and subsequent returns, $IC_t=\mathrm{corr}_i(C_{it},R_{i,t+1})$, and the expected information ratio of a score-weighted portfolio is
-$$IR\approx IC\times\sqrt{\text{breadth}},\qquad \text{breadth}=\text{number of independent bets per year}.$$
+$$
+IR\approx IC\times\sqrt{\text{breadth}},\qquad \text{breadth}=\text{number of independent bets per year}.
+$$
 This single equation is why a *weak* cross-sectional signal (IC ≈ 0.03–0.05) still makes a good long-short factor (breadth ≈ 12 × 300 stocks), and why **factor timing is hard**: timing has breadth of order 12 (one bet per month on the factor), so an IC of 0.05 buys an IR of only $0.05\sqrt{12}\approx0.17$.
 
 **The factor-timing signal.** The two canonical timing signals are (i) the **valuation spread** — how expensive the factor is versus its own history, $z_t=(S_t-\bar S)/\sigma_S$, which predicts *higher* factor returns when the spread is wide (the factor is "cheap"); and (ii) **trend** on the factor itself, $z_t=\frac{1}{L}\sum_{j=1}^{L}f_{t-j}$, which predicts *continuation*. The timed factor return is
-$$f^{\text{timed}}_t=w(z_{t-1})\,f_t,\qquad w(z)=\mathrm{clip}(\kappa z,\pm w_{\max}),$$
+$$
+f^{\text{timed}}_t=w(z_{t-1})\,f_t,\qquad w(z)=\mathrm{clip}(\kappa z,\pm w_{\max}),
+$$
 and its appraisal ratio is again $IC\times\sqrt{\text{breadth}}$ — the same law, with much smaller breadth.
 
 **Capacity under square-root market impact.** With gross alpha $g$ per year, turnover $\tau$ (round-trips/yr), and one-way impact modelled as
-$$\text{impact}=\lambda\,\sigma_{\text{daily}}\sqrt{\frac{Q}{ADV}},$$
+$$
+\text{impact}=\lambda\,\sigma_{\text{daily}}\sqrt{\frac{Q}{ADV}},
+$$
 the *net* alpha at scale $A$ is
-$$g_{\text{net}}(A)=g-\tau\cdot 2\lambda\sigma_{\text{daily}}\sqrt{\frac{A\,\tau/252}{ADV}}.$$
-Net alpha is **concave-decreasing in AUM** and hits zero at the capacity break-even — the empirical estimate in §3 is $\approx\$630$bn for a large, liquid, 4%/yr factor turning over twice a year.
+$$
+g_{\text{net}}(A)=g-\tau\cdot 2\lambda\sigma_{\text{daily}}\sqrt{\frac{A\,\tau/252}{ADV}}.
+$$
+Net alpha is **concave-decreasing in AUM** and hits zero at the capacity break-even — the empirical estimate in §3 is $\approx$\$630bn for a large, liquid, 4%/yr factor turning over twice a year.
 
 **Post-publication decay** (McLean & Pontiff 2016). Normalize each characteristic's out-of-sample and post-publication mean return by its in-sample mean:
-$$\hat d_{\text{OOS}}=1-\frac{\bar r_{\text{OOS}}}{\bar r_{\text{IS}}},\qquad \hat d_{\text{post}}=1-\frac{\bar r_{\text{post}}}{\bar r_{\text{IS}}}.$$
+$$
+\hat d_{\text{OOS}}=1-\frac{\bar r_{\text{OOS}}}{\bar r_{\text{IS}}},\qquad \hat d_{\text{post}}=1-\frac{\bar r_{\text{post}}}{\bar r_{\text{IS}}}.
+$$
 MP find $\hat d_{\text{OOS}}\approx10\%$ (not statistically different from 0) and $\hat d_{\text{post}}\approx35\%$ (highly significant, $t\approx-4.9$ in their pooled specification). A 5% in-sample alpha "is expected to decay to 3.25% post-publication."
 
 **The multiple-testing hurdle** (Harvey, Liu & Zhu 2016). If $K$ factors are tested independently at the 5% two-sided level, the expected number of false discoveries is $0.0455K$; the Bonferroni threshold for $K=300$ is $|t|>3.76$, and HLZ argue for a **$t>3$** hurdle in the factor literature. This is the *statistical* face of the factor zoo.

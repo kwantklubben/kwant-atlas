@@ -24,15 +24,19 @@ Two ideas carry the page. The first is that **the margin lives in the residual**
 
 **Uniqueness (orthogonalization).** Project the new signal $s$ onto the existing factor set $\mathcal F=\text{span}(f_1,\dots,f_k)$, giving $\hat s=\operatorname{Proj}_{\mathcal F}s$; then
 
-$$\boxed{\;U=1-R^2=1-\frac{\operatorname{Var}(\hat s)}{\operatorname{Var}(s)}\;},\qquad
-\text{marginal IR of } s \;\propto\; \text{IC}_s\sqrt{U}.$$
+$$
+\boxed{\;U=1-R^2=1-\frac{\operatorname{Var}(\hat s)}{\operatorname{Var}(s)}\;},\qquad
+\text{marginal IR of } s \;\propto\; \text{IC}_s\sqrt{U}.
+$$
 
 A signal at $\text{IC}=0.05$ but $U=0.18$ contributes less than one at $\text{IC}=0.03$, $U=0.99$. This is why vendor "analytics" (which many funds already trade) have near-zero $U$ and near-zero value.
 
 **Optimal signal combination.** Given $n$ signals with expected IC vector $\boldsymbol\mu$ and signal covariance $\Sigma$, the mean-variance-optimal (max-IR) weights solve
 
-$$\mathbf w^\star \;\propto\; \Sigma^{-1}\boldsymbol\mu,\qquad
-\text{ICIR}_{\text{comb}}=\sqrt{\boldsymbol\mu^\top \Sigma^{-1}\boldsymbol\mu}.$$
+$$
+\mathbf w^\star \;\propto\; \Sigma^{-1}\boldsymbol\mu,\qquad
+\text{ICIR}_{\text{comb}}=\sqrt{\boldsymbol\mu^\top \Sigma^{-1}\boldsymbol\mu}.
+$$
 
 Equal weighting (the simple, robust choice) gives $\text{IC}_{\text{comb}}=\mathbf 1^\top\boldsymbol\mu\,/\sqrt{\mathbf1^\top\Sigma\mathbf1}$ — the formula of page 02 when $\Sigma=(1-\rho)I+\rho\mathbf{11}^\top$.
 
@@ -40,7 +44,9 @@ Equal weighting (the simple, robust choice) gives $\text{IC}_{\text{comb}}=\math
 
 **Vendor cost / benefit.** A dataset that adds $\Delta\text{Sharpe}$ to a book with annual tracking error $TE$ generates gross excess return $\Delta\text{Sharpe}\times TE$ per unit of AUM. If it costs $C$ per year, it breaks even at
 
-$$\boxed{\;\text{AUM}^\star=\frac{C}{\Delta\text{Sharpe}\times TE}\;}.$$
+$$
+\boxed{\;\text{AUM}^\star=\frac{C}{\Delta\text{Sharpe}\times TE}\;}.
+$$
 
 Below $\text{AUM}^\star$ the dataset loses money no matter how good the backtest looks — the discipline that turns "great IC" into a business decision, and the reason capacity is a first-class constraint (Fundamental Law's TC).
 
@@ -106,7 +112,7 @@ for cost in (100_000, 500_000, 1_000_000):
   cost $1,000,000/yr, dSharpe=+0.3, TE=8%: break-even AUM = $  41.7M
 ```
 
-Read it. **(A)** A signal $0.90$-correlated with your factor has uniqueness $0.185$ — $81.5\%$ of it is already in your book, so its marginal value is a fifth of its headline. At correlation $0.10$, uniqueness is $0.990$: nearly all of it is new. **(B)** Three independent $IC{=}0.04$ alphas combine to $\text{IR}=1.100$ (vs $0.635$ for one) — the $\sqrt n$ payoff. At $\rho=0.8$ the composite is $\text{IR}=0.682$, barely better than a single alpha: **the correlation wall is real.** **(C)** A $\$1$M/yr dataset adding $\Delta\text{Sharpe}=0.1$ on an $8\%$-TE book must run **$\$125$M** of AUM just to break even; at $\Delta\text{Sharpe}=0.3$, only $\$42$M. **The dataset's worth is a function of the book's size, not just its IC.**
+Read it. **(A)** A signal $0.90$-correlated with your factor has uniqueness $0.185$ — $81.5\%$ of it is already in your book, so its marginal value is a fifth of its headline. At correlation $0.10$, uniqueness is $0.990$: nearly all of it is new. **(B)** Three independent $IC{=}0.04$ alphas combine to $\text{IR}=1.100$ (vs $0.635$ for one) — the $\sqrt n$ payoff. At $\rho=0.8$ the composite is $\text{IR}=0.682$, barely better than a single alpha: **the correlation wall is real.** **(C)** A \$1M/yr dataset adding $\Delta\text{Sharpe}=0.1$ on an $8\%$-TE book must run **\$125M** of AUM just to break even; at $\Delta\text{Sharpe}=0.3$, only \$42M. **The dataset's worth is a function of the book's size, not just its IC.**
 
 ---
 

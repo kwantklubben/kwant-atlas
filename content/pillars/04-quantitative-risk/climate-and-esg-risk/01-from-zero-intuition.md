@@ -22,7 +22,7 @@ Four steps, four "aha"s:
 
 1. **Two risks, one cash flow.** *Physical risk* is damage to assets and supply chains (acute: storm, flood, wildfire; chronic: heat, drought, sea level). *Transition risk* is the cost of changing the economy (carbon prices, technology substitution, consumer and investor preferences). Both land in the same place — earnings — which is why a single valuation channel can hold both.
 
-2. **Carbon is a cost per unit of output, not a return per unit of price.** Raise a carbon price by $\$50$/t and a firm emitting $4$ kg of CO2 per $\$1$ of revenue takes a $\$0.20$ hit per $\$1$ of revenue. That is a **margin** event, and margins are what shareholders own. It is why the canonical exposure metric — weighted average carbon intensity — is emissions *divided by revenue*.
+2. **Carbon is a cost per unit of output, not a return per unit of price.** Raise a carbon price by \$50/t and a firm emitting $4$ kg of CO2 per $ $\$1 of revenue takes a \0.20 hit per \$1 of revenue. That is a **margin** event, and margins are what shareholders own. It is why the canonical exposure metric — weighted average carbon intensity — is emissions *divided by revenue*.
 
 3. **The horizon kills the standard machinery.** A one-day $99\%$ VaR of an equity book asks about *tomorrow*; climate damage and policy arrive over **decades**. The annualised equivalent of a $30$-year $30\%$ loss is about $-0.0047\%$ per day — roughly $1000\times$ smaller than the daily VaR it must compete with (§3, panel A). No historical-simulation engine will ever flag it. The fix is not a better estimator; it is a *different instrument*: scenarios.
 
@@ -33,20 +33,28 @@ Four steps, four "aha"s:
 ### 2. Mathematical Ground Truth & Derivations
 
 **The horizon-mismatch identity.** Let a climate-driven loss of fraction $L$ of value accrue over $T$ years of $252$ trading days. Its equivalent constant daily drift is
-$$\boxed{\ d = (1-L)^{1/(252\,T)}-1\ }$$
+$$
+\boxed{\ d = (1-L)^{1/(252\,T)}-1\ }
+$$
 which is the number a daily risk report *would* have to show if climate risk were a diffusion. Because $d$ scales like $-L/(252T)$ for small $L$, it decays as $1/T$: **the longer the true horizon, the smaller the daily signature — the opposite of comfort.** Comparing it to a normal $99\%$ VaR, $\mathrm{VaR}_\alpha=\sigma z_\alpha$ with $z_{0.99}=2.326348$, gives the "invisibility ratio" of §3.
 
-**Carbon cost as a margin identity.** For a firm with emissions intensity $I_i=E_i/R_i$ (tCO2e per $\$1$ of revenue), a carbon price step $\Delta p$ (\$/tCO2e) and pass-through $\lambda\in[0,1]$:
-$$\boxed{\ \frac{\Delta(\text{cost})}{R_i}=(1-\lambda)\,I_i\,\Delta p\ \ (\text{a fraction of revenue}),\qquad \frac{\Delta V_i}{V_i}\approx-(1-\lambda)\,M_i\,I_i\,\frac{\Delta p}{10^6}\ }$$
-with $M_i$ a valuation multiple (firm value / profit). Summing over holdings gives the portfolio P&L identity in the hub: $\Delta V/V=-\sum_i w_i(1-\lambda_i)M_i(E_i/R_i)\Delta p/10^6$, where the $10^6$ converts "per $\$1$m of revenue" into a fraction.
+**Carbon cost as a margin identity.** For a firm with emissions intensity $I_i=E_i/R_i$ (tCO2e per $ $\$1 of revenue), a carbon price step \Delta p$ ($ \$/tCO2e) and pass-through \lambda\in[0,1]:
+$$
+\boxed{\ \frac{\Delta(\text{cost})}{R_i}=(1-\lambda)\,I_i\,\Delta p\ \ (\text{a fraction of revenue}),\qquad \frac{\Delta V_i}{V_i}\approx-(1-\lambda)\,M_i\,I_i\,\frac{\Delta p}{10^6}\ }
+$$
+with $M_i$ a valuation multiple (firm value / profit). Summing over holdings gives the portfolio P&L identity in the hub: $\Delta V/V=-\sum_i w_i(1-\lambda_i)M_i(E_i/R_i)\Delta p/10^6$, where the $10^6$ converts "per \$1m of revenue" into a fraction.
 
 **The three scopes (GHG Protocol).** For a firm, total emissions are conventionally partitioned as
-$$E^{\text{total}}=E_{\text{S1}}+E_{\text{S2}}+E_{\text{S3}},$$
+$$
+E^{\text{total}}=E_{\text{S1}}+E_{\text{S2}}+E_{\text{S3}},
+$$
 where **Scope 1** is direct combustion, **Scope 2** is purchased electricity/heat/steam, and **Scope 3** is everything upstream and downstream in the value chain. The TCFD recommends reporting **Scope 1+2** always and **Scope 3** when material; PCAF standardises attributing financed emissions to a portfolio share. The scope choice is a *definition*, and definitions do not have error bars — which is precisely why the number moves so much.
 
 **Double materiality.** Two evaluations of the same firm, both legitimate and useful:
-$$\text{financial materiality: } \frac{\partial(\text{firm cash flows})}{\partial(\text{climate variable})},\qquad
-\text{impact materiality: } \frac{\partial(\text{climate variable})}{\partial(\text{firm activity})}.$$
+$$
+\text{financial materiality: } \frac{\partial(\text{firm cash flows})}{\partial(\text{climate variable})},\qquad
+\text{impact materiality: } \frac{\partial(\text{climate variable})}{\partial(\text{firm activity})}.
+$$
 A quant uses the **first** as a risk input (it is a derivative of cash flows). The **second** is a mandate/constraint ("align the portfolio with 1.5 °C"), implemented as an optimisation constraint — never as a risk number. Conflating the two produces the familiar absurdity of a "high-ESG" portfolio that is also high-carbon: the score measured disclosure quality and controversy management, not emissions.
 
 ---
@@ -120,7 +128,7 @@ Panel (A): the daily VaR is $986\times$ larger than the climate drift, so the cl
 - **Carney, M.**, *Breaking the Tragedy of the Horizon — Climate Change and Financial Stability* (Bank of England speech, 29 September 2015) — the origin of the horizon-mismatch argument quantifies in §3(A).
 - **Greenhouse Gas Protocol**, *Corporate Standard* (2004) and *Scope 3 Standard* (2011) — the Scope 1/2/3 definitions.
 - **PCAF**, *The Global GHG Accounting and Reporting Standard for the Financial Industry* — portfolio attribution.
-- **High-Level Commission on Carbon Prices** (Stern & Stiglitz), *Report* (World Bank, 2017) — the $\$40$–$\$80$ / $\$50$–$\$100$ corridor used as a shadow-price starting point.
+- **High-Level Commission on Carbon Prices** (Stern & Stiglitz), *Report* (World Bank, 2017) — the \$40–\$80 / \$50–\$100 corridor used as a shadow-price starting point.
 - **Bolton, P. & Kacperczyk, M.**, *Do investors care about carbon risk?*, *Journal of Financial Economics* 142(2) (2021) — empirical evidence that the market prices the exposure described here.
 
 ---

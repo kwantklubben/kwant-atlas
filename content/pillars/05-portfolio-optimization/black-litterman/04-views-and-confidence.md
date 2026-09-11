@@ -31,7 +31,9 @@ The intuition: **$P$ says *where* your view points, $Q$ says *how much*, and $\O
 **View uncertainty $\Omega$.** The model treats $Pr=Q+\varepsilon$ with $\varepsilon\sim\mathcal{N}(0,\Omega)$. A diagonal $\Omega$ treats views as independently uncertain; off-diagonals express correlated view error (rare in practice). Three canonical recipes:
 
 1. **He–Litterman proportionality (the default):** scale the prior covariance the view actually touches,
-$$\Omega = \mathrm{diag}\big(P\,(\tau\Sigma)\,P^T\big).$$
+$$
+\Omega = \mathrm{diag}\big(P\,(\tau\Sigma)\,P^T\big).
+$$
 Intuition: the view's uncertainty is proportional to the prior variance *of the combination $P$ picks out* — the market's own uncertainty about that spread, scaled by $\tau$.
 2. **Meucci / variance-scaled:** $\Omega = \tfrac{1}{\tau}P\Sigma P^T$ with fixed scalar confidence.
 3. **Idzorek's confidence method (2005):** the user specifies a 0–100% confidence $c$; the resulting per-view uncertainty is an affine mixture that recovers $w_{mkt}$ at $c=0\%$ (no weight tilt). The most usable method in practice.

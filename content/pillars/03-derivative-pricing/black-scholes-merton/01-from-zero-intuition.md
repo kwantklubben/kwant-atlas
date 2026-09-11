@@ -33,23 +33,31 @@ Three steps, three "aha"s:
 
 **One-step binomial (the discrete seed).** Suppose the stock is $S_0$ and, over one period, moves to either $S_0u$ (up) or $S_0d$ (down). Buy $\Delta$ shares and finance with the bond. Choose $\Delta$ so the portfolio's payoff matches the option in both states:
 
-$$\Delta = \frac{f_u-f_d}{S_0u-S_0d},$$
+$$
+\Delta = \frac{f_u-f_d}{S_0u-S_0d},
+$$
 
 where $f_u,f_d$ are the option payoffs in the up/down states. The option price is the (discounted) cost of this replicating portfolio. Letting the number of steps $\to\infty$ and the step size $\to0$ (Cox–Ross–Rubinstein) converges *exactly* to the BSM closed form.
 
 **Continuous limit.** In continuous time the underlying obeys geometric Brownian motion
 
-$$dS_t = \mu S_t\,dt + \sigma S_t\,dW_t.$$
+$$
+dS_t = \mu S_t\,dt + \sigma S_t\,dW_t.
+$$
 
 By Itô's lemma the option $V(t,S)$ moves as
 
-$$dV = \Big(\frac{\partial V}{\partial t}+\mu S\frac{\partial V}{\partial S}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}\Big)dt + \sigma S\frac{\partial V}{\partial S}\,dW.$$
+$$
+dV = \Big(\frac{\partial V}{\partial t}+\mu S\frac{\partial V}{\partial S}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}\Big)dt + \sigma S\frac{\partial V}{\partial S}\,dW.
+$$
 
 Hold $\Pi=V-\Delta S$. Pick $\Delta=\partial V/\partial S$ to kill the $dW$ term — the portfolio becomes **riskless**, so it must earn $r$ (else arbitrage):
 
-$$\frac{\partial V}{\partial t}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}=r\Big(V-S\frac{\partial V}{\partial S}\Big)
+$$
+\frac{\partial V}{\partial t}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}=r\Big(V-S\frac{\partial V}{\partial S}\Big)
 \;\Longrightarrow\;
-\frac{\partial V}{\partial t}+rS\frac{\partial V}{\partial S}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}-rV=0.$$
+\frac{\partial V}{\partial t}+rS\frac{\partial V}{\partial S}+\tfrac12\sigma^2S^2\frac{\partial^2V}{\partial S^2}-rV=0.
+$$
 
 This is the BSM PDE (Hull eq. 15.16; Shreve II 4.5.14; Björk Thm 7.7). **Notice: $\mu$ is gone.** That is the entire point of the model.
 

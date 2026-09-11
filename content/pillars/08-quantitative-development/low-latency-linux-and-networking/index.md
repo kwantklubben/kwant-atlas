@@ -45,19 +45,25 @@ The objective is one measurable thing: **shrink the latency *and* the jitter of 
 
 **Line-rate ceiling (why a faster NIC may buy nothing).** For a minimum-size frame of $B$ bytes (Ethernet 84 B) on a link of $R_{\text{link}}$ b/s, the packet ceiling is
 
-$$R_{\max}=\frac{R_{\text{link}}}{8B}\ \text{pkt/s} \;\Rightarrow\; 14.88\ (10\text{GbE}),\ 37.20\ (25\text{GbE}),\ 148.8\ (100\text{GbE})\ \text{M pkt/s}.$$
+$$
+R_{\max}=\frac{R_{\text{link}}}{8B}\ \text{pkt/s} \;\Rightarrow\; 14.88\ (10\text{GbE}),\ 37.20\ (25\text{GbE}),\ 148.8\ (100\text{GbE})\ \text{M pkt/s}.
+$$
 
 A NIC beyond this ceiling is idle — **for latency-sensitive small-message traffic the wire, not the NIC, is the bottleneck.**
 
 **Per-core processing capacity.** A core at frequency $f$ spends $c$ *cycles* per packet:
 
-$$\Theta_{\text{core}}=\frac{f}{c}\ \text{pkt/s}.$$
+$$
+\Theta_{\text{core}}=\frac{f}{c}\ \text{pkt/s}.
+$$
 
 Kernel path $c\approx2600$ cycles (=~870 ns at 3 GHz) $\Rightarrow$ ~1.15 M pkt/s; bypass $c\approx160$ cycles (=~53 ns) $\Rightarrow$ ~18.8 M pkt/s. Sustaining 10GbE line rate (14.88 M pkt/s) therefore needs **~12.9 cores on the kernel path vs ~0.79 of one core bypassed** (verified in [[pillars/08-quantitative-development/low-latency-linux-and-networking/03-kernel-bypass-and-nics|03 · Kernel Bypass & NICs]]).
 
 **Jitter decomposition (the folder's organising idea).** Total latency is a sum of independent stage random variables, $T=\sum_i X_i$, so
 
-$$\mathbb{E}[T]=\sum_i \mathbb{E}[X_i],\qquad \operatorname{Var}(T)=\sum_i \operatorname{Var}(X_i).$$
+$$
+\mathbb{E}[T]=\sum_i \mathbb{E}[X_i],\qquad \operatorname{Var}(T)=\sum_i \operatorname{Var}(X_i).
+$$
 
 Because *variance adds*, one stage with large variance dominates every upper percentile. From the verified model in §3: taming the jitter of one stage ($\sigma\to$ flat) drops the end-to-end p99 from **110.6 µs to 21.5 µs** (p99/p50 from 7.63× to 1.50×) while barely moving the median. **The mean rewards shaving every stage; the p99 rewards killing one jitter source.**
 

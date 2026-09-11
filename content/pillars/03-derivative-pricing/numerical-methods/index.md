@@ -39,7 +39,9 @@ This folder is the hub: it gives the fast **scheme and error lookup** below and 
 
 **Lookup 2 — the finite-difference schemes** (Duffy eqs. 6.17–6.19). Writing the one-factor parabolic operator as $\mathcal{L}u$ and $\theta$ as the weight on the **old** time level (the new level carries $1-\theta$),
 
-$$\frac{U^{n+1}-U^n}{k} \;=\; (1-\theta)\,\mathcal{L}U^{n+1} + \theta\,\mathcal{L}U^{n}, \qquad \theta\in[0,1].$$
+$$
+\frac{U^{n+1}-U^n}{k} \;=\; (1-\theta)\,\mathcal{L}U^{n+1} + \theta\,\mathcal{L}U^{n}, \qquad \theta\in[0,1].
+$$
 
 | Scheme | $\theta$ | Time order | Stability (heat/BS) | Solve per step |
 |---|---|---|---|---|
@@ -51,16 +53,20 @@ $$\frac{U^{n+1}-U^n}{k} \;=\; (1-\theta)\,\mathcal{L}U^{n+1} + \theta\,\mathcal{
 
 Von Neumann (Duffy eqs. 8.34–8.39, printed with a typographical $4\lambda^2$ — the correct symbol has a **single** $\lambda$, consistent with the printed condition $\lambda\le\tfrac12$):
 
-$$\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\tfrac\xi2,\qquad
+$$
+\rho_{\text{expl}}(\xi)=1-4\lambda\sin^2\tfrac\xi2,\qquad
 \rho_{\text{impl}}(\xi)=\frac{1}{1+4\lambda\sin^2\frac\xi2},\qquad
-\rho_{\text{CN}}(\xi)=\frac{1-2\lambda\sin^2\frac\xi2}{1+2\lambda\sin^2\frac\xi2}.$$
+\rho_{\text{CN}}(\xi)=\frac{1-2\lambda\sin^2\frac\xi2}{1+2\lambda\sin^2\frac\xi2}.
+$$
 
 The **triangle** that governs everything (Definitions 8.1/8.3/8.4 + Theorem 8.1): *consistency* (truncation error $\to0$) + *stability* ($\|Q^n\|\le K$) $\iff$ *convergence* — Lax equivalence. Order $(p,q)$ means $\|\tau^n\|=O(h^p)+O(k^q)$.
 
 **Lookup 3 — the Monte Carlo estimator** (Glasserman eqs. 1.1–1.8, 1.39, 3.20).
 
-$$\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i),\qquad \hat\alpha_n-\alpha\approx\mathcal N\!\left(0,\frac{\sigma_f^2}{n}\right),\qquad
-V(0)=e^{-rT}\,\mathbb{E}^{\mathbb{Q}}[h(S_T)].$$
+$$
+\hat\alpha_n=\frac1n\sum_{i=1}^nf(U_i),\qquad \hat\alpha_n-\alpha\approx\mathcal N\!\left(0,\frac{\sigma_f^2}{n}\right),\qquad
+V(0)=e^{-rT}\,\mathbb{E}^{\mathbb{Q}}[h(S_T)].
+$$
 
 Error **$O(n^{-1/2})$ in every dimension** — versus the trapezoidal rule's $O(n^{-2})$ in one dimension and $O(n^{-2/d})$ in $d$, which is the entire reason Monte Carlo exists for exotics. Halving the error costs $4\times$ the paths; one extra decimal costs $100\times$.
 

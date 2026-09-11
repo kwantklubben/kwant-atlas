@@ -31,11 +31,15 @@ The practical objective of regime classification is *not* the labels themselves 
 
 **Regimes as a finite mixture.** Suppose returns $x_t$ come from one of $K$ regimes, and within regime $k$ they are (approximately) Gaussian with its own mean and variance. The marginal density of an observation is the **mixture**
 
-$$p(x_t)=\sum_{k=1}^{K}\underbrace{\pi_k}_{\text{regime weight}}\cdot\mathcal{N}\!\big(x_t;\mu_k,\sigma_k^2\big),\qquad \sum_k\pi_k=1,\ \pi_k\ge0.$$
+$$
+p(x_t)=\sum_{k=1}^{K}\underbrace{\pi_k}_{\text{regime weight}}\cdot\mathcal{N}\!\big(x_t;\mu_k,\sigma_k^2\big),\qquad \sum_k\pi_k=1,\ \pi_k\ge0.
+$$
 
 The "probability that observation $t$ came from regime $k$," given the model, is **Bayes' rule** — the *responsibility* (this is ESL Ch 14.3's soft assignment; the exact object the HMM generalizes in time):
 
-$$\gamma_t(k)=\mathbb{P}(z_t{=}k\mid x_t)=\frac{\pi_k\,\mathcal{N}(x_t;\mu_k,\sigma_k^2)}{\sum_{j=1}^{K}\pi_j\,\mathcal{N}(x_t;\mu_j,\sigma_j^2)}.$$
+$$
+\gamma_t(k)=\mathbb{P}(z_t{=}k\mid x_t)=\frac{\pi_k\,\mathcal{N}(x_t;\mu_k,\sigma_k^2)}{\sum_{j=1}^{K}\pi_j\,\mathcal{N}(x_t;\mu_j,\sigma_j^2)}.
+$$
 
 **Two simplifications that make the whole folder legible.**
 

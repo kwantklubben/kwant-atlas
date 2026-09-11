@@ -29,14 +29,18 @@ The through-line (Penman's whole thesis): **a ratio is only as good as the decom
 
 **Altman Z (1968, discriminant function).** With $X_1$ = working capital / total assets, $X_2$ = retained earnings / total assets, $X_3$ = EBIT / total assets, $X_4$ = market value of equity / book value of total liabilities, $X_5$ = sales / total assets:
 
-$$Z = 1.2\,X_1 + 1.4\,X_2 + 3.3\,X_3 + 0.6\,X_4 + 1.0\,X_5.$$
+$$
+Z = 1.2\,X_1 + 1.4\,X_2 + 3.3\,X_3 + 0.6\,X_4 + 1.0\,X_5.
+$$
 
 Zones: $Z>2.99$ safe · $1.81\le Z\le2.99$ grey · $Z<1.81$ distress. *(The weights assume $X_1..X_3$ are decimal fractions — see the hub's scaling caveat.)*
 
 **ROIC / ROCE decomposition (Penman Ch 11; DuPont).** The operating return is the product of margin and turnover, and the shareholder return adds the leverage effect:
 
-$$\text{RNOA}=\underbrace{\frac{\text{NOPAT}}{\text{S}}}_{\text{operating margin}} \times \underbrace{\frac{S}{\text{avg NOA}}}_{\text{asset turnover}}, \qquad
-\text{ROCE}=\text{RNOA}+\big[\text{FLEV}\times(\text{RNOA}-\text{NBC})\big].$$
+$$
+\text{RNOA}=\underbrace{\frac{\text{NOPAT}}{\text{S}}}_{\text{operating margin}} \times \underbrace{\frac{S}{\text{avg NOA}}}_{\text{asset turnover}}, \qquad
+\text{ROCE}=\text{RNOA}+\big[\text{FLEV}\times(\text{RNOA}-\text{NBC})\big].
+$$
 
 Every term is independently attackable: margin is pricing power, turnover is asset productivity, and the bracket is the leverage effect that is *additive only while* RNOA > NBC.
 

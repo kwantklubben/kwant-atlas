@@ -27,21 +27,29 @@ The through-line: **a factor model turns "this strategy made money" into "this s
 
 **The Fama–French 2×3 construction (1993; extended 2015).** Independent sorts: two size groups (small/big, split at the NYSE median market cap) and three groups on each of B/M, operating profitability, and investment (30th/70th percentile breakpoints). The intersections give six value-weighted portfolios; each factor is the *average of small and big versions* of a long-short:
 
-$$\text{SMB} = \tfrac{1}{3}\big[\text{avg(S/L,S/M,S/H)} - \text{avg(B/L,B/M,B/H)}\big],$$
+$$
+\text{SMB} = \tfrac{1}{3}\big[\text{avg(S/L,S/M,S/H)} - \text{avg(B/L,B/M,B/H)}\big],
+$$
 
-$$\text{HML} = \tfrac{1}{2}\big[\text{(S/H + B/H)} - \text{(S/L + B/L)}\big],$$
+$$
+\text{HML} = \tfrac{1}{2}\big[\text{(S/H + B/H)} - \text{(S/L + B/L)}\big],
+$$
 
 and analogously $\text{RMW}$ (robust minus weak profitability) and $\text{CMA}$ (conservative minus aggressive investment). Because each factor averages small and big portfolios, SMB/HML/RMW/CMA are **roughly size-neutral** — that neutrality is part of their definition.
 
 **The factor-model regression (Fama–MacBeth; Fama–French 2015).** A portfolio's excess return is regressed on the factor excess returns:
 
-$$R_{it} - R_{ft} = \alpha_i + \beta_i(R_{Mt}-R_{ft}) + s_i\,\text{SMB}_t + h_i\,\text{HML}_t + r_i\,\text{RMW}_t + c_i\,\text{CMA}_t + e_{it}.$$
+$$
+R_{it} - R_{ft} = \alpha_i + \beta_i(R_{Mt}-R_{ft}) + s_i\,\text{SMB}_t + h_i\,\text{HML}_t + r_i\,\text{RMW}_t + c_i\,\text{CMA}_t + e_{it}.
+$$
 
 The intercept $\alpha_i$ is the *abnormal return* unexplained by the factors. The five-factor model (Fama–French 2015) is **rejected** by the strict GRS test — it fails on small stocks that invest a lot despite low profitability — but for applied purposes it gives an acceptable description of average returns. HML averages about **0.38%/month** in the 2×3 construction; RMW and CMA add positive premiums on top.
 
 **Combining factors — composite scores.** The simplest combination that the evidence supports (and that [[fundamentals-accounting/quantitative-fundamental-investing/03-value-and-profitability|03 · Value & Profitability]] motivated) is a rank-sum: rank the universe on each factor and average the ranks:
 
-$$\text{Composite} = \frac{1}{K}\sum_{j=1}^{K} \text{rank}_j(\text{firm}),$$
+$$
+\text{Composite} = \frac{1}{K}\sum_{j=1}^{K} \text{rank}_j(\text{firm}),
+$$
 
 so a firm cheap *and* profitable *and* high-quality scores best. Greenblatt's magic formula and Piotroski's F-score are both instances; a factor model tells you how much of that composite's return is incremental.
 

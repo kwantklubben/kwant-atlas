@@ -17,7 +17,9 @@ tags:
 
 CVA needs one input more than any other: **the exposure profile** — the expected positive value of the portfolio at every future date, *conditional on the counterparty having survived so far*. This page builds that profile from scratch and separates the four statistics a desk actually quotes:
 
-$$\underbrace{\text{EE}(t)=\mathbb{E}[V(t)^+]}_{\text{expected exposure}},\quad \underbrace{\text{EPE}=\tfrac1T\!\int_0^T\!\text{EE}(t)\,dt}_{\text{expected positive exposure}},\quad \underbrace{\text{ENE}(t)=\mathbb{E}[V(t)^-]}_{\text{expected negative exposure}},\quad \underbrace{\text{PFE}_\alpha(t)}_{\text{quantile}}.$$
+$$
+\underbrace{\text{EE}(t)=\mathbb{E}[V(t)^+]}_{\text{expected exposure}},\quad \underbrace{\text{EPE}=\tfrac1T\!\int_0^T\!\text{EE}(t)\,dt}_{\text{expected positive exposure}},\quad \underbrace{\text{ENE}(t)=\mathbb{E}[V(t)^-]}_{\text{expected negative exposure}},\quad \underbrace{\text{PFE}_\alpha(t)}_{\text{quantile}}.
+$$
 
 The practical objective is the **shape**, because the shape *is* the answer. A forward's exposure **grows monotonically** (the further out you look, the more the spot can move away from the strike). A *swap's* exposure is **humped** — large in the middle, collapsing to zero at maturity, because near maturity there are few remaining payments to differ. Quantifying that shape is the job of a Monte Carlo over risk-factor paths.
 
@@ -30,20 +32,30 @@ The practical objective is the **shape**, because the shape *is* the answer. A f
 #### 2.1 Defining the profile and averaging it
 
 For a grid $0=t_0<t_1<\dots<t_m=T$:
-$$\text{EE}(t_i)=\mathbb{E}\!\left[\max(V(t_i),0)\right],\qquad \text{EPE}=\frac{1}{m}\sum_{i=1}^{m}\text{EE}(t_i)\ \ (\text{time-weighted if uneven}),$$
-$$\text{ENE}(t_i)=\mathbb{E}\!\left[\min(V(t_i),0)\right],\qquad \text{PFE}_\alpha(t_i)=\inf\{x:\mathbb{P}(V(t_i)^+\le x)\ge\alpha\}.$$
+$$
+\text{EE}(t_i)=\mathbb{E}\!\left[\max(V(t_i),0)\right],\qquad \text{EPE}=\frac{1}{m}\sum_{i=1}^{m}\text{EE}(t_i)\ \ (\text{time-weighted if uneven}),
+$$
+$$
+\text{ENE}(t_i)=\mathbb{E}\!\left[\min(V(t_i),0)\right],\qquad \text{PFE}_\alpha(t_i)=\inf\{x:\mathbb{P}(V(t_i)^+\le x)\ge\alpha\}.
+$$
 
 For CVA the profile is taken **discounted to today**: replace $\text{EE}(t_i)$ by $D(0,t_i)\,\text{EE}(t_i)$ (Gregory §17.2.2, citing Jamshidian 1989 to avoid a convexity bias).
 
 #### 2.2 A tractable example: the at-the-money forward
 
 Take a forward to buy the asset at $K$ at time $T$, on a spot that follows geometric Brownian motion under $\mathbb{Q}$:
-$$dS_t=rS_t\,dt+\sigma S_t\,dW_t,\qquad S_t=S_0\exp\!\left[(r-\tfrac12\sigma^2)t+\sigma\sqrt t\,Z\right].$$
+$$
+dS_t=rS_t\,dt+\sigma S_t\,dW_t,\qquad S_t=S_0\exp\!\left[(r-\tfrac12\sigma^2)t+\sigma\sqrt t\,Z\right].
+$$
 
 Set $K=S_0 e^{rT}$ (the **no-arbitrage forward price**, so the forward is struck at-the-money and worth zero today). The value at $t$ is the discounted forward gap
-$$V(t)=S_t-K\,e^{-r(T-t)}=S_t-S_0e^{rt},$$
+$$
+V(t)=S_t-K\,e^{-r(T-t)}=S_t-S_0e^{rt},
+$$
 so $\mathbb{E}[V(t)]=0$ and the forward has **symmetric** exposure. Because $S_t$ is lognormal, the expected positive exposure has a clean closed form:
-$$\boxed{\;\text{EE}(t)=S_0 e^{rt}\left[2\,\Phi\!\left(\tfrac{\sigma\sqrt t}{2}\right)-1\right]\;}$$
+$$
+\boxed{\;\text{EE}(t)=S_0 e^{rt}\left[2\,\Phi\!\left(\tfrac{\sigma\sqrt t}{2}\right)-1\right]\;}
+$$
 *(derivation: for lognormal $X$ with mean $S_0e^{rt}$, $\mathbb{E}[(X-K)^+]=\mathbb{E}[X]\Phi(d_1)-K\Phi(d_2)$ with $d_1=\sigma\sqrt t/2,\ d_2=-\sigma\sqrt t/2$).*
 
 Two immediate consequences, both visible in the numbers below:

@@ -33,7 +33,7 @@ This folder is a *hub*. It gives the **method lookup** below (§2), a single run
 | Quantity | Formula | Verified check |
 |---|---|---|
 | Cointegration (Engle–Granger) | $y_t=\mu+\beta x_t+z_t$, $z_t\sim I(0)$ | EG $\hat\beta=0.9955$ vs true $1.0$ |
-| Spurious-regression check | ADF on $\hat z_t$; reject unit root if $t<t^{\*}\!\approx\!-3.34$ (5%, $N{=}2$) | ADF $t=-10.255$ |
+| Spurious-regression check | ADF on $\hat z_t$; reject unit root if $t<t^{*}\!\approx\!-3.34$ (5%, $N{=}2$) | ADF $t=-10.255$ |
 | AR(1) discretisation | $z_{t}-z_{t-1}=a+b\,z_{t-1}+\varepsilon_t$ | $b=-0.1804$ |
 | Mean-reversion speed | $\theta=-\dfrac{\ln(1+b)}{\Delta t}$ | $\theta=0.1990$/day (true $0.20$) |
 | Half-life | $\tau_{1/2}=\dfrac{\ln 2}{\theta}$ | $3.48$ d (true $3.47$) |
@@ -45,7 +45,7 @@ This folder is a *hub*. It gives the **method lookup** below (§2), a single run
 | Johansen max-eigen | $LR_{\max}(m)=-(T-p)\ln(1-\hat\lambda_{m+1})$ | $\hat\lambda=(0.0983,0.0031)$ |
 | Portfolio P&L (dollar-neutral) | $r_{p,t+1}=r^{y}_{t+1}-\beta\,r^{x}_{t+1}=\Delta z_{t+1}$ | see sub-page 04 |
 
-**Dictionary of "beta".** Regression hedge ratio $\beta$ (OLS of $y$ on $x$) · dollar-neutral $\beta$-dollars of $x$ per \$1 of $y$ · Avellaneda residual $\tilde R_i=R_i-\sum_j\beta_{ij}F_j$ (idio return). These are three renderings of the same neutrality condition $\sum_i\beta_{ij}Q_i=0$.
+**Dictionary of "beta".** Regression hedge ratio $\beta$ (OLS of $y$ on $x$) · dollar-neutral $\beta$-dollars of $x$ per $ $\$1 of y · Avellaneda residual $\tilde R_i=R_i-\sum_j\beta_{ij}F_j$ (idio return). These are three renderings of the same neutrality condition $\sum_i\beta_{ij}Q_i=0$.
 
 > **Critical caveat.** A *high return correlation* is neither necessary nor sufficient for a *tradable stationary spread*. Correlation is a property of the returns; cointegration is a property of the levels. Two independent random walks routinely show $0.9$ return correlation while their spread diverges — see [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/01-from-zero-intuition|01 · From Zero]].
 

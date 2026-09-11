@@ -35,19 +35,25 @@ Three steps, three "aha"s:
 
 Let $\mu$ be the gross annualised return, $\sigma$ the annualised volatility, $c$ the one-way cost in basis points (half-spread + impact + fees) paid on each unit of traded notional, and $V$ the turnover in units of NAV traded per year. The net return is
 
-$$\mu_{\text{net}} = \mu - \frac{c\,V}{10^4}, \qquad \text{Sharpe}_{\text{net}} = \frac{\mu_{\text{net}}}{\sigma}.$$
+$$
+\mu_{\text{net}} = \mu - \frac{c\,V}{10^4}, \qquad \text{Sharpe}_{\text{net}} = \frac{\mu_{\text{net}}}{\sigma}.
+$$
 
 The strategy is tradable only while $\mu_{\text{net}}>0$, i.e. while
 
-$$V < V^\* = \frac{10^4\,\mu}{c}.$$
+$$
+V < V^* = \frac{10^4\,\mu}{c}.
+$$
 
-$V^\*$ is the **break-even turnover**. At $\mu=12\%/yr$ and $c=6$ bps, $V^\*=200$ — a strategy that trades more than 200× NAV per year has no edge it can keep. This single inequality kills more `high-Sharpe` backtests than any overfitting concern.
+$V^*$ is the **break-even turnover**. At $\mu=12\%/yr$ and $c=6$ bps, $V^*=200$ — a strategy that trades more than 200× NAV per year has no edge it can keep. This single inequality kills more `high-Sharpe` backtests than any overfitting concern.
 
 #### 2.2 Why the worst case dominates: the multiplicative incident model
 
 Suppose a year produces a gross return $r$ but with probability $p$ suffers a production incident that destroys a fraction $\ell$ of capital. The expected **log**-growth (the quantity that actually compounds, per the Kelly framing) is
 
-$$g \approx \underbrace{\log(1+r)}_{\text{strategy}} - \underbrace{p\,\log\!\left(\frac{1}{1-\ell}\right)}_{\text{incident drag}} - \underbrace{\tfrac12 p(1-p)\Big[\log\tfrac{1}{1-\ell}\Big]^2}_{\text{variance}}.$$
+$$
+g \approx \underbrace{\log(1+r)}_{\text{strategy}} - \underbrace{p\,\log\!\left(\frac{1}{1-\ell}\right)}_{\text{incident drag}} - \underbrace{\tfrac12 p(1-p)\Big[\log\tfrac{1}{1-\ell}\Big]^2}_{\text{variance}}.
+$$
 
 The lesson is in the sign structure: the strategy term grows with $r$ (linear-ish), the incident term grows with $-p\log(1-\ell)$ and is *independent of the strategy*. You cannot out-return a production incident — you can only lower $p$ (testing, canaries) or lower $\ell$ (risk limits, kill switches). That is exactly what the rest of this folder builds.
 
@@ -55,7 +61,9 @@ The lesson is in the sign structure: the strategy term grows with $r$ (linear-is
 
 A cleaner expression of the same fact, used in the runnable example below:
 
-$$Y_{\text{erased}} = \frac{\ell}{\mu_{\text{net}}}.$$
+$$
+Y_{\text{erased}} = \frac{\ell}{\mu_{\text{net}}}.
+$$
 
 A single 30% loss against a 6%/yr net edge erases **5.0 years** of careful work. Production is therefore best understood as *capital preservation with a P&L side effect*.
 

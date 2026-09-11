@@ -30,7 +30,9 @@ A financial statement of the same idea (Tsay §8–9): if three assets are drive
 
 **Gram–Schmidt.** Any set of independent vectors can be turned into an orthonormal basis by subtracting, from each new vector, its projections onto the already-orthonormal ones:
 
-$$q_k=\frac{v_k-\sum_{j<k}\langle v_k,q_j\rangle\,q_j}{\big\|v_k-\sum_{j<k}\langle v_k,q_j\rangle\,q_j\big\|}.$$
+$$
+q_k=\frac{v_k-\sum_{j<k}\langle v_k,q_j\rangle\,q_j}{\big\|v_k-\sum_{j<k}\langle v_k,q_j\rangle\,q_j\big\|}.
+$$
 
 This is the *algorithm* behind $QR$ and the geometric meaning of "de-correlating" a set of signals (Glasserman Ch 2's Cholesky does the same thing numerically for random variables).
 

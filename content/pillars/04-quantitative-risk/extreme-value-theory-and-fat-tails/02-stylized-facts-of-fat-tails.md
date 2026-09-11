@@ -28,9 +28,13 @@ The four facts that matter for this pillar:
 ### 2. Mathematical Ground Truth & Derivations
 
 **Heavy tails as power laws.** A distribution is in the Fréchet domain of attraction (tail index $\alpha=1/\xi$) iff its survival function is regularly varying (de Haan Thm 1.2.1; Gnedenko 1943):
-$$1-F(x)=x^{-\alpha}L(x),\qquad x\to\infty,$$
+$$
+1-F(x)=x^{-\alpha}L(x),\qquad x\to\infty,
+$$
 where $L$ is *slowly varying* ($L(tx)/L(t)\to 1$). For a Student-t with $\nu$ dof, $\alpha=\nu$ exactly, and (McNeil & Frey 2000, eq. 12):
-$$1-F_\nu(x)\sim \frac{\nu^{\nu/2-1}}{B(1/2,\nu/2)}\,x^{-\nu}\qquad\Big(=\frac{\Gamma((\nu+1)/2)\,\nu^{\nu/2-1}}{\sqrt{\pi}\,\Gamma(\nu/2)}\,x^{-\nu}\Big),\qquad x\to\infty.$$
+$$
+1-F_\nu(x)\sim \frac{\nu^{\nu/2-1}}{B(1/2,\nu/2)}\,x^{-\nu}\qquad\Big(=\frac{\Gamma((\nu+1)/2)\,\nu^{\nu/2-1}}{\sqrt{\pi}\,\Gamma(\nu/2)}\,x^{-\nu}\Big),\qquad x\to\infty.
+$$
 Consequences: the $m$-th moment exists only if $m<\alpha$. For $\alpha=3$ the 4th moment (kurtosis) does **not exist**; for $\alpha=2$ even the variance doesn't.
 
 **Kurtosis and the mean-excess function.** The classic diagnostics:
@@ -38,7 +42,9 @@ Consequences: the $m$-th moment exists only if $m<\alpha$. For $\alpha=3$ the 4t
 - The **mean excess function** $e(u)=\mathbb{E}[X-u\mid X>u]$. For a GPD tail, $e(u)=\dfrac{\beta+\xi u}{1-\xi}$ — a straight line in $u$ with slope $\xi/(1-\xi)>0$ when $\xi>0$. An upward-sloping empirical mean-excess plot is the standard visual sign of a heavy tail (McNeil 1997 §4.1).
 
 **Volatility clustering in one equation.** The GARCH(1,1) model (Bollerslev 1986; Tsay Ch 3) is the canonical generator:
-$$\sigma_t^2=\omega+\alpha\,X_{t-1}^2+\beta\,\sigma_{t-1}^2,\qquad X_t=\sigma_t Z_t,$$
+$$
+\sigma_t^2=\omega+\alpha\,X_{t-1}^2+\beta\,\sigma_{t-1}^2,\qquad X_t=\sigma_t Z_t,
+$$
 with $Z_t$ heavy-tailed innovations. It reproduces all four facts: heavy-tailed marginals (from $Z_t$), volatility clustering (from the $\sigma_t^2$ recursion), and near-zero autocorrelation of returns with strong autocorrelation of squares.
 
 ---

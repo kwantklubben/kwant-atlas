@@ -39,7 +39,9 @@ Three "aha"s:
 
 A clock of frequency $f$ Hz issues one cycle every $1/f$ seconds. The latency in *time* of an operation costing $c$ cycles is
 
-$$t = \frac{c}{f}.$$
+$$
+t = \frac{c}{f}.
+$$
 
 At $f = 4.0$ GHz, $1$ cycle $= 0.25$ ns, so L1 ($c\approx4$) is $\approx1$ ns and DRAM ($c\approx250$) is $\approx62$ ns. **Why it matters:** arithmetic costs single-digit cycles; a memory miss costs hundreds. Optimising the multiply is noise; optimising the access pattern is the whole game.
 
@@ -47,7 +49,9 @@ At $f = 4.0$ GHz, $1$ cycle $= 0.25$ ns, so L1 ($c\approx4$) is $\approx1$ ns an
 
 A tick-to-trade path is a *sum* of stage latencies $t_i$:
 
-$$t_{\text{total}} = \sum_{i=1}^{n} t_i.$$
+$$
+t_{\text{total}} = \sum_{i=1}^{n} t_i.
+$$
 
 In the hub's worked example $t_{\text{total}} = 2.00$ µs, and the *strategy signal* alone is 40% of it. Latency is additive along the path, so the budget is an accounting ledger: every stage you can shave is a stage that no longer steals from the others. Harness this with a **hard budget** (say `≤ 2 µs p99`) and treat any stage that breaks it as a defect, not a nice-to-have.
 
@@ -55,7 +59,9 @@ In the hub's worked example $t_{\text{total}} = 2.00$ µs, and the *strategy sig
 
 Model short-horizon edge as halving every $h$ microseconds. The surviving fraction after a reaction delay $t$ is
 
-$$\text{edge}(t) = 2^{-t/h} = e^{-(\ln 2)\, t/h}.$$
+$$
+\text{edge}(t) = 2^{-t/h} = e^{-(\ln 2)\, t/h}.
+$$
 
 This is exponential decay with rate $\lambda = \ln 2 / h$. Over a *small* window the loss is nearly linear, but across an order of magnitude it is catastrophic — the table in §3 shows 87% → 0.1% for a 2 µs → 100 µs delay. **The derivative matters more than the value:** at $t=0$ the marginal loss rate is $\lambda = \ln 2/h$ (for $h{=}10\,\mu s$, $\lambda\approx0.069$ per µs), so shaving the first microsecond off a 2 µs path is worth exactly as much as the last.
 
@@ -63,7 +69,9 @@ This is exponential decay with rate $\lambda = \ln 2 / h$. Over a *small* window
 
 For a stable system,
 
-$$L = W \lambda,$$
+$$
+L = W \lambda,
+$$
 
 where $L$ is work-in-flight, $W$ is latency, and $\lambda$ is arrival rate. Rearranged, a pipeline that can overlap work has a throughput ceiling $\lambda_{\max} = 1 / t_{\text{work}}$ set by the *stage duration*, independent of the end-to-end latency. A 2.00 µs stage therefore pipelining-caps at $500{,}000$ messages/s. **The lesson:** you can fix throughput with concurrency, but you can only fix *latency* by making the stage itself faster — and latency is what determines adverse selection.
 

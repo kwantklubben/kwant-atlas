@@ -38,7 +38,7 @@ This folder is the **market-impact & depth** topic-folder for Pillar 6. It is a 
 |---|---|---|
 | Informed demand | $x=\beta\,(v-p_0)$, $\;\beta=\sqrt{\sigma_u^2/\Sigma_0}$ | insider "slices and dices" |
 | Price rule | $P=p_0+\lambda\,y=p_0+\lambda\,(x+u)$ | linear, set by competitive MMs |
-| **Price impact / Kyle's lambda** | $\boxed{\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}}$ | $(\$/share)$ per unit signed flow |
+| **Price impact / Kyle's lambda** | $\boxed{\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}}$ | $($\$/share) per unit signed flow |
 | **Market depth** | $\boxed{1/\lambda=2\sqrt{\sigma_u^2/\Sigma_0}}$ | flow needed for a \$1 move |
 | Info incorporated | $\mathrm{Var}[v\mid P]=\Sigma_0/2$ | exactly half, independent of noise |
 | Insider profit (cond. on $v$) | $\mathbb{E}[\pi\mid v]=\dfrac{(v-p_0)^2}{2}\sqrt{\dfrac{\sigma_u^2}{\Sigma_0}}$ | Hasbrouck eq. 7.5 (Ch 7) |
@@ -56,18 +56,22 @@ This folder is the **market-impact & depth** topic-folder for Pillar 6. It is a 
 - Fitted: $\gamma=0.314\pm0.041$, $\eta=0.142\pm0.0062$; permanent exponent fixed at $1$ (no-arbitrage); temporary exponent $\beta=3/5$ (square root $\beta=\tfrac12$ rejected at 95%).
 
 #### D. The square-root law
-$$I \;\propto\; \sigma\,\sqrt{\frac{Q}{V}},$$
+$$
+I \;\propto\; \sigma\,\sqrt{\frac{Q}{V}},
+$$
 impact grows as the **square root** of order size (or participation rate): dominating today's execution models. Discounted origin (Bouchaud et al. 2009): for power-law order-sign autocorrelation $C_\tau\sim\tau^{-\gamma}$, impact $\sim N^{1-\beta}$ with $\beta=(1-\gamma)/2$; empirical $\gamma\approx0.5\Rightarrow$ impact $\sim N^{3/4}$ and, in the latent-liquidity picture, $\sqrt{Q}$.
 
 #### E. No-dynamic-arbitrage constraint (Gatheral 2010)
 Transient model $S_t=S_0+\int_0^t h(\dot X_s)G(t-s)\,ds$ with $h(x)=c|x|^\delta\mathrm{sgn}\,x$, $G(\tau)=\tau^{-\gamma}$:
-$$\text{price manipulation exists}\iff \gamma+\delta<1 .$$
+$$
+\text{price manipulation exists}\iff \gamma+\delta<1 .
+$$
 Empirically $\delta\approx\tfrac12,\gamma\approx\tfrac12$ sit right on the boundary — impact is *just barely* consistent with no-arbitrage.
 
 #### F. Impact as a microstructure measurement (Hasbrouck)
 - Generalized Roll (Ch 8): $\Delta p_t=c(q_t-q_{t-1})+\lambda q_t+u_t$, spread $=2(c+\lambda)$ (transitory $c$, permanent $\lambda$); identified random-walk variance $\sigma_w^2=\lambda^2+\sigma_u^2=\gamma_0+2\gamma_1$.
 - OFI (Cont et al. 2014): $\Delta P\approx\lambda_{\mathrm{OFI}}\cdot\mathrm{OFI}$, $\lambda_{\mathrm{OFI}}\propto 1/\text{depth}$.
-- Amihud illiquidity: $I=\mathbb{E}\!\left[|r_t|/\text{\$Vol}_t\right]$; Amivest liquidity ratio $L=\text{Vol}/|r|$; Amihud is the better $\lambda$ proxy (Hasbrouck 2005).
+- Amihud illiquidity: $I=\mathbb{E}\!\left[|r_t|/\text{Vol}_t\right]; Amivest liquidity ratio L=\text{Vol}/|r|$; Amihud is the better $\lambda$ proxy (Hasbrouck 2005).
 
 ---
 

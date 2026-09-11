@@ -50,7 +50,9 @@ This folder is the **low-latency-systems topic-folder** for Pillar 2. It is a *h
 
 **The latency budget (additive).** Total tick-to-trade is the sum of the stage costs:
 
-$$T_{\text{T2T}} = T_{\text{wire}} + T_{\text{NIC}} + T_{\text{stack}} + T_{\text{parse}} + T_{\text{strategy}} + T_{\text{serialize}} + T_{\text{gateway}} + T_{\text{TX}}.$$
+$$
+T_{\text{T2T}} = T_{\text{wire}} + T_{\text{NIC}} + T_{\text{stack}} + T_{\text{parse}} + T_{\text{strategy}} + T_{\text{serialize}} + T_{\text{gateway}} + T_{\text{TX}}.
+$$
 
 Because it is a **sum**, the slowest stages dominate the mean and the *tails* dominate the percentiles (§3).
 
@@ -58,13 +60,17 @@ Because it is a **sum**, the slowest stages dominate the mean and the *tails* do
 
 **Queueing — where a "fast" stage still loses.** A single-threaded handler is a queue; its waiting time is the **Pollaczek–Khinchine** formula:
 
-$$W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)},\qquad W = W_q + \mathbb{E}[S],\qquad L=\lambda W\ \ (\text{Little}).$$
+$$
+W_q = \rho\,\mathbb{E}[S]\,\frac{1+C_s^2}{2(1-\rho)},\qquad W = W_q + \mathbb{E}[S],\qquad L=\lambda W\ \ (\text{Little}).
+$$
 
 Two facts follow. **(i)** As $\rho\to1$, $W_q\to\infty$: an engine running at 90 % utilization has nine times the queueing delay of one at 50 %. **(ii)** Jitter multiplies it: a stage with $C_s=1$ queues twice as long as a constant-cost stage at the same load. *Determinism, not just speed, is what keeps $W_q$ small.*
 
 **Tail composition.** If each of $k$ independent hops is in its worst top-$q$ fraction with probability $q$, the chance *at least one* hop is in the tail is
 
-$$P_{\text{any}} = 1-(1-q)^k \approx kq \quad (q\ll1).$$
+$$
+P_{\text{any}} = 1-(1-q)^k \approx kq \quad (q\ll1).
+$$
 
 A 1-in-1000 per-hop event becomes ~6-in-1000 across six hops. **Rare per-stage faults are routine at the system level** — the structural reason low-latency work is about tails.
 

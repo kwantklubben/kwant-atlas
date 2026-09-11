@@ -36,7 +36,9 @@ The core of this page is **packet timing**: measuring inter-arrival times (IAT),
 
 **Sequence-gap detection.** Each feed message carries a monotonically increasing sequence number $s_i$. If the last received was $s_{i-1}$ and the next is $s_i$ with
 
-$$s_i - s_{i-1} > 1 \;\Rightarrow\; \text{lost } (s_i-s_{i-1}-1)\ \text{messages}.$$
+$$
+s_i - s_{i-1} > 1 \;\Rightarrow\; \text{lost } (s_i-s_{i-1}-1)\ \text{messages}.
+$$
 
 A single dropped packet opens a *hole* in the book — that instrument's last-known price is now stale by one or more ticks, and the risk is that your strategy trades on the stale value. The recovery action (replay/backfill from the venue) is the topic of [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity|FIX Protocol & Exchange Connectivity]]; *detecting* the hole is this page's job.
 
