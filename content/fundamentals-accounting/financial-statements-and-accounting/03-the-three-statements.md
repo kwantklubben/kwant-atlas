@@ -1,5 +1,5 @@
 ---
-title: "03 — The Three Statements: Balance Sheet, Income Statement, Cash Flow Statement"
+title: "A.1.3 The Three Statements"
 tags:
   - fundamentals-accounting
   - financial-statements-and-accounting

@@ -1,5 +1,5 @@
 ---
-title: "01 — Statistics & Inference from Zero: Intuition & the Why"
+title: "F.5.1 Statistics & Inference from Zero"
 tags:
   - foundations
   - statistics-and-inference

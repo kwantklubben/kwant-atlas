@@ -1,5 +1,5 @@
 ---
-title: "05 — SVD, PCA & Linear Regression: The Workhorse"
+title: "F.1.5 SVD, PCA & Linear Regression"
 tags:
   - foundations
   - linear-algebra

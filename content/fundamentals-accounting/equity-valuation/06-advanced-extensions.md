@@ -1,5 +1,5 @@
 ---
-title: "06 — Relative Valuation & Advanced Extensions: Multiples and Robustness"
+title: "A.3.6 Relative Valuation & Advanced Extensions"
 tags:
   - fundamentals-accounting
   - equity-valuation

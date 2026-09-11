@@ -1,5 +1,5 @@
 ---
-title: "05 — Ruin & Drawdown: The Cost of Overbetting"
+title: "F.9.5 Ruin & Drawdown"
 tags:
   - foundations
   - ruin-theory

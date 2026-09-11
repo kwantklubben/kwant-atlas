@@ -1,5 +1,5 @@
 ---
-title: "02 — Bayes' Theorem, Priors & Conjugate Families"
+title: "F.7.2 Bayes' Theorem, Priors & Conjugate Families"
 tags:
   - foundations
   - bayesian-statistics

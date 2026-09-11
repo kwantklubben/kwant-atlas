@@ -1,5 +1,5 @@
 ---
-title: "04 — The Research Workflow: Reading 10-Ks/10-Qs, Red Flags, and the Buy Decision"
+title: "A.4.4 The Research Workflow"
 tags:
   - fundamentals-accounting
   - fundamental-analysis-and-screening

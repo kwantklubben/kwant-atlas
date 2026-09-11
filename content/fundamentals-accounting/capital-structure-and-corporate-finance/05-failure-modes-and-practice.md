@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Leverage Death Spirals, Agency Costs, Dilution Risk"
+title: "A.6.5 Failure Modes & Practice"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

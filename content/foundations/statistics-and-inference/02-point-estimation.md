@@ -1,5 +1,5 @@
 ---
-title: "02 — Point Estimation: MLE, Method of Moments, Bias, Variance & Cramér–Rao"
+title: "F.5.2 Point Estimation"
 tags:
   - foundations
   - statistics-and-inference

@@ -1,5 +1,5 @@
 ---
-title: "01 — Stochastic Calculus from Zero: Intuition & the Why"
+title: "F.4.1 Stochastic Calculus from Zero"
 tags:
   - foundations
   - stochastic-calculus

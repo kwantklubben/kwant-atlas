@@ -1,5 +1,5 @@
 ---
-title: "05 — Gradient Descent & Newton's Method"
+title: "F.2.5 Gradient Descent & Newton's Method"
 tags:
   - foundations
   - optimization

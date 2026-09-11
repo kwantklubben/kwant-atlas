@@ -1,5 +1,5 @@
 ---
-title: "04 — The Kelly Criterion: Growth-Optimal Bet Sizing"
+title: "F.9.4 The Kelly Criterion"
 tags:
   - foundations
   - kelly-criterion

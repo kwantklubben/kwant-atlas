@@ -1,5 +1,5 @@
 ---
-title: "01 — Calculus & Optimization from Zero: What a Derivative Really Is"
+title: "F.2.1 Calculus & Optimization from Zero"
 tags:
   - foundations
   - calculus

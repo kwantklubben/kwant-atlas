@@ -1,5 +1,5 @@
 ---
-title: "02 — Graham's Criteria and the Value-Investing School: Defensive, Enterprising, and Deeper Tools"
+title: "A.4.2 Graham's Criteria and the Value-Investing School"
 tags:
   - fundamentals-accounting
   - fundamental-analysis-and-screening

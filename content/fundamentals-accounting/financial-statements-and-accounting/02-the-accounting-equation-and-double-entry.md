@@ -1,5 +1,5 @@
 ---
-title: "02 — The Accounting Equation & Double-Entry Bookkeeping"
+title: "A.1.2 The Accounting Equation & Double-Entry Bookkeeping"
 tags:
   - fundamentals-accounting
   - financial-statements-and-accounting

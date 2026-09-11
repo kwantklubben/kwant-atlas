@@ -1,5 +1,5 @@
 ---
-title: "Ergodicity & Statistical Mechanics"
+title: "F.9 Ergodicity & Statistical Mechanics"
 tags:
   - foundations
   - ergodicity

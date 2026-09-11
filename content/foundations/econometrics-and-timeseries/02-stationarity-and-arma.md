@@ -1,5 +1,5 @@
 ---
-title: "02 — Stationarity & ARMA Models: Mean Structure, Identification, Estimation"
+title: "F.6.2 Stationarity & ARMA Models"
 tags:
   - foundations
   - econometrics-timeseries

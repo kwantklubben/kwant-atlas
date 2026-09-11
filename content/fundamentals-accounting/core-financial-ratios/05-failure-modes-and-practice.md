@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Ratio Red Flags, Cross-Sectional Use"
+title: "A.2.5 Failure Modes & Practice"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

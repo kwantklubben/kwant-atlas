@@ -1,5 +1,5 @@
 ---
-title: "05 — Bias–Variance, Cross-Validation & Model Selection"
+title: "F.5.5 Bias–Variance, Cross-Validation & Model Selection"
 tags:
   - foundations
   - statistics-and-inference

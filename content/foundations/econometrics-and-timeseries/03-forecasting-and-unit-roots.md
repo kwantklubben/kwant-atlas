@@ -1,5 +1,5 @@
 ---
-title: "03 — Forecasting & Unit Roots: Conditional Expectations, ADF, Spurious Regression"
+title: "F.6.3 Forecasting & Unit Roots"
 tags:
   - foundations
   - econometrics-timeseries

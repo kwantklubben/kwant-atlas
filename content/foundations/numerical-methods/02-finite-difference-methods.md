@@ -1,5 +1,5 @@
 ---
-title: "02 — Finite-Difference Methods: Grids, Stability & Convergence"
+title: "F.8.2 Finite-Difference Methods"
 tags:
   - foundations
   - numerical-methods

@@ -1,5 +1,5 @@
 ---
-title: "01 — Capital Structure from Zero: Debt vs. Equity, the Residual Claim & Why Leverage Magnifies"
+title: "A.6.1 Capital Structure from Zero"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

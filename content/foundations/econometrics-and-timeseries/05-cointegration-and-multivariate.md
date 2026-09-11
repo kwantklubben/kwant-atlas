@@ -1,5 +1,5 @@
 ---
-title: "05 — Cointegration & Multivariate Models: VAR, Engle–Granger, Johansen, Pairs Trading"
+title: "F.6.5 Cointegration & Multivariate Models"
 tags:
   - foundations
   - econometrics-timeseries

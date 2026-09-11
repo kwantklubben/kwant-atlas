@@ -1,5 +1,5 @@
 ---
-title: "03 — Value & Profitability: Book-to-Market, Earnings Yield, and Novy-Marx's Gross Profitability"
+title: "A.7.3 Value & Profitability"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

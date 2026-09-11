@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Fama–French Factor Models, Combining Factors, and the Factor-Model Regression"
+title: "A.7.6 Advanced Extensions"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

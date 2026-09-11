@@ -1,5 +1,5 @@
 ---
-title: "03 — Multivariable Calculus: Gradients, Jacobians, Hessians, Taylor"
+title: "F.2.3 Multivariable Calculus"
 tags:
   - foundations
   - calculus

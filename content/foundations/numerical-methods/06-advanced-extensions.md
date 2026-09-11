@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: QMC, MCMC, State-Space & High Dimension"
+title: "F.8.6 Advanced Extensions"
 tags:
   - foundations
   - numerical-methods

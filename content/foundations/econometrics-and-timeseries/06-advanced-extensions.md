@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: State-Space & Kalman, Markov Switching, Multivariate Vol, MCMC"
+title: "F.6.6 Advanced Extensions"
 tags:
   - foundations
   - econometrics-timeseries

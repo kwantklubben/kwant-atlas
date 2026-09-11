@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Bootstrap, Asymptotics & Backtest Statistics"
+title: "F.5.6 Advanced Extensions"
 tags:
   - foundations
   - statistics-and-inference

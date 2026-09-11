@@ -1,5 +1,5 @@
 ---
-title: "02 — Probability Spaces & Filtrations: Sigma-algebras, Measurability, Information Flow"
+title: "F.3.2 Probability Spaces & Filtrations"
 tags:
   - foundations
   - probability-and-measure-theory

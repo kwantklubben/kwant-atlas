@@ -1,5 +1,5 @@
 ---
-title: "04 — Constrained Optimization: Lagrange Multipliers & KKT"
+title: "F.2.4 Constrained Optimization"
 tags:
   - foundations
   - optimization

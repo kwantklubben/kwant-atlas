@@ -1,5 +1,5 @@
 ---
-title: "01 — Bayesian Statistics from Zero: Intuition & the Why"
+title: "F.7.1 Bayesian Statistics from Zero"
 tags:
   - foundations
   - bayesian-statistics

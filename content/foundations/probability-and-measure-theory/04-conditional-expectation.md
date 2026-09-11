@@ -1,5 +1,5 @@
 ---
-title: "04 — Conditional Expectation: The Best Predictor Given Information"
+title: "F.3.4 Conditional Expectation"
 tags:
   - foundations
   - probability-and-measure-theory

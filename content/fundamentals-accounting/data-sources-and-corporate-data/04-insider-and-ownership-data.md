@@ -1,5 +1,5 @@
 ---
-title: "04 — Insider & Ownership Data: Form 4, OpenInsider, 13-F, WhaleWisdom"
+title: "A.8.4 Insider & Ownership Data"
 tags:
   - fundamentals-accounting
   - data-sources-and-corporate-data

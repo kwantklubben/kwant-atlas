@@ -1,5 +1,5 @@
 ---
-title: "02 — Brownian Motion & Martingales: Properties, Quadratic Variation, First Passage"
+title: "F.4.2 Brownian Motion & Martingales"
 tags:
   - foundations
   - stochastic-calculus

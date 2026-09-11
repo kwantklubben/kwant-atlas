@@ -1,5 +1,5 @@
 ---
-title: "Statistics & Inference"
+title: "F.5 Statistics & Inference"
 tags:
   - foundations
   - statistics-and-inference

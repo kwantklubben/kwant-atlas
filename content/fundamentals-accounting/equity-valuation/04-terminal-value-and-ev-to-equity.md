@@ -1,5 +1,5 @@
 ---
-title: "04 — Terminal Value & the EV→Equity→Per-Share Bridge"
+title: "A.3.4 Terminal Value & the EV→Equity→Per-Share Bridge"
 tags:
   - fundamentals-accounting
   - equity-valuation

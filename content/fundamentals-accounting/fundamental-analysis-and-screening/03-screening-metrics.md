@@ -1,5 +1,5 @@
 ---
-title: "03 — Screening Metrics: Revenue CAGR, Margins, Leverage & Composite Ranking"
+title: "A.4.3 Screening Metrics"
 tags:
   - fundamentals-accounting
   - fundamental-analysis-and-screening

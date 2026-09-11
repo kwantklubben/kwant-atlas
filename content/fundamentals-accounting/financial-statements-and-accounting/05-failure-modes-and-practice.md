@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice: Accounting Quality, Manipulation, Off-Balance-Sheet Items"
+title: "A.1.5 Failure Modes & Real-World Practice"
 tags:
   - fundamentals-accounting
   - financial-statements-and-accounting

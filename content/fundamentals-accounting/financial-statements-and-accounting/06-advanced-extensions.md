@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Common-Size Statements, GAAP vs IFRS, and Analysis"
+title: "A.1.6 Advanced Extensions"
 tags:
   - fundamentals-accounting
   - financial-statements-and-accounting

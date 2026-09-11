@@ -1,5 +1,5 @@
 ---
-title: "02 — Single-Variable Calculus: Limits, Derivatives, Taylor, Integration"
+title: "F.2.2 Single-Variable Calculus"
 tags:
   - foundations
   - calculus

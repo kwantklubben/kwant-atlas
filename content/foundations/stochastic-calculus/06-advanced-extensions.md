@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Feynman–Kac, Martingale Representation & the Fundamental Theorems"
+title: "F.4.6 Advanced Extensions"
 tags:
   - foundations
   - stochastic-calculus

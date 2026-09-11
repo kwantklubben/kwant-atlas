@@ -1,5 +1,5 @@
 ---
-title: "04 — Accrual Accounting vs Cash: Earnings ≠ Cash Flow, and Why That's the Point"
+title: "A.1.4 Accrual Accounting vs Cash"
 tags:
   - fundamentals-accounting
   - financial-statements-and-accounting

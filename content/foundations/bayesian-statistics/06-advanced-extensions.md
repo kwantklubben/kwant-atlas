@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Hierarchical Models & Applications"
+title: "F.7.6 Advanced Extensions"
 tags:
   - foundations
   - bayesian-statistics

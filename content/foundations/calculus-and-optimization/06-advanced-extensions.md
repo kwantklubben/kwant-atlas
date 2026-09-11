@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Convexity, Duality & Applications"
+title: "F.2.6 Advanced Extensions"
 tags:
   - foundations
   - optimization

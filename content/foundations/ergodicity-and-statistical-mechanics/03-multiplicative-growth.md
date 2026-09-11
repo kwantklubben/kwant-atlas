@@ -1,5 +1,5 @@
 ---
-title: "03 — Multiplicative Growth: Log Returns & the Volatility Drag"
+title: "F.9.3 Multiplicative Growth"
 tags:
   - foundations
   - growth-rate

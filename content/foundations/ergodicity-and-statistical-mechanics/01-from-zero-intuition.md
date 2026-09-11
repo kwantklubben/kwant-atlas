@@ -1,5 +1,5 @@
 ---
-title: "01 — Ergodicity from Zero: What 'Expected' Really Means"
+title: "F.9.1 Ergodicity from Zero"
 tags:
   - foundations
   - ergodicity

@@ -1,5 +1,5 @@
 ---
-title: "04 — Dilution & Buybacks: EPS Arithmetic, Wealth Transfer, and Payout Policy vs. ROIC"
+title: "A.6.4 Dilution & Buybacks"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Altman Z, ROIC Decomposition, the Piotroski F-Score"
+title: "A.2.6 Advanced Extensions"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

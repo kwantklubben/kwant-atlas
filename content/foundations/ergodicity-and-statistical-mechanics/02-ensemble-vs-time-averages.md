@@ -1,5 +1,5 @@
 ---
-title: "02 — Ensemble vs Time Averages: Where Ergodicity Breaks"
+title: "F.9.2 Ensemble vs Time Averages"
 tags:
   - foundations
   - ergodicity

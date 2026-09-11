@@ -1,5 +1,5 @@
 ---
-title: "02 — The Fundamental Factors: Value, Profitability, Investment, Quality — Construction & Portfolio Sorts"
+title: "A.7.2 The Fundamental Factors"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

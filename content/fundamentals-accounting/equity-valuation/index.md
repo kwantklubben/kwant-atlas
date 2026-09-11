@@ -1,5 +1,5 @@
 ---
-title: "Equity Valuation"
+title: "A.3 Equity Valuation"
 tags:
   - fundamentals-accounting
   - equity-valuation

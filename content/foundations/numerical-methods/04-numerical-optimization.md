@@ -1,5 +1,5 @@
 ---
-title: "04 — Numerical Optimization & Root-Finding: Iteration & Convergence"
+title: "F.8.4 Numerical Optimization & Root-Finding"
 tags:
   - foundations
   - numerical-methods

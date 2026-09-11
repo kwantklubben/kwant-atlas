@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Multi-Asset Kelly, Estimation Error & Ergodicity Economics"
+title: "F.9.6 Advanced Extensions"
 tags:
   - foundations
   - kelly-criterion

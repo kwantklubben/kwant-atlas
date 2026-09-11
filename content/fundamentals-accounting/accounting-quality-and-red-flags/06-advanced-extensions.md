@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: The Beneish M-Score, the Proxy Map, and What to Screen With"
+title: "A.5.6 Advanced Extensions"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

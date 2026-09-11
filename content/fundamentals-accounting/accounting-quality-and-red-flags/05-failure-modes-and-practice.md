@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Where Quality Screens Lie, and How to Use Them Honestly"
+title: "A.5.5 Failure Modes & Practice"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

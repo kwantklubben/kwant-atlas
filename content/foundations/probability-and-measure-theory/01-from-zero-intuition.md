@@ -1,5 +1,5 @@
 ---
-title: "01 — Probability & Measure Theory from Zero: Intuition & the Why"
+title: "F.3.1 Probability & Measure Theory from Zero"
 tags:
   - foundations
   - probability-and-measure-theory

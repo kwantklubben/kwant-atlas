@@ -1,5 +1,5 @@
 ---
-title: "04 — Bayesian Inference & Regularization: Ridge, Lasso & Shrinkage"
+title: "F.7.4 Bayesian Inference & Regularization"
 tags:
   - foundations
   - bayesian-statistics

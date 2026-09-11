@@ -1,5 +1,5 @@
 ---
-title: "03 — Debt, Equity & Seniority: the Priority Structure, Leverage, and Financial Risk"
+title: "A.6.3 Debt, Equity & Seniority"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

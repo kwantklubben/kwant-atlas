@@ -1,5 +1,5 @@
 ---
-title: "03 — Valuation Multiples: P/E, EV/EBITDA, P/B, FCF Yield, Earnings Yield"
+title: "A.2.3 Valuation Multiples"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

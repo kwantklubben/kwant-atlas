@@ -1,5 +1,5 @@
 ---
-title: "02 — The Accrual Anomaly: Sloan (1996) and Why Earnings Quality Is Priced"
+title: "A.5.2 The Accrual Anomaly"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

@@ -1,5 +1,5 @@
 ---
-title: "04 — Stochastic Differential Equations & Simulation: GBM, Vasicek, CIR"
+title: "F.4.4 Stochastic Differential Equations & Simulation"
 tags:
   - foundations
   - stochastic-calculus

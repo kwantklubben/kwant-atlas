@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Measure Theory, Radon–Nikodym & Convergence Theorems"
+title: "F.3.6 Advanced Extensions"
 tags:
   - foundations
   - probability-and-measure-theory

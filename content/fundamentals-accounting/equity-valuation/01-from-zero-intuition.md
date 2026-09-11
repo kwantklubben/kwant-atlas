@@ -1,5 +1,5 @@
 ---
-title: "01 — Equity Valuation from Zero: Why Value Is Future Cash"
+title: "A.3.1 Equity Valuation from Zero"
 tags:
   - fundamentals-accounting
   - equity-valuation

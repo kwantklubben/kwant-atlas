@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Pecking Order, Agency Theory, and the Trade-Off Theory of Optimal Capital Structure"
+title: "A.6.6 Advanced Extensions"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

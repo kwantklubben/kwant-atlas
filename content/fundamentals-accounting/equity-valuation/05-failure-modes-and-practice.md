@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Real-World Practice"
+title: "A.3.5 Failure Modes & Real-World Practice"
 tags:
   - fundamentals-accounting
   - equity-valuation

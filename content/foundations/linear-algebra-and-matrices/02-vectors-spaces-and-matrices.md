@@ -1,5 +1,5 @@
 ---
-title: "02 — Vector Spaces, Matrices & the Geometry of Returns"
+title: "F.1.2 Vector Spaces, Matrices & the Geometry of Returns"
 tags:
   - foundations
   - linear-algebra

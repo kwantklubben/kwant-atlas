@@ -1,5 +1,5 @@
 ---
-title: "01 — Accounting Quality from Zero: Why Earnings and Cash Are Not the Same Thing"
+title: "A.5.1 Accounting Quality from Zero"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

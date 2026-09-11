@@ -1,5 +1,5 @@
 ---
-title: "05 — Numerical Linear Algebra: Solving Systems & Eigenvalues"
+title: "F.8.5 Numerical Linear Algebra"
 tags:
   - foundations
   - numerical-methods

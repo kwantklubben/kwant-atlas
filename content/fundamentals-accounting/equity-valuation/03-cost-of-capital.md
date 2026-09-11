@@ -1,5 +1,5 @@
 ---
-title: "03 — The Cost of Capital: CAPM, Betas, and WACC"
+title: "A.3.3 The Cost of Capital"
 tags:
   - fundamentals-accounting
   - equity-valuation

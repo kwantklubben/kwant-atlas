@@ -1,5 +1,5 @@
 ---
-title: "04 — Eigenvalues & Covariance: Spectral Theory of Risk"
+title: "F.1.4 Eigenvalues & Covariance"
 tags:
   - foundations
   - linear-algebra

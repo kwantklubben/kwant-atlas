@@ -1,5 +1,5 @@
 ---
-title: "01 — Financial Statements from Zero: The Story of a Business in Three Reports"
+title: "A.1.1 Financial Statements from Zero"
 tags:
   - fundamentals-accounting
   - financial-statements-and-accounting

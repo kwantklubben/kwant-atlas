@@ -1,5 +1,5 @@
 ---
-title: "Core Financial Ratios"
+title: "A.2 Core Financial Ratios"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

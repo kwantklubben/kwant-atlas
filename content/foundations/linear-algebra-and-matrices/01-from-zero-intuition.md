@@ -1,5 +1,5 @@
 ---
-title: "01 — Linear Algebra from Zero: Intuition & the Why"
+title: "F.1.1 Linear Algebra from Zero"
 tags:
   - foundations
   - linear-algebra

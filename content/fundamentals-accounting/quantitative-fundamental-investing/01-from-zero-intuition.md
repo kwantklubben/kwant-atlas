@@ -1,5 +1,5 @@
 ---
-title: "01 — Quantitative Fundamental Investing from Zero: What a Factor Is & Why Accounting Predicts Returns"
+title: "A.7.1 Quantitative Fundamental Investing from Zero"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

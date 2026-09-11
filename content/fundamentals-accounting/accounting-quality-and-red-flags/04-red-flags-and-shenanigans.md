@@ -1,5 +1,5 @@
 ---
-title: "04 — Red Flags & Shenanigans: The Archetypes, and How to Detect Them in the Numbers"
+title: "A.5.4 Red Flags & Shenanigans"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

@@ -1,5 +1,5 @@
 ---
-title: "Accounting Quality & Red Flags"
+title: "A.5 Accounting Quality & Red Flags"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

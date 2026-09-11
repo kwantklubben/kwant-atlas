@@ -1,5 +1,5 @@
 ---
-title: "03 — Posterior Inference: Estimates, Credible Intervals & Prediction"
+title: "F.7.3 Posterior Inference"
 tags:
   - foundations
   - bayesian-statistics

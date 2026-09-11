@@ -1,5 +1,5 @@
 ---
-title: "05 — Girsanov's Theorem & the Risk-Neutral Measure"
+title: "F.4.5 Girsanov's Theorem & the Risk-Neutral Measure"
 tags:
   - foundations
   - stochastic-calculus

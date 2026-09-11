@@ -1,5 +1,5 @@
 ---
-title: "03 — Distributions & Expectation: Random Variables, Laws, Independence"
+title: "F.3.3 Distributions & Expectation"
 tags:
   - foundations
   - probability-and-measure-theory

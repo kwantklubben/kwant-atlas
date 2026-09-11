@@ -1,5 +1,5 @@
 ---
-title: "Calculus & Optimization"
+title: "F.2 Calculus & Optimization"
 tags:
   - foundations
   - calculus

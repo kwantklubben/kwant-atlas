@@ -1,5 +1,5 @@
 ---
-title: "02 — The Modigliani–Miller Theorem: Propositions I & II, WACC, and the Tax Shield"
+title: "A.6.2 The Modigliani–Miller Theorem"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

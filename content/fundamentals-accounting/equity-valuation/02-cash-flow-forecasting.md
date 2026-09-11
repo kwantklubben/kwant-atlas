@@ -1,5 +1,5 @@
 ---
-title: "02 — Cash-Flow Forecasting: FCFF vs FCFE from the Statements"
+title: "A.3.2 Cash-Flow Forecasting"
 tags:
   - fundamentals-accounting
   - equity-valuation

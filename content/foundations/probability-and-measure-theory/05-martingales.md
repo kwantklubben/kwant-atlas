@@ -1,5 +1,5 @@
 ---
-title: "05 — Martingales: Fair Games, Risk-Neutral Measures & Change of Measure"
+title: "F.3.5 Martingales"
 tags:
   - foundations
   - probability-and-measure-theory

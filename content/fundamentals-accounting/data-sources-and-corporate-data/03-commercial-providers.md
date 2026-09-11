@@ -1,5 +1,5 @@
 ---
-title: "03 — Commercial Providers: Sharadar, Nasdaq Data Link, Compustat, Bloomberg, FactSet"
+title: "A.8.3 Commercial Providers"
 tags:
   - fundamentals-accounting
   - data-sources-and-corporate-data

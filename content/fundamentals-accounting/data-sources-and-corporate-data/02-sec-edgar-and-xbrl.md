@@ -1,5 +1,5 @@
 ---
-title: "02 — SEC EDGAR & XBRL: Filings, APIs, and Tag-to-Field Mapping"
+title: "A.8.2 SEC EDGAR & XBRL"
 tags:
   - fundamentals-accounting
   - data-sources-and-corporate-data

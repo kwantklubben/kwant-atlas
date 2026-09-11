@@ -1,5 +1,5 @@
 ---
-title: "01 — Data Sources from Zero: What the Numbers Are, and Where They Come From"
+title: "A.8.1 Data Sources from Zero"
 tags:
   - fundamentals-accounting
   - data-sources-and-corporate-data

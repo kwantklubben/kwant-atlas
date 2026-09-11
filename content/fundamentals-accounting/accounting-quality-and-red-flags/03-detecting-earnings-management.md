@@ -1,5 +1,5 @@
 ---
-title: "03 — Detecting Earnings Management: Discretionary Accruals and the Modified Jones Model"
+title: "A.5.3 Detecting Earnings Management"
 tags:
   - fundamentals-accounting
   - accounting-quality-and-red-flags

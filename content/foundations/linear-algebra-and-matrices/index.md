@@ -1,5 +1,5 @@
 ---
-title: "Linear Algebra & Matrices"
+title: "F.1 Linear Algebra & Matrices"
 tags:
   - foundations
   - linear-algebra

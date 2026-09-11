@@ -1,5 +1,5 @@
 ---
-title: "02 — Profitability Ratios: ROE, ROA, ROIC/ROCE, Margins"
+title: "A.2.2 Profitability Ratios"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

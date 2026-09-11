@@ -1,5 +1,5 @@
 ---
-title: "Econometrics & Time Series"
+title: "F.6 Econometrics & Time Series"
 tags:
   - foundations
   - econometrics-timeseries

@@ -1,5 +1,5 @@
 ---
-title: "Quantitative Fundamental Investing"
+title: "A.7 Quantitative Fundamental Investing"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

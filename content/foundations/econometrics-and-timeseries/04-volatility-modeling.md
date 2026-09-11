@@ -1,5 +1,5 @@
 ---
-title: "04 — Volatility Modeling: ARCH, GARCH, Leverage, and Volatility Clustering"
+title: "F.6.4 Volatility Modeling"
 tags:
   - foundations
   - econometrics-timeseries

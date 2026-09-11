@@ -1,5 +1,5 @@
 ---
-title: "Stochastic Calculus"
+title: "F.4 Stochastic Calculus"
 tags:
   - foundations
   - stochastic-calculus

@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Factor Crowding, Data Mining, Look-Ahead & Survivorship Bias"
+title: "A.7.5 Failure Modes & Practice"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

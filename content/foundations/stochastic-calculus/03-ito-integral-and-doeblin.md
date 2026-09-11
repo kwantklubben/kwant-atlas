@@ -1,5 +1,5 @@
 ---
-title: "03 — The Itô Integral & the Itô–Doeblin Lemma"
+title: "F.4.3 The Itô Integral & the Itô–Doeblin Lemma"
 tags:
   - foundations
   - stochastic-calculus

@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Quantamental Screens, the Piotroski F-Score & Factor Combination"
+title: "A.4.6 Advanced Extensions"
 tags:
   - fundamentals-accounting
   - fundamental-analysis-and-screening

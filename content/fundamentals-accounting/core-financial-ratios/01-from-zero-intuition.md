@@ -1,5 +1,5 @@
 ---
-title: "01 — Core Financial Ratios from Zero: Intuition & the Why"
+title: "A.2.1 Core Financial Ratios from Zero"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

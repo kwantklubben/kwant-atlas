@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Value Traps, Falling Knives, and Screening Data Quality"
+title: "A.4.5 Failure Modes & Practice"
 tags:
   - fundamentals-accounting
   - fundamental-analysis-and-screening

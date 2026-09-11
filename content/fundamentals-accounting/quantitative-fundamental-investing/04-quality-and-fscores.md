@@ -1,5 +1,5 @@
 ---
-title: "04 — Quality & F-Scores: The Piotroski F-Score Screen and the Accruals Quality Factor"
+title: "A.7.4 Quality & F-Scores"
 tags:
   - fundamentals-accounting
   - quantitative-fundamental-investing

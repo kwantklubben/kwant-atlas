@@ -1,5 +1,5 @@
 ---
-title: "04 — Liquidity & Leverage: Current, Quick, D/E, Net Debt/EBITDA, Interest Coverage"
+title: "A.2.4 Liquidity & Leverage"
 tags:
   - fundamentals-accounting
   - core-financial-ratios

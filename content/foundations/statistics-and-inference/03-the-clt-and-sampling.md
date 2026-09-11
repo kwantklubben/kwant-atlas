@@ -1,5 +1,5 @@
 ---
-title: "03 — The CLT & Sampling: LLN, Standard Error, and Exact Sampling Distributions"
+title: "F.5.3 The CLT & Sampling"
 tags:
   - foundations
   - statistics-and-inference

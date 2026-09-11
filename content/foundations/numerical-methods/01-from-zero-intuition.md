@@ -1,5 +1,5 @@
 ---
-title: "01 — Numerical Methods from Zero: What 'Computing an Answer' Means"
+title: "F.8.1 Numerical Methods from Zero"
 tags:
   - foundations
   - numerical-methods

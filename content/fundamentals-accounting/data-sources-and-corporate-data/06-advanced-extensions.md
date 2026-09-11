@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Building a Fundamental Data Pipeline"
+title: "A.8.6 Advanced Extensions"
 tags:
   - fundamentals-accounting
   - data-sources-and-corporate-data

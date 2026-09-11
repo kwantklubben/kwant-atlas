@@ -1,5 +1,5 @@
 ---
-title: "03 — Monte Carlo: Estimation, Error & Variance Reduction"
+title: "F.8.3 Monte Carlo"
 tags:
   - foundations
   - numerical-methods

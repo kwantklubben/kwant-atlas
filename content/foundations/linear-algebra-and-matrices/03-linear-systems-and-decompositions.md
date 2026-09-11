@@ -1,5 +1,5 @@
 ---
-title: "03 — Linear Systems & Matrix Decompositions (LU, Cholesky)"
+title: "F.1.3 Linear Systems & Matrix Decompositions (LU, Cholesky)"
 tags:
   - foundations
   - linear-algebra

@@ -1,5 +1,5 @@
 ---
-title: "01 — Fundamental Analysis & Screening from Zero: Intuition & the Why"
+title: "A.4.1 Fundamental Analysis & Screening from Zero"
 tags:
   - fundamentals-accounting
   - fundamental-analysis-and-screening

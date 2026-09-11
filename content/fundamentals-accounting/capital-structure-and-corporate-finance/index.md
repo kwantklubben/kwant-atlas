@@ -1,5 +1,5 @@
 ---
-title: "Capital Structure & Corporate Finance"
+title: "A.6 Capital Structure & Corporate Finance"
 tags:
   - fundamentals-accounting
   - capital-structure-and-corporate-finance

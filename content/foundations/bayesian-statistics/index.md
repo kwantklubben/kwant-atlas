@@ -1,5 +1,5 @@
 ---
-title: "Bayesian Statistics"
+title: "F.7 Bayesian Statistics"
 tags:
   - foundations
   - bayesian-statistics

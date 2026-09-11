@@ -1,5 +1,5 @@
 ---
-title: "04 — Confidence Intervals & Hypothesis Testing: Pivots, Size, Power & Multiplicity"
+title: "F.5.4 Confidence Intervals & Hypothesis Testing"
 tags:
   - foundations
   - statistics-and-inference

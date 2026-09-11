@@ -1,5 +1,5 @@
 ---
-title: "05 — Markov Chain Monte Carlo: Metropolis–Hastings & Gibbs"
+title: "F.7.5 Markov Chain Monte Carlo"
 tags:
   - foundations
   - bayesian-statistics

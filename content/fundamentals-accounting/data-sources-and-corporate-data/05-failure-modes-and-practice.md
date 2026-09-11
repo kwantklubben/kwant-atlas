@@ -1,5 +1,5 @@
 ---
-title: "05 — Failure Modes & Practice: Point-in-Time, Survivorship, Restatements, API Limits"
+title: "A.8.5 Failure Modes & Practice"
 tags:
   - fundamentals-accounting
   - data-sources-and-corporate-data

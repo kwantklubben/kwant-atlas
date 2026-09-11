@@ -1,5 +1,5 @@
 ---
-title: "06 — Advanced Extensions: Random Matrix Theory & Numerical Linear Algebra"
+title: "F.1.6 Advanced Extensions"
 tags:
   - foundations
   - linear-algebra

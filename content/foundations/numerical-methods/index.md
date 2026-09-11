@@ -1,5 +1,5 @@
 ---
-title: "Numerical Methods"
+title: "F.8 Numerical Methods"
 tags:
   - foundations
   - numerical-methods

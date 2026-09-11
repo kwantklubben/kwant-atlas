@@ -1,5 +1,5 @@
 ---
-title: "01 — Econometrics & Time Series from Zero: Intuition & the Why"
+title: "F.6.1 Econometrics & Time Series from Zero"
 tags:
   - foundations
   - econometrics-timeseries
