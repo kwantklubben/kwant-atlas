@@ -8,6 +8,8 @@ name: Content checks
 #   1. the site builds                  -- a bad title/backslash in YAML frontmatter breaks it
 #   2. every wikilink resolves          -- catches dangling links and dead _legacy pointers
 #   3. the visualizer is not stale      -- node paths/edges are generated from the content tree
+#
+# Pinned to one Python version so the sibling fence-check report stays comparable across runs.
 
 on:
   push:

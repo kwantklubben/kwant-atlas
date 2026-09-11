@@ -78,7 +78,10 @@ def run_block(prior, target, timeout=90):
 problems = []
 npages = nblocks = nskip = 0
 TIMEOUT = int(os.environ.get("FENCE_TIMEOUT", "90"))
-print(f"per-block timeout: {TIMEOUT}s", flush=True)
+print(f"python: {sys.version.split()[0]}  |  per-block timeout: {TIMEOUT}s", flush=True)
+print("NOTE: results are interpreter-dependent. A clean local run and a CI run on a different", flush=True)
+print("      Python version legitimately disagree (random/module internals, float repr). Compare", flush=True)
+print("      against a run under the SAME version before calling a MISMATCH a defect.", flush=True)
 for f in sorted(glob.glob("content/**/*.md", recursive=True)):
     if "/_legacy/" in f:
         continue

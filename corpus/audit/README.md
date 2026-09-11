@@ -181,6 +181,12 @@ that it yields ~1040 edges — an unreadable hairball against the curated 255.
   page under a *different* libm can differ in the last digit when the code is ill-conditioned
   (κ≈10⁷ amplifies 1 ulp) — classify those as machine-dependent, don't "fix" them.
 
+  **The report is interpreter-dependent.** A clean local run (Python 3.14) and a CI run (3.12)
+  legitimately disagree on a number of blocks — verified: `covariance-shrinkage-and-denoising/05`
+  matches byte-for-byte locally and flags on CI. That is not a defect and not evidence the local run
+  was wrong; the two are simply different interpreters. The tool now prints its version and this
+  caveat, so **only compare a MISMATCH against a run under the same Python version.**
+
 - **Benchmarks are not defects.** Pages whose fence header reads `ms`/`µs`/`ns/op`/`x` document
   timings that cannot be byte-stable. Check the ratio/ordering/claim instead.
 
