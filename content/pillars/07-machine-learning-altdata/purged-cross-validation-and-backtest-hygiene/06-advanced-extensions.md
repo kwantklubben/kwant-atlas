@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The basic hygiene stack (purge + embargo + CPCV) is complete in the small; this page is the **launchpad** for the two questions practitioners actually argue about: (1) *why is walk-forward the wrong default?* and (2) *how do I do honest hyperparameter selection and final performance reporting under CPCV?* Both reduce to the same root idea — **every measurement you report must be a statement about a distribution, not a single historical draw** — and both connect to the Deflated Sharpe Ratio for the final yes/no on "is this real?"
+The basic hygiene stack (purge + embargo + CPCV) is complete in the small; this page is the **launchpad** for the two questions practitioners actually argue about: (1) *why is walk-forward the wrong default?* and (2) *how do I do honest hyperparameter selection and final performance reporting under CPCV?* Both reduce to the same root idea - **every measurement you report must be a statement about a distribution, not a single historical draw** - and both connect to the Deflated Sharpe Ratio for the final yes/no on "is this real?"
 
 ---
 
@@ -24,7 +24,7 @@ The basic hygiene stack (purge + embargo + CPCV) is complete in the small; this 
 
 Walk-forward (WF) trains on a trailing window and forecasts the next block, which sounds maximally realistic. López de Prado lists three structural flaws:
 
-1. **It overfits the sequence, not the signal.** Reversing the data (walk-backward) yields a different, equally "overfit" backtest; if WF were honest, walk-backward would *systematically* underperform — it does not, which shows WF is selecting on the historical ordering (AFML §12.2).
+1. **It overfits the sequence, not the signal.** Reversing the data (walk-backward) yields a different, equally "overfit" backtest; if WF were honest, walk-backward would *systematically* underperform - it does not, which shows WF is selecting on the historical ordering (AFML §12.2).
 2. **It is regime-dependent.** The training window fixes the mixture of regimes (a rally-then-selloff vs selloff-then-rally span the same sample in two orders and train two very different strategies).
 3. **Decisions use unequal data.** With a warm-up of $t_0$ observations, decision $\tau$ (for $\tau=t_0{+}1,\dots,T$) trains on $\tau{-}1$ points, so early decisions run on far less data than late ones:
 
@@ -32,7 +32,7 @@ $$
 \text{avg. train points per decision} = \frac{1}{T-t_0}\sum_{\tau=t_0+1}^{T}(\tau-1).
 $$
 
-The first half of decisions use only a small fraction of the sample, so a few early observations carry disproportionate weight on the final Sharpe — inflating its variance (AFML §12.2, §12.5).
+The first half of decisions use only a small fraction of the sample, so a few early observations carry disproportionate weight on the final Sharpe - inflating its variance (AFML §12.2, §12.5).
 
 #### 2.2 CPCV variance and the deflated decision
 
@@ -50,68 +50,40 @@ Tuning a hyperparameter grid *inside* each CPCV fold is the correct pattern: for
 
 ---
 
-### 3. Computational Implementation — walk-forward's unequal data + the CPCV variance
+### 3. Computational Implementation - walk-forward's unequal data + the CPCV variance
 
 Stdlib only.
 
 **A. Walk-forward warm-up: how few data the early decisions see.** `T=100`, three warm-up lengths:
 
-```python
-def wf_avg_train(T, t0):
-    tot = sum(tau - 1 for tau in range(t0 + 1, T + 1))   # decision tau trains on tau-1 pts
-    return tot / (T - t0)
 
-print("walk-forward warm-up: average training points per decision (T=100):")
-for t0 in (10, 20, 40):
-    avg = wf_avg_train(100, t0)
-    print(f"  warm-up t0={t0:2d}: avg {avg:5.1f} pts/decision  "
-          f"(first uses {t0}, last uses 99)  = {avg/100:.3f} of the sample")
-```
-```
-walk-forward warm-up: average training points per decision (T=100):
-  warm-up t0=10: avg  54.5 pts/decision  (first uses 10, last uses 99)  = 0.545 of the sample
-  warm-up t0=20: avg  59.5 pts/decision  (first uses 20, last uses 99)  = 0.595 of the sample
-  warm-up t0=40: avg  69.5 pts/decision  (first uses 40, last uses 99)  = 0.695 of the sample
-```
 
-Even with a modest warm-up, the early decisions run on $10\text{–}40$ points while the late ones use ~100 — so the Sharpe is a weighted average of very unequally-informed bets. That variance is what CPCV removes by training every combination on equal, large fractions.
 
-**B. CPCV variance table — the decision tool.** Choose $\varphi$ given your path correlation $\bar\rho_i$:
+Even with a modest warm-up, the early decisions run on $10\text{–}40$ points while the late ones use ~100 - so the Sharpe is a weighted average of very unequally-informed bets. That variance is what CPCV removes by training every combination on equal, large fractions.
 
-```python
-def cpcv_var(phi, sigma2, rho):
-    return sigma2 * (1 + (phi - 1)*rho) / phi
+**B. CPCV variance table - the decision tool.** Choose $\varphi$ given your path correlation $\bar\rho_i$:
 
-print("variance of CPCV mean Sharpe vs path count and correlation (sigma2=1):")
-for rho in (0.0, 0.3, 0.8):
-    row = " ".join(f"phi={p}:{cpcv_var(p,1.0,rho):.3f}" for p in (1, 2, 5, 20))
-    print(f"  rho={rho:.1f}: {row}")
-```
-```
-variance of CPCV mean Sharpe vs path count and correlation (sigma2=1):
-  rho=0.0: phi=1:1.000 phi=2:0.500 phi=5:0.200 phi=20:0.050
-  rho=0.3: phi=1:1.000 phi=2:0.650 phi=5:0.440 phi=20:0.335
-  rho=0.8: phi=1:1.000 phi=2:0.900 phi=5:0.840 phi=20:0.810
-```
 
-Read it as the design trade-off: with independent paths ($\bar\rho=0$) even $\varphi=20$ crushes variance to $0.05$; with highly correlated paths ($\bar\rho=0.8$) CPCV is nearly useless (variance barely falls below $0.8$) — so the *quality* of paths (low overlap, $k{=}2$) matters more than their sheer number.
+
+
+Read it as the design trade-off: with independent paths ($\bar\rho=0$) even $\varphi=20$ crushes variance to $0.05$; with highly correlated paths ($\bar\rho=0.8$) CPCV is nearly useless (variance barely falls below $0.8$) - so the *quality* of paths (low overlap, $k{=}2$) matters more than their sheer number.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Believing a single backtest number.** WF and plain CV return the *maximum*-variance estimate available (var $1.0$). Report the CPCV distribution and deflate the mean by trials.
-2. **Tuning hyperparameters on the outer split.** Selecting hyperparameters against the same data you then score on is the ESL §7.10.2 sin at the CPCV scale — it reinflates the estimate. Tune inside each fold only.
+2. **Tuning hyperparameters on the outer split.** Selecting hyperparameters against the same data you then score on is the ESL §7.10.2 sin at the CPCV scale - it reinflates the estimate. Tune inside each fold only.
 3. **Reversing the hygiene and the deflation.** Purging, CPCV, and DSR attack three *different* overfitting mechanisms. Using CPCV alone (no DSR) still selects on trials; using DSR alone (no purging) still leaks labels. The stack, not any one tool, is the answer.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 12** (§12.2 walk-forward flaws, §12.5 CPCV variance) — primary for the WF-vs-CPCV comparison.
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), **Ch. 7** — hyperparameter tuning under CPCV in practice.
-- **"Backtest Overfitting in the Machine Learning Era"** (Expert Systems with Applications, 2025) — recent controlled comparison of walk-forward vs. purged vs. *adaptive* CPCV on synthetic noisy/non-stationary data.
-- **Bailey & López de Prado**, *The Deflated Sharpe Ratio*, J. Portfolio Management 40(5) (2014) — the final deflation step.
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 12** (§12.2 walk-forward flaws, §12.5 CPCV variance) - primary for the WF-vs-CPCV comparison.
+- **López de Prado**, *Machine Learning for Asset Managers* (2020), **Ch. 7** - hyperparameter tuning under CPCV in practice.
+- **"Backtest Overfitting in the Machine Learning Era"** (Expert Systems with Applications, 2025) - recent controlled comparison of walk-forward vs. purged vs. *adaptive* CPCV on synthetic noisy/non-stationary data.
+- **Bailey & López de Prado**, *The Deflated Sharpe Ratio*, J. Portfolio Management 40(5) (2014) - the final deflation step.
 - **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7** (§7.10.2 screening inside folds).
 
 ---

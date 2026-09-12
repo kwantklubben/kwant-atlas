@@ -15,11 +15,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-"Spread" sounds like one number, but a trader and a market maker measure *different* spreads. This page defines the three canonical measures and shows how they nest — **quoted $\ge$ effective $\ge$ realized** when there is adverse selection, and why that ordering is the whole story of who pays whom.
+"Spread" sounds like one number, but a trader and a market maker measure *different* spreads. This page defines the three canonical measures and shows how they nest - **quoted $\ge$ effective $\ge$ realized** when there is adverse selection, and why that ordering is the whole story of who pays whom.
 
 - **Quoted spread** $S_q = a_t-b_t$: what the order book *advertises*. It is the gross cost of crossing the spread, but you almost never pay it in full because trades fill inside the touch or at better mid-market terms.
 - **Effective spread** $S_e=2q_t(p_t-m_t)$: what a trader *actually* pays, measured by how far the execution price sits from the prevailing midpoint. This is the number a venue or broker reports to a client as "your cost."
-- **Realized spread** $S_r = 2q_t(p_t-m_{t+\Delta})$: what the market maker *keeps*, measured by the midquote *after* the trade relative to the price paid. The gap between effective and realized is the **price impact** $S_e-S_r = 2q_t(m_{t+\Delta}-m_t)$ — the adverse-selection loss to informed flow.
+- **Realized spread** $S_r = 2q_t(p_t-m_{t+\Delta})$: what the market maker *keeps*, measured by the midquote *after* the trade relative to the price paid. The gap between effective and realized is the **price impact** $S_e-S_r = 2q_t(m_{t+\Delta}-m_t)$ - the adverse-selection loss to informed flow.
 
 The practical objective: **given a trade tape and quote data, compute all three and read off who captured the spread.** A market with $S_q$ large but $S_e\ll S_q$ is cheap to trade (liquidity hides inside the quote); a market with $S_e\gg S_r$ is one where the liquidity provider is being run over by informed flow.
 
@@ -29,7 +29,7 @@ The practical objective: **given a trade tape and quote data, compute all three 
 
 Under the generalized Roll model the three measures relate to two parameters: the half-spread $c$ and the price-impact $\lambda$ (adverse-selection cost per unit order flow).
 
-- **Quoted:** $S_q=2(c+\lambda)$ — the full bid-ask width (order-processing $c$ **plus** the adverse-selection component $\lambda$; Hasbrouck eq. 8.3).
+- **Quoted:** $S_q=2(c+\lambda)$ - the full bid-ask width (order-processing $c$ **plus** the adverse-selection component $\lambda$; Hasbrouck eq. 8.3).
 - **Effective:** a trade at the ask ($q_t=+1$) prices at $p_t=m_t+(c+\lambda)$, so $2q_t(p_t-m_t)=2(c+\lambda)$; at the bid likewise. **$S_e=2(c+\lambda)$.** The effective spread equals the quoted spread when trades print exactly at the touch.
 - **Realized:** after the trade the midquote is revised by the information content ($m_{t+\Delta}=m_t+\lambda q_t$ plus public noise), so
 $$
@@ -47,50 +47,21 @@ and with $\lambda>0$ the ordering $S_q \ge S_e \ge S_r$ holds (the middle equali
 
 ---
 
-### 3. Computational Implementation — all three on one tape
+### 3. Computational Implementation - all three on one tape
 
 Simulate a quote path where the dealer midpoint shifts by $\lambda$ after each trade, then measure all three spreads. Stdlib only.
 
-```python
-import math, random
 
-random.seed(7)
-def simulate(n=5000, c=0.02, lam=0.01, sig_u=0.005):
-    m = 100.0; mids = []; post = []; trades = []
-    for _ in range(n):
-        m += random.gauss(0, sig_u)              # public information moves the midpoint
-        q = random.choice([-1, 1])               # trade direction
-        mids.append(m); trades.append((q, m + q*(c+lam)))   # trade prints AT the touch
-        m += lam*q                               # adverse-selection impact AFTER the trade
-        post.append(m)
-    return trades, mids, post
 
-trades, mids, post = simulate()
-n = len(trades)
-qs   = [t[0] for t in trades]
-se   = sum(2.0*q*(p-m) for (q,p),m in zip(trades,mids))/n        # effective  = 2(c+lam)
-imp  = sum(2.0*q*(a-b) for q,b,a in zip(qs,mids,post))/n         # impact     = 2*lam
-sr   = se - imp                                                  # realized   = 2c
-print(f"quoted   spread = {2*(0.02+0.01):.4f}   (= 2(c+lambda))")
-print(f"effective spread = {se:.4f}   (= 2(c+lambda), trades at the touch)")
-print(f"realized  spread = {sr:.4f}   (= 2c, what the maker keeps)")
-print(f"adverse-selection loss = {imp:.4f}   (= 2*lambda)")
-```
-```
-quoted   spread = 0.0600   (= 2(c+lambda))
-effective spread = 0.0600   (= 2(c+lambda), trades at the touch)
-realized  spread = 0.0400   (= 2c, what the maker keeps)
-adverse-selection loss = 0.0200   (= 2*lambda)
-```
 
-The maker *advertises* $0.04$ but *keeps* only $0.02$ — exactly half is surrendered to informed flow. That is the economic content of spread decomposition in its simplest form.
+The maker *advertises* $0.04$ but *keeps* only $0.02$ - exactly half is surrendered to informed flow. That is the economic content of spread decomposition in its simplest form.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Assuming effective = quoted.** Real markets offer price improvement (fills inside the touch, hidden liquidity, midpoint cross). Always measure $S_e$ from actual execution prices, not from the displayed quote.
-2. **Wrong sign convention.** Effective and realized spreads are *signed* by trade direction ($q_t$). If you drop the sign, a buy-then-fall and a sell-then-rise cancel and you compute zero — erasing exactly the adverse-selection signal you want.
+2. **Wrong sign convention.** Effective and realized spreads are *signed* by trade direction ($q_t$). If you drop the sign, a buy-then-fall and a sell-then-rise cancel and you compute zero - erasing exactly the adverse-selection signal you want.
 3. **Realized-horizon sensitivity.** $S_r$ depends on $k$ (the post-trade horizon). Too short, and you miss the impact; too long, and other trades contaminate it. Standard practice uses a fixed short window (seconds) or a VWAP benchmark; the choice must be stated.
 4. **Stale quotes.** Using a stale midpoint (not updated at trade time) biases $S_e$ upward because the true $m_t$ has drifted. Quote timestamps must be matched to trade time.
 
@@ -98,10 +69,10 @@ The maker *advertises* $0.04$ but *keeps* only $0.02$ — exactly half is surren
 
 ### 5. Canonical Literature & Study References
 
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 3 & 8 — quoted/effective/realized spread definitions and the generalized-Roll relation $S_q=2c,\ S_r=2\lambda$.
-- **Huang & Stoll (1996)**, *Dealer versus auction markets: a paired comparison of execution costs on NASDAQ and the NYSE*, Journal of Financial Economics 41(3), 313–357 — the standard effective/realized estimators.
-- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1) — effective spread as a market-quality measure.
-- **Stoll (1989)**, *Inferring the components of the bid-ask spread* — realized spread less than quoted under both inventory and adverse-information models.
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 3 & 8 - quoted/effective/realized spread definitions and the generalized-Roll relation $S_q=2c,\ S_r=2\lambda$.
+- **Huang & Stoll (1996)**, *Dealer versus auction markets: a paired comparison of execution costs on NASDAQ and the NYSE*, Journal of Financial Economics 41(3), 313–357 - the standard effective/realized estimators.
+- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1) - effective spread as a market-quality measure.
+- **Stoll (1989)**, *Inferring the components of the bid-ask spread* - realized spread less than quoted under both inventory and adverse-information models.
 
 ---
 

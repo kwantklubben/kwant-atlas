@@ -16,19 +16,19 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Every statement this folder teaches is produced under rules that involve **estimates and choices**. That freedom is a feature (it lets earnings measure economic value) and a vulnerability (it lets earnings be *detached* from economics). This page names exactly where the machine can be gamed, so you can spot it. The discipline, per Penman Ch 18, is *accounting quality*: asking five questions about the current accounting — is it honest, is earnings quality defensible, could it be manipulated, what would change under different rules?
+Every statement this folder teaches is produced under rules that involve **estimates and choices**. That freedom is a feature (it lets earnings measure economic value) and a vulnerability (it lets earnings be *detached* from economics). This page names exactly where the machine can be gamed, so you can spot it. The discipline, per Penman Ch 18, is *accounting quality*: asking five questions about the current accounting - is it honest, is earnings quality defensible, could it be manipulated, what would change under different rules?
 
 The three failures in one line each:
 
-1. **Earnings vs cash divergence is the master signal.** Because $\text{Earnings}=\text{CFO}+\text{Accruals}$, anything that inflates earnings without producing cash raises accruals. Sustained high accruals (low cash conversion) is the single most reliable quantitative red flag — it is exactly the Sloan (1996) accruals anomaly.
+1. **Earnings vs cash divergence is the master signal.** Because $\text{Earnings}=\text{CFO}+\text{Accruals}$, anything that inflates earnings without producing cash raises accruals. Sustained high accruals (low cash conversion) is the single most reliable quantitative red flag - it is exactly the Sloan (1996) accruals anomaly.
 2. **Accruals are a place to hide.** They embed estimates (bad debts, depreciation method/life, pension assumptions) and recognition choices (revenue timing). Manage the estimate, and you manage earnings while cash stays put.
 3. **Off-balance-sheet items hide claims and assets.** Liabilities kept off the statement (pre-convergence operating leases, guarantees, contingent liabilities) make leverage and assets look better than the economic position.
 
-Penman Ch 18 catalogs the diagnostics (detecting manipulated sales, core expenses, unusual items, and transaction timing) and explicitly names **off-balance-sheet operations** as an organizational manipulation. The practical objective: you cannot fix what you cannot measure — this page gives you the *measurement*.
+Penman Ch 18 catalogs the diagnostics (detecting manipulated sales, core expenses, unusual items, and transaction timing) and explicitly names **off-balance-sheet operations** as an organizational manipulation. The practical objective: you cannot fix what you cannot measure - this page gives you the *measurement*.
 
 ---
 
-### 2. Mathematical Ground Truth — the quality metrics
+### 2. Mathematical Ground Truth - the quality metrics
 
 **The accrual identity restated as a quality lens** (Penman eq. 5.1; Sloan 1996):
 
@@ -50,97 +50,45 @@ $$
 \text{Reported debt} < \text{Economic debt},\qquad \text{Reported leverage} = \frac{D}{E}\Big|_{\text{reported}} < \frac{D_{\text{incl.\ leases}}}{E}
 $$
 
-The correction the analyst makes is to **capitalize** the lease: bring the PV of lease payments onto the balance sheet as an asset *and* a liability — which simultaneously lowers reported ROA and raises reported leverage to their true values.
+The correction the analyst makes is to **capitalize** the lease: bring the PV of lease payments onto the balance sheet as an asset *and* a liability - which simultaneously lowers reported ROA and raises reported leverage to their true values.
 
 ---
 
-### 3. Computational Implementation — catching channel stuffing in the numbers
+### 3. Computational Implementation - catching channel stuffing in the numbers
 
-**Experiment — channel stuffing.** Take the honest lemonade ledger and add one "aggressive" transaction: ship \$2,000 of extra goods (cost \$800) on credit *right before year end*, recognizing the revenue even though no cash arrives. Stdlib only.
+**Experiment - channel stuffing.** Take the honest lemonade ledger and add one "aggressive" transaction: ship \$2,000 of extra goods (cost \$800) on credit *right before year end*, recognizing the revenue even though no cash arrives. Stdlib only.
 
-```python
-from collections import defaultdict
-class Ledger:
-    def __init__(self): self.dr=defaultdict(float); self.cr=defaultdict(float)
-    def add(self,d,c,a): self.dr[d]+=a; self.cr[c]+=a
-    def bal(self,a): return self.dr[a]-self.cr[a]
 
-def statements(g, capex=6000):
-    rev=-g.bal("Revenue"); cogs=g.bal("COGS"); oe=g.bal("OperatingExpense"); dep=g.bal("DepreciationExpense")
-    ni=rev-cogs-oe-dep
-    dAR=g.bal("AccountsReceivable"); dInv=g.bal("Inventory")
-    cfo = ni + dep - dAR - dInv          # indirect, no AP
-    cc  = -g.bal("ContributedCapital"); bank=-g.bal("BankLoan")
-    cff = cc + bank
-    return ni, cfo, cc+bank, dAR
 
-# HONEST ledger (year 1)
-h=Ledger()
-h.add("Cash","ContributedCapital",10000); h.add("Cash","BankLoan",5000)
-h.add("Equipment","Cash",6000);           h.add("Inventory","Cash",4000)
-h.add("Cash","Revenue",5000);   h.add("COGS","Inventory",2500)
-h.add("AccountsReceivable","Revenue",2000); h.add("COGS","Inventory",1000)
-h.add("OperatingExpense","Cash",1500)
-h.add("Cash","AccountsReceivable",2000)
-h.add("DepreciationExpense","AccumDep",1200)
 
-# AGGRESSIVE ledger = honest + channel stuffing
-a=Ledger()
-for x in h.dr: a.dr[x]+=h.dr[x]
-for x in h.cr: a.cr[x]+=h.cr[x]
-a.add("Inventory","Cash",800)             # buy more goods
-a.add("AccountsReceivable","Revenue",2000) # ship on credit, recognize revenue
-a.add("COGS","Inventory",800)             # cost of goods shipped
+**Read the red flag.** Channel stuffing *doubled* net income (\$800 → \$2,000) while cash from operations *halved* (\$1,500 → \$700). Total accruals swung from **−\$700 to + \$1,300**, and cash conversion collapsed from 1.88 to 0.35. The receivables tell the same story: \$2,000 of sales shipped but unpaid. An analyst scanning for the Sloan accrual signal would flag this firm immediately - the *earnings* look great and the *cash* says the opposite. This is the exact pattern that runs through Schilit's shenanigans, Beneish's M-score, and Dechow–Sloan–Sweeney's detection models.
 
-for name,g in (("HONEST",h),("CHANNEL-STUFFED",a)):
-    ni,cfo,cff,ar = statements(g)
-    accruals = ni - cfo
-    print(f"{name:16s} NI={ni:6,.0f}  CFO={cfo:6,.0f}  Accruals={accruals:+6,.0f}  "
-          f"Cash conversion (CFO/NI)={cfo/ni:.2f}  Receivables={ar:,.0f}")
-```
-```
-HONEST           NI=   800  CFO= 1,500  Accruals=  -700  Cash conversion (CFO/NI)=1.88  Receivables=0
-CHANNEL-STUFFED  NI= 2,000  CFO=   700  Accruals=+1,300  Cash conversion (CFO/NI)=0.35  Receivables=2,000
-```
+**Experiment 2 - off-balance-sheet leverage.** Two economically identical firms; 20 of debt is an *operating lease* that Firm B keeps off the balance sheet (pre-ASC 842). Same economics, different reported leverage.
 
-**Read the red flag.** Channel stuffing *doubled* net income (\$800 → \$2,000) while cash from operations *halved* (\$1,500 → \$700). Total accruals swung from **−\$700 to + \$1,300**, and cash conversion collapsed from 1.88 to 0.35. The receivables tell the same story: \$2,000 of sales shipped but unpaid. An analyst scanning for the Sloan accrual signal would flag this firm immediately — the *earnings* look great and the *cash* says the opposite. This is the exact pattern that runs through Schilit's shenanigans, Beneish's M-score, and Dechow–Sloan–Sweeney's detection models.
 
-**Experiment 2 — off-balance-sheet leverage.** Two economically identical firms; 20 of debt is an *operating lease* that Firm B keeps off the balance sheet (pre-ASC 842). Same economics, different reported leverage.
 
-```python
-# same economics; 20 of debt is an off-balance-sheet operating lease
-equity = 60.0
-assets_reported, debt_reported = 80.0, 20.0   # lease NOT on the statement
-assets_true,     debt_true     = 100.0, 40.0  # capitalized lease = true position
-print(f"Reported (lease hidden):     D/E = {debt_reported/equity:.2f}")
-print(f"Economic  (lease capitalized): D/E = {debt_true/equity:.2f}")
-```
-```
-Reported (lease hidden):     D/E = 0.33
-Economic  (lease capitalized): D/E = 0.67
-```
 
-Same machinery, same true obligations — but the firm reports *half* the leverage it actually carries, because the lease obligation never appears as a liability. Every leverage and ROA ratio built from the reported statement is flattered. The analyst's fix is to read the footnotes and capitalize the lease (bring the PV of payments on as an asset *and* a liability).
+Same machinery, same true obligations - but the firm reports *half* the leverage it actually carries, because the lease obligation never appears as a liability. Every leverage and ROA ratio built from the reported statement is flattered. The analyst's fix is to read the footnotes and capitalize the lease (bring the PV of payments on as an asset *and* a liability).
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns (numbered)
 
 1. **The accruals trap (Sloan 1996).** Earnings boosted by accruals (high receivables, high inventory) without cash is the most robust, systematically *priced* red flag: high-accrual firms underperform. Never accept earnings without its cash counterpart.
-2. **Recognition timing games.** Channel stuffing (revenue recognized before the customer can pay/sell), bill-and-hold, premature long-term-contract recognition — all inflate earnings and receivables now, and all unwind later as write-offs (Penman Ch 18: "cutting through the accounting").
-3. **Estimate games.** Changing the bad-debt allowance, depreciation method or useful life, or pension assumptions shifts earnings between periods with zero cash effect. Watch for *policy changes* — a firm's accounting policy should be stable; deviations may be manipulation (Penman Ch 18).
-4. **Off-balance-sheet operations (Penman Ch 18).** Operating leases (pre-ASC 842), guarantees, recourse for assigned receivables, purchase commitments, contingent liabilities — economic claims that never appear as liabilities. Read footnotes and capitalize.
-5. **GAAP vs IFRS as a quality variable.** The two frameworks differ in key measurement choices (e.g. LIFO allowed under US GAAP, not IFRS; R&D expensed vs capitalized; inventory impairment reversals). The *same* economic facts can produce different reported earnings, so cross-border comparisons must be done on a *common* basis — or you are comparing apples to oranges.
+2. **Recognition timing games.** Channel stuffing (revenue recognized before the customer can pay/sell), bill-and-hold, premature long-term-contract recognition - all inflate earnings and receivables now, and all unwind later as write-offs (Penman Ch 18: "cutting through the accounting").
+3. **Estimate games.** Changing the bad-debt allowance, depreciation method or useful life, or pension assumptions shifts earnings between periods with zero cash effect. Watch for *policy changes* - a firm's accounting policy should be stable; deviations may be manipulation (Penman Ch 18).
+4. **Off-balance-sheet operations (Penman Ch 18).** Operating leases (pre-ASC 842), guarantees, recourse for assigned receivables, purchase commitments, contingent liabilities - economic claims that never appear as liabilities. Read footnotes and capitalize.
+5. **GAAP vs IFRS as a quality variable.** The two frameworks differ in key measurement choices (e.g. LIFO allowed under US GAAP, not IFRS; R&D expensed vs capitalized; inventory impairment reversals). The *same* economic facts can produce different reported earnings, so cross-border comparisons must be done on a *common* basis - or you are comparing apples to oranges.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
 - **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 18 ("The Quality of the Current Accounting": five questions, quality-of-earnings analysis, detecting manipulation, off-balance-sheet operations). *Deep-read.*
-- **Sloan (1996)**, *Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?* — the accruals anomaly, the empirical anchor for this page's headline signal.
-- **Schilit, Perler & Engelhart**, *Financial Shenanigans* (4th ed.) — the taxonomized catalog of earnings/CF/balance-sheet shenanigans with detection signals.
-- **Dechow, Sloan & Sweeney (1995)**, *Detecting Earnings Management* (modified-Jones model) and **Beneish (1999)**, *The Detection of Earnings Manipulation* (M-score) — the quantitative detection toolkit.
-- **Chan, Jegadeesh & Lakonishok (2006)**, *Earnings Quality and Stock Returns* — earnings-quality measures carry return-predictive power beyond value.
+- **Sloan (1996)**, *Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?* - the accruals anomaly, the empirical anchor for this page's headline signal.
+- **Schilit, Perler & Engelhart**, *Financial Shenanigans* (4th ed.) - the taxonomized catalog of earnings/CF/balance-sheet shenanigans with detection signals.
+- **Dechow, Sloan & Sweeney (1995)**, *Detecting Earnings Management* (modified-Jones model) and **Beneish (1999)**, *The Detection of Earnings Manipulation* (M-score) - the quantitative detection toolkit.
+- **Chan, Jegadeesh & Lakonishok (2006)**, *Earnings Quality and Stock Returns* - earnings-quality measures carry return-predictive power beyond value.
 
 ---
 

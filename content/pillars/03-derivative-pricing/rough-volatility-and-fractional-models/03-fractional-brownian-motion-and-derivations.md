@@ -15,7 +15,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Fractional Brownian motion is the mathematical object behind "rough vol". This page derives the facts from first principles — the covariance, the stationary-increment variance $\Delta^{2H}$, the self-similarity, and the Bergomi–Guyon skew functional — so that the rBergomi model of [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/02-the-rough-bergomi-model|02 · The rBergomi Model]] rests on proved identities rather than asserted ones.
+Fractional Brownian motion is the mathematical object behind "rough vol". This page derives the facts from first principles - the covariance, the stationary-increment variance $\Delta^{2H}$, the self-similarity, and the Bergomi–Guyon skew functional - so that the rBergomi model of [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/02-the-rough-bergomi-model|02 · The rBergomi Model]] rests on proved identities rather than asserted ones.
 
 The practical objective: derive $\mathbb E[(W^H_{t+\Delta}-W^H_t)^2]=\Delta^{2H}$ from the covariance, understand why $H=\tfrac12$ is Brownian and $H<\tfrac12$ is rough (fractal dimension $2-H$), and derive the double integral that produces the power-law skew $\psi(T)\propto T^{H-\frac12}$.
 
@@ -44,7 +44,7 @@ which is the exact scaling law that GJR estimate on log-volatility as $\nu^2\Del
 
 | H | increments | autocorrelation | character |
 |---|---|---|---|
-| $H<\tfrac12$ | **anti-persistent** (negatively correlated) | $\rho_1=\tfrac12(2^{2H}-2)<0$ | **rough** — fractal dimension $2-H>1.5$; vol clustering via reversal |
+| $H<\tfrac12$ | **anti-persistent** (negatively correlated) | $\rho_1=\tfrac12(2^{2H}-2)<0$ | **rough** - fractal dimension $2-H>1.5$; vol clustering via reversal |
 | $H=\tfrac12$ | independent (BM) | $\rho_1=0$ | smooth Markovian baseline |
 | $H>\tfrac12$ | persistent (positively correlated) | $\rho_1>0$ | long-memory / slowly-mean-reverting |
 
@@ -52,7 +52,7 @@ The lag-1 autocorrelation $\rho_1=\tfrac12(2^{2H}-2)$ follows directly: $\rho_1=
 
 #### 2.3 Self-similarity and the "one day ≈ one decade" scaling
 
-Self-similarity has a striking consequence (GJR §3.4): over an observation scale $\Delta$, the rescaled vol process $(\sigma_{t\Delta}/\sigma_0)_{t\in[0,1]}$ has the law of geometric fBm with vol $\nu\Delta^H$. Since $u\mapsto u^H$ grows slowly for small $H$, the *law of log-volatility is nearly scale-invariant*: between one day and five years ($\approx1250$ days), $1250^{0.14}=2.7$ — the vol coefficient barely changes. "Volatility over one day resembles volatility over a decade." This is why a *single* roughness parameter captures behaviour across all horizons.
+Self-similarity has a striking consequence (GJR §3.4): over an observation scale $\Delta$, the rescaled vol process $(\sigma_{t\Delta}/\sigma_0)_{t\in[0,1]}$ has the law of geometric fBm with vol $\nu\Delta^H$. Since $u\mapsto u^H$ grows slowly for small $H$, the *law of log-volatility is nearly scale-invariant*: between one day and five years ($\approx1250$ days), $1250^{0.14}=2.7$ - the vol coefficient barely changes. "Volatility over one day resembles volatility over a decade." This is why a *single* roughness parameter captures behaviour across all horizons.
 
 #### 2.4 The Bergomi–Guyon skew functional (the bridge to prices)
 
@@ -71,94 +71,44 @@ $$
 =\frac{T^{H+\frac32}}{(H+\frac12)(H+\frac32)},
 $$
 
-so $S_T\propto T^{H-\frac12}$. **This is the derivation of the rough-vol skew power law** — one boxed integral, no numerics needed, verified to 5 digits in [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/02-the-rough-bergomi-model|02 · The rBergomi Model]] §3.
+so $S_T\propto T^{H-\frac12}$. **This is the derivation of the rough-vol skew power law** - one boxed integral, no numerics needed, verified to 5 digits in [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/02-the-rough-bergomi-model|02 · The rBergomi Model]] §3.
 
 #### 2.5 Hurst estimation via the variogram
 
-Because $\mathbb E[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2]=\nu^2\Delta^{2H}$, an OLS regression of $\log m(2,\Delta)$ on $\log\Delta$ — where $m(2,\Delta)$ is the sample mean-squared increment of log-vol — has slope $2H$. GJR's estimate $H\approx0.13$ on SPX comes from exactly this variogram. The estimator is verified end-to-end (simulate fBm, recover H) in [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/04-hurst-estimation-and-simulation|04 · Hurst Estimation & Simulation]].
+Because $\mathbb E[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2]=\nu^2\Delta^{2H}$, an OLS regression of $\log m(2,\Delta)$ on $\log\Delta$ - where $m(2,\Delta)$ is the sample mean-squared increment of log-vol - has slope $2H$. GJR's estimate $H\approx0.13$ on SPX comes from exactly this variogram. The estimator is verified end-to-end (simulate fBm, recover H) in [[pillars/03-derivative-pricing/rough-volatility-and-fractional-models/04-hurst-estimation-and-simulation|04 · Hurst Estimation & Simulation]].
 
 ---
 
-### 3. Computational Implementation — exact fBm simulation and the Hurst recovery
+### 3. Computational Implementation - exact fBm simulation and the Hurst recovery
 
-We simulate exact fBm increments via the Hosking/Levinson recursion (O(n²), stdlib) — no approximate schemes — and verify (i) the increment variance law $\Delta^{2H}$ and (ii) that the variogram OLS recovers $H$. Stdlib only.
+We simulate exact fBm increments via the Hosking/Levinson recursion (O(n²), stdlib) - no approximate schemes - and verify (i) the increment variance law $\Delta^{2H}$ and (ii) that the variogram OLS recovers $H$. Stdlib only.
 
-```python
-import math, random
-def fbm_inc_cov(d, H):
-    if d == 0: return 1.0
-    return 0.5*(abs(d+1)**(2*H) + abs(d-1)**(2*H) - 2*abs(d)**(2*H))
-def hosking(n, H, seed):
-    """Exact fBm increments (unit-lag, Var=1) via the O(n^2) Hosking/Levinson recursion."""
-    random.seed(seed)
-    r=[fbm_inc_cov(d,H) for d in range(n+1)]
-    X=[random.gauss(0,1)]
-    if n==1: return X
-    phi=[r[1]/r[0]]; E=max(1.0-r[1]**2,1e-12)
-    X.append(phi[0]*X[0]+random.gauss(0,1)*math.sqrt(E))
-    for k in range(1,n-1):
-        num=r[k+1]-sum(phi[j]*r[k-j] for j in range(k))
-        nl=num/E
-        phi_new=[phi[j]-nl*phi[k-1-j] for j in range(k)]+[nl]
-        phi=phi_new; E=max(E*(1.0-nl**2),1e-12)
-        X.append(sum(phi[j]*X[k-j] for j in range(k+1))+random.gauss(0,1)*math.sqrt(E))
-    return X
-def variogram(n,H,lags,npath,seed):
-    ms={d:0.0 for d in lags}
-    for s in range(npath):
-        inc=hosking(n,H,seed+s); p=[0.0]
-        for x in inc: p.append(p[-1]+x)
-        for d in lags: ms[d]+=sum((p[i+d]-p[i])**2 for i in range(n-d))/(n-d)
-    return {d:ms[d]/npath for d in lags}
-# (i) exact stationary-increment variance: E[(W_{t+D}-W_t)^2] = D^{2H}
-print("(i) exact fBm increment variance vs D^{2H} (H=0.14, 300 paths x 800 pts)")
-lags=(5,20,80,200,400); ms=variogram(800,0.14,lags,300,seed=7)
-for d in lags: print(f"    D={d:4d}  m(2,D)={ms[d]:.4f}   D^{{2H}}={d**0.28:.4f}   ratio={ms[d]/d**0.28:.4f}")
-# (ii) variogram OLS recovers H
-print("(ii) variogram OLS: log m(2,D) vs log D, slope=2H")
-for Htrue in (0.14, 0.30, 0.50):
-    L=(1,2,3,5,8,13,21,34); ms=variogram(350,Htrue,L,120,seed=100)
-    lx=[math.log(d) for d in L]; ly=[math.log(ms[d]) for d in L]
-    xb=sum(lx)/len(lx); yb=sum(ly)/len(ly)
-    slope=sum((lx[i]-xb)*(ly[i]-yb) for i in range(len(lx)))/sum((lx[i]-xb)**2 for i in range(len(lx)))
-    print(f"    true H={Htrue:4.2f} -> estimated H={slope/2.0:.3f}")
-```
-```
-(i) exact fBm increment variance vs D^{2H} (H=0.14, 300 paths x 800 pts)
-    D=   5  m(2,D)=1.5705   D^{2H}=1.5693   ratio=1.0007
-    D=  20  m(2,D)=2.3000   D^{2H}=2.3136   ratio=0.9941
-    D=  80  m(2,D)=3.3993   D^{2H}=3.4109   ratio=0.9966
-    D= 200  m(2,D)=4.3069   D^{2H}=4.4085   ratio=0.9770
-    D= 400  m(2,D)=5.2602   D^{2H}=5.3527   ratio=0.9827
-(ii) variogram OLS: log m(2,D) vs log D, slope=2H
-    true H=0.14 -> estimated H=0.140
-    true H=0.30 -> estimated H=0.298
-    true H=0.50 -> estimated H=0.496
-```
+
+
 
 **Reading the output.**
 
-- **(i) The stationary-increment law is exact.** $m(2,D)$ equals $D^{2H}$ to within $2.5\%$ over four decades of lag — the precise scaling GJR observe on log-volatility as $\nu^2\Delta^{2H}$. (The small drift at the largest lags is finite-sample boundary bias, not model error.)
-- **(ii) The variogram is an unbiased, accurate H estimator.** Simulating exact fBm at $H=0.14$ and running the variogram OLS recovers $0.140$; $0.30\to0.298$; $0.50\to0.496$. This is the same estimator GJR apply to real log-vol — so when a paper reports $H\approx0.13$, this is the mechanism behind the number.
+- **(i) The stationary-increment law is exact.** $m(2,D)$ equals $D^{2H}$ to within $2.5\%$ over four decades of lag - the precise scaling GJR observe on log-volatility as $\nu^2\Delta^{2H}$. (The small drift at the largest lags is finite-sample boundary bias, not model error.)
+- **(ii) The variogram is an unbiased, accurate H estimator.** Simulating exact fBm at $H=0.14$ and running the variogram OLS recovers $0.140$; $0.30\to0.298$; $0.50\to0.496$. This is the same estimator GJR apply to real log-vol - so when a paper reports $H\approx0.13$, this is the mechanism behind the number.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **The covariance formula assumes $t,s\ge0$ with the given normalisation.** Shifting/scaling arguments are fine (self-similarity), but the $|t|^{2H}+|s|^{2H}$ form only holds with $W^H_0=0$; a two-sided fBm on $\mathbb R$ needs the symmetric form $\frac12(|t|^{2H}+|s|^{2H}-|t-s|^{2H})$ with $t,s$ possibly negative — use the right domain.
-2. **Hosking/Levinson drifts if the covariance matrix is nearly singular.** For $H$ very close to $0$ or $1$ the Toeplitz matrix becomes ill-conditioned; clamp the innovation variance (as here) or the recursion produces negative variances (see §3's `max(...,1e-12)`). For $H$ exactly $\tfrac12$ use plain BM — don't push fBm through the singular limit.
+1. **The covariance formula assumes $t,s\ge0$ with the given normalisation.** Shifting/scaling arguments are fine (self-similarity), but the $|t|^{2H}+|s|^{2H}$ form only holds with $W^H_0=0$; a two-sided fBm on $\mathbb R$ needs the symmetric form $\frac12(|t|^{2H}+|s|^{2H}-|t-s|^{2H})$ with $t,s$ possibly negative - use the right domain.
+2. **Hosking/Levinson drifts if the covariance matrix is nearly singular.** For $H$ very close to $0$ or $1$ the Toeplitz matrix becomes ill-conditioned; clamp the innovation variance (as here) or the recursion produces negative variances (see §3's `max(...,1e-12)`). For $H$ exactly $\tfrac12$ use plain BM - don't push fBm through the singular limit.
 3. **The double integral needs $H>-\tfrac12$.** The inner $\int_t^T(u-t)^{H-\frac12}du$ converges only for $H+\tfrac12>0$, i.e. $H>-\tfrac12$. The rough-vol range $H\in(0,\tfrac12)$ is fine, but the closed form $\frac{T^{H+3/2}}{(H+\frac12)(H+\frac32)}$ is invalid at $H=-\tfrac12$ (a pole).
-4. **Estimating H from the *increments* instead of the *path*.** The variogram must be computed on $W^H_{t+\Delta}-W^H_t$ (stationary increments, $\Delta^{2H}$), not on the second difference / increments-of-increments — a common slip that yields a spurious slope. And do not mistake the increment autocorrelation $\rho_1$ for long memory.
+4. **Estimating H from the *increments* instead of the *path*.** The variogram must be computed on $W^H_{t+\Delta}-W^H_t$ (stationary increments, $\Delta^{2H}$), not on the second difference / increments-of-increments - a common slip that yields a spurious slope. And do not mistake the increment autocorrelation $\rho_1$ for long memory.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437 — fBm covariance, self-similarity, Hurst parameter. *Primary mathematical source.*
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 — the variogram estimator (eq. 3.10), monofractal scaling $\zeta_q=qH$, SPX $H=0.13$, and §4 on spurious long memory.
-- **Hosking (1984)**, *Modeling persistence in hydrological time series using fractional differencing* / **McLeod & Hipel** — the O(n²) exact Gaussian simulation (Levinson/Hosking recursion) used in §3.
-- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 7–8 — the forward-variance framework and Bergomi–Guyon expansion that turn fBm covariance into the skew functional of §2.4.
-- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 — the Volterra-process construction (Riemann–Liouville fractional integral) used by rBergomi.
+- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437 - fBm covariance, self-similarity, Hurst parameter. *Primary mathematical source.*
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - the variogram estimator (eq. 3.10), monofractal scaling $\zeta_q=qH$, SPX $H=0.13$, and §4 on spurious long memory.
+- **Hosking (1984)**, *Modeling persistence in hydrological time series using fractional differencing* / **McLeod & Hipel** - the O(n²) exact Gaussian simulation (Levinson/Hosking recursion) used in §3.
+- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 7–8 - the forward-variance framework and Bergomi–Guyon expansion that turn fBm covariance into the skew functional of §2.4.
+- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 - the Volterra-process construction (Riemann–Liouville fractional integral) used by rBergomi.
 
 ---
 

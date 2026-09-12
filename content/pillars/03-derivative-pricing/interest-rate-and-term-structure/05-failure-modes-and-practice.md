@@ -18,10 +18,10 @@ tags:
 The interest-rate toolkit is *mathematically elegant and fails in a small set of well-understood ways*. This page names them precisely so a practitioner knows **which** assumption to distrust and **how** the failure shows up in money terms. The objective is discipline, not cynicism: know exactly where each model is an approximation so the residual risk can be measured and managed.
 
 The failures, in one line each:
-1. **One factor ⇒ perfect correlation** — a single short-rate Brownian motion moves the whole curve in lockstep, so curve-steepener and yield-spread products are mispriced.
-2. **Gaussian short rates go negative** — Vasicek/Hull–White have $\mathbb{P}(r<0)>0$; and in real low/negative-rate regimes the *lognormal* Black machinery breaks because $\ln(F)$ is undefined for $F\le0$.
-3. **Lognormal instantaneous forwards explode** — HJM with $\sigma\propto f$ has drift $\sim f^2$ and blows up before $T$; only *simple* (LIBOR) rates are safe to model lognormally.
-4. **Calibration instability** — HW's exact-fit $\theta(t)$ and market-model parameter recovery need numerically unstable derivatives / inversions.
+1. **One factor ⇒ perfect correlation** - a single short-rate Brownian motion moves the whole curve in lockstep, so curve-steepener and yield-spread products are mispriced.
+2. **Gaussian short rates go negative** - Vasicek/Hull–White have $\mathbb{P}(r<0)>0$; and in real low/negative-rate regimes the *lognormal* Black machinery breaks because $\ln(F)$ is undefined for $F\le0$.
+3. **Lognormal instantaneous forwards explode** - HJM with $\sigma\propto f$ has drift $\sim f^2$ and blows up before $T$; only *simple* (LIBOR) rates are safe to model lognormally.
+4. **Calibration instability** - HW's exact-fit $\theta(t)$ and market-model parameter recovery need numerically unstable derivatives / inversions.
 
 ---
 
@@ -51,59 +51,13 @@ well-defined for any $F,K$. The **shifted lognormal** model (BM Ch10.1) is the i
 
 ---
 
-### 3. Computational Implementation — the failures in numbers
+### 3. Computational Implementation - the failures in numbers
 
 Stdlib only: (1) the forward-rate explosion, (2) negative/zero rates breaking Black but not Bachelier, (3) the perfect-correlation fact, (4) the HW differentiation instability.
 
-```python
-import math
 
-def N(x): return 0.5*(1.0+math.erf(x/math.sqrt(2.0)))
-def phi(x): return math.exp(-0.5*x*x)/math.sqrt(2.0*math.pi)
 
-print("Failure 1: lognormal instantaneous-forward explosion (Shreve Ch34)")
-c=0.05
-print(f"  toy df/dt=f^2, f(0)=5%: f(t)=c/(1-ct) explodes at t=1/c={1/c:.1f} yr")
-for t in (0,5,10,18,19.9):
-    print(f"    f({t:4.1f}yr) = {c/(1-c*t)*100:8.2f}%")
-
-print("\nFailure 2: negative/zero rates break lognormal Black")
-def bach(F,K,v,tau,P):  d=(F-K)/(v*math.sqrt(tau)); return P*((F-K)*N(d)+v*math.sqrt(tau)*phi(d))
-def blk(F,K,v,tau,P):   d1=(math.log(F/K)+0.5*v*v*tau)/(v*math.sqrt(tau)); d2=d1-v*math.sqrt(tau); return P*(F*N(d1)-K*N(d2))
-F,K,v,tau,P=0.005,0.0,0.02,1.0,math.exp(-0.01)
-print(f"  Bachelier caplet F=0.5% K=0% = {bach(F,K,v,tau,P):.6f}  (well-defined)")
-print(f"  Black at K=0%: log(K) undefined -> blows up")
-print(f"  Black at K=0.4% (F,K>0)  = {blk(F,0.004,v,tau,P):.6f}  (fine)")
-
-print("\nFailure 3: one-factor => perfect correlation (BM Ch4)")
-print("  1-factor Vasicek: corr(f(t,T1),f(t,T2))=1.0  (only parallel shifts)")
-print("  2-factor G2++:    corr<1 -> fits swaption/correlation products")
-
-print("\nFailure 4: HW calibration needs 3 numerical derivatives (Shreve Ch30 Rem 30.1)")
-print("  f(t)=0 vs g(t)=sin(1000t)/100: |f-g|<=1/100 but |f'-g'|=10 -> unstable fit")
-```
-```
-Failure 1: lognormal instantaneous-forward explosion (Shreve Ch34)
-  toy df/dt=f^2, f(0)=5%: f(t)=c/(1-ct) explodes at t=1/c=20.0 yr
-    f( 0.0yr) =     5.00%
-    f( 5.0yr) =     6.67%
-    f(10.0yr) =    10.00%
-    f(18.0yr) =    50.00%
-    f(19.9yr) =  1000.00%
-
-Failure 2: negative/zero rates break lognormal Black
-  Bachelier caplet F=0.5% K=0% = 0.010620  (well-defined)
-  Black at K=0%: log(K) undefined -> blows up
-  Black at K=0.4% (F,K>0)  = 0.000990  (fine)
-
-Failure 3: one-factor => perfect correlation (BM Ch4)
-  1-factor Vasicek: corr(f(t,T1),f(t,T2))=1.0  (only parallel shifts)
-  2-factor G2++:    corr<1 -> fits swaption/correlation products
-
-Failure 4: HW calibration needs 3 numerical derivatives (Shreve Ch30 Rem 30.1)
-  f(t)=0 vs g(t)=sin(1000t)/100: |f-g|<=1/100 but |f'-g'|=10 -> unstable fit
-```
-The explosion is not a modelling nicety — $f$ goes from 5% to **1000%** in 20 years, all from a "small" lognormal choice. And Black literally cannot price a strike at 0, while Bachelier does.
+The explosion is not a modelling nicety - $f$ goes from 5% to **1000%** in 20 years, all from a "small" lognormal choice. And Black literally cannot price a strike at 0, while Bachelier does.
 
 ---
 

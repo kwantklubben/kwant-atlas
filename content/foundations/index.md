@@ -1,5 +1,5 @@
 ---
-title: "Foundations"
+title: "Math Foundations"
 tags:
   - foundations
   - mathematics
@@ -10,8 +10,6 @@ tags:
 > 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
 
 # Foundations
-
-> "If you cannot derive it from first principles, you cannot debug it when real markets break your assumptions."
 
 Quantitative finance is not a set of plug-and-play formulas. It is the applied intersection of rigorous mathematics, computational systems, and empirical market microstructure. When a trading strategy incurs catastrophic drawdowns, a derivative pricing engine misquotes, or an optimizer produces singular portfolios, the root cause is almost always a violation of fundamental mathematical or physical assumptions.
 
@@ -28,19 +26,19 @@ This **Foundations** provides the rigorous ground truth underlying all 8 operati
 5. **[[foundations/statistics-and-inference/index|Statistics & Inference]]**: Point estimation (MLE), the CLT, confidence intervals & hypothesis testing, bias-variance, bootstrap.
 6. **[[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]**: Weak vs strict stationarity, unit root tests (ADF), Engle–Granger and Johansen cointegration, and ARCH/GARCH volatility modeling.
 7. **[[foundations/bayesian-statistics/index|Bayesian Statistics]]**: Bayes' theorem & conjugate priors, posterior inference, regularization-as-MAP, and MCMC (Metropolis, Gibbs).
-8. **[[foundations/numerical-methods/index|Numerical Methods]]**: Finite-difference methods, Monte Carlo, numerical optimization, numerical linear algebra — the general computational toolbox.
+8. **[[foundations/numerical-methods/index|Numerical Methods]]**: Finite-difference methods, Monte Carlo, numerical optimization, numerical linear algebra - the general computational toolbox.
 9. **[[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]]**: Ensemble averages vs time averages, non-ergodic multiplicative wealth dynamics, the Kelly criterion, and ruin probability.
 
 ---
 
-### Reading Path — the consumption order (read this *before* a pillar)
+### Reading Path - the consumption order (read this *before* a pillar)
 
 This is not a menu; it is a **contract**. Each pillar's `01-from-zero-intuition` pages assume the foundations listed here, and the pillar hubs name them in their "Before this pillar (foundations)" line. Read the core trio first, then the pillar-specific foundations *before* you enter that pillar.
 
-**Step 1 — the core trio (everyone, before any pillar):**
+**Step 1 - the core trio (everyone, before any pillar):**
 **[[foundations/linear-algebra-and-matrices/index|1 · Linear Algebra]] → [[foundations/calculus-and-optimization/index|2 · Calculus & Optimization]] → [[foundations/probability-and-measure-theory/index|3 · Probability & Measure Theory]]**. These unlock everything else.
 
-**Step 2 — the pillar-specific foundations (read before entering that pillar):**
+**Step 2 - the pillar-specific foundations (read before entering that pillar):**
 
 | Before this pillar | Read first |
 | :--- | :--- |
@@ -53,11 +51,11 @@ This is not a menu; it is a **contract**. Each pillar's `01-from-zero-intuition`
 | **7 · ML & Alt-Data** | [[foundations/statistics-and-inference/index\|Statistics & Inference]] + [[foundations/linear-algebra-and-matrices/index\|Linear Algebra]] (PCA, regularization) |
 | **8 · Quantitative Development** | [[foundations/numerical-methods/index\|Numerical Methods]] + basic Python/C++ |
 
-**Step 3 — deeper / optional:** [[foundations/bayesian-statistics/index|Bayesian Statistics]] (the bridge into Pillar 5 and ML), and [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (multiplicative growth, Kelly sizing, ruin).
+**Step 3 - deeper / optional:** [[foundations/bayesian-statistics/index|Bayesian Statistics]] (the bridge into Pillar 5 and ML), and [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (multiplicative growth, Kelly sizing, ruin).
 
 ---
 
-### Exit ramp — now enter a pillar
+### Exit ramp - now enter a pillar
 
 You have the foundations; pick a pillar and walk its Reading Path:
 

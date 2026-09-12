@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-A model is not a fact — it is a *choice of dynamics* whose free parameters must be set so that the model **reproduces the prices the market already trades**. That act — finding the parameters that make the model's quotes match observed market quotes — is **calibration**, and it is the daily craft of every options desk.
+A model is not a fact - it is a *choice of dynamics* whose free parameters must be set so that the model **reproduces the prices the market already trades**. That act - finding the parameters that make the model's quotes match observed market quotes - is **calibration**, and it is the daily craft of every options desk.
 
 The objective is blunt: **fit the model to the smile without believing the fit.** Every parameter you change to match today's vanilla quotes is a *static* repair; it says nothing about the future dynamics the model is actually used for (exotic pricing, hedging, risk). This folder is the calibration-and-market-practice hub for Pillar 3: it is a *lookup* for the two things that matter most (the **objective function** you minimize, and the **workflow** you run each morning), and a *router* into six sub-pages that take you from the one-line idea to professional failure-mode depth.
 
@@ -22,7 +22,7 @@ The objective is blunt: **fit the model to the smile without believing the fit.*
 
 ---
 
-### 2. Mathematical Ground Truth — the objective functions (job #1)
+### 2. Mathematical Ground Truth - the objective functions (job #1)
 
 The core choice is **what distance to minimize**. Three families dominate practice (Gatheral Ch 3; Bergomi Ch 7 §7.5):
 
@@ -34,78 +34,42 @@ The core choice is **what distance to minimize**. Three families dominate practi
 
 The three disagree. In **01 · From Zero** a single-parameter fit shows the price-RMSE optimum lands at a *different* vol than the implied-vol optimum. In practice desks fit in **implied vol** (it is what is quoted, so a fit that misses it is untradeable) and often in **relative price** for exotic books, but they always *report* fit quality in both.
 
-**Regularization.** Non-uniqueness and instability force a penalty. A ridge term $+\lambda\lVert \theta-\theta_0\rVert^2$ (or $+\lambda\lVert\theta\rVert^2$) keeps parameters near a prior and stabilizes the inverse problem (see **02 · The Calibration Problem**, **04 · Stochastic Vol**). It is the price you pay for trading off fit (bias) against stability (variance) — the standard bias–variance decomposition.
+**Regularization.** Non-uniqueness and instability force a penalty. A ridge term $+\lambda\lVert \theta-\theta_0\rVert^2$ (or $+\lambda\lVert\theta\rVert^2$) keeps parameters near a prior and stabilizes the inverse problem (see **02 · The Calibration Problem**, **04 · Stochastic Vol**). It is the price you pay for trading off fit (bias) against stability (variance) - the standard bias–variance decomposition.
 
-**Why calibration is hard — the three structural obstacles:**
-1. **Non-identifiability** — different parameters give the *same* smile (SABR's $\beta$/$\rho$ ridge; the $\kappa$/$\eta$ collinearity of Heston). The smile pins the *combination*, not the parameters.
-2. **Ill-posedness** — the local-vol inversion (Dupire/Gatheral) differentiates noisy data, so tiny bid/ask noise explodes into huge local-vol spikes (**03 · Local Vol**, **05 · Failure Modes**).
-3. **Overfitting** — a rich parametric surface fits today's quotes perfectly and is useless tomorrow (or even mid-curve).
+**Why calibration is hard - the three structural obstacles:**
+1. **Non-identifiability** - different parameters give the *same* smile (SABR's $\beta$/$\rho$ ridge; the $\kappa$/$\eta$ collinearity of Heston). The smile pins the *combination*, not the parameters.
+2. **Ill-posedness** - the local-vol inversion (Dupire/Gatheral) differentiates noisy data, so tiny bid/ask noise explodes into huge local-vol spikes (**03 · Local Vol**, **05 · Failure Modes**).
+3. **Overfitting** - a rich parametric surface fits today's quotes perfectly and is useless tomorrow (or even mid-curve).
 
 ---
 
-### 3. Computational Implementation — the objective-function engine
+### 3. Computational Implementation - the objective-function engine
 
 Two objective functions on a real smile, fit with a single free parameter $\sigma$. Stdlib only.
 
-```python
-import math
 
-def N(x):  return 0.5*(1.0+math.erf(x/math.sqrt(2.0)))
 
-def bsm_call(S,X,T,r,sig):
-    d1=(math.log(S/X)+(r+0.5*sig**2)*T)/(sig*math.sqrt(T)); d2=d1-sig*math.sqrt(T)
-    return S*N(d1)-X*math.exp(-r*T)*N(d2)
-
-S0, T, r = 100.0, 1.0, 0.02
-strikes = [70,80,90,100,110,120,130]
-mkt_vol = [0.34,0.28,0.235,0.205,0.22,0.25,0.29]        # market smile
-mkt_prc = [bsm_call(S0,K,T,r,v) for K,v in zip(strikes,mkt_vol)]
-
-def prmse(sig): return math.sqrt(sum((bsm_call(S0,K,T,r,sig)-p)**2
-                                     for K,p in zip(strikes,mkt_prc))/len(strikes))
-def vrmse(sig): return math.sqrt(sum((sig-v)**2 for v in mkt_vol)/len(mkt_vol))
-
-def minimize(f,a,b):
-    gr=(math.sqrt(5)-1)/2; c=b-gr*(b-a); d=a+gr*(b-a); fc,fd=f(c),f(d)
-    while abs(b-a)>1e-8:
-        if fc<fd: b,d,fd=d,c,fc; c=b-gr*(b-a); fc=f(c)
-        else:     a,c,fc=c,d,fd; d=a+gr*(b-a); fd=f(d)
-    return (a+b)/2
-
-print("price-RMSE-optimal single vol =", round(minimize(prmse,0.05,0.6),5),
-      " prmse=",round(prmse(minimize(prmse,0.05,0.6)),5))
-print("vol-RMSE-optimal  single vol  =", round(minimize(vrmse,0.05,0.6),5),
-      " vrmse=",round(vrmse(minimize(vrmse,0.05,0.6)),5))
-print("price RMSE of the vol-optimal fit   =", round(prmse(minimize(vrmse,0.05,0.6)),5))
-print("vol   RMSE of the price-optimal fit =", round(vrmse(minimize(prmse,0.05,0.6)),5))
-```
-```
-price-RMSE-optimal single vol = 0.23904  prmse= 1.03628
-vol-RMSE-optimal  single vol  = 0.26  vrmse= 0.04318
-price RMSE of the vol-optimal fit   = 1.21277
-vol   RMSE of the price-optimal fit = 0.04799
-```
 The price-RMSE optimum ($\sigma{=}0.239$) sits *below* the vol-RMSE optimum ($\sigma{=}0.26$): dollar weighting pulls the fit toward the ATM strike, where prices are largest. **Same data, same model, different objective → different calibrated parameter.** This is job #1 of the hub: choose the objective deliberately.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-Hub signposts — full analysis lives in [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
+Hub signposts - full analysis lives in [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
-1. **Objective mismatch** — fitting in price space leaves the wings wrong (vega-weighted risk is mis-hedged); fitting in vol space can leave dollar P&L large at ATM.
-2. **Non-identifiability** — the smile fixes combinations of parameters, not the parameters themselves; two fits with identical RMSE carry different hedge ratios.
-3. **Instability** — differentiation of noisy quotes (the local-vol inversion) amplifies noise by $\sim 1/dy^2$; overfit surfaces are static, not predictive.
-4. **Recalibration drift** — a model "meant to be recalibrated daily" (Bergomi on local vol) has forward/future skews that change with recalibration — unhedgeable carry.
+1. **Objective mismatch** - fitting in price space leaves the wings wrong (vega-weighted risk is mis-hedged); fitting in vol space can leave dollar P&L large at ATM.
+2. **Non-identifiability** - the smile fixes combinations of parameters, not the parameters themselves; two fits with identical RMSE carry different hedge ratios.
+3. **Instability** - differentiation of noisy quotes (the local-vol inversion) amplifies noise by $\sim 1/dy^2$; overfit surfaces are static, not predictive.
+4. **Recalibration drift** - a model "meant to be recalibrated daily" (Bergomi on local vol) has forward/future skews that change with recalibration - unhedgeable carry.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley 2006) — Ch 1 (local vol & Dupire), Ch 3 (SV calibration, SVI), Ch 7–8 (asymptotics, dynamics). *Math-verified deep-read in the corpus.*
-- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC 2016) — Ch 2 (local-vol calibration & its instability), Ch 7 (calibration of forward-variance models, §7.5 "the vanilla smile"), Ch 5 (variance swaps, the natural calibration instrument). *Math-verified in the corpus.*
-- **Brigo–Mercurio**: *Interest Rate Models — Theory and Practice* (2nd ed.) — Ch 6 (LFM dynamics), Ch 7 (Cases of Calibration of the LFM: the cascade algorithm). *Verified in the corpus.*
-- **Duffy**: *Finite Difference Methods in Financial Engineering* (Wiley 2006) — numerical schemes used to *price* with a calibrated local-vol surface (Ch 8–12). *Corpus available.*
+- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley 2006) - Ch 1 (local vol & Dupire), Ch 3 (SV calibration, SVI), Ch 7–8 (asymptotics, dynamics). *Math-verified deep-read in the corpus.*
+- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC 2016) - Ch 2 (local-vol calibration & its instability), Ch 7 (calibration of forward-variance models, §7.5 "the vanilla smile"), Ch 5 (variance swaps, the natural calibration instrument). *Math-verified in the corpus.*
+- **Brigo–Mercurio**: *Interest Rate Models - Theory and Practice* (2nd ed.) - Ch 6 (LFM dynamics), Ch 7 (Cases of Calibration of the LFM: the cascade algorithm). *Verified in the corpus.*
+- **Duffy**: *Finite Difference Methods in Financial Engineering* (Wiley 2006) - numerical schemes used to *price* with a calibrated local-vol surface (Ch 8–12). *Corpus available.*
 
 ---
 
@@ -115,8 +79,4 @@ Hub signposts — full analysis lives in [[pillars/03-derivative-pricing/calibra
 - Sibling models: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton Hub]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest Rate Models]]
 - Sub-pages (in-folder): 01 From Zero · 02 The Calibration Problem · 03 Calibrating Local Vol · 04 Calibrating Stochastic Vol · 05 Failure Modes · 06 Advanced Extensions
 
-**Recommended reading route (audience arc):**
-- **Absolute beginner:** [[pillars/03-derivative-pricing/calibration-and-market-practice/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
-- **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/calibration-and-market-practice/02-the-calibration-problem|02 · The Calibration Problem]] → [[pillars/03-derivative-pricing/calibration-and-market-practice/03-calibrating-local-vol|03 · Calibrating Local Vol]] → [[pillars/03-derivative-pricing/calibration-and-market-practice/04-calibrating-stochastic-vol|04 · Calibrating Stochastic Vol]].
-- **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/calibration-and-market-practice/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/counterparty-risk-and-xva|Counterparty Risk & XVA]] · [[pillars/03-derivative-pricing/numerical-methods|Numerical Methods]]
+**Beginner:** start at [[pillars/03-derivative-pricing/calibration-and-market-practice/01-from-zero-intuition|01]] · **Practitioner:** start at [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05]]

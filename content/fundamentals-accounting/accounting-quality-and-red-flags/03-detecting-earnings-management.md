@@ -14,17 +14,17 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Page 02 gave you *total* accruals and showed they predict returns. But "this firm has high accruals" is a weak accusation: a firm growing sales 40% *should* have high accruals — receivables grow with sales, inventory grows with sales, and none of that is dishonest. The accusation a forensic analyst actually wants to make is stronger and narrower: **how much of this firm's accruals cannot be explained by its economic circumstances?** That residual is **discretionary accruals** — the part a manager chose, as opposed to the part the business forced.
+Page 02 gave you *total* accruals and showed they predict returns. But "this firm has high accruals" is a weak accusation: a firm growing sales 40% *should* have high accruals - receivables grow with sales, inventory grows with sales, and none of that is dishonest. The accusation a forensic analyst actually wants to make is stronger and narrower: **how much of this firm's accruals cannot be explained by its economic circumstances?** That residual is **discretionary accruals** - the part a manager chose, as opposed to the part the business forced.
 
 Dechow, Sloan & Sweeney (1995) is the paper that put this on a rigorous footing. It does not propose one model; it **evaluates a family of competing models** for the nondiscretionary benchmark and asks two questions that decide everything:
 
-1. **Specification** — does the model falsely flag innocent firms (type I error)?
-2. **Power** — does the model actually catch real earnings management (type II error)?
+1. **Specification** - does the model falsely flag innocent firms (type I error)?
+2. **Power** - does the model actually catch real earnings management (type II error)?
 
 Their answers, which are the operating manual for every discretionary-accrual study since:
 
 - **On random samples, all the models are fine.** Specification is not the problem.
-- **For small manipulations, all the models are weak.** They have low power for earnings management of **1–5% of total assets** — i.e. plenty of real-world manipulation is simply invisible to these tools.
+- **For small manipulations, all the models are weak.** They have low power for earnings management of **1–5% of total assets** - i.e. plenty of real-world manipulation is simply invisible to these tools.
 - **When performance is extreme (very good or very bad years), all models reject the null too often.** This is the killer: the models mis-specify precisely in the firms you most care about, because they fail to fully control for performance.
 - **A modified version of the Jones (1991) model has the most power**, because it adjusts for the one thing the original Jones model wrongly assumes: that *revenue is nondiscretionary*.
 
@@ -40,11 +40,11 @@ $$
 \text{TA}_t = \underbrace{\text{NDA}_t}_{\text{model says this is normal}} + \underbrace{\text{DA}_t}_{\text{the residual = "management"}}.
 $$
 
-**Model 1 — Healy (1985).** Nondiscretionary accruals are a **constant** (the average total accruals of the estimation period). Simple, and appropriate if accruals are white noise around a stable mean.
+**Model 1 - Healy (1985).** Nondiscretionary accruals are a **constant** (the average total accruals of the estimation period). Simple, and appropriate if accruals are white noise around a stable mean.
 
-**Model 2 — DeAngelo (1986).** Nondiscretionary accruals are **last period's total accruals** — a random-walk benchmark, a special case of Healy with a one-year estimation period. Better if accruals follow a random walk.
+**Model 2 - DeAngelo (1986).** Nondiscretionary accruals are **last period's total accruals** - a random-walk benchmark, a special case of Healy with a one-year estimation period. Better if accruals follow a random walk.
 
-**Model 3 — the Jones (1991) model.** Relaxes "constant" by explicitly modelling *economic circumstances*:
+**Model 3 - the Jones (1991) model.** Relaxes "constant" by explicitly modelling *economic circumstances*:
 
 $$
 \text{NDA}_t = \alpha_1\!\left(\frac{1}{A_{t-1}}\right) + \alpha_2\!\left(\frac{\Delta REV_t}{A_{t-1}}\right) + \alpha_3\!\left(\frac{PPE_t}{A_{t-1}}\right), \tag{6}
@@ -58,7 +58,7 @@ $$
 
 Jones reports the model explains about **a quarter** of the variation in total accruals.
 
-**Model 4 — the Modified Jones model (Dechow, Sloan & Sweeney's recommendation).** The flaw in Jones: it assumes *revenue is nondiscretionary*, so a manager who stuffs revenue at year-end inflates $\Delta REV$, the model *attributes* that rise to "normal," and the manipulation is subtracted away — the estimate of DA is **biased toward zero**. The fix: in the **event period only**, adjust the revenue change for the change in receivables:
+**Model 4 - the Modified Jones model (Dechow, Sloan & Sweeney's recommendation).** The flaw in Jones: it assumes *revenue is nondiscretionary*, so a manager who stuffs revenue at year-end inflates $\Delta REV$, the model *attributes* that rise to "normal," and the manipulation is subtracted away - the estimate of DA is **biased toward zero**. The fix: in the **event period only**, adjust the revenue change for the change in receivables:
 
 $$
 \boxed{\;\text{NDA}_t = \alpha_1\!\left(\frac{1}{A_{t-1}}\right) + \alpha_2\!\left(\frac{\Delta REV_t - \Delta REC_t}{A_{t-1}}\right) + \alpha_3\!\left(\frac{PPE_t}{A_{t-1}}\right)\;} \tag{7}
@@ -66,7 +66,7 @@ $$
 
 Parameters come from the **original** Jones estimation. The logic: it is easier to manage earnings through **credit sales** than cash sales, and a credit sale raises receivables. Subtracting $\Delta REC$ removes the receivable-side inflation from the "normal" benchmark, so the managed revenue stays in the residual where it belongs. The model's *assumption* is the reverse of Jones's: **all** change in credit sales in the event period is treated as management.
 
-**Model 5 — the Industry model (Dechow & Sloan 1991).** Nondiscretionary accruals track the industry median rather than the firm's own revenue/PPE:
+**Model 5 - the Industry model (Dechow & Sloan 1991).** Nondiscretionary accruals track the industry median rather than the firm's own revenue/PPE:
 
 $$
 \text{NDA}_t = \gamma_1 + \gamma_2\,\text{median}_{industry}\!\left(\frac{TA_t}{A_{t-1}}\right).
@@ -78,95 +78,34 @@ Good when industry factors dominate; bad when a firm's circumstances diverge fro
 
 ---
 
-### 3. Computational Implementation — Jones vs. Modified Jones, from scratch
+### 3. Computational Implementation - Jones vs. Modified Jones, from scratch
 
 Stdlib only, no numpy: the OLS is solved with normal equations and Gaussian elimination. The script simulates a firm panel whose total accruals follow the Jones process, injects a *known* amount of credit-sales earnings management, estimates the model on an **unmanaged estimation period**, and then measures the average discretionary accrual each model recovers. It runs the experiment at two manipulation sizes, because the size is what determines whether detection is even possible.
 
-```python
-# Dechow, Sloan & Sweeney (1995): Jones vs. Modified Jones discretionary accruals.
-import random
-random.seed(11)
-a1, a2, a3 = 500.0, 0.10, 0.06            # true Jones-model parameters
-N = 400
-base = []
-for i in range(N):
-    A = random.uniform(800, 1200)
-    dREV0 = random.uniform(-100, 200)     # true (unmanipulated) revenue change
-    dREC0 = random.uniform(-40, 90)
-    PPE = random.uniform(300, 700)
-    base.append((A, dREV0, dREC0, PPE, i % 2 == 0))   # True = managed firm
 
 
-def ols(y, X):
-    k = len(X[0])
-    M = [[sum(X[i][p]*X[i][q] for i in range(len(X))) for q in range(k)] +
-         [sum(X[i][p]*y[i] for i in range(len(X)))] for p in range(k)]
-    for c in range(k):
-        p = max(range(c, k), key=lambda r: abs(M[r][c])); M[c], M[p] = M[p], M[c]
-        for r in range(k):
-            if r != c:
-                f = M[r][c]/M[c][c]
-                M[r] = [M[r][j]-f*M[c][j] for j in range(k+1)]
-    return [M[i][k]/M[i][i] for i in range(k)]
-
-
-# --- estimation period: unmanaged firm-years (total accruals follow the Jones process)
-est = [r for r in base if not r[4]]
-b = ols([a1/A + a2*(dREV0/A) + a3*(PPE/A) for (A, dREV0, dREC0, PPE, m) in est],
-        [[1.0/A, dREV0/A, PPE/A] for (A, dREV0, dREC0, PPE, m) in est])
-print(f"Jones OLS on estimation period (true 500, 0.10, 0.06): "
-      f"a1={b[0]:.1f}  a2={b[1]:.4f}  a3={b[2]:.4f}")
-av = lambda v: sum(v)/len(v)
-
-for inj in (0.01, 0.08):                       # manipulation = 1% then 8% of lagged assets
-    ev = [r for r in base if r[4]]             # event period: managed firms
-    jones, modj = [], []
-    for (A, dREV0, dREC0, PPE, _) in ev:
-        true_nda = a1/A + a2*(dREV0/A) + a3*(PPE/A)
-        TA = true_nda + inj                    # reported accruals include the injection
-        dREV, dREC = dREV0 + inj*A, dREC0 + inj*A   # credit sales: revenue AND receivables up
-        jones.append(TA - (b[0]/A + b[1]*(dREV/A)        + b[2]*(PPE/A)))
-        modj.append( TA - (b[0]/A + b[1]*((dREV-dREC)/A) + b[2]*(PPE/A)))
-    det = lambda v: sum(abs(x) > 0.01 for x in v)/len(v)
-    print(f"\ninjected discretionary accruals = {inj:.2f}  (event n={len(ev)})")
-    print(f"  Jones          mean DA = {av(jones):.4f}  |bias| = {abs(av(jones)-inj):.4f}  "
-          f"detection |DA|>1%: {det(jones):.2f}")
-    print(f"  Modified Jones mean DA = {av(modj):.4f}  |bias| = {abs(av(modj)-inj):.4f}  "
-          f"detection |DA|>1%: {det(modj):.2f}")
-```
-```
-Jones OLS on estimation period (true 500, 0.10, 0.06): a1=500.0  a2=0.1000  a3=0.0600
-
-injected discretionary accruals = 0.01  (event n=200)
-  Jones          mean DA = 0.0090  |bias| = 0.0010  detection |DA|>1%: 0.00
-  Modified Jones mean DA = 0.0122  |bias| = 0.0022  detection |DA|>1%: 0.64
-
-injected discretionary accruals = 0.08  (event n=200)
-  Jones          mean DA = 0.0720  |bias| = 0.0080  detection |DA|>1%: 1.00
-  Modified Jones mean DA = 0.0822  |bias| = 0.0022  detection |DA|>1%: 1.00
-```
-The output is exactly the paper's story, reproduced on simulated data. **Jones recovers 0.0720 of a true 0.0800 — a −0.0080 bias toward zero, because it "explains away" 10% of the injection as normal revenue.** Modified Jones recovers 0.0822 (bias $+0.0022$). At **1% of assets** the picture inverts the naive expectation: Jones misses the manipulation entirely (detection 0.00), while Modified Jones catches most of it (0.64) — the *power* advantage Dechow et al. found.
+The output is exactly the paper's story, reproduced on simulated data. **Jones recovers 0.0720 of a true 0.0800 - a −0.0080 bias toward zero, because it "explains away" 10% of the injection as normal revenue.** Modified Jones recovers 0.0822 (bias $+0.0022$). At **1% of assets** the picture inverts the naive expectation: Jones misses the manipulation entirely (detection 0.00), while Modified Jones catches most of it (0.64) - the *power* advantage Dechow et al. found.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Low power is the base case, not a bug.** Nobody's discretionary-accrual model reliably detects management below ~5% of assets. If your screen finds "no earnings management" at a firm, the honest statement is *"no management large enough for this tool to see"* — and small manipulation is common and durable. Report the power, never just the p-value.
+1. **Low power is the base case, not a bug.** Nobody's discretionary-accrual model reliably detects management below ~5% of assets. If your screen finds "no earnings management" at a firm, the honest statement is *"no management large enough for this tool to see"* - and small manipulation is common and durable. Report the power, never just the p-value.
 2. **Extreme performance contaminates the residual.** A firm having a catastrophic year *must* have extreme accruals (write-downs, provisions). The benchmark under-controls for it, so DA spikes and the model screams "management" when the truth is "a bad year." Add a performance control (e.g. lagged ROA) or restrict the sample.
 3. **The models eat the manipulation they are meant to find.** Jones removes revenue-driven management; the Industry model removes management common to the whole industry; a model with a performance control removes performance-driven management. Every control you add removes *both* nondiscretionary accruals and the discretionary accruals correlated with them. This is the fundamental tension: **you can never fully separate the two, only trade bias against variance.**
-4. **Parameter estimation needs a clean estimation period.** If the firm manages earnings every year (serial manipulation), the estimation period is contaminated and the benchmark is wrong. Dechow et al.'s assumption — reported earnings are *unmanaged* in the estimation window — is an assumption about circumstances, not a fact; when it fails, DA is unreliable.
+4. **Parameter estimation needs a clean estimation period.** If the firm manages earnings every year (serial manipulation), the estimation period is contaminated and the benchmark is wrong. Dechow et al.'s assumption - reported earnings are *unmanaged* in the estimation window - is an assumption about circumstances, not a fact; when it fails, DA is unreliable.
 5. **Discretion is not the same as fraud.** Discretionary accruals measure *deviation from a model*, which includes legitimate business judgement, differing accounting policies, and a firm merely growing faster than its peers. Treating every high-DA firm as fraudulent is the model's most common misuse.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Dechow, Patricia M., Sloan, Richard G. & Sweeney, Amy P.**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995) — the model family (Healy, DeAngelo, Jones, Modified Jones, Industry), the specification/power design, and the conclusion that Modified Jones has the most power. *All model equations and findings on this page verified against the corpus paper.*
-- **Jones, Jennifer J.**: "Earnings Management During Import Relief Investigations" (*JAR*, 29(2), 193–228, 1991) — the original Jones model this page builds on.
-- **Healy, Paul M.**: "The Effect of Bonus Schemes on Accounting Decisions" (*JAE*, 7, 85–107, 1985) — the constant-accruals benchmark and the bonus-plan incentive story.
-- **DeAngelo, Linda E.**: "Accounting Numbers as Market Valuation Substitutes…" (*JAR*, 24(2), 400–420, 1986) — the random-walk (last-period-accruals) benchmark.
-- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature…" (*Accounting Horizons*, 13(4), 365–383, 1999) — the organising survey: *why* earnings get managed and what incentives drive it.
-- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010) — places discretionary accruals among all quality proxies and warns that the proxy chosen determines the conclusion.
+- **Dechow, Patricia M., Sloan, Richard G. & Sweeney, Amy P.**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995) - the model family (Healy, DeAngelo, Jones, Modified Jones, Industry), the specification/power design, and the conclusion that Modified Jones has the most power. *All model equations and findings on this page verified against the corpus paper.*
+- **Jones, Jennifer J.**: "Earnings Management During Import Relief Investigations" (*JAR*, 29(2), 193–228, 1991) - the original Jones model this page builds on.
+- **Healy, Paul M.**: "The Effect of Bonus Schemes on Accounting Decisions" (*JAE*, 7, 85–107, 1985) - the constant-accruals benchmark and the bonus-plan incentive story.
+- **DeAngelo, Linda E.**: "Accounting Numbers as Market Valuation Substitutes…" (*JAR*, 24(2), 400–420, 1986) - the random-walk (last-period-accruals) benchmark.
+- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature…" (*Accounting Horizons*, 13(4), 365–383, 1999) - the organising survey: *why* earnings get managed and what incentives drive it.
+- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010) - places discretionary accruals among all quality proxies and warns that the proxy chosen determines the conclusion.
 
 ---
 

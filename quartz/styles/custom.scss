@@ -13,13 +13,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 :root {
-  --math-inline: #3f3d9e; // ink colour for inline math
-  --math-inline-bg: #eef0fb; // its background chip
-  --math-display-bg: #f7f8fc; // panel behind display equations
-  --math-accent: #6366f1; // left rule on display equations
-}
-
-[saved-theme="dark"] {
   --math-inline: #b6bcff;
   --math-inline-bg: rgba(120, 130, 255, 0.16);
   --math-display-bg: rgba(148, 163, 184, 0.07);
@@ -82,4 +75,20 @@ h4 + .katex-display {
 ul.tags,
 a.tag-link {
   display: none !important;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DARK-ONLY THEME
+// The light palette was removed (quartz.config.ts colors.lightMode now mirrors
+// darkMode). Hide the pointless toggle so readers can't flip to a theme that
+// no longer exists.
+// ─────────────────────────────────────────────────────────────────────────────
+.darkmode {
+  display: none !important;
+}
+
+// Folder pages ("N items under this folder") and tag pages: drop the per-item
+// date line - it reads as noise and the index ordering carries the structure.
+.page-listing .meta {
+  display: none;
 }

@@ -20,11 +20,11 @@ Start with the sentence every analyst has heard: *"Our portfolio is net-zero ali
 
 Four steps, four "aha"s:
 
-1. **Two risks, one cash flow.** *Physical risk* is damage to assets and supply chains (acute: storm, flood, wildfire; chronic: heat, drought, sea level). *Transition risk* is the cost of changing the economy (carbon prices, technology substitution, consumer and investor preferences). Both land in the same place — earnings — which is why a single valuation channel can hold both.
+1. **Two risks, one cash flow.** *Physical risk* is damage to assets and supply chains (acute: storm, flood, wildfire; chronic: heat, drought, sea level). *Transition risk* is the cost of changing the economy (carbon prices, technology substitution, consumer and investor preferences). Both land in the same place - earnings - which is why a single valuation channel can hold both.
 
-2. **Carbon is a cost per unit of output, not a return per unit of price.** Raise a carbon price by \$50/t and a firm emitting $4$ kg of CO2 per $ $\$1 of revenue takes a \0.20 hit per \$1 of revenue. That is a **margin** event, and margins are what shareholders own. It is why the canonical exposure metric — weighted average carbon intensity — is emissions *divided by revenue*.
+2. **Carbon is a cost per unit of output, not a return per unit of price.** Raise a carbon price by \$50/t and a firm emitting $4$ kg of CO2 per $ $\$1 of revenue takes a \0.20 hit per \$1 of revenue. That is a **margin** event, and margins are what shareholders own. It is why the canonical exposure metric - weighted average carbon intensity - is emissions *divided by revenue*.
 
-3. **The horizon kills the standard machinery.** A one-day $99\%$ VaR of an equity book asks about *tomorrow*; climate damage and policy arrive over **decades**. The annualised equivalent of a $30$-year $30\%$ loss is about $-0.0047\%$ per day — roughly $1000\times$ smaller than the daily VaR it must compete with (§3, panel A). No historical-simulation engine will ever flag it. The fix is not a better estimator; it is a *different instrument*: scenarios.
+3. **The horizon kills the standard machinery.** A one-day $99\%$ VaR of an equity book asks about *tomorrow*; climate damage and policy arrive over **decades**. The annualised equivalent of a $30$-year $30\%$ loss is about $-0.0047\%$ per day - roughly $1000\times$ smaller than the daily VaR it must compete with (§3, panel A). No historical-simulation engine will ever flag it. The fix is not a better estimator; it is a *different instrument*: scenarios.
 
 4. **The data boundary defines the answer.** "Scope 1+2" (direct + purchased energy) and "Scope 1+2+3" (adding the value chain) are both legitimate, both standards-compliant, and differ by $13.5\times$ for the same firm and the same year (§3, panel B). ESG ratings are constructed from the same kind of contested inputs, and disagree accordingly. So the *first* question about any climate number is not "is the model right?" but **"what was measured, over what boundary, in what vintage?"**
 
@@ -36,7 +36,7 @@ Four steps, four "aha"s:
 $$
 \boxed{\ d = (1-L)^{1/(252\,T)}-1\ }
 $$
-which is the number a daily risk report *would* have to show if climate risk were a diffusion. Because $d$ scales like $-L/(252T)$ for small $L$, it decays as $1/T$: **the longer the true horizon, the smaller the daily signature — the opposite of comfort.** Comparing it to a normal $99\%$ VaR, $\mathrm{VaR}_\alpha=\sigma z_\alpha$ with $z_{0.99}=2.326348$, gives the "invisibility ratio" of §3.
+which is the number a daily risk report *would* have to show if climate risk were a diffusion. Because $d$ scales like $-L/(252T)$ for small $L$, it decays as $1/T$: **the longer the true horizon, the smaller the daily signature - the opposite of comfort.** Comparing it to a normal $99\%$ VaR, $\mathrm{VaR}_\alpha=\sigma z_\alpha$ with $z_{0.99}=2.326348$, gives the "invisibility ratio" of §3.
 
 **Carbon cost as a margin identity.** For a firm with emissions intensity $I_i=E_i/R_i$ (tCO2e per $ $\$1 of revenue), a carbon price step \Delta p$ ($ \$/tCO2e) and pass-through \lambda\in[0,1]:
 $$
@@ -48,65 +48,23 @@ with $M_i$ a valuation multiple (firm value / profit). Summing over holdings giv
 $$
 E^{\text{total}}=E_{\text{S1}}+E_{\text{S2}}+E_{\text{S3}},
 $$
-where **Scope 1** is direct combustion, **Scope 2** is purchased electricity/heat/steam, and **Scope 3** is everything upstream and downstream in the value chain. The TCFD recommends reporting **Scope 1+2** always and **Scope 3** when material; PCAF standardises attributing financed emissions to a portfolio share. The scope choice is a *definition*, and definitions do not have error bars — which is precisely why the number moves so much.
+where **Scope 1** is direct combustion, **Scope 2** is purchased electricity/heat/steam, and **Scope 3** is everything upstream and downstream in the value chain. The TCFD recommends reporting **Scope 1+2** always and **Scope 3** when material; PCAF standardises attributing financed emissions to a portfolio share. The scope choice is a *definition*, and definitions do not have error bars - which is precisely why the number moves so much.
 
 **Double materiality.** Two evaluations of the same firm, both legitimate and useful:
 $$
 \text{financial materiality: } \frac{\partial(\text{firm cash flows})}{\partial(\text{climate variable})},\qquad
 \text{impact materiality: } \frac{\partial(\text{climate variable})}{\partial(\text{firm activity})}.
 $$
-A quant uses the **first** as a risk input (it is a derivative of cash flows). The **second** is a mandate/constraint ("align the portfolio with 1.5 °C"), implemented as an optimisation constraint — never as a risk number. Conflating the two produces the familiar absurdity of a "high-ESG" portfolio that is also high-carbon: the score measured disclosure quality and controversy management, not emissions.
+A quant uses the **first** as a risk input (it is a derivative of cash flows). The **second** is a mandate/constraint ("align the portfolio with 1.5 °C"), implemented as an optimisation constraint - never as a risk number. Conflating the two produces the familiar absurdity of a "high-ESG" portfolio that is also high-carbon: the score measured disclosure quality and controversy management, not emissions.
 
 ---
 
-### 3. Computational Implementation — the horizon mismatch and the scope boundary
+### 3. Computational Implementation - the horizon mismatch and the scope boundary
 
 Two panels. (A) shows why a daily risk system cannot see climate risk; (B) shows how far the *definition* of the exposure moves the reported number; (C) translates a carbon price into a margin event. Standard library only.
 
-```python
-# c2_zero.py — the horizon mismatch and the scope boundary (page 01 §3)
-import math
 
-# (A) a slow climate loss is invisible inside a one-day VaR
-total_loss, years, vol = 0.30, 30.0, 0.02
-n_days = int(years * 252)
-drift = (1.0 - total_loss) ** (1.0 / n_days) - 1.0
-z99 = 2.3263478740408408                     # Phi^{-1}(0.99), cf. the VaR folder
-var99 = z99 * vol
-print("(A) the horizon mismatch")
-print(f"    30-year 30% climate loss on equity -> equivalent daily drift {100*drift:+.5f}% / day")
-print(f"    1-day 99% VaR of a 2.0%-vol equity -> {100*var99:.3f}%")
-print(f"    ratio (daily VaR / climate drift)  = {var99/abs(drift):,.0f}x")
 
-# (B) the scope boundary: the same firm and year, three legitimate headline numbers
-rev = 5000.0
-s1, s2, s3 = 50_000.0, 30_000.0, 1_000_000.0
-print(f"(B) scope-boundary effect on measured intensity (revenue ${rev:,.0f}m)")
-for label, e in (("Scope 1+2", s1 + s2), ("Scope 1+2+3", s1 + s2 + s3)):
-    print(f"    {label:12s} = {e/rev:8.1f} tCO2e per $m revenue")
-print(f"    Scope 3 alone multiplies the headline number by {(s1+s2+s3)/(s1+s2):.1f}x")
-
-# (C) pass-through decides whether a carbon price is a margin event or noise
-p = 50.0                      # $/tCO2e
-cost_per_100 = 0.25 * p       # 0.25 tCO2e per $100 of revenue
-ebitda_per_100 = 20.0         # 20% EBITDA margin on $100 revenue
-print(f"(C) carbon cost at ${p:.0f}/t for a firm emitting 0.25 tCO2e per $100 revenue")
-print(f"    total cost = ${cost_per_100:.2f} per $100 revenue = {100*cost_per_100/ebitda_per_100:.1f}% of EBITDA")
-print(f"    with 70% pass-through = {100*0.30*cost_per_100/ebitda_per_100:.1f}% of EBITDA")
-```
-```
-(A) the horizon mismatch
-    30-year 30% climate loss on equity -> equivalent daily drift -0.00472% / day
-    1-day 99% VaR of a 2.0%-vol equity -> 4.653%
-    ratio (daily VaR / climate drift)  = 986x
-(B) scope-boundary effect on measured intensity (revenue $5,000m)
-    Scope 1+2    =     16.0 tCO2e per $m revenue
-    Scope 1+2+3  =    216.0 tCO2e per $m revenue
-    Scope 3 alone multiplies the headline number by 13.5x
-(C) carbon cost at $50/t for a firm emitting 0.25 tCO2e per $100 revenue
-    total cost = $12.50 per $100 revenue = 62.5% of EBITDA
-    with 70% pass-through = 18.8% of EBITDA
-```
 
 Panel (A): the daily VaR is $986\times$ larger than the climate drift, so the climate signal is *below the noise floor by three orders of magnitude*. Panel (B): one definitional choice moves the intensity $13.5\times$. Panel (C): the same carbon price is either a $62.5\%$ EBITDA event or an $18.8\%$ one, depending only on pass-through. Together they explain why the rest of this folder is about scenarios (03) and data quality (05) rather than about cleverer estimators.
 
@@ -118,18 +76,18 @@ Panel (A): the daily VaR is $986\times$ larger than the climate drift, so the cl
 2. **Reading a rating as a measurement.** An ESG score is a weighted aggregation of contested indicators; the same firm legitimately ranks $2$nd and $8$th out of eight across three raters ([[pillars/04-quantitative-risk/climate-and-esg-risk/04-esg-scores-and-the-carbon-premium|04 · §3]]). Never treat it as an observed variable with small noise.
 3. **Confusing financial and impact materiality.** A portfolio optimised on impact (an emissions-reduction constraint) is not thereby lower-risk; a portfolio optimised on financial materiality is not thereby greener. State which one the mandate means.
 4. **Scope shopping.** Moving the boundary between Scope 1+2 and 1+2+3 changes the headline by an order of magnitude; a provider that reports only the favourable boundary is not lying, it is choosing. Pin the boundary in the reporting standard, not in the marketing.
-5. **Ignoring pass-through.** $\lambda$ is the single most influential and least scrutinised assumption in a carbon-price stress test — a factor of five in §3. It is an *economic* estimate and should be challenged like one.
+5. **Ignoring pass-through.** $\lambda$ is the single most influential and least scrutinised assumption in a carbon-price stress test - a factor of five in §3. It is an *economic* estimate and should be challenged like one.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **TCFD**, *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, 2017) — the physical/transition taxonomy and recommended metrics. *Primary framework source.*
-- **Carney, M.**, *Breaking the Tragedy of the Horizon — Climate Change and Financial Stability* (Bank of England speech, 29 September 2015) — the origin of the horizon-mismatch argument quantifies in §3(A).
-- **Greenhouse Gas Protocol**, *Corporate Standard* (2004) and *Scope 3 Standard* (2011) — the Scope 1/2/3 definitions.
-- **PCAF**, *The Global GHG Accounting and Reporting Standard for the Financial Industry* — portfolio attribution.
-- **High-Level Commission on Carbon Prices** (Stern & Stiglitz), *Report* (World Bank, 2017) — the \$40–\$80 / \$50–\$100 corridor used as a shadow-price starting point.
-- **Bolton, P. & Kacperczyk, M.**, *Do investors care about carbon risk?*, *Journal of Financial Economics* 142(2) (2021) — empirical evidence that the market prices the exposure described here.
+- **TCFD**, *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, 2017) - the physical/transition taxonomy and recommended metrics. *Primary framework source.*
+- **Carney, M.**, *Breaking the Tragedy of the Horizon - Climate Change and Financial Stability* (Bank of England speech, 29 September 2015) - the origin of the horizon-mismatch argument quantifies in §3(A).
+- **Greenhouse Gas Protocol**, *Corporate Standard* (2004) and *Scope 3 Standard* (2011) - the Scope 1/2/3 definitions.
+- **PCAF**, *The Global GHG Accounting and Reporting Standard for the Financial Industry* - portfolio attribution.
+- **High-Level Commission on Carbon Prices** (Stern & Stiglitz), *Report* (World Bank, 2017) - the \$40–\$80 / \$50–\$100 corridor used as a shadow-price starting point.
+- **Bolton, P. & Kacperczyk, M.**, *Do investors care about carbon risk?*, *Journal of Financial Economics* 142(2) (2021) - empirical evidence that the market prices the exposure described here.
 
 ---
 

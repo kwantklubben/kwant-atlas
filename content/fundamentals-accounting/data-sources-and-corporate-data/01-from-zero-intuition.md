@@ -13,9 +13,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of fundamental data with **no prior knowledge needed**. The objective is one idea: **a fundamental number is not a fact of nature — it is a claim made by a company, on a date, in a document, under a set of accounting rules; and "where the numbers come from" is a question with a real, inspectable answer.**
+This page builds the *why* of fundamental data with **no prior knowledge needed**. The objective is one idea: **a fundamental number is not a fact of nature - it is a claim made by a company, on a date, in a document, under a set of accounting rules; and "where the numbers come from" is a question with a real, inspectable answer.**
 
-Start with the dumbest question: *where does "FY2022 revenue = 1000" actually live?* It is not in a database in the sky. It is a number typed into a **10-K** filed with the SEC, tagged with an **XBRL** element name, stored in EDGAR, and then copied — with each provider's own adjustments — into Sharadar, Compustat, Bloomberg, Yahoo. Every one of those copies can differ, and the *original* is always the filing.
+Start with the dumbest question: *where does "FY2022 revenue = 1000" actually live?* It is not in a database in the sky. It is a number typed into a **10-K** filed with the SEC, tagged with an **XBRL** element name, stored in EDGAR, and then copied - with each provider's own adjustments - into Sharadar, Compustat, Bloomberg, Yahoo. Every one of those copies can differ, and the *original* is always the filing.
 
 Three steps, three "aha"s:
 
@@ -26,13 +26,13 @@ Three steps, three "aha"s:
    | Layer | What it is | Example | Who owns the risk |
    |---|---|---|---|
    | **L0 raw** | The filing as published | 10-K HTML + XBRL companyfacts JSON | nobody standardizes it for you |
-   | **L1 canonical** | Tagged concepts mapped to a fixed schema | `us-gaap:NetIncomeLoss` → `net_income` | *tag ambiguity* — see [[fundamentals-accounting/data-sources-and-corporate-data/02-sec-edgar-and-xbrl\|02 · SEC EDGAR & XBRL]] |
+   | **L1 canonical** | Tagged concepts mapped to a fixed schema | `us-gaap:NetIncomeLoss` → `net_income` | *tag ambiguity* - see [[fundamentals-accounting/data-sources-and-corporate-data/02-sec-edgar-and-xbrl\|02 · SEC EDGAR & XBRL]] |
    | **L2 panel** | One row per (firm, period, **as-of date**) | a PIT table that is never overwritten | *look-ahead* if you skip the as-of date |
    | **L3 signal** | Margins, ROE, growth, screen ranks | `ROE = NI / avg equity` | *bias propagation* from every layer below |
 
    The whole discipline of this folder is: **never compute L3 on anything but an honest L2.** Most people compute L3 directly off an L0/L1 convenience download and never notice the leak.
 
-3. **"As reported" is not "as restated," and the difference is the future.** A company's 2020 revenue will be re-filed in a later 10-K/10-K/A if it is reclassified. If your database shows the *restated* 2020 figure while you are standing in 2021, your screen is reading a number that did not exist yet — the classic look-ahead leak, and the subject of [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|05 · Failure Modes]].
+3. **"As reported" is not "as restated," and the difference is the future.** A company's 2020 revenue will be re-filed in a later 10-K/10-K/A if it is reclassified. If your database shows the *restated* 2020 figure while you are standing in 2021, your screen is reading a number that did not exist yet - the classic look-ahead leak, and the subject of [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|05 · Failure Modes]].
 
 ---
 
@@ -70,69 +70,37 @@ $$
 \Delta\text{growth} = \frac{R_{y+1}}{\tilde{R}_{y}} - \frac{R_{y+1}}{R_{y}} \neq 0,
 $$
 
-so even a *single* restated denominator silently rewrites every growth number that depends on it — which is why the leak is so easy to miss and so corrosive to a screen (§3 measures it).
+so even a *single* restated denominator silently rewrites every growth number that depends on it - which is why the leak is so easy to miss and so corrosive to a screen (§3 measures it).
 
 ---
 
-### 3. Computational Implementation — the stack, and one measured look-ahead leak
+### 3. Computational Implementation - the stack, and one measured look-ahead leak
 
 Stdlib only. It prints the four-layer stack and then quantifies a single 2020 restatement's effect on the 2021 growth figure a screen would have computed at the time.
 
-```python
-# The four layers of a fundamental data stack, and one look-ahead leak.
-# L0 raw filing text/XBRL  ->  L1 canonical fields  ->  L2 point-in-time panel  ->  L3 signal
-layers = {
-    "L0 raw":      "10-K/10-Q/8-K as filed + XBRL companyfacts JSON",
-    "L1 canonical": "us-gaap tags -> {revenue, net_income, assets, equity, cfo, capex}",
-    "L2 panel":     "one row per (firm, period, as-of date), never overwritten",
-    "L3 signal":    "margin, ROE, growth, screen ranks computed off L2",
-}
-for k, v in layers.items():
-    print(f"{k:14s} {v}")
 
-# The look-ahead leak: a 2020 revenue reclass restated AFTER the fact.
-as_first_reported = {2019: 100.0, 2020: 88.0, 2021: 120.0}   # what the 10-Ks said at the time
-as_restated       = {2019: 100.0, 2020: 92.0, 2021: 120.0}   # later restatement of 2020
 
-def growth(d, y):
-    return (d[y] - d[y - 1]) / d[y - 1]
 
-g_first, g_rest = growth(as_first_reported, 2021), growth(as_restated, 2021)
-print(f"\n2021 revenue growth, as-first-reported : {g_first*100:6.2f}%")
-print(f"2021 revenue growth, restated data     : {g_rest*100:6.2f}%")
-print(f"look-ahead inflation                   : {(g_first-g_rest)*100:6.2f} pp")
-```
-```
-L0 raw         10-K/10-Q/8-K as filed + XBRL companyfacts JSON
-L1 canonical   us-gaap tags -> {revenue, net_income, assets, equity, cfo, capex}
-L2 panel       one row per (firm, period, as-of date), never overwritten
-L3 signal      margin, ROE, growth, screen ranks computed off L2
-
-2021 revenue growth, as-first-reported :  36.36%
-2021 revenue growth, restated data     :  30.43%
-look-ahead inflation                   :   5.93 pp
-```
-
-The lesson is not that 5.93 points is enormous — it is that the *same firm, the same two years* produced two materially different growth readings depending only on **which vintage of the database was read**. Multiply that across a screen of hundreds of names and it is the difference between a real edge and a data artifact.
+The lesson is not that 5.93 points is enormous - it is that the *same firm, the same two years* produced two materially different growth readings depending only on **which vintage of the database was read**. Multiply that across a screen of hundreds of names and it is the difference between a real edge and a data artifact.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Provenance blindness (first principle: a number is a claim, not a fact).** "Revenue is 1000" is incomplete without *who tagged it, when, and whether it was later revised*. Always carry `source` and `as-of` alongside the value. Fully developed in [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|05 · Failure Modes]].
-2. **Convenience-first extraction (first principle: the downstream copy encodes choices).** Starting from a Yahoo `quoteSummary` scrape means inheriting an unknown standardization and *no as-of date* — fine for eyeballing a P/E, fatal for a backtest. Start from EDGAR when fidelity matters ([[fundamentals-accounting/data-sources-and-corporate-data/02-sec-edgar-and-xbrl|02]]).
+2. **Convenience-first extraction (first principle: the downstream copy encodes choices).** Starting from a Yahoo `quoteSummary` scrape means inheriting an unknown standardization and *no as-of date* - fine for eyeballing a P/E, fatal for a backtest. Start from EDGAR when fidelity matters ([[fundamentals-accounting/data-sources-and-corporate-data/02-sec-edgar-and-xbrl|02]]).
 3. **Duration/instant confusion (first principle: flows span a period, stocks are a point).** Storing a balance-sheet "instant" in the same column as a P&L "duration" makes every average-denominator ratio wrong. Tag the fact type at L1.
-4. **Overwriting on restatement (first principle: $\mathcal{P}$ must keep vintages).** A panel that keeps only the latest value cannot reconstruct the past — the exact defect that makes naive Compustat backtests look better than they were ([[fundamentals-accounting/data-sources-and-corporate-data/03-commercial-providers|03]]).
+4. **Overwriting on restatement (first principle: $\mathcal{P}$ must keep vintages).** A panel that keeps only the latest value cannot reconstruct the past - the exact defect that makes naive Compustat backtests look better than they were ([[fundamentals-accounting/data-sources-and-corporate-data/03-commercial-providers|03]]).
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **SEC**, *EDGAR APIs* documentation — the primary spec for the L0 layer this page describes; verified against the local data-access notes (`Data_SEC_EDGAR_access.txt`).
-- **XBRL US / XBRL International** taxonomies — the concept dictionary that turns a filing into a canonical field.
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* — the plain-English route to the statements whose numbers the filings contain.
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 7 (reformulation) — why the *stock* a flow is measured against must be defined precisely; the same discipline applied to extraction.
-- **Sloan, Richard** (*TAR*, 1996) — as-reported earnings vs. subsequent restatements differ *economically*; the empirical reason restatement gaps matter.
+- **SEC**, *EDGAR APIs* documentation - the primary spec for the L0 layer this page describes; verified against the local data-access notes (`Data_SEC_EDGAR_access.txt`).
+- **XBRL US / XBRL International** taxonomies - the concept dictionary that turns a filing into a canonical field.
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - the plain-English route to the statements whose numbers the filings contain.
+- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 7 (reformulation) - why the *stock* a flow is measured against must be defined precisely; the same discipline applied to extraction.
+- **Sloan, Richard** (*TAR*, 1996) - as-reported earnings vs. subsequent restatements differ *economically*; the empirical reason restatement gaps matter.
 
 ---
 

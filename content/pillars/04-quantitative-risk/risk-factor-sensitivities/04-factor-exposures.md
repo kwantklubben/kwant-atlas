@@ -14,13 +14,13 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-A book with $500$ positions has, in principle, $500$ sensitivities. Nobody can watch $500$ numbers, and — more importantly — **most of them are the same risk.** Risk-factor decomposition is the projection that reduces $500$ positions to a handful of **common factors** plus a residual, and it answers the question a risk committee actually asks:
+A book with $500$ positions has, in principle, $500$ sensitivities. Nobody can watch $500$ numbers, and - more importantly - **most of them are the same risk.** Risk-factor decomposition is the projection that reduces $500$ positions to a handful of **common factors** plus a residual, and it answers the question a risk committee actually asks:
 
-> *"Where is the risk coming from — and how much of it is diversified away by the others?"*
+> *"Where is the risk coming from - and how much of it is diversified away by the others?"*
 
 Two decompositions are used, and they answer different questions:
 
-1. **Variance decomposition (systematic vs specific).** Split the portfolio variance into the part explained by common factors and the part that is idiosyncratic: $\sigma_p^2=\underbrace{b^\top\Sigma_f b}_{\text{systematic}}+\underbrace{w^\top D w}_{\text{specific}}$. The ratio is the regression $R^2$ — how much of the risk a factor model can see.
+1. **Variance decomposition (systematic vs specific).** Split the portfolio variance into the part explained by common factors and the part that is idiosyncratic: $\sigma_p^2=\underbrace{b^\top\Sigma_f b}_{\text{systematic}}+\underbrace{w^\top D w}_{\text{specific}}$. The ratio is the regression $R^2$ - how much of the risk a factor model can see.
 2. **Euler (marginal-contribution) decomposition.** Allocate the *total* volatility back to each factor and each position, so the contributions sum exactly to $\sigma_p$. This is the allocation a risk system reports when it must charge each desk for the firm's risk.
 
 > **The essential idea.** A sensitivity $b_k$ is a *quantity of exposure*; the *risk* of that exposure is $b_k$ multiplied by the factor's volatility and by how correlated it is with everything else. **Exposure is not risk.** A large position in an uncorrelated factor is small risk; a modest position in the factor everything else also holds is large risk.
@@ -47,7 +47,7 @@ $$
 \boxed{\ \sigma_p^2=b^\top\Sigma_f\,b\;+\;w^\top D w\ },\qquad R^2=\frac{b^\top\Sigma_f b}{\sigma_p^2}.
 $$
 
-The full position covariance implied by the model is $\Sigma=B\Sigma_f B^\top+D$ — which is **positive semi-definite by construction** and requires only $K(K+1)/2+K$ parameters instead of $N(N+1)/2$. That parameter collapse is the whole point: with $N=500$ and $K=8$ it is $36+8=44$ numbers instead of $125{,}250$.
+The full position covariance implied by the model is $\Sigma=B\Sigma_f B^\top+D$ - which is **positive semi-definite by construction** and requires only $K(K+1)/2+K$ parameters instead of $N(N+1)/2$. That parameter collapse is the whole point: with $N=500$ and $K=8$ it is $36+8=44$ numbers instead of $125{,}250$.
 
 **Euler (marginal contribution) decomposition.** Because $\sigma_p$ is homogeneous of degree 1 in the exposures, Euler's theorem gives an *exact* additive allocation:
 
@@ -56,7 +56,7 @@ $$
 \frac{\partial\sigma_p}{\partial b_k}=\frac{(\Sigma_f b)_k}{\sigma_p},\qquad \frac{\partial\sigma_p}{\partial\sigma_{\varepsilon,i}}=\frac{w_i^2\sigma_{\varepsilon,i}}{\sigma_p}.
 $$
 
-The **component volatility** of factor $k$ is therefore $b_k(\Sigma_f b)_k/\sigma_p$, and of the residual of asset $i$ is $w_i^2\sigma_{\varepsilon,i}^2/\sigma_p$. These sum **exactly** to $\sigma_p$ — which is what makes them usable as a risk allocation (a "risk budget") rather than merely descriptive.
+The **component volatility** of factor $k$ is therefore $b_k(\Sigma_f b)_k/\sigma_p$, and of the residual of asset $i$ is $w_i^2\sigma_{\varepsilon,i}^2/\sigma_p$. These sum **exactly** to $\sigma_p$ - which is what makes them usable as a risk allocation (a "risk budget") rather than merely descriptive.
 
 **Two equivalent readings.** Because $b_k(\Sigma_f b)_k/\sigma_p \big/ \sigma_p = b_k(\Sigma_f b)_k/\sigma_p^2$, the **Euler share of volatility equals the share of variance**. So the same percentages can be quoted either way, as long as it is stated which total they are a share *of*.
 
@@ -68,85 +68,34 @@ This is the number used to charge a desk for its marginal use of firm risk, and 
 
 ---
 
-### 3. Computational Implementation — three assets, two factors, full decomposition
+### 3. Computational Implementation - three assets, two factors, full decomposition
 
 A three-asset book exposed to two common factors is decomposed into systematic and specific variance, cross-checked against the full covariance matrix, and then allocated to each factor and each residual by the Euler rule. Stdlib only.
 
-```python
-import math
 
-# --- inputs: 3 asset positions, 2 common factors ---
-B  = [[1.0, 0.0],       # asset 1 loadings on (factor 1, factor 2)
-      [0.8, 0.3],
-      [0.5, 0.6]]
-w     = [100_000., 80_000., 60_000.]      # currency (dollar) positions
-sf1, sf2, rhof = 0.010, 0.008, 0.30       # daily factor vols and correlation
-se    = [0.005, 0.006, 0.007]             # daily specific vols
-Sf = [[sf1*sf1,          rhof*sf1*sf2],
-      [rhof*sf1*sf2,     sf2*sf2]]
 
-# --- portfolio factor exposures (dollar betas) ---
-bp = [sum(w[i]*B[i][k] for i in range(3)) for k in range(2)]
 
-# --- variance decomposition ---
-sys_var = sum(bp[k]*Sf[k][l]*bp[l] for k in range(2) for l in range(2))
-spe_var = sum(w[i]**2 * se[i]**2 for i in range(3))
-tot_var = sys_var + spe_var
-vol     = math.sqrt(tot_var)
-
-# --- cross-check against the full covariance matrix Sigma = B Sf B' + D ---
-Cov = [[sum(B[i][k]*Sf[k][l]*B[j][l] for k in range(2) for l in range(2))
-        + (se[i]**2 if i == j else 0.0) for j in range(3)] for i in range(3)]
-tot_var2 = sum(w[i]*w[j]*Cov[i][j] for i in range(3) for j in range(3))
-
-print(f"dollar betas b_p = [{bp[0]:,.0f}, {bp[1]:,.0f}]")
-print(f"systematic var={sys_var:,.1f}  specific var={spe_var:,.1f}  total var={tot_var:,.1f}")
-print(f"cross-check w'Sigma w = {tot_var2:,.1f}   |diff| = {abs(tot_var-tot_var2):.3e}")
-print(f"portfolio 1-day vol = {vol:,.2f}   R^2 = {sys_var/tot_var:.4f}")
-print("Euler (component-volatility) allocation:")
-for k in range(2):
-    ck = bp[k]*sum(Sf[k][l]*bp[l] for l in range(2))/vol
-    print(f"  factor {k+1}        : {ck:,.2f}   ({100*ck/vol:.1f}% of vol)")
-for i in range(3):
-    ci = w[i]**2 * se[i]**2 / vol
-    print(f"  specific asset {i+1}: {ci:,.2f}   ({100*ci/vol:.1f}% of vol)")
-print(f"  SUM = {sum([bp[k]*sum(Sf[k][l]*bp[l] for l in range(2))/vol for k in range(2)] + [w[i]**2*se[i]**2/vol for i in range(3)]):,.2f}")
-```
-```
-dollar betas b_p = [194,000, 60,000]
-systematic var=4,552,720.0  specific var=656,800.0  total var=5,209,520.0
-cross-check w'Sigma w = 5,209,520.0   |diff| = 0.000e+00
-portfolio 1-day vol = 2,282.44   R^2 = 0.8739
-Euler (component-volatility) allocation:
-  factor 1        : 1,771.33   (77.6% of vol)
-  factor 2        : 223.34   (9.8% of vol)
-  specific asset 1: 109.53   (4.8% of vol)
-  specific asset 2: 100.94   (4.4% of vol)
-  specific asset 3: 77.29   (3.4% of vol)
-  SUM = 2,282.44
-```
-
-**Read the decomposition.** The book's \$240{,}000 of notional collapses to **two dollar-betas** — \$194{,}000 on factor 1 and \$60{,}000 on factor 2. The Euler allocation adds *exactly* to the \$2{,}282.44 portfolio volatility — the printed **SUM** line is the numerical verification of Euler's theorem. It says something the raw exposures do not: **factor 1 alone is $77.6\%$ of the risk** — more than its exposure share would suggest, because it is the factor every asset is loaded on and it is correlated with factor 2. Meanwhile the three specific risks together are only $12.6\%$ of variance ($R^2=0.874$): **a factor model sees $87\%$ of this book's risk, and the remaining $13\%$ cannot be hedged with factor instruments at all** — it diversifies away only by trading the individual names.
+**Read the decomposition.** The book's \$240{,}000 of notional collapses to **two dollar-betas** - \$194{,}000 on factor 1 and \$60{,}000 on factor 2. The Euler allocation adds *exactly* to the \$2{,}282.44 portfolio volatility - the printed **SUM** line is the numerical verification of Euler's theorem. It says something the raw exposures do not: **factor 1 alone is $77.6\%$ of the risk** - more than its exposure share would suggest, because it is the factor every asset is loaded on and it is correlated with factor 2. Meanwhile the three specific risks together are only $12.6\%$ of variance ($R^2=0.874$): **a factor model sees $87\%$ of this book's risk, and the remaining $13\%$ cannot be hedged with factor instruments at all** - it diversifies away only by trading the individual names.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Exposure $\ne$ risk.** The three specific positions have equal-ish notional but contribute $109.53$, $100.94$, $77.29$ — because their specific vols differ. Quoting only exposures hides the risk; quoting only risk hides what to trade. Report both.
-2. **A factor model is a model: the residual absorbs every error.** If the true dependence is non-linear or the residuals are correlated in stress (they are — that is the definition of a crisis), the "specific" bucket is not diversifiable and $R^2$ is overstated exactly when it matters. **Correlation breakdown in stress is the single biggest failure of factor-based risk** (see [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing]] and [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]]).
+1. **Exposure $\ne$ risk.** The three specific positions have equal-ish notional but contribute $109.53$, $100.94$, $77.29$ - because their specific vols differ. Quoting only exposures hides the risk; quoting only risk hides what to trade. Report both.
+2. **A factor model is a model: the residual absorbs every error.** If the true dependence is non-linear or the residuals are correlated in stress (they are - that is the definition of a crisis), the "specific" bucket is not diversifiable and $R^2$ is overstated exactly when it matters. **Correlation breakdown in stress is the single biggest failure of factor-based risk** (see [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing]] and [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]]).
 3. **The covariance matrix must be positive semi-definite.** Sample covariances with more assets than observations are singular or near-singular; unfiltered shrinkage-free estimation produces portfolios with apparently zero risk and huge exposures. Use EWMA/shrinkage/factor structure (Hull eq. 23.17 on PSD consistency).
-4. **Euler contributions are local, and can be negative.** A factor can have a *negative* component contribution (a natural hedge) — which is informative, but means "share of risk" is not a percentage in $[0,1]$ once hedges are present. Do not force-normalise it.
-5. **Aggregating sensitivities rather than risk.** Adding two desks' $b$-vectors is correct; adding their volatilities is not. The whole point of the covariance matrix is that the sum of risks exceeds the risk of the sum — **unless the factors are perfectly correlated, in which case the covariance matrix is doing nothing and you have hidden a single-factor bet.**
+4. **Euler contributions are local, and can be negative.** A factor can have a *negative* component contribution (a natural hedge) - which is informative, but means "share of risk" is not a percentage in $[0,1]$ once hedges are present. Do not force-normalise it.
+5. **Aggregating sensitivities rather than risk.** Adding two desks' $b$-vectors is correct; adding their volatilities is not. The whole point of the covariance matrix is that the sum of risks exceeds the risk of the sum - **unless the factors are perfectly correlated, in which case the covariance matrix is doing nothing and you have hidden a single-factor bet.**
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996) — §6 and the EWMA covariance methodology: the practical template for building $\Sigma_f$ and mapping every position onto a small factor set.
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) — Ch 22 §22.9 (PCA of the term structure: PC1 $\approx$ parallel shift, PC2 twist, PC3 bowing; Tables 22.9–22.10 — the empirical case for using a *few* factors) and Ch 23 (EWMA/GARCH covariance estimation, PSD consistency eq. 23.17). *Verified in the corpus (`hull_ch19-23.md`).*
-- **Alexander, Carol**: *Market Risk Analysis, Vol. IV (Value at Risk Models)* (2008) — factor-model decomposition, principal-component and orthogonal-factor approaches to VaR.
-- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015) — Ch 6 (statistical analysis of multivariate data, factor models, PCA) and Ch 7 (multivariate dependence and copulas — what replaces the Gaussian factor model when dependence is non-linear).
-- **Rockafellar & Uryasev**: *Optimization of Conditional Value-at-Risk* (2000) — the allocation machinery behind risk-budgeted portfolios that consume Euler contributions.
+- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996) - §6 and the EWMA covariance methodology: the practical template for building $\Sigma_f$ and mapping every position onto a small factor set.
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 22 §22.9 (PCA of the term structure: PC1 $\approx$ parallel shift, PC2 twist, PC3 bowing; Tables 22.9–22.10 - the empirical case for using a *few* factors) and Ch 23 (EWMA/GARCH covariance estimation, PSD consistency eq. 23.17). *Verified in the corpus (`hull_ch19-23.md`).*
+- **Alexander, Carol**: *Market Risk Analysis, Vol. IV (Value at Risk Models)* (2008) - factor-model decomposition, principal-component and orthogonal-factor approaches to VaR.
+- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015) - Ch 6 (statistical analysis of multivariate data, factor models, PCA) and Ch 7 (multivariate dependence and copulas - what replaces the Gaussian factor model when dependence is non-linear).
+- **Rockafellar & Uryasev**: *Optimization of Conditional Value-at-Risk* (2000) - the allocation machinery behind risk-budgeted portfolios that consume Euler contributions.
 
 ---
 

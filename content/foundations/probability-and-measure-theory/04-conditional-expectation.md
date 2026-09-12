@@ -1,5 +1,5 @@
 ---
-title: "F.3.4 Conditional Expectation"
+title: "M.3.4 Conditional Expectation"
 tags:
   - foundations
   - probability-and-measure-theory
@@ -14,9 +14,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Conditional expectation answers: **"given everything I know at time $t$, what is my best guess for the future value $X$?"** It is not a number — it is a *random variable* $\mathbb E[X\mid\mathcal F_t]$ that is measurable w.r.t. the available information $\mathcal F_t$. On a finite (coin-toss) space it reduces to **averaging over the atoms** of $\mathcal F_t$: for each piece of history, average $X$ over all continuations sharing that history (Shreve I §2.3). The measure-theoretic definition replaces this with **partial averaging** so it works even when the conditioning event has probability zero.
+Conditional expectation answers: **"given everything I know at time $t$, what is my best guess for the future value $X$?"** It is not a number - it is a *random variable* $\mathbb E[X\mid\mathcal F_t]$ that is measurable w.r.t. the available information $\mathcal F_t$. On a finite (coin-toss) space it reduces to **averaging over the atoms** of $\mathcal F_t$: for each piece of history, average $X$ over all continuations sharing that history (Shreve I §2.3). The measure-theoretic definition replaces this with **partial averaging** so it works even when the conditioning event has probability zero.
 
-The practical objective: understand the four faces — (1) partial averaging as the defining property; (2) the five properties (linearity, taking-out-what-is-known, tower, independence, conditional Jensen) that make it *the* pricing tool; (3) the conditional density / bivariate-normal closed form $\mathbb E[X\mid Y]=\rho(\sigma_1/\sigma_2)Y$; (4) the fact that it is the $L^2$ **orthogonal projection** onto $\mathcal F_t$ — the exact reason it is the regression function $\mathbb E[Y\mid X=x]$ of ESL Ch 2.
+The practical objective: understand the four faces - (1) partial averaging as the defining property; (2) the five properties (linearity, taking-out-what-is-known, tower, independence, conditional Jensen) that make it *the* pricing tool; (3) the conditional density / bivariate-normal closed form $\mathbb E[X\mid Y]=\rho(\sigma_1/\sigma_2)Y$; (4) the fact that it is the $L^2$ **orthogonal projection** onto $\mathcal F_t$ - the exact reason it is the regression function $\mathbb E[Y\mid X=x]$ of ESL Ch 2.
 
 ---
 
@@ -31,10 +31,10 @@ Existence is a corollary of the Radon–Nikodym theorem (Shreve I §9.5). On a f
 
 #### 2.2 The five properties (Shreve II Thm 2.3.2, eqs 2.3.18–2.3.22)
 - **(i) Linearity** $\mathbb E[c_1X+c_2Y\mid\mathcal G]=c_1\mathbb E[X\mid\mathcal G]+c_2\mathbb E[Y\mid\mathcal G]$.
-- **(ii) Taking out what is known** — $X$ $\mathcal G$-measurable $\Rightarrow$ $\mathbb E[XY\mid\mathcal G]=X\,\mathbb E[Y\mid\mathcal G]$.
-- **(iii) Tower** — $\mathcal H\subseteq\mathcal G$ $\Rightarrow$ $\mathbb E[\mathbb E[X\mid\mathcal G]\mid\mathcal H]=\mathbb E[X\mid\mathcal H]$.
-- **(iv) Independence** — $X$ independent of $\mathcal G$ $\Rightarrow$ $\mathbb E[X\mid\mathcal G]=\mathbb E X$.
-- **(v) Conditional Jensen** — $\varphi$ convex $\Rightarrow$ $\mathbb E[\varphi(X)\mid\mathcal G]\ge\varphi(\mathbb E[X\mid\mathcal G])$.
+- **(ii) Taking out what is known** - $X$ $\mathcal G$-measurable $\Rightarrow$ $\mathbb E[XY\mid\mathcal G]=X\,\mathbb E[Y\mid\mathcal G]$.
+- **(iii) Tower** - $\mathcal H\subseteq\mathcal G$ $\Rightarrow$ $\mathbb E[\mathbb E[X\mid\mathcal G]\mid\mathcal H]=\mathbb E[X\mid\mathcal H]$.
+- **(iv) Independence** - $X$ independent of $\mathcal G$ $\Rightarrow$ $\mathbb E[X\mid\mathcal G]=\mathbb E X$.
+- **(v) Conditional Jensen** - $\varphi$ convex $\Rightarrow$ $\mathbb E[\varphi(X)\mid\mathcal G]\ge\varphi(\mathbb E[X\mid\mathcal G])$.
 
 Property (ii) is what lets you pull a known stock price out of a conditional pricing formula; the **tower property** is what makes backward induction in trees work; (iv) is how the Independence Lemma yields the Markov property of Brownian motion (Shreve II Lemma 2.3.4, §3.5).
 
@@ -46,46 +46,16 @@ $$
 This is the **best linear/unbiased square-error estimator** of $X$ from $Y$ (Shreve I §11, verified p-129/130).
 
 #### 2.4 $L^2$ projection & the regression function (Shreve II Def 2.3.1; ESL Ch 2)
-$\mathbb E[X\mid\mathcal G]$ is the orthogonal projection of $X$ onto the subspace of $\mathcal G$-measurable square-integrable variables: the residual $X-\mathbb E[X\mid\mathcal G]$ is orthogonal to every $\mathcal G$-measurable $V$, $\mathbb E[(X-\mathbb E[X\mid\mathcal G])\cdot V]=0$. This is precisely why the optimal predictor in the mean-square sense is the conditional expectation $f(x)=\mathbb E[Y\mid X=x]$ (ESL eq. 2.13), and why the regression MSE decomposes as $\mathbb E[\mathrm{Var}(Y\mid X)] + \mathrm{Var}(\mathbb E[Y\mid X])$ — the first term *is* the irreducible noise, the second the reducible part explained by $X$ (ESL eq. 2.46).
+$\mathbb E[X\mid\mathcal G]$ is the orthogonal projection of $X$ onto the subspace of $\mathcal G$-measurable square-integrable variables: the residual $X-\mathbb E[X\mid\mathcal G]$ is orthogonal to every $\mathcal G$-measurable $V$, $\mathbb E[(X-\mathbb E[X\mid\mathcal G])\cdot V]=0$. This is precisely why the optimal predictor in the mean-square sense is the conditional expectation $f(x)=\mathbb E[Y\mid X=x]$ (ESL eq. 2.13), and why the regression MSE decomposes as $\mathbb E[\mathrm{Var}(Y\mid X)] + \mathrm{Var}(\mathbb E[Y\mid X])$ - the first term *is* the irreducible noise, the second the reducible part explained by $X$ (ESL eq. 2.46).
 
 ---
 
-### 3. Computational Implementation — verify partial-averaging/tower and the normal conditional mean
+### 3. Computational Implementation - verify partial-averaging/tower and the normal conditional mean
 
 Simulate a bivariate normal, bin by $X$, and check that the empirical conditional mean tracks $\rho(\sigma_1/\sigma_2)X$; verify that the $E[Y\mid X]$ predictor beats the constant predictor. Stdlib only.
 
-```python
-import math, random
-random.seed(5)
-s1,s2,rho=1.0,2.0,0.6
-N=400000
-X=[s1*random.gauss(0,1) for _ in range(N)]
-Y=[rho*s2*x + s2*math.sqrt(1-rho*rho)*random.gauss(0,1) for x in X]
-target=rho*s2/s1
-bins={}
-for x,y in zip(X,Y):
-    key=round(x/0.2)*0.2
-    g=bins.setdefault(key,[0,0.0]); g[0]+=1; g[1]+=y
-maxdev=0.0
-for k,g in bins.items():
-    if g[0]>=100:
-        d=abs(g[1]/g[0]-target*k)
-        if d>maxdev: maxdev=d
-print("bivariate normal: max|E[Y|X]-rho*s2/s1*X|=%.4f (theory 0)" % maxdev)
-print("  coefficient rho*s2/s1 = %.4f" % target)
-EY=sum(Y)/N
-pred={k:g[1]/g[0] for k,g in bins.items() if g[0]>0}
-mse_cond=sum((y-pred[round(x/0.2)*0.2])**2 for x,y in zip(X,Y))/N
-mse_const=sum((y-EY)**2 for y in Y)/N
-print("MSE of E[Y|X] predictor=%.4f vs MSE of E[Y]=%.4f" % (mse_cond,mse_const))
-print("  theory Var(Y|X)=(1-rho^2)s2^2 = %.4f" % ((1-rho*rho)*s2*s2))
-```
-```
-bivariate normal: max|E[Y|X]-rho*s2/s1*X|=0.1944 (theory 0)
-  coefficient rho*s2/s1 = 1.2000
-MSE of E[Y|X] predictor=2.5698 vs MSE of E[Y]=4.0117
-  theory Var(Y|X)=(1-rho^2)s2^2 = 2.5600
-```
+
+
 
 ---
 

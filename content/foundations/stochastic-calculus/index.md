@@ -1,5 +1,5 @@
 ---
-title: "F.4 Stochastic Calculus"
+title: "M.4 Stochastic Calculus"
 tags:
   - foundations
   - stochastic-calculus
@@ -15,11 +15,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Stochastic calculus is the calculus whose "clock" ticks randomly. Ordinary calculus assumes $df = f'(x)\,dx$ because $dx$ carries no randomness and $(dx)^2 = 0$. But the driving process of financial prices — **Brownian motion** $W$ — has *nonzero quadratic variation*: over every interval it accumulates squared increments at rate 1, i.e. $(dW)^2 = dt$. That single fact forces the correction term with the $\tfrac12$ in every formula, changes how you integrate, and is the deep reason the drift $\mu$ of a stock never enters the option price.
+Stochastic calculus is the calculus whose "clock" ticks randomly. Ordinary calculus assumes $df = f'(x)\,dx$ because $dx$ carries no randomness and $(dx)^2 = 0$. But the driving process of financial prices - **Brownian motion** $W$ - has *nonzero quadratic variation*: over every interval it accumulates squared increments at rate 1, i.e. $(dW)^2 = dt$. That single fact forces the correction term with the $\tfrac12$ in every formula, changes how you integrate, and is the deep reason the drift $\mu$ of a stock never enters the option price.
 
 This folder is the mathematical engine room of the whole Atlas. It is a *hub*: the **Theorem Lookup** below (job #1) and six sub-pages taking you from zero intuition through Brownian motion, the Itô integral & Itô–Doeblin lemma, SDEs and simulation, Girsanov / risk-neutral measure, and the advanced bridges (Feynman–Kac, martingale representation, Fundamental Theorems). Everything the [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] pillar needs to *derive* rather than quote lives here.
 
-> **The one-sentence essence.** "A calculus where the second-order term survives — because Brownian motion moves fast enough that its *squares* add up deterministically ($(dW)^2=dt$); every Itô result is the consequence of that bookkeeping."
+> **The one-sentence essence.** "A calculus where the second-order term survives - because Brownian motion moves fast enough that its *squares* add up deterministically ($(dW)^2=dt$); every Itô result is the consequence of that bookkeeping."
 
 ---
 
@@ -27,9 +27,9 @@ This folder is the mathematical engine room of the whole Atlas. It is a *hub*: t
 
 All formulas below are transcribed from Shreve Vol II (Ch 3–5), Shreve Vol I (Ch 13–18), Björk (Ch 4–5, 10–14) and Glasserman (Ch 1–3), all cross-checked in the verified corpus; the numeric checks in §3 reproduce them exactly.
 
-**Brownian Motion** — $W(t),\,t\ge0$, $W(0)=0$, continuous, independent increments $W(t)-W(s)\sim N(0,t-s)$, $W(\cdot)$ is an $\mathcal F(t)$-martingale (Shreve II Def 3.3.1, Thm 3.3.4). Covariance $\mathbb E[W(s)W(t)]=\min(s,t)$; finite-dimensional laws jointly normal with $C_{ij}=t_i\wedge t_j$ (Shreve I §13.6–13.7). **Quadratic variation** $[W,W](T)=T$, so $(dW)^2=dt$ (Shreve II §3.4; Def 3.4.1, Thm 3.4.3).
+**Brownian Motion** - $W(t),\,t\ge0$, $W(0)=0$, continuous, independent increments $W(t)-W(s)\sim N(0,t-s)$, $W(\cdot)$ is an $\mathcal F(t)$-martingale (Shreve II Def 3.3.1, Thm 3.3.4). Covariance $\mathbb E[W(s)W(t)]=\min(s,t)$; finite-dimensional laws jointly normal with $C_{ij}=t_i\wedge t_j$ (Shreve I §13.6–13.7). **Quadratic variation** $[W,W](T)=T$, so $(dW)^2=dt$ (Shreve II §3.4; Def 3.4.1, Thm 3.4.3).
 
-**Exponential martingale** — $Z(t)=\exp\{\sigma W(t)-\tfrac12\sigma^2 t\}$ is a martingale (Shreve II Thm 3.6.1). First-passage Laplace transform: $\mathbb E[e^{-\alpha\tau_m}]=e^{-|m|\sqrt{2\alpha}}$, and $\mathbb E\tau_m=\infty$ (Shreve II Thm 3.6.2, Remark 3.6.3).
+**Exponential martingale** - $Z(t)=\exp\{\sigma W(t)-\tfrac12\sigma^2 t\}$ is a martingale (Shreve II Thm 3.6.1). First-passage Laplace transform: $\mathbb E[e^{-\alpha\tau_m}]=e^{-|m|\sqrt{2\alpha}}$, and $\mathbb E\tau_m=\infty$ (Shreve II Thm 3.6.2, Remark 3.6.3).
 
 | Object | Formula | Where |
 |---|---|---|
@@ -38,33 +38,33 @@ All formulas below are transcribed from Shreve Vol II (Ch 3–5), Shreve Vol I (
 | Exp. martingale | $Z(t)=e^{\sigma W(t)-\tfrac12\sigma^2t}$ | Shreve II 3.6.1 |
 | First-passage | $\mathbb E e^{-\alpha\tau_m}=e^{-|m|\sqrt{2\alpha}}$ | Shreve II 3.6.2 |
 
-**Itô integral** — $I(t)=\int_0^t\Delta(u)\,dW(u)$, built for simple adapted $\Delta$ then extended to $\mathbb E\int_0^T\Delta^2\,du<\infty$. It is a **martingale**, mean $0$, with **Itô isometry** $\mathbb E[I^2]=\int_0^t\mathbb E[\Delta^2]du$ and **quadratic variation** $[I,I](t)=\int_0^t\Delta^2du$ (Shreve II Thm 4.2.1–4.2.3).
+**Itô integral** - $I(t)=\int_0^t\Delta(u)\,dW(u)$, built for simple adapted $\Delta$ then extended to $\mathbb E\int_0^T\Delta^2\,du<\infty$. It is a **martingale**, mean $0$, with **Itô isometry** $\mathbb E[I^2]=\int_0^t\mathbb E[\Delta^2]du$ and **quadratic variation** $[I,I](t)=\int_0^t\Delta^2du$ (Shreve II Thm 4.2.1–4.2.3).
 
-**Itô–Doeblin** — for $dX=\Theta dt+\Delta dW$ and $f\in C^{1,2}$ (Shreve II Thm 4.4.6):
+**Itô–Doeblin** - for $dX=\Theta dt+\Delta dW$ and $f\in C^{1,2}$ (Shreve II Thm 4.4.6):
 
 $$
 df(t,X)=f_t\,dt+f_x\,dX+\tfrac12 f_{xx}(dX)^2,\qquad (dX)^2=\Delta^2 dt.
 $$
 
-**GBM** — $dS=\mu S\,dt+\sigma S\,dW$ has solution $S(t)=S(0)e^{\sigma W(t)+(\mu-\tfrac12\sigma^2)t}$; $\mathbb E[S(t)]=S(0)e^{\mu t}$ (Shreve I 15.1, Thm 15.3; Björk 5.2). *The $\tfrac12\sigma^2$ is the Itô correction.*
+**GBM** - $dS=\mu S\,dt+\sigma S\,dW$ has solution $S(t)=S(0)e^{\sigma W(t)+(\mu-\tfrac12\sigma^2)t}$; $\mathbb E[S(t)]=S(0)e^{\mu t}$ (Shreve I 15.1, Thm 15.3; Björk 5.2). *The $\tfrac12\sigma^2$ is the Itô correction.*
 
 **Short-rate SDEs** (Shreve II Ex 4.4.10/11; Glasserman §3.3–3.4):
 - *Vasicek:* $dR=\kappa(\theta-R)\,dt+\sigma dW$ ⇒ $R(t)=e^{-\kappa t}R(0)+\theta(1-e^{-\kappa t})+\sigma e^{-\kappa t}\!\int_0^t e^{\kappa s}dW(s)$, Gaussian, can go negative.
-- *CIR:* $dR=\kappa(\theta-R)\,dt+\sigma\sqrt R\,dW$ — no closed form, nonnegative, **Feller condition** $2\kappa\theta\ge\sigma^2$ for strict positivity (Glasserman §3.4).
+- *CIR:* $dR=\kappa(\theta-R)\,dt+\sigma\sqrt R\,dW$ - no closed form, nonnegative, **Feller condition** $2\kappa\theta\ge\sigma^2$ for strict positivity (Glasserman §3.4).
 
-**Girsanov** (Shreve II Thm 5.2.3) — with $\tilde W(t)=W(t)+\int_0^t\Theta(u)du$, the RN derivative
+**Girsanov** (Shreve II Thm 5.2.3) - with $\tilde W(t)=W(t)+\int_0^t\Theta(u)du$, the RN derivative
 $$
 Z(t)=\exp\Big\{-\!\int_0^t\Theta(u)dW(u)-\tfrac12\!\int_0^t\Theta^2(u)du\Big\}
 $$
 makes $\tilde W$ a BM under $\tilde{\mathbb P}$ ($d\tilde{\mathbb P}=Z(T)d\mathbb P$). **Market price of risk** $\Theta=(\mu-r)/\sigma$; it changes the *drift* ($\mu\to r$) but **not the volatility or the paths** (Shreve II 5.2.22–23).
 
-**Martingale Representation** (Shreve II Thm 5.3.1) — w.r.t. the filtration generated by a single $W$, every martingale $M(t)=M(0)+\int_0^t\Gamma(u)dW(u)$.
+**Martingale Representation** (Shreve II Thm 5.3.1) - w.r.t. the filtration generated by a single $W$, every martingale $M(t)=M(0)+\int_0^t\Gamma(u)dW(u)$.
 
 **Risk-neutral pricing** (Shreve II 5.2.30/31): $V(t)=\tilde{\mathbb E}\big[e^{-\int_t^T R(s)ds}V(T)\mid\mathcal F(t)\big]$.
 
-**Feynman–Kac** (Björk 5.5/5.6) — $F_t+\mu F_x+\tfrac12\sigma^2F_{xx}-rF=0$, $F(T,\cdot)=\Phi$ ⇔ $F(t,x)=e^{-r(T-t)}\mathbb E_{t,x}[\Phi(X_T)]$ for $dX=\mu\,dt+\sigma\,dW$.
+**Feynman–Kac** (Björk 5.5/5.6) - $F_t+\mu F_x+\tfrac12\sigma^2F_{xx}-rF=0$, $F(T,\cdot)=\Phi$ ⇔ $F(t,x)=e^{-r(T-t)}\mathbb E_{t,x}[\Phi(X_T)]$ for $dX=\mu\,dt+\sigma\,dW$.
 
-**Fundamental Theorems** (Shreve II 5.4.7/5.4.9; Harrison–Pliska) — **FTA-1:** no arbitrage ⇔ a risk-neutral (martingale) measure exists. **FTA-2:** market complete ⇔ the risk-neutral measure is unique.
+**Fundamental Theorems** (Shreve II 5.4.7/5.4.9; Harrison–Pliska) - **FTA-1:** no arbitrage ⇔ a risk-neutral (martingale) measure exists. **FTA-2:** market complete ⇔ the risk-neutral measure is unique.
 
 ---
 
@@ -72,65 +72,29 @@ makes $\tilde W$ a BM under $\tilde{\mathbb P}$ ($d\tilde{\mathbb P}=Z(T)d\mathb
 
 A stdlib-only sanity sweep that reproduces the headline numbers of this folder end-to-end (each sub-page has a fuller example):
 
-```python
-import math, random
-random.seed(7)
 
-# (1) quadratic variation of BM -> T = 1
-n = 100000
-qv = sum(random.gauss(0.0, math.sqrt(1.0/n))**2 for _ in range(n))
-print("QV of BM (theory T=1.0000)        = %.4f" % qv)
 
-# (2) exponential martingale E[Z(1)] with sigma=0.5 -> 1.0
-zs = [math.exp(0.5*random.gauss(0,1.0)-0.5*0.25) for _ in range(200000)]
-print("E[Z(1)] exp martingale (theory 1)  = %.4f" % (sum(zs)/len(zs)))
-
-# (3) Itô isometry: I(T)=W(T), Var -> T
-Is=[random.gauss(0,1.0) for _ in range(80000)]
-print("Var[I(T)] ito integral (theory 1)  = %.4f" % (sum(x*x for x in Is)/len(Is)))
-
-# (4) Itô-Doeblin: int B dB = 0.5 B(T)^2 - 0.5T, one path
-n=5000; dt=1.0/n; W=[0.0]
-for _ in range(n): W.append(W[-1]+random.gauss(0,math.sqrt(dt)))
-print("int B dB        = %.4f   vs  0.5B(T)^2-0.5T = %.4f"
-      % (sum(W[i]*(W[i+1]-W[i]) for i in range(n)), 0.5*W[-1]**2-0.5))
-
-# (5) risk-neutral price MC vs BSM closed form (rule of the folder)
-def bsm(S,X,T,r,s):
-    d1=(math.log(S/X)+(r+0.5*s*s)*T)/(s*math.sqrt(T)); d2=d1-s*math.sqrt(T)
-    return S*0.5*(1+math.erf(d1/math.sqrt(2)))-X*math.exp(-r*T)*0.5*(1+math.erf(d2/math.sqrt(2)))
-S,X,T,r,s=100.,100.,1.,0.05,0.20
-tot=sum(max(S*math.exp((r-0.5*s*s)*T+s*random.gauss(0,1.0))-X,0.0) for _ in range(300000))
-print("risk-neutral MC call = %.4f   BSM closed = %.4f" % (tot/300000*math.exp(-r*T), bsm(S,X,T,r,s)))
-```
-```
-QV of BM (theory T=1.0000)        = 0.9979
-E[Z(1)] exp martingale (theory 1)  = 1.0007
-Var[I(T)] ito integral (theory 1)  = 0.9998
-int B dB        = -0.4156   vs  0.5B(T)^2-0.5T = -0.4053
-risk-neutral MC call = 10.4293   BSM closed = 10.4506
-```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-Hub signposts — the folder's failure analysis lives in each sub-page. In one line each:
+Hub signposts - the folder's failure analysis lives in each sub-page. In one line each:
 
 1. **$(dW)^2=0$ (classical calculus bleed-through).** Treating the SDE with ordinary calculus drops the $\tfrac12\sigma^2$ Itô term; every pricing formula, every hedge, every simulation is then wrong by the variance term. See [[foundations/stochastic-calculus/03-ito-integral-and-doeblin|03 · Itô Integral & Doeblin]].
 2. **Drift under the wrong measure.** Pricing requires expectation under $\mathbb Q$ (drift $r$), *not* $\mathbb P$ (drift $\mu$). Discounting a $\mathbb P$-expectation misprices by the unhedgeable drift. See [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05 · Girsanov & Risk-Neutral]].
 3. **Discretization error in simulation.** Exact lognormal transitions for GBM differ from Euler–Maruyama; coarse $\Delta t$ biases every statistic (Glasserman Ch 6). Simulate the *exact* transition whenever one exists.
 4. **Feller condition ignored.** Below $2\kappa\theta<\sigma^2$ a CIR Euler scheme crosses below zero; Milstein or exact noncentral-$\chi^2$ sampling is required. See [[foundations/stochastic-calculus/04-sdes-and-simulation|04 · SDEs & Simulation]].
-5. **MRT needs the BM filtration.** Martingale representation and market completeness both require the filtration generated by the Brownian motion — extra randomness (jumps, an untraded factor) breaks them. See [[foundations/stochastic-calculus/06-advanced-extensions|06 · Advanced Extensions]].
+5. **MRT needs the BM filtration.** Martingale representation and market completeness both require the filtration generated by the Brownian motion - extra randomness (jumps, an untraded factor) breaks them. See [[foundations/stochastic-calculus/06-advanced-extensions|06 · Advanced Extensions]].
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance II* — Ch 3 (BM, martingales, first passage), Ch 4 (Itô integral & Itô–Doeblin, GBM, Vasicek, CIR), Ch 5 (Girsanov, MRT, FTA). *Primary, math-verified in the corpus.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* — Ch 13 (BM from random walks), Ch 14–15 (Itô integral, Itô's formula), Ch 17–19 (Girsanov, MRT, FTA, the three MPR cases). *Math-verified.*
-- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.) — Ch 4 (stochastic integrals, multiplication table), Ch 5 (SDEs, Feynman–Kac), Ch 10–14 (martingale approach, Girsanov, FTA). *Math-verified.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* — Ch 1 (RN measure, the cornerstone equation), Ch 3 (exact BM/GBM/CIR simulation, Feller, noncentral-$\chi^2$). *Verified.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance II* - Ch 3 (BM, martingales, first passage), Ch 4 (Itô integral & Itô–Doeblin, GBM, Vasicek, CIR), Ch 5 (Girsanov, MRT, FTA). *Primary, math-verified in the corpus.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* - Ch 13 (BM from random walks), Ch 14–15 (Itô integral, Itô's formula), Ch 17–19 (Girsanov, MRT, FTA, the three MPR cases). *Math-verified.*
+- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.) - Ch 4 (stochastic integrals, multiplication table), Ch 5 (SDEs, Feynman–Kac), Ch 10–14 (martingale approach, Girsanov, FTA). *Math-verified.*
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* - Ch 1 (RN measure, the cornerstone equation), Ch 3 (exact BM/GBM/CIR simulation, Feller, noncentral-$\chi^2$). *Verified.*
 
 ---
 
@@ -139,8 +103,4 @@ Hub signposts — the folder's failure analysis lives in each sub-page. In one l
 - Foundational base: [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (martingales, RN derivative, conditional expectation)
 - Sub-pages (in-folder): 01 From Zero · 02 Brownian Motion & Martingales · 03 Itô Integral & Doeblin · 04 SDEs & Simulation · 05 Girsanov & Risk-Neutral · 06 Advanced Extensions
 
-**Recommended reading route (audience arc):**
-- **Absolute beginner:** [[foundations/stochastic-calculus/01-from-zero-intuition|01 · From Zero]] — elementary probability only, no measure theory.
-- **Tools to derive (undergrad/job-seeking):** [[foundations/stochastic-calculus/02-brownian-motion-and-martingales|02 · BM & Martingales]] → [[foundations/stochastic-calculus/03-ito-integral-and-doeblin|03 · Itô Integral & Doeblin]] → [[foundations/stochastic-calculus/04-sdes-and-simulation|04 · SDEs & Simulation]].
-- **Rigorous measure-theoretic framing (graduate):** [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05 · Girsanov]] → [[foundations/stochastic-calculus/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] · [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage & Binomial Trees]] · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]]
+**Beginner:** start at [[foundations/stochastic-calculus/01-from-zero-intuition|01]] · **Practitioner:** start at [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05]]

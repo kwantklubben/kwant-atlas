@@ -19,11 +19,11 @@ Every architecture on the previous pages is *expressive*. Expressiveness is a li
 
 The three failures, in one line each:
 
-1. **Data hunger** — deep nets have far more parameters than finance can supply *effective* samples for, so they overfit where a shallow model (or a tree with depth limits) does not.
-2. **Non-stationarity** — the process that generated the training set is not the process you will trade; a model can fit regime A perfectly and have *negative* $R^2$ on regime B.
-3. **Opacity** — a learned sequence model is hard to debug, hard to attribute, and fails silently under regime change.
+1. **Data hunger** - deep nets have far more parameters than finance can supply *effective* samples for, so they overfit where a shallow model (or a tree with depth limits) does not.
+2. **Non-stationarity** - the process that generated the training set is not the process you will trade; a model can fit regime A perfectly and have *negative* $R^2$ on regime B.
+3. **Opacity** - a learned sequence model is hard to debug, hard to attribute, and fails silently under regime change.
 
-The objective is the discipline of *measuring* all three before trusting the model — and the four-row decision table in §2.3.
+The objective is the discipline of *measuring* all three before trusting the model - and the four-row decision table in §2.3.
 
 ---
 
@@ -43,18 +43,18 @@ A daily return series with $\rho=0.1$ over $N=2500$ days has $N_{\text{eff}}\app
 
 The levers that trade expressiveness for robustness (all from ESL Ch. 11):
 
-- **Weight decay / $L_2$ regularisation** — penalise $\|W\|^2$; keeps weights small, shrinks the effective complexity.
-- **Early stopping** — stop when validation error turns up; equivalent to a shrunk model.
-- **Dropout** — randomly zero activations during training; a variance-reduction device.
-- **Small models** — one layer with few units usually beats a deep stack on financial $N$.
+- **Weight decay / $L_2$ regularisation** - penalise $\|W\|^2$; keeps weights small, shrinks the effective complexity.
+- **Early stopping** - stop when validation error turns up; equivalent to a shrunk model.
+- **Dropout** - randomly zero activations during training; a variance-reduction device.
+- **Small models** - one layer with few units usually beats a deep stack on financial $N$.
 
 #### 2.2 Non-stationarity: the distribution moves
 
 Assume returns follow a regime-switching process: at each time the process is in one of a few regimes, each with its own dynamics (see [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]] for the HMM machinery). A model trained on regime $A$ estimates the regime-$A$ conditional. Applied to regime $B$ it is mis-specified, and the out-of-sample $R^2$ can be *worse than predicting the mean* ($R^2<0$). §4 quantifies this: $R^2=+0.76$ in-regime, $-0.68$ out-of-regime.
 
-The remedy is not a better architecture but a **validation regime**: walk-forward splits, purged/embargoed CV, refit windows, and regime-aware features — i.e. the practice of the sibling [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]] folder.
+The remedy is not a better architecture but a **validation regime**: walk-forward splits, purged/embargoed CV, refit windows, and regime-aware features - i.e. the practice of the sibling [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]] folder.
 
-#### 2.3 When DL is justified vs trees — the decision rule
+#### 2.3 When DL is justified vs trees - the decision rule
 
 | Condition | Use trees (LightGBM/XGBoost) | Deep sequence model earns its place |
 |---|---|---|
@@ -65,82 +65,18 @@ The remedy is not a better architecture but a **validation regime**: walk-forwar
 | Latency | not binding, or modest | must be fast (or use TCN, not RNN) |
 | Interpretability need | high | lower, or attention provides a diagnostic |
 
-The empirical anchor: **Gu, Kelly & Xiu (2020)** ran a horse race of models on the same cross-sectional return data and found **gradient-boosted trees among the best performers**, with neural nets competitive only with heavy tuning and much more data — a direct refutation of "deep learning is automatically better." Deep sequence models win where the *sequence itself is the feature* — **DeepLOB** (Zhang et al. 2019) on limit-order-book data is the canonical case: CNN + LSTM over a deep, ordered order book, with enough ticks to justify the parameters.
+The empirical anchor: **Gu, Kelly & Xiu (2020)** ran a horse race of models on the same cross-sectional return data and found **gradient-boosted trees among the best performers**, with neural nets competitive only with heavy tuning and much more data - a direct refutation of "deep learning is automatically better." Deep sequence models win where the *sequence itself is the feature* - **DeepLOB** (Zhang et al. 2019) on limit-order-book data is the canonical case: CNN + LSTM over a deep, ordered order book, with enough ticks to justify the parameters.
 
 ---
 
-### 3. Computational Implementation — the three failures in numbers
+### 3. Computational Implementation - the three failures in numbers
 
-`numpy` + stdlib. Part A shows overfitting on a **pure-noise** target as the feature count $p$ approaches the sample count; Part B shows ridge (weight decay) repairing it; Part C shows non-stationarity — a model fit on one regime evaluated on another.
+`numpy` + stdlib. Part A shows overfitting on a **pure-noise** target as the feature count $p$ approaches the sample count; Part B shows ridge (weight decay) repairing it; Part C shows non-stationarity - a model fit on one regime evaluated on another.
 
-```python
-import numpy as np
-rng = np.random.default_rng(2)
 
-def r2(y, yhat):
-    ss = ((y - yhat)**2).sum()
-    return 1.0 - ss / ((y - y.mean())**2).sum()
 
-# ---- (A) pure-noise target: overfitting vs number of features p ----
-N, Ntr = 60, 40
-X = rng.normal(0, 1, (N, 60))
-y = rng.normal(0, 1, N)                      # y is INDEPENDENT of X
-print("pure-noise target (y independent of X), N_train=%d, N_test=%d" % (Ntr, N - Ntr))
-for p in (2, 5, 10, 20, 30, 38, 40):
-    Xtr, Xte, ytr, yte = X[:Ntr, :p], X[Ntr:, :p], y[:Ntr], y[Ntr:]
-    beta = np.linalg.lstsq(Xtr, ytr, rcond=None)[0]
-    print("  p=%3d : train R2=%+.3f   OOS R2=%+.3f" % (p, r2(ytr, Xtr@beta), r2(yte, Xte@beta)))
 
-# ---- (B) the same overfit, fixed by ridge weight decay p=38 ----
-print("\nridge (weight decay lambda) at p=38, pure noise:")
-p = 38
-Xtr, Xte, ytr, yte = X[:Ntr, :p], X[Ntr:, :p], y[:Ntr], y[Ntr:]
-for lam in (0.0, 1.0, 10.0, 100.0, 1000.0):
-    beta = np.linalg.solve(Xtr.T @ Xtr + lam*np.eye(p), Xtr.T @ ytr)
-    print("  lambda=%7.1f : train R2=%+.3f   OOS R2=%+.3f" % (lam, r2(ytr, Xtr@beta), r2(yte, Xte@beta)))
-
-# ---- (C) non-stationarity: fit on regime A, test on regime B ----
-print("\nnon-stationarity: AR(2) fitted on regime A, evaluated on regime B")
-def ar2(T, a1, a2, seed):
-    r = np.random.default_rng(seed)
-    e = r.normal(0, 1, T); x = np.zeros(T)
-    for t in range(2, T):
-        x[t] = a1*x[t-1] + a2*x[t-2] + e[t]
-    return x
-def design(x):
-    return np.column_stack([x[1:-1], x[:-2]]), x[2:]
-xa = ar2(5000, 0.6, 0.3, 1)                  # regime A: persistent
-xb = ar2(5000, -0.5, 0.1, 2)                 # regime B: mean-reverting
-Xa, ya = design(xa); Xb, yb = design(xb)
-beta = np.linalg.lstsq(Xa, ya, rcond=None)[0]
-print("  true A=(0.60,0.30)  fitted=(%.3f,%.3f)" % tuple(beta))
-print("  in-regime  R2 (A->A) = %+.3f" % r2(ya, Xa@beta))
-print("  out-regime R2 (A->B) = %+.3f" % r2(yb, Xb@beta))
-```
-```
-pure-noise target (y independent of X), N_train=40, N_test=20
-  p=  2 : train R2=-0.002   OOS R2=-0.228
-  p=  5 : train R2=+0.004   OOS R2=-0.171
-  p= 10 : train R2=+0.049   OOS R2=-0.416
-  p= 20 : train R2=+0.359   OOS R2=-1.552
-  p= 30 : train R2=+0.787   OOS R2=-4.819
-  p= 38 : train R2=+0.989   OOS R2=-409.314
-  p= 40 : train R2=+1.000   OOS R2=-834.263
-
-ridge (weight decay lambda) at p=38, pure noise:
-  lambda=    0.0 : train R2=+0.989   OOS R2=-409.314
-  lambda=    1.0 : train R2=+0.900   OOS R2=-3.565
-  lambda=   10.0 : train R2=+0.731   OOS R2=-1.157
-  lambda=  100.0 : train R2=+0.298   OOS R2=-0.165
-  lambda= 1000.0 : train R2=+0.025   OOS R2=-0.147
-
-non-stationarity: AR(2) fitted on regime A, evaluated on regime B
-  true A=(0.60,0.30)  fitted=(0.594,0.307)
-  in-regime  R2 (A->A) = +0.757
-  out-regime R2 (A->B) = -0.680
-```
-
-Read it as the whole folder's cautionary tale. In Part A the target is **pure noise** — there is *nothing* to learn — yet training $R^2$ climbs to $1.000$ as $p\to N_{\text{train}}$, while out-of-sample $R^2$ collapses to $-834$: a model with more parameters than data memorises the noise exactly and generalises catastrophically. (A deep sequence net is this, with $p$ in the millions.) Part B shows the cure: **weight decay** pulls OOS $R^2$ from $-409$ back toward $0$ — the honest value, since $y$ is unrelated to $X$ — by shrinking the parameters. Part C shows non-stationarity: the model recovers regime A's coefficients almost exactly ($0.594,0.307$ vs true $0.60,0.30$) and scores $R^2=+0.757$ *in* regime, but $-0.680$ on regime B — worse than predicting the mean, because the fitted rule actively mis-predicts when the dynamics flip.
+Read it as the whole folder's cautionary tale. In Part A the target is **pure noise** - there is *nothing* to learn - yet training $R^2$ climbs to $1.000$ as $p\to N_{\text{train}}$, while out-of-sample $R^2$ collapses to $-834$: a model with more parameters than data memorises the noise exactly and generalises catastrophically. (A deep sequence net is this, with $p$ in the millions.) Part B shows the cure: **weight decay** pulls OOS $R^2$ from $-409$ back toward $0$ - the honest value, since $y$ is unrelated to $X$ - by shrinking the parameters. Part C shows non-stationarity: the model recovers regime A's coefficients almost exactly ($0.594,0.307$ vs true $0.60,0.30$) and scores $R^2=+0.757$ *in* regime, but $-0.680$ on regime B - worse than predicting the mean, because the fitted rule actively mis-predicts when the dynamics flip.
 
 ---
 
@@ -158,13 +94,13 @@ Read it as the whole folder's cautionary tale. In Part A the target is **pure no
 
 ### 5. Canonical Literature & Study References
 
-- **Gu, Kelly & Xiu** (2020), *Empirical Asset Pricing via Machine Learning*, Review of Financial Studies 33(5):2223–2273 — the horse race: gradient-boosted trees are among the best models on the same data deep nets are applied to; the empirical basis for §2.3.
-- **López de Prado**, *Advances in Financial Machine Learning* (2018), **Ch. 1** and the *10 reasons most ML funds fail* — the low-SNR/overfitting framing and the "the bottlenecks are data, not architecture" warning. *Correction of a common mis-citation:* AFML has **no** deep-learning chapters (Ch. 19 = Microstructural Features, Ch. 20 = Multiprocessing), and Ch. 1 explicitly declines to cover deep/recurrent/convolutional nets.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 11** (§11.5: weight decay eq. 11.16, early stopping, input scaling, the nonconvex/multi-minima warnings) — the anti-overfit recipe used in §2.1.
-- **Heaton, Polson & Witte** (2017), *Deep learning for finance: deep portfolios*, Appl. Stochastic Models Bus. Ind. 33(1):3–12 — the finance-DL canonical application and its data requirements.
-- **Zhang, Zohren & Roberts** (2019), *DeepLOB*, IEEE TSP 67(11), arXiv:1808.03668 — the positive case: deep sequence learning that *does* generalise, because the microstructure data is deep and ordered and $N$ is large.
-- **Zhang, Z.** (2020), *Deep Learning for Limit Order Books* / related Oxford-Man work — the extended treatment of LOB sequence learning; read alongside DeepLOB.
-- **Bailey & López de Prado** (2014), *The Deflated Sharpe Ratio* — correcting reported performance for the number of trials (§4.5).
+- **Gu, Kelly & Xiu** (2020), *Empirical Asset Pricing via Machine Learning*, Review of Financial Studies 33(5):2223–2273 - the horse race: gradient-boosted trees are among the best models on the same data deep nets are applied to; the empirical basis for §2.3.
+- **López de Prado**, *Advances in Financial Machine Learning* (2018), **Ch. 1** and the *10 reasons most ML funds fail* - the low-SNR/overfitting framing and the "the bottlenecks are data, not architecture" warning. *Correction of a common mis-citation:* AFML has **no** deep-learning chapters (Ch. 19 = Microstructural Features, Ch. 20 = Multiprocessing), and Ch. 1 explicitly declines to cover deep/recurrent/convolutional nets.
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 11** (§11.5: weight decay eq. 11.16, early stopping, input scaling, the nonconvex/multi-minima warnings) - the anti-overfit recipe used in §2.1.
+- **Heaton, Polson & Witte** (2017), *Deep learning for finance: deep portfolios*, Appl. Stochastic Models Bus. Ind. 33(1):3–12 - the finance-DL canonical application and its data requirements.
+- **Zhang, Zohren & Roberts** (2019), *DeepLOB*, IEEE TSP 67(11), arXiv:1808.03668 - the positive case: deep sequence learning that *does* generalise, because the microstructure data is deep and ordered and $N$ is large.
+- **Zhang, Z.** (2020), *Deep Learning for Limit Order Books* / related Oxford-Man work - the extended treatment of LOB sequence learning; read alongside DeepLOB.
+- **Bailey & López de Prado** (2014), *The Deflated Sharpe Ratio* - correcting reported performance for the number of trials (§4.5).
 
 ---
 

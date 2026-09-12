@@ -14,11 +14,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The single most dangerous fact about liquidity is that it is **common and pro-cyclical**: illiquidity rises across *all* assets in bad times, so you cannot diversify it away by holding many illiquid assets — they all become illiquid together. This page makes that precise in three ways:
+The single most dangerous fact about liquidity is that it is **common and pro-cyclical**: illiquidity rises across *all* assets in bad times, so you cannot diversify it away by holding many illiquid assets - they all become illiquid together. This page makes that precise in three ways:
 
-1. **Commonality** — a large fraction of a stock's illiquidity moves with *market* illiquidity (Chordia, Roll & Subrahmanyam 2000).
-2. **The liquidity-adjusted CAPM** — Acharya & Pedersen (2005) show that expected return depends not just on the asset's own illiquidity but on **three covariances**: with market illiquidity, of its return with market illiquidity, and of its illiquidity with the market return.
-3. **Crises & flight to quality** — when these covariances spike (2007–08, 2020), the premium jumps and liquidity provision vanishes; investors flee to Treasuries and the spread between liquid and illiquid assets explodes.
+1. **Commonality** - a large fraction of a stock's illiquidity moves with *market* illiquidity (Chordia, Roll & Subrahmanyam 2000).
+2. **The liquidity-adjusted CAPM** - Acharya & Pedersen (2005) show that expected return depends not just on the asset's own illiquidity but on **three covariances**: with market illiquidity, of its return with market illiquidity, and of its illiquidity with the market return.
+3. **Crises & flight to quality** - when these covariances spike (2007–08, 2020), the premium jumps and liquidity provision vanishes; investors flee to Treasuries and the spread between liquid and illiquid assets explodes.
 
 The objective: understand *why* liquidity risk cannot be hedged by diversification, and be able to estimate the three betas that capture the risk.
 
@@ -46,60 +46,30 @@ $$
 
 where the four betas share the same denominator (the variance of the *net* market return $r^M-c^M$). The three liquidity-risk betas:
 
-- **$\beta_1=\operatorname{cov}(c^i,c^M)/\operatorname{var}(r^M-c^M)$** — *commonality*: asset illiquid when the market is illiquid ⇒ **higher** required return (positive premium).
-- **$\beta_2=\operatorname{cov}(r^i,c^M)/\operatorname{var}(r^M-c^M)$** — *return-vs-liquidity* (the PS channel): return high when market illiquid ⇒ **lower** required return (negative premium).
-- **$\beta_3=\operatorname{cov}(c^i,r^M)/\operatorname{var}(r^M-c^M)$** — *down-market liquidity*: asset stays liquid when the market falls ⇒ **lower** required return (negative premium).
+- **$\beta_1=\operatorname{cov}(c^i,c^M)/\operatorname{var}(r^M-c^M)$** - *commonality*: asset illiquid when the market is illiquid ⇒ **higher** required return (positive premium).
+- **$\beta_2=\operatorname{cov}(r^i,c^M)/\operatorname{var}(r^M-c^M)$** - *return-vs-liquidity* (the PS channel): return high when market illiquid ⇒ **lower** required return (negative premium).
+- **$\beta_3=\operatorname{cov}(c^i,r^M)/\operatorname{var}(r^M-c^M)$** - *down-market liquidity*: asset stays liquid when the market falls ⇒ **lower** required return (negative premium).
 
-**Crises.** In a crisis, $c^M$ spikes and its covariation with both $r^M$ and asset illiquidities increases, so the *priced* covariances rise precisely when risk aversion is highest — the liquidity premium becomes large exactly when you need to be compensated most. This is the asset-pricing reflection of the [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|funding/margin spiral]].
+**Crises.** In a crisis, $c^M$ spikes and its covariation with both $r^M$ and asset illiquidities increases, so the *priced* covariances rise precisely when risk aversion is highest - the liquidity premium becomes large exactly when you need to be compensated most. This is the asset-pricing reflection of the [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|funding/margin spiral]].
 
 ---
 
-### 3. Computational Implementation — the three liquidity-risk betas
+### 3. Computational Implementation - the three liquidity-risk betas
 
 Simulate a market where illiquidity rises in down markets, and a stock that shares market illiquidity (positive commonality) yet stays liquid when the market falls. Estimate all three betas and confirm the signs the theory predicts. Stdlib only.
 
-```python
-import random, statistics
 
-def cov(x, y):
-    mx=statistics.mean(x); my=statistics.mean(y)
-    return sum((a-mx)*(b-my) for a,b in zip(x,y))/(len(x)-1)
 
-random.seed(11)
-T = 240
-rM = [random.gauss(0.01, 0.020) for _ in range(T)]
-# market illiquidity rises when the market return falls (crisis channel)
-cM = [max(0.0005, 0.008 - 0.05*rM[t] + random.gauss(0,0.001)) for t in range(T)]
-# stock: strong commonality in illiquidity, beta-3 "liquid when market falls" profile
-r_i = [0.9*rM[t] + random.gauss(0,0.01) for t in range(T)]
-c_i = [1.0*cM[t] + random.gauss(0,0.0002) for t in range(T)]
-
-net = [rM[t]-cM[t] for t in range(T)]
-net_var = statistics.variance(net)               # var(r^M - c^M), common denominator
-b1 = cov(c_i, cM)/net_var                        # commonality in liquidity
-b2 = cov(r_i, cM)/net_var                        # return vs market liquidity (PS)
-b3 = cov(c_i, rM)/net_var                        # illiquidity vs market return
-print(f"var(net mkt r^M-c^M) = {net_var:.5f}")
-print(f"beta1 = cov(c^i,c^M)/varnet = {b1:+.4f}  (POSITIVE premium -> riskier)")
-print(f"beta2 = cov(r^i,c^M)/varnet = {b2:+.4f}  (beta2<0 -> LOW return when mkt illiquid -> riskier)")
-print(f"beta3 = cov(c^i,r^M)/varnet = {b3:+.4f}  (beta3<0 -> illiquid when mkt falls -> riskier)")
-```
-```
-var(net mkt r^M-c^M) = 0.00050
-beta1 = cov(c^i,c^M)/varnet = +0.0043  (POSITIVE premium -> riskier)
-beta2 = cov(r^i,c^M)/varnet = -0.0440  (beta2<0 -> LOW return when mkt illiquid -> riskier)
-beta3 = cov(c^i,r^M)/varnet = -0.0468  (beta3<0 -> illiquid when mkt falls -> riskier)
-```
-Read the signs through the AP convention (the price of risk on $\beta_2,\beta_3$ is **negative**, so each term enters with a minus sign): a **negative** $\beta_2$ means the stock's return is *low* exactly when the market is illiquid, and a **negative** $\beta_3$ means it becomes *illiquid* when the market falls. Both are **bad** risks and raise the required return. Here $\beta_1=+0.0043$, $\beta_2=-0.0440$, $\beta_3=-0.0468$, so with the minus signs the three liquidity terms are $+0.0043-(\!-0.0440\!)-(\!-0.0468\!)=+0.0951$ — **all three push required return the same way (up)**, which is what the simulated data (a pro-cyclical return, $r_i=0.9\,r^M$, and illiquidity that shares the market's commonality, $c_i=1.0\,c^M$) actually builds in.
+Read the signs through the AP convention (the price of risk on $\beta_2,\beta_3$ is **negative**, so each term enters with a minus sign): a **negative** $\beta_2$ means the stock's return is *low* exactly when the market is illiquid, and a **negative** $\beta_3$ means it becomes *illiquid* when the market falls. Both are **bad** risks and raise the required return. Here $\beta_1=+0.0043$, $\beta_2=-0.0440$, $\beta_3=-0.0468$, so with the minus signs the three liquidity terms are $+0.0043-(\!-0.0440\!)-(\!-0.0468\!)=+0.0951$ - **all three push required return the same way (up)**, which is what the simulated data (a pro-cyclical return, $r_i=0.9\,r^M$, and illiquidity that shares the market's commonality, $c_i=1.0\,c^M$) actually builds in.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-- **Commonality defeats diversification.** Holding many illiquid assets does not diversify liquidity risk because their illiquidities all load on the same market factor — you are long a single bet.
+- **Commonality defeats diversification.** Holding many illiquid assets does not diversify liquidity risk because their illiquidities all load on the same market factor - you are long a single bet.
 - **Betas estimated in calm times mislead.** If you estimate $\beta_2,\beta_3$ from a low-volatility sample, you miss the crisis-state covariances that are the whole point. This is a *regime-dependence* failure: the risk is in the tail, not the average.
-- **Flight to quality is a correlated bet.** "Safe" assets (Treasuries) see their *liquidity* improve and their price rise exactly when everything else dries up — so the flight itself is what makes the illiquid side so costly.
-- **The funding link.** The covariance spikes in a crisis are driven by the [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|margin spiral]] (leverage → forced sales → more illiquidity) — the asset-pricing betas here are the *shadow* of the funding constraint's failure.
+- **Flight to quality is a correlated bet.** "Safe" assets (Treasuries) see their *liquidity* improve and their price rise exactly when everything else dries up - so the flight itself is what makes the illiquid side so costly.
+- **The funding link.** The covariance spikes in a crisis are driven by the [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|margin spiral]] (leverage → forced sales → more illiquidity) - the asset-pricing betas here are the *shadow* of the funding constraint's failure.
 
 ---
 
@@ -107,9 +77,9 @@ Read the signs through the AP convention (the price of risk on $\beta_2,\beta_3$
 
 - **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77(2), 375–410. The full model, Proposition 1, and the three betas; empirical premia for each channel.
 - **Chordia, Roll & Subrahmanyam (2000).** *Commonality in liquidity.* JFE 56, 3–28. The empirical fact of a market-wide liquidity factor.
-- **Pástor & Stambaugh (2003).** *Liquidity risk and expected stock returns.* JPE 111(3) — the $\beta_2$ channel's big empirical payoff (7.5%/yr).
-- **Bao, Pan & Wang (2011).** *The illiquidity of corporate bonds.* Journal of Finance 66(3) — commonality and the crisis spike in the bond market (page 06).
-- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*, Ch 4 (liquidity risk) and Ch 6 (crises) — the crisis narrative in one volume.
+- **Pástor & Stambaugh (2003).** *Liquidity risk and expected stock returns.* JPE 111(3) - the $\beta_2$ channel's big empirical payoff (7.5%/yr).
+- **Bao, Pan & Wang (2011).** *The illiquidity of corporate bonds.* Journal of Finance 66(3) - commonality and the crisis spike in the bond market (page 06).
+- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*, Ch 4 (liquidity risk) and Ch 6 (crises) - the crisis narrative in one volume.
 
 ---
 

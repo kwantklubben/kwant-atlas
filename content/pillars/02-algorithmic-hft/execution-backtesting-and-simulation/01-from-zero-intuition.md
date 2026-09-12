@@ -13,12 +13,12 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of execution backtesting with **no prior knowledge needed**. The objective is one idea: **a trade price and a fill are not the same thing.** A signal backtest treats the price series as something you can *transact at on demand*. An execution backtest cannot — because the price series is the **output** of a matching process, and *whether you get to participate in that process* is a separate, harder question.
+This page builds the *why* of execution backtesting with **no prior knowledge needed**. The objective is one idea: **a trade price and a fill are not the same thing.** A signal backtest treats the price series as something you can *transact at on demand*. An execution backtest cannot - because the price series is the **output** of a matching process, and *whether you get to participate in that process* is a separate, harder question.
 
 Start with the dumbest question: *why can't I just test my execution algorithm by backtesting on prices?* Because "buy 10,000 shares at 10:00" is not an instruction a price series can honour. To turn it into a fact you must answer three things the price series never asked:
 
 1. **Did I fill at all?** A market order fills (minus size you walk through), but a *limit* order only fills if the queue ahead of you is consumed. Book that as a coin that may come up "no."
-2. **At what price relative to the decision price?** You buy at the *ask*, not the mid — you pay the half-spread on entering and again on exiting.
+2. **At what price relative to the decision price?** You buy at the *ask*, not the mid - you pay the half-spread on entering and again on exiting.
 3. **Did the market move because of me, or against me?** Your own order has impact, and your passive fills are adversely selected.
 
 Three "aha"s:
@@ -27,7 +27,7 @@ Three "aha"s:
 2. **A fill is a queue event, not a price event.** "The market printed at my price" $\ne$ "I filled." You fill when the cumulative outflow **ahead of you** passes your position: $\xi \ge x$. Ignoring $x$ is the single largest source of fake edge.
 3. **Execution cost is a *separate return stream*.** Perold's *implementation shortfall* decomposes realised vs paper P&L into an **execution cost** (how badly you paid) and an **opportunity cost** (what you failed to execute). A signal backtest sets the first to zero and the second to zero by assumption.
 
-> **The one-sentence essence.** "A signal backtest tells you whether the *idea* was right; an execution backtest tells you whether the *idea survives contact with the order book* — and these two answers can have opposite signs for the same alpha."
+> **The one-sentence essence.** "A signal backtest tells you whether the *idea* was right; an execution backtest tells you whether the *idea survives contact with the order book* - and these two answers can have opposite signs for the same alpha."
 
 ---
 
@@ -61,47 +61,16 @@ $$
 p_t-m_t=\underbrace{\big(p_t-m_{t+5}\big)}_{\text{realized cost}}+\underbrace{\big(m_{t+5}-m_t\big)}_{\text{price impact}}.
 $$
 
-A backtest that records only $p_t$ still misses the $m_{t+5}-m_t$ impact term — the part of the move that is *yours*.
+A backtest that records only $p_t$ still misses the $m_{t+5}-m_t$ impact term - the part of the move that is *yours*.
 
 ---
 
-### 3. Computational Implementation — the same alpha, two verdicts
+### 3. Computational Implementation - the same alpha, two verdicts
 
 One alpha, evaluated two ways. The signal backtest fills at the mid; the execution backtest pays the spread on both legs plus impact. Stdlib only.
 
-```python
-import random, math, statistics as st
-random.seed(42)
 
-H       = 20       # holding period (ticks)
-sigma_1 = 0.02     # per-tick mid vol ($)
-alpha_H = 0.06     # TRUE expected favourable H-tick move ($) -- the edge
-N       = 60000
 
-def run(spread, impact, N=N, seed=42):
-    random.seed(seed)
-    gross, net = [], []
-    for _ in range(N):
-        realized = alpha_H + random.gauss(0, sigma_1 * math.sqrt(H))   # in signal direction
-        gross.append(realized)
-        net.append(realized - spread - 2 * impact)                     # cross in AND out
-    return st.mean(gross), st.pstdev(gross), st.mean(net), st.pstdev(net)
-
-print(f"per-trade edge = ${alpha_H:.2f}, per-trade vol = ${sigma_1*math.sqrt(H):.4f}")
-print(f"{'regime':20s} {'spread':>7s} {'imp/leg':>8s} | signal-BT mean/SR | exec-BT mean/SR")
-for lab, sp, im in (("tight market", 0.02, 0.010),
-                    ("wide market", 0.04, 0.020),
-                    ("liquid / rebate", 0.005, 0.002)):
-    gm, gs, nm, ns = run(sp, im)
-    print(f"{lab:20s} {sp:7.3f} {im:8.3f} | {gm:+.4f} / {gm/gs:6.3f} | {nm:+.4f} / {nm/ns:6.3f}")
-```
-```
-per-trade edge = $0.06, per-trade vol = $0.0894
-regime                spread  imp/leg | signal-BT mean/SR | exec-BT mean/SR
-tight market           0.020    0.010 | +0.0601 /  0.671 | +0.0201 /  0.224
-wide market            0.040    0.020 | +0.0601 /  0.671 | -0.0199 / -0.222
-liquid / rebate        0.005    0.002 | +0.0601 /  0.671 | +0.0511 /  0.570
-```
 
 The signal backtest is **identical in all three rows** ($\text{SR}=0.671$): it never sees cost. The execution backtest takes the *same alpha* to $\text{SR}=0.224$ in a tight market, to $\text{SR}=-0.222$ (a loser) in a wide market, and back to $0.570$ where costs are tiny. **The alpha did not change; the verdict did.** This is why "backtested Sharpe" is meaningless without the fill and cost model underneath it.
 
@@ -119,10 +88,10 @@ The signal backtest is **identical in all three rows** ($\text{SR}=0.671$): it n
 
 ### 5. Canonical Literature & Study References
 
-- **Perold, André F.** — "The implementation shortfall: paper vs. reality," *Journal of Portfolio Management* 14(3), 4–9 (1988). *The origin of every execution benchmark; the execution/opportunity-cost decomposition.*
-- **Hasbrouck, Joel** — *Empirical Market Microstructure* (2007), Ch 14 (implementation shortfall eq 14.1; effective/realized cost eq 14.2; VWAP and its gaming) and Ch 3 (the Roll trade-price model $p_t=m_t+q_tc$). *Corpus verification `hasbrouck_ch11-15.md` / `hasbrouck_ch1-5.md`.*
-- **Almgren, Robert; Chriss, Neil** — "Optimal execution of portfolio transactions," *Journal of Risk* 3(2) (2000) — the $E[x]$/$V[x]$ cost that a proper execution backtest charges.
-- **Harris, Larry** — *Trading and Exchanges* (2003) — the practitioner vocabulary of benchmarks, shortfall, and order handling.
+- **Perold, André F.** - "The implementation shortfall: paper vs. reality," *Journal of Portfolio Management* 14(3), 4–9 (1988). *The origin of every execution benchmark; the execution/opportunity-cost decomposition.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (implementation shortfall eq 14.1; effective/realized cost eq 14.2; VWAP and its gaming) and Ch 3 (the Roll trade-price model $p_t=m_t+q_tc$). *Corpus verification `hasbrouck_ch11-15.md` / `hasbrouck_ch1-5.md`.*
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2) (2000) - the $E[x]$/$V[x]$ cost that a proper execution backtest charges.
+- **Harris, Larry** - *Trading and Exchanges* (2003) - the practitioner vocabulary of benchmarks, shortfall, and order handling.
 
 ---
 

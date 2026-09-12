@@ -16,9 +16,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The plain Roll model is univariate: prices only. This page is the **launchpad** to the modern toolkit that fixes its limits — (1) the **generalized Roll model** (Hasbrouck Ch 8) that splits the spread into $c$ (transitory) and $\lambda$ (permanent/price-impact), (2) the **random-walk / permanent-transitory decomposition** (Beveridge–Nelson 1981; Watson 1986) that separates the efficient price from the pricing error, and (3) the **multivariate VAR / price-impact** machinery (Hasbrouck Ch 9) that measures $\lambda$ directly from the trade-innovation response.
+The plain Roll model is univariate: prices only. This page is the **launchpad** to the modern toolkit that fixes its limits - (1) the **generalized Roll model** (Hasbrouck Ch 8) that splits the spread into $c$ (transitory) and $\lambda$ (permanent/price-impact), (2) the **random-walk / permanent-transitory decomposition** (Beveridge–Nelson 1981; Watson 1986) that separates the efficient price from the pricing error, and (3) the **multivariate VAR / price-impact** machinery (Hasbrouck Ch 9) that measures $\lambda$ directly from the trade-innovation response.
 
-> **Why these first?** They are the *measurement completion* of Roll: Roll gives the total spread; these give its *components* and its *permanent vs transitory* split. Everything farther — Hasbrouck information shares across venues, PIN/VPIN, structural adverse-selection models — links from here.
+> **Why these first?** They are the *measurement completion* of Roll: Roll gives the total spread; these give its *components* and its *permanent vs transitory* split. Everything farther - Hasbrouck information shares across venues, PIN/VPIN, structural adverse-selection models - links from here.
 
 ---
 
@@ -41,7 +41,7 @@ $$
 \gamma_0 = c^2 + (c+\lambda)^2 + \sigma_u^2, \qquad \gamma_1 = -c\,(c+\lambda).
 $$
 
-**The central identification result:** only two autocovariances are observable, but there are three structural parameters $\{c,\lambda,\sigma_u^2\}$ — so the components are **under-identified from prices alone**. However, the random-walk innovation variance
+**The central identification result:** only two autocovariances are observable, but there are three structural parameters $\{c,\lambda,\sigma_u^2\}$ - so the components are **under-identified from prices alone**. However, the random-walk innovation variance
 
 $$
 \boxed{\;\sigma_w^2 \equiv \lambda^2+\sigma_u^2 = \gamma_0+2\gamma_1\;}
@@ -60,7 +60,7 @@ $$
 \sigma_s^2 = \theta^2\,\sigma_\varepsilon^2 \qquad\text{(lower bound on the pricing-error variance)}.
 $$
 
-In the pure Roll case, $\sigma_w^2=\sigma_u^2$ and the *actual* pricing-error variance is $\mathrm{Var}(p_t-m_t)=c^2$, attained by the bound $\theta^2\sigma_\varepsilon^2$ only when $\sigma_u^2=0$ (in Roll, $c^2=\theta\sigma_\varepsilon^2>\theta^2\sigma_\varepsilon^2$). The decomposition is **invariant to the identification** of the MA parameters — a strong robustness property.
+In the pure Roll case, $\sigma_w^2=\sigma_u^2$ and the *actual* pricing-error variance is $\mathrm{Var}(p_t-m_t)=c^2$, attained by the bound $\theta^2\sigma_\varepsilon^2$ only when $\sigma_u^2=0$ (in Roll, $c^2=\theta\sigma_\varepsilon^2>\theta^2\sigma_\varepsilon^2$). The decomposition is **invariant to the identification** of the MA parameters - a strong robustness property.
 
 #### 2.3 Variance ratio
 
@@ -72,7 +72,7 @@ $$
 
 With microstructure (bid-ask bounce) inflating the *short* horizon variance, for $M>N$ (longer horizon in numerator) one gets $V_{M,N}<1$, declining toward $1$ as the horizon grows and the transitory component washes out. A ratio below 1 is the signature of a transitory (pricing-error) component in the price.
 
-#### 2.4 Multivariate price impact (Hasbrouck Ch 9) — the empirical route to $\lambda$
+#### 2.4 Multivariate price impact (Hasbrouck Ch 9) - the empirical route to $\lambda$
 
 Stack the price change and trade variables into $y_t=[\Delta p_t,\ x_t']'$ and fit a VAR; the impulse response of $\Delta p$ to a trade-innovation $v_t$ measures $\lambda$ directly. Structural form:
 
@@ -87,47 +87,12 @@ The permanent/trade-driven variance splits as $\sigma_w^2=\sigma_u^2+\lambda^2\s
 
 ---
 
-### 3. Computational Implementation — the decomposition in numbers
+### 3. Computational Implementation - the decomposition in numbers
 
 Recover the MA(1) parameters from the sample autocovariances, then split the price into permanent (random-walk) and transitory (pricing-error) components, and confirm the permanent variance equals $\gamma_0+2\gamma_1$. Stdlib only.
 
-```python
-import math, random, statistics as st
-random.seed(8181)
 
-def simulate_roll(n=50000, spread=0.05, sig_u=0.01):
-    c = spread/2.0; m = 100.0; ps = []
-    for _ in range(n):
-        m += random.gauss(0, sig_u)
-        ps.append(m + random.choice([-1, 1])*c)
-    return ps
 
-prices = simulate_roll()
-dp = [prices[i]-prices[i-1] for i in range(1, len(prices))]
-n = len(dp); mean = sum(dp)/n
-g0 = sum((x-mean)**2 for x in dp)/n
-g1 = sum((dp[i]-mean)*(dp[i-1]-mean) for i in range(1, n))/n
-
-disc  = math.sqrt(g0*g0 - 4*g1*g1)                 # invertible MA(1)
-theta = (g0 - disc)/(2*g1); se2 = (g0 + disc)/2
-sw2   = (1+theta)**2*se2                            # permanent innovation variance (B-N)
-perr  = theta**2*se2                                # pricing-error (bounce) variance
-print(f"gamma0={g0:.7f}  gamma1={g1:.7f}")
-print(f"MA(1): theta={theta:.4f}  sigma_e^2={se2:.7f}")
-print(f"permanent variance sw2 = {sw2:.6f}   (check gamma0+2*gamma1 = {g0+2*g1:.6f})   true su2 = {0.01**2:.6f}")
-print(f"pricing-error variance  = {perr:.6f}   (bounce ~ c^2 = {0.025**2:.6f})")
-
-dp10 = [prices[i]-prices[i-10] for i in range(10, len(prices))]
-vr   = (st.pvariance(dp10)/10)/g0                  # V(10,1): longer in numerator
-print(f"variance ratio V(10,1) = {vr:.4f}   (< 1 => transitory bounce inflates 1-period variance)")
-```
-```
-gamma0=0.0013522  gamma1=-0.0006322
-MA(1): theta=-0.6902  sigma_e^2=0.0009159
-permanent variance sw2 = 0.000088   (check gamma0+2*gamma1 = 0.000088)   true su2 = 0.000100
-pricing-error variance  = 0.000436   (bounce ~ c^2 = 0.000625)
-variance ratio V(10,1) = 0.1630   (< 1 => transitory bounce inflates 1-period variance)
-```
 
 The permanent (random-walk) innovation variance $0.000088$ matches $\gamma_0+2\gamma_1$ and recovers the true efficient $\sigma_u^2=0.0001$; the pricing-error variance $0.000436$ approximates the bounce $c^2$. The variance ratio below 1 is the empirical signature of the transitory component.
 
@@ -144,11 +109,11 @@ The permanent (random-walk) innovation variance $0.000088$ matches $\gamma_0+2\g
 
 ### 5. Canonical Literature & Study References
 
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 8 (generalized Roll, $\sigma_w^2=\gamma_0+2\gamma_1$, variance ratio, B–N decomposition) and Ch 9 (multivariate VAR, price impact, $\lambda^2\sigma_v^2$ info measure) — *verified per-chapter in the corpus*.
-- **Beveridge & Nelson (1981)**, *A new approach to decomposition of economic time series into permanent and transitory components*, Journal of Monetary Economics 7(2) — the permanent/transitory split.
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 8 (generalized Roll, $\sigma_w^2=\gamma_0+2\gamma_1$, variance ratio, B–N decomposition) and Ch 9 (multivariate VAR, price impact, $\lambda^2\sigma_v^2$ info measure) - *verified per-chapter in the corpus*.
+- **Beveridge & Nelson (1981)**, *A new approach to decomposition of economic time series into permanent and transitory components*, Journal of Monetary Economics 7(2) - the permanent/transitory split.
 - **Watson (1986)**, *Univariate detrending methods with stochastic trends*, Journal of Monetary Economics 18(1).
-- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4) — the structural three-component model underlying Ch 8's measurement.
-- **Hasbrouck (1991)**, *Measuring the information content of stock trades*, Journal of Finance 46(1) — the trade-innovation VAR, the empirical route to $\lambda$.
+- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4) - the structural three-component model underlying Ch 8's measurement.
+- **Hasbrouck (1991)**, *Measuring the information content of stock trades*, Journal of Finance 46(1) - the trade-innovation VAR, the empirical route to $\lambda$.
 
 ---
 

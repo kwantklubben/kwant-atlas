@@ -15,17 +15,17 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-A trading system fails *quietly*. The market does not return an error when your order router retries a cancel six thousand times, or when your position feed silently stops updating, or when latency creeps from 40 µs to 4 ms because another process took your CPU. Every one of those is a smooth degradation with no exception, no stack trace, and no immediate loss — until it is a catastrophic one.
+A trading system fails *quietly*. The market does not return an error when your order router retries a cancel six thousand times, or when your position feed silently stops updating, or when latency creeps from 40 µs to 4 ms because another process took your CPU. Every one of those is a smooth degradation with no exception, no stack trace, and no immediate loss - until it is a catastrophic one.
 
 Monitoring is the component that converts silence into a signal. Its job is to answer three questions continuously, all of them about **your system**, never about the market:
 
-1. **Is it alive?** — liveness: processes running, heartbeats fresh, data flowing, clock advancing.
-2. **Is it correct?** — integrity: positions reconcile, orders acknowledged, reject rate normal, P&L explained.
-3. **Is it fast enough?** — performance: end-to-end latency distribution, queue depths, message rates, resource saturation.
+1. **Is it alive?** - liveness: processes running, heartbeats fresh, data flowing, clock advancing.
+2. **Is it correct?** - integrity: positions reconcile, orders acknowledged, reject rate normal, P&L explained.
+3. **Is it fast enough?** - performance: end-to-end latency distribution, queue depths, message rates, resource saturation.
 
-Alerting is the *policy* layer on top: which of those signals deserves to wake a human, and which should trigger an automated action. And here is the first-principles trap: **an alert that fires falsely trains its humans to ignore it, and an ignored alert is worse than no alert** (it creates false confidence). Alert design is therefore a statistics problem — you are choosing a threshold on a noisy signal, and the false-alarm rate is a computable quantity, not a matter of taste.
+Alerting is the *policy* layer on top: which of those signals deserves to wake a human, and which should trigger an automated action. And here is the first-principles trap: **an alert that fires falsely trains its humans to ignore it, and an ignored alert is worse than no alert** (it creates false confidence). Alert design is therefore a statistics problem - you are choosing a threshold on a noisy signal, and the false-alarm rate is a computable quantity, not a matter of taste.
 
-> **The one-sentence essence.** "Monitor liveness, integrity, and latency — in that order — and set thresholds from the *measured noise* of the in-control signal, sized so the alert fires rarely enough that humans still believe it; if a signal must be checked continuously, escalate on rate-of-change or on a *shape*, not on a single-threshold crossing."
+> **The one-sentence essence.** "Monitor liveness, integrity, and latency - in that order - and set thresholds from the *measured noise* of the in-control signal, sized so the alert fires rarely enough that humans still believe it; if a signal must be checked continuously, escalate on rate-of-change or on a *shape*, not on a single-threshold crossing."
 
 ---
 
@@ -59,8 +59,8 @@ $$
 
 The control limit is set at $L = \mu_x + k\sigma_z$ (a $k$-sigma band on the *smoothed* signal). The choice $\lambda$ is the classic bias/variance knob:
 
-- **Small $\lambda$ (e.g. 0.05):** $z_t$ is a slow average — very quiet, but sluggish to react; good for slow drift (memory growth, position creep).
-- **Large $\lambda$ (e.g. 0.4):** $z_t$ tracks $x_t$ closely — responsive, but noisier; good for step changes (a latency regime shift, a rate spike).
+- **Small $\lambda$ (e.g. 0.05):** $z_t$ is a slow average - very quiet, but sluggish to react; good for slow drift (memory growth, position creep).
+- **Large $\lambda$ (e.g. 0.4):** $z_t$ tracks $x_t$ closely - responsive, but noisier; good for step changes (a latency regime shift, a rate spike).
 
 For a step of size $\Delta$ injected at time $t_0$, the EWMA's distance from the in-control mean grows as
 
@@ -94,60 +94,17 @@ $$
 \text{ack rate} = \frac{\#\{\text{orders acknowledged}\}}{\#\{\text{orders sent}\}}, \qquad \text{break count} = \#\{i : |q_i^{\text{int}}-q_i^{\text{ext}}|>\epsilon\}.
 $$
 
-A drop in ack rate or a non-zero break count precedes almost every catastrophic failure — the loss is just the cost of finding out, and monitoring's job is to find out for free.
+A drop in ack rate or a non-zero break count precedes almost every catastrophic failure - the loss is just the cost of finding out, and monitoring's job is to find out for free.
 
 ---
 
-### 3. Computational Implementation — false alarms and an EWMA detector
+### 3. Computational Implementation - false alarms and an EWMA detector
 
 Stdlib only. Part 1 computes the fleet-wide false-alarm rate as a function of the threshold (the computation that should precede *any* threshold decision). Part 2 builds an EWMA control chart on a synthetic in-control series with a step change injected, and reports the detection delay.
 
-```python
-import math, random
 
-# --- 1. Why fixed threshold alerting fails at fleet scale (stdlib only) ---
-def Phi(x): return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
-metrics, interval_s = 100, 10.0
-n_day = 86400.0 / interval_s
-print(f"{metrics} metrics @ {interval_s:.0f}s -> {n_day:,.0f} samples/metric/day")
-print(f"{'k':>3s} {'P(|z|>k)':>12s} {'FA/metric/day':>14s} {'FA/fleet/day':>13s}")
-for k in (2, 3, 4, 5, 6):
-    p = 2.0 * (1.0 - Phi(k))
-    per = n_day * p
-    print(f"{k:3d} {p:12.3e} {per:14.3f} {per*metrics:13.1f}")
-
-# --- 2. EWMA control chart: quiet in control, loud on a step ---
-random.seed(7)
-lam, baseline, sd = 0.2, 20.0, 1.0
-series = ([baseline + random.gauss(0, sd) for _ in range(50)]
-          + [baseline + 2.0 + random.gauss(0, sd) for _ in range(20)])
-limit = baseline + 3.0 * sd * math.sqrt(lam / (2.0 - lam))
-z, first, in_control_alarms = series[0], None, 0
-for i, x in enumerate(series):
-    z = lam * x + (1.0 - lam) * z
-    if z > limit:
-        if i < 50: in_control_alarms += 1
-        elif first is None: first = i
-print(f"\nEWMA(lambda={lam}) control limit = {limit:.3f} (= baseline + 3 sigma_EWMA)")
-print(f"alarms in the in-control stretch (samples 0-49): {in_control_alarms}")
-print(f"step of +2 sd injected at sample 50 -> first alarm at sample {first} "
-      f"(delay {first-50} samples)")
-```
-```
-100 metrics @ 10s -> 8,640 samples/metric/day
-  k     P(|z|>k)  FA/metric/day  FA/fleet/day
-  2    4.550e-02        393.122       39312.2
-  3    2.700e-03         23.326        2332.6
-  4    6.334e-05          0.547          54.7
-  5    5.733e-07          0.005           0.5
-  6    1.973e-09          0.000           0.0
-
-EWMA(lambda=0.2) control limit = 21.000 (= baseline + 3 sigma_EWMA)
-alarms in the in-control stretch (samples 0-49): 0
-step of +2 sd injected at sample 50 -> first alarm at sample 54 (delay 4 samples)
-```
-Read the two halves together. At $k=3$ — the "obvious" choice — a modest fleet of 100 metrics generates **2,332 false alarms per day**, which is a fleet nobody can respond to; $k=5$ brings it to **0.5/day**, which is staffed. And the EWMA chart achieves **zero false alarms over 50 in-control samples** while catching a modest $+2\sigma$ step within **4 samples** — quiet *and* fast, because it integrates rather than thresholds.
+Read the two halves together. At $k=3$ - the "obvious" choice - a modest fleet of 100 metrics generates **2,332 false alarms per day**, which is a fleet nobody can respond to; $k=5$ brings it to **0.5/day**, which is staffed. And the EWMA chart achieves **zero false alarms over 50 in-control samples** while catching a modest $+2\sigma$ step within **4 samples** - quiet *and* fast, because it integrates rather than thresholds.
 
 ---
 
@@ -156,7 +113,7 @@ Read the two halves together. At $k=3$ — the "obvious" choice — a modest fle
 1. **Alert fatigue as a causal failure mode.** With 2,332 daily alerts, the human response converges on "acknowledge and ignore," so the *one* real alert is ignored too. The fix is not "tell people to take alerts seriously"; it is to raise thresholds / aggregate until the base rate is staffable. An alert with a 99.99% false-alarm rate carries essentially no information.
 2. **Monitoring the market instead of the system.** "VIX is up 30%" is not an actionable system alert. Alert on *your* liveness, integrity, and latency. Market conditions are inputs to risk limits, not monitor pages.
 3. **Mean latency dashboards.** The mean hides exactly the property (the tail) that costs money. Collect the histogram; alert on $p_{99.9}$ against a budget.
-4. **Dead-man's-switch absence.** If the monitoring agent dies, the absence of alerts looks identical to the absence of problems. Every monitor needs an external heartbeat (a *watchdog*, itself monitored by something else) — the control-on-the-control of [[pillars/08-quantitative-development/production-trading-systems/05-failure-modes-and-practice|05 · Failure Modes]].
+4. **Dead-man's-switch absence.** If the monitoring agent dies, the absence of alerts looks identical to the absence of problems. Every monitor needs an external heartbeat (a *watchdog*, itself monitored by something else) - the control-on-the-control of [[pillars/08-quantitative-development/production-trading-systems/05-failure-modes-and-practice|05 · Failure Modes]].
 5. **Time-base and clock skew.** Metrics stitched across hosts with unsynchronised clocks alias and lie (latency appears negative; events reorder). Time sync is a monitoring prerequisite, not an ops detail.
 6. **Alerting on symptoms you cannot act on.** Every alert needs a runbook entry: a named owner and a concrete first action. If the response to an alert is "look at it tomorrow," it is a dashboard, not an alert.
 
@@ -164,11 +121,11 @@ Read the two halves together. At $k=3$ — the "obvious" choice — a modest fle
 
 ### 5. Canonical Literature & Study References
 
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) — Ch 6 (monitoring distributed systems), Ch 10 (practical alerting: "alert on symptoms, not causes"), Ch 4 (SLOs and error budgets). *The primary source for alerting philosophy.*
-- **Montgomery, Douglas C.**, *Introduction to Statistical Quality Control* — the EWMA/CUSUM control-chart theory behind §2.2, including the average-run-length and detection-delay formulas.
-- **Narang**, *Inside the Black Box*, 2nd ed. — the operational monitoring apparatus of a real quant shop.
-- **NautilusTrader — Official Documentation** (nautilustrader.io) — a live engine's built-in metrics, clock, and risk-status reporting as an implementable model.
-- **Kleppmann, Martin**, *Designing Data-Intensive Applications* (O'Reilly, 2017) — Ch 8–9 on clocks, time, and detecting process failure; the distributed-systems substrate under liveness monitoring.
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) - Ch 6 (monitoring distributed systems), Ch 10 (practical alerting: "alert on symptoms, not causes"), Ch 4 (SLOs and error budgets). *The primary source for alerting philosophy.*
+- **Montgomery, Douglas C.**, *Introduction to Statistical Quality Control* - the EWMA/CUSUM control-chart theory behind §2.2, including the average-run-length and detection-delay formulas.
+- **Narang**, *Inside the Black Box*, 2nd ed. - the operational monitoring apparatus of a real quant shop.
+- **NautilusTrader - Official Documentation** (nautilustrader.io) - a live engine's built-in metrics, clock, and risk-status reporting as an implementable model.
+- **Kleppmann, Martin**, *Designing Data-Intensive Applications* (O'Reilly, 2017) - Ch 8–9 on clocks, time, and detecting process failure; the distributed-systems substrate under liveness monitoring.
 
 ---
 

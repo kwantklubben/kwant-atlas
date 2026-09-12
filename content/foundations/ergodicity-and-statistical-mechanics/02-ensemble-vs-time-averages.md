@@ -1,5 +1,5 @@
 ---
-title: "F.9.2 Ensemble vs Time Averages"
+title: "M.9.2 Ensemble vs Time Averages"
 tags:
   - foundations
   - ergodicity
@@ -16,7 +16,7 @@ tags:
 
 Page 01 showed the paradox on a coin. This page names the machinery: **what ergodicity is, why additive processes have it, why multiplicative processes lose it, and how to tell the two apart before you are ruined by one.**
 
-The practical objective is a *test you can apply*: given a quantity that evolves, is its ensemble average a fair description of what one participant experiences over time? For a **sum** (additive) the answer is yes — the law of large numbers makes one long path's average converge to the group mean. For a **product** (multiplicative, i.e. any compounding account) the answer is no — the group mean is inflated by a vanishing tail, and the typical path is governed by a *different, smaller* number.
+The practical objective is a *test you can apply*: given a quantity that evolves, is its ensemble average a fair description of what one participant experiences over time? For a **sum** (additive) the answer is yes - the law of large numbers makes one long path's average converge to the group mean. For a **product** (multiplicative, i.e. any compounding account) the answer is no - the group mean is inflated by a vanishing tail, and the typical path is governed by a *different, smaller* number.
 
 Two vocabulary items make the rest of the folder precise:
 
@@ -68,7 +68,7 @@ $$
 \boxed{\;\text{ensemble growth rate}\;\ge\;\text{time-average growth rate}\;}
 $$
 
-and the gap is precisely the variance penalty of page 03. When $\mathbb{E}[1+R]>1$ but $\mathbb{E}[\ln(1+R)]<0$ the process is *positively expected yet almost surely decaying* — the coin game of page 01, and the object lesson of non-ergodicity.
+and the gap is precisely the variance penalty of page 03. When $\mathbb{E}[1+R]>1$ but $\mathbb{E}[\ln(1+R)]<0$ the process is *positively expected yet almost surely decaying* - the coin game of page 01, and the object lesson of non-ergodicity.
 
 **Why the ensemble is misleading here.** $\mathbb{E}[W_N]=W_0\,\mathbb{E}[1+R]^N$ is carried by exponentially rare paths: the mean is not a "typical" value. The **median** is the typical value, and it tracks the time average: $\mathrm{med}(W_N/W_0)\approx e^{Ng}$ for large $N$. A distribution whose mean and median diverge exponentially is the definition of a non-ergodic wealth process.
 
@@ -87,48 +87,12 @@ The moral: **anything that compounds (capital, information, population) must be 
 
 ---
 
-### 3. Computational Implementation — the two games side by side
+### 3. Computational Implementation - the two games side by side
 
-Stdlib only. We run the *same* two-sided coin two ways — once additively, once multiplicatively — and watch the time average and ensemble average agree in one case and split in the other.
+Stdlib only. We run the *same* two-sided coin two ways - once additively, once multiplicatively - and watch the time average and ensemble average agree in one case and split in the other.
 
-```python
-import math, random
 
-# ADDITIVE game: increments +0.05 / -0.04,  E[increment] = +0.005
-random.seed(1)
-N, M = 200, 100000
-add_ens = 0.0
-for _ in range(M):                      # ensemble at time N
-    a = 0.0
-    for _ in range(N):
-        a += 0.05 if random.random() < 0.5 else -0.04
-    add_ens += a
-print("ADDITIVE  ensemble mean x_N  = %.4f   (theory N*0.005 = %.4f)" % (add_ens/M, N*0.005))
 
-random.seed(2)
-T = 2_000_000                           # one long path -> time average
-s = 0.0
-for _ in range(T):
-    s += 0.05 if random.random() < 0.5 else -0.04
-print("ADDITIVE  time avg increment = %.5f   (ensemble = 0.00500) -> MATCH" % (s/T))
-
-# MULTIPLICATIVE game: multipliers 1.5 / 0.6
-print("MULT      ensemble mean x_N  = %.4e   (theory 1.05^N = %.4e)" % (1.05**N, 1.05**N))
-random.seed(3)
-logw = 0.0; T2 = 2_000_000
-for _ in range(T2):
-    logw += math.log(1.5) if random.random() < 0.5 else math.log(0.6)
-print("MULT      time avg log-growth= %.5f   (ensemble-per-round ln E[1+R] = %.5f)"
-      % (logw/T2, math.log(1.05)))
-print("MULT      -> time-average growth NEGATIVE though ensemble growth POSITIVE")
-```
-```
-ADDITIVE  ensemble mean x_N  = 0.9967   (theory N*0.005 = 1.0000)
-ADDITIVE  time avg increment = 0.00501   (ensemble = 0.00500) -> MATCH
-MULT      ensemble mean x_N  = 1.7293e+04   (theory 1.05^N = 1.7293e+04)
-MULT      time avg log-growth= -0.05325   (ensemble-per-round ln E[1+R] = 0.04879)
-MULT      -> time-average growth NEGATIVE though ensemble growth POSITIVE
-```
 
 The additive path's time average ($0.00501$) sits on its ensemble mean ($0.00500$): ergodic. The multiplicative game's time average ($-0.053$ per round, matching the theoretical $-0.0527$) has the **opposite sign** to its ensemble growth ($+0.0488$): non-ergodic, with the divergence growing without bound.
 
@@ -145,10 +109,10 @@ The additive path's time average ($0.00501$) sits on its ensemble mean ($0.00500
 
 ### 5. Canonical Literature & Study References
 
-- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019) — the additive/multiplicative dichotomy and the ensemble/time-average distinction.
-- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016) — the "growth rate of the dynamic" as the correct ergodic object.
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §2 — the bold strategy (maximise $\mathbb{E}[W_N]$) versus the growth strategy (maximise $\mathbb{E}[\ln W_N]$), and Theorem 1 (i)–(iii) on the certain growth/decay threshold. *Corpus-verified.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*, Ch 13 & 15 — random walks and the strong law behind the additive case, and GBM's $\mathbb{E}[S_t]=S_0e^{\mu t}$ vs $S_t=S_0e^{\mu t-\frac12\sigma^2 t+\sigma W_t}$. *Math-verified in the corpus.*
+- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019) - the additive/multiplicative dichotomy and the ensemble/time-average distinction.
+- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016) - the "growth rate of the dynamic" as the correct ergodic object.
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §2 - the bold strategy (maximise $\mathbb{E}[W_N]$) versus the growth strategy (maximise $\mathbb{E}[\ln W_N]$), and Theorem 1 (i)–(iii) on the certain growth/decay threshold. *Corpus-verified.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*, Ch 13 & 15 - random walks and the strong law behind the additive case, and GBM's $\mathbb{E}[S_t]=S_0e^{\mu t}$ vs $S_t=S_0e^{\mu t-\frac12\sigma^2 t+\sigma W_t}$. *Math-verified in the corpus.*
 
 ---
 

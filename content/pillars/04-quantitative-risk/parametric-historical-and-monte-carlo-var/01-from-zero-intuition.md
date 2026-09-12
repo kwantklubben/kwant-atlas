@@ -14,9 +14,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of Value at Risk with **no prior risk knowledge needed**. The objective is one idea: **VaR is just a quantile of your portfolio's loss distribution — the number that says "I only lose more than this with probability $1-\alpha$."** Everything else in this folder is about *how to obtain that quantile in practice*, because you almost never know the true loss distribution; you have to estimate it from a model or from data.
+This page builds the *why* of Value at Risk with **no prior risk knowledge needed**. The objective is one idea: **VaR is just a quantile of your portfolio's loss distribution - the number that says "I only lose more than this with probability $1-\alpha$."** Everything else in this folder is about *how to obtain that quantile in practice*, because you almost never know the true loss distribution; you have to estimate it from a model or from data.
 
-Start with the dumbest framing. A trader holds a portfolio. Tomorrow the market moves and the portfolio gains or loses $\Delta V$ dollars. We don't know $\Delta V$ in advance — it is random, drawn from some distribution. Define the **loss** $L=-\Delta V$ (positive when we lose money, and a negative loss is a gain). The 99% VaR over one day is the number $v$ such that
+Start with the dumbest framing. A trader holds a portfolio. Tomorrow the market moves and the portfolio gains or loses $\Delta V$ dollars. We don't know $\Delta V$ in advance - it is random, drawn from some distribution. Define the **loss** $L=-\Delta V$ (positive when we lose money, and a negative loss is a gain). The 99% VaR over one day is the number $v$ such that
 
 $$
 P(L > v) = 0.01,
@@ -24,9 +24,9 @@ $$
 
 i.e. *99% of the time the loss is no worse than $v$; only on 1 day in 100 do we lose more.* Three mental "aha"s:
 
-1. **VaR is a quantile, not an expectation.** It speaks about the *right tail* of the loss distribution, not its center. The mean loss could be tiny while VaR is huge — they answer different questions ("how much on a normal day" vs "how bad on a bad day").
+1. **VaR is a quantile, not an expectation.** It speaks about the *right tail* of the loss distribution, not its center. The mean loss could be tiny while VaR is huge - they answer different questions ("how much on a normal day" vs "how bad on a bad day").
 
-2. **Confidence and horizon are the two knobs.** Raise confidence $99\%\to99.9\%$ and VaR grows (you go further into the tail); lengthen the horizon $1\text{ day}\to10\text{ days}$ and VaR grows like $\sqrt{h}$ under i.i.d. returns. There is no single "the VaR" — every VaR number is meaningless unless it comes with a confidence and a horizon.
+2. **Confidence and horizon are the two knobs.** Raise confidence $99\%\to99.9\%$ and VaR grows (you go further into the tail); lengthen the horizon $1\text{ day}\to10\text{ days}$ and VaR grows like $\sqrt{h}$ under i.i.d. returns. There is no single "the VaR" - every VaR number is meaningless unless it comes with a confidence and a horizon.
 
 3. **VaR is model-free as a *definition*, but not as a *number*.** The *definition* "the $\alpha$-quantile of the loss distribution" needs no assumptions. But computing it requires the distribution, and *that* is where the three methods part ways: **parametric** assumes the shape, **historical** samples it from the past, **Monte Carlo** builds it by simulation.
 
@@ -48,55 +48,28 @@ $$
 \text{VaR}_\alpha^{(h)} = \text{VaR}_\alpha^{(1)} \cdot \sqrt{h}.
 $$
 
-This is the famous **$\sqrt{h}$ rule** (Hull Ch 22: "N-day VaR = 1-day VaR × √N"). It is *exact only under i.i.d. normal-ish returns* — when losses cluster (GARCH), the true $h$-day VaR scales slower or faster — a failure mode in [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05]].
+This is the famous **$\sqrt{h}$ rule** (Hull Ch 22: "N-day VaR = 1-day VaR × √N"). It is *exact only under i.i.d. normal-ish returns* - when losses cluster (GARCH), the true $h$-day VaR scales slower or faster - a failure mode in [[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/05-failure-modes-and-practice|05]].
 
 **Why a quantile at all? (vs the average loss).** The average loss (Expected Shortfall, [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|ES]]) answers "given I'm in the tail, how bad is it?", which is why regulators now prefer it. But VaR is the historically standard number: it is a *single market-stable capital figure* a board can hold, and it is *computable* from each of the three methods below.
 
 ---
 
-### 3. Computational Implementation — "what is a quantile, really?"
+### 3. Computational Implementation - "what is a quantile, really?"
 
 There is literally nothing mysterious here: a quantile is one line of Python. We take a set of hypothetical daily portfolio losses (our "crystal ball" of the future) and just grab the right one. Stdlib only.
 
-```python
-import math, random
 
-# Simulate 1000 one-day portfolio losses under a normal factor model.
-# (This is our stand-in for "the truth"; in practice a method supplies it.)
-random.seed(1)
-sigs = [0.012, 0.020]; pos = [40000.0, 60000.0]; rho = 0.40
-losses = []
-for _ in range(1000):
-    z  = random.gauss(0, 1)
-    r1, r2 = sigs[0]*z, sigs[1]*(rho*z + math.sqrt(1-rho*rho)*random.gauss(0, 1))
-    losses.append(-(r1*pos[0] + r2*pos[1]))
-losses.sort()
 
-def quantile(sorted_data, alpha):
-    k = math.ceil(len(sorted_data)*alpha) - 1
-    return sorted_data[max(k,0)]
-
-print(f"median loss        (50%) = {quantile(losses, 0.50):8.2f}")
-print(f"95% VaR                  = {quantile(losses, 0.95):8.2f}")
-print(f"99% VaR                  = {quantile(losses, 0.99):8.2f}")
-print(f"99.9% VaR                = {quantile(losses, 0.999):8.2f}")
-```
-```
-median loss        (50%) =   -67.69
-95% VaR                  =  2374.30
-99% VaR                  =  3432.97
-99.9% VaR                =  4496.08
-```
-Watch the behavior: the **median loss is negative** (a typical day is a small *gain*), yet the 99% and 99.9% VaR are thousands of dollars in losses. That is exactly the tail-vs-center gap from §1 — and it shows why confidence matters: raise the confidence and the VaR rockets into the tail. Note `quantile()` sorts the *loss* upward, so the `k`-th smallest loss at rank `round(αn)` is exactly the $\alpha$-quantile.
+Watch the behavior: the **median loss is negative** (a typical day is a small *gain*), yet the 99% and 99.9% VaR are thousands of dollars in losses. That is exactly the tail-vs-center gap from §1 - and it shows why confidence matters: raise the confidence and the VaR rockets into the tail. Note `quantile()` sorts the *loss* upward, so the `k`-th smallest loss at rank `round(αn)` is exactly the $\alpha$-quantile.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"The 99% VaR."** Saying just that is ambiguous — VaR lives in (confidence, horizon) space: 99% *what*? 1-day or 10-day? Differ by $\sqrt{10}\approx3.16$. Cite both, always.
+1. **"The 99% VaR."** Saying just that is ambiguous - VaR lives in (confidence, horizon) space: 99% *what*? 1-day or 10-day? Differ by $\sqrt{10}\approx3.16$. Cite both, always.
 2. **Quantile instability in the tail.** Less data lives out at 99.9%, so estimates bounce wildly (Glasserman Ch 9: quantile-estimation variance $\propto p(1-p)/f(x_p)^2$ blows up as $p\to0$). The 99.9% number in §3 is the *least* reliable of the four.
 3. **Sign errors.** Loss $L=-\Delta V$; compute VaR on the wrong sign and you have quoted gains as risk. Getting VaR from P&L requires taking `-` exactly once, in the right place.
-4. **VaR isn't subadditive.** $\text{VaR}(X+Y)$ can exceed $\text{VaR}(X)+\text{VaR}(Y)$ (Artzner et al. 1999; [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|ES is the coherent fix]]). Summing desk VaRs to get firm VaR can *understate* risk — dangerous precisely because it feels safe.
+4. **VaR isn't subadditive.** $\text{VaR}(X+Y)$ can exceed $\text{VaR}(X)+\text{VaR}(Y)$ (Artzner et al. 1999; [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|ES is the coherent fix]]). Summing desk VaRs to get firm VaR can *understate* risk - dangerous precisely because it feels safe.
 
 ---
 
@@ -104,7 +77,7 @@ Watch the behavior: the **median loss is negative** (a typical day is a small *g
 
 - **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 §22.1 (VaR definition, $X$%/$N$-day convention, the $\sqrt h$ rule). *Verified in corpus.*
 - **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 §9.1 (VaR as quantile; empirical-quantile estimation and its variance). *Math-verified.*
-- **Jorion, Philippe**: *Value at Risk: The New Benchmark for Managing Financial Risk* (3rd ed., 2006) — the classic practitioner survey of the VaR paradigm and its history.
+- **Jorion, Philippe**: *Value at Risk: The New Benchmark for Managing Financial Risk* (3rd ed., 2006) - the classic practitioner survey of the VaR paradigm and its history.
 
 ---
 

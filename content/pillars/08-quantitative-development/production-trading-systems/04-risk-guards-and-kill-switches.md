@@ -15,12 +15,12 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-On 1 August 2012, a bad deployment at Knight Capital left an obsolete code path live on one of eight servers. Over 45 minutes it sent millions of unintended orders, accumulated a position the firm could not finance, and lost roughly **\$440 million**, which was more than the firm's equity — Knight was sold within days. Nothing in that system's *strategy* was wrong. What was missing was a component whose only job was to **say no**.
+On 1 August 2012, a bad deployment at Knight Capital left an obsolete code path live on one of eight servers. Over 45 minutes it sent millions of unintended orders, accumulated a position the firm could not finance, and lost roughly **\$440 million**, which was more than the firm's equity - Knight was sold within days. Nothing in that system's *strategy* was wrong. What was missing was a component whose only job was to **say no**.
 
 Risk guards and kill switches are that component. They sit *between* the strategy and the wire and they are the one part of the stack that must be correct when everything else is broken:
 
-- **Risk guards** are per-action, always-on checks. They evaluate every order in the microseconds before it is serialised, and they *drop the order* if it violates a limit. They are fast, deterministic, and boringly simple — no model, no state machine beyond a token bucket.
-- **Kill switches** are global, escalating, and stateful. When risk guards cannot save you (the strategy is misbehaving in a way no per-order rule anticipated), the kill switch **cancels everything, blocks new risk, and — at its final setting — flattens the book and disconnects.**
+- **Risk guards** are per-action, always-on checks. They evaluate every order in the microseconds before it is serialised, and they *drop the order* if it violates a limit. They are fast, deterministic, and boringly simple - no model, no state machine beyond a token bucket.
+- **Kill switches** are global, escalating, and stateful. When risk guards cannot save you (the strategy is misbehaving in a way no per-order rule anticipated), the kill switch **cancels everything, blocks new risk, and - at its final setting - flattens the book and disconnects.**
 
 Three design principles, each a first principle:
 
@@ -28,7 +28,7 @@ Three design principles, each a first principle:
 2. **Every limit must be expressible as a closed-form inequality on observable state.** No forecast, no model, no judgement. A guard that needs to think is a guard that can be talked out of it.
 3. **The kill switch must have a bounded, pre-tested, *bounded-time* path to flat.** "We can always flatten manually" is false exactly when it matters (the market is fast and everyone else is also trying to cancel).
 
-> **The one-sentence essence.** "Every order passes through an ordering of cheap deterministic checks (size, notional, price, rate, exposure) that either approves it or drops it; and above those sits a state machine that escalates RUNNING → WARNING → SOFT_HALT → HARD_HALT on realised loss, and that, at HARD_HALT, cancels all resting orders, blocks all new risk, flattens, and disconnects — with manual, cool-down-gated recovery."
+> **The one-sentence essence.** "Every order passes through an ordering of cheap deterministic checks (size, notional, price, rate, exposure) that either approves it or drops it; and above those sits a state machine that escalates RUNNING → WARNING → SOFT_HALT → HARD_HALT on realised loss, and that, at HARD_HALT, cancels all resting orders, blocks all new risk, flattens, and disconnects - with manual, cool-down-gated recovery."
 
 ---
 
@@ -52,7 +52,7 @@ Crucially, G4/G5 check the **post-trade** state, not the current state: a guard 
 
 #### 2.2 Token-bucket rate limiting
 
-A token bucket $(B, R)$ — capacity $B$ tokens, refill rate $R$ tokens/second — satisfies, at time $t$ since the last refill,
+A token bucket $(B, R)$ - capacity $B$ tokens, refill rate $R$ tokens/second - satisfies, at time $t$ since the last refill,
 
 $$
 b_t = \min\big(B,\; b_{t^-} + R\,\Delta t\big),\qquad \text{approve iff } b_t \ge 1,\ \text{then } b_t \leftarrow b_t - 1.
@@ -60,7 +60,7 @@ $$
 
 Its properties are what make it the right primitive for market access:
 
-- **Steady-state rate $\le R$**, with the ability to burst up to $B$ — which matches how exchanges actually penalise you (bursts are free, sustained excess is not).
+- **Steady-state rate $\le R$**, with the ability to burst up to $B$ - which matches how exchanges actually penalise you (bursts are free, sustained excess is not).
 - **Bounded memory**: two numbers, so it can live in the hot path for nanoseconds.
 
 The alternative, a sliding window counter, needs $O(R\,W)$ state and is far more expensive at wire speed. $B$ is chosen as your burst tolerance (e.g. 4–10 messages) and $R$ as the exchange's message-rate allowance, typically set to a *fraction* of the limit so the guard fires well before the venue's own throttle (which is punitive and often disconnects the session).
@@ -89,7 +89,7 @@ The **hysteresis gap $\alpha>\beta$ is not optional.** Without it, a P&L series 
 | SOFT_HALT | **rejected** | **cancel all** | up (so cancels reach the venue) |
 | HARD_HALT | **rejected** | **cancel all** | **flatten, then disconnect** |
 
-Note the ordering constraint that makes the ladder work: SOFT_HALT keeps the connection *up* precisely so the cancels can be delivered; only HARD_HALT (all else failed) drops the wire. A kill switch that disconnects before it finishes cancelling leaves the resting orders live at the venue — the classic "I killed it and it kept trading" bug.
+Note the ordering constraint that makes the ladder work: SOFT_HALT keeps the connection *up* precisely so the cancels can be delivered; only HARD_HALT (all else failed) drops the wire. A kill switch that disconnects before it finishes cancelling leaves the resting orders live at the venue - the classic "I killed it and it kept trading" bug.
 
 #### 2.4 Latency budget for the guard
 
@@ -97,88 +97,20 @@ The whole guard must fit inside the tick-to-trade budget (see [[pillars/08-quant
 
 ---
 
-### 3. Computational Implementation — the guard + kill-switch state machine
+### 3. Computational Implementation - the guard + kill-switch state machine
 
 Stdlib only, no wall clock: the "clock" is an explicit `t` in the event stream, so the trace is exactly reproducible. The class implements G1–G3, the token bucket, and the four-state ladder with hysteresis and manual-reset-only recovery from HARD_HALT.
 
-```python
-# --- kill-switch state machine + pre-trade guard (stdlib only, no wall clock) ---
-RUNNING, WARNING, SOFT_HALT, HARD_HALT = "RUNNING", "WARNING", "SOFT_HALT", "HARD_HALT"
 
-class Guard:
-    """Pre-trade limits + a 4-state kill switch driven by an explicit clock."""
-    def __init__(self, qty_cap, notional_cap, loss_cap, rate, burst):
-        self.qty_cap, self.notional_cap, self.loss_cap = qty_cap, notional_cap, loss_cap
-        self.rate, self.burst = rate, burst          # tokens/sec, bucket capacity
-        self.tokens, self.t_last = burst, 0.0
-        self.state, self.pnl = RUNNING, 0.0
-    def _refill(self, t):
-        self.tokens = min(self.burst, self.tokens + (t - self.t_last) * self.rate)
-        self.t_last = t
-    def check(self, t, px, qty, mid, realized):
-        self._refill(t); self.pnl = realized
-        # --- state transitions ---
-        if self.pnl <= -2.0 * self.loss_cap:
-            self.state = HARD_HALT
-        elif self.pnl <= -self.loss_cap and self.state != HARD_HALT:
-            self.state = SOFT_HALT
-        elif self.state == RUNNING and self.pnl <= -0.6 * self.loss_cap:
-            self.state = WARNING
-        elif self.state == WARNING and self.pnl > -0.4 * self.loss_cap:
-            self.state = RUNNING
-        # --- gates, in order ---
-        if self.state == HARD_HALT:
-            return "REJECT", "HARD_HALT: cancel-all + flatten + disconnect"
-        if self.state == SOFT_HALT:
-            return "REJECT", "SOFT_HALT: cancel-all, no new risk"
-        if qty > self.qty_cap:
-            return "REJECT", f"max order qty {qty}>{self.qty_cap}"
-        if px * qty > self.notional_cap:
-            return "REJECT", f"max notional {px*qty:,.0f}>{self.notional_cap:,.0f}"
-        if abs(px - mid) / mid > 0.03:
-            return "REJECT", f"price collar {100*abs(px-mid)/mid:.2f}%>3%"
-        if self.tokens < 1.0:
-            return "REJECT", "rate limit: token bucket empty"
-        self.tokens -= 1.0
-        return "APPROVE", "ok"
 
-g = Guard(qty_cap=5_000, notional_cap=100_000.0, loss_cap=25_000.0, rate=4.0, burst=4.0)
-scenario = [  # (t, px, qty, mid, realized pnl)
-    (0.00, 150.00, 200, 150.05,      0.0),
-    (0.10, 150.00, 200, 150.05,      0.0),   # orders at t=0 and t=0.1 -> bucket nearly drained
-    (0.10, 150.00, 200, 150.05,      0.0),
-    (0.50, 150.00, 9000, 150.05,     0.0),   # fat finger
-    (1.00, 160.00, 200, 150.05,      0.0),   # price collar
-    (2.00, 150.00, 200, 150.05, -16_000.0),  # WARNING threshold
-    (3.00, 150.00, 200, 150.05, -26_000.0),  # SOFT_HALT
-    (4.00, 150.00, 200, 150.05, -55_000.0),  # HARD_HALT
-    (5.00, 150.00,  10, 150.05, -55_000.0),  # stays hard-halted: manual reset only
-]
-print(f"{'t':>5s} {'state':>10s} {'pnl':>9s}  verdict  reason")
-for t, px, qty, mid, pnl in scenario:
-    v, why = g.check(t, px, qty, mid, pnl)
-    print(f"{t:5.2f} {g.state:>10s} {pnl:9,.0f}  {v:<7s}  {why}")
-```
-```
-    t      state       pnl  verdict  reason
- 0.00    RUNNING         0  APPROVE  ok
- 0.10    RUNNING         0  APPROVE  ok
- 0.10    RUNNING         0  APPROVE  ok
- 0.50    RUNNING         0  REJECT   max order qty 9000>5000
- 1.00    RUNNING         0  REJECT   price collar 6.63%>3%
- 2.00    WARNING   -16,000  APPROVE  ok
- 3.00  SOFT_HALT   -26,000  REJECT   SOFT_HALT: cancel-all, no new risk
- 4.00  HARD_HALT   -55,000  REJECT   HARD_HALT: cancel-all + flatten + disconnect
- 5.00  HARD_HALT   -55,000  REJECT   HARD_HALT: cancel-all + flatten + disconnect
-```
-Read the trace as the guard's lifeline: the fat-finger and collar orders are rejected while the system is healthy and fully trading (they were never risk to the book); then loss pulls the ladder through WARNING (still trading, humans alerted), SOFT_HALT (orders refused, everything cancelled), and HARD_HALT (**sticky**: at $t=5.00$, with P&L recovered in principle, the guard still refuses — a good strategy cannot talk the kill switch back down; only an operator can).
+Read the trace as the guard's lifeline: the fat-finger and collar orders are rejected while the system is healthy and fully trading (they were never risk to the book); then loss pulls the ladder through WARNING (still trading, humans alerted), SOFT_HALT (orders refused, everything cancelled), and HARD_HALT (**sticky**: at $t=5.00$, with P&L recovered in principle, the guard still refuses - a good strategy cannot talk the kill switch back down; only an operator can).
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **In-flight orders during a kill.** Setting a flag in memory does nothing to the orders already sitting in the socket buffer or the exchange's matching engine. A kill switch is only real once it (a) stops *issuing*, (b) *cancels* what is out, and (c) waits for cancel acknowledgements. Without (b)/(c) you have a paused strategy and a live book — the Knight Capital shape.
-2. **Cancel-on-disconnect absent.** If the session dies while resting quotes are live, an exchange without COD leaves those quotes exposed to the next price move. The guard must therefore assume *any* disconnect could leave a position, and reconciliation on reconnect must be mandatory — never "resume from in-memory state."
+1. **In-flight orders during a kill.** Setting a flag in memory does nothing to the orders already sitting in the socket buffer or the exchange's matching engine. A kill switch is only real once it (a) stops *issuing*, (b) *cancels* what is out, and (c) waits for cancel acknowledgements. Without (b)/(c) you have a paused strategy and a live book - the Knight Capital shape.
+2. **Cancel-on-disconnect absent.** If the session dies while resting quotes are live, an exchange without COD leaves those quotes exposed to the next price move. The guard must therefore assume *any* disconnect could leave a position, and reconciliation on reconnect must be mandatory - never "resume from in-memory state."
 3. **Guards that check pre-trade state.** G4/G5 applied to the *current* position approve the very order that breaches the limit. Always evaluate the hypothetic post-trade book.
 4. **Limits that can be reconfigured by the strategy.** A limit set from a config file the strategy can write, or from a runtime API the strategy can call, is not a limit. Limits belong to the risk component, versioned with the deployment.
 5. **No hysteresis.** Without the dead-band, a P&L series hovering at the threshold produces a flickering state machine that blocks recovery orders and produces alert noise (see [[pillars/08-quantitative-development/production-trading-systems/03-monitoring-and-alerting|03 · Monitoring & Alerting]] on alert fatigue).
@@ -189,12 +121,12 @@ Read the trace as the guard's lifeline: the fat-finger and collar orders are rej
 
 ### 5. Canonical Literature & Study References
 
-- **SEC Rule 15c3-5** — *Risk Management Controls for Brokers or Dealers with Market Access* — the regulatory source for pre-trade risk controls (fat-finger, notional, rate, and the "direct and exclusive" control obligation).
-- **U.S. SEC**, *In the Matter of Knight Capital Americas LLC* (Release 34-70694, 2013) — the canonical incident record; read it for the exact control gaps, not just the headline.
-- **Narang**, *Inside the Black Box*, 2nd ed. — the risk engine as a first-class component of the trading system.
-- **NautilusTrader — Official Documentation** (nautilustrader.io) — a live engine's `RiskEngine` with pre-trade checks and trading-state (active/halted) semantics: a concrete, inspectable model.
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) — Ch 13–14 on emergency response and the "fail safe" design principle.
-- **Cartea, Jaimungal & Penalva**, *Algorithmic and High-Frequency Trading* — Ch 1–2 (market access, order types) for what the guard is protecting the venue-side state machine from.
+- **SEC Rule 15c3-5** - *Risk Management Controls for Brokers or Dealers with Market Access* - the regulatory source for pre-trade risk controls (fat-finger, notional, rate, and the "direct and exclusive" control obligation).
+- **U.S. SEC**, *In the Matter of Knight Capital Americas LLC* (Release 34-70694, 2013) - the canonical incident record; read it for the exact control gaps, not just the headline.
+- **Narang**, *Inside the Black Box*, 2nd ed. - the risk engine as a first-class component of the trading system.
+- **NautilusTrader - Official Documentation** (nautilustrader.io) - a live engine's `RiskEngine` with pre-trade checks and trading-state (active/halted) semantics: a concrete, inspectable model.
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) - Ch 13–14 on emergency response and the "fail safe" design principle.
+- **Cartea, Jaimungal & Penalva**, *Algorithmic and High-Frequency Trading* - Ch 1–2 (market access, order types) for what the guard is protecting the venue-side state machine from.
 
 ---
 

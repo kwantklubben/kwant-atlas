@@ -20,9 +20,9 @@ A Linux box arrives from the factory optimised for *many users, many jobs, fair 
 
 The objective is measurable: **give your critical receive thread a core all to itself, keep its working set resident in cache and its memory mappings flat (few page-table walks), and keep it on the same NUMA node as the NIC it reads from.** Three levers, three costs:
 
-1. **`isolcpus` + `nohz_full` + CPU pinning (via `taskset`/`sched_setaffinity`)** — remove other runnable tasks and the timer tick from your core, so your thread is *never* preempted and the scheduler never moves it. The kernel still tries to be fair; this is how you opt out.
-2. **Hugepages (2 MB / 1 GB via `hugetlb` or THP)** — shrink the page table so a large working set fits in the TLB, killing the multi-walk page-table miss from the hot path.
-3. **NUMA-aware allocation (`numactl --membind`, `--cpunodebind`)** — keep a thread's memory on the same socket as its CPU and its NIC, so it never pays the inter-socket (QPI/UPI) crossing.
+1. **`isolcpus` + `nohz_full` + CPU pinning (via `taskset`/`sched_setaffinity`)** - remove other runnable tasks and the timer tick from your core, so your thread is *never* preempted and the scheduler never moves it. The kernel still tries to be fair; this is how you opt out.
+2. **Hugepages (2 MB / 1 GB via `hugetlb` or THP)** - shrink the page table so a large working set fits in the TLB, killing the multi-walk page-table miss from the hot path.
+3. **NUMA-aware allocation (`numactl --membind`, `--cpunodebind`)** - keep a thread's memory on the same socket as its CPU and its NIC, so it never pays the inter-socket (QPI/UPI) crossing.
 
 > **One-sentence essence.** "Tuning a latency host is *removing competition and removing indirection*: an isolated, pinned core that never gets preempted, a page table shallow enough to live in the TLB, and memory that never crosses a socket boundary."
 
@@ -50,47 +50,19 @@ $$
 t_{\text{eff}}=(1-\text{miss})\,t_{\text{hit}}+\text{miss}\,(t_{\text{hit}}+L\,t_{\text{walk}}).
 $$
 
-For a 64 MB working set with a 64-entry TLB: 4 KB pages give $N=16{,}384$ (99.6% miss, ~20 ns effective) vs 2 MB pages give $N=32$ (0% miss, ~4 ns). **Hugepages turn a per-packet page-walk into a TLB hit — a 5× cut in address latency on the hot path.**
+For a 64 MB working set with a 64-entry TLB: 4 KB pages give $N=16{,}384$ (99.6% miss, ~20 ns effective) vs 2 MB pages give $N=32$ (0% miss, ~4 ns). **Hugepages turn a per-packet page-walk into a TLB hit - a 5× cut in address latency on the hot path.**
 
 **NUMA crossing.** Accessing memory on the *other* socket adds ~40–80 ns per access plus potential interconnect contention. If your NIC RX ring and your thread are on different NUMA nodes, every packet pays this crossing. `numactl` pins both to one node.
 
 ---
 
-### 3. Computational Implementation — the hugepages/NUMA cost model
+### 3. Computational Implementation - the hugepages/NUMA cost model
 
 Verifies the TLB-level math: for a fixed working set, page size decides how much of the working set the TLB covers, and therefore the effective address-translation latency. Stdlib only.
 
-```python
-import math
-def walk_levels(page_bits, va=48):
-    return max(0, math.ceil((va - page_bits) / 9))
-for name, ps_bits in (("4 KB", 12), ("2 MB", 21), ("1 GB", 30)):
-    lv = walk_levels(ps_bits)
-    print(f"{name:5s}: {lv} page-table levels, walk latency ~{lv*4} ns, "
-          f"TLB covers {2**ps_bits//1024:>8,d} KB/entry")
-W = 64 * 1024 * 1024          # 64 MB hot working set
-tlb_entries = 64              # typical dTLB size
-for name, ps_bits in (("4 KB", 12), ("2 MB", 21)):
-    ps = 2 ** ps_bits
-    npages = math.ceil(W / ps)
-    miss_rate = max(0.0, 1.0 - tlb_entries / max(npages, 1))
-    lv = walk_levels(ps_bits)
-    walk = lv * 4.0           # ns per level
-    hit = 4.0                 # L1 TLB hit latency, ns
-    eff = (1 - miss_rate) * hit + miss_rate * (hit + walk)
-    print(f"{name:5s}: {npages:,d} pages, TLB miss {miss_rate*100:5.1f}%, "
-          f"walk {walk:.0f} ns -> effective addr-latency {eff:5.1f} ns (vs {hit} ns base)")
-print("NUMA: local DRAM ~80 ns, remote socket +40-80 ns per access")
-```
-```
-4 KB : 4 page-table levels, walk latency ~16 ns, TLB covers        4 KB/entry
-2 MB : 3 page-table levels, walk latency ~12 ns, TLB covers    2,048 KB/entry
-1 GB : 2 page-table levels, walk latency ~8 ns, TLB covers 1,048,576 KB/entry
-4 KB : 16,384 pages, TLB miss  99.6%, walk 16 ns -> effective addr-latency  19.9 ns (vs 4.0 ns base)
-2 MB : 32 pages, TLB miss   0.0%, walk 12 ns -> effective addr-latency   4.0 ns (vs 4.0 ns base)
-NUMA: local DRAM ~80 ns, remote socket +40-80 ns per access
-```
-The lesson: with 4 KB pages a 64 MB working set is *essentially* 100% TLB-missing (~20 ns/access); with 2 MB hugepages it is 100% TLB-resident (~4 ns). Because this cost is paid on **every** packet-touching access, it compounds directly into the receive-path tail — the *same* mechanism that makes pinning and NUMA-locality matter.
+
+
+The lesson: with 4 KB pages a 64 MB working set is *essentially* 100% TLB-missing (~20 ns/access); with 2 MB hugepages it is 100% TLB-resident (~4 ns). Because this cost is paid on **every** packet-touching access, it compounds directly into the receive-path tail - the *same* mechanism that makes pinning and NUMA-locality matter.
 
 ---
 
@@ -105,11 +77,11 @@ The lesson: with 4 KB pages a 64 MB working set is *essentially* 100% TLB-missin
 
 ### 5. Canonical Literature & Study References
 
-- **Kerrisk, Michael** — *The Linux Programming Interface*: scheduling (Ch 35), timers, `sched_setaffinity` — the tuning vocabulary.
-- **Drepper, Ulrich** — *What Every Programmer Should Know About Memory*: the canonical TLB/hugepage/memory-hierarchy treatment behind §2.
-- **Databento** — *Low-Latency Tuning Guide for Linux and Trading Systems*: IRQ affinity, NUMA-local everything, busy-polling, done for trading hosts.
-- **Red Hat Enterprise Linux** — *Monitoring and Managing System Status and Performance*: official `tcp_*`/sysctl guidance.
-- **Intel** — *NUMA and Hugepages* tuning documentation (page tables, TLB coverage).
+- **Kerrisk, Michael** - *The Linux Programming Interface*: scheduling (Ch 35), timers, `sched_setaffinity` - the tuning vocabulary.
+- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory*: the canonical TLB/hugepage/memory-hierarchy treatment behind §2.
+- **Databento** - *Low-Latency Tuning Guide for Linux and Trading Systems*: IRQ affinity, NUMA-local everything, busy-polling, done for trading hosts.
+- **Red Hat Enterprise Linux** - *Monitoring and Managing System Status and Performance*: official `tcp_*`/sysctl guidance.
+- **Intel** - *NUMA and Hugepages* tuning documentation (page tables, TLB coverage).
 
 ---
 

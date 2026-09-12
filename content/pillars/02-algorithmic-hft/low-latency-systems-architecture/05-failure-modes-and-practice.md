@@ -19,12 +19,12 @@ Low-latency systems are not defeated by being *slow*; they are defeated by being
 
 The recurring culprits, in one line each:
 
-1. **Allocation / garbage collection** in the hot path — a stop-the-world event measured in microseconds lands inside a nanosecond-scale path.
-2. **Cache misses and false sharing** — touching data the CPU doesn't have, or fighting another core for a cache line.
-3. **The OS getting in the way** — timer interrupts, context switches, page faults, syscalls.
-4. **Load-induced queueing** — the engine is fine but its *utilization* is too high ([[pillars/02-algorithmic-hft/low-latency-systems-architecture/03-system-architecture|03]]).
+1. **Allocation / garbage collection** in the hot path - a stop-the-world event measured in microseconds lands inside a nanosecond-scale path.
+2. **Cache misses and false sharing** - touching data the CPU doesn't have, or fighting another core for a cache line.
+3. **The OS getting in the way** - timer interrupts, context switches, page faults, syscalls.
+4. **Load-induced queueing** - the engine is fine but its *utilization* is too high ([[pillars/02-algorithmic-hft/low-latency-systems-architecture/03-system-architecture|03]]).
 
-> **The one-sentence essence.** "The median is vanity; the p99.9 is sanity — and the p99.9 is set by *stop-the-world events* (allocation, page faults, scheduler preemption, cache misses), not by the average instruction count, so the fix is to remove the events, not to shorten the average."
+> **The one-sentence essence.** "The median is vanity; the p99.9 is sanity - and the p99.9 is set by *stop-the-world events* (allocation, page faults, scheduler preemption, cache misses), not by the average instruction count, so the fix is to remove the events, not to shorten the average."
 
 ---
 
@@ -38,7 +38,7 @@ $$
 Q_{1-p} \approx \text{baseline} + H,
 $$
 
-so the **p99.9** — the statistic that decides close races — is baseline $+\,H$ whenever $p \gtrsim 10^{-3}$. **Reducing the baseline does nothing to the tail; removing the hiccup removes the tail in one step.** This is why "profile the mean, optimize the mean" is the wrong loop for HFT.
+so the **p99.9** - the statistic that decides close races - is baseline $+\,H$ whenever $p \gtrsim 10^{-3}$. **Reducing the baseline does nothing to the tail; removing the hiccup removes the tail in one step.** This is why "profile the mean, optimize the mean" is the wrong loop for HFT.
 
 #### 2.2 Why allocation is catastrophic
 
@@ -62,76 +62,18 @@ The memory hierarchy ([[pillars/02-algorithmic-hft/low-latency-systems-architect
 
 #### 2.4 The OS as a latency source
 
-Standard Linux is designed for throughput and fairness, not latency determinism; the scheduler *will* preempt your thread for timer ticks, background work, and interrupts. A context switch costs 1–3 µs and pollutes the cache; a page fault can cost microseconds; a syscall costs hundreds of nanoseconds and can sleep. This is the root cause of the fat receive-path tail measured in the hub. The architectural responses — `isolcpus`, `nohz_full`, IRQ affinity, `mlockall`, huge pages, busy-polling, kernel bypass — are the subject of [[pillars/02-algorithmic-hft/low-latency-systems-architecture/06-advanced-extensions|06 · Advanced Extensions]].
+Standard Linux is designed for throughput and fairness, not latency determinism; the scheduler *will* preempt your thread for timer ticks, background work, and interrupts. A context switch costs 1–3 µs and pollutes the cache; a page fault can cost microseconds; a syscall costs hundreds of nanoseconds and can sleep. This is the root cause of the fat receive-path tail measured in the hub. The architectural responses - `isolcpus`, `nohz_full`, IRQ affinity, `mlockall`, huge pages, busy-polling, kernel bypass - are the subject of [[pillars/02-algorithmic-hft/low-latency-systems-architecture/06-advanced-extensions|06 · Advanced Extensions]].
 
 ---
 
-### 3. Computational Implementation — seeing the tail fail
+### 3. Computational Implementation - seeing the tail fail
 
 Standard library only. Two experiments: (a) **tail amplification by composition** across six independent hops, and (b) **a stop-the-world hiccup injected into a nanosecond-scale path**, showing the median is untouched while the p99.9 explodes.
 
-```python
-import random, math, bisect
-random.seed(2026)
-N = 200_000
 
-def q(xs, p):                     # percentile of a pre-sorted list
-    return xs[min(len(xs)-1, int(round(p/100.0*(len(xs)-1))))]
 
-HOPS = [(300,0.15),(1200,0.60),(150,0.20),(200,0.30),(80,0.15),(350,0.20)]
-per_hop = [sorted(math.exp(random.gauss(math.log(m), s)) for _ in range(N)) for (m,s) in HOPS]
 
-# 1) TAIL AMPLIFICATION BY COMPOSITION --------------------------------
-thr = [q(per_hop[i], 99.9) for i in range(len(HOPS))]
-print("per-hop p99.9 thresholds (6 independent hops):")
-for i,(m,s) in enumerate(HOPS):
-    print(f"  hop{i+1} median {m:>4}ns -> p99.9 = {thr[i]:7.1f} ns")
-p_theory = 1 - 0.999**len(HOPS)
-M = 100_000
-aligned = [[math.exp(random.gauss(math.log(m), s)) for _ in range(M)] for (m,s) in HOPS]
-p_any = sum(1 for i in range(M)
-            if any(aligned[j][i] > thr[j] for j in range(len(HOPS)))) / M
-print(f"P(at least one hop in its own top-0.1% tail): measured {p_any:.5f}  "
-      f"vs 1-0.999^6 = {p_theory:.5f}")
-print(f"  -> a 1-in-1000 per-hop event is a ~{p_theory*1000:.0f}-in-1000 event end-to-end.\n")
-
-e2e = sorted(sum(aligned[j][i] for j in range(len(HOPS))) for i in range(M))
-print("end-to-end: mean=%.0f  p50=%.0f  p99=%.0f  p99.9=%.0f  max=%.0f ns"
-      % (sum(e2e)/M, q(e2e,50), q(e2e,99), q(e2e,99.9), e2e[-1]))
-print("  (vs p50 far below mean -> the distribution is skewed by its tail)\n")
-
-# 2) STOP-THE-WORLD EVENT IN THE HOT PATH -----------------------------
-base = sorted(math.exp(random.gauss(math.log(2000), 0.25)) for _ in range(N))
-print("allocation/GC pause injected (0.1% of messages), base median 2000ns:")
-for label, p_pause, pause_ns in (("none",0.0,0),
-                                 ("50us pause",0.001,50_000),
-                                 ("500us pause",0.001,500_000)):
-    random.seed(5)
-    xs = sorted(v + (pause_ns if random.random() < p_pause else 0.0) for v in base)
-    print(f"  {label:12s}: p50={q(xs,50):6.0f}ns  p99={q(xs,99):7.0f}ns  "
-          f"p99.9={q(xs,99.9):8.0f}ns  p99.99={q(xs,99.99):8.0f}ns")
-```
-```
-per-hop p99.9 thresholds (6 independent hops):
-  hop1 median  300ns -> p99.9 =   476.1 ns
-  hop2 median 1200ns -> p99.9 =  7719.1 ns
-  hop3 median  150ns -> p99.9 =   277.0 ns
-  hop4 median  200ns -> p99.9 =   503.5 ns
-  hop5 median   80ns -> p99.9 =   127.1 ns
-  hop6 median  350ns -> p99.9 =   653.8 ns
-P(at least one hop in its own top-0.1% tail): measured 0.00517  vs 1-0.999^6 = 0.00599
-  -> a 1-in-1000 per-hop event is a ~6-in-1000 event end-to-end.
-
-end-to-end: mean=2540  p50=2310  p99=5926  p99.9=8469  max=25563 ns
-  (vs p50 far below mean -> the distribution is skewed by its tail)
-
-allocation/GC pause injected (0.1% of messages), base median 2000ns:
-  none        : p50=  2002ns  p99=   3580ns  p99.9=    4311ns  p99.99=    5091ns
-  50us pause  : p50=  2003ns  p99=   3625ns  p99.9=   51499ns  p99.99=   52801ns
-  500us pause : p50=  2003ns  p99=   3625ns  p99.9=  501499ns  p99.99=  502801ns
-```
-
-**Read the result.** (a) Each hop is in its own worst 0.1 % with probability 0.001, yet *at least one* is in the tail **0.52–0.60 %** of the time — the ~6x amplification predicted by $1-(1-q)^k$. Per-stage "rare" events are system-level "routine" events. (b) Injecting a hiccup in just **0.1 %** of messages leaves the p50 (2 003 ns) and p99 (3 625 ns) **untouched**, but moves the p99.9 from 4 311 ns to **51 499 ns** (a 50 µs pause) or **501 499 ns** (a 500 µs pause) — the full size of the pause, exactly as §2.1 predicts. **A single stop-the-world event class defines the tail; nothing about the median reveals it.**
+**Read the result.** (a) Each hop is in its own worst 0.1 % with probability 0.001, yet *at least one* is in the tail **0.52–0.60 %** of the time - the ~6x amplification predicted by $1-(1-q)^k$. Per-stage "rare" events are system-level "routine" events. (b) Injecting a hiccup in just **0.1 %** of messages leaves the p50 (2 003 ns) and p99 (3 625 ns) **untouched**, but moves the p99.9 from 4 311 ns to **51 499 ns** (a 50 µs pause) or **501 499 ns** (a 500 µs pause) - the full size of the pause, exactly as §2.1 predicts. **A single stop-the-world event class defines the tail; nothing about the median reveals it.**
 
 ---
 
@@ -149,12 +91,12 @@ allocation/GC pause injected (0.1% of messages), base median 2000ns:
 
 ### 5. Canonical Literature & Study References
 
-- **Drepper, Ulrich** — *What Every Programmer Should Know About Memory* (2007). Cache, false sharing, prefetch, NUMA — the first-principles source for failures 2–4.
-- **Thompson, Martin** — *Mechanical Sympathy*. Practical treatment of cache-line effects and false sharing in trading systems.
-- **Gregg, Brendan** — *Systems Performance* (2nd ed., 2020). Methodology for finding the actual tail source (off-CPU analysis, flame graphs); and **Gregg**, *BPF Performance Tools* for latency histograms in production.
-- **Williams, Anthony** — *C++ Concurrency in Action* (2nd ed., 2019). Memory model and false-sharing-avoidance patterns (cross-listed: [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]).
-- **MacKenzie, Donald** — *Trading at the Speed of Light* (2021). How these engineering tails translate into who wins on the exchange.
-- **Hasbrouck & Saar** — "Low-latency trading" (2013). The market behaviour that makes tail latency expensive.
+- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory* (2007). Cache, false sharing, prefetch, NUMA - the first-principles source for failures 2–4.
+- **Thompson, Martin** - *Mechanical Sympathy*. Practical treatment of cache-line effects and false sharing in trading systems.
+- **Gregg, Brendan** - *Systems Performance* (2nd ed., 2020). Methodology for finding the actual tail source (off-CPU analysis, flame graphs); and **Gregg**, *BPF Performance Tools* for latency histograms in production.
+- **Williams, Anthony** - *C++ Concurrency in Action* (2nd ed., 2019). Memory model and false-sharing-avoidance patterns (cross-listed: [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]).
+- **MacKenzie, Donald** - *Trading at the Speed of Light* (2021). How these engineering tails translate into who wins on the exchange.
+- **Hasbrouck & Saar** - "Low-latency trading" (2013). The market behaviour that makes tail latency expensive.
 
 ---
 

@@ -9,8 +9,6 @@ tags:
 
 # Kwant Atlas: The First-Principles Map of Quantitative Finance
 
-> *"From noise to insight."* — **KwantKlubben (SDU)**
-
 Welcome to **Kwant Atlas**, the universal, interconnected knowledge base and diagnostic study tool for quantitative finance. 
 
 Rather than a linear, week-by-week curriculum, the Atlas is structured around the **8 foundational operational disciplines of quantitative finance**. Every discipline connects directly back to first principles: mathematical ground truths, computational systems, empirical failure modes, and canonical literature.
@@ -19,64 +17,22 @@ Rather than a linear, week-by-week curriculum, the Atlas is structured around th
 
 ## 🚦 New here? Start here.
 
-The Atlas is a **map, not a straight line** — but if you are starting from zero and want a route, follow this:
+The Atlas is a **map, not a straight line** - but if you are starting from zero and want a route, follow this:
 
-1. **Foundations first — this is required, not an appendix.** Read the math toolbox before (or alongside) any pillar. The core trio is **[[foundations/linear-algebra-and-matrices/index|Linear Algebra]] → [[foundations/calculus-and-optimization/index|Calculus & Optimization]] → [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**; then take the extra foundations each pillar needs (the [[foundations/index|Foundations hub]] lists the exact consumption order — e.g. *Econometrics* before Pillar 1, *Stochastic Calculus* before Pillar 3, *Statistics* before Pillar 4).
+1. **Foundations first - this is required, not an appendix.** Read the math toolbox before (or alongside) any pillar. The core trio is **[[foundations/linear-algebra-and-matrices/index|Linear Algebra]] → [[foundations/calculus-and-optimization/index|Calculus & Optimization]] → [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]**; then take the extra foundations each pillar needs (the [[foundations/index|Math Foundations hub]] lists the exact consumption order - e.g. *Econometrics* before Pillar 1, *Stochastic Calculus* before Pillar 3, *Statistics* before Pillar 4).
 2. **Pick one pillar and walk its Reading Path.** Every pillar hub has a staged **"Reading Path (Zero to X)"** that starts at a `01-from-zero-intuition` page and climbs to `06-advanced-extensions`, plus a **"Before this pillar (foundations)"** line naming exactly which foundation folders to read first. Recommended first pillar by interest: **[[pillars/01-quantitative-research/index|1 · Quantitative Research]]** to build strategies, **[[pillars/03-derivative-pricing/index|3 · Derivative Pricing]]** for the mathematics of pricing, **[[pillars/04-quantitative-risk/index|4 · Quantitative Risk]]** to understand risk.
-3. **Mid-project? Use it as a lookup + debug tool.** Don't read front-to-back — jump straight in via the pillar hubs' lookup tables and formula indexes, check "what is near this topic" on the interactive graph (see the [Knowledge Graph](/visualizer.html) section below), and use the **diagnostic matrix** below for symptom → cause → fix.
+3. **Mid-project? Use it as a lookup + debug tool.** Don't read front-to-back - jump straight in via the pillar hubs' lookup tables and formula indexes, check "what is near this topic" on the interactive graph (see the [Knowledge Graph](/visualizer.html) section below), and use the **diagnostic matrix** below for symptom → cause → fix.
 
 > **Every page carries runnable code.** All Python is stdlib-or-numpy, deterministic, and reproduces the printed output shown. Clone the repo and run it as you read.
 
 ---
 
-## 🧭 The 8 Key Pillars of Quantitative Finance
 
-```mermaid
-graph TD
-    QR["<b>1. Quantitative Research</b><br/><i>(Alpha Generation, StatArb, Factors)</i>"]
-    HFT["<b>2. Algorithmic & HFT</b><br/><i>(Microstructure, Low-Latency, Almgren-Chriss)</i>"]
-    DP["<b>3. Derivative Pricing</b><br/><i>(Black-Scholes, Vol Surface, Greeks, Rates)</i>"]
-    QRisk["<b>4. Quantitative Risk</b><br/><i>(VaR, CVaR, EVT, Stress Testing, Merton)</i>"]
-    PO["<b>5. Portfolio Optimization</b><br/><i>(Markowitz, Shrinkage, Black-Litterman, HRP)</i>"]
-    MM["<b>6. Market Making</b><br/><i>(LOB, Avellaneda-Stoikov, Adverse Selection, VPIN)</i>"]
-    ML["<b>7. Machine Learning & AltData</b><br/><i>(Low SNR, Tree Boosting, NLP, HMM)</i>"]
-    QD["<b>8. Quantitative Development</b><br/><i>(HPC C++, kdb+/q, Lockless, FIX, Risk Guards)</i>"]
 
-    F["<b>Foundations</b><br/><i>Linear Algebra • Calculus • Probability • Stochastics • Statistics • Bayesian • Econometrics • Numerical • Ergodicity</i>"]
-
-    FA["<b>Accounting & Finance</b><br/><i>(Statements • Ratios • Valuation • Screening • Quality • Capital Structure • Factors • Data)</i>"]
-
-    F -.-> QR
-    F -.-> HFT
-    F -.-> DP
-    F -.-> QRisk
-    F -.-> PO
-    F -.-> MM
-    F -.-> ML
-    F -.-> QD
-
-    QR <--> PO
-    QR <--> ML
-    HFT <--> MM
-    HFT <--> QD
-    DP <--> QRisk
-    MM <--> QD
-    QRisk <--> PO
-    FA <--> QR
-    FA <--> PO
-    FA <--> ML
-
-    classDef pillar fill:#1E2530,stroke:#C2EB2B,stroke-width:2px,color:#FFFFFF;
-    classDef foundation fill:#0C1016,stroke:#D5F25A,stroke-width:1px,stroke-dasharray: 5 5,color:#C2EB2B;
-    classDef crosscut fill:#161B24,stroke:#7FB3D5,stroke-width:1px,stroke-dasharray: 5 5,color:#9CD0F0;
-    class QR,HFT,DP,QRisk,PO,MM,ML,QD pillar;
-    class F foundation;
-    class FA crosscut;
-```
 
 ---
 
-### 1. [[pillars/01-quantitative-research/index|Quantitative Research (Alpha Generation)]]
+## 1. [[pillars/01-quantitative-research/index|Quantitative Research (Alpha Generation)]]
 Analyzing historical and alternative market data to discover predictive trading signals and statistical anomalies.
 - **[[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/index|Statistical Arbitrage & Pairs Trading]]**: Cointegration, Ornstein–Uhlenbeck spread dynamics, and half-life decay.
 - **[[pillars/01-quantitative-research/momentum/index|Cross-Sectional & Time-Series Momentum]]**: Factor ranking, CTA trend following, volatility scaling, and momentum crashes.
@@ -87,7 +43,7 @@ Analyzing historical and alternative market data to discover predictive trading 
 
 ---
 
-### 2. [[pillars/02-algorithmic-hft/index|Algorithmic and High-Frequency Trading (HFT)]]
+## 2. [[pillars/02-algorithmic-hft/index|Algorithmic and High-Frequency Trading (HFT)]]
 Designing automated execution systems operating across the millisecond to nanosecond frontier.
 - **[[pillars/02-algorithmic-hft/market-microstructure-and-order-types/index|Market Microstructure & Order Types]]**: Passive vs aggressive orders, hidden icebergs, pegged orders, and maker-taker fee rebates.
 - **[[pillars/02-algorithmic-hft/low-latency-systems-architecture/index|Low-Latency Systems Architecture]]**: Kernel bypass (Solarflare Onload, DPDK), CPU pinning, NUMA affinity, and zero-copy pipelines.
@@ -98,7 +54,7 @@ Designing automated execution systems operating across the millisecond to nanose
 
 ---
 
-### 3. [[pillars/03-derivative-pricing/index|Derivative Pricing and Structuring]]
+## 3. [[pillars/03-derivative-pricing/index|Derivative Pricing and Structuring]]
 The traditional sell-side quant domain: valuing non-linear financial contracts and engineering self-financing dynamic hedges.
 - **[[pillars/03-derivative-pricing/no-arbitrage-and-binomial/index|No-Arbitrage Foundations & Binomial Trees]]**: Law of one price, put-call parity, Cox–Ross–Rubinstein discrete replication, and American early exercise.
 - **[[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton & Feynman–Kac Bridge]]**: Delta-neutral hedging, parabolic PDE derivation, and risk-neutral conditional expectations.
@@ -109,7 +65,7 @@ The traditional sell-side quant domain: valuing non-linear financial contracts a
 
 ---
 
-### 4. [[pillars/04-quantitative-risk/index|Quantitative Risk Management]]
+## 4. [[pillars/04-quantitative-risk/index|Quantitative Risk Management]]
 Measuring, bounding, and mitigating financial exposure to guarantee firm survival across extreme market volatility.
 - **[[pillars/04-quantitative-risk/var-and-expected-shortfall/index|Value at Risk & Expected Shortfall (CVaR)]]**: Coherent risk measure axioms, the subadditivity flaw of VaR, and Cornish–Fisher expansions.
 - **[[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Parametric, Historical, & Monte Carlo VaR]]**: Variance-covariance methods, filtered historical simulation (FHS), and Kupiec backtest batteries.
@@ -120,7 +76,7 @@ Measuring, bounding, and mitigating financial exposure to guarantee firm surviva
 
 ---
 
-### 5. [[pillars/05-portfolio-optimization/index|Portfolio Construction and Optimization]]
+## 5. [[pillars/05-portfolio-optimization/index|Portfolio Construction and Optimization]]
 Applying mathematical frameworks to allocate capital across assets, maximizing risk-adjusted return under real friction.
 - **[[pillars/05-portfolio-optimization/modern-portfolio-theory-and-mean-variance/index|Modern Portfolio Theory & Mean–Variance Frontiers]]**: Markowitz quadratic programs, the tangency portfolio, and the "estimation error maximizer" paradox.
 - **[[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]]**: The curse of dimensionality ($N > T$), Ledoit–Wolf analytical shrinkage, and Marchenko–Pastur eigenvalue filtering.
@@ -131,7 +87,7 @@ Applying mathematical frameworks to allocate capital across assets, maximizing r
 
 ---
 
-### 6. [[pillars/06-market-making/index|Market Making and Liquidity Provision]]
+## 6. [[pillars/06-market-making/index|Market Making and Liquidity Provision]]
 Designing automated systems that quote continuous two-sided liquidity, profiting from the bid-ask spread while managing inventory and adverse selection.
 - **[[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics & L3 Data]]**: Level 1/2/3 data feeds, order reconstruction engines, and Order Flow Imbalance (OFI).
 - **[[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|The Avellaneda–Stoikov Model]]**: Hamilton–Jacobi–Bellman (HJB) formulation, reservation prices, inventory penalty, and optimal quotes.
@@ -142,7 +98,7 @@ Designing automated systems that quote continuous two-sided liquidity, profiting
 
 ---
 
-### 7. [[pillars/07-machine-learning-altdata/index|Machine Learning and Alternative Data]]
+## 7. [[pillars/07-machine-learning-altdata/index|Machine Learning and Alternative Data]]
 Extracting non-linear signals and structural patterns from alternative, unstructured, and high-dimensional datasets.
 - **[[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls & Low SNR]]**: Why standard ML fails, the microscopic Signal-to-Noise Ratio, non-stationarity, and subtle data leakage traps.
 - **[[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Tree-Based Factor Ranking & Purged CV]]**: LightGBM/XGBoost factor synthesis, Mean Decrease Accuracy (MDA), and Purged/Embargoed Cross-Validation.
@@ -153,7 +109,7 @@ Extracting non-linear signals and structural patterns from alternative, unstruct
 
 ---
 
-### 8. [[pillars/08-quantitative-development/index|Quantitative Development (Quant Engineering)]]
+## 8. [[pillars/08-quantitative-development/index|Quantitative Development (Quant Engineering)]]
 The software and systems engineering backbone: translating mathematical models into ultra-low-latency production infrastructure.
 - **[[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++ for Trading]]**: Zero-allocation paradigms, CPU cache locality (L1/L2/L3), cacheline false sharing, and SIMD vectorization.
 - **[[pillars/08-quantitative-development/tick-level-databases-and-timeseries/index|Tick-Level Databases & kdb+/q]]**: Column-oriented architectures, kdb+/q vector primitives, DuckDB/ClickHouse pipelines, and point-in-time as-of joins.
@@ -164,9 +120,9 @@ The software and systems engineering backbone: translating mathematical models i
 
 ---
 
-## 🔬 Foundations
+## 🔬 Math Foundations
 
-**Read this before (or alongside) the pillars — it is the shared foundation the whole Atlas is built on, not an optional appendix.** Every pillar's `01-from-zero-intuition` page assumes the foundations its prerequisites name; the [[foundations/index|Foundations hub]] gives the exact consumption order (which foundation to read before which pillar). The core trio everyone needs:
+**Read this before (or alongside) the pillars - it is the shared foundation the whole Atlas is built on, not an optional appendix.** Every pillar's `01-from-zero-intuition` page assumes the foundations its prerequisites name; the [[foundations/index|Math Foundations hub]] gives the exact consumption order (which foundation to read before which pillar). The core trio everyone needs:
 
 * 📐 **[[foundations/linear-algebra-and-matrices/index|Linear Algebra & Matrices]]**: Vector spaces, spectral theory, positive semi-definiteness, and SVD.
 * 📈 **[[foundations/calculus-and-optimization/index|Calculus & Constrained Optimization]]**: Gradients, Hessians, Taylor expansions (Greeks), and KKT conditions.
@@ -178,20 +134,20 @@ Then the foundations each pillar draws on: **[[foundations/stochastic-calculus/i
 
 ## 📊 Accounting & Finance (Cross-Cutting Area)
 
-The company underneath every security. This area sits *alongside* the 8 pillars and the Foundations toolbox, covering how a business is reported, valued, financed, quality-checked, and sourced as data — the shared substrate for both **quantitative** factor projects and **discretionary** fundamental work.
+The company underneath every security. This area sits *alongside* the 8 pillars and the Foundations toolbox, covering how a business is reported, valued, financed, quality-checked, and sourced as data - the shared substrate for both **quantitative** factor projects and **discretionary** fundamental work.
 
 **→ [[fundamentals-accounting/index|Open the Accounting & Finance area hub]]**
 
 The 8 topic-folders, in recommended learning order:
 
-1. [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] — the accounting equation, double-entry, and the three statements.
-2. [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] — profitability, multiples, liquidity, leverage, and the ratio lookup table.
-3. [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] — DCF, cost of capital, multiples, comps, and the margin of safety.
-4. [[fundamentals-accounting/fundamental-analysis-and-screening/index|Fundamental Analysis & Screening]] — Graham-style criteria and mechanical screen construction.
-5. [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] — accruals, earnings management, and the red-flag checklist.
-6. [[fundamentals-accounting/capital-structure-and-corporate-finance/index|Capital Structure & Corporate Finance]] — Modigliani–Miller, the tax shield, distress, and agency costs.
-7. [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] — value, profitability, investment, and accrual *factors*.
-8. [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] — EDGAR/XBRL, vendors, and point-in-time data hygiene.
+1. [[fundamentals-accounting/financial-statements-and-accounting/index|Financial Statements & Accounting]] - the accounting equation, double-entry, and the three statements.
+2. [[fundamentals-accounting/core-financial-ratios/index|Core Financial Ratios]] - profitability, multiples, liquidity, leverage, and the ratio lookup table.
+3. [[fundamentals-accounting/equity-valuation/index|Equity Valuation]] - DCF, cost of capital, multiples, comps, and the margin of safety.
+4. [[fundamentals-accounting/fundamental-analysis-and-screening/index|Fundamental Analysis & Screening]] - Graham-style criteria and mechanical screen construction.
+5. [[fundamentals-accounting/accounting-quality-and-red-flags/index|Accounting Quality & Red Flags]] - accruals, earnings management, and the red-flag checklist.
+6. [[fundamentals-accounting/capital-structure-and-corporate-finance/index|Capital Structure & Corporate Finance]] - Modigliani–Miller, the tax shield, distress, and agency costs.
+7. [[fundamentals-accounting/quantitative-fundamental-investing/index|Quantitative Fundamental Investing]] - value, profitability, investment, and accrual *factors*.
+8. [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]] - EDGAR/XBRL, vendors, and point-in-time data hygiene.
 
 ---
 
@@ -215,6 +171,6 @@ When a quantitative strategy underperforms, drawdowns blow out, or live executio
 ## 🌐 Interactive Graph & Exploration
 
 - 🕸️ **[Open Fullscreen Interactive D3 Graph](/visualizer.html)**: Explore all 8 operational clusters, foundational nodes, cross-pillar bridges, and filter by hard-skill intensity (Math, Code, Intuition).
-- 📖 **[[glossary|Glossary & Symbol Index]]**: every term and symbol, A–Z, with the canonical page to jump to — the "find a word without knowing the pillar" entry point.
-- 🩺 **[[diagnostics|Diagnostic Index (Symptom → Cause → Fix)]]**: the global debug matrix — find your symptom, get the first-principles root cause and the page that fixes it.
+- 📖 **[[glossary|Glossary & Symbol Index]]**: every term and symbol, A–Z, with the canonical page to jump to - the "find a word without knowing the pillar" entry point.
+- 🩺 **[[diagnostics|Diagnostic Index (Symptom → Cause → Fix)]]**: the global debug matrix - find your symptom, get the first-principles root cause and the page that fixes it.
 - 📁 **Obsidian Integration**: If cloning locally (`git clone https://github.com/kwantklubben/kwant-atlas`), open the folder directly in Obsidian to view pre-configured branded color clusters and tag groups.

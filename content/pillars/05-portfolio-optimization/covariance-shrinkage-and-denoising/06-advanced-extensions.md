@@ -14,11 +14,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Linear shrinkage (page 03) applies **one** intensity to **every** eigenvalue; RMT clipping (page 04) hard-thresholds them. Both are crude approximations of a sharper object: the *optimal* per-eigenvalue map. This page presents the two extensions that a practitioner outgrows linear shrinkage into — **nonlinear (oracle) shrinkage** and **factor-model covariance** — and shows, numerically, why they are the natural next step.
+Linear shrinkage (page 03) applies **one** intensity to **every** eigenvalue; RMT clipping (page 04) hard-thresholds them. Both are crude approximations of a sharper object: the *optimal* per-eigenvalue map. This page presents the two extensions that a practitioner outgrows linear shrinkage into - **nonlinear (oracle) shrinkage** and **factor-model covariance** - and shows, numerically, why they are the natural next step.
 
 The unifying insight: any rotation-equivariant covariance estimator (one that keeps the sample eigenvectors and only transforms the eigenvalues) is *completely described* by a function $d_i=f(\lambda_i)$. Linear shrinkage uses $f(\lambda)=\delta\mu+(1-\delta)\lambda$; RMT uses a step function; **nonlinear shrinkage derives the optimal $f$**. Factor models take a different route: they impose an *economic* structure (few common factors + idiosyncratic noise) rather than a spectral one.
 
-> **One-line essence.** "The largest sample eigenvalues are biased up and the smallest down; the *optimal* correction is a nonlinear, eigenvalue-dependent shrinking — and when you have a trustworthy economic prior, a factor decomposition gets you well-conditioning and interpretability at once."
+> **One-line essence.** "The largest sample eigenvalues are biased up and the smallest down; the *optimal* correction is a nonlinear, eigenvalue-dependent shrinking - and when you have a trustworthy economic prior, a factor decomposition gets you well-conditioning and interpretability at once."
 
 ---
 
@@ -58,7 +58,7 @@ $B$ are the **factor loadings**, $\Lambda$ the factor covariance, $\Psi$ the **s
 
 | Estimator | Eigenvalues | Structure imposed | Key parameter |
 |---|---|---|---|
-| Sample $S$ | $\lambda_i$ | none | — |
+| Sample $S$ | $\lambda_i$ | none | - |
 | Linear shrinkage | $\delta\mu+(1-\delta)\lambda_i$ | prior $F$ | $\delta^*$ (data-driven) |
 | RMT clipping | $\lambda_i$ (signal), $\bar\lambda$ (bulk) | noise band | $\lambda_+$ (theory) |
 | **Nonlinear shrinkage** | $\lambda_i/|1-c-c\lambda_i\breve m_F|^2$ | rotation-equivariance | none (oracle) |
@@ -66,109 +66,31 @@ $B$ are the **factor loadings**, $\Lambda$ the factor covariance, $\Psi$ the **s
 
 ---
 
-### 3. Computational Implementation — nonlinear shrinkage beats linear, and factors condition
+### 3. Computational Implementation - nonlinear shrinkage beats linear, and factors condition
 
-**Experiment 1 — oracle nonlinear vs linear shrinkage.** A controlled diagonal truth $H=\operatorname{diag}(20,15,10,1,\dots,1)$ with $N=100,T=200$ ($c=0.5$). We solve the MP equation numerically for $\breve m_F$ and apply the oracle formula, then compare Frobenius loss to the truth (all estimators share the sample eigenvectors, so the comparison is fair).
+**Experiment 1 - oracle nonlinear vs linear shrinkage.** A controlled diagonal truth $H=\operatorname{diag}(20,15,10,1,\dots,1)$ with $N=100,T=200$ ($c=0.5$). We solve the MP equation numerically for $\breve m_F$ and apply the oracle formula, then compare Frobenius loss to the truth (all estimators share the sample eigenvectors, so the comparison is fair).
 
-```python
-import numpy as np
 
-def lw_identity(X):
-    T, N = X.shape; S = (X.T @ X)/T; mu = np.trace(S)/N; F = mu*np.eye(N)
-    dif = X[:,:,None]*X[:,None,:] - S
-    pi = (dif**2).mean(0).sum(); rho = np.sum((dif**2).mean(0)[np.arange(N),np.arange(N)])
-    d = min(max((pi-rho)/((F-S)**2).sum()/T, 0.0), 1.0)
-    return d*F + (1-d)*S, d
 
-def m_stieltjes(z, H, c, tol=1e-12, it=3000):
-    """Solve the Marchenko-Pastur eqn  m = -[z - c*mean(H/(1+H*m))]^{-1}  on C+."""
-    m = 1.0/z
-    for _ in range(it):
-        m_new = -1.0/(z - c*np.mean(H/(1.0 + H*m)))
-        if abs(m_new - m) < tol: m = m_new; break
-        m = 0.5*m + 0.5*m_new
-    return m
 
-rng = np.random.default_rng(4)
-N, T = 100, 200; c = N/T
-H  = np.concatenate([[20.0, 15.0, 10.0], np.ones(N-3)])   # true population eigenvalues
-Sigma = np.diag(H)
-X  = rng.normal(size=(T, N)) * np.sqrt(H)                  # returns with true covariance Sigma
-S  = (X.T @ X)/T
-ev, V = np.linalg.eigh(S); idx = np.argsort(ev)[::-1]; ev, V = ev[idx], V[:, idx]
+**Read the result.** The true large eigenvalues are $(20,15,10)$; the sample ones are biased up ($22.02,14.47,11.17$) and the noise eigenvalue is inflated ($2.77$ vs $1$). *Linear* shrinkage corrects the extremes by the same absolute step and therefore **undershoots the large eigenvalues** ($19.41$ for a true $20$, $12.82$ for $15$) while leaving the noise eigenvalue at $2.60$. *Nonlinear* shrinkage, using the eigenvalue-dependent map, lands the large ones much closer ($20.58$, $14.51$, $10.46$) and crushes the noise eigenvalue to $1.59$ - halving the error. Frobenius loss improves monotonically: $9.882\to8.972\to7.711$. **This is why nonlinear shrinkage is the state of the art when you outgrow linear shrinkage:** it applies the correction where it is needed, not uniformly.
 
-S_lw, delta = lw_identity(X - X.mean(0))
-d_nl = np.array([l/abs(1 - c - c*l*m_stieltjes(l + 1e-6j, H, c))**2 for l in ev])  # oracle
-S_nl = V @ np.diag(d_nl) @ V.T
+**Experiment 2 - factor-model covariance conditioning.** A 3-factor truth ($N=100$ assets, $T=150$). Estimate the sample covariance, a PCA factor covariance ($K=3$), and Ledoit–Wolf, then compare to the truth.
 
-print(f"linear intensity delta* = {delta:.4f}")
-print(f"||S    - Sigma||_F = {np.linalg.norm(S - Sigma):.3f}")
-print(f"||S_lw - Sigma||_F = {np.linalg.norm(S_lw - Sigma):.3f}")
-print(f"||S_nl - Sigma||_F = {np.linalg.norm(S_nl - Sigma):.3f}")
-print(f"top-4 sample    {np.round(ev[:4],2)}")
-print(f"top-4 linear    {np.round(delta*0 + (1-delta)*ev[:4] + delta*np.trace(S)/N, 2)}")
-print(f"top-4 nonlinear {np.round(d_nl[:4],2)}")
-```
-```
-linear intensity delta* = 0.1267
-||S    - Sigma||_F = 9.882
-||S_lw - Sigma||_F = 8.972
-||S_nl - Sigma||_F = 7.711
-top-4 sample    [22.02 14.47 11.17  2.77]
-top-4 linear    [19.41 12.82  9.93  2.6 ]
-top-4 nonlinear [20.58 14.51 10.46  1.59]
-```
 
-**Read the result.** The true large eigenvalues are $(20,15,10)$; the sample ones are biased up ($22.02,14.47,11.17$) and the noise eigenvalue is inflated ($2.77$ vs $1$). *Linear* shrinkage corrects the extremes by the same absolute step and therefore **undershoots the large eigenvalues** ($19.41$ for a true $20$, $12.82$ for $15$) while leaving the noise eigenvalue at $2.60$. *Nonlinear* shrinkage, using the eigenvalue-dependent map, lands the large ones much closer ($20.58$, $14.51$, $10.46$) and crushes the noise eigenvalue to $1.59$ — halving the error. Frobenius loss improves monotonically: $9.882\to8.972\to7.711$. **This is why nonlinear shrinkage is the state of the art when you outgrow linear shrinkage:** it applies the correction where it is needed, not uniformly.
 
-**Experiment 2 — factor-model covariance conditioning.** A 3-factor truth ($N=100$ assets, $T=150$). Estimate the sample covariance, a PCA factor covariance ($K=3$), and Ledoit–Wolf, then compare to the truth.
 
-```python
-import numpy as np
-
-def lw_identity(X):
-    T, N = X.shape; S = (X.T @ X)/T; mu = np.trace(S)/N; F = mu*np.eye(N)
-    dif = X[:,:,None]*X[:,None,:] - S
-    pi = (dif**2).mean(0).sum(); rho = np.sum((dif**2).mean(0)[np.arange(N),np.arange(N)])
-    d = min(max((pi-rho)/((F-S)**2).sum()/T, 0.0), 1.0)
-    return d*F + (1-d)*S, d
-
-rng = np.random.default_rng(5)
-N, T, K = 100, 150, 3
-B  = rng.normal(0, 1, size=(N, K)) * 0.7
-C_true = B @ B.T + np.diag(np.full(N, 0.6))
-X  = rng.normal(size=(T, N)) @ np.linalg.cholesky(C_true).T
-S  = np.cov(X, rowvar=False, bias=True)
-
-# PCA factor covariance:  Sigma = B*Lambda*B^T + diag(psi)
-ev, V = np.linalg.eigh(S); idx = np.argsort(ev)[::-1]; ev, V = ev[idx], V[:, idx]
-Bl = V[:, :K] * np.sqrt(ev[:K])                            # loadings
-C_fac = Bl @ Bl.T + np.diag(np.maximum(np.diag(S) - np.sum(Bl**2, axis=1), 1e-8))
-
-S_lw, delta = lw_identity(X - X.mean(0))
-print(f"||S     - Sigma||_F = {np.linalg.norm(S - C_true):.3f}")
-print(f"||S_fac - Sigma||_F = {np.linalg.norm(C_fac - C_true):.3f}")
-print(f"||S_lw  - Sigma||_F = {np.linalg.norm(S_lw - C_true):.3f}")
-print(f"cond: sample={np.linalg.cond(S):.2f}  factor={np.linalg.cond(C_fac):.2f}  LW={np.linalg.cond(S_lw):.2f}")
-```
-```
-||S     - Sigma||_F = 21.034
-||S_fac - Sigma||_F = 20.987
-||S_lw  - Sigma||_F = 18.748
-cond: sample=3323.14  factor=161.16  LW=568.28
-```
-
-The factor model is the **conditioning champion**: $\kappa$ drops from $3323$ (sample) to $161$ (factor), because the diagonal $\Psi$ floors every eigenvalue while the low-rank term keeps the economic structure. Ledoit–Wolf sits in between ($568$). In Frobenius terms all three are close here (the truth *is* a 3-factor model, so the factor estimator has the correct prior and wins slightly on conditioning), but the **interpretability** of $B$ and $\Psi$ — and the ability to stress individual factors — is the practical reason factor models dominate industry risk systems.
+The factor model is the **conditioning champion**: $\kappa$ drops from $3323$ (sample) to $161$ (factor), because the diagonal $\Psi$ floors every eigenvalue while the low-rank term keeps the economic structure. Ledoit–Wolf sits in between ($568$). In Frobenius terms all three are close here (the truth *is* a 3-factor model, so the factor estimator has the correct prior and wins slightly on conditioning), but the **interpretability** of $B$ and $\Psi$ - and the ability to stress individual factors - is the practical reason factor models dominate industry risk systems.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Oracle $\neq$ feasible.** The formula above needs $H$, the *population* eigenvalue distribution — unknown in reality. Deploying it requires estimating $\breve m_F$ (QuEST, LW 2012). Treat the oracle as an upper bound on what eigenvalue-only estimators can do, not as a plug-in.
+1. **Oracle $\neq$ feasible.** The formula above needs $H$, the *population* eigenvalue distribution - unknown in reality. Deploying it requires estimating $\breve m_F$ (QuEST, LW 2012). Treat the oracle as an upper bound on what eigenvalue-only estimators can do, not as a plug-in.
 2. **Nonlinear shrinkage assumes finite 4th moments.** The derivation requires well-behaved (finite) fourth moments of the data. Fat-tailed crypto/high-frequency returns violate it; the estimator can then *under-*perform linear shrinkage.
 3. **Factor count $K$ is the new bias–variance knob.** Too small $K$ → the covariance ignores real co-movement (misspecified, biased); too large $K$ → you re-import the eigenvalue noise you were trying to remove. There is no universal $K$; Ledoit–Wolf (2004) parameterize the trade-off explicitly and select it by an out-of-sample criterion.
 4. **Factor-model misspecification is silent.** If the true structure is not low-rank-plus-diagonal (e.g. clustered block structure), the model's conditioning is real but its risk forecast is wrong. Cross-check with RMT denoising or HRP clustering.
-5. **Eigenvectors are taken as given.** All eigenvalue-only estimators (linear, RMT, nonlinear) inherit the *sample* eigenvectors, which are themselves estimated with error. A badly rotated eigenvector cannot be fixed by any eigenvalue map — the reason purely spectral methods plateau, and the motivation for clustering-based methods.
+5. **Eigenvectors are taken as given.** All eigenvalue-only estimators (linear, RMT, nonlinear) inherit the *sample* eigenvectors, which are themselves estimated with error. A badly rotated eigenvector cannot be fixed by any eigenvalue map - the reason purely spectral methods plateau, and the motivation for clustering-based methods.
 
 ---
 
@@ -178,7 +100,7 @@ The factor model is the **conditioning champion**: $\kappa$ drops from $3323$ (s
 - **Ledoit, O. & Péché, S. (2011).** "Eigenvectors of some large sample covariance matrix ensembles." *Probability Theory and Related Fields* 151:233–264. *Origin of the oracle nonlinear shrinkage of eigenvalues.*
 - **Ledoit, O. & Wolf, M. (2003).** "Improved estimation of the covariance matrix of stock returns with an application to portfolio selection." *Journal of Empirical Finance* 10(5):603–621. *The single-index (factor) shrinkage target.*
 - **Laloux et al. (1999)** and **Plerou et al. (2002).** *The RMT lineage that links pages 02–06 (noise dressing; bulk-plus-spikes structure).*
-- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning*, Ch 18 (eigenvalue shrinkage / soft-thresholding — the same "shrink the spectrum" philosophy via a different route).
+- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning*, Ch 18 (eigenvalue shrinkage / soft-thresholding - the same "shrink the spectrum" philosophy via a different route).
 
 ---
 

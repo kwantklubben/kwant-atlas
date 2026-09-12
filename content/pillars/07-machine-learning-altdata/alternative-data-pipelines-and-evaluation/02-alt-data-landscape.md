@@ -14,9 +14,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page is the **map**: what alternative datasets *are*, how they are categorized, and — the practical question every PM asks — *is a given dataset worth anything to a portfolio?* The objective is the framework that answers "worth anything": the **Fundamental Law of Active Management**, which says the value of a signal is $\text{IR}=\text{IC}\sqrt{B}$, and its extension to *combining* signals, which says a new dataset's worth is governed not by its own IC but by its **uniqueness** — how much of it is *not already* in the signals you trade.
+This page is the **map**: what alternative datasets *are*, how they are categorized, and - the practical question every PM asks - *is a given dataset worth anything to a portfolio?* The objective is the framework that answers "worth anything": the **Fundamental Law of Active Management**, which says the value of a signal is $\text{IR}=\text{IC}\sqrt{B}$, and its extension to *combining* signals, which says a new dataset's worth is governed not by its own IC but by its **uniqueness** - how much of it is *not already* in the signals you trade.
 
-The central reframing: **alt-data rarely raises your IC; it raises your breadth.** Almost no single dataset has a large IC (weak signals are the norm — see [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]). What a *portfolio* of unique signals does is multiply your number of independent bets $B$ — and $\sqrt{B}$ is where the leverage lives. Twenty genuinely-uncorrelated $IC{=}0.03$ signals beat one $IC{=}0.06$ signal, because $\text{IR}$ grows like $\sqrt{n}$ while IC grows like $n$ only in a fantasy where the signals are perfect.
+The central reframing: **alt-data rarely raises your IC; it raises your breadth.** Almost no single dataset has a large IC (weak signals are the norm - see [[pillars/07-machine-learning-altdata/financial-ml-pitfalls-and-low-snr/index|Financial ML Pitfalls]]). What a *portfolio* of unique signals does is multiply your number of independent bets $B$ - and $\sqrt{B}$ is where the leverage lives. Twenty genuinely-uncorrelated $IC{=}0.03$ signals beat one $IC{=}0.06$ signal, because $\text{IR}$ grows like $\sqrt{n}$ while IC grows like $n$ only in a fantasy where the signals are perfect.
 
 ---
 
@@ -28,7 +28,7 @@ $$
 \boxed{\;\text{IR}=\text{IC}\cdot\sqrt{B}\cdot\text{TC}\;},
 $$
 
-with transfer coefficient $\text{TC}\in[0,1]$ capturing implementation friction (constraints, costs, capacity). Breadth, not IC, is the lever most strategies actually pull — and alt-data is the main way to add breadth because each *unique* dataset is a new, weakly-correlated bet stream.
+with transfer coefficient $\text{TC}\in[0,1]$ capturing implementation friction (constraints, costs, capacity). Breadth, not IC, is the lever most strategies actually pull - and alt-data is the main way to add breadth because each *unique* dataset is a new, weakly-correlated bet stream.
 
 **Combining $n$ signals with correlation.** Let each of $n$ alphas have standalone IC and let $\rho$ be their common pairwise correlation. An equal-weight composite has IC and IR
 
@@ -37,7 +37,7 @@ $$
 \text{IR}_{\text{comb}}=\text{IC}\sqrt{\frac{n}{1+(n-1)\rho}}\sqrt{B}.
 $$
 
-**The two limits are the whole lesson:** as $n\to\infty$ with $\rho=0$, $\text{IC}_{\text{comb}}\sim\text{IC}\sqrt{n}$ (unbounded — every new independent alpha helps); with $\rho>0$, the denominator gives the ceiling $\text{IC}_{\text{comb}}\to\text{IC}/\sqrt{\rho}$, a *finite* wall. **Correlated alt-data saturates; unique alt-data compounds.**
+**The two limits are the whole lesson:** as $n\to\infty$ with $\rho=0$, $\text{IC}_{\text{comb}}\sim\text{IC}\sqrt{n}$ (unbounded - every new independent alpha helps); with $\rho>0$, the denominator gives the ceiling $\text{IC}_{\text{comb}}\to\text{IC}/\sqrt{\rho}$, a *finite* wall. **Correlated alt-data saturates; unique alt-data compounds.**
 
 **Required IC vs breadth.** Setting $\text{IR}=1$ (a decent standalone strategy) and reading off IC:
 
@@ -57,72 +57,20 @@ The *marginal* IR contribution of $s$ scales with $\sqrt{U}$, not with its raw I
 
 ---
 
-### 3. Computational Implementation — breadth, correlation, and the ceiling
+### 3. Computational Implementation - breadth, correlation, and the ceiling
 
 Stdlib only. It computes the Fundamental Law for a single alpha, the $\sqrt{n}$ compounding of *independent* alphas, the **saturation wall** when they are correlated, and the IC required for $\text{IR}=1$ at each breadth.
 
-```python
-import math
 
-# Fundamental Law of Active Management:  IR = IC * sqrt(Breadth)
-def ir(ic, breadth):
-    return ic * math.sqrt(breadth)
 
-# Combining n equal-IC alphas with pairwise correlation rho:
-#   combined IC = IC * sqrt( n / (1 + (n-1) rho) )
-def combined_ic(ic, n, rho):
-    return ic * math.sqrt(n / (1.0 + (n - 1) * rho))
 
-IC, B = 0.03, 252.0
-print(f"Single alpha: IC={IC:.3f}, breadth={int(B)} -> IR = {ir(IC,B):.3f}\n")
-
-print("Adding INDEPENDENT alphas (rho=0).  Combined IC and IR:")
-print("  n      IC_comb     IR_comb")
-for n in (1, 2, 5, 10, 25):
-    icc = combined_ic(IC, n, 0.0)
-    print(f"  {n:2d}    {icc:.4f}      {ir(icc,B):.3f}")
-
-print("\nSame n alphas but CORRELATED (rho).  IR_comb:")
-print("  n      rho=0.0   rho=0.3   rho=0.7   rho=0.95")
-for n in (2, 5, 10, 25):
-    row = "  ".join(f"{ir(combined_ic(IC,n,r),B):7.3f}" for r in (0.0, 0.3, 0.7, 0.95))
-    print(f"  {n:2d}    {row}")
-
-print("\nWhat IC does a single alpha need for IR = 1.0 at each breadth?")
-for b, name in ((12, "monthly"), (52, "weekly"), (252, "daily")):
-    print(f"  breadth {b:3d} ({name:7s}): required IC = {1.0/math.sqrt(b):.4f}")
-```
-```
-Single alpha: IC=0.030, breadth=252 -> IR = 0.476
-
-Adding INDEPENDENT alphas (rho=0).  Combined IC and IR:
-  n      IC_comb     IR_comb
-   1    0.0300      0.476
-   2    0.0424      0.673
-   5    0.0671      1.065
-  10    0.0949      1.506
-  25    0.1500      2.381
-
-Same n alphas but CORRELATED (rho).  IR_comb:
-  n      rho=0.0   rho=0.3   rho=0.7   rho=0.95
-   2      0.673    0.591    0.517    0.482
-   5      1.065    0.718    0.546    0.486
-  10      1.506    0.783    0.557    0.487
-  25      2.381    0.832    0.564    0.488
-
-What IC does a single alpha need for IR = 1.0 at each breadth?
-  breadth  12 (monthly): required IC = 0.2887
-  breadth  52 (weekly ): required IC = 0.1387
-  breadth 252 (daily  ): required IC = 0.0630
-```
-
-Read the two middle blocks together. With **independent** alphas, ten $IC{=}0.03$ signals combine to $\text{IC}=0.0949$ and $\text{IR}=1.506$ — the $\sqrt{n}$ compounding, real diversification. With **correlated** alphas ($\rho=0.7$), adding signals barely helps: $\text{IR}$ rises from $0.517$ ($n{=}2$) to only $0.564$ ($n{=}25$) — it hits the $\text{IC}/\sqrt{\rho}$ wall. **The marginal value of an alt-data dataset is its correlation to what you already trade, not its standalone IC.**
+Read the two middle blocks together. With **independent** alphas, ten $IC{=}0.03$ signals combine to $\text{IC}=0.0949$ and $\text{IR}=1.506$ - the $\sqrt{n}$ compounding, real diversification. With **correlated** alphas ($\rho=0.7$), adding signals barely helps: $\text{IR}$ rises from $0.517$ ($n{=}2$) to only $0.564$ ($n{=}25$) - it hits the $\text{IC}/\sqrt{\rho}$ wall. **The marginal value of an alt-data dataset is its correlation to what you already trade, not its standalone IC.**
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"We have 500 datasets" — but they are all the same signal.** Correlated alt-data (card panels from two vendors, three satellite providers of parking-lot counts) adds almost no breadth. The first principle: **breadth counts independent bets, not tickers or feeds**; $\text{IC}_{\text{comb}}$ saturates at $\text{IC}/\sqrt{\rho}$.
+1. **"We have 500 datasets" - but they are all the same signal.** Correlated alt-data (card panels from two vendors, three satellite providers of parking-lot counts) adds almost no breadth. The first principle: **breadth counts independent bets, not tickers or feeds**; $\text{IC}_{\text{comb}}$ saturates at $\text{IC}/\sqrt{\rho}$.
 2. **Backtesting the IC and ignoring capacity/transfer.** A big IC in a tiny, illiquid name set with no capacity is worthless ($\text{TC}\ll1$). The law has three factors; optimizing IC alone is optimizing $\tfrac13$ of the problem.
 3. **The uniqueness illusion.** A new signal with high raw IC but high correlation to your existing model (low $U$) is *already priced into your P&L*; adding it double-counts and inflates the backtest. Always compute the residual ([[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/06-advanced-extensions|06 · Advanced Extensions]]).
 4. **Frequency ≠ breadth.** Rebalancing the *same* signal more often does not create independent bets when the signal is autocorrelated; $B$ must be an *effective* bet count after accounting for serial and cross-sectional correlation ([[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
@@ -131,11 +79,11 @@ Read the two middle blocks together. With **independent** alphas, ten $IC{=}0.03
 
 ### 5. Canonical Literature & Study References
 
-- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.) — the Fundamental Law $\text{IR}=\text{IC}\sqrt{B}\text{TC}$ (Ch. 6) and breadth; the source of this folder's valuation framework.
-- **López de Prado**, *Advances in Financial Machine Learning*, **§2.2.4** (the alt-data taxonomy: individuals / business processes / sensors, after Kolanovic & Krishnamachari) — the categories mapped here. *Corpus PDF verified.*
-- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017) — the taxonomy and the practical categorization of alt-data by source.
-- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) — breadth, capacity, and the economics of adding datasets to a live book.
-- **AIMA / SS&C**, *Casting the Net* (2017) — which datasets funds actually buy and the breadth-vs-crowding reality of the market.
+- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.) - the Fundamental Law $\text{IR}=\text{IC}\sqrt{B}\text{TC}$ (Ch. 6) and breadth; the source of this folder's valuation framework.
+- **López de Prado**, *Advances in Financial Machine Learning*, **§2.2.4** (the alt-data taxonomy: individuals / business processes / sensors, after Kolanovic & Krishnamachari) - the categories mapped here. *Corpus PDF verified.*
+- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017) - the taxonomy and the practical categorization of alt-data by source.
+- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) - breadth, capacity, and the economics of adding datasets to a live book.
+- **AIMA / SS&C**, *Casting the Net* (2017) - which datasets funds actually buy and the breadth-vs-crowding reality of the market.
 
 ---
 

@@ -14,13 +14,13 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Every failure mode in this folder has a *tool* that fixes it. This page is the **launchpad** for the pillar's advanced toolkit — the techniques that turn "financial ML is hard" from a warning into a workflow. Three extensions, each targeting one failure:
+Every failure mode in this folder has a *tool* that fixes it. This page is the **launchpad** for the pillar's advanced toolkit - the techniques that turn "financial ML is hard" from a warning into a workflow. Three extensions, each targeting one failure:
 
-1. **The Deflated Sharpe Ratio (DSR)** — corrects a reported Sharpe for the number of strategies you actually tried, killing the selection-bias illusion (Bailey & López de Prado 2014; AFML Ch. 14).
-2. **Fractional differentiation** — replaces the crude integer difference ($d=1$) with a fractional one ($0<d<1$) so features are stationary *without* destroying the long memory that carries the signal (AFML Ch. 5).
-3. **Purged & embargoed / combinatorial purged cross-validation** — the honest CV that respects label horizons (AFML Ch. 7; the dedicated sibling folder).
+1. **The Deflated Sharpe Ratio (DSR)** - corrects a reported Sharpe for the number of strategies you actually tried, killing the selection-bias illusion (Bailey & López de Prado 2014; AFML Ch. 14).
+2. **Fractional differentiation** - replaces the crude integer difference ($d=1$) with a fractional one ($0<d<1$) so features are stationary *without* destroying the long memory that carries the signal (AFML Ch. 5).
+3. **Purged & embargoed / combinatorial purged cross-validation** - the honest CV that respects label horizons (AFML Ch. 7; the dedicated sibling folder).
 
-> **Why these three first?** They are the minimal complete answer to the folder's core question — *"is this result real?"* DSR says whether the Sharpe is real given how hard you searched; fractional differentiation makes features usable at all; purged CV makes the evaluation honest.
+> **Why these three first?** They are the minimal complete answer to the folder's core question - *"is this result real?"* DSR says whether the Sharpe is real given how hard you searched; fractional differentiation makes features usable at all; purged CV makes the evaluation honest.
 
 ---
 
@@ -34,7 +34,7 @@ $$
 \mathrm{DSR}=\Phi\!\left[\frac{(\hat{\mathrm{SR}}-\mathrm{SR}_0)\sqrt{n-1}}{\sqrt{1-\gamma_3\hat{\mathrm{SR}}+\frac{\gamma_4-1}{4}\hat{\mathrm{SR}}^2}}\right],
 $$
 
-where $\mathrm{SR}_0=\sqrt{2\ln N}/\sqrt{n}$ is the expected-maximum benchmark. For Normal returns ($\gamma_3=0,\ \gamma_4=3$) the denominator is $\sqrt{1+\tfrac12\hat{\mathrm{SR}}^2}$. The DSR is the probability that the true Sharpe exceeds the best of $N$ pure-luck strategies — the honest, selection-bias-corrected score.
+where $\mathrm{SR}_0=\sqrt{2\ln N}/\sqrt{n}$ is the expected-maximum benchmark. For Normal returns ($\gamma_3=0,\ \gamma_4=3$) the denominator is $\sqrt{1+\tfrac12\hat{\mathrm{SR}}^2}$. The DSR is the probability that the true Sharpe exceeds the best of $N$ pure-luck strategies - the honest, selection-bias-corrected score.
 
 #### 2.2 Fractional differentiation (AFML Ch. 5)
 
@@ -44,7 +44,7 @@ $$
 w_k=(-1)^k\binom{d}{k},\qquad \binom{d}{k}=\prod_{i=1}^{k}\frac{d-i+1}{i},\qquad X_t^{(d)}=\sum_{k=0}^{l}w_k X_{t-k}.
 $$
 
-Because $|w_k|$ decays like $k^{-d-1}$ (unlike the sharp $d=1$ truncation), a fractionally-differenced series stays stationary while retaining long-memory dependence — the exact tradeoff AFML calls *stationarity with maximum memory preservation*.
+Because $|w_k|$ decays like $k^{-d-1}$ (unlike the sharp $d=1$ truncation), a fractionally-differenced series stays stationary while retaining long-memory dependence - the exact tradeoff AFML calls *stationarity with maximum memory preservation*.
 
 #### 2.3 Purged & embargoed CV (AFML Ch. 7)
 
@@ -52,40 +52,12 @@ If a label spans the forward window $[t_0,t_1]$, any training sample whose label
 
 ---
 
-### 3. Computational Implementation — the Deflated Sharpe in action
+### 3. Computational Implementation - the Deflated Sharpe in action
 
 A single, decisive experiment: one backtest (3 years of daily returns, reported annualized Sharpe $1.00$) judged under increasing numbers of strategies tried. Stdlib only.
 
-```python
-import math
 
-def norm_cdf(x):
-    return 0.5*(1.0 + math.erf(x/math.sqrt(2.0)))
 
-def deflated_sharpe(sr_ann, n_obs_per_year, years, N_trials, skew=0.0, kurt=3.0):
-    n = int(n_obs_per_year * years)                 # number of per-period returns
-    sr = sr_ann / math.sqrt(n_obs_per_year)         # per-period Sharpe
-    sr0 = math.sqrt(2.0*math.log(N_trials)) / math.sqrt(n)   # luck floor
-    denom = math.sqrt(1.0 - skew*sr + (kurt-1.0)/4.0*sr*sr)
-    z = (sr - sr0)*math.sqrt(n-1.0)/denom
-    return norm_cdf(z), sr0
-
-print("Backtest: 3y of daily returns, reported annualized Sharpe = 1.00 (skew=0, kurt=3).")
-for N in (1, 7, 45, 100, 1000):
-    dsr, sr0 = deflated_sharpe(1.0, 252, 3.0, N)
-    print(f"  N={N:5d} strategies tried: benchmark SR* = {sr0:.3f}  ->  DSR = {dsr:.3f}")
-print("\nDSR = probability the true Sharpe EXCEEDS the best of N pure-luck strategies.")
-```
-```
-Backtest: 3y of daily returns, reported annualized Sharpe = 1.00 (skew=0, kurt=3).
-  N=    1 strategies tried: benchmark SR* = 0.000  ->  DSR = 0.958
-  N=    7 strategies tried: benchmark SR* = 0.072  ->  DSR = 0.405
-  N=   45 strategies tried: benchmark SR* = 0.100  ->  DSR = 0.153
-  N=  100 strategies tried: benchmark SR* = 0.110  ->  DSR = 0.097
-  N= 1000 strategies tried: benchmark SR* = 0.135  ->  DSR = 0.024
-
-DSR = probability the true Sharpe EXCEEDS the best of N pure-luck strategies.
-```
 The *same* backtest (Sharpe $1.00$) is highly significant if you tried one strategy (DSR $=0.96$) and **statistically dead** if you tried 1,000 (DSR $=0.02$). This is why a strategy memo that does not report the number of trials $N$ makes the result uninterpretable (Bailey & López de Prado 2014; AFML Ch. 11). **Always deflate before believing.**
 
 ---
@@ -101,9 +73,9 @@ The *same* backtest (Sharpe $1.00$) is highly significant if you tried one strat
 
 ### 5. Canonical Literature & Study References
 
-- **Bailey, David H. & López de Prado, Marcos**, "The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting, and Non-Normality," *Journal of Portfolio Management* 40(5), 2014 — the DSR formula. *Corpus-listed.*
+- **Bailey, David H. & López de Prado, Marcos**, "The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting, and Non-Normality," *Journal of Portfolio Management* 40(5), 2014 - the DSR formula. *Corpus-listed.*
 - **López de Prado**, *Advances in Financial Machine Learning*, Ch 14 (probabilistic & deflated Sharpe), Ch 5 (fractional differentiation), Ch 7 (purged/embargoed/CPCV), Ch 12 (CPCV algorithm). *PRIMARY source; read in the corpus.*
-- **Bailey, Borwein, López de Prado & Zhu**, "The Probability of Backtest Overfitting," *Journal of Computational Finance* 20(4), 2017 — CSCV / PBO. *Corpus-listed.*
+- **Bailey, Borwein, López de Prado & Zhu**, "The Probability of Backtest Overfitting," *Journal of Computational Finance* 20(4), 2017 - CSCV / PBO. *Corpus-listed.*
 - **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 7 (model selection), Ch 5 (regularization). *Verified in the corpus.*
 
 ---

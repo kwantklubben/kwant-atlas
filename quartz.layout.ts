@@ -38,7 +38,11 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.ConditionalRender({
+      component: Component.Explorer(),
+      // no sidebar explorer on the home page: the page itself is the navigation
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
   right: [
     Component.Graph(),

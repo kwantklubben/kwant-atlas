@@ -13,31 +13,31 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of extreme value theory with **no prior EVT knowledge needed**. The objective is one idea: **the distribution of the center of the data tells you almost nothing about the distribution of its extremes — and extreme-value theory is the branch of statistics that models extremes directly, so that we can price and bound rare losses honestly.**
+This page builds the *why* of extreme value theory with **no prior EVT knowledge needed**. The objective is one idea: **the distribution of the center of the data tells you almost nothing about the distribution of its extremes - and extreme-value theory is the branch of statistics that models extremes directly, so that we can price and bound rare losses honestly.**
 
-Start with the dumbest question: *why can't we just use a normal distribution?* Because a normal's tail probability decays as $e^{-x^2/2}$ — absurdly fast. Under a normal with daily vol $\sigma=1\%$, a single-day $-6\sigma$ move ($-6\%$) has probability
+Start with the dumbest question: *why can't we just use a normal distribution?* Because a normal's tail probability decays as $e^{-x^2/2}$ - absurdly fast. Under a normal with daily vol $\sigma=1\%$, a single-day $-6\sigma$ move ($-6\%$) has probability
 $$
 P(X<-6\sigma)=\Phi(-6)\approx 1.0\times 10^{-9},
 $$
-roughly once in a billion trading days (single-sided) — on the order of 4 million years at 250 trading days/yr. Real equity markets saw multiple $-6\sigma$ days in the twentieth century alone. Something is structurally wrong with the normal as a *tail* model even if it is a fine *center* model.
+roughly once in a billion trading days (single-sided) - on the order of 4 million years at 250 trading days/yr. Real equity markets saw multiple $-6\sigma$ days in the twentieth century alone. Something is structurally wrong with the normal as a *tail* model even if it is a fine *center* model.
 
 Three steps, three "aha"s:
 
-1. **The CLT governs *averages*, not *extremes*.** Sums of i.i.d. finite-variance variables converge to a normal — that's why portfolio *means* look Gaussian. But the *maximum* of $n$ variables converges to a completely different set of laws. Risk management is about the maximum drawdown, the worst day, the tail of the loss distribution — extremes, not averages. Different question, different mathematics.
+1. **The CLT governs *averages*, not *extremes*.** Sums of i.i.d. finite-variance variables converge to a normal - that's why portfolio *means* look Gaussian. But the *maximum* of $n$ variables converges to a completely different set of laws. Risk management is about the maximum drawdown, the worst day, the tail of the loss distribution - extremes, not averages. Different question, different mathematics.
 
 2. **A fat tail is a *power law*, not a wide bell.** A distribution is heavy-tailed when its survival function decays like a power of $x$, not an exponential:
 $$
 1-F(x)\sim x^{-\alpha},\qquad x\to\infty,
 $$
-for a *tail index* $\alpha>0$. A Student-t with $\nu$ degrees of freedom has $\alpha=\nu$. If $\alpha<4$ the kurtosis is infinite; if $\alpha<2$ even the variance doesn't exist. Financial returns consistently show $\alpha\approx 3$–$4$ — the fourth moment is infinite or borderline, which is *why* sample kurtosis jumps all over the place (see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/02-stylized-facts-of-fat-tails|02 · Stylized Facts]]).
+for a *tail index* $\alpha>0$. A Student-t with $\nu$ degrees of freedom has $\alpha=\nu$. If $\alpha<4$ the kurtosis is infinite; if $\alpha<2$ even the variance doesn't exist. Financial returns consistently show $\alpha\approx 3$–$4$ - the fourth moment is infinite or borderline, which is *why* sample kurtosis jumps all over the place (see [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/02-stylized-facts-of-fat-tails|02 · Stylized Facts]]).
 
-3. **Extremes have their own universal laws.** Just as the CLT says "every finite-variance sum is eventually Gaussian," two theorems say the same for extremes: the **Fisher–Tippett–Gnedenko** theorem (normalized *maxima* are Generalized Extreme Value) and the **Pickands–Balkema–de Haan** theorem (high-threshold *exceedances* are Generalized Pareto). You don't need to know the parent distribution $F$ at all — you only need its tail index $\xi$. That is the entire practical promise of EVT.
+3. **Extremes have their own universal laws.** Just as the CLT says "every finite-variance sum is eventually Gaussian," two theorems say the same for extremes: the **Fisher–Tippett–Gnedenko** theorem (normalized *maxima* are Generalized Extreme Value) and the **Pickands–Balkema–de Haan** theorem (high-threshold *exceedances* are Generalized Pareto). You don't need to know the parent distribution $F$ at all - you only need its tail index $\xi$. That is the entire practical promise of EVT.
 
 ---
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Why maxima stabilize — the intuition behind Fisher–Tippett–Gnedenko.** Take $M_n=\max(X_1,\dots,X_n)$. As $n$ grows, the maximum of a heavy-tailed $X$ is essentially its largest order statistic, which "pulls" the right endpoint. If we can find location/scale sequences $a_n,b_n$ such that $(M_n-b_n)/a_n$ converges to a non-degenerate law, that law *must* be the Generalized Extreme Value family (de Haan §1.1.2):
+**Why maxima stabilize - the intuition behind Fisher–Tippett–Gnedenko.** Take $M_n=\max(X_1,\dots,X_n)$. As $n$ grows, the maximum of a heavy-tailed $X$ is essentially its largest order statistic, which "pulls" the right endpoint. If we can find location/scale sequences $a_n,b_n$ such that $(M_n-b_n)/a_n$ converges to a non-degenerate law, that law *must* be the Generalized Extreme Value family (de Haan §1.1.2):
 
 $$
 G_\xi(x)=\exp\Big\{-\big(1+\xi x\big)^{-1/\xi}\Big\},\qquad 1+\xi x>0,\qquad \xi\in\mathbb{R},
@@ -51,52 +51,19 @@ with $\xi=0$ interpreted as the limit $G_0(x)=e^{-e^{-x}}$. The single parameter
 | $\xi=0$ | Gumbel | exponential | normal, lognormal, gamma | central-limit-land |
 | $\xi<0$ | Weibull | bounded | uniform, beta | losses with a hard cap |
 
-**Heavy tails survive block maxima; light tails wash out.** This is the cleanest way to *see* the Fréchet vs Gumbel split. Take block maxima (say, the max of every 100 observations). If the parent is normal (light tail), the block maxima have an *even lighter*, Gumbel-like tail. If the parent is Student-t (heavy tail), the block maxima keep the *same* tail index $\alpha$ — the fat tail is preserved in the extremes. We verify this numerically in §3.
+**Heavy tails survive block maxima; light tails wash out.** This is the cleanest way to *see* the Fréchet vs Gumbel split. Take block maxima (say, the max of every 100 observations). If the parent is normal (light tail), the block maxima have an *even lighter*, Gumbel-like tail. If the parent is Student-t (heavy tail), the block maxima keep the *same* tail index $\alpha$ - the fat tail is preserved in the extremes. We verify this numerically in §3.
 
 **Why $\xi$ (not the whole distribution) is what matters.** The GEV/GPD convergence results hold for a huge class of parents; the only *free* quantity that survives is the tail index $\xi$. This is why EVT is called "the robust statistics of tails": you estimate one parameter from the tail observations, and the entire extreme-quantile machinery follows ([[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/04-peaks-over-threshold|04 · Peaks Over Threshold]]).
 
 ---
 
-### 3. Computational Implementation — block maxima: heavy tails survive, light tails don't
+### 3. Computational Implementation - block maxima: heavy tails survive, light tails don't
 
 Direct proof of the intuition in §2: compute block maxima of 100 from normal, t₃, and t₆ parents, then estimate the tail index of those maxima. The heavy-tailed parents keep their tail index ($\alpha=\nu$); the normal's maxima are far lighter (huge $\alpha$). Stdlib only.
 
-```python
-import math, random
 
-def t_sample(nu):                                # Student-t with nu dof
-    z = random.gauss(0,1)
-    chi = sum(v*v for v in (random.gauss(0,1) for _ in range(nu)))
-    return z/math.sqrt(chi/nu)
 
-def block_maxima(sampler, nobs, bsize):
-    out = []
-    for _ in range(nobs//bsize):
-        m = -1e300
-        for _ in range(bsize): m = max(m, sampler())
-        out.append(m)
-    return out
-
-def tail_index_est(x_desc, k=30):                # rough Hill-style tail index of a sample
-    xk1 = x_desc[k]
-    s = sum(math.log(x_desc[i]/xk1) for i in range(k))
-    return k/s if s > 0 else float('nan')
-
-random.seed(5)
-for name, sampler in (("normal", lambda: random.gauss(0,1)),
-                      ("t_3",   lambda: t_sample(3)),
-                      ("t_6",   lambda: t_sample(6))):
-    bm = block_maxima(sampler, 20000, 100)          # 200 blocks of 100
-    a  = tail_index_est(sorted(bm, reverse=True))
-    print(f"{name:6s}: block-maxima tail index alpha = {a:5.1f}   (parent alpha = "
-          + ("normal>20" if name=="normal" else ("3" if name=="t_3" else "6")) + ")")
-```
-```
-normal: block-maxima tail index alpha =  14.2   (parent alpha = normal>20)
-t_3   : block-maxima tail index alpha =   3.0   (parent alpha = 3)
-t_6   : block-maxima tail index alpha =   4.8   (parent alpha = 6)
-```
-The t₃ block maxima estimate $\alpha\approx3.0$ — the true tail index of the parent is *preserved in the maxima*. The normal's maxima show a much larger (lighter) tail index. **Fat tails are a property that survives aggregation to extremes; thin tails are not.**
+The t₃ block maxima estimate $\alpha\approx3.0$ - the true tail index of the parent is *preserved in the maxima*. The normal's maxima show a much larger (lighter) tail index. **Fat tails are a property that survives aggregation to extremes; thin tails are not.**
 
 ---
 
@@ -111,7 +78,7 @@ The t₃ block maxima estimate $\alpha\approx3.0$ — the true tail index of the
 ### 5. Canonical Literature & Study References
 
 - **de Haan & Ferreira**, *Extreme Value Theory: An Introduction* (2006), §1.1 (GEV, domains of attraction, Fisher–Tippett–Gnedenko). *Math-verified in the corpus.*
-- **Embrechts, Klüppelberg & Mikosch**, *Modelling Extremal Events for Insurance and Finance* (1997) — Ch 1–2 (motivation, the "Living on the Edge" argument for why fat tails change risk management).
+- **Embrechts, Klüppelberg & Mikosch**, *Modelling Extremal Events for Insurance and Finance* (1997) - Ch 1–2 (motivation, the "Living on the Edge" argument for why fat tails change risk management).
 - **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 7.1 (introduction, why EVT for risk). *In library.*
 
 ---

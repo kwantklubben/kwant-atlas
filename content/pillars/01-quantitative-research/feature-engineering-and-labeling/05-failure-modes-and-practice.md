@@ -15,9 +15,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Pages 01–04 built the machinery; this page is the **clinic**. Feature engineering and labeling fail in ways that produce *no error message and no red equity curve* — the model simply reports a beautiful in-sample score and then loses money. The objective here is a concrete, ordered protocol a researcher runs before features and labels are allowed to train anything, plus a numbered catalogue of the ways good pipelines fail.
+Pages 01–04 built the machinery; this page is the **clinic**. Feature engineering and labeling fail in ways that produce *no error message and no red equity curve* - the model simply reports a beautiful in-sample score and then loses money. The objective here is a concrete, ordered protocol a researcher runs before features and labels are allowed to train anything, plus a numbered catalogue of the ways good pipelines fail.
 
-The theme of every failure mode is the same: **a decision made with information that was not available at decision time.** Look-ahead in the label, leakage in the features, overlap across folds, non-stationarity in the transforms — each is a first-principles violation of the $\mathcal F_t$-measurability of the feature and the honest *ex-post* nature of the label.
+The theme of every failure mode is the same: **a decision made with information that was not available at decision time.** Look-ahead in the label, leakage in the features, overlap across folds, non-stationarity in the transforms - each is a first-principles violation of the $\mathcal F_t$-measurability of the feature and the honest *ex-post* nature of the label.
 
 > **The one-sentence essence.** "The label may look forward (that is its job); the features may never. Every other rule in this folder is a corollary of that asymmetry."
 
@@ -50,7 +50,7 @@ Two labels $y_i,y_j$ are **concurrent at $t$** when both are functions of the sa
 $$
 c_t=\sum_i \mathbf 1\{[t_{i,0},t_{i,1}]\ni t\},\qquad \bar u_i=\frac{1}{t_{i,1}-t_{i,0}+1}\sum_{t=t_{i,0}}^{t_{i,1}}\frac{1}{c_t}.
 $$
-$\bar u_i\in(0,1]$ is the **average uniqueness** of label $i$; its sum $\sum_i\bar u_i$ is the **effective number of independent outcomes**, which is what the sample really contains. Two consequences: (i) the raw count $I$ overstates the sample (behaviour below), and (ii) standard $k$-fold CV leaks because a test-fold return is *inside* a training-fold label — the fix is **purging** (drop training labels whose span overlaps the test span) plus an **embargo** (drop the next few observations after the test set), LdP Ch 7.
+$\bar u_i\in(0,1]$ is the **average uniqueness** of label $i$; its sum $\sum_i\bar u_i$ is the **effective number of independent outcomes**, which is what the sample really contains. Two consequences: (i) the raw count $I$ overstates the sample (behaviour below), and (ii) standard $k$-fold CV leaks because a test-fold return is *inside* a training-fold label - the fix is **purging** (drop training labels whose span overlaps the test span) plus an **embargo** (drop the next few observations after the test set), LdP Ch 7.
 
 #### 2.4 Class imbalance
 
@@ -58,65 +58,13 @@ Triple-barrier labels can be heavily skewed (e.g. rare $+1$ in a trending-down s
 
 ---
 
-### 3. Computational Implementation — leakage and overlap, in numbers
+### 3. Computational Implementation - leakage and overlap, in numbers
 
-Two independent failure modes, both measured. **(A)** Overlapping labels inflate the apparent sample size. **(B)** A barrier width set from the full-sample $\sigma$ instead of a point-in-time EWMA $\sigma_t$ changes a measurable fraction of labels — leaving the label encoding volatility the model could not have known. Standard library only.
+Two independent failure modes, both measured. **(A)** Overlapping labels inflate the apparent sample size. **(B)** A barrier width set from the full-sample $\sigma$ instead of a point-in-time EWMA $\sigma_t$ changes a measurable fraction of labels - leaving the label encoding volatility the model could not have known. Standard library only.
 
-```python
-import math, random
 
-# --- Failure mode 1: label overlap -> inflated effective sample size ---------
-random.seed(5)
-I, H = 500, 60                 # 500 overlapping events, 60-bar horizon, 1-bar stride
-spans = [(i, i+H) for i in range(I)]
-Tmax = max(t1 for _, t1 in spans) + 1
-c = [0]*Tmax
-for t0, t1 in spans:
-    for t in range(t0, min(t1+1, Tmax)): c[t] += 1
-uniq = [sum(1.0/c[t] for t in range(t0, min(t1+1, Tmax)))/len(range(t0, min(t1+1, Tmax)))
-        for t0, t1 in spans]
-effN = sum(uniq)
-print(f"events I={I}, horizon H={H}: max concurrency c_t = {max(c)} labels share one return")
-print(f"average uniqueness = {sum(uniq)/len(uniq):.4f} (1/{1/(sum(uniq)/len(uniq)):.1f})")
-print(f"effective independent outcomes = {effN:.1f}  vs naive I={I}  -> inflated {I/effN:.1f}x")
 
-# --- Failure mode 2: look-ahead barrier width --------------------------------
-prices = [100.0]
-for _ in range(4000):
-    prices.append(prices[-1]*math.exp(random.gauss(0, 0.015)-0.5*0.015**2))
-r = [math.log(prices[i+1]/prices[i]) for i in range(len(prices)-1)]
-full = math.sqrt(sum((x-sum(r)/len(r))**2 for x in r)/(len(r)-1))   # whole-sample sigma
-def ewma(t, span=50):
-    lam = 1-1.0/span; v = r[0]**2
-    for x in r[:t+1]: v = lam*v + (1-lam)*x*x
-    return math.sqrt(v)
-
-def label(t0, w, H=20, mult=1.0):
-    p0 = prices[t0]; up = p0*(1+mult*w); dn = p0*(1-mult*w)
-    for t in range(t0+1, min(t0+H, len(prices)-1)+1):
-        if prices[t] >= up: return 1
-        if prices[t] <= dn: return -1
-    return 1 if prices[min(t0+H, len(prices)-1)] > p0 else -1
-
-dis = same = 0
-for t0 in range(60, 3900, 7):
-    l_leaky = label(t0, full*math.sqrt(20))           # barrier from FUTURE-wide sigma
-    l_pit   = label(t0, ewma(t0)*math.sqrt(20))       # point-in-time EWMA sigma
-    if l_leaky != l_pit: dis += 1
-    else: same += 1
-print(f"\nfull-sample sigma={full:.4f}; look-ahead vs point-in-time barriers disagree on "
-      f"{dis/(dis+same):.1%} of events")
-print("=> the leaky label encodes volatility the model could not have known at entry")
-```
-```
-events I=500, horizon H=60: max concurrency c_t = 61 labels share one return
-average uniqueness = 0.0184 (1/54.5)
-effective independent outcomes = 9.2  vs naive I=500  -> inflated 54.5x
-
-full-sample sigma=0.0149; look-ahead vs point-in-time barriers disagree on 1.8% of events
-=> the leaky label encodes volatility the model could not have known at entry
-```
-Read the two results as the folder's two silent killers. **(A)** Five hundred labels that look like five hundred observations are effectively **9.2 independent outcomes** — the IID assumption overstates this design by **54.5×**, so a "large sample" conclusion is built on almost nothing, and CV folds leak freely. **(B)** Swapping the point-in-time EWMA $\sigma_t$ for the full-sample $\sigma$ flips **1.8%** of the labels — a small but systematic bias *in the direction of the true future volatility*, exactly the kind of edge that looks real in a backtest and vanishes live. Neither failure raises an error; both flatter the model.
+Read the two results as the folder's two silent killers. **(A)** Five hundred labels that look like five hundred observations are effectively **9.2 independent outcomes** - the IID assumption overstates this design by **54.5×**, so a "large sample" conclusion is built on almost nothing, and CV folds leak freely. **(B)** Swapping the point-in-time EWMA $\sigma_t$ for the full-sample $\sigma$ flips **1.8%** of the labels - a small but systematic bias *in the direction of the true future volatility*, exactly the kind of edge that looks real in a backtest and vanishes live. Neither failure raises an error; both flatter the model.
 
 ---
 
@@ -129,18 +77,18 @@ Read the two results as the folder's two silent killers. **(A)** Five hundred la
 5. **Under-differencing.** Leaving a unit root in a "level" feature makes its distribution regime-dependent; the same feature means different things in different samples.
 6. **Label overlap / non-IID draws.** Overlapping events share returns, so CV leaks and the effective sample is far smaller than $I$ (measured: 54.5×). *Fix:* purge + embargo, and sample weights $\propto\bar u_i$ (page 06).
 7. **Class imbalance masked by accuracy.** Rare labels make accuracy meaningless; use precision/recall/F1, class weights, or recursive label dropping (LdP §3.9).
-8. **Threshold/parameter selection on the test set.** Choosing the meta-labeling threshold (or $h$, or $pt/sl$) by test performance is backtest overfitting in miniature — use an inner validation set and log every trial (for which, see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
+8. **Threshold/parameter selection on the test set.** Choosing the meta-labeling threshold (or $h$, or $pt/sl$) by test performance is backtest overfitting in miniature - use an inner validation set and log every trial (for which, see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]]).
 9. **Ignoring costs in the label.** A profit target inside the round-trip cost band makes "+1" labels economically negative; barriers must sit outside costs.
-10. **Silent non-reproducibility.** Label construction depends on the sample (full-sample scalers, quantile cuts). *First principle:* a label that changes when you add one future bar to the file is not a label — it is a leak.
+10. **Silent non-reproducibility.** Label construction depends on the sample (full-sample scalers, quantile cuts). *First principle:* a label that changes when you add one future bar to the file is not a label - it is a leak.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018) — **Ch 7** (Cross-Validation in Finance: leakage, the purging/embargo solution, purged $k$-fold CV), **Ch 4** (overlapping outcomes, concurrency, average uniqueness, sequential bootstrap, time decay), **Ch 3 §3.9** (dropping under-populated labels), **Ch 2** (point-in-time data structures). *The formula-authoritative source; the concurrency/uniqueness definitions are reproduced.*
-- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014) — the selection-bias correction that must follow any tuning of $h/pt/sl$ (see [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · Deflated Sharpe]]).
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* — §7.10.2 (the wrong-vs-right cross-validation example: screening outside the folds gives CV error 3% vs a true 50%) — the canonical demonstration that preprocessing leakage inverts model-selection conclusions.
-- **Arnott, R., Harvey, C. R. & Markowitz, H.** (2019): *A Backtesting Protocol in the Era of Machine Learning* — the point-in-time, pre-registration, and multiple-testing discipline that feature/label construction must feed.
+- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018) - **Ch 7** (Cross-Validation in Finance: leakage, the purging/embargo solution, purged $k$-fold CV), **Ch 4** (overlapping outcomes, concurrency, average uniqueness, sequential bootstrap, time decay), **Ch 3 §3.9** (dropping under-populated labels), **Ch 2** (point-in-time data structures). *The formula-authoritative source; the concurrency/uniqueness definitions are reproduced.*
+- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014) - the selection-bias correction that must follow any tuning of $h/pt/sl$ (see [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · Deflated Sharpe]]).
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* - §7.10.2 (the wrong-vs-right cross-validation example: screening outside the folds gives CV error 3% vs a true 50%) - the canonical demonstration that preprocessing leakage inverts model-selection conclusions.
+- **Arnott, R., Harvey, C. R. & Markowitz, H.** (2019): *A Backtesting Protocol in the Era of Machine Learning* - the point-in-time, pre-registration, and multiple-testing discipline that feature/label construction must feed.
 
 ---
 

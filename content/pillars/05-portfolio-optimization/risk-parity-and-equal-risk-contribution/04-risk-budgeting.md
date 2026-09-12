@@ -13,13 +13,13 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-ERC equalizes — but an allocator rarely wants *equal* slices of risk. A pension fund may want to give equities 40% of the *risk* budget, bonds 30%, commodities 20%, credit 10%. **Risk budgeting** generalizes ERC in one move: pick a vector of risk budgets $b=(b_1,\dots,b_N)$ with $\sum b_i=1$, and find the weights $w$ whose contributions match them:
+ERC equalizes - but an allocator rarely wants *equal* slices of risk. A pension fund may want to give equities 40% of the *risk* budget, bonds 30%, commodities 20%, credit 10%. **Risk budgeting** generalizes ERC in one move: pick a vector of risk budgets $b=(b_1,\dots,b_N)$ with $\sum b_i=1$, and find the weights $w$ whose contributions match them:
 
 $$
 RC_i(w)=b_i\,\sigma(w)\quad\text{for all }i.
 $$
 
-ERC is simply the special case $b_i=1/N$. The objective of this page: (1) state the risk-budgeting program, (2) show it is solved by the *same* convex machinery as ERC (just with a weighted log-barrier), (3) verify arbitrary budgets land exactly, and (4) explain the discipline's second name — **risk budgets as a pre-commitment device**, made credible by Qian (2006)'s proof that budgets do add up and track actual losses.
+ERC is simply the special case $b_i=1/N$. The objective of this page: (1) state the risk-budgeting program, (2) show it is solved by the *same* convex machinery as ERC (just with a weighted log-barrier), (3) verify arbitrary budgets land exactly, and (4) explain the discipline's second name - **risk budgets as a pre-commitment device**, made credible by Qian (2006)'s proof that budgets do add up and track actual losses.
 
 Why is this a *management* tool and not just an optimization trick? Because a budget is a **contract with yourself** about where the risk will be, before the losses arrive. ERC is the "fair" default; risk budgeting is the knob that says "I am willing to be deliberately concentrated in strategy A, up to 40% of my risk, and no more." It is how multi-asset and portable-alpha shops declare their exposures, and how serious funds run *ex-ante* risk limits (Litterman 1996's "hot spots").
 
@@ -41,7 +41,7 @@ $$
 RC_i(w)=b_i\,\sigma(w)\ \Longleftrightarrow\ \frac{w_i(\Sigma w)_i}{\sigma(w)^2}=b_i\ \Longleftrightarrow\ w_i(\Sigma w)_i\propto b_i.
 $$
 
-So the condition is **weight-times-portfolio-covariance proportional to the budget** — the natural extension of the ERC condition ($b_i\propto1$).
+So the condition is **weight-times-portfolio-covariance proportional to the budget** - the natural extension of the ERC condition ($b_i\propto1$).
 
 **Convex embedding (extension of page 03).** Weighted log-barrier with the budget active:
 
@@ -49,9 +49,9 @@ $$
 \min_{w>0}\ \tfrac12\,w^\top\Sigma w \quad\text{s.t.}\quad \textstyle\sum_i b_i\ln w_i\;\ge\;c.
 $$
 
-KKT stationarity: $(\Sigma w)_i=\lambda\,b_i/w_i\Rightarrow w_i(\Sigma w)_i=\lambda b_i$ — proportional to $b_i$ as required. In practice one minimizes the unconstrained barrier $f(w)=\tfrac12 w^\top\Sigma w-\textstyle\sum_i b_i\ln w_i$ at a fixed barrier weight and renormalizes the optimum to $\sum w=1$; the contribution *ratios* are scale-invariant so normalization does not disturb the budgets.
+KKT stationarity: $(\Sigma w)_i=\lambda\,b_i/w_i\Rightarrow w_i(\Sigma w)_i=\lambda b_i$ - proportional to $b_i$ as required. In practice one minimizes the unconstrained barrier $f(w)=\tfrac12 w^\top\Sigma w-\textstyle\sum_i b_i\ln w_i$ at a fixed barrier weight and renormalizes the optimum to $\sum w=1$; the contribution *ratios* are scale-invariant so normalization does not disturb the budgets.
 
-**Feasibility & uniqueness.** For any positive budgets $b>0$ the program is strictly convex in the interior (quadratic term PD + concave $\ln$) so a unique long-only solution exists (provided, as always, $\Sigma$ is positive-definite). If any $b_i=0$, that weight is driven to zero and the asset leaves the portfolio — which is itself a meaningful decision.
+**Feasibility & uniqueness.** For any positive budgets $b>0$ the program is strictly convex in the interior (quadratic term PD + concave $\ln$) so a unique long-only solution exists (provided, as always, $\Sigma$ is positive-definite). If any $b_i=0$, that weight is driven to zero and the asset leaves the portfolio - which is itself a meaningful decision.
 
 **Special cases worth knowing.**
 - $b_i=1/N$ (equal): the ERC portfolio of page 03.
@@ -60,54 +60,21 @@ KKT stationarity: $(\Sigma w)_i=\lambda\,b_i/w_i\Rightarrow w_i(\Sigma w)_i=\lam
 
 ---
 
-### 3. Computational Implementation — arbitrary budgets, exactly hit
+### 3. Computational Implementation - arbitrary budgets, exactly hit
 
-Same cyclical coordinate-descent solver as page 03, but with a *weighted* barrier — budget $b_i$ enters the coefficient of the $\ln w_i$ term. Solve three different budget vectors on the Maillard universe and check the realized contribution shares hit the targets.
+Same cyclical coordinate-descent solver as page 03, but with a *weighted* barrier - budget $b_i$ enters the coefficient of the $\ln w_i$ term. Solve three different budget vectors on the Maillard universe and check the realized contribution shares hit the targets.
 
-```python
-import math
-def matvec(A, v): return [sum(A[i][k]*v[k] for k in range(len(v))) for i in range(len(A))]
-def dot(a, b):     return sum(x*y for x, y in zip(a, b))
 
-def risk_budgeting(S, b, sweeps=3000):
-    n = len(S); w = [1.0/n]*n
-    for _ in range(sweeps):
-        for i in range(n):
-            c_i = sum(S[i][j]*w[j] for j in range(n) if j != i)
-            w[i] = (-c_i + math.sqrt(c_i*c_i + 4.0*b[i]*S[i][i])) / (2.0*S[i][i])
-    s = sum(w); return [x/s for x in w]
 
-vols = [0.10, 0.20, 0.30, 0.40]
-C = [[1.00, 0.80, 0.00, 0.00],
-     [0.80, 1.00, 0.00, 0.00],
-     [0.00, 0.00, 1.00, -0.50],
-     [0.00, 0.00, -0.50, 1.00]]
-S = [[C[i][j]*vols[i]*vols[j] for j in range(4)] for i in range(4)]
 
-def report(tag, b):
-    w  = risk_budgeting(S, b)
-    Sw = matvec(S, w); sig = math.sqrt(dot(w, Sw))
-    share = [w[i]*Sw[i]/sig/sig*100 for i in range(4)]     # percentage risk contribution
-    print(f"{tag:22s} budget={['%.0f'%(x*100) for x in b]}  w={['%.3f'%x for x in w]}"
-          f"  realized={['%.1f'%(x) for x in share]}")
-report("ERC (equal)",          [0.25, 0.25, 0.25, 0.25])
-report("tilted 40/30/20/10",   [0.40, 0.30, 0.20, 0.10])
-report("bond-heavy 50/30/10/10",[0.50, 0.30, 0.10, 0.10])
-```
-```
-ERC (equal)            budget=['25', '25', '25', '25']  w=['0.384', '0.192', '0.243', '0.182']  realized=['25.0', '25.0', '25.0', '25.0']
-tilted 40/30/20/10     budget=['40', '30', '20', '10']  w=['0.493', '0.190', '0.194', '0.123']  realized=['40.0', '30.0', '20.0', '10.0']
-bond-heavy 50/30/10/10 budget=['50', '30', '10', '10']  w=['0.566', '0.178', '0.146', '0.110']  realized=['50.0', '30.0', '10.0', '10.0']
-```
-
-The realized percentage risk contributions match the requested budgets **to the first decimal** — the discipline works: the portfolio manager who commits to "equities may not exceed 40% of my risk" gets, out of the box, a portfolio that obeys exactly that rule. Note how the tilted 40/30/20/10 portfolio weights (49.3/19.0/19.4/12.3%) are *not* proportional to the budgets — weights and risk shares are different currencies, and risk budgeting is explicit that it prices risk, not capital.
+The realized percentage risk contributions match the requested budgets **to the first decimal** - the discipline works: the portfolio manager who commits to "equities may not exceed 40% of my risk" gets, out of the box, a portfolio that obeys exactly that rule. Note how the tilted 40/30/20/10 portfolio weights (49.3/19.0/19.4/12.3%) are *not* proportional to the budgets - weights and risk shares are different currencies, and risk budgeting is explicit that it prices risk, not capital.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Budgets live in risk-space, not capital-space.** A 40% risk budget is *not* a 40% weight. Confusing the two is the most common implementation error; the code's gap between budgets and weights is the reminder.
-2. **Zero budget = zero position.** Setting $b_i=0$ exits the asset — and re-estimating $\Sigma$ then *freezes* that exit decision, which can be wrong if a low budget was set on stale correlation assumptions.
+2. **Zero budget = zero position.** Setting $b_i=0$ exits the asset - and re-estimating $\Sigma$ then *freezes* that exit decision, which can be wrong if a low budget was set on stale correlation assumptions.
 3. **The whole budget sheet is a function of $\Sigma$.** Budgets are honored only to the extent the covariance used to solve them is the covariance that realizes. When correlations move, a portfolio that was "40% equity risk" silently becomes 55% on the first crash day ([[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/05-failure-modes-and-practice|05 · Failure Modes]]).
 4. **Institutional anchoring.** "Risk-budget additivity" (Qian 2006) is precise only for volatility/VaR-type (linear-homogeneous) measures; sloppy shops budget on stand-alone $\sigma_i$ totals that do not add up and misreport the true decomposition.
 
@@ -115,10 +82,10 @@ The realized percentage risk contributions match the requested budgets **to the 
 
 ### 5. Canonical Literature & Study References
 
-- **Qian, Edward** (2006): *On the Financial Interpretation of Risk Contribution* — "risk budgets do add up": budgets = expected contributions to loss, and become *expected-return* budgets at the mean-variance optimum.
-- **Litterman, Robert**: *Hot Spots and Hedges*, Journal of Portfolio Management (1996) — the modern statement of per-position risk ("hot spots") that institutional risk budgeting grew from.
-- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, CRC (2013) — the definitive treatment of risk budgeting with arbitrary budgets and long-only weights.
-- **Maillard, Roncalli & Teïletche** (2010) — the ERC special case and the general risk-contribution framework.
+- **Qian, Edward** (2006): *On the Financial Interpretation of Risk Contribution* - "risk budgets do add up": budgets = expected contributions to loss, and become *expected-return* budgets at the mean-variance optimum.
+- **Litterman, Robert**: *Hot Spots and Hedges*, Journal of Portfolio Management (1996) - the modern statement of per-position risk ("hot spots") that institutional risk budgeting grew from.
+- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, CRC (2013) - the definitive treatment of risk budgeting with arbitrary budgets and long-only weights.
+- **Maillard, Roncalli & Teïletche** (2010) - the ERC special case and the general risk-contribution framework.
 
 ---
 

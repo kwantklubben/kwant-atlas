@@ -13,17 +13,17 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of financial ratios with **no prior knowledge needed**. The objective is one idea: **every financial statement is a pile of flows and stocks, and a ratio is simply a flow divided by the stock that earned it — a question of "how hard did the money work?"** Learn to frame every ratio as that one question and the whole catalog stops being a list of formulas and becomes a single, repeatable thought.
+This page builds the *why* of financial ratios with **no prior knowledge needed**. The objective is one idea: **every financial statement is a pile of flows and stocks, and a ratio is simply a flow divided by the stock that earned it - a question of "how hard did the money work?"** Learn to frame every ratio as that one question and the whole catalog stops being a list of formulas and becomes a single, repeatable thought.
 
-Start with the dumbest question: *why do we need ratios at all?* A $1M profit tells you nothing by itself. Is it a good result? It depends — profit against what base? Against $5M of invested capital it is superb; against $1B it is a rounding error. The statements answer "how much," the **ratio answers "how well"** — and "how well" is what separates a great business from a busy one.
+Start with the dumbest question: *why do we need ratios at all?* A $1M profit tells you nothing by itself. Is it a good result? It depends - profit against what base? Against $5M of invested capital it is superb; against $1B it is a rounding error. The statements answer "how much," the **ratio answers "how well"** - and "how well" is what separates a great business from a busy one.
 
 Three steps, three "aha"s:
 
 1. **Every ratio is a flow over a stock.** Profit (a flow, earned over the period) ÷ book equity (a stock, the capital at a point in time) = ROE. Sales ÷ total assets = asset turnover. Debt ÷ equity = leverage. There are only two ingredients; the *names* are the catalog, the *ratio itself* is the single habit of matching a flow to the stock that produced it. (Penman Ch 5 opens exactly here.)
 
-2. **The denominator determines what you're actually asking.** Ask "return on *equity*" and you measure what the shareholders' own capital earned. Ask "return on *invested capital*" (equity + debt, minus cash) and you remove financing from the picture entirely — you now see how well the *operations* work, before anyone's claim on the money. Pick the wrong stock for your flow and you answer the wrong question. (Penman's reformulation of the statements in Ch 7 exists precisely to make these "stocks" unambiguous.)
+2. **The denominator determines what you're actually asking.** Ask "return on *equity*" and you measure what the shareholders' own capital earned. Ask "return on *invested capital*" (equity + debt, minus cash) and you remove financing from the picture entirely - you now see how well the *operations* work, before anyone's claim on the money. Pick the wrong stock for your flow and you answer the wrong question. (Penman's reformulation of the statements in Ch 7 exists precisely to make these "stocks" unambiguous.)
 
-3. **A ratio is a *comparison instrument*, never an absolute verdict.** An ROE of 15% is ordinary for a retailer and remarkable for a bank's operations; a P/B of 5 is cheap for a software compounder and expensive for a cyclical manufacturer. The ratio's *power is cross-sectional and over-time* — how does this firm sit relative to its sector and its own history — not its standalone size. This is the single most important discipline on this page, and it is why [[fundamentals-accounting/core-financial-ratios/05-failure-modes-and-practice|05 · Failure Modes]] exists.
+3. **A ratio is a *comparison instrument*, never an absolute verdict.** An ROE of 15% is ordinary for a retailer and remarkable for a bank's operations; a P/B of 5 is cheap for a software compounder and expensive for a cyclical manufacturer. The ratio's *power is cross-sectional and over-time* - how does this firm sit relative to its sector and its own history - not its standalone size. This is the single most important discipline on this page, and it is why [[fundamentals-accounting/core-financial-ratios/05-failure-modes-and-practice|05 · Failure Modes]] exists.
 
 ---
 
@@ -31,7 +31,7 @@ Three steps, three "aha"s:
 
 **The one flow-over-stock idea, in three families.**
 
-**Profitability — how hard the capital worked.** Relate a profit flow to the stock of capital that earned it:
+**Profitability - how hard the capital worked.** Relate a profit flow to the stock of capital that earned it:
 
 $$
 \text{ROE} = \frac{\text{Net Income}}{\text{avg Common Equity}}, \qquad
@@ -39,17 +39,17 @@ $$
 \text{ROIC} = \frac{\text{NOPAT}}{\text{avg Invested Capital}}.
 $$
 
-The trick lives in the denominators: ROE uses equity only; ROA uses everything (and so "forgets" leverage); ROIC uses *operating* capital (debt + equity − cash) so the financing noise is removed. Penman's key distinction — equity vs. operating base — is exactly the difference between ROCE and RNOA/ROIC.
+The trick lives in the denominators: ROE uses equity only; ROA uses everything (and so "forgets" leverage); ROIC uses *operating* capital (debt + equity − cash) so the financing noise is removed. Penman's key distinction - equity vs. operating base - is exactly the difference between ROCE and RNOA/ROIC.
 
-**Valuation multiples — price against a fundamental.** Relate the *market price* (a stock) to a fundamental flow:
+**Valuation multiples - price against a fundamental.** Relate the *market price* (a stock) to a fundamental flow:
 
 $$
 \text{P/E}=\frac{\text{MV}}{\text{NI}}, \qquad \text{P/B}=\frac{\text{MV}}{\text{BVE}}, \qquad \text{EV/EBITDA}=\frac{\text{MV}+\text{NetDebt}}{\text{EBITDA}}, \qquad \text{FCF yield}=\frac{\text{FCF}}{\text{MV}}.
 $$
 
-The deep point (Penman Ch 2, Ch 6): each multiple answers "what is the market paying per unit of this fundamental?" A high P/B means the market is paying for *growth* — intrinsic value above book — while a low P/B anchors value on the book itself.
+The deep point (Penman Ch 2, Ch 6): each multiple answers "what is the market paying per unit of this fundamental?" A high P/B means the market is paying for *growth* - intrinsic value above book - while a low P/B anchors value on the book itself.
 
-**Liquidity & leverage — how the balance sheet stands up.**
+**Liquidity & leverage - how the balance sheet stands up.**
 
 $$
 \text{Current}=\frac{\text{CA}}{\text{CL}}, \quad \text{Quick}=\frac{\text{CA}-\text{Inv}}{\text{CL}}, \quad
@@ -61,66 +61,29 @@ The first two ask "can the firm meet what comes due?"; the last three ask "how m
 
 ---
 
-### 3. Computational Implementation — the whole catalog from one sample company
+### 3. Computational Implementation - the whole catalog from one sample company
 
-This is the single most convincing way to *see* the idea: take one company's statements and compute **every** ratio on the hub table with stdlib only, then watch the **two consistency identities** line up — ROE must equal the Penman decomposition of ROCE, and P/E × Earnings-Yield must equal 1. If either fails, the math is wrong.
+This is the single most convincing way to *see* the idea: take one company's statements and compute **every** ratio on the hub table with stdlib only, then watch the **two consistency identities** line up - ROE must equal the Penman decomposition of ROCE, and P/E × Earnings-Yield must equal 1. If either fails, the math is wrong.
 
-```python
-# One sample firm, "Northstar Manufacturing" ($M). All ratios in one pass.
-rev, cogs, sgna, da = 1000.0, 620.0, 210.0, 40.0
-ebit   = rev - cogs - sgna; ebitda = ebit + da        # 170, 210
-interest, tau = 20.0, 0.30
-net_inc = (ebit - interest)*(1 - tau); nopat = ebit*(1 - tau)   # 105, 119
-mv = 40.0*45.0                                          # 1800 (40M sh @ $45)
-ca, ta = (190.0, 230.0), (590.0, 690.0)                # (BOY, EOY)
-cl, std, ltd = (120.0, 155.0), (40.0, 50.0), (180.0, 210.0)
-cash, inv = (30.0, 45.0), (90.0, 100.0); equity = (290.0, 325.0)
-td = (std[0]+ltd[0], std[1]+ltd[1])
-avg = lambda a,b: (a+b)/2.0
-ta_avg, eq_avg = avg(*ta), avg(*equity)
-# --- profitability
-roe, roa = net_inc/eq_avg, net_inc/ta_avg
-roic = nopat/(avg(*td)+eq_avg-avg(*cash))
-# --- valuation
-pe = mv/net_inc; pb = mv/equity[1]; ey = net_inc/mv; fcfy = (130.0-90.0)/mv
-ev = mv + (td[1]-cash[1]); ev_ebitda = ev/ebitda
-# --- liquidity & leverage
-cr, qr = ca[1]/cl[1], (ca[1]-inv[1])/cl[1]
-de = td[1]/equity[1]; nd_ebitda = (td[1]-cash[1])/ebitda; icov = ebit/interest
-print(f"Profitability: ROE={roe*100:.2f}%  ROA={roa*100:.2f}%  ROIC={roic*100:.2f}%")
-print(f"Valuation:     P/E={pe:.2f}  P/B={pb:.2f}  EV/EBITDA={ev_ebitda:.2f}  "
-      f"EY={ey*100:.2f}%  FCFyield={fcfy*100:.2f}%")
-print(f"Liq/Leverage:  CR={cr:.2f}  QR={qr:.2f}  D/E={de:.2f}  "
-      f"NetDebt/EBITDA={nd_ebitda:.2f}  Icov={icov:.2f}")
-print(f"identities: P/E*EY={pe*ey:.2f}  ROE(Penman)=", end="")
-noa_avg = avg(ta[0]-cash[0]-(60.0+20.0), ta[1]-cash[1]-(80.0+25.0))  # avg NOA=510
-rnoa = nopat/noa_avg; nfo = avg(*td)-avg(*cash); flev = nfo/eq_avg
-nbc = interest*(1-tau)/nfo
-print(f"{ (rnoa + flev*(rnoa - nbc))*100:.2f}%")
-```
-```
-Profitability: ROE=34.15%  ROA=16.41%  ROIC=23.33%
-Valuation:     P/E=17.14  P/B=5.54  EV/EBITDA=9.60  EY=5.83%  FCFyield=2.22%
-Liq/Leverage:  CR=1.48  QR=0.84  D/E=0.80  NetDebt/EBITDA=1.02  Icov=8.50
-identities: P/E*EY=1.00  ROE(Penman)=34.15%
-```
-*Note on the operating-liability constants (80, 105): they are the sample's non-debt operating liabilities (AP + accrued, BOY and EOY) used to get net operating assets in the Penman RNOA — see [[fundamentals-accounting/core-financial-ratios/06-advanced-extensions|06 · Advanced Extensions]] for the clean form.*
+
+
+*Note on the operating-liability constants (80, 105): they are the sample's non-debt operating liabilities (AP + accrued, BOY and EOY) used to get net operating assets in the Penman RNOA - see [[fundamentals-accounting/core-financial-ratios/06-advanced-extensions|06 · Advanced Extensions]] for the clean form.*
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **The "bigger number = better" trap.** A ratio's *level* is almost never the answer — its *sector-relative and history-relative* position is. A high current ratio can signal safety *or* a bloated, unproductive inventory pile; only comparison tells you which. (This is the entire thesis of [[fundamentals-accounting/core-financial-ratios/05-failure-modes-and-practice|05 · Failure Modes]].)
+1. **The "bigger number = better" trap.** A ratio's *level* is almost never the answer - its *sector-relative and history-relative* position is. A high current ratio can signal safety *or* a bloated, unproductive inventory pile; only comparison tells you which. (This is the entire thesis of [[fundamentals-accounting/core-financial-ratios/05-failure-modes-and-practice|05 · Failure Modes]].)
 2. **Mismatched flow/stock pairs.** Dividing *net* income by *total* assets (ROA) quietly folds in financing effects; dividing EBIT by *equity* mixes a pre-financing flow with a post-financing stock. Always match the flow to the stock that earned it.
-3. **Averages or point-in-time?** Balance-sheet stocks are measured at a *point*; profit flows over a *period*. Using ending balances (not averages) distorts the ratio whenever the balance changed during the year — the exact failure Penman's average-denominator convention exists to prevent.
+3. **Averages or point-in-time?** Balance-sheet stocks are measured at a *point*; profit flows over a *period*. Using ending balances (not averages) distorts the ratio whenever the balance changed during the year - the exact failure Penman's average-denominator convention exists to prevent.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
 - **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 5 (ROCE as the primary ratio), Ch 6 (P/B, P/E and value), Ch 7 (reformulated statements, why the denominator matters). *All ratios in this folder verified against the corpus text.*
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* — the plain-English route to the raw statements this page assumes.
-- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide* — ratio interpretation with the honest caveats a practitioner needs.
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - the plain-English route to the raw statements this page assumes.
+- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide* - ratio interpretation with the honest caveats a practitioner needs.
 
 ---
 

@@ -15,9 +15,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Kyle (1985) answered a question Glosten–Milgrom left open. In a sequential-trade market, the spread is set by a competitive market maker's **zero-profit condition** — but the *informed trader* there is a robot who always trades in the right direction and never optimises. Kyle asked the harder question: what happens when the informed trader is **strategic** — when he knows that a big, aggressive order reveals his information and therefore chooses to *hide* it inside the noise flow?
+Kyle (1985) answered a question Glosten–Milgrom left open. In a sequential-trade market, the spread is set by a competitive market maker's **zero-profit condition** - but the *informed trader* there is a robot who always trades in the right direction and never optimises. Kyle asked the harder question: what happens when the informed trader is **strategic** - when he knows that a big, aggressive order reveals his information and therefore chooses to *hide* it inside the noise flow?
 
-The answer produced the single most-used object in microstructure: **Kyle's $\lambda$**, the linear price impact. The model is one auction — three agents, one price — and yet it pins down:
+The answer produced the single most-used object in microstructure: **Kyle's $\lambda$**, the linear price impact. The model is one auction - three agents, one price - and yet it pins down:
 
 - why **price impact is linear** in order flow (at least at the margin),
 - why **market depth equals $1/\lambda$**,
@@ -34,7 +34,7 @@ The answer produced the single most-used object in microstructure: **Kyle's $\la
 
 #### 2.1 Setup (single auction)
 
-- **Value:** $v\sim\mathcal N(p_0,\Sigma_0)$ — the terminal value, unknown; prior mean $p_0$, variance $\Sigma_0$.
+- **Value:** $v\sim\mathcal N(p_0,\Sigma_0)$ - the terminal value, unknown; prior mean $p_0$, variance $\Sigma_0$.
 - **Informed trader:** knows $v$ exactly, submits a market order $x(v)$.
 - **Noise ("liquidity") traders:** submit $u\sim\mathcal N(0,\sigma_u^2)$, independent of $v$ and of $x$. This flow is the insider's camouflage.
 - **Market makers:** observe the **total order flow** $y=x+u$ (but not its decomposition), act competitively and risk-neutrally, and set the price equal to the expected value:
@@ -85,7 +85,7 @@ $$
 \boxed{\ \frac{1}{\lambda}=2\sqrt{\frac{\sigma_u^2}{\Sigma_0}}\ }
 $$
 
-— the signed order flow needed to move the price by one dollar. Larger noise flow $\sigma_u^2$ and smaller information $\Sigma_0$ both make the market deeper.
+- the signed order flow needed to move the price by one dollar. Larger noise flow $\sigma_u^2$ and smaller information $\Sigma_0$ both make the market deeper.
 
 #### 2.3 What the equilibrium implies
 
@@ -95,7 +95,7 @@ $$
 $$
 \mathbb E[\pi\mid v]=(v-p_0)x-\lambda x^2=\frac{(v-p_0)^2}{2\lambda}-\frac{(v-p_0)^2}{4\lambda}=\boxed{\frac{(v-p_0)^2}{2}\sqrt{\frac{\sigma_u^2}{\Sigma_0}}},
 $$
-increasing in the squared mispricing and in *noise* variance (more camouflage). Averaging over $v$: $\mathbb E[\pi]=\tfrac12\sqrt{\sigma_u^2\Sigma_0}$. *(This is Hasbrouck Ch 7 eq. 7.5; the conditional-vs-unconditional distinction is the correction flagged in the verified corpus — for a **fixed** $v$ the profit actually *decreases* in $\Sigma_0$.)*
+increasing in the squared mispricing and in *noise* variance (more camouflage). Averaging over $v$: $\mathbb E[\pi]=\tfrac12\sqrt{\sigma_u^2\Sigma_0}$. *(This is Hasbrouck Ch 7 eq. 7.5; the conditional-vs-unconditional distinction is the correction flagged in the verified corpus - for a **fixed** $v$ the profit actually *decreases* in $\Sigma_0$.)*
 - **Noise independence.** $\mathrm{Var}[P]=\lambda^2(\beta^2\Sigma_0+\sigma_u^2)=\lambda^2\cdot 2\sigma_u^2$, and the price innovations are driven by order flow, not by $\sigma_u^2$ directly: **the volatility of the price is unaffected by the level of noise trading** (Kyle, §2).
 
 #### 2.4 Multi-period and the continuous limit
@@ -104,64 +104,27 @@ Repeat the auction $N$ times with the insider splitting his order ("slicing and 
 $$
 \Delta x_n=\beta_n\,(v-p_{n-1})\,\Delta t,\qquad p_n=p_{n-1}+\lambda_n\,(\Delta x_n+\Delta u_n),\qquad \lambda_n=\frac12\sqrt{\frac{\Sigma_n}{\Delta t\,\sigma_u^2}}.
 $$
-The insider trades so that **total order flow is serially uncorrelated** (a martingale), and $\Sigma_n$ shrinks predictably. As the time between auctions $\to0$ the sequential equilibrium converges to the **continuous auction equilibrium** $dP_t=\lambda\,dY_t$ with $\lambda$ constant — the origin of the "$\Delta P=\lambda\cdot\text{order flow}$" rule used everywhere on this folder. (Huberman–Stanzl 2004: only *linear* price schedules are manipulation-free, which is why the linear model survives.)
+The insider trades so that **total order flow is serially uncorrelated** (a martingale), and $\Sigma_n$ shrinks predictably. As the time between auctions $\to0$ the sequential equilibrium converges to the **continuous auction equilibrium** $dP_t=\lambda\,dY_t$ with $\lambda$ constant - the origin of the "$\Delta P=\lambda\cdot\text{order flow}$" rule used everywhere on this folder. (Huberman–Stanzl 2004: only *linear* price schedules are manipulation-free, which is why the linear model survives.)
 
 ---
 
-### 3. Computational Implementation — simulate and recover $\lambda$
+### 3. Computational Implementation - simulate and recover $\lambda$
 
 Simulate the equilibrium, then **estimate $\lambda$ from order flow by OLS** (as a market maker would), and check the half-information and profit predictions. Stdlib only; the recovery is exact up to sampling noise.
 
-```python
-import math, random
 
-def kyle_sim(p0=100.0, Sigma0=4.0, sig_u2=1.0, n=300000, seed=11):
-    """Single-auction Kyle equilibrium.
-       v ~ N(p0,Sigma0); x = beta(v-p0); u ~ N(0,sig_u2); y = x+u;
-       P = p0 + lambda*y,  lambda = 0.5*sqrt(Sigma0/sig_u2)."""
-    lam  = 0.5 * math.sqrt(Sigma0 / sig_u2)      # price impact ($ per share of flow)
-    beta = math.sqrt(sig_u2 / Sigma0)            # insider aggressiveness
-    random.seed(seed); sv, su = math.sqrt(Sigma0), math.sqrt(sig_u2)
-    syy = svy = prof = 0.0
-    for _ in range(n):
-        v = p0 + sv*random.gauss(0, 1)
-        u = su*random.gauss(0, 1)
-        x = beta*(v-p0); y = x+u; P = p0 + lam*y
-        prof += (v-P)*x
-        svy += (v-p0)*y; syy += y*y
-    slope = svy/syy                              # OLS of (v-p0) on order flow y
-    resid = Sigma0 - slope*slope*(syy/n)         # Var[v|y] empirically
-    return lam, beta, slope, resid, prof/n
 
-lam, beta, slope, resid, prof = kyle_sim()
-print("Kyle single-auction equilibrium: p0=100, Sigma0=4, sigma_u^2=1")
-print(f"  lambda (theory)        = {lam:.4f}   [0.5*sqrt(Sigma0/sigma_u^2)]")
-print(f"  beta   (theory)        = {beta:.4f}   [sqrt(sigma_u^2/Sigma0)]")
-print(f"  lambda (recovered,OLS) = {slope:.4f}   <- impact estimated from flow")
-print(f"  Var[v|y] (empirical)   = {resid:.4f}   [theory Sigma0/2 = 2.0000]")
-print(f"  insider profit         = {prof:.4f}   [theory 0.5*sqrt(sigma_u^2*Sigma0) = 1.0000]")
-print(f"  market depth  1/lambda = {1/lam:.4f}")
-```
 
-```
-Kyle single-auction equilibrium: p0=100, Sigma0=4, sigma_u^2=1
-  lambda (theory)        = 1.0000   [0.5*sqrt(Sigma0/sigma_u^2)]
-  beta   (theory)        = 0.5000   [sqrt(sigma_u^2/Sigma0)]
-  lambda (recovered,OLS) = 0.9998   <- impact estimated from flow
-  Var[v|y] (empirical)   = 1.9982   [theory Sigma0/2 = 2.0000]
-  insider profit         = 0.9969   [theory 0.5*sqrt(sigma_u^2*Sigma0) = 1.0000]
-  market depth  1/lambda = 1.0000
-```
 
-Every equilibrium prediction is recovered from the simulation: $\lambda$ from a regression of value on flow, the halving of variance, and the insider's profit. **The market maker never sees $v$ — but the regression of $v$ on $y$ hands him exactly the price rule the model says he should use.**
+Every equilibrium prediction is recovered from the simulation: $\lambda$ from a regression of value on flow, the halving of variance, and the insider's profit. **The market maker never sees $v$ - but the regression of $v$ on $y$ hands him exactly the price rule the model says he should use.**
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **The linear-price-rule assumption is fragile.** Linearity comes from **normality** (the projection theorem). With fat-tailed values or non-Gaussian noise the linear equilibrium may not exist or may not be unique; the "$\lambda$" you estimate empirically is then a local slope, not a structural constant.
-2. **Competition and risk neutrality.** Market makers are assumed perfectly competitive and risk-neutral, so price $=\mathbb E[v\mid y]$ exactly (zero expected profit). A real book has finite depth, inventory costs ([[pillars/06-market-making/inventory-management-and-quote-skewing|inventory skewing]]) and a spread — the Kyle $\lambda$ is the *adverse-selection* component, not the whole cost.
-3. **Single informed trader.** The model assumes one strategic insider. With multiple informed traders (or a partially informed one), the equilibrium $\lambda$ changes and information is impounded faster — the empirically relevant case.
+2. **Competition and risk neutrality.** Market makers are assumed perfectly competitive and risk-neutral, so price $=\mathbb E[v\mid y]$ exactly (zero expected profit). A real book has finite depth, inventory costs ([[pillars/06-market-making/inventory-management-and-quote-skewing|inventory skewing]]) and a spread - the Kyle $\lambda$ is the *adverse-selection* component, not the whole cost.
+3. **Single informed trader.** The model assumes one strategic insider. With multiple informed traders (or a partially informed one), the equilibrium $\lambda$ changes and information is impounded faster - the empirically relevant case.
 4. **The insider is assumed to know $v$ exactly and have infinite horizon.** Real informed traders have noisy signals and must trade before their information decays; this is why the *continuous* equilibrium and its no-dynamic-arbitrage constraints (page 06) matter.
 5. **$\lambda$ is not constant in reality.** Empirically impact is concave (square-root) at larger sizes and $\lambda$ drifts with intraday depth. Kyle's $\lambda$ is the correct *local linearisation*, and the square-root law is its concavity at scale (page 04).
 6. **Half-information is a knife-edge.** $\mathrm{Var}[v\mid p]=\Sigma_0/2$ depends on the joint normality and the single-auction timing. In multi-period versions the fraction impounded per round is $\Sigma_n-\Sigma_{n+1}$ and is *not* a constant half.
@@ -172,7 +135,7 @@ Every equilibrium prediction is recovered from the simulation: $\lambda$ from a 
 
 - **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *Theorem 1 (single auction): $\beta=(\sigma_u^2/\Sigma_0)^{1/2}$, $\lambda=\tfrac12(\Sigma_0/\sigma_u^2)^{1/2}$; §2 "Properties": $1/\lambda$ = depth, $\mathrm{Var}[v\mid p]=\Sigma_0/2$, profit. Primary PDF in corpus (`40_Kyle_1985_...`).*
 - **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, Ch 7 *Strategic Trade Models*. *Cleanest textbook exposition of the equilibrium, eqs 7.1–7.5; verified in corpus (`hasbrouck_ch6-10.md`, Ch 7 section).*
-- **Huberman, G. & Stanzl, W. (2004)**, *Price manipulation and quasi-arbitrage*, Econometrica 72(4). *Only linear price schedules are manipulation-free — the no-arbitrage anchor for Kyle's linear rule.*
+- **Huberman, G. & Stanzl, W. (2004)**, *Price manipulation and quasi-arbitrage*, Econometrica 72(4). *Only linear price schedules are manipulation-free - the no-arbitrage anchor for Kyle's linear rule.*
 - **Glosten, L. R. & Milgrom, P. R. (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders*, JFE 14(1). *The sequential-trade counterpart (non-strategic insider).*
 
 ---

@@ -16,12 +16,12 @@ tags:
 
 Once you have a fill model, you must decide *where the events come from*. There are exactly two answers, and everything else is a blend:
 
-- **Market replay** — feed the simulator the **recorded** event stream (orders, trades, cancels with true timestamps). Deterministic, faithful, and *single-path*: you get one number and no counterfactual.
-- **Monte Carlo** — fit a **generative model** to the market and draw *new* event streams. You get a distribution over outcomes, confidence intervals, and the ability to ask "what if?", at the cost of trusting the model.
+- **Market replay** - feed the simulator the **recorded** event stream (orders, trades, cancels with true timestamps). Deterministic, faithful, and *single-path*: you get one number and no counterfactual.
+- **Monte Carlo** - fit a **generative model** to the market and draw *new* event streams. You get a distribution over outcomes, confidence intervals, and the ability to ask "what if?", at the cost of trusting the model.
 
 The practical objective is to know which questions each method can and cannot answer, and to use them in the right roles: **replay to calibrate and validate, Monte Carlo to decide.**
 
-> **The one-sentence essence.** "Replay has *path risk* — it tells you what happened on one day and cannot tell you what would have happened had you done something different; Monte Carlo has *model risk* — it can answer any counterfactual, but only as faithfully as the model reproduces the stylized facts of the book."
+> **The one-sentence essence.** "Replay has *path risk* - it tells you what happened on one day and cannot tell you what would have happened had you done something different; Monte Carlo has *model risk* - it can answer any counterfactual, but only as faithfully as the model reproduces the stylized facts of the book."
 
 ---
 
@@ -31,7 +31,7 @@ The practical objective is to know which questions each method can and cannot an
 
 Let $\omega$ denote a full event path and $g(\omega)$ the execution cost (or fill ratio) your algorithm produces on it.
 
-- **Replay:** the realised day is a single fixed $\omega_\star$; the estimate is $\hat\theta_{\text{replay}}=g(\omega_\star)$ — a **one-sample** estimator with *zero modelled variance and unbounded unmeasured variance*.
+- **Replay:** the realised day is a single fixed $\omega_\star$; the estimate is $\hat\theta_{\text{replay}}=g(\omega_\star)$ - a **one-sample** estimator with *zero modelled variance and unbounded unmeasured variance*.
 - **Monte Carlo:** draw $\omega_1,\dots,\omega_N\stackrel{\text{iid}}{\sim}\mathbb P_\theta$; the estimate is
 $$
 \hat\theta_{\text{MC}}=\frac1N\sum_{i=1}^N g(\omega_i),\qquad
@@ -42,7 +42,7 @@ So Monte Carlo's precision is *known and purchasable* (want half the error? run 
 
 #### 2.2 Why replay cannot answer counterfactuals
 
-$g(\omega_\star)$ is defined for the actions you *took*. Change the queue position, size, or placement, and $\omega_\star$ no longer contains the responses your new action would have elicited (your own impact, the liquidity you would have consumed). Replay of a *fixed* stream therefore answers only "how did *this* order do on *this* day" — a valid measurement, not an experiment.
+$g(\omega_\star)$ is defined for the actions you *took*. Change the queue position, size, or placement, and $\omega_\star$ no longer contains the responses your new action would have elicited (your own impact, the liquidity you would have consumed). Replay of a *fixed* stream therefore answers only "how did *this* order do on *this* day" - a valid measurement, not an experiment.
 
 #### 2.3 Look-ahead, the replay-specific poison
 
@@ -50,7 +50,7 @@ If the replay decides a fill using any event after the algorithm's decision time
 
 #### 2.4 Model risk: the MC failure mode
 
-Monte Carlo is only as honest as $\mathbb P_\theta$. A generator must reproduce the **stylized facts** of the book — the intraday U-shaped volume curve, the concave depth profile, the autocorrelation of order flow, the fat tails of trade size, and the cancel-to-trade ratio. A generator that misses one of these produces a *silently biased* distribution (often too smooth, too uncorrelated, too optimistic). This is precisely López de Prado's argument for **backtesting on synthetic data** (AFML Ch 13) *with* explicit stylized-fact validation — and the bridge to [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/06-advanced-extensions|06 · Advanced Extensions]].
+Monte Carlo is only as honest as $\mathbb P_\theta$. A generator must reproduce the **stylized facts** of the book - the intraday U-shaped volume curve, the concave depth profile, the autocorrelation of order flow, the fat tails of trade size, and the cancel-to-trade ratio. A generator that misses one of these produces a *silently biased* distribution (often too smooth, too uncorrelated, too optimistic). This is precisely López de Prado's argument for **backtesting on synthetic data** (AFML Ch 13) *with* explicit stylized-fact validation - and the bridge to [[pillars/02-algorithmic-hft/execution-backtesting-and-simulation/06-advanced-extensions|06 · Advanced Extensions]].
 
 #### 2.5 Standard error and variance reduction
 
@@ -58,61 +58,14 @@ With $\text{SE}=\sigma_g/\sqrt N$, reaching a target precision $\varepsilon$ nee
 
 ---
 
-### 3. Computational Implementation — replay is one draw; Monte Carlo is the distribution
+### 3. Computational Implementation - replay is one draw; Monte Carlo is the distribution
 
 A "recorded" day with a U-shaped arrival intensity is replayed once; the same fitted arrival model is then simulated $N$ times, and a counterfactual sweep (fill vs queue position) is run that replay could never produce. Stdlib only.
 
-```python
-import random, math, statistics as st
-random.seed(21)
 
-T_EV, Q_AHEAD, L = 400, 6000, 800
-def intensity(t, T):                      # U-shaped intraday volume (stylized fact)
-    return 0.5 + 1.5 * (2 * t / T - 1) ** 2
 
-def one_day():
-    xi = 0.0
-    for t in range(T_EV):
-        if random.random() < min(0.4, 0.06 * intensity(t, T_EV)):
-            xi += random.expovariate(1.0 / 300.0)     # trade volume
-    return xi
 
-def fill_ratio(xi, Q=Q_AHEAD):
-    return min(max(xi - Q, 0.0), L) / L
-
-print(f"market replay (one historical path): fill ratio = {fill_ratio(one_day()):.4f}")
-
-N = 5000
-mc = [fill_ratio(one_day()) for _ in range(N)]
-m, s = st.mean(mc), st.pstdev(mc)
-print(f"Monte Carlo (N={N}, estimated Poisson model): fill ratio mean={m:.4f} sd={s:.4f}"
-      f"  95% CI=[{m-1.96*s/math.sqrt(N):.4f}, {m+1.96*s/math.sqrt(N):.4f}]")
-
-print("standard error of the fill-ratio estimator:")
-for n in (100, 1000, 10000, 100000):
-    print(f"   N={n:>7}: SE={s/math.sqrt(n):.6f}")
-
-print("counterfactual sweep (mean fill ratio, 95% CI):")
-for Q in (3000, 6000, 9000):
-    v = [fill_ratio(one_day(), Q) for _ in range(2000)]
-    mm, ss = st.mean(v), st.pstdev(v)
-    print(f"   queue ahead Q={Q:>5}: {mm:.4f}  [{mm-1.96*ss/math.sqrt(2000):.4f}, {mm+1.96*ss/math.sqrt(2000):.4f}]")
-```
-```
-market replay (one historical path): fill ratio = 1.0000
-Monte Carlo (N=5000, estimated Poisson model): fill ratio mean=0.6384 sd=0.4511  95% CI=[0.6259, 0.6509]
-standard error of the fill-ratio estimator:
-   N=    100: SE=0.045109
-   N=   1000: SE=0.014265
-   N=  10000: SE=0.004511
-   N= 100000: SE=0.001426
-counterfactual sweep (mean fill ratio, 95% CI):
-   queue ahead Q= 3000: 0.9822  [0.9771, 0.9873]
-   queue ahead Q= 6000: 0.6291  [0.6092, 0.6491]
-   queue ahead Q= 9000: 0.1508  [0.1359, 0.1656]
-```
-
-The numbers teach the whole lesson. The **single replay** reports a fill ratio of $1.0000$ — a fully-filled day — while the **Monte Carlo mean is $0.6384$** with a $95\%$ interval $[0.626, 0.651]$ that *excludes the replay value*. The one recorded path was a lucky draw ($0.80$ standard deviations above the mean of a distribution with $\sigma=0.45$); had the desk trusted it, it would have sized the strategy for fills that occur on a minority of days. The **standard error** shows Monte Carlo precision is purchasable ($0.0451\!\to\!0.001426$ as $N$ goes $10^2\!\to\!10^5$), and the **counterfactual sweep** shows what replay structurally cannot: the full fill-vs-queue curve ($0.98$ at $Q{=}3000$ collapsing to $0.15$ at $Q{=}9000$), each point with a confidence interval — the input to a placement decision.
+The numbers teach the whole lesson. The **single replay** reports a fill ratio of $1.0000$ - a fully-filled day - while the **Monte Carlo mean is $0.6384$** with a $95\%$ interval $[0.626, 0.651]$ that *excludes the replay value*. The one recorded path was a lucky draw ($0.80$ standard deviations above the mean of a distribution with $\sigma=0.45$); had the desk trusted it, it would have sized the strategy for fills that occur on a minority of days. The **standard error** shows Monte Carlo precision is purchasable ($0.0451\!\to\!0.001426$ as $N$ goes $10^2\!\to\!10^5$), and the **counterfactual sweep** shows what replay structurally cannot: the full fill-vs-queue curve ($0.98$ at $Q{=}3000$ collapsing to $0.15$ at $Q{=}9000$), each point with a confidence interval - the input to a placement decision.
 
 ---
 
@@ -120,21 +73,21 @@ The numbers teach the whole lesson. The **single replay** reports a fill ratio o
 
 1. **Look-ahead in replay.** Fills decided from post-decision events inflate fill rates (the toy replay's $P(\text{fill})$ went $0.3301\!\to\!1.0000$ with a $4\times$ horizon (150 of 600 events)); in production this is the single most common reason a replay-tuned algo underperforms live.
 2. **Trusting a single path.** Replay gives one draw from an unseen distribution; here it landed $0.80\sigma$ high and would have mis-sized the strategy by $\sim56\%$. *Fix:* always pair replay with a distribution (MC or a cross-day ensemble).
-3. **Counterfactual blindness.** Replay cannot answer "what if my queue position were $x'$?" — the recorded stream does not contain the responses to an action you never took. Using it to *optimise* placement overfits the one path.
+3. **Counterfactual blindness.** Replay cannot answer "what if my queue position were $x'$?" - the recorded stream does not contain the responses to an action you never took. Using it to *optimise* placement overfits the one path.
 4. **Model risk in Monte Carlo.** A generator that misses a stylized fact (here the U-shaped intensity, elsewhere the fat tails or the cancel correlation) yields a confidently wrong interval. *Fix:* validate the generator against the stylized facts before trusting any counterfactual (page 06).
-5. **Calibrating on the replay day.** Fitting the arrival model *and* evaluating on the same recorded day is in-sample optimism of the classic backtest kind — the Monte Carlo analogue of [[pillars/01-quantitative-research/backtesting-hygiene/index|backtest overfitting]].
+5. **Calibrating on the replay day.** Fitting the arrival model *and* evaluating on the same recorded day is in-sample optimism of the classic backtest kind - the Monte Carlo analogue of [[pillars/01-quantitative-research/backtesting-hygiene/index|backtest overfitting]].
 6. **Variance reduction gone wrong.** Common random numbers across strategy variants can *hide* risk if the variants' responses to the same draw are correlated in exactly the way the real market is not.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **López de Prado, Marcos** — *Advances in Financial Machine Learning* (Wiley, 2018), Ch 13 ("Backtesting on Synthetic Data") and Ch 11–12 — the case for Monte Carlo/synthetic evaluation and the discipline required to make it honest.
-- **Cont, Stoikov & Talreja** — "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) — a queue model fast enough for Monte Carlo fill simulation; the standard substrate.
-- **Gould et al.** — "Limit order books," *Quantitative Finance* 13(11) (2013) — the stylized-fact checklist a Monte Carlo generator must satisfy.
-- **Abergel et al.** — *Limit Order Books* (Cambridge, 2016) — agent-based LOB generators for replay-vs-simulation studies.
-- **Glasserman, Paul** — *Monte Carlo Methods in Financial Engineering* (2004) — standard error, antithetic and control variates, and the variance-reduction toolbox.
-- **Almgren, Thum, Hauptmann & Li** — "Direct estimation of equity market impact," *Risk* 18(7) (2005) — the impact parameters a realistic Monte Carlo execution simulation must calibrate.
+- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018), Ch 13 ("Backtesting on Synthetic Data") and Ch 11–12 - the case for Monte Carlo/synthetic evaluation and the discipline required to make it honest.
+- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) - a queue model fast enough for Monte Carlo fill simulation; the standard substrate.
+- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013) - the stylized-fact checklist a Monte Carlo generator must satisfy.
+- **Abergel et al.** - *Limit Order Books* (Cambridge, 2016) - agent-based LOB generators for replay-vs-simulation studies.
+- **Glasserman, Paul** - *Monte Carlo Methods in Financial Engineering* (2004) - standard error, antithetic and control variates, and the variance-reduction toolbox.
+- **Almgren, Thum, Hauptmann & Li** - "Direct estimation of equity market impact," *Risk* 18(7) (2005) - the impact parameters a realistic Monte Carlo execution simulation must calibrate.
 
 ---
 

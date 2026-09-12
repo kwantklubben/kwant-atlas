@@ -18,11 +18,11 @@ The GM model says the *entire* spread is adverse selection. Reality is richer: a
 
 | Component | Source | Effect on transaction price |
 |---|---|---|
-| **Adverse selection** (information) | trading against informed | **permanent** — the efficient price moves and stays |
-| **Order-processing** (fees, clearing, rents) | cost of providing immediacy | **instant reversal** — a temporary premium that snaps back |
+| **Adverse selection** (information) | trading against informed | **permanent** - the efficient price moves and stays |
+| **Order-processing** (fees, clearing, rents) | cost of providing immediacy | **instant reversal** - a temporary premium that snaps back |
 | **Inventory** (holding risk) | undesired position | **slow/gradual reversal** |
 
-The objective: **identify the permanent part.** The information component is the one that moves the *true* price; processing and inventory only jiggle it around temporarily. If you can measure the permanent component, you have measured the "toxicity" of the flow in dollar terms — and you know how much spread revenue genuinely compensates you for taking information risk versus how much is just cost-recovery.
+The objective: **identify the permanent part.** The information component is the one that moves the *true* price; processing and inventory only jiggle it around temporarily. If you can measure the permanent component, you have measured the "toxicity" of the flow in dollar terms - and you know how much spread revenue genuinely compensates you for taking information risk versus how much is just cost-recovery.
 
 ---
 
@@ -40,7 +40,7 @@ $$
 \boxed{\;\Delta p_t=c\,(q_t-q_{t-1})+\lambda q_t+u_t\;}.
 $$
 
-Because $c$ multiplies the *change* in flow (it reverses next period) while $\lambda$ multiplies the *level* of flow (it persists), ordinary least squares on $\Delta p_t$ against $\{q_t,\,q_t-q_{t-1}\}$ separately recovers both — **the spread decomposition.** The moment structure (Hasbrouck eq. 8.3):
+Because $c$ multiplies the *change* in flow (it reverses next period) while $\lambda$ multiplies the *level* of flow (it persists), ordinary least squares on $\Delta p_t$ against $\{q_t,\,q_t-q_{t-1}\}$ separately recovers both - **the spread decomposition.** The moment structure (Hasbrouck eq. 8.3):
 
 $$
 \gamma_0\equiv Var(\Delta p_t)=c^2+(c+\lambda)^2+\sigma_u^2,\qquad
@@ -49,71 +49,37 @@ $$
 
 The permanent/variance measure $\sigma_w^2=\lambda^2+\sigma_u^2=\gamma_0+2\gamma_1$ is **identified** even though the three structural parameters $\{\lambda,c,\sigma_u^2\}$ individually are not (only two autocovariances). Glosten–Harris (1988) make the same permanent-vs-transitory split and, cross-sectionally, find statistically significant adverse-selection (information) components in NYSE common-stock spreads for 1981–83.
 
-**The signature test:** the transitory component reverses (negative return autocorrelation, bid–ask bounce), the permanent component does not — a trade that moves the *efficient* price leaves a lasting mark; a trade that only pays crossing costs leaves a bounce. In practice short-term impact = $\lambda+c$, long-term impact = $\lambda$ (Foucault eq. 3.34–3.37: $ST-LT=c$).
+**The signature test:** the transitory component reverses (negative return autocorrelation, bid–ask bounce), the permanent component does not - a trade that moves the *efficient* price leaves a lasting mark; a trade that only pays crossing costs leaves a bounce. In practice short-term impact = $\lambda+c$, long-term impact = $\lambda$ (Foucault eq. 3.34–3.37: $ST-LT=c$).
 
 ---
 
-### 3. Computational Implementation — recover $\lambda$ and $c$ from trade prices (stdlib only)
+### 3. Computational Implementation - recover $\lambda$ and $c$ from trade prices (stdlib only)
 
 Simulate the structural model with *known* $\lambda,c$, then run OLS and retrieve them. If the estimator recovers the true values, you can trust it on real price data to separate the information component of the spread.
 
-```python
-import random
 
-def decompose(T, lam, c, sigma_u, seed=42):
-    """m_t=m_{t-1}+lam*q_t+u_t, p_t=m_t+c*q_t  =>  dp_t = c(q_t-q_{t-1}) + lam*q_t + u_t.
-       OLS regressors x1=q_t (permanent/adverse-selection), x2=(q_t-q_{t-1}) (transitory/order-processing)."""
-    random.seed(seed)
-    m = 100.0; q_prev = 1; X1, X2, Y = [], [], []
-    p_prev = m + c * q_prev
-    for _ in range(T):
-        q = 1 if random.random() < 0.5 else -1
-        u = random.gauss(0, sigma_u)
-        m = m + lam * q + u
-        p = m + c * q
-        Y.append(p - p_prev); X1.append(q); X2.append(q - q_prev)
-        q_prev, p_prev = q, p
-    n = len(Y)
-    def d(a, b): return sum(x * y for x, y in zip(a, b))
-    S11, S12, S22 = d(X1, X1), d(X1, X2), d(X2, X2)
-    S1y, S2y = d(X1, Y), d(X2, Y)
-    det = S11 * S22 - S12 * S12
-    lam_hat = (S1y * S22 - S12 * S2y) / det
-    c_hat   = (S11 * S2y - S12 * S1y) / det
-    return lam_hat, c_hat
 
-print(" true lam   | true c   | (spread=2(lam+c)) | OLS lam-hat | OLS c-hat | recovered spread")
-for lam, c in ((0.020, 0.005), (0.050, 0.010), (0.100, 0.002)):
-    lh, ch = decompose(200000, lam, c, 0.001)
-    print(f" {lam:.3f}     | {c:.3f}   | {2*(lam+c):.3f}            | {lh:.3f}       | {ch:.3f}     | {2*(lh+ch):.3f}")
-```
 
-```text
- true lam   | true c   | (spread=2(lam+c)) | OLS lam-hat | OLS c-hat | recovered spread
- 0.020     | 0.005   | 0.050            | 0.020       | 0.005     | 0.050
- 0.050     | 0.010   | 0.120            | 0.050       | 0.010     | 0.120
- 0.100     | 0.002   | 0.204            | 0.100       | 0.002     | 0.204
-```
 
-The OLS recovers the adverse-selection ($\lambda$) and order-processing ($c$) components **exactly** across a range of true values — the mechanism that makes the spread decomposition practical. On real trade data, $\hat{c}$ is the "instant-reversal" premium and $\hat{\lambda}$ is the "permanent mark." (Copeland–Galai's option framing of the information piece and Huang–Stoll's three-way split are the extensions; the econometric instrument here is the same as Hasbrouck Ch 8.)
+The OLS recovers the adverse-selection ($\lambda$) and order-processing ($c$) components **exactly** across a range of true values - the mechanism that makes the spread decomposition practical. On real trade data, $\hat{c}$ is the "instant-reversal" premium and $\hat{\lambda}$ is the "permanent mark." (Copeland–Galai's option framing of the information piece and Huang–Stoll's three-way split are the extensions; the econometric instrument here is the same as Hasbrouck Ch 8.)
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Underidentification of the full tri-component spread.** $\{\lambda,c,\sigma_u^2\}$ cannot be recovered from $\{\gamma_0,\gamma_1\}$ alone — three parameters, two moments (Hasbrouck Ch 8). Only $\sigma_w^2=\lambda^2+\sigma_u^2$ is identified. Any claimed "exact" three-way split from pure price data needs extra structure or extra variables (e.g. quote data, order-size — Glosten–Harris, Huang–Stoll).
+1. **Underidentification of the full tri-component spread.** $\{\lambda,c,\sigma_u^2\}$ cannot be recovered from $\{\gamma_0,\gamma_1\}$ alone - three parameters, two moments (Hasbrouck Ch 8). Only $\sigma_w^2=\lambda^2+\sigma_u^2$ is identified. Any claimed "exact" three-way split from pure price data needs extra structure or extra variables (e.g. quote data, order-size - Glosten–Harris, Huang–Stoll).
 2. **Order-processing vs rents are inseparable from price data alone.** A dealer's "cost" $\gamma$ bundles operating cost and monopoly rent (Foucault Box 3.1); price dynamics cannot tell them apart. Don't assert a *cost* where you only measured a *markup*.
-3. **Roll bias corrupts the transitory estimate.** Serial correlation in orders (buys follow buys), informed flow (corr($q_t,u_t$)>0), unbalanced flow, and time-varying expected returns all bias the simple autocovariance estimator — on informed-flow data the bounce is attenuated and the naive $c$ is biased upward/downward depending on the misspecification (Foucault Ch 2, eqs 2.19–2.25).
+3. **Roll bias corrupts the transitory estimate.** Serial correlation in orders (buys follow buys), informed flow (corr($q_t,u_t$)>0), unbalanced flow, and time-varying expected returns all bias the simple autocovariance estimator - on informed-flow data the bounce is attenuated and the naive $c$ is biased upward/downward depending on the misspecification (Foucault Ch 2, eqs 2.19–2.25).
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 8 (generalized Roll; eq 8.1–8.3; identification; random-walk decomposition) — **math-verified**.
-- **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142 — the permanent/transitory empirical split.
-- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4), 995–1034 — the three-component (order-processing + inventory + adverse selection) framework.
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 8 (generalized Roll; eq 8.1–8.3; identification; random-walk decomposition) - **math-verified**.
+- **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142 - the permanent/transitory empirical split.
+- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4), 995–1034 - the three-component (order-processing + inventory + adverse selection) framework.
 - **Foucault, Pagano & Röell (2013)**, *Market Liquidity*, Ch 3 §3.4–3.6 (adverse-selection vs order-processing vs inventory signatures; $ST-LT=c$).
-- **Copeland & Galai (1983)**, J. Finance 38 — the option-theoretic view of the information component.
+- **Copeland & Galai (1983)**, J. Finance 38 - the option-theoretic view of the information component.
 
 ---
 

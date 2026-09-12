@@ -23,8 +23,8 @@ $$
 Three "aha"s:
 
 1. **No fixed memory horizon.** Attention's path length between any two positions is $O(1)$ (they interact directly), versus $O(T)$ for recurrence. This is why Transformers learn long-range dependencies that RNNs cannot.
-2. **It is fully parallel over time.** All queries and keys are computed at once — the reason Transformers train fast on GPUs, unlike the sequential BPTT of page 02.
-3. **Causality must be *enforced*, not assumed.** In a *forecasting* task the query at $t$ must not see keys at $j>t$. A raw (bidirectional) attention will happily attend to the future — look-ahead leakage *inside the architecture*. The fix is an explicit **causal mask** $M$ (§3 verifies it produces an exact zero upper triangle).
+2. **It is fully parallel over time.** All queries and keys are computed at once - the reason Transformers train fast on GPUs, unlike the sequential BPTT of page 02.
+3. **Causality must be *enforced*, not assumed.** In a *forecasting* task the query at $t$ must not see keys at $j>t$. A raw (bidirectional) attention will happily attend to the future - look-ahead leakage *inside the architecture*. The fix is an explicit **causal mask** $M$ (§3 verifies it produces an exact zero upper triangle).
 
 The practical objective: read and write the attention formula correctly, and *never* build a forecasting model without a causal mask.
 
@@ -63,79 +63,18 @@ $$
 \text{head}_m=\operatorname{Attn}(QW_m^Q,KW_m^K,VW_m^V).
 $$
 
-A Transformer block adds residual connections and a position-wise feed-forward net: $z=\operatorname{LayerNorm}(x+\text{MultiHead}(x))$, $y=\operatorname{LayerNorm}(z+\operatorname{FFN}(z))$. Positional encodings (sinusoidal or learned) are added to the inputs, because attention — unlike a recurrence — is permutation-invariant and otherwise cannot tell position $5$ from position $50$.
+A Transformer block adds residual connections and a position-wise feed-forward net: $z=\operatorname{LayerNorm}(x+\text{MultiHead}(x))$, $y=\operatorname{LayerNorm}(z+\operatorname{FFN}(z))$. Positional encodings (sinusoidal or learned) are added to the inputs, because attention - unlike a recurrence - is permutation-invariant and otherwise cannot tell position $5$ from position $50$.
 
 ---
 
-### 3. Computational Implementation — causal attention and the scaling argument
+### 3. Computational Implementation - causal attention and the scaling argument
 
 `numpy` + stdlib. Part A computes masked attention and proves the causality property; Part B measures why the $\sqrt{d_k}$ scaling exists.
 
-```python
-import numpy as np
-np.set_printoptions(precision=3, suppress=True)
 
-def softmax(x, axis=-1):
-    x = x - x.max(axis=axis, keepdims=True)
-    e = np.exp(x)
-    return e / e.sum(axis=axis, keepdims=True)
 
-def attention(Q, K, V, causal=True, scale=True):
-    dk = Q.shape[-1]
-    S = Q @ K.T
-    if scale:                        # divide by sqrt(d_k)
-        S = S / np.sqrt(dk)
-    if causal:                       # mask j > i  (no look-ahead)
-        mask = np.triu(np.ones_like(S), k=1).astype(bool)
-        S = np.where(mask, -1e30, S)
-    W = softmax(S)
-    return W, W @ V
 
-rng = np.random.default_rng(0)
-T, d = 6, 4
-Q = rng.normal(0, 1, (T, d)); K = rng.normal(0, 1, (T, d))
-V = np.arange(T*d, dtype=float).reshape(T, d)
-
-W, out = attention(Q, K, V, causal=True)
-print("causal attention weights W = softmax(QK^T/sqrt(d_k) + M):")
-print(W)
-print("row sums (=1):", W.sum(axis=1))
-print("upper triangle is exactly zero (no attention to the future):",
-      bool(np.allclose(np.triu(W, k=1), 0.0)))
-
-# effect of the 1/sqrt(d_k) scaling: score variance and softmax entropy grow with d_k
-def entropy(p):
-    p = p[p > 0]
-    return float(-(p * np.log(p)).sum())
-
-rng = np.random.default_rng(1)
-print("\nmean score stdev and mean attention entropy vs d_k (T=8, random Q,K):")
-for dk in (4, 64, 256):
-    Qi = rng.normal(0, 1, (8, dk)); Ki = rng.normal(0, 1, (8, dk))
-    raw = Qi @ Ki.T
-    ent_raw = entropy(softmax(raw)[0])
-    ent_scaled = entropy(softmax(raw / np.sqrt(dk))[0])
-    print("  d_k=%3d : stdev(scores)=%.2f  H(unscaled)=%.3f  H(scaled)=%.3f"
-          % (dk, raw.std(), ent_raw, ent_scaled))
-```
-```
-causal attention weights W = softmax(QK^T/sqrt(d_k) + M):
-[[1.    0.    0.    0.    0.    0.   ]
- [0.366 0.634 0.    0.    0.    0.   ]
- [0.288 0.473 0.24  0.    0.    0.   ]
- [0.133 0.582 0.151 0.133 0.    0.   ]
- [0.053 0.103 0.156 0.404 0.284 0.   ]
- [0.136 0.201 0.18  0.119 0.278 0.086]]
-row sums (=1): [1. 1. 1. 1. 1. 1.]
-upper triangle is exactly zero (no attention to the future): True
-
-mean score stdev and mean attention entropy vs d_k (T=8, random Q,K):
-  d_k=  4 : stdev(scores)=1.45  H(unscaled)=1.776  H(scaled)=1.979
-  d_k= 64 : stdev(scores)=8.96  H(unscaled)=0.613  H(scaled)=1.675
-  d_k=256 : stdev(scores)=15.73  H(unscaled)=0.158  H(scaled)=1.753
-```
-
-Read it as two facts. First, the weight matrix is **lower-triangular by construction** — the upper triangle is exactly zero, every row sums to $1$, and position $0$ can only attend to itself. This is what makes an attention forecasting model honest; drop the mask and you have built a leak. Second, the scaling matters: at $d_k{=}256$ the unscaled score standard deviation is $15.73$ and the softmax entropy collapses to $0.158$ (attention has pinned almost all weight on one key — gradient-starved), whereas the $\sqrt{d_k}$-scaled version stays at $1.75$, near the maximum-entropy value $\ln 8=2.08$ for $8$ positions.
+Read it as two facts. First, the weight matrix is **lower-triangular by construction** - the upper triangle is exactly zero, every row sums to $1$, and position $0$ can only attend to itself. This is what makes an attention forecasting model honest; drop the mask and you have built a leak. Second, the scaling matters: at $d_k{=}256$ the unscaled score standard deviation is $15.73$ and the softmax entropy collapses to $0.158$ (attention has pinned almost all weight on one key - gradient-starved), whereas the $\sqrt{d_k}$-scaled version stays at $1.75$, near the maximum-entropy value $\ln 8=2.08$ for $8$ positions.
 
 ---
 
@@ -151,11 +90,11 @@ Read it as two facts. First, the weight matrix is **lower-triangular by construc
 
 ### 5. Canonical Literature & Study References
 
-- **Vaswani, Ashish et al.** (2017), *Attention Is All You Need*, NeurIPS — scaled dot-product attention, multi-head, the Transformer. The $1/\sqrt{d_k}$ justification is in §3.2.1.
-- **Lim, Bryan et al.** (2021), *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4) — the finance/time-series adaptation: variable selection, static covariates, multi-horizon attention.
-- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.4 "Encoder–Decoder Sequence-to-Sequence Architectures" and the attention mechanism) — the pedagogical derivation.
-- **Zhang, Zohren & Roberts** (2019), *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE TSP 67(11), arXiv:1808.03668 — the microstructure model that shows **convolution + LSTM can beat full attention** when $T$ is huge and locality matters.
-- **Jain, S. & Wallace, B.** (2019), *Attention is not Explanation* — the cautionary result in §4.3.
+- **Vaswani, Ashish et al.** (2017), *Attention Is All You Need*, NeurIPS - scaled dot-product attention, multi-head, the Transformer. The $1/\sqrt{d_k}$ justification is in §3.2.1.
+- **Lim, Bryan et al.** (2021), *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4) - the finance/time-series adaptation: variable selection, static covariates, multi-horizon attention.
+- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.4 "Encoder–Decoder Sequence-to-Sequence Architectures" and the attention mechanism) - the pedagogical derivation.
+- **Zhang, Zohren & Roberts** (2019), *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE TSP 67(11), arXiv:1808.03668 - the microstructure model that shows **convolution + LSTM can beat full attention** when $T$ is huge and locality matters.
+- **Jain, S. & Wallace, B.** (2019), *Attention is not Explanation* - the cautionary result in §4.3.
 
 ---
 

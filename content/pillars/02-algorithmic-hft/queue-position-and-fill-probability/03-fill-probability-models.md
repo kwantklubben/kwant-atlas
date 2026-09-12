@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Page 02 gave the mechanics; this page turns them into **estimable models of fill probability**. The practical objective: given a queue position $x$, a flow rate, and a cancellations process, produce two numbers a trading system can act on — **(i) $\mathbb{P}(\text{fill by }T)$** and **(ii) the expected time to fill**. Along the way we connect the queue view to the **survival/hazard** view of the empirical literature (Lo–MacKinlay–Zhang 2002): a limit order "lives" until it fills or is cancelled, and its hazard is a function of the book state.
+Page 02 gave the mechanics; this page turns them into **estimable models of fill probability**. The practical objective: given a queue position $x$, a flow rate, and a cancellations process, produce two numbers a trading system can act on - **(i) $\mathbb{P}(\text{fill by }T)$** and **(ii) the expected time to fill**. Along the way we connect the queue view to the **survival/hazard** view of the empirical literature (Lo–MacKinlay–Zhang 2002): a limit order "lives" until it fills or is cancelled, and its hazard is a function of the book state.
 
 The organising idea: **fill probability is a first-passage probability.** In the pure-trade model the time to fill is negative-binomial; add cancellations and it speeds up in proportion to how far back you are; let the flow rate depend on the state and you have a queue-reactive model (page 04).
 
@@ -41,7 +41,7 @@ $$
 \boxed{\;\mathbb{P}(\tau_x \le T)=\mathbb{P}\big(\text{Bin}(T,p)\ge x\big)=I_p(x,\,T-x+1)\;}
 $$
 
-where $I_p$ is the regularised incomplete beta function. Two features matter: it is **steep in $x$** (position dominates), and the **relative dispersion** $\mathrm{sd}/\mathrm{mean}=\sqrt{(1-p)/x}$ *shrinks* with $x$ — deep orders have timely fills that are comparatively predictable, front orders have noisy waits.
+where $I_p$ is the regularised incomplete beta function. Two features matter: it is **steep in $x$** (position dominates), and the **relative dispersion** $\mathrm{sd}/\mathrm{mean}=\sqrt{(1-p)/x}$ *shrinks* with $x$ - deep orders have timely fills that are comparatively predictable, front orders have noisy waits.
 
 #### 2.2 Adding cancellations (uniform)
 
@@ -65,81 +65,18 @@ The **fill ratio** $\mathbb{E}[\text{filled}]/L$ is the quantity a placement alg
 
 #### 2.4 The survival / hazard view (Lo–MacKinlay–Zhang)
 
-Write $\tau$ = time from submission to execution-or-cancel. The **hazard** $\lambda(t)=\lim_{dt\to0}\frac{\mathbb{P}(t<\tau\le t+dt\mid\tau>t)}{dt}$ is the instantaneous execution rate given the order is still alive. Lo–MacKinlay–Zhang (2002) estimate $\lambda(t)$ as a function of covariates (distance from the quote, spread, volatility, time of day) and find execution hazards that **decay** with survival time — an order still unfilled after a long spell is trading "against" the flow and is more likely to be cancelled than executed. The queue model *predicts* this: long survival with a large $x$ means either the flow died or the position is stuck, both of which raise the cancel-to-fill ratio.
+Write $\tau$ = time from submission to execution-or-cancel. The **hazard** $\lambda(t)=\lim_{dt\to0}\frac{\mathbb{P}(t<\tau\le t+dt\mid\tau>t)}{dt}$ is the instantaneous execution rate given the order is still alive. Lo–MacKinlay–Zhang (2002) estimate $\lambda(t)$ as a function of covariates (distance from the quote, spread, volatility, time of day) and find execution hazards that **decay** with survival time - an order still unfilled after a long spell is trading "against" the flow and is more likely to be cancelled than executed. The queue model *predicts* this: long survival with a large $x$ means either the flow died or the position is stuck, both of which raise the cancel-to-fill ratio.
 
 ---
 
-### 3. Computational Implementation — closed form vs Monte Carlo
+### 3. Computational Implementation - closed form vs Monte Carlo
 
 Stdlib only. Model A computes the negative-binomial fill probability by exact binomial summation and checks it against direct simulation. Model B adds uniform cancellations and shows how much they lift the fill probability.
 
-```python
-import random
-from math import comb
-random.seed(5)
 
-# Model A: pure trade-driven fill (negative-binomial time to fill)
-def p_fill_closed(q, p, T):
-    return sum(comb(T, k) * p**k * (1 - p)**(T - k) for k in range(q, T + 1))
 
-def p_fill_mc(q, p, T, n=40000):
-    hit = 0
-    for _ in range(n):
-        c = 0
-        for _ in range(T):
-            if random.random() < p:
-                c += 1
-                if c >= q:
-                    break
-        hit += (c >= q)
-    return hit / n
 
-p, T = 0.05, 300
-print("P(fill within T) by queue position  (p=0.05, T=300 ticks)")
-print(f"{'pos q':>6} | {'closed form':>11} | {'Monte Carlo':>11} | {'mean wait q/p':>14}")
-for q in (1, 5, 10, 25, 50):
-    print(f"{q:>6} | {p_fill_closed(q, p, T):>11.4f} | {p_fill_mc(q, p, T):>11.4f} | {q/p:>14.1f}")
-
-# Model B: cancellations removed uniformly from the live queue
-def p_fill_cancel_mc(q, Q, p, pc, T, n=40000):
-    hit = 0
-    for _ in range(n):
-        x, Qq = q, Q
-        for _ in range(T):
-            r = random.random()
-            if r < p:
-                x -= 1
-            elif r < p + pc and Qq > 0:
-                if random.random() < x / Qq:
-                    x -= 1
-            Qq = max(1, Qq - 1)
-            if x <= 0:
-                break
-        hit += (x <= 0)
-    return hit / n
-
-print(f"\nCancellations ahead (q=25, Q=200, p=0.05, T=300):")
-for pc in (0.0, 0.05, 0.10, 0.20, 0.40):
-    print(f"  cancel rate pc={pc:.2f}: P(fill) = {p_fill_cancel_mc(25, 200, 0.05, pc, 300):.4f}")
-```
-```
-P(fill within T) by queue position  (p=0.05, T=300 ticks)
- pos q | closed form | Monte Carlo |  mean wait q/p
-     1 |      1.0000 |      1.0000 |           20.0
-     5 |      0.9993 |      0.9993 |          100.0
-    10 |      0.9350 |      0.9325 |          200.0
-    25 |      0.0093 |      0.0088 |          500.0
-    50 |      0.0000 |      0.0000 |         1000.0
-
-Cancellations ahead (q=25, Q=200, p=0.05, T=300):
-  cancel rate pc=0.00: P(fill) = 0.0091
-  cancel rate pc=0.05: P(fill) = 0.3508
-  cancel rate pc=0.10: P(fill) = 0.8989
-  cancel rate pc=0.20: P(fill) = 0.9999
-  cancel rate pc=0.40: P(fill) = 1.0000
-```
-
-The closed form and simulation agree to $<0.003$ across the grid — the negative-binomial law is exactly the FIFO fill-time law. Then Model B shows how **cancellations dominate**: at position 25 in a 200-lot queue, raising the cancel rate from $0$ to $0.10$ takes the fill probability from $0.009$ to $0.899$ — a hundredfold change driven entirely by the *front of the queue disappearing*, not by any trade of your own. This is precisely why fill models that ignore cancels are wrong in the most expensive direction: the cancels that help your fill are the ones that flee when the market turns, i.e. the ones that *precede adverse moves*.
+The closed form and simulation agree to $<0.003$ across the grid - the negative-binomial law is exactly the FIFO fill-time law. Then Model B shows how **cancellations dominate**: at position 25 in a 200-lot queue, raising the cancel rate from $0$ to $0.10$ takes the fill probability from $0.009$ to $0.899$ - a hundredfold change driven entirely by the *front of the queue disappearing*, not by any trade of your own. This is precisely why fill models that ignore cancels are wrong in the most expensive direction: the cancels that help your fill are the ones that flee when the market turns, i.e. the ones that *precede adverse moves*.
 
 ---
 
@@ -148,16 +85,16 @@ The closed form and simulation agree to $<0.003$ across the grid — the negativ
 1. **Ignoring cancellations.** A trade-only fill model understates fill probability in *normal* conditions and massively overstates it in stressed conditions (when cancels vanish). Both directions are costly.
 2. **Point estimates without dispersion.** $\mathbb{P}(\text{fill})$ alone hides the variance. The variance of the wait drives inventory risk; a fill model that reports a mean but not a distribution cannot size a position safely.
 3. **Calibrating $p$ on aggregate trade rate.** Your fill rate is governed by the trade rate *at your price level*, not the stock's average. Level-specific flow is the right input; using consolidated volume mis-times fills.
-4. **Stationary flow assumption.** Real arrival rates are time-varying and autocorrelated (clustering). A single $p$ mis-prices fills across the day — the gateway to the state-dependent intensities of page 04.
+4. **Stationary flow assumption.** Real arrival rates are time-varying and autocorrelated (clustering). A single $p$ mis-prices fills across the day - the gateway to the state-dependent intensities of page 04.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Lo, MacKinlay & Zhang** (2002), *J. Financial Economics* 65(1), 31–71 — the econometric survival/hazard model of limit-order execution; the empirical counterpart to the queue-model fill probability.
-- **Cont, Kukanov & Stoikov** (2014), *J. Financial Markets* 17 — the order-flow-imbalance price-impact law and the empirical queue accounting behind the fill function.
-- **Cont & Kukanov** (2017), §2 — the fill function $(\xi-Q)^+-(\xi-Q-L)^+$ and its use in placement optimisation.
-- **Gould et al.** (2013), §5 — empirical execution and cancellation frequencies, and the hazard/conditional-frequency evidence.
+- **Lo, MacKinlay & Zhang** (2002), *J. Financial Economics* 65(1), 31–71 - the econometric survival/hazard model of limit-order execution; the empirical counterpart to the queue-model fill probability.
+- **Cont, Kukanov & Stoikov** (2014), *J. Financial Markets* 17 - the order-flow-imbalance price-impact law and the empirical queue accounting behind the fill function.
+- **Cont & Kukanov** (2017), §2 - the fill function $(\xi-Q)^+-(\xi-Q-L)^+$ and its use in placement optimisation.
+- **Gould et al.** (2013), §5 - empirical execution and cancellation frequencies, and the hazard/conditional-frequency evidence.
 
 ---
 

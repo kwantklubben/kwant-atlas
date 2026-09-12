@@ -15,7 +15,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-"Style" is the cross-asset generalisation of a factor. The four canonical styles that recur across *every* asset class are **value, momentum, carry, and defensive** (sometimes "quality" or "low-risk"). This page focuses on the one that is *definable in every asset class without a valuation model* — **carry** — because carry is the cleanest bridge between an asset-class world and a factor world: it prices the term structure / roll-down / dividend / interest differential that each instrument pays merely for *staying still*.
+"Style" is the cross-asset generalisation of a factor. The four canonical styles that recur across *every* asset class are **value, momentum, carry, and defensive** (sometimes "quality" or "low-risk"). This page focuses on the one that is *definable in every asset class without a valuation model* - **carry** - because carry is the cleanest bridge between an asset-class world and a factor world: it prices the term structure / roll-down / dividend / interest differential that each instrument pays merely for *staying still*.
 
 **Carry, defined operationally:** the return you earn over the next period **if prices do not move**. It is not a forecast of price; it is the *structural* yield embedded in the instrument. It generalises:
 
@@ -27,9 +27,9 @@ tags:
 | Commodities | roll yield = $(F-S)/S$ | storage / convenience / scarcity |
 | Credit | credit spread (minus expected default loss) | credit risk premium |
 
-The key empirical fact (Koijen, Moskowitz, Pedersen & Vrugt, "Carry," 2018): **carry predicts returns in every asset class, with the same sign.** High-carry assets earn more than low-carry assets, on average, because carry is a compensation for *risk* — and the risk is a **carry crash**: the strategies earn steadily and lose suddenly when the risk shows up.
+The key empirical fact (Koijen, Moskowitz, Pedersen & Vrugt, "Carry," 2018): **carry predicts returns in every asset class, with the same sign.** High-carry assets earn more than low-carry assets, on average, because carry is a compensation for *risk* - and the risk is a **carry crash**: the strategies earn steadily and lose suddenly when the risk shows up.
 
-> **The one-sentence essence.** "Carry is what an instrument pays you for standing still — the same signal in bonds, FX, commodities, and equities; it is a real premium *and* a real crash risk, which is why it must be sized, not simply maximised."
+> **The one-sentence essence.** "Carry is what an instrument pays you for standing still - the same signal in bonds, FX, commodities, and equities; it is a real premium *and* a real crash risk, which is why it must be sized, not simply maximised."
 
 ---
 
@@ -62,51 +62,25 @@ This is the *same* construction as a value or momentum factor, which is why carr
 | Carry | yield if prices unchanged | risk premium / term structure |
 | Defensive | low beta / low vol | leverage-aversion (betting-against-beta) |
 
-**Why carry diversifies the others.** Value and momentum are negatively correlated; carry is closest to value (both like "cheap/high-yield"), defensive is closest to nothing. The style block therefore has low average pairwise correlation — the same diversification property that makes *factor allocation* efficient (page 03).
+**Why carry diversifies the others.** Value and momentum are negatively correlated; carry is closest to value (both like "cheap/high-yield"), defensive is closest to nothing. The style block therefore has low average pairwise correlation - the same diversification property that makes *factor allocation* efficient (page 03).
 
 ---
 
-### 3. Computational Implementation — carry across asset classes
+### 3. Computational Implementation - carry across asset classes
 
 Runnable (numpy). It ranks six cross-asset carry proxies, simulates a "prices unchanged plus noise" return environment, and shows the carry-tilted portfolio out-earning the equal-weight one. Stdlib + numpy.
 
-```python
-import numpy as np
 
-carry_names = ["Credit", "FX-carry", "Equity", "Cmdty-carry", "Bond", "Gold"]
-carry  = np.array([0.055, 0.045, 0.035, 0.030, 0.025, -0.010])  # net-of-financing carry
-vols   = np.array([0.08, 0.09, 0.16, 0.15, 0.06, 0.14])          # annualised, for noise
-rank   = np.argsort(-carry)
-print("carry ranking (high->low):", [carry_names[i] for i in rank])
-print("carry values:", [f"{carry[i]:+.3f}" for i in rank])
-print(f"mean carry = {carry.mean():.4f}")
 
-rng = np.random.default_rng(7)
-T = 120
-spot = rng.normal(0, 1, size=(T, 6)) * vols / np.sqrt(12)   # unexpected moves, no drift
-ret  = spot + carry / 12                                    # realised = unexpected + carry
 
-top = np.zeros(6); top[rank[:3]] = 1/3                      # long 3 highest-carry
-bot = np.zeros(6); bot[rank[-3:]] = 1/3                     # short 3 lowest-carry
-ew  = np.full(6, 1/6)
-ann = lambda x: float(np.mean(ret @ x)) * 12
-print(f"annualised: equal-weight = {ann(ew):.4f}   long-top-carry = {ann(top):.4f}   long-short-carry = {ann(top-bot):.4f}")
-```
-```
-carry ranking (high->low): ['Credit', 'FX-carry', 'Equity', 'Cmdty-carry', 'Bond', 'Gold']
-carry values: ['+0.055', '+0.045', '+0.035', '+0.030', '+0.025', '-0.010']
-mean carry = 0.0300
-annualised: equal-weight = -0.0160   long-top-carry = 0.0113   long-short-carry = 0.0544
-```
-
-The equal-weight portfolio earns a *negative* annualised return ($-1.6\%$) because it holds the negative-carry leg (gold) and the price noise is unhelpful over a short sample; the carry-tilted long-only portfolio earns $+1.1\%$ and the long-short carry portfolio $+5.4\%$. The carry signal, not the volatile spot, does the work — and the spot noise is exactly the **carry-crash** channel that page 05 quantifies.
+The equal-weight portfolio earns a *negative* annualised return ($-1.6\%$) because it holds the negative-carry leg (gold) and the price noise is unhelpful over a short sample; the carry-tilted long-only portfolio earns $+1.1\%$ and the long-short carry portfolio $+5.4\%$. The carry signal, not the volatile spot, does the work - and the spot noise is exactly the **carry-crash** channel that page 05 quantifies.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Carry is compensation for crash risk.** The realised return distribution is negatively skewed: steady gains punctuated by rare large losses (the "carry crash"). A carry-tilted portfolio needs explicit tail hedging or leverage discipline.
-2. **Carry and momentum disagree — by construction.** Momentum buys what is *rising*, carry buys what is *yielding*; the two can be simultaneously long and short the same asset. Diversification across styles means *tolerating* being on the wrong side of one.
+2. **Carry and momentum disagree - by construction.** Momentum buys what is *rising*, carry buys what is *yielding*; the two can be simultaneously long and short the same asset. Diversification across styles means *tolerating* being on the wrong side of one.
 3. **Carry changes regime.** In a funding crisis, FX carry reverses violently as the high-yielders depreciate; in a commodity shortage, roll yield can flip sign. Carry must be *conditioned* (page 06).
 4. **Roll yield $\ne$ return.** The $(F-S)/S$ term is the *expected* carry *if the term structure holds*; a persistent backwardation can be a symptom of scarcity, not free money.
 
@@ -114,11 +88,11 @@ The equal-weight portfolio earns a *negative* annualised return ($-1.6\%$) becau
 
 ### 5. Canonical Literature & Study References
 
-- **Koijen, Moskowitz, Pedersen & Vrugt**, "Carry," *Journal of Financial Economics* 127(2):197–225, 2018 — the cross-asset carry factor; the canonical reference for this page.
-- **Asness, Moskowitz & Pedersen**, "Value and Momentum Everywhere," *Journal of Finance* 68(3):929–985, 2013 — value and momentum styles across asset classes.
-- **Frazzini & Pedersen**, "Betting Against Beta," *Journal of Financial Economics* 111(1):1–25, 2014 — the defensive style.
-- **Ilmanen**, *Expected Returns* (2011) — the practical tour of carry and the carry crash.
-- **Ang**, *Asset Management* (2014), Ch 6–7 — value, momentum, carry, defensive as cross-asset style premia.
+- **Koijen, Moskowitz, Pedersen & Vrugt**, "Carry," *Journal of Financial Economics* 127(2):197–225, 2018 - the cross-asset carry factor; the canonical reference for this page.
+- **Asness, Moskowitz & Pedersen**, "Value and Momentum Everywhere," *Journal of Finance* 68(3):929–985, 2013 - value and momentum styles across asset classes.
+- **Frazzini & Pedersen**, "Betting Against Beta," *Journal of Financial Economics* 111(1):1–25, 2014 - the defensive style.
+- **Ilmanen**, *Expected Returns* (2011) - the practical tour of carry and the carry crash.
+- **Ang**, *Asset Management* (2014), Ch 6–7 - value, momentum, carry, defensive as cross-asset style premia.
 
 ---
 

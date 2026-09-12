@@ -16,15 +16,15 @@ tags:
 
 This page builds the *why* of pairs trading with **no prior knowledge needed**. The objective is one idea: **you do not need to know where the market is going; you only need two assets whose *difference* is pinned to a stable equilibrium, and the discipline to trade only deviations from it.**
 
-Start with the dumbest question: *why would two stocks move together at all?* Because they share the same nonstationary drivers — the market factor, their sector, commodity input costs, the rate level. If Chevron and ExxonMobil both load on the same "oil beta," then a portfolio that is long one and short a scaled amount of the other has **cancelled the oil exposure** and holds only their idiosyncratic difference. Buy the cheap one, sell the expensive one, wait for the difference to close.
+Start with the dumbest question: *why would two stocks move together at all?* Because they share the same nonstationary drivers - the market factor, their sector, commodity input costs, the rate level. If Chevron and ExxonMobil both load on the same "oil beta," then a portfolio that is long one and short a scaled amount of the other has **cancelled the oil exposure** and holds only their idiosyncratic difference. Buy the cheap one, sell the expensive one, wait for the difference to close.
 
 Three steps, three "aha"s:
 
-1. **Prices are nonstationary; the right object is stationary.** Individual prices wander (unit root, $I(1)$). A single price has no "mean" to revert to, so trading a price is a bet on direction. But a *linear combination* $\beta_1 y_t + \beta_2 x_t$ can cancel the common random walk and leave a **stationary** residual that oscillates around a fixed level. That combination — the **cointegrating vector** — is the tradable object.
+1. **Prices are nonstationary; the right object is stationary.** Individual prices wander (unit root, $I(1)$). A single price has no "mean" to revert to, so trading a price is a bet on direction. But a *linear combination* $\beta_1 y_t + \beta_2 x_t$ can cancel the common random walk and leave a **stationary** residual that oscillates around a fixed level. That combination - the **cointegrating vector** - is the tradable object.
 
 2. **Correlation is about returns; cointegration is about levels.** Two series can have $0.95$ return correlation and still diverge *forever*, because their difference is itself a random walk. Conversely a perfectly cointegrated pair can show modest month-to-month return correlation. Correlation says "they move together today"; cointegration says "they cannot drift apart permanently." **Only the second is tradable.**
 
-3. **Market-neutrality is the product, not the goal.** Because we trade the spread, the book carries no exposure to the market factor. The P&L is the idiosyncratic residual reverting — pure relative value. The risk is that the residual does *not* revert because the relationship changed.
+3. **Market-neutrality is the product, not the goal.** Because we trade the spread, the book carries no exposure to the market factor. The P&L is the idiosyncratic residual reverting - pure relative value. The risk is that the residual does *not* revert because the relationship changed.
 
 ---
 
@@ -52,68 +52,28 @@ $$
 \operatorname{Corr}(\Delta y_t,\Delta x_t)=\frac{\sigma_f^2}{\sqrt{(\sigma_f^2+\sigma_u^2)(\sigma_f^2+\sigma_v^2)}},
 $$
 
-which tends to $1$ as the common factor dominates the noises — **regardless of whether $u_t-v_t$ is stationary.** Two *independent* random walks with correlated increments (a wholly artificial construction) have high return correlation and a spread $\tfrac{1}{2}$-weighted random walk that diverges like $\sqrt{t}$. This is *spurious co-movement* and it is the single most common beginner disaster.
+which tends to $1$ as the common factor dominates the noises - **regardless of whether $u_t-v_t$ is stationary.** Two *independent* random walks with correlated increments (a wholly artificial construction) have high return correlation and a spread $\tfrac{1}{2}$-weighted random walk that diverges like $\sqrt{t}$. This is *spurious co-movement* and it is the single most common beginner disaster.
 
 **Variance-ratio signature.** For a stationary spread, $\operatorname{Var}(z_t)$ is bounded and its sample variance is *flat* as the window grows. For a random-walk spread, $\operatorname{Var}(z_t)\propto t$: the mean absolute deviation about the *initial* value grows like $\sqrt t$. The practical screen: plot, or test, whether the spread's displacement grows without bound.
 
 ---
 
-### 3. Computational Implementation — the trap, in numbers
+### 3. Computational Implementation - the trap, in numbers
 
 We build two pairs with **essentially the same return correlation** and watch the spread behave completely differently. Stdlib only.
 
-```python
-import math, random
 
-def rand_walk(n, mu, sig, rng):
-    x = 0.0; out = []
-    for _ in range(n):
-        x += mu + sig * rng.gauss(0, 1); out.append(x)
-    return out
 
-def corr(a, b):
-    n=len(a); ma=sum(a)/n; mb=sum(b)/n
-    va=sum((p-ma)**2 for p in a); vb=sum((p-mb)**2 for p in b)
-    return sum((a[i]-ma)*(b[i]-mb) for i in range(n))/math.sqrt(va*vb)
 
-n=1000
-# Case A — COINTEGRATED: prices share one nonstationary factor f, differ by stationary noise
-rng=random.Random(11)
-f=rand_walk(n,0.0,1.0,rng)
-ey=[0.0]*n; ex=[0.0]*n
-for t in range(1,n):
-    ey[t]=0.9*ey[t-1]+rng.gauss(0,0.3)
-    ex[t]=0.9*ex[t-1]+rng.gauss(0,0.3)
-yA=[f[t]+ey[t] for t in range(n)]; xA=[f[t]+ex[t] for t in range(n)]
-
-# Case B — SPURIOUS: two independent walks with correlated increments
-rng=random.Random(22); yb=[0.0]*n; xb=[0.0]*n
-for t in range(1,n):
-    u=rng.gauss(0,1); e=rng.gauss(0,1); v=0.9*u+math.sqrt(1-0.81)*e
-    yb[t]=yb[t-1]+u; xb[t]=xb[t-1]+v
-
-rv=lambda a:[a[t]-a[t-1] for t in range(1,len(a))]
-for name,y,x in (("COINTEGRATED",yA,xA),("SPURIOUS",yb,xb)):
-    sp=[y[t]-x[t] for t in range(n)]
-    a=sum(abs(sp[t]) for t in range(100))/100
-    b=sum(abs(sp[t]) for t in range(n-100,n))/100
-    print(f"{name:13s}: corr(returns)={corr(rv(y),rv(x)):+.3f}  "
-          f"mean|spread| first 100={a:.3f}  last 100={b:.3f}")
-```
-```
-COINTEGRATED : corr(returns)=+0.913  mean|spread| first 100=0.810  last 100=0.536
-SPURIOUS     : corr(returns)=+0.904  mean|spread| first 100=0.930  last 100=4.201
-```
-
-The **correlations are indistinguishable** ($0.913$ vs $0.904$). Yet the cointegrated spread stays bounded (mean absolute spread $0.81\to0.54$), while the spurious spread drifts away without limit ($0.93\to4.20$ and still growing like $\sqrt t$). A trading rule that shorts deviations would keep adding to a losing position in the spurious case — **there is no equilibrium to revert to.**
+The **correlations are indistinguishable** ($0.913$ vs $0.904$). Yet the cointegrated spread stays bounded (mean absolute spread $0.81\to0.54$), while the spurious spread drifts away without limit ($0.93\to4.20$ and still growing like $\sqrt t$). A trading rule that shorts deviations would keep adding to a losing position in the spurious case - **there is no equilibrium to revert to.**
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"They're correlated, so let's pair them."** The beginner's screen is $\rho(\Delta y,\Delta x)$ — but that is a statement about the *common innovation*, not about the spread. You must test the *level combination* (Ch 2), not the returns.
+1. **"They're correlated, so let's pair them."** The beginner's screen is $\rho(\Delta y,\Delta x)$ - but that is a statement about the *common innovation*, not about the spread. You must test the *level combination* (Ch 2), not the returns.
 2. **Spurious regression on levels.** Regressing one $I(1)$ price on another $I(1)$ price gives a high $R^2$ and a "significant" $t$-stat **even when the series are independent** (Granger & Newbold, 1974). The $t$-distribution is nonstandard; the reported significance is an artifact. Any $\beta$ estimated this way must be validated by a unit-root test on the residual.
-3. **Trading the price, not the spread.** "Both should go up" is a directional bet. Pairs trading requires *dollar-neutrality* (long \$1, short \$β) so that the common factor — and the market's direction — cancels. Without neutrality you have reintroduced exactly the risk you were trying to remove.
+3. **Trading the price, not the spread.** "Both should go up" is a directional bet. Pairs trading requires *dollar-neutrality* (long \$1, short \$β) so that the common factor - and the market's direction - cancels. Without neutrality you have reintroduced exactly the risk you were trying to remove.
 4. **Cointegration ≠ correct.** Cointegration is a *statistical* property of a finite sample. A pair can pass the test by chance, and a genuine economic relationship can fail it in a short window. The test is a screen, not a proof (see [[pillars/01-quantitative-research/statistical-arbitrage-and-pairs/05-failure-modes-and-practice|05 · Failure Modes]]).
 
 ---
@@ -121,9 +81,9 @@ The **correlations are indistinguishable** ($0.913$ vs $0.904$). Yet the cointeg
 ### 5. Canonical Literature & Study References
 
 - **Tsay**, *Analysis of Financial Time Series*, Ch 8 §8.5 (cointegration definition, common-trend example $y_{1t}=x_{1t}-2x_{2t}$) and Ch 2 (random walk, unit-root nonstationarity). *Math-verified in the corpus.*
-- **Engle, R. F. & Granger, C. W. J.**, "Co-integration and Error Correction", *Econometrica* 55(2), 1987 — the founding paper.
-- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006 — their §1.4 frames the trading space as *cointegrated prices*, and warns explicitly of "spuriously correlated prices, which are not de facto co-integrated."
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 10 — cointegration of a security's multiple prices and the arbitrage-link rationale.
+- **Engle, R. F. & Granger, C. W. J.**, "Co-integration and Error Correction", *Econometrica* 55(2), 1987 - the founding paper.
+- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006 - their §1.4 frames the trading space as *cointegrated prices*, and warns explicitly of "spuriously correlated prices, which are not de facto co-integrated."
+- **Hasbrouck**, *Empirical Market Microstructure*, Ch 10 - cointegration of a security's multiple prices and the arbitrage-link rationale.
 
 ---
 

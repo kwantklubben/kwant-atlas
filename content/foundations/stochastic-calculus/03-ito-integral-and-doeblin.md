@@ -1,5 +1,5 @@
 ---
-title: "F.4.3 The Itô Integral & the Itô–Doeblin Lemma"
+title: "M.4.3 The Itô Integral & the Itô–Doeblin Lemma"
 tags:
   - foundations
   - stochastic-calculus
@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Ordinary "$\int_0^T \Delta\,dW$" does not exist as a Riemann–Stieltjes integral because $W$ has infinite first-order variation. The **Itô integral** replaces it with a *martingale-building machine*: it is defined so that its output is a martingale with mean $0$, and its variance is exactly the object the smile/vol modeler controls — the integrated squared integrand. This is the mathematical object behind "delta-hedging gains," and the **Itô–Doeblin lemma** is its chain rule.
+Ordinary "$\int_0^T \Delta\,dW$" does not exist as a Riemann–Stieltjes integral because $W$ has infinite first-order variation. The **Itô integral** replaces it with a *martingale-building machine*: it is defined so that its output is a martingale with mean $0$, and its variance is exactly the object the smile/vol modeler controls - the integrated squared integrand. This is the mathematical object behind "delta-hedging gains," and the **Itô–Doeblin lemma** is its chain rule.
 
 Practical objective: by the end of this page you can (1) define $\int\Delta\,dW$ rigorously and state its three invariant properties (martingale, isometry, quadratic variation); (2) apply Itô–Doeblin to a GBM stock to *derive* $dS=\mu S\,dt+\sigma S\,dW$ and see where the $\tfrac12\sigma^2$ comes from; (3) prove $\int_0^T W\,dW=\tfrac12 W(T)^2-\tfrac12 T$, the canonical worked example.
 
@@ -23,7 +23,7 @@ Practical objective: by the end of this page you can (1) define $\int\Delta\,dW$
 ### 2. Mathematical Ground Truth & Derivations
 
 #### 2.1 Construction (Shreve II §4.2–4.3; Björk Ch 4)
-1. **Simple integrands** $\Delta(t)=\Delta_j$ (constant on $[t_j,t_{j+1})$): define $I(t)=\sum_j \Delta_j\big(W(t_{j+1})-W(t_j)\big)$ — the *forward* increment. It is a **martingale**, has mean $0$, and its quadratic variation is $\sum_j\Delta_j^2\Delta t$.
+1. **Simple integrands** $\Delta(t)=\Delta_j$ (constant on $[t_j,t_{j+1})$): define $I(t)=\sum_j \Delta_j\big(W(t_{j+1})-W(t_j)\big)$ - the *forward* increment. It is a **martingale**, has mean $0$, and its quadratic variation is $\sum_j\Delta_j^2\Delta t$.
 2. **General integrands** with $\mathbb E\int_0^T\Delta^2(t)\,dt<\infty$: approximate $\Delta$ by simple integrands and pass to the $L^2$ limit. The **Itô isometry** (Thm 4.2.2) makes this well-defined:
 $$
 \mathbb E\Big[\Big(\int_0^t\Delta\,dW\Big)^2\Big]=\mathbb E\Big[\int_0^t\Delta^2(u)\,du\Big].
@@ -60,45 +60,19 @@ The $-\tfrac12T$ is the Itô correction: naive $\tfrac12 W(T)^2$ comes from trea
 
 ---
 
-### 3. Computational Implementation — verify isometry & Itô–Doeblin numerically
+### 3. Computational Implementation - verify isometry & Itô–Doeblin numerically
 
 Three stdlib checks: (a) the Itô integral with $\Delta\equiv1$ equals $W(T)$, mean $\to0$ and variance $\to T$ (isometry); (b) the discrete Itô sum reproduces $\tfrac12W(T)^2-\tfrac12T$ path-by-path; (c) Euler–Maruyama approximates GBM.
 
-```python
-import math, random
-random.seed(7)
 
-def ito_path(Delta, nsteps, T=1.0):
-    """Discrete Itô sum int_0^T Delta(t) dW, Delta taken at left endpoints."""
-    dt = T/nsteps; s = 0.0
-    for i in range(nsteps):
-        s += Delta(i*dt) * random.gauss(0.0, math.sqrt(dt))
-    return s
 
-# (a) isometry: Delta=1 => I(T)=W(T), mean 0, Var=T
-vals = [ito_path(lambda t: 1.0, 400) for _ in range(80000)]
-m = sum(vals)/len(vals)
-v = sum(x*x for x in vals)/len(vals) - m*m
-print("Itô integral Delta=1:  mean=%.4f (theory 0)   Var=%.4f (theory T=1.0)" % (m, v))
-
-# (b) Itô-Doeblin: int W dW == 0.5 W(T)^2 - 0.5 T  (one path, n=5000)
-n = 5000; dt = 1.0/n
-W = [0.0]
-for _ in range(n): W.append(W[-1] + random.gauss(0.0, math.sqrt(dt)))
-ito_sum = sum(W[i]*(W[i+1]-W[i]) for i in range(n))
-print("int_0^T W dW  = %.4f    vs   0.5W(T)^2-0.5T = %.4f" % (ito_sum, 0.5*W[-1]**2-0.5))
-```
-```
-Itô integral Delta=1:  mean=-0.0051 (theory 0)   Var=0.9975 (theory T=1.0)
-int_0^T W dW  = -0.3005    vs   0.5W(T)^2-0.5T = -0.3026
-```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Applying the classical chain rule.** $\int_0^T W\,dW=\tfrac12W(T)^2$ is *wrong*; the correct Itô value subtracts $\tfrac12T$. Any result that doesn't subtract the quadratic-variation term is an $O(T)$ error.
-2. **Using backward vs forward increments.** The Itô integral uses *forward*/left-endpoint increments $\Delta(t_j)(W(t_{j+1})-W(t_j))$, which makes it a martingale. Using the *backward* increment would yield the Stratonovich integral (no martingale property, different answers). Is your $\Delta$ predictable (adapted) — if it looks into the future, the integral is ill-defined and arbitrage appears.
+2. **Using backward vs forward increments.** The Itô integral uses *forward*/left-endpoint increments $\Delta(t_j)(W(t_{j+1})-W(t_j))$, which makes it a martingale. Using the *backward* increment would yield the Stratonovich integral (no martingale property, different answers). Is your $\Delta$ predictable (adapted) - if it looks into the future, the integral is ill-defined and arbitrage appears.
 3. **Ignoring integrability** $\mathbb E\int\Delta^2du<\infty$. Without it the $L^2$ extension and isometry fail; in extreme cases the integral isn't even a martingale (local-martingale). This is the technical gate for Girsanov's integrability condition in [[foundations/stochastic-calculus/05-girsanov-and-risk-neutral|05]].
 4. **Reading $dX^2=\Delta^2dt$ as optional.** It is derived from QV, not assumed; skipping $f_{xx}$ (e.g. pretending the function is affine in $W$ on a curved payoff) drops the single term that drives all hedging P&L.
 

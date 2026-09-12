@@ -19,10 +19,10 @@ This is the **measurement page**: given two candidate assets, (i) test whether t
 
 The key insight is that cointegration is not a property of either series alone but of the **combination**, and that the *same* relationship can be written two equivalent ways:
 
-- **Static (Engle–Granger):** $y_t=\mu+\beta x_t+z_t$ with $z_t$ stationary — the "long-run equilibrium" the spread reverts to.
+- **Static (Engle–Granger):** $y_t=\mu+\beta x_t+z_t$ with $z_t$ stationary - the "long-run equilibrium" the spread reverts to.
 - **Dynamic (Error-Correction Model):** the short-run changes of both legs are *pulled* by the previous period's disequilibrium $z_{t-1}$. This is the **Granger representation theorem**: cointegration $\iff$ an error-correction representation exists.
 
-The error-correction picture is what makes pairs trading mechanical: if the spread is above equilibrium, either $y$ falls, $x$ rises, or both — and the ECM coefficients $\alpha_1,\alpha_2$ tell you **which leg does the adjusting** (the "leader/follower" structure).
+The error-correction picture is what makes pairs trading mechanical: if the spread is above equilibrium, either $y$ falls, $x$ rises, or both - and the ECM coefficients $\alpha_1,\alpha_2$ tell you **which leg does the adjusting** (the "leader/follower" structure).
 
 ---
 
@@ -30,7 +30,7 @@ The error-correction picture is what makes pairs trading mechanical: if the spre
 
 #### 2.1 The Engle–Granger two-step method (Tsay §8.5–8.6)
 
-**Step 1 — the cointegrating regression.** Estimate by OLS the static long-run relation
+**Step 1 - the cointegrating regression.** Estimate by OLS the static long-run relation
 
 $$
 y_t=\mu+\beta x_t+z_t,\qquad \hat\beta=\frac{\widehat{\operatorname{Cov}}(y,x)}{\widehat{\operatorname{Var}}(x)},\quad \hat\mu=\bar y-\hat\beta\bar x,
@@ -38,7 +38,7 @@ $$
 
 and form the residual $\hat z_t=y_t-\hat\mu-\hat\beta x_t$.
 
-**Step 2 — test the residual for a unit root.** Run an augmented Dickey–Fuller regression on the residual:
+**Step 2 - test the residual for a unit root.** Run an augmented Dickey–Fuller regression on the residual:
 
 $$
 \Delta \hat z_t=c+\gamma\,\hat z_{t-1}+\sum_{i=1}^{p}\varphi_i\,\Delta \hat z_{t-i}+e_t,
@@ -54,7 +54,7 @@ $$
 \begin{aligned}\Delta y_t &= \alpha_1\,(z_{t-1}-\mu_z)+\sum_i\gamma^y_i\Delta y_{t-i}+\sum_j\delta^y_j\Delta x_{t-j}+\varepsilon^y_t,\\ \Delta x_t &= \alpha_2\,(z_{t-1}-\mu_z)+\sum_i\gamma^x_i\Delta y_{t-i}+\sum_j\delta^x_j\Delta x_{t-j}+\varepsilon^x_t,\end{aligned}
 $$
 
-where $z_t=y_t-\beta x_t$. Cointegration requires $\alpha_1$ and $\alpha_2$ to be **opposite in sign** (at least one adjusts toward equilibrium; Tsay §8.8 Eq. 8.45). The size of $|\alpha_i|$ is the speed at which leg $i$ corrects — the econometric analogue of price discovery / leadership (Hasbrouck Ch 10). If $\alpha_1=\alpha_2=0$, no error correction and hence no cointegration.
+where $z_t=y_t-\beta x_t$. Cointegration requires $\alpha_1$ and $\alpha_2$ to be **opposite in sign** (at least one adjusts toward equilibrium; Tsay §8.8 Eq. 8.45). The size of $|\alpha_i|$ is the speed at which leg $i$ corrects - the econometric analogue of price discovery / leadership (Hasbrouck Ch 10). If $\alpha_1=\alpha_2=0$, no error correction and hence no cointegration.
 
 #### 2.3 The Ornstein–Uhlenbeck spread
 
@@ -64,7 +64,7 @@ $$
 dz_t=\theta(\mu-z_t)\,dt+\sigma\,dW_t,\qquad \theta>0.
 $$
 
-It is the continuous-time **AR(1)**: the increment has conditional mean $\theta(\mu-z_t)\,dt$ — positive when $z_t<\mu$ (spread too low, expect a rise), negative when $z_t>\mu$. The stationary (equilibrium) distribution is Gaussian with
+It is the continuous-time **AR(1)**: the increment has conditional mean $\theta(\mu-z_t)\,dt$ - positive when $z_t<\mu$ (spread too low, expect a rise), negative when $z_t>\mu$. The stationary (equilibrium) distribution is Gaussian with
 
 $$
 \mathbb{E}[z_t]=\mu,\qquad \operatorname{Var}[z_t]=\frac{\sigma^2}{2\theta}.
@@ -89,7 +89,7 @@ $$
 \boxed{\ \tau_{1/2}=\frac{\ln 2}{\theta}\ }.
 $$
 
-(Equivalently, for the discrete AR(1), $\tau_{1/2}=\ln(2)/\ln(1/b)$ — the Tsay Ch 2 mean-reversion half-life.) A spread with $\tau_{1/2}$ of a few days is tradable with daily data; one with $\tau_{1/2}$ of a year is not.
+(Equivalently, for the discrete AR(1), $\tau_{1/2}=\ln(2)/\ln(1/b)$ - the Tsay Ch 2 mean-reversion half-life.) A spread with $\tau_{1/2}$ of a few days is tradable with daily data; one with $\tau_{1/2}$ of a year is not.
 
 **Avellaneda–Lee estimation (Appendix).** Using the cumulative residual $X_k=\sum_{j\le k}\tilde R_j$ over a 60-day window and the regression $X_{n+1}=a+bX_n+\zeta_{n+1}$:
 
@@ -101,64 +101,12 @@ with the acceptance filter $\kappa>252/30$ (half-life under ~30 trading days, i.
 
 ---
 
-### 3. Computational Implementation — the full pipeline
+### 3. Computational Implementation - the full pipeline
 
-Stdlib only. We simulate a **known** OU spread ($\theta=0.20$/day, $\tau_{1/2}=3.47$ days) on top of a common random walk, then run Engle–Granger, the ADF test on the residual, and the OU fit — and check that we recover the truth.
+Stdlib only. We simulate a **known** OU spread ($\theta=0.20$/day, $\tau_{1/2}=3.47$ days) on top of a common random walk, then run Engle–Granger, the ADF test on the residual, and the OU fit - and check that we recover the truth.
 
-```python
-import math, random
 
-def ols(y, X):                                # X = list of regressor columns
-    T=len(y); K=len(X)
-    XtX=[[sum(X[i][t]*X[j][t] for t in range(T)) for j in range(K)] for i in range(K)]
-    Xty=[sum(X[i][t]*y[t] for t in range(T)) for i in range(K)]
-    A=[row[:]+[Xty[i]] for i,row in enumerate(XtX)]
-    for c in range(K):
-        p=max(range(c,K),key=lambda r:abs(A[r][c])); A[c],A[p]=A[p],A[c]
-        for r in range(K):
-            if r!=c:
-                f=A[r][c]/A[c][c]
-                for k in range(c,K+1): A[r][k]-=f*A[c][k]
-    return [A[i][K]/A[i][i] for i in range(K)], A
 
-def adf_tstat(z, p=1):
-    dz=[z[t]-z[t-1] for t in range(1,len(z))]
-    y=dz[p:]; cols=[[1.0]*len(y),[z[p+i] for i in range(len(y))]]
-    for lag in range(1,p+1): cols.append([dz[p+i-lag] for i in range(len(y))])
-    beta,_=ols(y,cols); T=len(y); K=len(cols)
-    fit=[sum(beta[i]*cols[i][t] for i in range(K)) for t in range(T)]
-    s2=sum((y[t]-fit[t])**2 for t in range(T))/(T-K)
-    XtX=[[sum(cols[i][t]*cols[j][t] for t in range(T)) for j in range(K)] for i in range(K)]
-    A=[row[:]+[1.0 if i==j else 0.0 for j in range(K)] for i,row in enumerate(XtX)]
-    for c in range(K):
-        p2=max(range(c,K),key=lambda r:abs(A[r][c])); A[c],A[p2]=A[p2],A[c]
-        pv=A[c][c]
-        for k in range(2*K): A[c][k]/=pv
-        for r in range(K):
-            if r!=c:
-                f2=A[r][c]
-                for k in range(2*K): A[r][k]-=f2*A[c][k]
-    return beta[1]/math.sqrt(s2*A[1][K+1])
-
-n=1200; rng=random.Random(7)
-f=[0.0]*n
-for t in range(1,n): f[t]=f[t-1]+rng.gauss(0,1)
-z=[0.0]*n
-for t in range(1,n): z[t]=z[t-1]+0.20*(0.0-z[t-1])+rng.gauss(0,0.5)   # true theta=0.20
-y=[f[t]+z[t] for t in range(n)]; x=f[:]
-
-b0b1,_=ols(y,[[1.0]*n,x]); a0,b1=b0b1
-resid=[y[t]-a0-b1*x[t] for t in range(n)]
-print(f"Engle-Granger beta = {b1:.4f}  (true 1.0),  alpha = {a0:.4f}")
-print(f"ADF t-stat on residual = {adf_tstat(resid,p=1):.3f}  (EG 5% CV ~ -3.34 -> reject unit root)")
-bc,_=ols([resid[t]-resid[t-1] for t in range(1,n)],[[1.0]*(n-1),resid[:-1]])
-theta=-math.log(1+bc[1]); print(f"OU: b={bc[1]:+.4f}  theta={theta:.4f}/day  half-life={math.log(2)/theta:.2f} days")
-```
-```
-Engle-Granger beta = 0.9955  (true 1.0),  alpha = 0.0467
-ADF t-stat on residual = -10.255  (EG 5% CV ~ -3.34 -> reject unit root)
-OU: b=-0.1804  theta=0.1990/day  half-life=3.48 days
-```
 
 All three stages recover the truth: $\hat\beta=0.9955$ (true $1.0$), an ADF $t=-10.255$ far below the $-3.34$ threshold (strong rejection of the unit root), and $\hat\theta=0.1990$ vs the simulated $0.20$, giving a half-life of $3.48$ vs $3.47$ days.
 
@@ -179,7 +127,7 @@ All three stages recover the truth: $\hat\beta=0.9955$ (true $1.0$), an ADF $t=-
 - **Tsay**, *Analysis of Financial Time Series*, Ch 8 §8.5 (cointegration definition, ECM Eq. 8.33–8.34), §8.6 (rank cases, deterministic spec, Johansen), §8.8 (pairs trading ECM Eq. 8.45, AR(2) on the spread, ADF $-6.04$ on the BHP/VALE example). *Math-verified in the corpus.*
 - **Tsay** Ch 2 §2.7 (unit-root tests, ADF Eq. 2.38–2.40; AR half-life $\ell=\ln(0.5)/\ln|\phi_1|$).
 - **Engle, R. F. & Granger, C. W. J.**, *Econometrica* 55(2), 1987.
-- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 — Appendix (OU parameter estimation, $\kappa,m,\sigma_{\text{eq}}$, the $\kappa>252/30$ filter).
+- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 - Appendix (OU parameter estimation, $\kappa,m,\sigma_{\text{eq}}$, the $\kappa>252/30$ filter).
 - **Hasbrouck**, *Empirical Market Microstructure*, Ch 10 §10.2–10.3 (cointegration, VECM Eq. 10.13, speed-of-adjustment as price leadership).
 
 ---

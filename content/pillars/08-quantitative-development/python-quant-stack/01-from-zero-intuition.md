@@ -14,17 +14,17 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of the Python quant stack with **no performance background needed**. The objective is one idea: **Python is a scripting language that gets its speed by delegating whole-array work to two invisible C runtimes — NumPy and pandas — and a quant researcher's entire craft is learning to write expressions that trigger those C runtimes instead of per-element interpreted loops.**
+This page builds the *why* of the Python quant stack with **no performance background needed**. The objective is one idea: **Python is a scripting language that gets its speed by delegating whole-array work to two invisible C runtimes - NumPy and pandas - and a quant researcher's entire craft is learning to write expressions that trigger those C runtimes instead of per-element interpreted loops.**
 
-Start with the dumbest question: *why is Python slow at math at all?* When Python executes `for i in range(n): s += a[i]`, every single iteration pays overhead that has nothing to do with the math: the interpreter fetches the loop variable, looks up `a` and `__getitem__`, creates a Python `int`/`float` object for each intermediate, and does the addition as an *object* operation. That is a few hundred nanoseconds per element, for work the CPU itself does in a few nanoseconds. Over a million elements the overhead is not a detail — it is the whole story.
+Start with the dumbest question: *why is Python slow at math at all?* When Python executes `for i in range(n): s += a[i]`, every single iteration pays overhead that has nothing to do with the math: the interpreter fetches the loop variable, looks up `a` and `__getitem__`, creates a Python `int`/`float` object for each intermediate, and does the addition as an *object* operation. That is a few hundred nanoseconds per element, for work the CPU itself does in a few nanoseconds. Over a million elements the overhead is not a detail - it is the whole story.
 
-The stack's answer is to **stop looping in Python**. A NumPy array is a single contiguous block of typed memory, and `2.0*x + 1.0` tells NumPy to run a *compiled C loop* over the whole block in one call. The Python code you write is thin — one line — but the work happens at C speed.
+The stack's answer is to **stop looping in Python**. A NumPy array is a single contiguous block of typed memory, and `2.0*x + 1.0` tells NumPy to run a *compiled C loop* over the whole block in one call. The Python code you write is thin - one line - but the work happens at C speed.
 
 Three "aha"s, mirroring the arc of the folder:
 
-1. **Python is the steering wheel; NumPy/pandas are the engine.** You write Python to *describe* the computation; the heavy lifting happens in C, batch by batch. Slow Python is almost never the math — it is the parts of your code that force per-element interpretation.
+1. **Python is the steering wheel; NumPy/pandas are the engine.** You write Python to *describe* the computation; the heavy lifting happens in C, batch by batch. Slow Python is almost never the math - it is the parts of your code that force per-element interpretation.
 2. **The same gap that slows you down is the opportunity.** Because $c_{\text{py}}/c_C \approx 50\text{–}150\times$ (measured in [[pillars/08-quantitative-development/python-quant-stack/02-numpy-vectorization|02 · NumPy Vectorization]]), a well-vectorized line is typically **1–2 orders of magnitude faster** than the obvious Python loop. Speed is a property of *how you write the loop boundary*, not of the hardware.
-3. **Backtests are arrays, not days.** A strategy over $T$ bars is a handful of whole-array transforms (returns, signals, positions, compounded equity) — see [[pillars/08-quantitative-development/python-quant-stack/02-numpy-vectorization|02]] for the algebra. Once you see a backtest as array math, the whole stack becomes coherent.
+3. **Backtests are arrays, not days.** A strategy over $T$ bars is a handful of whole-array transforms (returns, signals, positions, compounded equity) - see [[pillars/08-quantitative-development/python-quant-stack/02-numpy-vectorization|02]] for the algebra. Once you see a backtest as array math, the whole stack becomes coherent.
 
 **Where the stack sits.** The research layer feeds the compiled production core ([[pillars/08-quantitative-development/high-performance-cpp-for-trading/index|High-Performance C++ for Trading]]) and the event-driven engine ([[pillars/08-quantitative-development/event-driven-backtesting-engines/index|Event-Driven Backtesting Engines]]). The data arrives via [[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]]. This folder is the "how do I compute on this data quickly and correctly" layer.
 
@@ -52,46 +52,25 @@ $$
 E_T = E_0 \prod_{t=1}^{T}\big(1 + r^\star_t\big) \;=\; E_0 \exp\Big(\textstyle\sum_{t=1}^{T} \ln\big(1 + r^\star_t\big)\Big),
 $$
 
-so the "portfolio of a lifetime of trades" is `np.exp(np.log1p(rstar).cumsum())` — a constant number of C passes regardless of $T$. This is the mathematical backbone of vectorized backtesting (Hilpisch, *Python for Algorithmic Trading*, ch. on vectorized backtesting).
+so the "portfolio of a lifetime of trades" is `np.exp(np.log1p(rstar).cumsum())` - a constant number of C passes regardless of $T$. This is the mathematical backbone of vectorized backtesting (Hilpisch, *Python for Algorithmic Trading*, ch. on vectorized backtesting).
 
 ---
 
-### 3. Computational Implementation — your first taste of the stack
+### 3. Computational Implementation - your first taste of the stack
 
-This is a working, stdlib+numpy walk-through that computes the returns and compounded equity of a synthetic price path — the exact shape of a minimal vectorized backtest, and the seed of everything in the folder.
+This is a working, stdlib+numpy walk-through that computes the returns and compounded equity of a synthetic price path - the exact shape of a minimal vectorized backtest, and the seed of everything in the folder.
 
-```python
-import numpy as np
-np.random.seed(7)
-T = 5000
-arith    = np.random.randn(T) * 0.01      # T daily arithmetic returns
-log_ret  = np.log1p(arith)                # log(1+r), stable for small r
-price    = 100.0 * np.exp(log_ret.cumsum())   # price path from those log returns
-eq       = 100.0 * np.exp(log_ret.cumsum())   # fully-invested equity compounds the SAME returns
 
-print(f"bars T        = {T:,}")
-print(f"final price   = {price[-1]:10.2f}")
-print(f"final equity  = {eq[-1]:10.2f}")
-print(f"total log-ret = {log_ret.sum():.4f}  == log(eq[-1]/100): {np.log(eq[-1]/100):.4f}")
-print(f"equity identity holds: "
-      f"{np.isclose(np.log(eq[-1]/100), log_ret.sum()) and np.isclose(price[-1], eq[-1])}")
-```
-```
-bars T        = 5,000
-final price   =      25.74
-final equity  =      25.74
-total log-ret = -1.3572  == log(eq[-1]/100): -1.3572
-equity identity holds: True
-```
 
-The log-returns identity holds to floating-point precision (final equity *equals* final price because both are the same `exp(cumsum(log(1+r)))` chain) — and the entire computation is a handful of vectorized passes, not a 5,000-iteration Python loop. That is the stack's whole promise in one cell.
+
+The log-returns identity holds to floating-point precision (final equity *equals* final price because both are the same `exp(cumsum(log(1+r)))` chain) - and the entire computation is a handful of vectorized passes, not a 5,000-iteration Python loop. That is the stack's whole promise in one cell.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **"Python is slow" is a self-fulfilling prophecy.** The slowness is *your* loop placement, not the language. Writing per-element loops for things NumPy can do whole-array throws away the 50–150× gap on purpose.
-2. **The stack is only as fast as its slowest drop.** One `apply`-over-rows or one `object` column silently re-introduces the interpreted-per-element cost across the whole pipeline — often without a visible error (see [[pillars/08-quantitative-development/python-quant-stack/03-pandas-pitfalls|03 · pandas Pitfalls]]).
+2. **The stack is only as fast as its slowest drop.** One `apply`-over-rows or one `object` column silently re-introduces the interpreted-per-element cost across the whole pipeline - often without a visible error (see [[pillars/08-quantitative-development/python-quant-stack/03-pandas-pitfalls|03 · pandas Pitfalls]]).
 3. **Syntactic clarity ≠ computational clarity.** `df[df.x>0]['y'] = 5` *looks* like an assignment but operates on a copy. What reads as one line is not always what executes (the chained-assignment trap, [[pillars/08-quantitative-development/python-quant-stack/03-pandas-pitfalls|03]]).
 4. **Vectorization has a memory price.** Whole-array work means materializing whole arrays; a grid search over millions of parameter combos can blow RAM (see [[pillars/08-quantitative-development/python-quant-stack/06-advanced-extensions|06 · Advanced Extensions]]).
 
@@ -99,9 +78,9 @@ The log-returns identity holds to floating-point precision (final equity *equals
 
 ### 5. Canonical Literature & Study References
 
-- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) — Ch 1–5 (getting started, NumPy, pandas fundamentals); the whole book is the stack's tour.
-- **Hilpisch**, *Python for Algorithmic Trading* (2020) — ch. on vectorized backtesting: the `exp(cumsum(log1p))` equity chain in context.
-- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) — ch. 2 (profiling), ch. 4 (Cython/Numba), the mental model of where Python spends time.
+- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) - Ch 1–5 (getting started, NumPy, pandas fundamentals); the whole book is the stack's tour.
+- **Hilpisch**, *Python for Algorithmic Trading* (2020) - ch. on vectorized backtesting: the `exp(cumsum(log1p))` equity chain in context.
+- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) - ch. 2 (profiling), ch. 4 (Cython/Numba), the mental model of where Python spends time.
 
 ---
 

@@ -15,15 +15,15 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Trade, and the price moves against you. That single fact — **market impact** — is the price of immediacy and the central quantity of liquidity. It is why a $1bn order cannot be filled at the screen price, why execution desks exist, and why two markets with the same quoted spread can differ tenfold in the true cost of trading.
+Trade, and the price moves against you. That single fact - **market impact** - is the price of immediacy and the central quantity of liquidity. It is why a $1bn order cannot be filled at the screen price, why execution desks exist, and why two markets with the same quoted spread can differ tenfold in the true cost of trading.
 
 This folder is the **market-impact & depth** topic-folder for Pillar 6. It is a *hub*: it gives you (a) the **fast formula-and-model lookup** below, and (b) six sub-pages that walk from first-principles intuition through the Kyle (1985) equilibrium, the temporary/permanent decomposition, the empirical square-root law, the practice of measuring impact, and the advanced transient-impact models.
 
-> **The one-sentence essence.** "Depth is the amount of order flow needed to move the price by one unit; **Kyle's $\lambda$** is that unit impact, so market depth is $1/\lambda$ — and every impact model is a statement about how $\lambda$ behaves as a function of size, time and liquidity."
+> **The one-sentence essence.** "Depth is the amount of order flow needed to move the price by one unit; **Kyle's $\lambda$** is that unit impact, so market depth is $1/\lambda$ - and every impact model is a statement about how $\lambda$ behaves as a function of size, time and liquidity."
 
 **Scope note.** Pillar 2 covers *optimal execution* (how to schedule a trade given an impact model). This folder is the **microstructure/impact-model view**: what *causes* the price to move and how to *measure* it. The two meet at [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss]].
 
-*Primary verified sources:* Hasbrouck, *Empirical Market Microstructure* (Ch 7, Kyle; Ch 8, generalized Roll; Ch 9, multivariate; §9.9, impact proxies) — the deep-read verification reports `hasbrouck_ch6-10.md` / `hasbrouck_ch1-5.md` in the corpus — cross-checked against the primary papers (Kyle 1985; Almgren & Chriss 2000; Almgren et al. 2005; Bouchaud, Farmer & Lillo 2009; Gatheral 2010, 2013; Cont, Kukanov & Stoikov 2014).
+*Primary verified sources:* Hasbrouck, *Empirical Market Microstructure* (Ch 7, Kyle; Ch 8, generalized Roll; Ch 9, multivariate; §9.9, impact proxies) - the deep-read verification reports `hasbrouck_ch6-10.md` / `hasbrouck_ch1-5.md` in the corpus - cross-checked against the primary papers (Kyle 1985; Almgren & Chriss 2000; Almgren et al. 2005; Bouchaud, Farmer & Lillo 2009; Gatheral 2010, 2013; Cont, Kukanov & Stoikov 2014).
 
 ---
 
@@ -46,8 +46,8 @@ This folder is the **market-impact & depth** topic-folder for Pillar 6. It is a 
 | Continuous-time limit | $dP_t=\lambda\,dY_t$ | $\lambda$ constant; $P$ is a martingale |
 
 #### B. Temporary vs permanent impact (Almgren–Chriss 2000)
-- Permanent: $g(v)=\gamma v$ — price drift $\propto$ cumulative executed size, **schedule-independent**.
-- Temporary: $h(v)=\epsilon\,\mathrm{sgn}(v)+\tilde\eta\,v$ — the concession to *attract liquidity now*, schedule-sensitive.
+- Permanent: $g(v)=\gamma v$ - price drift $\propto$ cumulative executed size, **schedule-independent**.
+- Temporary: $h(v)=\epsilon\,\mathrm{sgn}(v)+\tilde\eta\,v$ - the concession to *attract liquidity now*, schedule-sensitive.
 - Expected cost: $\mathbb{E}[x]=\tfrac12\gamma X^2+\epsilon\!\sum_k|n_k|+\tilde\eta\!\sum_k n_k^2$, with $\tilde\eta=\eta-\tfrac12\gamma$; risk $\mathrm{Var}[x]=\tfrac12\sigma^2\sum\tau_k x_k^2$.
 - Optimal trajectory: $x_j=\dfrac{\sinh\!\big(\kappa(T-t_j)\big)}{\sinh(\kappa T)}X$, $\;\kappa\approx\sqrt{\tilde\lambda\sigma^2/\tilde\eta}$ (Gatheral's $\kappa$).
 
@@ -66,7 +66,7 @@ Transient model $S_t=S_0+\int_0^t h(\dot X_s)G(t-s)\,ds$ with $h(x)=c|x|^\delta\
 $$
 \text{price manipulation exists}\iff \gamma+\delta<1 .
 $$
-Empirically $\delta\approx\tfrac12,\gamma\approx\tfrac12$ sit right on the boundary — impact is *just barely* consistent with no-arbitrage.
+Empirically $\delta\approx\tfrac12,\gamma\approx\tfrac12$ sit right on the boundary - impact is *just barely* consistent with no-arbitrage.
 
 #### F. Impact as a microstructure measurement (Hasbrouck)
 - Generalized Roll (Ch 8): $\Delta p_t=c(q_t-q_{t-1})+\lambda q_t+u_t$, spread $=2(c+\lambda)$ (transitory $c$, permanent $\lambda$); identified random-walk variance $\sigma_w^2=\lambda^2+\sigma_u^2=\gamma_0+2\gamma_1$.
@@ -75,50 +75,18 @@ Empirically $\delta\approx\tfrac12,\gamma\approx\tfrac12$ sit right on the bound
 
 ---
 
-### 3. Computational Implementation — the Kyle model engine (stdlib only)
+### 3. Computational Implementation - the Kyle model engine (stdlib only)
 
 Simulate the single-auction equilibrium, recover $\lambda$ from order flow by OLS, and check that exactly half the private information is impounded. **Ran and verified** (exact output below; full experiment in [[pillars/06-market-making/market-impact-and-depth/02-the-kyle-model|02 · The Kyle Model]]).
 
-```python
-import math, random
 
-def kyle_sim(p0=100.0, Sigma0=4.0, sig_u2=1.0, n=300000, seed=11):
-    """Single-auction Kyle equilibrium: v~N(p0,Sigma0); x=beta(v-p0); y=x+u;
-       P=p0+lambda*y with lambda=0.5*sqrt(Sigma0/sig_u2)."""
-    lam  = 0.5 * math.sqrt(Sigma0 / sig_u2)      # price impact
-    beta = math.sqrt(sig_u2 / Sigma0)            # insider aggressiveness
-    random.seed(seed); sv, su = math.sqrt(Sigma0), math.sqrt(sig_u2)
-    syy = svy = prof = 0.0
-    for _ in range(n):
-        v = p0 + sv*random.gauss(0,1); u = su*random.gauss(0,1)
-        x = beta*(v-p0); y = x+u; P = p0 + lam*y
-        prof += (v-P)*x; svy += (v-p0)*y; syy += y*y
-    slope = svy/syy                              # OLS of (v-p0) on order flow y
-    resid = Sigma0 - slope*slope*(syy/n)         # Var[v|y] empirically
-    return lam, beta, slope, resid, prof/n
 
-lam, beta, slope, resid, prof = kyle_sim()
-print(f"lambda theory    = {lam:.4f}   [0.5*sqrt(Sigma0/sigma_u^2)]")
-print(f"beta   theory    = {beta:.4f}   [sqrt(sigma_u^2/Sigma0)]")
-print(f"lambda from OLS  = {slope:.4f}   <- impact recovered from flow")
-print(f"Var[v|y] resid   = {resid:.4f}   [theory Sigma0/2 = 2.0000]")
-print(f"insider profit   = {prof:.4f}   [theory 0.5*sqrt(sigma_u^2*Sigma0) = 1.0000]")
-print(f"market depth     = {1/lam:.4f}")
-```
-```
-lambda theory    = 1.0000   [0.5*sqrt(Sigma0/sigma_u^2)]
-beta   theory    = 0.5000   [sqrt(sigma_u^2/Sigma0)]
-lambda from OLS  = 0.9998   <- impact recovered from flow
-Var[v|y] resid   = 1.9982   [theory Sigma0/2 = 2.0000]
-insider profit   = 0.9969   [theory 0.5*sqrt(sigma_u^2*Sigma0) = 1.0000]
-market depth     = 1.0000
-```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-Hub signposts — the folder's failure-mode analysis lives in [[pillars/06-market-making/market-impact-and-depth/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
+Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-making/market-impact-and-depth/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
 1. **Impact-model misspecification.** Fitting a *linear* model to square-root data gives systematically wrong cost forecasts at scale; the permanent exponent is pinned to $1$ by no-arbitrage, the temporary exponent is not.
 2. **Temporary-vs-permanent confusion.** Counting temporary impact as permanent *double-charges* a strategy (and vice-versa); the realized VWAP sits between them and only the permanent part survives a round trip.
@@ -147,7 +115,4 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/06-marke
 - Cross-pillar: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss Optimal Execution (Pillar 2)]] (the scheduling side of the same model) · [[pillars/06-market-making/liquidity-risk-and-asset-pricing/index|Liquidity Risk & Asset Pricing]] (Amihud is the impact proxy that gets priced)
 - Sub-pages (in-folder): 01 From Zero · 02 The Kyle Model · 03 Temporary vs Permanent · 04 The Square-Root Law · 05 Failure Modes · 06 Advanced Extensions
 
-**Recommended reading route (audience arc):**
-- **Absolute beginner:** [[pillars/06-market-making/market-impact-and-depth/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
-- **Model + code (undergrad/job-seeking):** [[pillars/06-market-making/market-impact-and-depth/02-the-kyle-model|02 · The Kyle Model]] → [[pillars/06-market-making/market-impact-and-depth/03-temporary-vs-permanent-impact|03 · Temporary vs Permanent]] → [[pillars/06-market-making/market-impact-and-depth/04-the-square-root-law|04 · The Square-Root Law]].
-- **Robustness (practitioner/graduate):** [[pillars/06-market-making/market-impact-and-depth/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/06-market-making/market-impact-and-depth/06-advanced-extensions|06 · Advanced Extensions]].
+**Beginner:** start at [[pillars/06-market-making/market-impact-and-depth/01-from-zero-intuition|01]] · **Practitioner:** start at [[pillars/06-market-making/market-impact-and-depth/05-failure-modes-and-practice|05]]

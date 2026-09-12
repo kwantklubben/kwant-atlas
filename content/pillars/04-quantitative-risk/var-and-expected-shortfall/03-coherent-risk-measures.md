@@ -16,7 +16,7 @@ tags:
 
 Before Artzner–Delbaen–Eber–Heath (1999), "risk measure" meant *whatever a bank computed*. Their contribution was to ask: **what properties must any number claiming to be "risk" satisfy to be usable for regulating capital?** Four axioms. A measure satisfying all four is **coherent**. VaR fails one of them; ES passes all.
 
-This page states the axioms, connects them to a *set of acceptable positions* (the deeper primitive), gives the **scenario representation** (every coherent measure is a worst-case expectation over a set of probability scenarios), and shows — numerically — which axiom VaR breaks.
+This page states the axioms, connects them to a *set of acceptable positions* (the deeper primitive), gives the **scenario representation** (every coherent measure is a worst-case expectation over a set of probability scenarios), and shows - numerically - which axiom VaR breaks.
 
 ---
 
@@ -33,11 +33,11 @@ Fix the future net worth $X$ and a reference return $r$ (typically $r=1$; think 
 | **PH** Positive homogeneity | $\rho(\lambda X)=\lambda\rho(X),\ \lambda\ge0$ | risk scales with size (no liquidity/concavity) |
 | **M** Monotonicity | $X\le Y\ \Rightarrow\ \rho(Y)\le\rho(X)$ | more net worth is never riskier |
 
-Consequences useful in practice: T gives $\rho(X+\rho(X)r)=0$ (the risk measure *is* the capital that makes the position acceptable); T + PH give $\rho(\alpha(-r))=\alpha$. Artzner notes **M rules out** mean–standard-deviation measures $\rho(X)=-\mathbb{E}_P[X]+\alpha\sigma_P(X)$, and **S rules out** semi-variance-type measures — i.e. the axioms are *restrictive*.
+Consequences useful in practice: T gives $\rho(X+\rho(X)r)=0$ (the risk measure *is* the capital that makes the position acceptable); T + PH give $\rho(\alpha(-r))=\alpha$. Artzner notes **M rules out** mean–standard-deviation measures $\rho(X)=-\mathbb{E}_P[X]+\alpha\sigma_P(X)$, and **S rules out** semi-variance-type measures - i.e. the axioms are *restrictive*.
 
 #### 2.2 The deeper primitive: acceptance sets (Artzner §2.2–2.4)
 
-Define the acceptance set $\mathcal{A}=\{X:\rho(X)\le0\}$ — positions that need no extra capital. The measure is recovered as
+Define the acceptance set $\mathcal{A}=\{X:\rho(X)\le0\}$ - positions that need no extra capital. The measure is recovered as
 $$
 \rho_{\mathcal{A},r}(X)=\inf\{m: m\,r+X\in\mathcal{A}\}.
 $$
@@ -49,7 +49,7 @@ $$
 $$
 \boxed{\ \rho(X)=\sup\{\mathbb{E}_P[-X/r] \mid P\in\mathcal{P}\}\ }
 $$
-i.e. every coherent risk measure is a **supremum of expected losses over a set of "generalized scenarios."** Conversely (Prop. 3.1) any $\rho_{\mathcal{P}}(X)=\sup_{P\in\mathcal{P}}\mathbb{E}_P[-X/r]$ is coherent (satisfying relevance iff $\bigcup_P \operatorname{supp}P=\Omega$). Adding more scenarios makes the measure **more conservative**. This is the theoretical roof over *all* coherent measures — including ES, which is the special case where $\mathcal{P}$ is the set of all measures agreeing with the base measure on the tail (equivalently the spectral representation in [[pillars/04-quantitative-risk/var-and-expected-shortfall/06-advanced-extensions|06 · Advanced Extensions]]).
+i.e. every coherent risk measure is a **supremum of expected losses over a set of "generalized scenarios."** Conversely (Prop. 3.1) any $\rho_{\mathcal{P}}(X)=\sup_{P\in\mathcal{P}}\mathbb{E}_P[-X/r]$ is coherent (satisfying relevance iff $\bigcup_P \operatorname{supp}P=\Omega$). Adding more scenarios makes the measure **more conservative**. This is the theoretical roof over *all* coherent measures - including ES, which is the special case where $\mathcal{P}$ is the set of all measures agreeing with the base measure on the tail (equivalently the spectral representation in [[pillars/04-quantitative-risk/var-and-expected-shortfall/06-advanced-extensions|06 · Advanced Extensions]]).
 
 #### 2.4 ES as coherence repair (Artzner §5.1)
 
@@ -62,57 +62,16 @@ He proves $\mathrm{TCE}_\alpha\le\mathrm{WCE}_\alpha$ (Prop. 5.1), with equality
 $$
 \mathrm{VaR}_\alpha(X)=\inf\{\rho(X):\rho\ \text{coherent},\ \rho\ge\mathrm{VaR}_\alpha\},
 $$
-i.e. **VaR is the least coherent measure that dominates it.** Any coherent measure you pick (ES, WCE) must be *at least* as large as VaR — coherence costs conservatism, and this identity quantifies the gap.
+i.e. **VaR is the least coherent measure that dominates it.** Any coherent measure you pick (ES, WCE) must be *at least* as large as VaR - coherence costs conservatism, and this identity quantifies the gap.
 
 ---
 
-### 3. Computational Implementation — the axioms, checked numerically
+### 3. Computational Implementation - the axioms, checked numerically
 
 We encode discrete loss distributions as pmfs and test all four axioms for VaR and ES on the defaultable-bond example. Stdlib only.
 
-```python
-import math
 
-def var_pmf(pmf, a):
-    cum = 0.0
-    for l in sorted(pmf):
-        cum += pmf[l]
-        if cum >= a - 1e-12: return l
-    return max(pmf)
-def es_pmf(pmf, a):
-    cum = 0.0; tot = 0.0
-    for l in sorted(pmf):
-        hi = cum + pmf[l]; lo = max(cum, a)
-        if hi > lo: tot += l*(hi-lo)
-        cum = hi
-    return tot/(1.0-a)
-def conv(d1, d2):
-    o = {}
-    for x, px in d1.items():
-        for y, py in d2.items(): o[x+y] = o.get(x+y, 0.0) + px*py
-    return o
 
-A  = {0.0: 0.96, 100.0: 0.04}      # each bond defaults w.p. 4%, losing 100
-AB = conv(A, A); alpha = 0.95
-print(f"VaR_95(A)={var_pmf(A,alpha):.1f}   ES_95(A)={es_pmf(A,alpha):.2f}")
-print(f"VaR_95(A+B)={var_pmf(AB,alpha):.1f} ES_95(A+B)={es_pmf(AB,alpha):.2f}")
-print(f"SUBADDITIVITY (VaR): VaR(A+B)={var_pmf(AB,alpha):.1f} <= VaR(A)+VaR(B)={var_pmf(A,alpha)*2:.1f} ?  {var_pmf(AB,alpha)<=var_pmf(A,alpha)*2}")
-print(f"SUBADDITIVITY (ES) : ES(A+B)={es_pmf(AB,alpha):.2f}  <= ES(A)+ES(B) ={es_pmf(A,alpha)*2:.2f} ?  {es_pmf(AB,alpha)<=es_pmf(A,alpha)*2}")
-c = 10.0; lam = 3.0
-shift = {k+c: v for k, v in A.items()}; scale = {lam*k: v for k, v in A.items()}
-print(f"TRANSLATION  VaR(A+c)={var_pmf(shift,alpha):.1f} == VaR(A)+c={var_pmf(A,alpha)+c:.1f} ;  ES(A+c)={es_pmf(shift,alpha):.2f} == ES(A)+c={es_pmf(A,alpha)+c:.2f}")
-print(f"HOMOGENEITY  VaR(lamA)={var_pmf(scale,alpha):.1f} == lam*VaR(A)={lam*var_pmf(A,alpha):.1f} ;  ES(lamA)={es_pmf(scale,alpha):.2f} == lam*ES(A)={lam*es_pmf(A,alpha):.2f}")
-print(f"MONOTONICITY A<=AB pointwise: VaR(A)={var_pmf(A,alpha):.1f}<=VaR(AB)={var_pmf(AB,alpha):.1f} ; ES(A)={es_pmf(A,alpha):.2f}<=ES(AB)={es_pmf(AB,alpha):.2f}")
-```
-```
-VaR_95(A)=0.0   ES_95(A)=80.00
-VaR_95(A+B)=100.0 ES_95(A+B)=103.20
-SUBADDITIVITY (VaR): VaR(A+B)=100.0 <= VaR(A)+VaR(B)=0.0 ?  False
-SUBADDITIVITY (ES) : ES(A+B)=103.20  <= ES(A)+ES(B) =160.00 ?  True
-TRANSLATION  VaR(A+c)=10.0 == VaR(A)+c=10.0 ;  ES(A+c)=90.00 == ES(A)+c=90.00
-HOMOGENEITY  VaR(lamA)=0.0 == lam*VaR(A)=0.0 ;  ES(lamA)=240.00 == lam*ES(A)=240.00
-MONOTONICITY A<=AB pointwise: VaR(A)=0.0<=VaR(AB)=100.0 ; ES(A)=80.00<=ES(AB)=103.20
-```
 
 Both measures satisfy **T, PH, M**. VaR fails **S**; ES passes. That single `False` is the entire twentieth-century risk-management debate.
 
@@ -120,19 +79,19 @@ Both measures satisfy **T, PH, M**. VaR fails **S**; ES passes. That single `Fal
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Scenario-set mis-specification.** The representation $\rho(X)=\sup_{P\in\mathcal{P}}\mathbb{E}_P[-X/r]$ is only as good as $\mathcal{P}$. Too small and the measure is optimistic ("model risk" — Artzner's Remark: add other models' distributions to $\mathcal{P}$); too large and every position looks maximally risky. ES corresponds to a *specific* $\mathcal{P}$; choosing "coherent" does not remove the modelling choice.
+1. **Scenario-set mis-specification.** The representation $\rho(X)=\sup_{P\in\mathcal{P}}\mathbb{E}_P[-X/r]$ is only as good as $\mathcal{P}$. Too small and the measure is optimistic ("model risk" - Artzner's Remark: add other models' distributions to $\mathcal{P}$); too large and every position looks maximally risky. ES corresponds to a *specific* $\mathcal{P}$; choosing "coherent" does not remove the modelling choice.
 2. **Homogeneity is an idealisation.** Axiom PH ignores liquidity: if liquidating a position moves the price, then $\rho(\lambda X)<\lambda\rho(X)$, and the axiom over-states large-position risk (Artzner's own caveat on Axiom PH). This is the formal reason liquidity-adjusted risk measures are needed ([[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]]).
 3. **Coherence ≠ correctness of the loss distribution.** The axioms constrain the *functional*, not the *distribution*. A coherent measure on a wrong $\mathbb{P}$ is still wrong. Coherence buys aggregation safety, not predictive accuracy ([[pillars/04-quantitative-risk/parametric-historical-and-monte-carlo-var/index|Estimation & Backtesting]]).
-4. **Dominance cost of repair (Prop. 5.2).** Any coherent measure dominating VaR is *at least* VaR. Replacing VaR with ES raises the reported capital number — a governance decision as much as a mathematical one, which is exactly why the Basel switch needed a calibration ($97.5\%$ ES $\approx$ $99\%$ VaR; [[pillars/04-quantitative-risk/var-and-expected-shortfall/06-advanced-extensions|06 · §Basel]]).
+4. **Dominance cost of repair (Prop. 5.2).** Any coherent measure dominating VaR is *at least* VaR. Replacing VaR with ES raises the reported capital number - a governance decision as much as a mathematical one, which is exactly why the Basel switch needed a calibration ($97.5\%$ ES $\approx$ $99\%$ VaR; [[pillars/04-quantitative-risk/var-and-expected-shortfall/06-advanced-extensions|06 · §Basel]]).
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999) — §2.2–2.4 (acceptance-set axioms; coherence Def. 2.4), §3.3 (VaR's non-convex acceptance set), §4.1 (Prop. 4.1, scenario representation), §5.1 (TCE/WCE; Props. 5.1–5.3). *Primary source; read in full from the corpus PDF.*
-- **Föllmer & Schied**, *Stochastic Finance: An Introduction in Discrete Time* — the modern axiomatic treatment (convex risk measures, monetary measures of risk).
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 2 — coherence, convexity, and law-invariant measures in textbook form.
-- **Acerbi & Tasche**, *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7) (2002) — ES coherence under general distributions.
+- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999) - §2.2–2.4 (acceptance-set axioms; coherence Def. 2.4), §3.3 (VaR's non-convex acceptance set), §4.1 (Prop. 4.1, scenario representation), §5.1 (TCE/WCE; Props. 5.1–5.3). *Primary source; read in full from the corpus PDF.*
+- **Föllmer & Schied**, *Stochastic Finance: An Introduction in Discrete Time* - the modern axiomatic treatment (convex risk measures, monetary measures of risk).
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 2 - coherence, convexity, and law-invariant measures in textbook form.
+- **Acerbi & Tasche**, *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7) (2002) - ES coherence under general distributions.
 
 ---
 

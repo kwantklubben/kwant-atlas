@@ -9,11 +9,11 @@ tags:
 
 # Diagnostic Index: Symptom → Cause → Fix
 
-This is the **global** troubleshooting index for the whole Atlas — the aggregated "clinic" that collects the failure modes spread across every topic's §5 *Failure Modes & Practice* page, the pillar hubs' §4, and the home-page matrix, deduplicated and organised by symptom.
+This is the **global** troubleshooting index for the whole Atlas - the aggregated "clinic" that collects the failure modes spread across every topic's §5 *Failure Modes & Practice* page, the pillar hubs' §4, and the home-page matrix, deduplicated and organised by symptom.
 
-**How to use it.** Find your observed symptom in the left column (scan the area heading that matches where the problem bites: backtest, execution, risk, portfolio, derivatives, ML, or systems). The **root cause** names the first-principles violation underneath, the **remedy** says what to change, and the **canonical page** takes you to the full treatment — math, code, and the complete failure-mode catalogue.
+**How to use it.** Find your observed symptom in the left column (scan the area heading that matches where the problem bites: backtest, execution, risk, portfolio, derivatives, ML, or systems). The **root cause** names the first-principles violation underneath, the **remedy** says what to change, and the **canonical page** takes you to the full treatment - math, code, and the complete failure-mode catalogue.
 
-**What this supplements.** This index is a *pointer*, not a replacement. Each canonical page's **§5 Failure Modes & Practice** remains the authoritative, full-depth treatment of every failure mode here — with the derivations, runnable code, and numbered checklist. Use this page to route yourself fast; use the §5 to actually fix it.
+**What this supplements.** This index is a *pointer*, not a replacement. Each canonical page's **§5 Failure Modes & Practice** remains the authoritative, full-depth treatment of every failure mode here - with the derivations, runnable code, and numbered checklist. Use this page to route yourself fast; use the §5 to actually fix it.
 
 ---
 
@@ -406,4 +406,4 @@ This is the **global** troubleshooting index for the whole Atlas — the aggrega
 
 ---
 
-*Last note: this index is generated from, and points back to, the canonical §5 **Failure Modes & Practice** page of each folder — go there for the derivation, the code, and the complete numbered checklist.*
+*Last note: this index is generated from, and points back to, the canonical §5 **Failure Modes & Practice** page of each folder - go there for the derivation, the code, and the complete numbered checklist.*

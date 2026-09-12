@@ -15,9 +15,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Tick-by-tick prices are **not** noisy copies of the same "true" price. Every trade executes at either the bid or the ask, so consecutive trades *bounce* between two prices that straddle the efficient price. That bounce injects a spurious **negative** serial correlation into observed returns — the signature of the **bid-ask spread** — even when the efficient price itself is a random walk with no predictability at all.
+Tick-by-tick prices are **not** noisy copies of the same "true" price. Every trade executes at either the bid or the ask, so consecutive trades *bounce* between two prices that straddle the efficient price. That bounce injects a spurious **negative** serial correlation into observed returns - the signature of the **bid-ask spread** - even when the efficient price itself is a random walk with no predictability at all.
 
-This folder is the measurement hub for Pillar 6. Its job is the market maker's *accounting* problem: **how much does it cost to trade, and where does the spread revenue go?** It (a) defines the three spread measures (quoted, effective, realized) that every execution desk computes, (b) delivers the **Roll (1984) estimator** — the single most famous microstructure formula, which recovers the spread from just the autocovariance of returns, and (c) decomposes the spread into its economic components (**order processing, inventory holding, adverse selection**) following Glosten–Harris, Stoll, and Huang–Stoll.
+This folder is the measurement hub for Pillar 6. Its job is the market maker's *accounting* problem: **how much does it cost to trade, and where does the spread revenue go?** It (a) defines the three spread measures (quoted, effective, realized) that every execution desk computes, (b) delivers the **Roll (1984) estimator** - the single most famous microstructure formula, which recovers the spread from just the autocovariance of returns, and (c) decomposes the spread into its economic components (**order processing, inventory holding, adverse selection**) following Glosten–Harris, Stoll, and Huang–Stoll.
 
 > **The one-sentence essence.** "Trade prices bounce between bid and ask, so the first-order autocovariance of returns is negative; the effective spread is $2\sqrt{-\gamma_1}$, and the realized spread is what the liquidity provider keeps after the informed flow has moved the price."
 
@@ -31,11 +31,11 @@ This folder is the measurement hub for Pillar 6. Its job is the market maker's *
 
 | Quantity | Definition / Formula | Verified check |
 |---|---|---|
-| Roll trade price | $p_t = m_t + q_t\,c$, $\;m_t=m_{t-1}+u_t$ | — |
-| Return variance | $\gamma_0 \equiv \mathrm{Var}(\Delta p_t) = 2c^2+\sigma_u^2$ | — |
+| Roll trade price | $p_t = m_t + q_t\,c$, $\;m_t=m_{t-1}+u_t$ | - |
+| Return variance | $\gamma_0 \equiv \mathrm{Var}(\Delta p_t) = 2c^2+\sigma_u^2$ | - |
 | Return autocovariance | $\gamma_1 \equiv \mathrm{Cov}(\Delta p_{t-1},\Delta p_t) = -c^2$ (lags ≥ 2 zero) | $\gamma_1<0$ always under Roll |
 | **Roll effective spread** | $S=2\sqrt{-\gamma_1}$ | est $0.04991$ vs true $0.050$ |
-| Efficient innovation var | $\sigma_u^2=\gamma_0+2\gamma_1$ | — |
+| Efficient innovation var | $\sigma_u^2=\gamma_0+2\gamma_1$ | - |
 | Quoted spread | $S_q=a_t-b_t$ | $0.0600$ |
 | Effective spread | $S_e = 2\,q_t\,(p_t - m_t)$ | $0.0600$ |
 | Realized spread | $S_r = 2\,q_t\,(p_t-m_{t+\Delta})$ | $0.0400$ |
@@ -62,79 +62,25 @@ $$
 \Delta p_t = c\,(q_t-q_{t-1})+\lambda q_t+u_t,\qquad \gamma_1 = -c\,(c+\lambda),\qquad \gamma_0=c^2+(c+\lambda)^2+\sigma_u^2.
 $$
 
-So the **total spread is $2(c+\lambda)$**: $c$ = order-processing/inventory, $\lambda$ = adverse selection. Because only two autocovariances are observable but three structural parameters $\{c,\lambda,\sigma_u^2\}$ exist, the model is under-identified — this is why the decomposition needs trade-direction data, not just prices (see [[pillars/06-market-making/spread-decomposition-and-roll-model/04-spread-decomposition|04 · Spread Decomposition]]).
+So the **total spread is $2(c+\lambda)$**: $c$ = order-processing/inventory, $\lambda$ = adverse selection. Because only two autocovariances are observable but three structural parameters $\{c,\lambda,\sigma_u^2\}$ exist, the model is under-identified - this is why the decomposition needs trade-direction data, not just prices (see [[pillars/06-market-making/spread-decomposition-and-roll-model/04-spread-decomposition|04 · Spread Decomposition]]).
 
 ---
 
-### 3. Computational Implementation — the measurement engine
+### 3. Computational Implementation - the measurement engine
 
 This runs on the **standard library only**. It simulates a Roll-process price series, recovers the spread from the autocovariance, computes the quoted/effective/realized spread on a quote path, and estimates the $c/\lambda$ decomposition by regression. Every number below was reproduced exactly by this code.
 
-```python
-import math, random
 
-def roll_estimate(prices):
-    """Roll (1984): effective spread from return autocovariance. Returns None if gamma1>=0."""
-    dp = [prices[i]-prices[i-1] for i in range(1, len(prices))]
-    n = len(dp); mean = sum(dp)/n
-    g1 = sum((dp[i]-mean)*(dp[i-1]-mean) for i in range(1, n))/n
-    return (2.0*math.sqrt(-g1) if g1 < 0 else None), g1
 
-# (1) Roll estimator from a simulated price series with known spread 0.05
-random.seed(1234)
-def simulate_roll(n=20000, spread=0.05, sig_u=0.01):
-    c = spread/2.0; m = 100.0; ps = []
-    for _ in range(n):
-        m += random.gauss(0, sig_u)
-        q = random.choice([-1, 1])
-        ps.append(m + q*c)
-    return ps
 
-pr = simulate_roll()
-est, g1 = roll_estimate(pr)
-print(f"Roll estimate: gamma1={g1:.7f}  spread={est:.5f}   (true 0.050)")
-```
-```
-Roll estimate: gamma1=-0.0006227  spread=0.04991   (true 0.050)
-```
 
-```python
-import math, random
 
-random.seed(7)
-def simulate_quotes(n=5000, c=0.02, lam=0.01, sig_u=0.005):
-    m = 100.0; mids = []; post = []; trades = []
-    for _ in range(n):
-        m += random.gauss(0, sig_u)              # public information moves the midpoint
-        q = random.choice([-1, 1])               # trade direction
-        mids.append(m); trades.append((q, m + q*(c+lam)))   # trade prints AT the touch
-        m += lam*q                               # adverse-selection impact AFTER the trade
-        post.append(m)
-    return trades, mids, post
-
-trades, mids, post = simulate_quotes()
-n = len(trades)
-qs   = [t[0] for t in trades]
-se   = sum(2.0*q*(p-m) for (q,p),m in zip(trades,mids))/n        # effective  = 2(c+lam)
-imp  = sum(2.0*q*(a-b) for q,b,a in zip(qs,mids,post))/n         # impact     = 2*lam
-sr   = se - imp                                                  # realized   = 2c
-print(f"quoted   spread = {2*(0.02+0.01):.4f}   (= 2(c+lambda))")
-print(f"effective spread = {se:.4f}   (= 2(c+lambda), trades at the touch)")
-print(f"realized  spread = {sr:.4f}   (= 2c, what the maker keeps)")
-print(f"adverse-selection loss = {imp:.4f}   (= 2*lambda)")
-```
-```
-quoted   spread = 0.0600   (= 2(c+lambda))
-effective spread = 0.0600   (= 2(c+lambda), trades at the touch)
-realized  spread = 0.0400   (= 2c, what the maker keeps)
-adverse-selection loss = 0.0200   (= 2*lambda)
-```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-Hub signposts — the folder's failure-mode analysis lives in [[pillars/06-market-making/spread-decomposition-and-roll-model/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
+Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-making/spread-decomposition-and-roll-model/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
 1. **Positive autocovariance.** The estimator needs $\gamma_1<0$; momentum, clustering, or any persistence in the efficient returns can flip it positive and the square root breaks ($\sqrt{-}$ of a negative).
 2. **Serial-correlated order flow.** Buys-follow-buys (real data: $\mathrm{corr}(q_t,q_{t-1})\approx0.34$) biases the Roll spread **downward** (Hasbrouck Ex 4.2).
@@ -145,24 +91,20 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/06-marke
 
 ### 5. Canonical Literature & Study References
 
-- **Roll, Richard (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139. *The covariance estimator — the anchor of this folder.*
-- **Hasbrouck, Joel (2007)**, *Empirical Market Microstructure*, OUP — Ch 3 (the Roll model, $p_t=m_t+q_t c$, $\gamma_1=-c^2$), Ch 4 (MA(1), Wold, estimation, Roll-bias Ex 4.2/4.3), Ch 8 (generalized Roll & the random-walk decomposition). *Primary deep-read, verified per-chapter in the corpus.*
+- **Roll, Richard (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139. *The covariance estimator - the anchor of this folder.*
+- **Hasbrouck, Joel (2007)**, *Empirical Market Microstructure*, OUP - Ch 3 (the Roll model, $p_t=m_t+q_t c$, $\gamma_1=-c^2$), Ch 4 (MA(1), Wold, estimation, Roll-bias Ex 4.2/4.3), Ch 8 (generalized Roll & the random-walk decomposition). *Primary deep-read, verified per-chapter in the corpus.*
 - **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142. *The transitory-vs-permanent decomposition.*
 - **Stoll (1989)**, *Inferring the components of the bid-ask spread: theory and empirical tests*, Journal of Finance 44(1), 115–134. *Order-processing vs inventory vs adverse-information via reversal probability $\pi$ and reversal size $\delta$.*
 - **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, Review of Financial Studies 10(4), 995–1034. *The three-component decomposition in one framework.*
-- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1) — effective-spread measurement as a market-quality gauge.
+- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1) - effective-spread measurement as a market-quality gauge.
 
 ---
 
 ### 6. Connected Graph Bridges
 
 - Foundational base: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (autocovariance, MA(1), stationarity) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (martingales, i.i.d.)
-- Sibling topic: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] (why $\lambda>0$ — the information half of the spread) · [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]] (quoted spread, depth, effective half-spread) · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] (the inventory half)
+- Sibling topic: [[pillars/06-market-making/adverse-selection-and-glosten-milgrom|Adverse Selection & Glosten–Milgrom]] (why $\lambda>0$ - the information half of the spread) · [[pillars/06-market-making/limit-order-book-mechanics/index|Limit Order Book Mechanics]] (quoted spread, depth, effective half-spread) · [[pillars/06-market-making/inventory-management-and-quote-skewing|Inventory Management & Quote Skewing]] (the inventory half)
 - Sub-pages (in-folder): 01 From Zero · 02 Quoted / Effective / Realized · 03 The Roll Model · 04 Spread Decomposition · 05 Failure Modes & Practice · 06 Advanced Extensions
 - Cross-pillar: [[pillars/02-algorithmic-hft/market-microstructure-and-order-types|Market Microstructure & Order Types]] · [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution]]
 
-**Recommended reading route (audience arc):**
-- **Absolute beginner:** [[pillars/06-market-making/spread-decomposition-and-roll-model/01-from-zero-intuition|01 · From Zero]] — no prior knowledge needed.
-- **Measures + code (undergrad/job-seeking):** [[pillars/06-market-making/spread-decomposition-and-roll-model/02-quoted-effective-realized|02 · Quoted / Effective / Realized]] → [[pillars/06-market-making/spread-decomposition-and-roll-model/03-the-roll-model|03 · The Roll Model]] → [[pillars/06-market-making/spread-decomposition-and-roll-model/04-spread-decomposition|04 · Spread Decomposition]].
-- **Robustness (practitioner/graduate):** [[pillars/06-market-making/spread-decomposition-and-roll-model/05-failure-modes-and-practice|05 · Failure Modes & Practice]] → [[pillars/06-market-making/spread-decomposition-and-roll-model/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/06-market-making/toxic-order-flow-and-vpin|Toxic Order Flow & VPIN]] · [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|The Avellaneda–Stoikov Model]]
+**Beginner:** start at [[pillars/06-market-making/spread-decomposition-and-roll-model/01-from-zero-intuition|01]] · **Practitioner:** start at [[pillars/06-market-making/spread-decomposition-and-roll-model/05-failure-modes-and-practice|05]]

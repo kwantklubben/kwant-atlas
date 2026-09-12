@@ -15,14 +15,14 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The Python stack is *fast when used right and silently wrong when used wrong*. This page names the failure modes precisely so a practitioner knows **which assumption is failing and how it shows up in money terms**. The objective is not cynicism — it is the discipline of knowing exactly where the stack can corrupt a result or hide a cost, so it can be caught and fixed.
+The Python stack is *fast when used right and silently wrong when used wrong*. This page names the failure modes precisely so a practitioner knows **which assumption is failing and how it shows up in money terms**. The objective is not cynicism - it is the discipline of knowing exactly where the stack can corrupt a result or hide a cost, so it can be caught and fixed.
 
 The failure modes, tied to first principles:
 
-1. **Hidden copies** — indexing that selects a copy (fancy/boolean indexing in NumPy, chained assignment in pandas) makes writes vanish; the "column I updated is still zero" bug.
-2. **dtype traps** — `object` columns, integer overflow, and float-cents arithmetic corrupt results silently and slow the pipeline (the $N\cdot c_{\text{py}}$ cost returns).
-3. **The GIL** — CPU-bound pure-Python code cannot use threads; only processes (or releasing the GIL) scale past one core.
-4. **`apply` and elementwise loops** — re-entering interpreted Python per element discards the entire point of the stack.
+1. **Hidden copies** - indexing that selects a copy (fancy/boolean indexing in NumPy, chained assignment in pandas) makes writes vanish; the "column I updated is still zero" bug.
+2. **dtype traps** - `object` columns, integer overflow, and float-cents arithmetic corrupt results silently and slow the pipeline (the $N\cdot c_{\text{py}}$ cost returns).
+3. **The GIL** - CPU-bound pure-Python code cannot use threads; only processes (or releasing the GIL) scale past one core.
+4. **`apply` and elementwise loops** - re-entering interpreted Python per element discards the entire point of the stack.
 
 ---
 
@@ -34,70 +34,27 @@ $$
 T_K \approx K \cdot t_{\text{one}} \qquad\Rightarrow\qquad \text{speedup} \approx 1 \quad\text{(no gain from threads).}
 $$
 
-NumPy and Numba release the GIL *while their compiled code runs*, so real parallelism requires either (a) C-level releases (numpy/numba with `nogil=True`), or (b) separate processes (no shared interpreter). The §3 benchmark measures a thread speedup of **~1.0×** versus a process speedup of **~1.9×** on 16 cores — exactly this theorem.
+NumPy and Numba release the GIL *while their compiled code runs*, so real parallelism requires either (a) C-level releases (numpy/numba with `nogil=True`), or (b) separate processes (no shared interpreter). The §3 benchmark measures a thread speedup of **~1.0×** versus a process speedup of **~1.9×** on 16 cores - exactly this theorem.
 
 **The dtype-consistency principle.** Every column/array must have one uniform machine type. When it doesn't (an `object` column, or an `int32` that overflows), the operation either (a) falls back to per-element interpreted dispatch ($N\cdot c_{\text{py}}$, 47× slower, [[pillars/08-quantitative-development/python-quant-stack/03-pandas-pitfalls|03]]) or (b) wraps silently in arithmetic (integer overflow) because the result no longer fits the fixed-width type. Both are first-principles consequences of the contiguous-typed-buffer design that makes the stack fast.
 
-**Integer overflow.** A fixed-width signed `int32` holds $[-2^{31},\, 2^{31}-1]$. Adding $2\times 10^9 + 2\times 10^9 = 4\times 10^9$ wraps modulo $2^{32}$ to $4\times 10^9 - 2^{32} = -294{,}967{,}296$ — silently, with at most a `RuntimeWarning`. NumPy's `.sum()` upcasts to `int64` (hence correct), but scalar/array arithmetic on `int32` does not.
+**Integer overflow.** A fixed-width signed `int32` holds $[-2^{31},\, 2^{31}-1]$. Adding $2\times 10^9 + 2\times 10^9 = 4\times 10^9$ wraps modulo $2^{32}$ to $4\times 10^9 - 2^{32} = -294{,}967{,}296$ - silently, with at most a `RuntimeWarning`. NumPy's `.sum()` upcasts to `int64` (hence correct), but scalar/array arithmetic on `int32` does not.
 
 ---
 
-### 3. Computational Implementation — the failures in numbers
+### 3. Computational Implementation - the failures in numbers
 
-**Experiment 1 — the GIL: threads do nothing, processes do.**
+**Experiment 1 - the GIL: threads do nothing, processes do.**
 
-```python
-import time, threading, numpy as np
-import concurrent.futures as cf
 
-def burn():                                # CPU-bound pure-Python work
-    s = 0
-    for i in range(60_000_000):
-        s += i*i
-    return s
 
-def worker(_): return burn()
+Threads give **1.02×** - the GIL serialized the work exactly as predicted. Processes give **1.90×** on this 16-core box. Rule: for CPU-bound Python, use processes (or release the GIL via numpy/numba), never naive threads.
 
-if __name__ == "__main__":
-    t0=time.perf_counter(); burn(); burn(); seq=time.perf_counter()-t0
-    ts=[threading.Thread(target=burn) for _ in range(2)]
-    t0=time.perf_counter()
-    for t in ts: t.start()
-    for t in ts: t.join()
-    thr=time.perf_counter()-t0
-    with cf.ProcessPoolExecutor(max_workers=2) as ex:
-        t0=time.perf_counter(); list(ex.map(worker, range(2))); t1=time.perf_counter()
-    print(f"sequential 2x burn:   {seq:.3f} s")
-    print(f"two threads (GIL):    {thr:.3f} s  speedup {seq/thr:.2f}x  (serialized)")
-    print(f"two processes (free): {t1-t0:.3f} s  speedup {seq/(t1-t0):.2f}x")
-```
-```
-sequential 2x burn:   4.726 s
-two threads (GIL):    4.632 s  speedup 1.02x  (serialized)
-two processes (free): 2.493 s  speedup 1.90x
-```
-Threads give **1.02×** — the GIL serialized the work exactly as predicted. Processes give **1.90×** on this 16-core box. Rule: for CPU-bound Python, use processes (or release the GIL via numpy/numba), never naive threads.
+**Experiment 2 - hidden copies: view vs copy, proven.**
 
-**Experiment 2 — hidden copies: view vs copy, proven.**
 
-```python
-import numpy as np
-base = np.arange(12)
-view  = base[::2]          # slice   -> VIEW (shares memory)
-fancy = base[[0,2,4,6]]    # fancy   -> COPY
-print(f"base[::2]  shares memory: {np.shares_memory(view, base)}   (view)")
-print(f"base[[..]] shares memory: {np.shares_memory(fancy, base)}  (copy)")
-arr = np.array([2_000_000_000, 2_000_000_000], dtype=np.int32)
-print(f"int32 overflow: {arr[0]} + {arr[1]} = {arr[0]+arr[1]:,}  (silent wrong, should be 4,000,000,000)")
-print(f"numpy .sum() upcasts to int64 -> {arr.sum():,} (correct)")
-```
-```
-base[::2]  shares memory: True   (view)
-base[[..]] shares memory: False  (copy)
-int32 overflow: 2000000000 + 2000000000 = -294,967,296  (silent wrong, should be 4,000,000,000)
-numpy .sum() upcasts to int64 -> 4,000,000,000 (correct)
-```
-The hidden-copy trap is the same mechanism as the pandas chained-assignment loss ([[pillars/08-quantitative-development/python-quant-stack/03-pandas-pitfalls|03]]), and the `int32` overflow is the dtype trap — both silent, both corrupting, both caught only by knowing the rule.
+
+The hidden-copy trap is the same mechanism as the pandas chained-assignment loss ([[pillars/08-quantitative-development/python-quant-stack/03-pandas-pitfalls|03]]), and the `int32` overflow is the dtype trap - both silent, both corrupting, both caught only by knowing the rule.
 
 ---
 
@@ -113,10 +70,10 @@ The hidden-copy trap is the same mechanism as the pandas chained-assignment loss
 
 ### 5. Canonical Literature & Study References
 
-- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) — ch. 3 (lists vs tuples/memory), ch. 6 (async/parallel), ch. 9 (the GIL and multiprocessing); the definitive Python-performance failure-mode text.
-- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) — the dtype/`object`-column and indexing semantics behind modes 1–2.
-- **Beazley, David**: *Understanding the Python GIL* (PyCon talk, 2010) — the canonical explainer of what the GIL is and why it exists.
-- **Numba official docs** — `nogil=True` semantics for thread-parallel compiled code.
+- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) - ch. 3 (lists vs tuples/memory), ch. 6 (async/parallel), ch. 9 (the GIL and multiprocessing); the definitive Python-performance failure-mode text.
+- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) - the dtype/`object`-column and indexing semantics behind modes 1–2.
+- **Beazley, David**: *Understanding the Python GIL* (PyCon talk, 2010) - the canonical explainer of what the GIL is and why it exists.
+- **Numba official docs** - `nogil=True` semantics for thread-parallel compiled code.
 
 ---
 

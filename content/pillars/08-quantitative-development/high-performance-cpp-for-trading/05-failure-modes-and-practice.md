@@ -19,11 +19,11 @@ High-performance C++ fails in a small, recurring set of ways, and every one of t
 
 The five failures, one line each:
 
-1. **Hidden allocation in the hot path** — a `push_back`/`make_unique`/`std::function` allocates, and the *tail* (not the mean) explodes.
-2. **Cache misses** — a locality-blind layout fetches $3\times$ (or more) the bytes it uses, starving on memory latency.
-3. **Undefined behaviour (UB)** — signed overflow, aliasing violations, and data races don't just "give weird results"; they let the optimiser delete the code you measured, so the benchmark lies.
-4. **Branch misprediction** — unpredictable control flow flushes a 14–20 stage pipeline (~15–20 cycles) per miss; data *ordering* alone can eliminate it.
-5. **The micro-optimisation fallacy** — tuning arithmetic while the real cost is memory layout (§2.2) or the allocator (§2.3).
+1. **Hidden allocation in the hot path** - a `push_back`/`make_unique`/`std::function` allocates, and the *tail* (not the mean) explodes.
+2. **Cache misses** - a locality-blind layout fetches $3\times$ (or more) the bytes it uses, starving on memory latency.
+3. **Undefined behaviour (UB)** - signed overflow, aliasing violations, and data races don't just "give weird results"; they let the optimiser delete the code you measured, so the benchmark lies.
+4. **Branch misprediction** - unpredictable control flow flushes a 14–20 stage pipeline (~15–20 cycles) per miss; data *ordering* alone can eliminate it.
+5. **The micro-optimisation fallacy** - tuning arithmetic while the real cost is memory layout (§2.2) or the allocator (§2.3).
 
 > **One-sentence essence.** "In a latency path, 'correct' and 'fast' are the same requirement: any hidden allocation, cache miss, or UB is simultaneously a performance defect and a correctness risk."
 
@@ -39,7 +39,7 @@ $$
 C(N) = \sum_{k=0}^{\lfloor\log_2 N\rfloor} 2^{k} \approx N - 1,
 $$
 
-so the **amortised** cost per append is $C(N)/N \approx 1$ element copy — $O(1)$ in the mean. But the **worst single** append, when $\text{size} = \text{capacity}$, copies $\text{capacity} \approx N/2$ elements in one operation, at a moment chosen by the data, not by you. The gap defines the engineering rule:
+so the **amortised** cost per append is $C(N)/N \approx 1$ element copy - $O(1)$ in the mean. But the **worst single** append, when $\text{size} = \text{capacity}$, copies $\text{capacity} \approx N/2$ elements in one operation, at a moment chosen by the data, not by you. The gap defines the engineering rule:
 
 $$
 C_{\text{reserve}}(N) = 0 \ \text{copies}, \quad \text{reallocations}=0 \quad\Longrightarrow\quad \text{bounded } O(1) \text{ per append.}
@@ -53,7 +53,7 @@ For an $s$-byte AoS record scanning one field, distinct 64-byte lines scale as $
 
 #### 2.3 Branch misprediction
 
-A modern CPU speculates past branches; a correct guess is free, a wrong guess flushes the pipeline for $r \approx 15\text{–}20$ cycles. For a branch taken with probability $p$, a simple predictor is wrong with probability $m$ — for an unpredictable 50/50 branch $m \to 0.5$, giving expected cost per iteration
+A modern CPU speculates past branches; a correct guess is free, a wrong guess flushes the pipeline for $r \approx 15\text{–}20$ cycles. For a branch taken with probability $p$, a simple predictor is wrong with probability $m$ - for an unpredictable 50/50 branch $m \to 0.5$, giving expected cost per iteration
 
 $$
 \mathbb{E}[t_{\text{branch}}] = m \cdot r \approx 0.5 \times 15 = 7.5\ \text{cycles}.
@@ -77,104 +77,19 @@ Optimise top-down: eliminate misses and allocations first; branches and arithmet
 
 ---
 
-### 3. Computational Implementation — two failures, modelled
+### 3. Computational Implementation - two failures, modelled
 
-**Experiment 1 — the vector growth model (§2.1).** Simulate doubling growth vs `reserve()`, counting reallocations and element copies, and expose the spike.
+**Experiment 1 - the vector growth model (§2.1).** Simulate doubling growth vs `reserve()`, counting reallocations and element copies, and expose the spike.
 
-```python
-# Model std::vector::push_back growth: capacity doubles, each growth copies
-# every live element into the new block. Amortized O(1), but the copies spike.
-def vector_growth(n, reserve=None):
-    cap = 1 if reserve is None else reserve
-    size = 0
-    copies = 0
-    reallocs = 0
-    worst = 0
-    for _ in range(n):
-        if size == cap:
-            copies += cap            # reallocate + copy `cap` elements
-            reallocs += 1
-            worst = max(worst, cap)
-            cap *= 2
-        size += 1
-    return reallocs, copies, worst
 
-N = 1_000_000
-r1, c1, w1 = vector_growth(N)            # naive push_back
-r2, c2, w2 = vector_growth(N, reserve=N)  # reserve() up front
 
-print(f"Growth of a vector to {N:,} elements")
-print(f"  push_back (doubling): {r1:3d} reallocations, "
-      f"{c1:,} element copies, worst single spike {w1:,} copies")
-print(f"  reserve(N) upfront  : {r2:3d} reallocations, "
-      f"{c2:,} element copies, worst single spike {w2:,} copies")
-print(f"  total copy work ratio = {c1/max(c2,1):,.0f}x  "
-      f"(amortized O(1) still pays {c1/N:.2f} copies per element)")
 
-print(f"\n  worst-case tail: one push_back can copy {w1:,} elements "
-      f"({w1*24/1024:.0f} KiB memcpy) at an unpredictable time")
-print(f"  with reserve() the hot path never reallocates -> deterministic latency")
-```
-```
-Growth of a vector to 1,000,000 elements
-  push_back (doubling):  20 reallocations, 1,048,575 element copies, worst single spike 524,288 copies
-  reserve(N) upfront  :   0 reallocations, 0 element copies, worst single spike 0 copies
-  total copy work ratio = 1,048,575x  (amortized O(1) still pays 1.05 copies per element)
+**Reading Experiment 1.** Growing to $10^6$ elements costs **20 reallocations and 1,048,575 element copies** - about 1.05 copies per element (the $C(N)\approx N$ law of §2.1) with a **single worst spike of 524,288 copies (~12 MiB memcpy)** landing at an arbitrary tick. `reserve(N)` reduces all three to **zero**. This is exactly the "amortised but unbounded" trap: the average is fine, the spike destroys a latency budget.
 
-  worst-case tail: one push_back can copy 524,288 elements (12288 KiB memcpy) at an unpredictable time
-  with reserve() the hot path never reallocates -> deterministic latency
-```
+**Experiment 2 - branch misprediction (§2.3).** Model a 2-bit saturating predictor over random vs sorted data; the *same* comparison costs 7.5 cycles/iter unsorted and ~0 sorted.
 
-**Reading Experiment 1.** Growing to $10^6$ elements costs **20 reallocations and 1,048,575 element copies** — about 1.05 copies per element (the $C(N)\approx N$ law of §2.1) with a **single worst spike of 524,288 copies (~12 MiB memcpy)** landing at an arbitrary tick. `reserve(N)` reduces all three to **zero**. This is exactly the "amortised but unbounded" trap: the average is fine, the spike destroys a latency budget.
 
-**Experiment 2 — branch misprediction (§2.3).** Model a 2-bit saturating predictor over random vs sorted data; the *same* comparison costs 7.5 cycles/iter unsorted and ~0 sorted.
 
-```python
-import random
-
-random.seed(123)
-
-def two_bit_predictor(seq):
-    """Numeric 2-bit saturating branch predictor; returns mispredict rate.
-    Penalty per mispredict ~= 15 cycles (pipeline flush)."""
-    state = 1          # 0..3, start weakly-not-taken
-    miss = 0
-    for taken in seq:
-        pred = state >= 2
-        if pred != taken:
-            miss += 1
-        state = min(3, state + 1) if taken else max(0, state - 1)
-    return miss
-
-def mispredict_rate(data):
-    seq = [x >= 128 for x in data]
-    return two_bit_predictor(seq) / len(seq)
-
-N = 1_000_000
-data = [random.randint(0, 255) for _ in range(N)]
-unsorted_rate = mispredict_rate(data)          # 50/50 -> unpredictable
-sorted_rate   = mispredict_rate(sorted(data))  # runs -> predictable
-
-PENALTY = 15  # cycles per pipeline flush
-print(f"Branch predictor on N={N:,} random vs sorted data")
-print(f"  unsorted (random order): {unsorted_rate*100:5.1f}% mispredict "
-      f"-> {unsorted_rate*PENALTY:5.2f} cycles/iter")
-print(f"  sorted   (runs)        : {sorted_rate*100:5.2f}% mispredict "
-      f"-> {sorted_rate*PENALTY:5.3f} cycles/iter")
-factor = unsorted_rate / sorted_rate if sorted_rate else float("inf")
-print(f"  same algorithm, same data: ordering alone cut the mispredict rate "
-      f"to ~0 (>{factor:.0f}x lower)")
-
-print(f"\n  branchless (cmov/arithmetic): ~1 cycle, no misprediction possible")
-```
-```
-Branch predictor on N=1,000,000 random vs sorted data
-  unsorted (random order):  50.0% mispredict ->  7.50 cycles/iter
-  sorted   (runs)        :  0.00% mispredict -> 0.000 cycles/iter
-  same algorithm, same data: ordering alone cut the mispredict rate to ~0 (>250106x lower)
-
-  branchless (cmov/arithmetic): ~1 cycle, no misprediction possible
-```
 
 **Reading Experiment 2.** The comparison is identical; only the *order* differs. Random data defeats the predictor (50% miss → 7.5 cycles/iter of pure flushed pipeline), while runs on sorted data make it nearly free. The lesson is structural: either make the data predictable (sort/bucket before the hot loop) or make the code branchless. In trading, the usual answer is branchless, because you cannot reorder the market's arrivals.
 
@@ -189,17 +104,17 @@ Branch predictor on N=1,000,000 random vs sorted data
 3. **Undefined behaviour → a benchmark that lies** (§2.4). Signed overflow, strict-aliasing, and data races let the optimiser delete/reorder the measured code. Cause: C++'s "no UB" optimiser assumption. Fix: sanitizers, `std::atomic`, strict-aliasing-safe access.
 4. **Branch misprediction → pipeline flushes** (§2.3, §3 Exp 2). Unpredictable control flow costs $m\cdot r$ cycles; data order alone changes it by orders of magnitude. Cause: speculation + unpredictable condition. Fix: branchless/`cmov`, sort/bucket inputs.
 5. **The micro-optimisation fallacy** (§2.5). Hand-tuning arithmetic while the cost is at the memory or allocator tier. Cause: optimising the wrong level of the hierarchy. Fix: profile first, measure percentiles, optimise top-down.
-6. **False sharing across threads.** Per-thread state sharing a cache line serialises on coherence traffic — a latency bug that looks like no bug. Fix: `alignas(64)` (§03). Cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
+6. **False sharing across threads.** Per-thread state sharing a cache line serialises on coherence traffic - a latency bug that looks like no bug. Fix: `alignas(64)` (§03). Cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Meyers, Scott**: *Effective Modern C++* — Items on `reserve`, `emplace`, move, and the costs hiding in `std::function`/`shared_ptr`.
-- **Fog, Agner**: *Optimizing Software in C++* — branch prediction, the misprediction penalty, and branchless techniques; also the compiler-optimisation/UB interaction.
-- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* — Ch 9 (allocator internals: why allocation has a slow path and a tail) and Ch 6 (misses).
-- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.) — data races as UB and the memory model; cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* — the zero-allocation hot path and pre-allocated buffers in a real system.
+- **Meyers, Scott**: *Effective Modern C++* - Items on `reserve`, `emplace`, move, and the costs hiding in `std::function`/`shared_ptr`.
+- **Fog, Agner**: *Optimizing Software in C++* - branch prediction, the misprediction penalty, and branchless techniques; also the compiler-optimisation/UB interaction.
+- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* - Ch 9 (allocator internals: why allocation has a slow path and a tail) and Ch 6 (misses).
+- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.) - data races as UB and the memory model; cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++* - the zero-allocation hot path and pre-allocated buffers in a real system.
 
 ---
 

@@ -22,14 +22,14 @@ $$
 w_{\text{MV}}\propto\Sigma^{-1}\mu,\qquad w_{\text{GMV}}=\frac{\Sigma^{-1}\mathbf 1}{\mathbf 1^\top\Sigma^{-1}\mathbf 1}.
 $$
 
-Both need $\Sigma^{-1}$. The problem is not that $\Sigma$ is hard to invert numerically — it is that the $\hat\Sigma$ you have is an **estimate**, and the inverse converts estimation *error* into position *size*. The optimizer will, by construction, take its largest long and short positions along the directions where the sample covariance is most wrong. Michaud (1989) named this **"error maximization"**: the very act of optimizing magnifies the noise in the inputs.
+Both need $\Sigma^{-1}$. The problem is not that $\Sigma$ is hard to invert numerically - it is that the $\hat\Sigma$ you have is an **estimate**, and the inverse converts estimation *error* into position *size*. The optimizer will, by construction, take its largest long and short positions along the directions where the sample covariance is most wrong. Michaud (1989) named this **"error maximization"**: the very act of optimizing magnifies the noise in the inputs.
 
 The three failure signatures, in one line each:
 1. **Extreme positions.** $w\propto\Sigma^{-1}\mathbf 1$ scales like $1/\lambda_i$, so tiny noise eigenvalues produce enormous weights and large long/short gross exposure.
 2. **In-sample lies.** The reported risk $w^\top\hat\Sigma w$ is *below* the realized risk $w^\top\Sigma w$, because the optimizer was fit on the same $\hat\Sigma$.
-3. **A parameter-free benchmark that wins.** DeMiguel, Garlappi & Uppal (2009) showed no sophisticated optimizer reliably beats $1/N$ out-of-sample without decades of data — the bar every model must clear.
+3. **A parameter-free benchmark that wins.** DeMiguel, Garlappi & Uppal (2009) showed no sophisticated optimizer reliably beats $1/N$ out-of-sample without decades of data - the bar every model must clear.
 
-HRP's design is a direct answer to (1): if the inverse is the amplifier, **do not invert** — replace $\Sigma^{-1}$ with a tree whose edges come from the *ordering* of correlations, not their magnitudes.
+HRP's design is a direct answer to (1): if the inverse is the amplifier, **do not invert** - replace $\Sigma^{-1}$ with a tree whose edges come from the *ordering* of correlations, not their magnitudes.
 
 ---
 
@@ -55,7 +55,7 @@ $$
 \frac{\Delta\lambda_i}{\lambda_i^2}\ \text{is largest exactly where }\lambda_i\ \text{is smallest}\;\Longrightarrow\;\text{the optimizer loads the noise subspace.}
 $$
 
-This is the analytic form of "estimation-error maximizer." (Chopra–Ziemba 1993 quantify the priority: errors in **means** hurt $\sim11\times$ more than variances and $\sim21\times$ more than covariances (variances hurt $\sim2\times$ more than covariances) — which is why a *returns-free* allocator like HRP is attractive, but also why covariances still matter.)
+This is the analytic form of "estimation-error maximizer." (Chopra–Ziemba 1993 quantify the priority: errors in **means** hurt $\sim11\times$ more than variances and $\sim21\times$ more than covariances (variances hurt $\sim2\times$ more than covariances) - which is why a *returns-free* allocator like HRP is attractive, but also why covariances still matter.)
 
 #### 2.2 The in-sample / out-of-sample gap
 
@@ -73,86 +73,25 @@ HRP replaces the eigen-decomposition-and-invert step with three operations that 
 
 1. a *monotone* map $\rho\mapsto d=\sqrt{\tfrac12(1-\rho)}\in[0,1]$ (no division by small numbers);
 2. a *combinatorial* merge rule (distances compared, never raised to a negative power);
-3. *inverse-variance of sub-blocks*, $w_{\mathcal C}\propto\operatorname{diag}(\Sigma_{\mathcal C})^{-1}$ — a diagonal reciprocal, which needs only the $N$ variances, not the $N(N-1)/2$ covariances and never a matrix inverse.
+3. *inverse-variance of sub-blocks*, $w_{\mathcal C}\propto\operatorname{diag}(\Sigma_{\mathcal C})^{-1}$ - a diagonal reciprocal, which needs only the $N$ variances, not the $N(N-1)/2$ covariances and never a matrix inverse.
 
 No step forms $\lambda_i^{-2}$. That is the whole robustness argument, and Section 3 is its empirical face.
 
 ---
 
-### 3. Computational Implementation — the failure, measured
+### 3. Computational Implementation - the failure, measured
 
-A synthetic-but-honest universe: $N=50$ assets drawn from **4 common factors plus idiosyncratic risk**, with $T=60$ monthly observations — the realistic regime where $T>N$ but not by much. We estimate $\hat\Sigma$ on the window, build the minimum-variance portfolio, and score it against the *true* $\Sigma$.
+A synthetic-but-honest universe: $N=50$ assets drawn from **4 common factors plus idiosyncratic risk**, with $T=60$ monthly observations - the realistic regime where $T>N$ but not by much. We estimate $\hat\Sigma$ on the window, build the minimum-variance portfolio, and score it against the *true* $\Sigma$.
 
-```python
-import numpy as np
 
-def minvar(C):
-    one = np.ones(C.shape[0]); w = np.linalg.solve(C, one); return w / w.sum()
 
-def corr_dist(cov):
-    v = np.sqrt(np.diag(cov))
-    return np.sqrt(0.5 * (1.0 - np.clip(cov / np.outer(v, v), -1.0, 1.0)))
 
-def link_single(dist):
-    n = dist.shape[0]; d = np.zeros((2*n-1, 2*n-1)); d[:n, :n] = dist
-    active, Z = list(range(n)), []
-    for _ in range(n - 1):
-        h, i, j = min((d[active[a], active[b]], active[a], active[b])
-                      for a in range(len(active)) for b in range(a + 1, len(active)))
-        new = n + len(Z)
-        for k in active:
-            if k not in (i, j): d[new, k] = d[k, new] = min(d[i, k], d[j, k])
-        Z.append([i, j, h, 0]); active = [k for k in active if k not in (i, j)] + [new]
-    return np.array(Z)
+Read this table carefully - it is the entire motivation for the folder:
 
-def hrp(cov):
-    n = cov.shape[0]
-    order, Z = [], link_single(corr_dist(cov))
-    def rec(node):
-        if node < n: order.append(node)
-        else: rec(int(Z[node-n][0])); rec(int(Z[node-n][1]))
-    rec(n + len(Z) - 1)
-    w = np.ones(n); q = [order]
-    while q:
-        c = q.pop()
-        if len(c) > 1:
-            h = len(c)//2; c0, c1 = c[:h], c[h:]
-            iv = lambda ix: (lambda x: x / x.sum())(1.0 / np.diag(cov)[ix])
-            v0 = iv(c0) @ cov[np.ix_(c0, c0)] @ iv(c0)
-            v1 = iv(c1) @ cov[np.ix_(c1, c1)] @ iv(c1)
-            a = 1.0 - v0/(v0 + v1); w[c0] *= a; w[c1] *= 1.0 - a
-            q += [c0, c1]
-    return w / w.sum()
-
-rng = np.random.default_rng(7)
-N, T = 50, 60
-B = rng.normal(0, 1, size=(N, 4)) * 0.5
-Sigma_true = B @ B.T + np.diag(np.full(N, 0.6))          # the TRUE covariance
-X = rng.normal(size=(T, N)) @ np.linalg.cholesky(Sigma_true).T
-S = np.cov(X, rowvar=False, bias=True)                   # sample covariance
-
-w_mv, w_hrp, w_eq = minvar(S), hrp(S), np.ones(N)/N
-print(f"cond(S) = {np.linalg.cond(S):.1f}   (N={N}, T={T})")
-hdr = "report w'Sw | TRUE w'Sw | gross |w| |  max|w| | #shorts"
-print(f"{'':6s} {hdr}")
-for lbl, w in (("MVO", w_mv), ("HRP", w_hrp), ("1/N", w_eq)):
-    print(f"{lbl:6s} {w @ S @ w:12.5f} {w @ Sigma_true @ w:12.5f} {np.abs(w).sum():10.4f}"
-          f" {np.abs(w).max():8.4f} {(w < 0).sum():8d}")
-```
-```
-cond(S) = 8929.5   (N=50, T=60)
-       report w'Sw | TRUE w'Sw | gross |w| |  max|w| | #shorts
-MVO         0.00129      0.28417     4.0437   0.2207       21
-HRP         0.02395      0.03006     1.0000   0.0786        0
-1/N         0.03504      0.03755     1.0000   0.0200        0
-```
-
-Read this table carefully — it is the entire motivation for the folder:
-
-- **MVO reports risk $0.00129$ but delivers $0.28417$** — a factor of **220×** between the number on the slide and the number in the P&L. It is not "slightly" overfit; it is catastrophically so.
+- **MVO reports risk $0.00129$ but delivers $0.28417$** - a factor of **220×** between the number on the slide and the number in the P&L. It is not "slightly" overfit; it is catastrophically so.
 - MVO's **gross exposure is $4.04$** (you must borrow/short $\sim3\times$ notional to hold it) and it is **short 21 of the 50 assets**. Shorts of that breadth are almost never economic convictions; they are the optimizer exploiting small eigenvalues.
-- **HRP stays fully invested** (gross $=1.00$, no shorts), keeps its largest weight at $0.079$, and its *true* variance is $0.03006$ — a **$9.5\times$** improvement in realized risk over MVO, despite never inverting $\hat\Sigma$.
-- **$1/N$ is the honest benchmark** ($0.03755$). HRP beats it here; on a well-behaved universe HRP's edge over $1/N$ shrinks — as it should, since both are low-variance, low-information allocators.
+- **HRP stays fully invested** (gross $=1.00$, no shorts), keeps its largest weight at $0.079$, and its *true* variance is $0.03006$ - a **$9.5\times$** improvement in realized risk over MVO, despite never inverting $\hat\Sigma$.
+- **$1/N$ is the honest benchmark** ($0.03755$). HRP beats it here; on a well-behaved universe HRP's edge over $1/N$ shrinks - as it should, since both are low-variance, low-information allocators.
 
 The mechanism is visible in the numbers: MVO's weight vector is dominated by directions it cannot see reliably; HRP's is the product of well-behaved inverse-variance splits.
 
@@ -162,7 +101,7 @@ The mechanism is visible in the numbers: MVO's weight vector is dominated by dir
 
 1. **You cannot optimize what you cannot estimate.** The minimum-variance solution is $O(\lambda_i^{-2})$ sensitive to the smallest eigenvalues, which are the least reliable. More data or better estimation (shrinkage/denoising, factor models) helps; ignoring the problem does not. → [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT Denoising]].
 2. **Reported risk is not realized risk.** Because $\hat w^\top\hat\Sigma\hat w$ is fit on the same $\hat\Sigma$, it is biased low. The $220\times$ gap above is the *definition* of overfitting, not evidence of a coding error. Always evaluate walk-forward.
-3. **Means are worse than covariances.** Chopra–Ziemba (1993): expected-return errors dominate covariance errors by roughly twenty-fold. HRP sidesteps this by using *no* forecasts — which is a strength for pure risk allocation and a *limitation* when you have genuine alpha.
+3. **Means are worse than covariances.** Chopra–Ziemba (1993): expected-return errors dominate covariance errors by roughly twenty-fold. HRP sidesteps this by using *no* forecasts - which is a strength for pure risk allocation and a *limitation* when you have genuine alpha.
 4. **Instability is not cured by constraints alone.** Long-only and weight caps clip the symptom; the misaligned estimate remains and the *ranking* it induces still pushes risk toward noise. Constraints bound the damage; they do not fix the model.
 5. **$1/N$ is the bar.** Any sophisticated allocator must clear $1/N$ out-of-sample (DeMiguel–Garlappi–Uppal 2009) before its complexity is earned. HRP clears it precisely because it is nearly parameter-free.
 
@@ -170,12 +109,12 @@ The mechanism is visible in the numbers: MVO's weight vector is dominated by dir
 
 ### 5. Canonical Literature & Study References
 
-- **Markowitz, H.** (1952). "Portfolio Selection." *Journal of Finance* 7(1):77–91 — the founding mean–variance program, and the inverse it requires.
-- **Michaud, R. O.** (1989); **Michaud & Michaud** (2008), *Efficient Asset Management* (2nd ed.), Oxford — "estimation-error maximizer" and resampled frontiers as the industry fix.
-- **Chopra, V. & Ziemba, W.** (1993). "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11 — mean errors dominate covariance errors $\sim20\times$.
-- **Best, M. & Grauer, R.** (1991). "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means." *Review of Financial Studies* 4(2):315–342 — a $1\%$ mean change can move weights $>50\%$.
-- **DeMiguel, V., Garlappi, L. & Uppal, R.** (2009). "Optimal Versus Naive Diversification: How Inefficient Is the $1/N$ Portfolio Strategy?" *Review of Financial Studies* 22(5):1915–1953 — the $1/N$ benchmark.
-- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 — the HRP response to these failures.
+- **Markowitz, H.** (1952). "Portfolio Selection." *Journal of Finance* 7(1):77–91 - the founding mean–variance program, and the inverse it requires.
+- **Michaud, R. O.** (1989); **Michaud & Michaud** (2008), *Efficient Asset Management* (2nd ed.), Oxford - "estimation-error maximizer" and resampled frontiers as the industry fix.
+- **Chopra, V. & Ziemba, W.** (1993). "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11 - mean errors dominate covariance errors $\sim20\times$.
+- **Best, M. & Grauer, R.** (1991). "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means." *Review of Financial Studies* 4(2):315–342 - a $1\%$ mean change can move weights $>50\%$.
+- **DeMiguel, V., Garlappi, L. & Uppal, R.** (2009). "Optimal Versus Naive Diversification: How Inefficient Is the $1/N$ Portfolio Strategy?" *Review of Financial Studies* 22(5):1915–1953 - the $1/N$ benchmark.
+- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 - the HRP response to these failures.
 
 ---
 

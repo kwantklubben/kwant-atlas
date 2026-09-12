@@ -1,5 +1,5 @@
 ---
-title: "F.5 Statistics & Inference"
+title: "M.5 Statistics & Inference"
 tags:
   - foundations
   - statistics-and-inference
@@ -16,13 +16,13 @@ tags:
 
 Every number a quant reports is an **estimate** of something unobservable, and every decision (trade, hedge, size a position) is a **test** whose error rate is a choice. Statistics is the discipline that turns "the sample mean was 8%" into "8% ± 2%, and I would see a number this large by chance \(p\)% of the time." Without it, a backtest is a story; with it, a backtest is an inference with a stated failure probability.
 
-Its claim is sharp: **an estimator is a random variable with a distribution, and inference is the study of that distribution.** The three primitives are (i) *point estimation* — how to build and compare estimators (MLE, method of moments) via bias, variance, MSE and the Cramér–Rao bound; (ii) *sampling distributions* — the Laws of Large Numbers and the Central Limit Theorem that make the sampling distribution of a statistic calculable, and hence the standard error \(\sigma/\sqrt n\); (iii) *interval estimation and hypothesis testing* — pivots, confidence intervals, size/power, p-values, and the multiplicity corrections that make "the best of \(N\) strategies" an honest statement.
+Its claim is sharp: **an estimator is a random variable with a distribution, and inference is the study of that distribution.** The three primitives are (i) *point estimation* - how to build and compare estimators (MLE, method of moments) via bias, variance, MSE and the Cramér–Rao bound; (ii) *sampling distributions* - the Laws of Large Numbers and the Central Limit Theorem that make the sampling distribution of a statistic calculable, and hence the standard error \(\sigma/\sqrt n\); (iii) *interval estimation and hypothesis testing* - pivots, confidence intervals, size/power, p-values, and the multiplicity corrections that make "the best of \(N\) strategies" an honest statement.
 
 This folder is the topic-folder for that toolbox, and it is the statistical backbone of **backtesting and model validation**: a Sharpe ratio is a \(t\)-statistic, a strategy search is a multiple-testing problem, and a model-selection score like AIC is a penalised likelihood.
 
 This page is a *hub*: it (a) gives the **fast estimator/test lookup** below (job #1), and (b) routes you to six sub-pages from raw intuition through point estimation, the CLT, intervals & testing, bias–variance & validation, and the bootstrap/asymptotic extensions.
 
-> **The one-sentence essence.** "An estimator is a random variable, the CLT fixes its sampling distribution and hence the standard error \(\sigma/\sqrt n\), and inference is just claiming coverage (intervals) or error rates (tests) about that distribution — with multiplicity controlled when you look at many estimates at once."
+> **The one-sentence essence.** "An estimator is a random variable, the CLT fixes its sampling distribution and hence the standard error \(\sigma/\sqrt n\), and inference is just claiming coverage (intervals) or error rates (tests) about that distribution - with multiplicity controlled when you look at many estimates at once."
 
 ---
 
@@ -43,7 +43,7 @@ This page is a *hub*: it (a) gives the **fast estimator/test lookup** below (job
 | **Cramér–Rao lower bound** | \(\mathrm{Var}_\theta W\ge\dfrac{[\tau'(\theta)]^2}{n\,\mathbb E_\theta\!\left[\left(\frac{\partial}{\partial\theta}\log f(X\mid\theta)\right)^2\right]}=\dfrac{[\tau'(\theta)]^2}{I_n(\theta)}\) | Thm 7.3.1 | exp rate attains it (\(0.03172\approx0.03125\)) |
 | MLE asymptotic variance | \(\mathrm{Var}(h(\hat\theta))\approx\dfrac{[h'(\theta)]^2}{-\ell''(\hat\theta\mid x)}\sim\dfrac{[h'(\theta)]^2}{I_n(\theta)}\) (observed info) | Eq 7.4.1 | odds-ratio \(\mathrm{Var}=0.00177\) vs \(\frac{p}{n(1-p)^3}=0.00175\) |
 | **Delta method** | \(\mathrm{Var}\,g(\bar X)\approx[g'(\mu)]^2\mathrm{Var}\,\bar X\); multivariate: \(\sum_i g_i'^2\mathrm{Var}X_i+2\sum_{i<j}g_i'g_j'\mathrm{Cov}(X_i,X_j)\) | Eq 7.4.5 | odds-ratio check above |
-| Asymptotic normality of MLE | \(\hat\theta\approx N\!\left(\theta,\ \dfrac{1}{I_n(\theta)}\right)\) (regular models, support free of \(\theta\)) | §7.4.1 | — |
+| Asymptotic normality of MLE | \(\hat\theta\approx N\!\left(\theta,\ \dfrac{1}{I_n(\theta)}\right)\) (regular models, support free of \(\theta\)) | §7.4.1 | - |
 
 **Sampling distributions, LLN & CLT (Glasserman §1.1; C&B Ch 5):**
 
@@ -61,65 +61,32 @@ This page is a *hub*: it (a) gives the **fast estimator/test lookup** below (job
 |---|---|---|---|
 | Pivot | \(Q(X,\theta)\) with distribution independent of \(\theta\) | Def 9.2.1 | \( (\bar X-\mu)/(S/\sqrt n)\) is a pivot |
 | \(t\)-confidence interval | \(\bar X\pm t_{n-1,\alpha/2}\,S/\sqrt n\) | Ex 9.2.3 | 95% coverage: Normal 0.9504, Exponential 0.9123 |
-| Approx. CI (CLT) | \(W\pm z_{\alpha/2}\sqrt{\widehat{\mathrm{Var}}(W)}\) | §9.4.2 | — |
-| Neyman–Pearson | most powerful level-\(\alpha\) test of simple vs simple rejects where likelihood ratio \(L(\theta_1)/L(\theta_0)>k\) | Thm 8.3.1 | — |
+| Approx. CI (CLT) | \(W\pm z_{\alpha/2}\sqrt{\widehat{\mathrm{Var}}(W)}\) | §9.4.2 | - |
+| Neyman–Pearson | most powerful level-\(\alpha\) test of simple vs simple rejects where likelihood ratio \(L(\theta_1)/L(\theta_0)>k\) | Thm 8.3.1 | - |
 | Size / power | size \(\alpha=\sup_{\theta\in\Theta_0}P_\theta(\text{reject})\); power \(=P_\theta(\text{reject})\), \(\theta\in\Theta_1\) | §8.3.1 | Bonferroni keeps FWER \(\le0.05\): 0.0483 |
-| p-value | smallest \(\alpha\) at which the sample is rejected (data-dependent) | §8.3.3 | — |
+| p-value | smallest \(\alpha\) at which the sample is rejected (data-dependent) | §8.3.3 | - |
 | **Wilks (LRT)** | \(-2\log\Lambda\to\chi^2_\nu\), \(\nu=\dim\Theta-\dim\Theta_0\) | Thm 8.4.1 | Poisson mean LRT: mean 0.9941 (χ²₁ mean 1), 95th pct 3.861 vs 3.842 |
-| Multiple testing | Bonferroni \(\alpha/m\); FDR (Benjamini–Hochberg) controls \(\mathbb E[V/\max(R,1)]\) | — | 20 nulls: P(≥1 raw \(p<0.05\))=0.647 (theory 0.642) |
+| Multiple testing | Bonferroni \(\alpha/m\); FDR (Benjamini–Hochberg) controls \(\mathbb E[V/\max(R,1)]\) | - | 20 nulls: P(≥1 raw \(p<0.05\))=0.647 (theory 0.642) |
 | Model selection | AIC \(=-2\log L+2k\) (ESL \(-\frac2N\log L+\frac{2d}N\)); BIC \(=-2\log L+k\log n\) | ESL 7.29/7.35; Tsay 2.16 | AIC/BIC both pick degree 1 |
 
 ---
 
-### 3. Computational Implementation — MSE, Cramér–Rao and the CLT in one script
+### 3. Computational Implementation - MSE, Cramér–Rao and the CLT in one script
 
 Standard library only. Verifies the MSE decomposition, that the exponential-rate MLE attains the Cramér–Rao bound, and the \(\sigma/\sqrt n\) standard error.
 
-```python
-import math, random
-random.seed(11)
-def mean(x): return sum(x)/len(x)
-def var(x):
-    m=mean(x); return sum((v-m)**2 for v in x)/(len(x)-1)
 
-# (1) MSE = Var + Bias^2  (C&B eq 7.3.1): S^2 (unbiased) vs sigma^2_MLE (biased)
-sig2, n, B = 4.0, 10, 40000
-mle, s2 = [], []
-for _ in range(B):
-    x = [random.gauss(0, math.sqrt(sig2)) for _ in range(n)]; m = mean(x)
-    mle.append(sum((v-m)**2 for v in x)/n)        # biased MLE
-    s2.append(sum((v-m)**2 for v in x)/(n-1))     # unbiased S^2
-print(f"MSE(sigma2_MLE)={mean([(v-sig2)**2 for v in mle]):.4f}  theory (2n-1)/n^2*sig^4={(2*n-1)/n**2*sig2**2:.4f}")
-print(f"MSE(S^2)       ={mean([(v-sig2)**2 for v in s2]):.4f}  theory 2*sig^4/(n-1)     ={2*sig2**2/(n-1):.4f}")
 
-# (2) exponential-rate MLE attains the Cramer-Rao bound lam^2/n
-lam, n, B = 2.5, 200, 20000
-ests = [1.0/mean([-math.log(random.random())/lam for _ in range(n)]) for _ in range(B)]
-print(f"Exp rate MLE: mean={mean(ests):.4f} (true {lam})  Var={var(ests):.6f} vs CRLB lam^2/n={lam**2/n:.6f}")
-
-# (3) CLT standard error sigma/sqrt(n)
-for n in (10, 40, 160):
-    xs = [mean([random.gauss(0, 1) for _ in range(n)]) for _ in range(30000)]
-    print(f"n={n:4d}: sd(mean)={math.sqrt(var(xs)):.5f}  sigma/sqrt(n)={1/math.sqrt(n):.5f}")
-```
-```
-MSE(sigma2_MLE)=3.0366  theory (2n-1)/n^2*sig^4=3.0400
-MSE(S^2)       =3.5459  theory 2*sig^4/(n-1)     =3.5556
-Exp rate MLE: mean=2.5145 (true 2.5)  Var=0.031743 vs CRLB lam^2/n=0.031250
-n=  10: sd(mean)=0.31681  sigma/sqrt(n)=0.31623
-n=  40: sd(mean)=0.15793  sigma/sqrt(n)=0.15811
-n= 160: sd(mean)=0.07893  sigma/sqrt(n)=0.07906
-```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-Hub signposts — the folder's failure-mode analysis lives on the sub-pages. In one line each:
+Hub signposts - the folder's failure-mode analysis lives on the sub-pages. In one line each:
 
-1. **Estimating a ratio/nonlinear function and trusting the plug-in variance.** When \(h(\theta)\) is non-monotone the delta method can report (near-)zero variance — the MLE of \(p(1-p)\) gives \(\mathrm{Var}=0\) at \(p=\tfrac12\) (C&B §7.4.1). Non-monotone transforms break the approximation.
+1. **Estimating a ratio/nonlinear function and trusting the plug-in variance.** When \(h(\theta)\) is non-monotone the delta method can report (near-)zero variance - the MLE of \(p(1-p)\) gives \(\mathrm{Var}=0\) at \(p=\tfrac12\) (C&B §7.4.1). Non-monotone transforms break the approximation.
 2. **Using the CLT when the sample is too small or too skewed.** \(t\)-intervals on Exponential(1) data under-cover (0.912 not 0.950); the CLT error is \(O(\text{skew}/\sqrt n)\).
-3. **Testing many hypotheses and reporting the winner.** With \(m=20\) true nulls, P(at least one \(p<0.05\)) \(=0.647\); with \(N\) strategies the best spurious \(t\approx\sqrt{2\log N}\) — "significant" at \(1.96\) is guaranteed noise. Correct with Bonferroni/FDR or a Reality-Check bootstrap.
+3. **Testing many hypotheses and reporting the winner.** With \(m=20\) true nulls, P(at least one \(p<0.05\)) \(=0.647\); with \(N\) strategies the best spurious \(t\approx\sqrt{2\log N}\) - "significant" at \(1.96\) is guaranteed noise. Correct with Bonferroni/FDR or a Reality-Check bootstrap.
 4. **Validating on data you already used.** Selecting features/models on the full sample then cross-validating leaks information: the ESL screening example reports CV error 3% against a true 50% (ESL §7.10.2). Screening must happen inside each fold.
 5. **Confusing bias with error.** An unbiased estimator need not be closest (MSE = Var + Bias²); the biased \(\hat\sigma^2_{\text{MLE}}\) beats unbiased \(S^2\) on MSE.
 
@@ -127,11 +94,11 @@ Hub signposts — the folder's failure-mode analysis lives on the sub-pages. In 
 
 ### 5. Canonical Literature & Study References
 
-- **Casella, G. & Berger, R. L.**: *Statistical Inference* (2nd ed., 2002) — **the primary source for this folder.** Ch 7 (MLE, method of moments, MSE eq 7.3.1, Cramér–Rao Thm 7.3.1, consistency §7.3.4, asymptotic variance eq 7.4.1, delta method eq 7.4.5), Ch 8 (LRT §8.2.1, Neyman–Pearson Lemma Thm 8.3.1, Karlin–Rubin Thm 8.3.2, size/power §8.3.1, p-value §8.3.3, Wilks Thm 8.4.1), Ch 9 (inverting tests, pivots Def 9.2.1, coverage §9.3.1, approximate ML intervals §9.4.1). *PDF in the corpus; formulas cross-checked.*
-- **Hastie, Tibshirani & Friedman**: *Elements of Statistical Learning* (2nd ed., 2009) — Ch 2 (bias–variance eqs 2.25/2.46, pointwise risk), Ch 7 (model assessment: CV eq 7.48, AIC eq 7.29, BIC eq 7.35, the screening-inside-folds trap §7.10.2, one-standard-error rule, bootstrap §7.11), Ch 8 (bootstrap inference, bagging). *Verification report in the corpus.*
-- **Glasserman, P.**: *Monte Carlo Methods in Financial Engineering* (2004) — §1.1 (LLN, CLT, MC standard error \(\sigma_f/\sqrt n\), the dimension-free \(O(n^{-1/2})\)). *Math-verified in the corpus.*
-- **Tsay, R. S.**: *Analysis of Financial Time Series* (3rd ed., 2010) — Ch 1 (return moments; skewness/kurtosis \(t\)-stats; Jarque–Bera), Ch 2 (AIC/BIC, eq 2.16). *Verified in the corpus.*
-- **Efron, B. & Tibshirani, R.**: *An Introduction to the Bootstrap* (1993) — the canonical bootstrap reference (percentile/BCa intervals, bootstrap standard errors).
+- **Casella, G. & Berger, R. L.**: *Statistical Inference* (2nd ed., 2002) - **the primary source for this folder.** Ch 7 (MLE, method of moments, MSE eq 7.3.1, Cramér–Rao Thm 7.3.1, consistency §7.3.4, asymptotic variance eq 7.4.1, delta method eq 7.4.5), Ch 8 (LRT §8.2.1, Neyman–Pearson Lemma Thm 8.3.1, Karlin–Rubin Thm 8.3.2, size/power §8.3.1, p-value §8.3.3, Wilks Thm 8.4.1), Ch 9 (inverting tests, pivots Def 9.2.1, coverage §9.3.1, approximate ML intervals §9.4.1). *PDF in the corpus; formulas cross-checked.*
+- **Hastie, Tibshirani & Friedman**: *Elements of Statistical Learning* (2nd ed., 2009) - Ch 2 (bias–variance eqs 2.25/2.46, pointwise risk), Ch 7 (model assessment: CV eq 7.48, AIC eq 7.29, BIC eq 7.35, the screening-inside-folds trap §7.10.2, one-standard-error rule, bootstrap §7.11), Ch 8 (bootstrap inference, bagging). *Verification report in the corpus.*
+- **Glasserman, P.**: *Monte Carlo Methods in Financial Engineering* (2004) - §1.1 (LLN, CLT, MC standard error \(\sigma_f/\sqrt n\), the dimension-free \(O(n^{-1/2})\)). *Math-verified in the corpus.*
+- **Tsay, R. S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 1 (return moments; skewness/kurtosis \(t\)-stats; Jarque–Bera), Ch 2 (AIC/BIC, eq 2.16). *Verified in the corpus.*
+- **Efron, B. & Tibshirani, R.**: *An Introduction to the Bootstrap* (1993) - the canonical bootstrap reference (percentile/BCa intervals, bootstrap standard errors).
 
 ---
 
@@ -141,8 +108,4 @@ Hub signposts — the folder's failure-mode analysis lives on the sub-pages. In 
 - Sibling foundations: [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (stationarity & MLE for GARCH) · [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]] (time vs ensemble averages) · [[foundations/numerical-methods/index|Numerical Methods]] (Monte Carlo uses LLN/CLT)
 - Sub-pages (in-folder): 01 From Zero · 02 Point Estimation · 03 The CLT & Sampling · 04 Confidence Intervals & Testing · 05 Bias–Variance & Validation · 06 Advanced Extensions
 
-**Recommended reading route (audience arc):**
-- **Absolute beginner:** [[foundations/statistics-and-inference/01-from-zero-intuition|01 · From Zero]] — no prior statistics needed.
-- **Estimators + code (undergrad/job-seeking):** [[foundations/statistics-and-inference/02-point-estimation|02 · Point Estimation]] → [[foundations/statistics-and-inference/03-the-clt-and-sampling|03 · The CLT & Sampling]] → [[foundations/statistics-and-inference/04-confidence-intervals-and-testing|04 · Confidence Intervals & Testing]].
-- **Robustness (practitioner/graduate):** [[foundations/statistics-and-inference/05-bias-variance-and-validation|05 · Bias–Variance & Validation]] → [[foundations/statistics-and-inference/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/01-quantitative-research/index|Quantitative Research]] (backtesting, signal validation) · [[pillars/07-machine-learning-altdata/index|Machine Learning & Alt-Data]] (cross-validation, model selection) · [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (interval estimation at the tail).
+**Beginner:** start at [[foundations/statistics-and-inference/01-from-zero-intuition|01]] · **Practitioner:** start at [[foundations/statistics-and-inference/05-bias-variance-and-validation|05]]

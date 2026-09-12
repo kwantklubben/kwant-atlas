@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of robust portfolio optimization with **no optimization background beyond the one-line spec of Markowitz**. The objective is one idea: **you do not know the expected returns — you only have a noisy estimate of them — and a mean-variance optimizer does not "cope" with that noise, it multiplies it into extreme bets. Robust optimization is the discipline of optimizing over your *uncertainty*, not over a single guess.**
+This page builds the *why* of robust portfolio optimization with **no optimization background beyond the one-line spec of Markowitz**. The objective is one idea: **you do not know the expected returns - you only have a noisy estimate of them - and a mean-variance optimizer does not "cope" with that noise, it multiplies it into extreme bets. Robust optimization is the discipline of optimizing over your *uncertainty*, not over a single guess.**
 
 Start with the dumbest question: *what do I feed the optimizer?* Markowitz says: expected returns $\mu$ and covariances $\Sigma$. But nobody hands you $\mu$. You compute a **sample mean** $\hat\mu$ from history. The trouble is arithmetic: Markowitz's optimal weights are
 
@@ -26,9 +26,9 @@ so the *sensitivity* of the answer to the input is $dw^\star=\tfrac1\delta\Sigma
 
 Three "aha"s:
 
-1. **The optimizer is a noise amplifier, not a noise filter.** It hands your estimation errors back to you *levered*. A 1% error in one asset's mean does not move that asset's weight by 1% — it can move it by 100% or flip it from long to massively short.
+1. **The optimizer is a noise amplifier, not a noise filter.** It hands your estimation errors back to you *levered*. A 1% error in one asset's mean does not move that asset's weight by 1% - it can move it by 100% or flip it from long to massively short.
 
-2. **A one-asset mean change barely moves the portfolio's *return* — but it scrambles its *composition*.** Best & Grauer (1991) show that driving half the assets out of an equally-weighted 100-asset efficient portfolio needs, on average, a $11.6\%$ change in a single mean — yet the portfolio's expected return and standard deviation move by only about $2\%$. The portfolio *looks* fine and is *built on sand*.
+2. **A one-asset mean change barely moves the portfolio's *return* - but it scrambles its *composition*.** Best & Grauer (1991) show that driving half the assets out of an equally-weighted 100-asset efficient portfolio needs, on average, a $11.6\%$ change in a single mean - yet the portfolio's expected return and standard deviation move by only about $2\%$. The portfolio *looks* fine and is *built on sand*.
 
 3. **Robustness means judging portfolios by their worst case, not their fit.** Rather than trusting $\hat\mu$, admit $\mu$ lies in a set $U$ ("anywhere within my confidence interval"), and choose the portfolio whose worst case over $U$ is best. That single change of objective is what turns an error-prone procedure into a guaranteed one.
 
@@ -72,58 +72,29 @@ For a **box** $U=\{\mu:\lvert\mu_i-\hat\mu_i\rvert\le\gamma_i\}$ the inner worst
 
 ---
 
-### 3. Computational Implementation — naive MVO on real (simulated) data
+### 3. Computational Implementation - naive MVO on real (simulated) data
 
 The shared universe ($N=6$, $T=60$ monthly returns, fixed seed) and the naive optimizer, showing how small mean perturbations move the weights far more than their size suggests. numpy.
 
-```python
-import numpy as np
-rng = np.random.RandomState(20240910)
-N, T = 6, 60
-mu_ann  = np.array([0.08,0.06,0.05,0.10,0.07,0.04])    # TRUE means (unknown to us)
-vol_ann = np.array([0.16,0.12,0.20,0.22,0.14,0.10])    # TRUE vols
-C = np.array([[1,.55,.30,.25,.40,.20],[.55,1,.35,.20,.45,.25],[.30,.35,1,.50,.30,.35],
-              [.25,.20,.50,1,.25,.40],[.40,.45,.30,.25,1,.30],[.20,.25,.35,.40,.30,1]])
-mu = mu_ann/12.0; sig = vol_ann/np.sqrt(12.0); S_true = np.outer(sig,sig)*C
-L = np.linalg.cholesky(S_true)
-R = (L @ rng.randn(N,T)).T + mu        # THE ONLY DATA WE HAVE: 60 monthly returns
-mu_s = R.mean(0); S_s = np.cov(R,rowvar=False); delta = 3.0
 
-def mvo(mu_, S_): return (1.0/delta)*np.linalg.solve(S_, mu_)
-w0 = mvo(mu_s, S_s)
-print("sample means (annual):", np.round(mu_s*12,4), " (TRUE:", mu_ann, ")")
-print("naive MVO weights    :", np.round(w0,3), " gross=", round(np.abs(w0).sum(),2))
 
-for bps in (0.25, 0.50, 1.00):                     # bump ONE mean by bps %/yr
-    mp = mu_s.copy(); mp[0] += (bps/100)/12
-    wp = mvo(mp, S_s)
-    print(f"  mu0 +{bps:.2f}%/yr: w0 {w0[0]:+.3f} -> {wp[0]:+.3f}  dw0={wp[0]-w0[0]:+.4f}  "
-          f"|dw0|/|w0| = {abs((wp[0]-w0[0])/w0[0])*100:5.2f}%")
-```
-```
-sample means (annual): [0.1007 0.1444 0.2086 0.2147 0.1586 0.1468]  (TRUE: [0.08 0.06 0.05 0.1  0.07 0.04] )
-naive MVO weights    : [-2.257  3.33   0.28   0.78   0.299  4.963]  gross= 11.91
-  mu0 +0.25%/yr: w0 -2.257 -> -2.194  dw0=+0.0633  |dw0|/|w0| =  2.81%
-  mu0 +0.50%/yr: w0 -2.257 -> -2.130  dw0=+0.1267  |dw0|/|w0| =  5.61%
-  mu0 +1.00%/yr: w0 -2.257 -> -2.004  dw0=+0.2534  |dw0|/|w0| = 11.23%
-```
-Read the last line carefully: a **1% per annum** bump to one asset's expected return moves that asset's weight by $11.2\%$ of its own magnitude — from $-225.7\%$ short toward $-200.4\%$ short — even though the bump is only $\sim8\%$ of the mean being estimated (elasticity $>1$). The naive optimizer holds $\sim12\times$ gross leverage on the basis of sample means that, as the first line shows, are themselves off by *double* the truth on several assets. The portfolio is a leveraged bet on the noise in a $60$-point sample, and it takes only a whisper of new information to rebuild it from scratch.
+Read the last line carefully: a **1% per annum** bump to one asset's expected return moves that asset's weight by $11.2\%$ of its own magnitude - from $-225.7\%$ short toward $-200.4\%$ short - even though the bump is only $\sim8\%$ of the mean being estimated (elasticity $>1$). The naive optimizer holds $\sim12\times$ gross leverage on the basis of sample means that, as the first line shows, are themselves off by *double* the truth on several assets. The portfolio is a leveraged bet on the noise in a $60$-point sample, and it takes only a whisper of new information to rebuild it from scratch.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"The optimizer will average out my errors."** It will not — it inverts $\Sigma$ and *amplifies* them. The $11\%$ swing above is the proof in miniature; Best & Grauer's $14{,}000\times$ elasticity is the same fact at scale.
-2. **"A high in-sample Sharpe means a good portfolio."** No — it can mean a *lucky* sample. The in-sample fit rewards exactly the assets whose sample means were inflated by chance. §02 quantifies the collapse when the sample is refreshed.
-3. **"Constraints will save me."** They help (this is the point of §04) but they are blunt: an inept bound on weights throws away information as readily as it suppresses noise. And when short sales are allowed, Best & Grauer (1990) show that **almost any deviation** from returns that make the target portfolio efficient leaves *no* positively-weighted efficient portfolio at all — extreme weights are then the norm, not the exception.
+1. **"The optimizer will average out my errors."** It will not - it inverts $\Sigma$ and *amplifies* them. The $11\%$ swing above is the proof in miniature; Best & Grauer's $14{,}000\times$ elasticity is the same fact at scale.
+2. **"A high in-sample Sharpe means a good portfolio."** No - it can mean a *lucky* sample. The in-sample fit rewards exactly the assets whose sample means were inflated by chance. §02 quantifies the collapse when the sample is refreshed.
+3. **"Constraints will save me."** They help (this is the point of §04) but they are blunt: an inept bound on weights throws away information as readily as it suppresses noise. And when short sales are allowed, Best & Grauer (1990) show that **almost any deviation** from returns that make the target portfolio efficient leaves *no* positively-weighted efficient portfolio at all - extreme weights are then the norm, not the exception.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 — §1 the elasticity theory (eqs. 6–13) and §3–6 the CRSP computational magnitudes.
-- **Markowitz (1952)**, *Portfolio Selection*, Journal of Finance 7(1):77–91 — the original quadratic program this page perturbs.
-- **Chopra & Ziemba (1993)**, *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11 — the *relative* damage of input errors, developed on [[pillars/05-portfolio-optimization/robust-optimization/02-the-estimation-error-problem|02 · The Estimation-Error Problem]].
+- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 - §1 the elasticity theory (eqs. 6–13) and §3–6 the CRSP computational magnitudes.
+- **Markowitz (1952)**, *Portfolio Selection*, Journal of Finance 7(1):77–91 - the original quadratic program this page perturbs.
+- **Chopra & Ziemba (1993)**, *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11 - the *relative* damage of input errors, developed on [[pillars/05-portfolio-optimization/robust-optimization/02-the-estimation-error-problem|02 · The Estimation-Error Problem]].
 
 ---
 

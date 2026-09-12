@@ -44,53 +44,18 @@ $$
 \boxed{\;\text{Assets} = \text{Liabilities} + \text{Owners' equity}\;}
 $$
 
-An **asset** is something expected to generate future payoffs (cash, inventory, equipment). A **liability** is a claim by someone other than the owners (a bank loan, money owed to suppliers). **Owners' equity** is the *residual* — what is left for the owners after subtracting everyone else's claims. That is why it is sometimes called *net assets*. If assets rise without new liabilities, equity rises — and the only way that happens from running the business is profit.
+An **asset** is something expected to generate future payoffs (cash, inventory, equipment). A **liability** is a claim by someone other than the owners (a bank loan, money owed to suppliers). **Owners' equity** is the *residual* - what is left for the owners after subtracting everyone else's claims. That is why it is sometimes called *net assets*. If assets rise without new liabilities, equity rises - and the only way that happens from running the business is profit.
 
 ---
 
-### 3. Computational Implementation — follow the money through the accounting equation
+### 3. Computational Implementation - follow the money through the accounting equation
 
-The most convincing "from zero" demo: take a tiny lemonade stand, post nine real transactions, and watch the accounting equation stay true **after every single one**. If the books ever go out of balance, we made an arithmetic error — the equation is a built-in error detector. Stdlib only.
+The most convincing "from zero" demo: take a tiny lemonade stand, post nine real transactions, and watch the accounting equation stay true **after every single one**. If the books ever go out of balance, we made an arithmetic error - the equation is a built-in error detector. Stdlib only.
 
-```python
-# A lemonade stand, followed transaction by transaction.
-# Every step prints  Assets == Liabilities + Equity ; the equation must never break.
-cash = ar = inv = equip = accdep = loan = equity = 0.0
-rev = cogs = opexp = depexp = 0.0
 
-def check(step):
-    A = cash + ar + inv + equip - accdep
-    L = loan
-    E = equity + (rev - cogs - opexp - depexp)     # equity + accumulated profit
-    ok = abs(A - (L + E)) < 1e-9
-    print(f"{step:34s}  A={A:8,.0f}  L+E={L+E:8,.0f}  balanced={ok}")
 
-cash += 10000; equity += 10000            ; check("1 owner invests $10,000")
-cash += 5000;  loan  += 5000              ; check("2 borrow $5,000 from bank")
-equip += 6000; cash  -= 6000              ; check("3 buy equipment $6,000")
-inv  += 4000;  cash  -= 4000              ; check("4 buy inventory $4,000")
-cash += 5000;  rev   += 5000; cogs += 2500; inv -= 2500 ; check("5 cash sale, goods cost $2,500")
-ar   += 2000;  rev   += 2000; cogs += 1000; inv -= 1000 ; check("6 credit sale, goods cost $1,000")
-cash -= 1500;  opexp += 1500              ; check("7 pay operating expenses $1,500")
-cash += 2000;  ar    -= 2000              ; check("8 collect the $2,000 receivable")
-accdep += 1200; depexp += 1200            ; check("9 depreciation $1,200 (6000/5)")
-print(f"\nNet income = {rev-cogs-opexp-depexp:,.0f}   Cash balance = {cash:,.0f}")
-```
-```
-1 owner invests $10,000             A=  10,000  L+E=  10,000  balanced=True
-2 borrow $5,000 from bank           A=  15,000  L+E=  15,000  balanced=True
-3 buy equipment $6,000              A=  15,000  L+E=  15,000  balanced=True
-4 buy inventory $4,000              A=  15,000  L+E=  15,000  balanced=True
-5 cash sale, goods cost $2,500      A=  17,500  L+E=  17,500  balanced=True
-6 credit sale, goods cost $1,000    A=  18,500  L+E=  18,500  balanced=True
-7 pay operating expenses $1,500     A=  17,000  L+E=  17,000  balanced=True
-8 collect the $2,000 receivable     A=  17,000  L+E=  17,000  balanced=True
-9 depreciation $1,200 (6000/5)      A=  15,800  L+E=  15,800  balanced=True
 
-Net income = 800   Cash balance = 10,500
-```
-
-Read that table carefully. Transaction 5 (a cash sale) raises *both* assets and equity — the business made value. Transaction 6 (a credit sale) raises assets via a receivable and equity via revenue — **value was created even though no cash arrived**. Transaction 9 (depreciation) lowers assets and equity — the equipment wore out. Notice the equation never broke. That "never breaks" property is the entire discipline of double-entry accounting.
+Read that table carefully. Transaction 5 (a cash sale) raises *both* assets and equity - the business made value. Transaction 6 (a credit sale) raises assets via a receivable and equity via revenue - **value was created even though no cash arrived**. Transaction 9 (depreciation) lowers assets and equity - the equipment wore out. Notice the equation never broke. That "never breaks" property is the entire discipline of double-entry accounting.
 
 ---
 
@@ -98,16 +63,16 @@ Read that table carefully. Transaction 5 (a cash sale) raises *both* assets and 
 
 1. **The "profit means cash is coming" trap.** A credit sale (transaction 6) books revenue and profit *before* any cash moves. A beginner reading only net income thinks money is arriving; the cash flow statement is the report that tells the truth about cash.
 2. **Confusing a snapshot with a movie.** Asking "what is the company's value?" of a balance sheet is like asking "what is a film's value?" of a single frame. The balance sheet is a stock; income and cash-flow statements are the flows. You need both (Penman's stocks-and-flows articulation, Ch 2).
-3. **The equation is a consistency check, not a valuation.** $A=L+E$ is always true *by construction of the books* — it tells you nothing about whether the assets are worth what they are carried at. Value is not on the balance sheet; book value is (Penman Ch 2: P/B $\neq$ 1).
+3. **The equation is a consistency check, not a valuation.** $A=L+E$ is always true *by construction of the books* - it tells you nothing about whether the assets are worth what they are carried at. Value is not on the balance sheet; book value is (Penman Ch 2: P/B $\neq$ 1).
 
 ---
 
 ### 5. Canonical Literature & Study References
 
 - **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 1 (Fig 1.1: the three activities) and Ch 2 (the form of the statements, stocks vs flows, articulation). *Deep-read in the corpus.*
-- **Ball & Brown (1968)**, *An Empirical Evaluation of Accounting Income Numbers* — why the scoreboard matters: income numbers carry information that markets demonstrably use.
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* — builds the three statements line by line in plain English (best first book).
-- **Mullis & Orloff**, *The Accounting Game* — the same equation taught through a lemonade-stand case (the origin of the running-example idea used here).
+- **Ball & Brown (1968)**, *An Empirical Evaluation of Accounting Income Numbers* - why the scoreboard matters: income numbers carry information that markets demonstrably use.
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - builds the three statements line by line in plain English (best first book).
+- **Mullis & Orloff**, *The Accounting Game* - the same equation taught through a lemonade-stand case (the origin of the running-example idea used here).
 
 ---
 

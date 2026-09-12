@@ -15,9 +15,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Every dataset in this folder is a *survivor of its own history*, and if you read it naively you inherit the future as if it were the past. This page is the defense layer: it takes the four ways fundamental data lies to a backtest — **point-in-time bias, survivorship bias, restatement gaps, and API/coverage limits** — and ties each to a first principle, then quantifies each so the bias is a *number*, not a warning. If the hub table is the *map*, this page is the *compass check*.
+Every dataset in this folder is a *survivor of its own history*, and if you read it naively you inherit the future as if it were the past. This page is the defense layer: it takes the four ways fundamental data lies to a backtest - **point-in-time bias, survivorship bias, restatement gaps, and API/coverage limits** - and ties each to a first principle, then quantifies each so the bias is a *number*, not a warning. If the hub table is the *map*, this page is the *compass check*.
 
-The deepest principle: **a dataset is a function of when you looked at it.** Today's database is $\mathcal{D}(t_{\text{now}})$, and it encodes every deletion, restatement, and backfill since inception. A backtest that reads $\mathcal{D}(t_{\text{now}})$ for a decision made at time $t < t_{\text{now}}$ is not merely imprecise — it is *reading information flow from the future*, and the resulting performance is a measurement of the leak, not of the strategy.
+The deepest principle: **a dataset is a function of when you looked at it.** Today's database is $\mathcal{D}(t_{\text{now}})$, and it encodes every deletion, restatement, and backfill since inception. A backtest that reads $\mathcal{D}(t_{\text{now}})$ for a decision made at time $t < t_{\text{now}}$ is not merely imprecise - it is *reading information flow from the future*, and the resulting performance is a measurement of the leak, not of the strategy.
 
 ---
 
@@ -29,7 +29,7 @@ $$
 \text{Bias}_{\text{surv}} = \bar r_{\text{surv}} - \bar r = \frac{1}{M}\sum_{i \in \text{live}} r_i - \frac{1}{N}\sum_{i=1}^{N} r_i \ > 0 ,
 $$
 
-strictly positive because the delisted firms are, on average, the losers. It is largest for value and distress screens — the very strategies whose premise is that some firms *do not survive*.
+strictly positive because the delisted firms are, on average, the losers. It is largest for value and distress screens - the very strategies whose premise is that some firms *do not survive*.
 
 **Point-in-time / look-ahead bias.** With $\mathcal{D}(t)$ the vendor's database as of $t$, an honest signal is a function only of the past:
 
@@ -37,7 +37,7 @@ $$
 \text{honest: } \sigma_t = f\big(\mathcal{D}(t)\big) \qquad\text{vs.}\qquad \text{leaky: } \sigma_t = f\big(\mathcal{D}(t_{\text{now}})\big).
 $$
 
-Any strategy that replaces $\mathcal{D}(t)$ with $\mathcal{D}(t_{\text{now}})$ has substituted the restated, backfilled, survivor-filtered record for what was actually knowable — the arithmetic cost of which is precisely the restatement gap in [[fundamentals-accounting/data-sources-and-corporate-data/01-from-zero-intuition|01 §2]].
+Any strategy that replaces $\mathcal{D}(t)$ with $\mathcal{D}(t_{\text{now}})$ has substituted the restated, backfilled, survivor-filtered record for what was actually knowable - the arithmetic cost of which is precisely the restatement gap in [[fundamentals-accounting/data-sources-and-corporate-data/01-from-zero-intuition|01 §2]].
 
 **Restatement gap.** For a line item $x$ with as-filed value $x_f$ and final restated value $x_r$,
 
@@ -53,66 +53,22 @@ $$
 t_{\min} = \frac{N}{r} = \frac{5000}{10} = 500\ \text{s} \approx 8.3\ \text{minutes}\quad\text{before throttling, retries, or backoff.}
 $$
 
-The bulk/frames route collapses that to a handful of downloads — the practical difference between a pipeline and a denial-of-service against yourself.
+The bulk/frames route collapses that to a handful of downloads - the practical difference between a pipeline and a denial-of-service against yourself.
 
 ---
 
-### 3. Computational Implementation — the three biases, measured
+### 3. Computational Implementation - the three biases, measured
 
 **Offline and fully runnable** (stdlib only). It quantifies survivorship bias, the restatement look-ahead, and the API-cost gap in one pass.
 
-```python
-# Three data-hygiene failure modes, quantified, stdlib only.
-from statistics import mean
 
-# 1) SURVIVORSHIP: run a screen on today's live universe only.
-returns = {"A": 0.12, "B": 0.08, "C": -0.15, "D": -1.00, "E": 0.20}  # D delisted; E survives
-survivors = {k: v for k, v in returns.items() if v > -1.0}
-print("1) SURVIVORSHIP BIAS")
-print(f"   live-universe mean return (survivors) : {mean(survivors.values())*100:+.2f}%")
-print(f"   full-universe mean return (incl. dead): {mean(returns.values())*100:+.2f}%")
-print(f"   upward bias from dropping the dead     : "
-      f"{(mean(survivors.values())-mean(returns.values()))*100:.2f} pp")
 
-# 2) LOOK-AHEAD: rank on restated data you could not have had at the time.
-as_reported = {"X": 0.10, "Y": 0.22}   # ROE as filed for the screen date
-restated    = {"X": 0.10, "Y": -0.05}  # Y's later restatement (fraud write-off)
-print("\n2) LOOK-AHEAD / RESTATEMENT")
-print(f"   pick highest as-reported ROE : {max(as_reported, key=as_reported.get)}")
-print(f"   Y as-reported ROE={as_reported['Y']:.2f}  ->  restated ROE={restated['Y']:.2f}")
-print(f"   the winner on stale data is a restatement casualty; "
-      f"the backtest never sees the write-off")
 
-# 3) API LIMITS: cost of naive per-company pulls vs. bulk.
-tickers, ciks = 5000, 5000
-per_call, bulk_files = 1, 1
-n_calls = ciks * per_call
-print("\n3) API / RATE LIMITS")
-print(f"   naive: {n_calls:,} single-company calls @ 10 req/s "
-      f"= {n_calls/10/60:.1f} min minimum, throttling not applied")
-print(f"   bulk : {bulk_files} quarterly companyfacts bulk file(s) covers the whole universe")
-```
-```
-1) SURVIVORSHIP BIAS
-   live-universe mean return (survivors) : +6.25%
-   full-universe mean return (incl. dead): -15.00%
-   upward bias from dropping the dead     : 21.25 pp
-
-2) LOOK-AHEAD / RESTATEMENT
-   pick highest as-reported ROE : Y
-   Y as-reported ROE=0.22  ->  restated ROE=-0.05
-   the winner on stale data is a restatement casualty; the backtest never sees the write-off
-
-3) API / RATE LIMITS
-   naive: 5,000 single-company calls @ 10 req/s = 8.3 min minimum, throttling not applied
-   bulk : 1 quarterly companyfacts bulk file(s) covers the whole universe
-```
-
-A **21.25-point** survivorship gap on a five-firm toy universe is deliberately stark, but the *direction and mechanism* scale: the firms that vanished are the ones that went to zero, and any screen worth running is one that would have held some of them. The look-ahead case is even sharper — the firm the screen *picked* (highest as-reported ROE, Y) is the firm that was later restated *negative*. A leaky backtest would book Y as a winner; an honest one holds the write-off.
+A **21.25-point** survivorship gap on a five-firm toy universe is deliberately stark, but the *direction and mechanism* scale: the firms that vanished are the ones that went to zero, and any screen worth running is one that would have held some of them. The look-ahead case is even sharper - the firm the screen *picked* (highest as-reported ROE, Y) is the firm that was later restated *negative*. A leaky backtest would book Y as a winner; an honest one holds the write-off.
 
 **The practice checklist (data hygiene as a build gate).**
 
-1. **Key everything by $(firm, concept, period, \text{filing date})$** — never overwrite on restatement.
+1. **Key everything by $(firm, concept, period, \text{filing date})$** - never overwrite on restatement.
 2. **Lag every source by its legal deadline** (Form 4: 2 days; 13-F: 45 days; 10-Q: 40–45 days; 10-K: 60–90 days) before it can enter a signal.
 3. **Include delisted firms** and their terminal returns; build the universe from *historical* index membership, not today's tickers.
 4. **Reconcile across at least two sources** before trusting a line item ([[fundamentals-accounting/data-sources-and-corporate-data/03-commercial-providers|03]]).
@@ -136,11 +92,11 @@ A **21.25-point** survivorship gap on a five-firm toy universe is deliberately s
 
 ### 5. Canonical Literature & Study References
 
-- **WRDS**, *Compustat Point-in-Time* documentation and the *Compustat User's Guide* — the canonical statement of look-ahead and survivorship hygiene; cross-referenced from the Corpus's `data-sources-and-corporate-data` section as the "sourcing hygiene every fundamentals backtest must obey."
-- **SEC**, *EDGAR APIs* — the rate-limit guidance (identifying `User-Agent`, ~10 req/s) and filing deadlines behind the lag schedule; verified against `Data_SEC_EDGAR_access.txt`.
-- **Kenneth R. French**, *Data Library* and its description files — the rebalancing/breakpoint conventions that show how a careful provider documents its own construction.
-- **Sloan, Richard** (*TAR*, 1996) and **Dechow, Sloan & Sweeney** (*TAR*, 1995) — the empirical case that as-reported and restated figures differ *economically*, not just cosmetically.
-- **Fama & French** (*JF*, 1992; *JFE*, 2015) — the results any point-in-time-correct replication must reproduce; the standard a hygienic pipeline is built to match.
+- **WRDS**, *Compustat Point-in-Time* documentation and the *Compustat User's Guide* - the canonical statement of look-ahead and survivorship hygiene; cross-referenced from the Corpus's `data-sources-and-corporate-data` section as the "sourcing hygiene every fundamentals backtest must obey."
+- **SEC**, *EDGAR APIs* - the rate-limit guidance (identifying `User-Agent`, ~10 req/s) and filing deadlines behind the lag schedule; verified against `Data_SEC_EDGAR_access.txt`.
+- **Kenneth R. French**, *Data Library* and its description files - the rebalancing/breakpoint conventions that show how a careful provider documents its own construction.
+- **Sloan, Richard** (*TAR*, 1996) and **Dechow, Sloan & Sweeney** (*TAR*, 1995) - the empirical case that as-reported and restated figures differ *economically*, not just cosmetically.
+- **Fama & French** (*JF*, 1992; *JFE*, 2015) - the results any point-in-time-correct replication must reproduce; the standard a hygienic pipeline is built to match.
 
 ---
 

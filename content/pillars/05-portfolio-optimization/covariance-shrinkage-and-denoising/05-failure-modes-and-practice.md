@@ -14,12 +14,12 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The estimators are only as good as the discipline around them. This page names the ways covariance models fail *in deployment* — the $N\ge T$ cliff, the amplification of estimation error through the inverse, and the overfitting of the matrix to its estimation window — and gives the first-principles reason each happens, so a practitioner knows which knob to distrust.
+The estimators are only as good as the discipline around them. This page names the ways covariance models fail *in deployment* - the $N\ge T$ cliff, the amplification of estimation error through the inverse, and the overfitting of the matrix to its estimation window - and gives the first-principles reason each happens, so a practitioner knows which knob to distrust.
 
 The three failures, in one line each:
-1. **$N\ge T$ singularity** — the sample covariance loses rank, and any inversion-based portfolio is undefined or explosive.
-2. **Estimation-error amplification** — small eigenvalue errors become large weight errors because $w\propto\Sigma^{-1}\mathbf 1$ scales like $1/\lambda_i$.
-3. **Overfitting the covariance** — optimizing on the *same* window you estimated from guarantees an in-sample-optimal, out-of-sample-fragile portfolio.
+1. **$N\ge T$ singularity** - the sample covariance loses rank, and any inversion-based portfolio is undefined or explosive.
+2. **Estimation-error amplification** - small eigenvalue errors become large weight errors because $w\propto\Sigma^{-1}\mathbf 1$ scales like $1/\lambda_i$.
+3. **Overfitting the covariance** - optimizing on the *same* window you estimated from guarantees an in-sample-optimal, out-of-sample-fragile portfolio.
 
 ---
 
@@ -57,99 +57,31 @@ Page 01 measured exactly this: reported $0.0216$ vs realized $0.1752$, versus a 
 
 ---
 
-### 3. Computational Implementation — the failures, measured
+### 3. Computational Implementation - the failures, measured
 
-**Experiment 1 — the $N>T$ cliff.** $N=50$ assets from $T=40$ observations: the sample covariance has rank $39$, the smallest eigenvalue is $\approx0$, and the pseudo-inverse min-variance portfolio is meaningless.
+**Experiment 1 - the $N>T$ cliff.** $N=50$ assets from $T=40$ observations: the sample covariance has rank $39$, the smallest eigenvalue is $\approx0$, and the pseudo-inverse min-variance portfolio is meaningless.
 
-```python
-import numpy as np
 
-def minvar(C):                                 # invertible path (used for LW / 1-N)
-    one = np.ones(C.shape[0]); w = np.linalg.solve(C, one); return w / w.sum()
 
-def minvar_pinv(C):                            # fallback when C is singular (N > T)
-    one = np.ones(C.shape[0]); w = np.linalg.pinv(C) @ one; return w / w.sum()
+The sample-covariance path is a disaster ($\kappa\approx6\times10^{18}$, gross exposure $15.9\times$, true variance $4.79$). Ledoit–Wolf, with intensity $0.24$, keeps gross exposure near $1$ and true variance at $0.014$ - statistically on par with $1/N$ ($0.013$). Note the target here ($\mu I$) is *misspecified* (the true $\Sigma$ is not close to identity), which is why LW only ties rather than beats $1/N$; that is the target-choice lesson of page 03 in action.
 
-def lw_identity(X):
-    T, N = X.shape; S = (X.T @ X)/T; mu = np.trace(S)/N; F = mu*np.eye(N)
-    dif = X[:,:,None]*X[:,None,:] - S
-    pi = (dif**2).mean(0).sum(); rho = np.sum((dif**2).mean(0)[np.arange(N),np.arange(N)])
-    d = min(max((pi-rho)/((F-S)**2).sum()/T, 0.0), 1.0)
-    return d*F + (1-d)*S, d
+**Experiment 2 - estimator ranking across the $q$ regimes.** Average *true* min-variance variance for $N=100$ assets, 20 random draws per regime, comparing the sample covariance, Ledoit–Wolf, and $1/N$:
 
-rng = np.random.default_rng(3)
-N, T = 50, 40
-B  = rng.normal(0, 1, size=(N, 3))*0.4
-Ce = B @ B.T + np.diag(np.full(N, 0.5))
-X  = rng.normal(size=(T, N)) @ np.linalg.cholesky(Ce).T
-S  = np.cov(X, rowvar=False, bias=True)
-Slw, d = lw_identity(X - X.mean(0))
-w_pinv, w_lw, w_eq = minvar_pinv(S), minvar(Slw), np.ones(N)/N
-print(f"rank(S)={np.linalg.matrix_rank(S)} < N={N}; lam_min={np.linalg.eigvalsh(S)[0]:.3e}; cond={np.linalg.cond(S):.3e}")
-print(f"LW shrinkage intensity delta*={d:.4f}; cond(LW)={np.linalg.cond(Slw):.3f}")
-print(f"gross exposure sum|w|: pinv={np.abs(w_pinv).sum():.2f}   LW={np.abs(w_lw).sum():.4f}")
-print(f"TRUE variance: pinv={w_pinv@Ce@w_pinv:.4f}  LW={w_lw@Ce@w_lw:.4f}  1/N={w_eq@Ce@w_eq:.4f}")
-```
-```
-rank(S)=39 < N=50; lam_min=-1.095e-15; cond=6.186e+18
-LW shrinkage intensity delta*=0.2382; cond(LW)=40.392
-gross exposure sum|w|: pinv=15.89   LW=1.0148
-TRUE variance: pinv=4.7937  LW=0.0140  1/N=0.0130
-```
-The sample-covariance path is a disaster ($\kappa\approx6\times10^{18}$, gross exposure $15.9\times$, true variance $4.79$). Ledoit–Wolf, with intensity $0.24$, keeps gross exposure near $1$ and true variance at $0.014$ — statistically on par with $1/N$ ($0.013$). Note the target here ($\mu I$) is *misspecified* (the true $\Sigma$ is not close to identity), which is why LW only ties rather than beats $1/N$; that is the target-choice lesson of page 03 in action.
 
-**Experiment 2 — estimator ranking across the $q$ regimes.** Average *true* min-variance variance for $N=100$ assets, 20 random draws per regime, comparing the sample covariance, Ledoit–Wolf, and $1/N$:
 
-```python
-import numpy as np
-
-def lw_identity(X):
-    T, N = X.shape; S = (X.T @ X)/T; mu = np.trace(S)/N; F = mu*np.eye(N)
-    dif = X[:,:,None]*X[:,None,:] - S
-    pi = (dif**2).mean(0).sum(); rho = np.sum((dif**2).mean(0)[np.arange(N),np.arange(N)])
-    d = min(max((pi-rho)/((F-S)**2).sum()/T, 0.0), 1.0)
-    return d*F + (1-d)*S, d
-
-def minvar(C):
-    one = np.ones(C.shape[0])
-    try:   w = np.linalg.solve(C, one)
-    except np.linalg.LinAlgError: w = np.linalg.pinv(C) @ one
-    return w / w.sum()
-
-rng = np.random.default_rng(7)
-N = 100
-B  = rng.normal(0, 1, size=(N, 3))*0.5
-Ce = B @ B.T + np.diag(np.full(N, 0.7)); L = np.linalg.cholesky(Ce)
-we = np.ones(N)/N
-for T in (50, 100, 300, 1000):
-    vs, vl, ve = [], [], []
-    for _ in range(20):
-        X = rng.normal(size=(T, N)) @ L.T
-        S = np.cov(X, rowvar=False, bias=True)
-        Slw, _ = lw_identity(X - X.mean(0))
-        ws, wl = minvar(S), minvar(Slw)
-        vs.append(ws@Ce@ws); vl.append(wl@Ce@wl); ve.append(we@Ce@we)
-    print(f" T={T:5d} q={N/T:.2f}: sample={np.mean(vs):8.5f}  LW={np.mean(vl):.5f}  1/N={np.mean(ve):.5f}")
-```
-```
- T=   50 q=2.00: sample=13.92958  LW=0.01103  1/N=0.02290
- T=  100 q=1.00: sample=731.93084  LW=0.01226  1/N=0.02290
- T=  300 q=0.33: sample= 0.01119  LW=0.01016  1/N=0.02290
- T= 1000 q=0.10: sample= 0.00829  LW=0.00824  1/N=0.02290
-```
-This single table is the whole pillar's covariance story. When $q\ge1$ the sample covariance is **catastrophically** worse than naive diversification ($13.9$ and $731.9$ vs $0.023$). Ledoit–Wolf is *never* the worst and is best in the hard regimes, degrading gracefully to the sample matrix as $T$ grows (at $q=0.10$ the two are nearly identical, $0.00824$ vs $0.00829$). And $1/N$ — parameter-free — is a genuinely hard benchmark. This is precisely the DeMiguel–Garlappi–Uppal (2009) result: a covariance model must clear $1/N$ *out-of-sample*, and in the $N\approx T$ regime the sample matrix does not.
+This single table is the whole pillar's covariance story. When $q\ge1$ the sample covariance is **catastrophically** worse than naive diversification ($13.9$ and $731.9$ vs $0.023$). Ledoit–Wolf is *never* the worst and is best in the hard regimes, degrading gracefully to the sample matrix as $T$ grows (at $q=0.10$ the two are nearly identical, $0.00824$ vs $0.00829$). And $1/N$ - parameter-free - is a genuinely hard benchmark. This is precisely the DeMiguel–Garlappi–Uppal (2009) result: a covariance model must clear $1/N$ *out-of-sample*, and in the $N\approx T$ regime the sample matrix does not.
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns (numbered)
 
 1. **The $N\ge T$ cliff.** The sample covariance simply is not invertible; do not paper over it with `pinv` (EXP 1: true variance $4.79$). Use a shrinkage or factor estimator to *regularize the estimate*, not the arithmetic.
-2. **Amplification dominates small-sample inference.** Because $w\propto\Sigma^{-1}\mathbf 1$, the estimator's error enters the weights amplified by $1/\lambda_i^2$. Accurate *small* eigenvalues matter more than accurate large ones — the opposite of PCA's habit of trusting the top components.
+2. **Amplification dominates small-sample inference.** Because $w\propto\Sigma^{-1}\mathbf 1$, the estimator's error enters the weights amplified by $1/\lambda_i^2$. Accurate *small* eigenvalues matter more than accurate large ones - the opposite of PCA's habit of trusting the top components.
 3. **In-sample evaluation is not a test.** Reported risk can beat the true optimum; that is proof of overfitting, not skill. Always do **walk-forward / out-of-sample** evaluation with the covariance estimated on a trailing window and evaluated on the next period.
 4. **Look-ahead and survivorship in the window.** Real universes change (delistings, index reconstitution). A static $N$ and a survivorship-free history are prerequisites for any of these numbers to mean anything.
 5. **Target misspecification removes the gain.** As EXP 1 showed, shrinking toward the wrong prior ($\mu I$ for a heteroskedastic book) can leave you merely equal to $1/N$. Choose the target to match the economics (constant-correlation, single-index, factor).
 6. **Denoising and shrinkage can disagree with Frobenius.** They are proxies for the true objective (realized risk). Rank estimators by the *deployed* metric, not by $\|\cdot\|_F$ alone.
-7. **Non-stationarity ages every estimate.** Volatility regimes, correlation breaks (2008, 2020) invalidate an old window. Shrinkage reduces variance, it does not track regime change — pair with an exponentially-weighted or regime-aware window.
+7. **Non-stationarity ages every estimate.** Volatility regimes, correlation breaks (2008, 2020) invalidate an old window. Shrinkage reduces variance, it does not track regime change - pair with an exponentially-weighted or regime-aware window.
 
 ---
 
@@ -158,7 +90,7 @@ This single table is the whole pillar's covariance story. When $q\ge1$ the sampl
 - **Ledoit, O. & Wolf, M. (2004).** "A well-conditioned estimator…" *J. Multivariate Anal.* 88(2):365–411. *Condition-number boundedness; why classification happens not numerically but statistically.*
 - **Ledoit, O. & Wolf, M. (2004).** "Honey, I shrunk the sample covariance matrix." *J. Portfolio Management* 30(4):110–119. *Out-of-sample study on real US stock data (Shrink-CC beats sample, PC-5, and single-index).*
 - **DeMiguel, V., Garlappi, L. & Uppal, R. (2009).** "Optimal Versus Naive Diversification." *Review of Financial Studies* 22(5):1915–1953. *The $1/N$ benchmark and its $O(T^{-1})$ estimation-error logic.*
-- **Chopra, V. & Ziemba, W. (1993).** "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11. *Mean errors dominate covariance errors ~20× — the priority ordering for fixing inputs.*
+- **Chopra, V. & Ziemba, W. (1993).** "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11. *Mean errors dominate covariance errors ~20× - the priority ordering for fixing inputs.*
 - **Michaud, R. O. & Michaud, R. O. (2008).** *Efficient Asset Management* (2nd ed.), Oxford. *Resampled frontiers as the industry mitigation of error maximization.*
 
 ---

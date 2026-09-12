@@ -14,11 +14,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-So far every model handled **one** series. Portfolio risk, however, lives in the **dependence structure**: two assets each at 20% vol is a very different risk if their correlation is 0 or 0.9. Multivariate GARCH extends volatility modeling to a **conditional covariance matrix** $\Sigma_t$, and the central tension is that the naive extension explodes — a $k$-asset covariance matrix has $k(k+1)/2$ entries, and a full BEKK parameterises them all.
+So far every model handled **one** series. Portfolio risk, however, lives in the **dependence structure**: two assets each at 20% vol is a very different risk if their correlation is 0 or 0.9. Multivariate GARCH extends volatility modeling to a **conditional covariance matrix** $\Sigma_t$, and the central tension is that the naive extension explodes - a $k$-asset covariance matrix has $k(k+1)/2$ entries, and a full BEKK parameterises them all.
 
 The resolution is **two-step / correlation decomposition**: model each asset's volatility *univariately* (a problem already solved), then model **only the correlation matrix** dynamically. This is the **CCC** (constant conditional correlation, Bollerslev 1990) and **DCC** (dynamic conditional correlation, Engle 2002) family. DCC keeps the parameter count fixed ($\theta_1,\theta_2$ regardless of $k$) and guarantees positive definiteness by construction.
 
-The payoff: **portfolio VaR, risk-parity weights, and hedging ratios that move with the market's correlation regime** — because correlations, like volatilities, cluster and rise together in crises ("correlations go to one in a crash"). This page also covers **volatility forecasting and term structure**, the bridge to risk applications.
+The payoff: **portfolio VaR, risk-parity weights, and hedging ratios that move with the market's correlation regime** - because correlations, like volatilities, cluster and rise together in crises ("correlations go to one in a crash"). This page also covers **volatility forecasting and term structure**, the bridge to risk applications.
 
 ---
 
@@ -30,7 +30,7 @@ The payoff: **portfolio VaR, risk-parity weights, and hedging ratios that move w
 $$
 \Sigma_t=AA'+\sum_{i=1}^{m}A_i(a_{t-i}a_{t-i}')A_i'+\sum_{j=1}^{s}B_j\Sigma_{t-j}B_j',
 $$
-*is* positive definite almost surely if $AA'$ is, but has $k^2(m+s)+k(k+1)/2$ parameters — for $k=10$ that is hundreds, none individually interpretable. The shocks in the BEKK quadratic term are **raw** innovations $a_{t-i}a_{t-i}'$, *not* standardized.
+*is* positive definite almost surely if $AA'$ is, but has $k^2(m+s)+k(k+1)/2$ parameters - for $k=10$ that is hundreds, none individually interpretable. The shocks in the BEKK quadratic term are **raw** innovations $a_{t-i}a_{t-i}'$, *not* standardized.
 
 **Correlation decomposition (the practical route).** Write
 $$
@@ -38,7 +38,7 @@ $$
 $$
 Here each $\sigma_{ii,t}$ is a univariate GARCH(1,1) (fast, well-understood) and $R_t$ is the dynamic correlation matrix.
 
-- **CCC (Bollerslev 1990):** $R_t=\bar R$ constant. The log-likelihood separates into $k$ univariate pieces plus a correlation piece — estimation is trivial and consistent, but it ignores that correlations move.
+- **CCC (Bollerslev 1990):** $R_t=\bar R$ constant. The log-likelihood separates into $k$ univariate pieces plus a correlation piece - estimation is trivial and consistent, but it ignores that correlations move.
 - **DCC (Engle 2002):** let $\varepsilon_{it}=a_{it}/\sqrt{\sigma_{ii,t}}$ be the standardized shocks, and evolve a pseudo-correlation matrix
 $$
 Q_t=(1-\theta_1-\theta_2)\bar Q+\theta_1\,\varepsilon_{t-1}\varepsilon_{t-1}'+\theta_2\,Q_{t-1},\qquad R_t=J_tQ_tJ_t,\quad J_t=\operatorname{diag}\{q_{ii,t}^{-1/2}\}.
@@ -51,90 +51,41 @@ The rescaling $J_tQ_tJ_t$ forces unit diagonal, turning $Q_t$ into the true corr
 $$
 VaR_{1+2}=\sqrt{VaR_1^2+VaR_2^2+2\rho\,VaR_1VaR_2}.
 $$
-Tsay §10.7 (Cisco+Intel, \$1M each, 5%) reports **\$57,117 (univariate) < \$57,648 (time-varying corr) < \$58,180 (constant corr)** — the ordering showing that ignoring dynamic correlation *understates* joint risk when correlation rises.
+Tsay §10.7 (Cisco+Intel, \$1M each, 5%) reports **\$57,117 (univariate) < \$57,648 (time-varying corr) < \$58,180 (constant corr)** - the ordering showing that ignoring dynamic correlation *understates* joint risk when correlation rises.
 
-**Forecasting & term structure.** From a fitted GARCH(1,1), the $h$-step variance forecast is $\sigma_h^2(\ell)=\alpha_0+(\alpha_1+\beta_1)\sigma_h^2(\ell-1)$, decaying geometrically to the unconditional variance. The **term structure** (the shape of $\sigma_h^2(\ell)$ vs $\ell$) is upward-sloping when today's vol is *below* the long-run mean and downward-sloping when above — the "volatility cone". For $h$-day VaR, integrate the term structure: $VaR^{(h)}=z_p\sqrt{\sum_{\ell=1}^{h}\sigma_h^2(\ell)}$.
+**Forecasting & term structure.** From a fitted GARCH(1,1), the $h$-step variance forecast is $\sigma_h^2(\ell)=\alpha_0+(\alpha_1+\beta_1)\sigma_h^2(\ell-1)$, decaying geometrically to the unconditional variance. The **term structure** (the shape of $\sigma_h^2(\ell)$ vs $\ell$) is upward-sloping when today's vol is *below* the long-run mean and downward-sloping when above - the "volatility cone". For $h$-day VaR, integrate the term structure: $VaR^{(h)}=z_p\sqrt{\sum_{\ell=1}^{h}\sigma_h^2(\ell)}$.
 
 ---
 
-### 3. Computational Implementation — DCC recursion and the vol term structure
+### 3. Computational Implementation - DCC recursion and the vol term structure
 
 Standard library only. (a) Simulates two GARCH(1,1) assets with an average 0.60 correlation, runs the **DCC(1,1) correlation recursion** on the standardized residuals, and confirms the recovered mean correlation. (b) Takes a fitted GARCH(1,1) state after a $-3\%$ shock and reads off the **volatility term structure** and the corresponding 99% VaR at 1d/1w/2w/1m.
 
-```python
-import math, random
-random.seed(99)
 
-# ---- (a) DCC(1,1): Q_t = (1-t1-t2)Qbar + t1 e_{t-1}e'_{t-1} + t2 Q_{t-1},  R_t = J_t Q_t J_t ----
-n = 2000
-a0a,a1a,b1a = 1e-6,0.07,0.91
-a0b,a1b,b1b = 1.4e-6,0.06,0.92
-t1,t2 = 0.03,0.95                      # DCC persistence 0.98 < 1
-sa=[a0a/(1-a1a-b1a)]*n; sb=[a0b/(1-a1b-b1b)]*n; ra=[0.0]*n; rb=[0.0]*n; ops=[0.60]*n
-eps=[]
-for t in range(1,n):
-    za=random.gauss(0,1); zb=ops[t]*za+math.sqrt(1-ops[t]**2)*random.gauss(0,1)
-    ra[t]=math.sqrt(sa[t-1])*za; rb[t]=math.sqrt(sb[t-1])*zb
-    sa[t]=a0a+a1a*ra[t]**2+b1a*sa[t-1]; sb[t]=a0b+a1b*rb[t]**2+b1b*sb[t-1]
-    eps.append((ra[t]/math.sqrt(sa[t]), rb[t]/math.sqrt(sb[t])))
-q11=q22=1.0; q12=0.60; R=[]            # Q initialised at its mean; 50-obs burn-in
-for t in range(len(eps)):
-    e1,e2=eps[t]
-    q11=(1-t1-t2)*1.0 + t1*e1*e1 + t2*q11
-    q22=(1-t1-t2)*1.0 + t1*e2*e2 + t2*q22
-    q12=(1-t1-t2)*0.60 + t1*e1*e2 + t2*q12
-    R.append(q12/math.sqrt(q11*q22))
-R=R[50:]
-print(f"DCC(1,1) theta1={t1} theta2={t2} (persistence {t1+t2})")
-print(f"  mean DCC correlation = {sum(R)/len(R):.4f}  (target 0.60)")
-print(f"  range over {len(R)} days = [{min(R):.4f}, {max(R):.4f}]")
 
-# ---- (b) GARCH(1,1) vol term structure + 99% VaR after a -3% day ----
-a0,a1,b1 = 2e-6,0.08,0.90
-s = a0/(1-a1-b1)
-s = a0 + a1*(-0.03)**2 + b1*s          # tomorrow's variance given a -3% shock today
-path=[]
-for h in range(1,31): path.append(s); s = a0 + (a1+b1)*s
-print("h-step forecast, annualized vol %: " + " ".join(f"{math.sqrt(v)*math.sqrt(252)*100:.1f}" for v in path[:10]))
-z99 = 2.326
-for h,lab in ((1,"1d"),(5,"1w"),(10,"2w"),(22,"1m")):
-    print(f"  {lab:>3} 99% VaR = {z99*math.sqrt(path[h-1])*100:.2f}%")
-print(f"  long-horizon sigma -> {math.sqrt(a0/(1-a1-b1)):.5f}  = sqrt(omega/(1-a1-b1))")
-```
-```text
-DCC(1,1) theta1=0.03 theta2=0.95 (persistence 0.98)
-  mean DCC correlation = 0.5916  (target 0.60)
-  range over 1949 days = [0.3843, 0.7488]
-h-step forecast, annualized vol %: 20.3 20.2 20.2 20.1 20.0 19.9 19.9 19.8 19.7 19.7
-   1d 99% VaR = 2.98%
-   1w 99% VaR = 2.93%
-   2w 99% VaR = 2.88%
-   1m 99% VaR = 2.77%
-  long-horizon sigma -> 0.01000  = sqrt(omega/(1-a1-b1))
-```
 
-The DCC recursion recovers a mean correlation of **0.5916** against a true 0.60 — the small downward bias comes from the $Q_t$ targeting and finite sample — and it *moves* over 1949 days (range $[0.384, 0.749]$): correlation is dynamic, exactly as the model claims. Panel (b) shows the term structure after a $-3\%$ day: 20.3% annualized today decaying **toward** the 10% unconditional vol — the forecast is *downward-sloping* because the current shock has pushed vol above its long-run level. The 99% VaR shrinks monotonically with horizon per day ($2.98\%\to2.77\%$), because a single shock's influence fades — the $h$-day VaR is **sub-linear in $h$**, not $\sqrt h$ (a genuine, exploitable improvement over the naive rule).
+The DCC recursion recovers a mean correlation of **0.5916** against a true 0.60 - the small downward bias comes from the $Q_t$ targeting and finite sample - and it *moves* over 1949 days (range $[0.384, 0.749]$): correlation is dynamic, exactly as the model claims. Panel (b) shows the term structure after a $-3\%$ day: 20.3% annualized today decaying **toward** the 10% unconditional vol - the forecast is *downward-sloping* because the current shock has pushed vol above its long-run level. The 99% VaR shrinks monotonically with horizon per day ($2.98\%\to2.77\%$), because a single shock's influence fades - the $h$-day VaR is **sub-linear in $h$**, not $\sqrt h$ (a genuine, exploitable improvement over the naive rule).
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Dimensionality is the enemy.** BEKK/VEC parameter counts grow as $k^2$ and estimates are uninterpretable past $k\approx5$; the DCC/CCC decomposition exists precisely to keep estimation feasible. Prefer factor or Cholesky structures for large $k$ (Tsay §10.5–10.6).
-2. **DCC scalar dynamics assume common persistence.** The single $(\theta_1,\theta_2)$ forces *all* pairwise correlations to share the same persistence — implausible when some pairs (e.g. within-sector) are far more tightly coupled than others.
+2. **DCC scalar dynamics assume common persistence.** The single $(\theta_1,\theta_2)$ forces *all* pairwise correlations to share the same persistence - implausible when some pairs (e.g. within-sector) are far more tightly coupled than others.
 3. **DCC has no leverage.** The basic DCC correlation recursion is symmetric; the multivariate-$t$ + leverage extension (Tsay 2006) is needed for the crisis behaviour where correlations spike.
 4. **Two-step estimation error propagates.** Fitting the univariate GARCHs first and the correlations second ignores the uncertainty in step 1; standard errors are understated.
-5. **Correlations spike in crises.** Because $R_t$ rises toward 1 in a sell-off, a CCC or low-correlation assumption *systematically understates* portfolio VaR exactly in the tail — the verified Tsay ordering ($57.1k<57.6k<58.2k$) is a mild illustration; the effect is severe for concentrated equity books.
+5. **Correlations spike in crises.** Because $R_t$ rises toward 1 in a sell-off, a CCC or low-correlation assumption *systematically understates* portfolio VaR exactly in the tail - the verified Tsay ordering ($57.1k<57.6k<58.2k$) is a mild illustration; the effect is severe for concentrated equity books.
 6. **Forecast horizon vs re-estimation.** Term-structure forecasts assume parameters are constant over the horizon; over weeks–months the structural-break failure of 05 dominates, and the "decay to unconditional variance" is anticipated by nothing.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Engle, Robert F.** (2002): *Dynamic Conditional Correlation: A Simple Class of Multivariate Generalized Autoregressive Conditional Heteroskedasticity Models*, J. Business & Economic Statistics 20(3), 339–350 — DCC.
-- **Bollerslev, Tim** (1990): *Modelling the Coherence in Short-Run Nominal Exchange Rates: A Multivariate Generalized ARCH Model*, Review of Economics and Statistics 72(3) — CCC.
-- **Engle, Robert F. & Kroner, Kenneth F.** (1995): *Multivariate Simultaneous Generalized ARCH*, Econometric Theory 11(1) — BEKK.
+- **Engle, Robert F.** (2002): *Dynamic Conditional Correlation: A Simple Class of Multivariate Generalized Autoregressive Conditional Heteroskedasticity Models*, J. Business & Economic Statistics 20(3), 339–350 - DCC.
+- **Bollerslev, Tim** (1990): *Modelling the Coherence in Short-Run Nominal Exchange Rates: A Multivariate Generalized ARCH Model*, Review of Economics and Statistics 72(3) - CCC.
+- **Engle, Robert F. & Kroner, Kenneth F.** (1995): *Multivariate Simultaneous Generalized ARCH*, Econometric Theory 11(1) - BEKK.
 - **Tse, Yiu K. & Tsui, Albert K.** (2002): *A Multivariate GARCH Model with Time-Varying Correlations*, J. Business & Economic Statistics 20(3).
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) — §10.1 (EWMA covariance), §10.2 (VEC/DVEC/BEKK), §10.4 (CCC/TVC/DCC), §10.7 (portfolio VaR), §10.8 (multivariate-$t$). *The primary verified source for the multivariate material.*
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - §10.1 (EWMA covariance), §10.2 (VEC/DVEC/BEKK), §10.4 (CCC/TVC/DCC), §10.7 (portfolio VaR), §10.8 (multivariate-$t$). *The primary verified source for the multivariate material.*
 
 ---
 
@@ -143,4 +94,4 @@ The DCC recursion recovers a mean correlation of **0.5916** against a true 0.60 
 - Base: [[foundations/linear-algebra-and-matrices/index|Linear Algebra]] (PD matrices, Cholesky) · [[foundations/econometrics-and-timeseries/index|Econometrics & Time Series]] (forecasting)
 - Prior: [[pillars/01-quantitative-research/garch-and-volatility-modeling/02-arch-and-garch|02 · ARCH & GARCH]] · [[pillars/01-quantitative-research/garch-and-volatility-modeling/05-failure-modes-and-practice|05 · Failure Modes]] · Hub: [[pillars/01-quantitative-research/garch-and-volatility-modeling/index|Index]]
 - Applied: [[pillars/04-quantitative-risk/var-and-expected-shortfall/index|VaR & Expected Shortfall]] (DCC covariance → portfolio VaR) · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & Denoising]] · [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity]] · [[pillars/01-quantitative-research/signal-processing-and-kalman/index|Signal Processing & Kalman]] (SV vs GARCH, state-space covariance)
-- Home: [[pillars/01-quantitative-research/garch-and-volatility-modeling/index|GARCH & Volatility Modeling — Index Hub]]
+- Home: [[pillars/01-quantitative-research/garch-and-volatility-modeling/index|GARCH & Volatility Modeling - Index Hub]]

@@ -15,9 +15,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page is the **launchpad** and the **honest verdict**. It collects the one application of RL to trading that has genuinely earned its keep — **optimal trade execution / order scheduling** — formalizes it as the Nevmyvaka–Kearns MDP, shows the RL agent rediscovering a closed-form-optimal schedule, and then frames the whole finance-RL literature against the bar it must clear: *beat Almgren–Chriss, out of sample, net of costs.*
+This page is the **launchpad** and the **honest verdict**. It collects the one application of RL to trading that has genuinely earned its keep - **optimal trade execution / order scheduling** - formalizes it as the Nevmyvaka–Kearns MDP, shows the RL agent rediscovering a closed-form-optimal schedule, and then frames the whole finance-RL literature against the bar it must clear: *beat Almgren–Chriss, out of sample, net of costs.*
 
-> **Why execution is the honest use case.** It is short-horizon (limited compounding of simulator error), the action is small and bounded (sell shares over an interval), a strong non-RL baseline exists (Almgren–Chriss / TWAP / VWAP), and the impact model — while approximate — is at least *specifiable*. Contrast with "RL that trades the market": long-horizon, huge action space, no trustworthy simulator, no baseline that means anything. The lesson generalizes: **use RL where the simulator is defensible and the baseline is strong, and you will get honest gains; use it where neither holds and you will manufacture alpha in the backtest.**
+> **Why execution is the honest use case.** It is short-horizon (limited compounding of simulator error), the action is small and bounded (sell shares over an interval), a strong non-RL baseline exists (Almgren–Chriss / TWAP / VWAP), and the impact model - while approximate - is at least *specifiable*. Contrast with "RL that trades the market": long-horizon, huge action space, no trustworthy simulator, no baseline that means anything. The lesson generalizes: **use RL where the simulator is defensible and the baseline is strong, and you will get honest gains; use it where neither holds and you will manufacture alpha in the backtest.**
 
 ---
 
@@ -26,14 +26,14 @@ This page is the **launchpad** and the **honest verdict**. It collects the one a
 #### 2.1 The Nevmyvaka–Kearns execution MDP
 
 Formalize liquidating $X_0$ shares over $T$ intervals (the paper's design, simplified):
-- **State** $S_t=(t,\,x_t)$ — time step $t$ and shares $x_t$ still to sell (optionally an order-book/price feature).
-- **Action** $A_t=v_t\in\{0,\ldots,x_t\}$ — shares sold this interval (a discrete grid in the original).
-- **Reward** $R_{t+1}=v_t\,(S_t-\eta\,v_t)-h\,x_t$ — realized proceeds net of *temporary impact* $\eta v_t$ (linear) or $\eta v_t^2$ (convex) and a holding/risk penalty $h\,x_t$.
+- **State** $S_t=(t,\,x_t)$ - time step $t$ and shares $x_t$ still to sell (optionally an order-book/price feature).
+- **Action** $A_t=v_t\in\{0,\ldots,x_t\}$ - shares sold this interval (a discrete grid in the original).
+- **Reward** $R_{t+1}=v_t\,(S_t-\eta\,v_t)-h\,x_t$ - realized proceeds net of *temporary impact* $\eta v_t$ (linear) or $\eta v_t^2$ (convex) and a holding/risk penalty $h\,x_t$.
 - **Transition** $x_{t+1}=x_t-v_t$; the mid-price $S_t$ follows the market (a martingale under the reference measure, plus any drift $\mu$).
 
 The template, in words: **state = (time, inventory), action = shares this slice, reward = net proceeds.** Everything else (price features, order-book state) is an embellishment layered onto this core.
 
-#### 2.2 The baseline it must beat — Almgren–Chriss
+#### 2.2 The baseline it must beat - Almgren–Chriss
 
 The closed-form benchmark: with *linear* temporary and permanent impact and a risk-aversion $\lambda$, the optimal deterministic trajectory is exponentially decaying,
 $$
@@ -43,99 +43,28 @@ selling fast when risk-aversion $\lambda$ (or volatility $\sigma$) is high and s
 
 #### 2.3 Why RL can add something the closed form cannot
 
-Almgren–Chriss assumes (i) linear impact, (ii) a fixed horizon, (iii) no learning from state. RL relaxes all three: it can encode *non-linear / transient* impact, **condition on order-book/imbalance state**, and adapt the schedule online. Bertsimas & Lo (1998) predate the RL branding but solve the same DP with a *state-dependent* optimal policy, showing the value of conditioning — the conceptual ancestor of learned execution policies.
+Almgren–Chriss assumes (i) linear impact, (ii) a fixed horizon, (iii) no learning from state. RL relaxes all three: it can encode *non-linear / transient* impact, **condition on order-book/imbalance state**, and adapt the schedule online. Bertsimas & Lo (1998) predate the RL branding but solve the same DP with a *state-dependent* optimal policy, showing the value of conditioning - the conceptual ancestor of learned execution policies.
 
 #### 2.4 The reward-design frontier for execution
 
-Real execution rewards must trade off three things Almgren–Chriss bundles into one $\lambda$: implementation shortfall (the IS benchmark), impact/transaction cost, and timing risk. Writing $R_{t+1}=v_t(S_t-\eta v_t)-h\,x_t$ and sweeping $(h,\gamma)$ traces the *efficient frontier* of execution — and each point is a different RL objective. Getting $h$ wrong is the reward-hacking failure of [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/05-failure-modes-and-practice|05]] in a specific, measurable form.
+Real execution rewards must trade off three things Almgren–Chriss bundles into one $\lambda$: implementation shortfall (the IS benchmark), impact/transaction cost, and timing risk. Writing $R_{t+1}=v_t(S_t-\eta v_t)-h\,x_t$ and sweeping $(h,\gamma)$ traces the *efficient frontier* of execution - and each point is a different RL objective. Getting $h$ wrong is the reward-hacking failure of [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/05-failure-modes-and-practice|05]] in a specific, measurable form.
 
 ---
 
-### 3. Computational Implementation — the RL agent rediscovers an optimal execution schedule
+### 3. Computational Implementation - the RL agent rediscovers an optimal execution schedule
 
-A self-contained simulation: liquidate $X_0=10$ shares over $T=5$ intervals under **adverse price drift** ($\mu=-0.30$ — the price is expected to fall, so front-loading is optimal). We compute the DP oracle (the truth), train a **tabular Q-learning** execution agent from sampled episodes, and compare the RL-discovered schedule against a **drift-blind TWAP** baseline. Stdlib only.
+A self-contained simulation: liquidate $X_0=10$ shares over $T=5$ intervals under **adverse price drift** ($\mu=-0.30$ - the price is expected to fall, so front-loading is optimal). We compute the DP oracle (the truth), train a **tabular Q-learning** execution agent from sampled episodes, and compare the RL-discovered schedule against a **drift-blind TWAP** baseline. Stdlib only.
 
-```python
-import random
 
-# ---- Optimal-execution MDP with adverse drift (mu<0 => front-load) ----
-T, X0, S0, sigma, eta, mu = 5, 10, 50.0, 0.6, 0.04, -0.30
-ACTS = [0, 2, 4, 6, 8, 10]
-def allowed(x): return [v for v in ACTS if v <= x]
 
-# --- DP oracle over (t, x): E[reward] = v*(S0 + mu*t - eta*v) ---
-V = {(T, x): (-1e9*x if x > 0 else 0.0) for x in range(X0+1)}
-pol = {}
-for t in range(T-1, -1, -1):
-    for x in range(X0+1):
-        best, besta = -1e18, 0
-        for v in allowed(x):
-            val = v*(S0 + mu*t - eta*v) + V[(t+1, x-v)]
-            if val > best: best, besta = val, v
-        V[(t, x)] = best; pol[(t, x)] = besta
-
-def oracle_schedule(x=X0):
-    s = []
-    for t in range(T):
-        v = pol[(t, x)]; s.append(v); x -= v
-    return s
-
-# --- Tabular Q-learning: state = (t, x); sampled prices average to E[S_t]=S0+mu*t ---
-random.seed(0)
-Q = {(t, x): {v: 0.0 for v in ACTS} for t in range(T) for x in range(X0+1)}
-for ep in range(400000):
-    alpha = 0.3/(1 + ep/50000.0); eps = 1.0*max(0.0, 1 - ep/100000.0)
-    x = X0
-    for t in range(T):
-        opts = allowed(x)
-        if t == T-1: v = x
-        elif random.random() < eps: v = random.choice(opts)
-        else: v = max(opts, key=lambda a: Q[(t, x)][a])
-        xn = x - v
-        nxt = 0.0 if t+1 >= T else max(Q[(t+1, xn)][a] for a in allowed(xn))
-        Q[(t, x)][v] += alpha*(v*(S0 + mu*t - eta*v) + nxt - Q[(t, x)][v])
-        x = xn
-
-def rl_schedule(x=X0):
-    s = []
-    for t in range(T):
-        v = x if t == T-1 else max(allowed(x), key=lambda a: Q[(t, x)][a])
-        s.append(v); x -= v
-    return s
-
-def simulate(sched, npaths=20000, seed=42):
-    rng = random.Random(seed); tot = 0.0
-    for _ in range(npaths):
-        S = S0
-        for v in sched:
-            tot += v*(S - eta*v); S += mu + sigma*rng.gauss(0, 1)
-    return tot/npaths
-
-twap = lambda: [X0//T]*T
-rl = rl_schedule()
-print("RL-discovered schedule  :", rl)
-print("DP oracle schedule      :", oracle_schedule())
-print("TWAP (drift-blind)      :", twap())
-print(f"mean shortfall  RL      = {S0*X0 - simulate(rl):.4f}")
-print(f"mean shortfall  oracle  = {S0*X0 - simulate(oracle_schedule()):.4f}")
-print(f"mean shortfall  TWAP    = {S0*X0 - simulate(twap()):.4f}")
-```
-```
-RL-discovered schedule  : [6, 4, 0, 0, 0]
-DP oracle schedule      : [6, 4, 0, 0, 0]
-TWAP (drift-blind)      : [2, 2, 2, 2, 2]
-mean shortfall  RL      = 3.3040
-mean shortfall  oracle  = 3.3040
-mean shortfall  TWAP    = 6.7999
-```
 
 Three results, all exact:
 
-1. **The RL agent discovers the DP-optimal front-loaded schedule** $[6,4,0,0,0]$ — identical to the oracle. Faced with a falling price, it sells *fast early and stops*, rather than spreading evenly.
-2. **Its mean implementation shortfall is $3.3040$, matching the oracle exactly** — RL is not just "a good policy," it is *the* optimal policy here.
-3. **It beats drift-blind TWAP ($6.7999$) by $3.4959$**, i.e. it saves over half the shortfall — precisely because it conditions on the *state of the world* (adverse drift) that TWAP ignores. This is the honest value proposition of execution RL: **state-conditional scheduling where a static benchmark cannot respond.**
+1. **The RL agent discovers the DP-optimal front-loaded schedule** $[6,4,0,0,0]$ - identical to the oracle. Faced with a falling price, it sells *fast early and stops*, rather than spreading evenly.
+2. **Its mean implementation shortfall is $3.3040$, matching the oracle exactly** - RL is not just "a good policy," it is *the* optimal policy here.
+3. **It beats drift-blind TWAP ($6.7999$) by $3.4959$**, i.e. it saves over half the shortfall - precisely because it conditions on the *state of the world* (adverse drift) that TWAP ignores. This is the honest value proposition of execution RL: **state-conditional scheduling where a static benchmark cannot respond.**
 
-**The honest caveat.** This is a *simulation*. The gain is only as real as the impact model ($\eta$), the drift assumption, and the discretization are — and in live markets those are the very quantities that are uncertain ([[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/05-failure-modes-and-practice|05 · Failure Modes]]). The point is not "RL made money"; it is "RL recovered the provably optimal schedule, which is the *minimum* bar it must clear before its extra flexibility buys you anything."
+**The honest caveat.** This is a *simulation*. The gain is only as real as the impact model ($\eta$), the drift assumption, and the discretization are - and in live markets those are the very quantities that are uncertain ([[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/05-failure-modes-and-practice|05 · Failure Modes]]). The point is not "RL made money"; it is "RL recovered the provably optimal schedule, which is the *minimum* bar it must clear before its extra flexibility buys you anything."
 
 ---
 
@@ -143,8 +72,8 @@ Three results, all exact:
 
 1. **The baseline is the bar, not the ceiling.** If RL only matches Almgren–Chriss, it has added zero value and a lot of fragility. Only claim RL when it beats a *strong* baseline out of sample, net of the simulator-realism questions.
 2. **Simulator artifacts dominate.** In execution RL the agent will happily learn to exploit a queue/impact model that is slightly wrong; the deployed P&L then diverges from the training P&L by the mismatch term $\frac{\gamma}{(1-\gamma)^2}\|P^\star-P_{\text{sim}}\|$.
-3. **The Nevmyvaka–Kearns paper is often mis-summarized.** It reports improvements *over specific baselines on historical replay*, in a controlled setting — not live-market alpha. Treat "RL beats VWAP by X%" claims as simulator-dependent until proven otherwise (see the honesty clause in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/index|the hub]]).
-4. **Reward-design is the real frontier.** Execution RL's only free parameters that matter are $(\eta,h,\gamma)$ — the impact model and the risk penalty. Calibrating them is a *market-microstructure* problem, not an RL problem; getting them wrong re-introduces reward hacking in an execution dress ([[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Constraints & Transaction Costs]]).
+3. **The Nevmyvaka–Kearns paper is often mis-summarized.** It reports improvements *over specific baselines on historical replay*, in a controlled setting - not live-market alpha. Treat "RL beats VWAP by X%" claims as simulator-dependent until proven otherwise (see the honesty clause in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/index|the hub]]).
+4. **Reward-design is the real frontier.** Execution RL's only free parameters that matter are $(\eta,h,\gamma)$ - the impact model and the risk penalty. Calibrating them is a *market-microstructure* problem, not an RL problem; getting them wrong re-introduces reward hacking in an execution dress ([[pillars/05-portfolio-optimization/constraints-and-transaction-costs/index|Constraints & Transaction Costs]]).
 5. **Over-claiming the canon.** "Deep RL for trading" (Deng et al. 2017) and the direct-reinforcement line (Moody–Saffell 2001) are real and instructive, but their headline results have not generalized into durable, reproduced live alpha. Cite them as *templates and warnings*, not as evidence RL beats the market.
 6. **Compute/engineering cost.** Deep execution agents need low-latency inference in the hot path; the incremental value over a well-tuned Almgren–Chriss or a simple state-conditional rule must clear that engineering cost too.
 
@@ -152,13 +81,13 @@ Three results, all exact:
 
 ### 5. Canonical Literature & Study References
 
-- **Nevmyvaka, Yuriy; Feng, Yi & Kearns, Michael**: "Reinforcement Learning for Optimized Trade Execution" (ICML 2006) — the foundational execution-RL paper; state/action/reward design and replay-based evaluation. *The anchor of this page.*
-- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*J. Financial Markets* 1(1), 1998) — the DP/state-dependent ancestor of learned execution; the strongest non-RL baseline's lineage.
-- **Almgren, Robert & Chriss, Neil**: "Optimal Execution of Portfolio Transactions" (*Journal of Risk* 3, 2000) — the closed-form baseline RL must beat (see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Almgren–Chriss]]).
-- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE TNN* 12(4), 2001) — recurrent direct RL on a Sharpe-like differential objective.
-- **Ning, Lin & Jaimungal (2018, double deep Q-learning for optimal execution)**: reinforcement-learning execution / market-making — the modern state-conditional execution line.
-- **Deng, Yue et al.**: "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading" (*IEEE TNNLS*, 2017) — a concrete deep-RL trading template, to be read with the caveats above.
-- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018) — Ch 13 (policy gradients, the methods modern execution agents use).
+- **Nevmyvaka, Yuriy; Feng, Yi & Kearns, Michael**: "Reinforcement Learning for Optimized Trade Execution" (ICML 2006) - the foundational execution-RL paper; state/action/reward design and replay-based evaluation. *The anchor of this page.*
+- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*J. Financial Markets* 1(1), 1998) - the DP/state-dependent ancestor of learned execution; the strongest non-RL baseline's lineage.
+- **Almgren, Robert & Chriss, Neil**: "Optimal Execution of Portfolio Transactions" (*Journal of Risk* 3, 2000) - the closed-form baseline RL must beat (see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Almgren–Chriss]]).
+- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE TNN* 12(4), 2001) - recurrent direct RL on a Sharpe-like differential objective.
+- **Ning, Lin & Jaimungal (2018, double deep Q-learning for optimal execution)**: reinforcement-learning execution / market-making - the modern state-conditional execution line.
+- **Deng, Yue et al.**: "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading" (*IEEE TNNLS*, 2017) - a concrete deep-RL trading template, to be read with the caveats above.
+- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018) - Ch 13 (policy gradients, the methods modern execution agents use).
 
 ---
 

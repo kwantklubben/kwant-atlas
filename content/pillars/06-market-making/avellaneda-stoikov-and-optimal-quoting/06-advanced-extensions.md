@@ -15,9 +15,9 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Every defect of the baseline AS model motivates an extension. This page is the **launchpad**: it presents the canonical upgrades that stay close to the AS family — **inventory constraints** (Guéant–Lehalle–Fernandez-Tapia), **adverse selection and alpha** (Cartea–Jaimungal–Penalva), **alternative risk measures** (Cartea–Jaimungal), and **multi-asset / portfolio quoting** — and links each to its dedicated in-pillar page.
+Every defect of the baseline AS model motivates an extension. This page is the **launchpad**: it presents the canonical upgrades that stay close to the AS family - **inventory constraints** (Guéant–Lehalle–Fernandez-Tapia), **adverse selection and alpha** (Cartea–Jaimungal–Penalva), **alternative risk measures** (Cartea–Jaimungal), and **multi-asset / portfolio quoting** - and links each to its dedicated in-pillar page.
 
-> **Why these first?** Inventory limits are the *minimal* fix (the original AS quotes are only valid for moderate $|q|$). Adverse selection is the *most important* fix (it is what actually kills desks). Multi-asset is the *scaling* fix (real makers quote thousands of correlated instruments and cannot treat each in isolation). Everything farther out — hidden Markov mid-prices, deep learning quoters — links from here.
+> **Why these first?** Inventory limits are the *minimal* fix (the original AS quotes are only valid for moderate $|q|$). Adverse selection is the *most important* fix (it is what actually kills desks). Multi-asset is the *scaling* fix (real makers quote thousands of correlated instruments and cannot treat each in isolation). Everything farther out - hidden Markov mid-prices, deep learning quoters - links from here.
 
 ---
 
@@ -46,7 +46,7 @@ The modern textbook adds three ingredients AS omits: (i) a **drift / alpha** $\m
 
 #### 2.3 Cartea–Jaimungal: alternative risk measures
 
-Exponential utility fixes the skew to a single parameter $\gamma$. Cartea & Jaimungal (2015) replace CARA with general **dynamic risk measures** (mean–variance, expected shortfall, drawdown-based) and derive the corresponding reservation prices and spreads — showing how the *shape* of the skew depends on the chosen risk criterion, not just its scale. If a desk's mandate is drawdown-limited rather than variance-averse, this is the paper to start from.
+Exponential utility fixes the skew to a single parameter $\gamma$. Cartea & Jaimungal (2015) replace CARA with general **dynamic risk measures** (mean–variance, expected shortfall, drawdown-based) and derive the corresponding reservation prices and spreads - showing how the *shape* of the skew depends on the chosen risk criterion, not just its scale. If a desk's mandate is drawdown-limited rather than variance-averse, this is the paper to start from.
 
 #### 2.4 Multi-asset / portfolio quoting
 
@@ -58,47 +58,12 @@ Guéant et al. also give the solution for a mid-price with a **drift** $dS_t=\mu
 
 ---
 
-### 3. Computational Implementation — the effect of a hard inventory cap
+### 3. Computational Implementation - the effect of a hard inventory cap
 
 The cheapest, most robust extension: enforce $|q|\le Q$ by **pulling the inventory-growing quote** at the cap. We reuse the [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/04-inventory-and-risk-aversion|04]] simulator and compare no-cap, $Q=5$, $Q=3$.
 
-```python
-import numpy as np
 
-def run(gamma=0.1, sigma=2.0, k=1.5, A=140.0, s0=100.0, T=1.0, dt=0.005,
-        npaths=20000, seed=5, Q=None):
-    """Q = max |inventory|. At +Q stop buying; at -Q stop selling."""
-    rng = np.random.default_rng(seed)
-    nsteps = int(round(T/dt))
-    S = np.full(npaths, s0); q = np.zeros(npaths, dtype=int); cash = np.zeros(npaths)
-    for i in range(nsteps):
-        tau  = T - i*dt
-        r    = S - q*gamma*sigma**2*tau
-        half = 0.5*(gamma*sigma**2*tau + (2.0/gamma)*np.log(1.0+gamma/k))
-        ask, bid = r + half, r - half
-        pa = np.minimum(1.0, A*np.exp(-k*(ask - S))*dt)
-        pb = np.minimum(1.0, A*np.exp(-k*(S - bid))*dt)
-        if Q is not None:                       # block the inventory-growing side at the cap
-            pb = np.where(q >=  Q, 0.0, pb)     # at +Q stop buying (would grow long)
-            pa = np.where(q <= -Q, 0.0, pa)     # at -Q stop selling (would grow short)
-        ua, ub = rng.random(npaths), rng.random(npaths)
-        sell = ua < pa; buy = (~sell) & (ub < pb)
-        cash += np.where(sell, ask, 0.0) - np.where(buy, bid, 0.0)
-        q    += -sell.astype(int) + buy.astype(int)
-        S    += sigma*np.sqrt(dt)*rng.standard_normal(npaths)
-    return (cash + q*S), q
 
-for Q in (None, 5, 3):
-    w, q = run(Q=Q)
-    lab = "none" if Q is None else f"{Q}"
-    print(f"cap Q={lab:>4}: mean P&L={w.mean():7.3f}  std={w.std():7.3f}  "
-          f"final-q std={q.std():6.3f}  max|q|={np.abs(q).max()}")
-```
-```
-cap Q=none: mean P&L= 56.987  std=  5.731  final-q std= 3.170  max|q|=15
-cap Q=   5: mean P&L= 56.677  std=  5.591  final-q std= 2.495  max|q|=5
-cap Q=   3: mean P&L= 55.569  std=  5.334  final-q std= 1.774  max|q|=3
-```
 The cap does exactly what theory says: it **hard-bounds** inventory (max$|q|$ becomes $5$, then $3$) and shrinks the terminal-inventory dispersion ($3.17\to2.50\to1.77$) at a tiny cost in mean P&L ($56.99\to55.57$). This is the production-grade behaviour Guéant et al. formalize: the skew *encourages* flattening; the cap *guarantees* it.
 
 ---
@@ -106,19 +71,19 @@ The cap does exactly what theory says: it **hard-bounds** inventory (max$|q|$ be
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **A cap trades edge for safety.** Bounding $|q|$ removes the tail of inventory risk but also removes the fills that would have earned the widest spreads; the mean P&L falls. Choose $Q$ from a risk budget, not by taste.
-2. **Adverse selection survives every inventory fix.** Capping inventory does nothing about informed flow — the fix must add an information term (Cartea–Jaimungal–Penalva) or an external toxicity gate (VPIN). Do not mistake inventory control for safety against being picked off.
+2. **Adverse selection survives every inventory fix.** Capping inventory does nothing about informed flow - the fix must add an information term (Cartea–Jaimungal–Penalva) or an external toxicity gate (VPIN). Do not mistake inventory control for safety against being picked off.
 3. **Closed-form asymptotics have validity ranges.** The Guéant approximation is excellent for small $|q|$ and degrades for large $|q|$ (it approximates ratios $f^0_{q\pm1}/f^0_q$); use the exact linear-ODE solution when the inventory limit is tight or $q$ large.
 4. **Multi-asset coupling is ignored at your peril.** Treating $N$ correlated instruments independently double-counts risk and quotes $N$ times the intended inventory; the correlation matrix must enter the reservation price or the desk is systematically over- or under-hedged.
-5. **Drift is easy to add and easy to overfit.** A real $\mu$ belongs in the reservation price (Guéant Prop. 4), but an *estimated* $\mu$ is noisy — a spurious drift shifts quotes and can turn a market-neutral maker into a directional bet.
+5. **Drift is easy to add and easy to overfit.** A real $\mu$ belongs in the reservation price (Guéant Prop. 4), but an *estimated* $\mu$ is noisy - a spurious drift shifts quotes and can turn a market-neutral maker into a directional bet.
 
 ---
 
 ### 5. Canonical Literature & Study References
 
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4), 477–507 — linear-ODE reduction, inventory constraints, closed-form asymptotics, verification theorem.
-- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*, Cambridge UP — adverse selection, alpha, and impact added to the A–S core.
-- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611 — general dynamic risk measures replacing exponential utility.
-- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3) — the baseline these extensions generalize.
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4), 477–507 - linear-ODE reduction, inventory constraints, closed-form asymptotics, verification theorem.
+- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*, Cambridge UP - adverse selection, alpha, and impact added to the A–S core.
+- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611 - general dynamic risk measures replacing exponential utility.
+- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3) - the baseline these extensions generalize.
 
 ---
 

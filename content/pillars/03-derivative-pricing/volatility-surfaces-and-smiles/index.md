@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Black–Scholes–Merton has one free parameter, the volatility $\sigma$. If the model were true, inverting every liquid option price back to its implied volatility would return **the same number** for every strike and every maturity. It never does. The inverted number traces a **surface** $\sigma_{BS}(K,T)$ — downward-sloping in strike for equities ("the skew"), U-shaped for FX ("the smile"), flattening with maturity. That surface is the *empirical object* and this folder is its topic-hub.
+Black–Scholes–Merton has one free parameter, the volatility $\sigma$. If the model were true, inverting every liquid option price back to its implied volatility would return **the same number** for every strike and every maturity. It never does. The inverted number traces a **surface** $\sigma_{BS}(K,T)$ - downward-sloping in strike for equities ("the skew"), U-shaped for FX ("the smile"), flattening with maturity. That surface is the *empirical object* and this folder is its topic-hub.
 
 The one-sentence essence:
 
@@ -50,45 +50,20 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 
 ---
 
-### 3. Computational Implementation — the surface engine
+### 3. Computational Implementation - the surface engine
 
-Stdlib only (`math`, `cmath`) — no numpy/scipy. The recurring primitives are the BSM call, its vega, and a Newton implied-vol inverter. Every script in this folder reproduces the numbers in §2; the sub-pages carry the full listings.
+Stdlib only (`math`, `cmath`) - no numpy/scipy. The recurring primitives are the BSM call, its vega, and a Newton implied-vol inverter. Every script in this folder reproduces the numbers in §2; the sub-pages carry the full listings.
 
-```python
-import math
-def N(x): return 0.5*(1.0+math.erf(x/math.sqrt(2.0)))
-def n(x): return math.exp(-0.5*x*x)/math.sqrt(2.0*math.pi)
-def bsm_call(S,K,T,r,sig):
-    d1=(math.log(S/K)+(r+0.5*sig*sig)*T)/(sig*math.sqrt(T)); d2=d1-sig*math.sqrt(T)
-    return S*N(d1)-K*math.exp(-r*T)*N(d2), d1
-def implied_vol(price,S,K,T,r):          # Newton-Raphson on vega
-    sig=0.20
-    for _ in range(200):
-        c,d1=bsm_call(S,K,T,r,sig); diff=c-price
-        if abs(diff)<1e-13: break
-        sig-=diff/(S*n(d1)*math.sqrt(T))
-    return sig
 
-S,T,r=100.0,1.0,0.02
-for K,vol in {80:0.28,90:0.24,100:0.20,110:0.17,120:0.15}.items():
-    pr,_=bsm_call(S,K,T,r,vol)
-    print(f"K={K:4d} price={pr:8.4f}  implied={implied_vol(pr,S,K,T,r)*100:6.2f}%")
-```
-```
-K=  80 price= 24.2063  implied= 28.00%
-K=  90 price= 16.0715  implied= 24.00%
-K= 100 price=  8.9160  implied= 20.00%
-K= 110 price=  3.8054  implied= 17.00%
-K= 120 price=  1.1542  implied= 15.00%
-```
+
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
+Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes & Practice]]. In one line each:
 
-1. **Static fit ≠ correct dynamics.** Local volatility calibrates today's surface *exactly* yet generates forward skews that are too flat — it misprices cliquets, barriers, digitals (Gatheral ch 8/10; Bergomi ch 2).
+1. **Static fit ≠ correct dynamics.** Local volatility calibrates today's surface *exactly* yet generates forward skews that are too flat - it misprices cliquets, barriers, digitals (Gatheral ch 8/10; Bergomi ch 2).
 2. **Arbitrage-free interpolation is hard.** Unconstrained splines produce negative densities ($\partial^2C/\partial K^2<0$, butterfly) or decreasing total variance ($\partial_T w<0$, calendar).
 3. **The short-end smile needs jumps, not just SV.** No time-homogeneous stochastic-vol model reproduces the observed $T\to0$ skew decay; the compensator $-2\mu_J$ of a jump component is required (Gatheral ch 5, 7).
 
@@ -96,10 +71,10 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 
 ### 5. Canonical Literature & Study References
 
-- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley, 2006) — Ch 1 (SV/LV, Dupire eq 1.4/1.6/1.10, conditional-expectation 1.12), Ch 2 (Heston), Ch 3 (implied vol surface, SVI 3.20), Ch 5 (jumps), Ch 7 (asymptotics, SABR, Lee), Ch 8 (surface dynamics). *The primary math-verified source of this folder.*
-- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC, 2016) — Ch 2 (local vol, Dupire 2.3/2.19, SSR 2.64, forward-skew 2.91), Ch 3 (forward-start), Ch 5 (variance swaps, 5.28/5.31), Ch 6–7 (forward-variance models). *Math-verified.*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) — Ch 20 (volatility smiles & surfaces, term structure, minimum-variance delta) and Ch 23 (EWMA/GARCH, volatility term structure). *Verification report in the corpus.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) — §2 (Greeks/vega, used for the first-order sensitivities). *Numerically verified.*
+- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley, 2006) - Ch 1 (SV/LV, Dupire eq 1.4/1.6/1.10, conditional-expectation 1.12), Ch 2 (Heston), Ch 3 (implied vol surface, SVI 3.20), Ch 5 (jumps), Ch 7 (asymptotics, SABR, Lee), Ch 8 (surface dynamics). *The primary math-verified source of this folder.*
+- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC, 2016) - Ch 2 (local vol, Dupire 2.3/2.19, SSR 2.64, forward-skew 2.91), Ch 3 (forward-start), Ch 5 (variance swaps, 5.28/5.31), Ch 6–7 (forward-variance models). *Math-verified.*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 20 (volatility smiles & surfaces, term structure, minimum-variance delta) and Ch 23 (EWMA/GARCH, volatility term structure). *Verification report in the corpus.*
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) - §2 (Greeks/vega, used for the first-order sensitivities). *Numerically verified.*
 
 ---
 
@@ -110,8 +85,4 @@ Hub signposts — the folder's failure-mode analysis lives in [[pillars/03-deriv
 - Related flat notes: [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/index|Implied Volatility Surface & Smiles]] · [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/black-scholes-merton/04-greeks-and-hedging|The Greeks & Dynamic Hedging]]
 - Sub-pages (in-folder): 01 From Zero · 02 Implied vs Local Vol · 03 Surface Models · 04 Advanced Dynamics · 05 Failure Modes · 06 Advanced Extensions
 
-**Recommended reading route (audience arc):**
-- **Absolute beginner:** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/01-from-zero-intuition|01 · From Zero]] — no prior derivatives knowledge needed.
-- **Formulas + code (undergrad/job-seeking):** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/02-implied-vs-local-vol|02 · Implied vs Local Vol]] → [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/03-surface-models|03 · Surface Models]].
-- **Robustness (practitioner/graduate):** [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/04-advanced-dynamics|04 · Advanced Dynamics]] → [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05 · Failure Modes]] → [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/06-advanced-extensions|06 · Advanced Extensions]].
-- Forward links: [[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/index|Heston & SABR]] · [[pillars/03-derivative-pricing/interest-rate-and-term-structure/index|Interest-Rate & Term-Structure Models]]
+**Beginner:** start at [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/01-from-zero-intuition|01]] · **Practitioner:** start at [[pillars/03-derivative-pricing/volatility-surfaces-and-smiles/05-failure-modes-and-practice|05]]

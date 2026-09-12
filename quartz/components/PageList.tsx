@@ -52,13 +52,23 @@ export function byDateAndAlphabeticalFolderFirst(cfg: GlobalConfiguration): Sort
   }
 }
 
+export function byTitleNumeric(): SortFn {
+  // Pages are titled with a numeric index ("4.9.2 Capital & RWA"); sort on that
+  // so listings run lowest index -> highest instead of by file mtime.
+  return (f1, f2) => {
+    const t1 = (f1.frontmatter?.title ?? f1.slug ?? "").toLowerCase()
+    const t2 = (f2.frontmatter?.title ?? f2.slug ?? "").toLowerCase()
+    return t1.localeCompare(t2, undefined, { numeric: true, sensitivity: "base" })
+  }
+}
+
 type Props = {
   limit?: number
   sort?: SortFn
 } & QuartzComponentProps
 
 export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort }: Props) => {
-  const sorter = sort ?? byDateAndAlphabeticalFolderFirst(cfg)
+  const sorter = sort ?? byTitleNumeric()
   let list = allFiles.sort(sorter)
   if (limit) {
     list = list.slice(0, limit)

@@ -15,10 +15,10 @@ tags:
 
 This page builds the *why* of momentum with **no prior knowledge needed**. The objective is one idea: **past returns contain information about future returns, and that information can be harvested by ranking assets or by following each asset's own trend.**
 
-Start with the dumbest question: *why should an asset that went up keep going up?* In an efficient market, past prices encode no future signal — price is a martingale and today's price already discounts everything knowable. Momentum is the empirical finding that this is *wrong* at intermediate horizons: there is **positive serial correlation** in returns over 1–12 months. The two leading families of explanations:
+Start with the dumbest question: *why should an asset that went up keep going up?* In an efficient market, past prices encode no future signal - price is a martingale and today's price already discounts everything knowable. Momentum is the empirical finding that this is *wrong* at intermediate horizons: there is **positive serial correlation** in returns over 1–12 months. The two leading families of explanations:
 
-1. **Behavioral — underreaction & slow diffusion.** Investors anchor to stale information, underweight new news (representativeness, conservatism), and information spreads gradually through a network of investors (attention is scarce). So a price move is *not* fully digested for months; part of the move "leaks" into the future. Winners keep winning because their news is still being priced in.
-2. **Risk-based — compensation.** Momentum's large, crash-prone, negatively-skewed payoffs (see 05) may be a premium for bearing a *systematic* risk that is priced. The evidence is mixed: momentum loads on no standard factor and keeps its alpha even when crash-hedged, which tilts toward behavioral/limits-of-arbitrage explanations.
+1. **Behavioral - underreaction & slow diffusion.** Investors anchor to stale information, underweight new news (representativeness, conservatism), and information spreads gradually through a network of investors (attention is scarce). So a price move is *not* fully digested for months; part of the move "leaks" into the future. Winners keep winning because their news is still being priced in.
+2. **Risk-based - compensation.** Momentum's large, crash-prone, negatively-skewed payoffs (see 05) may be a premium for bearing a *systematic* risk that is priced. The evidence is mixed: momentum loads on no standard factor and keeps its alpha even when crash-hedged, which tilts toward behavioral/limits-of-arbitrage explanations.
 
 The key *quantitative* fact that makes it harvestable: **the first-order autocorrelation of asset returns is positive at daily–monthly–quarterly horizons, but turns negative at very short (days, one month) and very long (3–5 year) horizons.** Momentum lives in the *middle* band. Get the horizon wrong and you trade away the premium.
 
@@ -36,14 +36,14 @@ The conditional expectation of tomorrow's return given today's deviation is
 $$
 \mathbb{E}[r_{t+1}\mid r_t] = \mu + \rho_1(r_t-\mu).
 $$
-When $\rho_1>0$, an above-average past return raises the expected *future* return — continuation. A simple long-short bet $+\text{sign}(r_t-\mu)$ earns $\mathbb{E}[\text{sign}(r_t-\mu)(r_{t+1}-\mu)] = \rho_1\,\mathbb{E}|r_t-\mu| > 0$ per period, provided $\rho_1>0$.
+When $\rho_1>0$, an above-average past return raises the expected *future* return - continuation. A simple long-short bet $+\text{sign}(r_t-\mu)$ earns $\mathbb{E}[\text{sign}(r_t-\mu)(r_{t+1}-\mu)] = \rho_1\,\mathbb{E}|r_t-\mu| > 0$ per period, provided $\rho_1>0$.
 
 **The horizon structure.** Empirical autocorrelation is not constant:
 - $\rho$ **negative** at horizons of days-to-one-month → short-term reversal;
 - $\rho$ **positive** over roughly 2–12 months → the momentum premium;
 - $\rho$ **negative** over 3–5 years → long-term reversal (De Bondt & Thaler).
 
-So the exploitable signal is a *band-passed* version of the past — include months 2–12, **exclude month 1**.
+So the exploitable signal is a *band-passed* version of the past - include months 2–12, **exclude month 1**.
 
 **Cross-sectional ranking signal.** For a universe of $N$ assets, define the skip-month cumulative return
 $$
@@ -57,65 +57,18 @@ The zero-sum weights make the portfolio **dollar-neutral** (no net market exposu
 
 ---
 
-### 3. Computational Implementation — momentum is serial correlation you can harvest
+### 3. Computational Implementation - momentum is serial correlation you can harvest
 
 Standard library only. Generates a synthetic universe whose returns obey the continuation process above ($\rho_1>0$), then shows that ranking by the trailing 12-month return (skipping the last month) predicts next-month returns: **past winners keep winning, past losers keep losing.**
 
-```python
-import random, math
-random.seed(7)
 
-# Momentum as return continuation: positive serial correlation.
-N, DAYS = 300, 630          # 300 assets, ~2.5y of daily data
-phi = 0.05                  # daily persistence (underreaction)
-ret = [[0.0]*DAYS for _ in range(N)]
-mean = [random.gauss(0.0, 0.0009) for _ in range(N)]
-for i in range(N):
-    prev = 0.0
-    for t in range(DAYS):
-        eps = random.gauss(0.0, 0.012)
-        prev = mean[i] + phi*(prev - mean[i]) + eps
-        ret[i][t] = prev
 
-lookback, skip = 252, 21                     # 12m lookback, skip last month
-def cum(series, start, end):
-    p = 1.0
-    for r in series[start:end]: p *= (1.0 + r)
-    return p - 1.0
-
-W = L = n = 0
-for t in range(skip+lookback, DAYS-21):
-    r12 = [cum(ret[i], t-lookback, t-skip) for i in range(N)]
-    f21 = [cum(ret[i], t, t+21) for i in range(N)]
-    order = sorted(range(N), key=lambda i: r12[i])
-    q = len(order)//10
-    W += sum(f21[i] for i in order[-q:])/q
-    L += sum(f21[i] for i in order[:q])/q
-    n += 1
-W, L = W/n, L/n
-print(f"Avg next-1mo return, past-WINNERS decile: {W*100:+.3f}%")
-print(f"Avg next-1mo return, past-LOSERS  decile: {L*100:+.3f}%")
-print(f"Momentum spread W-L per month:            {(W-L)*100:+.3f}%")
-# the thing the strategy eats: average positive autocorrelation
-rhos = []
-for i in range(N):
-    rs = ret[i]
-    rho = (sum(rs[t]*rs[t-1] for t in range(1,DAYS))/(DAYS-1)) / (sum(rs[t]*rs[t] for t in range(DAYS))/DAYS)
-    rhos.append(rho)
-print(f"Average AR(1) rho across universe:         {sum(rhos)/N:+.3f}")
-```
-```
-Avg next-1mo return, past-WINNERS decile: +2.026%
-Avg next-1mo return, past-LOSERS  decile: -2.435%
-Momentum spread W-L per month:            +4.462%
-Average AR(1) rho across universe:         +0.053
-```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"Momentum means buying what just went up" is half-true and dangerous.** The exploitable signal is a *band-passed, peer-relative or own-absolute* measure. Naively buying last month's winner loads the *reversing* month and destroys the edge — the entire reason for the $12\text{-}1$ skip.
+1. **"Momentum means buying what just went up" is half-true and dangerous.** The exploitable signal is a *band-passed, peer-relative or own-absolute* measure. Naively buying last month's winner loads the *reversing* month and destroys the edge - the entire reason for the $12\text{-}1$ skip.
 2. **Horizon errors are the #1 beginner failure.** Use 1-week or 5-year lookbacks and you trade long-term/short-term reversal instead of momentum. The premium is specific to the 1–12 month band.
 3. **Confusing cross-sectional with time-series momentum.** They are *related but not the same* (in the corpus, TSMOM regresses on XSMOM with $\beta=0.66$, $R^2=44\%$, yet retains a significant alpha). XSMOM is relative and dollar-neutral; TSMOM is absolute and vol-scaled. They fail in different regimes (see 03 and 05).
 
@@ -123,10 +76,10 @@ Average AR(1) rho across universe:         +0.053
 
 ### 5. Canonical Literature & Study References
 
-- **Jegadeesh & Titman (1993)**, *Returns to Buying Winners and Selling Losers*, J. Finance — the original US equity momentum result; and **Jegadeesh & Titman (2001)**, *Profitability of Momentum Strategies* — the evaluation of behavioral vs rational explanations. *Verified corpus refs/13.*
-- **Jegadeesh (1990)** and **Lehmann (1990)** — one-month reversal, the reason for the skip-month convention.
-- **De Bondt & Thaler (1985)** — long-term (3–5y) reversal, the opposite tail of the horizon structure.
-- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing* — 200+ years, 40+ countries, 8.3% annual spread, ~half from the long side. *Verified corpus refs/18.*
+- **Jegadeesh & Titman (1993)**, *Returns to Buying Winners and Selling Losers*, J. Finance - the original US equity momentum result; and **Jegadeesh & Titman (2001)**, *Profitability of Momentum Strategies* - the evaluation of behavioral vs rational explanations. *Verified corpus refs/13.*
+- **Jegadeesh (1990)** and **Lehmann (1990)** - one-month reversal, the reason for the skip-month convention.
+- **De Bondt & Thaler (1985)** - long-term (3–5y) reversal, the opposite tail of the horizon structure.
+- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing* - 200+ years, 40+ countries, 8.3% annual spread, ~half from the long side. *Verified corpus refs/18.*
 
 ---
 

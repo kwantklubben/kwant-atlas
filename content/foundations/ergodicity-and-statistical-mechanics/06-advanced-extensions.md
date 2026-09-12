@@ -1,5 +1,5 @@
 ---
-title: "F.9.6 Advanced Extensions"
+title: "M.9.6 Advanced Extensions"
 tags:
   - foundations
   - kelly-criterion
@@ -16,9 +16,9 @@ tags:
 
 Pages 04–05 sized a single bet. Real investing is a **vector** decision across correlated assets with **estimated** parameters, in a world that does not hold still. This page is the launchpad to the three extensions that turn Kelly from a casino rule into a portfolio discipline:
 
-1. **Multi-asset (vector) Kelly.** The optimal fractions solve $\boldsymbol f^*=\Sigma^{-1}(\boldsymbol\mu-r\mathbf 1)$ — the growth-optimal analogue of mean-variance, with the same matrix inverse but a *log* objective. It naturally produces leverage and short positions.
+1. **Multi-asset (vector) Kelly.** The optimal fractions solve $\boldsymbol f^*=\Sigma^{-1}(\boldsymbol\mu-r\mathbf 1)$ - the growth-optimal analogue of mean-variance, with the same matrix inverse but a *log* objective. It naturally produces leverage and short positions.
 2. **Estimation error → fractional Kelly.** Because $f^*$ is computed from noisy estimates and the growth function is asymmetric (overbetting is punished harder than underbetting), the *practical* optimum is systematically *below* the plug-in Kelly fraction. This is the single most important robustness lesson in the folder.
-3. **Ergodicity economics.** The deeper theoretical extension: abandon expected-utility maximisation entirely and instead maximise the **time-average growth rate of the actual dynamic** — which, for multiplicative wealth, *derives* log utility rather than assuming it.
+3. **Ergodicity economics.** The deeper theoretical extension: abandon expected-utility maximisation entirely and instead maximise the **time-average growth rate of the actual dynamic** - which, for multiplicative wealth, *derives* log utility rather than assuming it.
 
 > **Takeaway.** Three out of four real-world blow-ups in leveraged growth strategies come from estimation error, not from the model being wrong. Multi-asset Kelly is elegant, but the fraction you should actually trade is smaller than the formula, by a factor you choose for survival.
 
@@ -41,7 +41,7 @@ $$
 g_\infty(\boldsymbol f^*)=r+\tfrac12(\boldsymbol\mu-r\mathbf 1)^\top\Sigma^{-1}(\boldsymbol\mu-r\mathbf 1).
 $$
 
-This is the log-utility cousin of the Markowitz tangency portfolio: same $\Sigma^{-1}$, but the objective is growth, not mean-variance utility. Note the fractions can exceed $1$ (leverage) and go negative (shorts) — the constraints $\mathbf 1^\top\boldsymbol f = c$ and $\boldsymbol f\ge0$ must be added for real portfolios (Thorp §7).
+This is the log-utility cousin of the Markowitz tangency portfolio: same $\Sigma^{-1}$, but the objective is growth, not mean-variance utility. Note the fractions can exceed $1$ (leverage) and go negative (shorts) - the constraints $\mathbf 1^\top\boldsymbol f = c$ and $\boldsymbol f\ge0$ must be added for real portfolios (Thorp §7).
 
 #### 2.2 Estimation error and the case for fractional Kelly
 
@@ -50,63 +50,26 @@ In practice $(\boldsymbol\mu,\Sigma)$ are estimated, so $f^*$ is itself random. 
 - **Mean reversion / data mining:** estimated expected returns are biased *upward* ($\mathbb{E}[\hat m]>m$), so $f^*=(m-r)/s^2$ is too large.
 - **Asymmetry of $g$:** the growth function is flat at its maximum and steep at the edges, so overbetting by $\delta$ costs more growth than underbetting by $\delta$ gains. The *optimal response to uncertainty* is to shrink the fraction.
 
-Thorp's recommendation (§7.3): choose $f$ so that even if the true edge is, say, $m_t=\tfrac12\hat m$, you stay in the growth region — i.e. **cap $f$ well below $\hat f^*$**; practice uses $\boldsymbol f=0.25\hat{\boldsymbol f}^*$ to $0.5\hat{\boldsymbol f}^*$.
+Thorp's recommendation (§7.3): choose $f$ so that even if the true edge is, say, $m_t=\tfrac12\hat m$, you stay in the growth region - i.e. **cap $f$ well below $\hat f^*$**; practice uses $\boldsymbol f=0.25\hat{\boldsymbol f}^*$ to $0.5\hat{\boldsymbol f}^*$.
 
 #### 2.3 Ergodicity economics (the theoretical extension)
 
-Peters & Gell-Mann propose replacing "maximise expected utility" with "maximise the time-average growth rate of the dynamic". For additive dynamics $dx=\mu\,dt+\sigma\,dW$, the time-average growth equals the ensemble drift $\mu$ — reproduce the standard answer. For **multiplicative** dynamics $dx=\mu x\,dt+\sigma x\,dW$, the time-average growth rate is $\mu-\tfrac12\sigma^2$ (page 03) — so maximising it **derives** logarithmic utility rather than assuming it. Ergodicity economics thus gives the axiomatic foundation under Kelly: log utility is not an arbitrary risk-aversion choice, it is *the* utility that makes the ensemble average equal the time average.
+Peters & Gell-Mann propose replacing "maximise expected utility" with "maximise the time-average growth rate of the dynamic". For additive dynamics $dx=\mu\,dt+\sigma\,dW$, the time-average growth equals the ensemble drift $\mu$ - reproduce the standard answer. For **multiplicative** dynamics $dx=\mu x\,dt+\sigma x\,dW$, the time-average growth rate is $\mu-\tfrac12\sigma^2$ (page 03) - so maximising it **derives** logarithmic utility rather than assuming it. Ergodicity economics thus gives the axiomatic foundation under Kelly: log utility is not an arbitrary risk-aversion choice, it is *the* utility that makes the ensemble average equal the time average.
 
 #### 2.4 Non-stationarity and path dependence
 
-All the closed forms assume i.i.d. returns. Real markets are non-stationary: $m$ and $s$ drift, correlations change, and regimes switch. The practical consequences are (i) $f^*$ should be re-estimated and revised over time (Thorp §7.2), and (ii) drawdowns *path-depend* — leverage that looked safe is re-levered automatically as equity falls, exactly the mechanism of 1987 and 2008.
+All the closed forms assume i.i.d. returns. Real markets are non-stationary: $m$ and $s$ drift, correlations change, and regimes switch. The practical consequences are (i) $f^*$ should be re-estimated and revised over time (Thorp §7.2), and (ii) drawdowns *path-depend* - leverage that looked safe is re-levered automatically as equity falls, exactly the mechanism of 1987 and 2008.
 
 ---
 
-### 3. Computational Implementation — vector Kelly and the estimation-error penalty
+### 3. Computational Implementation - vector Kelly and the estimation-error penalty
 
 Stdlib only. Block A solves the two-asset Kelly system and verifies the closed-form growth. Block B simulates a trader who estimates the edge with noise and evaluates full Kelly versus fractional Kelly.
 
-```python
-import math, random
 
-# (A) multi-asset Kelly:  f* = Sigma^-1 (mu - r*1)
-mu = [0.10, 0.14]; sig = [0.15, 0.25]; rho = 0.3; r = 0.03
-cov = [[sig[0]**2, rho*sig[0]*sig[1]],
-       [rho*sig[0]*sig[1], sig[1]**2]]
-det = cov[0][0]*cov[1][1] - cov[0][1]*cov[1][0]
-ex  = [mu[0]-r, mu[1]-r]
-f0 = (ex[0]*cov[1][1] - cov[0][1]*ex[1]) / det
-f1 = (cov[0][0]*ex[1] - ex[0]*cov[1][0]) / det
-def ginf(v): return r + sum(ex[i]*v[i] for i in range(2)) \
-                    - 0.5*sum(v[i]*cov[i][j]*v[j] for i in range(2) for j in range(2))
-print("multivariate Kelly f* = (%.4f, %.4f), sum = %.4f" % (f0, f1, f0+f1))
-print("g_inf(f*) = %.6f   (= r + 0.5 ex' Sigma^-1 ex = %.6f)"
-      % (ginf([f0, f1]), r + 0.5*ex[0]*f0 + 0.5*ex[1]*f1))
 
-# (B) estimation error: trade on a noisy estimate of the edge
-random.seed(21)
-m_true, s, r, T = 0.08, 0.20, 0.03, 20
-for c in (1.0, 0.5, 0.25):
-    random.seed(21); growths = []; ruin = 0
-    for _ in range(20000):
-        m_est = m_true + random.gauss(0, 0.08)          # sd of the edge estimate
-        f = max(c*(m_est - r)/s**2, 0.0)
-        G = (1-f)*r + f*m_true - 0.5*(f*s)**2            # true growth rate
-        growths.append(G*T)
-        if G < 0: ruin += 1
-    growths.sort()
-    print("c=%.2f: median 20y log-growth = %+.3f   P(growth<0) = %.3f"
-          % (c, growths[len(growths)//2], ruin/20000))
-```
-```
-multivariate Kelly f* = (2.4518, 1.3187), sum = 3.7705
-g_inf(f*) = 0.188339   (= r + 0.5 ex' Sigma^-1 ex = 0.188339)
-c=1.00: median 20y log-growth = +0.600   P(growth<0) = 0.197
-c=0.50: median 20y log-growth = +0.965   P(growth<0) = 0.009
-c=0.25: median 20y log-growth = +0.880   P(growth<0) = 0.000
-```
 
-The punchline is in block B: with a modest estimation error, **full Kelly has almost a 20% chance of a negative twenty-year growth rate and a *lower* median outcome ($+0.600$) than half Kelly ($+0.965$)**. Fractional Kelly is not merely safer — it is *better* once you admit you do not know $\mu$. A quarter Kelly nearly eliminates the ruin probability at a small growth cost. This is the empirical case for $\boldsymbol f\approx0.5\hat{\boldsymbol f}^*$ in production.
+The punchline is in block B: with a modest estimation error, **full Kelly has almost a 20% chance of a negative twenty-year growth rate and a *lower* median outcome ($+0.600$) than half Kelly ($+0.965$)**. Fractional Kelly is not merely safer - it is *better* once you admit you do not know $\mu$. A quarter Kelly nearly eliminates the ruin probability at a small growth cost. This is the empirical case for $\boldsymbol f\approx0.5\hat{\boldsymbol f}^*$ in production.
 
 ---
 
@@ -122,11 +85,11 @@ The punchline is in block B: with a modest estimation error, **full Kelly has al
 
 ### 5. Canonical Literature & Study References
 
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006) — §7 (portfolio Kelly, the $n$-dimensional $g(\boldsymbol f)=\mathbb{E}\ln(1+\boldsymbol f^\top\mathbf X)$, constraints), §7.3 (fractional Kelly and estimation error), §7.2 (re-estimating and revising $f^*$). *Corpus-verified.*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (World Scientific, 2011) — multi-asset Kelly and the "good/bad properties" treatment of estimation error.
-- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15 (2019), and **Peters & Gell-Mann**, *Evaluating Gambles Using Dynamics*, Chaos 26 (2016) — ergodicity economics: time-average growth as the objective, deriving log utility.
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*, Ch 1 — the standard error $\sigma_f/\sqrt n$ that governs the precision of every estimation-error experiment here. *Verified in the corpus.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, Ch 1 — the non-normality/fat-tail facts that make the Gaussian growth formulas a leading-order approximation. *Verified in the corpus.*
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006) - §7 (portfolio Kelly, the $n$-dimensional $g(\boldsymbol f)=\mathbb{E}\ln(1+\boldsymbol f^\top\mathbf X)$, constraints), §7.3 (fractional Kelly and estimation error), §7.2 (re-estimating and revising $f^*$). *Corpus-verified.*
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (World Scientific, 2011) - multi-asset Kelly and the "good/bad properties" treatment of estimation error.
+- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15 (2019), and **Peters & Gell-Mann**, *Evaluating Gambles Using Dynamics*, Chaos 26 (2016) - ergodicity economics: time-average growth as the objective, deriving log utility.
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*, Ch 1 - the standard error $\sigma_f/\sqrt n$ that governs the precision of every estimation-error experiment here. *Verified in the corpus.*
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, Ch 1 - the non-normality/fat-tail facts that make the Gaussian growth formulas a leading-order approximation. *Verified in the corpus.*
 
 ---
 
@@ -136,4 +99,4 @@ The punchline is in block B: with a modest estimation error, **full Kelly has al
 - Hub: [[foundations/ergodicity-and-statistical-mechanics/index|Index Hub]]
 - Base: [[foundations/calculus-and-optimization/04-constrained-optimization|Constrained Optimization]] (constrained vector Kelly) · [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]]
 - Applied destinations: [[pillars/05-portfolio-optimization/index|Portfolio Optimization]] · [[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Estimation, Shrinkage & RMT]] · [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory & Fat Tails]] · [[pillars/01-quantitative-research/index|Quantitative Research]] (overfitting & estimation error)
-- Forward topic-folder (in Pillar 5): `kelly-criterion-and-bet-sizing` — the applied treatment of this material.
+- Forward topic-folder (in Pillar 5): `kelly-criterion-and-bet-sizing` - the applied treatment of this material.

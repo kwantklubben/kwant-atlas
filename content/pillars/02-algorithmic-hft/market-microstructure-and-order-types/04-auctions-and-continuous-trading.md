@@ -16,12 +16,12 @@ tags:
 
 Equities and futures do not trade continuously all the time: they **open and close with a call auction**, and many instruments (and the whole of the FX fixings) are set periodically. An auction is a fundamentally different mechanism from the continuous book, and understanding it is required to trade the open/close and to reason about market-design proposals. The twin facts:
 
-1. A **call auction** collects orders during a window, then executes them **all at one uniform clearing price** that maximizes the volume that can trade. Nobody gets price-discriminated against — everyone crosses at the same price.
+1. A **call auction** collects orders during a window, then executes them **all at one uniform clearing price** that maximizes the volume that can trade. Nobody gets price-discriminated against - everyone crosses at the same price.
 2. **Continuous trading** executes orders on arrival, so early orders get better prices than late ones, and the price history is a path, not a single point.
 
 The practical objective: compute an auction's clearing price and volume from a supply/demand schedule; contrast it with continuous price–time matching; and understand why **openings, closings, and fixings are auctions** (they need *one* price for valuation/settlement) and why designers worry about **manipulating the close** and about **last-instant bidding** (Hasbrouck Ch 2).
 
-> **The one-sentence essence.** "A call auction answers 'what single price clears the most volume?' while continuous trading answers 'who arrived first at the best price?' — the first is a market-clearing equilibrium, the second a price–time queue."
+> **The one-sentence essence.** "A call auction answers 'what single price clears the most volume?' while continuous trading answers 'who arrived first at the best price?' - the first is a market-clearing equilibrium, the second a price–time queue."
 
 ---
 
@@ -39,7 +39,7 @@ $$
 \boxed{\;p^*=\arg\max_p\ E(p),\qquad V^*=E(p^*)\;}
 $$
 
-($E$ is unimodal; ties broken by exchange rule, e.g. closest to the previous price). All buy orders with $p^b_i\ge p^*$ and all sell orders with $p^s_j\le p^*$ execute, **all at $p^*$** — buyers do not pay their limits and sellers do not receive theirs. The market is a *single-price* market at the instant of the auction.
+($E$ is unimodal; ties broken by exchange rule, e.g. closest to the previous price). All buy orders with $p^b_i\ge p^*$ and all sell orders with $p^s_j\le p^*$ execute, **all at $p^*$** - buyers do not pay their limits and sellers do not receive theirs. The market is a *single-price* market at the instant of the auction.
 
 **Why uniform pricing is the design.** Because $p^*$ is common to every fill, no participant is penalized for being early, and the price is an un-manipulable *clearing* price rather than the last of a sequence. This is why fixings (WM/Reuters FX, SOFR, closing benchmarks) are auctions: a benchmark defined as *one* price is hard to move with a single small trade, whereas a *last trade* price is trivial to nudge.
 
@@ -48,71 +48,20 @@ $$
 **Market-design concerns (Hasbrouck Ch 2).**
 - **Random stopping times.** To defeat last-instant "sniping," exchanges end the window at a *random* instant within a band, so a trader cannot know exactly when to inject a price-moving order.
 - **Early deadlines.** Orders that could destabilize the clearing (e.g., large market-on-close orders) are subject to earlier cut-offs or price-collar constraints.
-- **"Mark the close" manipulation.** Because the closing price settles derivatives and index funds, there is a direct incentive to trade the close to move it — which is why closing auctions are heavily monitored and collared.
+- **"Mark the close" manipulation.** Because the closing price settles derivatives and index funds, there is a direct incentive to trade the close to move it - which is why closing auctions are heavily monitored and collared.
 
-**Continuous vs batch — the wider design debate.** Budish, Cramton & Shim (2015) argue that the continuous-time matching of modern exchanges *manufactures* a latency arms race, and propose **frequent batch auctions** (all orders in a tiny interval clear together, tie-broken by size) as a design that removes the speed race — the modern, formal echo of the call-auction mechanism.
+**Continuous vs batch - the wider design debate.** Budish, Cramton & Shim (2015) argue that the continuous-time matching of modern exchanges *manufactures* a latency arms race, and propose **frequent batch auctions** (all orders in a tiny interval clear together, tie-broken by size) as a design that removes the speed race - the modern, formal echo of the call-auction mechanism.
 
 ---
 
-### 3. Computational Implementation — clearing an auction, then trading it continuously
+### 3. Computational Implementation - clearing an auction, then trading it continuously
 
 Build a supply/demand schedule, find the volume-maximizing uniform clearing price, then replay the same flow through a price–time continuous book and compare the price dispersion. Standard library only; **re-executed and reproduced**.
 
-```python
-# 04 - call auction: uniform clearing price maximizing executable volume
-buys  = [(100.30, 500), (100.20, 700), (100.10, 900), (100.00, 1500)]
-sells = [(99.90, 400), (100.00, 600), (100.10, 1000), (100.20, 1600)]
-candidates = sorted({p for p, _ in buys} | {p for p, _ in sells})
-best_p, best_exec, sched = None, -1, []
-for p in candidates:
-    dem = sum(q for bp, q in buys if bp >= p)
-    sup = sum(q for sp, q in sells if sp <= p)
-    exe = min(dem, sup)
-    sched.append((p, dem, sup, exe))
-    if exe > best_exec:
-        best_exec, best_p = exe, p
-print("price   cum.demand  cum.supply  executable")
-for p, dem, sup, exe in sched:
-    print(f"{p:6.2f}   {dem:8d}    {sup:8d}    {exe:8d}")
-print(f"\nAUCTION clears at {best_p:.2f}, uniform price, volume = {best_exec}")
-print("every executed order gets the SAME price -> no price discrimination")
 
-flow = [("B", 100.30, 500), ("B", 100.20, 700), ("S", 100.20, 1600),
-        ("S", 100.10, 1000), ("B", 100.10, 900), ("S", 100.00, 600)]
-book_b, book_s, trades = [], [], []
-for side, p, q in flow:
-    if side == "B":
-        while q > 0 and book_s and book_s[0][0] <= p:
-            sp, sq = book_s[0]
-            f = min(q, sq); trades.append((sp, f)); q -= f; book_s[0] = (sp, sq - f)
-            if book_s[0][1] == 0: book_s.pop(0)
-        if q > 0: book_b.append((p, q)); book_b.sort(key=lambda x: -x[0])
-    else:
-        while q > 0 and book_b and book_b[0][0] >= p:
-            bp, bq = book_b[0]
-            f = min(q, bq); trades.append((bp, f)); q -= f; book_b[0] = (bp, bq - f)
-            if book_b[0][1] == 0: book_b.pop(0)
-        if q > 0: book_s.append((p, q)); book_s.sort(key=lambda x: x[0])
-tot = sum(f for _, f in trades)
-vwp = sum(pp*f for pp, f in trades)/tot if tot else 0.0
-print(f"\nCONTINUOUS: volume {tot}, VW price {vwp:.4f}, "
-      f"prices ranged {min(p for p,_ in trades):.2f}-{max(p for p,_ in trades):.2f}")
-```
-```
-price   cum.demand  cum.supply  executable
- 99.90       3600         400         400
-100.00       3600        1000        1000
-100.10       2100        2000        2000
-100.20       1200        3600        1200
-100.30        500        3600         500
 
-AUCTION clears at 100.10, uniform price, volume = 2000
-every executed order gets the SAME price -> no price discrimination
 
-CONTINUOUS: volume 2100, VW price 100.1810, prices ranged 100.10-100.30
-```
-
-**Read the numbers.** The executable-volume curve peaks at **$p^*=100.10$ with $V^*=2000$ shares** — at that single price, 2100 shares of demand and 2000 shares of supply overlap, so 2000 trade and every one of them crosses at $100.10$, whether their limit was $100.10$ or $100.30$. Replayed continuously, the *same order flow* prints **2100 shares at prices ranging from 100.10 to 100.30**, with a volume-weighted average of **100.1810** — early buyers got 100.10, late sellers got 100.30, and price was *discriminated*. The auction delivered one fair price; the continuous book delivered immediacy at the cost of a $\sim 20$-cent price band (100.10 to 100.30).
+**Read the numbers.** The executable-volume curve peaks at **$p^*=100.10$ with $V^*=2000$ shares** - at that single price, 2100 shares of demand and 2000 shares of supply overlap, so 2000 trade and every one of them crosses at $100.10$, whether their limit was $100.10$ or $100.30$. Replayed continuously, the *same order flow* prints **2100 shares at prices ranging from 100.10 to 100.30**, with a volume-weighted average of **100.1810** - early buyers got 100.10, late sellers got 100.30, and price was *discriminated*. The auction delivered one fair price; the continuous book delivered immediacy at the cost of a $\sim 20$-cent price band (100.10 to 100.30).
 
 ---
 
@@ -127,10 +76,10 @@ CONTINUOUS: volume 2100, VW price 100.1810, prices ranged 100.10-100.30
 
 ### 5. Canonical Literature & Study References
 
-- **Hasbrouck, Joel** — *Empirical Market Microstructure* (2007), Ch 2 (single-price double-sided auctions, maximizing feasible volume, random stopping times, early deadlines, "mark the close" risk; Euronext fixings, TSE, NYSE open/close). *Verified in `hasbrouck_ch1-5.md`.*
-- **Budish, Cramton & Shim** — "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response," *QJE* 130(4), 2015. *The modern market-design argument for batch auctions over continuous matching.*
-- **Foucault, Pagano & Röell** — *Market Liquidity* (2013), Ch 1–2 (price discovery; why openings/closings are auctions). *Verified in `foucault_ch1-3.md`.*
-- **Harris, Larry** — *Trading and Exchanges* (2003). *The practitioner treatment of call auctions, openings, and closings.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 2 (single-price double-sided auctions, maximizing feasible volume, random stopping times, early deadlines, "mark the close" risk; Euronext fixings, TSE, NYSE open/close). *Verified in `hasbrouck_ch1-5.md`.*
+- **Budish, Cramton & Shim** - "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response," *QJE* 130(4), 2015. *The modern market-design argument for batch auctions over continuous matching.*
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 1–2 (price discovery; why openings/closings are auctions). *Verified in `foucault_ch1-3.md`.*
+- **Harris, Larry** - *Trading and Exchanges* (2003). *The practitioner treatment of call auctions, openings, and closings.*
 
 ---
 

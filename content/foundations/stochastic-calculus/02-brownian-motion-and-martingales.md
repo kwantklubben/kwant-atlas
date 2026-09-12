@@ -1,5 +1,5 @@
 ---
-title: "F.4.2 Brownian Motion & Martingales"
+title: "M.4.2 Brownian Motion & Martingales"
 tags:
   - foundations
   - stochastic-calculus
@@ -14,16 +14,16 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-Brownian motion is the *canonical fair game in continuous time*: it moves, but has no drift, so its best predictor of the future given the present information is the present value. That single property — the **martingale property** $\mathbb E[W(t)\mid\mathcal F(s)]=W(s)$ — is the backbone of all no-arbitrage pricing, because "prices under the risk-neutral measure are martingales" is how modern pricing is stated.
+Brownian motion is the *canonical fair game in continuous time*: it moves, but has no drift, so its best predictor of the future given the present information is the present value. That single property - the **martingale property** $\mathbb E[W(t)\mid\mathcal F(s)]=W(s)$ - is the backbone of all no-arbitrage pricing, because "prices under the risk-neutral measure are martingales" is how modern pricing is stated.
 
-The practical objective of this page: understand the *three linked faces of BM* — (1) Gaussian increments and the covariance $\min(s,t)$; (2) the martingale and Markov properties and their exponential cousin $e^{\sigma W-\tfrac12\sigma^2t}$; (3) the fact that BM "runs fast," i.e. quadratic variation $=t$ and infinite first-order variation. These give the toolkit (independent increments, stopping, first-passage) used constantly in barrier options, simulation, and Girsanov.
+The practical objective of this page: understand the *three linked faces of BM* - (1) Gaussian increments and the covariance $\min(s,t)$; (2) the martingale and Markov properties and their exponential cousin $e^{\sigma W-\tfrac12\sigma^2t}$; (3) the fact that BM "runs fast," i.e. quadratic variation $=t$ and infinite first-order variation. These give the toolkit (independent increments, stopping, first-passage) used constantly in barrier options, simulation, and Girsanov.
 
 ---
 
 ### 2. Mathematical Ground Truth & Derivations
 
 #### 2.1 Definition & covariance (Shreve II Def 3.3.1; Shreve I §13.5–13.7)
-A process $W(t),\,t\ge0$ is **BM** if: $W(0)=0$; paths are continuous; increments $W(t_{i+1})-W(t_i)$ are independent and $N(0,\,t_{i+1}-t_i)$-distributed. Then $\operatorname{Cov}(W(s),W(t))=\min(s,t)$ and finite-dimensional laws are jointly normal with $C_{ij}=t_i\wedge t_j$. **Equivalent characterizations** (Shreve II Thm 3.3.2): independent normal increments ⇔ jointly-normal-with-that-covariance ⇔ the joint MGF form (3.3.5). *Normal increments make "uncorrelated ⇒ independent" true here — a huge simplification that fails for general processes.*
+A process $W(t),\,t\ge0$ is **BM** if: $W(0)=0$; paths are continuous; increments $W(t_{i+1})-W(t_i)$ are independent and $N(0,\,t_{i+1}-t_i)$-distributed. Then $\operatorname{Cov}(W(s),W(t))=\min(s,t)$ and finite-dimensional laws are jointly normal with $C_{ij}=t_i\wedge t_j$. **Equivalent characterizations** (Shreve II Thm 3.3.2): independent normal increments ⇔ jointly-normal-with-that-covariance ⇔ the joint MGF form (3.3.5). *Normal increments make "uncorrelated ⇒ independent" true here - a huge simplification that fails for general processes.*
 
 #### 2.2 Martingale property (Shreve II Thm 3.3.4)
 Using independence of the future increment $W(t)-W(s)$ from $\mathcal F(s)$:
@@ -47,54 +47,25 @@ Let $\tau_m=\min\{t\ge0: W(t)=m\}$ ($m>0$). Stopping the exponential martingale 
 $$
 \mathbb E\big[e^{-\alpha\tau_m}\big]=e^{-m\sqrt{2\alpha}}\quad(\alpha>0),\qquad \mathbb E\tau_m=\infty.
 $$
-So BM *reaches every level with probability 1 but takes, on average, infinitely long* — a striking, exactly-quantified tension. The **reflection principle** (Shreve II eq 3.7.6) turns barrier/threshold probabilities into tail probabilities:
+So BM *reaches every level with probability 1 but takes, on average, infinitely long* - a striking, exactly-quantified tension. The **reflection principle** (Shreve II eq 3.7.6) turns barrier/threshold probabilities into tail probabilities:
 $$
 \mathbb P\{M(t)\ge m,\ W(t)\le w\}=\mathbb P\{W(t)\ge 2m-w\},\qquad M(t)=\max_{0\le s\le t}W(s).
 $$
 
 ---
 
-### 3. Computational Implementation — verify martingale & exponential-martingale in one shot
+### 3. Computational Implementation - verify martingale & exponential-martingale in one shot
 
 Simulate many paths, condition on the state at a fixed time $s$, and check that the sample mean of the later value equals the conditioned state (martingale property); then average the exponential martingale and compare to 1. Stdlib only.
 
-```python
-import math, random
-random.seed(1)
 
-def sim_bm(npaths, nsteps, T=1.0):
-    dt = T/nsteps
-    W = [[0.0]*(nsteps+1) for _ in range(npaths)]
-    for p in range(npaths):
-        for i in range(nsteps):
-            W[p][i+1] = W[p][i] + random.gauss(0.0, math.sqrt(dt))
-    return W
 
-W = sim_bm(20000, 500)
-s, t = 100, 400
-# group paths by rounded state at t=s; check E[W(t)|W(s)] == W(s)
-groups = {}
-for p in range(20000):
-    ws = round(W[p][s], 1)
-    g = groups.setdefault(ws, [0, 0.0]); g[0]+=1; g[1]+=W[p][t]
-max_dev = max(abs(ws - g[1]/g[0]) for ws, g in groups.items() if g[0] >= 50)
-print("martingale: max |E[W(t)|F(s)] - W(s)| = %.4f  (theory 0)" % max_dev)
-
-# exponential martingale E[e^{sigma W - .5 sigma^2 t}] = 1
-sig = 0.5
-zs = [math.exp(sig*random.gauss(0.,1.0) - 0.5*sig*sig*1.0) for _ in range(200000)]
-print("E[e^{sig W - .5 sig^2 t}] = %.4f  (theory 1.0)" % (sum(zs)/len(zs)))
-```
-```
-martingale: max |E[W(t)|F(s)] - W(s)| = 0.0526  (theory 0)
-E[e^{sig W - .5 sig^2 t}] = 0.9997  (theory 1.0)
-```
 
 ---
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **"Zero drift" ≠ "stays put."** A martingale can have enormous variance — BM, discounted asset prices, everything fair-but-volatile. The martingale property says only that the *conditional mean* of the future is the present, never that the path is flat. Treating "martingale" as "predictable at the level" misreads the definition.
+1. **"Zero drift" ≠ "stays put."** A martingale can have enormous variance - BM, discounted asset prices, everything fair-but-volatile. The martingale property says only that the *conditional mean* of the future is the present, never that the path is flat. Treating "martingale" as "predictable at the level" misreads the definition.
 2. **Uncorrelated ≠ independent (outside Gaussian).** Only for *jointly normal* processes does zero covariance imply independence (Shreve II §2.2, Example). Many intuitions that "work" for BM fail for general processes; the independence cutoff is the Gaussian assumption, not a general fact.
 3. **$\mathbb E\tau_m=\infty$ surprises everyone.** First-passage is almost-sure but mean-infinite; naive simulation (finite horizon) massively understates hitting probabilities, and pricing barrier options from a short simulation is biased. This underlies the continuity-correction and Brownian-interpolation literature (Glasserman Ch 6).
 4. **Mismatched variance in simulation.** Mis-scale the step variance: drawing $\Delta W\sim N(0,dt)$ from $N(0,\Delta t)$ over a *different* grid quietly violates $\operatorname{Var}=t-s$ and breaks every downstream QV/martingale check.

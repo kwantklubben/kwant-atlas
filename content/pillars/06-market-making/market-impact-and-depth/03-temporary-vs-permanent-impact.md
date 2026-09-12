@@ -17,10 +17,10 @@ tags:
 
 Every impact you observe is the sum of two things that behave nothing alike:
 
-- **Permanent impact** — the part of the price move that *stays*. The market has genuinely re-priced the asset (because your flow was informative, or because a large imbalance permanently cleared). Sell a stock and watch the price settle 20bp lower *for good*: that is permanent impact. It is **schedule-independent**: it depends on *how much* you trade, not on *how you slice it*.
-- **Temporary impact** — the part that *decays*. You are consuming liquidity faster than it replenishes, so the price you pay is temporarily worse; once you stop, the book refills ("resilience") and the price snaps back. It is **schedule-sensitive**: trade more slowly and it shrinks.
+- **Permanent impact** - the part of the price move that *stays*. The market has genuinely re-priced the asset (because your flow was informative, or because a large imbalance permanently cleared). Sell a stock and watch the price settle 20bp lower *for good*: that is permanent impact. It is **schedule-independent**: it depends on *how much* you trade, not on *how you slice it*.
+- **Temporary impact** - the part that *decays*. You are consuming liquidity faster than it replenishes, so the price you pay is temporarily worse; once you stop, the book refills ("resilience") and the price snaps back. It is **schedule-sensitive**: trade more slowly and it shrinks.
 
-**Why this is the most important distinction in execution.** If you mistake *temporary* impact for *permanent*, you will conclude that trading slowly is pointless (it isn't — it removes the temporary part). If you mistake *permanent* for *temporary*, you will schedule an order assuming the price will revert when it never will — and you will systematically lose money on every large trade. The realized cost of your execution (the VWAP impact) is a mixture: it is worse than the permanent impact but better than the instantaneous peak, and *where* it lands between them is precisely what your execution algorithm controls.
+**Why this is the most important distinction in execution.** If you mistake *temporary* impact for *permanent*, you will conclude that trading slowly is pointless (it isn't - it removes the temporary part). If you mistake *permanent* for *temporary*, you will schedule an order assuming the price will revert when it never will - and you will systematically lose money on every large trade. The realized cost of your execution (the VWAP impact) is a mixture: it is worse than the permanent impact but better than the instantaneous peak, and *where* it lands between them is precisely what your execution algorithm controls.
 
 > **The one-sentence essence.** "Permanent impact is the price you truly pay for the liquidity of the asset and is fixed by size; temporary impact is the price you pay for trading *fast* and is a dial your execution schedule turns."
 
@@ -45,8 +45,8 @@ $$
 
 and whose variance is $\mathrm{Var}[x]=\tfrac12\sigma^2\sum_k\tau_k x_k^2$ (the uncertain future price of the shares you still hold). Two immediate consequences:
 
-- The **permanent term $\tfrac12\gamma X^2$ is independent of the schedule** — every child order size drops out of it (the sum telescopes). *You cannot schedule permanent impact away.*
-- The **temporary term $\tilde\eta\sum_k n_k^2$ is minimised by spreading the order out** (making the $n_k$ small). Trading very slowly drives it toward zero — the "min-impact" / TWAP limit.
+- The **permanent term $\tfrac12\gamma X^2$ is independent of the schedule** - every child order size drops out of it (the sum telescopes). *You cannot schedule permanent impact away.*
+- The **temporary term $\tilde\eta\sum_k n_k^2$ is minimised by spreading the order out** (making the $n_k$ small). Trading very slowly drives it toward zero - the "min-impact" / TWAP limit.
 
 Trading off expected cost against timing risk yields the **efficient frontier**, and for linear impact the optimal trajectory is the closed form
 
@@ -58,9 +58,9 @@ which interpolates between constant-rate (risk-neutral, $\kappa\to0$) and front-
 
 #### 2.2 The temporary component is exactly what the price does `back`
 
-Define the **transient** pressure $T_n$ as an AR(1)-like decay: $T_n=\rho\,T_{n-1}+\eta\,n_n$, with recovery factor $\rho\in[0,1)$ (resilience). Then the observed mid is $m_n+T_n$ where $m_n$ carries the permanent drift. After execution stops ($n_n=0$), $T_n\to\rho^n T\to0$ and the price settles at $m_\infty=S_0+\gamma X$ — **the permanent level**. The gap between the peak and the permanent level is the temporary impact that "comes back".
+Define the **transient** pressure $T_n$ as an AR(1)-like decay: $T_n=\rho\,T_{n-1}+\eta\,n_n$, with recovery factor $\rho\in[0,1)$ (resilience). Then the observed mid is $m_n+T_n$ where $m_n$ carries the permanent drift. After execution stops ($n_n=0$), $T_n\to\rho^n T\to0$ and the price settles at $m_\infty=S_0+\gamma X$ - **the permanent level**. The gap between the peak and the permanent level is the temporary impact that "comes back".
 
-#### 2.3 The statistical version — generalized Roll
+#### 2.3 The statistical version - generalized Roll
 
 Hasbrouck's generalized Roll model makes the same split *in transaction data*:
 
@@ -72,48 +72,19 @@ with $q_t\in\{+1,-1\}$ the trade sign, $c$ the **transitory** (order-processing 
 
 #### 2.4 Resilience and the finite-book correction
 
-If the book refills immediately, all impact is temporary and total cost is zero for infinitesimal trade rates — absurd, so permanent impact must exist. If the book never refills, all impact is permanent — equally wrong. The truth is a **decay**: Obizhaeva & Wang (2013) show that with a resilient book the optimal strategy is a **block at the start, a block at the end, and a linear ramp between** — precisely because the temporary impact you create will *partly come back*, and you can re-use that resilience.
+If the book refills immediately, all impact is temporary and total cost is zero for infinitesimal trade rates - absurd, so permanent impact must exist. If the book never refills, all impact is permanent - equally wrong. The truth is a **decay**: Obizhaeva & Wang (2013) show that with a resilient book the optimal strategy is a **block at the start, a block at the end, and a linear ramp between** - precisely because the temporary impact you create will *partly come back*, and you can re-use that resilience.
 
 ---
 
-### 3. Computational Implementation — the same order, four speeds
+### 3. Computational Implementation - the same order, four speeds
 
 One sell of $X=-10^6$ shares, executed at four speeds (10, 25, 100, 500 child orders). Permanent coefficient $\gamma=+2\times10^{-6}$/share (so a *sell* has negative signed flow and pushes the price down), transient coefficient $\eta=+8\times10^{-6}$/share, per-slice decay $\rho=0.90$. Stdlib only.
 
-```python
-def propagator(X, n_slices, gamma_perm, eta_temp, rho, S0=50.0):
-    """Discrete temporary-vs-permanent impact.
-       X (signed) sold over n_slices child orders; transient pressure decays by rho
-       each slice.  Returns (permanent impact, peak impact, execution VWAP impact)."""
-    q = X / n_slices
-    m = S0            # permanent / efficient price
-    T = 0.0           # transient pressure (price units)
-    extreme = S0; notional = 0.0
-    for _ in range(n_slices):
-        m += gamma_perm * q              # permanent drift accumulates with size
-        T = rho * T + eta_temp * q       # new transient pressure + decayed old
-        mid = m + T
-        extreme = min(extreme, mid) if X < 0 else max(extreme, mid)
-        notional += mid * q              # we trade at the observed (impacted) mid
-    return gamma_perm * X, extreme - S0, notional / X - S0
 
-print("Temporary vs permanent: same size X, different execution speed")
-print(f"{'slices':>7} {'speed':>6} {'permanent':>11} {'peak impact':>12} {'exec VWAP imp':>14}")
-for n in (10, 25, 100, 500):
-    perm, peak, vwap = propagator(-1_000_000, n, 2e-6, 8e-6, 0.90)
-    print(f"{n:>7} {n/10:>5.0f}x {perm:>11.4f} {peak:>12.4f} {vwap:>14.4f}")
-```
-```
-Temporary vs permanent: same size X, different execution speed
- slices  speed   permanent  peak impact  exec VWAP imp
-     10     1x     -2.0000      -7.2106        -4.4105
-     25     2x     -2.0000      -4.9703        -3.1707
-    100    10x     -2.0000      -2.8000        -1.7380
-    500    50x     -2.0000      -2.1600        -1.1591
-```
+
 
 Read the table:
-- **Permanent impact is constant at $-2.0000$** across a fifty-fold speed range — the per-share permanent impact $\gamma X=2\times10^{-6}\times(-10^6)=-$ \$2 (in total dollars, \tfrac12\gamma X^2=-\$1\text{M}), schedule-independent.
+- **Permanent impact is constant at $-2.0000$** across a fifty-fold speed range - the per-share permanent impact $\gamma X=2\times10^{-6}\times(-10^6)=-$ \$2 (in total dollars, \tfrac12\gamma X^2=-\$1\text{M}), schedule-independent.
 - **Peak (adverse) impact falls from $-7.21$ to $-2.16$** as execution slows: the temporary component $\to0$, and the peak converges on the permanent level.
 - **Realized VWAP impact** is always *between* the two ($-4.41$ down to $-1.16$): it is what you actually pay, and it is the quantity your execution schedule controls.
 
@@ -121,8 +92,8 @@ Read the table:
 
 ### 4. Failure Modes & First-Principles Breakdowns
 
-1. **Double-charging the permanent part.** A common bug: charging the *full* observed impact to every slice *and* also counting the permanent drift — effectively paying $\gamma X$ twice. The Almgren–Chriss bookkeeping charges $\tfrac12\gamma X^2$ once (the $\tfrac12$ comes from the fact that the shares you sell early escape the full permanent drop).
-2. **Assuming the price reverts when it doesn't.** If the flow is informed, "temporary" impact can become permanent the moment the market infers the information — the Kyle half-information result (page 02). Distinguishing temporary from permanent in real data requires waiting and observing the post-trade decay (the Almgren et al. 2005 methodology: $S_{\text{post}}-S_0$ gives permanent, $\bar S-S_0$ gives realized).
+1. **Double-charging the permanent part.** A common bug: charging the *full* observed impact to every slice *and* also counting the permanent drift - effectively paying $\gamma X$ twice. The Almgren–Chriss bookkeeping charges $\tfrac12\gamma X^2$ once (the $\tfrac12$ comes from the fact that the shares you sell early escape the full permanent drop).
+2. **Assuming the price reverts when it doesn't.** If the flow is informed, "temporary" impact can become permanent the moment the market infers the information - the Kyle half-information result (page 02). Distinguishing temporary from permanent in real data requires waiting and observing the post-trade decay (the Almgren et al. 2005 methodology: $S_{\text{post}}-S_0$ gives permanent, $\bar S-S_0$ gives realized).
 3. **Ignoring resilience.** Treating the book as statically thin over-charges repeated trading; treating it as instantly-resilient under-charges the first block. Obizhaeva–Wang's block-ramp-block solution is the correct minimal model when resilience matters.
 4. **Confusing the transitory bounce with information.** In the generalized Roll model, a *negative* first autocovariance ($\gamma_1=-c(c+\lambda)$) is the bid-ask bounce; a persistent positive response to signed flow is the permanent $\lambda$. Mislabelling the bounce as information (or vice-versa) corrupts every downstream estimate.
 5. **The linear/quadratic trap.** The clean $\tfrac12\gamma X^2+\tilde\eta\sum n_k^2$ form relies on **linear** impact; real temporary impact is *concave* (page 04), so the quadratic penalty is a local approximation that mis-sizes large orders.
