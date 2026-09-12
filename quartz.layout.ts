@@ -38,7 +38,19 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      // hide the site home from the tree (it isn't one of the top-level items)
+      filterFn: (node) => node.slugSegment !== "tags" && node.slugSegment !== "index",
+      // flatten the "pillars" wrapper so Pillar 1-8 sit at the tree's top level
+      mapFn: (node) => {
+        const idx = node.children?.findIndex((c) => c.slugSegment === "pillars" && c.isFolder) ?? -1
+        if (idx >= 0) {
+          const pillars = node.children[idx]
+          node.children.splice(idx, 1, ...pillars.children)
+        }
+        return node
+      },
+    }),
   ],
   right: [
     Component.DesktopOnly(Component.Graph()),
@@ -62,7 +74,19 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      // hide the site home from the tree (it isn't one of the top-level items)
+      filterFn: (node) => node.slugSegment !== "tags" && node.slugSegment !== "index",
+      // flatten the "pillars" wrapper so Pillar 1-8 sit at the tree's top level
+      mapFn: (node) => {
+        const idx = node.children?.findIndex((c) => c.slugSegment === "pillars" && c.isFolder) ?? -1
+        if (idx >= 0) {
+          const pillars = node.children[idx]
+          node.children.splice(idx, 1, ...pillars.children)
+        }
+        return node
+      },
+    }),
   ],
   right: [],
 }
