@@ -1,5 +1,5 @@
 ---
-title: "Kwant Atlas: The First-Principles Map of Quantitative Finance"
+title: "Kwant Atlas: The Map of Quantitative Finance"
 tags:
   - hub
   - index
@@ -7,7 +7,7 @@ tags:
   - kwantklubben
 ---
 
-# Kwant Atlas: The First-Principles Map of Quantitative Finance
+# Kwant Atlas: The Map of Quantitative Finance
 
 Welcome to **Kwant Atlas**, the universal, interconnected knowledge base and diagnostic study tool for quantitative finance. 
 

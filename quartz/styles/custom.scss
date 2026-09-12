@@ -92,3 +92,24 @@ a.tag-link {
 .page-listing .meta {
   display: none;
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FOCUS MODE (reader toggle)
+// The stock Quartz reader mode fades BOTH sidebars with a hover-to-reappear,
+// which hides the toggle along with everything else and feels like fluff.
+// Instead: reader mode collapses the index (Explorer) and the right sidebar
+// (TOC + graph view), but keeps the minimal left header - page title, search
+// and the reader toggle itself - so the mode is a genuine "content only"
+// focus and remains toggleable.
+// ─────────────────────────────────────────────────────────────────────────────
+:root[reader-mode="on"] .sidebar.left {
+  opacity: 1 !important; // keep the minimal header reachable
+}
+
+:root[reader-mode="on"] .explorer {
+  display: none !important; // the index / file tree
+}
+
+:root[reader-mode="on"] .sidebar.right {
+  display: none !important; // TOC + graph view
+}
