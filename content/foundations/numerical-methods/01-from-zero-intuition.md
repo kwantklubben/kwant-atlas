@@ -93,12 +93,12 @@ Read the shape: from $h=10^{-2}$ to $h=10^{-5}$ the error falls like $h^2$ (as t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 6 (§6.3 round-off/truncation trade-off, optimal $h$; §6.5 Richardson extrapolation) and Ch 8 (consistency, stability, convergence, Lax).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 1 (§1.1 estimator and error; §1.1.3 the asymptotic MSE framework $O(s^{-\beta/(2\beta+\eta)})$).
-- **Nocedal & Wright**, *Numerical Optimization*, Ch 1–2 (orders of convergence, floating-point arithmetic).
-- **Golub & Van Loan**, *Matrix Computations*, Ch 2 (floating-point error, conditioning).
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Nocedal & Wright**, *Numerical Optimization*
+- **Golub & Van Loan**, *Matrix Computations*
 
 ---
 

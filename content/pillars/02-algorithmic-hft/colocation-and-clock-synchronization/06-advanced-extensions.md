@@ -64,12 +64,12 @@ Read the table across: a 1 ms edge is worth $75M under continuous matching but o
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Budish, Cramton & Shim (2015)**, QJE 130(4) - the central reference: §1 (the argument), §2 (intuition & Spread Networks), §3–§4 (data: correlations, ~1000/day, ≈$75M/yr, 97→7 ms), §5–§6 (the model, prisoner's dilemma, batch auctions), §7 (stability/backlog/timestamps).
-- **Cohen, Kalman; Schwartz, Robert (1989)** and **Economides, Nicholas; Schwartz, Robert (1995)** - the older "electronic call market" lineage BCS build on (equilibrium properties of call auctions).
-- **O'Hara, Maureen (2015)** - the HFT microstructure context in which batch-auction proposals must operate.
-- **Menkveld (2013)** - evidence that fast market-making narrowed spreads (the *beneficial* channel a batch must preserve, not destroy).
+- **Budish, Cramton & Shim (2015)**, QJE 130(4)
+- **Cohen, Kalman; Schwartz, Robert (1989)** and **Economides, Nicholas; Schwartz, Robert (1995)**
+- **O'Hara, Maureen (2015)**
+- **Menkveld (2013)**
 
 ---
 

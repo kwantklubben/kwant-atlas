@@ -105,13 +105,13 @@ $$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **BCBS** - *Minimum Capital Requirements for Market Risk* (January 2019, BIS **d457**, FRTB). The primary source for everything above: MAR33.4 (liquidity-horizon ES formula), MAR33.3 (97.5%), MAR33.5–33.7 (stressed calibration), MAR33.15/33.41 (aggregation, $m_c\ge1.5$), MAR32 (backtesting/PLA), MAR21 (SBM). *Read in full from the corpus PDF.*
 - **BCBS** - *Amendment to the Capital Accord to Incorporate Market Risks* (1996, BIS). The 99%/10-day VaR, multiplier $\ge3$, $0$–$1$ backtesting add-on. *Read from the corpus PDF.*
-- **BCBS** - *Supervisory Framework for the Use of Backtesting in Conjunction with the Internal Models Approach to Market Risk Capital Requirements* (1996). The traffic-light zones behind the add-on.
+- **BCBS** - *Supervisory Framework for the Use of Backtesting in Conjunction with the Internal Models Approach to Market Risk Capital Requirements* (1
 - **Nadarajah et al.** - *Sensitivities-Based Method and Expected Shortfall under FRTB* (2023, corpus PDF) and the FRTB survey literature (2015–2019) in *Journal of Risk / Quantitative Finance*. Where SBM (delta/vega/curvature) meets ES in practice.
-- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.), Ch 22 (VaR/ES, the 1996/Basel numbers, backtesting). *Numerically verified in the corpus.*
+- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.)
 
 ---
 

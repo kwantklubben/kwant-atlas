@@ -80,13 +80,13 @@ Even with 5,000 observations the Hill estimate is 0.550 against a true 0.5 (and 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shevchenko, *Modelling Operational Risk Using Bayesian Inference*** (2011) - the definitive treatment of op-risk data scarcity: Bayesian combination of internal + external + expert data.
-- **Embrechts, Klüppelberg & Mikosch, *Modelling Extremal Events*** (1997) - heavy-tail inference and why tail estimators are intrinsically unstable.
-- **Glasserman, *Monte Carlo Methods*** (2004), Ch 1 - the $O(M^{-1/2})$ MC tail error that underlies VaR-estimator noise.
-- **BCBS, *Basel II*** (2006), ¶669(e)–(f) - the four data elements and the supervisory weighting that exists *because* internal data alone is insufficient; ¶672 (five-year minimum data window).
-- **BCBS, *Basel III d424*** (2017), §5–6 - loss-data quality standards and the "capital = 100% BIC" penalty for banks failing data standards (the institutional answer to incentive corruption).
+- **Shevchenko, *Modelling Operational Risk Using Bayesian Inference*** (2011)
+- **Embrechts, Klüppelberg & Mikosch, *Modelling Extremal Events*** (1997)
+- **Glasserman, *Monte Carlo Methods*** (2004)
+- **BCBS, *Basel II*** (2006), ¶669(e)–(f)
+- **BCBS, *Basel III d424*** (2017)
 
 ---
 

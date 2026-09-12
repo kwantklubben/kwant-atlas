@@ -109,13 +109,13 @@ We implement the identity-target estimator (the simplest to make fully self-cont
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Ledoit, O. & Wolf, M. (2004).** "A well-conditioned estimator for large-dimensional covariance matrices." *J. Multivariate Anal.* 88(2):365–411. *Thm 2.1 (optimal combination), Thm 3.5 (bounded condition number), general asymptotics.*
 - **Ledoit, O. & Wolf, M. (2004).** "Honey, I shrunk the sample covariance matrix." *J. Portfolio Management* 30(4):110–119. *Appendix B: the practical $\pi,\rho,\gamma$ formulas and the constant-correlation target; out-of-sample evidence for $N=30\dots500$.*
 - **Ledoit, O. & Wolf, M. (2003).** "Improved estimation of the covariance matrix of stock returns with an application to portfolio selection." *Journal of Empirical Finance* 10(5):603–621. *The single-index-target precursor; basis of scikit-learn's `LedoitWolf`.*
 - **Jorion, P. (1986).** "Bayes–Stein Estimation for Portfolio Analysis." *JFQA* 21(3):279–292. *The pre-Ledoit–Wolf shrinkage result for means.*
-- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning*, Ch 3.4 (ridge shrinks toward zero - the same convex-combination idea for coefficients).
+- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning*
 
 ---
 

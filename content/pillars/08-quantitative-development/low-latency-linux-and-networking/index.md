@@ -94,10 +94,10 @@ Hub signposts - the folder's full fault analysis lives in [[pillars/08-quantitat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Kerrisk, Michael** - *The Linux Programming Interface* (No Starch, 2010). The definitive syscall/socket/timer reference; the tuning vocabulary everything here uses.
-- **Benvenuti, Christian** - *Understanding Linux Network Internals* (O'Reilly, 2005). How the kernel actually processes packets (NAPI, softirqs, sk_buff) - where microseconds leak.
+- **Benvenuti, Christian** - *Understanding Linux Network Internals* (O'Reilly, 2005). How the kernel actually processes packets (NAPI, softirqs, sk_buff)
 - **Rosen, Rami** - *Linux Kernel Networking: Implementation and Theory* (Apress, 2013). The modern-stack sibling to Benvenuti.
 - **Stevens, W. Richard (Fall, Kevin)** - *TCP/IP Illustrated, Vol. 1: The Protocols*, 2nd ed. The transport semantics your trading connection sits on.
 - **Red Hat Enterprise Linux** - *Monitoring and Managing System Status and Performance: Tuning the Network Performance*. Official sysctl/`tcp_*` tuning guidance.

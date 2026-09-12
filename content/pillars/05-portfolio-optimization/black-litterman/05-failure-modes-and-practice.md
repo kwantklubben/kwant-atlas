@@ -48,12 +48,12 @@ Shows how each mis-set knob degrades the solution on the folder universe.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Black & Litterman (1992)**, §Discussion - the assumptions and the limits the authors themselves flagged.
-- **He & Litterman (1999)**; **Idzorek (2005)** - the two competing $\Omega$ recipes; choosing wrong between them is itself a failure mode.
-- **Best & Grauer (1991)** - the estimation-error motivation (why overconfidence re-imports the disease).
-- **Covariance bridge**: Ledoit & Wolf (2004) / RMT denoising - how to fix the $\Sigma^{-1}$ amplification inside BL.
+- **Black & Litterman (1992)**
+- **He & Litterman (1999)**; **Idzorek (2005)**
+- **Best & Grauer (1991)**
+- **Covariance bridge**: Ledoit & Wolf (2004) / RMT denoising
 
 ---
 

@@ -119,13 +119,13 @@ Read the two halves together. At $k=3$ - the "obvious" choice - a modest fleet o
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) - Ch 6 (monitoring distributed systems), Ch 10 (practical alerting: "alert on symptoms, not causes"), Ch 4 (SLOs and error budgets). *The primary source for alerting philosophy.*
-- **Montgomery, Douglas C.**, *Introduction to Statistical Quality Control* - the EWMA/CUSUM control-chart theory behind §2.2, including the average-run-length and detection-delay formulas.
-- **Narang**, *Inside the Black Box*, 2nd ed. - the operational monitoring apparatus of a real quant shop.
-- **NautilusTrader - Official Documentation** (nautilustrader.io) - a live engine's built-in metrics, clock, and risk-status reporting as an implementable model.
-- **Kleppmann, Martin**, *Designing Data-Intensive Applications* (O'Reilly, 2017) - Ch 8–9 on clocks, time, and detecting process failure; the distributed-systems substrate under liveness monitoring.
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016)
+- **Montgomery, Douglas C.**, *Introduction to Statistical Quality Control*
+- **Narang**, *Inside the Black Box*, 2nd ed.
+- **NautilusTrader - Official Documentation** (nautilustrader.io)
+- **Kleppmann, Martin**, *Designing Data-Intensive Applications* (O'Reilly, 2017)
 
 ---
 

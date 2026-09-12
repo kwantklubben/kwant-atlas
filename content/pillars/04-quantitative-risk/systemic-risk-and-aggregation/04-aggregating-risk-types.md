@@ -69,12 +69,12 @@ The **Gaussian copula** (one-factor form, Vasicek's model) is the industry defau
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 5 (copulas & dependence), §5.4 (tail dependence), §6.4 (aggregating risk with a copula). *In the corpus - the authoritative treatment.*
-- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016) - cross-risk-type integration via a shared macro factor (CLE/MCRE), the practical "how to build it".
-- **Vašíček**, *Probability of Loss on Loan Portfolio* (1987) - the one-factor Gaussian copula at the heart of Basel IRB and CreditMetrics (bridges [[pillars/04-quantitative-risk/credit-risk-and-the-merton-model/index|Credit Risk & the Merton Model]]).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24–25 - Gaussian copula for correlated default, tranching (see the verified notes in `corpus/verified/hull_ch24-28.md`, §24.9–25.10).
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
+- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016)
+- **Vašíček**, *Probability of Loss on Loan Portfolio* (1987)
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

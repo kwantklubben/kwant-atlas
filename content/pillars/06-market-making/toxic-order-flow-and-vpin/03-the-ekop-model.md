@@ -74,11 +74,11 @@ MLE recovers the truth: estimated PIN $=0.2857$, exactly equal to the true PIN, 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, J. Empirical Finance 4, 159–186 - the Poisson-mixture model and PIN, the anchor for this page. *Primary PDF in corpus.*
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 6 - the mixture likelihood (eq. 6.3), the identification of $\alpha\mu$, and the daily-total-only aggregation point. *Math-verified in `hasbrouck_ch6-10.md`.*
-- **Easley, Hvidkjaer & O'Hara (2002)**, *Is information risk a determinant of asset returns?*, J. Finance 57(5) - PIN estimated by this very likelihood, then used cross-sectionally as an information-risk factor.
+- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, J. Empirical Finance 4, 159–186
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Easley, Hvidkjaer & O'Hara (2002)**, *Is information risk a determinant of asset returns?*, J. Finance 57(5)
 
 ---
 

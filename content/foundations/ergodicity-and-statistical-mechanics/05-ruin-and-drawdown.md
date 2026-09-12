@@ -97,12 +97,12 @@ Half Kelly gives up about a third of the terminal wealth ($21.1\times$ vs $32.0\
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006) - §3.2 (probability of ever being reduced to a fraction $x$, eq. 3.2), §7.1 (eq. 7.3, $t_k$), §7.3 (fractional Kelly), §7.4 (the remarkable drawdown/doubling formulas 7.10–7.13). *Corpus-verified.*
-- **Feller, William**: *An Introduction to Probability Theory and Its Applications*, Vol. I - the gambler's ruin formula. *(Standard reference for §2.1.)*
-- **Cox, D. R. & Miller, H. D.**: *The Theory of Stochastic Processes* - the two-absorbing-barrier Wiener solution (Example 5.5) behind Thorp eq. 7.12. *(Standard reference.)*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011) - the "good/bad properties" survey, including the drawdown critique of full Kelly.
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **Feller, William**: *An Introduction to Probability Theory and Its Applications*, Vol. I
+- **Cox, D. R. & Miller, H. D.**: *The Theory of Stochastic Processes*
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011)
 
 ---
 

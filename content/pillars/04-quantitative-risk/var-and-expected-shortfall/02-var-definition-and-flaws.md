@@ -83,13 +83,13 @@ The exact and Monte Carlo numbers agree; the Monte Carlo path also shows the est
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999) - Def. 2.4 (coherence), Def. 3.2–3.3 (quantiles, VaR), §3.3 (digital-option counterexample, normal-subadditivity remark, concentration and allocation failures). *Primary source, read from the corpus PDF.*
-- **Rockafellar & Uryasev**, *Optimization of Conditional Value-at-Risk*, *J. Risk* 2(3):21–41 (2000) - VaR's lack of convexity and multiple local extrema (citing Mauser–Rosen, McKay–Keefer).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 (VaR mechanisms, backtesting) and *Risk Management and Financial Institutions*, Ch 11–13.
-- **Jorion, P.**, *Value at Risk: The New Benchmark for Managing Financial Risk*, 3rd ed. (2006) - the practitioner standard for VaR implementation.
-- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *J. Derivatives* 3(2) (1995) - the backtest that grades a VaR model.
+- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999)
+- **Rockafellar & Uryasev**, *Optimization of Conditional Value-at-Risk*, *J. Risk* 2(3):21–41 (2000)
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Jorion, P.**, *Value at Risk: The New Benchmark for Managing Financial Risk*, 3rd ed. (2006)
+- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *J. Derivatives* 3(2) (1995)
 
 ---
 

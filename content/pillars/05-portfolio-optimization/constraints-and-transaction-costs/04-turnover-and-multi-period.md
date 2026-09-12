@@ -102,13 +102,13 @@ Three verified readings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gârleanu, Nicolae & Pedersen, Lasse Heje (2013)**, *Dynamic Trading with Predictable Returns and Transaction Costs*, Journal of Finance 68(6):2309–2340 - the aim portfolio and the closed-form partial-adjustment policy. ★ STRONG
-- **Boyd, Busseti, Diamond, Kahn, Koh, Nystrup & Speth (2017)**, *Multi-Period Trading via Convex Optimization*, Foundations and Trends in Optimization 3(1):1–72 - the multi-period convex formulation and its tractability.
-- **Lobo, Fazel & Boyd (2007)**, Annals of OR 152:341–365 - the linear/fixed-cost static problem underlying the penalty form.
-- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed. - the marginal-alpha = marginal-cost rebalancing rule.
-- **Clarke, de Silva & Thorley (2002)**, FAJ 58(5):48–66 - transfer-coefficient accounting when turnover is constrained.
+- **Gârleanu, Nicolae & Pedersen, Lasse Heje (2013)**, *Dynamic Trading with Predictable Returns and Transaction Costs*, Journal of Finance 68(6):2309–2340
+- **Boyd, Busseti, Diamond, Kahn, Koh, Nystrup & Speth (2017)**, *Multi-Period Trading via Convex Optimization*, Foundations and Trends in Optimization 3(1):1–72
+- **Lobo, Fazel & Boyd (2007)**, Annals of OR 152:341–365
+- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed.
+- **Clarke, de Silva & Thorley (2002)**, FAJ 58(5):48–66
 
 ---
 

@@ -97,15 +97,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/02-algorit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Drepper, Ulrich** - *What Every Programmer Should Know About Memory* (Red Hat, 2007). The authoritative free treatment of the cache/memory hierarchy that every latency number in this folder comes from.
 - **LMAX** - *The Disruptor* (paper + library) and **Fowler, Martin** - *The LMAX Architecture*. The canonical treatment of ring-buffer batching and mechanical sympathy.
 - **Thompson, Martin** - *Mechanical Sympathy* (blog/talks). Cache lines, false sharing, memory-mapped I/O, low-latency design.
-- **Hasbrouck, Joel & Saar, Gideon** - "Low-latency trading," *Journal of Financial Markets* 16(4), 646–679 (2013). The empirical definition and measurement of the latency-sensitive trader - the numbers the architecture must satisfy.
-- **Biais, Bruno; Foucault, Thierry; Moinas, Sophie** - "Equilibrium fast trading," *J. Financial Economics* 116(2), 292–313 (2015). *When* speed is privately profitable but socially wasteful - the economic frame for building latency at all.
+- **Hasbrouck, Joel & Saar, Gideon** - "Low-latency trading," *Journal of Financial Markets* 16(4), 646–679 (2
+- **Biais, Bruno; Foucault, Thierry; Moinas, Sophie** - "Equilibrium fast trading," *J. Financial Economics* 116(2), 292–313 (2015). *When* speed is privately profitable but socially wasteful
 - **MacKenzie, Donald** - *Trading at the Speed of Light* (Princeton, 2021). The best single read on the end-to-end low-latency stack and its economics.
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* Ch 1–5 (corpus verification `hasbrouck_ch1-5.md`). The point-process structure of microstructure data that a latency-safe pipeline must respect.
+- **Hasbrouck, Joel** - *Empirical Market Microstructure*
 - **DPDK documentation** and **Solarflare/OpenOnload & EF_VI** docs. Primary references for kernel-bypass receive paths.
 
 ---

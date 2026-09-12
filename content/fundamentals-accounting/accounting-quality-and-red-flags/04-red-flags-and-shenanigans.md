@@ -99,14 +99,14 @@ Five independent archetypes, five independent traces, and they **all point the s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Schilit, Howard M., Perler, Jeremy & Engelhart, Yoni**: *Financial Shenanigans: How to Detect Accounting Gimmicks and Fraud in Financial Reports* (McGraw-Hill, 4th ed., 2020) - the taxonomised catalogue of earnings, cash-flow and balance-sheet shenanigans with real cases; the source of the archetype list above.
-- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987) - the original case for **free cash flow vs. reported earnings** as the central quality test; cumulative CFO/NI is his thesis in one ratio.
-- **Mulford, Charles W. & Comiskey, Eugene E.**: *The Financial Numbers Game: Detecting Creative Accounting Practices* (Wiley, 2002) - the rigorous accountant's companion, on how aggressive choices bend earnings and how to reverse-engineer them.
-- **Beneish, Messod D.**: "The Detection of Earnings Manipulation" (*FAJ*, 55(5), 24–36, 1999) - the quantitative screen; see [[fundamentals-accounting/accounting-quality-and-red-flags/06-advanced-extensions|06 · Advanced Extensions]].
-- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature…" (*Accounting Horizons*, 13(4), 365–383, 1999) - the *incentives* (bonus plans, debt covenants, capital raising) that make the archetypes more likely in the first place.
-- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996) - why any of these flags should matter to a *price*.
+- **Schilit, Howard M., Perler, Jeremy & Engelhart, Yoni**: *Financial Shenanigans: How to Detect Accounting Gimmicks and Fraud in Financial Reports* (McGraw-Hill, 4th ed., 2020)
+- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987)
+- **Mulford, Charles W. & Comiskey, Eugene E.**: *The Financial Numbers Game: Detecting Creative Accounting Practices* (Wiley, 2002)
+- **Beneish, Messod D.**: "The Detection of Earnings Manipulation" (*FAJ*, 55(5), 24–36, 1999)
+- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature…" (*Accounting Horizons*, 13(4), 365–383, 1999)
+- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996)
 
 ---
 

@@ -63,13 +63,13 @@ We run a bank through a GARCH(1,1) stress with a single $-6\sigma$ shock, under 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brunnermeier & Pedersen**, *Market Liquidity and Funding Liquidity*, *RFS* 22(6) (2009) - the loss/margin spiral, the micro-mechanism of §3's loop (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/04-margin-and-funding-spirals|Margin & Funding Spirals]]).
-- **Adrian & Brunnermeier**, *CoVaR*, *AER* 106(7) (2016) - CoVaR as a feed-back measure; its procyclical sensitivity is a known defect.
-- **McNeil, Frey & Embrechts**, *QRM* (2015), §5.4 (tail-dependence limits) and §6.4.2 (copula-risk aggregation and its model risk). *In the corpus.*
-- **Embrechts, McNeil & Straumann**, *Correlation and Dependence in Risk Management* (2002) - the classic "correlation is not a good dependence measure for fat tails" argument.
-- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009) - the regulatory push that moved firms from pure VaR to scenario/stress capital (bridges [[pillars/04-quantitative-risk/stress-testing-and-scenario-analysis/index|Stress Testing]]).
+- **Brunnermeier & Pedersen**, *Market Liquidity and Funding Liquidity*, *RFS* 22(6) (2009)
+- **Adrian & Brunnermeier**, *CoVaR*, *AER* 106(7) (2016)
+- **McNeil, Frey & Embrechts**, *QRM* (2015)
+- **Embrechts, McNeil & Straumann**, *Correlation and Dependence in Risk Management* (2002)
+- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009)
 
 ---
 

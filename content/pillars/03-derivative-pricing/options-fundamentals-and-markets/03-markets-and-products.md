@@ -102,11 +102,11 @@ The naked-call number decomposes cleanly: $100\times5$ premium $+20\%\times100\t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 1 (exchange vs OTC, market sizes, trader taxonomy), Ch 2 (contract specification, margins, CCPs, delivery, cash settlement), Ch 6 §6.1–6.3 (day-count conventions, clean/dirty price, rate-futures \$/\text{bp}), Ch 10 §10.3–10.7 (underlying assets, contract spec, trading costs, margin requirements). *Per-chapter verification report in the corpus.*
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.1 (the cost-of-carry dictionary that maps market structure to the pricing parameter $b$).
-- **Hull & White** (via Hull Ch 7, 9), on OIS discounting and post-2008 clearing/collateral - the structural change that moved the risk-free curve from LIBOR to OIS.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Hull & White** (via Hull
 
 ---
 

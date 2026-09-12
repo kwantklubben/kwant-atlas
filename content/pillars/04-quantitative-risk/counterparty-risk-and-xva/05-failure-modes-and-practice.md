@@ -88,12 +88,12 @@ Read the three blocks:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025) - §17.6 (WWR: general vs specific, quantification, intensity vs structural, jump approaches, collateral, CCPs), §13.4.7 (regulatory WWR), §21.2.5 (jump-to-default risk). *Deep-read and numerically re-verified in the corpus.*
-- **Pykhtin & Sokol** (2013): *Modelling Wrong-Way Risk and Credit Valuation Adjustment* - the reference treatment of jumps and the erosion of collateral benefit.
-- **Levy & Levin** (1999) / **Chung & Gregory** (2019): empirical implied sovereign-jump magnitudes (the evidence base for §2.3).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 §24.7 (wrong-way / right-way risk); **Hull & White** (2011): a parametric PD–exposure link calibrated by what-if analysis.
+- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025)
+- **Pykhtin & Sokol** (2013): *Modelling Wrong-Way Risk and Credit Valuation Adjustment*
+- **Levy & Levin** (1999) / **Chung & Gregory** (2019): empirical implied sovereign-jump magnitudes (the evidence base for
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

@@ -65,12 +65,12 @@ Simulate an exponential by inverse transform and check its mean and survival fun
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 1 §1.2 (RV & distribution, Def 1.2.3), §1.4–1.5 (standard machine, MCT/Fatou/DCT), Ch 2 §2.2 (independence, Thm 2.2.7(vi), the uncorrelated-not-independent example).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 11 (law, density, $\mathbb E h(X)=\int h f\,dx$, bivariate & multivariate normal, independence iff diagonal covariance).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 2 (inverse transform, acceptance–rejection, Box–Muller, normal vectors).
-- **Casella & Berger**, *Statistical Inference*, Ch 4 (distributions, moments, transformations of RVs) - the classical companion.
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Casella & Berger**, *Statistical Inference*
 
 ---
 

@@ -77,13 +77,13 @@ The Kalman filter cuts the tracking error roughly in half (MAE 0.333 vs 0.744 on
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 11 (§11.1 local-level & Kalman recursion, §11.2 diffuse init, §11.3 time-varying CAPM & transformations, §11.4 steady state, §11.6 forecasting/missing data), Ch 12 (Gibbs, Metropolis, FFBS, stochastic volatility), Ch 4 (Markov switching), Ch 10 (EWMA, BEKK, DCC, portfolio VaR). *Primary, verified.*
-- **Hamilton, J.D.** (1989), "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle," *Econometrica* - Markov-switching and the Hamilton filter.
-- **Durbin & Koopman**, *Time Series Analysis by State Space Methods* - the modern Kalman/smoothing reference.
-- **Engle, R.F.** (2002), "Dynamic Conditional Correlation," *J. Business & Econ. Stat.* - DCC.
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 - how heavy-tailed risk and copulas enter the multivariate picture.
+- **Tsay**, *Analysis of Financial Time Series*
+- **Hamilton, J.D.** (1989), "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle," *Econometrica*
+- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*
+- **Engle, R.F.** (2002), "Dynamic Conditional Correlation," *J. Business & Econ. Stat.*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

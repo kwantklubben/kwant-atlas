@@ -74,12 +74,12 @@ Read the table. A **7-day half-life** signal (fast card/foot-traffic panel) lose
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **López de Prado**, *Advances in Financial Machine Learning*, **§2.2.4** (alternative data is *primary* information; "data that is hard to store, manipulate and operate is always the most promising"; the individuals/business-process/sensors taxonomy). *The primary source for the framing on this page.*
-- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017) - the taxonomy AFML §2.2.4 cites; the source of "individuals / business processes / sensors."
-- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) - pipeline-level treatment of latency, data sourcing, and the decay of live edges.
-- **Grinold & Kahn**, *Active Portfolio Management* - breadth, IC, and why a small signal is worth building (the Fundamental Law, formalized in [[pillars/07-machine-learning-altdata/alternative-data-pipelines-and-evaluation/02-alt-data-landscape|02 · Alt-Data Landscape]]).
+- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017)
+- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019)
+- **Grinold & Kahn**, *Active Portfolio Management*
 
 ---
 

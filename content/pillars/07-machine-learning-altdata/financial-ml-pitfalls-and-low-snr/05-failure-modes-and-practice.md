@@ -71,11 +71,11 @@ Experiment A reproduces the ESL wrong-vs-right lesson in $R^2$ units: leaky scre
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 1 (the Sisyphus vs meta-strategy paradigms; "Overfitting is unethical"), Ch 7 (why K-fold CV fails; purged/embargoed CV), Ch 11 (dangers of backtesting), Ch 14 (probabilistic & deflated Sharpe).
-- **Bailey, David H. & López de Prado, Marcos**, "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance," *Notices of the AMS* 61(5), 2014 - MinBTL and the expected-max-Sharpe formalization. *Corpus PDF read.*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 7 §7.10.2 (the wrong-vs-right CV warning). *Verified in the corpus.*
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Bailey, David H. & López de Prado, Marcos**, "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance," *Notices of the AMS* 61(5), 2014
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

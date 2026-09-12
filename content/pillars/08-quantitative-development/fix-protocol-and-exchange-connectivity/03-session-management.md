@@ -98,11 +98,11 @@ Read the trace as the recovery proof: the server sees `seq=3` while expecting `1
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **FIX Trading Community**, *FIX 4.4 Specification, Volume 2 - Session Layer* (fixtrading.org) - the normative session rules: logon sequence negotiation, heartbeat/test-request semantics, resend/gap-fill, and the `SequenceReset` modes. *The authoritative reference for this page.*
-- **FIX Trading Community**, *FIX Latest - Session Layer* - the modern restatement (FIXT.1.1 transport) with the same core invariants.
-- **OnixS**, *FIX Dictionary & Protocol Reference* - the clearest free walkthrough of sequence numbers and resend for learners.
+- **FIX Trading Community**, *FIX 4.4 Specification, Volume 2
+- **FIX Trading Community**, *FIX Latest
+- **OnixS**, *FIX Dictionary & Protocol Reference*
 
 ---
 

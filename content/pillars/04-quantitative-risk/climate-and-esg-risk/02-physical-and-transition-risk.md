@@ -98,16 +98,16 @@ Cross-check against the earlier identity: at $p= $ \$100/t the threshold is \mat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **TCFD**, *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, 2017), Figure 1 - the physical/transition risk taxonomy and the recommended metrics (WACI, carbon footprint). *Primary source.*
-- **High-Level Commission on Carbon Prices** (Stern, N. & Stiglitz, J., chairs), *Report of the High-Level Commission on Carbon Prices* (World Bank, 2017) - the explicit shadow-price corridor (\$40–\$80 by 2020; \$50–\$100 by 2030).
-- **World Bank**, *Shadow Price of Carbon in Economic Analysis - Guidance Note* (2017) - how shadow prices enter project appraisal.
-- **IPCC**, *Climate Change 2013: The Physical Science Basis* (AR5, WG1 Ch. 12) - TCRE and its likely range; *Global Warming of 1.5 °C* (SR1.5, 2018, Ch. 2) - the remaining carbon budget.
-- **Carbon Tracker Initiative**, *Unburnable Carbon: Are the World's Financial Markets Carrying a Carbon Bubble?* (2011) - the origin of the stranded-asset framing.
-- **PACTA / RMI**, *Paris Agreement Capital Transition Assessment* methodology notes - forward-looking alignment using company production plans and sectoral pathways.
-- **NGFS**, *Climate Scenarios for Central Banks and Supervisors* - the scenario-consistent pairing of transition and physical risk used in §4.6.
-- **Bolton, P. & Kacperczyk, M.**, *Do investors care about carbon risk?*, *Journal of Financial Economics* 142(2):517–549 (2021) - the empirical carbon premium that prices this exposure.
+- **TCFD**, *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, 2017), Figure 1
+- **High-Level Commission on Carbon Prices** (Stern, N. & Stiglitz, J., chairs), *Report of the High-Level Commission on Carbon Prices* (World Bank, 2017)
+- **World Bank**, *Shadow Price of Carbon in Economic Analysis
+- **IPCC**, *Climate Change 2013: The Physical Science Basis* (AR5, WG1
+- **Carbon Tracker Initiative**, *Unburnable Carbon: Are the World's Financial Markets Carrying a Carbon Bubble?* (2011)
+- **PACTA / RMI**, *Paris Agreement Capital Transition Assessment* methodology notes
+- **NGFS**, *Climate Scenarios for Central Banks and Supervisors*
+- **Bolton, P. & Kacperczyk, M.**, *Do investors care about carbon risk?*, *Journal of Financial Economics* 142(2):517–549 (2021)
 
 ---
 

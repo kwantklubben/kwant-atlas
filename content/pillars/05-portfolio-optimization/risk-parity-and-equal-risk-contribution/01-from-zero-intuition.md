@@ -74,11 +74,11 @@ The lesson is on the left column of the weights: **60/40 gives the equity leg ~9
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Qian, Edward**: *Risk Parity Portfolios: Efficient Portfolios Through True Diversification*, PanAgora (2005) - the 60/40-is-~90%-equity-eggs argument; parity weights ≈23/77; parity's mean-variance optimality under equal Sharpe ratios.
-- **Maillard, Roncalli & Teïletche**: *The Properties of Equally Weighted Risk Contribution Portfolios*, JPM 36(4) (2010) - the formal place of this two-asset intuition in the general ERC theory.
-- **Asness, Frazzini & Pedersen**: *Leverage Aversion and Risk Parity*, FAJ 68(1) (2012) - the honest framing: risk balance is a view on expected returns + a willingness to use leverage.
+- **Qian, Edward**: *Risk Parity Portfolios: Efficient Portfolios Through True Diversification*, PanAgora (2005)
+- **Maillard, Roncalli & Teïletche**: *The Properties of Equally Weighted Risk Contribution Portfolios*, JPM 36(4) (2010)
+- **Asness, Frazzini & Pedersen**: *Leverage Aversion and Risk Parity*, FAJ 68(1) (2012)
 
 ---
 

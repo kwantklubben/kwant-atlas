@@ -76,15 +76,15 @@ The merge join does $679\times$ fewer comparisons on a *small* input - and in a 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Borror, Jeffry** - *Q for Mortals (4th ed.)*, Kx Systems (free, `code.kx.com/q4m3/`) - the canonical q/kdb+ introduction; `aj` and attributes are covered here.
-- **Psaris, Nick** - *Q Tips* (Vector Sigma) - production q patterns and performance; companion repo `psaris/qtips`.
-- **kdb+ and q - Official Documentation & Tick Architecture** (`code.kx.com`) - tickerplant/RDB/HDB/gateway, `aj`, `.Q.qidi`, `s#`/`p#`/`g#`; the authoritative tick-store spec. **Priority H.**
-- **DuckDB - AsOf Join documentation** (`duckdb.org`) - the SQL `ASOF JOIN`; the single most important SQL feature for PIT financial analytics.
-- **Needham & Simons** - *DuckDB in Action* (Manning), ch. 4 - worked as-of joins and window functions.
-- **ClickHouse Documentation** (`clickhouse.com`) - `MergeTree` ordering keys and `ASOF JOIN`.
-- **Novotný, Jan et al.** - *Machine Learning and Big Data with kdb+/q* (Wiley, 2017) - big-data analytics on the kdb+ stack.
+- **Borror, Jeffry** - *Q for Mortals (4th ed.)*, Kx Systems (free, `code.kx.com/q4m3/`)
+- **Psaris, Nick** - *Q Tips* (Vector Sigma)
+- **kdb+ and q - Official Documentation & Tick Architecture** (`code.kx.com`)
+- **DuckDB - AsOf Join documentation** (`duckdb.org`)
+- **Needham & Simons** - *DuckDB in Action* (Manning), ch. 4
+- **ClickHouse Documentation** (`clickhouse.com`)
+- **Novotný, Jan et al.** - *Machine Learning and Big Data with kdb+/q* (Wiley, 2017)
 
 ---
 

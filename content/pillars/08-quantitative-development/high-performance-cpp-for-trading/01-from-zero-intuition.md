@@ -97,12 +97,12 @@ Standard library only. Build the budget, compute the exponential decay, and read
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* - the tick-to-trade path and its latency stages in a real matching-engine/trading-system build.
-- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* - Ch 6 (the memory hierarchy, locality) is the foundation of the cycles↔time discussion above.
-- **Narang, Rishi K.**: *Inside the Black Box* - the systems view of where latency sits in a quant trading operation (the business framing of §1).
-- **Martin Thompson**, *"Mechanical Sympathy"* (blog/talks) - the practitioner essays on why hardware timing, not code elegance, rules latency; cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++*
+- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective*
+- **Narang, Rishi K.**: *Inside the Black Box*
+- **Martin Thompson**, *"Mechanical Sympathy"* (blog/talks)
 
 ---
 

@@ -69,11 +69,11 @@ Read the numbers against the formula $\rho\sigma^2+(1-\rho)\sigma^2/B$. One deep
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 8 §8.7 (bootstrap & bagging, eqs 8.51–8.52) and Ch 15 §15.1–15.3 (random forests: eq 15.1 variance decomposition, OOB error §15.3.1, proximity plots §15.3.3). *PRIMARY source; verified in the corpus.*
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 6 §6.3–6.4 (bagging setup, sequential bootstrapping, `avgU`, why bagging suits low-SNR finance) and §6.7 (bagging for scalability).
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 7 §7.11 (the bootstrap foundation of bagging).
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Hastie, Tibshirani & Friedman**, *ESL*
 
 ---
 

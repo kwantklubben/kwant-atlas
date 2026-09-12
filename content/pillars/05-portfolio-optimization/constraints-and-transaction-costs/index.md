@@ -81,13 +81,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Lobo, Fazel & Boyd (2007)**. *Portfolio Optimization with Linear and Fixed Transaction Costs*. Annals of Operations Research 152:341–365. *The modeling backbone: convex cost-aware QPs, the $\ell_1$ no-trade region, the fixed-cost relaxation.* ★ MUST-HAVE
 - **Gârleanu & Pedersen (2013)**. *Dynamic Trading with Predictable Returns and Transaction Costs*. Journal of Finance 68(6):2309–2340. *The aim portfolio and the closed-form partial-adjustment policy.* ★ STRONG
 - **Almgren & Chriss (2000/01)**. *Optimal Execution of Portfolio Transactions*. Journal of Risk 3(2):5–39. *Permanent + temporary impact and the trading frontier. Cross-pillar: owned by Pillar 2 (optimal execution).* ★ STRONG
 - **Grinold & Kahn (2000)**. *Active Portfolio Management*, 2nd ed., McGraw-Hill. *The practitioner's bible for constrained active portfolios, tracking error and cost-adjusted rebalancing.* ★ MUST-HAVE
-- **Hasbrouck (2007)**. *Empirical Market Microstructure*, OUP. *Ch 3 (Roll: $c=\sqrt{-\gamma_1}$, spread $2c$), Ch 5 (Glosten–Milgrom), Ch 7 (Kyle $\lambda$), Ch 8 (generalized Roll: spread $2(c+\lambda)$), Ch 9.9 (Amihud illiquidity). The microstructure source of every cost coefficient.*
+- **Hasbrouck (2007)**. *Empirical Market Microstructure*, OUP. *Ch 3 (Roll: $c=\sqrt{-\gamma_1}$, spread $2c$)
 - **Clarke, de Silva & Thorley (2002)**. *Portfolio Constraints and the Fundamental Law of Active Management*. FAJ 58(5):48–66. *The transfer coefficient $=$ the price of constraints.* ★ STRONG
 - **Boyd, Busseti, Diamond, Kahn, Koh, Nystrup & Speth (2017)**. *Multi-Period Trading via Convex Optimization*. FnT in Optimization 3(1):1–72. *The multi-period convex formulation and its implementations.*
 

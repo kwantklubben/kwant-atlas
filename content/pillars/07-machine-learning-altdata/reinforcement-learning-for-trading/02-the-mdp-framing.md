@@ -91,13 +91,13 @@ Two things are worth reading off. First, the **Bellman residual is exactly zero*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018) - Ch 3 (MDP formalism, returns, policies, value functions, Bellman optimality 3.19), Ch 4 (policy/value iteration, DP as the fixed-point view). *Primary reference for this page.*
-- **Bertsekas**, *Dynamic Programming and Optimal Control*, Vol I, Ch 1–2 (contraction mapping, monotonicity, convergence of value iteration). *The rigorous foundation.*
-- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*J. Financial Markets* 1(1), 1998) - the DP formulation of execution as a state/control problem.
-- **Nevmyvaka, Feng & Kearns** (ICML 2006) - the state/action/reward instantiation for RL execution; detailed in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/06-advanced-extensions|06]].
-- **Puterman, Martin L.**: *Markov Decision Processes* (1994) - the definitive MDP textbook (existence, contraction, policy iteration).
+- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018)
+- **Bertsekas**, *Dynamic Programming and Optimal Control*, Vol I
+- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*J. Financial Markets* 1(1), 1998)
+- **Nevmyvaka, Feng & Kearns** (ICML 2006)
+- **Puterman, Martin L.**: *Markov Decision Processes* (1994)
 
 ---
 

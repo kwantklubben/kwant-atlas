@@ -83,13 +83,13 @@ The spiral panel is the money shot: one solvency shock ($A: 2000 \to 1100$) turn
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Jensen, Michael C.**: "Agency Costs of Free Cash Flow, Corporate Finance, and Takeovers" (*AER*, 1986) - the free-cash-flow overinvestment problem and debt-as-discipline. *Verified against the paper text.*
-- **Jensen, Michael C. & Meckling, William H.**: "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure" (*JFE*, 1976) - monitoring + bonding + residual loss, and the asset-substitution/debt-equity agency tradeoff. *Verified against the paper text.*
-- **Myers, Stewart C.**: "Determinants of Corporate Borrowing" (*JFE*, 1977) - **debt overhang** and underinvestment from risky debt; the paper that names this failure mode.
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance*, Ch 18–19 - financial distress, agency costs, and the practical design of debt to control them.
-- **Graham & Dodd**, *Security Analysis* (6th ed.) - the practitioner's lens on speculative (over-levered, pyramided) capital structures.
+- **Jensen, Michael C.**: "Agency Costs of Free Cash Flow, Corporate Finance, and Takeovers" (*AER*, 1986)
+- **Jensen, Michael C. & Meckling, William H.**: "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure" (*JFE*, 1976)
+- **Myers, Stewart C.**: "Determinants of Corporate Borrowing" (*JFE*, 1977)
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
+- **Graham & Dodd**, *Security Analysis* (6th ed.)
 
 ---
 

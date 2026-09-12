@@ -82,12 +82,12 @@ The analytic ratio is exactly $3.00$: the interleaved layout drags $\tfrac{3}{4}
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Borror, Jeffry** - *Q for Mortals (4th ed.)*, Kx Systems - the free canonical introduction; §1–2 explain why q's vector primitives operate on whole columns, which *is* the column-store argument.
-- **Needham & Simons** - *DuckDB in Action* (Manning), ch. 1–2 - modern, gentle framing of columnar analytics from a SQL user's perspective.
-- **Bryant & O'Hallaron** - *Computer Systems: A Programmer's Perspective*, ch. 6 - the cache hierarchy behind the $3\times$ line-count arithmetic (cross-listed with [[pillars/08-quantitative-development/high-performance-cpp-for-trading|High-Performance C++ for Trading]]).
-- **Hasbrouck, Joel** - *Empirical Market Microstructure*, ch. 2 - what the tick fields *mean* before you decide how to store them.
+- **Borror, Jeffry** - *Q for Mortals (4th ed.)*, Kx Systems
+- **Needham & Simons** - *DuckDB in Action* (Manning), ch. 1–2
+- **Bryant & O'Hallaron** - *Computer Systems: A Programmer's Perspective*, ch. 6
+- **Hasbrouck, Joel** - *Empirical Market Microstructure*, ch. 2
 
 ---
 

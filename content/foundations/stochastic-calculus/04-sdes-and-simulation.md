@@ -82,11 +82,11 @@ Stdlib block that (a) confirms GBM exact-MC mean converges to $S_0e^{\mu T}$; (b
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 3 (exact BM §3.1, exact GBM §3.2, Vasicek/exact-Gaussian §3.3, CIR/noncentral-$\chi^2$ & Feller §3.4).
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 - **Shreve**, *Stochastic Calculus for Finance II*, Ex 4.4.8 (GBM), Ex 4.4.10 (Vasicek), Ex 4.4.11 (CIR, closed vs open form).
-- **Björk**, *Arbitrage Theory in Continuous Time*, Prop 5.2 (GBM), Prop 5.3 (linear SDE), Ch 4 (stochastic integrals).
+- **Björk**, *Arbitrage Theory in Continuous Time*, Prop 5.2 (GBM), Prop 5.3 (linear SDE)
 
 ---
 

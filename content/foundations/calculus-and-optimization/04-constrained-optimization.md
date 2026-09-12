@@ -111,12 +111,12 @@ Stdlib only. Part (a) verifies the elementary Lagrange result $\max xy$ s.t. $x+
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Simon & Blume**: *Mathematics for Economists* - Ch 18.1–18.2 (equality constraints: one constraint, several constraints), Ch 18.3–18.5 (inequality constraints, mixed constraints, constrained minimisation), Ch 18.6 (the **Kuhn–Tucker formulation**), Ch 19.1 (the meaning of the multiplier), Ch 19.2 (envelope theorems: unconstrained and constrained), Ch 19.3 (constrained second-order conditions, the bordered Hessian, necessary SOC), Ch 19.5 (constraint qualifications). *The primary constrained-optimisation source.*
-- **Boyd & Vandenberghe**: *Convex Optimization* - §5.5.3 (KKT optimality conditions, eq. 5.49; sufficiency under convexity and Slater's condition; Example 5.1 the equality-constrained convex QP and its linear KKT system). *Verified at glyph level.*
-- **Nocedal, J. & Wright, S. J.**: *Numerical Optimization* (2nd ed.) - for solving KKT systems numerically (saddle-point systems, interior-point and active-set methods). *(Standard reference.)*
-- **Bertsekas, Dimitri P.**: *Nonlinear Programming* (3rd ed.) - the rigorous treatment of constraint qualifications and duality.
+- **Simon & Blume**: *Mathematics for Economists*
+- **Boyd & Vandenberghe**: *Convex Optimization*
+- **Nocedal, J. & Wright, S. J.**: *Numerical Optimization* (2nd ed.)
+- **Bertsekas, Dimitri P.**: *Nonlinear Programming* (3rd ed.)
 
 ---
 

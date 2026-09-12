@@ -69,11 +69,11 @@ Shows: posterior covariance $M$; the combined $\Sigma_{total}=\Sigma+M$; and a *
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Meucci, Attilio**: *Risk and Asset Allocation*, Springer, 2005, Ch 9 - the rigorous treatment of views on returns **and** on the covariance, and the "master formula" generalization.
-- **Satchell & Scowcroft (2000)** - the posterior-covariance structure and special cases.
-- **Idzorek (2005)** - practical combined-covariance and confidence implementation.
+- **Meucci, Attilio**: *Risk and Asset Allocation*, Springer, 2005
+- **Satchell & Scowcroft (2000)**
+- **Idzorek (2005)**
 - **Factor bridge**: **Sharpe (1964)** and factor-model literature for $r=Bf+\eta$.
 
 ---

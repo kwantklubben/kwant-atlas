@@ -84,13 +84,13 @@ Three lessons in one table. **(i) Boosting builds a strong learner from weak one
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 10 §10.1–10.13 (AdaBoost, forward stagewise additive modelling, gradient boosting, shrinkage, subsampling, variable importance). *PRIMARY source; verified in the corpus.*
-- **Chen, Tianqi & Guestrin, Carlos**, "XGBoost: A Scalable Tree Boosting System," *KDD*, 2016 - the regularized second-order objective, leaf-weight and split-gain formulas.
-- **Ke, Guolin et al.**, "LightGBM: A Highly Efficient Gradient Boosting Decision Tree," *NeurIPS*, 2017 - leaf-wise growth, histogram splitting.
-- **Prokhorenkova, Liudmila et al.**, "CatBoost: Unbiased Boosting with Categorical Features," *NeurIPS*, 2018 - ordered boosting, categorical leakage.
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 6 §6.5–6.6 (boosting mechanics; bagging vs boosting in finance).
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Chen, Tianqi & Guestrin, Carlos**, "XGBoost: A Scalable Tree Boosting System," *KDD*, 2016
+- **Ke, Guolin et al.**, "LightGBM: A Highly Efficient Gradient Boosting Decision Tree," *NeurIPS*, 2017
+- **Prokhorenkova, Liudmila et al.**, "CatBoost: Unbiased Boosting with Categorical Features," *NeurIPS*, 2018
+- **López de Prado**, *Advances in Financial Machine Learning*
 
 ---
 

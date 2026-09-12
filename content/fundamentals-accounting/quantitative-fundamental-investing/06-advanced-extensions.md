@@ -77,14 +77,14 @@ Two halves. First it constructs **SMB and HML** from a 20-stock cross-section us
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) - the three-factor model and the SMB/HML construction.
-- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - adds RMW and CMA; *the 2×3 construction and the ~0.38%/month average HML return verified against the corpus paper.*
-- **Hou, Xue & Zhang**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015) - the q-factor model (investment + ROE) as the production-theory competitor.
-- **Green, Hand & Zhang**: "The Characteristics That Provide Independent Information…" (*RFS*, 2017) - how many factors genuinely matter; the parsimonious 10-signal model.
-- **Fama & French**: "Choosing Factors" (*JFE*, 2018) - the selection discipline for what counts as a real factor.
-- **Gray & Carlisle**: *Quantitative Value* - the published, transparent combination of value, quality, and earnings-quality signals into a backtested quantamental screen.
+- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993)
+- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Hou, Xue & Zhang**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015)
+- **Green, Hand & Zhang**: "The Characteristics That Provide Independent Information…" (*RFS*, 2017)
+- **Fama & French**: "Choosing Factors" (*JFE*, 2018)
+- **Gray & Carlisle**: *Quantitative Value*
 
 ---
 

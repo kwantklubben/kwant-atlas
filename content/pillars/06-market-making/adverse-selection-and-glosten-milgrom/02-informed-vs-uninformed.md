@@ -73,12 +73,12 @@ Read the numbers as a toxicity screen: at $\pi=0.10$ a single buy barely moves t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Glosten & Milgrom (1985)**, JFE 14 (sequential Bayes; belief dynamics; martingale transaction prices).
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 5 §5.6 (price impact as signal extraction) and Ch 6 (PIN - the likelihood-based measure of informed-trading probability).
-- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, JFE 44 - the POISSON model of informed/uninformed arrivals behind PIN.
-- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*, Ch 3 §3.5 (price discovery $\mu_t=\theta_tV_H+(1-\theta_t)V_L$; convergence speed in $\pi$).
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, JFE 44
+- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*
 
 ---
 

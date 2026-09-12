@@ -95,15 +95,15 @@ Standard library (normal CDF from `math.erf`, inverse from a rational approximat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **BCBS** - *Basel II: International Convergence of Capital Measurement and Capital Standards* (2006). SA risk-weight grid, the IRB formula, the three pillars. *Read from the corpus PDF.*
 - **BCBS** - *Basel III: Finalising Post-Crisis Reforms* (2017, d424). Revised SA credit risk weights, the removal of the AMA, and the SMA for operational risk (Business Indicator, BIC, ILM, ORC$=\mathrm{BIC}\times\mathrm{ILM}$). *Read from the corpus PDF; the €35bn BIC example is checked numerically above.*
-- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.), Ch 24: §24.9 gives the **Vasicek one-factor** credit-VaR formula (eq. 24.10) that *is* the IRB conditional-default argument; §24.3 recovery ~40%; §24.4 hazard from spread (eq. 24.2). *Verified per chapter in the corpus.*
+- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.)
 - **Vašíček, Oldřich** - *Probability of Loss on Loan Portfolio* (1987, KMV). The one-factor Gaussian model underpinning the IRB capital formula.
-- **Gupton, Finger & Bhatia (J.P. Morgan)** - *CreditMetrics™ Technical Document* (1997). The rating-transition portfolio credit-risk framework - the practical ancestor of IRB.
+- **Gupton, Finger & Bhatia (J.P. Morgan)** - *CreditMetrics™ Technical Document* (1
 - **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling* (2nd ed., 2010). Accessible derivation of the ASRF formula and portfolio loss distributions.
-- **Panjer, Harry H.** - *Operational Risk: Modeling Analytics* (2006, Wiley). The loss-distribution approach that the AMA was built on - now historical, but the right reference for understanding what the SMA replaced.
+- **Panjer, Harry H.** - *Operational Risk: Modeling Analytics* (2006, Wiley). The loss-distribution approach that the AMA was built on
 
 ---
 

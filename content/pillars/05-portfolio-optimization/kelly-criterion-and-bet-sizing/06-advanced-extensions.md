@@ -74,13 +74,13 @@ Read the last two lines: if the assets were independent, Kelly would put $1.25$ 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §7.1–7.3 - the securities/multi-asset growth rate $r_f+w^T(\mu-r_f\mathbf{1})-\tfrac12 w^T\Sigma w$. *Corpus-verified.*
-- **Breiman, Leo**: *Optimal Gambling Systems for Favorable Games* (1961) - the multi-period/optimality grounding.
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011) - multi-asset Kelly and the "good/bad properties" surveys.
-- **Ledoit & Wolf**: *Improved Estimation of the Covariance Matrix of Stock Returns…* (2004) - the shrinkage estimator every multi-asset Kelly deployment needs ([[pillars/05-portfolio-optimization/covariance-shrinkage-and-denoising/index|Covariance Shrinkage & RMT]]).
-- **Chopra & Ziemba**: *The Effect of Errors in Means, Variances, Covariances on Optimal Portfolio Choice* (JPM 1993) - means dominate as error source.
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **Breiman, Leo**: *Optimal Gambling Systems for Favorable Games* (1961)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011)
+- **Ledoit & Wolf**: *Improved Estimation of the Covariance Matrix of Stock Returns…* (2004)
+- **Chopra & Ziemba**: *The Effect of Errors in Means, Variances, Covariances on Optimal Portfolio Choice* (JPM 1993)
 
 ---
 

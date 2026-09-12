@@ -89,14 +89,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Roll, Richard (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139. *The covariance estimator - the anchor of this folder.*
-- **Hasbrouck, Joel (2007)**, *Empirical Market Microstructure*, OUP - Ch 3 (the Roll model, $p_t=m_t+q_t c$, $\gamma_1=-c^2$), Ch 4 (MA(1), Wold, estimation, Roll-bias Ex 4.2/4.3), Ch 8 (generalized Roll & the random-walk decomposition). *Primary deep-read, verified per-chapter in the corpus.*
+- **Roll, Richard (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139. *The covariance estimator
+- **Hasbrouck, Joel (2007)**, *Empirical Market Microstructure*, OUP
 - **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142. *The transitory-vs-permanent decomposition.*
 - **Stoll (1989)**, *Inferring the components of the bid-ask spread: theory and empirical tests*, Journal of Finance 44(1), 115–134. *Order-processing vs inventory vs adverse-information via reversal probability $\pi$ and reversal size $\delta$.*
 - **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, Review of Financial Studies 10(4), 995–1034. *The three-component decomposition in one framework.*
-- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1) - effective-spread measurement as a market-quality gauge.
+- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1)
 
 ---
 

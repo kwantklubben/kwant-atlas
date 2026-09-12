@@ -131,11 +131,11 @@ Every equilibrium prediction is recovered from the simulation: $\lambda$ from a 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *Theorem 1 (single auction): $\beta=(\sigma_u^2/\Sigma_0)^{1/2}$, $\lambda=\tfrac12(\Sigma_0/\sigma_u^2)^{1/2}$; §2 "Properties": $1/\lambda$ = depth, $\mathrm{Var}[v\mid p]=\Sigma_0/2$, profit. Primary PDF in corpus (`40_Kyle_1985_...`).*
-- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, Ch 7 *Strategic Trade Models*. *Cleanest textbook exposition of the equilibrium, eqs 7.1–7.5; verified in corpus (`hasbrouck_ch6-10.md`, Ch 7 section).*
-- **Huberman, G. & Stanzl, W. (2004)**, *Price manipulation and quasi-arbitrage*, Econometrica 72(4). *Only linear price schedules are manipulation-free - the no-arbitrage anchor for Kyle's linear rule.*
+- **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *Theorem 1 (single auction): $\beta=(\sigma_u^2/\Sigma_0)^{1/2}$, $\lambda=\tfrac12(\Sigma_0/\sigma_u^2)^{1/2}$;
+- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*
+- **Huberman, G. & Stanzl, W. (2004)**, *Price manipulation and quasi-arbitrage*, Econometrica 72(4). *Only linear price schedules are manipulation-free
 - **Glosten, L. R. & Milgrom, P. R. (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders*, JFE 14(1). *The sequential-trade counterpart (non-strategic insider).*
 
 ---

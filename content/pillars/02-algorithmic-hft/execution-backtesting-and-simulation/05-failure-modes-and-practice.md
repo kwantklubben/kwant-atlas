@@ -92,14 +92,14 @@ Read across the four. **F1:** the naive rule books **800** shares where FIFO fil
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont & Kukanov** (2017), §2.3 - adverse selection as negative post-fill drift, and its inclusion via effective rebates.
-- **Gould et al.** (2013), §4.5 - latency caveats for conditional order-book studies; the cancel-to-trade ratio evidence.
-- **Almgren, Thum, Hauptmann & Li** - "Direct estimation of equity market impact," *Risk* 18(7) (2005) - the impact parameters whose omission is Failure 4.
-- **Almgren & Chriss** (2000) - the $\eta X^2/T$ temporary-impact structure.
-- **Hasbrouck** - *Empirical Market Microstructure*, Ch 14–15 - effective/realized cost, censoring, and the prospective cost framework. *Corpus verification `hasbrouck_ch11-15.md`.*
-- **López de Prado** - *AFML* (2018), Ch 11 - the failure catalogues (backtest illusions) that execution simulation must not re-create.
+- **Cont & Kukanov** (2017)
+- **Gould et al.** (2013)
+- **Almgren, Thum, Hauptmann & Li** - "Direct estimation of equity market impact," *Risk* 18(7) (2005)
+- **Almgren & Chriss** (2000)
+- **Hasbrouck** - *Empirical Market Microstructure*
+- **López de Prado** - *AFML* (2018)
 
 ---
 

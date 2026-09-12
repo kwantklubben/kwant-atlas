@@ -113,12 +113,12 @@ Closed forms and MC agree to $O(10^{-4})$ (MC sampling error). The Hull–White 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brigo–Mercurio**, *Interest Rate Models*, Ch 3 (one-factor short-rate models: Vasicek 3.5–3.10, CIR 3.21–3.26, Hull–White 3.33–3.43, affine structure 3.1–3.29, deterministic-shift / CIR++), Ch 4 (two-factor G2++). *Primary verified source.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 23 (market price of risk, term-structure equation Prop 23.2) and Ch 24 (martingale models, affine Prop 24.2, Vasicek 24.3, CIR 24.6, Hull–White 24.8, Ho-Lee 24.4–24.5).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 29–32 (Gaussian/HW affine bond, CIR construction & Feller, Duffie-Kan two-factor).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 31 (equilibrium models) and Ch 32 (no-arbitrage models, HW $\theta$ 32.4).
+- **Brigo–Mercurio**, *Interest Rate Models*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

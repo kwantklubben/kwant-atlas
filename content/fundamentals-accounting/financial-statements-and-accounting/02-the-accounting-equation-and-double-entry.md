@@ -78,12 +78,12 @@ Note *why* debits and credits each total \$40,200: the business recorded every t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 2 (accounting equation eq. 2.1, articulation through the statement of shareholders' equity eq. 2.4–2.5). *Deep-read.*
-- **Mullis & Orloff**, *The Accounting Game* - double-entry via a lemonade stand; the gentlest correct treatment of debits/credits.
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - how each transaction becomes a line item on each statement.
-- **Kieso, Weygandt & Warfield**, *Intermediate Accounting* - the authoritative reference for how specific items are measured (the "deep dictionary" for any measurement nuance).
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Mullis & Orloff**, *The Accounting Game*
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide*
+- **Kieso, Weygandt & Warfield**, *Intermediate Accounting*
 
 ---
 

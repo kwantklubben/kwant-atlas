@@ -65,10 +65,10 @@ Simulate (1) the forced concession of a deterministic TWAP, (2) the tracking-err
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (VWAP gamability, order-size-dependence, zero-sum execution cost) and Ch 15 (U-shaped strategies). *Corpus verification `hasbrouck_ch11-15.md`.*
-- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013), Ch 2 (VWAP "gamed by slow trickling," l. 2451-2465). *Corpus verification `foucault_ch1-3.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013)
 - **Harris, Larry** - *Trading and Exchanges* (2003). *The classic statement of benchmark gamability and execution ambiguity.*
 - **Kissell** - *The Science of Algorithmic Trading* (2014). *Desk practice: randomization, real-time participation, TCA of execution quality.*
 

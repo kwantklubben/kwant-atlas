@@ -69,14 +69,14 @@ Hub signposts - the full analysis lives in [[pillars/06-market-making/dealer-ban
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6), 1815–1847 - the anchor search-and-bargaining model; dealer bid-ask, endogenous search, welfare. *Primary PDF read and equations re-derived; `58_Duffie_2005_over_the_counter_markets.pdf`.*
-- **Duffie (2010)**, *Presidential address: Asset price dynamics with slow-moving capital*, Journal of Finance 65(4), 1237–1267 - dealer/intermediary capital limits, price impact and reversal, fire sales. *Primary PDF read; `60_Duffie_2010_president_address_asset_price_dynamics.pdf`.*
-- **Duffie (2012)**, *Dark Markets: Asset Pricing and Information Transmission in Over-the-Counter Markets*, Princeton University Press - the book-length capstone (search, information, and pricing in OTC).
-- **Duffie (2012)**, *Over-the-counter markets*, in *Handbook of Financial Econometrics* - the survey companion to the 2005 paper.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, OUP - Ch 1–2 (why trade; dealer settings, interdealer markets, transparency). *Verified in corpus (`hasbrouck_ch1-5.md`).*
-- **Bao, Pan & Wang (2011)**, *The illiquidity of corporate bonds*, Journal of Finance 66(3), 911–946 - the empirical OTC illiquidity benchmark. *Cross-listed from [[pillars/06-market-making/liquidity-risk-and-asset-pricing/index|Liquidity Risk & Asset Pricing]].*
+- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6), 1815–1847
+- **Duffie (2010)**, *Presidential address: Asset price dynamics with slow-moving capital*, Journal of Finance 65(4), 1237–1267
+- **Duffie (2012)**, *Dark Markets: Asset Pricing and Information Transmission in Over-the-Counter Markets*, Princeton University Press
+- **Duffie (2012)**, *Over-the-counter markets*, in *Handbook of Financial Econometrics*
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*, OUP
+- **Bao, Pan & Wang (2011)**, *The illiquidity of corporate bonds*, Journal of Finance 66(3), 911–946
 
 ---
 

@@ -86,12 +86,12 @@ Now it **overstates**: $0.0426$ vs true $0.040$. The two bias directions are opp
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Harris (1990)**, *Statistical properties of the Roll serial covariance bid/ask spread estimator*, Journal of Financial Economics 27(2) - the positive-autocovariance problem and small-sample behavior.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 4 - Exercises 4.2 (downward bias from $\rho>0$) and 4.3 (upward bias from $\mathrm{corr}(q,u)>0$), plus estimation practice (drop overnight, conditional estimation). *Verified in the corpus.*
-- **Stoll (1989)**, *Inferring the components of the bid-ask spread* - on why the realized spread is less than the quoted spread (both inventory and adverse-information models).
-- **Hasbrouck (2005)**, *Trading costs and returns for US equities* - Bayesian approach to estimating the Roll model with positive autocovariances (the fix when $\hat\gamma_1>0$).
+- **Harris (1990)**, *Statistical properties of the Roll serial covariance bid/ask spread estimator*, Journal of Financial Economics 27(2)
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Stoll (1989)**, *Inferring the components of the bid-ask spread*
+- **Hasbrouck (2005)**, *Trading costs and returns for US equities*
 
 ---
 

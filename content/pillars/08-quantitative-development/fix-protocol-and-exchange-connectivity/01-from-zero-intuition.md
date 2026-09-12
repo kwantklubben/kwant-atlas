@@ -85,11 +85,11 @@ Read it as the beginner's first two facts: **one order is ~165 bytes and ~20% of
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **FIX Trading Community**, *FIX Protocol - Introduction & Session Layer* (fixtrading.org) - read the Introduction chapter first; it states the tag-value grammar and the session concept in prose, before you meet the message tables.
-- **OnixS**, *FIX Dictionary & Protocol Reference* - the gentlest explanation of the session layer and the tag-value syntax for a first-time reader.
-- **Donadio, Sebastien**, *Learn Algorithmic Trading* (Packt, 2019) - a zero-background tour that introduces FIX communication inside the broader algorithmic-trading build.
+- **FIX Trading Community**, *FIX Protocol
+- **OnixS**, *FIX Dictionary & Protocol Reference*
+- **Donadio, Sebastien**, *Learn Algorithmic Trading* (Packt, 2019)
 
 ---
 

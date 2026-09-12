@@ -86,11 +86,11 @@ Three verified takeaways: (1) the risk-neutral PD is $26.4$ bp; (2) a realistic 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives* - §24.5 (real-world vs risk-neutral PDs), §24.6 eq. (24.4) with $\mathbb{Q}(\text{default})=N(-d_2)$, Example 24.3. *Verification report in the corpus.*
-- **Merton (1974)** - eq. (14) (risk premium as a function of $d$ and $\sigma_V^2$) and eq. (18) ($P_\tau<0$, spread rises with asset volatility). *Primary source.*
-- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*, §1.2.3 (asset-value model, default point calibration, reference to Crosbie). *Corpus digest available.*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Merton (1974)**
+- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*
 - **Gupton, Finger & Bhatia** - *CreditMetrics™ Technical Document* (1997): the transition-matrix analogue (PD read off the default column) as the discrete alternative to DD.
 
 ---

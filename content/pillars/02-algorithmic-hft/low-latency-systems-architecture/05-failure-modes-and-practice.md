@@ -89,14 +89,14 @@ Standard library only. Two experiments: (a) **tail amplification by composition*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory* (2007). Cache, false sharing, prefetch, NUMA - the first-principles source for failures 2–4.
+- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory* (2007). Cache, false sharing, prefetch, NUMA
 - **Thompson, Martin** - *Mechanical Sympathy*. Practical treatment of cache-line effects and false sharing in trading systems.
 - **Gregg, Brendan** - *Systems Performance* (2nd ed., 2020). Methodology for finding the actual tail source (off-CPU analysis, flame graphs); and **Gregg**, *BPF Performance Tools* for latency histograms in production.
 - **Williams, Anthony** - *C++ Concurrency in Action* (2nd ed., 2019). Memory model and false-sharing-avoidance patterns (cross-listed: [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]).
 - **MacKenzie, Donald** - *Trading at the Speed of Light* (2021). How these engineering tails translate into who wins on the exchange.
-- **Hasbrouck & Saar** - "Low-latency trading" (2013). The market behaviour that makes tail latency expensive.
+- **Hasbrouck & Saar** - "Low-latency trading" (2
 
 ---
 

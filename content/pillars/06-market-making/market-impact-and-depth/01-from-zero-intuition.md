@@ -88,10 +88,10 @@ Read the last line: the price change equals $\lambda$ times the *net* signed flo
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *The origin of $\lambda$ and $1/\lambda$ as depth. Primary PDF in corpus.*
-- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP - Ch 1, §1.2 (depth/breadth/resiliency), Ch 3 (Roll), Ch 7 (Kyle), Ch 8 (permanent/transitory). *Math-verified in corpus (`hasbrouck_ch1-5.md`, `hasbrouck_ch6-10.md`).*
+- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP
 - **Cont, R., Kukanov, A. & Stoikov, S. (2014)**, *The price impact of order book events*, J. Financial Econometrics 12(1), 47–88. *Linear flow–price relation and impact $\propto 1/$depth. Primary PDF in corpus.*
 - **Bouchaud, J.-P., Farmer, J. D. & Lillo, F. (2009)**, *How markets slowly digest changes in supply and demand*. *The empirical impact landscape. Primary PDF in corpus.*
 

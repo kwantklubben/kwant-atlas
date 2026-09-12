@@ -80,13 +80,13 @@ The jump model prices the call materially higher ($13.35$ vs $10.45$): the fat l
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, Ch 3 (American: BAW, Bjerksund–Stensland 1993/2002, perpetual options) and Ch 7 (trees). *All numerically verified in the corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13 (binomial, American via backward induction), Ch 20/21 (smiles, numerical procedures).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 1 (MC principles), Ch 3 §3.5 (jump-diffusion simulation, eq. 3.79–3.81). *Math-verified.*
-- **Duffy**, *Finite Difference Methods in Financial Engineering* (FDM for the BSM PDE). *Corpus available.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, §7.8 (American options introduction).
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Duffy**, *Finite Difference Methods in Financial Engineering* (FDM for the BSM PDE).
+- **Björk**, *Arbitrage Theory in Continuous Time*
 
 ---
 

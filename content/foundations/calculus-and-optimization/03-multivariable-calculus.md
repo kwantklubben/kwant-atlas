@@ -107,12 +107,12 @@ Stdlib only. We take $f(x,y)=x^2+y^2+xy$ (a convex quadratic), compute the analy
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Simon & Blume**: *Mathematics for Economists* - Ch 13.3 (linear functions, quadratic forms, matrix representation of quadratic forms), Ch 14.4 (the total derivative and linear approximation, functions of more than two variables), Ch 14.5 (the chain rule: curves, tangent vectors, differentiating along a curve), Ch 14.6 (directional derivatives and gradients), Ch 16 (quadratic forms and definiteness, bordered matrices, definiteness and optimality, bordered-Hessian second-order conditions). *The primary multivariable source for this page.*
-- **Stewart, Clegg & Watson**: *Calculus: Early Transcendentals* (9th ed.) - the partial-derivatives chapter (partial derivatives, the chain rule, directional derivatives and the gradient, maximum and minimum values, Lagrange multipliers). *The readable treatment.*
-- **Hubbard, John H. & Hubbard, Barbara Burke**: *Vector Calculus, Linear Algebra, and Differential Forms* (5th ed.) - for the differential-as-linear-map viewpoint and the inverse/implicit function theorems in their sharp form. *(Titles list; not in the verified set.)*
-- **Spivak, Michael**: *Calculus* - the single-variable analogues of Clairaut, the chain rule and the second-derivative test, developed rigorously.
+- **Simon & Blume**: *Mathematics for Economists*
+- **Stewart, Clegg & Watson**: *Calculus: Early Transcendentals* (9th ed.)
+- **Hubbard, John H. & Hubbard, Barbara Burke**: *Vector Calculus, Linear Algebra, and Differential Forms* (5th ed.)
+- **Spivak, Michael**: *Calculus*
 
 ---
 

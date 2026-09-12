@@ -73,13 +73,13 @@ Read it. **(A)** A signal $0.90$-correlated with your factor has uniqueness $0.1
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.) - signal combination, the transfer coefficient, and the covariance-based optimal allocation (Ch. 6, 10). *The framework of Part B.*
-- **López de Prado**, *Advances in Financial Machine Learning* - **Ch. 4** (sample uniqueness / sequential bootstrap), **Ch. 8** (feature importance & the deflated Sharpe), and the clustering/orthogonalization machinery (Ch. 16, 20) for extracting the non-crowded component. *Corpus PDF verified.*
-- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) - combining datasets, capacity, and the operational evaluation of a data program.
-- **AIMA / SS&C**, *Casting the Net* (2017) - the market reality of dataset pricing (the $C$ in Part C) and crowding.
-- **Qlib (Microsoft)** - an open-source, point-in-time-aware factor/ML pipeline where pages 03–06 of this folder become a runnable program; the natural next step for the feature-synthesis track.
+- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.)
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019)
+- **AIMA / SS&C**, *Casting the Net* (2017)
+- **Qlib (Microsoft)**
 
 ---
 

@@ -91,13 +91,13 @@ We price two coupon bonds off a flat $4\%$ zero curve, compute modified duration
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 22 §22.5 (the linear model $\Delta P=\sum_i S_i\delta_i\Delta x_i$ and duration mapping, eq. 22.6; cash-flow mapping) and Ch 22 §22.9 (PCA of the yield curve: PC1 $\approx$ parallel shift $\sim87\%$ of variance, PC2 twist, PC3 bowing - the empirical justification for a small set of curve factors). *Verified in the corpus (`hull_ch19-23.md`).*
-- **Hull, John C.**: *Risk Management and Financial Institutions* - interest-rate risk chapters: the standard DV01/duration/convexity limit framework used by bank treasuries.
-- **Alexander, Carol**: *Market Risk Analysis, Vol. III* (2008) - Ch 6–7, mapping bonds and swaps to zero-rate risk factors and constructing key-rate/bucket sensitivities.
-- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996) - §6.2, the original duration-based and cash-flow mapping of fixed-income positions to risk factors.
-- **BCBS**: *Minimum Capital Requirements for Market Risk* (2019, FRTB, d457) - the sensitivities-based method (SBM) prescribes exactly this: risk-weighted delta/curvature sensitivities **vertically bucketed by tenor node** (the regulatory adoption of key-rate durations).
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Hull, John C.**: *Risk Management and Financial Institutions*
+- **Alexander, Carol**: *Market Risk Analysis, Vol. III* (2008)
+- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996)
+- **BCBS**: *Minimum Capital Requirements for Market Risk* (2019, FRTB, d457)
 
 ---
 

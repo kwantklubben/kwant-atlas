@@ -83,13 +83,13 @@ Three lessons in the numbers. (i) **The three point estimates differ** - mean $0
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference* (2nd ed.) - §7.2.3 (Bayes estimators; the posterior mean as squared-error minimizer; non-unbiasedness), §9.2.4 (Bayesian intervals), Ch 10 §10.3.1 (Bayesian decision problems, risk = posterior expected loss). *Primary; PDF in the corpus.*
-- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.) - Ch 2 (posterior summaries for conjugate models), Ch 10 §10.5 (posterior predictive checks), §2.5 (point estimates and loss functions).
-- **Robert**, *The Bayesian Choice* (2nd ed.) - Ch 2–3 (decision-theoretic foundations of Bayes estimators, admissibility).
-- **Berger**, *Statistical Decision Theory and Bayesian Analysis* (2nd ed.) - the reference on loss, risk, and interval estimation.
-- **McElreath**, *Statistical Rethinking* (2nd ed.) - Ch 3 (sampling the posterior and summarizing it), Ch 4–5 (prediction vs inference; the distinction between the posterior and the predictive).
+- **Casella & Berger**, *Statistical Inference* (2nd ed.)
+- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.)
+- **Robert**, *The Bayesian Choice* (2nd ed.)
+- **Berger**, *Statistical Decision Theory and Bayesian Analysis* (2nd ed.)
+- **McElreath**, *Statistical Rethinking* (2nd ed.)
 
 ---
 

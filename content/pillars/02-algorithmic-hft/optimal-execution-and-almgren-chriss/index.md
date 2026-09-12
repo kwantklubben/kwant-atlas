@@ -98,18 +98,18 @@ Hub signposts - the full failure analysis lives in [[pillars/02-algorithmic-hft/
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000). *The canonical paper; the source of eqs (1)-(20) above. Read §1-2 first, then §3 (utility, L-VaR).*
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000). *The canonical paper; the source of eqs (1)-(20) above.
 - **Almgren, Robert** - "Optimal execution with nonlinear impact functions and trading-enhanced risk," *Applied Mathematical Finance* 10(1), 1-18 (2003). *Extends linear impact to power laws $h(v)=\eta v^{\alpha}$; the source of the $\sqrt{\cdot}$ correction used in sub-page 05.*
-- **Almgren, Thum, Hauptmann, Li** - "Direct estimation of equity market impact," *Risk* 18(7), 58-62 (2005). *How to fit $\eta$ (and the power $\alpha$) to real order data - the calibration companion.*
+- **Almgren, Thum, Hauptmann, Li** - "Direct estimation of equity market impact," *Risk* 18(7), 58-62 (2005). *How to fit $\eta$ (and the power $\alpha$) to real order data
 - **Obizhaeva, Anna; Wang, Jiang** - "Optimal trading strategy and supply/demand dynamics," *Journal of Financial Markets* 16(1), 1-32 (2013). *Resilient book: optimal schedule is discrete at both ends (block-continuous-block).*
 - **Gatheral, Jim** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7), 749-759 (2010). *The consistency constraint (Huberman–Stanzl) every impact model must satisfy; rules out arbitrary decay kernels.*
 - **Gatheral, Jim; Schied, Alexander; Slynko, Alla** - "Transient linear price impact and Fredholm integral equations," *Mathematical Finance* 22(3), 445-474 (2012). *Optimal execution for general (power-law) decay kernels.*
 - **Bertsimas, Dimitris; Lo, Andrew W.** - "Optimal control of execution costs," *Journal of Financial Markets* 1(1), 1-50 (1998). *The dynamic-programming predecessor; gives $s_t^\star=\bar s/T$ under zero drift.*
-- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015), Ch 6-8. *The stochastic-control generalization (adaptive execution, dark pools, limit orders).*
+- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015)
 - **Gueant, Olivier** - *The Financial Mathematics of Market Liquidity* (2016). *Rigorous modern monograph: execution and market making as one theory.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (trading costs, implementation shortfall, Perold 1988) and Ch 15 (order splitting, temporary/permanent impact, DP, U-shaped strategies). *Corpus verification: `hasbrouck_ch11-15.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 
 ---
 

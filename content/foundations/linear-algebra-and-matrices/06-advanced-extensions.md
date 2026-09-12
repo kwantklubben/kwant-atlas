@@ -68,13 +68,13 @@ Two clean verdicts. **Ill-conditioning is real and silent:** $H_8$ has $\kappa\a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bai & Silverstein**: *Spectral Analysis of Large Dimensional Random Matrices* (2010) - the rigorous RMT source for the Marchenko–Pastur law. *Corpus PDF available.*
-- **Laloux, Cizeau, Bouchaud & Potters**: "Noise Dressing of Financial Correlation Matrices" (1999) - the finance-native statement: most empirical eigenvalue "structure" in correlation matrices is MP noise.
-- **Hastie, Tibshirani, Friedman**, *The Elements of Statistical Learning*, Ch 18 (high-dimensional $p\gg N$ problems; supervised PCA; false-discovery discipline). *Verified in the corpus.*
-- **Tsay**, *Analysis of Financial Time Series*, §9.6.1 (factor-number selection: Connor–Korajczyk, Bai–Ng criteria). *Verified.*
-- **Horn & Johnson**, *Matrix Analysis*, Ch 5–6 (condition numbers, matrix norms).
+- **Bai & Silverstein**: *Spectral Analysis of Large Dimensional Random Matrices* (2010)
+- **Laloux, Cizeau, Bouchaud & Potters**: "Noise Dressing of Financial Correlation Matrices" (1999)
+- **Hastie, Tibshirani, Friedman**, *The Elements of Statistical Learning*
+- **Tsay**, *Analysis of Financial Time Series*
+- **Horn & Johnson**, *Matrix Analysis*
 
 ---
 

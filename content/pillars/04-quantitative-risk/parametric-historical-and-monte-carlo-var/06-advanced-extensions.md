@@ -93,13 +93,13 @@ The under-stated-vol model breaches ~11× too often - **Kupiec rejects it decisi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 §9.2 (delta–gamma diagonalization (9.4), MGF/inversion, importance sampling, variance-reduction table 9.1). *Math-verified in corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 §22.5 (linear eq. 22.6; quadratic delta–gamma eq. 22.7/22.8; Cornish–Fisher), Ch 22 §22.8 (backtesting). *Verified in corpus.*
-- **Kupiec, Paul H.**: *Techniques for Verifying the Accuracy of Risk Measurement Models*, *Journal of Derivatives* 3(2):73–84 (1995) - the POF statistic.
-- **Christoffersen, Peter F.**: *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998) - the independence/conditional-coverage test.
-- **BCBS**: *Supervisory Framework for the Use of Backtesting...* (1996) - the traffic-light zones; and *Minimum Capital Requirements for Market Risk* / *FRTB* (2019) - the structural shift from VaR to 97.5% ES.
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Kupiec, Paul H.**: *Techniques for Verifying the Accuracy of Risk Measurement Models*, *Journal of Derivatives* 3(2):73–84 (1995)
+- **Christoffersen, Peter F.**: *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998)
+- **BCBS**: *Supervisory Framework for the Use of Backtesting...* (1996)
 
 ---
 

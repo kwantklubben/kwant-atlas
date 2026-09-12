@@ -75,10 +75,10 @@ The lesson: with 4 KB pages a 64 MB working set is *essentially* 100% TLB-missin
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kerrisk, Michael** - *The Linux Programming Interface*: scheduling (Ch 35), timers, `sched_setaffinity` - the tuning vocabulary.
-- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory*: the canonical TLB/hugepage/memory-hierarchy treatment behind §2.
+- **Kerrisk, Michael** - *The Linux Programming Interface*: scheduling (Ch 35), timers, `sched_setaffinity`
+- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory*: the canonical TLB/hugepage/memory-hierarchy treatment behind
 - **Databento** - *Low-Latency Tuning Guide for Linux and Trading Systems*: IRQ affinity, NUMA-local everything, busy-polling, done for trading hosts.
 - **Red Hat Enterprise Linux** - *Monitoring and Managing System Status and Performance*: official `tcp_*`/sysctl guidance.
 - **Intel** - *NUMA and Hugepages* tuning documentation (page tables, TLB coverage).

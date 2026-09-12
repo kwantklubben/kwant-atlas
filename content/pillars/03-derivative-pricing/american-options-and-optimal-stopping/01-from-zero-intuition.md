@@ -77,12 +77,12 @@ Build the CRR tree, price a European and an American put, and watch the premium 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance I*, §5.1 (the American recursion and the $S=2$ early-exercise node) and Ch 8.7 (binomial perpetual put). *Math-verified.*
-- **Shreve**, *Stochastic Calculus for Finance II*, §8.1–8.2 (optimal-stopping value of an American security; no-early-exercise for a dividend-free call, Cor 8.5.3). *Math-verified.*
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.2 (American call = European, no dividends) and §4.2 (CRR American put $4.692$). *Numerically verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13 (binomial American valuation, early-exercise boundary pictures).
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

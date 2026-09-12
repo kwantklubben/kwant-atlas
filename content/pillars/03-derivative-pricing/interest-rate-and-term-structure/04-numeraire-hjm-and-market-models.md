@@ -114,12 +114,12 @@ The forward LIBOR is driftless under its own measure (MC returns $F(0)$ to $10^{
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brigo–Mercurio**, *Interest Rate Models*, Ch 2 (numeraire change: drift-shift 2.12, forward measure 2.20, Prop 2.5.1/2.5.2), Ch 5 (HJM drift condition 5.2, HJM↔HW equivalence, Musiela), Ch 6 (LFM/LSM: Prop 6.3.1–6.3.3, caplet=Black Prop 6.4.1, swaption Prop 6.7.1), Ch 7 (calibration). *Primary verified source.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 25 (HJM, drift condition Prop 25.2, Musiela 25.20), Ch 26 (change of numeraire ★, GER Prop 26.11, caps §26.8), Ch 27 (LMM/LSM, Black caplet Def 27.2, terminal measure 27.30, swaption Def 27.13), Ch 29 (forwards vs futures correction).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 33 (change of numeraire, T-forward measure, Merton formula) and Ch 34 (BGM: forward-LIBOR dynamics 5.3/5.4, Black caplet 9.2, forward swap rate).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 33 (HJM drift 33.5, LMM forward-rate vol 33.10–33.11).
+- **Brigo–Mercurio**, *Interest Rate Models*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

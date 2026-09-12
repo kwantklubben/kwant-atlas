@@ -69,13 +69,13 @@ Take the lemonade ledger's statements and express them on a common-size basis. T
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 9 (reformulation, common-size analysis 282–285, trend analysis, ratio analysis, operating margin) and Ch 10 (free cash flow, $\text{FCF}=\text{OI}-\Delta\text{NOA}$, cash conservation). *Deep-read.*
-- **Subramanyam**, *Financial Statement Analysis* - ratio systems and DuPont decomposition in rigorous form.
-- **Palepu & Healy**, *Business Analysis and Valuation* - the strategy→accounting→financial→prospective workflow that consumes these ratios.
-- **Pinto et al. (CFA)**, *Equity Asset Valuation* - relative valuation/multiples built on common-size fundamentals.
-- **Kieso, Weygandt & Warfield**, *Intermediate Accounting* - the GAAP measurement dictionary (LIFO, revenue recognition, leases).
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Subramanyam**, *Financial Statement Analysis*
+- **Palepu & Healy**, *Business Analysis and Valuation*
+- **Pinto et al. (CFA)**, *Equity Asset Valuation*
+- **Kieso, Weygandt & Warfield**, *Intermediate Accounting*
 
 ---
 

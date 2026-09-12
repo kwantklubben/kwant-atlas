@@ -80,14 +80,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge: A Valuation Adjustment Framework for Modern Derivatives Markets* (5th ed., 2025) - the definitive industry reference; CVA Ch 17 (Eqs 17.1–17.9), exposure Ch 11/15, funding Ch 18, capital Ch 19, MVA Ch 20, collateral Ch 7/9. *Read in depth from the corpus (Ch 1–3, 7, 9, 13–21); all formulas numerically re-verified.*
-- **Brigo, Morini & Pallavicini**: *Counterparty Credit Risk, Collateral and Funding* (2013, Wiley) - the rigorous CVA/FVA-with-collateral pricing companion.
-- **Pykhtin & Zhu**: *A Guide to Modeling Counterparty Credit Risk* (GARP Risk Review, 2007) - the canonical practitioner introduction to EE/EPE/PFE and CVA measurement.
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* - Ch 24 (exposure, netting, collateral, CVA & DVA, closed-form CVA special cases) and Ch 25 (CDS as the PD input). *Verified in the corpus.*
-- **BCBS (2014)**: *The Standardised Approach for Measuring Counterparty Credit Risk Exposures* (BIS d317) - the SA-CCR definition of EAD (Eqs 13.16–13.21). *Read from the primary PDF.*
-- **BCBS (2017)**: *Basel III CVA Risk Framework* (BIS d325) - the regulatory capitalisation of CVA volatility (BA-CVA / SA-CVA).
+- **Gregory, Jon**: *The xVA Challenge: A Valuation Adjustment Framework for Modern Derivatives Markets* (5th ed., 2025)
+- **Brigo, Morini & Pallavicini**: *Counterparty Credit Risk, Collateral and Funding* (2013, Wiley)
+- **Pykhtin & Zhu**: *A Guide to Modeling Counterparty Credit Risk* (GARP Risk Review, 2007)
+- **Hull, John C.**: *Options, Futures, and Other Derivatives*
+- **BCBS (2014)**: *The Standardised Approach for Measuring Counterparty Credit Risk Exposures* (BIS d317)
+- **BCBS (2017)**: *Basel III CVA Risk Framework* (BIS d325)
 
 ---
 

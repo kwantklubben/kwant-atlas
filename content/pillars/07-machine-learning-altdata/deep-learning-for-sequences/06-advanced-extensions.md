@@ -98,16 +98,16 @@ Read it as the TCN's two defining properties, verified. The three-layer dilated 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bai, Shaojie, Kolter, J. Zico & Koltun, Vladlen** (2018), *An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling*, arXiv:1803.01271 - the TCN; causal dilated convolutions and the receptive-field result.
-- **Cho, Kyunghyun et al.** (2014), *Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation*, EMNLP - the GRU.
-- **Salinas, David et al.** (2020), *DeepAR: Probabilistic Forecasting with Autoregressive Recurrent Networks*, International Journal of Forecasting (arXiv:1704.04110) - full predictive distributions from an autoregressive RNN.
-- **Lim, Bryan, Arık, Sercan Ö., Loeff, Nicolas & Pfister, Tomas** (2021), *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4):1748–1764 (arXiv:1912.09363) - interpretable multi-horizon attention with static covariates.
-- **Zhang, Zihao, Zohren, Stefan & Roberts, Stephen** (2019), *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE TSP 67(11):3001–3012, arXiv:1808.03668 - the canonical CNN+LSTM microstructure model (the "Zhang 2020" extended treatment is the Oxford-Man follow-on).
-- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.4 encoder–decoder, attention) and **Ch. 9** (convolutional structure - the basis of the TCN and DeepLOB's spatial filters).
-- **Sutton, Richard S. & Barto, Andrew G.** (2018), *Reinforcement Learning: An Introduction* (2nd ed.) - the bridge to RL-for-trading; the sequential-decision formalisation of the same data.
-- **Microsoft Qlib** (arXiv:2009.11189) - the reference implementation: LightGBM/XGBoost/CatBoost **and** LSTM/GRU/Transformer/TFT backends with purged-style evaluation; the closest thing to a runnable embodiment of Pillar 7's stack.
+- **Bai, Shaojie, Kolter, J. Zico & Koltun, Vladlen** (2018), *An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling*, arXiv:1803.01271
+- **Cho, Kyunghyun et al.** (2014), *Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation*, EMNLP
+- **Salinas, David et al.** (2020), *DeepAR: Probabilistic Forecasting with Autoregressive Recurrent Networks*, International Journal of Forecasting (arXiv:1704.04110)
+- **Lim, Bryan, Arık, Sercan Ö., Loeff, Nicolas & Pfister, Tomas** (2021), *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4):1748–1764 (arXiv:1912.09363)
+- **Zhang, Zihao, Zohren, Stefan & Roberts, Stephen** (2019), *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE TSP 67(11):3001–3012, arXiv:1808.03668
+- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.4 encoder–decoder, attention) and **Ch. 9** (convolutional structure
+- **Sutton, Richard S. & Barto, Andrew G.** (2018), *Reinforcement Learning: An Introduction* (2nd ed.)
+- **Microsoft Qlib** (arXiv:2009.11189)
 
 ---
 

@@ -78,12 +78,12 @@ The cap does exactly what theory says: it **hard-bounds** inventory (max$|q|$ be
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4), 477–507 - linear-ODE reduction, inventory constraints, closed-form asymptotics, verification theorem.
-- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*, Cambridge UP - adverse selection, alpha, and impact added to the A–S core.
-- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611 - general dynamic risk measures replacing exponential utility.
-- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3) - the baseline these extensions generalize.
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4), 477–507
+- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*, Cambridge UP
+- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611
+- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3)
 
 ---
 

@@ -89,13 +89,13 @@ A three-asset book exposed to two common factors is decomposed into systematic a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996) - §6 and the EWMA covariance methodology: the practical template for building $\Sigma_f$ and mapping every position onto a small factor set.
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 22 §22.9 (PCA of the term structure: PC1 $\approx$ parallel shift, PC2 twist, PC3 bowing; Tables 22.9–22.10 - the empirical case for using a *few* factors) and Ch 23 (EWMA/GARCH covariance estimation, PSD consistency eq. 23.17). *Verified in the corpus (`hull_ch19-23.md`).*
-- **Alexander, Carol**: *Market Risk Analysis, Vol. IV (Value at Risk Models)* (2008) - factor-model decomposition, principal-component and orthogonal-factor approaches to VaR.
-- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015) - Ch 6 (statistical analysis of multivariate data, factor models, PCA) and Ch 7 (multivariate dependence and copulas - what replaces the Gaussian factor model when dependence is non-linear).
-- **Rockafellar & Uryasev**: *Optimization of Conditional Value-at-Risk* (2000) - the allocation machinery behind risk-budgeted portfolios that consume Euler contributions.
+- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996)
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Alexander, Carol**: *Market Risk Analysis, Vol. IV (Value at Risk Models)* (2008)
+- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015)
+- **Rockafellar & Uryasev**: *Optimization of Conditional Value-at-Risk* (2000)
 
 ---
 

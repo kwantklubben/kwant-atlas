@@ -71,13 +71,13 @@ Read it: the mean $RV$ ($1.4396\text{e-}04$) nails the true daily variance ($1.4
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Corsi, Fulvio** (2009): *A Simple Approximate Long-Memory Model of Realized Volatility*, J. Financial Econometrics 7(2), 174–196 - HAR-RV, the three-timescale cascade.
-- **Andersen, Bollerslev, Diebold & Labys** (2003): *Modeling and Forecasting Realized Volatility*, Econometrica 71(2) - $RV$ as quadratic variation, log-normality, long memory.
-- **Barndorff-Nielsen & Shephard** (2002): *Econometric Analysis of Realized Volatility and its Use in Estimating Stochastic Volatility Models*, JRSS-B 64(2) - bipower variation, jump robustness.
-- **Parkinson, Michael** (1980) / **Garman & Klass** (1980) / **Yang & Zhang** (2000) - range-based volatility estimators and their efficiency factors.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - §3.15 (realized volatility, 4–15 min rule, range estimators incl. Garman–Klass, Parkinson, Yang–Zhang), §3.16 (GARCH kurtosis).
+- **Corsi, Fulvio** (2009): *A Simple Approximate Long-Memory Model of Realized Volatility*, J. Financial Econometrics 7(2), 174–196
+- **Andersen, Bollerslev, Diebold & Labys** (2003): *Modeling and Forecasting Realized Volatility*, Econometrica 71(2)
+- **Barndorff-Nielsen & Shephard** (2002): *Econometric Analysis of Realized Volatility and its Use in Estimating Stochastic Volatility Models*, JRSS-B 64(2)
+- **Parkinson, Michael** (1980) / **Garman & Klass** (1980) / **Yang & Zhang** (2000)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
 
 ---
 

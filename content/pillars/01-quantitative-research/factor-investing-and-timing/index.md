@@ -105,15 +105,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/01-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*Journal of Finance*, 1992) - size and book-to-market capture the cross-section that market beta cannot; the empirical birth of the factor-investing era. *Verified against the corpus paper.*
-- **Cochrane, John H.**: "Presidential Address: Discount Rates" (*Journal of Finance*, 2011) - the **"zoo of new factors"**; portfolio sorts *are* nonparametric cross-sectional regressions; the panel-data forecasting view $\mathbb{E}[R^e_{t+1}\mid C_t]$. *Verified against the corpus paper (§II).*
-- **McLean, R. David & Pontiff, Jeffrey**: "Does Academic Research Destroy Stock Return Predictability?" (*Journal of Finance*, 2016) - the 82-characteristic study; **~10% out-of-sample decay (insignificant), ~35% post-publication decay (significant)**; higher post-publication volume, variance, and short interest. *Verified against the corpus paper.*
-- **Harvey, Campbell; Liu, Yan & Zhu, Heqing**: "... and the Cross-Section of Expected Returns" (*RFS*, 2016) - the multiple-testing critique and the $t>3$ hurdle.
-- **Ilmanen, Antti**: *Expected Returns* (Wiley, 2011) - the practitioner synthesis: value/carry/momentum styles across asset classes, time-varying expected returns, tactical beta timing, and the endogenous crowding cycle. *Verified against the corpus book.*
-- **Grinold, Richard**: "The Fundamental Law of Active Management" (*JPM*, 1989) - $IR\approx IC\sqrt{\text{breadth}}$, the equation that governs both factor breadth and factor-timing breadth.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.), Ch 9 - factor models, BARRA cross-sectional estimation, Fama–French hedge portfolios. *Math-verified deep-read in the corpus.*
+- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*Journal of Finance*, 1992)
+- **Cochrane, John H.**: "Presidential Address: Discount Rates" (*Journal of Finance*, 2011)
+- **McLean, R. David & Pontiff, Jeffrey**: "Does Academic Research Destroy Stock Return Predictability?" (*Journal of Finance*, 2016)
+- **Harvey, Campbell; Liu, Yan & Zhu, Heqing**: "... and the Cross-Section of Expected Returns" (*RFS*, 2016)
+- **Ilmanen, Antti**: *Expected Returns* (Wiley, 2011)
+- **Grinold, Richard**: "The Fundamental Law of Active Management" (*JPM*, 1989)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.)
 
 ---
 

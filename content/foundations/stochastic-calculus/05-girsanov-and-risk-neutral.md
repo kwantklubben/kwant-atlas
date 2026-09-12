@@ -69,12 +69,12 @@ Stdlib check of the two pillars: (a) under $\mathbb Q$ (drift $r$), $\mathbb E^\
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 5 (RN derivative machinery 5.2.1, Girsanov 5.2.3, stock under $\mathbb Q$, market price of risk, RN pricing 5.2.30/31, BSM by RN expectation §5.2.5).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 17 (Girsanov, risk-neutral measure) & Ch 12 (market price of risk, Cameron–Martin–Girsanov).
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 11 (martingale representation, Girsanov, Novikov), Ch 12 (BS from a martingale view; market price of risk $\lambda=(\alpha-r)/\sigma$).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.2 (radon–Nikodym, change-of-numeraire, market price of risk).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

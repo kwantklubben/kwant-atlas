@@ -77,11 +77,11 @@ The delta-normal shortcut and full revaluation differ by only ~7% here - *becaus
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering* - Ch 9 (applications in risk management: delta (9.1), delta–gamma (9.2), heavy-tail MC, importance sampling for the tail, quantile-estimation variance); Ch 2 (Cholesky/PC normal sampling); Ch 4 (variance reduction); Ch 1 (the $\sigma/\sqrt m$ foundation). *Math-verified in corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 §21.6 (MC in options/delta-gamma context) and Ch 22 §22.6 (MC for VaR, full vs partial simulation). *Verified in corpus.*
-- **RiskMetrics / J.P. Morgan**, *RiskMetrics Technical Document* (1996) - the hybrid and full-revaluation MC traditions.
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **RiskMetrics / J.P. Morgan**, *RiskMetrics Technical Document* (1996)
 
 ---
 

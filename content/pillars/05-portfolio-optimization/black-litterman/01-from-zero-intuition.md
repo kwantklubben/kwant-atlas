@@ -63,11 +63,11 @@ Direct comparison on the folder universe: naive sample means produce extreme sho
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Black & Litterman (1992)**, *Global Portfolio Optimization*, §Motivation - the market-cap starting point and why it beats raw MVO.
-- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2) - the formal estimation-error-maximizer theorem that motivates the whole BL approach.
-- **He & Litterman (1999)**, Goldman note - the worked intuition connecting views to weight tilts.
+- **Black & Litterman (1992)**, *Global Portfolio Optimization*
+- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2)
+- **He & Litterman (1999)**, Goldman note
 
 ---
 

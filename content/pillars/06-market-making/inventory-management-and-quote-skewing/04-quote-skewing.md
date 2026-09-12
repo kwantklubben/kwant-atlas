@@ -94,12 +94,12 @@ The qualitative law is exact and reproducible: **skewing trades a little mean fo
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1) - the reservation-price skew $\alpha=\gamma\sigma^2\tau$.
-- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3), §3.3 - the inventory-vs-symmetric simulation this page reproduces.
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4) - inventory caps and closed-form asymptotics for the capped engine.
-- **Menkveld (2013)**, *High frequency trading and the new market makers*, Journal of Financial Markets 16(4) - empirical: real HFT makers earn the spread, incur inventory costs, and skew their quotes.
+- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1)
+- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3)
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4)
+- **Menkveld (2013)**, *High frequency trading and the new market makers*, Journal of Financial Markets 16(4)
 
 ---
 

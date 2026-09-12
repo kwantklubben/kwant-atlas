@@ -79,13 +79,13 @@ A gate that **passes at zero cost fails at 2 bps** - a cost level no high-turnov
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014) - §"When should we stop testing?" and the selection-bias taxonomy (file-drawer, publication, survivorship, backfill).
-- **Harvey, C. R. & Liu, Y.**: *Backtesting*, JPM (2015) - the haircut framework and its caveats (non-normal returns, risk-adjustment, choice of significance level, choice of method, number of tests).
-- **Harvey, C. R., Liu, Y. & Zhu, H.**: *… and the Cross-Section of Expected Returns*, RFS 29(1) (2016) - the 316-factor zoo and the case for $t>3$ thresholds after multiple-testing adjustment.
-- **Almgren, R. & Chriss, N.**: *Optimal Execution of Portfolio Transactions*, Journal of Risk (2001) - the market-impact cost model behind the $\tau c$ drag, in its size-dependent form.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.), §7.10.2 - the wrong-vs-right cross-validation demonstration (screening outside folds gives CV error $3\%$ vs true $50\%$).
+- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014)
+- **Harvey, C. R. & Liu, Y.**: *Backtesting*, JPM (2015)
+- **Harvey, C. R., Liu, Y. & Zhu, H.**: *… and the Cross-Section of Expected Returns*, RFS 29(1) (2016)
+- **Almgren, R. & Chriss, N.**: *Optimal Execution of Portfolio Transactions*, Journal of Risk (2001)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.)
 
 ---
 

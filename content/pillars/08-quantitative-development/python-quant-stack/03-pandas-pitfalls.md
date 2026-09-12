@@ -83,10 +83,10 @@ All three are wrong cents: `1.005*100` = 100.499… (rounds to 0¢ not 1¢), `2.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) - Ch 5–8 (pandas: indexing, alignment, groupby) and Ch 10 (time-series); the authoritative treatment of `.loc`, masks, and `object` dtype.
-- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) - ch. on pandas performance: when `object` and `apply` defeat vectorization, and when to use native vs compiled paths.
+- **McKinney**, *Python for Data Analysis* (3rd ed., 2022)
+- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020)
 - **pandas official docs** - "Working with Copy-on-Write" and the "Gotchas" section (pandas.pydata.org) for the current assignment semantics and `string` dtype.
 
 ---

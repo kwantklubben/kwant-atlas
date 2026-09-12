@@ -91,14 +91,14 @@ We compute the capacity-channel impact across capital levels and trace the slow-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffie (2010)**, *Presidential address: Asset price dynamics with slow-moving capital*, Journal of Finance 65(4), 1237–1267 - the capacity/slow-capital framework; Figures on the CDS-bond basis and GM/Ford. *Primary PDF read; `60_Duffie_2010_president_address_asset_price_dynamics.pdf`.*
-- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6) - the search frictions that slow the capital arrival.
-- **Duffie (2012)**, *Dark Markets*, Ch 6–7 - capital and price dynamics in OTC markets.
-- **Myers (1984)**, *The capital structure puzzle*, Journal of Finance 39(3) - debt overhang, the recapitalisation friction.
-- **Coval & Stafford (2007)**, *Asset fire sales in equity markets*, JFE 86(2) - the empirical fire-sale price impact Duffie cites.
-- **Hendershott & Menkveld (2014)**, *Price pressures*, JFE 114(3) - intermediaries absorb imbalances into inventory and are later compensated.
+- **Duffie (2010)**, *Presidential address: Asset price dynamics with slow-moving capital*, Journal of Finance 65(4), 1237–1267
+- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6)
+- **Duffie (2012)**, *Dark Markets*
+- **Myers (1984)**, *The capital structure puzzle*, Journal of Finance 39(3)
+- **Coval & Stafford (2007)**, *Asset fire sales in equity markets*, JFE 86(2)
+- **Hendershott & Menkveld (2014)**, *Price pressures*, JFE 114(3)
 
 ---
 

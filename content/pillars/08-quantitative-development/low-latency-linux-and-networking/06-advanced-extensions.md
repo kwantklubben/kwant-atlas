@@ -61,12 +61,12 @@ The median estimate is nearly unchanged across a 10× change in bin width (1.45 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **perf / `perf stat` / `perf record` documentation** (kernel.org) - the profiling tool and its histogram semantics.
-- **IEEE 1588-2008 (PTP)** and **NTP (RFC 5905)** - the clock-plane standard this page's measurement sits on.
-- **NIST PTP guidance & exchange timestamp specs** (CME, Nasdaq, Cboe) - the operational accuracy targets.
-- **Kerrisk, Michael** - *The Linux Programming Interface*: `clock_gettime`, timers, `perf_event_open` - the timing vocabulary.
+- **perf / `perf stat` / `perf record` documentation** (kernel.org)
+- **IEEE 1588-2008 (PTP)** and **NTP (RFC 5905)**
+- **NIST PTP guidance & exchange timestamp specs** (CME, Nasdaq, Cboe)
+- **Kerrisk, Michael** - *The Linux Programming Interface*: `clock_gettime`, timers, `perf_event_open`
 - **Montgomery, D.** - *Introduction to Statistical Quality Control*: EWMA monitoring (links to [[pillars/08-quantitative-development/low-latency-linux-and-networking/05-failure-modes-and-practice|05 · Failure Modes]]).
 
 ---

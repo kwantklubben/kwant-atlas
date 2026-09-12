@@ -79,11 +79,11 @@ The closed form ([[pillars/03-derivative-pricing/interest-rate-and-term-structur
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 22 (bonds & interest rates: all definitions, duration, convexity, toolbox Prop 22.5) and Ch 23 (short-rate models & the market price of risk, Prop 23.1–23.3).
-- **Brigo–Mercurio**, *Interest Rate Models*, Ch 1 (definitions: ZCB, spot/forward rates, FRA, IRS, caps/swaptions, Black pricing 1.26–1.29).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 27–28 (bonds, yield, forwards, HJM setup, fundamental theorem for term structure).
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Brigo–Mercurio**, *Interest Rate Models*
+- **Shreve**, *Stochastic Calculus for Finance I*
 
 ---
 

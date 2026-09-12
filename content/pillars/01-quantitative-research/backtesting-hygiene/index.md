@@ -64,13 +64,13 @@ Hub signposts - the folder's practice checklist lives in [[pillars/01-quantitati
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Bailey, David H. & López de Prado, Marcos**: *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality*, Journal of Portfolio Management 40(5), 94–107 (2014). *The formula-authoritative source for this folder; the worked example above is reproduced exactly.*
 - **Harvey, Campbell R. & Liu, Yan**: *Backtesting*, Journal of Portfolio Management 42(1), 13–28 (2015). *The multiple-testing / haircut Sharpe framework (FWER, FDR, Bonferroni–Holm).*
 - **Bailey, Borwein, López de Prado & Zhu**: *The Probability of Backtest Overfitting*, Journal of Computational Finance 20(4) (2017). *CSCV and the PBO statistic.*
 - **White, Halbert**: *A Reality Check for Data Snooping*, Econometrica 68(5), 1097–1126 (2000). *The bootstrap/reality-check test that the best model in a search has no predictive edge over a benchmark.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 7 (model assessment/selection: bias–variance eq. 7.9, optimism eq. 7.24, $K$-fold CV eq. 7.48, the *wrong-vs-right* CV example §7.10.2) and Ch 5/6 (regularization, kernel smoothing). *Math-verified in the corpus.*
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
 
 ---
 

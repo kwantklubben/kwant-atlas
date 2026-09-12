@@ -58,12 +58,12 @@ Build the 3-toss space, compute $\mathbb E[X\mid\mathcal F_1]$ by **averaging ov
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 1 (Def 1.1.1 $\sigma$-algebra, Def 1.1.2 measure, Ex 1.1.3 Lebesgue) and Ch 2 §2.1–2.2 (information as $\sigma$-algebra, independence).
-- **Shreve**, *Stochastic Calculus for Finance I*, §2.2–2.4 (coin-toss space, $\mathcal F_k=\sigma(S_1,\dots,S_k)$, measurability, filtration, adapted), Ch 11 (law, density).
-- **Shreve**, *Stochastic Calculus for Finance I*, §13.8 (BM filtration, independence of future increments).
-- **Williams**, *Probability with Martingales*, Ch 1–3 (sigma-algebras, probability, random variables) - the cleanest rigorous reference.
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Williams**, *Probability with Martingales*
 
 ---
 

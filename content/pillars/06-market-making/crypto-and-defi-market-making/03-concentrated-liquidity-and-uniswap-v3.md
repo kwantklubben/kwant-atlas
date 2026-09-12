@@ -82,12 +82,12 @@ Two facts jump out. **First**, the position converts exactly at the bounds: at $
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Adams, Zinsmeister, Salem, Keefer & Robinson (2021)**, *Uniswap v3 Core*, Uniswap whitepaper, §2 and §6 - the concentrated-liquidity construction and the token-amount formulas verified above.
-- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601 - the short-options replication that the bounded strangle generalizes.
-- **Capponi & Jia (2022)**, *The Anatomy of a Liquidity Provision in Automated Market Makers*, arXiv:2210.07852 - how concentrated LPs' realized losses concentrate in the "active rebalancing" failure above.
-- **Lehar & Parlour (2023)**, *Decentralized Exchange: The Uniswap Automated Market Maker* - empirical evidence on which v3 ranges LPs actually choose and how they underperform.
+- **Adams, Zinsmeister, Salem, Keefer & Robinson (2021)**, *Uniswap v3 Core*, Uniswap whitepaper
+- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601
+- **Capponi & Jia (2022)**, *The Anatomy of a Liquidity Provision in Automated Market Makers*, arXiv:2210.07852
+- **Lehar & Parlour (2023)**, *Decentralized Exchange: The Uniswap Automated Market Maker*
 
 ---
 

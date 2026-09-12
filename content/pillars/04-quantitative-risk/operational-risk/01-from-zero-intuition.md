@@ -75,11 +75,11 @@ Notice: the *count* wanders around 20 (it is random!), and each event's size dif
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS, *Basel II*** (2006), ¶644 - the canonical definition; ¶646 (continuum of approaches) - read the definition *as a modelling spec*.
-- **Hull, *Risk Management and Financial Institutions*** (5th ed., 2018), operational-risk chapter - the pragmatic, non-technical entry to op risk before the math.
-- **Panjer, *Operational Risk: Modeling Analytics*** (2006), Ch 1 - frames op risk as the frequency–severity/aggregate-loss problem from the first page.
+- **BCBS, *Basel II*** (2006), ¶644
+- **Hull, *Risk Management and Financial Institutions*** (5th ed., 2018), operational-risk chapter
+- **Panjer, *Operational Risk: Modeling Analytics*** (2006)
 
 ---
 

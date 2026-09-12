@@ -115,12 +115,12 @@ Stdlib only. We solve the steady-state masses from the quadratic, then compute T
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6), 1815–1847 - Propositions 1–4, HJB (10), bargaining (11)–(13), Theorem 2 (14)–(16), Theorem 3 (fast search), Theorem 4 (heterogeneous investors). *Primary PDF in corpus; all equations and numbers re-derived and verified.*
-- **Duffie, Gârleanu & Pedersen (2003)**, *Valuation in dynamic bargaining markets* - the working-paper precursor (alternating-offer bargaining).
-- **Duffie (2012)**, *Dark Markets*, Ch 2–5 - the book-length treatment of the same search framework with information.
-- **Rubinstein & Wolinsky (1985)**, *Equilibrium in a market with sequential bargaining*, Econometrica - the bargain-without-intermediary ancestor; DGP reconcile it with Walrasian limits.
+- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6), 1815–1847
+- **Duffie, Gârleanu & Pedersen (2003)**, *Valuation in dynamic bargaining markets*
+- **Duffie (2012)**, *Dark Markets*
+- **Rubinstein & Wolinsky (1985)**, *Equilibrium in a market with sequential bargaining*, Econometrica
 
 ---
 

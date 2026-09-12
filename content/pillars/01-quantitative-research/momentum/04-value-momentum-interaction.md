@@ -59,12 +59,12 @@ The combination's Sharpe ($+0.67$) **nearly doubles** ($1.95\times$) the better 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Asness, Moskowitz & Pedersen (2013)**, *Value and Momentum Everywhere*, J. Finance 68(3) - premia in eight markets, negative correlation ($-0.60$ stocks, $-0.49$ other), 50/50 combination Sharpe near 1.45. *Verified corpus refs/15.*
-- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing* - combining momentum with negatively-correlated styles like value as the practical hedge. *Verified corpus refs/18.*
-- **Fama & French (1993, 1996)** - the value (HML) factor and why momentum is the anomaly value models cannot explain.
-- **Daniel, Hirshleifer & Subrahmanyam (1998)** and **Barberis, Shleifer & Vishny (1998)** - the over/under-reaction behavioral foundations of value and momentum.
+- **Asness, Moskowitz & Pedersen (2013)**, *Value and Momentum Everywhere*, J. Finance 68(3)
+- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing*
+- **Fama & French (1993, 1996)**
+- **Daniel, Hirshleifer & Subrahmanyam (1998)** and **Barberis, Shleifer & Vishny (1998)**
 
 ---
 

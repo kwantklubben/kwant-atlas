@@ -70,14 +70,14 @@ Signposts - the folder's failure-mode analysis lives in [[pillars/01-quantitativ
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 8 §8.5–8.8 (cointegration, error-correction, Johansen, threshold cointegration, pairs trading), Ch 2 (unit-root/ADF). *Primary formula source for this folder; math-verified in the corpus.*
-- **Hasbrouck, Joel**: *Empirical Market Microstructure* (2007) - Ch 10 (cointegration, VECM, price discovery, "cointegration tests are sensitive to data snooping and structural breaks"). *Verified in the corpus.*
-- **Avellaneda, Marco & Lee, Jeong-Hyun**: "Statistical Arbitrage in the U.S. Equities Market", *Quantitative Finance* 10(7), 2010 - residual OU model, s-score, PCA/ETF factor decomposition, 1997–2007 backtest.
-- **Gatev, Evan, Goetzmann, William N. & Rouwenhorst, K. Geert**: "Pairs Trading: Performance of a Relative-Value Arbitrage Rule", *Review of Financial Studies* 19(3), 2006 - the distance method, 1962–2002.
-- **Krauss, Christopher**: "Statistical Arbitrage Pairs Trading Strategies: Review and Outlook", *Journal of Economic Surveys* 31(2), 2017 - five-family taxonomy (distance, cointegration, time-series, stochastic control, other).
-- **Do, Binh & Faff, Robert**: "Does Simple Pairs Trading Still Work?", *Financial Analysts Journal* 66(4), 2010 - declining profitability, post-GGR out-of-sample.
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Hasbrouck, Joel**: *Empirical Market Microstructure* (2007)
+- **Avellaneda, Marco & Lee, Jeong-Hyun**: "Statistical Arbitrage in the U.S. Equities Market", *Quantitative Finance* 10(7), 2010
+- **Gatev, Evan, Goetzmann, William N. & Rouwenhorst, K. Geert**: "Pairs Trading: Performance of a Relative-Value Arbitrage Rule", *Review of Financial Studies* 19(3), 2006
+- **Krauss, Christopher**: "Statistical Arbitrage Pairs Trading Strategies: Review and Outlook", *Journal of Economic Surveys* 31(2), 2017
+- **Do, Binh & Faff, Robert**: "Does Simple Pairs Trading Still Work?", *Financial Analysts Journal* 66(4), 2010
 
 ---
 

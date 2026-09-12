@@ -121,14 +121,14 @@ Hub signposts - the full first-principles analysis lives on the sub-pages. In on
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffy, Daniel J.**: *Finite Difference Methods in Financial Engineering* (Wiley, 2006) - Ch 3 (parabolic IBVPs, maximum principle), Ch 4 (BS → heat reduction), Ch 6 (divided differences, Euler/CN, round-off, Padé, Richardson), Ch 7 (method of lines, $\theta$-method, M-matrices), Ch 8 (consistency, stability, Lax, von Neumann, Gershgorin). *The primary finite-difference source; equations verified at glyph level in the corpus.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004) - Ch 1 (estimator, MSE/efficiency), Ch 4 (control variates, antithetics, stratification, LHS, importance sampling), Ch 5 (quasi-Monte Carlo, discrepancy, Koksma–Hlawka, Sobol'/Halton/lattices, RQMC), Ch 6 (Euler/Milstein, strong vs weak order, MSE balancing, Brownian interpolation), Ch 7 (pathwise & likelihood-ratio sensitivities), Ch 8 (American by simulation, LSM, duality). *The primary Monte Carlo source; math-verified in the corpus.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 11 (state-space models and the Kalman filter), Ch 12 (MCMC: Gibbs, Metropolis–Hastings, FFBS). *Verified in the corpus; the source for the state-space/MCMC extensions.*
-- **Golub, G. H. & Van Loan, C. F.**: *Matrix Computations* - LU/Cholesky, conditioning, eigenvalue algorithms. *(Standard reference for page 05.)*
-- **Nocedal, J. & Wright, S. J.**: *Numerical Optimization* - line search, Newton, quasi-Newton, convergence rates. *(Standard reference for page 04.)*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 21 (trees, MC variance reduction, finite differences). *Verified extraction in the corpus.*
+- **Duffy, Daniel J.**: *Finite Difference Methods in Financial Engineering* (Wiley, 2006)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Golub, G. H. & Van Loan, C. F.**: *Matrix Computations*
+- **Nocedal, J. & Wright, S. J.**: *Numerical Optimization*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
 
 ---
 

@@ -86,14 +86,14 @@ Two lessons the numbers force. **(i)** At the naive $|t|>2$ hurdle, **60% of the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Cochrane, John H.**, "Presidential Address: Discount Rates" (*JF*, 2011) §II.A–B - "a zoo of new factors"; the four questions; sorts vs regressions; the multidimensional challenge. *Verified against the corpus paper.*
-- **Harvey, Campbell; Liu, Yan & Zhu, Heqing**, "... and the Cross-Section of Expected Returns" (*RFS*, 2016) - the multiple-testing critique; the $t>3$ hurdle. Corpus paper *28_harvey_2016_cross_section_expected_returns*.
-- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017) - the characteristic census (~100 candidates, ~24 independent). Corpus paper *49_Green_2017*.
-- **Bailey, Borwein, López de Prado & Zhu**, "Pseudo-Mathematics and Financial Charlatanism" (*Notices of the AMS*, 2014) - the expected-maximum-Sharpe inflation $\sqrt{2\ln m}$; backtest overfitting. Corpus paper *42_bailey_2014*.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 18.7 - Bonferroni, Benjamini–Hochberg FDR, q-values; the machinery behind §2–§3. *Verified in the corpus.*
-- **Tsay, Ruey S.**, *Analysis of Financial Time Series*, Ch 9 - factor-model families, factor-number selection. *Math-verified in the corpus.*
+- **Harvey, Campbell; Liu, Yan & Zhu, Heqing**, "... and the Cross-Section of Expected Returns" (*RFS*, 2016)
+- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017)
+- **Bailey, Borwein, López de Prado & Zhu**, "Pseudo-Mathematics and Financial Charlatanism" (*Notices of the AMS*, 2014)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Tsay, Ruey S.**, *Analysis of Financial Time Series*
 
 ---
 

@@ -79,12 +79,12 @@ Standard library only. This is the mental model made arithmetic: a desk that cap
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Stoll, Hans R. (1978)**, *The supply of dealer services in securities markets*, JF 33(4) - the original three-cost decomposition of the dealer's spread (processing, inventory, adverse selection). *The template for the five-term accounting on this page.*
-- **Grossman & Miller (1988)**, *Liquidity and market structure*, JF 43(3) - why someone must be paid to hold the other side of your trade. *(Primary PDF in corpus.)*
-- **Hasbrouck (2007)**, Ch 11 (dealers and their inventories) - Garman (1976), Amihud–Mendelson (1980), Stoll (1978) in formal form. *Verified in corpus.*
-- **Demsetz (1968)**, *The cost of transacting*, QJE 82 - the oldest statement of the idea: the spread is the price of immediacy.
+- **Stoll, Hans R. (1978)**, *The supply of dealer services in securities markets*, JF 33(4)
+- **Grossman & Miller (1988)**, *Liquidity and market structure*, JF 43(3)
+- **Hasbrouck (2007)**
+- **Demsetz (1968)**, *The cost of transacting*, QJE 82
 
 ---
 

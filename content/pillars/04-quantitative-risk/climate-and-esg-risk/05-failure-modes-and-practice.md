@@ -101,15 +101,15 @@ Panel (A) quantifies label instability and a retroactive restatement; (B) shows 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Berg, F., Kölbel, J.F. & Rigobon, R.** - *Aggregate Confusion: The Divergence of ESG Ratings*, *Review of Finance* **26**(6):1315–1344 (2022) - the decomposition and the rater (halo) effect behind §2.4. *Primary source.*
-- **Berg, F., Fabisik, K. & Sautner, Z.** - *Rewriting History II: The (Un)Predictable Past of ESG Ratings* (ECGI Finance Working Paper 708/2020) - retroactive revisions and the look-ahead bias quantified in §3(A).
-- **IOSCO** - *Final Report on ESG Ratings and Data Products Providers* (2021) and the *Statement on Sustainability Disclosure* - the supervisory response to divergence (disclosure harmonisation). *[REG]*
-- **BCBS** - *Climate-related Financial Risks - Measurement Methodologies* (2021) - the supervisory catalogue of data gaps and methodological limits. *[REG]*
-- **Bolton, P. & Kacperczyk, M.** (2021) and **Pástor, Ľ., Stambaugh, R.F. & Taylor, L.A.** (2021, 2022) - the competing premium/greenium regimes of §3(C).
-- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *J. Derivatives* 3(2) (1995) - the backtesting discipline that a climate stress test cannot inherit in the usual way ([[pillars/04-quantitative-risk/var-and-expected-shortfall/05-failure-modes-and-practice|VaR/ES · 05]]).
-- **López de Prado, M.**, *Advances in Financial Machine Learning* (Wiley, 2018), Ch. 7 (purged cross-validation) and Ch. 11 (backtest overfitting) - the general point-in-time discipline applied here to ESG data.
+- **Berg, F., Kölbel, J.F. & Rigobon, R.** - *Aggregate Confusion: The Divergence of ESG Ratings*, *Review of Finance* **26**(6):1315–1344 (2022)
+- **Berg, F., Fabisik, K. & Sautner, Z.** - *Rewriting History II: The (Un)Predictable Past of ESG Ratings* (ECGI Finance Working Paper 708/2020)
+- **IOSCO** - *Final Report on ESG Ratings and Data Products Providers* (2021) and the *Statement on Sustainability Disclosure*
+- **BCBS** - *Climate-related Financial Risks
+- **Bolton, P. & Kacperczyk, M.** (2021) and **Pástor, Ľ., Stambaugh, R.F. & Taylor, L.A.** (2021, 2022)
+- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *J. Derivatives* 3(2) (1995)
+- **López de Prado, M.**, *Advances in Financial Machine Learning* (Wiley, 2018)
 
 ---
 

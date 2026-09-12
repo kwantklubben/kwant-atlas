@@ -84,15 +84,15 @@ Hub signposts - the folder's failure analysis lives in the sub-pages. In one lin
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4):917–926 (1956) - the source: maximising $\mathbb{E}\log V$ makes capital grow at the channel information rate $G=\lim\frac1N\log_2(V_N/V_0)$. *Corpus-verified.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market*, in *Handbook of Asset and Liability Management* Vol. 1 (Zenios & Ziemba eds., 2006) - the definitive practical treatment: $g(f)=p\ln(1+f)+q\ln(1-f)$, $f^*=p-q$, $f_c$, Theorem 1 (growth-optimality), fractional Kelly, the drawdown/doubling formulas (7.10)–(7.13). *Corpus-verified; the formula-authoritative source for this folder.*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion: Theory and Practice* (World Scientific, 2011) - the anthology (Kelly, Breiman, Thorp, MacLean–Ziemba "good/bad properties").
-- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019) - the multiplicative-vs-additive non-ergodicity critique; the ensemble/time-average framing used throughout.
-- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016) - the "ergodicity economics" formalisation: maximise the time-average growth rate of the dynamic.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.) - Ch 1 (return definitions, geometric vs arithmetic mean, fat tails & excess kurtosis). *Verified in the corpus.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* - Ch 1 (the standard error $\sigma_f/\sqrt n$, $O(n^{-1/2})$ convergence used to validate every simulation here). *Verified in the corpus.*
+- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4):917–926 (1956)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market*, in *Handbook of Asset and Liability Management* Vol. 1 (Zenios & Ziemba eds., 2006)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion: Theory and Practice* (World Scientific, 2011)
+- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019)
+- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*
 
 ---
 

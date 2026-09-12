@@ -73,11 +73,11 @@ Watch the behavior: the **median loss is negative** (a typical day is a small *g
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 §22.1 (VaR definition, $X$%/$N$-day convention, the $\sqrt h$ rule). *Verified in corpus.*
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 §9.1 (VaR as quantile; empirical-quantile estimation and its variance). *Math-verified.*
-- **Jorion, Philippe**: *Value at Risk: The New Benchmark for Managing Financial Risk* (3rd ed., 2006) - the classic practitioner survey of the VaR paradigm and its history.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Jorion, Philippe**: *Value at Risk: The New Benchmark for Managing Financial Risk* (3rd ed., 2006)
 
 ---
 

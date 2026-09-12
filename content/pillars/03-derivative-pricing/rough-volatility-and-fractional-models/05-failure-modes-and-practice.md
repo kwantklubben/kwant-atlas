@@ -84,14 +84,14 @@ We (i) run a full Monte Carlo of the rBergomi model and extract the ATMF skew at
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - §4 (**spurious long memory**: R/S, fractional differencing $d=0.4$, matching data-vs-model statistics), §3.4 (scale invariance). *The failure-mode ground truth.*
-- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965 - why naive discretisation of the singular kernel fails, and the convergent fix.
-- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 - the rBergomi model and SPX calibration.
-- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 8 (Bergomi–Guyon expansion and its validity) - the framework behind §2.3–2.4; ch 3 §3.1.7 (vanillas do not pin forward skew - model risk).
-- **McCrickerd & Pakkanen (2018)**, *Turbocharging Monte Carlo pricing for the rough Bergomi model* - variance-reduced MC for rBergomi calibration.
-- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility* - the rigorous skew asymptotics behind §2.4.
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949
+- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965
+- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904
+- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 8 (Bergomi–Guyon expansion and its validity)
+- **McCrickerd & Pakkanen (2018)**, *Turbocharging Monte Carlo pricing for the rough Bergomi model*
+- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility*
 
 ---
 

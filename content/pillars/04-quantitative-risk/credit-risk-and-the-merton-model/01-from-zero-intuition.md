@@ -81,11 +81,11 @@ Read the table: below $V_T=100$ the equity is **flat at zero** (the call is out 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Merton, Robert C.** - *On the Pricing of Corporate Debt: The Risk Structure of Interest Rates*, *Journal of Finance* 29(2):449–470 (1974). Read §III (equity as a call, eqs. 10–11) and §IV (comparative statics, eq. 15). *The primary source for this page; formula-verified in the corpus.*
-- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*, 2nd ed. (2010) - §1.2.3 (asset-value models: the default point and the induced bivariate asset-value distribution). *Corpus digest available.*
-- **Hull** - *Options, Futures, and Other Derivatives*, Ch 24: the equity-as-call identity as an *application* of the option-pricing machinery you already know.
+- **Merton, Robert C.** - *On the Pricing of Corporate Debt: The Risk Structure of Interest Rates*, *Journal of Finance* 29(2):449–470 (1974).
+- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*, 2nd ed. (2010)
+- **Hull** - *Options, Futures, and Other Derivatives*
 
 ---
 

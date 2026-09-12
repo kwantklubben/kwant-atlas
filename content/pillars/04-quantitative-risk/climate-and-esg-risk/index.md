@@ -74,21 +74,21 @@ Hub signposts - the folder's full failure-mode analysis lives in [[pillars/04-qu
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **TCFD** - *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, June 2017). The physical/transition taxonomy and the recommended metrics (weighted average carbon intensity, absolute emissions, carbon footprint). *The primary framework source for this folder.*
-- **Greenhouse Gas Protocol** - *Corporate Accounting and Reporting Standard* (2004, rev. 2015) and *Corporate Value Chain (Scope 3) Accounting and Reporting Standard* (2011) - the Scope 1/2/3 definitions.
-- **PCAF** - *The Global GHG Accounting and Reporting Standard for the Financial Industry* - attribution of financed emissions to a portfolio.
+- **Greenhouse Gas Protocol** - *Corporate Accounting and Reporting Standard* (2004, rev. 2015) and *Corporate Value Chain (Scope 3) Accounting and Reporting Standard* (2011)
+- **PCAF** - *The Global GHG Accounting and Reporting Standard for the Financial Industry*
 - **NGFS** - *Climate Scenarios for Central Banks and Supervisors* (Network for Greening the Financial System, 2019 onwards; phases I–V). Orderly, disorderly and hot-house-world scenario families. *[REG]*
 - **Bank of England** - *Key Elements of the 2021 Biennial Exploratory Scenario: Financial Risks from Climate Change* (2021) and *Results of the 2021 Climate Biennial Exploratory Scenario* (May 2022). Three scenarios: early action, late action, no additional action. *[REG]*
-- **BCBS** - *Climate-related Financial Risks - Measurement Methodologies* (2021) and *Principles for the Effective Management and Supervision of Climate-related Financial Risks* (2022). *[REG]*
+- **BCBS** - *Climate-related Financial Risks
 - **PACTA** - *Paris Agreement Capital Transition Assessment* methodology (2° Investing Initiative; stewardship transferred to RMI, 2022). Forward-looking alignment of portfolios with climate scenarios using company production plans.
 - **High-Level Commission on Carbon Prices** (Stern & Stiglitz) - *Report of the High-Level Commission on Carbon Prices* (World Bank, 2017). The \$40–\$80 (2020) / \$50–\$100 (2030) corridor.
-- **IPCC** - *Climate Change 2013: The Physical Science Basis* (AR5, WG1 Ch. 12) and *Global Warming of 1.5 °C* (SR1.5, 2018) - the transient climate response to cumulative CO2 emissions (TCRE, likely $0.8$–$2.5^\circ$C per 1000 PgC) and the remaining carbon budget.
-- **Bolton, P. & Kacperczyk, M.** - *Do investors care about carbon risk?*, *Journal of Financial Economics* **142**(2):517–549 (2021) - the carbon premium.
-- **Pástor, Ľ., Stambaugh, R.F. & Taylor, L.A.** - *Sustainable investing in equilibrium*, *Journal of Financial Economics* **142**(2):550–571 (2021) - green assets, lower expected returns, climate-news hedging.
-- **Berg, F., Kölbel, J.F. & Rigobon, R.** - *Aggregate Confusion: The Divergence of ESG Ratings*, *Review of Finance* **26**(6):1315–1344 (2022) - measurement $56\%$, scope $38\%$, weight $6\%$ of rating divergence.
-- **Andersson, M., Bolton, P. & Samama, F.** - *Hedging Climate Risk*, *Financial Analysts Journal* **72**(3):13–32 (2016) - the minimum-variance carbon-efficient portfolio.
+- **IPCC** - *Climate Change 2013: The Physical Science Basis* (AR5, WG1
+- **Bolton, P. & Kacperczyk, M.** - *Do investors care about carbon risk?*, *Journal of Financial Economics* **142**(2):517–549 (2021)
+- **Pástor, Ľ., Stambaugh, R.F. & Taylor, L.A.** - *Sustainable investing in equilibrium*, *Journal of Financial Economics* **142**(2):550–571 (2021)
+- **Berg, F., Kölbel, J.F. & Rigobon, R.** - *Aggregate Confusion: The Divergence of ESG Ratings*, *Review of Finance* **26**(6):1315–1344 (2022)
+- **Andersson, M., Bolton, P. & Samama, F.** - *Hedging Climate Risk*, *Financial Analysts Journal* **72**(3):13–32 (2016)
 
 ---
 

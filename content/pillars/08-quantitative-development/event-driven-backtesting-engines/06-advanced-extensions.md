@@ -87,13 +87,13 @@ Together these two models are where a "correct" engine becomes a *useful* one: t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Almgren, R. & Chriss, N.**, *Optimal Execution of Portfolio Transactions*, Journal of Risk 3(2), 2001 - the impact/urgency framework behind Extension 2 (full treatment at [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]]).
-- **Tóth, B. et al.**, *Anomalous Price Impact and the Critical Nature of Liquidity in Financial Markets*, Phys. Rev. X 1, 021006 (2011) - the square-root impact law.
-- **NautilusTrader Docs** - event sourcing, the `Clock`, and single-engine backtest/live parity; the engineering reference for Extensions 4–5.
-- **Law, Averill M.**, *Simulation Modeling and Analysis* (5th ed.) - reproducible random-variable generation and output analysis for the Poisson/lognormal models of §3.
-- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020) - deployment and the research-to-production handoff for Extension 5.
+- **Almgren, R. & Chriss, N.**, *Optimal Execution of Portfolio Transactions*, Journal of Risk 3(2), 2001
+- **Tóth, B. et al.**, *Anomalous Price Impact and the Critical Nature of Liquidity in Financial Markets*, Phys. Rev. X 1, 021006 (2011)
+- **NautilusTrader Docs**
+- **Law, Averill M.**, *Simulation Modeling and Analysis* (5th ed.)
+- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020)
 
 ---
 

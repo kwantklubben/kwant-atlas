@@ -61,12 +61,12 @@ Two lessons jump out. **(1) The free fit recovers the truth** ($\beta{=}0.51,\rh
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 1 (SV valuation, $\phi$ = market price of vol risk), Ch 2 (Heston solution, fast calibration), Ch 3 (skew structure, eq 3.19, why Heston under-fits the short end), Ch 7 (SABR asymptotics, eq 7.7).
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 6 (Heston as a forward-variance model and its deficiencies, eqs 6.4–6.20), Ch 7 (forward-variance calibration, benchmark vol-of-vol eq 7.40, §7.5). *Math-verified in the corpus.*
-- **Hagan–Kumar–Lesniewski–Woodward (2002)**, "Managing Smile Risk" - the SABR formula and its use in fitting $\alpha,\beta,\rho,\chi$.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (volatility smiles, calibration of stochastic vol in practice).
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hagan–Kumar–Lesniewski–Woodward (2002)**, "Managing Smile Risk"
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

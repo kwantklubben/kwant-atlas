@@ -68,14 +68,14 @@ Thin trading drags OLS beta from the true $1.5$ down to $0.87$; the Scholes–Wi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brown & Warner (1985)**, *Using Daily Stock Returns*, JFE 14(1) - non-synchronous trading §2.2, variance estimation §2.3, portfolio t-stat eq. 5. *Verified refs/50, read in full.*
-- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance Ch. 1 - cross-correlation eq. 10, joint-test problem §3.5.1, variance increase §3.6, long-horizon §4. *Verified refs/52, read in full.*
+- **Brown & Warner (1985)**, *Using Daily Stock Returns*, JFE 14(1)
+- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance
 - **Kothari & Warner (1997)**, *Measuring Long-Horizon Security Price Performance*, JFE 43(3) - "extreme caution" on long-window inference; joint-test problem.
-- **Scholes & Williams (1977)** and **Dimson (1979)** - lag/lead beta corrections for non-synchronous trading. *Cited in Brown–Warner (1985).*
-- **Corrado (1989)**, *A Nonparametric Test for Abnormal Security-Price Performance in Event Studies*, JFE 23(2) - rank test robust to variance increase.
-- **Mitchell & Stafford (2000)**, *Managerial Decisions and Long-Term Stock Price Performance*, J. Business 73(3) - cross-correlation in long-horizon tests; calendar-time approach.
+- **Scholes & Williams (1977)** and **Dimson (1979)**
+- **Corrado (1989)**, *A Nonparametric Test for Abnormal Security-Price Performance in Event Studies*, JFE 23(2)
+- **Mitchell & Stafford (2000)**, *Managerial Decisions and Long-Term Stock Price Performance*, J. Business 73(3)
 - **Lyon, Barber & Tsai (1999)**, *Improved Methods for Tests of Long-Run Abnormal Stock Returns*, J. Finance 54(1) - "the analysis of long-run abnormal returns is treacherous."
 
 ---

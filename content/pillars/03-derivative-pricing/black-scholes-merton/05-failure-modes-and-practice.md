@@ -69,12 +69,12 @@ If the market prices OTM puts richer than this (post-1987 skew), then the *impli
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 15 (assumptions) and Ch 19 (hedging in practice); Ch 20/21 (volatility smiles and numerical hedging).
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 5 (why completeness/hedging needs a single Brownian driver - the structural reason jumps break pricing).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §2.15 (theta/gamma, the residual) and §2.10 (ATM approximations useful when vol is unstable).
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 7 (Prop 7.6: the "riskless ⇒ must earn $r$" step that fails under friction).
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Björk**, *Arbitrage Theory in Continuous Time*
 
 ---
 

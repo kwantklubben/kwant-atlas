@@ -81,13 +81,13 @@ Reading it: the **VaR engine** is the most material model but scores *lowest* ($
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Federal Reserve / OCC**, *SR 11-7* (2011) - the three pillars; "effective challenge… incentives, competence, and influence"; the mitigating steps and the model inventory; governance at board level. *Read in full from the corpus PDF (45_OCC_2011...).*
-- **BCBS**, *Supervisory Framework for the Use of Backtesting…* (1996, BIS) - the capital multiplier schedule $k=3+\text{plus}$ and the zone boundaries (reproduced above). *Read from the corpus PDF.*
+- **Federal Reserve / OCC**, *SR 11-7* (2011)
+- **BCBS**, *Supervisory Framework for the Use of Backtesting…* (1996, BIS)
 - **Derman, E.**, *Model Risk* (Goldman Sachs QSR, 1996) - "AVOIDING MODEL RISK": diffuse the model slowly, test boundaries, don't ignore small discrepancies, modeler–programmer–user co-location. *Read in full from the corpus PDF.*
-- **Morini, M.**, *Understanding and Managing Model Risk* (2011), Ch 2 & 6 - valuing model-risk adjustments and setting limits by model-uncertainty band.
-- **Hull, J. C.**, *Risk Management and Financial Institutions* (5th ed.), Ch on model risk - the practitioner bridge from validation to capital. *Cross-checked in the corpus.*
+- **Morini, M.**, *Understanding and Managing Model Risk* (2011)
+- **Hull, J. C.**, *Risk Management and Financial Institutions* (5th ed.), Ch on model risk
 
 ---
 

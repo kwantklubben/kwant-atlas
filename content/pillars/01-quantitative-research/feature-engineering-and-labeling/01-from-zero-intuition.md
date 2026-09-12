@@ -79,12 +79,12 @@ Read the example: the path *first* climbs to a maximum of $106.21$, breaching th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.**: *Advances in Financial Machine Learning*, Ch 3 §3.3–3.4 (why fixed-horizon labels are flawed; the triple-barrier method) and Ch 5 §5.1–5.3 (stationarity vs memory).
-- **Hosking, J.R.M.** (1981): *Fractional differencing*, Biometrika - the long-memory origin of the fractional-weights idea.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning*, Ch 2 §2.5 (basis expansion as the general form of a "designed" feature; eq. 2.43).
-- **Gu, Kelly & Xiu** (2020): *Empirical Asset Pricing via Machine Learning* - empirical evidence that *which* firm characteristics and *how* they are constructed dominates the choice of model.
+- **López de Prado, M.**: *Advances in Financial Machine Learning*
+- **Hosking, J.R.M.** (1981): *Fractional differencing*, Biometrika
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning*
+- **Gu, Kelly & Xiu** (2020): *Empirical Asset Pricing via Machine Learning*
 
 ---
 

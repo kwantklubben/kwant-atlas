@@ -89,12 +89,12 @@ Read the table as the stationarity–memory frontier. At $d=0$ the level fails t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018) - **Ch 5** (Fractionally Differentiated Features: long memory §5.4.1, iterative weights and eq. 5.3–5.5, expanding window §5.5.1, fixed-width window FFD §5.5.2, minimum $d^*$ §5.6), **Ch 4** (Sample Weights: overlapping outcomes, concurrency, average uniqueness, sequential bootstrap, return attribution §4.6, time decay §4.7, class weights §4.8), **Ch 17** (Structural Breaks). *The formula-authoritative source; the weights recursion and FFD definition are reproduced.*
-- **Hosking, J.R.M.** (1981): *Fractional differencing*, Biometrika 68(1) - the original fractional-ARIMA long-memory formulation that Ch 5 generalizes.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* - Ch 2/Ch 8 (unit-root/ADF testing and the cointegration distinction) - the stationarity tests used to fix $d^*$.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* - Ch 7 (the bias–variance and effective-sample-size consequences of re-weighting/CV under dependence).
+- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018)
+- **Hosking, J.R.M.** (1981): *Fractional differencing*, Biometrika 68(1)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning*
 
 ---
 

@@ -122,13 +122,13 @@ All three stages recover the truth: $\hat\beta=0.9955$ (true $1.0$), an ADF $t=-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 8 §8.5 (cointegration definition, ECM Eq. 8.33–8.34), §8.6 (rank cases, deterministic spec, Johansen), §8.8 (pairs trading ECM Eq. 8.45, AR(2) on the spread, ADF $-6.04$ on the BHP/VALE example). *Math-verified in the corpus.*
-- **Tsay** Ch 2 §2.7 (unit-root tests, ADF Eq. 2.38–2.40; AR half-life $\ell=\ln(0.5)/\ln|\phi_1|$).
+- **Tsay**, *Analysis of Financial Time Series*
+- **Tsay**
 - **Engle, R. F. & Granger, C. W. J.**, *Econometrica* 55(2), 1987.
-- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 - Appendix (OU parameter estimation, $\kappa,m,\sigma_{\text{eq}}$, the $\kappa>252/30$ filter).
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 10 §10.2–10.3 (cointegration, VECM Eq. 10.13, speed-of-adjustment as price leadership).
+- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010
+- **Hasbrouck**, *Empirical Market Microstructure*
 
 ---
 

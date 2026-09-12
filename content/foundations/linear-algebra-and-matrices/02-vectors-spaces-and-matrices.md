@@ -56,11 +56,11 @@ The dependent set collapses to **rank 2** because its third vector was just a co
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Strang**, *Introduction to Linear Algebra* (5th ed.), Ch 1 (vectors), Ch 3 (spaces, independence, basis, dimension), Ch 4 (orthogonality, Gram–Schmidt, $QR$). *Corpus PDF available.*
-- **Tsay**, *Analysis of Financial Time Series*, §9.4 (PCA as orthogonal dimension reduction), §9.5 (factor model with $m$ latent drivers - rank structure). *Verified.*
-- **Horn & Johnson**, *Matrix Analysis*, Ch 0–1 (vector spaces, inner products, rank inequalities).
+- **Strang**, *Introduction to Linear Algebra* (5th ed.)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Horn & Johnson**, *Matrix Analysis*
 
 ---
 

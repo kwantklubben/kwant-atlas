@@ -79,13 +79,13 @@ Note the output: revenue resolved to the **ASC-606 tag**, *not* to `Revenues` - 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **SEC**, *EDGAR APIs* - `companyfacts`, `companyconcept`, `frames`, `submissions`; the authoritative spec. *All endpoints and the ≤10 req/s guidance verified against `Data_SEC_EDGAR_access.txt`.*
-- **XBRL US** (xbrl.us) - the US-GAAP taxonomy browser; **XBRL International** (taxonomies.xbrl.org) - IFRS. *The tag dictionary behind the mapper above.*
-- **Arelle** (arelle.org) - the reference open-source XBRL processor; the right tool once you graduate from JSON facts to full filing instances.
-- **Loughran & McDonald** (*JF*, 2011) - the canonical method for mining the *text* of the 10-Ks that EDGAR serves, once the tagged facts are in hand.
-- **WRDS Compustat User's Guide** - how a commercial vendor standardizes what EDGAR left as filer-tagged, i.e. the exact choices the next page unpacks.
+- **SEC**, *EDGAR APIs*
+- **XBRL US** (xbrl.us)
+- **Arelle** (arelle.org)
+- **Loughran & McDonald** (*JF*, 2011)
+- **WRDS Compustat User's Guide**
 
 ---
 

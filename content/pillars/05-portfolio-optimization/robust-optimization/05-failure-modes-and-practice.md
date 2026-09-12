@@ -67,14 +67,14 @@ The scoreboard, read honestly:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Best & Grauer (1991)**, RFS 4(2) - the estimation-error-maximizer magnitudes that motivate the whole discipline.
-- **Chopra & Ziemba (1993)**, JPM 19(2) - relative input-error damage.
-- **DeMiguel, Garlappi & Uppal (2009)**, RFS 22(5) - out-of-sample discipline and the $1/N$ benchmark.
-- **Michaud & Michaud (2008)**, *Efficient Asset Management* - resampling in practice and its limits.
-- **Goldfarb & Iyengar (2003)**, Math. of OR 28(1) - guarantees, calibration, and the critique of non-guaranteed methods.
-- **Clarke, de Silva & Thorley (2002)**, FAJ 58(5) - the measured cost of constraints (transfer coefficient).
+- **Best & Grauer (1991)**, RFS 4(2)
+- **Chopra & Ziemba (1993)**, JPM 19(2)
+- **DeMiguel, Garlappi & Uppal (2009)**, RFS 22(5)
+- **Michaud & Michaud (2008)**, *Efficient Asset Management*
+- **Goldfarb & Iyengar (2003)**, Math. of OR 28(1)
+- **Clarke, de Silva & Thorley (2002)**, FAJ 58(5)
 
 ---
 

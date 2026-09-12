@@ -93,12 +93,12 @@ Read the table as two messages. First, CRR **does** converge: $n{=}1000$ gives $
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13 - one-step delta (13.1), risk-neutral valuation (13.2–13.3), two-step trees (13.5–13.10), volatility matching (13.12–13.18), American backward induction, §13.9 convergence and its appendix, §13.11 index/currency trees. *Verification report in the corpus.*
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §4.1 (CRR European closed binomial, eq 7.1–7.6; §4.2 American and tree Greeks, eq 7.9–7.11), §4.3–4.5 (Rendleman–Bartter, Leisen–Reimer, trinomial). *Numerically verified: the $4.4496$ vs $4.4494$ pair used above is Haug's own check.*
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 1–3 - the recursive, measure-theoretic version of the same backward induction.
-- **Cox, Ross & Rubinstein (1979)**, *Option pricing: a simplified approach*, J. Financial Economics 7 - the original tree.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Cox, Ross & Rubinstein (1979)**, *Option pricing: a simplified approach*, J. Financial Economics 7
 
 ---
 

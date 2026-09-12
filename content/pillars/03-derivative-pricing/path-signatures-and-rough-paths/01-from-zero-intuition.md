@@ -83,12 +83,12 @@ We compute iterated integrals of piecewise-linear paths **by explicit sums** (ex
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Chevyrev & Kormilitzin** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788 - §2–3: the iterated-integral hierarchy, the area interpretation, and the first worked examples. *The primary applied reference for this page.*
-- **Lyons** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2) - §2: the signature as the natural object, motivation from the endpoint-only failure.
-- **Hambly & Lyons** (2010), *Uniqueness for the signature of a path of bounded variation and the reduced path group*, Annals of Mathematics 171 - the formal statement that the *whole* signature (not any truncation) determines the path; the mathematical target that the hierarchy is converging to.
-- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*, Ch 1–2 - the analytic foundations of iterated integrals over irregular paths. *Math-verified.*
+- **Chevyrev & Kormilitzin** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788
+- **Lyons** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2)
+- **Hambly & Lyons** (2010), *Uniqueness for the signature of a path of bounded variation and the reduced path group*, Annals of Mathematics 171
+- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*
 
 ---
 

@@ -79,13 +79,13 @@ The netting benefit **grows with network density**: in a dense interdealer marke
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6) - §2 models the dealer's bid-ask with the interdealer price $M$ as the outside option.
-- **Duffie (2012)**, *Dark Markets*, Princeton UP - Ch 2–4 (search, transparency, and OTC pricing).
-- **Duffie (2010)**, *Asset price dynamics with slow-moving capital*, JF 65(4) - the dealer capital / interdealer-liquidity channel in crisis.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 2.3 (dealer settings; interdealer brokers; transparency). *Verified in corpus.*
-- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*, OUP - transparency and market-structure design. *Verified in corpus.*
+- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6)
+- **Duffie (2012)**, *Dark Markets*, Princeton UP
+- **Duffie (2010)**, *Asset price dynamics with slow-moving capital*, JF 65(4)
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*, OUP
 
 ---
 

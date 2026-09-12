@@ -102,12 +102,12 @@ The estimated half-life is $4.78$ days (fast, well inside the $\kappa>252/30$ fi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 - §4.1 pure mean-reversion signal (Eq. 15–16, cutoffs $1.25/0.75/0.50$), §4.2 drift-adjusted modified s-score; 10 bp round-trip cost assumption.
-- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006 - §2.2 trading rule (open at two historical standard deviations, close at the next crossing), self-financing top-20 portfolio.
-- **Tsay**, *Analysis of Financial Time Series*, Ch 8 §8.8 - pairs-trading rule (enter at $\mu_w-\delta$, unwind at $\mu_w+\delta$, net profit $2\delta-\eta$).
-- **Krauss, C.**, *J. Economic Surveys* 31(2), 2017 - §4 time-series approach (optimal rules for mean-reverting spreads), transaction-cost sensitivity.
+- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010
+- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006
+- **Tsay**, *Analysis of Financial Time Series*
+- **Krauss, C.**, *J. Economic Surveys* 31(2), 2017
 - **Gatev et al.** and **Do & Faff** for the empirical cost-adjusted Sharpe collapse.
 
 ---

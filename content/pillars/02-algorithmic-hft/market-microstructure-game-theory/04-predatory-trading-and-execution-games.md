@@ -114,7 +114,7 @@ Five things worth reading off this output:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Brunnermeier, Markus K.; Pedersen, Lasse Heje** - "Predatory trading," *Journal of Finance* 60(4), 1825–1863 (2005). *The source. Predators sell alongside a distressed liquidator and buy back later; price overshoot, reduced liquidation value, spillover across traders and markets.*
 - **Carlin, Bruce I.; Lobo, Miguel Sousa; Viswanathan, S.** - "Episodic liquidity crises: Cooperative and predatory trading," *Journal of Finance* 62(5), 2235–2274 (2007). *What happens when the potential predators can also cooperate with the victim; the "trigger strategy" outcome and its breakdown.*
@@ -124,7 +124,7 @@ Five things worth reading off this output:
 - **Cardaliaguet, Pierre; Lehalle, Charles-Albert** - "Mean field game of controls and an application to trade crowding," *Mathematics and Financial Economics* 12(3) (2018). *The anonymous-crowd limit of exactly the competitive game solved above.*
 - **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000). *The single-agent benchmark that the Nash equilibrium is measured against.*
 - **Huberman, Gur; Stanzl, Werner** - "Price manipulation and quasi-arbitrage," *Econometrica* 72(4), 1247–1275 (2004). *Which price-impact games admit manipulation at all; the admissibility constraint on any linear game you write down.*
-- **Carlin, Bruce I.; Lobo, Miguel Sousa; Viswanathan, S.** - see also their experimental/OTC work cited in the Schied–Strehle–Zhang literature for the empirical side of episodic liquidity crises.
+- **Carlin, Bruce I.; Lobo, Miguel Sousa; Viswanathan, S.**
 
 ---
 

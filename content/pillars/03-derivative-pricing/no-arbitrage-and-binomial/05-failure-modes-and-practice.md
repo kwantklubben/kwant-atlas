@@ -94,12 +94,12 @@ The put carries a $+5.2\%$ early-exercise premium that no European formula can s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 5–7 - American recursion and worked example (Ex. 5.1), stopping times, the smallest-supermartingale characterization (Def 6.1), consumption hedge (Lemma 2.21), and the **no-early-exercise theorem for calls** (Ch 7, Cor. 2.25). *Math-verified in the corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13 (American backward induction; convergence and its oscillation), §13.11 (index/currency trees), §15.12 (dividends and Black's approximation).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §4.2 (CRR American), §4.3 (local volatility in the tree and negative probabilities when $\sigma<|b\sqrt{\Delta t}|$), Ch 3 (analytic American approximations). *Numerically verified.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 3 (the no-arbitrage condition that a coarse tree violates) and §7.8 (American options).
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Björk**, *Arbitrage Theory in Continuous Time*
 
 ---
 

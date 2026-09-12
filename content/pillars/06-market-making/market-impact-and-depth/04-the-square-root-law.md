@@ -107,7 +107,7 @@ The regression recovers the square-root exponent **0.5054** on the diffusive boo
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Almgren, R., Thum, C., Hauptmann, H. & Li, H. (2005)**, *Direct estimation of equity market impact*, Risk 18(7), 57–62. *The fitted exponents and coefficients ($\gamma=0.314$, $\eta=0.142$, temporary $\beta=3/5$, square root rejected). Primary PDF in corpus (`45_Almgren_2005_...`).*
 - **Bouchaud, J.-P., Farmer, J. D. & Lillo, F. (2009)**, *How markets slowly digest changes in supply and demand*. *Order-flow long memory, impact concavity, the $N^{1-\beta}$ and $\pi^\beta$ results. Primary PDF in corpus (`44_Bouchaud_2009_...`).*

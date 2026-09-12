@@ -85,12 +85,12 @@ Now the *inverse* lesson - that a large *median* can still hide a competitive ta
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **MacKenzie, Donald** - *Trading at the Speed of Light* (2021). The accessible account of *why* the race exists and what the whole stack looks like end-to-end.
-- **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2) (2015). The economic theory of when speed is worth investing in - the "should you build this at all" question.
-- **Hasbrouck & Saar** - "Low-latency trading," *J. Financial Markets* 16(4) (2013). Empirical measurement of latency-sensitive order behaviour: short lifetimes, high cancel rates - the behaviour this architecture must support.
-- **Harris, Larry** - *Trading and Exchanges* (2003). The underlying market mechanics of stale quotes and adverse selection.
+- **MacKenzie, Donald** - *Trading at the Speed of Light* (2
+- **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2) (2
+- **Hasbrouck & Saar** - "Low-latency trading," *J. Financial Markets* 16(4) (2013). Empirical measurement of latency-sensitive order behaviour: short lifetimes, high cancel rates
+- **Harris, Larry** - *Trading and Exchanges* (2
 
 ---
 

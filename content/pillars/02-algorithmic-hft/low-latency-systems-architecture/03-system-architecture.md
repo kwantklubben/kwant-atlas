@@ -96,14 +96,14 @@ Standard library only. We simulate the strategy stage as a single server with Po
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Fowler, Martin** - *The LMAX Architecture* and the **LMAX Disruptor** paper. The canonical one-way, single-writer, ring-buffer architecture this page describes.
 - **NautilusTrader** documentation (nautilustrader.io). A production-grade, open-source event-driven engine whose message-bus/actor design is the cleanest modern reference for stage decoupling.
-- **Kerrisk, Michael** - *The Linux Programming Interface* (2010), and **Benvenuti** - *Understanding Linux Network Internals* (2005). The OS-level mechanics behind the feed-handler stage.
+- **Kerrisk, Michael** - *The Linux Programming Interface* (2010), and **Benvenuti** - *Understanding Linux Network Internals* (2
 - **Gregg, Brendan** - *Systems Performance* (2nd ed., 2020). Measuring per-stage latency and queueing in production.
 - **FIX Protocol official specifications** (fixtrading.org) and **Nasdaq TotalView-ITCH 5.0** spec. The actual wire protocols the feed handler and gateway speak.
-- **Hamilton, Peter** et al. - multithreading/event-driven architecture in *C++ Concurrency in Action* (Williams): the language-level counterpart is in [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
+- **Hamilton, Peter** et al.
 
 ---
 

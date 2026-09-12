@@ -74,16 +74,16 @@ Hub signposts - the full failure analysis lives in [[pillars/02-algorithmic-hft/
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5–40 (2000). *The permanent/temporary-impact cost model an execution simulator must calibrate ($E[x]$, $V[x]$, $\eta$, $\gamma$).* `ADV`
 - **Almgren, Thum, Hauptmann & Li** - "Direct estimation of equity market impact," *Risk* 18(7), 58–62 (2005). *The empirical impact parameters a realistic simulator is calibrated to; the square-root/power-law shape.* `ADV`
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (OUP, 2007), Ch 14 (implementation shortfall, effective/realized cost, VWAP) and Ch 15 (prospective costs, order placement, diffusion-barrier execution, censoring). *Corpus verification `hasbrouck_ch11-15.md` / `hasbrouck_ch1-5.md`.* `INT`
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (OUP, 2007)
 - **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017). *The fill function $(\xi-Q)^+-(\xi-Q-L)^+$ and its use as a simulation primitive.* `ADV`
-- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3), 549–563 (2010). *The tractable queue model fast enough for Monte Carlo fill simulation - the standard substrate of execution backtests (corpus sub-topic "Backtesting & Simulation of Execution").* `ADV`
+- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3), 549–563 (2010). *The tractable queue model fast enough for Monte Carlo fill simulation
 - **Gould, Porter, Williams, McDonald, Fenn & Howison** - "Limit order books," *Quantitative Finance* 13(11), 1709–1742 (2013). *The survey listing the stylized facts any credible execution simulator must reproduce (and the cancel-to-trade ratios that break naive fills).* `ADV`
 - **Abergel, Anane, Chakraborti, Jedidi & Toke** - *Limit Order Books* (Cambridge, 2016). *Agent-based LOB simulation and order-placement micro-simulation used to test execution logic.* `ADV`
-- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018), Ch 11 (the dangers of backtesting), Ch 12 (backtesting through cross-validation), Ch 13 (backtesting on **synthetic** data). *The case for Monte Carlo/synthetic execution evaluation and the overfitting discipline.* `INT`
+- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018)
 
 ---
 

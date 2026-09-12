@@ -79,11 +79,11 @@ This is the single most convincing way to *see* the idea: take one company's sta
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 5 (ROCE as the primary ratio), Ch 6 (P/B, P/E and value), Ch 7 (reformulated statements, why the denominator matters). *All ratios in this folder verified against the corpus text.*
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - the plain-English route to the raw statements this page assumes.
-- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide* - ratio interpretation with the honest caveats a practitioner needs.
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide*
+- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide*
 
 ---
 

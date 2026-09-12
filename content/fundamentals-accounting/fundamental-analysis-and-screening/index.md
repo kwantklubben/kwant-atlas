@@ -82,14 +82,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[fundamentals-accou
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Graham, Benjamin & Dodd, David**: *Security Analysis* (McGraw-Hill, 6th ed. 2008) - the founding text: margin of safety, earnings power, asset-value floors. The intellectual source of every value screen. *Criteria verified against the corpus text.*
-- **Graham, Benjamin**: *The Intelligent Investor* (rev. 1973; HarperBusiness annotated 4th ed. 2003, Jason Zweig) - the readable distillation; Ch 14's seven defensive criteria and Ch 15's enterprising criteria are the exact inequalities on this page. *All thresholds verified against the corpus text.*
-- **Fisher, Philip A.**: *Common Stocks and Uncommon Profits* (Wiley reissue) - the growth/quality counterweight: the "scuttlebutt" qualitative criteria that become the reading half of any screen.
-- **Greenwald, Kahn, Sonkin & van Biema**: *Value Investing: From Graham to Buffett and Beyond* (Wiley, 2001) - formalizes value as asset-based, earnings-power, and franchise valuation; turns Graham's heuristics into an analyzable method.
-- **Dorsey, Pat (Morningstar)**: *The Five Rules for Successful Stock Investing* (2004) - the institutional screening workflow and the moat framework; the practitioner bridge from filter to research.
-- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000) - the 9-signal F-score that quantifies the "is the cheap stock *good*?" question. See [[fundamentals-accounting/fundamental-analysis-and-screening/06-advanced-extensions|06 · Advanced Extensions]].
+- **Graham, Benjamin & Dodd, David**: *Security Analysis* (McGraw-Hill, 6th ed. 2008)
+- **Graham, Benjamin**: *The Intelligent Investor* (rev. 1973; HarperBusiness annotated 4th ed. 2003, Jason Zweig)
+- **Fisher, Philip A.**: *Common Stocks and Uncommon Profits* (Wiley reissue)
+- **Greenwald, Kahn, Sonkin & van Biema**: *Value Investing: From Graham to Buffett and Beyond* (Wiley, 2001)
+- **Dorsey, Pat (Morningstar)**: *The Five Rules for Successful Stock Investing* (2004)
+- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000)
 
 ---
 

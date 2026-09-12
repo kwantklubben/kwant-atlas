@@ -79,10 +79,10 @@ Read the tension in the "General counters" block. With $k=2$ you get $N-1$ paths
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 12** (§12.4 "The Combinatorial Purged Cross-Validation Method": §12.4.1 splits & $\varphi[N,k]$, §12.4.2 the algorithm, §12.4.3 examples and the $k=2$ rule of thumb; §12.5 the variance formula $\sigma^2[\mu_i]=\varphi^{-1}\sigma_i^2[1+(\varphi-1)\bar\rho_i]$). *Primary source; every formula on this page is transcribed from it and numerically reproduced.*
-- **Bailey, Borwein, López de Prado & Zhu**, *The Probability of Backtest Overfitting*, J. Comp. Finance 20(4) (2017) - the CSCV/PBO machinery CPCV complements.
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 12** (§12.4 "The Combinatorial Purged Cross-Validation Method":
+- **Bailey, Borwein, López de Prado & Zhu**, *The Probability of Backtest Overfitting*, J. Comp. Finance 20(4) (2017)
 
 ---
 

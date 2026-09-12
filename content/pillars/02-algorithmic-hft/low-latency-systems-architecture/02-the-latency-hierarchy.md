@@ -80,14 +80,14 @@ Standard library only. We assign each stage of the tick-to-trade path a log-norm
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory* (Red Hat, 2007). The authoritative free treatment of the cache/memory numbers in §2.1.
+- **Drepper, Ulrich** - *What Every Programmer Should Know About Memory* (Red Hat, 2007). The authoritative free treatment of the cache/memory numbers in
 - **Thompson, Martin** - *Mechanical Sympathy* (blog/talks). Cache lines, prefetch, and why predictable access patterns beat clever ones.
-- **Gregg, Brendan** - *Systems Performance* (2nd ed., 2020). The methodology for measuring latency by layer (use-method, off-CPU analysis) - how to *verify* the ruler on your own box.
+- **Gregg, Brendan** - *Systems Performance* (2
 - **Benvenuti, Christian** - *Understanding Linux Network Internals* (2005) and **Kerrisk, Michael** - *The Linux Programming Interface* (2010). Where the kernel/stack microseconds actually come from.
-- **Hasbrouck & Saar** - "Low-latency trading," *J. Financial Markets* 16(4) (2013). The empirical latency budget the market actually imposes.
-- **MacKenzie, Donald** - *Trading at the Speed of Light* (2021). The physics/geography layer told end-to-end.
+- **Hasbrouck & Saar** - "Low-latency trading," *J. Financial Markets* 16(4) (2
+- **MacKenzie, Donald** - *Trading at the Speed of Light* (2
 
 ---
 

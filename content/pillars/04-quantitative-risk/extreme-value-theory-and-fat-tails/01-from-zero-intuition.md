@@ -75,11 +75,11 @@ The t₃ block maxima estimate $\alpha\approx3.0$ - the true tail index of the p
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **de Haan & Ferreira**, *Extreme Value Theory: An Introduction* (2006), §1.1 (GEV, domains of attraction, Fisher–Tippett–Gnedenko). *Math-verified in the corpus.*
-- **Embrechts, Klüppelberg & Mikosch**, *Modelling Extremal Events for Insurance and Finance* (1997) - Ch 1–2 (motivation, the "Living on the Edge" argument for why fat tails change risk management).
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 7.1 (introduction, why EVT for risk). *In library.*
+- **de Haan & Ferreira**, *Extreme Value Theory: An Introduction* (2006)
+- **Embrechts, Klüppelberg & Mikosch**, *Modelling Extremal Events for Insurance and Finance* (1997)
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
 
 ---
 

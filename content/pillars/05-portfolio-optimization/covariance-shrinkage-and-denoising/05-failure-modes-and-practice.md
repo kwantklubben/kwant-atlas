@@ -85,12 +85,12 @@ This single table is the whole pillar's covariance story. When $q\ge1$ the sampl
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Ledoit, O. & Wolf, M. (2004).** "A well-conditioned estimator…" *J. Multivariate Anal.* 88(2):365–411. *Condition-number boundedness; why classification happens not numerically but statistically.*
 - **Ledoit, O. & Wolf, M. (2004).** "Honey, I shrunk the sample covariance matrix." *J. Portfolio Management* 30(4):110–119. *Out-of-sample study on real US stock data (Shrink-CC beats sample, PC-5, and single-index).*
 - **DeMiguel, V., Garlappi, L. & Uppal, R. (2009).** "Optimal Versus Naive Diversification." *Review of Financial Studies* 22(5):1915–1953. *The $1/N$ benchmark and its $O(T^{-1})$ estimation-error logic.*
-- **Chopra, V. & Ziemba, W. (1993).** "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11. *Mean errors dominate covariance errors ~20× - the priority ordering for fixing inputs.*
+- **Chopra, V. & Ziemba, W. (1993).** "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." *J. Portfolio Management* 19(2):6–11. *Mean errors dominate covariance errors ~20×
 - **Michaud, R. O. & Michaud, R. O. (2008).** *Efficient Asset Management* (2nd ed.), Oxford. *Resampled frontiers as the industry mitigation of error maximization.*
 
 ---

@@ -89,13 +89,13 @@ Stdlib only. (A) gradient descent from several starts on a convex and a non-conv
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Boyd & Vandenberghe**: *Convex Optimization* - Ch 2–3 (convex sets, convex functions, the $\nabla^2f\succeq0$ criterion), Ch 4 (convex problems), Ch 5 (duality: the Lagrangian, the dual function, weak and strong duality, Slater's condition, §5.5.3 KKT), Ch 9 (unconstrained minimisation). *The primary convexity-and-duality source; verified at glyph level.*
-- **Simon & Blume**: *Mathematics for Economists* - Ch 16 (quadratic forms, definiteness and optimality), Ch 21.1–21.2 (concave and convex functions, calculus criteria, properties), Ch 21.3–21.4 (quasiconcave and pseudoconcave functions - the weaker conditions under which KKT is still sufficient), Ch 21.5 (concave programming, the saddle-point approach). *The economics-framed companion.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.) - §3.4 (subset selection, ridge penalty eq. 3.41 and constraint eq. 3.42, solution eq. 3.44, effective df; lasso constraint eq. 3.51 and Lagrangian eq. 3.52, soft-threshold $S(t,\lambda)=\operatorname{sign}(t)(|t|-\lambda)_+$, the $L_1$↔Laplace connection), Ch 10.10 (gradient boosting as steepest descent on a loss). *Verified in the corpus; the regularisation-and-ML bridge.*
-- **Rockafellar, R. T.**: *Convex Analysis* (1970) - the rigorous foundation of convex sets, conjugates and duality. *(Titles list; not in the verified set.)*
-- **Bertsekas, Dimitri P.**: *Nonlinear Programming* (3rd ed.) - duality, the saddle-point theorem, and constraint qualifications in their sharp form.
+- **Boyd & Vandenberghe**: *Convex Optimization*
+- **Simon & Blume**: *Mathematics for Economists*
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.)
+- **Rockafellar, R. T.**: *Convex Analysis* (1970)
+- **Bertsekas, Dimitri P.**: *Nonlinear Programming* (3rd ed.)
 
 ---
 

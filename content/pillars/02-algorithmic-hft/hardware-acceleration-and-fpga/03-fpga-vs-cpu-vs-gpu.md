@@ -89,12 +89,12 @@ Read the ladder. **(i)** FPGA payback swings from 2.5 years to 50 days across a 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **De Schryver, Christian (ed.)** - *FPGA Based Accelerators for Financial Applications* (Springer, 2015). *The primary FPGA-for-finance reference: what accelerates well (fixed-point option pricing, MC, feed parsing) and what does not.*
 - **MDPI *Electronics* (2024)** - "The Role of FPGAs in Modern Option Pricing Techniques: A Survey." *Measured speedups and energy figures across the design space.*
 - **Trex, Thomas V.** - *GPU-Accelerated Research in Quant Finance*. *The GPU-side companion: backtests and analytics on CUDA, and the transfer-cost accounting that makes it wrong for latency.*
-- **Ashenden, Peter J.** - *The Designer's Guide to VHDL* (Morgan Kaufmann). *How synchronous digital design - and hence deterministic latency - actually works.*
+- **Ashenden, Peter J.** - *The Designer's Guide to VHDL* (Morgan Kaufmann). *How synchronous digital design
 - **Herlihy & Shavit** - *The Art of Multiprocessor Programming*; **Williams** - *C++ Concurrency in Action* (2nd ed.). *The CPU-parallel fallback: why correct lock-free software is often the right answer before any accelerator.* `INT`
 
 ---

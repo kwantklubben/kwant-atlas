@@ -95,11 +95,11 @@ Three takeaways visible in the numbers: the numerical MLE recovers $\alpha=4.03$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference*, Ch 7 §7.2 (MoM, MLE, invariance), §7.3 (MSE eq 7.3.1, Cramér–Rao Thm 7.3.1, Rao–Blackwell, sufficiency, consistency §7.3.4), §7.4 (asymptotic variance eq 7.4.1, Taylor/delta method eqs 7.4.4–7.4.5). *Primary source, formulas cross-checked in the corpus.*
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 8 §8.2 (MLE vs Bayesian estimation), Ch 7 (why in-sample error is optimistic).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 3 (MLE for GARCH/EGARCH - the production use of this machinery).
+- **Casella & Berger**, *Statistical Inference*
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

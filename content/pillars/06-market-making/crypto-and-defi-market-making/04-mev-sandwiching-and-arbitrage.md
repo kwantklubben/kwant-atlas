@@ -83,12 +83,12 @@ The sandwich is cleanly profitable: the attacker pays $15{,}000$ USDC for $4.762
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Daian, Philip et al.**, *Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges* (2019), arXiv:1904.05234 - the canonical MEV taxonomy (including sandwiching) and its consensus-level origins.
-- **Qin, Kaihua, Zhou, Liyi & Gervais, Arthur**, *Quantifying Blockchain Extractable Value* (2021), arXiv:2101.05511 - empirical MEV measurement and the "MEV = arbitrage + liquidation + sandwich" decomposition.
-- **Capponi & Jia (2022)**, *The Anatomy of a Liquidity Provision in Automated Market Makers*, arXiv:2210.07852 - adverse selection in AMMs framed as the LP cost of arbitrage.
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5) - the VPIN framework that the MEV-as-toxic-flow mapping generalizes.
+- **Daian, Philip et al.**, *Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges* (2019), arXiv:1904.05234
+- **Qin, Kaihua, Zhou, Liyi & Gervais, Arthur**, *Quantifying Blockchain Extractable Value* (2021), arXiv:2101.05511
+- **Capponi & Jia (2022)**, *The Anatomy of a Liquidity Provision in Automated Market Makers*, arXiv:2210.07852
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5)
 
 ---
 

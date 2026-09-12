@@ -99,14 +99,14 @@ The full analysis lives in [[pillars/07-machine-learning-altdata/regime-classifi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hamilton, James D.**: "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle," *Econometrica* 57(2):357–384, 1989 - the foundational Markov regime-switching paper every finance HMM/GMM treatment descends from. *Corpus verified (pillar1 PDF, deep-read).*
-- **Dempster, Arthur P., Laird, Nan M. & Rubin, Donald B.**: "Maximum Likelihood from Incomplete Data via the EM Algorithm," *Journal of the Royal Statistical Society B* 39(1):1–38, 1977 - the EM algorithm; the convergence guarantee and the general E/M-step structure this folder operationalizes.
-- **Rabiner, Lawrence R.**: "A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition," *Proceedings of the IEEE* 77(2):257–286, 1989 - the canonical algorithm-level HMM treatment: Baum–Welch, forward–backward, Viterbi.
-- **Ang, Andrew & Timmermann, Allan**: "Regime Changes and Financial Markets," *Annual Review of Financial Economics* 4:313–337, 2012 - the survey linking estimated regimes to fat tails, heteroskedasticity, skewness, and portfolio choice - the bridge from statistics to allocation.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 14 (unsupervised learning: K-means §14.3, mixtures & EM §14.3.7, PCA; the generative view of clustering), Ch 12 (discriminants / classifiers used for supervised regime labeling). *Corpus verified.*
-- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 4 (Markov switching: two-state chain, expected duration $=1/w_i$, MCMC), Ch 11 (state-space / Kalman filter), Ch 12 (MCMC: Gibbs, MH). *Corpus verified: tsay_ch4-6.md, tsay_ch10-12.md - no factual errors.*
+- **Hamilton, James D.**: "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle," *Econometrica* 57(2):357–384, 1989
+- **Dempster, Arthur P., Laird, Nan M. & Rubin, Donald B.**: "Maximum Likelihood from Incomplete Data via the EM Algorithm," *Journal of the Royal Statistical Society B* 39(1):1–38, 1977
+- **Rabiner, Lawrence R.**: "A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition," *Proceedings of the IEEE* 77(2):257–286, 1989
+- **Ang, Andrew & Timmermann, Allan**: "Regime Changes and Financial Markets," *Annual Review of Financial Economics* 4:313–337, 2012
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed., 2010)
 
 ---
 

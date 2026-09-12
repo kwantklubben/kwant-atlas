@@ -71,15 +71,15 @@ Hub signposts - the full treatment lives in [[pillars/07-machine-learning-altdat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sutton, Richard S. & Barto, Andrew G.**: *Reinforcement Learning: An Introduction* (2nd ed., MIT Press, 2018) - the canonical text; Ch 3 (MDPs, Bellman equations), Ch 4 (DP), Ch 6 (TD learning), Ch 9 (function approximation), Ch 13 (policy gradients). *The backbone for every sub-page here.*
-- **Bertsekas, Dimitri P.**: *Dynamic Programming and Optimal Control*, Vol I–II - the rigorous DP/martingale foundation behind the Bellman equations.
-- **Nevmyvaka, Yuriy; Feng, Yi & Kearns, Michael**: "Reinforcement Learning for Optimized Trade Execution" (ICML 2006) - the foundational execution-RL paper; the anchor of [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/06-advanced-extensions|06 · Advanced Extensions]].
-- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*Journal of Financial Markets* 1(1), 1998) - the pre-RL dynamic-programming formulation of the same problem.
-- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE Trans. Neural Networks* 12(4), 2001) - recurrent RL optimizing a Sharpe-like differential objective directly on price series.
-- **Mnih, Volodymyr et al.**: "Human-level Control through Deep Reinforcement Learning" (*Nature* 518, 2015) - DQN, the template for deep value-based agents.
-- **Schulman, John et al.**: "Proximal Policy Optimization Algorithms" (arXiv:1707.06347, 2017) - PPO, the default policy-gradient method in finance RL frameworks (incl. Qlib's RL module).
+- **Sutton, Richard S. & Barto, Andrew G.**: *Reinforcement Learning: An Introduction* (2nd ed., MIT Press, 2018)
+- **Bertsekas, Dimitri P.**: *Dynamic Programming and Optimal Control*, Vol I–II
+- **Nevmyvaka, Yuriy; Feng, Yi & Kearns, Michael**: "Reinforcement Learning for Optimized Trade Execution" (ICML 2006)
+- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*Journal of Financial Markets* 1(1), 1998)
+- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE Trans. Neural Networks* 12(4), 2001)
+- **Mnih, Volodymyr et al.**: "Human-level Control through Deep Reinforcement Learning" (*Nature* 518, 2015)
+- **Schulman, John et al.**: "Proximal Policy Optimization Algorithms" (arXiv:1707.06347, 2017)
 
 ---
 

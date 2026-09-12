@@ -108,14 +108,14 @@ Hub signposts - the full first-principles analysis lives on the sub-pages. In on
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Simon, Carl P. & Blume, Lawrence**: *Mathematics for Economists* (W. W. Norton, 1994) - Ch 13–14 (functions/calculus of several variables: total derivative, chain rule, directional derivatives & gradients), Ch 16 (quadratic forms, definiteness, bordered matrices), Ch 17 (unconstrained optimisation: first- and second-order conditions), Ch 18 (constrained optimisation I: equality/inequality constraints and the Kuhn–Tucker formulation), Ch 19 (constrained optimisation II: the meaning of the multiplier, envelope theorems, bordered-Hessian second-order conditions, constraint qualifications), Ch 21 (concave/quasiconcave functions and concave programming). *The primary multivariable-and-constrained-optimisation source for this folder.*
-- **Boyd, Stephen & Vandenberghe, Lieven**: *Convex Optimization* (Cambridge University Press, 2004) - §5.5.3 (KKT conditions, eq. 5.49; Example 5.1 equality-constrained QP), §9.1.2 (strong convexity, eq. 9.7), §9.3 (gradient descent and the $c=1-m/M$ linear rate, eqs. 9.18–9.19), §9.4 (steepest descent), §9.5 (Newton step, Newton decrement, damped Newton and the quadratic-convergence phase). *The primary convexity-and-algorithms source; equations verified at glyph level.*
-- **Spivak, Michael**: *Calculus* (4th ed.) - Part I–III (limits, continuity, derivatives, the mean value theorem, the Taylor polynomial and its remainder, the integral). *The rigorous single-variable backstop.*
-- **Stewart, James, Clegg, Daniel & Watson, Saleem**: *Calculus: Early Transcendentals* (9th ed., 2020) - §11.10–11.11 (Taylor and Maclaurin series, applications of Taylor polynomials), §14.x (partial derivatives, directional derivatives, maxima/minima, Lagrange multipliers). *The readable single- and multivariable reference.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - §3.4 (ridge/lasso, the constraint form and the Lagrangian), §4.4 (Newton–Raphson / IRLS for logistic regression, eqs. 4.26–4.28), §10.10 (gradient boosting via the negative gradient / pseudo-residuals, Table 10.2). *Verified in the corpus; the bridge to machine-learning optimisation.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.) - Ch 11 (state-space ML estimation, the Kalman recursion and the Riccati fixed point), Ch 12 (MCMC: Gibbs and Metropolis–Hastings sampling, and grid-based approximation of intractable conditionals). *Verified in the corpus; the stochastic-optimisation bridge.*
+- **Simon, Carl P. & Blume, Lawrence**: *Mathematics for Economists* (W. W. Norton, 1994)
+- **Boyd, Stephen & Vandenberghe, Lieven**: *Convex Optimization* (Cambridge University Press, 2004)
+- **Spivak, Michael**: *Calculus* (4th ed.)
+- **Stewart, James, Clegg, Daniel & Watson, Saleem**: *Calculus: Early Transcendentals* (9th ed., 2020)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.)
 - **Bernstein, D. J.**: *Calculus for Mathematicians* (1997 draft) - *internal foundation note.* **Scope caveat:** this is a compact, proof-based **single-variable only** text (continuity, Carathéodory derivatives, completeness, MVT, Kurzweil–Henstock integration, limits/L'Hôpital). It contains **no** multivariable calculus, **no** Taylor/power series, and **no** optimisation beyond Fermat's interior-extremum principle. It underwrites page 02 only; pages 03–06 are built from Simon & Blume, Boyd and Stewart.
 
 ---

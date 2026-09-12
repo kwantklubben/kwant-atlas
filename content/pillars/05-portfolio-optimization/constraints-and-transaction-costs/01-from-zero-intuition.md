@@ -102,13 +102,13 @@ Read the second and third blocks together. The unconstrained "optimum" is unatte
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of Operations Research 152:341–365 - the modeling backbone: convex cost-aware QPs and the no-trade-region geometry. ★ MUST-HAVE
-- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed. - the practitioner's treatment of constrained active portfolios, tracking error and cost-adjusted rebalancing.
-- **Clarke, de Silva & Thorley (2002)**, *Portfolio Constraints and the Fundamental Law of Active Management*, FAJ 58(5):48–66 - the transfer-coefficient accounting of what constraints cost.
-- **Almgren & Chriss (2000/01)**, *Optimal Execution of Portfolio Transactions*, Journal of Risk 3(2):5–39 - the order-level view of the same cost, owned by [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Pillar 2 · Optimal Execution]].
-- **Hasbrouck (2007)**, *Empirical Market Microstructure* - Ch 3–5 (Roll spread, Glosten–Milgrom spread) and Ch 8 (generalized Roll: spread $=2(c+\lambda)$, price impact $\lambda$); the microstructure *source* of the $c$ and $\eta$ coefficients used here.
+- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of Operations Research 152:341–365
+- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed.
+- **Clarke, de Silva & Thorley (2002)**, *Portfolio Constraints and the Fundamental Law of Active Management*, FAJ 58(5):48–66
+- **Almgren & Chriss (2000/01)**, *Optimal Execution of Portfolio Transactions*, Journal of Risk 3(2):5–39
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
 
 ---
 

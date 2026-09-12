@@ -114,12 +114,12 @@ We cannot call a C++ allocator from these stdlib-only examples, but the *mechani
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Meyers, Scott**: *Effective Modern C++* - Items 23–30 (rvalue references, `std::move`/`std::forward`, perfect forwarding) and Items 34–42 (`std::function`, `shared_ptr` costs, `emplace`, the rule of five). *The primary source for §2.2.*
-- **Meyers, Scott**: *Effective C++* - the older baseline on object lifetime and resource ownership.
-- **Stroustrup, Bjarne**: *The C++ Programming Language* / *A Tour of C++* - the origin of the "zero-overhead abstraction" principle.
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* - pre-allocated buffers and template-driven hot paths in a matching engine.
+- **Meyers, Scott**: *Effective Modern C++*
+- **Meyers, Scott**: *Effective C++*
+- **Stroustrup, Bjarne**: *The C++ Programming Language* / *A Tour of C++*
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++*
 
 ---
 

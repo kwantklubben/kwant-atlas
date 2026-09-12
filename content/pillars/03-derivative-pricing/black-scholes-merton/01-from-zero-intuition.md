@@ -80,11 +80,11 @@ This is the single most convincing way to *see* the theory: build the CRR tree (
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 2 (binomial: replicating weights, risk-neutral valuation, Prop 2.9–2.11) - the cleanest discrete seed.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13 (binomial trees & convergence) and Ch 15 (the model, risk-neutral rationale).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §4.1 (CRR tree, verified 4.4494→4.4496).
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

@@ -92,12 +92,12 @@ HRP lands between the unconstrained optimum and ERC, and beats $1/N$ by a wide m
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 - the recursive-bisection algorithm (`getRecBipart`) and the inverse-variance sub-portfolio variance.
-- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*, Ch. 16 - reference code and the discussion of why the algorithm is long-only and inverse-free.
-- **Maillard, Roncalli & Teïletche** (2010). "The Properties of Equally Weighted Risk Contribution Portfolios." *J. Portfolio Management* 36(4):60–70 - the ERC benchmark and its closed forms, used above as the contrast.
-- **Qian, E.** (2005). *Risk Parity Portfolios: Efficient Portfolios Through True Diversification*, PanAgora - why inverse-variance is the risk-parity seed.
+- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69
+- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*
+- **Maillard, Roncalli & Teïletche** (2010). "The Properties of Equally Weighted Risk Contribution Portfolios." *J. Portfolio Management* 36(4):60–70
+- **Qian, E.** (2005). *Risk Parity Portfolios: Efficient Portfolios Through True Diversification*, PanAgora
 
 ---
 

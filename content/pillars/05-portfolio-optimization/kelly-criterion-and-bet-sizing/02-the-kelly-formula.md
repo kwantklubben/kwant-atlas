@@ -84,11 +84,11 @@ Two things worth noting in the output. First, the **discrete $f^*$ is bounded by
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §2, §7 - the discrete ($f^*=p-q$, $m/ab$) and continuous ($f^*=(m-r)/s^2$) derivations, $g_\infty$, critical fraction. *Corpus-verified; the formula source for this page.*
-- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, BSTJ 35(4) (1956) - the original maximiser of $\mathbb{E}\log V$.
-- **Breiman, L.**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961) - optimality proofs.
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, BSTJ 35(4) (1956)
+- **Breiman, L.**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961)
 
 ---
 

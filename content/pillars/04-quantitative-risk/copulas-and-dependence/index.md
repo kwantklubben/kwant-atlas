@@ -83,15 +83,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Frey & Embrechts**: *Quantitative Risk Management: Concepts, Techniques and Tools* (rev. ed. 2015, Princeton) - **Ch 7 "Copulas and Dependence"** is the backbone of this folder: definitions 7.1 (copula), Sklar Thm 7.3, Fréchet bounds 7.8, the Gauss/$t$/Gumbel/Clayton copulas (7.10)–(7.13), simulation Algorithms 7.10–7.12, Kendall (7.28) and Spearman (7.33), tail dependence (7.34)–(7.38) and Table 7.1, and Ch 7.5 (fitting copulas). Ch 12 §12.2 (copula credit models) is the portfolio-credit bridge. *Formula-verified in the corpus.*
-- **Nelsen, Roger B.**: *An Introduction to Copulas* (2nd ed., 2006, Springer) - the mathematical standard on copula families, Archimedean generators, and dependence measures.
-- **Joe, Harry**: *Multivariate Models and Dependence Concepts* (1997) - origin of the tail-dependence definitions used here.
-- **Bluhm, Overbeck & Wagner**: *Introduction to Credit Risk Modeling* (2nd ed., 2010) - §2.5 (one-factor/sector models), §2.6 (loss dependence by copulas), §7.3 (correlated default times via the copula approach), portfolio UL (1.13). *Read in the corpus.*
-- **Bielecki & Rutkowski**: *Credit Risk: Modeling, Valuation and Hedging* (2002, Springer) - the copula-function approach to dependent default times. *Corpus available.*
-- **Li, David X.**: *On Default Correlation: A Copula Function Approach*, *Journal of Fixed Income* **9**(4):43–54 (2000) - the paper that brought the Gaussian copula to CDO pricing, and the subject of the 2009 "formula that killed Wall Street" critique.
-- **Salmon, Felix**: *Recipe for Disaster: The Formula That Killed Wall Street*, *Wired* (23 Feb 2009) - the journalistic framing of the 2008 Gaussian-copula failure; McNeil §1.2.1/§1.5 gives the balanced academic reading.
+- **McNeil, Frey & Embrechts**: *Quantitative Risk Management: Concepts, Techniques and Tools* (rev. ed. 2015, Princeton)
+- **Nelsen, Roger B.**: *An Introduction to Copulas* (2nd ed., 2006, Springer)
+- **Joe, Harry**: *Multivariate Models and Dependence Concepts* (1997)
+- **Bluhm, Overbeck & Wagner**: *Introduction to Credit Risk Modeling* (2nd ed., 2010)
+- **Bielecki & Rutkowski**: *Credit Risk: Modeling, Valuation and Hedging* (2002, Springer)
+- **Li, David X.**: *On Default Correlation: A Copula Function Approach*, *Journal of Fixed Income* **9**(4):43–54 (2000)
+- **Salmon, Felix**: *Recipe for Disaster: The Formula That Killed Wall Street*, *Wired* (23 Feb 2009)
 
 ---
 

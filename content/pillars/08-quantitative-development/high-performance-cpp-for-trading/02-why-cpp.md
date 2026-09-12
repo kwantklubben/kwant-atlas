@@ -92,12 +92,12 @@ This simulates the exact failure mode: two latency distributions with **near-ide
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Meyers, Scott**: *Effective Modern C++* - Items on move semantics, `shared_ptr`/`unique_ptr` cost, and why `std::function`/virtuality have runtime price. *The definitive statement of "what does this line actually cost".*
-- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.) - the atomic-cost model behind `shared_ptr` refcounts and lock-free alternatives; cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* - RAII and deterministic-destruction patterns in a real trading system, and the "no allocation in the hot path" rule.
-- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* - allocator internals (Ch 9.9, the malloc implementation) behind §2.3.
+- **Meyers, Scott**: *Effective Modern C++*
+- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.)
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++*
+- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective*
 
 ---
 

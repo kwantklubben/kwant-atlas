@@ -88,14 +88,14 @@ Stdlib only. **Part A** builds a pair that is genuinely cointegrated for 300 day
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Do, B. & Faff, R.**, "Does Simple Pairs Trading Still Work?", *Financial Analysts Journal* 66(4), 2010 - the 57% decline in mean excess return (1962–88 → 1989–2002), 2003–09 continuation, state-dependence.
+- **Do, B. & Faff, R.**, "Does Simple Pairs Trading Still Work?", *Financial Analysts Journal* 66(4), 2010
 - **Do, B. & Faff, R.**, "Are Pairs Trading Profits Robust to Trading Costs?", *Journal of Financial Research* 35(2), 2012.
-- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 - §7 the August 2007 liquidity crisis and the "unwinding" explanation; performance degradation after 2002 (Sharpe $1.44$ 1997–2002 → $0.9$ 2003–2007 for PCA).
-- **Krauss, C.**, *J. Economic Surveys* 31(2), 2017 - decay of profitability, robustness to transaction costs, data-snooping discussion.
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 10 §10.3.4 - "cointegration tests are sensitive to data snooping (understate test size when the pair is selected ex post) and to structural breaks in long-run error means."
-- **Bailey, D. H. & López de Prado, M.** - the Deflated Sharpe Ratio; see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]].
+- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010
+- **Krauss, C.**, *J. Economic Surveys* 31(2), 2017
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Bailey, D. H. & López de Prado, M.**
 
 ---
 

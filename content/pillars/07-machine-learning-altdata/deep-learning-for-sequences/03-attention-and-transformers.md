@@ -88,13 +88,13 @@ Read it as two facts. First, the weight matrix is **lower-triangular by construc
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Vaswani, Ashish et al.** (2017), *Attention Is All You Need*, NeurIPS - scaled dot-product attention, multi-head, the Transformer. The $1/\sqrt{d_k}$ justification is in §3.2.1.
-- **Lim, Bryan et al.** (2021), *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4) - the finance/time-series adaptation: variable selection, static covariates, multi-horizon attention.
-- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.4 "Encoder–Decoder Sequence-to-Sequence Architectures" and the attention mechanism) - the pedagogical derivation.
-- **Zhang, Zohren & Roberts** (2019), *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE TSP 67(11), arXiv:1808.03668 - the microstructure model that shows **convolution + LSTM can beat full attention** when $T$ is huge and locality matters.
-- **Jain, S. & Wallace, B.** (2019), *Attention is not Explanation* - the cautionary result in §4.3.
+- **Vaswani, Ashish et al.** (2017), *Attention Is All You Need*, NeurIPS
+- **Lim, Bryan et al.** (2021), *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4)
+- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.4 "Encoder–Decoder Sequence-to-Sequence Architectures" and the attention mechanism)
+- **Zhang, Zohren & Roberts** (2019), *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE TSP 67(11), arXiv:1808.03668
+- **Jain, S. & Wallace, B.** (2019), *Attention is not Explanation*
 
 ---
 

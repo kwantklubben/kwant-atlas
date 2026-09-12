@@ -66,14 +66,14 @@ Stdlib only. Computes the standard earnings-quality and distress red flags from 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996) - the accruals anomaly; the empirical base of red flag #1.
-- **Beneish, Messod**: "The Detection of Earnings Manipulation" (*FAJ*, 1999) - the M-score, the multivariate manipulation screen.
-- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010) - the definitive map of every earnings-quality proxy and what each does.
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 11 (why sector-relative margin/turnover comparison is the analysis) - the comparative-use principle.
-- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - P/B and E/P as cross-sectional (comparative) drivers.
-- **Schilit, Perler & Engelhart**, *Financial Shenanigans* - the catalog of the specific games each red flag is designed to catch.
+- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996)
+- **Beneish, Messod**: "The Detection of Earnings Manipulation" (*FAJ*, 1999)
+- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010)
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **Schilit, Perler & Engelhart**, *Financial Shenanigans*
 
 ---
 

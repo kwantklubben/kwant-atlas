@@ -83,13 +83,13 @@ The severely-adverse scenario pushes the macro-driven PD from 1.4% to 13.4%, pro
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Federal Reserve**: *2025 Stress Test Scenarios* (CCAR/DFAST) - the severely-adverse scenario used above: unemployment +5.9pp to a 10% peak, real GDP −7.8%, equity −50%, house prices −33%, CRE −30%, VIX peak 65; global market shock + counterparty-default components. *Primary source, directly verified.*
-- **BCBS (BIS)**, *Minimum Capital Requirements for Market Risk* (FRTB, 2019, d457) - §33: stressed ES @97.5%, stress-period calibration back to 2007, reduced-factor-set ≥75% rule, liquidity-horizon scaling 10–120 days. *Primary source, directly verified.*
-- **Schuermann**, *Stress Testing Banks*, *IJCB* 10(2) (2014) - comparative analysis of SCAP, CCAR, and EBA exercises; design, disclosure, and the geography problem.
-- **Quagliariello (ed.)**, *Stress-testing the Banking System* (2009); **Bellini**, *Stress Testing and Risk Integration in Banks* (2016) - macro and bank-level methodology handbooks.
-- **Brunnermeier & Pedersen (2009)**, **Brunnermeier (2009)** - the funding-spiral mechanics that static bank stress tests omit.
+- **Federal Reserve**: *2025 Stress Test Scenarios* (CCAR/DFAST)
+- **BCBS (BIS)**, *Minimum Capital Requirements for Market Risk* (FRTB, 2019, d457)
+- **Schuermann**, *Stress Testing Banks*, *IJCB* 10(2) (2014)
+- **Quagliariello (ed.)**, *Stress-testing the Banking System* (2009); **Bellini**, *Stress Testing and Risk Integration in Banks* (2016)
+- **Brunnermeier & Pedersen (2009)**, **Brunnermeier (2009)**
 
 ---
 

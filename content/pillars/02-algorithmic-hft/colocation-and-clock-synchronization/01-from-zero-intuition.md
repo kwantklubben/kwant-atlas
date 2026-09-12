@@ -75,11 +75,11 @@ The takeaway that makes colocation non-negotiable: a 1 µs edge is worth only ~3
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Budish, Cramton & Shim (2015)**, §1–§2 - the NYC↔Chicago 4 ms light-time and the $300M/13 ms Spread Networks example; the cleanest statement of why *physical* speed wins are first principles.
-- **O'Hara, Maureen (2015)** - "High-Frequency Market Microstructure" - the physical-tier numbers (fiber, microwave, colocation reach) in one place.
-- **MacKenzie, Donald (2021)**, *Trading at the Speed of Light*, ch 1–2 - the best non-technical narrative of what the physical race actually is.
+- **Budish, Cramton & Shim (2015)**
+- **O'Hara, Maureen (2015)** - "High-Frequency Market Microstructure"
+- **MacKenzie, Donald (2021)**, *Trading at the Speed of Light*, ch 1–2
 
 ---
 

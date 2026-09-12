@@ -80,13 +80,13 @@ A mere $1\%$ annual jump intensity **nearly quintuples** the default probability
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives* - §24.5 (risk-neutral vs real-world PD), §24.6 (Merton equity inversion), §24.3 (recovery, average $\approx40\%$). *Verification report in the corpus.*
-- **Merton (1974)** - §V–VI (the comparative statics that make spreads too small; coupon/callable extensions). *Primary source.*
-- **Gregory, Jon** - *The xVA Challenge* (5th ed., 2025) - §17.6.4 (jump-to-default: intensity models *cannot* reproduce observed jump risk; Levy–Levin 83% implied jumps for AAA), §17.6 (wrong-way risk), §3.3.5 (recovery/LGD conventions). *Corpus digest available.*
-- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling* (2010) - §1.2 (portfolio UL, eq. 1.13; concentration vs diversification). *Corpus digest available.*
-- **Derman, Emanuel** - *Model Risk* (1996) - the taxonomy of model error; the frame for failure #6.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Merton (1974)**
+- **Gregory, Jon** - *The xVA Challenge* (5th ed., 2025)
+- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling* (2010)
+- **Derman, Emanuel** - *Model Risk* (1996)
 
 ---
 

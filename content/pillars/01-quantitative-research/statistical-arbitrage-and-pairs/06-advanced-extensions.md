@@ -105,14 +105,14 @@ The procedure recovers the simulated rank exactly: the first trace statistic ($1
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 8 §8.6.2 (Johansen MLE, auxiliary regressions Eq. 8.40–8.41, eigenvalues), §8.6.3 (trace Eq. and max-eigenvalue tests; TB3m/TB6m trace $83.27$ vs 95% CV $19.96$), §8.7 (3-regime threshold cointegration). *Math-verified in the corpus.*
+- **Tsay**, *Analysis of Financial Time Series*
 - **Johansen, S.**, "Statistical Analysis of Cointegration Vectors", *Journal of Economic Dynamics and Control* 12(2–3), 1988; and *Econometrica* 59(6), 1991.
-- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 - §1 "generalized pairs-trading", §2 PCA/eigenportfolios.
-- **Elliott, R. J., van der Hoek, J. & Malcolm, W. P.**, "Pairs Trading", *Quantitative Finance* 5(3), 2005 - OU optimal stopping.
-- **Krauss, C.**, *J. Economic Surveys* 31(2), 2017 - §5 stochastic-control approach (Bertram renewal-theory thresholds, Eq. 23–25).
-- **Harvey, A. C.**, *Forecasting, Structural Time Series Models and the Kalman Filter* - the state-space machinery for time-varying $\beta$.
+- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010
+- **Elliott, R. J., van der Hoek, J. & Malcolm, W. P.**, "Pairs Trading", *Quantitative Finance* 5(3), 2005
+- **Krauss, C.**, *J. Economic Surveys* 31(2), 2017
+- **Harvey, A. C.**, *Forecasting, Structural Time Series Models and the Kalman Filter*
 
 ---
 

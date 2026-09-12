@@ -67,13 +67,13 @@ This is the failure made concrete. Inventory control keeps the final-position st
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3) - the model's scope: inventory risk only, no drift, no information.
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, Math. & Financial Econ. 7(4) - inventory constraints and the admissibility/verification the original paper lacked.
-- **Glosten & Milgrom (1985)**, J. Financial Economics 14(1) - the Bayesian adverse-selection model that AS omits.
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5) - VPIN, the practical toxicity gauge for gating quotes.
-- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading* - models that add adverse selection and alpha to the A–S core.
+- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3)
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, Math. & Financial Econ. 7(4)
+- **Glosten & Milgrom (1985)**, J. Financial Economics 14(1)
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5)
+- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*
 
 ---
 

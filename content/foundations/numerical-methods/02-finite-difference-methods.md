@@ -127,11 +127,11 @@ Three lessons in one table: (i) at equal $(M,N)$ **Crank–Nicolson is more accu
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffy**, *Finite Difference Methods in Financial Engineering* - Ch 3 (parabolic IBVPs, maximum principle), Ch 4 (heat equation, exact solutions), Ch 6 (divided differences, Euler/CN, round-off, Padé, Richardson, exponential fitting), Ch 7 (method of lines, $\theta$-method, M-matrices, Toeplitz eigenvalues), Ch 8 (consistency, stability, Lax, von Neumann, Gerschgorin), Ch 11 (exponentially fitted schemes), Ch 19–21 (ADI and operator splitting for multidimensional problems). *The primary source; equations verified at glyph level in the corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (explicit/implicit/CN finite differences; explicit FDM ≡ trinomial tree).
-- **Strikwerda, J. C.**: *Finite Difference Schemes and Partial Differential Equations* - the classical consistency/stability/convergence treatment.
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Strikwerda, J. C.**: *Finite Difference Schemes and Partial Differential Equations*
 
 ---
 

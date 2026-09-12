@@ -89,13 +89,13 @@ Every top-5 pair is **within sector A** - the screen correctly identifies the co
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006 - §2.1 pairs formation (minimum distance in normalised cum-dividend price space), §1.4 cointegration interpretation.
-- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010 - §2 (PCA vs ETF factor extraction, market-neutrality condition Eq. 6, eigenportfolios Eq. 9), §3 (residual model Eq. 10–11).
-- **Vidyamurthy, G.**, *Pairs Trading: Quantitative Methods and Analysis*, Wiley, 2004 - the univariate cointegration approach to pair selection.
-- **Krauss, C.**, *Journal of Economic Surveys* 31(2), 2017 - §2 distance approach, §3 cointegration approach, and the finding that the cointegration method "outperforms the distance method" after risk loadings and costs (Dunis & Ho).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 8 §8.5 - spurious-correlation caveat in pair matching.
+- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006
+- **Avellaneda, M. & Lee, J.-H.**, *Quantitative Finance* 10(7), 2010
+- **Vidyamurthy, G.**, *Pairs Trading: Quantitative Methods and Analysis*, Wiley, 2004
+- **Krauss, C.**, *Journal of Economic Surveys* 31(2), 2017
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

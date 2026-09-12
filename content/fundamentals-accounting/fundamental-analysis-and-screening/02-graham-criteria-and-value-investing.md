@@ -78,13 +78,13 @@ The three answers *disagree*, and that is the lesson: the stock **passes the ent
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Graham, Benjamin**: *The Intelligent Investor* (rev. 1973; HarperBusiness annotated 4th ed. 2003) - Ch 14 (the seven defensive criteria, quoted with exact thresholds above) and Ch 15 (enterprising criteria). *All thresholds verified against the corpus text.*
-- **Graham, Benjamin & Dodd, David**: *Security Analysis* (McGraw-Hill, 6th ed. 2008) - the source of earnings power, asset-value floors, and the net-current-asset technique; the founding text of fundamental equity analysis.
-- **Greenwald, Kahn, Sonkin & van Biema**: *Value Investing: From Graham to Buffett and Beyond* (Wiley, 2001) - the modern formalization of the asset / earnings-power / franchise three-method approach used above.
-- **Fisher, Philip A.**: *Common Stocks and Uncommon Profits* (Wiley reissue) - the growth counterpoint: management quality and business moats as the qualitative half Graham under-weighted.
-- **Piotroski, Joseph D.**: "Value Investing…" (*JAR*, 2000) - the empirical test that *within* cheap stocks, a fundamental-quality score separates the winners from the value traps. See [[fundamentals-accounting/fundamental-analysis-and-screening/06-advanced-extensions|06 · Advanced Extensions]].
+- **Graham, Benjamin**: *The Intelligent Investor* (rev. 1973; HarperBusiness annotated 4th ed. 2003)
+- **Graham, Benjamin & Dodd, David**: *Security Analysis* (McGraw-Hill, 6th ed. 2008)
+- **Greenwald, Kahn, Sonkin & van Biema**: *Value Investing: From Graham to Buffett and Beyond* (Wiley, 2001)
+- **Fisher, Philip A.**: *Common Stocks and Uncommon Profits* (Wiley reissue)
+- **Piotroski, Joseph D.**: "Value Investing…" (*JAR*, 2000)
 
 ---
 

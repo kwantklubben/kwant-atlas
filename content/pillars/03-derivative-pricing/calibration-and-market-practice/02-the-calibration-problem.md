@@ -74,12 +74,12 @@ The degree-6 polynomial cuts the in-sample RMSE by $5\times$ (0.0082 → 0.0017)
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 3 (why parameterizing implied vol directly is hard; SVI as a stable arbitrage-free surface; fitting all expirations simultaneously under no calendar-spread arbitrage).
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 2 (interpolation rules that preserve no-arbitrage - affine-in-$t$ with non-crossing $f$ profiles, eq 2.20), Ch 7 §7.5 (what a calibrated forward-variance model actually fixes).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (smiles and model calibration in practice).
-- **Brigo–Mercurio**, *Interest Rate Models*, Ch 7 (calibration as a sequence of solvable least-squares/cascade steps in the LFM - see [[pillars/03-derivative-pricing/calibration-and-market-practice/06-advanced-extensions|06 · Advanced Extensions]]).
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Brigo–Mercurio**, *Interest Rate Models*
 
 ---
 

@@ -108,12 +108,12 @@ The bottom two rows are the entire argument for "ERC over naive risk parity": th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Maillard, Roncalli & Teïletche** (2010), *JPM* 36(4) - definition (eq. 2), existence/uniqueness, the two-asset and constant-correlation closed forms (eq. 3), the beta form (eq. 5), the SQP/barrier programs (eqs. 6–8), and the volatility-ordering proof (App. A.3). **Math-authoritative for this page; all numbers re-verified.**
-- **Qian, Edward** (2005): *Risk Parity Portfolios* - the practitioner statement that parity *means* equal risk contribution and is MV-optimal under equal Sharpe ratios + independence.
-- **Griveau-Billion, T., Richard, J.-C. & Roncalli, T.**: *A Fast Algorithm for Computing High-Dimensional Risk Parity Portfolios* (2013) - the cyclical-coordinate-descent acceleration behind the implementation here.
-- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, CRC (2013) - Ch. on ERC algorithms and long-only constraints.
+- **Maillard, Roncalli & Teïletche** (2010), *JPM* 36(4)
+- **Qian, Edward** (2005): *Risk Parity Portfolios*
+- **Griveau-Billion, T., Richard, J.-C. & Roncalli, T.**: *A Fast Algorithm for Computing High-Dimensional Risk Parity Portfolios* (2013)
+- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, CRC (2013)
 
 ---
 

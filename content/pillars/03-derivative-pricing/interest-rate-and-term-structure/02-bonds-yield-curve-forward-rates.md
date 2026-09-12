@@ -85,12 +85,12 @@ The reconstruction error is at the level of numerical integration ($\sim10^{-11}
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brigo–Mercurio**, *Interest Rate Models*, Ch 1 - the complete instrument dictionary: ZCB, spot/forward rates, FRA, IRS (eq. 1.24), forward swap rate (eq. 1.25), caps/floors/swaptions Black pricing (1.26–1.29). *Verified in the corpus.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 22 - Def 22.2 (LIBOR forwards), Prop 22.6–22.7 (swap rate), Prop 22.11 (duration), toolbox Prop 22.5.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 29 - Black market models for bonds/caps/floors/swaptions (eqs. 29.1–29.10), put-call parity for caps.
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 27–28 - forward price, futures martingale, HJM setup.
+- **Brigo–Mercurio**, *Interest Rate Models*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Shreve**, *Stochastic Calculus for Finance I*
 
 ---
 

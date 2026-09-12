@@ -68,13 +68,13 @@ The portfolio *thinks* it holds equal 25% risk slices. Marked to reality, assets
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Maillard, Roncalli & Teïletche** (2010) - turnover/concentration statistics (H̄, Ḡ) and the empirical behavior of 1/n vs MV vs ERC across three real universes.
-- **Asness, Frazzini & Pedersen** (2012) - App. A (construction), App. B (financing-cost robustness / LIBOR), and the honest "you still need a return view" critique.
-- **Qian, Edward** (2005, 2006) - the parity thesis and its risk-contribution economics; also the risk of trusting estimates of correlation.
-- **DeMiguel, Garlappi & Uppal** (2009) - the out-of-sample $1/N$ benchmark against which every superior-sounding allocation must be measured.
-- **Ledoit & Wolf** (2004) - the shrinkage fix for the estimator at the heart of the budget (sibling topic).
+- **Maillard, Roncalli & Teïletche** (2010)
+- **Asness, Frazzini & Pedersen** (2012)
+- **Qian, Edward** (2005, 2006)
+- **DeMiguel, Garlappi & Uppal** (2009)
+- **Ledoit & Wolf** (2004)
 
 ---
 

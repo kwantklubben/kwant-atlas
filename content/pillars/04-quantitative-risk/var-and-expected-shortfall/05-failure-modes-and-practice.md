@@ -68,14 +68,14 @@ Panel (A): the standard error falls only as $1/\sqrt n$, and **ES's is larger th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 (§22.2 historical simulation and window length, §22.7 backtesting, Business Snapshot 22.1 on the Basel $99\%$/$10$-day/$k\ge3$ rule) and Ch 23 (EWMA/GARCH volatility updating). *Numerically verified in the corpus.*
-- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *J. Derivatives* 3(2):73–84 (1995) - the POF/TUFF backtest.
-- **Christoffersen, P.**, *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998) - conditional-coverage (independence/clustering) test.
-- **BCBS**, *Supervisory Framework for the Use of Backtesting…* (1996, BIS) - the traffic-light zones and the capital multiplier.
-- **McNeil & Frey**, *Estimation of Tail-Related Risk Measures…* (2000) - GARCH-filtered, EVT-tailed VaR/ES for heteroscedastic series; shows multi-day ES beats $\sqrt N$ scaling.
-- **Gneiting, T.**, *Making and Evaluating Point Forecasts*, *JASA* 106 (2011) - ES is not elicitable, the formal limit on direct ES backtesting.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *J. Derivatives* 3(2):73–84 (1995)
+- **Christoffersen, P.**, *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998)
+- **BCBS**, *Supervisory Framework for the Use of Backtesting…* (1996, BIS)
+- **McNeil & Frey**, *Estimation of Tail-Related Risk Measures…* (2000)
+- **Gneiting, T.**, *Making and Evaluating Point Forecasts*, *JASA* 106 (2011)
 
 ---
 

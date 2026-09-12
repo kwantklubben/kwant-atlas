@@ -64,13 +64,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4):917–926 (1956) - the source: maximise $\mathbb{E}\log V$; growth rate equals information rate. *Corpus-verified.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006; repr. in MacLean–Thorp–Ziemba 2011) - §2 (coin-toss $f^*=p-q$, $g(f)$, $f_c$), §7.1 (continuous $f^*=(m-r)/s^2$, $g_\infty$, $S^2/2$), §7.3 (the case for fractional Kelly). *The formula source for this folder.*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion: Theory and Practice* (World Scientific, 2011) - the anthology of the key results incl. the "good and bad properties of Kelly" survey.
-- **MacLean, Ziemba & Blazenko**: "Growth versus Security in Dynamic Investment Analysis" (Management Science 1992) - the formal fractional-Kelly growth/security trade-off.
-- **Breiman, L.**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961) - asymptotic dominance and time-optimality proofs.
+- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4):917–926 (1956)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006; repr. in MacLean–Thorp–Ziemba 2011)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion: Theory and Practice* (World Scientific, 2011)
+- **MacLean, Ziemba & Blazenko**: "Growth versus Security in Dynamic Investment Analysis" (Management Science 1992)
+- **Breiman, L.**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961)
 
 ---
 

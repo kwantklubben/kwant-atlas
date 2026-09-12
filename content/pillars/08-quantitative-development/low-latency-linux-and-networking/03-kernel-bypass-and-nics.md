@@ -69,10 +69,10 @@ Two concrete reads. **(1)** Bypass turns a 13-core networking problem into a fra
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **DPDK documentation** (dpdk.org) - the definitive kernel-bypass receive-path reference.
-- **Solarflare OpenOnload & EF_VI documentation** - the transparent-bypass alternative; the second mainstream route.
+- **DPDK documentation** (dpdk.org)
+- **Solarflare OpenOnload & EF_VI documentation**
 - **Databento** - *Low-Latency Tuning Guide for Linux and Trading Systems*: RSS/RFS, IRQ affinity, busy-polling, NUMA-local, written for trading.
 - **Benvenuti, Christian** - *Understanding Linux Network Internals*: NAPI/softirq/interrupt path the bypass replaces (why bypass works).
 - **Rosen, Rami** - *Linux Kernel Networking*: the modern-stack sibling.

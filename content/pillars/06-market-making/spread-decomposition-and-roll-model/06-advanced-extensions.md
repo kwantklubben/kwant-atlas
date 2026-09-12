@@ -107,13 +107,13 @@ The permanent (random-walk) innovation variance $0.000088$ matches $\gamma_0+2\g
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 8 (generalized Roll, $\sigma_w^2=\gamma_0+2\gamma_1$, variance ratio, B–N decomposition) and Ch 9 (multivariate VAR, price impact, $\lambda^2\sigma_v^2$ info measure) - *verified per-chapter in the corpus*.
-- **Beveridge & Nelson (1981)**, *A new approach to decomposition of economic time series into permanent and transitory components*, Journal of Monetary Economics 7(2) - the permanent/transitory split.
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Beveridge & Nelson (1981)**, *A new approach to decomposition of economic time series into permanent and transitory components*, Journal of Monetary Economics 7(2)
 - **Watson (1986)**, *Univariate detrending methods with stochastic trends*, Journal of Monetary Economics 18(1).
-- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4) - the structural three-component model underlying Ch 8's measurement.
-- **Hasbrouck (1991)**, *Measuring the information content of stock trades*, Journal of Finance 46(1) - the trade-innovation VAR, the empirical route to $\lambda$.
+- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4)
+- **Hasbrouck (1991)**, *Measuring the information content of stock trades*, Journal of Finance 46(1)
 
 ---
 

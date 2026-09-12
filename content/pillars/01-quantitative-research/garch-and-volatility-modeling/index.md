@@ -80,14 +80,14 @@ Hub signposts - the full analysis lives in [[pillars/01-quantitative-research/ga
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Engle, Robert F.** (1982): *Autoregressive Conditional Heteroscedasticity with Estimates of the Variance of United Kingdom Inflation*, Econometrica 50(4), 987–1007 - the original ARCH model (Nobel 2003). *Verified corpus refs/pillar1 - `Engle1982_AutoregressiveConditionalHeteroscedasticity.pdf`.*
-- **Bollerslev, Tim** (1986): *Generalized Autoregressive Conditional Heteroskedasticity*, J. Econometrics 31(3), 307–327 - extends ARCH to GARCH ($\beta_j\sigma_{t-j}^2$ terms), the workhorse form.
-- **Nelson, Daniel B.** (1991): *Conditional Heteroskedasticity in Asset Returns: A New Approach*, Econometrica 59(2), 347–370 - EGARCH, the log-variance model that permits asymmetry. *Verified corpus refs/pillar1 - `Nelson1991_ConditionalHeteroskedasticityAssetReturns.pdf`.*
-- **Glosten, Jagannathan & Runkle** (1993): *On the Relation between the Expected Value and the Volatility of the Nominal Excess Return on Stocks*, J. Finance 48(5), 1779–1801 - the GJR/TGARCH threshold asymmetry model. *Verified corpus refs/pillar1 - `GlostenJagannathanRunkle1993_ExpectedValueVolatilityStocks.pdf`.*
-- **Corsi, Fulvio** (2009): *A Simple Approximate Long-Memory Model of Realized Volatility*, J. Financial Econometrics 7(2), 174–196 - HAR-RV, the three-timescale cascade.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 3 (§3.4–3.16: ARCH/GARCH/EGARCH/TGARCH/IGARCH/SV/realized vol/range estimators) and Ch 10 (§10.4 multivariate & DCC). *The primary verified source for this folder.*
+- **Engle, Robert F.** (1982): *Autoregressive Conditional Heteroscedasticity with Estimates of the Variance of United Kingdom Inflation*, Econometrica 50(4), 987–1007
+- **Bollerslev, Tim** (1986): *Generalized Autoregressive Conditional Heteroskedasticity*, J. Econometrics 31(3), 307–327
+- **Nelson, Daniel B.** (1991): *Conditional Heteroskedasticity in Asset Returns: A New Approach*, Econometrica 59(2), 347–370
+- **Glosten, Jagannathan & Runkle** (1993): *On the Relation between the Expected Value and the Volatility of the Nominal Excess Return on Stocks*, J. Finance 48(5), 1779–1801
+- **Corsi, Fulvio** (2009): *A Simple Approximate Long-Memory Model of Realized Volatility*, J. Financial Econometrics 7(2), 174–196
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
 
 ---
 

@@ -89,13 +89,13 @@ Read the table: the closed form and the 400,000-path Monte Carlo agree to four d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Leber, Geib & Litz** (FPL 2011) - the proof-of-concept that FPGA feed parsing + tick-to-trade at wire speed is real; the origin of this folder's silicon tier.
-- **MacKenzie**, *Trading at the Speed of Light* (2021) - the best accessible account of why nanoseconds, colocation, and hardware matter; read Ch 1–3 for the physical frame.
-- **Aldridge**, *High-Frequency Trading* (2nd ed., 2013) - infrastructure chapters for the systems context around latency budgets.
-- **DPDK docs** and **Solarflare/Onload docs** - the primary sources for the "cheap microseconds" (kernel bypass) that precede any FPGA decision.
-- **Hasbrouck**, *Empirical Market Microstructure* Ch 2 - the microstructure frame in which speed is a dimension of price.
+- **Leber, Geib & Litz** (FPL 2011)
+- **MacKenzie**, *Trading at the Speed of Light* (2021)
+- **Aldridge**, *High-Frequency Trading* (2nd ed., 2013)
+- **DPDK docs** and **Solarflare/Onload docs**
+- **Hasbrouck**, *Empirical Market Microstructure*
 
 ---
 

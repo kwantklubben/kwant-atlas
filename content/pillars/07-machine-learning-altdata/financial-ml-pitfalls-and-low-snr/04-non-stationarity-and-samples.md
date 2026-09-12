@@ -71,11 +71,11 @@ The model was *good* in its training regime (in-sample $R^2=0.29$), yet the mome
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 5 (fractional differentiation: stationarity vs memory), Ch 11 (dangers of backtesting / non-stationarity), Ch 17 (structural breaks).
-- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed.) - regime-switching and volatility-clustering grounding. *Corpus cross-listed from Foundations.*
-- **Hamilton, James D.**, "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle," *Econometrica* 57(2), 1989 - the canonical Markov regime-switching model. *Corpus-listed.*
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed.)
+- **Hamilton, James D.**, "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle," *Econometrica* 57(2), 1989
 
 ---
 

@@ -77,12 +77,12 @@ Read the table top-to-bottom with $N$ (the number of seriously-fast firms) growi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Budish, Cramton & Shim (2015)**, QJE 130(4), 1547–1621 - the canonical arms-race paper: §1 (Spread Networks, 4 ms), §3–§4 (data: correlations, ~$75M/yr, 97 ms→7 ms), §5 (model, prisoner's dilemma), §6 (batch auctions). *Read in full; it is the intellectual core of this topic.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure*, Ch 1–2 (the limit-order-book institution) & Ch 14 (who bears trading costs). *Corpus: `hasbrouck_ch1-5.md`, `hasbrouck_ch11-15.md`.*
-- **Menkveld, Albert J. (2013)** - HFT as the new market makers; documents that fast entrants narrowed spreads on Chi-X Europe - the beneficial-case counterweight to the arms-race critique.
-- **Biais, Bruno; Foucault, Thierry; Moinas, Sophie (2015)** - "Equilibrium Fast Trading" - the theory of *when* investing in speed is privately profitable but socially wasteful.
+- **Budish, Cramton & Shim (2015)**, QJE 130(4), 1547–1621
+- **Hasbrouck, Joel** - *Empirical Market Microstructure*
+- **Menkveld, Albert J. (2013)**
+- **Biais, Bruno; Foucault, Thierry; Moinas, Sophie (2015)** - "Equilibrium Fast Trading"
 
 ---
 

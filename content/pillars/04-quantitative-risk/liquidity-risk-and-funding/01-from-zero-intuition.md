@@ -71,10 +71,10 @@ Read the two halves together. A 10 bp spread costs \$12,500 on a \$12.5M positio
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 1 §0.4 (the three dimensions of liquidity) and Ch 2 (spread as the practical measure of illiquidity). *Verified in the corpus.*
-- **Hasbrouck** - *Empirical Market Microstructure* (2007), Ch 1.2: liquidity = **depth, breadth, resiliency** - the definitional anchor for this page.
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
+- **Hasbrouck** - *Empirical Market Microstructure* (2007)
 - **Brunnermeier & Pedersen** - *Market Liquidity and Funding Liquidity*, *RFS* 22(6):2201–2238 (2009): the formal pairing of the two liquidities.
 - **Brunnermeier** - *Deciphering the Liquidity and Credit Crunch 2007–2008* (2009): the plain-language case study.
 

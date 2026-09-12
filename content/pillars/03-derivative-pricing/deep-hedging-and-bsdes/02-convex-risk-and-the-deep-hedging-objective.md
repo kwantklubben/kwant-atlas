@@ -165,15 +165,15 @@ We (a) verify the closed forms of CVaR and entropic risk on a standard-normal sa
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291 - the convex-risk objective, the explicit treatment of the *entropic* case via a **quadratic BSDE**, the robust/CVaR set-up, and the neural-network parametrisation of the strategy. *The primary source.*
-- **Artzner, P., Delbaen, F., Eber, J.-M., Heath, D.** (1999), *Coherent measures of risk*, Mathematical Finance 9(3), 203–228 - the axioms. **Föllmer, H. & Schied, A.** (2004), *Stochastic Finance: An Introduction in Discrete Time* (de Gruyter) - convex risk measures and the robust representation $\rho(X)=\sup_{\mathbb Q}(\mathbb E_{\mathbb Q}[-X]-\alpha(\mathbb Q))$. **Frittelli, M. & Rosazza Gianin, E.** (2002), *Putting order in risk measures* - convex, not necessarily coherent.
-- **Rockafellar, R.T. & Uryasev, S.** (2000), *Optimization of conditional value-at-risk*, Journal of Risk 2, 21–41 - the $\inf_t\{t+\frac{1}{1-\alpha}\mathbb E[(X-t)^+]\}$ form. **Acerbi, C. & Tasche, D.** (2002), *On the coherence of expected shortfall* - the conditional-mean form and its estimation.
-- **Föllmer, H. & Sondermann, D.** (1986), *Hedging of non-redundant contingent claims*; **Schweizer, M.** (2001), *A guided tour through quadratic hedging approaches* - the variance/quadratic branch and its $L^2$ projection. **Föllmer, H. & Leukert, P.** (2000), *Efficient hedging: cost versus shortfall risk*, Finance & Stochastics 4, 117–146 - shortfall-risk objectives, the ancestor of the CVaR objective here.
-- **Musiela, M. & Zariphopoulou, T.** (2004), *A valuation algorithm for indifference prices in incomplete markets*, Finance & Stochastics 8, 399–414 - indifference pricing with exponential utility and the entropic correspondence $p^{\mathrm{ind}}=\frac1\gamma\ln\mathbb E[e^{\gamma H}]$. **Henderson, V. & Hobson, D.** (2004), *Utility indifference pricing - an overview*. **Davis, M.** (1997), *Option pricing in incomplete markets*.
-- **Almgren, R. & Chriss, N.** (2001), *Optimal execution of portfolio transactions*, Journal of Risk 3, 5–39 - the cost/risk trade-off that underlies the multi-period cost objective (see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]). **Bouchard, B., Moreau, L., Soner, H.M.** (2018), *On the pricing of explicit transaction costs* and **Guéant, O.** (2016), *The Financial Mathematics of Market Liquidity* - transaction-cost pricing.
-- **Hull, J.**, *Options, Futures, and Other Derivatives*, Ch 20 §20.5 (**minimum-variance delta**, the practitioner's face of the quadratic hedge) and Ch 22–23 (VaR/ES and the risk side). *Verification report in the corpus.*
+- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291
+- **Artzner, P., Delbaen, F., Eber, J.-M., Heath, D.** (1999), *Coherent measures of risk*, Mathematical Finance 9(3), 203–228
+- **Rockafellar, R.T. & Uryasev, S.** (2000), *Optimization of conditional value-at-risk*, Journal of Risk 2, 21–41
+- **Föllmer, H. & Sondermann, D.** (1986), *Hedging of non-redundant contingent claims*; **Schweizer, M.** (2001), *A guided tour through quadratic hedging approaches*
+- **Musiela, M. & Zariphopoulou, T.** (2004), *A valuation algorithm for indifference prices in incomplete markets*, Finance & Stochastics 8, 399–414
+- **Almgren, R. & Chriss, N.** (2001), *Optimal execution of portfolio transactions*, Journal of Risk 3, 5–39
+- **Hull, J.**, *Options, Futures, and Other Derivatives*
 
 ---
 

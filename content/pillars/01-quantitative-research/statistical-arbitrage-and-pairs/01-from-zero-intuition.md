@@ -78,12 +78,12 @@ The **correlations are indistinguishable** ($0.913$ vs $0.904$). Yet the cointeg
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 8 §8.5 (cointegration definition, common-trend example $y_{1t}=x_{1t}-2x_{2t}$) and Ch 2 (random walk, unit-root nonstationarity). *Math-verified in the corpus.*
-- **Engle, R. F. & Granger, C. W. J.**, "Co-integration and Error Correction", *Econometrica* 55(2), 1987 - the founding paper.
-- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006 - their §1.4 frames the trading space as *cointegrated prices*, and warns explicitly of "spuriously correlated prices, which are not de facto co-integrated."
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 10 - cointegration of a security's multiple prices and the arbitrage-link rationale.
+- **Tsay**, *Analysis of Financial Time Series*
+- **Engle, R. F. & Granger, C. W. J.**, "Co-integration and Error Correction", *Econometrica* 55(2), 1987
+- **Gatev, Goetzmann & Rouwenhorst**, *RFS* 19(3), 2006
+- **Hasbrouck**, *Empirical Market Microstructure*
 
 ---
 

@@ -66,11 +66,11 @@ The +2.63% value spread *is* the HML factor in miniature: sort on B/M, hold the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - the empirical anchor: size + B/M capture the cross-section, beta alone does not; the Fama–MacBeth two-pass regressions.
-- **Tsay**, *Analysis of Financial Time Series*, §9 intro and §9.1–9.2 - the general factor model, the covariance decomposition, the three factor families.
-- **Connor, Gregory**: "The Three Types of Factor Models" (*FAJ*, 1995) - the macroeconomic/fundamental/statistical taxonomy.
+- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Connor, Gregory**: "The Three Types of Factor Models" (*FAJ*, 1995)
 
 ---
 

@@ -84,11 +84,11 @@ The recovered component means $(-1.46,0.42)$ and $(0.98,1.00)$ sit on top of the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Dempster, Laird & Rubin**, "Maximum Likelihood from Incomplete Data via the EM Algorithm," *JRSS-B* 39(1), 1977 - the EM algorithm and its convergence theorem.
-- **Bishop, Christopher M.**, *Pattern Recognition and Machine Learning* (2006) - Ch 9 (mixture models and the EM lower-bound derivation). 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 14.3.7 (EM for Gaussian mixtures; soft assignment) - *Corpus verified.*
+- **Dempster, Laird & Rubin**, "Maximum Likelihood from Incomplete Data via the EM Algorithm," *JRSS-B* 39(1), 1977
+- **Bishop, Christopher M.**, *Pattern Recognition and Machine Learning* (2006)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

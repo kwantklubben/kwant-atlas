@@ -97,13 +97,13 @@ Read the last line: **the MC expected loss matches the exact $\lambda\,\mathbb{E
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Panjer, *Operational Risk: Modeling Analytics*** (2006), Ch 4–5 - compound-Poisson theory, Panjer recursion, and the full LDA pipeline to capital.
-- **McNeil, Frey & Embrechts, *Quantitative Risk Management*** (2015), Ch 6 & 10 - loss distributions, compound processes, and risk-measure estimation. *Corpus-verified.*
-- **Glasserman, *Monte Carlo Methods in Financial Engineering*** (2004, Springer), Ch 1 & 3 - MC error $O(M^{-1/2})$ and compound-process simulation. *In the corpus.*
-- **BCBS, *Basel II*** (2006), ¶667 (99.9%/one-year AMA soundness standard) and ¶669(d) (correlations across estimates) - the regulatory frame for what LDA must produce.
-- **Shevchenko, *Modelling Operational Risk Using Bayesian Inference*** (2011) - LDA under parameter/model uncertainty, the data-scarcity answer.
+- **Panjer, *Operational Risk: Modeling Analytics*** (2006)
+- **McNeil, Frey & Embrechts, *Quantitative Risk Management*** (2015)
+- **Glasserman, *Monte Carlo Methods in Financial Engineering*** (2004, Springer)
+- **BCBS, *Basel II*** (2006), ¶667 (99.9%/one-year AMA soundness standard) and ¶669(d) (correlations across estimates)
+- **Shevchenko, *Modelling Operational Risk Using Bayesian Inference*** (2011)
 
 ---
 

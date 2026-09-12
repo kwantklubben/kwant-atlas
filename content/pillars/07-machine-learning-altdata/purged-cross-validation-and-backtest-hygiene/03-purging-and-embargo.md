@@ -75,9 +75,9 @@ Notice the geometry. Folds 2–4 each purge $\approx38$ overlapping training lab
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7** (§7.4 purging & embargo; Snippets 7.1–7.3 `getTrainTimes`, `getEmbargoTimes`, `PurgedKFold`; Fig. 7.2 the two overlaps; §7.4.2 the $h\approx0.01T$ rule). *Primary source; the interval rules on this page are transcribed from it.*
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7** (§7.4 purging & embargo; Snippets 7.1–7.3 `getTrainTimes`, `getEmbargoTimes`, `PurgedKFold`; Fig. 7.2 the two overlaps;
 
 ---
 

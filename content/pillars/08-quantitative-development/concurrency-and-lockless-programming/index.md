@@ -83,7 +83,7 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Herlihy, Maurice & Shavit, Nir** - *The Art of Multiprocessor Programming* (rev. ed., Morgan Kaufmann). The canonical text on shared-memory models, mutual exclusion, and the formal blocking/lock-free/wait-free progress definitions; conceptual bedrock for Disruptor-style engineering. *(Corpus: Pillar 8, Concurrency & Lock-Free Programming.)*
 - **Williams, Anthony** - *C++ Concurrency in Action* (2nd ed., Manning, 2019). The practical C++ counterpart: `std::atomic`, memory ordering/fences, lock-free data structures in real C++17.

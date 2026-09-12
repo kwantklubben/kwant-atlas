@@ -68,12 +68,12 @@ The hidden-copy trap is the same mechanism as the pandas chained-assignment loss
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) - ch. 3 (lists vs tuples/memory), ch. 6 (async/parallel), ch. 9 (the GIL and multiprocessing); the definitive Python-performance failure-mode text.
-- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) - the dtype/`object`-column and indexing semantics behind modes 1–2.
-- **Beazley, David**: *Understanding the Python GIL* (PyCon talk, 2010) - the canonical explainer of what the GIL is and why it exists.
-- **Numba official docs** - `nogil=True` semantics for thread-parallel compiled code.
+- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020)
+- **McKinney**, *Python for Data Analysis* (3rd ed., 2022)
+- **Beazley, David**: *Understanding the Python GIL* (PyCon talk, 2010)
+- **Numba official docs**
 
 ---
 

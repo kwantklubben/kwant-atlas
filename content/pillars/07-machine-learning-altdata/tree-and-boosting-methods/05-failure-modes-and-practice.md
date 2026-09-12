@@ -74,12 +74,12 @@ MDA is *out-of-sample* (so it can honestly declare all features useless), but it
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 6 §6.6 (bagging vs boosting), Ch 8 §8.3–8.4 (MDI/MDA/SFI, substitution effects, orthogonalisation), Ch 9 (grid/randomised search under purged CV, log-loss scoring). *PRIMARY source; PDF read in the corpus.*
-- **Strobl, Carolin et al.**, "Bias in Random Forest Variable Importance Measures," *BMC Bioinformatics*, 2007 - the experiment establishing MDI's cardinality bias (cited in AFML §8.3.1).
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 7 §7.10.2 (*the WRONG vs RIGHT way to do CV*: screening must happen inside folds) and Ch 10 §10.13 (variable importance).
-- **Bailey & López de Prado**, "The Deflated Sharpe Ratio," *JPM* 40(5), 2014 - how many trials inflate the best backtest.
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Strobl, Carolin et al.**, "Bias in Random Forest Variable Importance Measures," *BMC Bioinformatics*, 2007
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Bailey & López de Prado**, "The Deflated Sharpe Ratio," *JPM* 40(5), 2014
 
 ---
 

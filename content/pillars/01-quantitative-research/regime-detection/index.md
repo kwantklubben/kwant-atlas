@@ -66,11 +66,11 @@ Hub signposts - the folder's full failure-mode analysis lives in [[pillars/01-qu
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hamilton, James D.**: *A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle*, Econometrica 57(2), 357–384 (1989). *Verified corpus ref (pillar1 PDF, pdftotext deep-read). The foundational paper: the nonlinear filter, ML estimation, and the 1952–1984 US GNP application - the 3% permanent GNP drop, recession duration $4.1$ qtr, expansion $10.5$ qtr.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, 3rd ed. (2010) - Ch 4 (Markov switching, SETAR, STAR, BDS), Ch 11 (state-space, Kalman filter), Ch 12 (MCMC: Gibbs, Metropolis–Hastings, FFBS, Markov-switching GARCH). *Verified corpus: tsay_ch4-6.md, tsay_ch10-12.md - no factual errors.*
-- **Ang, Andrew & Timmermann, Allan**: *Regime Changes and Financial Markets*, Annual Review of Financial Economics 4, 313–337 (2012). *The canonical survey linking estimated regimes to fat tails, heteroskedasticity, skewness, and portfolio choice - the bridge from statistics to allocation.*
+- **Hamilton, James D.**: *A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle*, Econometrica 57(2), 357–384 (1989). *Verified corpus ref (pillar1 PDF, pdftotext deep-read). The foundational paper: the nonlinear filter, ML estimation, and the 1952–1984 US GNP application
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, 3rd ed. (2010)
+- **Ang, Andrew & Timmermann, Allan**: *Regime Changes and Financial Markets*, Annual Review of Financial Economics 4, 313–337 (2012). *The canonical survey linking estimated regimes to fat tails, heteroskedasticity, skewness, and portfolio choice
 - **Kritzman, Mark, Page, Sébastien & Turkington, David**: *Regime Shifts: Implications for Dynamic Strategies*, Financial Analysts Journal 68(3) (2012). *Practitioner application of regime detection (Markov-switching on macro data) to dynamic asset allocation.*
 
 ---

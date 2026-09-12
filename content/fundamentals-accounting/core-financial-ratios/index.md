@@ -74,14 +74,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[fundamentals-accou
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman, Stephen H.**: *Financial Statement Analysis and Security Valuation* (McGraw-Hill) - Ch 5 (ROCE), Ch 7 (business activities, reformulated statements), Ch 8 (RNOA, net borrowing cost), Ch 9 (FLEV, OL-leverage), Ch 11 (the full ROCE = RNOA + FLEV×SPREAD decomposition). *The spine of this folder; all ratios and decomposition identities verified against the corpus text.*
-- **Subramanyam, K. R.**: *Financial Statement Analysis* (McGraw-Hill) - the DuPont decomposition and ratio-systems mechanics that Penman pushes further.
-- **Fridson, Martin & Alvarez, Fernando**: *Financial Statement Analysis: A Practitioner's Guide* (Wiley) - ratio interpretation with honest warnings about where standard analysis breaks in live credit/equity decisions.
-- **Altman, Edward I.**: "Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy" (*JF*, 1968) - the Z-score; see [[fundamentals-accounting/core-financial-ratios/06-advanced-extensions|06 · Advanced Extensions]].
-- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000) - the 9-signal F-score, a working composite of exactly the ratios on this page.
-- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - size + book-to-market as the cross-sectional drivers; P/B is a *priced* ratio, not just a curiosity.
+- **Penman, Stephen H.**: *Financial Statement Analysis and Security Valuation* (McGraw-Hill)
+- **Subramanyam, K. R.**: *Financial Statement Analysis* (McGraw-Hill)
+- **Fridson, Martin & Alvarez, Fernando**: *Financial Statement Analysis: A Practitioner's Guide* (Wiley)
+- **Altman, Edward I.**: "Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy" (*JF*, 1968)
+- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000)
+- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
 
 ---
 

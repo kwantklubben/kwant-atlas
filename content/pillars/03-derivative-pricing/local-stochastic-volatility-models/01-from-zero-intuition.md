@@ -121,13 +121,13 @@ Three facts to read off the table:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107 - the paper that made LSV a practical production object; the particle method and the "particular" (nonlinear) structure of the calibration. *Primary source.*
-- **Bergomi, L.**, *Stochastic Volatility Modeling*, Ch 1 (the Black–Scholes equation as an "accounting" identity - the frame that makes the leverage's role obvious) and Ch 12 §12.1–12.2 (LSV defined, the pricing equation as an ansatz, and the "not usable models" warning). *Math-verified in the corpus.*
-- **Dupire, B.** (1994), *Pricing with a smile*, Risk **7**(1), 18–20; **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, PTRF **71**(4), 501–516 - the two theorems behind the defining equation. **Gatheral, J.**, *The Volatility Surface*, Ch 7 §7.8 (the shape of the smile is model-generic). *Verification backdrop.*
-- **Hull, J. C.**, *Options, Futures, and Other Derivatives*, Ch 20 §20.3–20.8 (why smiles exist; the surface as an interpolation tool) and Ch 20 §20.5 (minimum-variance delta - the practitioner's face of a spot-dependent leverage). *Verification report in the corpus.*
-- **Ren, Y., Madan, D. & Qian, M. Q.** (2007), *Calibrating and pricing with embedded local volatility models*, Risk **20**(9); **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott 84–108 - the SABR-based LSV and the LSV-LMM formulation used on rates desks.
+- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107
+- **Bergomi, L.**, *Stochastic Volatility Modeling*
+- **Dupire, B.** (1994), *Pricing with a smile*, Risk **7**(1), 18–20; **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, PTRF **71**(4), 501–516
+- **Hull, J. C.**, *Options, Futures, and Other Derivatives*
+- **Ren, Y., Madan, D. & Qian, M. Q.** (2007), *Calibrating and pricing with embedded local volatility models*, Risk **20**(9); **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott 84–108
 
 ---
 

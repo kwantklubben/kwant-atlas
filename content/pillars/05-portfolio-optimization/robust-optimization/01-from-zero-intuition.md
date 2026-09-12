@@ -90,11 +90,11 @@ Read the last line carefully: a **1% per annum** bump to one asset's expected re
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 - §1 the elasticity theory (eqs. 6–13) and §3–6 the CRSP computational magnitudes.
-- **Markowitz (1952)**, *Portfolio Selection*, Journal of Finance 7(1):77–91 - the original quadratic program this page perturbs.
-- **Chopra & Ziemba (1993)**, *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11 - the *relative* damage of input errors, developed on [[pillars/05-portfolio-optimization/robust-optimization/02-the-estimation-error-problem|02 · The Estimation-Error Problem]].
+- **Best & Grauer (1991)**, *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342
+- **Markowitz (1952)**, *Portfolio Selection*, Journal of Finance 7(1):77–91
+- **Chopra & Ziemba (1993)**, *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11
 
 ---
 

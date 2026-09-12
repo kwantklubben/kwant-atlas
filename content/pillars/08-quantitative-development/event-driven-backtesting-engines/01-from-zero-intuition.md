@@ -83,12 +83,12 @@ That is what "vectorized backtests are lethal illusions" means, stated as a repr
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020) - Ch 4–5 set up vectorized backtesting precisely so that Ch 6+ can show what it misses; the cleanest didactic bridge from §3 above to the engine of page 02.
-- **Halls-Moore, Michael**, *QuantStart - Event-Driven Backtesting with Python* - the classic walk-through that introduced the DataHandler/Strategy/Portfolio/ExecutionHandler split to a generation of retail quants.
-- **López de Prado, Marcos**, *Advances in Financial Machine Learning* (Wiley, 2018) - Ch 11 and the "7 reasons funds fail": why even a look-ahead-free backtest overstates.
-- **Chan, Ernie**, *Quantitative Trading* (Wiley, 2nd ed., 2021) - the practitioner's bias checklist; a useful sanity frame for §4.
+- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020)
+- **Halls-Moore, Michael**, *QuantStart
+- **López de Prado, Marcos**, *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Chan, Ernie**, *Quantitative Trading* (Wiley, 2nd ed., 2021)
 
 ---
 

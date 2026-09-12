@@ -99,11 +99,11 @@ The stationary spread column reproduces the paper's Tables 1–3 ($\gamma=0.1\Ri
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3), §3.1 (optimal quotes, eq. 3.6–3.13) and §3.2 (asymptotic expansion in $q$, eq. 3.14–3.18). *The canonical derivations; eq. (3.18) reproduced and verified above.*
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, Math. & Financial Econ. 7(4) - the rigorous HJB solution and closed-form asymptotics that supersede the linear expansion for large $q$.
-- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*, Ch 10–11 - the A–S model as a special case of the general market-making framework.
+- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3)
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, Math. & Financial Econ. 7(4)
+- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*
 
 ---
 

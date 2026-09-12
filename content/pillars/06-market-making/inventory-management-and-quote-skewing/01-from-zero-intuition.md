@@ -76,12 +76,12 @@ Five symmetric-quote paths terminate at $-1,-11,-10,10,-3$ - the inventory wande
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1) - the dealer-inventory model whose reservation price is this skew.
-- **Stoll (1978)**, *The supply of dealer services in securities markets*, JFE 3(2), 113–124 - the holding-cost view of why inventory risk sets the spread.
-- **Garman (1976)**, *Market microstructure*, JFE 3(3) - the first inventory-control model, in which an unhedged market maker can go bankrupt.
-- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3) - the continuous-time engine behind the reservation-price centre used in §3.
+- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1)
+- **Stoll (1978)**, *The supply of dealer services in securities markets*, JFE 3(2), 113–124
+- **Garman (1976)**, *Market microstructure*, JFE 3(3)
+- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3)
 
 ---
 

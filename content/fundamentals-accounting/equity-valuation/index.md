@@ -76,12 +76,12 @@ Hub signposts - the folder's failure-mode analysis lives in [[fundamentals-accou
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Damodaran, Aswath**: *Investment Valuation: Tools and Techniques for Determining the Value of Any Asset* (Wiley, 2nd/3rd ed.). **The valuation canon.** Ch 2 (cash-flow/discount-rate matching), Ch 11–12 (growth, reinvestment, terminal value), Ch 14 (FCFE models), Ch 15 (FCFF/cost-of-capital models), Ch 17–19 (relative valuation: PE, PBV, EV/EBITDA). *The deep-read source for this folder; all numeric checks reproduced from it.*
-- **Koller, Goedhart & Wessels (McKinsey)**: *Valuation: Measuring and Managing the Value of Companies* - the enterprise-DCF practitioner standard: ROIC-and-growth value drivers, error-checking the model, the "value = invested capital + PV(economic profit)" reformulation.
-- **Pinto, Henry, Robinson & Stowe (CFA Institute)**: *Equity Asset Valuation* - the professional-standard treatment that sits DCF, residual income, and **relative valuation / multiples** side by side.
-- **John Burr Williams**: *The Theory of Investment Value* (1938) - the origin of "intrinsic value = present value of future dividends/flows"; the historical root of every formula above.
+- **Damodaran, Aswath**: *Investment Valuation: Tools and Techniques for Determining the Value of Any Asset* (Wiley, 2nd/3rd ed.). **The valuation canon.**
+- **Koller, Goedhart & Wessels (McKinsey)**: *Valuation: Measuring and Managing the Value of Companies*
+- **Pinto, Henry, Robinson & Stowe (CFA Institute)**: *Equity Asset Valuation*
+- **John Burr Williams**: *The Theory of Investment Value* (1938)
 
 ---
 

@@ -68,12 +68,12 @@ Regression and the SVD give **byte-identical** coefficients (both solve the same
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani, Friedman**, *The Elements of Statistical Learning* (2nd ed.), Ch 3 (LS eqs. 3.3–3.7; ridge 3.41–3.47; SVD 3.45) and Ch 14.5 (PCA, eqs. 14.49–14.50, 14.54; digits example). *Math-verified in the corpus.*
-- **Tsay**, *Analysis of Financial Time Series*, §9.4 (PCA), §9.5–9.6 (statistical factor models, APCA for $k\gg T$). *Verified.*
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §2.2 (eigen/PC simulation route, eq. 2.32).
-- **Strang**, *Introduction to Linear Algebra* (5th ed.), Ch 7 (SVD) and Ch 11 (numerical linear algebra). *Corpus PDF available.*
+- **Hastie, Tibshirani, Friedman**, *The Elements of Statistical Learning* (2nd ed.)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Strang**, *Introduction to Linear Algebra* (5th ed.)
 
 ---
 

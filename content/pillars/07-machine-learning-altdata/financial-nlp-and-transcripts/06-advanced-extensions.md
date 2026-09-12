@@ -81,13 +81,13 @@ The numbers carry the whole story. The **prepared remarks** are optimistic (+0.1
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cohen, Lauren, Malloy, Christopher & Nguyen, Quoc**, "Lazy Prices," *Journal of Finance* 75(3), 2020 - the linguistic-change metric ($1-\cos$) and its return predictability. *Corpus section referenced.*
-- **Araci, Dogu**, "FinBERT," arXiv:1908.10063, 2019; **Yang, Uy & Huang**, "FinBERT," arXiv:2006.08097, 2020 - contextual sentiment for transcripts when labeled data justify deep models.
-- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**, "Understanding Earnings Quality," 2010 - text as the narration of the earnings-quality gap (*corpus ref `40_Dechow_2010`*).
-- **Healy, Paul & Wahlen, James**, "A Review of the Earnings Management Literature," *Journal of Accounting & Economics* 27(2), 1999 - disclosure choice and the narrative incentives behind managed tone (*corpus ref `39_Healy_1999`*).
-- **Loughran & McDonald**, "When Is a Liability Not a Liability?" *Journal of Finance* 66(1), 2011 - the LM dictionaries underlying every tone feature here. *Corpus PDF verified.*
+- **Cohen, Lauren, Malloy, Christopher & Nguyen, Quoc**, "Lazy Prices," *Journal of Finance* 75(3), 2020
+- **Araci, Dogu**, "FinBERT," arXiv:1908.10063, 2019; **Yang, Uy & Huang**, "FinBERT," arXiv:2006.08097, 2020
+- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**, "Understanding Earnings Quality," 2010
+- **Healy, Paul & Wahlen, James**, "A Review of the Earnings Management Literature," *Journal of Accounting & Economics* 27(2), 1999
+- **Loughran & McDonald**, "When Is a Liability Not a Liability?" *Journal of Finance* 66(1), 2011
 
 ---
 

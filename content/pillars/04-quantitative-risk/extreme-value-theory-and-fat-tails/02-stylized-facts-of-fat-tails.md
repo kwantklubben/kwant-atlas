@@ -68,12 +68,12 @@ Read the table top to bottom: kurtosis explodes (t₄'s 4th moment is *infinite*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed., Wiley) - Ch 3 (volatility/GARCH), Ch 7 (heavy tails & EVT). *Ch 4–6 verified in the corpus* (`tsay_ch4-6.md` confirms nonlinear models and jump-diffusion motivated by empirical heavy tails).
-- **McNeil & Frey (2000)**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, JEF 7:271–300 - eq. (11)–(12) (regular variation, t-distribution tail), and the empirical case for filtering before EVT. *Read in corpus.*
-- **McNeil (1997)**, *Estimating the Tails of Loss Severity Distributions Using EVT*, ASTIN 27:117–137 - mean-excess plot for heavy-tail detection (Danish data). *Read in corpus.*
-- **Embrechts, Klüppelberg & Mikosch (1997)** - Ch 1 (the stylized facts and their consequences for risk).
+- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed., Wiley)
+- **McNeil & Frey (2000)**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, JEF 7:271–300
+- **McNeil (1997)**, *Estimating the Tails of Loss Severity Distributions Using EVT*, ASTIN 27:117–137
+- **Embrechts, Klüppelberg & Mikosch (1997)**
 
 ---
 

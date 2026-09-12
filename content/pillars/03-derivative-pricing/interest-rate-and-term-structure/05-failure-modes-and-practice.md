@@ -71,12 +71,12 @@ The explosion is not a modelling nicety - $f$ goes from 5% to **1000%** in 20 ye
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brigo–Mercurio**, *Interest Rate Models*, Ch 3 §3.9.3 (CIR++ positivity), Ch 4 (two-factor G2++ motivation: perfect-correlation), Ch 6.2 (why Black caplets are exact, not approximations), Ch 7 (calibration; cascade & RCCAEI).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 30 Remark 30.1 (HW differentiation instability), Ch 31 (Feller), Ch 34 (lognormal-forward explosion, BGM).
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 24 (affine, Vasicek/CIR/HW), Ch 27 (why simple rates).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 29 (SABR, shifted lognormal, backward-looking SOFR adjustments for negative-rate regimes).
+- **Brigo–Mercurio**, *Interest Rate Models*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

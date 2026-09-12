@@ -71,11 +71,11 @@ The Yule–Walker estimates recover $(\phi_1,\phi_2)$ almost exactly. The **PACF
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 2 (§2.2 ACF/PACF, §2.3 Wold/ARMA, §2.5 estimation, §2.6 identification incl. EACF). *Primary, verified.*
-- **Box, Jenkins & Reinsel**, *Time Series Analysis: Forecasting and Control* - the classic Box–Jenkins identification/estimation/diagnostic loop.
-- **Hastie, Tibshirani & Friedman**, *Elements of Statistical Learning*, Ch 7 - model-selection discipline (AIC/BIC/CV) that governs order choice.
+- **Tsay**, *Analysis of Financial Time Series*
+- **Box, Jenkins & Reinsel**, *Time Series Analysis: Forecasting and Control*
+- **Hastie, Tibshirani & Friedman**, *Elements of Statistical Learning*
 
 ---
 

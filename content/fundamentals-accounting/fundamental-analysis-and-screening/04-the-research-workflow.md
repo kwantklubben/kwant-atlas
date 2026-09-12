@@ -78,14 +78,14 @@ The verdict writes itself: **four red flags against one green.** The receivables
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Graham, Benjamin**: *The Intelligent Investor* (2003 annotated ed.) - the analyst's reading discipline; Graham's insistence that mechanical tests are the *start* of analysis, not the end.
-- **Fisher, Philip A.**: *Common Stocks and Uncommon Profits* (Wiley reissue) - the "scuttlebutt" method: how to learn the *business* quality the filings cannot show you.
-- **Palepu, Krishna & Healy, Paul**: *Business Analysis and Valuation: Using Financial Statements* (Cengage) - the canonical strategy→accounting→financial→prospective research workflow this page operationalizes.
-- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed. 2020) - the taxonomized catalog of the exact games the red-flag scanner is built to catch.
-- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987) - the original reframing of analysis around cash flow vs. reported earnings.
-- **SEC EDGAR** - the primary source for the 10-K/10-Q filings themselves ([[fundamentals-accounting/data-sources-and-corporate-data/index|Data Sources & Corporate Data]]).
+- **Graham, Benjamin**: *The Intelligent Investor* (2003 annotated ed.)
+- **Fisher, Philip A.**: *Common Stocks and Uncommon Profits* (Wiley reissue)
+- **Palepu, Krishna & Healy, Paul**: *Business Analysis and Valuation: Using Financial Statements* (Cengage)
+- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed. 2020)
+- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987)
+- **SEC EDGAR**
 
 ---
 

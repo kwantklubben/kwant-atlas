@@ -69,12 +69,12 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley, 2006) - Ch 1 (SV/LV, Dupire eq 1.4/1.6/1.10, conditional-expectation 1.12), Ch 2 (Heston), Ch 3 (implied vol surface, SVI 3.20), Ch 5 (jumps), Ch 7 (asymptotics, SABR, Lee), Ch 8 (surface dynamics). *The primary math-verified source of this folder.*
-- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC, 2016) - Ch 2 (local vol, Dupire 2.3/2.19, SSR 2.64, forward-skew 2.91), Ch 3 (forward-start), Ch 5 (variance swaps, 5.28/5.31), Ch 6–7 (forward-variance models). *Math-verified.*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 20 (volatility smiles & surfaces, term structure, minimum-variance delta) and Ch 23 (EWMA/GARCH, volatility term structure). *Verification report in the corpus.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) - §2 (Greeks/vega, used for the first-order sensitivities). *Numerically verified.*
+- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley, 2006)
+- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC, 2016)
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.)
 
 ---
 

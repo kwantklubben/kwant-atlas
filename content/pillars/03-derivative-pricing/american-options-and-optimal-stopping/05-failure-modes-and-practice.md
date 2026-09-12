@@ -63,13 +63,13 @@ Two experiments. **(A)** BAW error versus a 4000-step tree, across maturities. *
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §3.1–3.3 (the approximations and their printed accuracy tables) and §4.2 (tree benchmark). *Numerically verified.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, §21.4 (discrete Snell envelope; convergence in $m$) and §21.6.2 (free boundary, gamma jump). *Math-verified.*
-- **Shreve**, *Stochastic Calculus for Finance II*, §8.4 (finite-expiration free boundary, $v_{xx}$ jump). *Math-verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13/21 (binomial American values, numerical-procedure error and oscillation).
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 33 (spurious oscillations near the strike for American/CN schemes).
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
 
 ---
 

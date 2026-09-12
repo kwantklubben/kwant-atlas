@@ -82,11 +82,11 @@ Simulate the Roll data-generating process and recover $c$ from the autocovarianc
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 1 (the field, multiple simultaneous prices, liquidity = depth/breadth/resiliency) and Ch 3 (the Roll model, PCO calibration). *Verified in `hasbrouck_ch1-5.md`.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 1 (liquidity and price discovery, the liquidity-definition triad, the spread as the primary illiquidity measure). *Verified in `foucault_ch1-3.md`.*
-- **Harris, Larry** - *Trading and Exchanges* (2003). *The accessible map of traders, orders, and venues - the best zero-knowledge companion to this page.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
+- **Harris, Larry** - *Trading and Exchanges* (2003). *The accessible map of traders, orders, and venues
 - **O'Hara, Maureen** - *Market Microstructure Theory* (1995). *The model-based foundation beneath the Roll and Glosten–Milgrom ideas.*
 
 ---

@@ -71,13 +71,13 @@ The run confirms the two invariant facts of the informed-trading family: Kyle's 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kyle (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335 - the strategic model; $\lambda,\beta$, equilibrium, multi-period slicing. *Primary PDF in corpus; math verified via Hasbrouck Ch 7.*
-- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, JFE 44(1), 159–186 - the POISSON model and PIN. *Primary PDF: `37_Easley_1997...` in corpus.*
-- **Easley & O'Hara (1992)**, *Time and the process of security price adjustment*, J. Finance 47(2), 577–605 - information uncertainty and no-trade unemployment. *Primary PDF: `22_Easley_1992...` in corpus.*
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 6 (PIN) and Ch 7 (Kyle) - both **math-verified** (`hasbrouck_ch6-10.md`; note Ch 7 conditional-profit form $\mathbb{E}\pi=\frac{(v-p_0)^2}{2}\sqrt{\sigma_u^2/\Sigma_0}$).
-- **Glosten (1994)**, *Is the electronic open limit order book inevitable?*, J. Finance 49(4), 1127–1161 - why a competitive electronic book survives adverse selection; the modern queue-level version of this model (*primary PDF: `23_Glosten_1994...` in corpus; SUP reading*).
+- **Kyle (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335
+- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, JFE 44(1), 159–186
+- **Easley & O'Hara (1992)**, *Time and the process of security price adjustment*, J. Finance 47(2), 577–605
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Glosten (1994)**, *Is the electronic open limit order book inevitable?*, J. Finance 49(4), 1127–1161
 
 ---
 

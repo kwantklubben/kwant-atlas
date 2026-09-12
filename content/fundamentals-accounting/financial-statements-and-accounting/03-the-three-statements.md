@@ -86,12 +86,12 @@ One transaction list, three statements, and every articulation check passes. The
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 2 (the three statements, eq. 2.1–2.5, Dell Exhibits 2.1) and Ch 10 (the cash flow statement, direct/indirect, reformulation). *Deep-read and math-verified.*
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - builds the same three statements line by line.
-- **Graham & Meredith**, *The Interpretation of Financial Statements* - the classic value-investor line-by-line reading of each statement.
-- **Kieso, Weygandt & Warfield**, *Intermediate Accounting* - measurement detail for specific line items.
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide*
+- **Graham & Meredith**, *The Interpretation of Financial Statements*
+- **Kieso, Weygandt & Warfield**, *Intermediate Accounting*
 
 ---
 

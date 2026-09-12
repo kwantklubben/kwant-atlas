@@ -86,11 +86,11 @@ Read the table: at queue position 1 you always fill; at position 10 (mean wait 2
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont, Stoikov & Talreja** (2010), §2 - the model of a limit order book as a system of queues; the source of the "position + flow" framing used here.
-- **Gould et al.** (2013), §4–5 - empirical fill frequencies and the caveat that conditional order-book studies are contaminated by latency between observation and event.
-- **Foucault, Pagano & Roell**, *Market Liquidity* Ch 6 - the marginal-unit expected-profit condition and pick-off risk (why the spread compensates adverse selection).
+- **Cont, Stoikov & Talreja** (2010)
+- **Gould et al.** (2013)
+- **Foucault, Pagano & Roell**, *Market Liquidity*
 
 ---
 

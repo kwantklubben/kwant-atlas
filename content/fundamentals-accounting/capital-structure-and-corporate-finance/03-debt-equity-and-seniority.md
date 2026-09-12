@@ -84,12 +84,12 @@ Read the ladder: **senior debt is repaid in full whenever assets cover it ($A\ge
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Modigliani & Miller**, "The Cost of Capital…" (*AER*, 1958) - Proposition II is the formal statement of the financial-risk premium seniority imposes on equity. *Verified against the paper text.*
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance*, Ch 24–25 - seniority, subordination, and the design of the priority structure in practice.
-- **Graham & Dodd**, *Security Analysis* (6th ed.) - the founding treatment of senior securities, the protection of the senior claim, and the dilution danger of warrants/convertibles (Ch 46 on the CD).
-- **Tirole**, *The Theory of Corporate Finance* (2006) - the graduate theory of seniority, debt design, and collateral under asymmetric information.
+- **Modigliani & Miller**, "The Cost of Capital…" (*AER*, 1958)
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
+- **Graham & Dodd**, *Security Analysis* (6th ed.)
+- **Tirole**, *The Theory of Corporate Finance* (2006)
 
 ---
 

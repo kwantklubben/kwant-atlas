@@ -63,12 +63,12 @@ A 20 bp cost is *nothing* if you hold for a year (0.2%/yr) but a *huge* 10% per 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Amihud & Mendelson (1986).** *Asset pricing and the bid-ask spread.* Journal of Financial Economics 17, 223–249. The origin of the liquidity-premium idea; the spread/holding-period relation.
 - **Amihud (2002).** *Illiquidity and stock returns.* JFM 5, 31–56. The empirical anchor: expected illiquidity is priced cross-sectionally and over time.
-- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity: Asset Pricing, Risk, and Crises.* Cambridge University Press. Ch 2 (why liquidity is priced) - the ideal first-read capstone.
-- **Foucault, Pagano & Roell (2013).** *Market Liquidity.* Ch 9 (liquidity and asset prices) - the gross-return/amortization form.
+- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity: Asset Pricing, Risk, and Crises.* Cambridge University Press
+- **Foucault, Pagano & Roell (2013).** *Market Liquidity.*
 
 ---
 

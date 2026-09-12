@@ -85,11 +85,11 @@ Read it: the tree's first (top) split is $\{C\}$ versus $\{A,B\}$. The $\{A,B\}$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *Journal of Portfolio Management* 42(4):59–69 - the HRP construction in its original three steps (tree, quasi-diagonalization, recursive bisection).
-- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.), §14.3.12 - hierarchical agglomerative clustering, dendrograms, and the cophenetic correlation used to audit a linkage.
-- **López de Prado, Marcos** (2018). *Advances in Financial Machine Learning*, Ch. 16 - the accessible book-length walk-through with the reference implementation.
+- **López de Prado, Marcos** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *Journal of Portfolio Management* 42(4):59–69
+- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.)
+- **López de Prado, Marcos** (2018). *Advances in Financial Machine Learning*
 
 ---
 

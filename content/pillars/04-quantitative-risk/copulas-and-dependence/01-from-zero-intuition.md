@@ -85,13 +85,13 @@ The simulation reproduces the analytic VaR to three decimals. The three books ar
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Frey & Embrechts (2015)**, *Quantitative Risk Management* - §1.5 and Ch 7 §7.2 ("Correlation fallacies" and dependence measures); the Fréchet bounds and the diversification discussion behind §2. *In library.*
-- **Embrechts, McNeil & Straumann (2002)**, *Correlation and Dependence in Risk Management: Properties and Pitfalls* - the canonical essay on the three correlation fallacies; the source of McNeil §7.2.2.
-- **Nelsen, Roger B. (2006)**, *An Introduction to Copulas*, 2nd ed. - Ch 2 (definitions, Fréchet bounds) and Ch 3 (the families).
-- **Embrechts, Klüppelberg & Mikosch (1997)**, *Modelling Extremal Events* - Ch 5 (dependence and the extremal index); the tail-risk motivation.
-- **Hull (11th ed.)**, *Options, Futures, and Other Derivatives* - §24.10 (the one-factor model's dependence intuition).
+- **McNeil, Frey & Embrechts (2015)**, *Quantitative Risk Management*
+- **Embrechts, McNeil & Straumann (2002)**, *Correlation and Dependence in Risk Management: Properties and Pitfalls*
+- **Nelsen, Roger B. (2006)**, *An Introduction to Copulas*, 2nd ed.
+- **Embrechts, Klüppelberg & Mikosch (1997)**, *Modelling Extremal Events*
+- **Hull (11th ed.)**, *Options, Futures, and Other Derivatives*
 
 ---
 

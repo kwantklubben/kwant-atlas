@@ -112,14 +112,14 @@ Read the two stages against each other. The *independent* model is seductive: tw
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kleppmann, Martin**, *Designing Data-Intensive Applications* (O'Reilly, 2017) - Ch 8–9: quorums, leader election, fencing tokens, split brain, and the impossibility results that bound what HA can promise. *The primary source for §2.3–2.4.*
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) - Ch 17–18 (testing for reliability, software engineering in SRE), Ch 22–23 (distributed consensus, managing critical state), and Ch 6 (dependency and blast-radius/graceful-degradation reasoning). *The operational framing of availability targets.*
-- **Ongaro & Ousterhout**, *In Search of an Understandable Consensus Algorithm* (Raft, USENIX ATC 2014) - the canonical readable treatment of leader election and log replication; the mechanism behind §2.3.
-- **Narang**, *Inside the Black Box*, 2nd ed. - how a real firm structures redundancy, and its operational trade-offs.
-- **NautilusTrader - Official Documentation** (nautilustrader.io) - the engine's cache/state model and restart-recovery behaviour as a concrete case study.
-- **BIS / BCBS**, *Principles for the Sound Management of Operational Risk* (2011) - business continuity and the supervisory expectation of tested recovery (RTO/RPO).
+- **Kleppmann, Martin**, *Designing Data-Intensive Applications* (O'Reilly, 2017)
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016)
+- **Ongaro & Ousterhout**, *In Search of an Understandable Consensus Algorithm* (Raft, USENIX ATC 2014)
+- **Narang**, *Inside the Black Box*, 2nd ed.
+- **NautilusTrader - Official Documentation** (nautilustrader.io)
+- **BIS / BCBS**, *Principles for the Sound Management of Operational Risk* (2011)
 
 ---
 

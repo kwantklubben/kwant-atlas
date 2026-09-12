@@ -81,14 +81,14 @@ We compute the netting benefit across network densities (the case *for* clearing
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffie & Zhu (2011)**, *Does a central clearing counterparty reduce counterparty risk?*, Review of Asset Pricing Studies 1(1), 74–95 - the clearing trade-off (netting vs concentration).
-- **Duffie (2012)**, *Dark Markets: Asset Pricing and Information Transmission in Over-the-Counter Markets*, Princeton UP - the information/OTC capstone. *Corpus target.*
-- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6) - §6 heterogeneous investors (sophistication ⇒ tighter spreads).
-- **Duffie (2010)**, *Asset price dynamics with slow-moving capital*, JF 65(4) - capital and network context for the post-2008 reforms.
-- **Allen & Gale (2000)**, *Financial contagion*, JPE 108(1) - network contagion foundations.
-- **Bao, Pan & Wang (2011)**, *The illiquidity of corporate bonds*, Journal of Finance 66(3) - the OTC illiquidity benchmark for the corporate-bond market.
+- **Duffie & Zhu (2011)**, *Does a central clearing counterparty reduce counterparty risk?*, Review of Asset Pricing Studies 1(1), 74–95
+- **Duffie (2012)**, *Dark Markets: Asset Pricing and Information Transmission in Over-the-Counter Markets*, Princeton UP
+- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6)
+- **Duffie (2010)**, *Asset price dynamics with slow-moving capital*, JF 65(4)
+- **Allen & Gale (2000)**, *Financial contagion*, JPE 108(1)
+- **Bao, Pan & Wang (2011)**, *The illiquidity of corporate bonds*, Journal of Finance 66(3)
 
 ---
 

@@ -72,11 +72,11 @@ Read the table like an auctioneer. At \$99.95 no seller accepts (supply 0), so n
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 1 (§1.2 depth/breadth/resiliency; §1.3 transparency) and Ch 2 §2.1 (limit order markets) and §2.4 (auctions and the volume-maximizing fixing).
-- **Foucault, Pagano & Röell**, *Market Liquidity*, Ch 1 (liquidity and price discovery as the two key concepts; the bid–ask spread as the standard illiquidity measure) and Ch 2 (the spread, depth, and resilience definitions).
-- **Smith, Farmer, Gillemot & Krishnamurthy (2003)**, *Statistical theory of the continuous double auction*, Quantitative Finance 3(6) - the "zero-intelligence" baseline showing how much price formation is *mechanical* rather than strategic.
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Foucault, Pagano & Röell**, *Market Liquidity*
+- **Smith, Farmer, Gillemot & Krishnamurthy (2003)**, *Statistical theory of the continuous double auction*, Quantitative Finance 3(6)
 
 ---
 

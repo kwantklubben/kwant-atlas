@@ -93,12 +93,12 @@ Hub signposts - the folder's failure-mode analysis lives in [[fundamentals-accou
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman, Stephen H.**: *Financial Statement Analysis and Security Valuation* (McGraw-Hill, 1st ed. 2001) - Ch 2 (form & articulation of the three statements, eq. 2.1–2.5, Dell exhibits), Ch 5 (accrual accounting, eq. 5.1–5.2), Ch 9 (common-size analysis), Ch 10 (cash flow statement, direct/indirect), Ch 18 (accounting quality). *Deep-read and math-verified in the corpus.*
-- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 1968, 6(2), 159–178) - the classic that showed accounting income numbers carry information: the market's security-price response to earnings is evidence the numbers are *useful*. *Corpus PDF read.*
-- **Ittelson, Thomas R.**: *Financial Statements: A Step-by-Step Guide* (4th ed. 2020) - the plain-English on-ramp for members who have never read a statement; builds all three line by line.
-- **Graham & Meredith**: *The Interpretation of Financial Statements* (1937/2003) - the value-investor line-by-line reading of the statements this folder's reading route assumes.
+- **Penman, Stephen H.**: *Financial Statement Analysis and Security Valuation* (McGraw-Hill, 1st ed. 2001)
+- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 1968, 6(2), 159–178)
+- **Ittelson, Thomas R.**: *Financial Statements: A Step-by-Step Guide* (4th ed. 2020)
+- **Graham & Meredith**: *The Interpretation of Financial Statements* (1937/2003)
 
 ---
 

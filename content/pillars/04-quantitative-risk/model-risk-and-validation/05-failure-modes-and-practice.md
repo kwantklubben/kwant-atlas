@@ -74,14 +74,14 @@ The same model, unchanged, goes from $0.80\%$ to $12.0\%$ exceptions - a $15\tim
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *ESL* 2nd ed. (2009), §7.1 (model selection vs assessment; the vaulted test set), §7.10.2 (the wrong-vs-right way to do CV - screening inside folds; full-data screening understates error), §7.11 (bootstrap: .632/.632+). *Verified in the corpus.*
-- **Bailey, D. & López de Prado, M.**, *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality*, *Journal of Portfolio Management* 40(5) (2014) - the multiple-testing correction for backtested strategies.
+- **Hastie, Tibshirani & Friedman**, *ESL* 2nd ed. (2009)
+- **Bailey, D. & López de Prado, M.**, *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality*, *Journal of Portfolio Management* 40(5) (2014)
 - **Federal Reserve / OCC**, *SR 11-7* (2011) - "Validation is an important check during periods of benign economic and financial conditions, when estimates of risk and potential loss can become overly optimistic"; ongoing monitoring and benchmarking. *Read in full from the corpus PDF.*
 - **Derman, E.**, *Model Risk* (Goldman Sachs QSR, 1996) - "A model may be reasonable, but the world itself may be unstable… a good model today may be inappropriate tomorrow." *Read in full from the corpus PDF.*
-- **Christoffersen, P.** (1998) - the independence test that catches clustering, the statistical fingerprint of drift.
-- **McNeil & Frey** (2000) - GARCH-filtered, EVT-tailed VaR/ES; the estimation-side remedy for drift and fat tails.
+- **Christoffersen, P.** (1998)
+- **McNeil & Frey** (2000)
 
 ---
 

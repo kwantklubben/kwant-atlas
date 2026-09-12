@@ -72,11 +72,11 @@ Simulate many paths, condition on the state at a fixed time $s$, and check that 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 3 (definitions, martingale Thm 3.3.4, QV Thm 3.4.3, exp martingale Thm 3.6.1, first-passage Laplacian Thm 3.6.2, reflection eq 3.7.6, joint densities).
-- **Shreve**, *Stochastic Calculus for Finance I*, §13 (random-walk construction, covariance, martingale Thm 9.40, exp martingale Thm 9.41, first passage/reflection).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §3.1 (exact BM simulation, covariance, Brownian bridge).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

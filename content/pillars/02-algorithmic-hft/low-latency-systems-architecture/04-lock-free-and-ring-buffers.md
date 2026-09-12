@@ -80,13 +80,13 @@ Standard library only. We model the SPSC channel as a discrete-event single-serv
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **LMAX Disruptor paper + library**, and **Fowler, Martin** - *The LMAX Architecture*. The foundational treatment of ring-buffer channels, batching, and single-writer design.
 - **Thompson, Martin** - *Mechanical Sympathy* (blog/talks). Cache-line padding, false sharing, memory-mapped I/O.
 - **Herlihy, Maurice & Shavit, Nir** - *The Art of Multiprocessor Programming* (rev. ed.). The formal definitions of blocking/lock-free/wait-free progress and the semantics of the handshake above.
 - **Preshing, Jeff** - *An Introduction to Lock-Free Programming*. The clearest free exposition of atomics, ordering, and lock-free structure.
-- **Williams, Anthony** - *C++ Concurrency in Action* (2nd ed., 2019). The practical C++ realisation (cross-listed under [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]).
+- **Williams, Anthony** - *C++ Concurrency in Action* (2
 - **DPDK** and **Solarflare/OpenOnload (EF_VI)** documentation. Production, hardware-backed versions of the same ring, used for the NIC receive path.
 
 ---

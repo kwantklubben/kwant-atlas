@@ -98,12 +98,12 @@ Stdlib only. Three experiments: (A) truncation error of the Taylor polynomial of
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bernstein, D. J.**: *Calculus for Mathematicians* (1997 draft) - Part 1 (continuity, open balls, $\epsilon$–$\delta$), Part 2 (Carathéodory derivative; sum/product/chain/quotient/power rules), Part 3 (supremum, IVT, max–min-value theorem), Part 4 (Fermat, Rolle, MVT, derivative-zero), Part 5 (Kurzweil–Henstock integral, FTC), Part 6 (limits and L'Hôpital). *The proof-based single-variable backstop for this page.*
-- **Spivak, Michael**: *Calculus* (4th ed.) - Ch 5–11 (limits/continuity, differentiation, MVT, the Taylor polynomial, the integral). *The rigorous companion.*
-- **Stewart, Clegg & Watson**: *Calculus: Early Transcendentals* (9th ed., 2020) - §11.10 Taylor and Maclaurin Series, §11.11 Applications of Taylor Polynomials (Taylor's inequality with the Lagrange remainder). *Worked-error treatment.*
-- **Simon & Blume**: *Mathematics for Economists* - Ch 3 (using the first derivative, second derivatives and convexity, maxima/minima, second-order conditions). *The economics framing of the FOC/SOC.*
+- **Bernstein, D. J.**: *Calculus for Mathematicians* (1997 draft)
+- **Spivak, Michael**: *Calculus* (4th ed.)
+- **Stewart, Clegg & Watson**: *Calculus: Early Transcendentals* (9th ed., 2020)
+- **Simon & Blume**: *Mathematics for Economists*
 
 ---
 

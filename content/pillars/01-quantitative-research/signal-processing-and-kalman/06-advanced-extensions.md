@@ -84,13 +84,13 @@ Part A runs the RTS smoother on the local-level model and measures the variance/
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series* (3rd ed.), Ch 11 §11.1.1 (filtering/prediction/**smoothing** definitions) and Ch 12 §12.8 (FFBS / forward-filter backward-sample in stochastic volatility). *Corpus-verified.*
-- **Särkkä, S.**: *Bayesian Filtering and Smoothing* (2013) - Ch 8.3 (RTS smoother), Ch 11 (particle filters, resampling, degeneracy). *The reference for this page.*
-- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*, Ch 4 (smoothing and EM estimation).
-- **Doucet, de Freitas & Gordon**, *Sequential Monte Carlo Methods in Practice* - the canonical particle-filter compendium.
-- **Harvey, Kim & Shephard (1994)**, *Estimation of stochastic volatility models with diagnostics* - the SV state-space and its estimation.
+- **Tsay**, *Analysis of Financial Time Series* (3rd ed.)
+- **Särkkä, S.**: *Bayesian Filtering and Smoothing* (2013)
+- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*
+- **Doucet, de Freitas & Gordon**, *Sequential Monte Carlo Methods in Practice*
+- **Harvey, Kim & Shephard (1994)**, *Estimation of stochastic volatility models with diagnostics*
 
 ---
 

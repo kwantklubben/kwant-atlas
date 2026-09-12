@@ -89,13 +89,13 @@ The fitted shape $\hat\xi=0.360$ recovers the true $1/3$ well. Read the comparis
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Alexander J.**, *Estimating the Tails of Loss Severity Distributions Using Extreme Value Theory*, ASTIN Bulletin 27(1):117–137 (1997) - GPD/POT on Danish fire losses, threshold selection, Table 1 (quantile estimates by threshold). *Read in corpus.*
-- **McNeil, Alexander J. & Rüdiger Frey**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, Journal of Empirical Finance 7(3–4):271–300 (2000) - tail estimator eq. (8), quantile eq. (10), expected shortfall §4.1 eq. (14), threshold simulation §2.3. *Read in corpus.*
-- **Pickands, James III (1975)**; **Balkema & de Haan (1974)** - the threshold-excess limit theorem. *(Corpus PDFs, scanned.)*
-- **de Haan & Ferreira (2006)** - Ch 3 (estimation), Ch 4 (quantile estimation, §4.3–4.4). *Math-verified in corpus.*
-- **McNeil, Frey & Embrechts (2015)**, Ch 7 (EVT, the accessible textbook bridge). *In library.*
+- **McNeil, Alexander J.**, *Estimating the Tails of Loss Severity Distributions Using Extreme Value Theory*, ASTIN Bulletin 27(1):117–137 (1997)
+- **McNeil, Alexander J. & Rüdiger Frey**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, Journal of Empirical Finance 7(3–4):271–300 (2000)
+- **Pickands, James III (1975)**; **Balkema & de Haan (1974)**
+- **de Haan & Ferreira (2006)**
+- **McNeil, Frey & Embrechts (2015)**
 
 ---
 

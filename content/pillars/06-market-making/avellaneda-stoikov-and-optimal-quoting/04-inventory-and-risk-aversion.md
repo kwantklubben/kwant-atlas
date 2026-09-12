@@ -66,11 +66,11 @@ The qualitative law is exact and reproducible: **AS trades a little mean for a l
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3), §2.3 (infinite-horizon/stationary version and the role of $\omega$ as an inventory bound) and §3.3 (numerical simulations, Tables 1–3 and Figures 2–4 - the inventory-vs-symmetric comparison reproduced here).
-- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611 - how the choice of risk measure ($\gamma$, or mean–variance, or drawdown) changes the skew.
-- **Menkveld (2013)**, *High frequency trading and the new market makers*, J. Financial Markets 16(4) - empirical evidence that real HFT makers skew quotes as the model predicts.
+- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3)
+- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611
+- **Menkveld (2013)**, *High frequency trading and the new market makers*, J. Financial Markets 16(4)
 
 ---
 

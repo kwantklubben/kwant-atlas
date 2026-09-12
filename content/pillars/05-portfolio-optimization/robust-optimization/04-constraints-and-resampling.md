@@ -78,14 +78,14 @@ Two verified, and deliberately honest, results:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Michaud, R. & Michaud, R.** *Efficient Asset Management*, 2nd ed., OUP, 2008 - resampling and the resampled efficient frontier.
-- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of OR 152:341–365 - convex cost-aware formulations.
-- **Clarke, de Silva & Thorley (2002)**, *Portfolio Constraints and the Fundamental Law of Active Management*, FAJ 58(5):48–66 - the transfer coefficient quantifying the cost of constraints.
-- **DeMiguel, Garlappi & Uppal (2009)**, RFS 22(5) - the sobering $1/N$ benchmark constrained portfolios must beat.
-- **Goldfarb & Iyengar (2003)**, Math. of OR 28(1):1–38, §1 - explicit critique of sampling-based remedies lacking guarantees.
-- **Frost & Savarino (1988)**, *For better performance: constrain portfolio weights*, JPM - the classic argument that weight constraints reduce estimation risk.
+- **Michaud, R. & Michaud, R.** *Efficient Asset Management*, 2nd ed., OUP, 2008
+- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of OR 152:341–365
+- **Clarke, de Silva & Thorley (2002)**, *Portfolio Constraints and the Fundamental Law of Active Management*, FAJ 58(5):48–66
+- **DeMiguel, Garlappi & Uppal (2009)**, RFS 22(5)
+- **Goldfarb & Iyengar (2003)**, Math. of OR 28(1):1–38
+- **Frost & Savarino (1988)**, *For better performance: constrain portfolio weights*, JPM
 
 ---
 

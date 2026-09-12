@@ -107,12 +107,12 @@ The additive path's time average ($0.00501$) sits on its ensemble mean ($0.00500
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019) - the additive/multiplicative dichotomy and the ensemble/time-average distinction.
-- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016) - the "growth rate of the dynamic" as the correct ergodic object.
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §2 - the bold strategy (maximise $\mathbb{E}[W_N]$) versus the growth strategy (maximise $\mathbb{E}[\ln W_N]$), and Theorem 1 (i)–(iii) on the certain growth/decay threshold. *Corpus-verified.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*, Ch 13 & 15 - random walks and the strong law behind the additive case, and GBM's $\mathbb{E}[S_t]=S_0e^{\mu t}$ vs $S_t=S_0e^{\mu t-\frac12\sigma^2 t+\sigma W_t}$. *Math-verified in the corpus.*
+- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019)
+- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*
 
 ---
 

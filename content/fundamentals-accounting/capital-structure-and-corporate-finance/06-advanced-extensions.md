@@ -79,14 +79,14 @@ The three panels capture the whole advanced layer at once: the **trade-off hump*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Myers, Stewart C. & Majluf, Nicholas S.**: "Corporate Financing and Investment Decisions When Firms Have Information That Investors Do Not Have" (*JFE*, 1984) - the pecking order and the underinvestment/financing trap. *Verified against the paper text.*
-- **Myers, Stewart C.**: "The Capital Structure Puzzle" (*JF*, 1984, 39(3), 575–592) - the classic statement that neither the trade-off nor the pecking order alone explains observed capital structure ("the puzzle").
-- **Jensen, Michael C. & Meckling, William H.**: "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure" (*JFE*, 1976) - monitoring + bonding + residual loss; the agency basis of debt vs. equity. *Verified against the paper text.*
-- **Jensen, Michael C.**: "Agency Costs of Free Cash Flow, Corporate Finance, and Takeovers" (*AER*, 1986) - the free-cash-flow problem and debt as discipline. *Verified against the paper text.*
-- **Tirole**, *The Theory of Corporate Finance* (2006) - the graduate treatment of agency, contracting, and liquidity underlying these theories.
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance*, Ch 18 - the textbook presentation of trade-off, pecking order, and agency.
+- **Myers, Stewart C. & Majluf, Nicholas S.**: "Corporate Financing and Investment Decisions When Firms Have Information That Investors Do Not Have" (*JFE*, 1984)
+- **Myers, Stewart C.**: "The Capital Structure Puzzle" (*JF*, 1984, 39(3), 575–592)
+- **Jensen, Michael C. & Meckling, William H.**: "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure" (*JFE*, 1976)
+- **Jensen, Michael C.**: "Agency Costs of Free Cash Flow, Corporate Finance, and Takeovers" (*AER*, 1986)
+- **Tirole**, *The Theory of Corporate Finance* (2006)
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
 
 ---
 

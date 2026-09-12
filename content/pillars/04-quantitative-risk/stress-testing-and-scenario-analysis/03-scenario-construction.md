@@ -67,12 +67,12 @@ Reading the matrix: equity-only sensitivity tops out at $-$20M, but the **corner
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14) - §"Scenario selection": sensitivity vs scenario analysis, historical vs hypothetical, the pre-crisis failures of insufficient severity and buy-in. *Directly verified source for this page.*
-- **Hull**, *OFOD*, Ch 22 - linear/quadratic P&L mapping (eq. 22.6–22.8) that the sensitivity and matrix cells evaluate.
-- **McNeil, Frey & Embrechts**, *QRM*, Ch 13 - scenario design and the interplay of historical and hypothetical approaches.
-- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016) - hands-on construction of scenario sets and their aggregation across risk types.
+- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14)
+- **Hull**, *OFOD*
+- **McNeil, Frey & Embrechts**, *QRM*
+- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016)
 
 ---
 

@@ -92,13 +92,13 @@ Read the output carefully: the firm shows a modestly **positive** net insider fl
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **SEC**, *EDGAR* filing-type documentation - the legal deadlines and definitions behind Form 4, 13-D/G, and 13-F; verified against `Data_SEC_EDGAR_access.txt` (which lists Form 4 and 13-D/G among EDGAR's holdings).
-- **OpenInsider** (openinsider.com) - the free aggregator and cluster-buy screens that make Form 4 machine-screenable; the practical bridge from raw forms to signals.
-- **WhaleWisdom** (whalewisdom.com) - the freemium 13-F/13-D/G aggregator; the convenient front-end for ownership data.
-- **Loughran & McDonald** (*JF*, 2011) - the general method for turning filing *text* into quantitative signals, applicable to the narrative sections of 13-D and proxies.
-- **Jensen & Meckling**, "Theory of the Firm…" (*JFE*, 1976) and **Jensen**, "Agency Costs of Free Cash Flow…" (*AER*, 1986) - the agency theory that gives insider buying and ownership concentration their economic meaning; cross-listed in the Corpus's `capital-structure-and-corporate-finance` section.
+- **SEC**, *EDGAR* filing-type documentation
+- **OpenInsider** (openinsider.com)
+- **WhaleWisdom** (whalewisdom.com)
+- **Loughran & McDonald** (*JF*, 2011)
+- **Jensen & Meckling**, "Theory of the Firm…" (*JFE*, 1976) and **Jensen**, "Agency Costs of Free Cash Flow…" (*AER*, 1986)
 
 ---
 

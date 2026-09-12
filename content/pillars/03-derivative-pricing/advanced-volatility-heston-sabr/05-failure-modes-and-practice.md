@@ -122,13 +122,13 @@ We (i) check the two positivity conditions on the fitted SPX parameters, (ii) co
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 2 §2.2 (Euler/Milstein/truncation, the exact transition of Broadie–Kaya, Andersen–Brotherton-Ratcliffe, the Milstein positivity condition $4\lambda\bar v/\eta^2>1$), Ch 3 §3.4 (the two-expiration/term-structure/curvature calibration recipe), Ch 5 (SVJ vs SVJJ: fits, parameter counts, additivity of the short-dated skew), Ch 8 §8.4 (**digital options**: $\mathcal D=-\partial C/\partial K$, the 12%-of-notional skew term; digital cliquets), Ch 9 (barriers: model sensitivity, Broadie–Glasserman–Kou discretisation correction $\beta=-\zeta(1/2)/\sqrt{2\pi}\approx0.5826$), Ch 10 (cliquets: the LV/SV valuation table and the Napoleon counter-example). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 1 (usable models and P&L attribution), Ch 3 §3.1.7 (model-independent bounds on forward call spreads; why vanillas do not constrain forward skew), Ch 5 (variance swaps and the vol-of-vol/variance risk premium; the log-contract mismatch), Ch 9 §9.10–9.11 (realised SSR backtest: Euro Stoxx 50 $\approx1.6$ vs implied $2$; the Nikkei negative-SSR episode and autocall-vega hedging), Ch 12 §12.2.2 (**LSV**: "most local-stochastic volatility models are not usable models"; the pricing equation is not derived from replication and must be checked *a posteriori*). *Math-verified.*
-- **Andersen, L.** (2008), *Simple and efficient simulation of the Heston stochastic volatility model* - the QE scheme; **Lord, Koekkoek & van Dijk** (2010), *A comparison of biased simulation schemes for stochastic volatility models*; **Broadie & Kaya** (2006), *Exact simulation of stochastic volatility and other affine jump diffusion processes*; **Alfonsi** (2005), implicit schemes.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 19 (gamma–theta P&L, delta–gamma neutrality, per-day Greeks), Ch 20 §20.5 (**minimum-variance delta**), Ch 22–23 (VaR/ES and EWMA/GARCH - the risk side of a vol book). *Verification report in the corpus.*
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §2 (full Greek set and its scaling conventions - the numbers a hedging desk actually quotes). *Numerically verified.*
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Andersen, L.** (2008), *Simple and efficient simulation of the Heston stochastic volatility model*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

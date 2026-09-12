@@ -55,10 +55,10 @@ Read the columns. Under **standard** contiguous $k$-fold the accuracy is not con
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7** (§7.3 "Why k-fold CV fails in finance"; §7.4.1 the $k\to T$ diagnostic). *Primary source for this page.*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7** (§7.10.2 wrong-vs-right CV; the full-data-screening example reports $\sim$3% CV error against a true $\sim$50%) - the classical analogue of the leak above.
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7** (§7.3 "Why k-fold CV fails in finance";
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7** (§7.10.2 wrong-vs-right CV; the full-data-screening example reports $\sim$3% CV error against a true $\sim$50%)
 
 ---
 

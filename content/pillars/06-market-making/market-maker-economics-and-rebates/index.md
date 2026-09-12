@@ -68,15 +68,15 @@ Hub signposts - the full analysis lives in [[pillars/06-market-making/market-mak
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Stoll, Hans R. (1978)**, *The supply of dealer services in securities markets*, Journal of Finance 33(4) - the classic dealer-cost decomposition: spread = order-processing + inventory-holding + adverse-selection. *The economics template for this folder.*
-- **Grossman & Miller (1988)**, *Liquidity and market structure*, Journal of Finance 43(3) - why immediacy must be *paid for*: liquidity suppliers bear inventory risk and need compensation. *(Primary PDF in corpus.)*
-- **Colliard & Foucault (2012)**, *Trading fees and efficiency in limit order markets*, Review of Financial Studies 25(11), 3389–3421 - the standard theory of maker–taker schedules; cum-fee spread and the neutrality of the make/take breakdown. *Corpus `53_Colliard_2012_trading_fees_and_efficiency_in_limit.pdf`.*
-- **Malinova & Park (2015)**, *Subsidizing liquidity: the impact of make/take fees on market quality*, Journal of Finance 70(2), 509–536 - empirical counterweight: quotes adjust, taker cum-fee costs do not. *Corpus `56_Malinova_2015_subsidizing_liquidity_the_impact_of.pdf`.*
-- **Hasbrouck, Jeffrey (2007)**, *Empirical Market Microstructure* - Ch 11 (dealers and inventories: Garman, Amihud–Mendelson, Stoll CARA-normal) and Ch 12 (limit order markets: "a limit order is a dealer quote by another name"). *Verified in corpus.*
-- **Menkveld, Albert J. (2013)**, *High frequency trading and the new market makers*, Journal of Financial Markets 16(4) - the unit economics of one HFT market-making firm. *(Cross-listed.)*
-- **Foucault, Kadan & Kandel (2013)**, *Liquidity cycles and make/take fees in electronic markets*, Journal of Finance 68(1) - why a **tick size** breaks fee neutrality (the friction CF abstract out).
+- **Stoll, Hans R. (1978)**, *The supply of dealer services in securities markets*, Journal of Finance 33(4)
+- **Grossman & Miller (1988)**, *Liquidity and market structure*, Journal of Finance 43(3)
+- **Colliard & Foucault (2012)**, *Trading fees and efficiency in limit order markets*, Review of Financial Studies 25(11), 3389–3421
+- **Malinova & Park (2015)**, *Subsidizing liquidity: the impact of make/take fees on market quality*, Journal of Finance 70(2), 509–536
+- **Hasbrouck, Jeffrey (2007)**, *Empirical Market Microstructure*
+- **Menkveld, Albert J. (2013)**, *High frequency trading and the new market makers*, Journal of Financial Markets 16(4)
+- **Foucault, Kadan & Kandel (2013)**, *Liquidity cycles and make/take fees in electronic markets*, Journal of Finance 68(1)
 
 ---
 

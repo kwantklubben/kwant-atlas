@@ -75,13 +75,13 @@ We run a bank with a trading book and a loan book under a shared macro factor $Z
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016) - the CLE/MCRE macro-factor credit link and cross-risk-type integration, hands-on R/MATLAB; *the* practical reference (CORE in the corpus).
-- **BCBS**, *Basel III: A Global Regulatory Framework for More Resilient Banks* (2010), and the 2017 finalisation - the CCyB, countercyclical toolkit (corpus refs: `63_BCBS_2017...finalising_post_crisis`, `67_BCBS_2010...`).
-- **Schuermann**, *Stress Testing Banks*, *IJCB* 10(2) (2014) - the supervisory design that integrated macro scenarios into bank capital.
-- **Quagliariello (ed.)**, *Stress-testing the Banking System* (2009) - system-wide vs bank-level macro stress integration.
-- **McNeil, Frey & Embrechts**, *QRM* (2015) §6.4 - copula-risk aggregation as the theoretical backdrop Bellini's scenario approach sits on.
+- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016)
+- **BCBS**, *Basel III: A Global Regulatory Framework for More Resilient Banks* (2010), and the 2017 finalisation
+- **Schuermann**, *Stress Testing Banks*, *IJCB* 10(2) (2014)
+- **Quagliariello (ed.)**, *Stress-testing the Banking System* (2009)
+- **McNeil, Frey & Embrechts**, *QRM* (2015)
 
 ---
 

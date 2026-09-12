@@ -92,7 +92,7 @@ Three results, straight from the propagator:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Gatheral, J. (2010)**, *No-dynamic-arbitrage and market impact*, Quantitative Finance 10(7), 749–759. *The propagator model, $\gamma+\delta\ge1$, exclusion of exponential decay. Primary PDF in corpus (`42Gatheral2010_...`).*
 - **Gatheral, J. & Schied, A. (2013)**, *Dynamical models of market impact and algorithms for order execution*, in *Handbook on Systemic Risk*. *Rigorous synthesis; Theorem 22.13, Prop. 22.14, JG model (22.21), Remark 22.15. Primary PDF in corpus (`46_Gatheral_2013_...`).*

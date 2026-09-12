@@ -75,12 +75,12 @@ With fundamental moves small relative to the spread, Roll recovers the true spre
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Amihud (2002).** *Illiquidity and stock returns.* JFM 5, 31–56 - the ILLIQ definition, eq. (1), and its robustness.
-- **Roll (1984).** *A simple implicit measure of the effective bid-ask spread.* Journal of Finance 39, 1127–1139 - the autocovariance estimator.
-- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*, Ch 3 - the full catalogue of measures and their relative merits.
-- **Hasbrouck.** *Market Microstructure: Foundations*, Ch 3 (Roll, effective spreads) and Ch 5 (price impact, ILLIQ).
+- **Amihud (2002).** *Illiquidity and stock returns.* JFM 5, 31–56
+- **Roll (1984).** *A simple implicit measure of the effective bid-ask spread.* Journal of Finance 39, 1127–1139
+- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*
+- **Hasbrouck.** *Market Microstructure: Foundations*
 
 ---
 

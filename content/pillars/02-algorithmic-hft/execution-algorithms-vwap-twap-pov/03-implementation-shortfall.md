@@ -69,11 +69,11 @@ Reproduce the corpus-verified Perold/Foucault example ($24{,}000$, 2.4% of paper
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Perold, André F.** - "The implementation shortfall: Paper versus reality," *Journal of Portfolio Management* 14(3), 4-9 (1988). *The origin of the IS benchmark.*
-- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013), Ch 2, eq 2.29 (IS decomposition + delay split) with the $24{,}000$ worked example. *Corpus verification `foucault_ch1-3.md`: verified exactly.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 eq 14.1 (portfolio IS, zero-sum property). *Corpus verification `hasbrouck_ch11-15.md`.*
+- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Almgren & Chriss** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000). *The arrival-price / IS objective as a mean-variance optimization.*
 
 ---

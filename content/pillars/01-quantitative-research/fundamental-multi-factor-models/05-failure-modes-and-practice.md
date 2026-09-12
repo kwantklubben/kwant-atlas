@@ -63,13 +63,13 @@ Adding a single near-duplicate factor inflates HML's standard error by **1.5×**
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) and "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - the factor set whose crowding/overlap the practitioner must manage.
-- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017) - the characteristic census and the ~24 genuinely priced signals; the empirical factor zoo.
-- **Harvey, Campbell; Liu, Yan & Zhu, Heqing**, "... and the Cross-Section of Expected Returns" (*RFS*, 2016) - the multiple-testing critique of published factors; the $t>3$ hurdle.
-- **Khandani & Lo**, "What Happened to the Quants in August 2007?" (*JIM*, 2007) - the crowding/unwind mechanics of the Quant Quake.
-- **Hastie et al.**, *The Elements of Statistical Learning*, Ch 3 - multicollinearity, shrinkage (ridge/lasso) as the fix; Ch 18 - high-dimensional multiple testing (FDR/Bonferroni).
+- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) and "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017)
+- **Harvey, Campbell; Liu, Yan & Zhu, Heqing**, "... and the Cross-Section of Expected Returns" (*RFS*, 2016)
+- **Khandani & Lo**, "What Happened to the Quants in August 2007?" (*JIM*, 2007)
+- **Hastie et al.**, *The Elements of Statistical Learning*
 
 ---
 

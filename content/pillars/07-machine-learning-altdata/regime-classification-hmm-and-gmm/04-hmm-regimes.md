@@ -86,12 +86,12 @@ The HMM recovers both regime volatilities ($0.00779$, $0.02461$ vs true $0.008$,
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Rabiner**, "A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition," *Proceedings of the IEEE* 77(2), 1989 - the canonical algorithm reference (forward–backward, Baum–Welch, Viterbi).
-- **Hamilton**, "A New Approach…," *Econometrica* 57(2), 1989 - the finance-side origin: regime-switching via the nonlinear filter; the econometric twin is [[pillars/01-quantitative-research/regime-detection/04-hmm|Regime Detection · HMM]].
-- **Tsay**, *Analysis of Financial Time Series*, Ch 4 (two-state Markov switching, expected duration $1/w_i$) and Ch 11 (state-space / Kalman filter, the continuous-state sibling). *Corpus verified.*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 14 (mixtures; the HMM as a time-ordered mixture). *Corpus verified.*
+- **Rabiner**, "A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition," *Proceedings of the IEEE* 77(2), 1989
+- **Hamilton**, "A New Approach…," *Econometrica* 57(2), 1989
+- **Tsay**, *Analysis of Financial Time Series*
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

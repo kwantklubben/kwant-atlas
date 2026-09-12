@@ -96,13 +96,13 @@ Read across: the naive backtest books a fill **every** time a trade prints ($1.0
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont & Kukanov** (2017), §2.3 - adverse selection as negative post-fill drift and its inclusion via effective rebates $r_k=r_k^e+\mathrm{AS}_k$; the multi-venue overbooking solution that hedges non-execution risk.
-- **Gould et al.** (2013), §4.5 - the latency caveat for conditional order-book studies and the cancel-to-trade ratio evidence.
-- **Foucault, Pagano & Roell**, *Market Liquidity*, Ch 6 - pick-off risk (limit orders as free options) and its effect on the spread.
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 8 - the generalized Roll model's separation of adverse-selection ($\lambda$) from order-processing ($c$) spread components.
-- **Gatheral, J.** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7) (2010) - the consistency constraint any impact/latency model must satisfy.
+- **Cont & Kukanov** (2017)
+- **Gould et al.** (2013)
+- **Foucault, Pagano & Roell**, *Market Liquidity*
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Gatheral, J.** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7) (2010)
 
 ---
 

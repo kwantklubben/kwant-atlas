@@ -95,15 +95,15 @@ Four things to read off. (1) The Monte Carlo mean recovers the input PD exactly 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Li, David X. (2000)**, *On Default Correlation: A Copula Function Approach*, *Journal of Fixed Income* **9**(4):43–54 - the paper that put the Gaussian copula at the centre of CDO pricing.
-- **McNeil, Frey & Embrechts (2015)** - §1.2.1 and §1.5 (the Gauss-copula/2008 history, the *Economist* "in defence of the Gaussian copula" framing), Ch 12 §12.2 (copula credit models: the one-factor Gaussian and $t$ models, mixed and implied copulas) and §12.3 (pricing index derivatives in factor copula models). *Formula-verified in the corpus.*
-- **Hull (11th ed.)**, *Options, Futures, and Other Derivatives* - §25.5–25.10 (default correlation, the one-factor Gaussian copula market model eqs. 25.5–25.12, CDO tranching, the correlation smile; the "Gaussian copula model is not a true model" caution). *Verification report in the corpus.*
-- **Bluhm, Overbeck & Wagner (2010)**, *Introduction to Credit Risk Modeling* - §2.5–2.6 (one-factor/sector models and loss dependence by copulas) and §7.3 (generating correlated default times via the copula approach). *Read in the corpus.*
-- **Vašíček, Oldřich (1987/1991)** - *Probability of Loss on Loan Portfolio* / *Limiting Loan Loss Probability Distribution*: the one-factor model whose closed form is the Basel IRB formula. *Primary source; formula-verified in the corpus.*
-- **Salmon, Felix (2009)**, *Recipe for Disaster: The Formula That Killed Wall Street*, *Wired* (23 Feb) - the popular post-mortem.
-- **BCBS (2017)**, *Basel III: Finalising Post-Crisis Reforms* - the IRB asset-correlation formula, the regulatory descendant of §2.2.
+- **Li, David X. (2000)**, *On Default Correlation: A Copula Function Approach*, *Journal of Fixed Income* **9**(4):43–54
+- **McNeil, Frey & Embrechts (2015)**
+- **Hull (11th ed.)**, *Options, Futures, and Other Derivatives*
+- **Bluhm, Overbeck & Wagner (2010)**, *Introduction to Credit Risk Modeling*
+- **Vašíček, Oldřich (1987/1991)** - *Probability of Loss on Loan Portfolio* / *Limiting Loan Loss Probability Distribution*: the one-factor model whose closed form is the Basel IRB formula.
+- **Salmon, Felix (2009)**, *Recipe for Disaster: The Formula That Killed Wall Street*, *Wired* (23 Feb)
+- **BCBS (2017)**, *Basel III: Finalising Post-Crisis Reforms*
 
 ---
 

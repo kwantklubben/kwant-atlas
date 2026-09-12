@@ -65,13 +65,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Ho, Thomas & Stoll, Hans**: *Optimal dealer pricing under transactions and return uncertainty*, Journal of Financial Economics 9(1), 47–73 (1981). *The canonical dealer-inventory model; every inventory-skew rule in production descends from its reservation price.*
 - **Ho, Thomas & Stoll, Hans**: *The dynamics of dealer markets under competition*, Journal of Finance 38(4), 1053–1074 (1983). *Competing dealers and how competition compresses the inventory component of the spread.*
 - **Stoll, Hans**: *The supply of dealer services in securities markets*, Journal of Finance 33(4), 1133–1151 (1978). *The holding-cost / transaction-cost decomposition of the spread that the markup $a^\ast=c+1/k$ formalizes.*
 - **Avellaneda, Marco & Stoikov, Sasha**: *High-frequency trading in a limit order book*, Quantitative Finance 8(3), 217–224 (2008). *The continuous-time descendant of Ho–Stoll; the reservation price $s-q\gamma\sigma^2(T-t)$ is this folder's skew.*
-- **Guéant, Lehalle & Fernandez-Tapia**: *Dealing with the inventory risk*, Mathematics and Financial Economics 7(4), 477–507 (2013). *Inventory caps and closed-form asymptotics - the production-grade treatment of "don't let inventory run away."*
+- **Guéant, Lehalle & Fernandez-Tapia**: *Dealing with the inventory risk*, Mathematics and Financial Economics 7(4), 477–507 (2013). *Inventory caps and closed-form asymptotics
 - **Garman, Mark**: *Market microstructure*, Journal of Financial Economics 3(3), 257–275 (1976). *The first inventory-control model, in which an unhedged market maker can go bankrupt.*
 - **Menkveld, Albert**: *High frequency trading and the new market makers*, Journal of Financial Markets 16(4), 712–740 (2013). *Empirical: real HFT makers earn the spread, incur inventory costs, and skew their quotes.*
 

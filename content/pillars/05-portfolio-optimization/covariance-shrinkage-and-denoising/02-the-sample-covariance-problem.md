@@ -80,7 +80,7 @@ Pure-noise simulation: generate $T\times N$ i.i.d. Gaussian data, compute the sa
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Marchenko, V. A. & Pastur, L. A. (1967).** "Distribution of eigenvalues for some sets of random matrices." *Mat. Sb.* 72(4):507–536. *The original law.*
 - **Silverstein, J. W. & Choi, S.-I. (1995).** "Analysis of the limiting spectral distribution of large-dimensional random matrices." *Journal of Multivariate Analysis* 54(2):295–309. *The rigorous support/edge determination used for RMT denoising.*

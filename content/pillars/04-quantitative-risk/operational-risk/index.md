@@ -65,14 +65,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS, *Basel II: International Convergence of Capital Measurement and Capital Standards*** (2006) - ¶644 (definition), ¶645–655 (BIA/TSA/AMA), ¶667 (99.9% one-year soundness standard), Annex 8 (business lines), Annex 9 (loss event types). *The regulatory definition of record; verified in the corpus.*
-- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424) - the Standardised Measurement Approach replacing BIA/TSA/ASA/AMA: BI, BIC, LC, ILM, ORC. *All SMA numbers in this folder verified against this document.*
-- **Panjer, Harry H., *Operational Risk: Modeling Analytics*** (2006, Wiley) - the quantitative foundation of LDA: frequency/severity convolution, Panjer recursion, EVT tails, capital estimation.
-- **Shevchenko, Pavel V., *Modelling Operational Risk Using Bayesian Inference*** (2011, Springer) - Bayesian combination of internal/external data and expert opinion; the definitive treatment of op-risk data scarcity.
-- **McNeil, Frey & Embrechts, *Quantitative Risk Management*** (2015, Princeton) - compound-Poisson/EVT machinery and risk-measure axiomatics. *Corpus-verified.*
-- **Embrechts, Klüppelberg & Mikosch, *Modelling Extremal Events for Insurance and Finance*** (1997, Springer) - the heavy-tail theory behind severity modelling.
+- **BCBS, *Basel II: International Convergence of Capital Measurement and Capital Standards*** (2006)
+- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424)
+- **Panjer, Harry H., *Operational Risk: Modeling Analytics*** (2006, Wiley)
+- **Shevchenko, Pavel V., *Modelling Operational Risk Using Bayesian Inference*** (2011, Springer)
+- **McNeil, Frey & Embrechts, *Quantitative Risk Management*** (2015, Princeton)
+- **Embrechts, Klüppelberg & Mikosch, *Modelling Extremal Events for Insurance and Finance*** (1997, Springer)
 
 ---
 

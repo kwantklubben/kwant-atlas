@@ -79,12 +79,12 @@ Reading the $g/g^*$ column: half Kelly compounds at 88% of full Kelly here (with
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Breiman, Leo**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961) - asymptotic dominance and time-optimality (Thorp's Theorem 1(iv),(v)).
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §7 - $g_\infty(f^*)=S^2/2+r$, the Sharpe bridge, §7.3 on fractional Kelly.
-- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1) (1952) - the E-V objective Kelly's growth logic sits against.
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011) - the "good and bad properties of Kelly" survey.
+- **Breiman, Leo**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1) (1952)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011)
 
 ---
 

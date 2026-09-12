@@ -65,12 +65,12 @@ We build a random directed interbank network, knock out a few banks, and let the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Eisenberg & Noe**, *Systemic Risk in Financial Systems*, *Management Science* 47(2):236–249 (2001) - the clearing-payments fixed point that formalises cascade losses with proportional recovery.
-- **Gai & Kapadia**, *Contagion in Financial Networks*, *Proc. R. Soc. A* 466 (2010) - robust-yet-fragile, degree and solvency distributions.
-- **Allen & Gale**, *Financial Contagion*, *JPE* 108 (2000) - network completeness as a contagion shaper.
-- **Gregory**, *The xVA Challenge* (2025), Ch 1–3 - why derivatives create counterparty "daisy-chain"/interconnectedness risk at dealer hubs (bridges to [[pillars/04-quantitative-risk/counterparty-risk-and-xva/index|Counterparty Risk & xVA]]).
+- **Eisenberg & Noe**, *Systemic Risk in Financial Systems*, *Management Science* 47(2):236–249 (2001)
+- **Gai & Kapadia**, *Contagion in Financial Networks*, *Proc. R. Soc. A* 466 (2010)
+- **Allen & Gale**, *Financial Contagion*, *JPE* 108 (2000)
+- **Gregory**, *The xVA Challenge* (2025)
 
 ---
 

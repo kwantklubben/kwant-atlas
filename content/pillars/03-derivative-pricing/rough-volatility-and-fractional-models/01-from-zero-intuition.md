@@ -96,13 +96,13 @@ Read the table:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - the empirical finding: $\mathbb E[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2]=\nu^2\Delta^{2H}$ with $H\approx0.1$ on 21 indices (SPX $H{=}0.13,\nu{=}0.32$); monofractal scaling $\zeta_q=qH$; §4 on **spurious long memory**. *The empirical ground truth of this page.*
-- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437 - the fBm covariance and the Hurst-parameter framework.
-- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965 - how rough processes are actually simulated (and why naive schemes fail).
-- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility* - the theory linking H to the short-time skew.
-- **Hull**, *Options, Futures, and Other Derivatives*, ch 20 §20.3 (why smiles exist) and ch 23 (volatility term structure) - the classical baseline this folder extends.
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949
+- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437
+- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965
+- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility*
+- **Hull**, *Options, Futures, and Other Derivatives*, ch 20
 
 ---
 

@@ -118,11 +118,11 @@ Perpetual closed forms, BAW and BS-1993, each checked against its Haug cell and 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, Ch 3 - §3.1 BAW (Table 3-1, $1.8771$ / $15.5689$), §3.2 BS-1993, §3.3 BS-2002 (Table 3-2), §3.4 put-call transformation, §3.5 perpetual (Table 3-3, $20.7939$). *All numerically verified in the corpus.*
-- **Shreve**, *Stochastic Calculus for Finance II*, §8.3 (perpetual put 8.3.12–8.3.14, linear-complementarity 8.3.18–8.3.20). *Math-verified.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, §21.6.3 (perpetual put Prop 21.30, $b=\gamma K/(1+\gamma)$). *Math-verified.*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Björk**, *Arbitrage Theory in Continuous Time*
 - **Barone-Adesi, G. & Whaley, R.** (1987), *Efficient analytic approximation of American option values*, JF 42(2). **Bjerksund, P. & Stensland, G.** (1993, 2002), NHH working papers.
 
 ---

@@ -66,12 +66,12 @@ The table is the whole lesson of the folder, in four rows. **Global** is the nai
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Jacobs, Jordan, Nowlan & Hinton**, "Adaptive Mixtures of Local Experts," *Neural Computation* 3(1):79–87, 1991 - the mixture-of-experts architecture the soft regime-weighted predictor is an instance of.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* - Ch 4 (logistic regression / linear classifiers for the labeler), Ch 14 (mixtures and soft assignment). *Corpus verified.*
-- **Ang & Timmermann**, "Regime Changes and Financial Markets," *ARFE* 4, 2012 - the survey connecting estimated regimes to portfolio choice; the allocation-side payoff of regime-conditional modeling.
-- **López de Prado**, *Advances in Financial Machine Learning* - Ch 3/10 (meta-labeling: a secondary model on top of a primary signal - the same "condition on a secondary latent factor" idea), Ch 7 (honest CV). See [[pillars/07-machine-learning-altdata/tree-and-boosting-methods/index|Tree & Boosting]] and [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged CV]].
+- **Jacobs, Jordan, Nowlan & Hinton**, "Adaptive Mixtures of Local Experts," *Neural Computation* 3(1):79–87, 1991
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Ang & Timmermann**, "Regime Changes and Financial Markets," *ARFE* 4, 2012
+- **López de Prado**, *Advances in Financial Machine Learning*
 
 ---
 

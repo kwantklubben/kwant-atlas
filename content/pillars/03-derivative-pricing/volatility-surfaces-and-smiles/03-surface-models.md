@@ -107,12 +107,12 @@ Three verifications land at once: the **flat-smile identity** returns exactly $0
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 3 (SVI eq 3.20, SPX surface fitting, ATM skew term structure Table 3.1–3.2) and Ch 7 §7.7 (Lee's extreme-strike bounds). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 2 §2.4–2.6 (ATMF skew, $R=2$ rule, forward skew 2.90–2.92), Ch 3 §3.1 (log contract, Breeden–Litzenberger 3.7), Ch 5 (variance swaps: 5.1–5.17, jump spread 5.28/5.31, driftless forward variance 5.6). *Math-verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 §20.4–20.6 (term structure, surface construction, minimum-variance delta).
-- **Lee, Roger**: *The Moment Formula for Implied Volatility at Extreme Strikes* (2004) - the linear-in-$|k|$ wing bound.
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Lee, Roger**: *The Moment Formula for Implied Volatility at Extreme Strikes* (2004)
 
 ---
 

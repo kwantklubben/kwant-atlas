@@ -123,13 +123,13 @@ We solve the **two-state** LSV system by finite differences, with a deliberately
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Guyon, J. & Henry-Labordère, P.** (2013), *Nonlinear Option Pricing* (Chapman & Hall/CRC) - the systematic treatment of McKean–Vlasov SDEs in finance; the LSV calibration and its nonlinear structure. **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107 - the Monte-Carlo form of the same fixed point.
-- **Lipton, A.** (2002), *The vol smile problem*, Risk (February), 61–65 - the forward-PDE route to the leverage in one-factor models; the reference Bergomi's admissibility article cites for "a forward-partial differential equation method … in the case of one-factor models". **Piterbarg, V.** (2005), *Time to smile*, Risk (May), 71–75 - the same family of forward-equation constructions.
-- **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, PTRF **71**(4), 501–516 - the conditional-expectation identity that the marginal reduction realises. **Dupire, B.** (1994), *Pricing with a smile*, Risk **7**(1) - the local variance appearing as the marginal FP coefficient.
-- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016), Ch 12 §12.1–12.4 (LSV, the pricing equation as an ansatz, and the admissibility discussion) and Ch 7 (forward-variance drivers, where the joint-density route generalises). **Bergomi, L.**, *Local-stochastic volatility: models and non-models*, Risk - the footnote to Lipton's forward-PDE method, and the admissibility condition. *Math-verified in the corpus.*
-- **Gatheral, J.**, *The Volatility Surface*, Ch 1 (the Dupire equation in the $w(k,T)$ form that the maturity-by-maturity FP solve mirrors). **Andersen, L. & Brotherton-Ratcliffe, R.** (2001) on finite-difference schemes for the Heston PDE - the machinery the joint solve reuses. *Verification backdrop for §03 of this page.*
+- **Guyon, J. & Henry-Labordère, P.** (2013), *Nonlinear Option Pricing* (Chapman & Hall/CRC)
+- **Lipton, A.** (2002), *The vol smile problem*, Risk (February), 61–65
+- **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, PTRF **71**(4), 501–516
+- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016)
+- **Gatheral, J.**, *The Volatility Surface*
 
 ---
 

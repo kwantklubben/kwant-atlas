@@ -83,13 +83,13 @@ The punchline is in block B: with a modest estimation error, **full Kelly has al
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006) - §7 (portfolio Kelly, the $n$-dimensional $g(\boldsymbol f)=\mathbb{E}\ln(1+\boldsymbol f^\top\mathbf X)$, constraints), §7.3 (fractional Kelly and estimation error), §7.2 (re-estimating and revising $f^*$). *Corpus-verified.*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (World Scientific, 2011) - multi-asset Kelly and the "good/bad properties" treatment of estimation error.
-- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15 (2019), and **Peters & Gell-Mann**, *Evaluating Gambles Using Dynamics*, Chaos 26 (2016) - ergodicity economics: time-average growth as the objective, deriving log utility.
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*, Ch 1 - the standard error $\sigma_f/\sqrt n$ that governs the precision of every estimation-error experiment here. *Verified in the corpus.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, Ch 1 - the non-normality/fat-tail facts that make the Gaussian growth formulas a leading-order approximation. *Verified in the corpus.*
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (World Scientific, 2011)
+- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15 (2019), and **Peters & Gell-Mann**, *Evaluating Gambles Using Dynamics*, Chaos 26 (2016)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*
 
 ---
 

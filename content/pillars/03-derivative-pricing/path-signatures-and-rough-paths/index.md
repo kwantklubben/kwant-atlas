@@ -86,16 +86,16 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lyons, Terry J.** (1998), *Differential equations driven by rough signals*, Revista Matemática Iberoamericana 14(2), 215–310 - **the foundational paper**: $p$-variation control, the rough-path lift, the extension theorem, and uniqueness of the signature. *The primary math-verified source of this folder.*
-- **Lyons, T., Caruana, M., Lévy, T.** (2007), *Differential Equations Driven by Rough Paths* (Springer Lecture Notes 1908) - the standard monograph of the theory; the full signature/extension framework.
-- **Lyons, T. J., Ni, Hao, Zhang, Hao** (2019), *Machine Learning Models of Financial Time Series*, arXiv:1905.11666 - signature kernels and lead-lag signatures applied to (rough) volatility and financial series; the applied bridge this folder leans on for §05–§06.
-- **Hambly, B., Lyons, T.** (2010), *Uniqueness for the signature of a path of bounded variation and the reduced path group*, Annals of Mathematics 171(1), 109–167 - the sharp uniqueness result: the signature determines a bounded-variation path up to tree-like equivalence (the basis for §03's uniqueness statement).
-- **Chevyrev, Ilya & Kormilitzin, Andrey** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788 - the standard practitioner introduction: iterated integrals, lead-lag, expected signature, feature engineering for ML. *The primary applied reference for §01, §05–§06.*
-- **Friz, Peter K. & Victoir, Nicolas** (2010), *Multidimensional Stochastic Processes as Rough Paths* (Cambridge Studies in Advanced Mathematics 120) - the modern comprehensive treatment; geometric rough paths, the extension theorem, Brownian rough paths. *Math-verified.*
-- **Boedihardjo, H., Geng, X., Lyons, T., Yang, D.** (2016), *The signature of a rough path: uniqueness*, Advances in Mathematics 293, 720–737 - uniqueness for *rough* paths (beyond bounded variation), closing the gap this folder flags in §03–§04.
-- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough* - the $H\approx0.1$ empirical finding and the lead-lag signature of rough vol, linked from §06.
+- **Lyons, Terry J.** (1998), *Differential equations driven by rough signals*, Revista Matemática Iberoamericana 14(2), 215–310
+- **Lyons, T., Caruana, M., Lévy, T.** (2007), *Differential Equations Driven by Rough Paths* (Springer Lecture Notes 1908)
+- **Lyons, T. J., Ni, Hao, Zhang, Hao** (2019), *Machine Learning Models of Financial Time Series*, arXiv:1905.11666
+- **Hambly, B., Lyons, T.** (2010), *Uniqueness for the signature of a path of bounded variation and the reduced path group*, Annals of Mathematics 171(1), 109–167
+- **Chevyrev, Ilya & Kormilitzin, Andrey** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788
+- **Friz, Peter K. & Victoir, Nicolas** (2010), *Multidimensional Stochastic Processes as Rough Paths* (Cambridge Studies in Advanced Mathematics 120)
+- **Boedihardjo, H., Geng, X., Lyons, T., Yang, D.** (2016), *The signature of a rough path: uniqueness*, Advances in Mathematics 293, 720–737
+- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough*
 
 ---
 

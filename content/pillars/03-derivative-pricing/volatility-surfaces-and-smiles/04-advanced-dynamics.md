@@ -104,11 +104,11 @@ The LV **skew stickiness ratio climbs toward $R=2$–$3$** exactly as the power-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 7 (short-expiration asymptotics §7.1, Medvedev–Scaillet §7.2, SABR 7.7, jumps §7.3, FPS §7.4, Lewis §7.6, Lee §7.7, summary §7.8) and Ch 8 (surface dynamics: skew level-independence §8.1, LV forward skew §8.2, stochastic implied vol §8.3). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 2 §2.5–2.6 (SSR 2.61/2.64, $R=2$ rule 2.66–2.79, forward skew 2.90–2.92), Ch 3 (forward-start, model-independent bounds), Ch 6 (Heston in forward-variance form 6.9/6.17–6.20). *Math-verified.*
-- **Hagan, Kumar, Lesniewski, Woodward**: *Managing Smile Risk* (Wilmott, 2002) - the SABR formula. **Medvedev–Scaillet** (2004), **Lewis** (2000), **Lee** (2004) for the asymptotics.
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hagan, Kumar, Lesniewski, Woodward**: *Managing Smile Risk* (Wilmott, 2002)
 
 ---
 

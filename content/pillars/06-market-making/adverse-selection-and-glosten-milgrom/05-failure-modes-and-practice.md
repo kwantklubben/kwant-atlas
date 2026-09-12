@@ -68,12 +68,12 @@ The three solid numbers: correct $h$ is break-even ($\approx0$), the underestima
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glosten & Milgrom (1985)**, JFE 14 - the regret-free/zero-profit quote that prices the winner's curse (spread $=\pi(V_H-V_L)$ at $\theta=\tfrac12$).
-- **Copeland & Galai (1983)**, J. Finance 38 - the "short a put and a call" view: the dealer's adverse-selection losses are option-like payoffs whose value rises with information uncertainty - i.e. why the spread must widen with uncertainty.
-- **Hasbrouck (2007)**, Ch 5 (market-maker P&L/zero-profit; belief dynamics) and Ch 6 (PIN as the empirical estimate of the informed-arrival probability $\pi$).
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25 - the practical detector of toxic (permanent-impact) flow feeding directly off this model family. *(Primary PDF: `33Easley2012_flow_toxicity_and_liquidity_in`.pdf in corpus.)*
+- **Glosten & Milgrom (1985)**, JFE 14
+- **Copeland & Galai (1983)**, J. Finance 38
+- **Hasbrouck (2007)**
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25
 
 ---
 

@@ -83,13 +83,13 @@ Read the column breakdown as a design guide: **timestamps and symbols are the re
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Pelkonen, Tuomas et al.** - "Gorilla: A Fast, Scalable, In-Memory Time Series Database" (*VLDB*, 2015) - the canonical delta-of-delta timestamp + XOR-float scheme behind most modern TSDBs.
-- **Parquet Format Specification** (`parquet.apache.org`) - normative definitions of `DELTA_BINARY_PACKED`, `DELTA_LENGTH_BYTE_ARRAY`, `RLE_DICTIONARY`, and dictionary pages.
-- **Lee, Chan et al.** - "Fast Integer Compression" literature and **Lemire & Boytsov**, "Decoding Billions of Integers per Second Through Vectorization" (*SPE*, 2015) - bit-packing and SIMD decode, the mechanism behind "compressed *and* faster to scan."
-- **Borror, Jeffry** - *Q for Mortals*, Kx Systems - how q's sorted attribute and column types make delta/dictionary coding idiomatic.
-- **ClickHouse Documentation** (`clickhouse.com`) - codec chaining (`Delta`, `DoubleDelta`, `ZSTD`) as the production expression of these primitives.
+- **Pelkonen, Tuomas et al.** - "Gorilla: A Fast, Scalable, In-Memory Time Series Database" (*VLDB*, 2015)
+- **Parquet Format Specification** (`parquet.apache.org`)
+- **Lee, Chan et al.** - "Fast Integer Compression" literature and **Lemire & Boytsov**, "Decoding Billions of Integers per Second Through Vectorization" (*SPE*, 2015)
+- **Borror, Jeffry** - *Q for Mortals*, Kx Systems
+- **ClickHouse Documentation** (`clickhouse.com`)
 
 ---
 

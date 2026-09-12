@@ -74,10 +74,10 @@ With $h{=}1$ (non-overlapping) the labels are fair coin flips ($0.501$) - indepe
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7** (§7.2–7.3: why $k$-fold fails in finance; the $X_t\approx X_{t+1}$, $Y_t\approx Y_{t+1}$ mechanism) - the primary source for everything on this page.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7** (§7.10.2: the wrong-vs-right CV example) - why screening inside folds matters.
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7** (§7.2–7.3: why $k$-fold fails in finance; the $X_t\approx X_{t+1}$, $Y_t\approx Y_{t+1}$ mechanism)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7** (§7.10.2: the wrong-vs-right CV example)
 
 ---
 

@@ -73,11 +73,11 @@ The EPE + ENE = EFV check is visible in the outputs (30 + (−8) = 22), and the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory**, *The xVA Challenge*, Ch 1–3 (CCR, the xVA concept, economic costs) and Ch 11 (future value and exposure, Spreadsheet 11.1). *Primary; all numbers verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 §24.7 (credit risk in derivatives transactions: exposure, netting, collateral, CVA/DVA, wrong-way risk).
-- **Brigo & Mercurio**, *Interest Rate Models*, Ch 21 (the CVA pricing proposition).
+- **Gregory**, *The xVA Challenge*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Brigo & Mercurio**, *Interest Rate Models*
 
 ---
 

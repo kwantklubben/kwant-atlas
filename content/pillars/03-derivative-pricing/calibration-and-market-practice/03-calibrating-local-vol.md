@@ -71,11 +71,11 @@ The round-trip closes: options priced under the *calibrated* local vol come back
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 1 (Dupire eq 1.4/1.6, Breeden–Litzenberger, local variance = conditional expectation, eq 1.10), Ch 3 (SVI as an arbitrage-free implied-vol surface for calibration).
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 2 (Dupire eq 2.3, no-arbitrage eqs 2.9–2.17, implied-from-local eqs 2.40–2.54, dynamics & SSR eq 2.64, "has no physical significance"). *Math-verified in the corpus.*
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 8–12 (numerical schemes to price and calibrate the LV PDE). *Corpus available.*
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
 
 ---
 

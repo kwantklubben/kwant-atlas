@@ -126,13 +126,13 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **FIX Trading Community**: *FIX Protocol - Official Specifications (FIX Latest; FIX 4.4)* - fixtrading.org. The **normative source of truth**: message definitions, session-level rules, and the machine-readable **Unified Repository** (XML data dictionary) for code generation. *Priority H, free.*
-- **FIX Trading Community**: *The FIX Algorithmic Trading Definition Language (FIXatdl) v1.1* - venue-agnostic XML descriptions of execution algos. *Referenced from [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/06-advanced-extensions|06 · Advanced Extensions]].*
-- **OnixS**: *FIX Dictionary & Protocol Reference* - onixs.biz. A maintained, browsable explainer of the session layer, FIXT/FIXP, and the FAST/SBE/FIXML encodings. The gentlest free complement to the raw specs.
-- **Nasdaq**: *TotalView-ITCH 5.0 Specification* - nasdaqtrader.com. The official binary market-data protocol (the market-data counterpart to FIX on the order-entry side). *Verified in the corpus; free.*
-- **Donadio, Sebastien**: *Learn Algorithmic Trading* (Packt, 2019) - a zero-background on-ramp covering FIX communication before the official specs.
+- **FIX Trading Community**: *FIX Protocol
+- **FIX Trading Community**: *The FIX Algorithmic Trading Definition Language (FIXatdl) v1.1*
+- **OnixS**: *FIX Dictionary & Protocol Reference*
+- **Nasdaq**: *TotalView-ITCH 5.0 Specification*
+- **Donadio, Sebastien**: *Learn Algorithmic Trading* (Packt, 2019)
 
 ---
 

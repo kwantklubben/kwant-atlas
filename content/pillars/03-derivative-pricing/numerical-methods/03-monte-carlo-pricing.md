@@ -95,12 +95,12 @@ Three verifications: the RMSE ratio between $n$ and $10n$ is $3.54$ and between 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 1 §1.1–1.2 (estimator, CLT rate, dimension-free comparison, risk-neutral measure, eq. 1.39), Ch 2 (random-number generation, inverse transform, Box–Muller, Cholesky normals), Ch 3 §3.1–3.2 (Brownian bridge eq. 3.7–3.8; exact GBM eq. 3.20–3.22; Asian/barrier/lookback payoffs), §3.5 (jump diffusion).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 §21.6 (sampling $S_T$, sampling through a tree, estimating Greeks from simulated paths).
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 4 §4.4 (the Gauss–Weierstrass kernel is the Brownian transition density - the same object MC samples).
-- **Haug**, *Complete Guide to Option Pricing Formulas*, §4.5 (tree values that any MC price can be cross-checked against).
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Haug**, *Complete Guide to Option Pricing Formulas*
 
 ---
 

@@ -123,12 +123,12 @@ At 2,000 points in 8 dimensions, low-discrepancy points cut the RMSE from $0.169
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffy**, *Finite Difference Methods in Financial Engineering* - Ch 19 (Peaceman–Rachford 19.7, growth factors 19.5–19.6, 3-D caution 19.34, mixed derivatives 19.37, Douglas–Rachford 19.35), Ch 20–21 (Yanenko splitting 20.8–20.9, IMEX 21.19–21.21, compound/chooser systems), Ch 24 (multi-asset PDE, Rothe + SOR/GS), Ch 26 (free/moving boundaries, Stefan analogy, smooth pasting 26.8), Ch 27 (front fixing/Landau 27.1–27.36), Ch 28 (penalty 28.15/28.17, Thm 28.2–28.3), Ch 29 (variational inequality, PSOR 29.11, Thm 29.1).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering* - Ch 8 §8.2–8.6 (parametric stopping rules, stochastic mesh, LR mesh weights, regression/LSM 8.46–8.52, the high/low bias split), §8.7 (duality 8.58–8.65, nested simulation), Ch 5 (discrepancy, Koksma–Hlawka 5.10, Halton/Faure/Sobol' 5.14–5.26, randomised QMC 5.32, finance setting 5.33–5.34 and the plateau trap), Ch 7 (pathwise vs likelihood-ratio Greeks, 7.15–7.45).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 §21.4 (alternative tree construction incl. trinomial $u=e^{\sigma\sqrt{3\Delta t}}$), §21.7 (variance reduction incl. quasi-random sequences), §21.8 (finite differences, early exercise from the grid).
-- **Haug**, *Complete Guide to Option Pricing Formulas*, §4.2 (American put $4.692$ at $n=1000$ - the benchmark used above), §4.5 (trinomial: European $13.1752$ vs BSM $13.1744$), Ch 3 (BAW and Bjerksund–Stensland analytic approximations as fast American alternatives).
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *Complete Guide to Option Pricing Formulas*
 
 ---
 

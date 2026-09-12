@@ -87,14 +87,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Merton, Robert C.** - *On the Pricing of Corporate Debt: The Risk Structure of Interest Rates*, *Journal of Finance* 29(2):449–470 (1974). The primary source: eqs. (10)–(11) (equity = call), (12)–(13) (equity/debt values), (14) (risk premium). *Deep-read and formula-verified in the corpus.*
-- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.) - Ch 24 (ratings, transition matrices Table 24.4, hazard-from-spread 24.2, Merton 24.3–24.4, Credit VaR 24.9–24.10) and Ch 25 (CDS mechanics and valuation, one-factor Gaussian copula). *Verification report in the corpus.*
-- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*, 2nd ed. (2010) - asset-value models (§1.2.3), factor decomposition $r_i=\beta_i\Phi_i+\varepsilon_i$, portfolio UL (1.13). *Read in the corpus.*
-- **Gupton, Finger & Bhatia (J.P. Morgan)** - *CreditMetrics™ - Technical Document* (1997) - the one-year transition matrix (Table 1.8) and the rating-migration portfolio framework.
-- **Vašíček, Oldřich** - *Probability of Loss on Loan Portfolio* (KMV, 1987) and *Limiting Loan Loss Probability Distribution* (1991) - the one-factor closed form behind Basel IRB.
-- **Gregory, Jon** - *The xVA Challenge* (5th ed., 2025) - CVA $=\mathrm{LGD}\times\mathbb{E}[\mathrm{EE}\times\mathrm{PD}]$, jump-to-default, wrong-way risk, CDS-basis; the bridge from single-name default to counterparty pricing. *Corpus digest available.*
+- **Merton, Robert C.** - *On the Pricing of Corporate Debt: The Risk Structure of Interest Rates*, *Journal of Finance* 29(2):449–470 (1
+- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.)
+- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*, 2nd ed. (2010)
+- **Gupton, Finger & Bhatia (J.P. Morgan)** - *CreditMetrics™
+- **Vašíček, Oldřich** - *Probability of Loss on Loan Portfolio* (KMV, 1987) and *Limiting Loan Loss Probability Distribution* (1991)
+- **Gregory, Jon** - *The xVA Challenge* (5th ed., 2025)
 
 ---
 

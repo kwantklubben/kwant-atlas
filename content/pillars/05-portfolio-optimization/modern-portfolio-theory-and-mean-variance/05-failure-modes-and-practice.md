@@ -65,13 +65,13 @@ Read it twice: **at a perfectly ordinary near-collinear covariance ($\kappa{=}16
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 (1991) - the headline sensitivity numbers and elasticities this page reproduces. *Verified in the corpus.*
-- **Chopra, Vijay K. & Ziemba, William T.**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, Journal of Portfolio Management 19(2):6–11 (1993) - the ~11× means-over-variances (and ~21× over covariances) result.
+- **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, RFS 4(2):315–342 (1991)
+- **Chopra, Vijay K. & Ziemba, William T.**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, Journal of Portfolio Management 19(2):6–11 (1993)
 - **Michaud, Richard O. (with Robert O. Michaud)**: *Efficient Asset Management*, 2nd ed., OUP (2008) - "Markowitz optimization en masse": resampling and "estimation-error maximizers".
-- **DeMiguel, Garlappi & Uppal**: *Optimal Versus Naive Diversification*, RFS 22(5) (2009) - out-of-sample, no sophisticated optimizer reliably beats $1/N$; the benchmark every optimizer must face.
-- **Kan & Zhou**: *Optimal Portfolio Choice with Parameter Uncertainty*, JFQA 42(3) (2007) - the three-fund/Bayesian answer to input risk.
+- **DeMiguel, Garlappi & Uppal**: *Optimal Versus Naive Diversification*, RFS 22(5) (2009)
+- **Kan & Zhou**: *Optimal Portfolio Choice with Parameter Uncertainty*, JFQA 42(3) (2007)
 
 ---
 

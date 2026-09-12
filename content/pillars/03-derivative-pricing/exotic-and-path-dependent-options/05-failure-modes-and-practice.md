@@ -69,12 +69,12 @@ The pathwise derivative of the digital is identically zero - useless. The likeli
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 7 (pathwise vs likelihood-ratio: the digital/barrier failure, score estimators, finite-difference bias/variance tradeoffs) and Ch 1 (the $O(n^{-1/2})$ rate, §1.1).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §5.6 (Broadie–Glasserman–Kou discrete-barrier correction).
-- **Broadie, Glasserman & Kou (1995)**, "A Continuity Correction for Discrete Barrier Options," *Math. Finance* - the source of $H_D=He^{\pm\beta\sigma\sqrt{\Delta t}}$.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 26–27 (pricing notes and the numerical route for path-dependent products).
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Broadie, Glasserman & Kou (1995)**, "A Continuity Correction for Discrete Barrier Options," *Math. Finance*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

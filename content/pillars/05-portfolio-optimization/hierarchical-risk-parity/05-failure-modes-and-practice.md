@@ -89,13 +89,13 @@ Runs on numpy. **EXP A** builds $N=60$ assets from $T=40$ observations (a singul
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 - the out-of-sample evidence that motivates HRP's robustness claim, and the limits of that claim.
-- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*, Ch. 16–17 - HRP/HERC in practice, clustering-stability concerns, and the machine-learning view of the same estimation problems.
-- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.), §14.3.12 - the cophenetic correlation as the standard clustering-quality diagnostic.
-- **DeMiguel, Garlappi & Uppal** (2009). "Optimal Versus Naive Diversification." *Review of Financial Studies* 22(5):1915–1953 - the $1/N$ benchmark HRP must clear out-of-sample.
-- **Ledoit & Wolf** (2004). "A Well-Conditioned Estimator for Large-Dimensional Covariance Matrices." *J. Multivariate Analysis* 88(2):365–411 - the shrinkage that repairs HRP's noisy inputs.
+- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69
+- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*
+- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.)
+- **DeMiguel, Garlappi & Uppal** (2009). "Optimal Versus Naive Diversification." *Review of Financial Studies* 22(5):1915–1953
+- **Ledoit & Wolf** (2004). "A Well-Conditioned Estimator for Large-Dimensional Covariance Matrices." *J. Multivariate Analysis* 88(2):365–411
 
 ---
 

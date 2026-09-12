@@ -60,13 +60,13 @@ Read the table. Moving from $B=1$ to $B=64$ is a **5.6x** throughput gain with *
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **LMAX**, *The Disruptor* (paper) and **Fowler, Martin**, *The LMAX Architecture* - batching, single-writer ring, mechanical sympathy. The corpus cites the "6M msg/s sub-µs" headline.
-- **Thompson, Martin** - *Mechanical Sympathy* - the cache-line / batching engineering behind Disruptor.
-- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*, Ch 6 (universality, helping → wait-free) and the blocking/lock-free/wait-free hierarchy.
-- **Preshing, Jeff** - *An Introduction to Lock-Free Programming* - the practical framing of lock-free vs wait-free.
-- **Williams**, *C++ Concurrency in Action*, Ch 7 - implementing batching and lock-free structures in C++.
+- **LMAX**, *The Disruptor* (paper) and **Fowler, Martin**, *The LMAX Architecture*
+- **Thompson, Martin** - *Mechanical Sympathy*
+- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*
+- **Preshing, Jeff** - *An Introduction to Lock-Free Programming*
+- **Williams**, *C++ Concurrency in Action*
 
 ---
 

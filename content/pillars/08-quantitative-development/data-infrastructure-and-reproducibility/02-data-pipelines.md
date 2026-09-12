@@ -61,12 +61,12 @@ Note that the `NaN` row is caught by the `px != px` reflexivity check - a direct
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado** - *Advances in Financial Machine Learning*, Ch 1 & 9 - data leakage and the discipline that a pipeline's validate stage must enforce at ingest, not retroactively.
-- **Financial Data Engineering with Python** - production-grade market/accounting/forecasting pipelines in Python (candidate SOURCE).
-- **Needham & Simons** - *DuckDB in Action* - the serve-stage query layer (as-of joins, point-in-time reads).
-- **ClickHouse Documentation** - the append-only OLAP store where validated tick/time-series rows land.
+- **López de Prado** - *Advances in Financial Machine Learning*
+- **Financial Data Engineering with Python**
+- **Needham & Simons** - *DuckDB in Action*
+- **ClickHouse Documentation**
 
 ---
 

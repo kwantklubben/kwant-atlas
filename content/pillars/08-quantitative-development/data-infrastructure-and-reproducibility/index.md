@@ -83,13 +83,13 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018) - **the** priority source on data leakage and point-in-time correctness; the reproducibility discipline for financial data pipelines. **Priority H.**
-- **Needham, Mark & Simons, Michael** - *DuckDB in Action* (Manning) - the analytics/as-of query layer of a quant data stack (cross-listed from the tick-DB folder).
-- **Astral `uv` / Poetry / conda-lock / Docker** - official tool documentation - the practical baseline for locking and reproducing Python research environments. **Priority M.**
-- **Financial Data Engineering with Python** (O'Reilly-adjacent practical guide) - building production-grade market/accounting/forecasting data pipelines in Python; candidate SOURCE pending verification.
-- **ClickHouse Documentation** - clickhouse.com - OLAP engine for high-volume tick/time-series storage (cross-listed from the tick-DB folder).
+- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Needham, Mark & Simons, Michael** - *DuckDB in Action* (Manning)
+- **Astral `uv` / Poetry / conda-lock / Docker**
+- **Financial Data Engineering with Python** (O'Reilly-adjacent practical guide)
+- **ClickHouse Documentation**
 
 ---
 

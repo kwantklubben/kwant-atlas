@@ -119,14 +119,14 @@ Read the trace as the guard's lifeline: the fat-finger and collar orders are rej
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **SEC Rule 15c3-5** - *Risk Management Controls for Brokers or Dealers with Market Access* - the regulatory source for pre-trade risk controls (fat-finger, notional, rate, and the "direct and exclusive" control obligation).
-- **U.S. SEC**, *In the Matter of Knight Capital Americas LLC* (Release 34-70694, 2013) - the canonical incident record; read it for the exact control gaps, not just the headline.
-- **Narang**, *Inside the Black Box*, 2nd ed. - the risk engine as a first-class component of the trading system.
-- **NautilusTrader - Official Documentation** (nautilustrader.io) - a live engine's `RiskEngine` with pre-trade checks and trading-state (active/halted) semantics: a concrete, inspectable model.
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) - Ch 13–14 on emergency response and the "fail safe" design principle.
-- **Cartea, Jaimungal & Penalva**, *Algorithmic and High-Frequency Trading* - Ch 1–2 (market access, order types) for what the guard is protecting the venue-side state machine from.
+- **SEC Rule 15c3-5** - *Risk Management Controls for Brokers or Dealers with Market Access*
+- **U.S. SEC**, *In the Matter of Knight Capital Americas LLC* (Release 34-70694, 2013)
+- **Narang**, *Inside the Black Box*, 2nd ed.
+- **NautilusTrader - Official Documentation** (nautilustrader.io)
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016)
+- **Cartea, Jaimungal & Penalva**, *Algorithmic and High-Frequency Trading*
 
 ---
 

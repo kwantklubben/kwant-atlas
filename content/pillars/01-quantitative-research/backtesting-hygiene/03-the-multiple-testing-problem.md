@@ -100,13 +100,13 @@ Three readings: **(1)** the exact order statistic tracks Monte Carlo (2.531 vs 2
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014), §"Expected Sharpe ratios under multiple trials", eqs. (1)–(2), and Appendix 1 (the order-statistic derivation), Appendix 3 (implied independent trials $\widehat N$). *The expected-max formula and its MC verification.*
-- **Harvey, C. R. & Liu, Y.**: *Backtesting*, JPM (2015), §"Method", §"Multiple testing framework" - eqs. (1)–(5): the t↔Sharpe link, $p_M=1-(1-p_S)^N$, the haircut Sharpe $HSR$, and the Bonferroni/Holm/FDR trio.
-- **White, H.**: *A Reality Check for Data Snooping*, Econometrica 68(5) (2000) - the bootstrap test that the best model in a search has no edge (page 06).
-- **Bruss, F. T.**: *A Unified Approach to a Class of Best Choice Problems*, Annals of Probability 12(3) (1984) - the $1/e$-law / secretary problem as the optimal trial count.
-- **Bonferroni / Holm / Benjamini–Hochberg** - the classical multiple-testing procedures (see Harvey & Liu references).
+- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014)
+- **Harvey, C. R. & Liu, Y.**: *Backtesting*, JPM (2015)
+- **White, H.**: *A Reality Check for Data Snooping*, Econometrica 68(5) (2000)
+- **Bruss, F. T.**: *A Unified Approach to a Class of Best Choice Problems*, Annals of Probability 12(3) (1984)
+- **Bonferroni / Holm / Benjamini–Hochberg**
 
 ---
 

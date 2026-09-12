@@ -74,15 +74,15 @@ The demonstration is the point: **the single cheapest stock (Zeta Steel) is the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Graham, Benjamin**: *The Intelligent Investor* (2003 annotated ed.) - the margin-of-safety doctrine that every guard above implements; the behavioral spine (Ch 8, Mr. Market; Ch 20).
-- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000) - the F-score; the empirical proof that quality *conditions* the value signal. *The core of this page's trap detector.*
-- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows…?" (*TAR*, 1996) - the accrual red flag behind the CFO/NI guard.
-- **Gray, Wesley R. & Carlisle, Tobias E.**: *Quantitative Value* (Wiley, 2013) - the practical combination of value and quality signals with explicit bias controls.
-- **O'Shaughnessy, James P.**: *What Works on Wall Street* (McGraw-Hill, 4th ed.) - decades of backtests with the honest caveats about overfitting and decay.
-- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - why value (book-to-market) is a priced characteristic and how cross-sectional controls matter.
-- **Green, Hand & Zhang**: "The Characteristics That Provide Independent Information…" (*RFS*, 2017) - the map of which of 94 characteristics survive; the antidote to screen overfitting.
+- **Graham, Benjamin**: *The Intelligent Investor* (2003 annotated ed.)
+- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000)
+- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows…?" (*TAR*, 1996)
+- **Gray, Wesley R. & Carlisle, Tobias E.**: *Quantitative Value* (Wiley, 2013)
+- **O'Shaughnessy, James P.**: *What Works on Wall Street* (McGraw-Hill, 4th ed.)
+- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **Green, Hand & Zhang**: "The Characteristics That Provide Independent Information…" (*RFS*, 2017)
 
 ---
 

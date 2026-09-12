@@ -86,13 +86,13 @@ The equal-weight portfolio earns a *negative* annualised return ($-1.6\%$) becau
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Koijen, Moskowitz, Pedersen & Vrugt**, "Carry," *Journal of Financial Economics* 127(2):197–225, 2018 - the cross-asset carry factor; the canonical reference for this page.
-- **Asness, Moskowitz & Pedersen**, "Value and Momentum Everywhere," *Journal of Finance* 68(3):929–985, 2013 - value and momentum styles across asset classes.
-- **Frazzini & Pedersen**, "Betting Against Beta," *Journal of Financial Economics* 111(1):1–25, 2014 - the defensive style.
-- **Ilmanen**, *Expected Returns* (2011) - the practical tour of carry and the carry crash.
-- **Ang**, *Asset Management* (2014), Ch 6–7 - value, momentum, carry, defensive as cross-asset style premia.
+- **Koijen, Moskowitz, Pedersen & Vrugt**, "Carry," *Journal of Financial Economics* 127(2):197–225, 2018
+- **Asness, Moskowitz & Pedersen**, "Value and Momentum Everywhere," *Journal of Finance* 68(3):929–985, 2013
+- **Frazzini & Pedersen**, "Betting Against Beta," *Journal of Financial Economics* 111(1):1–25, 2014
+- **Ilmanen**, *Expected Returns* (2011)
+- **Ang**, *Asset Management* (2014)
 
 ---
 

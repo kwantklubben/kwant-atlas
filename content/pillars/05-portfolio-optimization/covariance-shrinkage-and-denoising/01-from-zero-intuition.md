@@ -83,7 +83,7 @@ Read those four numbers together. The optimizer reports a variance of $0.0216$ -
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Markowitz, H. (1952).** "Portfolio Selection." *Journal of Finance* 7(1):77–91. *The mean–variance quadratic program whose $\Sigma^{-1}$ is the source of the sensitivity.*
 - **Michaud, R. O. (1989).** "The Markowitz Optimization Enigma: Is 'Optimized' Optimal?" *Financial Analysts Journal* 45(1):31–42. *Coins "error maximization."*

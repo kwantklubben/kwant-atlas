@@ -66,12 +66,12 @@ Vol-scaling lifts Sharpe from $+0.72$ to $+1.18$, cuts the worst month from $-45
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Barroso & Santa-Clara (2015)**, *Momentum Has Its Moments*, J. Financial Economics 116(1) - vol-managed momentum, Sharpe 0.53→0.97, crash risk nearly eliminated. *Verified corpus refs/17.*
-- **Daniel & Moskowitz (2016)**, *Momentum Crashes*, J. Financial Economics 122(2) - the optimal dynamic strategy, conditional-vol-proportional-to-conditional-Sharpe scaling, annualized Sharpe 1.18 across markets. *Verified corpus refs/16.*
-- **Moskowitz, Ooi & Pedersen (2012)**, *Time Series Momentum* - asset-level vol scaling (40%/σ) that the strategy-level risk management extends. *Verified corpus refs/14.*
-- **Baltas & Kosowski (2013)**, *Demystifying Time-Series Momentum* - the role of volatility-estimator efficiency and correlation adjustment for constant-vol strategies. *Verified corpus refs/19.*
+- **Barroso & Santa-Clara (2015)**, *Momentum Has Its Moments*, J. Financial Economics 116(1)
+- **Daniel & Moskowitz (2016)**, *Momentum Crashes*, J. Financial Economics 122(2)
+- **Moskowitz, Ooi & Pedersen (2012)**, *Time Series Momentum*
+- **Baltas & Kosowski (2013)**, *Demystifying Time-Series Momentum*
 
 ---
 

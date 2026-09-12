@@ -72,15 +72,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **BCBS** - *Minimum Capital Requirements for Market Risk* (January 2019, BIS **d457**; the **FRTB**). Replaces 99% VaR with 97.5% Expected Shortfall, splits into a sensitivities-based standardised approach (SA) and an internal-models approach (IMA). *The single most important current market-risk regulation; read in full from the corpus PDF.*
 - **BCBS** - *Basel III: Finalising Post-Crisis Reforms* (December 2017, BIS **d424**). The "endgame": revised credit/operational/CVA capital, the leverage ratio, and the **output floor** ($72.5\%$ from 2027). *Read from the corpus PDF.*
 - **BCBS** - *Basel III: A Global Regulatory Framework for More Resilient Banks and Banking Systems* (December 2010, BIS d189). Defines the CET1/Tier 1/total minima, the capital conservation buffer, and the 3% leverage ratio test. *Read from the corpus PDF.*
 - **BCBS** - *Amendment to the Capital Accord to Incorporate Market Risks* (1996, BIS). Origin of the internal-models (VaR) approach: 99%/10-day VaR, multiplier $\ge3$. *Read from the corpus PDF.*
-- **BCBS** - *Basel II: International Convergence of Capital Measurement and Capital Standards* (2006). The three-pillar structure and the IRB credit-risk formula. *Read from the corpus PDF.*
-- **Hull, John C.** - *Risk Management and Financial Institutions* (5th ed., 2018, Wiley). Ch on Basel I/II/III, Solvency II, and post-crisis reform - the clearest textbook map of the architecture; read first, then the primary BCBS documents.
-- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.). Ch 24 (credit ratings, Merton, the Vasicek one-factor credit model behind IRB capital) and Ch 22 (VaR/ES and the 1996/Basel numbers). *Verified per chapter in the corpus.*
+- **BCBS** - *Basel II: International Convergence of Capital Measurement and Capital Standards* (2
+- **Hull, John C.** - *Risk Management and Financial Institutions* (5th ed., 2018, Wiley). Ch on Basel I/II/III, Solvency II, and post-crisis reform
+- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.)
 
 ---
 

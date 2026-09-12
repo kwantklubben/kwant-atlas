@@ -92,13 +92,13 @@ Two experiments on a long ATM call ($S=X=100$, $T=0.5$, $r=b=5\%$, $\sigma=20\%$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 19 §19.2–19.4 (the $\Delta$-neutral P&L expansion, the gamma–theta identity, why delta-hedging leaves gamma risk), Ch 20 (volatility smiles - the empirical basis for vanna/volga mattering), Ch 22 §22.5 (the delta–gamma VaR model and its acknowledged limits). *Verified in the corpus (`hull_ch19-23.md`).*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) - §2.3.3 (vanna, volga, and the higher-order Greek set - the exact objects whose omission is failure mode 2), §2.15 (gamma–theta).
-- **Taleb, Nassim Nicholas**: *Dynamic Hedging* (Wiley, 1997) - the desk-level account of gamma/vega books, pin risk, and why the P&L of an option book is never captured by its Greeks.
-- **Derman, Emanuel**: *Model Risk* (Goldman Sachs QSR Notes, 1996) - the framework for failure mode 6: sensitivities inherit every error of the model that produced them.
-- **Alexander, Carol**: *Market Risk Analysis, Vol. IV* (2008) - the accuracy limits of delta-gamma VaR and the cases where full revaluation is mandatory.
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006)
+- **Taleb, Nassim Nicholas**: *Dynamic Hedging* (Wiley, 1997)
+- **Derman, Emanuel**: *Model Risk* (Goldman Sachs QSR Notes, 1996)
+- **Alexander, Carol**: *Market Risk Analysis, Vol. IV* (2008)
 
 ---
 

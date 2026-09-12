@@ -80,15 +80,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Easley, D., Kiefer, N. & O'Hara, M. (1997)**, *The information content of the trading process*, J. Empirical Finance 4, 159–186. **PIN**, the Poisson-mixture informed-fraction. *Primary PDF: `37_Easley_1997...` in corpus.*
 - **Easley, D., López de Prado, M. & O'Hara, M. (2012)**, *Flow toxicity and liquidity in a high-frequency world*, Review of Financial Studies 25(5), 1457–1493. **The formal VPIN paper**: volume-synchronized imbalance, bulk-volume classification, eq. 9 and Appendix A. *Primary PDF: `33Easley2012_flow_toxicity_and_liquidity_in.pdf`.*
 - **Easley, D., López de Prado, M. & O'Hara, M. (2011)**, *The microstructure of the "flash crash": flow toxicity, liquidity crashes, and the probability of informed trading*, J. Portfolio Management 37(2), 118–128. The applied claim that VPIN spiked *before* May 6, 2010. *Primary PDF: `34_Easley_2011...`.*
 - **Lee, C. M. C. & Ready, M. J. (1991)**, *Inferring trade direction from intraday data*, J. Finance 46(2), 733–746. The signing algorithm every flow metric rests on. *Primary PDF: `36_Lee_1991...`.*
-- **Andersen, T. G. & Bondarenko, O. (2014)**, *VPIN and the flash crash*, J. Financial Markets 17, 1–46. **The essential critique** - read beside any VPIN claim. *Primary PDF: `35_Andersen_2014...`.*
+- **Andersen, T. G. & Bondarenko, O. (2014)**, *VPIN and the flash crash*, J. Financial Markets 17, 1–46. **The essential critique**
 - **Easley, D., Hvidkjaer, S. & O'Hara, M. (2002)**, *Is information risk a determinant of asset returns?*, J. Finance 57(5), 2185–2221. The asset-pricing use of PIN. *Primary PDF: `38_Easley_2002...`.*
-- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP. Ch 6 (PIN: mixture, likelihood, identification). *Math-verified in `hasbrouck_ch6-10.md`.*
+- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP
 
 ---
 

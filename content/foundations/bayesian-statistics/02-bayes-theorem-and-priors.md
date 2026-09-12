@@ -91,13 +91,13 @@ Three facts are visible in the output. (i) **Precisions add**: $10.250 = 0.250 +
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference* (2nd ed.) - §7.2.3 (Bayes estimators, eq. 7.2.6–7.2.7, Example 7.2.9 beta–binomial, Example 7.2.10 normal–normal), Def 7.2.2 (conjugate family). *Primary for the derivation; PDF in the corpus.*
-- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.) - Ch 2 (single-parameter models: binomial, Poisson, normal - the conjugate catalogue), Ch 3 (multi-parameter models; the $N(\mu,\sigma^2)$ pair), §2.8 (weakly informative priors), Ch 7 (evaluating and comparing models: marginal likelihood, Bayes factors, DIC/WAIC as the modern alternatives).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 12 §12.3 - Bayesian inference, conjugate results, and the role of the prior in the Gibbs sampler. *Math-verified in the corpus.*
-- **Hoff**, *A First Course in Bayesian Statistical Methods*, Ch 3–5 - conjugate families and the normal model worked carefully, with code.
-- **MacKay**, *Information Theory, Inference, and Learning Algorithms*, Ch 2–3, 28 - Bayes' theorem, priors, and the evidence as a model-comparison tool.
+- **Casella & Berger**, *Statistical Inference* (2nd ed.)
+- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Hoff**, *A First Course in Bayesian Statistical Methods*
+- **MacKay**, *Information Theory, Inference, and Learning Algorithms*
 
 ---
 

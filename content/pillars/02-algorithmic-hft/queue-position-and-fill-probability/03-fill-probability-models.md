@@ -89,12 +89,12 @@ The closed form and simulation agree to $<0.003$ across the grid - the negative-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lo, MacKinlay & Zhang** (2002), *J. Financial Economics* 65(1), 31–71 - the econometric survival/hazard model of limit-order execution; the empirical counterpart to the queue-model fill probability.
-- **Cont, Kukanov & Stoikov** (2014), *J. Financial Markets* 17 - the order-flow-imbalance price-impact law and the empirical queue accounting behind the fill function.
-- **Cont & Kukanov** (2017), §2 - the fill function $(\xi-Q)^+-(\xi-Q-L)^+$ and its use in placement optimisation.
-- **Gould et al.** (2013), §5 - empirical execution and cancellation frequencies, and the hazard/conditional-frequency evidence.
+- **Lo, MacKinlay & Zhang** (2002), *J. Financial Economics* 65(1), 31–71
+- **Cont, Kukanov & Stoikov** (2014), *J. Financial Markets* 17
+- **Cont & Kukanov** (2017)
+- **Gould et al.** (2013)
 
 ---
 

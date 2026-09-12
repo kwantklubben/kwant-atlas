@@ -86,14 +86,14 @@ The DM statistic is $-0.04$: the model and its benchmark are **statistically ind
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *Journal of Derivatives* 3(2):73–84 (1995) - the POF/TUFF unconditional-coverage test.
-- **Christoffersen, P.**, *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998) - the independence/conditional-coverage test.
-- **BCBS**, *Supervisory Framework for the Use of Backtesting…* (1996, BIS), §2 - "Statistical considerations in defining the zones"; the $95.88\%$/$99.99\%$ boundaries (reproduced exactly above). *Read from the corpus PDF (16_BCBS_1996...).*
-- **Federal Reserve / OCC**, *SR 11-7* (2011) - the three validation elements (conceptual soundness, ongoing monitoring, outcomes analysis) and independence. *Read in full from the corpus PDF.*
-- **Diebold, F. & Mariano, R.**, *Comparing Predictive Accuracy*, *J. Business & Economic Statistics* 13(3):253–263 (1995) - the loss-differential comparison test.
-- **Hastie, Tibshirani & Friedman**, *ESL* 2nd ed. (2009), §7.10.2 - the wrong-vs-right way to do cross-validation (screening inside folds); the model-selection analogue of benchmark discipline. *Verified in the corpus.*
+- **Kupiec, P.**, *Techniques for Verifying the Accuracy of Risk Measurement Models*, *Journal of Derivatives* 3(2):73–84 (1995)
+- **Christoffersen, P.**, *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998)
+- **BCBS**, *Supervisory Framework for the Use of Backtesting…* (1996, BIS)
+- **Federal Reserve / OCC**, *SR 11-7* (2011)
+- **Diebold, F. & Mariano, R.**, *Comparing Predictive Accuracy*, *J. Business & Economic Statistics* 13(3):253–263 (1995)
+- **Hastie, Tibshirani & Friedman**, *ESL* 2nd ed. (2009)
 
 ---
 

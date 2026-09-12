@@ -72,13 +72,13 @@ The slowdown is a **constant 18x** for any $K$: it comes from the *rate* at whic
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Williams**, *C++ Concurrency in Action*, Ch 5 (the C++ memory model: `std::memory_order`, happens-before, fences) - the definitive practical treatment.
-- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*, Ch 5 (the shared-memory model and why consistency matters).
-- **Preshing, Jeff** - *Preshing on Programming* (the "acqrel" and "relaxed vs acquire-release" series) - the clearest free explanation of the C++ memory model.
-- **Maranget, Sarkar, Sewell et al.** - *A Tutorial Introduction to the ARM and POWER Relaxed Memory Models* - the weak-model reality behind the "x86 trap."
-- **Bryant & O'Hallaron (CS:APP)**, Ch 12 (cache coherence and the memory system).
+- **Williams**, *C++ Concurrency in Action*
+- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*
+- **Preshing, Jeff** - *Preshing on Programming* (the "acqrel" and "relaxed vs acquire-release" series)
+- **Maranget, Sarkar, Sewell et al.** - *A Tutorial Introduction to the ARM and POWER Relaxed Memory Models*
+- **Bryant & O'Hallaron (CS:APP)**
 
 ---
 

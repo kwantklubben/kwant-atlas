@@ -95,11 +95,11 @@ The OLS slope tracks $1/(2\,\text{depth})$ to five decimals at every depth - the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Cont, R., Kukanov, A. & Stoikov, S. (2014)**, *The price impact of order book events*, J. Financial Econometrics 12(1), 47–88. *OFI definition, linear relation, slope $\propto1/$depth, robustness. Primary PDF in corpus (`04Cont2014_...`).*
 - **Almgren, R., Thum, C., Hauptmann, H. & Li, H. (2005)**, *Direct estimation of equity market impact*, Risk 18(7), 57–62. *Pre-trade/post-trade/realized prices, volume time, power-law fitting, $\gamma,\eta$. Primary PDF in corpus.*
-- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, §9.7 (signing, event time, quote midpoints) and §9.9 (Amivest/Amihud proxies; Amihud better as a $\lambda$ proxy, Hasbrouck 2005). *Verified in corpus (`hasbrouck_ch6-10.md`).*
+- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*
 - **Amihud, Y. (2002)**, *Illiquidity and stock returns*, J. Financial Markets 5(1), 31–56. *The illiquidity ratio. Primary PDF in corpus.*
 - **Lee, C. & Ready, M. (1991)**, *Inferring trade direction from intraday data*, J. Finance 46(2), 733–746. *The trade-signing prerequisite for any flow regression.*
 - **Roll, R. (1984)**, *A simple implicit measure of the effective bid-ask spread*, J. Finance 39(4), 1127–1139. *The autocovariance spread proxy and its bias directions.*

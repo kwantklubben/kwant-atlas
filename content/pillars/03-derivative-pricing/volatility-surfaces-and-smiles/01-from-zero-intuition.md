@@ -81,11 +81,11 @@ The inversion recovers the skew exactly (28/24/20/17/15%) - confirming that the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 §20.1–20.5 (definition of implied vol, FX smile vs equity skew, leverage/volatility-feedback/crashophobia, delta-based characterization, term structure & surface) and app. 20A (Breeden–Litzenberger extraction of the risk-neutral density). *Verification report in the corpus.*
-- **Gatheral**, *The Volatility Surface*, Ch 3 (the implied volatility surface), Ch 6 (default risk as a driver of single-stock skew).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §2.3 (vega) and §2.1 (delta) - the sensitivities that make inversion work.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Gatheral**, *The Volatility Surface*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

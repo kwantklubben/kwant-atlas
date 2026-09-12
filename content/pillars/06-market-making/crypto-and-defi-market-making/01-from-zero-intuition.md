@@ -90,12 +90,12 @@ Note the asymmetry between the "ladder" (LP value grows, but more slowly than ho
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Adams, Zinsmeister, Salem, Keefer & Robinson (2021)**, *Uniswap v3 Core*, Uniswap whitepaper - the constant-product foundation and the concentrated-liquidity upgrade.
-- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601 - proves the LP payoff is a short options bundle ("short gamma").
-- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3) - the human-maker baseline the AMM dispenses with.
-- **Milionis, Moallemi, Roughgarden & Zhang (2022)**, *Automated Market Making and Loss-Versus-Rebalancing*, arXiv:2208.06046 - reframes divergence loss path-dependently as LVR.
+- **Adams, Zinsmeister, Salem, Keefer & Robinson (2021)**, *Uniswap v3 Core*, Uniswap whitepaper
+- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601
+- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3)
+- **Milionis, Moallemi, Roughgarden & Zhang (2022)**, *Automated Market Making and Loss-Versus-Rebalancing*, arXiv:2208.06046
 
 ---
 

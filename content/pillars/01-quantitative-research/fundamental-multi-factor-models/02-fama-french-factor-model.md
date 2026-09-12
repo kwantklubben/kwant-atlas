@@ -78,13 +78,13 @@ The OLS recovers the true loadings to within sampling error ($R^2{=}0.90$ becaus
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) - the 3-factor model; market, SMB, HML.
-- **Fama & French**, "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - eq. (5) regression adding RMW and CMA.
-- **Gibbons, Ross & Shanken**, "A Test of the Efficiency of a Given Portfolio" (*Econometrica*, 1989) - the GRS joint test of zero intercepts.
-- **Tsay**, *Analysis of Financial Time Series*, §9.3.2 - Fama–French factor estimation by time-series regression.
-- **Hastie et al.**, *The Elements of Statistical Learning*, Ch 3 - OLS, $X^\top X$ solution, inference.
+- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993)
+- **Fama & French**, "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Gibbons, Ross & Shanken**, "A Test of the Efficiency of a Given Portfolio" (*Econometrica*, 1989)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Hastie et al.**, *The Elements of Statistical Learning*
 
 ---
 

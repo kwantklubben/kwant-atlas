@@ -83,11 +83,11 @@ The entire method is the covariance machinery. We verify the `3,396.15` hub numb
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 §22.4 (linear model, portfolio variance eq. 22.3/22.4, $z_\alpha\sigma\sqrt h$) and Ch 23 (EWMA/GARCH covariance estimation, eq. 23.7–23.9, 23.17). *Verified in corpus.*
-- **RiskMetrics / J.P. Morgan**: *RiskMetrics - Technical Document*, 4th ed. (1996) - the canonical delta-normal framework: risk-factor mapping, EWMA vol/correlation, $\lambda{=}0.94$.
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 §9.1 (the delta model (9.1) and delta–gamma (9.2) as the parametric backbone).
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **RiskMetrics / J.P. Morgan**: *RiskMetrics
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

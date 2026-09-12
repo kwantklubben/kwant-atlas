@@ -59,12 +59,12 @@ Read the numbers carefully: **the mean barely moved ($99.97\to100.06$)** - a nai
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado** - *Advances in Financial Machine Learning*, Ch 1 & 9 - data leakage and point-in-time correctness; the definitive treatment of the costliest failure mode. **Priority H.**
-- **Needham & Simons** - *DuckDB in Action* - as-of/point-in-time querying that prevents look-ahead at serve time.
-- **Astral `uv` / conda-lock / Docker** - official docs - the tooling that prevents config drift by pinning the environment.
-- **Financial Data Engineering with Python** - production validation/quality discipline for Python pipelines.
+- **López de Prado** - *Advances in Financial Machine Learning*
+- **Needham & Simons** - *DuckDB in Action*
+- **Astral `uv` / conda-lock / Docker**
+- **Financial Data Engineering with Python**
 
 ---
 

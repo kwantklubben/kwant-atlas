@@ -75,11 +75,11 @@ The cleanest way to *see* contagion is the deterministic ring cascade above. Std
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Allen & Gale**, *Financial Contagion*, *Journal of Political Economy* 108(1):1–33 (2000) - the first rigorous statement that network completeness shapes contagion (complete networks *survive* smallish shocks better than incomplete ones).
-- **Gai & Kapadia**, *Contagion in Financial Networks*, *Proc. R. Soc. A* 466:2401–2423 (2010) - the "robust-yet-fragile" catalogue; sparse networks are fragile in a distinctive way.
-- **Haldane**, *Rethinking the Financial Network* (2009, Bank of England) - the policy essay that made network risk central; crisp intuition, no math required.
+- **Allen & Gale**, *Financial Contagion*, *Journal of Political Economy* 108(1):1–33 (2000)
+- **Gai & Kapadia**, *Contagion in Financial Networks*, *Proc. R. Soc. A* 466:2401–2423 (2010)
+- **Haldane**, *Rethinking the Financial Network* (2009, Bank of England)
 
 ---
 

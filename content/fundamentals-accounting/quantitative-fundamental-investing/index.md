@@ -68,16 +68,16 @@ Hub signposts - the folder's failure-mode analysis lives in [[fundamentals-accou
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - size + book-to-market capture the cross-section; the paper that displaced the one-beta CAPM story. *Factor definitions and headline result verified against the corpus paper.*
-- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) - the canonical **three-factor model** (market, SMB, HML) and the 2×3 construction used across this folder.
-- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - adds **profitability (RMW)** and **investment (CMA)**; the formal seat of accounting fundamentals inside the asset-pricing model.
-- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013) - gross profitability predicts with roughly the same power as book-to-market, orthogonal to it.
-- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000) - the 9-signal F-score; value + quality in one mechanical screen (see [[fundamentals-accounting/quantitative-fundamental-investing/04-quality-and-fscores|04 · Quality & F-scores]]).
-- **Hou, Kewei; Xue, Chen & Zhang, Lu**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015) - the q-factor model (investment + ROE) that consolidates most anomalies through a production-based lens.
-- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**: "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017) - the 100-characteristic census and the 24 genuinely priced signals (see [[fundamentals-accounting/quantitative-fundamental-investing/05-failure-modes-and-practice|05 · Failure Modes]]).
-- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996) - the accruals quality factor.
+- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993)
+- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013)
+- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000)
+- **Hou, Kewei; Xue, Chen & Zhang, Lu**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015)
+- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**: "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017)
+- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996)
 
 ---
 

@@ -99,13 +99,13 @@ The L3 map shows what L2 hides: at \$100.00 there are **two** orders (#1 = 200 l
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 2 §2.1 (the book as unexecuted limit orders; dynamic and transparent; point-process data) and Ch 2 §2.2–2.3 (mechanism taxonomy) - *verified in the corpus*.
-- **Foucault, Pagano & Röell**, *Market Liquidity*, Ch 1 (liquidity = depth, breadth, resiliency; transparency) and Ch 2 (spread and depth measures) - *verified in the corpus*.
-- **Bouchaud, Mézard & Potters (2002)**, *Statistical properties of stock order books*, Quantitative Finance 2(4), 251–256 - the empirical book-shape stylised facts (deposit/withdrawal rates vs price level).
-- **Cont, Stoikov & Talreja (2010)**, *A stochastic model for order book dynamics*, Operations Research 58(3) - the Markovian state model of §2.4.
-- **Gould, Porter, Williams, McDonald, Fenn & Howison (2013)**, *Limit order books*, Quantitative Finance 13(11) - the review and citation hub.
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Foucault, Pagano & Röell**, *Market Liquidity*
+- **Bouchaud, Mézard & Potters (2002)**, *Statistical properties of stock order books*, Quantitative Finance 2(4), 251–256
+- **Cont, Stoikov & Talreja (2010)**, *A stochastic model for order book dynamics*, Operations Research 58(3)
+- **Gould, Porter, Williams, McDonald, Fenn & Howison (2013)**, *Limit order books*, Quantitative Finance 13(11)
 
 ---
 

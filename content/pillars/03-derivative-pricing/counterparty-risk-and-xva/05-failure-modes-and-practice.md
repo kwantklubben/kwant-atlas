@@ -82,11 +82,11 @@ WWR is real and asymmetric: at +50% correlation the conditional EPE is **1.85×*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory**, *The xVA Challenge*, Ch 17 §17.6 (wrong-way risk), §18.2.5 (double-counting), Ch 21 §21.2 (hedging, JTD, beta hedging, limits/P&L explain). *Primary; numbers verified.*
-- **Pykhtin, Michael & Andrew Sokol (2013)**: *Exposure under systematic credit impact* - jump-based WWR erodes the collateral benefit.
-- **Rosen, Dan & David Saunders (2012)**: *CVA the wrong way* - WWR quantification.
+- **Gregory**, *The xVA Challenge*
+- **Pykhtin, Michael & Andrew Sokol (2013)**: *Exposure under systematic credit impact*
+- **Rosen, Dan & David Saunders (2012)**: *CVA the wrong way*
 - **Hull & White (2012, 2014)** / **Kenyon & Green (2014)** / **Morini & Prampolini (2010)**: the FVA/DVA double-counting debate.
 
 ---

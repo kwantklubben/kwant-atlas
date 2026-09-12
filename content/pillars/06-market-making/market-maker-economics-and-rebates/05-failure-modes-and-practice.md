@@ -92,13 +92,13 @@ Standard library only. Part 1 shows the rebate raising the toxicity tolerance an
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glosten & Milgrom (1985)**, JFE 14 - the $\pi$ toxicity structure behind $\pi^\star = h+r$.
-- **Hasbrouck (2007)**, Ch 11 (inventory/ruin and the levered-inventory channel; Brunnermeier–Pedersen 2005 reference) and Ch 5 (the winner's curse). *Verified in corpus.*
-- **Menkveld (2013)**, JFM 16(4) - inventory costs as a first-order term in a real HFT maker's P&L.
-- **Malinova & Park (2015)**, JF 70(2) - empirical evidence that maker rebates change *behaviour* (order aggressiveness, adverse-selection costs) without necessarily changing cum-fee costs.
-- **Brunnermeier & Pedersen (2009)**, *Market liquidity and funding liquidity*, RFS 22(6) - the leverage/funding channel of inventory blowups.
+- **Glosten & Milgrom (1985)**, JFE 14
+- **Hasbrouck (2007)**
+- **Menkveld (2013)**, JFM 16(4)
+- **Malinova & Park (2015)**, JF 70(2)
+- **Brunnermeier & Pedersen (2009)**, *Market liquidity and funding liquidity*, RFS 22(6)
 
 ---
 

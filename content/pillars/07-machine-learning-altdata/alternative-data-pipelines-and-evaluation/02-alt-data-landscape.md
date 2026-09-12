@@ -77,13 +77,13 @@ Read the two middle blocks together. With **independent** alphas, ten $IC{=}0.03
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.) - the Fundamental Law $\text{IR}=\text{IC}\sqrt{B}\text{TC}$ (Ch. 6) and breadth; the source of this folder's valuation framework.
-- **López de Prado**, *Advances in Financial Machine Learning*, **§2.2.4** (the alt-data taxonomy: individuals / business processes / sensors, after Kolanovic & Krishnamachari) - the categories mapped here. *Corpus PDF verified.*
-- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017) - the taxonomy and the practical categorization of alt-data by source.
-- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) - breadth, capacity, and the economics of adding datasets to a live book.
-- **AIMA / SS&C**, *Casting the Net* (2017) - which datasets funds actually buy and the breadth-vs-crowding reality of the market.
+- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.)
+- **López de Prado**, *Advances in Financial Machine Learning*, **§2.2.4** (the alt-data taxonomy: individuals / business processes / sensors, after Kolanovic & Krishnamachari)
+- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017)
+- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019)
+- **AIMA / SS&C**, *Casting the Net* (2017)
 
 ---
 

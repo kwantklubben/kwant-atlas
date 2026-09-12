@@ -90,13 +90,13 @@ Read it as the tradeoff in numbers: an ITCH `Add Order` is **38 bytes** against 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Nasdaq**, *TotalView-ITCH 5.0 Specification* - the official binary market-data protocol, including the message layouts and the $10^{-4}$ price scaling demonstrated above. *Verified in the corpus; free.*
-- **Nasdaq**, *OUCH Specification* - the venue-native binary **order-entry** counterpart to ITCH; the OUCH message set is the binary analog of `D`/`F`/`G`.
-- **FIX Trading Community**, *FAST Specification* and *Simple Binary Encoding (SBE)* - the normative encodings for compressed and fixed-offset FIX.
-- **FIX Trading Community**, *FIX Protocol - FIXT.1.1 transport & FIX Latest*, and *FIXatdl v1.1* - the transport/application split and the algo-description language.
-- **De Schryver, Christian (ed.)**, *FPGA Based Accelerators for Financial Applications* (Springer, 2015) - where these binary feeds get decoded in hardware; cross-listed from [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga/index|Hardware Acceleration & FPGA]].
+- **Nasdaq**, *TotalView-ITCH 5.0 Specification*
+- **Nasdaq**, *OUCH Specification*
+- **FIX Trading Community**, *FAST Specification* and *Simple Binary Encoding (SBE)*
+- **FIX Trading Community**, *FIX Protocol
+- **De Schryver, Christian (ed.)**, *FPGA Based Accelerators for Financial Applications* (Springer, 2015)
 
 ---
 

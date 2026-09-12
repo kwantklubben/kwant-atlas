@@ -109,12 +109,12 @@ Read the two halves as one story. The lifecycle half shows the **invariants hold
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **FIX Trading Community**, *FIX 4.4 Specification* - the `ExecutionReport (8)` field tables and the normative `ExecType`/`OrdStatus` value lists. *The authoritative state reference.*
-- **FIX Trading Community**, *FIX Session Layer / FIXT.1.1* - session reset and failover semantics that constrain the HA design.
-- **Nasdaq**, *TotalView-ITCH 5.0 Specification* and *OUCH* - the venue-native binary order-entry protocol (introduced in [[pillars/08-quantitative-development/fix-protocol-and-exchange-connectivity/06-advanced-extensions|06 · Advanced Extensions]]).
-- **Narang, Rishi K.**: *Inside the Black Box* (2nd ed.) - where the gateway sits in the end-to-end trading architecture.
+- **FIX Trading Community**, *FIX 4.4 Specification*
+- **FIX Trading Community**, *FIX Session Layer / FIXT.1.1*
+- **Nasdaq**, *TotalView-ITCH 5.0 Specification* and *OUCH*
+- **Narang, Rishi K.**: *Inside the Black Box* (2nd ed.)
 
 ---
 

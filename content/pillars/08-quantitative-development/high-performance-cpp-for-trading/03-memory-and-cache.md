@@ -117,13 +117,13 @@ Standard library only. This reconstructs the exact line counts of §2.2 from fir
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* - Ch 6 (memory hierarchy & locality) and Ch 5 (optimisation, including data layout), the authoritative source for §2.1–2.2.
-- **Fog, Agner**: *Optimizing Software in C++* - caches, alignment, and vectorisation in practice; the vector-width arithmetic of §2.3.
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* - cache-friendly order-book and market-data layouts, and zero-allocation buffers.
-- **Martin Thompson**: *"Mechanical Sympathy"* - cache-line effects, false sharing, and memory-mapped I/O in low-latency design; cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
-- **Intel**: *Intel 64 and IA-32 Architectures Optimization Reference Manual* - cache-line size, prefetchers, and false-sharing guidance.
+- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective*
+- **Fog, Agner**: *Optimizing Software in C++*
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++*
+- **Martin Thompson**: *"Mechanical Sympathy"*
+- **Intel**: *Intel 64 and IA-32 Architectures Optimization Reference Manual*
 
 ---
 

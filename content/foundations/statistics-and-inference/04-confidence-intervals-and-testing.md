@@ -92,12 +92,12 @@ The $t$-interval is exact for normal data (0.9504) but *under-covers* on exponen
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference*, Ch 8 (LRT §8.2.1, Neyman–Pearson Lemma Thm 8.3.1, Karlin–Rubin Thm 8.3.2, size/power §8.3.1, p-values §8.3.3, Wilks Thm 8.4.1, large-sample tests §8.4.2), Ch 9 (inverting tests Thm 9.2.1, pivots Def 9.2.1, coverage §9.3.1, approximate/ML intervals §9.4.1–§9.4.2). *Primary source, formulas cross-checked in the corpus.*
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 7 (§7.10.2 the wrong-vs-right CV: screening outside folds gives 3% vs a true 50%). The validation counterpart of multiplicity.
-- **White, H. (2000)**, *A Reality Check for Data Snooping* - the canonical bootstrap test for the best of many strategies.
-- **Harvey, Liu & Zhu (2016)**, "…and the Cross-Section of Expected Returns" - multiple-testing thresholds for factor discovery.
+- **Casella & Berger**, *Statistical Inference*
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **White, H. (2000)**, *A Reality Check for Data Snooping*
+- **Harvey, Liu & Zhu (2016)**, "…and the Cross-Section of Expected Returns"
 
 ---
 

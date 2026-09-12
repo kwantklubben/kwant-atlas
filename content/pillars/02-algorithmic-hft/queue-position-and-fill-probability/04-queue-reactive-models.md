@@ -81,12 +81,12 @@ The exact backward-equation solution and the simulation agree to ~2 decimals (wi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont, Stoikov & Talreja** (2010), *Operations Research* 58(3), 549–563 - §2 (birth–death queues with $\lambda(i),\mu,\theta(i)$), §4 (Laplace-transform conditional probabilities), §5 (steady-state and simulation validation). *The canonical reference for this page; the model is estimated on Tokyo Stock Exchange data.*
-- **Huang, Weibing; Lehalle, Charles-Albert; Rosenbaum, Mathieu** - "Simulating and analyzing order book data: the queue-reactive model," *J. American Statistical Association* 110(509), 107–122 (2015) - the state-dependent $\lambda(q),\mu(q)$ queue-reactive extension.
-- **Gould et al.** (2013), §4–5 - empirical conditional event frequencies (the data the reactive model is built to match).
-- **Rosu** (2009) - equilibrium LOB with the "hump" depth profile, the structural counterpart to reactive refill intensities.
+- **Cont, Stoikov & Talreja** (2010), *Operations Research* 58(3), 549–563
+- **Huang, Weibing; Lehalle, Charles-Albert; Rosenbaum, Mathieu** - "Simulating and analyzing order book data: the queue-reactive model," *J. American Statistical Association* 110(509), 107–122 (2015)
+- **Gould et al.** (2013)
+- **Rosu** (2009)
 
 ---
 

@@ -75,13 +75,13 @@ The percentile interval covers the truth 94.3% of the time at a nominal 95% - go
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Efron, B. & Tibshirani, R.**: *An Introduction to the Bootstrap* (1993) - the canonical reference (percentile and BCa intervals, bootstrap standard errors, block bootstrap).
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 7 §7.11 (bootstrap and the .632/.632+ error estimators, eqs 7.55–7.61), Ch 8 §8.2 (bootstrap as approximate Bayesian inference), §8.7 (bagging). *Verification report in the corpus.*
-- **Casella & Berger**, *Statistical Inference*, Ch 7 §7.4 (MLE efficiency, observed vs expected information, delta method eq 7.4.5). *Primary asymptotic reference.*
-- **White, H. (2000)**, *A Reality Check for Data Snooping*, Econometrica 68(5) - the bootstrap test for the best of many strategies.
-- **Harvey, C., Liu, Y. & Zhu, H. (2016)**, "…and the Cross-Section of Expected Returns" - multiple-testing $t$-thresholds for factor discovery.
+- **Efron, B. & Tibshirani, R.**: *An Introduction to the Bootstrap* (1993)
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **Casella & Berger**, *Statistical Inference*
+- **White, H. (2000)**, *A Reality Check for Data Snooping*, Econometrica 68(5)
+- **Harvey, C., Liu, Y. & Zhu, H. (2016)**, "…and the Cross-Section of Expected Returns"
 
 ---
 

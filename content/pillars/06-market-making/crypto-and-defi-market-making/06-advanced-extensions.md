@@ -79,13 +79,13 @@ The measured rate ($0.4822$) matches the Milionis et al. coefficient $\tfrac18\s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Milionis, Moallemi, Roughgarden & Zhang (2022)**, *Automated Market Making and Loss-Versus-Rebalancing*, arXiv:2208.06046 - LVR theory, the $\tfrac18\sigma^2V$ rate, and the "fees minus LVR" LP-P&L identity (verified numerically above).
-- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601 - the short-options replication that makes LVR an options-adverse-selection cost.
-- **Capponi & Jia (2022)**, *The Anatomy of a Liquidity Provision in Automated Market Makers*, arXiv:2210.07852 - concentrated-liquidity rebalancing and the adverse-selection structure of LP losses.
-- **Lehar & Parlour (2023)**, *Decentralized Exchange: The Uniswap Automated Market Maker* - empirical evidence on range choice, migration behavior, and LP exit from volatile pools.
-- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading* - the market-making-with-hedging framework that delta-hedged LPing generalizes.
+- **Milionis, Moallemi, Roughgarden & Zhang (2022)**, *Automated Market Making and Loss-Versus-Rebalancing*, arXiv:2208.06046
+- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601
+- **Capponi & Jia (2022)**, *The Anatomy of a Liquidity Provision in Automated Market Makers*, arXiv:2210.07852
+- **Lehar & Parlour (2023)**, *Decentralized Exchange: The Uniswap Automated Market Maker*
+- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*
 
 ---
 

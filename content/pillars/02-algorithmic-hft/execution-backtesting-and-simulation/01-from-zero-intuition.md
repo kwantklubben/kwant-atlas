@@ -86,12 +86,12 @@ The signal backtest is **identical in all three rows** ($\text{SR}=0.671$): it n
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Perold, André F.** - "The implementation shortfall: paper vs. reality," *Journal of Portfolio Management* 14(3), 4–9 (1988). *The origin of every execution benchmark; the execution/opportunity-cost decomposition.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (implementation shortfall eq 14.1; effective/realized cost eq 14.2; VWAP and its gaming) and Ch 3 (the Roll trade-price model $p_t=m_t+q_tc$). *Corpus verification `hasbrouck_ch11-15.md` / `hasbrouck_ch1-5.md`.*
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2) (2000) - the $E[x]$/$V[x]$ cost that a proper execution backtest charges.
-- **Harris, Larry** - *Trading and Exchanges* (2003) - the practitioner vocabulary of benchmarks, shortfall, and order handling.
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2) (2000)
+- **Harris, Larry** - *Trading and Exchanges* (2003)
 
 ---
 

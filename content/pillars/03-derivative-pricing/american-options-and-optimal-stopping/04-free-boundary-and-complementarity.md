@@ -97,12 +97,12 @@ Read the residual table: on the exercise side ($x=60,75$) the value *equals* pay
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, §8.3 (linear-complementarity 8.3.18–8.3.20, second-derivative jump at $L^*$) and §8.4 (finite-expiration free boundary; $v,v_x$ continuous, $v_{xx}$ jumps). *Math-verified.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, §21.5.2 (driven-diffusion optimal stopping; Props 21.25/21.26 VI, 21.27 free boundary, 21.28 drift test) and §21.6.2. *Math-verified.*
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 27–29 (front fixing, penalty method, PSOR for the LCP). *Corpus available - the numerical counterpart.*
-- **Wilmott, Howison & Dewynne**, *The Mathematics of Financial Derivatives*, Ch 7 (American options and the moving boundary).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Wilmott, Howison & Dewynne**, *The Mathematics of Financial Derivatives*
 
 ---
 

@@ -73,17 +73,17 @@ Hub signposts - the decision rule and practice checklist live in [[pillars/07-ma
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Goodfellow, Bengio & Courville**: *Deep Learning*, MIT Press (2016) - **Ch. 10 "Sequence Modeling: Recurrent and Recursive Nets"** (unrolling, BPTT, the vanishing-gradient problem, LSTM/GRU, the encoder–decoder family). *The core theory reference for this folder; the free HTML edition is at deeplearningbook.org (the MIT Press PDF is print-only - the corpus holds only the 66-page front matter).*
-- **Hochreiter, Sepp & Schmidhuber, Jürgen**: *Long Short-Term Memory*, Neural Computation 9(8):1735–1780 (1997) - the LSTM paper; the constant-error-carousel argument is the reason §2's CEC gradient survives.
-- **Vaswani et al.**: *Attention Is All You Need*, NeurIPS (2017) - scaled dot-product and multi-head attention; the Transformer.
-- **Bai, Kolter & Koltun**: *An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling*, arXiv:1803.01271 (2018) - defines the TCN; the cheap, parallelisable alternative to recurrence.
-- **Lim, Arık, Loeff & Pfister**: *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4):1748–1764 (2021) - the attention-based, interpretable multi-horizon architecture this pillar points to.
-- **Heaton, Polson & Witte**: *Deep learning for finance: deep portfolios*, Applied Stochastic Models in Business and Industry 33(1):3–12 (2017) - the finance-DL canon: autoencoders/deep nets for factor construction and portfolio weights.
-- **Zhang, Zohren & Roberts**: *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE Trans. Signal Processing 67(11):3001–3012 (2019), arXiv:1808.03668 - the canonical CNN+LSTM microstructure model; the case where deep sequence learning demonstrably wins.
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) - **Ch. 1 "Financial Machine Learning as a Distinct Subject"** and the *10 reasons most ML funds fail*. *Correction of a common mis-citation:* AFML contains **no autoencoder or RNN chapter** - its Ch. 19 is "Microstructural Features" and Ch. 20 is "Multiprocessing and Vectorization", none of which concerns deep learning; and AFML Ch. 1 explicitly declines to cover "the latest reincarnation of deep, recurrent, or convolutional neural networks", arguing the binding problems are data-structure, labelling, and validation ones. Cite it here for the **low-SNR / overfitting framing**, not for DL architecture.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - **Ch. 11 "Neural Networks"** (PPR→MLP, back-propagation, weight decay and early stopping as the anti-overfit recipe). *Math-verified in the corpus.*
+- **Goodfellow, Bengio & Courville**: *Deep Learning*, MIT Press (2016)
+- **Hochreiter, Sepp & Schmidhuber, Jürgen**: *Long Short-Term Memory*, Neural Computation 9(8):1735–1780 (1997)
+- **Vaswani et al.**: *Attention Is All You Need*, NeurIPS (2017)
+- **Bai, Kolter & Koltun**: *An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling*, arXiv:1803.01271 (2018)
+- **Lim, Arık, Loeff & Pfister**: *Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting*, IJF 37(4):1748–1764 (2021)
+- **Heaton, Polson & Witte**: *Deep learning for finance: deep portfolios*, Applied Stochastic Models in Business and Industry 33(1):3–12 (2017)
+- **Zhang, Zohren & Roberts**: *DeepLOB: Deep Convolutional Neural Networks for Limit Order Books*, IEEE Trans. Signal Processing 67(11):3001–3012 (2019), arXiv:1808.03668
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
 
 ---
 

@@ -67,13 +67,13 @@ Runs on the standard library. Computes the Altman Z for the sample firm (returns
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Altman, Edward I.**: "Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy" (*JF*, 1968) - the Z-score original; and *Corporate Financial Distress and Bankruptcy* (Wiley, 3rd ed.) for the full treatment and adapted coefficients.
-- **Ohlson, James**: "Financial Ratios and the Probabilistic Prediction of Bankruptcy" (*JAR*, 1980) - the O-score, the logit successor to Altman.
-- **Piotroski, Joseph**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000) - the F-score; *all nine signal definitions and the scoring logic verified against the corpus paper.*
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 11 (RNOA margin/turnover decomposition, leverage effect) and Ch 8 (net borrowing cost) - *the ROCE identity verified against the corpus text.*
-- **Subramanyam**, *Financial Statement Analysis* - the DuPont decomposition in full.
+- **Altman, Edward I.**: "Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy" (*JF*, 1968)
+- **Ohlson, James**: "Financial Ratios and the Probabilistic Prediction of Bankruptcy" (*JAR*, 1980)
+- **Piotroski, Joseph**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000)
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Subramanyam**, *Financial Statement Analysis*
 
 ---
 

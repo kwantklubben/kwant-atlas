@@ -134,12 +134,12 @@ Read the third block: at $c=2$ (double Kelly, $f=0.12$) the growth rate has coll
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, BSTJ 35(4):917–926 (1956) - the original: maximise $\mathbb{E}\log V$, growth rate $G=\lim\frac1N\log(V_N/V_0)$ equals the information rate. *Corpus-verified.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006) - §2 (coin tossing: $f^*=p-q$, $g(f)$, $f_c$, Theorem 1), §3 (Kelly formulas for practitioners), §7.1 (continuous $f^*=(m-r)/s^2$, $g_\infty$, $S^2/2$), §7.3 (the case for fractional Kelly). *Corpus-verified; the formula source for this page.*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (World Scientific, 2011) - the "good and bad properties of Kelly" survey.
-- **Breiman, L.**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961) - proofs of asymptotic dominance and time-optimality (Thorp's Theorem 1(iv),(v)).
+- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, BSTJ 35(4):917–926 (1956)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (World Scientific, 2011)
+- **Breiman, L.**: *Optimal Gambling Systems for Favorable Games*, Proc. 4th Berkeley Symposium (1961)
 
 ---
 

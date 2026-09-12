@@ -92,15 +92,15 @@ Six groups of 8 observations each, with a *known* observation variance $\sigma^2
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference* (2nd ed.) - §4.4 (Hierarchical Models and Mixture Distributions: Example 4.4.1, Theorem 4.4.1 iterated expectation $EX=E[E(X\mid Y)]$; the marginal as a mixture). *Primary for the classical construction; PDF in the corpus.*
-- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.) - Ch 5 (Hierarchical Models: the normal–normal model, exchangeability, shrinkage, the beauty of hierarchical models), Ch 6 (model checking), Ch 11 (the funnel and efficient hierarchical sampling, non-centered parameterization).
-- **Hoff**, *A First Course in Bayesian Statistical Methods* - Ch 8 (group comparisons and hierarchical modeling), Ch 10 (lifetime/random-effects models).
-- **McElreath**, *Statistical Rethinking* (2nd ed.) - Ch 12–14 (multilevel models: varying intercepts and slopes, *partial pooling*, the tadpole and chimpanzee examples - the canonical intuition for shrinkage).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 12 §12.7–12.8 (stochastic volatility and state-space models; FFBS for latent paths) and §12.9 (Markov-switching GARCH-M). *Math-verified in the corpus.*
-- **MacKay**, *Information Theory, Inference, and Learning Algorithms* - Ch 21–22 (hierarchical models). 
-- **Robert & Casella**, *Monte Carlo Statistical Methods* - Ch on hierarchical models and MCMC in latent-variable settings.
+- **Casella & Berger**, *Statistical Inference* (2nd ed.)
+- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.)
+- **Hoff**, *A First Course in Bayesian Statistical Methods*
+- **McElreath**, *Statistical Rethinking* (2nd ed.)
+- **Tsay**, *Analysis of Financial Time Series*
+- **MacKay**, *Information Theory, Inference, and Learning Algorithms*
+- **Robert & Casella**, *Monte Carlo Statistical Methods*
 
 ---
 

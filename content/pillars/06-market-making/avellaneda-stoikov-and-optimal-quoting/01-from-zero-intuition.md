@@ -75,11 +75,11 @@ Five paths terminate at $+3,-6,+5,-14,-5$ - the inventory wanders freely and nev
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3), §1–2 (the dealer's role, inventory vs information risk, the model setup). *The canonical paper.*
-- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1) - the ancestor: a dealer who prices to control inventory drift.
-- **Garman (1976)**, *Market microstructure*, JFE 3(3) - the first inventory-control model in which an unhedged market maker can go bankrupt.
+- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3)
+- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1)
+- **Garman (1976)**, *Market microstructure*, JFE 3(3)
 
 ---
 

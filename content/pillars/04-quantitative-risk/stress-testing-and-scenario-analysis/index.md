@@ -70,15 +70,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS (BIS)**: *Minimum Capital Requirements for Market Risk* (FRTB, Jan 2019, d457) - the regulatory standard replacing VaR with **stressed ES @97.5%**; §33 (ES calibration to a stress period back to 2007, reduced-factor set ≥75% of full-ES variation, liquidity-horizon scaling 10–120 days). *Regulatory-verified primary source for this folder.*
-- **BCBS (BIS)**: *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14) - the post-crisis codification of forward-looking, severe-but-plausible scenario design, and the origin of **reverse stress testing** (CRMPG III). *The scenario-selection lessons in §2 and 05 are verified against this text.*
-- **Federal Reserve**: *2025 Stress Test Scenarios* (CCAR/DFAST) - the severely-adverse scenario used in 06: unemployment +5.9pp to 10%, real GDP −7.8%, equity −50%, house prices −33%, CRE −30%, VIX peak 65.
-- **Schuermann, Til**: *Stress Testing Banks*, *IJCB* 10(2):95–154 (2014) - the authoritative survey of supervisory stress-test design, CCAR/EBA comparison.
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) Ch 22 - VaR/ES definitions, 99%/10-day convention; Ch 19–20 (Greeks, smiles) underpin the factor sensitivities used here.
-- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015) Ch 13 - stress testing as a distinct methodology from risk-measure estimation.
-- **Quagliariello (ed.)** (2009), **Bellini** (2016) - bank-level and macro stress-testing methodology handbooks.
+- **BCBS (BIS)**: *Minimum Capital Requirements for Market Risk* (FRTB, Jan 2019, d457)
+- **BCBS (BIS)**: *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14)
+- **Federal Reserve**: *2025 Stress Test Scenarios* (CCAR/DFAST)
+- **Schuermann, Til**: *Stress Testing Banks*, *IJCB* 10(2):95–154 (2014)
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015)
+- **Quagliariello (ed.)** (2009), **Bellini** (2016)
 
 ---
 

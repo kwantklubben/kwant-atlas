@@ -91,15 +91,15 @@ Panel (A) runs the bottom-up scenario engine over six NGFS-style archetypes, for
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **NGFS**, *Climate Scenarios for Central Banks and Supervisors* (Network for Greening the Financial System; phases I–V) and the NGFS Scenarios Portal - the orderly / disorderly / hot-house-world families. *[REG] primary scenario source.*
-- **Bank of England**, *Key Elements of the 2021 Biennial Exploratory Scenario: Financial Risks from Climate Change* (2021) and *Results of the 2021 Climate Biennial Exploratory Scenario* (2022) - early action / late action / no additional action. *[REG]*
-- **BCBS**, *Climate-related Financial Risks - Measurement Methodologies* (2021) and *Principles for the Effective Management and Supervision of Climate-related Financial Risks* (2022) - the supervisory framework. *[REG]*
-- **ECB**, *ECB Economy-wide Climate Stress Test* (2021) and *2022 Climate Risk Stress Test* (methodology, 2022); **EBA**, *2023 EU-wide Climate Risk Stress Test* - the EU supervisory implementations.
-- **PACTA / RMI**, *Paris Agreement Capital Transition Assessment* - forward-looking, production-plan-based portfolio alignment against sectoral pathways.
-- **BCBS**, *Minimum Capital Requirements for Market Risk* (2019, d457) - the ES@$97.5\%$ standard that motivates §2.3's tail sensitivity.
-- **Rockafellar, R.T. & Uryasev, S.**, *Optimization of Conditional Value-at-Risk*, *Journal of Risk* 2(3):21–41 (2000) - the convex representation that makes scenario-based ES optimisable.
+- **NGFS**, *Climate Scenarios for Central Banks and Supervisors* (Network for Greening the Financial System; phases I–V) and the NGFS Scenarios Portal
+- **Bank of England**, *Key Elements of the 2021 Biennial Exploratory Scenario: Financial Risks from Climate Change* (2021) and *Results of the 2021 Climate Biennial Exploratory Scenario* (2022)
+- **BCBS**, *Climate-related Financial Risks
+- **ECB**, *ECB Economy-wide Climate Stress Test* (2021) and *2022 Climate Risk Stress Test* (methodology, 2022); **EBA**, *2023 EU-wide Climate Risk Stress Test*
+- **PACTA / RMI**, *Paris Agreement Capital Transition Assessment*
+- **BCBS**, *Minimum Capital Requirements for Market Risk* (2019, d457)
+- **Rockafellar, R.T. & Uryasev, S.**, *Optimization of Conditional Value-at-Risk*, *Journal of Risk* 2(3):21–41 (2000)
 - **TCFD**, *Recommendations* (2017) and *The Use of Scenario Analysis in Disclosure of Climate-related Risks and Opportunities* (Technical Supplement, 2017).
 
 ---

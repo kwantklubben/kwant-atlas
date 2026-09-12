@@ -90,12 +90,12 @@ Allocation efficiency **rises monotonically** with search intensity and approach
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6) - the search model this folder is built on; §1 motivates OTC existence. *Primary PDF in corpus.*
-- **Duffie (2012)**, *Dark Markets*, Princeton UP - Ch 1 (why OTC markets are search markets).
-- **Stoll (1978)**, *The supply of dealer services in securities markets*, Journal of Finance 33(4) - the dealer-as-service-provider view of the spread. *Primary PDF in corpus.*
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 1–2 - the taxonomy of market mechanisms, dealer vs. order-driven. *Verified in corpus.*
+- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6)
+- **Duffie (2012)**, *Dark Markets*, Princeton UP
+- **Stoll (1978)**, *The supply of dealer services in securities markets*, Journal of Finance 33(4)
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
 
 ---
 

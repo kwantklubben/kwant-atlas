@@ -124,14 +124,14 @@ Read it as the discipline the whole page argues for: the AAPL difference is **ex
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **SEC**, *Knight Capital Americas LLC* (Release 34-70694, 2013) - the canonical incident record; the control that was missing was, precisely, one that could halt the flow.
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) - Ch 14–15 (managing incidents, emergency response), Ch 15 (post-mortem culture: blameless, learning-oriented).
-- **Allspaw, John**, "Blameless PostMortems and a Just Culture" (Etsy Code as Craft, 2012) - the short, canonical articulation of cause-not-culprit.
-- **Narang**, *Inside the Black Box*, 2nd ed. - the operational apparatus (reconciliation, trade matching, exception handling) of a real quant firm.
-- **NautilusTrader - Official Documentation** (nautilustrader.io) - the engine's position/account state and its reconciliation-from-venue pattern.
-- **BIS / BCBS**, *Principles for the Sound Management of Operational Risk* (2011) - reconciliation, segregation of duties, and control-monitoring as supervisory expectations; the regulatory frame for §2.
+- **SEC**, *Knight Capital Americas LLC* (Release 34-70694, 2013)
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016)
+- **Allspaw, John**, "Blameless PostMortems and a Just Culture" (Etsy Code as Craft, 2012)
+- **Narang**, *Inside the Black Box*, 2nd ed.
+- **NautilusTrader - Official Documentation** (nautilustrader.io)
+- **BIS / BCBS**, *Principles for the Sound Management of Operational Risk* (2011)
 
 ---
 

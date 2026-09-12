@@ -71,11 +71,11 @@ The EM run recovers both regime volatilities to within a few percent of the trut
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 14.3 (Gaussian mixtures and EM; soft assignment; the "EM as coordinate ascent on the complete-data log-likelihood" view). *Corpus verified.*
-- **Dempster, Laird & Rubin**, "Maximum Likelihood from Incomplete Data via the EM Algorithm," *JRSS-B* 39(1), 1977 - the EM algorithm and its monotone-likelihood guarantee.
-- **Tsay**, *Analysis of Financial Time Series*, Ch 4 (the mixture-of-distributions motivation for fat-tailed financial returns; two-state Markov switching as the persistent generalization).
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Dempster, Laird & Rubin**, "Maximum Likelihood from Incomplete Data via the EM Algorithm," *JRSS-B* 39(1), 1977
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

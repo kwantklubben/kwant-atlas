@@ -69,15 +69,15 @@ Hub signposts - the folder's full analysis lives in [[pillars/04-quantitative-ri
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **de Haan, Laurens & Ana Ferreira**: *Extreme Value Theory: An Introduction* (2006, Springer) - §§1.1–1.2 (GEV, domains of attraction), Ch 3 (estimation: Hill §3.2.2, Pickands §3.3.1). *The primary mathematical source for this folder; read in the corpus.*
-- **McNeil, Alexander J.**: *Estimating the Tails of Loss Severity Distributions Using Extreme Value Theory*, *ASTIN Bulletin* 27(1):117–137 (1997) - GPD/POT on Danish fire-loss data; the worked threshold-selection study. *Read in the corpus.*
-- **McNeil, Alexander J. & Rüdiger Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series: An Extreme Value Approach*, *Journal of Empirical Finance* 7(3–4):271–300 (2000) - tail estimator (eq. 8), quantile (eq. 10), expected shortfall (§4.1), GARCH-filtered conditional EVT + backtests. *Read in the corpus.*
-- **Embrechts, Klüppelberg & Mikosch**: *Modelling Extremal Events for Insurance and Finance* (1997, Springer) - the definitive monograph.
-- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015, Princeton) - Ch 7 (EVT) is the accessible bridge. *In library.*
+- **de Haan, Laurens & Ana Ferreira**: *Extreme Value Theory: An Introduction* (2006, Springer)
+- **McNeil, Alexander J.**: *Estimating the Tails of Loss Severity Distributions Using Extreme Value Theory*, *ASTIN Bulletin* 27(1):117–137 (1997)
+- **McNeil, Alexander J. & Rüdiger Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series: An Extreme Value Approach*, *Journal of Empirical Finance* 7(3–4):271–300 (2000)
+- **Embrechts, Klüppelberg & Mikosch**: *Modelling Extremal Events for Insurance and Finance* (1997, Springer)
+- **McNeil, Frey & Embrechts**: *Quantitative Risk Management* (2015, Princeton)
 - **Hill, Bruce M.**: *A Simple General Approach to Inference About the Tail of a Distribution*, *Annals of Statistics* 3(5):1163–1174 (1975); **Pickands, James III**: *Statistical Inference Using Extreme Order Statistics*, *Annals of Statistics* 3(1):119–131 (1975); **Balkema & de Haan**: *Residual Life Time at Great Age* (1974). *(PDFs in corpus; scanned/image-only.)*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, Ch 3–7 (heavy tails, volatility models) - *verified in the corpus* (`tsay_ch4-6.md` confirms nonlinear/GARCH and jump-diffusion motivation from empirical heavy tails).
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*
 
 ---
 

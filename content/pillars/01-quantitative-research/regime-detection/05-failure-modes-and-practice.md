@@ -71,12 +71,12 @@ The third state buys only $+0.925$ of log-likelihood by **splitting the bull sta
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hamilton (1989)**, §4.2 - the identification/normalization discussion ("which state to call state 0... is arbitrary"), and the practical limit on parameterizing both regime and Gaussian dynamics.
+- **Hamilton (1989)**
 - **ESL, Ch 7** (model selection, BIC, bias–variance) and **Ch 8.5** (EM monotonicity). *Verified: esl_ch6-10.md.*
-- **Tsay**, Ch 4 (nonlinearity tests, BDS, threshold-test caveats) and Ch 12 (MCMC convergence diagnostics - multiple chains, burn-in). *Verified: tsay_ch4-6.md, tsay_ch10-12.md.*
-- **Ang & Timmermann (2012)** - identification and estimation pitfalls in financial regime-switching.
+- **Tsay**
+- **Ang & Timmermann (2012)**
 
 ---
 

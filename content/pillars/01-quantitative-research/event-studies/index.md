@@ -66,14 +66,14 @@ Hub signposts - the full analysis lives in [[pillars/01-quantitative-research/ev
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama, Fisher, Jensen & Roll (1969)**, *The Adjustment of Stock Prices to New Information*, IER 10(1) - the original stock-split event study whose table layout still defines the format. *Cited in MacKinlay (1997) and Kothari–Warner (2007).*
-- **Brown & Warner (1980)**, *Measuring Security Price Performance*, JFE 8(3). *Verified refs/49* - the methodological foundation.
-- **Brown & Warner (1985)**, *Using Daily Stock Returns: The Case of Event Studies*, JFE 14(1). *Verified refs/50* - the daily-data milestone; mean-adjusted / market-adjusted / market-model measures, simulation evidence on specification & power.
-- **MacKinlay, A. Craig (1997)**, *Event Studies in Economics and Finance*, J. Economic Literature 35(1). *Verified refs/51* - the canonical survey.
-- **Kothari, S.P. & Warner, J.B. (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance Ch. 1. *Verified refs/52, read in full* - the authoritative methods synthesis; BHAR, Jensen-alpha, cross-correlation, power/specification.
-- **Campbell, Lo & MacKinlay (1997)**, *The Econometrics of Financial Markets*, Ch. 4 - the textbook treatment. *Listed in the pillar refs.*
+- **Fama, Fisher, Jensen & Roll (1969)**, *The Adjustment of Stock Prices to New Information*, IER 10(1)
+- **Brown & Warner (1980)**, *Measuring Security Price Performance*, JFE 8(3). *Verified refs/49*
+- **Brown & Warner (1985)**, *Using Daily Stock Returns: The Case of Event Studies*, JFE 14(1). *Verified refs/50*
+- **MacKinlay, A. Craig (1997)**, *Event Studies in Economics and Finance*, J. Economic Literature 35(1). *Verified refs/51*
+- **Kothari, S.P. & Warner, J.B. (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance
+- **Campbell, Lo & MacKinlay (1997)**, *The Econometrics of Financial Markets*
 
 ---
 

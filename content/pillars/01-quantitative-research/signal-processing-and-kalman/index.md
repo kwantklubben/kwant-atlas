@@ -74,17 +74,17 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/01-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 11 (state-space models and the Kalman filter: local-level model 11.1–11.2, filtering/prediction/smoothing 11.1.1, general SS form 11.26–11.27, Kalman filter 11.64, diffuse initialization 11.1.6, steady state 11.4.1, time-varying CAPM 11.29, ML via prediction-error decomposition 11.25). **The primary, corpus-verified source for this folder.**
-- **Tsay, Ch 1–3** - the signal-vs-noise view of returns (Ch 1), ARMA as the linear signal model with ACF/PACF (Ch 2), and the stochastic-volatility state-space (Ch 3 §3.13). *Verified in the corpus.*
-- **Durbin, J. & Koopman, S. J.**: *Time Series Analysis by State Space Methods* (2nd ed.) - Ch 2 (filter/smoother), Ch 4 (ML estimation), Ch 6–7 (smoothing recursions). The reference treatment of the general framework.
-- **Harvey, A. C.**: *Forecasting, Structural Time Series Models and the Kalman Filter* (1989) - the structural-model lineage (trend/seasonal/cycle) that motivates the state-space form.
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Tsay, Ch 1–3**
+- **Durbin, J. & Koopman, S. J.**: *Time Series Analysis by State Space Methods* (2nd ed.)
+- **Harvey, A. C.**: *Forecasting, Structural Time Series Models and the Kalman Filter* (1989)
 - **Kalman, R. E.** (1960): *A New Approach to Linear Filtering and Prediction Problems*, J. Basic Engineering. The original paper.
-- **Welch, G. & Bishop, G.**: *An Introduction to the Kalman Filter*, UNC-Chapel Hill TR 95-041 - the standard pedagogical derivation (predictor-corrector, gain as a blending weight).
-- **Chan, Ernest P.**: *Algorithmic Trading: Winning Strategies and Their Rationale*, Ch 3 - the Kalman filter applied to dynamic hedge ratios in pairs trading.
-- **Särkkä, S.**: *Bayesian Filtering and Smoothing* (2013) - Ch 4–7 (KF), Ch 8 (extended/unscented), Ch 11 (particle filters). *The reference for page 06.*
-- **Hilpisch, Y.** *Python for Algorithmic Trading* / **Strimpel** *Python Algorithmic Trading Cookbook* (both in the corpus) - practitioner code patterns for state-space finance.
+- **Welch, G. & Bishop, G.**: *An Introduction to the Kalman Filter*, UNC-Chapel Hill TR 95-041
+- **Chan, Ernest P.**: *Algorithmic Trading: Winning Strategies and Their Rationale*
+- **Särkkä, S.**: *Bayesian Filtering and Smoothing* (2013)
+- **Hilpisch, Y.** *Python for Algorithmic Trading* / **Strimpel** *Python Algorithmic Trading Cookbook* (both in the corpus)
 
 ---
 

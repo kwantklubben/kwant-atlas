@@ -71,12 +71,12 @@ The *same* backtest (Sharpe $1.00$) is highly significant if you tried one strat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bailey, David H. & López de Prado, Marcos**, "The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting, and Non-Normality," *Journal of Portfolio Management* 40(5), 2014 - the DSR formula. *Corpus-listed.*
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 14 (probabilistic & deflated Sharpe), Ch 5 (fractional differentiation), Ch 7 (purged/embargoed/CPCV), Ch 12 (CPCV algorithm). *PRIMARY source; read in the corpus.*
-- **Bailey, Borwein, López de Prado & Zhu**, "The Probability of Backtest Overfitting," *Journal of Computational Finance* 20(4), 2017 - CSCV / PBO. *Corpus-listed.*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 7 (model selection), Ch 5 (regularization). *Verified in the corpus.*
+- **Bailey, David H. & López de Prado, Marcos**, "The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting, and Non-Normality," *Journal of Portfolio Management* 40(5), 2014
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Bailey, Borwein, López de Prado & Zhu**, "The Probability of Backtest Overfitting," *Journal of Computational Finance* 20(4), 2017
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

@@ -87,15 +87,15 @@ Two things to notice, and they are the lesson. First, **Redwing clears the thres
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Beneish, Messod D.**: "The Detection of Earnings Manipulation" (*FAJ*, 55(5), 24–36, 1999) - the M-score original; the 8 variables, weights and the $-1.78$ threshold used above.
-- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**: "Understanding Earnings Quality: A Review of the Proxies, Their Determinants and Their Consequences" (*JAE*, 50(2–3), 344–401, 2010) - the proxy map; the definitive statement that the measure chosen determines the answer, and the source of the smoothness-trap warning.
-- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996) - the accrual signal underneath TATA (and most quality factors).
-- **Chan, Louis K. C., Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006) - the accrual decomposition and its return-predictive power beyond value.
-- **Jones, Jennifer J.**: "Earnings Management During Import Relief Investigations" (*JAR*, 29(2), 193–228, 1991) and **Dechow, Sloan & Sweeney**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995) - the model family behind the "discretionary accruals" row of the proxy map.
-- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 108(1), 1–28, 2013) and **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 116(1), 1–22, 2015) - where accounting-quality signals sit in the modern factor structure (RMW, CMA).
-- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed., 2020) - the qualitative layer that no composite replaces.
+- **Beneish, Messod D.**: "The Detection of Earnings Manipulation" (*FAJ*, 55(5), 24–36, 1999)
+- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**: "Understanding Earnings Quality: A Review of the Proxies, Their Determinants and Their Consequences" (*JAE*, 50(2–3), 344–401, 2010)
+- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996)
+- **Chan, Louis K. C., Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006)
+- **Jones, Jennifer J.**: "Earnings Management During Import Relief Investigations" (*JAR*, 29(2), 193–228, 1991) and **Dechow, Sloan & Sweeney**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995)
+- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 108(1), 1–28, 2013) and **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 116(1), 1–22, 2015)
+- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed., 2020)
 
 ---
 

@@ -73,13 +73,13 @@ The ARCH-LM test screams rejection ($2817\gg11.07$) - the squared returns are un
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 3 (§3.3 model-building loop, §3.4 ARCH, §3.5 GARCH, §3.6 IGARCH/RiskMetrics, §3.7 GARCH-M, §3.8 EGARCH, §3.10 TGARCH/GJR, §3.15 realized vol & range estimators, §3.16 excess kurtosis). *Primary, verified.*
-- **Engle, R.F.** (1982), "Autoregressive Conditional Heteroscedasticity," *Econometrica* - the ARCH founding paper.
-- **Bollerslev, T.** (1986), "Generalized Autoregressive Conditional Heteroskedasticity," *J. Econometrics* - GARCH.
-- **Nelson, D.** (1991), "Conditional Heteroskedasticity in Asset Returns: A New Approach," *Econometrica* - EGARCH.
-- **RiskMetrics**, *Technical Document* (1996) - the $\lambda=0.94$ EWMA convention.
+- **Tsay**, *Analysis of Financial Time Series*
+- **Engle, R.F.** (1982), "Autoregressive Conditional Heteroscedasticity," *Econometrica*
+- **Bollerslev, T.** (1986), "Generalized Autoregressive Conditional Heteroskedasticity," *J. Econometrics*
+- **Nelson, D.** (1991), "Conditional Heteroskedasticity in Asset Returns: A New Approach," *Econometrica*
+- **RiskMetrics**, *Technical Document* (1996)
 
 ---
 

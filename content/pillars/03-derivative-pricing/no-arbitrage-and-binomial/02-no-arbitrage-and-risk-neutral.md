@@ -99,11 +99,11 @@ Two things are visible in that output. The state prices reproduce *both* traded 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance I*, §2.4 (martingale/super-/submartingale conditions $pu+qd\gtrless1$; the discounted stock as the $\widetilde{\mathbb P}$-martingale), §3.3–3.4 (self-financing wealth, risk-neutral valuation, state prices/Radon–Nikodym in Ch 9). *Math-verified.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 3 - equivalent measures (Def 3.5), martingale measure (Def 3.7), martingale pricing (Prop 3.15), stochastic discount factor $\Lambda$ and $\Pi(0;X)=\mathbb E^{\mathbb P}[\Lambda X]$ (Prop 3.18, the Arrow–Debreu system). *Math-verified.*
-- **Shreve**, *Stochastic Calculus for Finance II*, §5.2 - the continuous version: Girsanov, market price of risk, $V(t)=\widetilde{\mathbb E}[e^{-\int_t^TR}V(T)\,|\,F(t)]$.
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Shreve**, *Stochastic Calculus for Finance II*
 
 ---
 

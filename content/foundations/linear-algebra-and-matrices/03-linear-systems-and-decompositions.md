@@ -66,12 +66,12 @@ The factorization reproduces $LL'=\Sigma$ **exactly** (it is an algebraic identi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §2.2 (multivariate normals, Cholesky eqs. 2.29–2.31, eigen/PC factorization eq. 2.32; semidefinite rank-reduction via factor models). *Math-verified in the corpus.*
-- **Strang**, *Introduction to Linear Algebra* (5th ed.), Ch 2 (Gaussian elimination, LU), Ch 6 (positive definite, Cholesky). *Corpus PDF available.*
-- **Horn & Johnson**, *Matrix Analysis*, Ch 7 (positive definite matrices, Cholesky existence/uniqueness).
-- **Tsay**, *Analysis of Financial Time Series*, §10.3 (Cholesky covariance parameterization $L_tG_tL_t'$), §8.2.5 (Cholesky orthogonalized impulse responses). *Verified.*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Strang**, *Introduction to Linear Algebra* (5th ed.)
+- **Horn & Johnson**, *Matrix Analysis*
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

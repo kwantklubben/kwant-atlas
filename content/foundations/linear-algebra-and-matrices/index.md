@@ -76,13 +76,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[foundations/linear
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani, Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 3 (linear regression: eqs. 3.6–3.7, ridge 3.41–3.47, SVD 3.45), Ch 14.5 (PCA as best rank-$q$ manifold, eqs. 14.49–14.50, SVD 14.54). *Math-verified deep-read in the corpus.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (2nd ed.) - §9.4 (PCA theory & the 5-stock example), §9.5 (statistical factor model, eqs. 9.16–9.18), §8 (VAR/cointegration, Cholesky orthogonalization). *Verified.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* - Ch 2 (multivariate normals & Cholesky, eqs. 2.29–2.31; eigen/PC factorization 2.32), Ch 3. *Math-verified.*
-- **Strang, Gilbert**: *Introduction to Linear Algebra* (5th ed., 2016) - Ch 1–3 (vectors/spaces), 4–6 (orthogonality, determinants, eigenvalues), 7 (SVD). *Corpus PDF available.*
-- **Horn & Johnson**: *Matrix Analysis* (2nd ed., 2013) - the definitive reference for spectral theory, PSD cone, and condition numbers. *Corpus PDF available.*
+- **Hastie, Tibshirani, Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (2nd ed.)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*
+- **Strang, Gilbert**: *Introduction to Linear Algebra* (5th ed., 2016)
+- **Horn & Johnson**: *Matrix Analysis* (2nd ed., 2013)
 
 ---
 

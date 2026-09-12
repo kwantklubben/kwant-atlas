@@ -70,16 +70,16 @@ The simulation reproduces the closed form $S_0/(1-k)$ to the printed precision f
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brunnermeier & Pedersen** (2009) - the spiral foundations extended here; **Brunnermeier** (2009) - the crisis narrative.
-- **Acharya, V. & Pedersen, L.H.** - *Asset Pricing with Liquidity Risk*, *JFE* 77(2):375–410 (2005). The four-beta liquidity-adjusted CAPM. (Corpus: `61_Acharya_2005_...pdf`.)
+- **Brunnermeier & Pedersen** (2009)
+- **Acharya, V. & Pedersen, L.H.** - *Asset Pricing with Liquidity Risk*, *JFE* 77(2):375–410 (2
 - **Pastor, L. & Stambaugh, R.** - *Liquidity Risk and Expected Stock Returns*, *JPE* 111(3) (2003). Liquidity as a priced systematic factor. (Pillar 6 refs.)
-- **Bouchaud, J.-P., Farmer, J.D. & Lillo, F.** - *How Markets Slowly Digest Changes in Supply and Demand* (2009) - square-root impact, the endogenous $\kappa$. (Pillar 6 refs.)
-- **Duffie, Gârleanu & Pedersen** - *Over-the-Counter Markets*, *Econometrica* 73(6) (2005) - the search-based joint determination of market and funding liquidity (Foucault Ch 9).
-- **Hasbrouck & Seppi** (2001) / **Chordia, Roll & Subrahmanyam** (2000) - liquidity commonality, the empirical basis of a *systematic* liquidity factor. **Amihud (2002)** - the aggregate illiquidity measure.
-- **Bao, J., Pan, J. & Wang, J.** - *The Illiquidity of Corporate Bonds*, *JF* 66(3) (2011) - market liquidity as search cost in OTC markets. (Pillar 6 refs.)
-- **BCBS** - LCR (2013, d238), NSFR (2014, d295), and the margin-procyclicality / *Principles for Sound Stress Testing* (2009) workstreams.
+- **Bouchaud, J.-P., Farmer, J.D. & Lillo, F.** - *How Markets Slowly Digest Changes in Supply and Demand* (2009)
+- **Duffie, Gârleanu & Pedersen** - *Over-the-Counter Markets*, *Econometrica* 73(6) (2005)
+- **Hasbrouck & Seppi** (2001) / **Chordia, Roll & Subrahmanyam** (2000)
+- **Bao, J., Pan, J. & Wang, J.** - *The Illiquidity of Corporate Bonds*, *JF* 66(3) (2011)
+- **BCBS**
 
 ---
 

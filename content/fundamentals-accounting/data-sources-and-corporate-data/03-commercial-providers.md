@@ -93,13 +93,13 @@ A 5.7% spread on *the same firm-year* is not a bug in any one provider - it is t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **WRDS** - *Compustat* and *Compustat Point-in-Time* documentation and the Compustat User's Guide. *The canonical statement of the restated-vs-PIT distinction; cross-referenced from the Corpus's `data-sources-and-corporate-data` section.*
-- **Sharadar** (Nasdaq Data Link) dataset documentation - `SF1` (fundamentals) and `SEP` (prices), including the `ARQ`/`ART` as-reported tables. *The retail-accessible backbone the club's blueprint uses.*
-- **Kenneth R. French**, *Data Library* - the free, canonical factor/portfolio returns that any Compustat-based factor study validates against (`Data_KenFrench_DataLibrary_access.txt`).
-- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992) and "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - the results these databases were built to test; the standard any vendor-based replication must match.
-- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide* - the practitioner's habit of distrusting a single line item and checking it against its source.
+- **Sharadar** (Nasdaq Data Link) dataset documentation
+- **Kenneth R. French**, *Data Library*
+- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992) and "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide*
 
 ---
 

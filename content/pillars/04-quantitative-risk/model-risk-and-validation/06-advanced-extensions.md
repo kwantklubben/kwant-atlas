@@ -78,13 +78,13 @@ Reading it: the three models span $10.45\to11.40$, a $\pm5\%$ range; BIC weighti
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *ESL* 2nd ed. (2009), §8.8 (model averaging & stacking: Bayesian posterior weights eqs. 8.53–8.54; frequentist combination never hurts at the population level eq. 8.58), §7.7 (BIC, eq. 7.35). *Verified in the corpus.*
-- **Cont, R.**, *Model Uncertainty and Its Impact on the Pricing of Derivative Instruments*, *Mathematical Finance* 16(3):519–547 (2006) - the entropy-ambiguity framework for derivative prices and the robust-superhedging perspective.
-- **Morini, M.**, *Understanding and Managing Model Risk* (2011), Ch 3–5 - model-uncertainty measures, "model-risk-adjusted" prices and limits.
-- **Acerbi, C.**, *Spectral Measures of Risk* (2002) and **Artzner et al.** (1999) - the coherent-measure language in which robust bounds are stated.
-- **Glasserman, P. & Xu, X.**, *Robust Risk Measurement and Model Risk*, *Quantitative Finance* 14(1):29–58 (2014) - robust risk measurement when the reference measure is itself uncertain.
+- **Hastie, Tibshirani & Friedman**, *ESL* 2nd ed. (2009)
+- **Cont, R.**, *Model Uncertainty and Its Impact on the Pricing of Derivative Instruments*, *Mathematical Finance* 16(3):519–547 (2006)
+- **Morini, M.**, *Understanding and Managing Model Risk* (2011)
+- **Acerbi, C.**, *Spectral Measures of Risk* (2002) and **Artzner et al.** (1999)
+- **Glasserman, P. & Xu, X.**, *Robust Risk Measurement and Model Risk*, *Quantitative Finance* 14(1):29–58 (2014)
 
 ---
 

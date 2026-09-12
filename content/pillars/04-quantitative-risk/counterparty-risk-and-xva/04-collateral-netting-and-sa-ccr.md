@@ -118,12 +118,12 @@ Points to read: (i) netting captures **62%** of the gross exposure but leaves **
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025) - Ch 7 (CSA, thresholds/MTA, credit support amount, collateral spikes), Ch 9 (initial-margin methodologies, the variance-covariance and SIMM forms), Ch 13.4 (CEM, **SA-CCR**, IMM; Tables 13.8–13.9), Ch 15.5 (modelling margin and MPoR). *Deep-read and numerically checked in the corpus.*
-- **BCBS (2014)**: *The Standardised Approach for Measuring Counterparty Credit Risk Exposures* (BIS d317) - the primary SA-CCR definitions of RC (paras 144) and the multiplier (para 149); Eqs 13.16–13.21 here. *Read from the primary PDF.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 §24.7 (netting, collateral, cure/margin periods, downgrade triggers).
-- **BCBS-IOSCO (2015)**: *Margin requirements for non-centrally cleared derivatives* - 99% one-tailed, 10-day, stressed-calibrated IM.
+- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025)
+- **BCBS (2014)**: *The Standardised Approach for Measuring Counterparty Credit Risk Exposures* (BIS d317)
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **BCBS-IOSCO (2015)**: *Margin requirements for non-centrally cleared derivatives*
 
 ---
 

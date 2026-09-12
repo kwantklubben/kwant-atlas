@@ -90,13 +90,13 @@ Standard library only. We compute the maximum sustainable PFOF for a wholesaler 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Colliard & Foucault (2012)**, RFS 25(11) - cum-fee spread, access-fee/regulatory discussion, the 17% internalisation statistic (fn. 4). *Corpus `53_Colliard_2012_trading_fees_and_efficiency_in_limit.pdf`.*
-- **Malinova & Park (2015)**, JF 70(2) - the TSX maker-taker natural experiment and its behavioural (order-aggressiveness) channel. *Corpus `56_Malinova_2015_subsidizing_liquidity_the_impact_of.pdf`.*
-- **Foucault, Kadan & Kandel (2013)**, JF 68(1) - tick size as the friction breaking fee neutrality.
-- **Menkveld (2013)**, JFM 16(4) - HFT maker unit economics (spread revenue vs. inventory cost).
-- **SEC (2010)**, *Concept Release on Equity Market Structure* - internalisation share, access-fee cap, and the market-structure baseline. **SEC Tick Size Pilot Program (2016–2018)** - the randomized \$0.05-tick experiment.
+- **Colliard & Foucault (2012)**, RFS 25(11)
+- **Malinova & Park (2015)**, JF 70(2)
+- **Foucault, Kadan & Kandel (2013)**, JF 68(1)
+- **Menkveld (2013)**, JFM 16(4)
+- **SEC (2010)**, *Concept Release on Equity Market Structure*
 - **Malinova & Park (2015)** and **Anand, McCormick & Serban** on PFOF economics (cited in MP 2015).
 
 ---

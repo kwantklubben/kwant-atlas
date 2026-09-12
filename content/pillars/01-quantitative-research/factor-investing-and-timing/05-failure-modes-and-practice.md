@@ -86,15 +86,15 @@ Both factors keep the *same* mean and the *same* volatility throughout - nothing
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Khandani, Amir & Lo, Andrew**, "What Happened to the Quants in August 2007?" (*JIM*, 2007) - the crowding/unwind mechanics; the canonical crowding case study.
-- **McLean & Pontiff** (*JF*, 2016) - the ~35% post-publication haircut and the cheap-vs-costly-to-arbitrage asymmetry. *Verified against the corpus paper.*
-- **Almgren et al.** (*Risk*, 2005) - square-root impact, the basis of the capacity calculation.
-- **Ilmanen**, *Expected Returns* (2011) - the virtuous→vicious crowding cycle; the practitioner's warnings on timing. *Verified against the corpus book.*
-- **Cochrane**, (*JF*, 2011) §II - the covariance-as-central-object argument behind the diversification illusion; the factor zoo. *Verified against the corpus paper.*
-- **Grinold, Richard & Kahn, Ronald**, *Active Portfolio Management* - the fundamental law; the treatment of breadth, correlation, and costs in a real book.
-- **Taleb, Nassim Nicholas**, *Dynamic Hedging* - the culture of monitoring residual risk rather than trusting the model; relevant to the crowding overlay.
+- **Khandani, Amir & Lo, Andrew**, "What Happened to the Quants in August 2007?" (*JIM*, 2007)
+- **McLean & Pontiff** (*JF*, 2016)
+- **Almgren et al.** (*Risk*, 2005)
+- **Ilmanen**, *Expected Returns* (2011)
+- **Cochrane**, (*JF*, 2011) §II
+- **Grinold, Richard & Kahn, Ronald**, *Active Portfolio Management*
+- **Taleb, Nassim Nicholas**, *Dynamic Hedging*
 - Sibling practitioner page: [[pillars/01-quantitative-research/fundamental-multi-factor-models/05-failure-modes-and-practice|the construction folder's failure page]] - multicollinearity in $X^\top X$, the factor zoo, and the same crowding episode seen from the *model* side.
 
 ---

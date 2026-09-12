@@ -81,10 +81,10 @@ Build the VWAP and TWAP schedules from the canonical 13-bucket U-shaped profile,
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013), Ch 2 (VWAP eq 2.7, weighted-average benchmarks, own-order dependence). *Corpus verification `foucault_ch1-3.md`: eq 2.7 verified exactly.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (VWAP as broker-evaluation benchmark, order-size dependence, gamability).
+- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Kissell, Glantz & Malamut** - *Optimal Trading Strategies* (2003); **Johnson** - *Algorithmic Trading & DMA* (2010). *The practitioner treatment of building TWAP/VWAP/POV and their benchmarks.*
 
 ---

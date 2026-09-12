@@ -92,12 +92,12 @@ Hub signposts - the folder's full failure-mode analysis lives in [[pillars/03-de
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed., 2022) - Ch 1 (what derivatives are), Ch 2 (futures, margins, CCPs), Ch 3 (hedging, basis, minimum-variance ratio), Ch 4 (rates, day counts), Ch 5 (forward/futures pricing), Ch 6 (rate futures), Ch 7 (swaps), Ch 10 (option mechanics, margins), Ch 11 (bounds, parity, early exercise), Ch 12 (strategies). *The primary source of this folder; per-chapter verification report in the corpus.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* - §1.1 (binomial no-arbitrage, delta, $\tilde p$), §5–7 (American options, optimal stopping, no early exercise of calls). *Math-verified in the corpus.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) - §1.2 (parities & symmetries), §1.5–1.6 (Black-76, Garman–Kohlhagen), the cost-of-carry dictionary. *Numerically verified.*
-- **Hull, J. & White, A.**: background on OIS discounting and post-2008 clearing (via Hull Ch 7, 9). *Corpus available.*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed., 2022)
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006)
+- **Hull, J. & White, A.**: background on OIS discounting and post-2008 clearing (via Hull
 
 ---
 

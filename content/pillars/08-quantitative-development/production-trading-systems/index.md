@@ -91,16 +91,16 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Narang, Rishi K.**: *Inside the Black Box: A Simple Guide to Quantitative and High-Frequency Trading* (2nd ed., Wiley; 3rd ed. 2024 retitled *A Simple Guide to Systematic Investing*) - the standard high-level architecture of a quant trading system: data → alpha → risk → portfolio → execution, and how the pieces interoperate. *The systems-level mental model for this folder.*
-- **Davey, Kevin J.**: *Building Winning Algorithmic Trading Systems* (Wiley, 2014) - the full life cycle: data mining → Monte Carlo validation → live trading, with walk-forward discipline. *The production-readiness half.*
-- **Cartea, Jaimungal & Penalva**: *Algorithmic and High-Frequency Trading* (Cambridge, 2015) - the rigorous source for the optimal-execution layer a production stack must implement.
-- **Carver, Robert**: *Systematic Trading* (Harriman House, 2015) - rules → position sizing → portfolio → live operation, with emphasis on robustness and process over prediction.
-- **NautilusTrader - Official Documentation** (nautilustrader.io) - the best open-source model for a real live runtime: risk engine, order routing, kill switches, event-driven state.
-- **SEC Rule 15c3-5** - *Risk Management Controls for Brokers or Dealers with Market Access* - the regulatory floor for pre-trade risk controls (the canonical citation for market-access controls).
-- **Almgren & Chriss (2000)**, *Optimal Execution of Portfolio Transactions*, Journal of Risk - the primary paper behind execution scheduling in order-management systems.
-- **Beyer et al.**: *Site Reliability Engineering* (O'Reilly, 2016) - SLOs, error budgets, alerting philosophy, incident response and blameless post-mortems; the vocabulary the monitoring/HA pages use.
+- **Narang, Rishi K.**: *Inside the Black Box: A Simple Guide to Quantitative and High-Frequency Trading* (2nd ed., Wiley; 3rd ed. 2024 retitled *A Simple Guide to Systematic Investing*)
+- **Davey, Kevin J.**: *Building Winning Algorithmic Trading Systems* (Wiley, 2014)
+- **Cartea, Jaimungal & Penalva**: *Algorithmic and High-Frequency Trading* (Cambridge, 2015)
+- **Carver, Robert**: *Systematic Trading* (Harriman House, 2015)
+- **NautilusTrader - Official Documentation** (nautilustrader.io)
+- **SEC Rule 15c3-5** - *Risk Management Controls for Brokers or Dealers with Market Access*
+- **Almgren & Chriss (2000)**, *Optimal Execution of Portfolio Transactions*, Journal of Risk
+- **Beyer et al.**: *Site Reliability Engineering* (O'Reilly, 2016)
 
 ---
 

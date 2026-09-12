@@ -64,15 +64,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015) - Ch 5 (copulas & dependence), Ch 7–9 (ARMA-GARCH, EVT, multivariate tails). *The math backbone; in the corpus.*
-- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016) - CLE/MCRE macro-factor credit link and cross-risk-type integration. *CORE in the corpus.*
-- **Adrian & Brunnermeier**, *CoVaR*, *AER* 106(7) (2016) - the CoVaR measure.
-- **Acharya, Pedersen, Philippon & Richardson**, *Measuring Systemic Risk* (RFS 2017) - MES and SRISK.
-- **Brunnermeier & Pedersen**, *Market Liquidity and Funding Liquidity*, *RFS* 22(6) (2009) - the liquidity/margin spiral, the micro-mechanism that turns firm risk into system risk (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]]).
-- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009) - the regulatory anchor for macroprudential stress. *(Corpus, refs/pillar4.)*
-- **Gai & Kapadia**, *Contagion in Financial Networks*, *Proc. R. Soc. A* 466 (2010); **Allen & Gale**, *Financial Contagion*, *JPE* 108 (2000) - the "robust-yet-fragile" network result reproduced in §02.
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
+- **Bellini**, *Stress Testing and Risk Integration in Banks* (2016)
+- **Adrian & Brunnermeier**, *CoVaR*, *AER* 106(7) (2016)
+- **Acharya, Pedersen, Philippon & Richardson**, *Measuring Systemic Risk* (RFS 2017)
+- **Brunnermeier & Pedersen**, *Market Liquidity and Funding Liquidity*, *RFS* 22(6) (2009)
+- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009)
+- **Gai & Kapadia**, *Contagion in Financial Networks*, *Proc. R. Soc. A* 466 (2010); **Allen & Gale**, *Financial Contagion*, *JPE* 108 (2000)
 
 ---
 

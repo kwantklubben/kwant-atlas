@@ -100,16 +100,16 @@ Two results, both load-bearing. **First:** a book assembled entirely from coin f
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont, Stoikov & Talreja (2010)**, *A stochastic model for order book dynamics*, Operations Research 58(3), 549–563 - the Markovian queue model of §2.1.
-- **Cont, Kukanov & Stoikov (2014)**, *The price impact of order book events*, Journal of Financial Econometrics 12(1), 47–88 - OFI, the linear price-impact law, inverse-depth slope (§2.2).
-- **Smith, Farmer, Gillemot & Krishnamurthy (2003)**, *Statistical theory of the continuous double auction*, Quantitative Finance 3(6), 481–514 - the zero-intelligence baseline simulated in §3.
-- **Huang, Lehalle & Rosenbaum (2015)**, *Simulating and analysing the queue-reactive model*, Journal of Statistical Mechanics - touch-queue mean reversion and short-horizon move probabilities (§2.3).
-- **Bouchaud, Mézard & Potters (2002)**, *Statistical properties of stock order books*, Quantitative Finance 2(4), 251–256 - empirical book shape and deposit/withdrawal rates.
-- **Bouchaud, Farmer & Lillo (2009)**, *How markets slowly digest changes in supply and demand* - order-flow clustering, impact, and the Hawkes view (§2.4).
-- **Rosu (2009)**, *A dynamic model of the limit order book*, Review of Financial Studies 22(11) - general-equilibrium spread and depth dynamics.
-- **Gould, Porter, Williams, McDonald, Fenn & Howison (2013)**, *Limit order books*, Quantitative Finance 13(11) - the review hub for the whole folder.
+- **Cont, Stoikov & Talreja (2010)**, *A stochastic model for order book dynamics*, Operations Research 58(3), 549–563
+- **Cont, Kukanov & Stoikov (2014)**, *The price impact of order book events*, Journal of Financial Econometrics 12(1), 47–88
+- **Smith, Farmer, Gillemot & Krishnamurthy (2003)**, *Statistical theory of the continuous double auction*, Quantitative Finance 3(6), 481–514
+- **Huang, Lehalle & Rosenbaum (2015)**, *Simulating and analysing the queue-reactive model*, Journal of Statistical Mechanics
+- **Bouchaud, Mézard & Potters (2002)**, *Statistical properties of stock order books*, Quantitative Finance 2(4), 251–256
+- **Bouchaud, Farmer & Lillo (2009)**, *How markets slowly digest changes in supply and demand*
+- **Rosu (2009)**, *A dynamic model of the limit order book*, Review of Financial Studies 22(11)
+- **Gould, Porter, Williams, McDonald, Fenn & Howison (2013)**, *Limit order books*, Quantitative Finance 13(11)
 
 ---
 

@@ -85,12 +85,12 @@ The bull mean ($0.01$) and both vols ($0.021$, $0.037$) are recovered well from 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hamilton (1989)**, *Econometrica* 57(2) - §2 (Markov trend), §4.2 (the filter, likelihood, ML), §5 (US GNP: $-0.4\%$ vs $+1.2\%$ growth, $\sigma=0.769$, $p=0.9049$, $q=0.7550$, 3% permanent drop), §6 (NBER dating match). *Verified corpus PDF, pdftotext deep-read.*
-- **Tsay**, *Analysis of Financial Time Series*, Ch 4 §4.1.3 (Markov switching, two-state chain, expected duration $1/w_i$) and Ch 12 §12.9 (Markov-switching GARCH-M via Gibbs). *Verified: tsay_ch4-6.md, tsay_ch10-12.md.*
-- **Ang & Timmermann (2012)** - the survey on regime-switching in asset returns and its economic consequences.
-- **Hamilton, James D.**: *Time Series Analysis* (1994) - Ch 22, the textbook treatment of the filter, smoothing, and regime inference.
+- **Hamilton (1989)**, *Econometrica* 57(2)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Ang & Timmermann (2012)**
+- **Hamilton, James D.**: *Time Series Analysis* (1994)
 
 ---
 

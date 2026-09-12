@@ -85,11 +85,11 @@ Since the truth is linear, bias² is ~0 for every degree; **all** the U-shape co
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *Elements of Statistical Learning*, Ch 2 §2.5–2.6 (bias–variance eqs 2.25/2.46), Ch 7 (test vs training error, the $2d/N$ optimism, Cp/AIC/BIC eqs 7.24–7.35, effective df §7.6, $K$-fold CV eq 7.48, one-standard-error rule, the wrong-vs-right CV §7.10.2, bootstrap §7.11). *Verification report in the corpus.*
-- **Casella & Berger**, *Statistical Inference*, Ch 7 (MSE = Var + Bias² is the parameter-level twin of this decomposition).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 2 (AIC/BIC eq 2.16 used for ARMA/GARCH order selection).
+- **Hastie, Tibshirani & Friedman**, *Elements of Statistical Learning*
+- **Casella & Berger**, *Statistical Inference*
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

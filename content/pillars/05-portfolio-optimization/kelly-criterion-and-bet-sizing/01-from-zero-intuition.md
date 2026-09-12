@@ -71,11 +71,11 @@ Read the first block: the growth rate is *positive* only between $f=0$ and $f_c\
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4) (1956) - the original growth-rate-vs-information connection. *Corpus-verified.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §2 - the coin-toss case, $g(f)$, $f^*=p-q$, the critical fraction and Thorp's Theorem 1. *Corpus-verified.*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011) - the collected history and theory.
+- **Kelly, J. L. jr.**: *A New Interpretation of Information Rate*, Bell System Technical Journal 35(4) (1956)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011)
 
 ---
 

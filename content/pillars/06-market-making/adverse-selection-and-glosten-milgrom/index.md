@@ -113,12 +113,12 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glosten, L. R. & Milgrom, P. R. (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders*, Journal of Financial Economics 14(1), 71–100. *The folder's anchor; primary PDF in the corpus; model verified via Hasbrouck Ch 5.*
+- **Glosten, L. R. & Milgrom, P. R. (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders*, Journal of Financial Economics 14(1), 71–100. *The folder's anchor; primary PDF in the corpus; model verified via Hasbrouck
 - **Copeland, T. E. & Galai, D. (1983)**, *Information effects on the bid-ask spread*, Journal of Finance 38(5), 1457–1469. *"Short a put and a call" intuition; primary PDF in corpus.*
 - **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *The strategic-information counterpart. Primary PDF in corpus.*
-- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP. *Ch 5 (GM), Ch 6 (PIN), Ch 7 (Kyle), Ch 8 (generalized Roll). Math-verified deep-read in corpus (`hasbrouck_ch1-5.md`, `hasbrouck_ch6-10.md`).*
+- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP. *Ch 5 (GM)
 - **Foucault, T., Pagano, M. & Röell, A. (2013)**, *Market Liquidity*, OUP. *Ch 3 (adverse selection, eqs 3.5–3.37). Verified in corpus (`foucault_ch1-3.md`).*
 - **Glosten, L. R. & Harris, L. E. (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142. *The transitory/permanent split. Primary PDF in corpus.*
 - **Easley, D., Kiefer, N. & O'Hara, M. (1997)**, *The information content of the trading process*, JFE 44(1), 159–186. *PIN. Primary PDF in corpus.*

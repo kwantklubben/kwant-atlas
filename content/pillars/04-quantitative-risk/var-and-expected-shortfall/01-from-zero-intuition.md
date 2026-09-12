@@ -73,12 +73,12 @@ Read the first two lines aloud: identical economic exposures, and VaR *doubles i
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk*, *Mathematical Finance* 9(3) (1999) - §2 (why a measure of risk is a *capital* number) and §3.3 (the quantile/aggregation complaint, with the normal-distribution remark). *Primary source, read from the corpus PDF.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 (VaR & ES: definition, the $99\%$/10-day regulatory number, normal ES) - the gentle entry point.
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 2 (coherent risk measures) and Ch 6 (backtesting).
-- **Rockafellar & Uryasev**, *Optimization of Conditional Value-at-Risk*, *J. Risk* 2(3) (2000) - the convex view of the same two measures.
+- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk*, *Mathematical Finance* 9(3) (1999)
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
+- **Rockafellar & Uryasev**, *Optimization of Conditional Value-at-Risk*, *J. Risk* 2(3) (2000)
 
 ---
 

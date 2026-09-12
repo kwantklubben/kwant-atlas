@@ -86,12 +86,12 @@ Read the story: a strategy with an annualized Sharpe of **2.5** over 5 years is 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality*, JPM 40(5), 94–107 (2014) - eqs. (1)–(2); §"A numerical example" (the example reproduced above: annualized $\widehat{SR}{=}2.5$, $T{=}1250$, $V[\{\widehat{SR}_n\}]$, skew $-3$, kurtosis $10$, $N{=}100$; the paper reports the $N{=}46$ crossing and the normal-returns $N{=}88$ crossing, both matched here). *The formula-authoritative source.*
-- **Bailey, D. H. & López de Prado, M.**: *The Sharpe Ratio Efficient Frontier*, Journal of Risk 15(2) (2012) - the PSR and MinTRL.
-- **Lo, A.**: *The Statistics of Sharpe Ratios*, Financial Analysts Journal 58(4) (2002) - the non-normal variance of the Sharpe estimator.
-- **Ingersoll, Spiegel, Goetzmann & Welch**: *Portfolio Performance Manipulation and Manipulation-Proof Performance Measures*, RFS 20(5) (2007) - why higher moments matter for performance claims.
+- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality*, JPM 40(5), 94–107 (2014)
+- **Bailey, D. H. & López de Prado, M.**: *The Sharpe Ratio Efficient Frontier*, Journal of Risk 15(2) (2012)
+- **Lo, A.**: *The Statistics of Sharpe Ratios*, Financial Analysts Journal 58(4) (2002)
+- **Ingersoll, Spiegel, Goetzmann & Welch**: *Portfolio Performance Manipulation and Manipulation-Proof Performance Measures*, RFS 20(5) (2007)
 
 ---
 

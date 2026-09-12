@@ -80,12 +80,12 @@ Read the output as a decision, not a calculation: at \$30 the stock trades at a 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Graham, Benjamin**: *The Intelligent Investor* (rev. 1973; HarperBusiness annotated 4th ed. 2003) - Ch 8 ("Mr. Market") and Ch 20 ("Margin of Safety") are the direct sources of this page. *Concepts and the \$15 / 1.5× caps verified against the corpus text.*
-- **Graham, Benjamin & Dodd, David**: *Security Analysis* (McGraw-Hill, 6th ed. 2008) - the deeper origin of earnings power, asset-value floors, and the margin-of-safety principle.
-- **Greenwald, Kahn, Sonkin & van Biema**: *Value Investing: From Graham to Buffett and Beyond* (Wiley, 2001) - the modern formalization of "value" as three distinct estimates (asset, earnings power, franchise) rather than one number.
-- **Dorsey, Pat (Morningstar)**: *The Five Rules for Successful Stock Investing* (2004) - the plain-English on-ramp to how a professional turns "is it cheap?" into "is it a good business at a fair price?"
+- **Graham, Benjamin**: *The Intelligent Investor* (rev. 1973; HarperBusiness annotated 4th ed. 2003)
+- **Graham, Benjamin & Dodd, David**: *Security Analysis* (McGraw-Hill, 6th ed. 2008)
+- **Greenwald, Kahn, Sonkin & van Biema**: *Value Investing: From Graham to Buffett and Beyond* (Wiley, 2001)
+- **Dorsey, Pat (Morningstar)**: *The Five Rules for Successful Stock Investing* (2004)
 
 ---
 

@@ -73,14 +73,14 @@ Experiment A: in the crisis regime the *same* portfolio's volatility jumps from 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Chopra & Ziemba**, "The Effect of Errors in Means, Variances, and Covariances…," *JPM* 19(2):6–11, 1993 - the error-dominance result.
-- **Best & Grauer**, "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means," *RFS* 4(2):315–342, 1991 - the formal MVO-fragility statement.
-- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* 22(5):1915–1953, 2009 - $1/N$ as the benchmark every optimizer must beat.
-- **Laloux, Cizeau, Bouchaud & Potters**, "Noise Dressing of Financial Correlation Matrices," *PRL* 83(7):1467–1470, 1999 - why empirical correlation is mostly noise (covariance denoising).
-- **Koijen et al.**, "Carry," *JFE* 127(2):197–225, 2018 - the carry crash (negative skew) result.
-- **Ang**, *Asset Management* (2014), Ch 11–12 - factor crowding and the practice of factor allocation.
+- **Chopra & Ziemba**, "The Effect of Errors in Means, Variances, and Covariances…," *JPM* 19(2):6–11, 1993
+- **Best & Grauer**, "On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means," *RFS* 4(2):315–342, 1991
+- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* 22(5):1915–1953, 2009
+- **Laloux, Cizeau, Bouchaud & Potters**, "Noise Dressing of Financial Correlation Matrices," *PRL* 83(7):1467–1470, 1999
+- **Koijen et al.**, "Carry," *JFE* 127(2):197–225, 2018
+- **Ang**, *Asset Management* (2014)
 
 ---
 

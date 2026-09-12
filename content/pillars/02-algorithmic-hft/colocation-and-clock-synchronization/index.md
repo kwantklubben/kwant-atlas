@@ -88,15 +88,15 @@ Hub signposts - the full failure analysis lives in [[pillars/02-algorithmic-hft/
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Budish, Eric; Cramton, Peter; Shim, John** - "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response," *Quarterly Journal of Economics* 130(4), 1547–1621 (2015). *The central reading: millisecond direct-feed data, the arms-race model, and the batch-auction remedy. Source of the ES–SPY $75M/$300M/13ms/8.5ms numbers and the $\delta/\tau$ compression result.*
 - **Menkveld, Albert J.** - "High-Frequency Trading and the New Market Makers," *Journal of Financial Markets* 16(4), 712–740 (2013). *HFT latency bound (1.67 ms), Chi-X spread-narrowing evidence, why fast intermediaries co-locate at fragmented venues.*
 - **O'Hara, Maureen** - "High-Frequency Market Microstructure," *J. Financial Economics* (2015). *The colocation/microwave/physical-layer numbers (Hibernian 59.6, Perseus 4.6, TSE 15.7 µs); SEC 23%/38% cancel statistics; HFT market making = cross-venue stat-arb.*
-- **Hendershott, Terrence; Menkveld, Albert J.; et al.** - "Price Pressures," (2014). *The intermediation cost the latency tier must survive: a $100k inventory shock costs 0.28% with a 0.92-day half-life - inventory risk, not speed, dominates the market-maker's P&L constraint.*
+- **Hendershott, Terrence; Menkveld, Albert J.; et al.** - "Price Pressures," (2014). *The intermediation cost the latency tier must survive: a $100k inventory shock costs 0.28% with a 0.92-day half-life
 - **MacKenzie, Donald** - *Trading at the Speed of Light* (Princeton, 2021). *The authoritative socio-technical account of colocation and the physical race.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 1–2 (trading mechanisms, the limit-order-book institution the arms race runs on) and Ch 14 (trading costs). *Corpus verification `hasbrouck_ch1-5.md`, `hasbrouck_ch11-15.md`.*
-- **IEEE 1588-2008 (PTP)** and exchange colocation/timestamp specs (CME, Nasdaq, Cboe) / NIST PTP guidance - the primary ground truth on clock sync.
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **IEEE 1588-2008 (PTP)** and exchange colocation/timestamp specs (CME, Nasdaq, Cboe) / NIST PTP guidance
 
 ---
 

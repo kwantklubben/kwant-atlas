@@ -65,13 +65,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Avellaneda, Marco & Stoikov, Sasha**: *High-frequency trading in a limit order book*, Quantitative Finance 8(3), 217–224 (2008). *The canonical paper for this folder; every formula above transcribed and numerically verified.*
-- **Guéant, Olivier, Lehalle, Charles-Albert & Fernandez-Tapia, Joaquin**: *Dealing with the inventory risk: a solution to the market making problem*, Mathematics and Financial Economics 7(4), 477–507 (2013). *Rigorous HJB treatment - linear-ODE reduction, inventory constraints, closed-form asymptotics, and the verification theorem the original paper lacked.*
+- **Guéant, Olivier, Lehalle, Charles-Albert & Fernandez-Tapia, Joaquin**: *Dealing with the inventory risk: a solution to the market making problem*, Mathematics and Financial Economics 7(4), 477–507 (2013). *Rigorous HJB treatment
 - **Cartea, Álvaro, Jaimungal, Sebastian & Penalva, José**: *Algorithmic and High-Frequency Trading*, Cambridge University Press (2015). *The modern textbook; the A–S family, adverse selection, and execution in one voice.*
 - **Ho, Thomas & Stoll, Hans**: *Optimal dealer pricing under transactions and return uncertainty*, Journal of Financial Economics 9(1), 47–73 (1981). *The intellectual ancestor: dealer pricing under inventory risk.*
-- **Cartea, Álvaro & Jaimungal, Sebastian**: *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611 (2015). *Generalizes A–S beyond exponential utility - closes the "why this risk measure?" gap.*
+- **Cartea, Álvaro & Jaimungal, Sebastian**: *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611 (2015). *Generalizes A–S beyond exponential utility
 
 ---
 

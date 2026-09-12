@@ -110,13 +110,13 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Meyers, Scott**: *Effective Modern C++* (O'Reilly, 2014) - the C++11/14 baseline: move semantics, smart pointers, perfect forwarding. *The language prerequisite for every page here.*
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* (Packt, 2023) - the pillar's dedicated low-latency-trading-C++ text (matching engine, market-data handling, trading algorithms). Companion repo `PacktPublishing/Building-Low-Latency-Applications-with-CPP`.
-- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* (CS:APP) - the canonical source for the cache hierarchy, memory, and instruction-level parallelism behind §2. *Conceptual foundation of mechanical sympathy.*
-- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed., 2019) - cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]]; atomics and memory ordering.
-- **Fog, Agner**: *Optimizing Software in C++* - the practitioner's guide to flags, vectorisation, and microarchitecture.
+- **Meyers, Scott**: *Effective Modern C++* (O'Reilly, 2014)
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++* (Packt, 2023)
+- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* (CS:APP)
+- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed., 2019)
+- **Fog, Agner**: *Optimizing Software in C++*
 
 ---
 

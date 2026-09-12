@@ -62,11 +62,11 @@ Price-RMSE picks $\sigma{=}0.239$ (biased to ATM where prices are largest); vol-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 1 (the break-even/P&L view that frames *why* we calibrate to market quotes), Ch 7 §7.5 (what "calibration" of a forward-variance model means and does not mean).
-- **Gatheral**, *The Volatility Surface*, Ch 3 (calibration options for the implied-vol surface; why parameterizing implied vol directly is hard - sparse quotes and no-arbitrage interpolation).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (volatility smiles: how they force calibration beyond BSM).
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Gatheral**, *The Volatility Surface*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

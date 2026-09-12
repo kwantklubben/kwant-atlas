@@ -75,13 +75,13 @@ At the 95% level the high-correlation copula shows *subasymptotic* tail dependen
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil & Frey (2000)**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, JEF 7:271–300 - the filtered/conditional EVT method, ES eq. (14), backtests. *Read in corpus.*
-- **de Haan & Ferreira (2006)**, Ch 6–7 - multivariate EVT, stable tail dependence / Pickands dependence functions. *Math-verified in corpus.*
-- **McNeil, Frey & Embrechts (2015)**, Ch 7 (EVT) and Ch 8 (copulas, tail dependence). *In library.*
-- **Embrechts, Klüppelberg & Mikosch (1997)** - Ch 5 (dependence, extremal index) and Ch 6 (multivariate EVT). The reference monograph.
-- **Tsay, *Analysis of Financial Time Series*** - Ch 3 (GARCH, the filter side). *Ch 4–6 verified in corpus.*
+- **McNeil & Frey (2000)**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, JEF 7:271–300
+- **de Haan & Ferreira (2006)**
+- **McNeil, Frey & Embrechts (2015)**
+- **Embrechts, Klüppelberg & Mikosch (1997)**
+- **Tsay, *Analysis of Financial Time Series***
 
 ---
 

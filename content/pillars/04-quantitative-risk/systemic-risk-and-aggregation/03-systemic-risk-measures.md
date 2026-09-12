@@ -89,12 +89,12 @@ We build a two-bank system from a common factor $F\sim N(0,1)$ plus idiosyncrati
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Adrian & Brunnermeier**, *CoVaR*, *American Economic Review* 106(7):1705–1741 (2016) - the CoVaR and ΔCoVaR measures.
-- **Acharya, Pedersen, Philippon & Richardson**, *Measuring Systemic Risk*, *Review of Financial Studies* 30(1):2–47 (2017) - MES and the capital-shortfall view.
-- **Brownlees & Engle**, *SRISK: A Conditional Capital Shortfall Measure of Systemic Risk*, *RFS* 30(1):49–79 (2017) - the SRISK scenario measure; the direct ancestor of the Fed's systemic-importance screens.
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), §8.4 - multivariate tail estimation that CoVaR/MES rest on. *In the corpus.*
+- **Adrian & Brunnermeier**, *CoVaR*, *American Economic Review* 106(7):1705–1741 (2016)
+- **Acharya, Pedersen, Philippon & Richardson**, *Measuring Systemic Risk*, *Review of Financial Studies* 30(1):2–47 (2017)
+- **Brownlees & Engle**, *SRISK: A Conditional Capital Shortfall Measure of Systemic Risk*, *RFS* 30(1):49–79 (2017)
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
 
 ---
 

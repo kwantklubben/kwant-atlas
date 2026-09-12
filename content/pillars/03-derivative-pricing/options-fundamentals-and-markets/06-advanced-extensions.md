@@ -90,12 +90,12 @@ Read the table: the **bull call spread is capped** at $K_2-K_1=10$ (it gives up 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 12 (principal-protected notes, covered call & protective put, bull/bear/box/butterfly/calendar/diagonal spreads, straddle/strip/strap/strangle, and the "any payoff from butterflies" construction). *Per-chapter verification report in the corpus (spread set = bull, bear, box, butterfly, calendar, diagonal).*
-- **Hull**, Ch 3 (index/futures hedging: $N^*=\beta\,V_A/V_F$, changing beta, stack-and-roll) - the hedging half of this page.
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.2 (the parity identities that make the box spread a bond and the covered call a short put).
-- **Shreve**, *Stochastic Calculus for Finance I*, §5 (American exercise), for why the box/parity relations require European-style legs.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Hull**
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance I*
 
 ---
 

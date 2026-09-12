@@ -222,12 +222,12 @@ We (i) verify Heston's VS-vol curve (6.4) and its short-maturity limit, (ii) ver
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bergomi**, *Stochastic Volatility Modeling* - **Ch 6** (Heston in the forward-variance framework: 6.1–6.5, drift of $V_t$ as the short-end curve slope, 6.6–6.9 vol-of-vol, 6.16–6.20 skew and its limits, and the four structural criticisms), **Ch 7** (forward-variance models: pricing equation 7.4, break-even covariances 7.2, Markov representation 7.9–7.10 and 7.13, $N$-factor 7.11–7.27, two-factor 7.28–7.39, benchmark 7.40, VIX/realized-variance §7.6–7.7), **Ch 8** (**Bergomi–Guyon**: 8.3–8.12 the expansion machinery, 8.13–8.17 the three constants, 8.18 the price expansion, 8.20–8.21 implied vols, 8.22–8.26 the order-1 skew and the LV identity, 8.29–8.33 gamma representation and $\ln^2$ payoff, 8.35–8.44 short-maturity limits and the SABR/Heston specialisations), **Ch 9** (SSR: 9.1–9.9 definitions and $R_T\in[1,2]$, 9.11–9.16 Type I/II and the two-factor forms, 9.22–9.31 realised SSR and the skew trade), **Ch 10** (what causes equity smiles: Student-$t$ one-day distribution, the $1/T$ contribution of the one-day smile, jumps as a stress-reserve policy). *The primary modern treatment, math-verified in the corpus.*
-- **Gatheral**, *The Volatility Surface*, Ch 3 (gamma-weighted implied variance 3.1–3.11, Heston local variance 3.15, ATM term structure 3.18) and Ch 8 (skew level-independence §8.1, LV forward skew §8.2, stochastic implied vol §8.3, digitals and cliquets §8.4). *Math-verified.*
-- **Bergomi & Guyon** (2012), *Stochastic volatility's orderly smiles*, Risk 25(5) - the published form of ch 8; **Durrleman** (2005) on extracting variance dynamics from the implied-vol surface; **Lewis** (2000) on the small-vol-of-vol expansion that proves (7.11) exact to $O(\eta)$.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 (smile dynamics, volatility term structure, minimum-variance delta $\Delta_{MV}=\Delta_{BSM}+\mathcal V_{BSM}\partial\mathbb E[\sigma_{imp}]/\partial S$ - the practical face of the SSR) and Ch 23 (GARCH variance term structure eq. 23.14, the $\mathbb P$-measure analogue of $\xi_0^T$). *Verification report in the corpus.*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi & Guyon** (2012), *Stochastic volatility's orderly smiles*, Risk 25(5)
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

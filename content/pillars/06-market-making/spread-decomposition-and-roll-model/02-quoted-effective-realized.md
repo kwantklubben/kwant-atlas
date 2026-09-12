@@ -67,12 +67,12 @@ The maker *advertises* $0.04$ but *keeps* only $0.02$ - exactly half is surrende
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 3 & 8 - quoted/effective/realized spread definitions and the generalized-Roll relation $S_q=2c,\ S_r=2\lambda$.
-- **Huang & Stoll (1996)**, *Dealer versus auction markets: a paired comparison of execution costs on NASDAQ and the NYSE*, Journal of Financial Economics 41(3), 313–357 - the standard effective/realized estimators.
-- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1) - effective spread as a market-quality measure.
-- **Stoll (1989)**, *Inferring the components of the bid-ask spread* - realized spread less than quoted under both inventory and adverse-information models.
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Huang & Stoll (1996)**, *Dealer versus auction markets: a paired comparison of execution costs on NASDAQ and the NYSE*, Journal of Financial Economics 41(3), 313–357
+- **Hasbrouck (1993)**, *Assessing the quality of a security market*, RFS 6(1)
+- **Stoll (1989)**, *Inferring the components of the bid-ask spread*
 
 ---
 

@@ -68,12 +68,12 @@ Simulate a bivariate normal, bin by $X$, and check that the empirical conditiona
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 2 (Def 2.3.1 partial averaging, Thm 2.3.2 properties (i)–(v), Independence Lemma 2.3.4, conditional densities).
-- **Shreve**, *Stochastic Calculus for Finance I*, §2.3 (atom-average picture, properties), Ch 11 (conditional density ratio, bivariate normal conditional mean/var).
-- **ESL (Hastie, Tibshirani, Friedman)**, Ch 2 (regression function $\mathbb E[Y\mid X=x]$ eq. 2.13, EPE eq. 2.9, MSE decomposition eq. 2.46).
-- **Williams**, *Probability with Martingales*, Ch 9 (conditional expectation, properties).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **ESL (Hastie, Tibshirani, Friedman)**
+- **Williams**, *Probability with Martingales*
 
 ---
 

@@ -63,12 +63,12 @@ Two lessons at once. First, on *filtered* residuals the tail is thinner ($\hat\x
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil (1997)**, *Estimating the Tails of Loss Severity Distributions Using EVT*, ASTIN 27:117–137 - §4.4 (threshold bias–variance), Table 1 (quantile sensitivity), Figure 8 (shape vs threshold). *Read in corpus.*
-- **McNeil & Frey (2000)**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, JEF 7:271–300 - §2.3 (threshold/k simulation: GPD robust, Hill narrow), §3 (backtests: conditional EVT best, conditional normal fails 11/15, unconditional EVT fails in stress). *Read in corpus.*
-- **Embrechts, Klüppelberg & Mikosch (1997)** - Ch 5 (dependence and the extremal index; the AR(1) example McNeil & Frey cite).
-- **Tsay, *Analysis of Financial Time Series*** - Ch 3 (GARCH) and Ch 7 (EVT), for the econometrics side. *Ch 4–6 verified in corpus.*
+- **McNeil (1997)**, *Estimating the Tails of Loss Severity Distributions Using EVT*, ASTIN 27:117–137
+- **McNeil & Frey (2000)**, *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series*, JEF 7:271–300
+- **Embrechts, Klüppelberg & Mikosch (1997)**
+- **Tsay, *Analysis of Financial Time Series***
 
 ---
 

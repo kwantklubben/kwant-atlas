@@ -78,15 +78,15 @@ A 4x error in $\lambda$ costs 22.6% of utility; a 4x error in $\eta$ costs 24.0%
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Almgren, Robert** - "Optimal execution with nonlinear impact functions and trading-enhanced risk," *Applied Mathematical Finance* 10(1), 1-18 (2003). *Power-law impact, size-dependent characteristic time, trading-enhanced risk.*
-- **Almgren, Robert; Thum, Chee; Hauptmann, Emmanuel; Li, Hong** - "Direct estimation of equity market impact," *Risk* 18(7), 58-62 (2005). *Fitting the real impact curve - where the linear model's error is measured.*
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §3.2-3.4 (VaR/L-VaR, parameter choice), §4 (drift, serial correlation, parameter shifts).
+- **Almgren, Robert; Thum, Chee; Hauptmann, Emmanuel; Li, Hong** - "Direct estimation of equity market impact," *Risk* 18(7), 58-62 (2005). *Fitting the real impact curve
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000)
 - **Gatheral, Jim** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7), 749-759 (2010). *Huberman–Stanzl consistency: which impact/decay models are even admissible.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 15 (drift-augmented optimum eq 15.4, slowly-decaying temporary impact ⇒ U-shaped strategies).
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Perold, André F.** - "The implementation shortfall," *JPM* 14(3), 4-9 (1988). *Opportunity cost.*
-- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015), Ch 6-9. *Adaptive re-solving, randomisation and gaming countermeasures.*
+- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015)
 
 ---
 

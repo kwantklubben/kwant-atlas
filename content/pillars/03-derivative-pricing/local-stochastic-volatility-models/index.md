@@ -91,14 +91,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107 - the particle method, the McKean–Vlasov formulation, and the calibration of LSV models to market smiles. *The primary source of this folder.* Companion and precursor: **Henry-Labordère, P.** (2009), *Calibration of local stochastic volatility models to market smiles: a Monte-Carlo approach*, Risk (September 2009), SSRN 1493306.
-- **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, Probability Theory and Related Fields **71**(4), 501–516 - the Markovian projection theorem; the mathematical reason a *deterministic* function can carry an entire implied surface.
-- **Dupire, B.** (1994), *Pricing with a smile*, Risk **7**(1), 18–20 - the local volatility surface and both Dupire formulae; the object the leverage must reproduce.
-- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016) - **Ch 1** (what a *usable* model is; the Black–Scholes equation as an accounting identity), **Ch 12** (§12.1–12.4: LSV, the pricing equation as an *ansatz* rather than a replication result, the ATMF-skew decomposition, and the §12.2.2 verdict that *"most local-stochastic volatility models are not usable models"*). Also **Bergomi, L.**, *Local-stochastic volatility: models and non-models*, Risk (the admissibility condition $\partial P/\partial\lambda_k=0$ used in §05/§06). *The primary modern treatment.*
-- **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott Magazine, 84–108 - the SABR stochastic-volatility component routinely used as the LSV driver, and the LSV-LMM construction for rates. **Ren, Y., Madan, D. & Qian, M. Q.** (2007), *Calibrating and pricing with embedded local volatility models*, Risk **20**(9) - the "embedded LV" (LSV-LMM) formulation that dominated rates desks. **Lipton, A.** (2002), *The vol smile problem*, Risk (February) - the forward-PDE route to the leverage in one-factor models.
-- **Gatheral, J.**, *The Volatility Surface* (Wiley, 2006) - Ch 1 (Dupire local vol, eq. 1.10 used in §02), Ch 7 §7.8 (the shape of the smile is model-generic: only the dynamics discriminate), Ch 8 (digital and cliquet prices where the dynamics show up). **Andreasen, J. & Huge, B.** (2011), *Volatility interpolation*; **Andersen, L. & Andreasen, J.** (2002), *Volatility skews and extensions of the LIBOR market model*. *Verification backdrop for the Dupire/numerics in this folder.*
+- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107
+- **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, Probability Theory and Related Fields **71**(4), 501–516
+- **Dupire, B.** (1994), *Pricing with a smile*, Risk **7**(1), 18–20
+- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016)
+- **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott Magazine, 84–108
+- **Gatheral, J.**, *The Volatility Surface* (Wiley, 2006)
 
 ---
 

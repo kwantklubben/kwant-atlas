@@ -74,11 +74,11 @@ Repeatedly "stretching and re-normalizing" a vector converges to the direction t
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Strang**, *Introduction to Linear Algebra* (5th ed., 2016), Ch 1–2 (vectors, spaces, the picture) and Ch 6 (eigenvalues, diagonalization, spectral theorem). *Corpus PDF available.*
-- **Tsay**, *Analysis of Financial Time Series*, §9.4 (PCA: "$\text{Var}(PC_i)=\lambda_i$", proportion of variance) - the finance-native statement of this page.
-- **Horn & Johnson**, *Matrix Analysis*, Thm 2.5.6 (spectral theorem) - the rigorous statement.
+- **Strang**, *Introduction to Linear Algebra* (5th ed., 2016)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Horn & Johnson**, *Matrix Analysis*, Thm 2.5.6 (spectral theorem)
 
 ---
 

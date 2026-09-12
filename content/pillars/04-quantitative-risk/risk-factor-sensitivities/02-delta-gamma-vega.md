@@ -83,12 +83,12 @@ Two blocks: first reproduce the Haug Table 2-3 numbers that Pillar 3 verified, s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 19 §19.1–19.10 ($\Delta$-neutral P&L eq. 19.3, $\Theta+rS\Delta+\tfrac12\sigma^2S^2\Gamma=r\Pi$ eq. 19.4, Greeks of forwards/futures eq. 19.5/19.6, delta/gamma/vega-neutral construction, theta per day/trading day). *Verified in the corpus (`hull_ch19-23.md`).*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) - §2.3–2.16 (the full Greek set and the per-point/per-day scaling), §2.15 (the gamma–theta identity), §2.16 (futures-option rho). *Numerically re-verified here against Table 2-3.*
-- **Taleb, Nassim Nicholas**: *Dynamic Hedging* (Wiley, 1997) - the practitioner's account of gamma/vega books, pin risk, and why aggregated Greeks lie.
-- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996) - §6, the risk-factor mapping for options and the delta-gamma treatment of non-linearity.
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006)
+- **Taleb, Nassim Nicholas**: *Dynamic Hedging* (Wiley, 1997)
+- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996)
 
 ---
 

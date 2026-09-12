@@ -102,12 +102,12 @@ What to read:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.), §14.3.12 - hierarchical clustering, the Lance–Williams family (eqs. 14.41 single, 14.42 complete, 14.43 group-average), dendrograms and the cophenetic correlation. *The applied-statistics canon for this page; corpus-verified.*
-- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 - the correlation distance and quasi-diagonalization as used in HRP.
-- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*, Ch. 16 - practical linkage choices and the tree-building code.
-- **Raffinot, T.** (2017/18). "Hierarchical Clustering-Based Asset Allocation." *J. Portfolio Management* 44(2):89–99 - clustering choices in the HRP/HERC family.
+- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.)
+- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69
+- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*
+- **Raffinot, T.** (2017/18). "Hierarchical Clustering-Based Asset Allocation." *J. Portfolio Management* 44(2):89–99
 
 ---
 

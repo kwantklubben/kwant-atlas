@@ -96,13 +96,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/01-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*Journal of Finance*, 1992) - size + book-to-market capture the cross-section; the Fama–MacBeth two-pass methodology; the paper that displaced the one-beta CAPM story. *Verified against the corpus paper.*
-- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) - the canonical **three-factor model** (market, SMB, HML) and its 2×3 construction.
-- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - adds **profitability (RMW)** and **investment (CMA)**; the 2×3/2×2×2×2 sorts; eq. (5) regression. *Construction and factor definitions verified against the corpus paper.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010), Ch 9 - factor models, BARRA two-step WLS/GLS (eqs. 9.7–9.8), Fama–French hedge portfolios, PCA/statistical factor models, communality & specific variance, APCA, factor-number selection. *Math-verified deep-read in the corpus.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009), Ch 3 (linear regression, shrinkage), Ch 14 (PCA, SVD). *Verified in the corpus.*
+- **Fama, Eugene & French, Kenneth**: "The Cross-Section of Expected Stock Returns" (*Journal of Finance*, 1992)
+- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993)
+- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
 
 ---
 

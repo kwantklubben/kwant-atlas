@@ -79,11 +79,11 @@ Hub signposts - each failure mode is dissected on [[pillars/06-market-making/lim
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel**: *Empirical Market Microstructure* (OUP, 2007) - Ch 1 (what microstructure is, three pillars, liquidity = depth/breadth/resiliency) and Ch 2 (limit order markets, priority rules, "walking the book"). *The empirical bible; verified in the corpus.*
-- **Foucault, Pagano & Röell**: *Market Liquidity: Theory, Evidence, and Practice* (OUP, 2013) - Ch 1 (liquidity & price discovery) and Ch 2 (quoted vs effective vs realized spread, price impact $\Delta m=\lambda q+\varepsilon$, $1/\lambda$ = depth). *Theory + evidence; verified in the corpus.*
-- **Cont, Stoikov & Talreja (2010)**, *A stochastic model for order book dynamics*, Operations Research 58(3), 549–563. *See [[pillars/06-market-making/limit-order-book-mechanics/06-advanced-extensions|06 · Advanced Extensions]].*
+- **Hasbrouck, Joel**: *Empirical Market Microstructure* (OUP, 2007)
+- **Foucault, Pagano & Röell**: *Market Liquidity: Theory, Evidence, and Practice* (OUP, 2013)
+- **Cont, Stoikov & Talreja (2010)**, *A stochastic model for order book dynamics*, Operations Research 58(3), 549–563. *
 - **Cont, Kukanov & Stoikov (2014)**, *The price impact of order book events*, Journal of Financial Econometrics 12(1), 47–88. *OFI: the micro-price signal.*
 - **Gould, Porter, Williams, McDonald, Fenn & Howison (2013)**, *Limit order books*, Quantitative Finance 13(11), 1709–1742. *Citation hub and orientation for the whole folder.*
 

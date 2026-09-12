@@ -84,14 +84,14 @@ This is *exactly* the Quant Quake signature. The monthly **volatility** (4.05%) 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Almgren, Robert; Thum, Chee; Hauptmann, Emmanuel & Li, Hong**: "Direct Estimation of Equity Market Impact" (*Risk*, 2005) - the square-root impact law and its calibration; corpus paper *45_Almgren_2005*.
-- **Khandani, Amir & Lo, Andrew**: "What Happened to the Quants in August 2007?" (*JIM*, 2007, and NBER WP) - the crowding/unwind mechanics of the Quant Quake: same-side liquidations, no counterparty, market-neutral books down double digits in days.
-- **Bouchaud, Jean-Philippe**: "How Markets Slowly Digest Changes in Supply and Demand" (2009) - impact and liquidity in the crowded-unwind regime; corpus paper *44_Bouchaud_2009*.
-- **Ilmanen, Antti**: *Expected Returns* (Wiley, 2011), Ch 1 §"Endogenous sources of return and risk" - the virtuous→vicious crowding cycle, verbatim source of the quote above. *Verified against the corpus book.*
-- **Grinold, Richard & Kahn, Ronald**: *Active Portfolio Management* (2nd ed.) - the fundamental law, breadth, and the practical treatment of trading costs and capacity.
-- **Kyle (1985) / Glosten–Milgrom (1985)** - the microstructure foundations of why trading moves price (adverse selection, inventory), for the reader who wants the *why* behind square-root impact.
+- **Almgren, Robert; Thum, Chee; Hauptmann, Emmanuel & Li, Hong**: "Direct Estimation of Equity Market Impact" (*Risk*, 2005)
+- **Khandani, Amir & Lo, Andrew**: "What Happened to the Quants in August 2007?" (*JIM*, 2007, and NBER WP)
+- **Bouchaud, Jean-Philippe**: "How Markets Slowly Digest Changes in Supply and Demand" (2009)
+- **Ilmanen, Antti**: *Expected Returns* (Wiley, 2011)
+- **Grinold, Richard & Kahn, Ronald**: *Active Portfolio Management* (2nd ed.)
+- **Kyle (1985) / Glosten–Milgrom (1985)**
 
 ---
 

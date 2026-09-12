@@ -112,11 +112,11 @@ The control variate - exploiting the $0.992$ correlation between $e^U$ and $U$ -
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004) - Ch 1 (§1.1 estimator, SLLN/CLT, $O(n^{-1/2})$ vs $O(n^{-2/d})$; §1.1.3 the MSE framework), Ch 2 (generation: inverse transform, acceptance–rejection, Box–Muller, Cholesky/PC normals), Ch 3 (path generation, Brownian bridge), Ch 4 (control variates, antithetics, stratification, LHS, matching, importance sampling), Ch 5 (quasi-Monte Carlo), Ch 6 (discretisation, MSE balancing). *The primary source; math-verified in the corpus.*
-- **Robert, C. P. & Casella, G.**: *Monte Carlo Statistical Methods* - the general statistics treatment of IS, MCMC and variance reduction.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (Monte Carlo and variance reduction in practice).
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004)
+- **Robert, C. P. & Casella, G.**: *Monte Carlo Statistical Methods*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

@@ -72,13 +72,13 @@ The crash lifts VaR by ~$116 while present, then pulls it ~$153 *below* the clea
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 §9.1 (tail-quantile variance) and §9.3 (heavy-tailed setting - why normality fails).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 (VaR conventions) and Ch 23 (vol clusters: EWMA/GARCH are the *reason* fat tails and ghost effects exist).
-- **McNeil & Frey** (2000) and **Hull & White** (1998) - the filtered-historical / GARCH-EVT fixes for the window and tail.
-- **Artzner, Delbaen, Eber, Heath** (1999), *Coherent Measures of Risk* - the subadditivity failure and the fix.
-- **Derman, Emanuel**: *Model Risk* (1996) - the general framing: right model/wrong inputs; every VaR is a model, models fail.
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **McNeil & Frey** (2000) and **Hull & White** (1998)
+- **Artzner, Delbaen, Eber, Heath** (1999), *Coherent Measures of Risk*
+- **Derman, Emanuel**: *Model Risk* (1996)
 
 ---
 

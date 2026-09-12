@@ -88,13 +88,13 @@ The reading: when **nothing** is real, the IS-best is OOS-median on average - PB
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bailey, D., Borwein, J., López de Prado, M. & Zhu, J.**: *The Probability of Backtest Overfitting*, Journal of Computational Finance 20(4) (2017) - the PBO definition and Algorithm 2.3 (CSCV). *The source for §2.2 and §3.*
-- **White, H.**: *A Reality Check for Data Snooping*, Econometrica 68(5), 1097–1126 (2000) - the null $\max_k\mathbb{E}[f_k^{\ast}]\le0$, the statistic $V_l$, and the stationary-bootstrap $p$-value. *The source for §2.3.*
-- **Hansen, P. R.**: *A Test for Superior Predictive Ability*, Journal of Business & Economic Statistics (2005) - the SPA refinement of the Reality Check.
-- **López de Prado, M.**: *Advances in Financial Machine Learning*, Ch 7 (purged $K$-fold CV, embargo, the interplay of overlapping labels with CV) - the leakage fix. *Companion to the Atlas's [[pillars/01-quantitative-research/feature-engineering-and-labeling/index|Feature Engineering & Labeling]].*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.), §7.10.2–7.10.3 and eq. 7.48 - $K$-fold CV mechanics and its failure under feature screening/high dimension.
+- **Bailey, D., Borwein, J., López de Prado, M. & Zhu, J.**: *The Probability of Backtest Overfitting*, Journal of Computational Finance 20(4) (2017)
+- **White, H.**: *A Reality Check for Data Snooping*, Econometrica 68(5), 1097–1126 (2000)
+- **Hansen, P. R.**: *A Test for Superior Predictive Ability*, Journal of Business & Economic Statistics (2005)
+- **López de Prado, M.**: *Advances in Financial Machine Learning*
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.)
 
 ---
 

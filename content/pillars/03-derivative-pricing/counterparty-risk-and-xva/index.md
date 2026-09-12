@@ -91,12 +91,12 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge: Counterparty Credit Risk, Funding, Collateral and Capital* (4th ed., Wiley 2020) - *the* primary source for this folder: Ch 1–3 (CCR, xVA components), Ch 7/9 (margin, SIMM), Ch 11 (exposure), Ch 13 (capital), Ch 16–20 (CVA/DVA/FVA/KVA/MVA), Ch 21 (xVA desk). All formulas and numbers below are from this book and verified in the corpus.
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 24 (credit risk, hazard from spread, Merton model, CVA/DVA, wrong-way risk), Ch 25 (CDS/CDO). *Related credit verified in the corpus.*
-- **Brigo, Damiano & Fabio Mercurio**: *Interest Rate Models - Theory and Practice* (2nd ed.) - Ch 21 (counterparty-risk/CVA pricing proposition, CDS), Ch 22 (intensity models, CIR++, filtration switching, default-time simulation). *Math-verified in the corpus.*
-- **Green, Andrew**: *XVA: Credit, Funding and Capital Valuation Adjustments* (Wiley 2015) - the more rigorous companion text recommended by Gregory.
+- **Gregory, Jon**: *The xVA Challenge: Counterparty Credit Risk, Funding, Collateral and Capital* (4th ed., Wiley 2020) - *the* primary source for this folder:
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Brigo, Damiano & Fabio Mercurio**: *Interest Rate Models
+- **Green, Andrew**: *XVA: Credit, Funding and Capital Valuation Adjustments* (Wiley 2015)
 
 ---
 

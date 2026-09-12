@@ -112,12 +112,12 @@ The ensemble mean ($131.5\times$) and the typical outcome ($0.005\times$) differ
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019) - the multiplicative-coin argument in exactly this form, and why it invalidates the ensemble-average habit.
-- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016) - formalises "the relevant average is the time average of the dynamic."
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §2 - derivation of $g(f)=p\ln(1+f)+q\ln(1-f)$ and the ruin of the bold strategy. *Corpus-verified.*
-- **Kelly, J. L.**: *A New Interpretation of Information Rate*, BSTJ 35:917–926 (1956) - defines $G=\lim\frac1N\log(V_N/V_0)$ as the natural performance measure. *Corpus-verified.*
+- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15, 1216–1221 (2019)
+- **Peters & Gell-Mann**: *Evaluating Gambles Using Dynamics*, Chaos 26, 023103 (2016)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **Kelly, J. L.**: *A New Interpretation of Information Rate*, BSTJ 35:917–926 (1956)
 
 ---
 

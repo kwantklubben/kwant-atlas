@@ -85,12 +85,12 @@ Computes $\Pi$, verifies the reverse-optimization identity round-trips to $w_{mk
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Black & Litterman (1992)**, §Deriving the Implied Returns - the original reverse-optimization argument.
-- **He & Litterman (1999)**, §The Market for Equities / calibration - market-equilibrium interpretation of $\Pi$ and $\delta$.
-- **Idzorek (2005)**, §Step 2 - practitioner treatment of implied returns and $\delta$ selection.
-- Connection: **Sharpe (1964)**, *Capital Asset Prices* - the CAPM equilibrium that makes reverse optimization meaningful.
+- **Black & Litterman (1992)**
+- **He & Litterman (1999)**
+- **Idzorek (2005)**
+- Connection: **Sharpe (1964)**, *Capital Asset Prices*
 
 ---
 

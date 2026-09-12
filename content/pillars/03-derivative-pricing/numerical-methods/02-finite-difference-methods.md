@@ -108,12 +108,12 @@ Four verified facts fall out of this single run: Crank–Nicolson's time order i
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffy**, *Finite Difference Methods in Financial Engineering* - Ch 3 (parabolic IBVP, maximum principle, boundary classes), Ch 6 (divided differences, Euler/CN, Padé stability $p\ge q$), Ch 7 (method of lines, $\theta$-method, Toeplitz eigenvalues, M-matrices), Ch 8 (consistency Def 8.1, order Def 8.4, Lax Thm 8.1, von Neumann 8.31–8.39, Gerschgorin 8.2), Ch 11 (exponential fitting, Thm 11.1), Ch 12 (explicit BS coefficients and stability bounds 12.15–12.18).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 §21.8 (implicit, explicit and Crank–Nicolson finite differences; the $\ln S$ change of variable; hopscotch; explicit FDM ≡ trinomial).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 6 §6.1–6.2 (strong vs weak order and the ordering rationales that mirror FDM's $O(h^p)+O(k^q)$ split).
-- **Haug**, *Complete Guide to Option Pricing Formulas*, §4.1–4.2 (tree benchmarks used to validate any grid solver: European put $4.4496$, American put $4.692$).
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Haug**, *Complete Guide to Option Pricing Formulas*
 
 ---
 

@@ -94,12 +94,12 @@ Hub signposts - the folder's failure-mode analysis lives on the sub-pages. In on
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - **the primary source for this folder.** Ch 1 (returns & distributions), Ch 2 (linear/stationarity/unit roots), Ch 3 (ARCH/GARCH), Ch 8 (VAR/cointegration), Ch 9 (PCA/factors), Ch 10 (multivariate vol), Ch 11 (state-space/Kalman), Ch 12 (MCMC). All formulas above transcribed and verified from the corpus deep-read.
-- **Campbell, Lo & MacKinlay**: *The Econometrics of Financial Markets* - Ch 1–2 (returns, predictability), the standard reference on why returns, not prices, are the object of study.
-- **Hastie, Tibshirani & Friedman**: *Elements of Statistical Learning*, Ch 7 (model assessment: CV, AIC/BIC, the "screening-inside-folds" trap) - the validation discipline for model selection throughout.
-- **Box, Jenkins & Reinsel**: *Time Series Analysis* - the classic ARIMA/identification reference (ACF/PACF/EACF).
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Campbell, Lo & MacKinlay**: *The Econometrics of Financial Markets*
+- **Hastie, Tibshirani & Friedman**: *Elements of Statistical Learning*
+- **Box, Jenkins & Reinsel**: *Time Series Analysis*
 
 ---
 

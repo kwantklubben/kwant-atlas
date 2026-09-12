@@ -81,15 +81,15 @@ The Euler contributions sum to the portfolio ES to machine precision (diff $1.4\
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Acerbi, C.**, *Spectral Measures of Risk: A Coherent Representation of Subjective Risk Aversion*, *J. Banking & Finance* 26(7):1505–1518 (2002) - the spectral family, $\varphi$ monotonicity, ES as the extreme member.
-- **Acerbi, C. & Tasche, D.**, *On the Coherence of Expected Shortfall* / *Expected Shortfall: A Natural Coherent Alternative to Value at Risk*, *JBF* 26(7) (2002) - Euler allocation of ES (component CVaR) and the coherence proof.
-- **Kusuoka, S.**, *On Law Invariant Coherent Risk Measures*, *Advances in Mathematical Economics* 3:83–95 (2001) - every law-invariant coherent measure is a mixture of ES.
-- **Rockafellar, R.T. & Uryasev, S.**, *Optimization of Conditional Value-at-Risk*, *J. Risk* 2(3) (2000) - CVaR optimisation and the convex program behind FRTB-style computation.
-- **BCBS**, *Minimum Capital Requirements for Market Risk* (Jan 2019, BIS d457; *FRTB*) - the ES@$97.5\%$ standard, liquidity horizons, stressed calibration. *[REG] primary source.*
-- **BCBS**, *Amendment to the Capital Accord to Incorporate Market Risks* (1996) and *Supervisory Framework for Backtesting* (1996) - the original $99\%$/$10$-day VaR regime FRTB replaces.
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 8 - spectral measures and ES allocation in textbook form.
+- **Acerbi, C.**, *Spectral Measures of Risk: A Coherent Representation of Subjective Risk Aversion*, *J. Banking & Finance* 26(7):1505–1518 (2002)
+- **Acerbi, C. & Tasche, D.**, *On the Coherence of Expected Shortfall* / *Expected Shortfall: A Natural Coherent Alternative to Value at Risk*, *JBF* 26(7) (2002)
+- **Kusuoka, S.**, *On Law Invariant Coherent Risk Measures*, *Advances in Mathematical Economics* 3:83–95 (2001)
+- **Rockafellar, R.T. & Uryasev, S.**, *Optimization of Conditional Value-at-Risk*, *J. Risk* 2(3) (2000)
+- **BCBS**, *Minimum Capital Requirements for Market Risk* (Jan 2019, BIS d457; *FRTB*)
+- **BCBS**, *Amendment to the Capital Accord to Incorporate Market Risks* (1996) and *Supervisory Framework for Backtesting* (1996)
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
 
 ---
 

@@ -85,12 +85,12 @@ Standard library only. Each simulated fill earns a half-spread, receives a rebat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Menkveld, Albert J. (2013)**, *High frequency trading and the new market makers*, JFM 16(4), 712–740 - the closest thing to an audited P&L decomposition for a real HFT maker (spread revenue vs. inventory cost vs. passive profitability).
-- **Hasbrouck (2007)**, Ch 11 (dealers & inventories; information vs. inventory effects) and Ch 14 (realized cost, effective cost, implementation shortfall). *Verified in corpus; the $\Delta m$ horizons used here are Ch 14's.*
-- **Stoll (1978)** and **Ho & Stoll (1981)** - the linear inventory-cost derivation underlying $c_{\text{inv}}$.
-- **Copeland & Galai (1983)**, *Information effects on the bid-ask spread*, JF 38 - the option-like payoff view of adverse selection (why $\lambda$ rises with volatility).
+- **Menkveld, Albert J. (2013)**, *High frequency trading and the new market makers*, JFM 16(4), 712–740
+- **Hasbrouck (2007)**
+- **Stoll (1978)** and **Ho & Stoll (1981)**
+- **Copeland & Galai (1983)**, *Information effects on the bid-ask spread*, JF 38
 
 ---
 

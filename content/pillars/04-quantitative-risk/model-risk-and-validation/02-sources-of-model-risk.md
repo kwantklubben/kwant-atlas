@@ -76,12 +76,12 @@ Reading the budget: the 1-vol-point calibration error alone moves the price by $
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Derman, E.**, *Model Risk*, Goldman Sachs QSR Notes (1996) - the seven types ("WHAT ARE MODELS?", "THE TYPES OF MODEL RISK", "AVOIDING MODEL RISK"). *Read in full from the corpus PDF (44_Derman_1996_model_risk.pdf).*
-- **Federal Reserve / OCC**, *SR 11-7* (2011) - the two causes of model risk and "Accounting for model uncertainty". *Read in full from the corpus PDF.*
-- **Morini, M.**, *Understanding and Managing Model Risk* (2011), Ch 1–3 - the quantitative treatment of model-parameter pricing and model-risk premia.
-- **Hull, J. C.**, *Options, Futures, and Other Derivatives*, Ch 15 - the Greeks used as error sensitivities. *Verified in the corpus.*
+- **Derman, E.**, *Model Risk*, Goldman Sachs QSR Notes (1996)
+- **Federal Reserve / OCC**, *SR 11-7* (2011)
+- **Morini, M.**, *Understanding and Managing Model Risk* (2011)
+- **Hull, J. C.**, *Options, Futures, and Other Derivatives*
 
 ---
 

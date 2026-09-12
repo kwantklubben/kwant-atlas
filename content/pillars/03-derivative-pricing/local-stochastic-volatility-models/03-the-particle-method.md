@@ -129,14 +129,14 @@ The **target market is a flat $20\%$ Black–Scholes surface** (target local var
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107 - the particle method as published: the fixed-point algorithm, the treatment of the conditional expectation, and its use with hybrid local-stochastic volatility models. *The primary source of this page.*
-- **Henry-Labordère, P.** (2009), *Calibration of local stochastic volatility models to market smiles: a Monte-Carlo approach*, Risk (September 2009); SSRN 1493306 - the precursor, illustrated on the Bergomi variance-curve model and the two-factor lognormal model, with the Markovian-projection derivation.
-- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016), Ch 12 §12.2–12.4 (LSV construction, the ATMF-skew decomposition after calibration) and Ch 7 (the forward-variance drivers the leverage is most often applied to; exact OU simulation, which removes all discretisation bias for the variance-only part). *Math-verified in the corpus.*
-- **Guyon, J. & Henry-Labordère, P.**, *Nonlinear Option Pricing* (Chapman & Hall/CRC, 2013) - the book-length treatment of McKean–Vlasov SDEs in finance, including the LSV calibration and the "particle" interpretation. **Jourdain, B. & Sbai, M.** (2015) on well-posedness of LSV calibration problems; **Abergel & Tachet** (2010) on calibration of a local-stochastic model.
-- **Andersen, L.** (2008), *Simple and efficient simulation of the Heston stochastic volatility model* (QE scheme); **Lord, Koekkoek & van Dijk** (2010), *A comparison of biased simulation schemes for stochastic volatility models* - the simulators the step-3 recipe calls for. *Verification backdrop for §03 of this page.*
-- **Gatheral, J.**, *The Volatility Surface*, Ch 1 (the Dupire local variance fed into the calibration) and Ch 7 §7.8 (why the *static* fit is not a test of the model the leverage preserves). *Math-verified in the corpus.*
+- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107
+- **Henry-Labordère, P.** (2009), *Calibration of local stochastic volatility models to market smiles: a Monte-Carlo approach*, Risk (September 2009); SSRN 1493306
+- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016)
+- **Guyon, J. & Henry-Labordère, P.**, *Nonlinear Option Pricing* (Chapman & Hall/CRC, 2013)
+- **Andersen, L.** (2008), *Simple and efficient simulation of the Heston stochastic volatility model* (QE scheme); **Lord, Koekkoek & van Dijk** (2010), *A comparison of biased simulation schemes for stochastic volatility models*
+- **Gatheral, J.**, *The Volatility Surface*
 
 ---
 

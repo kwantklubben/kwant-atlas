@@ -95,12 +95,12 @@ Read the three lines at the bottom together: the **same 8 flips** produce a post
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference* (2nd ed.), §7.2.3 (Bayes estimators; eq. 7.2.6–7.2.7; Example 7.2.9 Beta–Bernoulli; Laplace's rule) - the classical derivation used here. *PDF in the corpus.*
-- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.), Ch 1–2 - the conceptual introduction; "Bayesian inference is reallocation of credibility across possibilities."
-- **McElreath**, *Statistical Rethinking* (2nd ed.), Ch 1–2 - the best intuition-first on-ramp; the coin-tossing/Garden-of-Forking-Data framing.
-- **Tsay**, *Analysis of Financial Time Series*, Ch 12 §12.3 - Bayesian inference (posterior $\propto$ likelihood $\times$ prior) in a finance context. *Math-verified in the corpus.*
+- **Casella & Berger**, *Statistical Inference* (2nd ed.)
+- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.)
+- **McElreath**, *Statistical Rethinking* (2nd ed.)
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

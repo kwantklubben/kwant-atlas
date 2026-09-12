@@ -86,14 +86,14 @@ Two lessons from the numbers: (a) the min-variance portfolio is dominated by bon
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Markowitz**, "Portfolio Selection," *Journal of Finance* 7(1):77–91, 1952 - the MV quadratic program.
-- **Tobin**, "Liquidity Preference as Behavior Toward Risk," *Review of Economic Studies* 25(2):65–86, 1958 - two-fund separation.
-- **Merton**, "An Analytic Derivation of the Efficient Portfolio Frontier," *JFQA* 7(4):1851–1872, 1972 - closed-form frontier, GMV and tangency formulas.
-- **Chopra & Ziemba**, "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice," *JPM* 19(2):6–11, 1993 - means dominate the error budget.
-- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* 22(5):1915–1953, 2009 - no optimizer beats $1/N$ out-of-sample on realistic histories.
-- **Ang**, *Asset Management* (2014), Ch 5–6 - asset-class building blocks and factor interpretations of each.
+- **Markowitz**, "Portfolio Selection," *Journal of Finance* 7(1):77–91, 1952
+- **Tobin**, "Liquidity Preference as Behavior Toward Risk," *Review of Economic Studies* 25(2):65–86, 1958
+- **Merton**, "An Analytic Derivation of the Efficient Portfolio Frontier," *JFQA* 7(4):1851–1872, 1972
+- **Chopra & Ziemba**, "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice," *JPM* 19(2):6–11, 1993
+- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* 22(5):1915–1953, 2009
+- **Ang**, *Asset Management* (2014)
 
 ---
 

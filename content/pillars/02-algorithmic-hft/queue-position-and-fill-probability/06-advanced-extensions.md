@@ -95,14 +95,14 @@ Three lessons in the numbers. **(i)** Queue position is a fill-ratio *tax*: movi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017) - the fill function (eq. 1), the multi-venue cost function, the overbooking result, and effective rebates $r_k=r_k^e+\mathrm{AS}_k$.
-- **Cont, Rama; Kukanov, Arseniy; Stoikov, Sasha** - "The price impact of order book events," *J. Financial Markets* 17, 47–88 (2014) - the OFI linear law, its depth-normalisation, and the square-root volume relation.
-- **Huang, Lehalle & Rosenbaum** - "Simulating and analyzing order book data: the queue-reactive model," *JASA* 110(509), 107–122 (2015) - state-dependent $\lambda(q),\mu(q)$ intensities.
-- **Rosu** (2009) - equilibrium LOB and the depth-vs-distance "hump" that reactive intensities reproduce.
-- **Cartea, Jaimungal & Penalva** - *Algorithmic and High-Frequency Trading* (2015), Ch 8 - limit-order placement and queue-aware market making.
-- **Gueant** - *The Financial Mathematics of Market Liquidity* (2016) - rigorous treatment of execution and market making under queue/impact dynamics.
+- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017)
+- **Cont, Rama; Kukanov, Arseniy; Stoikov, Sasha** - "The price impact of order book events," *J. Financial Markets* 17, 47–88 (2014)
+- **Huang, Lehalle & Rosenbaum** - "Simulating and analyzing order book data: the queue-reactive model," *JASA* 110(509), 107–122 (2015)
+- **Rosu** (2009)
+- **Cartea, Jaimungal & Penalva** - *Algorithmic and High-Frequency Trading* (2015)
+- **Gueant** - *The Financial Mathematics of Market Liquidity* (2016)
 
 ---
 

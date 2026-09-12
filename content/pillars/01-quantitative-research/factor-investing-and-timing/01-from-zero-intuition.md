@@ -86,12 +86,12 @@ Three readings. **(i)** The decile spread (+1.004%/mo) is *larger* than the per-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama, Eugene & French, Kenneth**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - the flat-beta finding and the size/BM result that launched factor investing. *Verified against the corpus paper.*
+- **Fama, Eugene & French, Kenneth**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
 - **Cochrane, John H.**, "Presidential Address: Discount Rates" (*JF*, 2011) §II - "a zoo of new factors"; sorts-as-regressions; the comovement argument. *Verified against the corpus paper.*
-- **Grinold, Richard**, "The Fundamental Law of Active Management" (*JPM*, 1989) - $IR\approx IC\sqrt{\text{breadth}}$.
-- **Ilmanen, Antti**, *Expected Returns* (Wiley, 2011), Ch 1 - the practitioner's case for value/carry/momentum and the warning against extremes on timing. *Verified against the corpus book.*
+- **Grinold, Richard**, "The Fundamental Law of Active Management" (*JPM*, 1989)
+- **Ilmanen, Antti**, *Expected Returns* (Wiley, 2011)
 
 ---
 

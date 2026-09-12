@@ -72,12 +72,12 @@ The Engle–Granger procedure recovers the true hedge ratio $\beta\approx2$ and 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 8 (§8.5 cointegration, §8.6 ECM/Johansen, §8.6.1 deterministic spec, §8.6.2 MLE, §8.6.3 trace/max tests, §8.7 threshold cointegration, §8.8 pairs trading) and Ch 9 (PCA/factors). *Primary, verified.*
-- **Engle, R.F. & Granger, C.W.J.** (1987), "Co-integration and Error Correction: Representation, Estimation, and Testing," *Econometrica* - the founding two-step.
-- **Johansen, S.** (1991), "Estimation and Hypothesis Testing of Cointegration Vectors in Gaussian Vector Autoregressive Models," *Econometrica* - the full-information MLE.
-- **Granger, C.W.J.** (1987), representation theorem - why cointegrated series must error-correct.
+- **Tsay**, *Analysis of Financial Time Series*
+- **Engle, R.F. & Granger, C.W.J.** (1987), "Co-integration and Error Correction: Representation, Estimation, and Testing," *Econometrica*
+- **Johansen, S.** (1991), "Estimation and Hypothesis Testing of Cointegration Vectors in Gaussian Vector Autoregressive Models," *Econometrica*
+- **Granger, C.W.J.** (1987), representation theorem
 
 ---
 

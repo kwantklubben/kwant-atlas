@@ -79,15 +79,15 @@ Three results, all exact:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Nevmyvaka, Yuriy; Feng, Yi & Kearns, Michael**: "Reinforcement Learning for Optimized Trade Execution" (ICML 2006) - the foundational execution-RL paper; state/action/reward design and replay-based evaluation. *The anchor of this page.*
-- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*J. Financial Markets* 1(1), 1998) - the DP/state-dependent ancestor of learned execution; the strongest non-RL baseline's lineage.
-- **Almgren, Robert & Chriss, Neil**: "Optimal Execution of Portfolio Transactions" (*Journal of Risk* 3, 2000) - the closed-form baseline RL must beat (see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Almgren–Chriss]]).
-- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE TNN* 12(4), 2001) - recurrent direct RL on a Sharpe-like differential objective.
-- **Ning, Lin & Jaimungal (2018, double deep Q-learning for optimal execution)**: reinforcement-learning execution / market-making - the modern state-conditional execution line.
-- **Deng, Yue et al.**: "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading" (*IEEE TNNLS*, 2017) - a concrete deep-RL trading template, to be read with the caveats above.
-- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018) - Ch 13 (policy gradients, the methods modern execution agents use).
+- **Nevmyvaka, Yuriy; Feng, Yi & Kearns, Michael**: "Reinforcement Learning for Optimized Trade Execution" (ICML 2006)
+- **Bertsimas, Dimitris & Lo, Andrew W.**: "Optimal Control of Execution Costs" (*J. Financial Markets* 1(1), 1998)
+- **Almgren, Robert & Chriss, Neil**: "Optimal Execution of Portfolio Transactions" (*Journal of Risk* 3, 2000)
+- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE TNN* 12(4), 2001)
+- **Ning, Lin & Jaimungal (2018, double deep Q-learning for optimal execution)**: reinforcement-learning execution / market-making
+- **Deng, Yue et al.**: "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading" (*IEEE TNNLS*, 2017)
+- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018)
 
 ---
 

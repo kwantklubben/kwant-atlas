@@ -82,13 +82,13 @@ Same machinery, same true obligations - but the firm reports *half* the leverage
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 18 ("The Quality of the Current Accounting": five questions, quality-of-earnings analysis, detecting manipulation, off-balance-sheet operations). *Deep-read.*
-- **Sloan (1996)**, *Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?* - the accruals anomaly, the empirical anchor for this page's headline signal.
-- **Schilit, Perler & Engelhart**, *Financial Shenanigans* (4th ed.) - the taxonomized catalog of earnings/CF/balance-sheet shenanigans with detection signals.
-- **Dechow, Sloan & Sweeney (1995)**, *Detecting Earnings Management* (modified-Jones model) and **Beneish (1999)**, *The Detection of Earnings Manipulation* (M-score) - the quantitative detection toolkit.
-- **Chan, Jegadeesh & Lakonishok (2006)**, *Earnings Quality and Stock Returns* - earnings-quality measures carry return-predictive power beyond value.
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Sloan (1996)**, *Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?*
+- **Schilit, Perler & Engelhart**, *Financial Shenanigans* (4th ed.)
+- **Dechow, Sloan & Sweeney (1995)**, *Detecting Earnings Management* (modified-Jones model) and **Beneish (1999)**, *The Detection of Earnings Manipulation* (M-score)
+- **Chan, Jegadeesh & Lakonishok (2006)**, *Earnings Quality and Stock Returns*
 
 ---
 

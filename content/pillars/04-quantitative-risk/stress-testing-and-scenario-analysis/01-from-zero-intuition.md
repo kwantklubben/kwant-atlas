@@ -66,12 +66,12 @@ The 2008 replay loses $47M - 47% of NAV - on a portfolio whose VaR model, calibr
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS**: *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14) - §"Scenario selection" documents how pre-crisis "severe" scenarios were too mild; the historical-vs-hypothetical distinction used here is verified against it.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 - the linear/quadratic P&L mapping (eq. 22.6–22.8) that a factor stress runs through.
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management*, Ch 13 - stress testing framed as complementary to risk-measure estimation.
-- **Tsay**, *Analysis of Financial Time Series*, Ch 1–3 - historical return distributions and extreme episodes (volatility clustering, fat tails) that motivate why the normal VaR window is the wrong lens for tails.
+- **BCBS**: *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14)
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management*
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

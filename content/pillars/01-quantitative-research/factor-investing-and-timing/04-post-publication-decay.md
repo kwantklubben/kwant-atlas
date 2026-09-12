@@ -89,14 +89,14 @@ This is the discriminating test. If publication decay were driven by a *statisti
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McLean, R. David & Pontiff, Jeffrey**: "Does Academic Research Destroy Stock Return Predictability?" (*Journal of Finance*, 2016) - the primary source for this page: 82 characteristics, ~10% out-of-sample decay (insignificant), ~35% post-publication decay (significant), the 25% publication-effect lower bound, the post-publication volume/variance/short-interest increases, and the low-idiosyncratic-risk result. *Verified against the corpus paper (`32_mclean_2016_does_academic_research_destroy`).*
-- **Cochrane, John H.**: "Presidential Address: Discount Rates" (*JF*, 2011) - the factor zoo framing within which the decay question sits. *Verified against the corpus paper.*
+- **McLean, R. David & Pontiff, Jeffrey**: "Does Academic Research Destroy Stock Return Predictability?" (*Journal of Finance*, 2016)
+- **Cochrane, John H.**: "Presidential Address: Discount Rates" (*JF*, 2011)
 - **Ilmanen, Antti**: *Expected Returns* (2011) - "The persistent success of any asset class or trading strategy leads to a 'virtuous' cycle of growing popularity and further success, resulting in eventual overcrowding and subsequent disappointments." *Verified against the corpus book.*
-- **Schwert, G. William**: "Anomalies and Market Efficiency" (*Handbook of the Economics of Finance*, 2003) - the earlier, single-anomaly evidence that value and size "fail to generate alpha" after publication; cited by MP as one of the conflicting prior results.
-- **Jegadeesh, Narasimhan & Titman, Sheridan**: "Profitability of Momentum Strategies: An Evaluation of Alternative Explanations" (*JF*, 2001) - the counter-example: momentum returns *increased* after publication. Both results are real; the reconciliation is that momentum is a costlier, faster-decaying trade. Corpus paper *13_jegadeesh_2001*.
-- **Bailey, Borwein, López de Prado & Zhu** (2014) and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]] - the statistical-bias half of the story, quantified.
+- **Schwert, G. William**: "Anomalies and Market Efficiency" (*Handbook of the Economics of Finance*, 2003)
+- **Jegadeesh, Narasimhan & Titman, Sheridan**: "Profitability of Momentum Strategies: An Evaluation of Alternative Explanations" (*JF*, 2001)
+- **Bailey, Borwein, López de Prado & Zhu** (2014) and [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]]
 
 ---
 

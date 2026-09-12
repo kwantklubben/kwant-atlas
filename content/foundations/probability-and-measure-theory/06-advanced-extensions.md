@@ -66,12 +66,12 @@ Check the discrete RN derivative values, the $L^2$ orthogonality of the conditio
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 1 (Def 1.1.1–1.1.2, standard machine, MCT/Fatou/DCT Thms 1.4.5/1.4.9, RN Thm 1.6.1), Ch 2 (conditional expectation existence, properties).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 9 (Radon–Nikodym, state price density, Ex 9.1, existence of conditional expectation §9.5), Ch 11 (law, density as RN derivative w.r.t. Lebesgue, multivariate normal independence ⇔ diagonal covariance).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.1 (MC estimator, SLLN, CLT, standard error), §1.2 (risk-neutral measure via RN).
-- **Casella & Berger**, *Statistical Inference*, Ch 4 (distributions, moments) - the classical distributional companion (PDF in the corpus).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Casella & Berger**, *Statistical Inference*
 
 ---
 

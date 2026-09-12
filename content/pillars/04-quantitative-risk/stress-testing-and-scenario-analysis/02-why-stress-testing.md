@@ -66,12 +66,12 @@ The 99% VaR ($1.86M) and ES ($2.02M) - both perfectly valid quantile estimates *
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS (BIS)**, *Minimum Capital Requirements for Market Risk* (FRTB, 2019, d457), §33 - the regulatory move from VaR to **stressed ES @97.5%**, calibrated to a 12-month stress period back to 2007; the institutional admission that current-period-calibrated measures are not tail-adequate.
-- **Artzner et al. (1999)** - coherence axioms and VaR's subadditivity flaw; the formal backdrop to why ES replaced VaR (see [[pillars/04-quantitative-risk/var-and-expected-shortfall/03-coherent-risk-measures|Coherent Risk Measures]]).
-- **Hull**, *OFOD*, Ch 22 - VaR/ES definitions, the $2.326\sigma$ and normal-ES-ratio numerics reproduced here.
-- **McNeil, Frey & Embrechts**, *QRM*, Ch 13 - stress testing as a distinct methodology with its own failure modes, complementary to §2–7 on risk measures.
+- **BCBS (BIS)**, *Minimum Capital Requirements for Market Risk* (FRTB, 2019, d457)
+- **Artzner et al. (1999)**
+- **Hull**, *OFOD*
+- **McNeil, Frey & Embrechts**, *QRM*
 
 ---
 

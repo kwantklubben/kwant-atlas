@@ -70,12 +70,12 @@ The monitor catches a ~3× p99 drift *the instant it appears* and produces **zer
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Kerrisk, Michael** - *The Linux Programming Interface*: the sysctl/affinity vocabulary whose *drift* this page guards against.
 - **Databento** - *Low-Latency Tuning Guide for Linux and Trading Systems*: practitioner-grade tuning whose silent revert is a classic drift.
 - **Red Hat Enterprise Linux** - *Tuning the Network Performance*: sysctl baseline to diff against.
-- **Montgomery, D.** - *Introduction to Statistical Quality Control*: EWMA control-chart theory behind §3.
+- **Montgomery, D.** - *Introduction to Statistical Quality Control*: EWMA control-chart theory behind
 - **Hasbrouck, Joel & Saar, Gideon** - "Low-latency trading," *J. Financial Markets* 16(4) (2013): why the tail, not the mean, is the market's metric.
 
 ---

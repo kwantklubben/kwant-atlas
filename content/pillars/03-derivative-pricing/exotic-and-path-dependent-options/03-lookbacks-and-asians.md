@@ -70,11 +70,11 @@ The geometric closed form and MC agree to ~0.007 (MC $O(1/\sqrt n)$ error), conf
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §4.15 (lookbacks, eqs 4.39–4.44) and §4.20 (Asians: geometric 4.91–4.92, Turnbull–Wakeman 4.97–4.98, Levy 4.101, discrete HHM 4.102–4.103).
-- **Shreve**, *Stochastic Calculus for Finance II*, §7.4 (lookback: running-max state, smooth pasting, dimension reduction) and §7.5 (Asian: state augmentation, the degenerate PDE, Večeř change of numeraire - *no closed form*).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §3.2 (geometric average is lognormal → control variate; arithmetic Asian is the natural MC target).
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

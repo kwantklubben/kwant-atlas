@@ -86,14 +86,14 @@ The full analysis lives in [[pillars/07-machine-learning-altdata/financial-nlp-a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks," *Journal of Finance* 66(1):35–65, 2011 - the finance-specific LM dictionaries and the measurement of why generic lexicons fail. *Corpus PDF verified (`refs/pillar7/28_...`).*
-- **Tetlock, Paul C.**, "Giving Content to Investor Sentiment: The Role of Media in the Stock Market," *Journal of Finance* 62(3):1139–1168, 2007 - the foundational media-content/returns result. *Corpus PDF verified.*
-- **Gentzkow, Matthew, Kelly, Bryan & Taddy, Matt**, "Text as Data," *Journal of Economic Literature* 57(3):535–574, 2019 - the unifying count-matrix + prediction framework this folder operationalizes.
-- **Araci, Dogu**, "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models," arXiv:1908.10063, 2019; and **Yang, Yi, Uy, Mark C.S. & Huang, Allen**, "FinBERT: A Pretrained Language Model for Financial Communications," arXiv:2006.08097, 2020 - the finance-domain transformers used for the deep-sentiment track.
-- **Cohen, Lauren, Malloy, Christopher & Nguyen, Quoc**, "Lazy Prices," *Journal of Finance* 75(3):1371–1415, 2020 - linguistic change in filings as a priced signal.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 18 ($p\gg N$) and Ch 11 (the classic bag-of-words spam classifier). *Verified in the corpus.*
+- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks," *Journal of Finance* 66(1):35–65, 2011
+- **Tetlock, Paul C.**, "Giving Content to Investor Sentiment: The Role of Media in the Stock Market," *Journal of Finance* 62(3):1139–1168, 2007
+- **Gentzkow, Matthew, Kelly, Bryan & Taddy, Matt**, "Text as Data," *Journal of Economic Literature* 57(3):535–574, 2019
+- **Araci, Dogu**, "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models," arXiv:1908.10063, 2019; and **Yang, Yi, Uy, Mark C.S. & Huang, Allen**, "FinBERT: A Pretrained Language Model for Financial Communications," arXiv:2006.08097, 2020
+- **Cohen, Lauren, Malloy, Christopher & Nguyen, Quoc**, "Lazy Prices," *Journal of Finance* 75(3):1371–1415, 2020
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

@@ -88,13 +88,13 @@ Three verified findings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Chopra, Vijay & Ziemba, William**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11, 1993 - the ranking of input-error damage ($\mu > \sigma^2 > \sigma_{ij}$).
-- **Best & Grauer (1991)**, RFS 4(2) - the elasticity theory (developed on [[pillars/05-portfolio-optimization/robust-optimization/01-from-zero-intuition|01 · From Zero]]).
-- **DeMiguel, Garlappi & Uppal (2009)**, *Optimal Versus Naive Diversification*, RFS 22(5):1915–1953 - the $1/N$ benchmark and the sample-size needed to beat it.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, 2nd ed. - bias–variance decomposition (eq. 2.46 / 7.9), ridge/Lasso shrinkage (Ch. 3), and the $p\gg N$ regularized-estimator toolkit (Ch. 18).
-- **Jorion, Philippe**: *Bayes–Stein Estimation for Portfolio Analysis*, JFQA 21(3):279–292, 1986 - the classic proof that shrinking means improves out-of-sample performance.
+- **Chopra, Vijay & Ziemba, William**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice*, JPM 19(2):6–11, 1993
+- **Best & Grauer (1991)**, RFS 4(2)
+- **DeMiguel, Garlappi & Uppal (2009)**, *Optimal Versus Naive Diversification*, RFS 22(5):1915–1953
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, 2nd ed.
+- **Jorion, Philippe**: *Bayes–Stein Estimation for Portfolio Analysis*, JFQA 21(3):279–292, 1986
 
 ---
 

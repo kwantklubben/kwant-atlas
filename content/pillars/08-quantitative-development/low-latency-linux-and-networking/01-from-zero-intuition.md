@@ -69,7 +69,7 @@ The median barely moves (8.01 → 8.08 µs) and the mean grows by only ~1 µs, b
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Kerrisk, Michael** - *The Linux Programming Interface* (No Starch, 2010). The syscall/socket/timer reference behind everything a tuning page says.
 - **Stevens, W. Richard (Fall, Kevin)** - *TCP/IP Illustrated, Vol. 1*, 2nd ed. The transport semantics.

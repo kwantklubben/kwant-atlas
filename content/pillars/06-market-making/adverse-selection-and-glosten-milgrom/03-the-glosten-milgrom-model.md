@@ -91,12 +91,12 @@ The output is exactly the model's three claims: (1) spread grows linearly in $\p
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glosten & Milgrom (1985)**, JFE 14(1), 71–100 - the anchor paper; the model, the regret-free/martingale results, the serial-correlation-of-spread analysis.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 5 §5.2 (eqs 5.1–5.7; spread formula; wealth-transfer identity; extensions) and §5.3 (market dynamics; martingale; spread decline). **Math-verified.**
-- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*, Ch 3 §3.4 (eqs 3.6–3.28; spread $\pi(v_H-v_L)$; belief updates; convergence). **Math-verified.**
-- **Bagehot (1971)** (= Walter Bagehot pseudonym), *The only game in town*, Financial Analysts Journal 27(2), 12–14 - the essay that first framed adverse selection as the reason dealers must charge a spread.
+- **Glosten & Milgrom (1985)**, JFE 14(1), 71–100
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*
+- **Bagehot (1971)** (= Walter Bagehot pseudonym), *The only game in town*, Financial Analysts Journal 27(2), 12–14
 
 ---
 

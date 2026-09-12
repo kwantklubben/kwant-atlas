@@ -98,13 +98,13 @@ For reference, the same trigger stage as silicon - one clock tick, deterministic
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Nasdaq** - *TotalView-ITCH 5.0 Specification*, message formats and the software/FPGA decode variants the parser must implement.
-- **Leber, Geib & Litz** (FPL 2011) - the FPL proof-of-concept's stage-by-stage pipeline; the direct ancestor of the five stages above.
+- **Leber, Geib & Litz** (FPL 2011)
 - **De Schryver (ed.)** - *FPGA Based Accelerators for Financial Applications* (2015), HFT hardware-design chapters: pipeline depth, clock budgets, HLS mapping.
-- **DPDK documentation** - the software pipeline (RX rings, burst sizes, prefetch) this page's numbers are benchmarked against.
-- **Hasbrouck & Saar** (2013), "Low-latency trading," *JFM* 16(4) - the empirical order-cancellation rates a pipeline must satisfy.
+- **DPDK documentation**
+- **Hasbrouck & Saar** (2013), "Low-latency trading," *JFM* 16(4)
 
 ---
 

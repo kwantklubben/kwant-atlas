@@ -78,12 +78,12 @@ Read the table carefully: **the same earnings and the same growth rate produce v
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **John Burr Williams**, *The Theory of Investment Value* (1938) - the origin of the dividend/present-value framework; the intellectual root of this page.
-- **Damodaran**, *Investment Valuation*, Ch 1–2 (why valuation matters; cash-flow/discount-rate matching) and Ch 11 (the fundamental growth equation, $\text{RR}=g/\text{ROC}$).
-- **Graham**, *The Intelligent Investor*, Ch 8 & 20 - the "margin of safety" frame that this arithmetic exists to serve (see [[fundamentals-accounting/equity-valuation/05-failure-modes-and-practice|05 · Failure Modes]]).
-- **Pinto et al. (CFA Institute)**, *Equity Asset Valuation*, Ch 1–2 - the professional overview of the value-driver tree.
+- **John Burr Williams**, *The Theory of Investment Value* (1938)
+- **Damodaran**, *Investment Valuation*
+- **Graham**, *The Intelligent Investor*
+- **Pinto et al. (CFA Institute)**, *Equity Asset Valuation*
 
 ---
 

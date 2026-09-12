@@ -70,14 +70,14 @@ Two simulations. The first runs **200 random candidate factors** against a *null
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**: "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017) - the ~100-characteristic census; 24 priced at $|t|\ge3$, a parsimonious 10-signal model; the empirical map of redundancy vs. genuine factors.
-- **Fama, Eugene & French, Kenneth**: "Choosing Factors" (*JFE*, 2018) - the factor-selection and multiple-testing discipline for deciding *which* characteristics are real factors.
-- **Bailey, Borwein, López de Prado & Zhu**: "The Probability of Backtest Overfitting" (*J. Computational Finance*, 2017) - the deflated-Sharpe/familywise machinery for backtests; see [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene & Deflated Sharpe]].
-- **Hou, Xue & Zhang**: "Replicating Anomalies" (*RFS*, 2020) - the replication audit showing a large share of published anomalies fail to survive replication.
-- **Novy-Marx, Robert**: "Backtesting Strategies Based on Multiple Signals" (working paper) - the multiple-testing correction applied to signal selection.
-- **Loughran & McDonald**: "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks" (*JF*, 2011) - data-quality discipline for mining filings.
+- **Green, Jeremiah; Hand, John R. M. & Zhang, X. Frank**: "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017)
+- **Fama, Eugene & French, Kenneth**: "Choosing Factors" (*JFE*, 2018)
+- **Bailey, Borwein, López de Prado & Zhu**: "The Probability of Backtest Overfitting" (*J. Computational Finance*, 2017)
+- **Hou, Xue & Zhang**: "Replicating Anomalies" (*RFS*, 2020)
+- **Novy-Marx, Robert**: "Backtesting Strategies Based on Multiple Signals" (working paper)
+- **Loughran & McDonald**: "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks" (*JF*, 2011)
 
 ---
 

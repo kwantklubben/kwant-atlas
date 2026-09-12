@@ -89,12 +89,12 @@ Hub signposts - the folder's failure analysis lives in each sub-page. In one lin
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance II* - Ch 3 (BM, martingales, first passage), Ch 4 (Itô integral & Itô–Doeblin, GBM, Vasicek, CIR), Ch 5 (Girsanov, MRT, FTA). *Primary, math-verified in the corpus.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* - Ch 13 (BM from random walks), Ch 14–15 (Itô integral, Itô's formula), Ch 17–19 (Girsanov, MRT, FTA, the three MPR cases). *Math-verified.*
-- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.) - Ch 4 (stochastic integrals, multiplication table), Ch 5 (SDEs, Feynman–Kac), Ch 10–14 (martingale approach, Girsanov, FTA). *Math-verified.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* - Ch 1 (RN measure, the cornerstone equation), Ch 3 (exact BM/GBM/CIR simulation, Feller, noncentral-$\chi^2$). *Verified.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance II*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*
+- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*
 
 ---
 

@@ -71,13 +71,13 @@ Hub signposts - the full treatment lives in [[pillars/07-machine-learning-altdat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 8 (bootstrap & bagging, eqs 8.51–8.52), Ch 9 (CART: eqs 9.10–9.17, cost-complexity pruning), Ch 10 (boosting & additive trees: eqs 10.28–10.43, gradient boosting, variable importance), Ch 15 (random forests: eq 15.1 variance decomposition, OOB, permutation importance). *The PRIMARY source for this folder; text read in the corpus (esl_ch6-10.md, esl_ch11-18.md).*
-- **Chen, Tianqi & Guestrin, Carlos**: "XGBoost: A Scalable Tree Boosting System," *KDD*, 2016 - the second-order regularized objective, optimal leaf weight, and split-gain criterion. *The algorithm most quants start with.*
-- **Ke, Guolin et al.**: "LightGBM: A Highly Efficient Gradient Boosting Decision Tree," *NeurIPS*, 2017 - leaf-wise growth and histogram splitting; the current default in quant pipelines.
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) - Ch 6 (bagging vs boosting in finance; bagging preferred under low SNR), Ch 8 (MDI/MDA/SFI feature importance and substitution effects), Ch 9 (hyper-parameter tuning under purged CV). *PDF read in the corpus.*
-- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**: "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020 - the empirical evidence that trees and shallow nets dominate linear models on tabular factor data.
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Chen, Tianqi & Guestrin, Carlos**: "XGBoost: A Scalable Tree Boosting System," *KDD*, 2016
+- **Ke, Guolin et al.**: "LightGBM: A Highly Efficient Gradient Boosting Decision Tree," *NeurIPS*, 2017
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**: "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020
 
 ---
 

@@ -95,13 +95,13 @@ Generate a 2-state Gaussian HMM, run **forward–backward smoothing**, **Viterbi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Rabiner, Lawrence R.**: *A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition*, Proc. IEEE 77(2), 257–286 (1989) - the canonical statement of forward–backward, Viterbi, and Baum–Welch.
-- **Bishop, Christopher M.**: *Pattern Recognition and Machine Learning* - Ch 13 (sequential data, HMM, forward–backward, scaling, Viterbi) - the cleanest modern treatment.
-- **ESL (Hastie, Tibshirani & Friedman)**: Ch 8.5 (EM) and Ch 6.8 (mixture models / GMM connection). *Verified: esl_ch6-10.md.*
-- **Tsay**, *Analysis of Financial Time Series*, Ch 12 - MCMC (Gibbs, Metropolis–Hastings, FFBS) as the Bayesian alternative to EM for regime/state-space models. *Verified: tsay_ch10-12.md.*
-- **Hamilton (1989)** - the finance origin; **Ang & Timmermann (2012)** - the finance survey.
+- **Rabiner, Lawrence R.**: *A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition*, Proc. IEEE 77(2), 257–286 (1989)
+- **Bishop, Christopher M.**: *Pattern Recognition and Machine Learning*
+- **ESL (Hastie, Tibshirani & Friedman)**:
+- **Tsay**, *Analysis of Financial Time Series*
+- **Hamilton (1989)**
 
 ---
 

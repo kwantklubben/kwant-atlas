@@ -102,13 +102,13 @@ We (i) verify the two defining identities of the hybrid-scheme rBergomi - $\math
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 - the rBergomi model, its forward-variance form, and the SPX calibration $\eta=1.9,\rho=-0.9$. *The primary source of this page.*
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - the RFSV scaling law that rBergomi is the pricing-compatible lift of.
-- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965 - the exact hybrid discretisation (first-order κ=1 form used here).
-- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 7–8 - forward-variance pricing equation and the **Bergomi–Guyon expansion** ($C^{x\xi}$ functional) that produces the skew formula of §2.3; ch 7's power-law vol-of-vol benchmark $\nu_T\propto T^{-0.4}$ is the same roughness.
-- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility* - rigorous short-time skew asymptotics.
+- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949
+- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965
+- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 7–8
+- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility*
 
 ---
 

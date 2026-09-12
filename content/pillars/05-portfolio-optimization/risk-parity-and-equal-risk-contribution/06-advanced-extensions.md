@@ -70,13 +70,13 @@ Two numbers tell the whole story. First, the **max-Sharpe (tangency) portfolio s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Asness, Frazzini & Pedersen**: *Leverage Aversion and Risk Parity*, Financial Analysts Journal 68(1):47–59 (2012) - the theory, the long/broad/global evidence, and the honest framing of parity as a view. Fig. 2's 88/12 tangency and App. A/B construction are reproduced conceptually above.
-- **Black, Fischer**: *Capital Market Equilibrium with Restricted Borrowing*, Journal of Business 45(3):444–455 (1972) - the originating leverage-constrained equilibrium (flat SML).
-- **Frazzini, Andrea & Pedersen, Lasse H.**: *Betting Against Beta*, (2010) - the BAB construction: long low-$\beta$, short high-$\beta$, lever; risk parity as its cross-asset case.
-- **Qian, Edward** (2005) - the mean-variance-optimality of parity under equal Sharpe ratios / low correlation (the formal assumption behind "parity is efficient").
-- **López de Prado, Marcos**: *Building Diversified Portfolios that Outperform Out-of-Sample*, Journal of Portfolio Management 42(4) (2016) - Hierarchical Risk Parity, the matrix-inversion-free alternative (the natural next folder).
+- **Asness, Frazzini & Pedersen**: *Leverage Aversion and Risk Parity*, Financial Analysts Journal 68(1):47–59 (2012)
+- **Black, Fischer**: *Capital Market Equilibrium with Restricted Borrowing*, Journal of Business 45(3):444–455 (1972)
+- **Frazzini, Andrea & Pedersen, Lasse H.**: *Betting Against Beta*, (2010)
+- **Qian, Edward** (2005)
+- **López de Prado, Marcos**: *Building Diversified Portfolios that Outperform Out-of-Sample*, Journal of Portfolio Management 42(4) (2016)
 
 ---
 

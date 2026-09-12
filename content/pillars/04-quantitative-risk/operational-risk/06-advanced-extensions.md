@@ -106,13 +106,13 @@ The aggregate stop-loss (attachment €1M) **caps the 99.9% loss at €1M**, a 2
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS, *Revised standardised measurement approach for operational risk*** (2016, d305) - the BI/BIC/LC/ILM consultation; the graduated loss component ($7\times$avg, $7\times$>€10m, $5\times$>€100m) and its rationale.
-- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424), op-risk section - the **final** SMA: 3-bucket BIC, $\text{LC}=15\times\text{avg}$, $\text{ILM}=\ln(e-1+(\text{LC/BIC})^{0.8})$, $\text{ORC}=\text{BIC}\cdot\text{ILM}$, $\text{RWA}=12.5\times\text{ORC}$. *All SMA numbers verified against this source.*
-- **BCBS, *Basel II*** (2006), ¶645–655 - the BIA/TSA/AMA the SMA replaces.
-- **Cruz, Peters & Shevchenko, *Fundamental Aspects of Operational Risk and Insurance Analytics*** (2015, Wiley) - op risk together with heavy-tailed insurance analytics and risk-transfer design.
-- **Panjer, *Operational Risk: Modeling Analytics*** (2006), Ch 10 - insurance/reinsurance of operational risk within the LDA framework.
+- **BCBS, *Revised standardised measurement approach for operational risk*** (2016, d305)
+- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424), op-risk section
+- **BCBS, *Basel II*** (2006), ¶645–655
+- **Cruz, Peters & Shevchenko, *Fundamental Aspects of Operational Risk and Insurance Analytics*** (2015, Wiley)
+- **Panjer, *Operational Risk: Modeling Analytics*** (2006)
 
 ---
 

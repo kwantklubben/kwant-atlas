@@ -88,12 +88,12 @@ The WLS recovers all three factor returns near their true values (the residual e
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, §9.3.1 (BARRA fundamental model, two-step WLS/GLS eqs. 9.7–9.8, factor-mimicking portfolios), §9.1–9.4 (general factor model, covariance decomposition). *Math-verified.*
-- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - the cross-sectional/Fama–MacBeth pass and its headline results (size slope, flat beta).
-- **MSCI Barra / Axioma** risk-model documentation - the commercial GLS/WLS factor-return estimation and $\Sigma=X\Omega X'+D$ risk decomposition this page formalizes.
-- **Hastie et al.**, *The Elements of Statistical Learning*, Ch 3 - GLS/weighted regression, $X^\top V^{-1}X$.
+- **Tsay**, *Analysis of Financial Time Series*
+- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **MSCI Barra / Axioma** risk-model documentation
+- **Hastie et al.**, *The Elements of Statistical Learning*
 
 ---
 

@@ -88,15 +88,15 @@ We demonstrate the structural obstruction at the heart of the lift programme: th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **El Euch & Rosenbaum (2019)**, *The characteristic function of rough Heston models*, Mathematical Finance 29(1), 3–38 - the fractional Riccati system and the (semi-)closed-form characteristic function.
-- **Jaisson & Rosenbaum (2016)**, *Rough fractional diffusions as scaling limits of nearly unstable heavy tailed Hawkes processes*, Annals of Applied Probability 26(5), 2860–2882 - the microstructural (Hawkes) foundation of roughness.
-- **Jacquier, Martini & Muguruza (2018)**, *On VIX futures in the rough Bergomi model*, Quantitative Finance 18(1), 45–61 - closed-form VIX futures and joint SPX/VIX calibration.
-- **Abi Jaber & El Euch (2019)** and **Harang & Langrené (2019)**, multifactor/rational Markovian approximations of the Volterra kernel - the lift programme of §2.2.
-- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 - the rBergomi base model.
-- **Bacry & Muzy (2014)**, *Hawkes model for price and trades high-frequency dynamics* - the Hawkes framing of price jumps.
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - the empirical anchor ($H\approx0.1$).
+- **El Euch & Rosenbaum (2019)**, *The characteristic function of rough Heston models*, Mathematical Finance 29(1), 3–38
+- **Jaisson & Rosenbaum (2016)**, *Rough fractional diffusions as scaling limits of nearly unstable heavy tailed Hawkes processes*, Annals of Applied Probability 26(5), 2860–2882
+- **Jacquier, Martini & Muguruza (2018)**, *On VIX futures in the rough Bergomi model*, Quantitative Finance 18(1), 45–61
+- **Abi Jaber & El Euch (2019)** and **Harang & Langrené (2019)**, multifactor/rational Markovian approximations of the Volterra kernel
+- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904
+- **Bacry & Muzy (2014)**, *Hawkes model for price and trades high-frequency dynamics*
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949
 
 ---
 

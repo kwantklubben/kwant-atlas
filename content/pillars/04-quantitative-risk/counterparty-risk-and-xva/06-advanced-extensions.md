@@ -103,9 +103,9 @@ Read the block: the ITM forward is an **asset** (EPE avg 27.2 vs ENE avg −7.6)
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025) - Ch 16 (ColVA, base value, discounting), Ch 18 (FVA: Eqs 18.2–18.5, the double-count framework, the Hull–White debate), Ch 19 (KVA), Ch 20 (MVA: Eq 20.1, EIM, MVA/KVA link), §17.6.3 (WWR models), Ch 21 (xVA-desk hedging and JTD). *Deep-read and numerically re-verified in the corpus.*
+- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025)
 - **Burgard & Kjær** (2011a,b, 2013): the funding-cost derivation and the conditions under which DVA ≡ FBA.
 - **Hull & White** (2012a, 2014): the case against FVA in valuation; **Andersen, Duffie & Song** (2016): the shareholder-value view that FVA belongs in entry prices.
 - **Brigo, Morini & Pallavicini** (2013): the rigorous CVA/FVA-with-collateral pricing framework.

@@ -58,11 +58,11 @@ The LSM value (6.1339) is a low-biased estimate of the American put for $S=100,\
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 3 (exact GBM path simulation §3.2; Brownian bridge §3.1) - the foundation of every path simulator here.
-- **Glasserman**, Ch 8 (American by simulation: the low/high bias framework, §8.6 Longstaff–Schwartz, §8.7 duality upper bounds, Andersen–Broadie).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 27 (MC & trees for path-dependent and American products; LSM).
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Glasserman**
+- **Hull**, *Options, Futures, and Other Derivatives*
 - **Broadie, Glasserman & Kou (1995)**, "A Continuity Correction for Discrete Barrier Options," *Math. Finance*.
 
 ---

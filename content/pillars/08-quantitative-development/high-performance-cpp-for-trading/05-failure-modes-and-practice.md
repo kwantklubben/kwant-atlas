@@ -108,13 +108,13 @@ Optimise top-down: eliminate misses and allocations first; branches and arithmet
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Meyers, Scott**: *Effective Modern C++* - Items on `reserve`, `emplace`, move, and the costs hiding in `std::function`/`shared_ptr`.
-- **Fog, Agner**: *Optimizing Software in C++* - branch prediction, the misprediction penalty, and branchless techniques; also the compiler-optimisation/UB interaction.
-- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* - Ch 9 (allocator internals: why allocation has a slow path and a tail) and Ch 6 (misses).
-- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.) - data races as UB and the memory model; cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* - the zero-allocation hot path and pre-allocated buffers in a real system.
+- **Meyers, Scott**: *Effective Modern C++*
+- **Fog, Agner**: *Optimizing Software in C++*
+- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective*
+- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.)
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++*
 
 ---
 

@@ -74,12 +74,12 @@ Standard library only. Generates a synthetic universe whose returns obey the con
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Jegadeesh & Titman (1993)**, *Returns to Buying Winners and Selling Losers*, J. Finance - the original US equity momentum result; and **Jegadeesh & Titman (2001)**, *Profitability of Momentum Strategies* - the evaluation of behavioral vs rational explanations. *Verified corpus refs/13.*
-- **Jegadeesh (1990)** and **Lehmann (1990)** - one-month reversal, the reason for the skip-month convention.
-- **De Bondt & Thaler (1985)** - long-term (3–5y) reversal, the opposite tail of the horizon structure.
-- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing* - 200+ years, 40+ countries, 8.3% annual spread, ~half from the long side. *Verified corpus refs/18.*
+- **Jegadeesh & Titman (1993)**, *Returns to Buying Winners and Selling Losers*, J. Finance
+- **Jegadeesh (1990)** and **Lehmann (1990)**
+- **De Bondt & Thaler (1985)**
+- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing*
 
 ---
 

@@ -100,14 +100,14 @@ Four verified readings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of OR 152:341–365 - convex cost-aware formulations; the linear-and-fixed-cost model.
-- **Almgren & Chriss (2000/01)**, *Optimal Execution of Portfolio Transactions*, Journal of Risk 3(2):5–39 - permanent + temporary impact and the trading frontier. *Cross-pillar: owned by [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Pillar 2]].*
-- **Hasbrouck (2007)**, *Empirical Market Microstructure* - Ch 3 (Roll: $c=\sqrt{-\gamma_1}$, spread $=2c$), Ch 5 (Glosten–Milgrom spread $=(V_H-V_L)\mu$), Ch 7 (Kyle: $\lambda=\tfrac12\sqrt{\Sigma_0/\sigma_u^2}$), Ch 8 (generalized Roll: $\text{spread}=2(c+\lambda)$), Ch 9.9 (Amihud illiquidity $\lvert r\rvert/\text{Vol}$). *The microstructure source of every coefficient here.*
-- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed. - transaction-cost-adjusted rebalancing and the marginal-cost = marginal-alpha rule.
-- **Kyle (1985)**, *Continuous Auctions and Insider Trading*, Econometrica 53(6):1315–1335 - the equilibrium price-impact foundation.
-- **Amihud (2002)**, *Illiquidity and Stock Returns*, Journal of Financial Markets 5(1):31–56 - the illiquidity-ratio proxy for $\lambda$.
+- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of OR 152:341–365
+- **Almgren & Chriss (2000/01)**, *Optimal Execution of Portfolio Transactions*, Journal of Risk 3(2):5–39
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed.
+- **Kyle (1985)**, *Continuous Auctions and Insider Trading*, Econometrica 53(6):1315–1335
+- **Amihud (2002)**, *Illiquidity and Stock Returns*, Journal of Financial Markets 5(1):31–56
 
 ---
 

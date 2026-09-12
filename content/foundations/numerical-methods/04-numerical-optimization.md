@@ -80,12 +80,12 @@ Two fingerprints of quadratic convergence: in the root-finding log the error seq
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Nocedal, J. & Wright, S. J.**: *Numerical Optimization* (2nd ed.) - Ch 2 (unconstrained: Newton, line search, rates), Ch 3 (line-search methods), Ch 6–7 (quasi-Newton, BFGS/L-BFGS), Ch 12 (constrained/KKT). *The standard reference.*
-- **Dennis, J. E. & Schnabel, R. B.**: *Numerical Methods for Unconstrained Optimization and Nonlinear Equations* - root-finding and convergence theory.
-- **Duffy**, *Finite Difference Methods in Financial Engineering* - §27.6 (Newton–Raphson for the free boundary, eqs. 27.35–27.36), §28 (penalty methods), §29.11 (projected SOR for the linear complementarity problem).
-- **Tsay**, *Analysis of Financial Time Series* - Ch 11 (maximum-likelihood estimation via the prediction-error decomposition, solved by numerical optimisation).
+- **Nocedal, J. & Wright, S. J.**: *Numerical Optimization* (2nd ed.)
+- **Dennis, J. E. & Schnabel, R. B.**: *Numerical Methods for Unconstrained Optimization and Nonlinear Equations*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

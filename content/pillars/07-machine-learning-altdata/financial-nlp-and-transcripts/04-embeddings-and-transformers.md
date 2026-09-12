@@ -72,13 +72,13 @@ Two teaching points, both real. First, **synonyms land together**: `earnings`≈
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Araci, Dogu**, "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models," arXiv:1908.10063, 2019 - the `ProsusAI/finbert` weights and the finance-domain BERT fine-tune. *Corpus PDF verified.*
-- **Yang, Yi, Uy, Mark C.S. & Huang, Allen**, "FinBERT: A Pretrained Language Model for Financial Communications," arXiv:2006.08097, 2020 - the larger financial-communications pretraining variant.
-- **Vaswani et al.**, "Attention Is All You Need," NeurIPS 2017 - the transformer / self-attention architecture. *Corpus PDF verified.*
-- **Levy, Omer & Goldberg, Yoav**, "Neural Word Embedding as Implicit Matrix Factorization," NeurIPS 2014 - the PMI–SVD equivalence that connects this page's count-based demo to word2vec.
-- **Jurafsky & Martin**, *Speech and Language Processing* (3rd ed.) - Ch 6 (vector semantics), Ch 11 (transformers). *Corpus PDF verified.*
+- **Araci, Dogu**, "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models," arXiv:1908.10063, 2019
+- **Yang, Yi, Uy, Mark C.S. & Huang, Allen**, "FinBERT: A Pretrained Language Model for Financial Communications," arXiv:2006.08097, 2020
+- **Vaswani et al.**, "Attention Is All You Need," NeurIPS 2017
+- **Levy, Omer & Goldberg, Yoav**, "Neural Word Embedding as Implicit Matrix Factorization," NeurIPS 2014
+- **Jurafsky & Martin**, *Speech and Language Processing* (3rd ed.)
 
 ---
 

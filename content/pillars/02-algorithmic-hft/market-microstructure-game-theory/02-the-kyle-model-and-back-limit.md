@@ -113,14 +113,14 @@ Three things to take away:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Kyle, Albert S.** - "Continuous auctions and insider trading," *Econometrica* 53(6), 1315–1335 (1985). *Sections 1–3: the batch auction, $\lambda$, $\Sigma_0/2$, the $N$-auction recursion, and the insider's profit.*
-- **Back, Kerry** - "Insider trading in continuous time," *Review of Financial Studies* 5(3), 387–409 (1992). *The rigorous continuous-time limit; the founding application of filtering to microstructure. Read §2 (the model) and §3 (the equilibrium).*
+- **Back, Kerry** - "Insider trading in continuous time," *Review of Financial Studies* 5(3), 387–409 (1992). *The rigorous continuous-time limit; the founding application of filtering to microstructure.
 - **Holden, Craig W.; Subrahmanyam, Avanidhar** - "Long-lived private information and imperfect competition," *Journal of Finance* 47(1), 247–270 (1992). *What happens with many informed traders; see page 06.*
 - **Kühn, Christoph; Lorenz, Christopher** - "Insider trading in discrete time Kyle games," *Mathematics and Financial Economics* 19, 39–66 (2025). *Exactly the question this page turns on: which discrete games converge to the continuous-time Kyle–Back equilibrium (and which do not).*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 7 (the Kyle model) and Ch 6 (PIN). *Corpus verification `hasbrouck_ch6-10.md` - equation-by-equation check passed; the insider's FOC is eq 7.1 and the equilibrium $(\lambda,\beta)$ is eq 7.4, with profit (conditional on $v$) as eq 7.5 - the $N$-auction structure of §2.2 is Hasbrouck's §7.2.*
-- **Grossman, Sanford J.; Stiglitz, Joseph E.** - "On the impossibility of informationally efficient markets," *American Economic Review* 70(3), 393–408 (1980). *Why some noise must exist for information to be worth acquiring - the deep reason $\sigma_u^2>0$ is not a nuisance parameter.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Grossman, Sanford J.; Stiglitz, Joseph E.** - "On the impossibility of informationally efficient markets," *American Economic Review* 70(3), 393–408 (1980). *Why some noise must exist for information to be worth acquiring
 - **Kyle, Albert S.; Obizhaeva, Anna A.** - "Market microstructure invariance," *Econometrica* 84(3), 975–1024 (2016). *What happens when you insist that $\lambda$ obey dimensional invariance across assets.*
 
 ---

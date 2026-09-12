@@ -113,15 +113,15 @@ We measure (1) the model risk of a learned delta hedge under a volatility misspe
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291 - the model-risk and cost discussion, the explicit statement that the optimal strategy is a functional of the assumed dynamics, and the CVaR/robust treatment that is the intended defence. *The primary reference for this page.* **Buehler et al.** (2019), *Deep hedging: learning to simulate, hedge and price under market frictions* - the costs-in-the-objective version.
-- **Boyle, P. & Emanuel, D.** (1980), *Discretely adjusted option hedges*, Journal of Financial Economics 8, 259–282 - the $\sqrt{\Delta t}$ law measured in §3(2). **Bertsimas, D., Kogan, L., Lo, A.** (2000), *When is time continuous?*, Journal of Financial Economics 55, 173–204 - the corrected scaling and its constants. **Boyle, P. & Vorst, T.** - discrete-hedge error analysis.
-- **Almgren, R. & Chriss, N.** (2001), *Optimal execution of portfolio transactions*, Journal of Risk 3, 5–39; **Guéant, O.** (2016), *The Financial Mathematics of Market Liquidity* (CRC) - the continuous counterpart of the cost/risk trade-off, and the correct place to look for the cost model that feeds $\kappa$. See [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]].
-- **Gatheral, J.**, *The Volatility Surface*, Ch 8 §8.1 (skew level-independence) and Ch 10 (cliquet valuations: the LV/SV gaps of percentage points of notional) - the same "model risk dwarfs parameter risk" message in a *pricing* context, which is the natural benchmark for the hedging version. **Bergomi, L.**, *Stochastic Volatility Modeling*, Ch 1 (what makes a model "usable" - the P&L-attribution criterion) and Ch 12 §12.2.2 (*"most local-stochastic volatility models are not usable models"* - the test that a hedge's P&L must have the gamma/theta form).
-- **Cont, R.** (2006), *Model uncertainty and its impact on the pricing of derivative instruments*, Mathematical Finance 16(3), 519–547 - quantifying model risk as a price range; the conceptual basis for the min–max robustification of §2.1. **Glasserman, P. & Xu, X.** (2019), *Robust risk measurement and model risk*, Quantitative Finance 14(1) - the robust-representation approach to exactly this problem.
-- **Bender, C. & Steiner, J.** (2012), *Least-squares Monte Carlo for BSDEs*; **Gobet, E., Lemor, J.-P., Warin, X.** (2005), *A regression-based Monte Carlo method to solve BSDEs*, Annals of Applied Probability 15(3), 2172–2202 - the $Y$-vs-$Z$ error asymmetry quantified in §2.4. **Bender, C. & Zhang, J.** (2018), *Time discretization and Markovian iteration for coupled FBSDEs*.
-- **Hull, J.**, *Options, Futures, and Other Derivatives*, Ch 19 (gamma–theta P&L and per-day Greeks - the reconciliation a learned hedge does not natively provide) and Ch 20 §20.5 (**minimum-variance delta**). *Verification report in the corpus.*
+- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291
+- **Boyle, P. & Emanuel, D.** (1980), *Discretely adjusted option hedges*, Journal of Financial Economics 8, 259–282
+- **Almgren, R. & Chriss, N.** (2001), *Optimal execution of portfolio transactions*, Journal of Risk 3, 5–39; **Guéant, O.** (2016), *The Financial Mathematics of Market Liquidity* (CRC)
+- **Gatheral, J.**, *The Volatility Surface*
+- **Cont, R.** (2006), *Model uncertainty and its impact on the pricing of derivative instruments*, Mathematical Finance 16(3), 519–547
+- **Bender, C. & Steiner, J.** (2012), *Least-squares Monte Carlo for BSDEs*; **Gobet, E., Lemor, J.-P., Warin, X.** (2005), *A regression-based Monte Carlo method to solve BSDEs*, Annals of Applied Probability 15(3), 2172–2202
+- **Hull, J.**, *Options, Futures, and Other Derivatives*
 
 ---
 

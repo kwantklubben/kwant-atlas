@@ -88,16 +88,16 @@ A venue with fill probability above **33.2%** is worth routing to on these numbe
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Almgren, Robert** - "Optimal execution with nonlinear impact functions and trading-enhanced risk," *Applied Mathematical Finance* 10(1), 1-18 (2003). *Power-law impact, $T_\star\propto X^{(\alpha-1)/(\alpha+1)}$, trading-enhanced risk.*
 - **Obizhaeva, Anna; Wang, Jiang** - "Optimal trading strategy and supply/demand dynamics," *Journal of Financial Markets* 16(1), 1-32 (2013). *Resilient book, block-continuous-block, $n_1=n_N$ symmetry.*
 - **Gatheral, Jim** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7), 749-759 (2010). *The admissibility constraint on impact/decay models.*
 - **Gatheral, Jim; Schied, Alexander; Slynko, Alla** - "Transient linear price impact and Fredholm integral equations," *Mathematical Finance* 22(3), 445-474 (2012). *Optimal execution for general decay kernels (power-law kernels, oscillating strategies).*
-- **Gatheral, Jim** - "Dynamical models of market impact and algorithms for order execution," in *Handbook on Systemic Risk* (2013), §22.4. *Continuous-time transient-impact survey; decay kernels and Figure 22.2.*
-- **Cont, Rama; Kukanov, Arseniy; Stoikov, Sasha** - "The price impact of order book events," *Journal of Financial Econometrics* 12(1), 47-88 (2014). *OFI and the concave/square-root impact relation - the empirical anchor for §2.1.*
-- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015), Ch 6-9. *Stochastic control, transient impact, dark-pool allocation, limit-order execution.*
-- **Gueant, Olivier** - *The Financial Mathematics of Market Liquidity* (2016), Ch 2-5. *Unified modern treatment of transient impact and market making.*
+- **Gatheral, Jim** - "Dynamical models of market impact and algorithms for order execution," in *Handbook on Systemic Risk* (2013)
+- **Cont, Rama; Kukanov, Arseniy; Stoikov, Sasha** - "The price impact of order book events," *Journal of Financial Econometrics* 12(1), 47-88 (2014). *OFI and the concave/square-root impact relation
+- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015)
+- **Gueant, Olivier** - *The Financial Mathematics of Market Liquidity* (2016)
 - **Huberman, Gur; Stanzl, Werner** - "Price manipulation and quasi-arbitrage," *Econometrica* 72(4), 1247-1275 (2004). *The no-manipulation condition behind Gatheral's constraint.*
 
 ---

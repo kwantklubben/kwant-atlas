@@ -96,14 +96,14 @@ The empirical coefficients converge to the analytic values as the threshold move
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Frey & Embrechts (2015)** - §7.4 (Archimedean copulas: §7.4.1 bivariate generators, tail dependence of Gumbel/Clayton, §7.4.2 multivariate construction) and §15.2 (advanced Archimedean characterisation, non-exchangeable extensions); Ch 12 §12.2–12.3 (factor copula credit models and the **implied copula**, §12.3.3); §16.3–16.4 (multivariate extreme-value copulas). *Formula-verified in the corpus.*
-- **Nelsen, R. B. (2006)**, *An Introduction to Copulas*, 2nd ed. - Ch 4 (Archimedean copulas: generators, families, properties) and Ch 5 (dependence and tail behaviour).
-- **Schönbucher, P. J. (2005)**, *A Measure of Survival* / the **implied-copula** approach - calibrating the risk-neutral loss distribution directly to tranche prices.
-- **Hull, J. & White, A. (2004)**, *Valuation of a CDO and an n-th to Default CDS without Monte Carlo Simulation* - the double-$t$ and heterogeneous copula constructions behind the implied-correlation skew.
-- **Bluhm, Overbeck & Wagner (2010)** - §2.6 (loss dependence by copula functions), §7.3 (correlated default times via the copula approach), Ch 8 (CDO modelling: migrations, correlated default times, tranching). *Read in the corpus.*
-- **Joe, H. (1997)** and **Embrechts, Klüppelberg & Mikosch (1997)** - Archimedean frailty constructions and multivariate extreme-value dependence.
+- **McNeil, Frey & Embrechts (2015)**
+- **Nelsen, R. B. (2006)**, *An Introduction to Copulas*, 2nd ed.
+- **Schönbucher, P. J. (2005)**, *A Measure of Survival* / the **implied-copula** approach
+- **Hull, J. & White, A. (2004)**, *Valuation of a CDO and an n-th to Default CDS without Monte Carlo Simulation*
+- **Bluhm, Overbeck & Wagner (2010)**
+- **Joe, H. (1997)** and **Embrechts, Klüppelberg & Mikosch (1997)**
 
 ---
 

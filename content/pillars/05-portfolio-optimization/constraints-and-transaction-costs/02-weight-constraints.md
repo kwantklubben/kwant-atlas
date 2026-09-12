@@ -101,13 +101,13 @@ Three verified findings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Frost & Savarino (1988)**, *For better performance: constrain portfolio weights*, Journal of Portfolio Management - the classic argument that weight constraints reduce estimation risk.
-- **Clarke, de Silva & Thorley (2002)**, *Portfolio Constraints and the Fundamental Law of Active Management*, FAJ 58(5):48–66 - the transfer coefficient $\mathrm{TC}<1$ that quantifies what a constraint set costs in information ratio.
-- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed. - active risk, tracking-error budgets, constrained active construction and the fundamental law.
-- **Lobo, Fazel & Boyd (2007)**, Annals of OR 152:341–365 - convex formulation with the box and linear constraints, plus the fixed-cost extension.
-- **Markowitz (1952)**, *Portfolio Selection*, JoF 7(1):77–91 - the original QP whose feasible set is the object we are drawing knives across.
+- **Frost & Savarino (1988)**, *For better performance: constrain portfolio weights*, Journal of Portfolio Management
+- **Clarke, de Silva & Thorley (2002)**, *Portfolio Constraints and the Fundamental Law of Active Management*, FAJ 58(5):48–66
+- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed.
+- **Lobo, Fazel & Boyd (2007)**, Annals of OR 152:341–365
+- **Markowitz (1952)**, *Portfolio Selection*, JoF 7(1):77–91
 
 ---
 

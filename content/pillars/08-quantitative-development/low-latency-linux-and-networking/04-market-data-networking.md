@@ -66,12 +66,12 @@ The IAT report is the health monitor: the *mean* (3.59 µs) is comfortably under
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Stevens, W. Richard (Fall, Kevin)** - *TCP/IP Illustrated, Vol. 1*, 2nd ed.: UDP/multicast semantics and why there is no delivery guarantee.
-- **Nasdaq TotalView-ITCH 5.0 Specification** - the canonical multicast binary feed spec (also covers FPGA variants); the sequence-number scheme this page's gap detection reads.
+- **Nasdaq TotalView-ITCH 5.0 Specification**
 - **Databento** - *Low-Latency Tuning Guide for Linux and Trading Systems*: multicast receive tuning on Linux.
-- **FIX Protocol (fixtrading.org)** - FIX Latest/4.4 and FIXatdl: the point-to-point TCP counterpart on the order side.
+- **FIX Protocol (fixtrading.org)**
 - **Benvenuti, Christian** - *Understanding Linux Network Internals*: how the kernel receives/batches multicast UDP.
 
 ---

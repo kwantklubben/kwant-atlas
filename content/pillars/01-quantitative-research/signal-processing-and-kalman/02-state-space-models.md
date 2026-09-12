@@ -89,13 +89,13 @@ Two things are verified. First, the local-level/ARIMA algebra reproduces Tsay's 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series* (3rd ed.), Ch 11 §11.1 (general SS form 11.26–11.27) and §11.3 (model transformations: time-varying CAPM, ARMA $\leftrightarrow$ state-space, regression with ARMA errors). **Corpus-verified.**
-- **Tsay**, Ch 1–3 - returns as signal-plus-noise, ARMA building blocks (Ch 2), and the stochastic-volatility state-space (Ch 3 §3.13). *Verified.*
-- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*, Ch 2 (the linear SS model and its properties).
-- **Harvey**, *Forecasting, Structural Time Series Models and the Kalman Filter*, Ch 2–3 (structural models: trend, seasonal, cycle).
-- **Hamilton, J. D.**: *Time Series Analysis*, Ch 13 (state-space representations of ARMA and dynamic linear models).
+- **Tsay**, *Analysis of Financial Time Series* (3rd ed.)
+- **Tsay**
+- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*
+- **Harvey**, *Forecasting, Structural Time Series Models and the Kalman Filter*
+- **Hamilton, J. D.**: *Time Series Analysis*
 
 ---
 

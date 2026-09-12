@@ -67,11 +67,11 @@ Simulate a fair coin and watch the sample mean converge to $0.5$; then simulate 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 1 §1.1 (uncountability of $\Omega_\infty$; Def 1.1.1 $\sigma$-algebra; Def 1.1.2 measure; Ex 1.1.3 Lebesgue), §1.4–1.5 (standard machine, MCT/Fatou/DCT, expectations via densities).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 1 §1.5 (finite probability spaces), Ch 11 (law, density, $\mathbb E h(X)=\int h\,f\,dx$).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.1 (MC estimator, SLLN, CLT, standard error $O(n^{-1/2})$, dimension-independence).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

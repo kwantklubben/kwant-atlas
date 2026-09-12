@@ -67,12 +67,12 @@ The worst WML month is $-24.6\%$, occurring exactly in the $+20\%$ rebound month
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Daniel & Moskowitz (2016)**, *Momentum Crashes*, J. Financial Economics 122(2) - the definitive treatment: panic-state crashes, option-like loser payoffs, dynamic strategy. *Verified corpus refs/16.*
-- **Grundy & Martin (2001)** - time-varying beta of momentum portfolios and the (biased) hedged-momentum result.
-- **Barroso & Santa-Clara (2015)**, *Momentum Has Its Moments* - 1932 WML $-91.6\%$ in two months, 2009 $-73.4\%$; volatility-managed momentum nearly eliminates them. *Verified corpus refs/17.*
-- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing* - the 2009 episode and the value-diversification response. *Verified corpus refs/18.*
+- **Daniel & Moskowitz (2016)**, *Momentum Crashes*, J. Financial Economics 122(2)
+- **Grundy & Martin (2001)**
+- **Barroso & Santa-Clara (2015)**, *Momentum Has Its Moments*
+- **Asness, Frazzini, Israel & Moskowitz (2014)**, *Fact, Fiction, and Momentum Investing*
 
 ---
 

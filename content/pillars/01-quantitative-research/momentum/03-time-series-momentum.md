@@ -80,12 +80,12 @@ Standard library only. Implements the MOP engine: EWMA ex-ante vol, sign-based 1
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Moskowitz, Ooi & Pedersen (2012)**, *Time Series Momentum*, J. Financial Economics 104(2) - the TSMOM engine, EWMA vol, 58 contracts, XSMOM relation. *Verified corpus refs/14.*
-- **Baltas & Kosowski (2013)**, *Demystifying Time-Series Momentum Strategies* - the role of volatility estimators and trading rules. *Verified corpus refs/19.*
-- **Daniel & Moskowitz (2016)**, *Momentum Crashes* - dynamic version of the TSMOM/XSMOM strategy. *Verified corpus refs/16.*
-- **Fung & Hsieh (2001)** - trend-following CTA returns and their option-like payoff structure.
+- **Moskowitz, Ooi & Pedersen (2012)**, *Time Series Momentum*, J. Financial Economics 104(2)
+- **Baltas & Kosowski (2013)**, *Demystifying Time-Series Momentum Strategies*
+- **Daniel & Moskowitz (2016)**, *Momentum Crashes*
+- **Fung & Hsieh (2001)**
 
 ---
 

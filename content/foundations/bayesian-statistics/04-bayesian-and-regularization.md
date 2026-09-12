@@ -93,13 +93,13 @@ Read the three coefficient vectors together. **OLS** spreads small non-zero nois
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2nd ed.) - §3.4.1 (ridge: the $+\lambda I$ normal equation, degrees of freedom), §3.4.2–3.4.3 (lasso, soft-thresholding, lasso as $L_1$), §3.4.4 (elastic net), §8.3 (Bayesian methods: posterior, priors, MAP), §8.6 (MCMC for posteriors). *Math-verified in the corpus.*
-- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.) - Ch 14 (regression models), §14.1–14.2 (prior specification, the Gaussian prior on coefficients), Ch 5 (hierarchical shrinkage).
-- **Hoff**, *A First Course in Bayesian Statistical Methods* - Ch 9 (regression and shrinkage; the normal prior on $\beta$ and its posterior).
-- **McElreath**, *Statistical Rethinking* (2nd ed.) - Ch 4–5 (priors as regularizers, the Gaussian prior and shrinkage), Ch 6 (overfitting and regularizing priors).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 12 §12.5 - Bayesian regression with time-series errors (regularized regression in a finance setting).
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2nd ed.)
+- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.)
+- **Hoff**, *A First Course in Bayesian Statistical Methods*
+- **McElreath**, *Statistical Rethinking* (2nd ed.)
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

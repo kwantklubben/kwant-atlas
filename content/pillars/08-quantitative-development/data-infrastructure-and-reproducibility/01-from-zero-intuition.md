@@ -67,11 +67,11 @@ Two lessons are printed literally: **same inputs give a byte-identical digest** 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado** - *Advances in Financial Machine Learning*, Ch 1 (backtesting & the reproducibility/leakage discipline) - the canonical framing for why honest data matters.
-- **Astral `uv` / Poetry / conda-lock / Docker** - official docs - the *tools* that turn "same inputs" from aspiration into an executable lockfile.
-- **Needham & Simons** - *DuckDB in Action* - the query layer where point-in-time correctness must be enforced at read time.
+- **López de Prado** - *Advances in Financial Machine Learning*
+- **Astral `uv` / Poetry / conda-lock / Docker**
+- **Needham & Simons** - *DuckDB in Action*
 
 ---
 

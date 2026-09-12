@@ -83,11 +83,11 @@ A single function parameterized by $b$, with every specialization verified again
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1 (all closed forms, §1.1–1.6), §1.2 (parities & symmetries), §1.3 (precursors), §2.10 (ATM approximations). *Numerically verified in the corpus.*
-- **Shreve**, *Stochastic Calculus for Finance II*, §4.5 (solution, put formula, parity 4.5.29) and §5.5–5.6 (dividends, forwards/futures).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 15 (BSM, eq. 15.20/15.21), Ch 17 (index/FX), Ch 18 (futures & Black's model, eq. 18.7/18.8).
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

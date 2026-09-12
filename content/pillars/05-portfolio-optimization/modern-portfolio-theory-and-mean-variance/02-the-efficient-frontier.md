@@ -79,12 +79,12 @@ The direct weight computation (top) and the analytic parabola (right column) agr
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4):1851–1872 (1972) - the $A,B,C,D$ solutions (eq. 12–18), min-variance portfolio, two-fund/mutual-fund theorem (§III). *Math-authoritative for this page; all numbers re-verified.*
-- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1):77–91 (1952) - the original quadratic program and efficient set.
-- **Tobin, James**: *Liquidity Preference as Behavior Toward Risk*, RES 25(2):65–86 (1958) - the two-fund separation theorem with a riskless asset.
-- **Elton, Gruber, Brown & Goetzmann**, *Modern Portfolio Theory and Investment Analysis* - the textbook frontier geometry.
+- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4):1851–1872 (1972)
+- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1):77–91 (1952)
+- **Tobin, James**: *Liquidity Preference as Behavior Toward Risk*, RES 25(2):65–86 (1958)
+- **Elton, Gruber, Brown & Goetzmann**, *Modern Portfolio Theory and Investment Analysis*
 
 ---
 

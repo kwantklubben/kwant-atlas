@@ -71,11 +71,11 @@ Part A is the reproducibility you *want*; part B is the silent divergence you mu
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Astral `uv` / Poetry / conda-lock / Docker** - official docs - the *tools* that pin $E$ (dependency + environment reproducibility), the practical baseline. **Priority M.**
-- **López de Prado** - *Advances in Financial Machine Learning*, Ch 1 - reproducibility discipline and the cost of leakage/overfitting when inputs drift.
-- **McKinney** - *Python for Data Analysis*, 3rd ed. - the Python-stack foundation this reproducibility layer manages.
+- **Astral `uv` / Poetry / conda-lock / Docker**
+- **López de Prado** - *Advances in Financial Machine Learning*
+- **McKinney** - *Python for Data Analysis*, 3rd ed.
 
 ---
 

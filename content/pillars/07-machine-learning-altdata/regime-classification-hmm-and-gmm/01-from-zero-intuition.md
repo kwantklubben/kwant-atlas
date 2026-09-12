@@ -67,11 +67,11 @@ The high-vol cluster (z-vol $+1.97$, z-return $-1.80$) sits at the opposite corn
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 14 (unsupervised learning): §14.3.1–14.3.7 (K-means, Gaussian mixtures, EM), §14.3.11 (gap statistic for choosing $K$). *Corpus verified.*
-- **Hamilton**, "A New Approach…," *Econometrica* 57(2), 1989 - the original proof-of-concept that latent regimes explain nonstationarity in real macro/finance series.
-- **Tsay**, *Analysis of Financial Time Series*, Ch 4 (Markov switching; expected duration $=1/w_i$; the two-regime chain) - the econometric framing this ML view abstracts over.
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Hamilton**, "A New Approach…," *Econometrica* 57(2), 1989
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

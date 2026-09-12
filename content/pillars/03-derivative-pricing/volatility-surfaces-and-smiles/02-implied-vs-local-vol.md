@@ -104,11 +104,11 @@ The two constructions agree to six decimals at every strike - the numerical proo
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 1 (§1.1–1.3: stochastic-vol SDEs, Dupire eq 1.4/1.6/1.10, conditional-expectation 1.12, Derman–Kani derivation) and Ch 3 (gamma-weighted implied variance 3.1/3.5, Brownian-bridge path integral 3.11). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 2 §2.1–2.4 (LV SDE, Dupire 2.3, implied-vol form 2.19, averaging 2.32/2.42, ATMF skew 2.48/2.50) and §2.5 (dynamics, SSR). *Math-verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 §20.7–20.8 (using the model as an interpolation tool; role of a single large jump).
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hull**, *Options, Futures, and Other Derivatives*
 - **Dupire, Bruno**: *Pricing with a Smile*, Risk **7** (1994), 18–20. **Derman–Kani** (1994, binomial) and **Breeden–Litzenberger** (1978) for the density link.
 
 ---

@@ -67,12 +67,12 @@ We simulate a **trending, volatile market** ($\mu=+3$, $\sigma=3$) with position
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1) - the reservation-price skew that keeps inventory off the limit.
-- **Garman (1976)**, *Market microstructure*, JFE 3(3) - the first model in which unbounded inventory risk can bankrupt the market maker.
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4) - inventory constraints as the formal way to make the problem well-posed.
-- **Hendershott & Menkveld (2014)**, *Price pressures*, Journal of Financial Economics 114(3) - intermediaries absorb order-flow imbalances into inventory and are later compensated; the empirical footprint of the skew.
+- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1)
+- **Garman (1976)**, *Market microstructure*, JFE 3(3)
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4)
+- **Hendershott & Menkveld (2014)**, *Price pressures*, Journal of Financial Economics 114(3)
 
 ---
 

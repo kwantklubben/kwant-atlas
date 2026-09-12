@@ -104,14 +104,14 @@ Two verified readings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gârleanu, N. & Pedersen, L. H. (2013)**, *Dynamic Trading with Predictable Returns and Transaction Costs*, Journal of Finance 68(6):2309–2340 - the aim portfolio and the closed-form partial-adjustment policy. ★ STRONG
-- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of OR 152:341–365 - the fixed-cost convex relaxation and the big-$M$ formulation. ★ MUST-HAVE
-- **Boyd, Busseti, Diamond, Kahn, Koh, Nystrup & Speth (2017)**, *Multi-Period Trading via Convex Optimization*, FnT in Optimization 3(1):1–72 - multi-period convex formulations, SOCP reformulations and scaling.
-- **Almgren & Chriss (2000/01)**, Journal of Risk 3(2):5–39 - permanent/temporary impact, the trading frontier, and the order-level counterpart of §2.4. *Cross-pillar: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Pillar 2]] owns this work.*
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 7 (Kyle $\lambda$) and Ch 8 (generalized Roll: $\text{spread}=2(c+\lambda)$) - the structural origin of the $c$ and $\lambda$ coefficients.
-- **Avellaneda & Stoikov (2008)**, *High-Frequency Trading in a Limit Order Book*, Quantitative Finance 8(3):217–224 - the market-maker's inventory-aware quoting problem, the *supply-side* mirror of the portfolio's cost. *Cross-pillar: [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/index|Pillar 6]].*
+- **Gârleanu, N. & Pedersen, L. H. (2013)**, *Dynamic Trading with Predictable Returns and Transaction Costs*, Journal of Finance 68(6):2309–2340
+- **Lobo, Fazel & Boyd (2007)**, *Portfolio Optimization with Linear and Fixed Transaction Costs*, Annals of OR 152:341–365
+- **Boyd, Busseti, Diamond, Kahn, Koh, Nystrup & Speth (2017)**, *Multi-Period Trading via Convex Optimization*, FnT in Optimization 3(1):1–72
+- **Almgren & Chriss (2000/01)**, Journal of Risk 3(2):5–39
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Avellaneda & Stoikov (2008)**, *High-Frequency Trading in a Limit Order Book*, Quantitative Finance 8(3):217–224
 
 ---
 

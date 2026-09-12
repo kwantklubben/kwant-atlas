@@ -103,13 +103,13 @@ The first two blocks are the desync proof: the same replay produces **500 phanto
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **FIX Trading Community**, *FIX 4.4 Specification* and *FIX Latest* - the normative value lists for `OrdStatus`, `ExecType`, and the session-level reject codes; the definitions the certification suite tests against.
-- **FIX Trading Community**, *FIX Unified Repository* - generate your conformance test matrix directly from the data dictionary rather than from memory.
-- **OnixS**, *FIX Dictionary & Protocol Reference* - the readable treatment of resend, `PossDupFlag`, and the `SequenceReset` modes that underpin failure modes 1, 2, and 7.
-- **López de Prado, Marcos**, *Advances in Financial Machine Learning* - the broader discipline of testing for correctness before trusting a system's output; the mindset transfers directly to connectivity certification.
-- **Databento / Red Hat**, *low-latency Linux & networking tuning guides* - the socket-level fixes behind failure mode 5.
+- **FIX Trading Community**, *FIX 4.4 Specification* and *FIX Latest*
+- **FIX Trading Community**, *FIX Unified Repository*
+- **OnixS**, *FIX Dictionary & Protocol Reference*
+- **López de Prado, Marcos**, *Advances in Financial Machine Learning*
+- **Databento / Red Hat**, *low-latency Linux & networking tuning guides*
 
 ---
 

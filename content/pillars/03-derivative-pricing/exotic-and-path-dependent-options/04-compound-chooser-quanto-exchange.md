@@ -91,12 +91,12 @@ Stdlib only. $M(a,b;\rho)$ via the one-dimensional integral form; compound/choos
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §4.12 (choosers, eqs 4.26–4.27), §4.13 (compound, eqs 4.28–4.34), Ch 5 (Margrabe 5.7, Kirk 5.17–5.18, quanto 5.35–5.42), §13.3 (bivariate normal primitives).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 26 (compound §26.7, chooser, Margrabe §26.14, quanto).
-- **Shreve**, *Stochastic Calculus for Finance II*, §5.6 (change of numeraire - the rigorous basis of quanto adjustments, via the covariance term in the drift).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.2 (change of numeraire; Margrabe as the worked example).
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

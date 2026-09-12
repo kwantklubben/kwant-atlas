@@ -87,13 +87,13 @@ We (i) simulate exact fBm and recover $H$ by variogram OLS across three values, 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - the variogram $m(q,\Delta)$, monofractal scaling $\zeta_q=qH$, and the SPX estimate $H\approx0.13$; §3.4 on the one-day-vs-one-decade scale invariance.
-- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965 - the hybrid discretisation (far-field convolution + proximal integral), convergence order, and BSS-process generality. *Primary simulation source.*
-- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 - the rBergomi model the scheme simulates; the SPX calibration $\eta=1.9,\rho=-0.9$.
-- **McCrickerd & Pakkanen (2018)**, *Turbocharging Monte Carlo pricing for the rough Bergomi model* - variance-reduced MC under rBergomi (antithetics, conditioning) for the calibration-in-simulation problem.
-- **Hosking (1984)**, exact Gaussian simulation of stationary sequences (the Levinson recursion used in §3(i)).
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949
+- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965
+- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904
+- **McCrickerd & Pakkanen (2018)**, *Turbocharging Monte Carlo pricing for the rough Bergomi model*
+- **Hosking (1984)**, exact Gaussian simulation of stationary sequences (the Levinson recursion used in
 
 ---
 

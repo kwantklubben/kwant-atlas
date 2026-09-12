@@ -71,12 +71,12 @@ Stdlib only. Forty firms all experience the same event type on day 0, each with 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance Ch. 1 - cross-sectional mean (eq. 3), CAR (eq. 4), BHAR (eq. 7), portfolio-strategy interpretation §3.2.2, long-horizon CAR/BHAR issues §4. *Verified refs/52, read in full.*
-- **Brown & Warner (1985)**, *Using Daily Stock Returns*, JFE 14(1) - the aggregation design and its simulation-verified properties. *Verified refs/50.*
-- **Fama, Fisher, Jensen & Roll (1969)**, *The Adjustment of Stock Prices to New Information* - the original cumulative mean abnormal-return table format. *Cited in MacKinlay (1997).*
-- **Campbell, Lo & MacKinlay (1997)**, *The Econometrics of Financial Markets*, Ch. 4 - the textbook CAR/statistical-treatment. *Listed in pillar refs.*
+- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance
+- **Brown & Warner (1985)**, *Using Daily Stock Returns*, JFE 14(1)
+- **Fama, Fisher, Jensen & Roll (1969)**, *The Adjustment of Stock Prices to New Information*
+- **Campbell, Lo & MacKinlay (1997)**, *The Econometrics of Financial Markets*
 
 ---
 

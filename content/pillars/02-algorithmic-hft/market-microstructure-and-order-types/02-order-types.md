@@ -87,10 +87,10 @@ Send five different order types against the *same* book and measure each one's f
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 2 (limit-order markets, order qualifiers TIF/IOC/AON, hidden and reserve/iceberg orders, price-then-time priority, walk-the-book; Euronext market orders that do *not* walk). *Verified in `hasbrouck_ch1-5.md`.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 2 (quoted/effective/realized spreads, Lee–Ready trade signing). *Verified in `foucault_ch1-3.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 - **Harris, Larry** - *Trading and Exchanges* (2003). *The practitioner catalogue of order types and their costs.*
 - **Abergel et al.** - *Limit Order Books* (2016). *The quantitative treatment of order placement, priority, and fill dynamics.*
 

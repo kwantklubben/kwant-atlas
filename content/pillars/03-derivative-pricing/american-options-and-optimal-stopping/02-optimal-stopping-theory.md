@@ -80,12 +80,12 @@ The no-dividend call has **exactly zero** nodes where intrinsic beats continuati
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 21 (§21.2–21.3 generalities and drift test, Props 21.2/21.3/21.5; §21.4 discrete backward recursion Prop 21.7 and Snell Envelope Thm 21.12; §21.5 continuous Thm 21.23; §21.6 the call/put asymmetry). *Math-verified deep-read.*
-- **Shreve**, *Stochastic Calculus for Finance I*, §5.1–5.2 (recursion, stopping times, optional sampling) and §6.1 (Definition 6.1, the four characterisations) and Cor 2.25 (no early exercise of the call). *Math-verified.*
-- **Shreve**, *Stochastic Calculus for Finance II*, §8.1–8.2 (optimal-stopping value, Optional Sampling Thm 8.2.4) and §8.5 (dividend-call recursion, Eqs. 8.5.28–30). *Math-verified.*
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §8.2 (the primal value $\sup_\tau\mathbb E[U(\tau)]$ and value-function bias). *Math-verified.*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

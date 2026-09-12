@@ -61,14 +61,14 @@ The mechanism, in numbers: at $\delta{=}0$ (raw sample) the condition number is 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ledoit, Olivier & Wolf, Michael**: *Improved Estimation of the Covariance Matrix of Stock Returns with an Application to Portfolio Selection*, Journal of Empirical Finance 10(5) (2004) - analytical shrinkage to a single-index/diagonal target; the workhorse estimator.
-- **Goldfarb, Donald & Iyengar, Garud**: *Robust Portfolio Selection Problems*, Mathematics of Operations Research 28(1) (2003) - worst-case SOCP MVO against uncertainty sets.
-- **Michaud, Richard O.**: *Efficient Asset Management*, 1st ed. OUP 1998 / 2nd ed. 2008 - resampling the frontier.
-- **Black, Fischer & Litterman, Robert**: *Global Portfolio Optimization*, Financial Analysts Journal 48(5) (1992) - equilibrium reverse-optimization + views ([[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]]).
-- **DeMiguel, Garlappi & Uppal**: *Optimal Versus Naive Diversification*, RFS 22(5) (2009) - the $1/N$ out-of-sample benchmark.
-- **Kan & Zhou**: *Optimal Portfolio Choice with Parameter Uncertainty*, JFQA 42(3) (2007) - the three-fund / moment-shrinkage answer.
+- **Ledoit, Olivier & Wolf, Michael**: *Improved Estimation of the Covariance Matrix of Stock Returns with an Application to Portfolio Selection*, Journal of Empirical Finance 10(5) (2004)
+- **Goldfarb, Donald & Iyengar, Garud**: *Robust Portfolio Selection Problems*, Mathematics of Operations Research 28(1) (2003)
+- **Michaud, Richard O.**: *Efficient Asset Management*, 1st ed. OUP 1998 / 2nd ed. 2008
+- **Black, Fischer & Litterman, Robert**: *Global Portfolio Optimization*, Financial Analysts Journal 48(5) (1992)
+- **DeMiguel, Garlappi & Uppal**: *Optimal Versus Naive Diversification*, RFS 22(5) (2009)
+- **Kan & Zhou**: *Optimal Portfolio Choice with Parameter Uncertainty*, JFQA 42(3) (2007)
 
 ---
 

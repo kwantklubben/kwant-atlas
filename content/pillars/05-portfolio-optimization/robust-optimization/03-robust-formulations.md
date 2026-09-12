@@ -116,12 +116,12 @@ Two verified lessons:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Goldfarb, D. & Iyengar, G. (2003)**, *Robust Portfolio Selection Problems*, Math. of OR 28(1):1–38 - the model (§2), the worst-case mean formulas (eqs. 15–17), the SOCP reductions (§3–4), and sets-as-confidence-regions (§5–6). *The math source for this page.*
-- **Ben-Tal, El Ghaoui & Nemirovski**, *Robust Optimization*, Princeton University Press, 2009 - the general theory: uncertainty sets, robust counterparts, tractability.
-- **Tütüncü & Koenig (2004)**, *Robust Asset Allocation*, Annals of OR 132:157–187 - robust MV and VaR/CVaR formulations against moment uncertainty.
-- **El Ghaoui & Lebret (1997)** and **Halldórsson & Tütüncü (2000)** - the antecedent robust-least-squares / saddle-point reductions cited by GI.
+- **Goldfarb, D. & Iyengar, G. (2003)**, *Robust Portfolio Selection Problems*, Math. of OR 28(1):1–38
+- **Ben-Tal, El Ghaoui & Nemirovski**, *Robust Optimization*, Princeton University Press, 2009
+- **Tütüncü & Koenig (2004)**, *Robust Asset Allocation*, Annals of OR 132:157–187
+- **El Ghaoui & Lebret (1997)** and **Halldórsson & Tütüncü (2000)**
 
 ---
 

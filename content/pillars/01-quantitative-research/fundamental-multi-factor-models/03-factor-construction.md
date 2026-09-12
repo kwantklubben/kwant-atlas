@@ -87,12 +87,12 @@ We reproduce the 2×3 independent sort on a synthetic 200-stock monthly cross-se
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) - the original SMB/HML 2×3 construction.
-- **Fama & French**, "A Five-Factor Asset Pricing Model" (*JFE*, 2015), §4 - the precise 2×3 and 2×2×2×2 recipes for SMB, HML, RMW, CMA; value-weighting and NYSE-breakpoint rules. *Construction verified against the corpus paper.*
-- **Tsay**, *Analysis of Financial Time Series*, §9.3.2 - Fama–French hedge portfolios; §9.3.1 - factor-mimicking portfolios $\hat f_t=\omega^\top r_t$. *Math-verified.*
-- **Ken French Data Library** - official SMB/HML/RMW/CMA returns (the reference implementation of these recipes).
+- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993)
+- **Fama & French**, "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Ken French Data Library**
 
 ---
 

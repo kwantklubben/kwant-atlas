@@ -66,13 +66,13 @@ The naive maker trades at break-even ($\approx0$) because the toxic period wipes
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Easley, Hvidkjaer & O'Hara (2002)**, *Is information risk a determinant of asset returns?*, J. Finance 57(5), 2185–2221 - PIN as a priced information-risk factor. *Primary PDF: `38_Easley_2002...` in corpus.*
-- **Easley, López de Prado & O'Hara (2011)**, *The microstructure of the "flash crash"*, J. Portfolio Management 37(2) - VPIN spiking before May 6, 2010; the kill-switch motivation. *Primary PDF: `34_Easley_2011...`.*
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5) - the volume-synchronized updating and the maker-withdrawal channel. *Primary PDF: `33Easley2012...`.*
-- **Andersen & Bondarenko (2014)**, *VPIN and the flash crash*, J. Financial Markets 17 - the counterpoint any kill-switch design must read.
-- **Hasbrouck & Saar (2009)**, *Technology and liquidity provision*, J. Financial Markets 12(2) - low-latency liquidity provision and order "fleeting," the modern maker environment where toxicity dominates queue dynamics.
+- **Easley, Hvidkjaer & O'Hara (2002)**, *Is information risk a determinant of asset returns?*, J. Finance 57(5), 2185–2221
+- **Easley, López de Prado & O'Hara (2011)**, *The microstructure of the "flash crash"*, J. Portfolio Management 37(2)
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5)
+- **Andersen & Bondarenko (2014)**, *VPIN and the flash crash*, J. Financial Markets 17
+- **Hasbrouck & Saar (2009)**, *Technology and liquidity provision*, J. Financial Markets 12(2)
 
 ---
 

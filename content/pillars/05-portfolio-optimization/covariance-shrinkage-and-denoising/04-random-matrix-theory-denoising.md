@@ -84,7 +84,7 @@ Simulate a 3-factor correlation matrix (three "sectors"), draw $N=200$ assets fr
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Laloux, L., Cizeau, P., Bouchaud, J.-P. & Potters, M. (1999).** "Noise dressing of financial correlation matrices." *Physical Review Letters* 83(7):1467–1470. ★ *The constant-residual method implemented here.*
 - **Plerou, V., Gopikrishnan, P., Rosenow, B., Amaral, L., Guhr, T. & Stanley, H. (2002).** "Random matrix approach to cross correlations in financial data." *Physical Review E* 65:066126. *Empirical bulk-plus-spikes structure of equity correlation matrices.*

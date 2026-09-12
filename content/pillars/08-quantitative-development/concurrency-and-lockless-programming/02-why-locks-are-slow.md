@@ -64,10 +64,10 @@ Standard library only. A discrete-event model of $P$ threads each doing $K$ crit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*, Ch 7 (spin locks, contention, test-and-set vs ticket locks) - the anatomy of contention.
-- **Williams**, *C++ Concurrency in Action*, Ch 3 (sharing data: mutexes, deadlock, lock granularity) and Ch 4 (condition variables, the wake-up cost).
+- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*
+- **Williams**, *C++ Concurrency in Action*
 - **Silberschatz, Galvin & Gagne**, *Operating System Concepts*, the priority-inversion and priority-inheritance discussion.
 - **Powell, George** - *Mars Pathfinder bug* (1997 write-up): the canonical real-world priority-inversion case.
 

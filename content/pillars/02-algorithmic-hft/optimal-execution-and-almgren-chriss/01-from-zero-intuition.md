@@ -75,10 +75,10 @@ Read down the columns: impact cost **falls** as $1/T$, risk sd **rises** as $\sq
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §1 (the model), §2.3 (the half-life $\theta=1/\kappa$ and its independence from portfolio size).
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (implementation shortfall as the objective) and Ch 15 (the permanent/temporary decomposition; the $s_t^\star=\bar s/T$ zero-drift optimum).
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Perold, André F.** - "The implementation shortfall: Paper versus reality," *Journal of Portfolio Management* 14(3), 4-9 (1988). *The benchmark this whole folder is graded against.*
 
 ---

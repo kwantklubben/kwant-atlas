@@ -81,14 +81,14 @@ Hub signposts - the folder's full failure-mode analysis lives in [[fundamentals-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **SEC**, *EDGAR Application Programming Interfaces* documentation (sec.gov/edgar/sec-api-documentation) - the authoritative spec for `companyfacts`, `companyconcept`, `frames`, and `submissions`. *All endpoints on this page verified against the local data-access notes.*
-- **XBRL US** (xbrl.us) - the US-GAAP taxonomy viewer and downloads; **XBRL International** (taxonomies.xbrl.org) - the IFRS taxonomy.
-- **Kenneth R. French**, *Data Library* (Dartmouth) - the canonical factor return series; pairs with Fama–French 1992/1993/2015 in the corpus.
-- **Loughran, Tim & McDonald, Bill**: "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks" (*JF*, 2011) - the canonical link from *filings data* to quantitative textual signals; the method layer under any 10-K NLP work.
-- **WRDS**, *Compustat Point-in-Time* documentation and the **Compustat User's Guide** - the sourcing hygiene every fundamentals backtest must obey; see also the Corpus's `data-sources-and-corporate-data` section.
-- **Sloan, Richard** (*TAR*, 1996) and **Dechow, Ge & Schrand** (*JAE*, 2010) - why *as-reported vs. restated* earnings differ economically, not just mechanically.
+- **SEC**, *EDGAR Application Programming Interfaces* documentation (sec.gov/edgar/sec-api-documentation)
+- **XBRL US** (xbrl.us)
+- **Kenneth R. French**, *Data Library* (Dartmouth)
+- **Loughran, Tim & McDonald, Bill**: "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks" (*JF*, 2011)
+- **WRDS**, *Compustat Point-in-Time* documentation and the **Compustat User's Guide**
+- **Sloan, Richard** (*TAR*, 1996) and **Dechow, Ge & Schrand** (*JAE*, 2010)
 
 ---
 

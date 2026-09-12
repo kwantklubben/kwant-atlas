@@ -59,11 +59,11 @@ The simulated informed fraction (0.4309) converges to the formula (0.4286) - PIN
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, J. Empirical Finance 4, 159–186 - the PIN model, the Poisson mixture, MLE. *Primary PDF: `37_Easley_1997...` in corpus.*
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 6 - mixture likelihood (eq. 6.3), PIN (eq. 6.4), identification of $\alpha\mu$. *Math-verified in `hasbrouck_ch6-10.md`.*
-- **Easley, Hvidkjaer & O'Hara (2002)**, *Is information risk a determinant of asset returns?*, J. Finance 57(5) - PIN as an asset-pricing "information risk" factor. *Primary PDF: `38_Easley_2002...`.*
+- **Easley, Kiefer & O'Hara (1997)**, *The information content of the trading process*, J. Empirical Finance 4, 159–186
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Easley, Hvidkjaer & O'Hara (2002)**, *Is information risk a determinant of asset returns?*, J. Finance 57(5)
 
 ---
 

@@ -77,13 +77,13 @@ Hub signposts - the full analysis is in [[pillars/02-algorithmic-hft/execution-a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Perold, André F.** - "The implementation shortfall: Paper versus reality," *Journal of Portfolio Management* 14(3), 4–9 (1988). *The origin of the IS benchmark - every execution algo is graded here.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (trading-cost decomposition eq 14.1, VWAP objections) and Ch 15 (order splitting, U-shaped strategies). *Corpus verification report `hasbrouck_ch11-15.md`.*
-- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013), Ch 2 (VWAP eq 2.7, effective/realized spread, implementation shortfall eq 2.29 with the verified 24,000 example).
+- **Perold, André F.** - "The implementation shortfall: Paper versus reality," *Journal of Portfolio Management* 14(3), 4–9 (1988). *The origin of the IS benchmark
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013)
 - **Kissell, Glantz & Malamut** - *Optimal Trading Strategies* (2003) and **Kissell** - *The Science of Algorithmic Trading* (2014). *The desk standard on building/slicing around VWAP/TWAP/POV/IS.*
-- **Johnson, Barry** - *Algorithmic Trading & DMA* (2010). `INT` - the most digestible practitioner walk-through of VWAP/TWAP/POV/IS logic.
+- **Johnson, Barry** - *Algorithmic Trading & DMA* (2010). `INT`
 - **Almgren & Chriss** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5–40 (2000). *The scheduling calculus underlying arrival-price (IS) execution.*
 
 ---

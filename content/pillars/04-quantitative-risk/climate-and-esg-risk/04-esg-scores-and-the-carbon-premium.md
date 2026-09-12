@@ -101,16 +101,16 @@ Three panels: (A) three raters scoring eight firms, with rank correlations; (B) 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Berg, F., Kölbel, J.F. & Rigobon, R.** - *Aggregate Confusion: The Divergence of ESG Ratings*, *Review of Finance* **26**(6):1315–1344 (2022) - the scope/measurement/weight decomposition ($38\%/56\%/6\%$), the correlation range $0.38$–$0.71$, and the rater (halo) effect. *Primary source, read from the corpus PDF.*
-- **Berg, F., Fabisik, K. & Sautner, Z.** - *Rewriting History II: The (Un)Predictable Past of ESG Ratings* (ECGI Finance Working Paper 708/2020; circulated as *Is History Repeating Itself?*) - retroactive restatement of ESG history and the resulting look-ahead bias.
-- **Bolton, P. & Kacperczyk, M.** - *Do investors care about carbon risk?*, *Journal of Financial Economics* **142**(2):517–549 (2021) - the carbon (brown) premium in US equities.
-- **Pástor, Ľ., Stambaugh, R.F. & Taylor, L.A.** - *Sustainable investing in equilibrium*, *Journal of Financial Economics* **142**(2):550–571 (2021) - greenium in expected returns; and *Dissecting green returns*, *Journal of Financial Economics* **146**(2):403–424 (2022) - climate-news-driven outperformance and its reversal.
-- **Zerbib, O.D.** - *The effect of pro-environmental preferences on bond prices: Evidence from green bonds*, *Journal of Banking & Finance* **98**:39–60 (2019) - the green-bond yield premium (order $-2$ basis points).
-- **Andersson, M., Bolton, P. & Samama, F.** - *Hedging Climate Risk*, *Financial Analysts Journal* **72**(3):13–32 (2016) - carbon-efficient portfolios at equal tracking error.
-- **TCFD**, *Recommendations* (2017) and **SBTi**, *Foundations for Science-Based Net-Zero Target Setting* - the pathway/budget logic behind temperature alignment.
-- **IPCC**, *Climate Change 2013: The Physical Science Basis* (AR5, WG1 Ch. 12) - TCRE, the physical basis for a cumulative-emissions-to-warming map.
+- **Berg, F., Kölbel, J.F. & Rigobon, R.** - *Aggregate Confusion: The Divergence of ESG Ratings*, *Review of Finance* **26**(6):1315–1344 (2022)
+- **Berg, F., Fabisik, K. & Sautner, Z.** - *Rewriting History II: The (Un)Predictable Past of ESG Ratings* (ECGI Finance Working Paper 708/2020; circulated as *Is History Repeating Itself?*)
+- **Bolton, P. & Kacperczyk, M.** - *Do investors care about carbon risk?*, *Journal of Financial Economics* **142**(2):517–549 (2021)
+- **Pástor, Ľ., Stambaugh, R.F. & Taylor, L.A.** - *Sustainable investing in equilibrium*, *Journal of Financial Economics* **142**(2):550–571 (2021)
+- **Zerbib, O.D.** - *The effect of pro-environmental preferences on bond prices: Evidence from green bonds*, *Journal of Banking & Finance* **98**:39–60 (2019)
+- **Andersson, M., Bolton, P. & Samama, F.** - *Hedging Climate Risk*, *Financial Analysts Journal* **72**(3):13–32 (2016)
+- **TCFD**, *Recommendations* (2017) and **SBTi**, *Foundations for Science-Based Net-Zero Target Setting*
+- **IPCC**, *Climate Change 2013: The Physical Science Basis* (AR5, WG1
 
 ---
 

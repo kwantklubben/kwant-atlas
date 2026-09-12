@@ -69,12 +69,12 @@ A *0.4-vol-point* wiggle in the smile blows one reconstructed local variance up 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 1 & 3 (local-vol inversion eq 1.10; SVI as a smooth arbitrage-free surface; why direct implied-vol parameterization is hard with sparse quotes).
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 2 (eq 2.89: skew = covariance integral; eq 2.20 interpolation; instability and the "no physical significance" warning; Ch 2.6 on forward skews), Ch 5 (conventions: $\\ln^2$ vs returns, dividends, eqs 5.31–5.54).
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 8–12 (numerical stability of the schemes used once a calibrated LV surface must be *priced* with).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (smiles, model risk, calibration in practice).
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

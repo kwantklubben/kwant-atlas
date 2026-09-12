@@ -123,14 +123,14 @@ A three-state one-period market, a short ATM call, and the $L^2$ projection comp
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291 - the objective $\inf_\delta\rho(L_T^\delta)$, the convexity, the entropic/quadratic-BSDE equivalence, the robust representation of CVaR, and the neural-network solver. *The primary source for this folder.*
-- **Föllmer, H. & Sondermann, D.** (1986), *Hedging of non-redundant contingent claims*, in Contributions to Mathematical Economics - the $L^2$ projection (variance-optimal hedge) used in §2.2. **Schweizer, M.** (2001), *A guided tour through quadratic hedging approaches* - the taxonomy (mean-variance, variance-optimal, local risk-minimisation). **Föllmer, H. & Leukert, P.** (2000), *Efficient hedging: cost versus shortfall risk*, Finance & Stochastics 4, 117–146 - the first "minimise a loss functional" formulation.
-- **Delbaen, F. & Schachermayer, W.** (1994/2006), on the Fundamental Theorems and the no-free-lunch framework - why completeness ⇔ uniqueness of the martingale measure. See [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/04-fundamental-theorems|No-Arb · 04 Fundamental Theorems]] for the finite-state version used in §2.1.
-- **Artzner, P., Delbaen, F., Eber, J.-M., Heath, D.** (1999), *Coherent measures of risk*, Mathematical Finance 9(3), 203–228, and **Föllmer, H. & Schied, A.** (2004), *Stochastic Finance: An Introduction in Discrete Time* (de Gruyter) - convex risk measures and the robust representation quoted in §2.3. **Rockafellar, R.T. & Uryasev, S.** (2000), *Optimization of conditional value-at-risk*, Journal of Risk 2, 21–41 - CVaR as an infimum of a convex functional.
-- **Gatheral, J.**, *The Volatility Surface*, Ch 5 §5.1 (*"no replicating hedge"* for jump models) - the concrete financial statement that incompleteness is not exotic. **Cont, R. & Tankov, P.**, *Financial Modelling with Jump Processes*, Ch 10 - the mathematical version.
-- **Boyle, P. & Emanuel, D.** (1980), *Discretely adjusted option hedges*, Journal of Financial Economics 8, 259–282 - the $\sqrt{\Delta t}$ law of §05. **Bertsimas, D., Kogan, L., Lo, A.** (2000), *When is time continuous?*, Journal of Financial Economics 55, 173–204.
+- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291
+- **Föllmer, H. & Sondermann, D.** (1986), *Hedging of non-redundant contingent claims*, in Contributions to Mathematical Economics
+- **Delbaen, F. & Schachermayer, W.** (1994/2006), on the Fundamental Theorems and the no-free-lunch framework
+- **Artzner, P., Delbaen, F., Eber, J.-M., Heath, D.** (1999), *Coherent measures of risk*, Mathematical Finance 9(3), 203–228, and **Föllmer, H. & Schied, A.** (2004), *Stochastic Finance: An Introduction in Discrete Time* (de Gruyter)
+- **Gatheral, J.**, *The Volatility Surface*
+- **Boyle, P. & Emanuel, D.** (1980), *Discretely adjusted option hedges*, Journal of Financial Economics 8, 259–282
 
 ---
 

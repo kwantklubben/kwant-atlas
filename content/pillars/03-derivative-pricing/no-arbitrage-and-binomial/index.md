@@ -69,13 +69,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I: The Binomial Asset Pricing Model* - §1.1 (no-arbitrage bracket, delta, $\tilde p/\tilde q$), Ch 2 (conditional expectation, martingales), Ch 3 (general APT, completeness, risk-neutral valuation), Ch 5–8 (American pricing, stopping times, Jensen, random walks, the perpetual put). *The primary source of this folder; math-verified in the corpus.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance II* - §5.4 (First/Second Fundamental Theorems, market price of risk), §5.2 (Girsanov, risk-neutral pricing). *Math-verified.*
-- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* - Ch 2 (binomial, replicating weights Prop 2.9–2.11), Ch 3 (general one-period model, Farkas' lemma, FTA, state-price/SDF Prop 3.18). *Math-verified.*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 13 (one-step delta, risk-neutral valuation, CRR parameters, American backward induction, convergence). *Verification report in the corpus.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* - §4.1 (CRR European, eq 7.1–7.6), §4.2 (CRR American + tree Greeks, eq 7.9–7.11). *Numerically verified.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I: The Binomial Asset Pricing Model*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance II*
+- **Björk, Tomas**: *Arbitrage Theory in Continuous Time*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas*
 
 ---
 

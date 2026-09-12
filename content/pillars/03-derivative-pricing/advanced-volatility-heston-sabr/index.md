@@ -82,13 +82,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley, 2006) - Ch 1 (SV SDEs 1.1/1.2, valuation equation 1.3, Dupire local vol), Ch 2 (**Heston**: PDE 2.3, ansatz 2.5, Riccati 2.11, $C,D$ 2.12, CF 2.15, Milstein 2.18, branch-cut caveat), Ch 3 (Heston implied variance 3.17, ATM term structure 3.18, skew 3.19), Ch 4 (Heston–Nandi), Ch 5 (**jumps**, Lewis formula 5.6, skew 5.8/5.10, SVJ/SVJJ), Ch 7 (**asymptotics**: 7.2 local-vol skew, 7.3 $\rho\eta\beta/2$, Medvedev–Scaillet 7.5–7.6, **SABR 7.7**, jumps 7.9, FPS 7.10, interpolation 7.11, Lewis 7.12, **Lee 7.13–7.14**), Ch 8 (**dynamics**: skew level-independence, LV forward skew, digital mispricing 12% of notional), Ch 9–10 (barriers, cliquets). *The primary math-verified source of this folder.*
-- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC, 2016) - Ch 1 (usable models, BS equation as accounting), Ch 5 (**variance swaps**, Gram–Charlier/$\kappa_3$ seed, $\mathcal S_T=s/(6\sqrt T)$), Ch 6 (**Heston as a one-factor forward-variance model**: 6.1–6.4, vol-of-vol 6.9, skew 6.16–6.20), Ch 7 (**forward-variance models**: pricing eq 7.4, Markov rep 7.9–7.10, $N$-factor 7.11–7.27, two-factor 7.28–7.39, benchmark 7.40), Ch 8 (**Bergomi–Guyon expansion**: 8.3–8.14, price/vol expansions 8.18–8.21, skew 8.22–8.26, short-maturity 8.35–8.44, one-factor family 8.47–8.49), Ch 9 (**SSR** 9.3–9.16, $R_0=2$, $R_T\in[1,2]$, Type I/II), Ch 10 (**what causes equity smiles**), Ch 12 (LSV, 12.1–12.4). *The primary modern treatment.*
-- **Hagan, Kumar, Lesniewski, Woodward**: *Managing Smile Risk* (Wilmott, 2002) - the SABR model and eq. (2.17a) formula. **Medvedev–Scaillet** (2004), **Lewis** (2000), **Lee** (2004) for the short/long/extreme-strike asymptotics. **Heston, S. L.** (1993), *A closed-form solution for option prices with stochastic volatility*, RFS 6(2) 327–343.
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 19 (Greeks, gamma–theta), Ch 20 (smiles & surfaces, minimum-variance delta), Ch 23 (EWMA/GARCH volatility term structure, eq. 23.14). *Verification report in the corpus.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) - §1.1–1.9 (generalized BSM, parity, symmetries used as the pricing backstop) and §2 (the Greek set used to define vega-weighted calibration weights). *Numerically verified.*
+- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley, 2006)
+- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC, 2016)
+- **Hagan, Kumar, Lesniewski, Woodward**: *Managing Smile Risk* (Wilmott, 2002)
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.)
 
 ---
 

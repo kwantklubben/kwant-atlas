@@ -103,14 +103,14 @@ Read it:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*, Wiley, Ch. 16–17 - the canonical exposition of HRP, **HERC**, and **Nested Clustered Optimization** (the "ML asset allocation" chapter).
-- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69 - the base algorithm all variants generalize.
-- **Raffinot, T.** (2017/18). "Hierarchical Clustering-Based Asset Allocation." *J. Portfolio Management* 44(2):89–99 - HACA / hierarchical-ERC: graph-partitioning alternatives in the same family.
-- **Maillard, Roncalli & Teïletche** (2010). "The Properties of Equally Weighted Risk Contribution Portfolios." *J. Portfolio Management* 36(4):60–70 - the ERC program HERC embeds at each cluster.
-- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning*, §14.3.12 - the Lance–Williams family, including the Ward coefficients used above.
-- **Ledoit & Wolf** (2004). "A Well-Conditioned Estimator for Large-Dimensional Covariance Matrices." *J. Multivariate Analysis* 88(2):365–411 - the denoised input that makes every variant above more stable.
+- **López de Prado, M.** (2018). *Advances in Financial Machine Learning*, Wiley
+- **López de Prado, M.** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *J. Portfolio Management* 42(4):59–69
+- **Raffinot, T.** (2017/18). "Hierarchical Clustering-Based Asset Allocation." *J. Portfolio Management* 44(2):89–99
+- **Maillard, Roncalli & Teïletche** (2010). "The Properties of Equally Weighted Risk Contribution Portfolios." *J. Portfolio Management* 36(4):60–70
+- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning*
+- **Ledoit & Wolf** (2004). "A Well-Conditioned Estimator for Large-Dimensional Covariance Matrices." *J. Multivariate Analysis* 88(2):365–411
 
 ---
 

@@ -80,14 +80,14 @@ Interpretation: the impact cost (\$25,000, 25 bp) *exceeds* the exogenous spread
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bangia, A., Diebold, F., Schuermann, T. & Stroughair, J.** - *Modeling Liquidity Risk, With Implications for Traditional Market Risk Measurement and Management* (1999/2000) - the canonical exogenous + endogenous L-VaR decomposition and its horizon scaling; the source of the $\tfrac12V(S+z_\alpha\sigma_S)$ form.
-- **Almgren, R. & Chriss, N.** - *Optimal Execution of Portfolio Transactions*, *J. Risk* 3(2):5–39 (2000) - temporary vs permanent impact, the efficient frontier of impact vs timing risk. (Pillar 6 refs.)
-- **Bouchaud, J.-P., Farmer, J.D. & Lillo, F.** - *How Markets Slowly Digest Changes in Supply and Demand* (2009) - square-root impact; the empirical shape behind §2.2's caveat. (Pillar 6 refs.)
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 2: effective/realized spread, price impact $\Delta m=\lambda q$, implementation shortfall (Perold 1988). *Verified in corpus.*
-- **Hull** - *Risk Management and Financial Institutions*, liquidity-risk chapter (liquidity trading risk and L-VaR) and *Options, Futures and Other Derivatives* Ch 22.4 (the $\sqrt N$ scaling). *Corpus-verified for Ch 22.*
-- **BCBS** - *FRTB: Minimum Capital Requirements for Market Risk* (2019, d457) - liquidity horizons and the ES scaling. (Pillar 4 refs.)
+- **Bangia, A., Diebold, F., Schuermann, T. & Stroughair, J.** - *Modeling Liquidity Risk, With Implications for Traditional Market Risk Measurement and Management* (1999/2000)
+- **Almgren, R. & Chriss, N.** - *Optimal Execution of Portfolio Transactions*, *J. Risk* 3(2):5–39 (2000)
+- **Bouchaud, J.-P., Farmer, J.D. & Lillo, F.** - *How Markets Slowly Digest Changes in Supply and Demand* (2009)
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
+- **Hull** - *Risk Management and Financial Institutions*, liquidity-risk chapter (liquidity trading risk and L-VaR) and *Options, Futures and Other Derivatives*
+- **BCBS** - *FRTB: Minimum Capital Requirements for Market Risk* (2019, d457)
 
 ---
 

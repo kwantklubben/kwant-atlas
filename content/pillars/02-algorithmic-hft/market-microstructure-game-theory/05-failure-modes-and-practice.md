@@ -95,16 +95,16 @@ What this measures:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Easley, David; Kiefer, Nicholas M.; O'Hara, Maureen; Paperman, Joseph B.** - "Liquidity, information, and infrequently traded stocks," *Journal of Finance* 51(4), 1405–1436 (1996). *PIN: the MLE estimator of the informed share the games take as given.*
 - **Easley, David; López de Prado, Marcos; O'Hara, Maureen** - "Flow toxicity and liquidity in a high-frequency world," *Review of Financial Studies* 25(5), 1457–1493 (2012). *VPIN.*
 - **Andersen, Torben G.; Bondarenko, Oleg** - "VPIN and the flash crash," *Journal of Financial Markets* 17, 1–46 (2014). *The critique: VPIN's predictive power and its flash-crash evidence both fail under scrutiny. Read it before using any toxicity number.*
-- **Glosten, Lawrence R.; Harris, Lawrence E.** - "Estimating the components of the bid/ask spread," *Journal of Financial Economics* 21(1), 123–142 (1988). *How to decompose a *measured* spread into adverse-selection and other components - the empirical bridge from this page's theory to a quoted spread.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 6 (PIN) and Ch 14 (measurement, implementation shortfall). *Corpus verification `hasbrouck_ch6-10.md` / `hasbrouck_ch11-15.md`.*
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §4. *Parameter shifts and serial correlation - the same non-stationarity argument on the execution side.*
+- **Glosten, Lawrence R.; Harris, Lawrence E.** - "Estimating the components of the bid/ask spread," *Journal of Financial Economics* 21(1), 123–142 (1988). *How to decompose a *measured* spread into adverse-selection and other components
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000)
 - **Brunnermeier, Markus K.; Pedersen, Lasse Heje** - "Predatory trading," *Journal of Finance* 60(4), 1825–1863 (2005). *The theory that is hardest to identify empirically.*
-- **Andersen, Torben G.; Bondarenko, Oleg** - see also their subsequent work on order-flow imbalance and its measurement, for the practical construction of imbalance statistics.
+- **Andersen, Torben G.; Bondarenko, Oleg**
 
 ---
 

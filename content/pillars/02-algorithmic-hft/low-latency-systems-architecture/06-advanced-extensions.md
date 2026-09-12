@@ -82,12 +82,12 @@ Standard library only. We hold the downstream work fixed (parse, strategy, seria
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **DPDK documentation** (dpdk.org). Poll-mode drivers, the user-space receive path, and the getting-started/kernel-bypass guide. *(Primary documentation.)*
 - **Solarflare/Onload & EF_VI documentation**. The canonical production kernel-bypass API for trading NICs; zero-copy receive and busy-polling.
 - **Benvenuti, Christian** - *Understanding Linux Network Internals* (2005) and **Rosen, Rami** - *Linux Kernel Networking* (2013). Where the microseconds you are bypassing actually come from.
-- **Kerrisk, Michael** - *The Linux Programming Interface* (2010). `mlockall`, CPU affinity, huge pages, real-time scheduling - the OS primitives of §2.3.
+- **Kerrisk, Michael** - *The Linux Programming Interface* (2010). `mlockall`, CPU affinity, huge pages, real-time scheduling
 - **Databento** - *Low-Latency Tuning Guide for Linux and Trading Systems*. Practitioner-grade tuning checklist (NIC multi-queue/RSS/RFS, IRQ affinity, busy-polling, NUMA-local everything) specific to trading hosts.
 - **De Schryver, Christian (ed.)** - *FPGA Based Accelerators for Financial Applications* (Springer, 2015) and **Leber, Geib & Litz** - "High Frequency Trading Acceleration Using FPGAs" (FPL 2011). The silicon tier, cross-referenced from [[pillars/02-algorithmic-hft/hardware-acceleration-and-fpga|Hardware Acceleration & FPGA]].
 - **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2) (2015) and **Budish, Cramton & Shim** - "The High-Frequency Trading Arms Race," *QJE* (2015). Whether the arms race is worth running.

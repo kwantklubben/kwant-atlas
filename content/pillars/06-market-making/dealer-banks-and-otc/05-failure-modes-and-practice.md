@@ -83,13 +83,13 @@ This is precisely the mechanism the post-2008 clearing mandate targets: remove b
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffie (2010)**, *Asset price dynamics with slow-moving capital*, JF 65(4) - the price-impact/reversal and fire-sale evidence. *Primary PDF in corpus.*
-- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6) - the illiquidity-discount mechanism and its limits.
-- **Duffie (2012)**, *Dark Markets*, Princeton UP - contagion, information, and OTC market failures.
-- **Duffie & Zhu (2011)**, *Does a central clearing counterparty reduce counterparty risk?*, Review of Asset Pricing Studies 1(1) - the clearing trade-off (netting benefit vs concentration risk).
-- **Allen & Gale (2000)**, *Financial contagion*, Journal of Political Economy 108(1) - the foundational network-contagion theory behind §3.
+- **Duffie (2010)**, *Asset price dynamics with slow-moving capital*, JF 65(4)
+- **Duffie, Gârleanu & Pedersen (2005)**, *Over-the-counter markets*, Econometrica 73(6)
+- **Duffie (2012)**, *Dark Markets*, Princeton UP
+- **Duffie & Zhu (2011)**, *Does a central clearing counterparty reduce counterparty risk?*, Review of Asset Pricing Studies 1(1)
+- **Allen & Gale (2000)**, *Financial contagion*, Journal of Political Economy 108(1)
 
 ---
 

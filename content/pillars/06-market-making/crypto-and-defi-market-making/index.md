@@ -67,10 +67,10 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Adams, Hayden, Zinsmeister, Noah, Salem, Moody, Keefer, River & Robinson, Dan**: *Uniswap v3 Core* (2021), the Uniswap v3 whitepaper. *Canonical source for concentrated liquidity; the v3 token formulas above are transcribed and numerically verified.*
-- **Clark, Joseph**: *The Replicating Portfolio of a Constant Product Market* (2020), SSRN 3550601. *The closed-form proof that a CPMM LP's payoff is a short position in a bundle of European options - the "short gamma" statement made rigorous.*
+- **Clark, Joseph**: *The Replicating Portfolio of a Constant Product Market* (2020), SSRN 3550601. *The closed-form proof that a CPMM LP's payoff is a short position in a bundle of European options
 - **Milionis, Jason, Moallemi, Ciamac C., Roughgarden, Tim & Zhang, Anthony Lee**: *Automated Market Making and Loss-Versus-Rebalancing* (2022), arXiv:2208.06046. *Introduces LVR, decomposes LP returns into the rebalancing-strategy return plus "fees minus LVR," and proves the $\tfrac18\sigma^2V$ instantaneous rate.*
 - **Capponi, Agostino & Jia, Ruizhe**: *The Anatomy of a Liquidity Provision in Automated Market Makers* (2022), arXiv:2210.07852. *The adverse-selection view of AMM LPs; LP losses decomposed across fee tiers and pool sizes.*
 - **Lehar, Alfred & Parlour, Christine**: *Decentralized Exchange: The Uniswap Automated Market Maker* (2023). *Empirical anatomy of who provides and who withdraws Uniswap v2/v3 liquidity, and why LPs flee volatile pools.*

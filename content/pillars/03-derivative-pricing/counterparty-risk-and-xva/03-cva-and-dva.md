@@ -110,12 +110,12 @@ Notice the *structure*: the counterparty is riskier than you (150bp vs 100bp), s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory**, *The xVA Challenge*, Ch 17 (CVA/DVA, unilateral & bilateral formulas, spread form, margin impact, WWR). *Primary; all numbers verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 (hazard from spread, real vs risk-neutral PD, CVA & DVA `fnd - CVA + DVA`, wrong-way/right-way risk).
-- **Brigo & Mercurio**, *Interest Rate Models*, Ch 21 (Prop 21.6.1: risky value = default-free value minus an LGD-weighted call on residual NPV) and Ch 22 (intensity models, default-time simulation).
-- **Pykhtin, Michael & Steven Zhu (2007)**: *A Guide to Modeling Counterparty Credit Risk* - the classic EE/EPE/PFE framework.
+- **Gregory**, *The xVA Challenge*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Brigo & Mercurio**, *Interest Rate Models*
+- **Pykhtin, Michael & Steven Zhu (2007)**: *A Guide to Modeling Counterparty Credit Risk*
 
 ---
 

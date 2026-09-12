@@ -99,12 +99,12 @@ Four things the trace proves, each a first principle:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Halls-Moore, Michael**, *QuantStart - Event-Driven Backtesting with Python* - the origin of the DataHandler/Strategy/Portfolio/ExecutionHandler decomposition used here.
-- **NautilusTrader Docs** (nautilustrader.io) - the same components formalised as an actor/message-bus system with an explicit `Clock`; the production reference for everything in §2.
-- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020) - Ch 6–7 build this class hierarchy from scratch and deploy it.
-- **Backtrader Docs** (backtrader.com) - a widely-taught alternative decomposition (`Cerebro` orchestrator); read for the shape of the component contracts.
+- **Halls-Moore, Michael**, *QuantStart
+- **NautilusTrader Docs** (nautilustrader.io)
+- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020)
+- **Backtrader Docs** (backtrader.com)
 
 ---
 

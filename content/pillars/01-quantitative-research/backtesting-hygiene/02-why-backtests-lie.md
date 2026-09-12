@@ -81,12 +81,12 @@ The searched rule looks like a **Sharpe 1.3 strategy in sample** and is worth **
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.), Ch 7 §7.1–7.4 (training vs test error, bias–variance eq. 7.9, in-sample variance eq. 7.12, optimism eq. 7.24, effective $df$ eq. 7.32) and §7.10.2–7.10.3 (the wrong-vs-right CV example: full-data screening yields CV error $3\%$ against a true $50\%$). *Math-verified in the corpus.*
-- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014), §"Backtest overfitting under memory effects" and §"Backtest overfitting and the holdout method".
-- **Bailey, Borwein, López de Prado & Zhu**: *Pseudo-Mathematics and Financial Charlatanism* (Notices of the AMS, 2014) - the formal "overfitting ⇒ loss maximization under memory" result.
-- **Harvey, C. R. & Liu, Y.**: *Backtesting*, JPM (2015) - the origin of the "50% haircut" folklore and its critique.
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.)
+- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014)
+- **Bailey, Borwein, López de Prado & Zhu**: *Pseudo-Mathematics and Financial Charlatanism* (Notices of the AMS, 2014)
+- **Harvey, C. R. & Liu, Y.**: *Backtesting*, JPM (2015)
 
 ---
 

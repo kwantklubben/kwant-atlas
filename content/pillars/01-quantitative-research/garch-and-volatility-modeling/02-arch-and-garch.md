@@ -96,12 +96,12 @@ Two things to read off. First, **MLE recovers the true process closely**: the es
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Engle, Robert F.** (1982): *Autoregressive Conditional Heteroscedasticity…*, Econometrica 50(4), 987–1007 - ARCH. *Verified corpus refs/pillar1.*
-- **Bollerslev, Tim** (1986): *Generalized Autoregressive Conditional Heteroskedasticity*, J. Econometrics 31(3), 307–327 - GARCH.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - §3.4 (ARCH: definitions, uncond. variance, ARCH(1) kurtosis, weaknesses), §3.5 (GARCH: $a_t^2$ ARMA form, stationarity $\max(p,q)$ bound, forecasting).
-- **Hansen, Peter R. & Lunde, Asger** (2005): *A Forecast Comparison of Volatility Models: Does Anything Beat a GARCH(1,1)?*, J. Applied Econometrics 20(7) - the empirical defence of the low-order model.
+- **Engle, Robert F.** (1982): *Autoregressive Conditional Heteroscedasticity…*, Econometrica 50(4), 987–1007
+- **Bollerslev, Tim** (1986): *Generalized Autoregressive Conditional Heteroskedasticity*, J. Econometrics 31(3), 307–327
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Hansen, Peter R. & Lunde, Asger** (2005): *A Forecast Comparison of Volatility Models: Does Anything Beat a GARCH(1,1)?*, J. Applied Econometrics 20(7)
 
 ---
 

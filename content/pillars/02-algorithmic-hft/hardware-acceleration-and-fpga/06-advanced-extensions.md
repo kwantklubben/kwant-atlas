@@ -101,14 +101,14 @@ Three lessons in the numbers. **(i)** The medium saving is huge and consistent: 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Budish, Cramton & Shim** (2015) - "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response," *QJE* 130(4), 1547–1621. *The market-design critique; the case that the arms race is a microstructure artifact.* `ADV`
-- **MacKenzie**, *Trading at the Speed of Light* (2021) - the definitive account of microwave/laser networks and the geography of latency. `BEGIN`
-- **De Schryver (ed.)** - *FPGA Based Accelerators for Financial Applications* (2015) - HLS-readiness and mixed-precision case studies (the toolchain half of this page). `ADV`
-- **MDPI *Electronics* (2024)** - FPGA option-pricing/HFT accelerator survey, with the speedup/energy figures that make or break an accelerator business case. `INT`
-- **DPDK and P4/programmable-switch documentation** - the primary sources for in-network aggregation and match–action pipelines. `INT`
-- **Aldridge**, *High-Frequency Trading* (2nd ed.) - infrastructure chapters on connectivity and venue access economics. `INT`
+- **MacKenzie**, *Trading at the Speed of Light* (2021)
+- **De Schryver (ed.)** - *FPGA Based Accelerators for Financial Applications* (2015)
+- **MDPI *Electronics* (2024)**
+- **DPDK and P4/programmable-switch documentation**
+- **Aldridge**, *High-Frequency Trading* (2nd ed.)
 
 ---
 

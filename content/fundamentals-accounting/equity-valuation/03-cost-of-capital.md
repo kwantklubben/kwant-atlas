@@ -88,12 +88,12 @@ Both Damodaran checks reproduce exactly ($21.30\%$ / $15.60\%$ / $9.94\%$). The 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Damodaran**, *Investment Valuation*, Ch 7 (risk-free rate), Ch 8 (equity risk premiums, country risk), Ch 9 (beta: regression and bottom-up), Ch 10 (cost of debt, WACC, market-value weights and circularity).
-- **Berk & DeMarzo**, *Corporate Finance*, Ch 12 - the rigorous derivation of WACC and when it is and is not the right discount rate.
-- **Modigliani & Miller (1958)**, "The Cost of Capital, Corporation Finance and the Theory of Investment", *AER* - the irrelevance theorems that make leverage/WACC analysis meaningful.
-- **Koller et al. (McKinsey)**, *Valuation*, Ch 9–10 - practitioner estimation of the cost of capital and the constant-vs-changing-leverage debate.
+- **Damodaran**, *Investment Valuation*
+- **Berk & DeMarzo**, *Corporate Finance*
+- **Modigliani & Miller (1958)**, "The Cost of Capital, Corporation Finance and the Theory of Investment", *AER*
+- **Koller et al. (McKinsey)**, *Valuation*
 
 ---
 

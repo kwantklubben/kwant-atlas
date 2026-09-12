@@ -67,12 +67,12 @@ Read that table carefully. Transaction 5 (a cash sale) raises *both* assets and 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 1 (Fig 1.1: the three activities) and Ch 2 (the form of the statements, stocks vs flows, articulation). *Deep-read in the corpus.*
-- **Ball & Brown (1968)**, *An Empirical Evaluation of Accounting Income Numbers* - why the scoreboard matters: income numbers carry information that markets demonstrably use.
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - builds the three statements line by line in plain English (best first book).
-- **Mullis & Orloff**, *The Accounting Game* - the same equation taught through a lemonade-stand case (the origin of the running-example idea used here).
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Ball & Brown (1968)**, *An Empirical Evaluation of Accounting Income Numbers*
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide*
+- **Mullis & Orloff**, *The Accounting Game*
 
 ---
 

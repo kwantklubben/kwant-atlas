@@ -86,12 +86,12 @@ Both measures satisfy **T, PH, M**. VaR fails **S**; ES passes. That single `Fal
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999) - §2.2–2.4 (acceptance-set axioms; coherence Def. 2.4), §3.3 (VaR's non-convex acceptance set), §4.1 (Prop. 4.1, scenario representation), §5.1 (TCE/WCE; Props. 5.1–5.3). *Primary source; read in full from the corpus PDF.*
-- **Föllmer & Schied**, *Stochastic Finance: An Introduction in Discrete Time* - the modern axiomatic treatment (convex risk measures, monetary measures of risk).
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 2 - coherence, convexity, and law-invariant measures in textbook form.
-- **Acerbi & Tasche**, *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7) (2002) - ES coherence under general distributions.
+- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999)
+- **Föllmer & Schied**, *Stochastic Finance: An Introduction in Discrete Time*
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
+- **Acerbi & Tasche**, *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7) (2002)
 
 ---
 

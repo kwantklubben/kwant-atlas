@@ -112,13 +112,13 @@ The regression cleanly separates the transitory (order-processing) half-spread $
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, Journal of Financial Economics 21(1), 123–142 - the transitory-vs-permanent (order-processing vs information) decomposition.
-- **Stoll (1989)**, *Inferring the components of the bid-ask spread: theory and empirical tests*, Journal of Finance 44(1), 115–134 - reversal probability $\pi$ and reversal size $\delta$; order-processing vs inventory vs adverse-information on NASDAQ/NMS.
-- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, Review of Financial Studies 10(4), 995–1034 - the unified three-component framework.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 8 (generalized Roll, $\sigma_w^2=\gamma_0+2\gamma_1$ identification) and Ch 9 (Glosten–Harris, MRR, multivariate VAR) - *verified per-chapter in the corpus*.
-- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1), 47–73 - the inventory-holding model.
+- **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, Journal of Financial Economics 21(1), 123–142
+- **Stoll (1989)**, *Inferring the components of the bid-ask spread: theory and empirical tests*, Journal of Finance 44(1), 115–134
+- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, Review of Financial Studies 10(4), 995–1034
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1), 47–73
 
 ---
 

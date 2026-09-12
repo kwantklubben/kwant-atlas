@@ -61,12 +61,12 @@ Moving correlation from 0.3 to 0.9 raises 1-yr 99% VaR from 37.5% to 45.3% and *
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14) - the authoritative post-crisis catalogue of these failures (scenario-selection bias, insufficient severity, interaction neglect, governance). *Directly verified for this page.*
-- **Hull**, *OFOD*, Ch 22 - VaR/ES definitions and the correlation-driven portfolio variance used in §2–3.
-- **Brunnermeier & Pedersen**, *Market Liquidity and Funding Liquidity* (2009) and **Brunnermeier**, *Deciphering the Liquidity and Credit Crunch* (2009) - the mechanism by which a stress loss becomes a *funding* spiral, the real-world sequel to correlation breakdown (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Margin Spirals]]).
-- **McNeil, Frey & Embrechts**, *QRM*, Ch 13 - stress testing's own failure modes and best practice.
+- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14)
+- **Hull**, *OFOD*
+- **Brunnermeier & Pedersen**, *Market Liquidity and Funding Liquidity* (2009) and **Brunnermeier**, *Deciphering the Liquidity and Credit Crunch* (2009)
+- **McNeil, Frey & Embrechts**, *QRM*
 
 ---
 

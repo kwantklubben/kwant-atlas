@@ -79,12 +79,12 @@ The learned policy **matches the exact optimum** (trade in states 0 and 2, hold 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sutton, Richard S. & Barto, Andrew G.**: *Reinforcement Learning: An Introduction* (2nd ed., 2018) - Ch 1 (the RL problem), Ch 2 (multi-armed bandits, explore/exploit), Ch 3 (MDPs, return, value functions, Bellman). *This page is Ch 1–3 in finance clothing.*
-- **Bertsekas, Dimitri P.**: *Dynamic Programming and Optimal Control*, Vol I - the value-function formalism behind Bellman.
-- **Nevmyvaka, Feng & Kearns** (ICML 2006) - the execution-RL paper; skim the introduction for *why* trading is an RL problem, then read the detail in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/06-advanced-extensions|06 · Advanced Extensions]].
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning*, Ch 1 - why supervised financial ML already struggles, the necessary backdrop for what RL can and cannot add.
+- **Sutton, Richard S. & Barto, Andrew G.**: *Reinforcement Learning: An Introduction* (2nd ed., 2018)
+- **Bertsekas, Dimitri P.**: *Dynamic Programming and Optimal Control*, Vol I
+- **Nevmyvaka, Feng & Kearns** (ICML 2006)
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning*
 
 ---
 

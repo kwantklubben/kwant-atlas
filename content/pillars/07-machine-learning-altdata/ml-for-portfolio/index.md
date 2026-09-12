@@ -68,16 +68,16 @@ Hub signposts - the folder's full failure-mode analysis lives in [[pillars/07-ma
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (2018) - Ch 6 (ensemble methods, bias–variance–noise, bagging variance), Ch 10 (bet sizing from predicted probabilities, meta-labeling), Ch 16 (Machine Learning Asset Allocation: Markowitz's curse, condition number, HRP tree clustering → quasi-diagonalization → recursive bisection). *The primary anchor for this folder.*
-- **López de Prado, Marcos**: *Machine Learning for Asset Managers* (2020) - Ch 2 (covariance estimation, denoising/detoning, Marchenko–Pastur), Ch 4 (optimal clustering) and Ch 7 (portfolio construction / NCO). *Companion anchor.*
-- **Granger, C. W. J. & Ramanathan, R.**: "Improved Methods of Combining Forecasts," *J. Forecasting* 3(2):197–204, 1984 - the OLS forecast-combination regression.
-- **López de Prado, Marcos**: "Building Diversified Portfolios That Outperform Out of Sample," *J. Portfolio Management* 42(4):59–69, 2016 - the HRP paper; canonical ML-for-portfolio reference.
-- **López de Prado, Marcos**: "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019 - MCD/SK/NaN/TS/DNN covariance estimators vs the naive $1/N$ benchmark.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - §7.3 (bias–variance tradeoff), Ch 16 (ensemble learning), eq. 15.1 (bagging variance decomposition). *Verified in the corpus (esl_ch11-18).*
-- **DeMiguel, Garlappi & Uppal**: "Optimal Versus Naive Diversification," *RFS* 22(5):1915–1953, 2009 - the $1/N$ benchmark that beats mean-variance out-of-sample.
-- **Ledoit & Wolf**: "Improved Estimation of the Covariance Matrix of Stock Returns," *J. Empirical Finance* 10(5):603–621, 2003 - shrinkage.
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (2018)
+- **López de Prado, Marcos**: *Machine Learning for Asset Managers* (2020)
+- **Granger, C. W. J. & Ramanathan, R.**: "Improved Methods of Combining Forecasts," *J. Forecasting* 3(2):197–204, 1984
+- **López de Prado, Marcos**: "Building Diversified Portfolios That Outperform Out of Sample," *J. Portfolio Management* 42(4):59–69, 2016
+- **López de Prado, Marcos**: "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **DeMiguel, Garlappi & Uppal**: "Optimal Versus Naive Diversification," *RFS* 22(5):1915–1953, 2009
+- **Ledoit & Wolf**: "Improved Estimation of the Covariance Matrix of Stock Returns," *J. Empirical Finance* 10(5):603–621, 2003
 
 ---
 

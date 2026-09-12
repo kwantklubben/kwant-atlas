@@ -79,11 +79,11 @@ The STAR midpoint lands at $0.00$ - right on the SETAR threshold - and reaches $
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, 3rd ed. - Ch 4 §4.1 (SETAR Eq. 4.9, ergodicity condition, STAR Eq. 4.15, Markov-switching contrast §4.1.3) and Ch 8 §8.7 (threshold cointegration, S&P 500 basis thresholds). *Verified: tsay_ch4-6.md, tsay_ch7-9.md.*
-- **Tong, Howell**: *Non-Linear Time Series* (1990) and *Threshold Models in Non-linear Time Series Analysis* (1983) - the origin of SETAR/threshold models (Tsay's Ch 4 frames Hamilton's Markov-switching as Tong's *stochastic* counterpart).
-- **Teräsvirta, Timo**: *Specification, Estimation, and Evaluation of Smooth Transition Autoregressive Models*, JASA (1994) - STAR estimation and the logistic/exponential transition.
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*, 3rd ed.
+- **Tong, Howell**: *Non-Linear Time Series* (1990) and *Threshold Models in Non-linear Time Series Analysis* (1983)
+- **Teräsvirta, Timo**: *Specification, Estimation, and Evaluation of Smooth Transition Autoregressive Models*, JASA (1994)
 
 ---
 

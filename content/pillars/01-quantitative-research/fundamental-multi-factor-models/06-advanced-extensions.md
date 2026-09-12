@@ -70,14 +70,14 @@ Two latent factors explain **91.2%** of total variance. The loadings tell the ec
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**, "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - the 5-factor model, eq. (5), the dividend-discount rationale (eqs. 1–3), GRS rejection, factor-definition insensitivity. *Verified against the corpus paper.*
-- **Tsay**, *Analysis of Financial Time Series*, §9.4–9.6 - PCA, statistical factor analysis, communality/specific variance, rotation, APCA, factor-number selection (CK, Bai–Ng). *Math-verified.*
-- **Hastie et al.**, *The Elements of Statistical Learning*, Ch 14 - PCA as the best rank-$q$ linear manifold (eqs. 14.49–14.54, SVD $X=UDV^\top$); Ch 3 - shrinkage for the zoo.
-- **Hou, Kewei; Xue, Chen & Zhang, Lu**, "Digesting Anomalies: An Investment Approach" (*RFS*, 2015) - the q-factor model consolidating anomalies through investment and ROE.
-- **Green, Hand & Zhang**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017) - the factor zoo, empirically.
-- **Harvey, Liu & Zhu**, "... and the Cross-Section of Expected Returns" (*RFS*, 2016) - the multiple-testing hurdle.
+- **Fama & French**, "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Hastie et al.**, *The Elements of Statistical Learning*
+- **Hou, Kewei; Xue, Chen & Zhang, Lu**, "Digesting Anomalies: An Investment Approach" (*RFS*, 2015)
+- **Green, Hand & Zhang**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017)
+- **Harvey, Liu & Zhu**, "... and the Cross-Section of Expected Returns" (*RFS*, 2016)
 
 ---
 

@@ -103,11 +103,11 @@ The solver recovers the firm parameters to machine precision - the forward/inver
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Merton (1974)**, *On the Pricing of Corporate Debt* - §III (PDE and the equity call, eqs. 10–12), §IV (debt value, risk premium, comparative statics, eqs. 13–18). *Primary source; formula-verified in the corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives* - §24.6 "Using equity prices" eqs. (24.3)–(24.4); Example 24.3 solves the system numerically. *Verification report in the corpus.*
-- **Bluhm, Overbeck & Wagner**, *Introduction to Credit Risk Modeling*, Ch 3 (Merton's asset-value model in full detail). *Corpus digest available.*
+- **Merton (1974)**, *On the Pricing of Corporate Debt*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Bluhm, Overbeck & Wagner**, *Introduction to Credit Risk Modeling*
 
 ---
 

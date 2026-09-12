@@ -64,14 +64,14 @@ The **true** persistence was $0.98$ in both regimes; the full-sample fit reports
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lamoureux, Christopher G. & Lastrapes, William D.** (1990): *Persistence in Variance, Structural Change, and the GARCH Model*, J. Business & Economic Statistics 8(2) - the break-inflates-persistence result.
-- **Diebold, Francis X.** (1986): *Modeling the Persistence of Conditional Variances* - IGARCH and the persistence question.
-- **Hansen, Peter R. & Lunde, Asger** (2005): *A Forecast Comparison of Volatility Models…*, J. Applied Econometrics 20(7) - parsimony wins.
-- **Kupiec, Paul** (1995) and **Christoffersen, Peter** (1998): *Evaluating Interval Forecasts*, International Economic Review 39(4) - VaR backtesting. *Verified corpus refs/pillar4 - `14_Christoffersen_1998_evaluating_interval_forecasts.pdf`.*
+- **Lamoureux, Christopher G. & Lastrapes, William D.** (1990): *Persistence in Variance, Structural Change, and the GARCH Model*, J. Business & Economic Statistics 8(2)
+- **Diebold, Francis X.** (1986): *Modeling the Persistence of Conditional Variances*
+- **Hansen, Peter R. & Lunde, Asger** (2005): *A Forecast Comparison of Volatility Models…*, J. Applied Econometrics 20(7)
+- **Kupiec, Paul** (1995) and **Christoffersen, Peter** (1998): *Evaluating Interval Forecasts*, International Economic Review 39(4)
 - **Derman, Emanuel** (1996): *Model Risk*, Quantitative Strategies Research Notes, Goldman Sachs. *Verified corpus refs/pillar4.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - §3.4.2 (ARCH weaknesses), §3.16 (kurtosis conditions).
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
 
 ---
 

@@ -92,13 +92,13 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McKinney, Wes**: *Python for Data Analysis* (3rd ed., O'Reilly, 2022) - written by the creator of pandas; the canonical NumPy/pandas/Jupyter reference. Free open-access HTML at `wesmckinney.com/book`. *The foundation of this entire folder.*
-- **Gorelick & Ozsvald**: *High Performance Python* (2nd ed., O'Reilly, 2020) - profiling, compiled acceleration (Cython/Numba), parallel processing, memory optimization for the Python layer that sits on top of the C++/NumPy core.
-- **Hilpisch, Yves**: *Python for Finance* (2nd ed., 2018) and *Python for Algorithmic Trading* (2020) - numerical computing with NumPy, vectorized finance algorithms, and the full vectorized-to-event-driven backtesting workflow. *(The backtesting book cross-lists to [[pillars/08-quantitative-development/event-driven-backtesting-engines/index|Event-Driven Backtesting Engines]].)*
-- **VectorBT**: *Vectorized Backtesting with VectorBT* + official docs (vectorbt.dev) - the numpy/numba-accelerated vectorized backtesting engine used in the research workflow.
-- **QuantEcon - Numba chapter** (quantecon.org) - the free, economics-focused JIT tutorial bringing numeric Python loops to compiled speed; and the **Numba official docs** (numba.pydata.org).
+- **McKinney, Wes**: *Python for Data Analysis* (3rd ed., O'Reilly, 2022)
+- **Gorelick & Ozsvald**: *High Performance Python* (2nd ed., O'Reilly, 2020)
+- **Hilpisch, Yves**: *Python for Finance* (2nd ed., 2018) and *Python for Algorithmic Trading* (2020)
+- **VectorBT**: *Vectorized Backtesting with VectorBT* + official docs (vectorbt.dev)
+- **QuantEcon - Numba chapter** (quantecon.org)
 
 ---
 

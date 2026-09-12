@@ -111,13 +111,13 @@ Standard library only. The example times a tiny operation both ways - single-sho
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fog, Agner**: *Optimizing Software in C++* - compiler flags, the optimiser's transformations, and measurement pitfalls; the primary reference for §2.5.
-- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective* - performance measurement and `perf`/counter basics, and why the mean hides the tail (Ch 5).
-- **Ghosh, Sourav**: *Building Low Latency Applications with C++* - profiling and tuning a low-latency trading system end-to-end, and the flag/toolchain discipline.
-- **Gregg, Brendan**: *Systems Performance* (and *BPF Performance Tools*) - the methodology for CPU profiling, flamegraphs, and off-CPU analysis on Linux; the practitioner's companion for §3.
-- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.) - measuring under concurrency (TSan, contention), cross-listed to [[pillars/08-quantitative-development/concurrency-and-lockless-programming|Concurrency & Lockless Programming]].
+- **Fog, Agner**: *Optimizing Software in C++*
+- **Bryant & O'Hallaron**: *Computer Systems: A Programmer's Perspective*
+- **Ghosh, Sourav**: *Building Low Latency Applications with C++*
+- **Gregg, Brendan**: *Systems Performance* (and *BPF Performance Tools*)
+- **Williams, Anthony**: *C++ Concurrency in Action* (2nd ed.)
 
 ---
 

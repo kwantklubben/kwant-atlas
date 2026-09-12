@@ -90,14 +90,14 @@ Builds value, profitability, investment, and the accruals signal from a twelve-f
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - value (B/M, E/P) as priced cross-sectional drivers.
-- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993) - the three-factor model and the SMB/HML construction.
-- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - profitability (RMW) and investment (CMA) added to the model; the formal seat of fundamentals.
-- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013) - gross profitability orthogonal to value.
-- **Hou, Xue & Zhang**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015) - the q-factor model (investment + ROE); the production-theory sign of the investment factor.
-- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996) - the accruals (quality) factor.
+- **Fama & French**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **Fama & French**: "Common Risk Factors in the Returns on Stocks and Bonds" (*JFE*, 1993)
+- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013)
+- **Hou, Xue & Zhang**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015)
+- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996)
 
 ---
 

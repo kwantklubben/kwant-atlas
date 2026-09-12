@@ -79,11 +79,11 @@ Two things to notice. First, the **ATM call is pure time value** ($10.4506$ of i
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 10 (call/put definitions, four positions and payoffs, underlying assets, contract specification, moneyness, intrinsic & time value, margins) and Ch 11 §11.1 (the six factors $S_0,K,T,\sigma,r$,dividends with the direction-of-effect table).
-- **Shreve**, *Stochastic Calculus for Finance I*, §1.1 and §5.1 (the payoff $V_m=(S_m-K)^+$, the American algorithm $\max\{\text{continuation},\text{intrinsic}\}$).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.1 (the closed form whose inputs this page names) and §1.2 (parities and symmetries of the same payoffs).
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

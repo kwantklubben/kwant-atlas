@@ -71,14 +71,14 @@ Hub signposts - the full analysis lives in [[pillars/01-quantitative-research/mo
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Jegadeesh, Narasimhan & Titman, Sheridan**: *Profitability of Momentum Strategies: An Evaluation of Alternative Explanations*, J. Finance 56(2), 699–720 (2001). *Verified corpus refs/13; extends the classic 1993 JFE paper that first documented US equity momentum (1965–1989).*
-- **Moskowitz, Tobias J., Ooi, Yao Hua & Pedersen, Lasse Heje**: *Time Series Momentum*, J. Financial Economics 104(2), 228–250 (2012). *Verified corpus refs/14 - TSMOM across 58 futures contracts, EWMA vol scaling, TSMOM-vs-XSMOM relation.*
-- **Asness, Clifford S., Moskowitz, Tobias J. & Pedersen, Lasse Heje**: *Value and Momentum Everywhere*, J. Finance 68(3), 929–985 (2013). *Verified corpus refs/15 - value & momentum premia in eight markets, negative correlation, 50/50 combination.*
-- **Daniel, Kent & Moskowitz, Tobias J.**: *Momentum Crashes*, J. Financial Economics 122(2), 221–247 (2016). *Verified corpus refs/16 - panic-state crashes, option-like loser payoffs, optimal dynamic momentum.*
-- **Barroso, Pedro & Santa-Clara, Pedro**: *Momentum Has Its Moments*, J. Financial Economics 116(1), 111–120 (2015). *Verified corpus refs/17 - volatility-managed momentum, Sharpe 0.53→0.97, crash risk nearly eliminated.*
-- **Asness, Clifford S., Frazzini, Andrea, Israel, Ronen & Moskowitz, Tobias J.**: *Fact, Fiction, and Momentum Investing*, J. Portfolio Management 40th Ann. (2014). *Verified corpus refs/18 - the momentum premium persists: 200+ years, 40+ countries, 8.3% annual spread, ~half from the long side.*
+- **Moskowitz, Tobias J., Ooi, Yao Hua & Pedersen, Lasse Heje**: *Time Series Momentum*, J. Financial Economics 104(2), 228–250 (2012). *Verified corpus refs/14
+- **Asness, Clifford S., Moskowitz, Tobias J. & Pedersen, Lasse Heje**: *Value and Momentum Everywhere*, J. Finance 68(3), 929–985 (2013). *Verified corpus refs/15
+- **Daniel, Kent & Moskowitz, Tobias J.**: *Momentum Crashes*, J. Financial Economics 122(2), 221–247 (2016). *Verified corpus refs/16
+- **Barroso, Pedro & Santa-Clara, Pedro**: *Momentum Has Its Moments*, J. Financial Economics 116(1), 111–120 (2015). *Verified corpus refs/17
+- **Asness, Clifford S., Frazzini, Andrea, Israel, Ronen & Moskowitz, Tobias J.**: *Fact, Fiction, and Momentum Investing*, J. Portfolio Management 40th Ann. (2014). *Verified corpus refs/18
 
 ---
 

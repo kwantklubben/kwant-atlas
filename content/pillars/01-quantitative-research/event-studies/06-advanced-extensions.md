@@ -87,14 +87,14 @@ Stdlib only. Sixty firms announce earnings at day 0 with a SUE. The market under
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ball, Ray & Brown, Philip (1968)**, *An Empirical Evaluation of Accounting Income Numbers*, J. Accounting Research 6(2), 159–178 - the original information-content and PEAD study. *Cited extensively in Kothari–Warner (2007).*
-- **Beaver (1968)**, *The Information Content of Annual Earnings Announcements*, J. Accounting Research 6(Supplement), 67–92 - variance-based information content.
-- **Bernard & Thomas (1989)**, *Post-Earnings-Announcement Drift: Delayed Price Response or Risk Premium?*, J. Accounting Research 27 - quantified PEAD; attributed it to delayed response.
-- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance Ch. 1 - cross-sectional tests §3.7, long-horizon BHAR (eq. 7) and Jensen-alpha (eq. 8) approaches, drift literature §4.1. *Verified refs/52, read in full.*
-- **Fama (1998)**, *Market Efficiency, Long-Term Returns, and Behavioral Finance*, J. Financial Economics 49(3) - long-horizon anomalies and the joint-test problem.
-- **Sefcik & Thompson (1986)** - cross-sectional regression properties in event studies.
+- **Ball, Ray & Brown, Philip (1968)**, *An Empirical Evaluation of Accounting Income Numbers*, J. Accounting Research 6(2), 159–178
+- **Beaver (1968)**, *The Information Content of Annual Earnings Announcements*, J. Accounting Research 6(Supplement), 67–92
+- **Bernard & Thomas (1989)**, *Post-Earnings-Announcement Drift: Delayed Price Response or Risk Premium?*, J. Accounting Research 27
+- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance
+- **Fama (1998)**, *Market Efficiency, Long-Term Returns, and Behavioral Finance*, J. Financial Economics 49(3)
+- **Sefcik & Thompson (1986)**
 
 ---
 

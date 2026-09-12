@@ -80,11 +80,11 @@ The bad slice produces a **negative risk-neutral density** ($-6.92$ at $k=-0.04$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 7 §7.8 (shape is model-generic), Ch 8 (dynamics, digitals & digital cliquets, the 12%-of-notional digital error), Ch 9 (barriers & quasistatic hedging), Ch 10 (exotic cliquets: LCFG 3.53% vs 2.55%). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 2 §2.2 (no-arbitrage & convex order 2.9/2.14/2.20), §2.5–2.6 (SSR, forward skew, vol-of-vol mismatch), Ch 3 §3.1.7 (model-independent bounds). *Math-verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 §20.5–20.8 (minimum-variance delta, model role, single-large-jump frown).
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

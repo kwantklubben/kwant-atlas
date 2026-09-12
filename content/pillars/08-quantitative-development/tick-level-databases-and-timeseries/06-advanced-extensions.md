@@ -77,14 +77,14 @@ The same table answers as $104.33$ or $97.00$ depending on the *as-of date* - an
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **kdb+ and q - Tick Architecture** (`code.kx.com`) - tickerplant/RDB/HDB/gateway/chained tickerplants, `u`/`aj`/`wj`, and the `.Q` partition utilities; the authoritative reference for the pipeline in §3. **Priority H.**
-- **Borror, Jeffry** - *Q for Mortals (4th ed.)* - the q vocabulary for building the above.
-- **Psaris, Nick** - *Q Tips* - production patterns for scalable q pipelines and PIT joins.
-- **DuckDB - AsOf Join & Time-Series Documentation** (`duckdb.org`) and **Needham & Simons**, *DuckDB in Action*, ch. 4 - the same pipeline in an embedded engine, including `ASOF JOIN` over bitemporal keys.
-- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018) - why append-only, PIT pipelines are the precondition for trustworthy research; cross-listed with [[pillars/08-quantitative-development/event-driven-backtesting-engines|Event-Driven Backtesting Engines]].
-- **Novotný, Jan et al.** - *Machine Learning and Big Data with kdb+/q* (Wiley, 2017) - pipelines applied to high-frequency analytics.
+- **kdb+ and q - Tick Architecture** (`code.kx.com`)
+- **Borror, Jeffry** - *Q for Mortals (4th ed.)*
+- **Psaris, Nick** - *Q Tips*
+- **DuckDB - AsOf Join & Time-Series Documentation** (`duckdb.org`) and **Needham & Simons**, *DuckDB in Action*, ch. 4
+- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Novotný, Jan et al.** - *Machine Learning and Big Data with kdb+/q* (Wiley, 2017)
 
 ---
 

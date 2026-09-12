@@ -114,14 +114,14 @@ Three lessons. **(A)** The binomial closed form and its Monte Carlo agree to ~3 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017) - the fill function (eq. 1) and its use as the simulation primitive.
-- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) - the tractable Poisson queue model with closed-form fill probabilities.
-- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013) - empirical price-time vs pro-rata priority, cancel-to-trade ratios, and the stylized facts a fill model must respect.
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 15 - order placement as a first-passage problem and the censoring of limit orders (only a minority execute). *Corpus verification `hasbrouck_ch11-15.md`.*
-- **Lo, MacKinlay & Zhang** - "Econometric models of limit-order executions," *JFE* 65(1) (2002) - the survival/hazard formulation of execution times (and the finding that first-passage models are *too optimistic* about execution speed).
-- **Abergel et al.** - *Limit Order Books* (Cambridge, 2016) - the LOB-simulation monograph.
+- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017)
+- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010)
+- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Lo, MacKinlay & Zhang** - "Econometric models of limit-order executions," *JFE* 65(1) (2002)
+- **Abergel et al.** - *Limit Order Books* (Cambridge, 2016)
 
 ---
 

@@ -90,13 +90,13 @@ A **21.25-point** survivorship gap on a five-firm toy universe is deliberately s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **WRDS**, *Compustat Point-in-Time* documentation and the *Compustat User's Guide* - the canonical statement of look-ahead and survivorship hygiene; cross-referenced from the Corpus's `data-sources-and-corporate-data` section as the "sourcing hygiene every fundamentals backtest must obey."
-- **SEC**, *EDGAR APIs* - the rate-limit guidance (identifying `User-Agent`, ~10 req/s) and filing deadlines behind the lag schedule; verified against `Data_SEC_EDGAR_access.txt`.
-- **Kenneth R. French**, *Data Library* and its description files - the rebalancing/breakpoint conventions that show how a careful provider documents its own construction.
-- **Sloan, Richard** (*TAR*, 1996) and **Dechow, Sloan & Sweeney** (*TAR*, 1995) - the empirical case that as-reported and restated figures differ *economically*, not just cosmetically.
-- **Fama & French** (*JF*, 1992; *JFE*, 2015) - the results any point-in-time-correct replication must reproduce; the standard a hygienic pipeline is built to match.
+- **WRDS**, *Compustat Point-in-Time* documentation and the *Compustat User's Guide*
+- **SEC**, *EDGAR APIs*
+- **Kenneth R. French**, *Data Library* and its description files
+- **Sloan, Richard** (*TAR*, 1996) and **Dechow, Sloan & Sweeney** (*TAR*, 1995)
+- **Fama & French** (*JF*, 1992; *JFE*, 2015)
 
 ---
 

@@ -100,12 +100,12 @@ $v(4)=1.5$ and $v(8)=0.75$ match the random-walk rule values exactly, and $v(x)=
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 5 (American recursion, Ex. 5.1, stopping times, optional sampling), Ch 6 (properties of American securities, Def 6.1(a)–(d), consumption hedge, compound European decomposition), Ch 7 (Jensen; the no-early-exercise corollary), Ch 8 (random walks, first-passage times, $\mathbb E[\alpha^{\tau_1}]$, the perpetual put $v(x)$ and its difference-equation conditions). *Math-verified in the corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13.5–13.9 - American backward induction and the convergence proof sketch; Ch 15–18 for the continuous limit.
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, Ch 3 (analytic American approximations: Barone–Adesi–Whaley, Bjerksund–Stensland) and §4.2 (CRR American). *Numerically verified.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, §7.8 (American options: early exercise, price bounds) and Ch 7 (the continuous-time limit of this whole folder).
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Björk**, *Arbitrage Theory in Continuous Time*
 
 ---
 

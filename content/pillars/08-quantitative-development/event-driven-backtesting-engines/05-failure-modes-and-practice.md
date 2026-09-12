@@ -98,13 +98,13 @@ One script, three experiments: the fill-assumption cost, the capacity requiremen
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos**, *Advances in Financial Machine Learning* (Wiley, 2018) - the authoritative catalogue of backtest biases; Ch 11–12 and "7 reasons funds fail."
-- **Halls-Moore, Michael**, *QuantStart* event-driven series - the reference for the fill/latency defaults most retail engines ship with.
-- **Almgren & Chriss**, *Optimal Execution of Portfolio Transactions* (2001) - the impact model behind the capacity and working-time analysis (developed in [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]]).
-- **Elton, Gruber & Blake**, *Survivorship Bias and Mutual Fund Performance* (1996) - the canonical measurement of the survivorship effect quantified in §3.
-- **NautilusTrader Docs** - how a production engine states its fill and capacity assumptions explicitly rather than defaulting them.
+- **López de Prado, Marcos**, *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Halls-Moore, Michael**, *QuantStart* event-driven series
+- **Almgren & Chriss**, *Optimal Execution of Portfolio Transactions* (2001)
+- **Elton, Gruber & Blake**, *Survivorship Bias and Mutual Fund Performance* (1996)
+- **NautilusTrader Docs**
 
 ---
 

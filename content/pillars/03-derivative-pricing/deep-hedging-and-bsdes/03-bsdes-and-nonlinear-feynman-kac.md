@@ -173,14 +173,14 @@ Three independent checks on the exactly-solvable example of §2.4: (A) the close
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Pardoux, E. & Peng, S.** (1990), *Adapted solution of a backward stochastic differential equation*, Systems & Control Letters 14, 55–61 - the founding existence/uniqueness theorem under Lipschitz $f$. **Pardoux, E. & Peng, S.** (1992), *Backward SDEs and quasilinear PDEs* - the nonlinear Feynman–Kac correspondence. **El Karoui, N., Peng, S., Quenez, M.-C.** (1997), *Backward stochastic differential equations in finance*, Mathematical Finance 7(1), 1–71 - the financial dictionary (pricing, hedging, $g$-expectations, comparison theorem).
-- **Kobylanski, M.** (2000), *Backward stochastic differential equations and partial differential equations with quadratic growth*, Annals of Probability 28(2), 558–602 - the theory required by the entropic driver. **Briand, P. & Hu, Y.** (2006/2008), *BSDEs with quadratic growth and unbounded terminal value* - extensions. **Barrieu, P. & El Karoui, N.** - on inf-convolution and risk measures via BSDEs.
-- **Peng, S.** (1997/2004), *Monotonic limit theorem of BSDE and nonlinear decomposition theorem*, and *Nonlinear expectations and nonlinear Markov chains* - $g$-expectations, sublinearity and the link to the "set of priors" robust representation. **Coquet, F., Hu, Y., Mémin, J., Peng, S.** (2002), *Filtration-consistent nonlinear expectations and related $g$-expectations*, Probability Theory and Related Fields 123, 1–27.
-- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291 - the explicit identification of the entropic hedging problem with a *quadratic BSDE*, which is the bridge between §02 and §03 of this folder. Their follow-up, **Buehler et al.** (2019), *Deep hedging: learning to simulate, hedge and price under market frictions* (and **Buehler, Gonon, Teichmann, Wood** 2019, *A stochastic control approach to deep hedging*) develops the BSDE side further.
-- **Gobet, E., Lemor, J.-P., Warin, X.** (2005), *A regression-based Monte Carlo method to solve backward stochastic differential equations*, Annals of Applied Probability 15(3), 2172–2202 - the LSMC-BSDE scheme of §3. **Bender, C. & Steiner, J.** (2012), *Least-squares Monte Carlo for BSDEs*, and **Bender, C. & Zhang, J.** (2018), *Time discretization and Markovian iteration for coupled FBSDEs* - the error analysis, including the $Z$-regression noise seen in check B.
-- **Karatzas, I. & Shreve, S.**, *Brownian Motion and Stochastic Calculus*, Ch 5 (martingale representation) - the theorem that makes $Z$ exist. **Øksendal, B.**, *Stochastic Differential Equations*, Ch 4 (the linear Feynman–Kac theorem whose nonlinear generalisation this page uses). **Pham, H.**, *Continuous-time Stochastic Control and Optimization with Financial Applications*, Ch 6 (FBSDEs and the four-step scheme).
+- **Pardoux, E. & Peng, S.** (1990), *Adapted solution of a backward stochastic differential equation*, Systems & Control Letters 14, 55–61
+- **Kobylanski, M.** (2000), *Backward stochastic differential equations and partial differential equations with quadratic growth*, Annals of Probability 28(2), 558–602
+- **Peng, S.** (1997/2004), *Monotonic limit theorem of BSDE and nonlinear decomposition theorem*, and *Nonlinear expectations and nonlinear Markov chains*
+- **Buehler, H., Gonon, L., Teichmann, J., Wood, B.** (2019), *Deep Hedging*, Quantitative Finance 19(8), 1271–1291
+- **Gobet, E., Lemor, J.-P., Warin, X.** (2005), *A regression-based Monte Carlo method to solve backward stochastic differential equations*, Annals of Applied Probability 15(3), 2172–2202
+- **Karatzas, I. & Shreve, S.**, *Brownian Motion and Stochastic Calculus*
 
 ---
 

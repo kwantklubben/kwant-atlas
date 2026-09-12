@@ -93,13 +93,13 @@ The factor portfolio's diversification ratio is **1.98** against **1.46** for th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ang**, *Asset Management* (2014), Ch 2–4, 8–10 - the factor view of asset allocation; the canonical text for this page.
-- **Tsay**, *Analysis of Financial Time Series* (3rd ed., 2010), Ch 9 - factor-model families (macroeconomic / fundamental / statistical), the covariance decomposition $\Sigma=\beta\Sigma_f\beta^\top+D$, and PCA-based factor extraction. *Verified in the corpus.*
-- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds," *Journal of Financial Economics* 33(1):3–56, 1993 - the empirical factor families.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2nd ed., 2009), Ch 14 - PCA as the best rank-$q$ linear manifold (the statistical-factor view). *Verified in the corpus.*
-- **Qian, Hua & Sorensen**, *Quantitative Equity Portfolio Management* (2007) - factor-based expected returns and risk attribution in practice.
+- **Ang**, *Asset Management* (2014)
+- **Tsay**, *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Fama & French**, "Common Risk Factors in the Returns on Stocks and Bonds," *Journal of Financial Economics* 33(1):3–56, 1993
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Qian, Hua & Sorensen**, *Quantitative Equity Portfolio Management* (2007)
 
 ---
 

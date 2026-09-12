@@ -66,13 +66,13 @@ Half the sample vanished. For an infrequently-traded stock this fraction is far 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Roll (1984).** *A simple implicit measure of the effective bid-ask spread.* Journal of Finance 39 - the estimator and its identification condition (negative autocovariance).
-- **Amihud (2002).** *Illiquidity and stock returns.* JFM 5 - ILLIQ's construction, robustness, and its known limits (volatility confounding, data availability).
-- **Chordia, Roll & Subrahmanyam (2000).** *Commonality in liquidity.* JFE 56 - why the common factor defeats diversification and breaks level-based thinking.
-- **Brunnermeier & Pedersen (2009).** *Market liquidity and funding liquidity.* RFS 22 - the spiral that makes tail liquidity risk self-amplifying.
-- **Acharya & Pedersen (2005); Amihud, Mendelson & Pedersen (2013).** - the priced-risk view these failures warn you to stress-test.
+- **Roll (1984).** *A simple implicit measure of the effective bid-ask spread.* Journal of Finance 39
+- **Amihud (2002).** *Illiquidity and stock returns.* JFM 5
+- **Chordia, Roll & Subrahmanyam (2000).** *Commonality in liquidity.* JFE 56
+- **Brunnermeier & Pedersen (2009).** *Market liquidity and funding liquidity.* RFS 22
+- **Acharya & Pedersen (2005); Amihud, Mendelson & Pedersen (2013).**
 
 ---
 

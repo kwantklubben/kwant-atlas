@@ -90,12 +90,12 @@ That is the entire policy content of the maker-taker literature in one table: **
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Colliard & Foucault (2012)**, *Trading fees and efficiency in limit order markets*, RFS 25(11), 3389–3421 - the cum-fee spread, breakdown neutrality, and the empirical pitfalls. *Corpus `53_Colliard_2012_trading_fees_and_efficiency_in_limit.pdf`; NYSE Arca 30¢/21¢ anchor in fn. 3.*
-- **Malinova & Park (2015)**, *Subsidizing liquidity: the impact of make/take fees on market quality*, JF 70(2), 509–536 - the TSX natural experiment; quotes adjust, taker costs do not. *Corpus `56_Malinova_2015_subsidizing_liquidity_the_impact_of.pdf`; TSX 27.5¢/40¢ anchor.*
-- **Foucault, Kadan & Kandel (2013)**, *Liquidity cycles and make/take fees in electronic markets*, JF 68(1) - the tick-size friction that breaks neutrality.
-- **Angel, Harris & Spatt (2011)**, *Equity trading in the 21st century*, QJF 1(1) - the neutrality intuition in its original form.
+- **Colliard & Foucault (2012)**, *Trading fees and efficiency in limit order markets*, RFS 25(11), 3389–3421
+- **Malinova & Park (2015)**, *Subsidizing liquidity: the impact of make/take fees on market quality*, JF 70(2), 509–536
+- **Foucault, Kadan & Kandel (2013)**, *Liquidity cycles and make/take fees in electronic markets*, JF 68(1)
+- **Angel, Harris & Spatt (2011)**, *Equity trading in the 21st century*, QJF 1(1)
 
 ---
 

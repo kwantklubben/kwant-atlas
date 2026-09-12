@@ -118,12 +118,12 @@ The numbers confirm the theory each time. Antithetic: $4.41\times$. Control vari
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 4 §4.1 (control variates eqs. 4.1–4.20), §4.2 (antithetic 4.27–4.30), §4.3 (stratification 4.31–4.46), §4.4 (LHS 4.55–4.58), §4.5 (matching/weighted MC 4.60–4.72), §4.6 (importance sampling 4.73–4.91, GHS optimal path, weight degeneracy), §4.7 (qualitative ranking, Fig 4.16).
-- **Glasserman**, Ch 1 §1.1.3 (efficiency and the $\mathrm{RMSE}=O(s^{-\beta/(2\beta+\eta)})$ framework) and Ch 6 §6.3.3 (MSE balancing, eqs. 6.47–6.48).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 §21.7 (antithetic, control variate, importance sampling, stratified sampling, moment matching, quasi-random sequences - the practitioner's checklist version).
-- **Haug**, *Complete Guide to Option Pricing Formulas*, §4.5 (closed-form geometric-average and trinomial benchmarks used as controls and cross-checks).
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Glasserman**
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *Complete Guide to Option Pricing Formulas*
 
 ---
 

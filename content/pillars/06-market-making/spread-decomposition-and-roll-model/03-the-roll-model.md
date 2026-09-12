@@ -106,12 +106,12 @@ Full dissections with numbers in [[pillars/06-market-making/spread-decomposition
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Roll (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139 - the original.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 3 (model & formulas) and Ch 4 (MA(1), Wold, estimation, bias exercises) - *verified per-chapter in the corpus*.
-- **Harris (1990)**, *Statistical properties of the Roll serial covariance bid/ask spread estimator*, Journal of Financial Economics 27(2), 305–329 - on the positive-autocovariance problem and estimation.
-- **Niederhoffer & Osborne (1966)**, *Market making and reversal on the stock exchange* - the empirical precursor documenting bid-ask bounce.
+- **Roll (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Harris (1990)**, *Statistical properties of the Roll serial covariance bid/ask spread estimator*, Journal of Financial Economics 27(2), 305–329
+- **Niederhoffer & Osborne (1966)**, *Market making and reversal on the stock exchange*
 
 ---
 

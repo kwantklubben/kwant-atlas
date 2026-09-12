@@ -75,13 +75,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Maillard, Sébastien; Roncalli, Thierry & Teïletche, Jérôme**: *The Properties of Equally Weighted Risk Contribution Portfolios*, Journal of Portfolio Management 36(4):60–70 (2010) - the ERC formalization: definition, existence/uniqueness, closed forms, the volatility ordering $\sigma_{mv}\le\sigma_{erc}\le\sigma_{1/n}$. **The math-authoritative source for this folder; all numbers numerically verified.**
-- **Qian, Edward**: *Risk Parity Portfolios: Efficient Portfolios Through True Diversification*, PanAgora Asset Management (2005) - the conceptual origin: why 60/40 is ~90/10 equity risk, and the mean-variance optimality of parity under equal Sharpe ratios.
-- **Qian, Edward**: *On the Financial Interpretation of Risk Contribution: Risk Budgets Do Add Up*, Journal of Investment Management 4(4) (2006) - risk contribution = expected loss contribution; the economic meaning that makes risk budgets add up.
-- **Asness, Clifford; Frazzini, Andrea & Pedersen, Lasse H.** (with **Black 1972**): *Leverage Aversion and Risk Parity*, Financial Analysts Journal 68(1):47–59 (2012) - why risk parity *can* earn a premium (leverage-averse investors bid up risky assets), and the honest critique that parity is not free of return beliefs.
-- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, Chapman & Hall/CRC (2013) - the definitive book-length treatment (ERC algorithms, risk budgeting, long-only constraints).
+- **Maillard, Sébastien; Roncalli, Thierry & Teïletche, Jérôme**: *The Properties of Equally Weighted Risk Contribution Portfolios*, Journal of Portfolio Management 36(4):60–70 (2010)
+- **Qian, Edward**: *Risk Parity Portfolios: Efficient Portfolios Through True Diversification*, PanAgora Asset Management (2005)
+- **Qian, Edward**: *On the Financial Interpretation of Risk Contribution: Risk Budgets Do Add Up*, Journal of Investment Management 4(4) (2006)
+- **Asness, Clifford; Frazzini, Andrea & Pedersen, Lasse H.** (with **Black 1972**): *Leverage Aversion and Risk Parity*, Financial Analysts Journal 68(1):47–59 (2012)
+- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, Chapman & Hall/CRC (2013)
 
 ---
 

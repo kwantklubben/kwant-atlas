@@ -79,13 +79,13 @@ The local-level model with a **+5 level shift at $t=250$** exposes both failure 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series* (3rd ed.), Ch 11 §11.4 (stationarity/steady state; the gain's behavior) and §11.5 (model checking via standardized innovations). *Corpus-verified.*
-- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*, Ch 6–7 (diagnostics, smoothed disturbances, and the exact tests for residual structure).
-- **Särkkä**, *Bayesian Filtering and Smoothing*, Ch 6–7 (numerical stability, Joseph form, square-root filtering).
-- **Harvey**, *Forecasting, Structural Time Series Models and the Kalman Filter*, Ch 5 (diagnostic checking of structural models).
-- **Chan**, *Algorithmic Trading*, Ch 3 - practical pitfalls of Kalman hedge ratios in live pairs trading.
+- **Tsay**, *Analysis of Financial Time Series* (3rd ed.)
+- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*
+- **Särkkä**, *Bayesian Filtering and Smoothing*
+- **Harvey**, *Forecasting, Structural Time Series Models and the Kalman Filter*
+- **Chan**, *Algorithmic Trading*
 
 ---
 

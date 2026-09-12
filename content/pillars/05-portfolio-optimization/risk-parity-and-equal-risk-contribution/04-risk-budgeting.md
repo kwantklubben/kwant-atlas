@@ -80,12 +80,12 @@ The realized percentage risk contributions match the requested budgets **to the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Qian, Edward** (2006): *On the Financial Interpretation of Risk Contribution* - "risk budgets do add up": budgets = expected contributions to loss, and become *expected-return* budgets at the mean-variance optimum.
-- **Litterman, Robert**: *Hot Spots and Hedges*, Journal of Portfolio Management (1996) - the modern statement of per-position risk ("hot spots") that institutional risk budgeting grew from.
-- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, CRC (2013) - the definitive treatment of risk budgeting with arbitrary budgets and long-only weights.
-- **Maillard, Roncalli & Teïletche** (2010) - the ERC special case and the general risk-contribution framework.
+- **Litterman, Robert**: *Hot Spots and Hedges*, Journal of Portfolio Management (1996)
+- **Roncalli, Thierry**: *Introduction to Risk Parity and Budgeting*, CRC (2013)
+- **Maillard, Roncalli & Teïletche** (2010)
 
 ---
 

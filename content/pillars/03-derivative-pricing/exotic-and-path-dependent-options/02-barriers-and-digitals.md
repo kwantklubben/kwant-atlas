@@ -97,11 +97,11 @@ Reproduces the Haug-verified values and the parity identity exactly. Stdlib only
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §4.17 (barrier options, eqs 4.51–4.52, `[V-8]` verified block) and §4.19 (binary options, eqs 4.84–4.87). §5.6 (discrete-barrier correction, Broadie–Glasserman–Kou).
-- **Shreve**, *Stochastic Calculus for Finance II*, §7.2 (joint density of max & terminal, the reflection principle) and §7.3 (knock-out barrier PDE; the hedge $\Delta=v_x$ "breaks down" near the barrier - why industry prices a barrier slightly above $B$).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 26 (barrier & binary catalog; $c=c_{di}+c_{do}$).
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

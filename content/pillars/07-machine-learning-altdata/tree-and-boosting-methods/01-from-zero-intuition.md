@@ -68,11 +68,11 @@ The stump recovered the true breakpoint ($s\approx0.50$) and the two regime mean
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 9 §9.2 (CART and the recursive partition) - the cleanest statement of the greedy split.
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 10 §10.1–10.2 (boosting and additive trees; why weak learners combine).
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 6 (the three sources of error and why bagging is generally preferable to boosting in finance).
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **López de Prado**, *Advances in Financial Machine Learning*
 
 ---
 

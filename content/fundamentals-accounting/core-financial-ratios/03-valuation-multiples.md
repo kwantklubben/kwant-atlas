@@ -72,13 +72,13 @@ Stdlib only. Computes the equity and enterprise multiples for the sample firm, v
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Pinto, Henry, Robinson & Stowe (CFA)**, *Equity Asset Valuation* - the professional-standard relative-valuation/multiples treatment, including the equity-vs-enterprise discipline.
-- **Damodaran**, *Investment Valuation* - multiples and the "when to use which" judgment; his NYU data pages give live cross-sectional multi-source multiples.
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 2 (P/B and value), Ch 6 (P/E, P/B as value anchors) - the accounting-to-price bridge.
-- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - P/B and E/P as *priced* characteristics; size + book-to-market capture the cross-section.
-- **Campbell & Shiller**, "Valuation Ratios and the Long-Run Stock Market Outlook" (*JPM*, 1998) - earnings/dividend *yields* as long-run market-return predictors (the ratio-to-return justification for cheapness screens).
+- **Pinto, Henry, Robinson & Stowe (CFA)**, *Equity Asset Valuation*
+- **Damodaran**, *Investment Valuation*
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Fama & French**, "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **Campbell & Shiller**, "Valuation Ratios and the Long-Run Stock Market Outlook" (*JPM*, 1998)
 
 ---
 

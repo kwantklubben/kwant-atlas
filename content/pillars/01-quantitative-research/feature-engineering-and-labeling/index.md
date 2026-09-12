@@ -69,13 +69,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/01-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) - **Ch 3** (Labeling: fixed-horizon flaws §3.3, triple-barrier §3.4, learning side & size §3.5, meta-labeling §3.6, quantamental §3.8, dropping labels §3.9), **Ch 4** (Sample Weights: overlapping outcomes, concurrency, average uniqueness, sequential bootstrap, return attribution, time decay), **Ch 5** (Fractionally Differentiated Features: long memory, iterative weights, expanding vs fixed-width window, minimum $d^*$), **Ch 7** (purging & embargo - the interface to CV). *The formula-authoritative source for this folder; the worked numbers above are reproduced exactly.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 2 (basis expansion eq. 2.43, additive models eq. 2.17), Ch 5 (spline bases eq. 5.3, smoothing-spline df eq. 5.16), Ch 14 (PCA as best rank-$q$ manifold eq. 14.49–14.50, SVD eq. 14.54). *Math-verified in the corpus.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 9 (factor models eq. 9.1–9.4; PCA via eigenvectors of $\Sigma_r$, variance share $\lambda_i/\sum\lambda_j$; BARRA two-step eq. 9.7–9.8; Fama–French hedge-portfolio construction). *Math-verified in the corpus.*
-- **Hosking, J.R.M.** (1981): *Fractional differencing*, Biometrika 68(1) - the origin of fractionally differenced ARIMA and long-memory preservation.
-- **Gu, Kelly & Xiu** (2020): *Empirical Asset Pricing via Machine Learning*, RFS 33(5) - feature importance across ~94 firm characteristics and macro predictors (the empirical case for disciplined feature construction).
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Hosking, J.R.M.** (1981): *Fractional differencing*, Biometrika 68(1)
+- **Gu, Kelly & Xiu** (2020): *Empirical Asset Pricing via Machine Learning*, RFS 33(5)
 
 ---
 

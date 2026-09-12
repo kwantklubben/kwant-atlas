@@ -95,12 +95,12 @@ The strategy is deliberately *predictable* - the data is AR(1) with $\phi=0.15$,
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020) - Ch 4 (vectorized) set against Ch 6–7 (event-driven); the comparison this page quantifies.
-- **VectorBT book / docs** - the modern baseline for *fast vectorized* simulation; the fair way to run the parameter sweep of failure mode 2.
-- **NautilusTrader Docs** - a production event engine whose Rust core is how the $10^2$–$10^3\times$ Python slowdown is made irrelevant.
-- **López de Prado, Marcos**, *Advances in Financial Machine Learning* (Wiley, 2018) - why even `honest_vec` is still a maximum of a search; developed fully in [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]].
+- **Hilpisch, Yves**, *Python for Algorithmic Trading* (O'Reilly, 2020)
+- **VectorBT book / docs**
+- **NautilusTrader Docs**
+- **López de Prado, Marcos**, *Advances in Financial Machine Learning* (Wiley, 2018)
 
 ---
 

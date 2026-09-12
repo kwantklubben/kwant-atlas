@@ -70,13 +70,13 @@ Quantify the trade-through, the pick-off, and the fee misroute. Standard library
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011. *Fragmentation raises short-term volatility; execution-speed differences of ~7 s; `corpus/titles/refs/pillar2/25_OHara_2011_fragmentation.pdf`.*
 - **Hasbrouck, Joel & Saar, Gideon** - "Low-latency trading," *JFM* 16(4), 2013. *Order lifetimes and cancel rates that make latency a first-order routing cost.*
-- **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2), 2015. *When speed investment is privately profitable but socially wasteful - the economic frame for the pick-off race.*
+- **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2), 2015. *When speed investment is privately profitable but socially wasteful
 - **Colliard, Jean-Edouard & Foucault, Thierry** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 2012. *The fee structure behind the misrouting failure; `corpus/titles/refs/53_Colliard_2012_...pdf`.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 2 (the realized spread $S_r$ *is* the adverse-selection cost a stale quote produces). *Verified in `foucault_ch1-3.md`.*
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 
 ---
 

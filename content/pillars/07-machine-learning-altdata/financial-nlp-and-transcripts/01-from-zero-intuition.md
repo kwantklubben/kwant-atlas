@@ -68,13 +68,13 @@ The bull call nets $+0.292$; the bear call $-0.304$ - opposite signs, clean sepa
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tetlock, Paul C.**, "Giving Content to Investor Sentiment," *Journal of Finance* 62(3), 2007 - the foundational "text predicts returns" result (media pessimism → drift then reversal). *Corpus PDF verified.*
-- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability?" *Journal of Finance* 66(1), 2011 - the motivation for finance-specific dictionaries.
-- **Cohen, Lauren, Malloy, Christopher & Nguyen, Quoc**, "Lazy Prices," *Journal of Finance* 75(3), 2020 - silent wording changes in 10-Ks forecast underperformance ($>7\%$/yr).
-- **Gentzkow, Matthew, Kelly, Bryan & Taddy, Matt**, "Text as Data," *JEL* 57(3), 2019 - the unified count-matrix view this page's demo is the seed of.
-- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**, "Understanding Earnings Quality," 2010 - text as the narration of the earnings-quality gap (*corpus ref `40_Dechow_2010`*).
+- **Tetlock, Paul C.**, "Giving Content to Investor Sentiment," *Journal of Finance* 62(3), 2007
+- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability?" *Journal of Finance* 66(1), 2011
+- **Cohen, Lauren, Malloy, Christopher & Nguyen, Quoc**, "Lazy Prices," *Journal of Finance* 75(3), 2020
+- **Gentzkow, Matthew, Kelly, Bryan & Taddy, Matt**, "Text as Data," *JEL* 57(3), 2019
+- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**, "Understanding Earnings Quality," 2010
 
 ---
 

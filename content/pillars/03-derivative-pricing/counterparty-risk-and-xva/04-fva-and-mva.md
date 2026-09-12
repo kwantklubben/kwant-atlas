@@ -85,11 +85,11 @@ The payer swap is a *net asset* (EFV > 0 throughout), so FVA is a cost; but noti
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory**, *The xVA Challenge*, Ch 14 (funding, margin, capital costs), Ch 16 (ColVA, perfect collateralisation, base value), Ch 18 (FVA), Ch 20 (MVA). *Primary; all numbers verified.*
-- **Piterbarg, Vladimir (2010)**: *Funding beyond discounting* (Risk) - the marginal-funding/perfect-collateralisation base value.
-- **Burgard, Christoph & Martin Kjaer (2011a,b)**: *Partial differential equation representations of derivatives with bilateral counterparty risk and funding costs* - the FCA/DVA integral framework.
+- **Gregory**, *The xVA Challenge*
+- **Piterbarg, Vladimir (2010)**: *Funding beyond discounting* (Risk)
+- **Burgard, Christoph & Martin Kjaer (2011a,b)**: *Partial differential equation representations of derivatives with bilateral counterparty risk and funding costs*
 - **Hull & White (2012, 2014)** and **Kenyon & Green (2014)**: the FVA debate (against / for).
 
 ---

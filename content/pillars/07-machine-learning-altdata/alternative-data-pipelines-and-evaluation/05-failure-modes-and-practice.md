@@ -72,13 +72,13 @@ Read both. **Backfill** lifts the measured IC from $+0.4509$ to $+0.6069$ - a $+
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning* - **§2.2.1** (backfilled/reinstated values; the period-end indexing error), **Ch. 11** (backtest errors, quoting Luo et al.'s "Seven Sins": survivorship, look-ahead, storytelling, data snooping, transactions costs...). *Corpus PDF verified.*
-- **Luo, Yin et al.**: "Seven Sins of Quantitative Investing" (Deutsche Bank, 2014) - the practical failure checklist this page quantifies.
-- **Bailey, López de Prado, et al.**: "The Probability of Backtest Overfitting" and "The Deflated Sharpe Ratio" - the multiple-testing corrections that make "overfitting the evaluation" a *number*.
-- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) - panel construction, coverage, and vendor due diligence in practice.
-- **In-repo companion:** [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|Data Sources · 05 Failure Modes & Practice]] - the same biases derived for fundamentals; read side by side.
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Luo, Yin et al.**: "Seven Sins of Quantitative Investing" (Deutsche Bank, 2014)
+- **Bailey, López de Prado, et al.**: "The Probability of Backtest Overfitting" and "The Deflated Sharpe Ratio"
+- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019)
+- **In-repo companion:** [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|Data Sources · 05 Failure Modes & Practice]]
 
 ---
 

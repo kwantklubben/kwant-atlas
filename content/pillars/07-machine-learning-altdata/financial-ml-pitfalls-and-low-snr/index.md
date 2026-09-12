@@ -65,13 +65,13 @@ Hub signposts - the full treatment lives in [[pillars/07-machine-learning-altdat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) - Ch 1 (financial ML as a distinct subject; the Sisyphus vs meta-strategy paradigms; the low-SNR warning), Ch 2 (financial data structures), Ch 4 (sample weights / overlapping labels / uniqueness), Ch 7 (why K-fold CV fails in finance; purged & embargoed CV), Ch 11 (dangers of backtesting), Ch 14 (the Deflated Sharpe Ratio). *The PRIMARY source for this folder; text read in the corpus.*
-- **López de Prado, Marcos**: *Machine Learning for Asset Managers* (Cambridge Elements, 2020) - the math-light companion (meta-labeling, fractional differentiation, covariance denoising). *Corpus anchor.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 7 (model assessment & selection: bias–variance eq. 7.9, the *wrong-vs-right* CV warning §7.10.2, effective parameters), Ch 5 (regularization). *Verified in the corpus (esl_ch1-5.md, esl_ch6-10.md).*
-- **Bailey, David H. & López de Prado, Marcos**: "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance," *Notices of the AMS* 61(5), 2014 - the MinBTL / expected-max-Sharpe formalization. *Corpus PDF read.*
-- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**: "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020 - the rigorous benchmark quantifying the true (low) OOS IC/SNR; trees + shallow NNs win only under disciplined evaluation. *Corpus-listed.*
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018)
+- **López de Prado, Marcos**: *Machine Learning for Asset Managers* (Cambridge Elements, 2020)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Bailey, David H. & López de Prado, Marcos**: "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance," *Notices of the AMS* 61(5), 2014
+- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**: "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020
 
 ---
 

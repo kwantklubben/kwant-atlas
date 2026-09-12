@@ -77,16 +77,16 @@ Hub signposts - the full failure analysis lives in [[pillars/02-algorithmic-hft/
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont, Rama; Stoikov, Sasha; Talreja, Rishi** - "A stochastic model for order book dynamics," *Operations Research* 58(3), 549–563 (2010). *The foundational tractable queue model: independent Poisson queues, birth–death first-passage, Laplace-transform conditional probabilities. Read §2 (model), §4 (Laplace methods).* `ADV`
-- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017). *The fill function $(\xi-x)^+ - (\xi-x-L)^+$ and the queue-position-aware optimal placement / multi-venue overbooking problem. Read §2–3.* `ADV`
-- **Cont, Rama; Kukanov, Arseniy; Stoikov, Sasha** - "The price impact of order book events," *Journal of Financial Markets* 17, 47–88 (2014). *The linear OFI price-impact law $\Delta P=\beta\,\text{OFI}/\text{depth}$ - the bridge from queue dynamics to price moves. Read §2.3–4.* `ADV`
+- **Cont, Rama; Stoikov, Sasha; Talreja, Rishi** - "A stochastic model for order book dynamics," *Operations Research* 58(3), 549–563 (2010). *The foundational tractable queue model: independent Poisson queues, birth–death first-passage, Laplace-transform conditional probabilities.
+- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4), 553–571 (2017). *The fill function $(\xi-x)^+
+- **Cont, Rama; Kukanov, Arseniy; Stoikov, Sasha** - "The price impact of order book events," *Journal of Financial Markets* 17, 47–88 (2014). *The linear OFI price-impact law $\Delta P=\beta\,\text{OFI}/\text{depth}$
 - **Lo, Andrew W.; MacKinlay, A. C.; Zhang, June** - "Econometric models of limit-order executions," *Journal of Financial Economics* 65(1), 31–71 (2002). *The classic empirical survival/hazard model of limit-order execution times - "how long until I fill or cancel."* `ADV`
 - **Gould, Martin D.; Porter, M. A.; Williams, S.; McDonald, M.; Fenn, D. J.; Howison, S. D.** - "Limit order books," *Quantitative Finance* 13(11), 1709–1742 (2013). *Structured empirical survey: price-time vs pro-rata, cancel-to-trade ratios, latency effects on conditional event studies. arXiv:1012.0349.* `ADV`
 - **Rosu, Ioanid** - "A dynamic model of the limit order book," *Review of Financial Studies* 22(11), 4601–4641 (2009). *Equilibrium LOB; the "hump" shape in depth vs distance and the trade-off between matching optimism and fill pessimism.* `ADV`
-- **Foucault, Thierry; Pagano, Marco; Roell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (OUP, 2013), Ch 6 (Limit Order Book: marginal-unit expected-profit condition, $\Pi_k(Y_k)=\mathbb{P}(Y_k)(A_k-\mathbb{E}[v\mid q\ge Y_k])-C$; pick-off risk widens the spread). *Corpus verification `foucault_ch4-6.md`.* `INT`
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (OUP, 2007), Ch 8 (Generalized Roll: transient/adverse-selection components of the spread). *Corpus verification `hasbrouck_ch6-10.md`.* `INT`
+- **Foucault, Thierry; Pagano, Marco; Roell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (OUP, 2013)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (OUP, 2007)
 
 ---
 

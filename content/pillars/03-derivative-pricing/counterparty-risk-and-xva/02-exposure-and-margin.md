@@ -96,11 +96,11 @@ The IM table shows the *same* $\sigma_P=100$ at different horizons/levels, exact
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory**, *The xVA Challenge*, Ch 6 (netting), Ch 7 (margin/collateral, credit support amount), Ch 9 (initial margin methodologies, SIMM, variance-covariance IM), Ch 15 (quantifying exposure, MPoR model). *Primary; numbers verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 §24.7 (netting, collateral/cure period, downgrade triggers).
-- **BCBS–IOSCO (2015)**: *Margin requirements for non-centrally cleared derivatives* - the 99% / 10-day / stressed-data anchor for regulatory IM.
+- **Gregory**, *The xVA Challenge*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **BCBS–IOSCO (2015)**: *Margin requirements for non-centrally cleared derivatives*
 
 ---
 

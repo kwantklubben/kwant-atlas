@@ -103,14 +103,14 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Borror, Jeffry** - *Q for Mortals (4th ed.)*, Kx Systems (free at `code.kx.com/q4m3/`) - the canonical introduction to q and kdb+; the entry point to the tick-database world (priority H)*.
-- **Psaris, Nick** - *Q Tips: Fast, Scalable and Maintainable kdb+*, Vector Sigma - idiomatic q and performance patterns from production trading systems; companion repo `psaris/qtips`.
-- **kdb+ and q - Official Documentation & Tick Architecture** (`code.kx.com`) - tickerplant/RDB/HDB, `aj`, `.Q.qidi`, parted/sorted attributes; the authoritative spec for any tick-store claim. **Priority H.**
-- **DuckDB - AsOf Join & Time-Series Documentation** (`duckdb.org`) and **Needham & Simons**, *DuckDB in Action* (Manning) - the as-of join and time-series handling in an embeddable columnar engine.
-- **ClickHouse Documentation** (`clickhouse.com`) - MergeTree, `LowCardinality`, ordering keys, and predicate pushdown for append-only tick OLAP.
-- **Novotný, Jan et al.** - *Machine Learning and Big Data with kdb+/q* (Wiley Finance, 2017) - bridges the DB layer and high-frequency analytics.
+- **Borror, Jeffry** - *Q for Mortals (4th ed.)*, Kx Systems (free at `code.kx.com/q4m3/`)
+- **Psaris, Nick** - *Q Tips: Fast, Scalable and Maintainable kdb+*, Vector Sigma
+- **kdb+ and q - Official Documentation & Tick Architecture** (`code.kx.com`)
+- **DuckDB - AsOf Join & Time-Series Documentation** (`duckdb.org`) and **Needham & Simons**, *DuckDB in Action* (Manning)
+- **ClickHouse Documentation** (`clickhouse.com`)
+- **Novotný, Jan et al.** - *Machine Learning and Big Data with kdb+/q* (Wiley Finance, 2017)
 
 ---
 

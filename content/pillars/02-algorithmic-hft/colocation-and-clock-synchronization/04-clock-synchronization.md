@@ -74,13 +74,13 @@ Two concrete lessons from the run: (1) an asymmetric network path silently biase
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **IEEE 1588-2008 (Precision Time Protocol / PTP)** and **NTP (RFC 5905)** - the standard timestamp-exchange and offset-estimation math presented above.
-- **O'Hara, Maureen (2015)** - discusses exchange timestamp architecture as part of HFT microstructure.
-- **Budish, Cramton & Shim (2015)**, §3 - the direct-feed vs regulatory-feed timestamp accuracy gap (tens–hundreds of ms) that motivated millisecond-resolution research data.
-- **Hasbrouck, Joel** - *Empirical Market Microstructure*, Ch 1 (data are "well-ordered" point processes - a property that *depends on* trustworthy timestamps). *Corpus: `hasbrouck_ch1-5.md`.*
-- **NIST PTP guidance & exchange timestamp specs** (CME, Nasdaq, Cboe) - the operational ground truth.
+- **IEEE 1588-2008 (Precision Time Protocol / PTP)** and **NTP (RFC 5905)**
+- **O'Hara, Maureen (2015)**
+- **Budish, Cramton & Shim (2015)**
+- **Hasbrouck, Joel** - *Empirical Market Microstructure*
+- **NIST PTP guidance & exchange timestamp specs** (CME, Nasdaq, Cboe)
 
 ---
 

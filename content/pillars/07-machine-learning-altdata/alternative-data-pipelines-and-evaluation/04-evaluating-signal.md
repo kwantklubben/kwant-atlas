@@ -81,12 +81,12 @@ Read it. The measured mean IC ($+0.0566$) sits within sampling error of the true
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning* - **Ch. 8** (feature importance, PSR/DSR and the multiple-testing correction to a Sharpe/IC $t$-stat), **Ch. 7** (purged CV so the IC is measured out of sample), **Ch. 11** (backtest errors). *Corpus PDF verified.*
-- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.) - IC, ICIR, breadth, and the translation of a signal into IR (Ch. 6).
-- **Bailey, David H. & López de Prado, Marcos**: "The Deflated Sharpe Ratio" (*Journal of Portfolio Management*, 2014) and "The Probability of Backtest Overfitting" (*Journal of Computational Finance*, 2017) - the corrections for selection bias when many signals are tested.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch. 7 - the generalisation-error framework behind honest evaluation. *Corpus available.*
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* (2nd ed.)
+- **Bailey, David H. & López de Prado, Marcos**: "The Deflated Sharpe Ratio" (*Journal of Portfolio Management*, 2014) and "The Probability of Backtest Overfitting" (*Journal of Computational Finance*, 2017)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

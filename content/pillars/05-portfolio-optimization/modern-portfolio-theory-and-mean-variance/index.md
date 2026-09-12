@@ -67,13 +67,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4):1851–1872 (1972) - the $A,B,C,D$ closed forms, min-variance portfolio, tangency, and SML derived here. **The math-authoritative source for this folder; all formulas numerically verified.**
-- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1):77–91 (1952) - the founding E-V quadratic program and efficient set.
-- **Tobin, James**: *Liquidity Preference as Behavior Toward Risk*, Review of Economic Studies 25(2):65–86 (1958) - the (two-fund) separation theorem: a riskless asset + one efficient risky portfolio.
-- **Sharpe, William F.**: *Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk*, Journal of Finance 19(3):425–442 (1964) - equilibrium tangency = market portfolio + the SML/CAPM.
-- **Best & Grauer**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, Review of Financial Studies 4(2):315–342 (1991) - the formal "estimation-error maximizer" result.
+- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4):1851–1872 (1972)
+- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1):77–91 (1952)
+- **Tobin, James**: *Liquidity Preference as Behavior Toward Risk*, Review of Economic Studies 25(2):65–86 (1958)
+- **Sharpe, William F.**: *Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk*, Journal of Finance 19(3):425–442 (1964)
+- **Best & Grauer**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, Review of Financial Studies 4(2):315–342 (1991)
 
 ---
 

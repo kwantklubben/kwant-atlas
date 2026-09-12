@@ -78,12 +78,12 @@ Read it as the design trade-off: with independent paths ($\bar\rho=0$) even $\va
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 12** (§12.2 walk-forward flaws, §12.5 CPCV variance) - primary for the WF-vs-CPCV comparison.
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), **Ch. 7** - hyperparameter tuning under CPCV in practice.
-- **"Backtest Overfitting in the Machine Learning Era"** (Expert Systems with Applications, 2025) - recent controlled comparison of walk-forward vs. purged vs. *adaptive* CPCV on synthetic noisy/non-stationary data.
-- **Bailey & López de Prado**, *The Deflated Sharpe Ratio*, J. Portfolio Management 40(5) (2014) - the final deflation step.
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 12** (§12.2 walk-forward flaws
+- **López de Prado**, *Machine Learning for Asset Managers* (2020), **Ch. 7**
+- **"Backtest Overfitting in the Machine Learning Era"** (Expert Systems with Applications, 2025)
+- **Bailey & López de Prado**, *The Deflated Sharpe Ratio*, J. Portfolio Management 40(5) (2014)
 - **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7** (§7.10.2 screening inside folds).
 
 ---

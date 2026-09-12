@@ -61,10 +61,10 @@ On data with **no signal whatsoever**, the naive random K-fold CV is biased **$+
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 7 §7.3 ("Why K-Fold CV Fails in Finance"), Ch 4 (sample weights, number of concurrent labels, average uniqueness), Ch 1 (finance as a distinct, low-SNR, adapting subject).
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 7 §7.10.2 (the wrong-vs-right CV warning: screening on full data gives $3\%$ error vs the honest $50\%$). *Verified in the corpus.*
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

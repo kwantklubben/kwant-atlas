@@ -80,14 +80,14 @@ Panel (A): the daily VaR is $986\times$ larger than the climate drift, so the cl
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **TCFD**, *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, 2017) - the physical/transition taxonomy and recommended metrics. *Primary framework source.*
-- **Carney, M.**, *Breaking the Tragedy of the Horizon - Climate Change and Financial Stability* (Bank of England speech, 29 September 2015) - the origin of the horizon-mismatch argument quantifies in §3(A).
-- **Greenhouse Gas Protocol**, *Corporate Standard* (2004) and *Scope 3 Standard* (2011) - the Scope 1/2/3 definitions.
-- **PCAF**, *The Global GHG Accounting and Reporting Standard for the Financial Industry* - portfolio attribution.
-- **High-Level Commission on Carbon Prices** (Stern & Stiglitz), *Report* (World Bank, 2017) - the \$40–\$80 / \$50–\$100 corridor used as a shadow-price starting point.
-- **Bolton, P. & Kacperczyk, M.**, *Do investors care about carbon risk?*, *Journal of Financial Economics* 142(2) (2021) - empirical evidence that the market prices the exposure described here.
+- **TCFD**, *Recommendations of the Task Force on Climate-related Financial Disclosures* (FSB, 2017)
+- **Carney, M.**, *Breaking the Tragedy of the Horizon
+- **Greenhouse Gas Protocol**, *Corporate Standard* (2004) and *Scope 3 Standard* (2011)
+- **PCAF**, *The Global GHG Accounting and Reporting Standard for the Financial Industry*
+- **High-Level Commission on Carbon Prices** (Stern & Stiglitz), *Report* (World Bank, 2017)
+- **Bolton, P. & Kacperczyk, M.**, *Do investors care about carbon risk?*, *Journal of Financial Economics* 142(2) (2021)
 
 ---
 

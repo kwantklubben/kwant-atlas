@@ -73,13 +73,13 @@ We simulate a constant-product pool over one year (drift-free geometric Brownian
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Milionis, Moallemi, Roughgarden & Zhang (2022)**, *Automated Market Making and Loss-Versus-Rebalancing*, arXiv:2208.06046 - LVR, the $\tfrac18\sigma^2V$ rate, and the "fees minus LVR" decomposition reproduced above.
-- **a16z Crypto**, *LVR: Quantifying the Cost of Providing Liquidity to Automated Market Makers* - the accessible statement that LVR depends on the price *trajectory* and accumulates trade-by-trade, unlike divergence loss.
-- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601 - the short-options view that makes the $\tfrac18\sigma^2$ "option premium" intuition precise.
-- **Lehar & Parlour (2023)**, *Decentralized Exchange: The Uniswap Automated Market Maker* - empirical evidence that LPs systematically withdraw from volatile, high-LVR pools.
-- **Daian et al. (2019)**, *Flash Boys 2.0*, arXiv:1904.05234 - the MEV/gas-economics mechanism behind the fee-tier attack threshold.
+- **Milionis, Moallemi, Roughgarden & Zhang (2022)**, *Automated Market Making and Loss-Versus-Rebalancing*, arXiv:2208.06046
+- **a16z Crypto**, *LVR: Quantifying the Cost of Providing Liquidity to Automated Market Makers*
+- **Clark, Joseph (2020)**, *The Replicating Portfolio of a Constant Product Market*, SSRN 3550601
+- **Lehar & Parlour (2023)**, *Decentralized Exchange: The Uniswap Automated Market Maker*
+- **Daian et al. (2019)**, *Flash Boys 2.0*, arXiv:1904.05234
 
 ---
 

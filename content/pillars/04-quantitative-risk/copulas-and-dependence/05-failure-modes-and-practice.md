@@ -76,14 +76,14 @@ Three lessons, quantified. (1) **The fit is faithful.** Kendall inversion recove
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Frey & Embrechts (2015)** - §7.5 (fitting copulas to data: §7.5.1 rank-correlation/MLE estimators, §7.5.2 the pseudo-sample, §7.5.3 ML for the $t$ copula, Example 7.56 Kendall-tau calibration, Algorithm 7.57 the eigenvalue PD repair) and §8.3–8.4 (dynamic/vine dependence). *Read in the corpus.*
-- **Derman, Emanuel (1996)**, *Model Risk* - the taxonomy of model error; the frame for failure #7.
-- **Morini, Massimo (2011)**, *Understanding and Managing Model Risk* - the practitioner treatment of model uncertainty and validation for pricing models, including copula/CDO models.
-- **OCC / Federal Reserve (2011)**, *Supervisory Guidance on Model Risk Management* (SR 11-7 / OCC 2011-12) - the binding validation standard that a copula engine must satisfy.
-- **Embrechts, McNeil & Straumann (2002)** - the correlation fallacies underlying failures #3 and #5.
-- **Chollete, Heinen & Valdes (2008)**, *Modeling international financial returns with a multivariate regime-switching copula* - regime-switching copulas, the practical answer to failure #1.
+- **McNeil, Frey & Embrechts (2015)**
+- **Derman, Emanuel (1996)**, *Model Risk*
+- **Morini, Massimo (2011)**, *Understanding and Managing Model Risk*
+- **OCC / Federal Reserve (2011)**, *Supervisory Guidance on Model Risk Management* (SR 11-7 / OCC 2011-12)
+- **Embrechts, McNeil & Straumann (2002)**
+- **Chollete, Heinen & Valdes (2008)**, *Modeling international financial returns with a multivariate regime-switching copula*
 
 ---
 

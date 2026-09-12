@@ -94,16 +94,16 @@ Panel (A) splits a portfolio ES into market and transition contributions for thr
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Acerbi, C. & Tasche, D.** - *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7):1487–1503 (2002) - Euler allocation (component CVaR) of ES, the additivity verified in §3(A).
-- **Acerbi, C.** - *Spectral Measures of Risk: A Coherent Representation of Subjective Risk Aversion*, *J. Banking & Finance* 26(7):1505–1518 (2002) - the spectral family and the role of the weight function $\varphi$.
-- **Kusuoka, S.** - *On Law Invariant Coherent Risk Measures*, *Advances in Mathematical Economics* 3:83–95 (2001) - every law-invariant coherent measure is a mixture of expected shortfalls.
-- **Artzner, Delbaen, Eber & Heath** - *Coherent Measures of Risk*, *Mathematical Finance* 9(3):203–228 (1999) - the scenario representation (Prop. 4.1) that makes a scenario stress test a coherent risk measure.
-- **Andersson, M., Bolton, P. & Samama, F.** - *Hedging Climate Risk*, *Financial Analysts Journal* 72(3):13–32 (2016) - carbon-efficient portfolios at negligible tracking error; the green-tilt result of §2.1.
-- **Merton, R.C.** - *On the Pricing of Corporate Debt: The Risk Structure of Interest Rates*, *Journal of Finance* 29(2):449–470 (1974) - the structural model used in §2.2.
-- **Bolton, P. & Kacperczyk, M.** - *Do investors care about carbon risk?*, *JFE* 142(2):517–549 (2021) - the empirical counterpart of the transition factor.
-- **BCBS** - *Climate-related Financial Risks - Measurement Methodologies* (2021) - supervisory treatment of climate risk aggregation across risk types. *[REG]* (Extended reading: [[pillars/04-quantitative-risk/systemic-risk-and-aggregation/index|Systemic Risk & Aggregation]].)
+- **Acerbi, C. & Tasche, D.** - *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7):1487–1503 (2002)
+- **Acerbi, C.** - *Spectral Measures of Risk: A Coherent Representation of Subjective Risk Aversion*, *J. Banking & Finance* 26(7):1505–1518 (2002)
+- **Kusuoka, S.** - *On Law Invariant Coherent Risk Measures*, *Advances in Mathematical Economics* 3:83–95 (2001)
+- **Artzner, Delbaen, Eber & Heath** - *Coherent Measures of Risk*, *Mathematical Finance* 9(3):203–228 (1999)
+- **Andersson, M., Bolton, P. & Samama, F.** - *Hedging Climate Risk*, *Financial Analysts Journal* 72(3):13–32 (2016)
+- **Merton, R.C.** - *On the Pricing of Corporate Debt: The Risk Structure of Interest Rates*, *Journal of Finance* 29(2):449–470 (1974)
+- **Bolton, P. & Kacperczyk, M.** - *Do investors care about carbon risk?*, *JFE* 142(2):517–549 (2021)
+- **BCBS** - *Climate-related Financial Risks
 
 ---
 

@@ -72,13 +72,13 @@ Hub signposts - the folder's full failure-mode analysis lives in [[pillars/05-po
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ang, Andrew**: *Asset Management: A Systematic Approach to Factor Investing* (Oxford University Press, 2014) - ★ the modern canonical text on allocating across asset classes *and* factor premia (value, momentum, carry, defensive); bridges Pillar 1 (factor models) and Pillar 5 (how to hold them). *Cornerstone of this folder.*
-- **Meucci, Attilio**: *Risk and Asset Allocation* (Springer Finance, 2005) - rigorous univariate/multivariate statistics → flexible allocation, including the Black–Litterman treatments; the statistical backbone.
-- **Ilmanen, Antti**: *Expected Returns: An Investor's Guide to Harvesting Market Rewards* (Wiley, 2011) - the practical tour of what premium each asset class / factor actually pays and why (the "carry" chapter is the reference for page 04).
-- **Qian, Hua & Sorensen**: *Quantitative Equity Portfolio Management* (Chapman & Hall/CRC, 2007) - factor-based expected returns and risk budgeting in one applied text.
-- **Grinold & Kahn**: *Active Portfolio Management* (2nd ed., 2000) - the practitioner bible for turning forecasts into constrained active portfolios (strategic vs tactical, tracking-error budgets).
+- **Ang, Andrew**: *Asset Management: A Systematic Approach to Factor Investing* (Oxford University Press, 2014)
+- **Meucci, Attilio**: *Risk and Asset Allocation* (Springer Finance, 2005)
+- **Ilmanen, Antti**: *Expected Returns: An Investor's Guide to Harvesting Market Rewards* (Wiley, 2011)
+- **Qian, Hua & Sorensen**: *Quantitative Equity Portfolio Management* (Chapman & Hall/CRC, 2007)
+- **Grinold & Kahn**: *Active Portfolio Management* (2nd ed., 2000)
 
 ---
 

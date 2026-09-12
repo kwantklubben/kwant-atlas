@@ -90,15 +90,15 @@ numpy. Simulate 30 assets in 3 correlated blocks; estimate the sample and shrunk
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 16 (Markowitz's curse, condition number, the HRP algorithm: tree clustering → quasi-diagonalization → recursive bisection). *Primary anchor.*
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 2 (covariance estimation, Marchenko–Pastur denoising/detoning), Ch 4 (optimal clustering) and Ch 7 (portfolio construction via NCO).
-- **López de Prado**, "Building Diversified Portfolios That Outperform Out of Sample," *J. Portfolio Management* 42(4):59–69, 2016 - the HRP paper.
-- **López de Prado**, "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019 - MCD/SK/NaN/TS/DNN estimators vs $1/N$.
-- **Ledoit & Wolf**, "Improved Estimation of the Covariance Matrix of Stock Returns," *J. Empirical Finance* 10(5):603–621, 2003 - shrinkage.
-- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* 22(5), 2009 - $1/N$ beats mean-variance out-of-sample.
-- **Hastie, Tibshirani & Friedman**, *ESL* (2009), Ch 17 (graphical lasso / sparse precision) and Ch 14 (clustering) - the sparse-covariance toolkit. *Verified in the corpus (esl_ch11-18).*
+- **López de Prado**, *Advances in Financial Machine Learning* (2018)
+- **López de Prado**, *Machine Learning for Asset Managers* (2020)
+- **López de Prado**, "Building Diversified Portfolios That Outperform Out of Sample," *J. Portfolio Management* 42(4):59–69, 2016
+- **López de Prado**, "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019
+- **Ledoit & Wolf**, "Improved Estimation of the Covariance Matrix of Stock Returns," *J. Empirical Finance* 10(5):603–621, 2003
+- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* 22(5), 2009
+- **Hastie, Tibshirani & Friedman**, *ESL* (2009)
 
 ---
 

@@ -64,12 +64,12 @@ Hub signposts - full analysis lives in [[pillars/03-derivative-pricing/calibrati
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley 2006) - Ch 1 (local vol & Dupire), Ch 3 (SV calibration, SVI), Ch 7–8 (asymptotics, dynamics). *Math-verified deep-read in the corpus.*
-- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC 2016) - Ch 2 (local-vol calibration & its instability), Ch 7 (calibration of forward-variance models, §7.5 "the vanilla smile"), Ch 5 (variance swaps, the natural calibration instrument). *Math-verified in the corpus.*
-- **Brigo–Mercurio**: *Interest Rate Models - Theory and Practice* (2nd ed.) - Ch 6 (LFM dynamics), Ch 7 (Cases of Calibration of the LFM: the cascade algorithm). *Verified in the corpus.*
-- **Duffy**: *Finite Difference Methods in Financial Engineering* (Wiley 2006) - numerical schemes used to *price* with a calibrated local-vol surface (Ch 8–12). *Corpus available.*
+- **Gatheral, Jim**: *The Volatility Surface: A Practitioner's Guide* (Wiley 2006)
+- **Bergomi, Lorenzo**: *Stochastic Volatility Modeling* (CRC 2016)
+- **Brigo–Mercurio**: *Interest Rate Models
+- **Duffy**: *Finite Difference Methods in Financial Engineering* (Wiley 2006)
 
 ---
 

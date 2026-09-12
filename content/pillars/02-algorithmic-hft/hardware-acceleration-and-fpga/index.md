@@ -93,16 +93,16 @@ Hub signposts - the full failure analysis lives in [[pillars/02-algorithmic-hft/
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Leber, Christian; Geib, Benjamin; Litz, Heiner** - "High Frequency Trading Acceleration Using FPGAs," *FPL 2011*. *The proof-of-concept that FPGAs can parse feeds and run tick-to-trade logic at wire speed - the entry point to the silicon tier. Cited throughout.* `ADV`
+- **Leber, Christian; Geib, Benjamin; Litz, Heiner** - "High Frequency Trading Acceleration Using FPGAs," *FPL 2011*. *The proof-of-concept that FPGAs can parse feeds and run tick-to-trade logic at wire speed
 - **De Schryver, Christian (ed.)** - *FPGA Based Accelerators for Financial Applications* (Springer, 2015). *The dedicated reference: option-pricing accelerators, Monte Carlo, HFT hardware designs, HLS case studies, mixed-precision MC.* `ADV`
 - **Nasdaq** - *TotalView-ITCH 5.0 Specification (software and FPGA variants)*. *The concrete feed spec the hardware parser must speak.* `INT`
-- **DPDK documentation** (dpdk.org) and **Solarflare/Onload & OpenOnload docs** - kernel bypass, busy-polling, zero-copy receive. `INT`
+- **DPDK documentation** (dpdk.org) and **Solarflare/Onload & OpenOnload docs**
 - **MDPI *Electronics* (2024)** - "The Role of FPGAs in Modern Option Pricing Techniques: A Survey." *Open-access landscape with measured speedups/energy figures.* `INT`
 - **MacKenzie, Donald** - *Trading at the Speed of Light* (Princeton, 2021). *The physical/hardware tier told accurately for non-hardware readers.* `BEGIN`
 - **Aldridge, Irene** - *High-Frequency Trading* (2nd ed., 2013). *Infrastructure/latency chapters: the systems context around FPGA and kernel-bypass decisions.* `INT`
-- **Hasbrouck, Joel** - *Empirical Market Microstructure*, Ch 2. *The microstructure frame for "many prices at one instant" - why speed is a dimension of price.* `INT`
+- **Hasbrouck, Joel** - *Empirical Market Microstructure*
 
 ---
 

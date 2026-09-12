@@ -74,11 +74,11 @@ VPIN reads the tape exactly as advertised: **~0.007** on balanced flow (buys and
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5), 1457–1493 - the VPIN construction: volume bucketing, bulk-volume classification, eq. 9, Appendix A algorithm. *Primary PDF: `33Easley2012_flow_toxicity_and_liquidity_in.pdf`.*
-- **Easley, López de Prado & O'Hara (2011)**, *The microstructure of the "flash crash"*, J. Portfolio Management 37(2) - VPIN spiking before May 6, 2010; the applied motivation. *Primary PDF: `34_Easley_2011...`.*
-- **Lee & Ready (1991)**, *Inferring trade direction from intraday data*, J. Finance 46(2) - the tick-rule signing VPIN generalizes. *Primary PDF: `36_Lee_1991...`.*
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5), 1457–1493
+- **Easley, López de Prado & O'Hara (2011)**, *The microstructure of the "flash crash"*, J. Portfolio Management 37(2)
+- **Lee & Ready (1991)**, *Inferring trade direction from intraday data*, J. Finance 46(2)
 
 ---
 

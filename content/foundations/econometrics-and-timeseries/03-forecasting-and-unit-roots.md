@@ -68,12 +68,12 @@ Two independent random walks regressed on each other give mean $R^2=0.248$ and -
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, §2.6 (forecasting), §2.7 (unit roots, DF/ADF), §2.10 (HAC covariance), §2.11 (long memory). *Primary, verified.*
-- **Granger, C.W.J. & Newbold, P.** (1974), "Spurious Regressions in Econometrics," *Journal of Econometrics* - the founding statement.
-- **Hastie, Tibshirani & Friedman**, *Elements of Statistical Learning*, Ch 7 - model assessment; the discipline that stops you from reporting in-sample "significance" as truth.
-- **Campbell, Lo & MacKinlay**, *The Econometrics of Financial Markets* - long-horizon predictability and unit-root evidence for asset prices.
+- **Tsay**, *Analysis of Financial Time Series*
+- **Granger, C.W.J. & Newbold, P.** (1974), "Spurious Regressions in Econometrics," *Journal of Econometrics*
+- **Hastie, Tibshirani & Friedman**, *Elements of Statistical Learning*
+- **Campbell, Lo & MacKinlay**, *The Econometrics of Financial Markets*
 
 ---
 

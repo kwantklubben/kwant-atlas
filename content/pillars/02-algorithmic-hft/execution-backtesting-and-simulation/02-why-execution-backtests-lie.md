@@ -88,13 +88,13 @@ Read the table as the anatomy of the illusion: the optimistic rule fills **every
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14–15 - effective/realized cost, implementation shortfall, and the censoring of limit orders (execution is the minority outcome). `INT`
-- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4) (2017) - the fill function that replaces the naive rules.
-- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013), §4.5 - latency caveats in order-book event studies and the cancel-to-trade ratio that makes cancel-aware fills mandatory.
-- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (2018), Ch 11 - the catalogue of backtest illusions that any execution simulation inherits and must not re-introduce.
-- **Perold, A. F.** - "The implementation shortfall" (1988) - the identity that shows what the naive test silently sets to zero.
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Cont, Rama; Kukanov, Arseniy** - "Optimal order placement in limit order markets," *Quantitative Finance* 17(4) (2017)
+- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013)
+- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (2018)
+- **Perold, A. F.** - "The implementation shortfall" (1988)
 
 ---
 

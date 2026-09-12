@@ -99,11 +99,11 @@ The hedge is a **short** position of half a share plus $3.20$ in the bank; it pa
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance I*, §1.1 - the bracket $d<1+r<u$ with its economic justification, the replication equations (1.3)–(1.4), delta (1.6), risk-neutral probabilities (1.8) and the price (1.9); §3.2 the abstract one-step APT. *Math-verified in the corpus (Example 1.1 params reused here).*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 2 - one-period model, arbitrage portfolio (Def 2.2), no-arbitrage (Prop 2.3), replicating weights (eqs 2.2–2.3), risk-neutral valuation (Prop 2.11).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13.1–13.2 - the same one-step delta (eq 13.1) and risk-neutral valuation (eqs 13.2–13.3).
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

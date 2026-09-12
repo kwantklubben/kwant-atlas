@@ -69,12 +69,12 @@ Route a 1,000-share buy across fragmented venues by (a) raw quoted price and (b)
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Johnson, Barry** - *Algorithmic Trading & DMA* (2010). *The most concrete practitioner treatment of smart order types, order lifecycle, and routing mechanics.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 2 (effective spread $S_e=d(p-m)$ - the per-fill realization of the all-in price). *Verified in `foucault_ch1-3.md`.*
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 - **Colliard, Jean-Edouard & Foucault, Thierry** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 2012. *Why the take fee belongs in the ranking: the cum-fee price is what the taker pays; `corpus/titles/refs/53_Colliard_2012_...pdf`.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 10 (the common efficient price that all venue prices track - the reason a cross-venue merged book is well-defined). *Verified in `hasbrouck_ch6-10.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 
 ---
 

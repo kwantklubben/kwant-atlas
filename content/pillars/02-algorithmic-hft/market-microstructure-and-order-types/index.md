@@ -84,13 +84,13 @@ Hub signposts - the full analysis is in [[pillars/02-algorithmic-hft/market-micr
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 1–2 (mechanisms, order types, TIF/IOC/AON/hidden/reserve, priority rules, walk-the-book) and Ch 3 (Roll model). *Primary corpus source, verified in `hasbrouck_ch1-5.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **O'Hara, Maureen** - *Market Microstructure Theory* (1995). *The theoretical bedrock: price formation, dealer and sequential-trade models.*
 - **Harris, Larry** - *Trading and Exchanges* (2003). *The plain-English practitioner map of who trades, how venues are structured, and how every order type behaves.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 1–2 (liquidity, price discovery, quoted/effective/realized spreads, Roll estimator, Rule 605). *Verified in `foucault_ch1-3.md`.*
-- **Abergel, Anane, Chakraborti, Jedidi & Toke (eds.)** - *Limit Order Books* (2016); **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11), 2013. *Deep LOB modeling - paired with Pillar 6.*
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
+- **Abergel, Anane, Chakraborti, Jedidi & Toke (eds.)** - *Limit Order Books* (2016); **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11), 2013. *Deep LOB modeling
 
 ---
 

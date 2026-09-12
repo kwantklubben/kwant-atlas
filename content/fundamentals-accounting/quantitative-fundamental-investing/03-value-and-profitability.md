@@ -76,14 +76,14 @@ Stdlib only. Twelve firms with book equity, market cap, gross profit and assets.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Fama & French**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - B/M and E/P as priced cross-sectional value drivers.
+- **Fama & French**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
 - **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013) - *gross profitability predicts with roughly the same power as book-to-market, and profitable firms earn more despite higher valuation ratios; verified against the corpus paper.*
-- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - HML (value) and RMW (profitability) as distinct priced factors.
-- **Basu, Sanjoy**: "The Relationship Between Earnings Yield, Market Value and Return for NYSE Common Stocks" (*JFE*, 1983) - the E/P effect.
-- **Greenblatt, Joel**: *The Little Book That Beats the Market* - the magic formula: rank on earnings yield + ROIC; the famous "good *and* cheap" combination this page's double-sort formalizes.
-- **Hou, Xue & Zhang**: "Digesting Anomalies" (*RFS*, 2015) - ROE as the profitability leg of the q-factor model.
+- **Fama & French**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Basu, Sanjoy**: "The Relationship Between Earnings Yield, Market Value and Return for NYSE Common Stocks" (*JFE*, 1983)
+- **Greenblatt, Joel**: *The Little Book That Beats the Market*
+- **Hou, Xue & Zhang**: "Digesting Anomalies" (*RFS*, 2015)
 
 ---
 

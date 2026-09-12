@@ -103,13 +103,13 @@ The matrix implementation matches the hand-checkable scalar recursion to **$3.5\
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series* (3rd ed.), Ch 11 §11.1 (filter/prediction/smoothing definitions; local KF 11.14; diffuse init 11.1.6; ML via 11.25) and §11.4 (general filter 11.64, steady state 11.4.1). **Primary, corpus-verified source.**
-- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*, Ch 2 (filtering), Ch 4 (ML estimation), Ch 5–6 (diagnostics, initialization).
-- **Welch & Bishop**, *An Introduction to the Kalman Filter* (TR 95-041) - the standard predictor–corrector derivation.
-- **Särkkä**, *Bayesian Filtering and Smoothing*, Ch 4 (the general Gaussian filter) and Ch 6 (numerically stable / square-root forms).
-- **Hamilton**, *Time Series Analysis*, Ch 13.2 (the filter as an iterative least-squares projection).
+- **Tsay**, *Analysis of Financial Time Series* (3rd ed.)
+- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*
+- **Welch & Bishop**, *An Introduction to the Kalman Filter* (TR 95-041)
+- **Särkkä**, *Bayesian Filtering and Smoothing*
+- **Hamilton**, *Time Series Analysis*
 
 ---
 

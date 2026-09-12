@@ -76,12 +76,12 @@ The firm moved +2.5%, but once we subtract its usual −0.22% baseline, the *abn
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brown & Warner (1980)**, *Measuring Security Price Performance*, JFE 8(3) - the mean-adjusted / market-model measures and the return decomposition. *Verified refs/49.*
-- **Brown & Warner (1985)**, *Using Daily Stock Returns: The Case of Event Studies*, JFE 14(1) - eq. 1–2 (mean-adjusted returns), the estimation-window design. *Verified refs/50, read in full.*
-- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance Ch. 1 - the abnormal-return decomposition (eq. 1–2) and its interpretation as a wealth effect. *Verified refs/52, read in full.*
-- **Fama (1991)**, *Efficient Capital Markets: II*, J. Finance 46(5) - event studies as "the cleanest evidence we have on efficiency."
+- **Brown & Warner (1980)**, *Measuring Security Price Performance*, JFE 8(3)
+- **Brown & Warner (1985)**, *Using Daily Stock Returns: The Case of Event Studies*, JFE 14(1)
+- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance
+- **Fama (1991)**, *Efficient Capital Markets: II*, J. Finance 46(5)
 
 ---
 

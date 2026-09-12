@@ -94,14 +94,14 @@ The policy-gradient agent **recovers the exact optimal policy** $[0,1,1,1]$ foun
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sutton, Richard S. & Barto, Andrew G.**: *Reinforcement Learning: An Introduction* (2nd ed., 2018) - Ch 13 (policy-gradient methods, the policy-gradient theorem 13.5, REINFORCE, baselines, actor–critic).
-- **Williams, Ronald J.**: "Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning" (*Machine Learning* 8, 1992) - the original REINFORCE.
-- **Sutton, Richard S.; McAllester, David; Singh, Satinder & Mansour, Yishay**: "Policy Gradient Methods for Reinforcement Learning with Function Approximation" (NeurIPS 2000) - the policy-gradient theorem with the compatible-function-approximation result.
-- **Schulman, John et al.**: "Proximal Policy Optimization Algorithms" (arXiv:1707.06347, 2017) - PPO; the stable default in trading-RL frameworks (including Qlib's RL module).
-- **Mnih, Volodymyr et al.**: "Asynchronous Methods for Deep Reinforcement Learning" (ICML 2016) - A3C/A2C, the parallel-advantage actor–critic template.
-- **Konda, Vijay & Tsitsiklis, John**: "Actor-Critic Algorithms" (NeurIPS 1999) - the two-time-scale actor–critic convergence result.
+- **Sutton, Richard S. & Barto, Andrew G.**: *Reinforcement Learning: An Introduction* (2nd ed., 2018)
+- **Williams, Ronald J.**: "Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning" (*Machine Learning* 8, 1992)
+- **Sutton, Richard S.; McAllester, David; Singh, Satinder & Mansour, Yishay**: "Policy Gradient Methods for Reinforcement Learning with Function Approximation" (NeurIPS 2000)
+- **Schulman, John et al.**: "Proximal Policy Optimization Algorithms" (arXiv:1707.06347, 2017)
+- **Mnih, Volodymyr et al.**: "Asynchronous Methods for Deep Reinforcement Learning" (ICML 2016)
+- **Konda, Vijay & Tsitsiklis, John**: "Actor-Critic Algorithms" (NeurIPS 1999)
 
 ---
 

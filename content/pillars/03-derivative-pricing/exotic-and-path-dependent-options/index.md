@@ -69,12 +69,12 @@ Hub signposts - full analysis in [[pillars/03-derivative-pricing/exotic-and-path
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) - Ch 4 §4.12–4.20 (single-asset exotics: chooser, compound, lookback, barrier, binary, Asian), Ch 5 (two-asset: exchange, quanto, spread, basket), Ch 12–13 (basket vol, bivariate normal primitives). *Primary lookup; all quoted digits numerically verified.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance II* - Ch 6 (Feynman–Kac, Asian-option PDE) and Ch 7 (exotics: joint density of max & terminal, knock-out barrier PDE, lookback dimension reduction, Večeř change-of-numeraire). *Math-verified deep-read.*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 26 (the 15-family exotic catalog: gap, compound, barrier, binary, lookback, Asian, exchange, rainbow). Ch 27 (MC & trees for path-dependent products, LSM).
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* - Ch 1 (estimator, $O(n^{-1/2})$), Ch 3 (exact GBM path simulation; path-dependent payoffs), Ch 7 (pathwise vs likelihood-ratio Greeks - the failure modes), Ch 8 (American by simulation: LSM, duality).
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006)
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance II*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*
 
 ---
 

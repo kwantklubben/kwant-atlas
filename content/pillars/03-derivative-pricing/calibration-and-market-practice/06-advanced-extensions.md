@@ -63,12 +63,12 @@ SVI fits the whole slice to a total-variance RMSE of $2.3\times10^{-5}$ (about a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 3 (SVI, eq 3.20, surface fitting under no calendar-spread arbitrage; ATM level/skew term-structure table).
-- **Brigo–Mercurio**, *Interest Rate Models - Theory and Practice* (2nd ed.), Ch 6 (LFM dynamics, caplet=Black, correlation parameterizations, swaption Black) and Ch 7 (Cases of Calibration: cascade algorithm 7.4.1, RCCAEI endogenous interpolation, Monte Carlo reliability). *Verified in the corpus.*
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 8–12 (numerical schemes for pricing a calibrated surface).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 (smiles, model risk) and Ch 28+ (the LIBOR market model).
+- **Gatheral**, *The Volatility Surface*
+- **Brigo–Mercurio**, *Interest Rate Models
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

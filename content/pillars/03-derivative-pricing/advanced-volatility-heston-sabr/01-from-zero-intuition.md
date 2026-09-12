@@ -88,12 +88,12 @@ Three facts to read off the table:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 §20.3–20.8 (why smiles exist: leverage, volatility feedback, crashophobia; FX smile vs equity skew; surface as an interpolation tool; single-large-jump "frown") and Ch 23 §23.1–23.6 (EWMA/GARCH volatility term structure eq. 23.14 - the $\mathbb P$-measure cousin of the SV term structure). *Verification report in the corpus.*
-- **Gatheral**, *The Volatility Surface*, Ch 1 (empirical motivation: volatility clustering, fat tails, and the SDEs 1.1–1.2 that follow), Ch 7 §7.8 (shape is model-generic). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 1 (what a "usable" model is; the Black–Scholes equation as an accounting device) and Ch 5 Appendix B (the Gram–Charlier/$\kappa_3$ perturbation that makes the mixed-density intuition precise). *Math-verified.*
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.1–1.9 (generalized BSM, put–call parity, symmetries) and §2.9 (vega - the map that makes vol-inversion well posed). *Numerically verified.*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

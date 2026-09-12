@@ -83,12 +83,12 @@ Re-produce the sensitivities of a European call **without using a single Greek f
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 19 §19.1 (why sensitivities are the desk's risk language), Ch 21 §21.8 (finite-difference *pricing* machinery, eq. 21.27) - the same central-difference idea used here for Greeks, Ch 22 §22.5 (mapping a portfolio to factors, eq. 22.6). *Verified in the corpus.*
-- **RiskMetrics (J.P. Morgan)**: *Technical Document*, 4th ed. (1996) - Ch 6–7, the original "map every position to a small set of primary risk factors" doctrine, and the reason delta-normal VaR is a *sensitivity* method.
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) - §2.2, the analytic first-order Greeks that bump-and-revalue is used to avoid (and used to check).
-- **Alexander, Carol**: *Market Risk Analysis, Vol. III* (2008) - Ch 4–7, instrument-by-instrument risk-factor mapping (bonds, swaps, FX, equity, options).
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **RiskMetrics (J.P. Morgan)**: *Technical Document*, 4th ed. (1996)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006)
+- **Alexander, Carol**: *Market Risk Analysis, Vol. III* (2008)
 
 ---
 

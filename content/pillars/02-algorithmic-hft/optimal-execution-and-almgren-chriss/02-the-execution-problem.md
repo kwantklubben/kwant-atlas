@@ -86,12 +86,12 @@ The Monte Carlo reproduces the closed forms to within sampling error ($O(1/\sqrt
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Perold, André F.** - "The implementation shortfall: Paper versus reality," *Journal of Portfolio Management* 14(3), 4-9 (1988). *The origin of IS.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (IS decomposition eq 14.1, effective/realized cost eq 14.2, Rule 605, VWAP objections) and Ch 15 (prospective costs, order splitting). *Corpus verification report `hasbrouck_ch11-15.md` - formula-by-formula check passed.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Bertsimas, Dimitris; Lo, Andrew W.** - "Optimal control of execution costs," *Journal of Financial Markets* 1(1), 1-50 (1998). *Defines best execution as minimal expected cost; the DP formulation IS sits inside.*
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §1.4 (the capture/cost formulas eqs 3-5).
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000)
 
 ---
 

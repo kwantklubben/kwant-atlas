@@ -83,13 +83,13 @@ numpy. A primary model emits a side call whose correctness is predictable from a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 3 (meta-labeling) and Ch 10 (bet sizing from probabilities) - the meta-labeling machinery demonstrated in §3.
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 2 (Marchenko–Pastur denoising/detoning) and Ch 7 (NCO portfolio construction).
-- **López de Prado**, "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019 - MCD/SK/NaN/TS/DNN covariance estimators vs $1/N$.
-- **Raffinot**, "The Hierarchical Equal Risk Contribution Portfolio," SSRN 3237540, 2018 - HERC.
-- **Ang & Timmermann**, "Regime Changes and Financial Markets," *Annual Review of Financial Economics* 4:313–337, 2012 - regime structure behind allocation (bridges to [[pillars/07-machine-learning-altdata/regime-classification-hmm-and-gmm/index|Regime Classification]]).
+- **López de Prado**, *Advances in Financial Machine Learning* (2018)
+- **López de Prado**, *Machine Learning for Asset Managers* (2020)
+- **López de Prado**, "A Robust Estimator of the Efficient Frontier," SSRN 3469961, 2019
+- **Raffinot**, "The Hierarchical Equal Risk Contribution Portfolio," SSRN 3237540, 2018
+- **Ang & Timmermann**, "Regime Changes and Financial Markets," *Annual Review of Financial Economics* 4:313–337, 2012
 
 ---
 

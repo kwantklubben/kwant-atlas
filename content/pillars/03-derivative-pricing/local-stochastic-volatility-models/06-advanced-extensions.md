@@ -140,13 +140,13 @@ We verify: (a) Dupire's formula returns the diffusive variance *exactly* when th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016) - **Ch 7** (forward-variance models: pricing equation 7.4, Markov representation 7.9–7.13, exact simulation 7.15–7.18, two-factor model 7.28–7.39, benchmark 7.40, VIX/realized variance §7.6–7.7, rank-of-covariance caveat §7.3.3) and **Ch 12 §12.1–12.4** (LSV: construction, the ATMF-skew decomposition once the leverage is in place, and the *"not usable models"* warning §12.2.2). **Bergomi, L.**, *Local-stochastic volatility: models and non-models*, Risk - admissibility, the gauge, and the delta discussion. *The primary modern treatment; math-verified in the corpus.*
-- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107, and their *Nonlinear Option Pricing* (CRC, 2013) - the particle method and the McKean–Vlasov framework that every extension here reuses; the same authors' work covers **LSV with jumps** and the multi-factor calibration.
-- **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott 84–108 - SABR, and the LMM backbone used by embedded-local-volatility constructions. **Ren, Y., Madan, D. & Qian, M. Q.** (2007), *Calibrating and pricing with embedded local volatility models*, Risk **20**(9) - LSV-LMM as practised on rates desks. **Piterbarg, V.** (2005), *Time to smile*, Risk (May) and **Lipton, A.** (2002), *The vol smile problem*, Risk (February) - the forward-equation constructions.
-- **Gatheral, J., Jaisson, T. & Rosenbaum, M.** (2018), *Volatility is rough* - the $H\approx0.1$ finding and the rough-vol programme; **El Euch, O. & Rosenbaum, M.** (2019), *The characteristic function of rough Heston models* (the Markovian lift); **Bayer, Friz & Gatheral** (2016), *Pricing under rough volatility*. **Horvath, B., Muguruza, A. & Tomas, M.** (2021), *Deep learning volatility* - neural calibration of rough and local-stochastic models. *Forward pointers beyond the verified corpus of this folder.*
-- **Merton, R. C.** (1976), *Option pricing when underlying stock returns are discontinuous* - the jump-diffusion whose Poisson-mixture prices are used in §3; **Cont, R. & Tankov, P.**, *Financial Modelling with Jump Processes*, ch 8–9 (measure choice and incompleteness under jumps). **Gatheral, J.**, *The Volatility Surface*, Ch 5 (SVJ/SVJJ and the additive short-dated skew, eq. 5.8/7.8) and Ch 7 §7.8 (shape is model-generic). *Math-verified in the corpus.*
+- **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016)
+- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107, and their *Nonlinear Option Pricing* (CRC, 2013)
+- **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott 84–108
+- **Gatheral, J., Jaisson, T. & Rosenbaum, M.** (2018), *Volatility is rough*
+- **Merton, R. C.** (1976), *Option pricing when underlying stock returns are discontinuous*
 
 ---
 

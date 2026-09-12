@@ -77,12 +77,12 @@ Read the output honestly: **Hill is accurate and stable** ($\hat\alpha\approx3.3
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **de Haan & Ferreira**, *Extreme Value Theory: An Introduction* (2006), §1.1–1.2 (GEV, domains of attraction), §3.2 (Hill, Thm 3.2.2, eq. 3.2.2), §3.3 (Pickands, eq. 3.3.1, Thm 3.3.1), §3.4 (comparison of estimators, asymptotic variances). *Math-verified in the corpus.*
+- **de Haan & Ferreira**, *Extreme Value Theory: An Introduction* (2006)
 - **Hill, Bruce M.**, *A Simple General Approach to Inference About the Tail of a Distribution*, Annals of Statistics 3(5):1163–1174 (1975). *(Corpus PDF, scanned.)*
 - **Pickands, James III**, *Statistical Inference Using Extreme Order Statistics*, Annals of Statistics 3(1):119–131 (1975). *(Corpus PDF, scanned.)*
-- **McNeil & Frey (2000)**, §2.3 - Hill vs GPD vs empirical quantile estimators, MSE/bias vs $k$. *Read in corpus.*
+- **McNeil & Frey (2000)**
 
 ---
 

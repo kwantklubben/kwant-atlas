@@ -68,11 +68,11 @@ Numba's compiled loop lands within ~2–3× of BLAS `np.dot` (0.35× = `np.dot` 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **QuantEcon - Numba chapter**, *Python Programming for Economics and Finance* (quantecon.org) - the free tutorial that brings numeric Python loops to compiled speed, economics-flavored and directly applicable to quant simulation loops.
-- **Numba official docs** (numba.pydata.org) - JIT decorators, `nopython` mode, supported types, `nogil`, and caching; the authoritative reference.
-- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) - ch. 4 (Cython/Numba): when to compile vs vectorize, profiling to find the loop worth compiling.
+- **QuantEcon - Numba chapter**, *Python Programming for Economics and Finance* (quantecon.org)
+- **Numba official docs** (numba.pydata.org)
+- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020)
 
 ---
 

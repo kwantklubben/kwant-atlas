@@ -68,11 +68,11 @@ Simulate BM and watch $\sum(\Delta W)^2\to T$ regardless of path; then check tha
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 13 (random walk → BM: LLN/CLT MGF proofs, scaling, covariance, first passage & reflection) - the cleanest discrete-to-continuous bridge.
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 3 §3.4 (quadratic variation, Def 3.4.1, Thm 3.4.3, the $dW\,dW=dt$ rules).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 3 §3.1 (exact BM construction, covariance $\min(s,t)$, Brownian bridge).
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

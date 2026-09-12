@@ -80,7 +80,7 @@ Quantify the sniping profit as a function of latency advantage, show the batch a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Budish, Cramton & Shim** - "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response," *QJE* 130(4), 2015. *The batch-auction counterfactual and the latency-race critique.*
 - **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2), 2015. *When private speed investment is socially wasteful.*

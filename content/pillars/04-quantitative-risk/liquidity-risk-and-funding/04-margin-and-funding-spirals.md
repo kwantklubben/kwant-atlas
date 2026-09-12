@@ -87,14 +87,14 @@ Read it carefully. A **3% price shock** (\$1.5M of loss on a \$10M equity base) 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brunnermeier, M. & Pedersen, L.H.** - *Market Liquidity and Funding Liquidity*, *RFS* **22**(6):2201–2238 (2009). The margin/loss-spiral model, the funding-constraint recurrence, and the margin–MPOR coupling. **The primary source.** (Corpus: `58_Brunnermeier_2009_...pdf`.)
-- **Brunnermeier, M.** - *Deciphering the Liquidity and Credit Crunch 2007–2008*, *JEP* **23**(1):77–100 (2009). The case study - margin spirals in Bear Stearns, the ABCP conduits, the repo run. (Corpus: `59_Brunnermeier_2009_...pdf`.)
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 9.4–9.5 (limits to arbitrage, fire sales, the market↔funding interaction; Shleifer–Vishny 1997 performance-based arbitrage). *Verified in corpus.*
-- **Shleifer, A. & Vishny, R.** - *The Limits of Arbitrage*, *JF* 52(1):35–55 (1997) - the fire-sale/performance-based-arbitrage mechanism that recruits the loss spiral.
-- **BCBS** - *Basel III: The LCR and Liquidity Risk Monitoring Tools* (2013, d238); *Basel III: The NSFR* (2014, d295). The regulatory funding-liquidity layer of §2.5.
-- **Hull** - *Risk Management and Financial Institutions*, liquidity-risk and Basel chapters - the regulatory glue.
+- **Brunnermeier, M. & Pedersen, L.H.** - *Market Liquidity and Funding Liquidity*, *RFS* **22**(6):2201–2238 (2
+- **Brunnermeier, M.** - *Deciphering the Liquidity and Credit Crunch 2007–2008*, *JEP* **23**(1):77–100 (2
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
+- **Shleifer, A. & Vishny, R.** - *The Limits of Arbitrage*, *JF* 52(1):35–55 (1997)
+- **BCBS** - *Basel III: The LCR and Liquidity Risk Monitoring Tools* (2013, d238); *Basel III: The NSFR* (2014, d295). The regulatory funding-liquidity layer of
+- **Hull** - *Risk Management and Financial Institutions*, liquidity-risk and Basel chapters
 
 ---
 

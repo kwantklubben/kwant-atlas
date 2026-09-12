@@ -67,11 +67,11 @@ Two messages. **A:** with 1,000 searches on short samples, the best of pure coin
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014), §"Multiple testing", §"Backtest overfitting", §"Backtest overfitting and the holdout method" - the coin-toss example and the 50% haircut as folklore.
-- **White, H.**: *A Reality Check for Data Snooping*, Econometrica (2000), §1 - the "newsletter scam" and the foundational statement of why a specification search inflates results.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.), Ch 7 §7.1–7.3 - why the *training error* is an optimistically biased estimate of test error, and the two distinct goals of model selection vs assessment.
+- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014)
+- **White, H.**: *A Reality Check for Data Snooping*, Econometrica (2000)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed.)
 
 ---
 

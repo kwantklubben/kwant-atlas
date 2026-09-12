@@ -87,15 +87,15 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brunnermeier, Markus K. & Pedersen, Lasse Heje** - *Market Liquidity and Funding Liquidity*, *Review of Financial Studies* **22**(6):2201–2238 (2009). The margin/loss-spiral model - the theory behind the whole folder. **The primary source.** (In corpus as `58_Brunnermeier_2009_market_liquidity_and_funding_liquidity.pdf`.)
-- **Brunnermeier, Markus K.** - *Deciphering the Liquidity and Credit Crunch 2007–2008*, *Journal of Economic Perspectives* **23**(1):77–100 (2009). The narrative-and-mechanism account; the accessible case study of the spirals in action.
-- **Foucault, Thierry, Pagano, Marco & Röell, Ailsa** - *Market Liquidity: Theory, Evidence and Policy* (Oxford, 2013). Ch 1 (three dimensions of liquidity: market, funding, monetary), Ch 2 (spread/impact measurement, Roll, Amihud, implementation shortfall), Ch 9 (liquidity and asset prices). *Verified per chapter in the corpus.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (Oxford, 2007). Ch 1 (liquidity = depth, breadth, resiliency), Ch 3 (Roll model, spread $2c$), Ch 7 (Kyle $\lambda$, depth $1/\lambda$), Ch 9 (Amihud/Amivest ratios). *Verified per chapter in the corpus.*
+- **Brunnermeier, Markus K. & Pedersen, Lasse Heje** - *Market Liquidity and Funding Liquidity*, *Review of Financial Studies* **22**(6):2201–2238 (2
+- **Brunnermeier, Markus K.** - *Deciphering the Liquidity and Credit Crunch 2007–2008*, *Journal of Economic Perspectives* **23**(1):77–100 (2
+- **Foucault, Thierry, Pagano, Marco & Röell, Ailsa** - *Market Liquidity: Theory, Evidence and Policy* (Oxford, 2013)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (Oxford, 2007)
 - **Hull, John C.** - *Risk Management and Financial Institutions* (Wiley), liquidity-risk chapter (liquidity trading risk, L-VaR, the Basel LCR/NSFR). *Risk-engineering companion to this folder.*
-- **Amihud, Yakov** - *Illiquidity and Stock Returns: Cross-Section and Time-Series Effects*, *J. Financial Markets* **5**(1):31–56 (2002). The $|r|/\text{Vol}$ illiquidity ratio - the standard empirical proxy. (In corpus.)
-- **Acharya, Viral & Pedersen, Lasse Heje** - *Asset Pricing with Liquidity Risk*, *J. Financial Economics* **77**(2):375–410 (2005). Liquidity as a priced factor - the return-premium bridge (§6). (In corpus.) Also **Pastor & Stambaugh (2003)** *Liquidity Risk and Expected Stock Returns* (Pillar 6 refs).
+- **Amihud, Yakov** - *Illiquidity and Stock Returns: Cross-Section and Time-Series Effects*, *J. Financial Markets* **5**(1):31–56 (2
+- **Acharya, Viral & Pedersen, Lasse Heje** - *Asset Pricing with Liquidity Risk*, *J. Financial Economics* **77**(2):375–410 (2005). Liquidity as a priced factor
 - **[REG]** **BCBS** - *Basel III: The Liquidity Coverage Ratio and Liquidity Risk Monitoring Tools* (2013, BIS d238) and *Basel III: The Net Stable Funding Ratio* (2014, BIS d295). The regulatory definitions of funding-liquidity risk.
 
 ---

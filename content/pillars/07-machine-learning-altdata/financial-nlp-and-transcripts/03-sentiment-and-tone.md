@@ -79,12 +79,12 @@ The monotone ordering is the point: sentiment −0.571 ↔ drift −4.0, sentime
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tetlock, Paul C.**, "Giving Content to Investor Sentiment," *Journal of Finance* 62(3), 2007 - negative-word fraction → return pressure and reversal; the method this page implements. *Corpus PDF verified.*
-- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability?" *Journal of Finance* 66(1), 2011 - net-tone, uncertainty, litigious, constraining, strong-modal lists and readability in 10-Ks. *Corpus PDF verified.*
-- **Loughran, Tim & McDonald, Bill**, "Measuring Readability in Financial Disclosures," *Journal of Finance* 69(4), 2014 - the Fog/Gunning usage and obfuscation findings (referenced via the corpus section).
-- **Gentzkow, Kelly & Taddy**, "Text as Data," *JEL* 57(3), 2019 - text-feature regression as the unifying statistical model.
+- **Tetlock, Paul C.**, "Giving Content to Investor Sentiment," *Journal of Finance* 62(3), 2007
+- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability?" *Journal of Finance* 66(1), 2011
+- **Loughran, Tim & McDonald, Bill**, "Measuring Readability in Financial Disclosures," *Journal of Finance* 69(4), 2014
+- **Gentzkow, Kelly & Taddy**, "Text as Data," *JEL* 57(3), 2019
 
 ---
 

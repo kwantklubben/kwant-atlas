@@ -74,14 +74,14 @@ Panel (A): the *same order* costs A twice as much as its private model says the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brunnermeier & Pedersen** (2009) - the coupling $\partial m/\partial(\text{stress})$ and the spiral interaction. **Brunnermeier** (2009) - the 2007–08 case evidence for all three failures.
-- **Shleifer & Vishny** (1997), *The Limits of Arbitrage* - performance-based arbitrage and fire sales; the externality's microfoundation.
-- **Foucault, Pagano & Röell** (2013), Ch 9 (limits to arbitrage; crisis amplification when the liquidation discount is large) and Ch 3 (adverse selection ⇒ permanent impact, so liquidation *does* move the efficient price). *Verified in corpus.*
-- **Hasbrouck** (2007), Ch 9.9 (Amihud/Amivest proxies and their pitfalls) and Ch 1.2 (depth/breadth/resiliency). *Verified in corpus.*
-- **Pastor, L. & Stambaugh, R.** - *Liquidity Risk and Expected Stock Returns*, *JPE* 111(3) (2003) - liquidity as a priced, undiversifiable factor. (Pillar 6 refs.) **Acharya & Pedersen** (2005) - the liquidity-adjusted CAPM. (Corpus.)
-- **BCBS** - *Principles for Sound Stress Testing Practices and Supervision* (2009, BIS) and the LCR/NSFR documents - the regulatory response to failures 2–4.
+- **Brunnermeier & Pedersen** (2009)
+- **Shleifer & Vishny** (1997), *The Limits of Arbitrage*
+- **Foucault, Pagano & Röell** (2013)
+- **Hasbrouck** (2007)
+- **Pastor, L. & Stambaugh, R.** - *Liquidity Risk and Expected Stock Returns*, *JPE* 111(3) (2003)
+- **BCBS** - *Principles for Sound Stress Testing Practices and Supervision* (2009, BIS) and the LCR/NSFR documents
 
 ---
 

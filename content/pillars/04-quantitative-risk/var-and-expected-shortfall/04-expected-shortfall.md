@@ -87,14 +87,14 @@ All three agree to Monte Carlo precision (the small residual is $O(1/\sqrt{N})$ 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Rockafellar, R.T. & Uryasev, S.**, *Optimization of Conditional Value-at-Risk*, *Journal of Risk* 2(3):21–41 (2000) - Defs. of VaR/CVaR, the function $F_\alpha$ and Thms. 1–2 (CVaR as a convex minimum), the linear-programming reduction. *Primary source; read in full from the corpus PDF.* (Extended: *Conditional Value-at-Risk for General Loss Distributions*, *JBF* 26(7), 2002.)
-- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999) - §5.1 (tail conditional expectation), Prop. 5.2 (VaR is the least coherent measure dominating it).
-- **Acerbi, C. & Tasche, D.**, *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7):1487–1503 (2002) - ES coherence for general distributions; Euler allocation of ES.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 (ES definition, normal ES eq. 22.1, Basel ES@97.5%). *Numerically verified in the corpus.*
-- **McNeil & Frey**, *Estimation of Tail-Related Risk Measures…*, *J. Empirical Finance* 7 (2000) - conditional ES via GARCH + EVT.
-- **Gneiting, T.**, *Making and Evaluating Point Forecasts*, *JASA* 106(494) (2011) - the non-elicatability of ES (the backtesting caveat).
+- **Rockafellar, R.T. & Uryasev, S.**, *Optimization of Conditional Value-at-Risk*, *Journal of Risk* 2(3):21–41 (2000)
+- **Artzner, Delbaen, Eber & Heath**, *Coherent Measures of Risk* (1999)
+- **Acerbi, C. & Tasche, D.**, *On the Coherence of Expected Shortfall*, *J. Banking & Finance* 26(7):1487–1503 (2002)
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **McNeil & Frey**, *Estimation of Tail-Related Risk Measures…*, *J. Empirical Finance* 7 (2000)
+- **Gneiting, T.**, *Making and Evaluating Point Forecasts*, *JASA* 106(494) (2011)
 
 ---
 

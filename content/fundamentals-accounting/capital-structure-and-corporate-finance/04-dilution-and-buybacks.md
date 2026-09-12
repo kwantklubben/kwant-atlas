@@ -74,13 +74,13 @@ The dilution panel is the red flag: issuing at $8$ when shares are worth $10$ ha
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Myers & Majluf**, "Corporate Financing and Investment Decisions…" (*JFE*, 1984) - the issue-below-intrinsic wealth transfer and the underinvestment trap; the formal dilution channel. *Verified against the paper text.*
-- **Jensen**, "Agency Costs of Free Cash Flow…" (*AER*, 1986) - the free-cash-flow / payout-vs-reinvest rule (reinvest only if ROIC ≥ cost of capital). *Verified against the paper text.*
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance*, Ch 16 - dividend policy, buybacks, and the MM dividend-irrelevance result.
-- **Graham & Dodd**, *Security Analysis* (6th ed.) - the classic warning that warrants and convertibles "siphon off" part of future appreciation from common holders (the original dilution concern).
-- **Damodaran**, *Applied Corporate Finance* - dividend and buyback decisions for real firms, with the sustainable-payout framework.
+- **Myers & Majluf**, "Corporate Financing and Investment Decisions…" (*JFE*, 1984)
+- **Jensen**, "Agency Costs of Free Cash Flow…" (*AER*, 1986)
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
+- **Graham & Dodd**, *Security Analysis* (6th ed.)
+- **Damodaran**, *Applied Corporate Finance*
 
 ---
 

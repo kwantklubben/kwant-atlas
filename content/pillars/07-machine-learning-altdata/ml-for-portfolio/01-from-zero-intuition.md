@@ -91,11 +91,11 @@ Read the rows carefully: the **forecast IC is identical (0.0674) under both posi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 6 (bias–variance–noise, ensemble motivation) and Ch 10 (bet sizing as the forecast-to-position step). *Primary anchor.*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2009), §7.3 (bias–variance decomposition). *Verified in the corpus.*
-- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* (2009) - the framework's null benchmark: how much you give up trusting a naive $1/N$ position rule.
+- **López de Prado**, *Advances in Financial Machine Learning* (2018)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2009)
+- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* (2009)
 
 ---
 

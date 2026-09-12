@@ -103,12 +103,12 @@ Hub signposts - the full analysis is in [[pillars/03-derivative-pricing/numerica
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffy, Daniel J.**: *Finite Difference Methods in Financial Engineering* (Wiley, 2006) - Ch 3 (parabolic IBVPs, maximum principle), Ch 4 (BS → heat reduction), Ch 6 (divided differences, Euler/CN, Padé), Ch 7 (method of lines, $\theta$-method, M-matrix), Ch 8 (consistency, stability, Lax, von Neumann), Ch 11 (exponential fitting), Ch 12 (explicit schemes + stability bounds), Ch 19–21 (ADI, splitting, IMEX), Ch 27–29 (front fixing, penalty, PSOR). *The primary FDM source for this folder; equations verified at glyph level in the corpus.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004) - Ch 1 (estimator, MSE/efficiency), Ch 3 (sample paths, GBM, Brownian bridge, jump diffusions), Ch 4 (variance reduction), Ch 5 (QMC), Ch 6 (discretisation, Brownian interpolation), Ch 7 (sensitivities), Ch 8 (American by simulation, LSM, duality). *The primary Monte Carlo source; math-verified in the corpus.*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 21 (numerical procedures: trees, MC variance reduction, implicit/explicit/CN finite differences, explicit FDM ≡ trinomial). *Verified extraction in the corpus.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) - §4.1–4.2 (CRR binomial, European 4.4496 vs BSM 4.4494; American put 4.692 at $n{=}1000$), §4.5 (Boyle trinomial, 13.1752 vs BSM 13.1744). *Numerically verified.*
+- **Duffy, Daniel J.**: *Finite Difference Methods in Financial Engineering* (Wiley, 2006)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (Springer, 2004)
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.)
 
 ---
 

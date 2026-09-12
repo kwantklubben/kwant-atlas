@@ -89,13 +89,13 @@ Read it as the two-sided tax on going live: **costs scale linearly with turnover
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Narang**, *Inside the Black Box*, 2nd ed. - the architecture and the case that the strategy is a small part of the system.
-- **Davey**, *Building Winning Algorithmic Trading Systems*, Ch 1–4 (the research-to-live arc, and why "backtest complete" is not "live ready").
-- **Carver**, *Systematic Trading*, Ch 1–3 & 7 (robustness over fit; position sizing and the cost of turnover).
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 7 & 11–12 - the hygiene case that a good backtest is usually still a false discovery.
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016) - the general theory of "bounded worst case over expected value" that production trading imports wholesale.
+- **Narang**, *Inside the Black Box*, 2nd ed.
+- **Davey**, *Building Winning Algorithmic Trading Systems*
+- **Carver**, *Systematic Trading*
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016)
 
 ---
 

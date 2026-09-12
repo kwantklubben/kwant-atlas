@@ -82,14 +82,14 @@ Q-learning, seeing only $(x,a,r,x')$ samples, reproduces the exact $V^*$ to $0.0
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018) - Ch 6 (TD learning), Ch 6.5 (Q-learning), Ch 7 (n-step, eligibility traces), Ch 9–11 (function approximation, the deadly triad, off-policy divergence). *Primary reference.*
-- **Watkins, Christopher & Dayan, Peter**: "Q-learning" (*Machine Learning* 8, 1992) - convergence of tabular Q-learning.
-- **van Hasselt, Hado; Guez, Arthur & Silver, David**: "Deep Reinforcement Learning with Double Q-learning" (AAAI 2016) - the maximization-bias fix.
-- **Mnih, Volodymyr et al.**: "Human-level Control through Deep Reinforcement Learning" (*Nature* 518, 2015) - DQN: replay + target network.
-- **Sutton, Richard S.**: "Learning to Predict by the Methods of Temporal Differences" (*Machine Learning* 3, 1988) - the original TD paper.
-- **Deng, Yue et al.**: "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading" (*IEEE TNNLS*, 2017) - a concrete (and realistically modest) deep-RL trading system.
+- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018)
+- **Watkins, Christopher & Dayan, Peter**: "Q-learning" (*Machine Learning* 8, 1992)
+- **van Hasselt, Hado; Guez, Arthur & Silver, David**: "Deep Reinforcement Learning with Double Q-learning" (AAAI 2016)
+- **Mnih, Volodymyr et al.**: "Human-level Control through Deep Reinforcement Learning" (*Nature* 518, 2015)
+- **Sutton, Richard S.**: "Learning to Predict by the Methods of Temporal Differences" (*Machine Learning* 3, 1988)
+- **Deng, Yue et al.**: "Deep Direct Reinforcement Learning for Financial Signal Representation and Trading" (*IEEE TNNLS*, 2017)
 
 ---
 

@@ -100,13 +100,13 @@ The trade log is the whole proof: order #5 arrived *later* than #1 and #2 at the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 2 §2.1 (limit order markets: priority = price then time, FIFO; matched at the price of the older order; market orders "walk the book") - *verified in the corpus*.
-- **Foucault, Pagano & Röell**, *Market Liquidity*, Ch 2 (spread/depth definitions and price impact $1/\lambda$) and Ch 3 (order-flow price dynamics) - *verified in the corpus*.
-- **Huang, Lehalle & Rosenbaum (2015)**, *Simulating and analysing the queue-reactive model*, Journal of Statistical Mechanics - queue-size dynamics and the empirical priority of the touch; a direct descendant of Cont–Stoikov–Talreja.
-- **Parlour (1998)**, *Price dynamics in limit order markets*, Review of Financial Studies 11(4) - why traders choose to make or take and how priority shapes the book.
-- **Foucault, Kadan & Kandel (2005)**, *Limit order book as a market for liquidity*, Review of Financial Studies 18(4) - equilibrium with endogenous liquidity supply and impatience.
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Foucault, Pagano & Röell**, *Market Liquidity*
+- **Huang, Lehalle & Rosenbaum (2015)**, *Simulating and analysing the queue-reactive model*, Journal of Statistical Mechanics
+- **Parlour (1998)**, *Price dynamics in limit order markets*, Review of Financial Studies 11(4)
+- **Foucault, Kadan & Kandel (2005)**, *Limit order book as a market for liquidity*, Review of Financial Studies 18(4)
 
 ---
 

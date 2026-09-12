@@ -66,12 +66,12 @@ Estimate the profile from a history of noisy U-shaped days, build a randomized-b
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Kissell, Glantz & Malamut** - *Optimal Trading Strategies* (2003); **Kissell** - *The Science of Algorithmic Trading* (2014). *The desk standard on volume profiles and building/slicing schedules around them.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 15 (U-shaped strategies, slowly-decaying temporary impact, order-splitting across profile). *Corpus verification `hasbrouck_ch11-15.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Johnson, Barry** - *Algorithmic Trading & DMA* (2010). *Volume-profile estimation and VWAP/TWAP construction in practice.*
-- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013), Ch 2 (VWAP as a realized-weighted benchmark). *Corpus verification `foucault_ch1-3.md`.*
+- **Foucault, Pagano, Roëll** - *Market Liquidity* (2013)
 
 ---
 

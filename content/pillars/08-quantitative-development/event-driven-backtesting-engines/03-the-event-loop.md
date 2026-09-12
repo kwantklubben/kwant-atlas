@@ -108,12 +108,12 @@ Skipping `PENDING_NEW → OPEN` (the latency gap) or the `CANCELLED` branch is h
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **NautilusTrader Docs** - the `Clock` / message-bus determinism section is the clearest production statement of the ordering rules in §2.
-- **Halls-Moore, Michael**, *Advanced Algorithmic Trading* - the event-loop chapter with the queue-driven `while` loop and latency injection.
-- **Law, Averill M.**, *Simulation Modeling and Analysis* (5th ed.) - the canonical discrete-event-simulation text: next-event time advance, event graphs, deterministic vs stochastic ordering. The theory behind §2.
-- **FIX Protocol - Official Specifications** (fixtrading.org) - the normative order-state vocabulary (`NewOrderSingle`, `ExecutionReport`, `OrderCancelReplaceRequest`) that the FSM above abbreviates.
+- **NautilusTrader Docs**
+- **Halls-Moore, Michael**, *Advanced Algorithmic Trading*
+- **Law, Averill M.**, *Simulation Modeling and Analysis* (5th ed.)
+- **FIX Protocol - Official Specifications** (fixtrading.org)
 
 ---
 

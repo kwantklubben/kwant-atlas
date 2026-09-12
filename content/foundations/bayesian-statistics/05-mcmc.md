@@ -104,14 +104,14 @@ Three experiments: (a) random-walk **Metropolis** on a **bimodal** target, swept
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed.), **Ch 12** - the primary source: §12.1 (Markov-chain simulation, ergodicity, data augmentation), §12.2 (Gibbs sampling, burn-in, eq. 12.3 point estimate), §12.3 (Bayesian inference, conjugacy), §12.4 (Metropolis §12.4.1, Metropolis–Hastings §12.4.2, Griddy Gibbs §12.4.3), §12.5–12.7 (regression with TS errors, missing data/outliers, stochastic volatility), §12.8 (FFBS: forward filter + backward sampler; Carter–Kohn, Frühwirth-Schnatter), §12.10 (forecasting / predictive distribution). *Math-verified in the corpus.*
-- **Robert, C. P. & Casella, G.**, *Monte Carlo Statistical Methods* (2nd ed.) - the authoritative MCMC treatment: importance sampling, Metropolis–Hastings theory, Gibbs, convergence.
-- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.) - Ch 10 (introduction to MCMC), Ch 11 (basics of Markov chains, $\hat R$, ESS, autocorrelation), Ch 12 (computationally efficient sampling: HMC, NUTS).
-- **Hastie, Tibshirani & Friedman**, *ESL* - §8.6 (MCMC/Gibbs sampling for posterior simulation; Alg 8.3).
-- **McElreath**, *Statistical Rethinking* (2nd ed.) - Ch 8–9 (MCMC, Hamiltonian Monte Carlo, convergence diagnostics, the "visualizing the chain" discipline).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 1–2 - the sampling primitives (inverse transform, rejection, normal generation) that MCMC proposals build on. *Verified in the corpus.*
+- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed.), **Ch 12**
+- **Robert, C. P. & Casella, G.**, *Monte Carlo Statistical Methods* (2nd ed.)
+- **Gelman et al.**, *Bayesian Data Analysis* (3rd ed.)
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **McElreath**, *Statistical Rethinking* (2nd ed.)
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

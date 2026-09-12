@@ -79,11 +79,11 @@ The filter tracks the planted regime **without ever seeing it** - 87.5% agreemen
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hamilton (1989)**, *Econometrica* 57(2) - §§1–4.2: the intuition (the coin metaphor, state 1/0), the filter, and why the sample likelihood is a byproduct. *Verified corpus deep-read.*
-- **Tsay**, *Analysis of Financial Time Series*, Ch 4 §4.1.3 - the Markov-switching model contrasted with SETAR (deterministic vs stochastic switching), forecasting implications. *Verified: tsay_ch4-6.md.*
-- **Ang & Timmermann (2012)**, *Annual Review of Financial Economics* - the survey bridge from regime estimates to market behavior and portfolio choice.
+- **Hamilton (1989)**, *Econometrica* 57(2)
+- **Tsay**, *Analysis of Financial Time Series*
+- **Ang & Timmermann (2012)**, *Annual Review of Financial Economics*
 
 ---
 

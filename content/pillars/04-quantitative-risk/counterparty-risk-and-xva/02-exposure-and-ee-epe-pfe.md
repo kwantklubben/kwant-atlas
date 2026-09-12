@@ -89,12 +89,12 @@ Three things to verify by eye: (i) the Monte Carlo EE tracks the closed form wit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025) - Ch 11 (exposure definitions, EFV/EPE/ENE/PFE, the five-scenario and normal examples) and Ch 15 (Monte Carlo methodology, grids, roll-off risk, margin modelling). *Deep-read and numerically checked in the corpus.*
+- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025)
 - **Sorensen & Bollier** (1994): the co-terminal-swaption representation of swap exposure (EPE = swaption payoff × risky duration).
-- **Pykhtin & Zhu** (2007): *A Guide to Modeling Counterparty Credit Risk* - the practitioner standard for PFE and expected exposure.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 §24.7 (exposure, netting, collateral); **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 1/4 (simulation and variance reduction).
+- **Pykhtin & Zhu** (2007): *A Guide to Modeling Counterparty Credit Risk*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

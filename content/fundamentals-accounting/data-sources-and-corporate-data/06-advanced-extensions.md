@@ -94,14 +94,14 @@ The output is the tracker in miniature: 20 clean annual rows, the 3/5/7-year mat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **WRDS**, *Compustat Point-in-Time* documentation - the canonical statement of the vintage-stamped panel design this pipeline implements.
-- **SEC**, *EDGAR APIs* - the ingestion layer (bulk archives, `frames`, rate limits); verified against `Data_SEC_EDGAR_access.txt`.
-- **Sharadar** (Nasdaq Data Link) `SF1`/`SEP` documentation - the 20-year standardized panel and price feed behind the company-tracker blueprint.
-- **Kenneth R. French**, *Data Library* description files - how a careful provider documents rebalancing and breakpoints; the model for documenting your own pipeline.
-- **Penman**, *Financial Statement Analysis and Security Valuation* - the analysis layer the served signals are meant to feed (margin/turnover decomposition, the ratios this panel computes).
-- **Gray & Carlisle**, *Quantitative Value* - the closest published cousin to a systematically built quantamental pipeline; full backtest transparency as the standard.
+- **WRDS**, *Compustat Point-in-Time* documentation
+- **SEC**, *EDGAR APIs*
+- **Sharadar** (Nasdaq Data Link) `SF1`/`SEP` documentation
+- **Kenneth R. French**, *Data Library* description files
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Gray & Carlisle**, *Quantitative Value*
 
 ---
 

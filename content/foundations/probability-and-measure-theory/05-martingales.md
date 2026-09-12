@@ -73,11 +73,11 @@ Check the random-walk martingale property, the risk-neutral discounted-stock rel
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 1 §1.6 (change of measure, RN Thm 1.6.1, normal-recentering Ex), Ch 3 (martingale Thm 3.3.4, exponential martingale Thm 3.6.1).
-- **Shreve**, *Stochastic Calculus for Finance I*, §2.4 (martingale/super/sub), §3.3 (discounted-stock martingale), Ch 9 (Radon–Nikodym, state-price density $\zeta_k=(1+r)^{-k}Z_k$, Ex 9.1), Ch 12 (market price of risk, CMG), §5.3 (optional sampling).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.2 (risk-neutral measure via Radon–Nikodym, cornerstone eq. 1.39, Girsanov drift).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

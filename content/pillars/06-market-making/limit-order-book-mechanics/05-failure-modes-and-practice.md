@@ -95,14 +95,14 @@ Three readings. **Toxicity:** at $\pi=0.20$ the passive quote earns exactly noth
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 5 (sequential-trade models: quote revision after a trade, spread and trade-impact as the principal empirical implications; market failure when uninformed flow is price-sensitive) - *verified in the corpus*.
-- **Foucault, Pagano & Röell**, *Market Liquidity*, Ch 3 (adverse selection ⇒ permanent impact; order-processing ⇒ instant reversal; inventory ⇒ slow reversal; the full picture, Fig 3.8–3.9) - *verified in the corpus*.
-- **Glosten & Milgrom (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders* - the canonical adverse-selection spread.
-- **Easley, Kiefer, O'Hara & Paperman (1996)** / **Easley, Hvidkjaer & O'Hara (2002)** - PIN and the probability of informed trading; the empirical toxicity measure.
-- **Bouchaud, Farmer & Lillo**, *How markets slowly digest changes in supply and demand* (2009) - price impact, liquidity provision, and the empirical mechanics of execution risk.
-- **Menkveld & Zoican (2017)**, *Need for speed? Exchange latency and liquidity* - the latency/liquidity trade-off formalised.
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Foucault, Pagano & Röell**, *Market Liquidity*
+- **Glosten & Milgrom (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders*
+- **Easley, Kiefer, O'Hara & Paperman (1996)** / **Easley, Hvidkjaer & O'Hara (2002)**
+- **Bouchaud, Farmer & Lillo**, *How markets slowly digest changes in supply and demand* (2009)
+- **Menkveld & Zoican (2017)**, *Need for speed? Exchange latency and liquidity*
 
 ---
 

@@ -70,10 +70,10 @@ The **linear** model (degree 1) is the *only* one that generalizes ($+0.016$ OOS
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 2 §2.9 (bias–variance), Ch 7 (model assessment, optimism $2p/N\,\sigma_\varepsilon^2$, eqs. 7.9 & 7.12). *Verified in the corpus.*
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 1 (financial ML as a distinct subject; "When misused, ML algorithms will confuse statistical flukes with patterns … combined with the low signal-to-noise ratio that characterizes finance").
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **López de Prado**, *Advances in Financial Machine Learning*
 
 ---
 

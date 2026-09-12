@@ -97,11 +97,11 @@ Three verified statements in one run: parity pins the put at $8.37909$; the arbi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 11 §11.1–11.7 (six factors, upper/lower bounds, put–call parity and its arbitrage tables, American bounds, early-exercise rules, dividend adjustments) and Ch 12 (the parity relation between covered call and protective put).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.2 (parities and symmetries: eq. 1.13–1.25, including put–call symmetry and supersymmetry). *Numerically verified.*
-- **Shreve**, *Stochastic Calculus for Finance I*, §1.1 (the discrete no-arbitrage bracket $d<1+r<u$), §3.5 (completeness), §5.1–5.2 (American algorithm, smallest supermartingale), and §7 (the no-early-exercise theorem for convex payoffs with $g(0)=0$). *Math-verified.*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance I*
 
 ---
 

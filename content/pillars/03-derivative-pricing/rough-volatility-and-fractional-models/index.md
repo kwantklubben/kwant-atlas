@@ -75,14 +75,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - the $H\approx0.1$ empirical finding (variogram $m(q,\Delta)$, monofractal scaling $\zeta_q=qH$ with $H\approx0.13$), the RFSV model ($\mathbb E[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2]=\nu^2\Delta^{2H}$), and the "spurious long memory" refutation (§4). *The empirical ground truth of this folder.*
-- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 - the **rBergomi model**: forward-variance form $v_t=\xi_0(t)\exp(\eta W^\alpha_t-\frac{\eta^2}{2}t^{2\alpha+1})$, the SPX calibration ($\eta=1.9$, $\rho=-0.9$), and the power-law skew.
-- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965 - the hybrid discretisation of Volterra/BSS processes (far-field convolution + proximal integral), the scheme used throughout this folder.
-- **Bergomi (2016)**, *Stochastic Volatility Modeling*, CRC Press - ch 7 (forward-variance models and the power-law vol-of-vol benchmark $\nu_T=\sigma_0(\tau_0/(T-t))^\alpha$, $\alpha\approx0.4$), ch 8 (**Bergomi–Guyon expansion**: the $C^{x\xi},C^{\xi\xi},D$ functionals that turn any forward-variance model into a smile), ch 9 (skew stickiness). *The bridge from Markovian to rough.*
-- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437 - the fBm covariance and Hurst-parameter framework.
-- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility* - the rigorous short-time skew $\psi(T)\sim T^{H-\frac12}$ for rough SV.
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949
+- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904
+- **Bennedsen, Lunde & Pakkanen (2017)**, *Hybrid scheme for Brownian semistationary processes*, Finance and Stochastics 21(4), 931–965
+- **Bergomi (2016)**, *Stochastic Volatility Modeling*, CRC Press
+- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437
+- **Fukasawa (2017)**, *Short-time at-the-money skew and rough fractional volatility*
 - **Gatheral (2006)**, *The Volatility Surface*, ch 7 (short-expiration skew asymptotics that rough vol generalises).
 
 ---

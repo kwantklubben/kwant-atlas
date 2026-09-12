@@ -73,12 +73,12 @@ Verifies both formulas agree exactly, the zero-view identity recovers $w_{mkt}$,
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Black & Litterman (1992)**, §The Combined Model - the original posterior derivation.
-- **Satchell & Scowcroft (2000)**, §2 - the cleanest derivation of the posterior and its special cases.
-- **Idzorek (2005)**, §Steps 1–7 - computation of $\bar\mu$ and $w^*$ step by step.
-- **Bayesian bridge**: the Normal–Normal conjugate update is the same form as Bayesian linear regression - see **Hastie, Tibshirani & Friedman**, *ESL*, §3.3 (Bayesian ridge) in the verified corpus `esl_ch1-5.md`.
+- **Black & Litterman (1992)**
+- **Satchell & Scowcroft (2000)**
+- **Idzorek (2005)**
+- **Bayesian bridge**: the Normal–Normal conjugate update is the same form as Bayesian linear regression
 
 ---
 

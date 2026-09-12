@@ -66,12 +66,12 @@ Same $8N$ bytes in pandas, polars, DuckDB, or Spark - the shared Arrow buffer is
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **VectorBT - Official Documentation** (vectorbt.dev / vectorbt.pro) - the numpy/numba-accelerated vectorized backtesting engine built on pandas/NumPy, accelerated by Numba and Rust; includes PRO engine docs and performance fundamentals. *(Cross-listed from [[pillars/08-quantitative-development/event-driven-backtesting-engines/index|Event-Driven Backtesting Engines]].)*
-- **Vectorized Backtesting with VectorBT** (VectorBT book) - the dedicated treatment of vectorbt's vectorized engine.
-- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) - ch. on memory (array layouts, zero-copy) and profiling; the conceptual bridge to Arrow.
-- **polars & Apache Arrow official docs** (pola.rs, arrow.apache.org) - lazy execution, `collect`, the Arrow columnar format and zero-copy interop; the current authoritative references.
+- **VectorBT - Official Documentation** (vectorbt.dev / vectorbt.pro)
+- **Vectorized Backtesting with VectorBT** (VectorBT book)
+- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020)
+- **polars & Apache Arrow official docs** (pola.rs, arrow.apache.org)
 
 ---
 

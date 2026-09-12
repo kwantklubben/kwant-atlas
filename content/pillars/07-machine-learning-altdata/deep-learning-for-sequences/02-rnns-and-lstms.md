@@ -96,13 +96,13 @@ Read it as the derivation in numbers. The vanilla RNN at $W{=}0.9$ loses seven o
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hochreiter, S. & Schmidhuber, J.** (1997), *Long Short-Term Memory*, Neural Computation 9(8):1735–1780 - the original LSTM; the constant-error-carousel argument (§2.3).
-- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.2: the recurrence, BPTT, the vanishing-gradient discussion; the LSTM/GRU subsection) - the authoritative derivation.
-- **Bengio, Simard & Frasconi** (1994), *Learning Long-Term Dependencies with Gradient Descent is Difficult* - the classical vanishing-gradient result.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 11** (§11.4–11.5: back-propagation, weight decay, early stopping) - the anti-overfit recipe that carries over verbatim to recurrent nets.
-- **Bai, Kolter & Koltun** (2018), *An Empirical Evaluation of Generic Convolutional and Recurrent Networks*, arXiv:1803.01271 - shows a well-tuned TCN matches or beats LSTMs on sequence benchmarks with more parallelism; read before assuming recurrence is necessary.
+- **Hochreiter, S. & Schmidhuber, J.** (1997), *Long Short-Term Memory*, Neural Computation 9(8):1735–1780
+- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.2: the recurrence, BPTT, the vanishing-gradient discussion; the LSTM/GRU subsection)
+- **Bengio, Simard & Frasconi** (1994), *Learning Long-Term Dependencies with Gradient Descent is Difficult*
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 11** (§11.4–11.5: back-propagation, weight decay, early stopping)
+- **Bai, Kolter & Koltun** (2018), *An Empirical Evaluation of Generic Convolutional and Recurrent Networks*, arXiv:1803.01271
 
 ---
 

@@ -78,12 +78,12 @@ The exact `3,289.54` reproduces the hub historical-simulation column (5th-worst 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 22 §22.2 (historical simulation; 501-day/500-scenario, 5th-worst convention). *Verified in corpus.*
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 §9.1 (empirical quantile; the $p/f(x_p)^2$ variance). *Math-verified.*
-- **Hull & White**: *Incorporating Volatility Updating into the Historical Simulation Method for Value-at-Risk* (1998) - the original filtered historical simulation.
-- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000) - GARCH-filtered EVT tail for HS; bridges to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT]].
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hull & White**: *Incorporating Volatility Updating into the Historical Simulation Method for Value-at-Risk* (1998)
+- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000)
 
 ---
 

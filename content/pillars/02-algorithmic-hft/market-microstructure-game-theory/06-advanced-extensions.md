@@ -95,20 +95,20 @@ Two readings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Holden, Craig W.; Subrahmanyam, Avanidhar** - "Long-lived private information and imperfect competition," *Journal of Finance* 47(1), 247–270 (1992). *The multi-insider model; the source of "more informed traders $\Rightarrow$ faster revelation".*
 - **Admati, Anat R.; Pfleiderer, Paul** - "A theory of intraday patterns: Volume and price variability," *Review of Financial Studies* 1(1), 3–40 (1988). *Many insiders and intraday volume/volatility patterns; the companion to Holden–Subrahmanyam.*
-- **Kyle, Albert S.; Obizhaeva, Anna A.** - "Market microstructure invariance," *Econometrica* 84(3), 975–1024 (2016). *Dimensional analysis of $\lambda$ and bet sizes across assets - what an "invariant" λ even means.*
+- **Kyle, Albert S.; Obizhaeva, Anna A.** - "Market microstructure invariance," *Econometrica* 84(3), 975–1024 (2016). *Dimensional analysis of $\lambda$ and bet sizes across assets
 - **Schied, Alexander; Zhang, Tao** - "A market impact game under transient price impact," *Mathematics of Operations Research* 44(1), 102–121 (2019). *The multi-agent execution game and its instability threshold.*
 - **Cordoni, Francesco; Lillo, Fabrizio** - "Instabilities in multi-asset and multi-agent market impact games," *Annals of Operations Research* (2022). *How the scaling of impact with the number of agents and assets determines stability.*
 - **Cardaliaguet, Pierre; Lehalle, Charles-Albert** - "Mean field game of controls and an application to trade crowding," *Mathematics and Financial Economics* 12(3) (2018). *The anonymous-crowd limit; HJB coupled to a Fokker–Planck equation.*
 - **Gatheral, Jim** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7), 749–759 (2010). *The admissibility constraint on any transient-impact kernel.*
 - **Huberman, Gur; Stanzl, Werner** - "Price manipulation and quasi-arbitrage," *Econometrica* 72(4), 1247–1275 (2004). *Which impact models admit manipulation; only linear schedules are manipulation-free.*
 - **Back, Kerry** - "Insider trading in continuous time," *Review of Financial Studies* 5(3), 387–409 (1992). *The continuous-time benchmark the extensions generalise.*
-- **Gatheral, Jim; Schied, Alexander; Slynko, Alla** - "Transient linear price impact and Fredholm integral equations," *Mathematical Finance* 22(3), 445–474 (2012). *Optimal execution for general decay kernels; the single-agent counterpart of §2.4.*
+- **Gatheral, Jim; Schied, Alexander; Slynko, Alla** - "Transient linear price impact and Fredholm integral equations," *Mathematical Finance* 22(3), 445–474 (2012). *Optimal execution for general decay kernels; the single-agent counterpart of
 - **Baruch, Shmuel** - "Insider trading and risk aversion," *Journal of Financial Markets* 5(4), 451–464 (2002). *What happens to the Kyle equilibrium when the insider is risk-averse (the $K$-insider extension with a different friction).*
-- **Cartea, Álvaro; Jaimungal, Sebastian; Penalva, José** - *Algorithmic and High-Frequency Trading* (2015), Ch 6–9. *Stochastic control with transient impact and stochastic liquidity - the practical face of §2.5.*
+- **Cartea, Álvaro; Jaimungal, Sebastian; Penalva, José** - *Algorithmic and High-Frequency Trading* (2015)
 
 ---
 

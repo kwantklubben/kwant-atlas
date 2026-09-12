@@ -74,11 +74,11 @@ The price's first autocorrelation is ~0.99 - a shock essentially never decays (u
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, Ch 1 (return definitions, empirical properties, conditional vs marginal distributions) and §2.1 (stationarity). *Primary, verified.*
-- **Campbell, Lo & MacKinlay**, *The Econometrics of Financial Markets*, Ch 1–2 - the canonical statement of why returns (not prices) are the unit of analysis.
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 9 - how non-stationarity and fat tails force the heavy-tailed risk machinery (bridged in 06).
+- **Tsay**, *Analysis of Financial Time Series*
+- **Campbell, Lo & MacKinlay**, *The Econometrics of Financial Markets*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

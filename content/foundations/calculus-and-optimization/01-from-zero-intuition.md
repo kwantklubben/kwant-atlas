@@ -113,12 +113,12 @@ The straight line misses by $0.061$ over a step of $0.1$ - the miss is the *curv
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Bernstein, D. J.**: *Calculus for Mathematicians* (1997 draft), §§1–5 (continuity, Carathéodory derivatives, completeness, mean value theorem, Kurzweil–Henstock integration). *The internal foundation note; single-variable and proof-based.*
-- **Spivak, Michael**: *Calculus* (4th ed.) - Part II–III (limits, derivatives, the mean value theorem, the Taylor polynomial and its remainder) and Part IV (the integral). *The rigorous single-variable treatment of exactly this page.*
-- **Stewart, Clegg & Watson**: *Calculus: Early Transcendentals* (9th ed.) - Ch 2–4 (limits, derivatives, applications of differentiation). *The readable companion.*
-- **Simon & Blume**: *Mathematics for Economists* - Ch 1–3 (one-variable calculus: derivative for graphing, convexity, second-order conditions, maxima and minima, chain rule). Ch 3.5 gives the one-variable FOC/SOC directly in the economics framing used throughout this folder.
+- **Bernstein, D. J.**: *Calculus for Mathematicians* (1997 draft)
+- **Spivak, Michael**: *Calculus* (4th ed.)
+- **Stewart, Clegg & Watson**: *Calculus: Early Transcendentals* (9th ed.)
+- **Simon & Blume**: *Mathematics for Economists*
 
 ---
 

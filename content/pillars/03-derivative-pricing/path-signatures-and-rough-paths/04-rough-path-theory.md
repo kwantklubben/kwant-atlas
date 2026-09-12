@@ -86,14 +86,14 @@ We (i) compute the partition $p$-variation of a seeded Brownian path at successi
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lyons, Terry J.** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2), 215–310 - $p$-variation control, the rough-path lift, and the **extension theorem**. *The primary math-verified source of this page.*
-- **Lyons, T., Caruana, M., Lévy, T.** (2007), *Differential Equations Driven by Rough Paths*, Springer LNM 1908 - the systematic monograph; §1–3 for the lift and extension.
-- **Friz, P. K. & Victoir, N.** (2010), *Multidimensional Stochastic Processes as Rough Paths*, Cambridge Studies in Adv. Math. 120 - geometric rough paths, Brownian rough paths, the continuity of the signature under $p$-variation, and the Itô/Stratonovich distinction. *The modern comprehensive treatment; math-verified.*
-- **Friz, P. K. & Hairer, M.** (2014), *A Course on Rough Paths* (Springer) - a graduate-level, shorter account; Ch 1–3.
-- **Boedihardjo, H., Geng, X., Lyons, T., Yang, D.** (2016), *The signature of a rough path: uniqueness*, Advances in Mathematics 293 - uniqueness for rough paths (up to tree-like equivalence).
-- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough* - the empirical *rougher-than-Brownian* vol paths ($H\approx0.1$) that make rough path theory not just rigorous but *necessary* for vol, §06.
+- **Lyons, Terry J.** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2), 215–310
+- **Lyons, T., Caruana, M., Lévy, T.** (2007), *Differential Equations Driven by Rough Paths*, Springer LNM 1908
+- **Friz, P. K. & Victoir, N.** (2010), *Multidimensional Stochastic Processes as Rough Paths*, Cambridge Studies in Adv. Math. 120
+- **Friz, P. K. & Hairer, M.** (2014), *A Course on Rough Paths* (Springer)
+- **Boedihardjo, H., Geng, X., Lyons, T., Yang, D.** (2016), *The signature of a rough path: uniqueness*, Advances in Mathematics 293
+- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough*
 
 ---
 

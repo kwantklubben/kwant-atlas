@@ -110,14 +110,14 @@ Two verified findings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ledoit, O. & Wolf, M.** *Improved Estimation of the Covariance Matrix of Stock Returns…*, JEF 10(5):603–621, 2004 - single-index shrinkage and the optimal intensity. Companion: *A Well-Conditioned Estimator…*, JMVA 88(2):365–411, 2004 (constant-correlation target).
-- **Ledoit, O. & Wolf, M.** *Nonlinear Shrinkage Estimation of Large-Dimensional Covariance Matrices*, Annals of Statistics 40(2):1024–1060, 2012 - the oracle nonlinear estimator.
-- **Black, F. & Litterman, R.** *Global Portfolio Optimization*, FAJ 48(5):28–43, 1992 - the equilibrium prior as Bayesian robustness (see [[pillars/05-portfolio-optimization/black-litterman/index|Black–Litterman]]).
-- **Ben-Tal, El Ghaoui & Nemirovski**, *Robust Optimization*, Princeton University Press, 2009 - the general robust-optimization framework, from which DRO descends.
-- **Goldfarb & Iyengar (2003)**, Math. of OR 28(1) - robust VaR (§4) and robust factor models with uncertain loadings (§6).
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, 2nd ed. - ridge/Lasso shrinkage (eq. 3.44), the $p\gg N$ regularized-estimator toolkit (Ch. 18), and weight decay (eq. 11.16).
+- **Ledoit, O. & Wolf, M.** *Improved Estimation of the Covariance Matrix of Stock Returns…*, JEF 10(5):603–621, 2004
+- **Ledoit, O. & Wolf, M.** *Nonlinear Shrinkage Estimation of Large-Dimensional Covariance Matrices*, Annals of Statistics 40(2):1024–1060, 2012
+- **Black, F. & Litterman, R.** *Global Portfolio Optimization*, FAJ 48(5):28–43, 1992
+- **Ben-Tal, El Ghaoui & Nemirovski**, *Robust Optimization*, Princeton University Press, 2009
+- **Goldfarb & Iyengar (2003)**, Math. of OR 28(1)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, 2nd ed.
 
 ---
 

@@ -107,14 +107,14 @@ The full analysis lives in [[pillars/07-machine-learning-altdata/alternative-dat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) - **§2.2.1** (fundamental data is reported *with a lapse*; backfilled/reinstated values; the "indexed by period-end" error), **§2.2.4** (alternative data = *primary* information; the individuals/business-process/sensors taxonomy, citing Kolanovic & Krishnamachari), **§2.3** (bars: making irregular raw data into a regularized table), **Ch. 7** (leak-proof cross-validation), **Ch. 11** (backtest errors). *The spine of this folder; corpus PDF verified.*
-- **Kolanovic, Marko & Krishnamachari, Rajesh T.**: *Big Data and AI Strategies: Machine Learning and Alternative Data Approach to Investing*, J.P. Morgan Global Quantitative & Derivatives Strategy (2017) - the industry-defining alt-data taxonomy (individuals / business processes / sensors). *Corpus reference.*
-- **Guida, Tony**: *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) - the most complete practitioner treatment of the *end-to-end* alt-data pipeline: sourcing, cleaning, feature generation, backtesting. *Corpus [CORE] for this sub-topic.*
-- **AIMA / SS&C Technologies**: *Casting the Net: How Hedge Funds Are Using Alternative Data* (2017) - the standard industry survey (~\$720bn AUM respondents) on which datasets funds buy and the practical pain points. *Corpus [CORE]; ideal orientation reading.*
-- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management* - the Fundamental Law of Active Management, $\text{IR}=\text{IC}\sqrt{B}\text{TC}$ (2nd ed., Ch. 6), the origin of "breadth beats raw IC."
-- **Luo, Yin et al.**: "Seven Sins of Quantitative Investing" (Deutsche Bank, 2014) - survivorship, look-ahead, storytelling, data snooping, ... (quoted in AFML Ch. 11). *The failure-mode checklist.*
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Kolanovic, Marko & Krishnamachari, Rajesh T.**: *Big Data and AI Strategies: Machine Learning and Alternative Data Approach to Investing*, J.P. Morgan Global Quantitative & Derivatives Strategy (2017)
+- **Guida, Tony**: *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019)
+- **AIMA / SS&C Technologies**: *Casting the Net: How Hedge Funds Are Using Alternative Data* (2017)
+- **Grinold, Richard C. & Kahn, Ronald N.**: *Active Portfolio Management*
+- **Luo, Yin et al.**: "Seven Sins of Quantitative Investing" (Deutsche Bank, 2014)
 
 ---
 

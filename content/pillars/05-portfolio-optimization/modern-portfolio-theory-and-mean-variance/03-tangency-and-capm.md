@@ -63,12 +63,12 @@ Read the output: the theoretical Sharpe identity $(C r_f^2-2A r_f+B)=0.085121$ r
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4):1851–1872 (1972), §IV–V - the risky+riskless frontier, tangency (eq. 44), and the SML derivation (eq. 45–47).
-- **Tobin, James**: *Liquidity Preference as Behavior Toward Risk*, RES 25(2):65–86 (1958) - two-fund separation; the cash/risky split this page operationalizes.
-- **Sharpe, William F.**: *Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk*, Journal of Finance 19(3):425–442 (1964) - the CAPM/SML; follow with *Mutual Fund Performance* (1966), the Sharpe ratio paper.
-- **Bodie, Kane & Marcus**, *Investments* - the CML/SML and beta interpretation.
+- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4):1851–1872 (1972)
+- **Tobin, James**: *Liquidity Preference as Behavior Toward Risk*, RES 25(2):65–86 (1958)
+- **Sharpe, William F.**: *Capital Asset Prices: A Theory of Market Equilibrium under Conditions of Risk*, Journal of Finance 19(3):425–442 (1964)
+- **Bodie, Kane & Marcus**, *Investments*
 
 ---
 

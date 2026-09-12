@@ -87,14 +87,14 @@ We (i) build the **lead-lag** transform of a seeded random-walk path and verify 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Chevyrev, I. & Kormilitzin, A.** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788 - §6–7: lead-lag, time augmentation, and the geometricisation of financial data; the standard practitioner treatment. *Primary applied reference for this page.*
-- **Lyons, T. J., Ni, H., Zhang, H.** (2019), *Machine Learning Models of Financial Time Series*, arXiv:1905.11666 - **lead-lag signatures for (rough) volatility**, signature kernels on financial series, and the variance/vol connections that this page's lead-lag identity instantiates.
-- **Chevyrev, I. & Oberhauser, H.** (2022), *Signature moments to characterize laws of stochastic processes* (J. Mach. Learn. Res.) - the measure-theoretic grounding of expected signatures used to justify signature features as *hedging/pricing* primitives.
-- **Dupire, B.** (2009) / **Cont, R. & Fournié, D.-A.** (2010), *Functional Itô calculus* - the functional-Itô framework in which path-functionals are represented and hedged; the setting signature hedging generalises.
-- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough* - the empirical motivation for lead-lag/rough-vol signatures (§06).
-- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*, Ch 7–9 - the geometric-rough-path convention that lead-lag restores. *Math-verified.*
+- **Chevyrev, I. & Kormilitzin, A.** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788
+- **Lyons, T. J., Ni, H., Zhang, H.** (2019), *Machine Learning Models of Financial Time Series*, arXiv:1905.11666
+- **Chevyrev, I. & Oberhauser, H.** (2022), *Signature moments to characterize laws of stochastic processes* (J. Mach. Learn. Res.)
+- **Dupire, B.** (2009) / **Cont, R. & Fournié, D.-A.** (2010), *Functional Itô calculus*
+- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough*
+- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*
 
 ---
 

@@ -92,13 +92,13 @@ Hub signposts - the folder's failure-mode analysis lives on the sub-pages. In on
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella, G. & Berger, R. L.**: *Statistical Inference* (2nd ed., 2002) - **the primary source for this folder.** Ch 7 (MLE, method of moments, MSE eq 7.3.1, Cramér–Rao Thm 7.3.1, consistency §7.3.4, asymptotic variance eq 7.4.1, delta method eq 7.4.5), Ch 8 (LRT §8.2.1, Neyman–Pearson Lemma Thm 8.3.1, Karlin–Rubin Thm 8.3.2, size/power §8.3.1, p-value §8.3.3, Wilks Thm 8.4.1), Ch 9 (inverting tests, pivots Def 9.2.1, coverage §9.3.1, approximate ML intervals §9.4.1). *PDF in the corpus; formulas cross-checked.*
-- **Hastie, Tibshirani & Friedman**: *Elements of Statistical Learning* (2nd ed., 2009) - Ch 2 (bias–variance eqs 2.25/2.46, pointwise risk), Ch 7 (model assessment: CV eq 7.48, AIC eq 7.29, BIC eq 7.35, the screening-inside-folds trap §7.10.2, one-standard-error rule, bootstrap §7.11), Ch 8 (bootstrap inference, bagging). *Verification report in the corpus.*
-- **Glasserman, P.**: *Monte Carlo Methods in Financial Engineering* (2004) - §1.1 (LLN, CLT, MC standard error $\sigma_f/\sqrt n$, the dimension-free $O(n^{-1/2})$). *Math-verified in the corpus.*
-- **Tsay, R. S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 1 (return moments; skewness/kurtosis $t$-stats; Jarque–Bera), Ch 2 (AIC/BIC, eq 2.16). *Verified in the corpus.*
-- **Efron, B. & Tibshirani, R.**: *An Introduction to the Bootstrap* (1993) - the canonical bootstrap reference (percentile/BCa intervals, bootstrap standard errors).
+- **Casella, G. & Berger, R. L.**: *Statistical Inference* (2nd ed., 2002)
+- **Hastie, Tibshirani & Friedman**: *Elements of Statistical Learning* (2nd ed., 2009)
+- **Glasserman, P.**: *Monte Carlo Methods in Financial Engineering* (2004)
+- **Tsay, R. S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Efron, B. & Tibshirani, R.**: *An Introduction to the Bootstrap* (1993)
 
 ---
 

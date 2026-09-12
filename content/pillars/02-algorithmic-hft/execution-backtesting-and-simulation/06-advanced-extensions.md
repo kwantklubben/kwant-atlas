@@ -93,16 +93,16 @@ The three tests pass. **(1)** The simulator's trade prices carry the exact Roll 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Abergel, F.; Anane, M.; Chakraborti, A.; Jedidi, H.; Toke, I. M.** - *Limit Order Books* (Cambridge, 2016) - agent-based LOB generation and order-placement micro-simulation.
-- **Huang, W.; Lehalle, C.-A.; Rosenbaum, M.** - "Simulating and analyzing order book data: the queue-reactive model," *JASA* 110(509), 107–122 (2015) - state-dependent $\lambda(q),\mu(q)$ intensities and the concave depth relation.
-- **Almgren, R.; Thum, C.; Hauptmann, E.; Li, H.** - "Direct estimation of equity market impact," *Risk* 18(7), 58–62 (2005) - the empirical square-root/power-law impact a simulator must reproduce.
-- **Gatheral, J.** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7) (2010) - the consistency constraint any impact model/simulator must satisfy.
-- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) - the tractable model fast enough for Monte Carlo fill simulation.
-- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013) - the stylized-facts survey that doubles as a simulator-acceptance checklist.
-- **López de Prado, M.** - *Advances in Financial Machine Learning* (Wiley, 2018), Ch 13 - backtesting on synthetic data, and its validation requirements.
-- **Hasbrouck, J.** - *Empirical Market Microstructure*, Ch 3 (Roll signature) and Ch 8 (generalized Roll) - the spread-recovery tests used in Validation #1. *Corpus verification `hasbrouck_ch1-5.md` / `hasbrouck_ch11-15.md`.*
+- **Abergel, F.; Anane, M.; Chakraborti, A.; Jedidi, H.; Toke, I. M.** - *Limit Order Books* (Cambridge, 2016)
+- **Huang, W.; Lehalle, C.-A.; Rosenbaum, M.** - "Simulating and analyzing order book data: the queue-reactive model," *JASA* 110(509), 107–122 (2015)
+- **Almgren, R.; Thum, C.; Hauptmann, E.; Li, H.** - "Direct estimation of equity market impact," *Risk* 18(7), 58–62 (2005)
+- **Gatheral, J.** - "No-dynamic-arbitrage and market impact," *Quantitative Finance* 10(7) (2010)
+- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010)
+- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013)
+- **López de Prado, M.** - *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Hasbrouck, J.** - *Empirical Market Microstructure*
 
 ---
 

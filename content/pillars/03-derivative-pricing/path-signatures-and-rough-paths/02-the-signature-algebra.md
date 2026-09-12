@@ -92,13 +92,13 @@ We compute iterated integrals of a piecewise-linear path by explicit sums, then 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lyons** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2) - §2–§3: Chen's identity and the shuffle relation as the two structural laws of the signature; the group-like / Lie-algebra picture. *The primary math-verified source.*
-- **Chevyrev & Kormilitzin** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788 - §2 (Chen's identity, shuffle, algebra structure) and §4 (the tensor algebra as the feature space; universality sketch). *Primary applied reference.*
-- **Reutenauer, C.** (1993), *Free Lie Algebras* (Oxford) - the combinatorics of shuffles, Lyndon words and the free Lie algebra behind §2.3. *Math reference.*
-- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*, Ch 7–9 - geometric rough paths, the shuffle (multiplicativity) relation and its precise statement; the Itô-versus-Stratonovich distinction. *Math-verified.*
-- **Lyons, Caruana & Lévy** (2007), *Differential Equations Driven by Rough Paths* - the systematic development of the two identities. *Math reference.*
+- **Lyons** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2)
+- **Chevyrev & Kormilitzin** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788
+- **Reutenauer, C.** (1993), *Free Lie Algebras* (Oxford)
+- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*
+- **Lyons, Caruana & Lévy** (2007), *Differential Equations Driven by Rough Paths*
 
 ---
 

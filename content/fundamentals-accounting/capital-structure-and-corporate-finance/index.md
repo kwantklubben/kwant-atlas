@@ -79,14 +79,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[fundamentals-accou
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Modigliani, Franco & Miller, Merton H.**: "The Cost of Capital, Corporation Finance and the Theory of Investment" (*AER*, 1958, 48(3), 261–297) - **Propositions I and II**, the arbitrage proof, and the tax extension. *The null hypothesis of this folder; all propositions verified against the paper text (incl. the fn-12 worked example).*
-- **Myers, Stewart C. & Majluf, Nicholas S.**: "Corporate Financing and Investment Decisions When Firms Have Information That Investors Do Not Have" (*JFE*, 1984, 13(2), 187–221) - the **pecking order** and the underinvestment/financing trap.
-- **Jensen, Michael C. & Meckling, William H.**: "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure" (*JFE*, 1976, 3(4), 305–360) - **agency costs** (monitoring + bonding + residual loss) and the debt-equity agency tradeoff.
-- **Jensen, Michael C.**: "Agency Costs of Free Cash Flow, Corporate Finance, and Takeovers" (*AER*, 1986, 76(2), 323–329) - **free cash flow**, the overinvestment problem, and debt as discipline.
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance* - the canonical textbook treatment of capital structure, payout policy, and WACC; the theory backbone of the whole area.
-- **Graham, Benjamin & Dodd, David**, *Security Analysis* (6th ed., 2008) - the pre-theory practitioner view of speculative capital structures, pyramiding, and the dilution of warrants.
+- **Modigliani, Franco & Miller, Merton H.**: "The Cost of Capital, Corporation Finance and the Theory of Investment" (*AER*, 1958, 48(3), 261–297)
+- **Myers, Stewart C. & Majluf, Nicholas S.**: "Corporate Financing and Investment Decisions When Firms Have Information That Investors Do Not Have" (*JFE*, 1984, 13(2), 187–221)
+- **Jensen, Michael C. & Meckling, William H.**: "Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure" (*JFE*, 1976, 3(4), 305–360)
+- **Jensen, Michael C.**: "Agency Costs of Free Cash Flow, Corporate Finance, and Takeovers" (*AER*, 1986, 76(2), 323–329)
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
+- **Graham, Benjamin & Dodd, David**, *Security Analysis* (6th ed., 2008)
 
 ---
 

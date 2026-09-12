@@ -94,13 +94,13 @@ The factor model is the **conditioning champion**: $\kappa$ drops from $3323$ (s
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Ledoit, O. & Wolf, M. (2012).** "Nonlinear shrinkage estimation of large-dimensional covariance matrices." *Annals of Statistics* 40(2):1024–1060. *The oracle formula $d_i=\lambda_i/|1-c-c\lambda_i\breve m_F|^2$, the MP equation (2.3), and the bona fide QuEST estimator.*
 - **Ledoit, O. & Péché, S. (2011).** "Eigenvectors of some large sample covariance matrix ensembles." *Probability Theory and Related Fields* 151:233–264. *Origin of the oracle nonlinear shrinkage of eigenvalues.*
 - **Ledoit, O. & Wolf, M. (2003).** "Improved estimation of the covariance matrix of stock returns with an application to portfolio selection." *Journal of Empirical Finance* 10(5):603–621. *The single-index (factor) shrinkage target.*
 - **Laloux et al. (1999)** and **Plerou et al. (2002).** *The RMT lineage that links pages 02–06 (noise dressing; bulk-plus-spikes structure).*
-- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning*, Ch 18 (eigenvalue shrinkage / soft-thresholding - the same "shrink the spectrum" philosophy via a different route).
+- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning*
 
 ---
 

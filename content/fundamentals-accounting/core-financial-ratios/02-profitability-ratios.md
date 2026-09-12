@@ -77,12 +77,12 @@ Stdlib only. Builds the return ratios, margins, the DuPont chain, and the Penman
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 5 (ROCE), Ch 7 (reformulation: NOA, NFO), Ch 8 (RNOA, net borrowing cost), Ch 11 (the ROCE decomposition, leverage effect). *All identities verified against the corpus text.*
-- **Subramanyam**, *Financial Statement Analysis* - the DuPont decomposition in full mechanical rigor.
-- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013) - gross margin is itself a *priced* characteristic, not just a descriptor.
-- **Hou, Xue & Zhang**: "Digesting Anomalies" (*RFS*, 2015) - the q-factor model puts **ROE** at the center of the cross-section of returns.
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Subramanyam**, *Financial Statement Analysis*
+- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013)
+- **Hou, Xue & Zhang**: "Digesting Anomalies" (*RFS*, 2015)
 
 ---
 

@@ -91,11 +91,11 @@ Read the **pct** line. The 1/n portfolio holds 25% of capital in every asset, ye
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Qian, Edward**: *On the Financial Interpretation of Risk Contribution: Risk Budgets Do Add Up*, Journal of Investment Management 4(4) (2006) - risk contribution **as** expected contribution to loss; the beta reading; the $D_i/L$ correction that vanishes for large losses / mean-variance-optimal portfolios.
-- **Maillard, Roncalli & Teïletche** (2010) - §2.1, the MRC / RC / Euler decomposition in the context of the ERC portfolio (vector form $\text{MRC}=\Sigma x/\sqrt{x^\top\Sigma x}$).
-- **Hallerbach, Winfried**: *Decomposing Portfolio Value-at-Risk: A General Analysis*, Journal of Risk 5(2) (2003) - the extension of the same Euler decomposition to general *linear-homogeneous* risk measures (VaR), a precondition for any risk measure to be "budgetable."
+- **Qian, Edward**: *On the Financial Interpretation of Risk Contribution: Risk Budgets Do Add Up*, Journal of Investment Management 4(4) (2006)
+- **Maillard, Roncalli & Teïletche** (2010)
+- **Hallerbach, Winfried**: *Decomposing Portfolio Value-at-Risk: A General Analysis*, Journal of Risk 5(2) (2003)
 
 ---
 

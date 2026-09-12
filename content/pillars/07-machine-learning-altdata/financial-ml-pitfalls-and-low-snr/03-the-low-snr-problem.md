@@ -85,11 +85,11 @@ The empirical $N_{\text{eff}}=52$ matches the formula's prediction of $53$ - the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 1 (the low-SNR warning), Ch 4 (overlapping labels / sample uniqueness - the label-side effective-sample reduction).
-- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**, "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020 - the rigorous documentation of the true OOS IC/SNR on daily cross-sections. *Corpus-listed.*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 7 (model assessment in finite samples). *Verified in the corpus.*
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**, "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
 
 ---
 

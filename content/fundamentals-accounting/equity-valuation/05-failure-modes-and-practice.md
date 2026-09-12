@@ -76,13 +76,13 @@ Read the numbers: a **$2$-point margin** swing ($18\%\to22\%$) moves the value *
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Damodaran**, *Investment Valuation*, Ch 2 (mismatching cash flows and rates - Illustration 2.1), Ch 12 & 15 (stable-growth limits; why the terminal term dominates), and *The Dark Side of Valuation* (valuing the firms where clean DCF assumptions break).
-- **Graham**, *The Intelligent Investor*, Ch 8 & 20 - "margin of safety" as the central concept; the buy rule that this page's last line operationalises.
-- **Graham & Dodd**, *Security Analysis* - asset-value floors and earnings power as cross-checks on the DCF.
-- **Koller et al. (McKinsey)**, *Valuation*, Ch 15 - error-checking a DCF and running scenario/sensitivity analysis professionally.
-- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide* - realistic interpretation warnings when the inputs misbehave.
+- **Damodaran**, *Investment Valuation*
+- **Graham**, *The Intelligent Investor*
+- **Graham & Dodd**, *Security Analysis*
+- **Koller et al. (McKinsey)**, *Valuation*
+- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide*
 
 ---
 

@@ -79,12 +79,12 @@ Three stdlib checks: (a) Feynman–Kac - the $\mathbb Q$-expectation of a payoff
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 5 (Feynman–Kac 5.5/5.6, Kolmogorov), Ch 10–14 (martingale approach, Girsanov, Martingale Representation 11.2, FTA 10.9/10.17, completeness criteria 14.6/14.8, meta-theorem 8.3.1).
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 5 (MRT 5.3.1, hedging, FTA 5.4.7/5.4.9, market-price-of-risk equations, three-case summary §5.7).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 18 (MRT, Girsanov), Ch 19 (two-dimensional market model, the three MPR cases).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.2 (change of numeraire, Girsanov, martingale measure).
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
 
 ---
 

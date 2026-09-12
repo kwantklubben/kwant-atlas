@@ -82,14 +82,14 @@ Hub signposts - the folder's fault analysis lives in [[pillars/08-quantitative-d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hilpisch, Yves**: *Python for Algorithmic Trading: From Idea to Cloud Deployment* (O'Reilly, 2020) - the pillar's dedicated backtesting-to-production text; covers vectorized *and* event-driven architecture in one pipeline. Companion repo `yhilpisch/py4at`. *The primary tutorial source for this folder.*
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) - the authoritative treatment of why backtests lie: purged CV, deflated Sharpe, synthetic data, "7 reasons funds fail." *The hygiene half of this folder; fully developed in* [[pillars/01-quantitative-research/backtesting-hygiene/index|Backtesting Hygiene]].
-- **NautilusTrader - Official Documentation & Concepts** (nautilustrader.io) - production-grade Rust-native event-driven engine; the best free reference for message-bus/actor design, clock and queue determinism.
-- **Halls-Moore, Michael**: *QuantStart - Event-Driven Backtesting with Python* & *Advanced Algorithmic Trading* - the classic free series that builds the DataHandler → Strategy → Portfolio → ExecutionHandler decomposition used throughout this folder.
-- **Backtrader Documentation** (backtrader.com) - the widely-taught event-driven Python model; cite as a pedagogical baseline (engine aging), not as a production engine.
-- **VectorBT - Vectorized Backtesting with VectorBT** - the modern high-throughput vectorized counterpart, the fair baseline for [[pillars/08-quantitative-development/event-driven-backtesting-engines/04-vectorized-vs-event-driven|04 · Vectorized vs Event-Driven]].
+- **Hilpisch, Yves**: *Python for Algorithmic Trading: From Idea to Cloud Deployment* (O'Reilly, 2020)
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018)
+- **NautilusTrader - Official Documentation & Concepts** (nautilustrader.io)
+- **Halls-Moore, Michael**: *QuantStart
+- **Backtrader Documentation** (backtrader.com)
+- **VectorBT - Vectorized Backtesting with VectorBT**
 
 ---
 

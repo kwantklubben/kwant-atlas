@@ -109,14 +109,14 @@ The analytic formula reproduces McNeil's Table 7.1 to the published precision ($
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McNeil, Frey & Embrechts (2015)** - §7.2.4 (coefficients of tail dependence, Definitions 7.36, formulas 7.34–7.35) and §7.3.1 (tail dependence of normal-mixture copulas: Example 7.38 Gauss asymptotic independence, Example 7.39 the $t$-copula $\lambda=2t_{\nu+1}(-\sqrt{(\nu+1)(1-\rho)/(1+\rho)}\,)$, Table 7.1). *Formula-verified in the corpus.*
-- **Joe, H. (1993, 1997)** - the origin of the tail-dependence definition and its multivariate extensions.
-- **Coles, Heffernan & Tawn (1999)**, *Dependence measures for extreme value analyses* - the survey of alternative tail-dependence definitions and their (non-equivalence) caveats.
-- **Embrechts, Klüppelberg & Mikosch (1997)**, *Modelling Extremal Events* - Ch 5–6 (multivariate EVT and the stable tail-dependence function).
-- **de Haan & Ferreira (2006)** - Ch 6–7 (multivariate EVT, Pickands dependence function). *Math-verified in the corpus.*
-- **Demarta & McNeil (2005)**, *The t copula and related copulas* - the reference treatment of the $t$ copula's properties and calibration.
+- **McNeil, Frey & Embrechts (2015)**
+- **Joe, H. (1993, 1997)**
+- **Coles, Heffernan & Tawn (1999)**, *Dependence measures for extreme value analyses*
+- **Embrechts, Klüppelberg & Mikosch (1997)**, *Modelling Extremal Events*
+- **de Haan & Ferreira (2006)**
+- **Demarta & McNeil (2005)**, *The t copula and related copulas*
 
 ---
 

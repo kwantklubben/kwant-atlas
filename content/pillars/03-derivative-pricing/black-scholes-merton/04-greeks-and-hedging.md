@@ -86,12 +86,12 @@ Haug's Table 2-3 is reproduced (inputs $S{=}98,X{=}100,T{=}.25,r{=}.10,b{=}.05,\
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §2 (the complete first/second/third-order Greek set; Table 2-3 reproduced here), §2.10 (ATM-forward approximations), §2.15 (theta, gamma–theta). *Numerically verified.*
-- **Shreve**, *Stochastic Calculus for Finance II*, §4.5 (delta $=c_x$, theta, gamma, vega; the delta-hedging rule eq. 4.5.11).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 19 (the Greeks, hedging).
-- **Taleb, Nassim Nicholas**: *Dynamic Hedging: Managing Vanilla and Exotic Options*, Wiley - pin risk, vega/volga trading, real desk practice.
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Taleb, Nassim Nicholas**: *Dynamic Hedging: Managing Vanilla and Exotic Options*, Wiley
 
 ---
 

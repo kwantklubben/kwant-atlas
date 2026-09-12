@@ -90,13 +90,13 @@ Two observations. **First**, the Amihud ratio separates cap tiers by roughly *th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 2 (spread measures, Lee–Ready, Roll + its four biases, implementation shortfall, resiliency) and Ch 9 (liquidity and asset prices, eq. 9.6/9.9). *Verified in corpus.*
-- **Hasbrouck** - *Empirical Market Microstructure* (2007), Ch 1.2 (depth/breadth/resiliency), Ch 3 (Roll $S_R=2\sqrt{-\gamma_1}$), Ch 7 (Kyle $\lambda$, $1/\lambda$ = depth), Ch 9.9 (Amihud/Amivest). *Verified in corpus.*
-- **Amihud, Y.** - *Illiquidity and Stock Returns*, *JFM* 5(1):31–56 (2002) - the $|r|/\text{Vol}$ ratio. **Roll, R.** - *A Simple Implicit Measure of the Effective Bid-Ask Spread*, *JF* 39(4) (1984).
-- **Brunnermeier & Pedersen** (2009) - the market↔funding coupling; **Brunnermeier** (2009) - the 2007–08 case study.
-- **BCBS** - LCR (2013, d238) and NSFR (2014, d295) - the regulatory funding-liquidity definitions.
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
+- **Hasbrouck** - *Empirical Market Microstructure* (2007)
+- **Amihud, Y.** - *Illiquidity and Stock Returns*, *JFM* 5(1):31–56 (2002)
+- **Brunnermeier & Pedersen** (2009)
+- **BCBS**
 
 ---
 

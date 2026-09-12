@@ -81,12 +81,12 @@ Diagnose a broken ML-for-portfolio pipeline in this order:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 10 (bet sizing, the poker/sizing analogy) and Ch 11 (backtest overfitting, deflated Sharpe) - the honest-measurement guardrail.
-- **López de Prado**, *Machine Learning for Asset Managers* (2020), Ch 2 (covariance denoising as the fix for the fragile optimizer).
-- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* (2009) - the empirical proof that fragile optimization loses to $1/N$.
-- **Bailey & López de Prado**, "The Deflated Sharpe Ratio," *J. Portfolio Management* 40(5), 2014 - measuring whether your edge survives multiple testing.
+- **López de Prado**, *Advances in Financial Machine Learning* (2018)
+- **López de Prado**, *Machine Learning for Asset Managers* (2020)
+- **DeMiguel, Garlappi & Uppal**, "Optimal Versus Naive Diversification," *RFS* (2009)
+- **Bailey & López de Prado**, "The Deflated Sharpe Ratio," *J. Portfolio Management* 40(5), 2014
 
 ---
 

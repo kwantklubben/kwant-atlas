@@ -102,13 +102,13 @@ We simulate exact fBm increments via the Hosking/Levinson recursion (O(n²), std
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437 - fBm covariance, self-similarity, Hurst parameter. *Primary mathematical source.*
-- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949 - the variogram estimator (eq. 3.10), monofractal scaling $\zeta_q=qH$, SPX $H=0.13$, and §4 on spurious long memory.
-- **Hosking (1984)**, *Modeling persistence in hydrological time series using fractional differencing* / **McLeod & Hipel** - the O(n²) exact Gaussian simulation (Levinson/Hosking recursion) used in §3.
-- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 7–8 - the forward-variance framework and Bergomi–Guyon expansion that turn fBm covariance into the skew functional of §2.4.
-- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904 - the Volterra-process construction (Riemann–Liouville fractional integral) used by rBergomi.
+- **Mandelbrot & Van Ness (1968)**, *Fractional Brownian motions, fractional noises and applications*, SIAM Review 10(4), 422–437
+- **Gatheral, Jaisson & Rosenbaum (2018)**, *Volatility is rough*, Quantitative Finance 18(6), 933–949
+- **Hosking (1984)**, *Modeling persistence in hydrological time series using fractional differencing* / **McLeod & Hipel**
+- **Bergomi (2016)**, *Stochastic Volatility Modeling*, ch 7–8
+- **Bayer, Friz & Gatheral (2016)**, *Pricing under rough volatility*, Quantitative Finance 16(6), 887–904
 
 ---
 

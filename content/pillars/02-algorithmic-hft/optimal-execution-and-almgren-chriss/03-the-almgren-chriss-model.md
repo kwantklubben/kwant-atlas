@@ -106,13 +106,13 @@ The closed form and the exact discrete minimizer agree to **2 shares in 1,000,00
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §1.5 (linear impact), §2.1-2.4 (frontier, eqs 16-19, half-life), §3.1 (quadratic utility, the time-homogeneity Theorem), §3.2 (Value at Risk / L-VaR).
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000)
 - **Bertsimas, Dimitris; Lo, Andrew W.** - "Optimal control of execution costs," *Journal of Financial Markets* 1(1), 1-50 (1998). *The dynamic-programming / HJB formulation ($s_t^\star=\bar s/T$ in the zero-drift case).*
-- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015), Ch 6-7. *The HJB statement in full generality, with inventory penalties and the Almgren–Chriss problem as a special case.*
-- **Gueant, Olivier** - *The Financial Mathematics of Market Liquidity* (2016), Ch 1-4. *Rigorous treatment of the execution problem and its well-posedness.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 15 (the discrete DP, eqs 15.1-15.4, and the drift-augmented optimum).
+- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015)
+- **Gueant, Olivier** - *The Financial Mathematics of Market Liquidity* (2016)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 
 ---
 

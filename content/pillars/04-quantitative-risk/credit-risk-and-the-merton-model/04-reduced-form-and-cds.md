@@ -96,12 +96,12 @@ The pricer recovers the input spread to the basis point, closing the loop betwee
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives* - §24.4 (hazard from spread, eq. 24.2, bootstrapping), §25.1–25.2 (CDS mechanics, fair spread $s=C/(A+B)$, Examples 25.1/25.2), §25.3 (indices), §25.9 (correlation and tranching). *Verification report in the corpus.*
-- **Jarrow & Turnbull (1995)** - *Pricing Derivatives on Financial Securities Subject to Credit Risk*, *Journal of Finance* 50(1):53–85 - the founding reduced-form intensity paper (spread-driven default). *Corpus bibliography.*
-- **Gregory, Jon** - *The xVA Challenge* (5th ed., 2025) - Ch 3.3 (real-world vs risk-neutral PD, recovery/LGD), §14.3.4 (CDS–bond basis), §17.6 (wrong-way risk). *Corpus digest available.*
-- **Bielecki & Rutkowski** - *Credit Risk: Modeling, Valuation and Hedging* (2002) - the rigorous intensity/doubly-stochastic theory and hedging of defaultable claims. *Corpus available.*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Jarrow & Turnbull (1995)** - *Pricing Derivatives on Financial Securities Subject to Credit Risk*, *Journal of Finance* 50(1):53–85
+- **Gregory, Jon** - *The xVA Challenge* (5th ed., 2025)
+- **Bielecki & Rutkowski** - *Credit Risk: Modeling, Valuation and Hedging* (2002)
 
 ---
 

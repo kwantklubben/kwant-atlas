@@ -91,13 +91,13 @@ on the $2Q+1$ inventory states, with closed-form asymptotics for the quotes that
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Almgren & Chriss (2000)**, *Optimal execution of portfolio transactions*, Journal of Risk 3(2) - the optimal-liquidation trajectory $x_t=X\sinh(\kappa(T-t))/\sinh(\kappa T)$.
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4) - linear-ODE reduction, inventory constraints, closed-form asymptotics, verification theorem.
-- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*, Cambridge UP - adverse selection, alpha, and impact added to the market-making core.
-- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611 - how the choice of risk measure changes the skew.
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5) - VPIN, the practical toxicity gauge for gating quotes.
+- **Almgren & Chriss (2000)**, *Optimal execution of portfolio transactions*, Journal of Risk 3(2)
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4)
+- **Cartea, Jaimungal & Penalva (2015)**, *Algorithmic and High-Frequency Trading*, Cambridge UP
+- **Cartea & Jaimungal (2015)**, *Risk metrics and fine tuning of high-frequency trading strategies*, Mathematical Finance 25(3), 576–611
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5)
 
 ---
 

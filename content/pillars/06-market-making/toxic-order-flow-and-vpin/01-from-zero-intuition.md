@@ -68,11 +68,11 @@ The time-clock shows one bar with **8x** the trades of the others - a bar whose 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Easley, López de Prado & O'Hara (2011)**, *The microstructure of the "flash crash"*, J. Portfolio Management 37(2) - the applied narrative: toxicity built before the May 6 collapse.
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5) - the volume-clock / volume-bucket construction and why it beats time sampling (their §2.4 on updating VPIN in volume-time).
-- **Lee & Ready (1991)**, *Inferring trade direction from intraday data*, J. Finance 46(2) - how buys and sells are actually signed from the tape (the machinery every imbalance metric uses).
+- **Easley, López de Prado & O'Hara (2011)**, *The microstructure of the "flash crash"*, J. Portfolio Management 37(2)
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5)
+- **Lee & Ready (1991)**, *Inferring trade direction from intraday data*, J. Finance 46(2)
 
 ---
 

@@ -79,13 +79,13 @@ Stdlib only. Three experiments: (a) the cross-correlation inflation factor; (b) 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance Ch. 1 - test statistic (eq. 5–6), cross-correlation inflation (eq. 10), power/specification summary (Table 2), variance increase §3.6. *Verified refs/52, read in full.*
-- **Brown & Warner (1985)**, *Using Daily Stock Returns*, JFE 14(1) - the portfolio-excess-return t-stat (eq. 5), simulation evidence on specification and power. *Verified refs/50, read in full.*
-- **Brown & Warner (1980)**, *Measuring Security Price Performance*, JFE 8(3) - the original power/specification simulations. *Verified refs/49.*
-- **Corrado (1989)**, *A Nonparametric Test for Abnormal Security-Price Performance in Event Studies*, JFE 23(2) - the rank test robust to variance increase.
-- **Jegadeesh & Karceski (2004)**, *Long-Term Performance Evaluation*, Working Paper - correlation-robust long-horizon tests; low power. *Cited in Kothari–Warner §4.4.*
+- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance
+- **Brown & Warner (1985)**, *Using Daily Stock Returns*, JFE 14(1)
+- **Brown & Warner (1980)**, *Measuring Security Price Performance*, JFE 8(3)
+- **Corrado (1989)**, *A Nonparametric Test for Abnormal Security-Price Performance in Event Studies*, JFE 23(2)
+- **Jegadeesh & Karceski (2004)**, *Long-Term Performance Evaluation*, Working Paper
 
 ---
 

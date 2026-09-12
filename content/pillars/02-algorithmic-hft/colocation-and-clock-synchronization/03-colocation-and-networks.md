@@ -76,12 +76,12 @@ The **2 km line** is the practical takeaway: a 2 km tape displacement costs **10
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **O'Hara, Maureen (2015)** - "High-Frequency Market Microstructure," *J. Financial Economics* - the clearest published set of colocation/fiber/microwave numbers (TSE 15.7 µs, Hibernian 59.6, Perseus 4.6, chips at 740 ns, SEC 23%/38% cancel stats).
-- **Budish, Cramton & Shim (2015)**, §1 - the NY↔Chicago fiber (13 ms) vs microwave (8.5 ms) timeline and the $300M Spread Networks cable.
-- **MacKenzie, Donald (2021)** - *Trading at the Speed of Light* - the engineering/social history of colocation, microwave towers, and undersea cables.
-- **Menkveld (2013)** - the industry practice of HFT latency budgets (≤1.67 ms inter-message) that colocation must satisfy.
+- **O'Hara, Maureen (2015)** - "High-Frequency Market Microstructure," *J. Financial Economics*
+- **Budish, Cramton & Shim (2015)**
+- **MacKenzie, Donald (2021)** - *Trading at the Speed of Light*
+- **Menkveld (2013)**
 
 ---
 

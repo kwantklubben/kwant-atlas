@@ -73,12 +73,12 @@ Read the two columns: the standard deviation of the mean tracks $1/\sqrt n$ (0.4
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference*, Ch 5 (random samples, distributions of sums, the CLT §5.3), Ch 4 (moments) - the classical treatment.
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.1 (SLLN, CLT, MC standard error, dimension-free $O(n^{-1/2})$).
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 2 §2.4–2.6 (sampling distributions and the variance of estimates).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 1 (sampling distribution of return moments; skewness/kurtosis test statistics).
+- **Casella & Berger**, *Statistical Inference*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

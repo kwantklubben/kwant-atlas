@@ -71,14 +71,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ledoit, O. & Wolf, M. (2004).** "A well-conditioned estimator for large-dimensional covariance matrices." *Journal of Multivariate Analysis* 88(2):365–411. *Primary source this folder is transcribed from; condition-number theory and the identity/target shrinkage formulas.*
+- **Ledoit, O. & Wolf, M. (2004).** "A well-conditioned estimator for large-dimensional covariance matrices." *Journal of Multivariate Analysis* 88(2):365–411.
 - **Ledoit, O. & Wolf, M. (2004).** "Honey, I shrunk the sample covariance matrix." *Journal of Portfolio Management* 30(4):110–119. *The practitioner-facing version: constant-correlation target, error maximization, out-of-sample evidence on $N=30\dots500$.*
 - **Ledoit, O. & Wolf, M. (2012).** "Nonlinear shrinkage estimation of large-dimensional covariance matrices." *Annals of Statistics* 40(2):1024–1060. *The oracle nonlinear shrinkage estimator and its Stieltjes-transform derivation.*
 - **Laloux, L., Cizeau, P., Bouchaud, J.-P. & Potters, M. (1999).** "Noise dressing of financial correlation matrices." *Physical Review Letters* 83(7):1467–1470. ★ *The RMT "noise dressing" result behind eigenvalue cleaning.*
 - **Plerou, V. et al. (2002).** "Random matrix approach to cross correlations in financial data." *Physical Review E* 65:066126. *Confirms the bulk-plus-few-large-eigenvalues structure of equity correlations.*
-- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning* (2nd ed.), Ch 3 (ridge → L2 shrinkage), Ch 18 (§18.3.3/eigenvalue shrinkage). *The statistical-learning frame for shrinkage regularization.*
+- **Hastie, Tibshirani & Friedman (2009).** *The Elements of Statistical Learning* (2nd ed.)
 
 ---
 

@@ -73,13 +73,13 @@ The OLS recovers the adverse-selection ($\lambda$) and order-processing ($c$) co
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 8 (generalized Roll; eq 8.1–8.3; identification; random-walk decomposition) - **math-verified**.
-- **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142 - the permanent/transitory empirical split.
-- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4), 995–1034 - the three-component (order-processing + inventory + adverse selection) framework.
-- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*, Ch 3 §3.4–3.6 (adverse-selection vs order-processing vs inventory signatures; $ST-LT=c$).
-- **Copeland & Galai (1983)**, J. Finance 38 - the option-theoretic view of the information component.
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
+- **Glosten & Harris (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142
+- **Huang & Stoll (1997)**, *The components of the bid-ask spread: a general approach*, RFS 10(4), 995–1034
+- **Foucault, Pagano & Röell (2013)**, *Market Liquidity*
+- **Copeland & Galai (1983)**, J. Finance 38
 
 ---
 

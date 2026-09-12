@@ -117,11 +117,11 @@ The numerically-solved indifference prices match eqs. (2.6)–(2.7) to machine p
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3), §2.1–2.5 (mid-price, value function, reservation prices, limit orders, intensity) and §3.1 (the HJB equation, eq. 3.1–3.3). *The canonical source; equations transcribed above.*
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4), §2 (the same stochastic-control problem, stated with inventory constraints and a change of variables).
-- **Ho & Stoll (1981)**, JFE 9(1) - the original dealer-pricing problem AS's HJB descends from.
+- **Avellaneda & Stoikov (2008)**, Quantitative Finance 8(3)
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Math. & Financial Econ. 7(4)
+- **Ho & Stoll (1981)**, JFE 9(1)
 
 ---
 

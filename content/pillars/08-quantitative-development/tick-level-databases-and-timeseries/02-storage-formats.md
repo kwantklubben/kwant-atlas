@@ -79,13 +79,13 @@ Three independent multipliers compound: **252×** from date partitioning, **6×*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **DuckDB - AsOf Join, Parquet & Arrow documentation** (`duckdb.org`) - the practical reference for row-group skipping, projection pushdown, and the as-of join.
-- **Needham & Simons** - *DuckDB in Action* (Manning), ch. 4 (window functions, Parquet, as-of joins) - a worked treatment of exactly these mechanics.
-- **ClickHouse Documentation** (`clickhouse.com`) - `MergeTree` ordering keys and `LowCardinality`; the server-scale counterpart of the same ideas.
-- **Arrow & Parquet specifications** (`arrow.apache.org`, `parquet.apache.org`) - the normative definitions of SoA layout, row groups, and per-column statistics.
-- **Bryant & O'Hallaron** - *CS:APP*, ch. 6 (locality) - the cache-line arithmetic of §2.
+- **DuckDB - AsOf Join, Parquet & Arrow documentation** (`duckdb.org`)
+- **Needham & Simons** - *DuckDB in Action* (Manning), ch. 4 (window functions, Parquet, as-of joins)
+- **ClickHouse Documentation** (`clickhouse.com`)
+- **Arrow & Parquet specifications** (`arrow.apache.org`, `parquet.apache.org`)
+- **Bryant & O'Hallaron** - *CS:APP*, ch. 6 (locality)
 
 ---
 

@@ -80,11 +80,11 @@ Two facts jump out. First, the **interaction is discovered automatically**: dept
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 9 §9.2 (CART: eqs 9.10–9.17, growing, pruning, impurity) - the authoritative statement of everything on this page.
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 9 §9.2.4 (bias toward high-cardinality predictors when growing) and §9.2.3 (cost-complexity pruning).
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 6 §6.4–6.5 (why trees must be capped/bagged in finance) and Ch 8 (importance of the split criterion).
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **López de Prado**, *Advances in Financial Machine Learning*
 
 ---
 

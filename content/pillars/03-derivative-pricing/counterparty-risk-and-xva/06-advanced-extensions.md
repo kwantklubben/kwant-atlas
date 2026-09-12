@@ -81,11 +81,11 @@ Three practitioner results, all visible: Basel's BA-CVA half-rewards diversifica
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory**, *The xVA Challenge*, Ch 13 (CVA capital: BA-CVA, SA-CVA, SA-CCR, IMM, EAD), Ch 19 (KVA), Ch 20 (MVA), Ch 21 (xVA desk, hedging, P&L explain, optimisation). *Primary; numbers verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 (Vasicek one-factor credit VaR eq 24.10; Merton; CDS).
-- **Brigo & Mercurio**, *Interest Rate Models*, Ch 21–22 (CVA pricing proposition, intensity/WWR machinery, SSRD/CIR++).
+- **Gregory**, *The xVA Challenge*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Brigo & Mercurio**, *Interest Rate Models*
 - **Basel Committee (BCBS 2015, 2017)**: *The standardised approach for measuring counterparty credit risk exposures* (SA-CCR) and the FRTB-CVA framework; **BCBS–IOSCO (2015)** bilateral margin rules.
 
 ---

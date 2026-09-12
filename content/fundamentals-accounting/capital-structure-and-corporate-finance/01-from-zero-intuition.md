@@ -71,12 +71,12 @@ Read the spread: all-equity ranges 6–30%; at 80% debt it ranges **−2% to +11
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Modigliani & Miller**, "The Cost of Capital, Corporation Finance and the Theory of Investment" (*AER*, 1958) - the null theorem this page's intuition leads toward; the arbitrage proof that value is independent of the slice. *Verified against the paper text.*
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance*, Ch 17–18 - the canonical debt-vs-equity and capital-structure treatment.
-- **Damodaran**, *Applied Corporate Finance* - debt vs. equity through the lens of actual financing decisions and cost-of-capital estimation.
-- **Graham & Dodd**, *Security Analysis* (6th ed.) - the practitioner's pre-theory view that equity is the risky residual and seniority protects the lender.
+- **Modigliani & Miller**, "The Cost of Capital, Corporation Finance and the Theory of Investment" (*AER*, 1958)
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
+- **Damodaran**, *Applied Corporate Finance*
+- **Graham & Dodd**, *Security Analysis* (6th ed.)
 
 ---
 

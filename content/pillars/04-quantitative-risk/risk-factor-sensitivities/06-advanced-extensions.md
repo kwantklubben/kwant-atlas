@@ -106,15 +106,15 @@ One Monte Carlo run prices the *truth*. Then the two sensitivity models are comp
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 22 §22.5 (the linear model eq. 22.6 and the quadratic delta–gamma model eq. 22.7/22.8 with cross-gamma $\gamma_{ij}$; Cornish–Fisher for non-normal percentiles) and §22.6–22.8 (MC comparison, backtesting). *Verified in the corpus (`hull_ch19-23.md`).*
-- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996) - the original delta-gamma methodology for options under delta-normal VaR; the practical template every bank copied.
-- **Dowd, Kevin**: *Measuring Market Risk* (2nd ed., 2005) - the clearest self-contained derivation of delta-normal and delta-gamma VaR and the Cornish–Fisher correction.
-- **Fisher, R. A. & Cornish, E. A.**: *Moments and Cumulants in the Specification of Distributions*, *Biometrika* **30**(3–4):262–291 (1938) - the quantile expansion itself.
-- **Alexander, Carol**: *Market Risk Analysis, Vol. IV (Value at Risk Models)* (2008) - the accuracy limits of quadratic approximations and the crossover point to full-revaluation VaR.
-- **BCBS**: *Minimum Capital Requirements for Market Risk* (January 2019, d457 - **FRTB**) - the sensitivities-based method (delta / vega / curvature, bucketed and risk-weighted) and the ES replacement for VaR; the regulatory endpoint of this entire folder.
-- **RiskMetrics / MSCI** and **Hull, *Risk Management and Financial Institutions*** - the standard limit-system structure (delta/gamma/vega/theta, VaR, stress) as implemented in bank practice.
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **J.P. Morgan / RiskMetrics**: *Technical Document*, 4th ed. (1996)
+- **Dowd, Kevin**: *Measuring Market Risk* (2nd ed., 2005)
+- **Fisher, R. A. & Cornish, E. A.**: *Moments and Cumulants in the Specification of Distributions*, *Biometrika* **30**(3–4):262–291 (1938)
+- **Alexander, Carol**: *Market Risk Analysis, Vol. IV (Value at Risk Models)* (2008)
+- **BCBS**: *Minimum Capital Requirements for Market Risk* (January 2019, d457
+- **RiskMetrics / MSCI** and **Hull, *Risk Management and Financial Institutions***
 
 ---
 

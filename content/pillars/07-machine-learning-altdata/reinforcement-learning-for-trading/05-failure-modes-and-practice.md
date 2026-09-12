@@ -75,14 +75,14 @@ This is the whole folder's warning, made numeric.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018) - Ch 11 (function approximation, off-policy divergence), Ch 17 (frontiers, including the reward-design problem). *The reward-specification caution is theirs.*
-- **Henderson, Peter et al.**: "Deep Reinforcement Learning that Matters" (AAAI 2018) - the reproducibility/seed-variance reality check every trading-RL claim should answer to.
-- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE TNN* 12(4), 2001) - the differential-Sharpe objective; useful, and a textbook example of a *gameable* reward.
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (2018) - Ch 11 (dangers of backtesting), Ch 14 (Deflated Sharpe) - the hygiene this page insists on.
-- **Nevmyvaka, Feng & Kearns** (ICML 2006) - read for how *carefully* an honest execution-RL study scopes its claims (and for the caveats in [[pillars/07-machine-learning-altdata/reinforcement-learning-for-trading/06-advanced-extensions|06]]).
-- **Hasselt, van; Guez & Silver**: "Deep RL with Double Q-learning" (AAAI 2016) - the overestimation bias fix relevant to over-trading.
+- **Sutton & Barto**, *Reinforcement Learning: An Introduction* (2nd ed., 2018)
+- **Henderson, Peter et al.**: "Deep Reinforcement Learning that Matters" (AAAI 2018)
+- **Moody, John & Saffell, Matthew**: "Learning to Trade via Direct Reinforcement" (*IEEE TNN* 12(4), 2001)
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (2018)
+- **Nevmyvaka, Feng & Kearns** (ICML 2006)
+- **Hasselt, van; Guez & Silver**: "Deep RL with Double Q-learning" (AAAI 2016)
 
 ---
 

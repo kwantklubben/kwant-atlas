@@ -114,11 +114,11 @@ Read the block: CVA is **−1.06** on a zero-value ATM forward - the price of th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025) - Ch 17 in full: Eqs 17.1–17.9 (direct, path-wise, spread, LGD-adjusted, bilateral), credit-spread effects (Tables 17.1–17.2), DVA accounting, survival adjustments, allocation. *Deep-read and re-verified in the corpus.*
-- **Brigo, Morini & Pallavicini**: *Counterparty Credit Risk, Collateral and Funding* (2013) - the rigorous treatment of CVA/DVA with collateral and close-out, including the first-to-default discount factor.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 24 §24.7 (CVA & DVA, the closed-form special cases) and Ch 25 (CDS spreads as the PD input). *Verified in the corpus.*
+- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025)
+- **Brigo, Morini & Pallavicini**: *Counterparty Credit Risk, Collateral and Funding* (2013)
+- **Hull**, *Options, Futures, and Other Derivatives*
 - **BCBS (2011d)**: DVA derecognition; **BCBS (2017)** *Basel III CVA Risk Framework* for the capital treatment.
 
 ---

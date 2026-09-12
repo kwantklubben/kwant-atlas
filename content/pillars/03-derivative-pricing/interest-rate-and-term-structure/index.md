@@ -70,12 +70,12 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brigo, Damiano & Mercurio, Fabio**: *Interest Rate Models - Theory and Practice: With Smile, Inflation and Credit* (2nd ed., 2006) - Ch 1–2 (definitions, numeraire change), Ch 3–4 (one/two-factor short-rate models), Ch 5 (HJM), Ch 6 (LFM/LSM), Ch 7 (calibration), Ch 9–12 (smile in rates). *Primary math-verified source for this folder.*
-- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed., 2009) - Ch 22–27 (bonds, short-rate models, HJM, change of numeraire, LIBOR & swap market models), Ch 29 (forwards vs futures). *Math-verified deep-read in the corpus.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* - Ch 27–34 (bonds & term structure, Hull–White, CIR, change of numeraire, BGM/LIBOR). *Math-verified in the corpus.*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 29 (Black caplet/swaption market models), Ch 31–32 (equilibrium & no-arbitrage short-rate models), Ch 33 (HJM & LMM). *Verified in the corpus.*
+- **Brigo, Damiano & Mercurio, Fabio**: *Interest Rate Models
+- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed., 2009)
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
 
 ---
 

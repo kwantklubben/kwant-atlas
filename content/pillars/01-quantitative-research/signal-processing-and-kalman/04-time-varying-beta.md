@@ -84,13 +84,13 @@ The Kalman beta tracks the truth to **RMSE 0.0187**, while the 60-day rolling OL
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series* (3rd ed.), Ch 11 §11.3 - the **time-varying CAPM** state-space form (Eq. 11.29), the canonical template for this page. *Corpus-verified.*
-- **Chan, Ernest P.**: *Algorithmic Trading: Winning Strategies and Their Rationale*, Ch 3 - the dynamic hedge ratio / Kalman pairs-trading implementation.
-- **Vidyamurthy, G.**: *Pairs Trading* (in the corpus) - the static hedge-ratio benchmark the Kalman version upgrades.
-- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*, Ch 3 (time-varying regression parameters).
-- **Hilpisch, Y.**: *Python for Algorithmic Trading* and **Strimpel**, *Python Algorithmic Trading Cookbook* (both in the corpus) - hands-on dynamic-beta code patterns.
+- **Tsay**, *Analysis of Financial Time Series* (3rd ed.)
+- **Chan, Ernest P.**: *Algorithmic Trading: Winning Strategies and Their Rationale*
+- **Vidyamurthy, G.**: *Pairs Trading* (in the corpus)
+- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*
+- **Hilpisch, Y.**: *Python for Algorithmic Trading* and **Strimpel**, *Python Algorithmic Trading Cookbook* (both in the corpus)
 
 ---
 

@@ -111,11 +111,11 @@ The MC expectation converges to the PDE solution - the Feynman–Kac bridge, ver
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 4 (BSM PDE, solution, Greeks, forward, parity) and Ch 5 (Girsanov 5.2.3, risk-neutral pricing 5.2.30, BSM by RN expectation 5.2.5, MRT 5.3.1, FTA 5.4.7/5.4.9). *Math-verified in the corpus.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 5 (Feynman–Kac Props 5.5/5.6) and Ch 7 (arbitrage pricing, BSM PDE Thm 7.7, risk-neutral valuation Thm 7.8). *Math-verified.*
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 15 (BSM PDE eq. 15.16, risk-neutral rationale) and Ch 14 (Itô's lemma).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

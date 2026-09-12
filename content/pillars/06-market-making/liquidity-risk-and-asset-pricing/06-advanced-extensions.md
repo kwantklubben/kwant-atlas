@@ -66,13 +66,13 @@ Intensifying the transitory price noise by 5× raises measured bond illiquidity 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Bao, Pan & Wang (2011).** *The illiquidity of corporate bonds.* Journal of Finance 66(3), 911–946. The $\gamma$ measure, commonality, the 2008 crisis spike, and its dominance over credit risk in spreads.
-- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*, Ch 3–4 - where the bond/OTC extensions sit in the broader framework.
-- **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77 - the pricing framework the bond evidence feeds into.
-- **Dick-Nielsen, Feldhütter & Lando (2012).** *Corporate bond liquidity before and after the onset of the subprime crisis.* JFE 103 - the pre/post-2008 bond-illiquidity comparison.
-- **O'Hara (2015).** *High frequency market microstructure.* JFE 116 - modern dealer/OTC market structure.
+- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*
+- **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77
+- **Dick-Nielsen, Feldhütter & Lando (2012).** *Corporate bond liquidity before and after the onset of the subprime crisis.* JFE 103
+- **O'Hara (2015).** *High frequency market microstructure.* JFE 116
 
 ---
 

@@ -93,12 +93,12 @@ Weighting the ensemble members by their out-of-sample reliability (again inverse
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2009), Ch 15 (random forests) and Ch 16 (ensemble learning); **eq. 15.1** is the variance decomposition verified here. *Verified in the corpus (esl_ch11-18).*
-- **López de Prado**, *Advances in Financial Machine Learning* (2018), Ch 6 (bias–variance–noise, bagging variance, sequential bootstrap motivation) and Ch 4 (sequential bootstrapping to de-correlate samples).
-- **Breiman**, "Random Forests," *Machine Learning* 45:5–32, 2001 - the feature-subsampling device that lowers $\rho$.
-- **Wolpert**, "Stacked Generalization," *Neural Networks* 5(2):241–259, 1992 - stacking as learning the combination weights (and its overfitting risk).
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* (2009)
+- **López de Prado**, *Advances in Financial Machine Learning* (2018)
+- **Breiman**, "Random Forests," *Machine Learning* 45:5–32, 2001
+- **Wolpert**, "Stacked Generalization," *Neural Networks* 5(2):241–259, 1992
 
 ---
 

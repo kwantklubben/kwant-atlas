@@ -100,12 +100,12 @@ Read the table:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Almgren, R. & Chriss, N. (2000)**, *Optimal execution of portfolio transactions*, Journal of Risk 3(2), 5–39. *Permanent/temporary split, the linear cost function, the efficient frontier, the $\sinh$ trajectory. Primary PDF in corpus (`Almgren_2000_...`).*
 - **Almgren, R., Thum, C., Hauptmann, H. & Li, H. (2005)**, *Direct estimation of equity market impact*, Risk 18(7), 57–62. *The empirical operationalisation: pre-trade, post-trade, realized prices; $\gamma,\eta$ fitted. Primary PDF in corpus.*
 - **Obizhaeva, A. & Wang, J. (2013)**, *Optimal trading strategy and supply/demand dynamics*, J. Financial Markets 16(1), 1–32. *Resilience and the block-ramp-block solution.*
-- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, Ch 8. *Generalized Roll $\Delta p_t=c(q_t-q_{t-1})+\lambda q_t+u_t$, spread $2(c+\lambda)$, $\sigma_w^2=\gamma_0+2\gamma_1$; verified in corpus (`hasbrouck_ch6-10.md`, Ch 8).*
+- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*
 - **Glosten, L. R. & Harris, L. E. (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142. *The size-dependent transitory/permanent decomposition. Primary PDF in corpus.*
 
 ---

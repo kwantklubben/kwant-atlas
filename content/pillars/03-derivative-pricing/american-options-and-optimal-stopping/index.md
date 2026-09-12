@@ -70,13 +70,13 @@ Hub signposts - the full analysis is in [[pillars/03-derivative-pricing/american
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance II* - **Ch 8, "American Derivative Securities"** (optimal-stopping value 8.1–8.2; perpetual put 8.3.12–13 with smooth pasting 8.3.14 and the LCP 8.3.18–20; finite-expiration free boundary 8.4; dividend-call recursion 8.5). *Math-verified deep-read in the corpus - the primary source for this folder.*
-- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.) - **Ch 21, "Optimal Stopping Theory & American Options"** (Snell envelope Thm 21.12/21.23; backward recursion Prop 21.7; variational inequalities Prop 21.25/21.26; free-boundary §21.6.2; perpetual put Prop 21.30). *Math-verified.*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.) - **Ch 3** (BAW 3.1, Bjerksund–Stensland 1993 3.2 / 2002 3.3, put-call transformation 3.4, perpetual 3.5) and §4.2 (CRR American recursion). *Numerically verified - the formula-authoritative lookup source.*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* - **Ch 8** (pricing American options by simulation: LSM 8.52, regression-DP, stochastic mesh §8.5, duality §8.7). *Math-verified.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I* - Ch 5–6, 8 (stopping times, American recursion, no-early-exercise corollary, binomial perpetual put). *Math-verified.*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance II*
+- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed.)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*
 
 ---
 

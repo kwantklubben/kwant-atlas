@@ -82,12 +82,12 @@ Simulate the iceberg priority loss, the latency pick-off, and the dark hit-rate.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 2 (hidden and reserve orders, "reload from reserve" mechanics that forfeit priority) and Ch 3 (the spread that a stale quote gives away). *Verified in `hasbrouck_ch1-5.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Hasbrouck & Saar** - "Low-latency trading," *JFM* 16(4), 2013. *Empirically measures the low-latency trader: order lifetimes and cancel rates that make latency a first-order cost.*
-- **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2), 2015. *When investing in speed is privately profitable but socially wasteful - the economic frame for the latency failure.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 2 (effective vs realized spread - the realized spread *is* the adverse-selection cost that pick-off produces). *Verified in `foucault_ch1-3.md`.*
+- **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2), 2015. *When investing in speed is privately profitable but socially wasteful
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 - **Harris, Larry** - *Trading and Exchanges* (2003). *Practitioner treatment of order-type risk and queue position.*
 
 ---

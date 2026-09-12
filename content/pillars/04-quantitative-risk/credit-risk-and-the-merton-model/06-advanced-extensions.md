@@ -89,13 +89,13 @@ The one-year numbers reproduce the matrix's default column exactly (BBB $0.18\%$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Vašíček, Oldřich** - *Probability of Loss on Loan Portfolio* (KMV, 1987) and *Limiting Loan Loss Probability Distribution* (1991): the one-factor conditional PD and the asymptotic loss CDF. *Primary source; formula-verified in the corpus.*
-- **Hull**, *Options, Futures, and Other Derivatives* - §24.9 (credit VaR, Vasicek eq. 24.10, CreditMetrics), §25.8–25.10 (CDO tranching, one-factor Gaussian copula standard market model, eqs. 25.5–25.12), §25.9 (role of correlation). *Verification report in the corpus.*
-- **Gupton, Finger & Bhatia (J.P. Morgan)** - *CreditMetrics™ - Technical Document* (1997) - Table 1.8/2.1 (one-year transition matrix used above) and the migration-simulation portfolio framework.
-- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*, Ch 2 (uniform default intensity and correlation, §2.2.2) and §1.2.3–1.3 (multi-factor asset-correlation model, portfolio UL). *Corpus digest available.*
-- **BCBS** - *Basel III: Finalising Post-Crisis Reforms* (2017) - the IRB asset-correlation formula and its PD-dependent weighting; the regulatory descendant of the Vasicek result.
+- **Vašíček, Oldřich** - *Probability of Loss on Loan Portfolio* (KMV, 1987) and *Limiting Loan Loss Probability Distribution* (1991): the one-factor conditional PD and the asymptotic loss CDF.
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Gupton, Finger & Bhatia (J.P. Morgan)** - *CreditMetrics™
+- **Bluhm, Overbeck & Wagner** - *Introduction to Credit Risk Modeling*
+- **BCBS** - *Basel III: Finalising Post-Crisis Reforms* (2017)
 
 ---
 

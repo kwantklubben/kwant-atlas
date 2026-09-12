@@ -95,14 +95,14 @@ Hub signposts - the full analysis lives in [[pillars/04-quantitative-risk/model-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Derman, E.** - *Model Risk*, Goldman Sachs Quantitative Strategies Research Notes (April 1996). The founding taxonomy: three meanings of "model"; the seven types of model risk; the seven guidelines for avoidance. *Read in full from the corpus PDF (44_Derman_1996_model_risk.pdf).*
 - **Board of Governors of the Federal Reserve System & OCC** - *Supervisory Guidance on Model Risk Management*, SR Letter 11-7 / OCC 2011-12 (April 2011). The binding definitions of *model*, *model risk*, *effective challenge*, the three validation elements (conceptual soundness, ongoing monitoring, outcomes analysis) and the governance framework. *Read in full from the corpus PDF (45_OCC_2011...).*
 - **Morini, M.** - *Understanding and Managing Model Risk: A Practical Guide for Quants, Traders and Validators* (2011, Wiley). The rare quantitative treatment of model uncertainty, validation and limits, written by a working validator.
 - **Tunaru, R.** - *Model Risk in Financial Markets: From Financial Engineering to Risk Management* (2015, World Scientific). Broad academic–industry survey of model-risk measurement.
 - **BCBS** - *Supervisory Framework for the Use of Backtesting in Conjunction with the Internal Models Approach to Market Risk Capital Requirements* (1996, BIS). The three-zone traffic light and the capital multiplier.
-- **Hastie, Tibshirani & Friedman** - *The Elements of Statistical Learning*, 2nd ed. (2009), Ch 7 (Model Assessment & Selection: bias–variance eq. 7.9, $C_p$/AIC/BIC eqs. 7.24–7.36, cross-validation eq. 7.48, the wrong-vs-right way to do CV §7.10.2) and Ch 8 (Model Inference & Averaging: bagging, stacking). *Verified in the corpus.*
+- **Hastie, Tibshirani & Friedman** - *The Elements of Statistical Learning*, 2nd ed. (2009)
 
 ---
 

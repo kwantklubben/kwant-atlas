@@ -79,12 +79,12 @@ The two consistency checks prove the math: **Prop II's formula and definition ag
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Modigliani, Franco & Miller, Merton H.**: "The Cost of Capital, Corporation Finance and the Theory of Investment" (*AER*, 1958, 48(3), 261–297) - **Propositions I and II, the arbitrage proof (equations 3–8), and the corporate-tax extension (equations 10–12)**. *All formulas and the fn-12 worked example verified against the paper text.*
-- **Miller, Merton H.**: "Debt and Taxes" (*JF*, 1977, 32(2), 261–275) - the subsequent refinement: with both corporate *and* personal taxes, the debt advantage shrinks or can vanish.
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance*, Ch 17 - the standard classroom treatment of MM I & II and the tax shield.
-- **Damodaran**, *Applied Corporate Finance* - estimating WACC and sustainable debt ratios for real firms, bridging the theory to practice.
+- **Modigliani, Franco & Miller, Merton H.**: "The Cost of Capital, Corporation Finance and the Theory of Investment" (*AER*, 1958, 48(3), 261–297)
+- **Miller, Merton H.**: "Debt and Taxes" (*JF*, 1977, 32(2), 261–275)
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
+- **Damodaran**, *Applied Corporate Finance*
 
 ---
 

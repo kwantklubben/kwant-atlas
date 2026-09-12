@@ -73,13 +73,13 @@ Read the signs through the AP convention (the price of risk on $\beta_2,\beta_3$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77(2), 375–410. The full model, Proposition 1, and the three betas; empirical premia for each channel.
 - **Chordia, Roll & Subrahmanyam (2000).** *Commonality in liquidity.* JFE 56, 3–28. The empirical fact of a market-wide liquidity factor.
-- **Pástor & Stambaugh (2003).** *Liquidity risk and expected stock returns.* JPE 111(3) - the $\beta_2$ channel's big empirical payoff (7.5%/yr).
-- **Bao, Pan & Wang (2011).** *The illiquidity of corporate bonds.* Journal of Finance 66(3) - commonality and the crisis spike in the bond market (page 06).
-- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*, Ch 4 (liquidity risk) and Ch 6 (crises) - the crisis narrative in one volume.
+- **Pástor & Stambaugh (2003).** *Liquidity risk and expected stock returns.* JPE 111(3)
+- **Bao, Pan & Wang (2011).** *The illiquidity of corporate bonds.* Journal of Finance 66(3)
+- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity*
 
 ---
 

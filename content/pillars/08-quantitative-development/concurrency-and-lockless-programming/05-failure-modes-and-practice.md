@@ -68,12 +68,12 @@ This is the exact mechanism that, at scale, silently eats increments, order coun
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*, Ch 5 (ABA) and Ch 7–11 (the failure modes of lock-free structures).
-- **Williams**, *C++ Concurrency in Action*, Ch 5–7 (memory-order errors, lock-free pitfalls, and why "it passes" is not proof).
-- **Boehm, Hans-J.** - *Threads Cannot Be Implemented as a Library* (PLDI 2005) - why the data-race problem needs language-level memory semantics.
-- **Preshing, Jeff** - *An Introduction to Lock-Free Programming* and the *Acquire and Release Semantics* series - the clearest free failure-mode exposition.
+- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*
+- **Williams**, *C++ Concurrency in Action*
+- **Boehm, Hans-J.** - *Threads Cannot Be Implemented as a Library* (PLDI 2005)
+- **Preshing, Jeff** - *An Introduction to Lock-Free Programming* and the *Acquire and Release Semantics* series
 - **Powell, George** - *Mars Pathfinder* (1997): the canonical priority-inversion incident.
 
 ---

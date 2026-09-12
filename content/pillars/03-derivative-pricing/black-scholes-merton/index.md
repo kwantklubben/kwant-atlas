@@ -67,12 +67,12 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/03-derivat
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) - §§1–2 (generalized BSM, full Greek set), Ch 3 (American), Ch 7 (trees). *The formula-authoritative lookup source for this folder; all formulas numerically verified.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance II* - Ch 4 (Itô–Doeblin, BSM PDE, Greeks, parity) and Ch 5 (Girsanov, risk-neutral pricing, BSM by expectation, dividends, forwards/futures). *Math-verified deep-read in the corpus.*
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 13 (binomial), 14 (Itô), 15 (BSM model), 17 (indices/FX), 18 (futures/Black). *Verification report in the corpus.*
-- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.) - Ch 7 (arbitrage pricing & the BSM PDE), Ch 5 (Feynman–Kac). *Math-verified in the corpus.*
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006)
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance II*
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Björk, Tomas**: *Arbitrage Theory in Continuous Time* (3rd ed.)
 
 ---
 

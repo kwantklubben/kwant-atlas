@@ -104,13 +104,13 @@ The reservation price is *exactly* linear in $I$ - slope $-0.4000$ per share, ma
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1), 47–73 - the dealer model: inventory recursion, reservation price, and the transaction-cost-anchored spread.
-- **Ho & Stoll (1983)**, *The dynamics of dealer markets under competition*, Journal of Finance 38(4), 1053–1074 - competing dealers and how competition compresses the inventory component of the spread.
-- **Stoll (1978)**, *The supply of dealer services in securities markets*, JFE 3(2) - the holding-cost / transaction-cost decomposition.
-- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3) - the continuous-time engine whose reservation price is Ho–Stoll's $r(I)$.
-- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Mathematics and Financial Economics 7(4) - the rigorous HJB treatment and inventory-constrained solution that supersedes the linearized spread for large $|I|$.
+- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1), 47–73
+- **Ho & Stoll (1983)**, *The dynamics of dealer markets under competition*, Journal of Finance 38(4), 1053–1074
+- **Stoll (1978)**, *The supply of dealer services in securities markets*, JFE 3(2)
+- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3)
+- **Guéant, Lehalle & Fernandez-Tapia (2013)**, *Dealing with the inventory risk*, Mathematics and Financial Economics 7(4)
 
 ---
 

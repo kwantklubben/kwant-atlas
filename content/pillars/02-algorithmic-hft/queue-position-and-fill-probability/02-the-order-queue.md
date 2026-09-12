@@ -94,11 +94,11 @@ Notice how faithfully the deterministic mean-field curve tracks the simulation: 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Cont, Stoikov & Talreja** (2010), §2.2 - the event-by-event queue dynamics (limit/market/cancel at each level) and the unit-size convention used here.
-- **Gould et al.** (2013), §3–4 - taxonomy of LOB event types, price-time vs pro-rata priority, and empirical cancel rates.
-- **Foucault, Pagano & Roell**, *Market Liquidity*, Ch 6 - the limit-order-book marginal-unit profit condition and the queueing interpretation.
+- **Cont, Stoikov & Talreja** (2010)
+- **Gould et al.** (2013)
+- **Foucault, Pagano & Roell**, *Market Liquidity*
 
 ---
 

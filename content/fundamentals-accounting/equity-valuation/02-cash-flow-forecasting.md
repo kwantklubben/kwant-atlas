@@ -86,12 +86,12 @@ Both reproduce Damodaran exactly: FCFF $=212.2$ (Rs mn), and the Home Depot year
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Damodaran**, *Investment Valuation*, Ch 11 (reinvestment, ROC, the growth equations), Ch 14 (FCFE: full and δ-form, Home Depot/Boeing illustrations), Ch 15 (FCFF, comparison to EBITDA/EBIT/NOI, Tube Investments).
-- **Koller et al. (McKinsey)**, *Valuation* - the enterprise-DCF view of reinvestment and ROIC; the "net investment = growth × incremental invested capital" logic.
-- **Penman**, *Financial Statement Analysis and Security Valuation* - how to reformulate statements to separate operating from financing flows before forecasting.
-- **O'Glove**, *Quality of Earnings* - why cash flow (not accrual earnings) is the honest starting point.
+- **Damodaran**, *Investment Valuation*
+- **Koller et al. (McKinsey)**, *Valuation*
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **O'Glove**, *Quality of Earnings*
 
 ---
 

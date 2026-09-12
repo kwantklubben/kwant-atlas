@@ -83,12 +83,12 @@ Stdlib only. Two firms report **identical** net income and identical revenue. On
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996) - the identity, the balance-sheet accrual measure, and the persistence result; *verified against the corpus paper.*
-- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987) - the original practitioner framing of **free cash flow vs. reported earnings**; the plain-English version of this page.
-- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed., 2020) - the games this page warns about, catalogued.
-- **Penman, Stephen H.**: *Financial Statement Analysis and Security Valuation* - Ch 7 on reformulated statements: the same accrual-versus-cash split done for valuation.
+- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996)
+- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987)
+- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed., 2020)
+- **Penman, Stephen H.**: *Financial Statement Analysis and Security Valuation*
 
 ---
 

@@ -80,11 +80,11 @@ Read the punchline: the shuffled and original series have **identical values** (
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.1–10.3: why sequence modeling needs state; the unrolled computational graph; the RNN as a learned sufficient statistic) - the primary theory source for this page.
-- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed.) - serial dependence, autocorrelation, and why the IID assumption fails for returns (the classical-econometrics side of the same idea). *Corpus available.*
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 1** - why a *sequence* of financial data is not an IID sample, and why the ML-pipeline problems (labels, validation) dominate the architecture choice.
+- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 10** (§10.1–10.3: why sequence modeling needs state; the unrolled computational graph; the RNN as a learned sufficient statistic)
+- **Tsay, Ruey S.**, *Analysis of Financial Time Series* (3rd ed.)
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 1**
 
 ---
 

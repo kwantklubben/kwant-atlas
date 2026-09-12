@@ -68,14 +68,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Goldfarb, Donald & Iyengar, Garud**: *Robust Portfolio Selection Problems*, Mathematics of Operations Research 28(1):1–38, 2003. **The seminal deterministic robust-MVO paper and the math-authoritative source for this folder.** Uncertainty sets on mean/factor-loadings/residual covariance; worst-case formulations as SOCPs; sets as regression confidence regions. ★ MUST-HAVE
 - **Best, Michael J. & Grauer, Robert R.**: *On the Sensitivity of Mean–Variance-Efficient Portfolios to Changes in Asset Means*, Review of Financial Studies 4(2):315–342, 1991. The formal estimation-error-maximizer result: weight elasticities up to $14{,}000\times$ those of portfolio returns. ★ STRONG
 - **Michaud, Richard O. & Michaud, Robert O.**: *Efficient Asset Management: A Practical Guide to Stock Portfolio Optimization and Asset Allocation*, 2nd ed., Oxford University Press, 2008. Resampling as an error-aware alternative to robust formulations. ★ MUST-HAVE
 - **Tütüncü, Reha & Koenig, Michael**: *Robust Asset Allocation*, Annals of Operations Research 132:157–187, 2004. Robust reformulations of MV and VaR/CVaR allocation against moment uncertainty; complements Goldfarb–Iyengar.
 - **Fabozzi, Kolm, Pachamanova & Focardi**: *Robust Portfolio Optimization and Management*, Wiley, 2007. The broad reference shelf item: estimation error, resampling vs robust vs Black–Litterman, robust input estimation, QP/SOCP formulations. ★ STRONG
-- **Ledoit, Olivier & Wolf, Michael**: *Improved Estimation of the Covariance Matrix of Stock Returns…*, Journal of Empirical Finance 10(5):603–621, 2004. Analytical shrinkage - an *implicit* form of robustness on $\Sigma$. ★ MUST-HAVE
+- **Ledoit, Olivier & Wolf, Michael**: *Improved Estimation of the Covariance Matrix of Stock Returns…*, Journal of Empirical Finance 10(5):603–621, 2004. Analytical shrinkage
 
 ---
 

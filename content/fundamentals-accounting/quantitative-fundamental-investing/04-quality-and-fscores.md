@@ -75,13 +75,13 @@ Runs on the standard library. It computes all nine Piotroski signals for a six-c
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000, 38 Supplement) - the F-score; *all nine signal definitions, the 7.5% annual mean-return boost, and the ~23% annual long-short return (1976–1996) verified against the corpus paper.*
-- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996) - the accruals anomaly; the theoretical base of the quality factor.
-- **Chan, Konan; Chan, Louis; Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 2006) - earnings-quality measures carry return-predictive power *beyond* value; the bridge from red flags to factors.
-- **Dechow, Ge & Schrand**: "Understanding Earnings Quality" (*JAE*, 2010) - the definitive map of every earnings-quality proxy.
-- **Greenblatt, Joel**: *The Little Book That Beats the Market* - the magic formula as the "good & cheap" cousin of the value+quality screen.
+- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000, 38 Supplement)
+- **Sloan, Richard**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 1996)
+- **Chan, Konan; Chan, Louis; Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 2006)
+- **Dechow, Ge & Schrand**: "Understanding Earnings Quality" (*JAE*, 2010)
+- **Greenblatt, Joel**: *The Little Book That Beats the Market*
 
 ---
 

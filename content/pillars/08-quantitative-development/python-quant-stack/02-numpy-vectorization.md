@@ -79,11 +79,11 @@ The copy in (C) is the same mechanism behind the pandas chained-assignment trap 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) - Ch 4 (NumPy basics: arrays, indexing, ufuncs, broadcasting) and Appendix A (advanced array idioms, views vs copies). *The authoritative NumPy-in-the-stack reference.*
-- **Hilpisch**, *Python for Finance* (2nd ed., 2018) - Ch 3–5 (NumPy: vectorized finance algorithms, moving windows, Monte Carlo simulation).
-- **NumPy official docs** - "Array Broadcasting" and "Copies and Views" (numpy.org/doc/stable) - the precise, current semantics.
+- **McKinney**, *Python for Data Analysis* (3rd ed., 2022)
+- **Hilpisch**, *Python for Finance* (2nd ed., 2018)
+- **NumPy official docs** - "Array Broadcasting" and "Copies and Views" (numpy.org/doc/stable)
 
 ---
 

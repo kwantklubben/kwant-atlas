@@ -69,13 +69,13 @@ Standard library only. Builds the skip-month signal, verifies **dollar-neutralit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Jegadeesh & Titman (1993)**, *Returns to Buying Winners and Selling Losers*, J. Finance 48(1) - the original 1965–1989 US result; and **Jegadeesh & Titman (2001)**, *Profitability of Momentum Strategies*, J. Finance 56(2) - persistence in the 1990s, non-January effect, behavioral-vs-rational tests. *Verified corpus refs/13.*
-- **Jegadeesh (1990)** and **Lehmann (1990)** - one-month reversal motivating the skip.
-- **Moskowitz & Grinblatt (1999)** - industry-level momentum; **Rouwenhorst (1998, 1999)** - international/emerging.
-- **Kothari & Shanken (1992)** and **Grundy & Martin (2001)** - time-varying betas of return-sorted portfolios.
-- **Moskowitz, Ooi & Pedersen (2012)**, *Time Series Momentum* - §5 XSMOM/TSMOM decomposition. *Verified corpus refs/14.*
+- **Jegadeesh & Titman (1993)**, *Returns to Buying Winners and Selling Losers*, J. Finance 48(1)
+- **Jegadeesh (1990)** and **Lehmann (1990)**
+- **Moskowitz & Grinblatt (1999)**
+- **Kothari & Shanken (1992)** and **Grundy & Martin (2001)**
+- **Moskowitz, Ooi & Pedersen (2012)**, *Time Series Momentum*
 
 ---
 

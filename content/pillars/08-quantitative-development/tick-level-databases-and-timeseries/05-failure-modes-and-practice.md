@@ -77,13 +77,13 @@ The honest signal has **no skill** (Sharpe $0.04$); the same-bar leak manufactur
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018) - backtest-overfitting hygiene, purged CV, and the structural statement of why data leaks (like restatements) inflate results; cross-listed with [[pillars/08-quantitative-development/event-driven-backtesting-engines|Event-Driven Backtesting Engines]].
-- **WRDS** - *Compustat Point-in-Time* documentation - the canonical statement of the restated-vs-PIT distinction, cited here as the template a *tick* store must follow for its own vintages.
-- **kdb+ and q - Official Documentation** (`code.kx.com`) - `asof`, the `s#`/`p#`/`g#` attributes, and the tick architecture whose whole design is the "never overwrite, always log" discipline.
-- **DuckDB - AsOf Join documentation** (`duckdb.org`) - the normative SQL semantics of the join whose misuse produces failures 1 and 2.
-- **Hasbrouck, Joel** - *Empirical Market Microstructure*, ch. 2 - the event-time semantics (trades vs quotes) that make the as-of join the only correct primitive.
+- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018)
+- **WRDS** - *Compustat Point-in-Time* documentation
+- **kdb+ and q - Official Documentation** (`code.kx.com`)
+- **DuckDB - AsOf Join documentation** (`duckdb.org`)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure*, ch. 2
 
 ---
 

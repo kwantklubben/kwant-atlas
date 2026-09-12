@@ -104,12 +104,12 @@ Read the risk shares: under equal *dollars*, equities and commodities together c
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ang**, *Asset Management: A Systematic Approach to Factor Investing* (2014), Ch 1–4 - why portfolio construction is the study of *return sources*, not labels.
-- **Ilmanen**, *Expected Returns* (2011), Ch 1–5 - the practical tour of what each asset class and factor actually pays.
-- **Markowitz**, "Portfolio Selection," *Journal of Finance* 7(1):77–91, 1952 - the diversification math in its original form.
-- **Qian**, "Risk Parity Portfolios: Efficient Portfolios Through True Diversification," PanAgora, 2005 - the capital-vs-risk demonstration.
+- **Ang**, *Asset Management: A Systematic Approach to Factor Investing* (2014)
+- **Ilmanen**, *Expected Returns* (2011)
+- **Markowitz**, "Portfolio Selection," *Journal of Finance* 7(1):77–91, 1952
+- **Qian**, "Risk Parity Portfolios: Efficient Portfolios Through True Diversification," PanAgora, 2005
 
 ---
 

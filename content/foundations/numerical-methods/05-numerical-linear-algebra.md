@@ -90,12 +90,12 @@ Note the conditioning number in dollars and cents: with $\kappa=4\times10^{6}$, 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Golub, G. H. & Van Loan, C. F.**: *Matrix Computations* (4th ed.) - Ch 2 (floating-point/conditioning), Ch 3 (LU, Cholesky, pivoting), Ch 4 (special systems, banded/Toeplitz), Ch 10–11 (eigenvalue/SVD, QR algorithm). *The standard reference.*
-- **Trefethen, L. N. & Bau, D.**: *Numerical Linear Algebra* - the clearest treatment of conditioning, stability and the QR/SVD connection.
-- **Duffy**, *Finite Difference Methods in Financial Engineering* - Ch 7 (M-matrices, Toeplitz eigenvalues, eqs. 7.8, 7.14), Ch 8 (Gerschgorin, Corollary 8.1, eq. 8.51), Ch 24 (iterative elliptic solvers: Jacobi, Gauss–Seidel, SOR), Ch 29.11 (PSOR for complementarity problems).
-- **Strang, Gilbert**: *Linear Algebra and Learning from Data* - SVD, SPD matrices, the algorithmic view.
+- **Golub, G. H. & Van Loan, C. F.**: *Matrix Computations* (4th ed.)
+- **Trefethen, L. N. & Bau, D.**: *Numerical Linear Algebra*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Strang, Gilbert**: *Linear Algebra and Learning from Data*
 
 ---
 

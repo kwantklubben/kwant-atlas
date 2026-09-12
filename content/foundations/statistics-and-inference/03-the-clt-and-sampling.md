@@ -77,12 +77,12 @@ The $\sigma/\sqrt n$ law holds to three digits; the $\chi^2$ moments match (11.0
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Casella & Berger**, *Statistical Inference*, Ch 5 (random samples, $\chi^2$/$t$/$F$ distributions §5.3, CLT §5.3.2, LLN §5.5) - the classical reference.
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §1.1 (LLN, CLT, estimator/standard error eqs 1.1–1.8, the dimension-free rate, the asymptotic MSE framework). *Math-verified in the corpus.*
-- **Hastie, Tibshirani & Friedman**, *ESL*, Ch 7 (the sampling distribution of the prediction error; in-sample vs out-of-sample).
-- **Tsay**, *Analysis of Financial Time Series*, Ch 1 (sampling distribution of return moments; Jarque–Bera normality test).
+- **Casella & Berger**, *Statistical Inference*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hastie, Tibshirani & Friedman**, *ESL*
+- **Tsay**, *Analysis of Financial Time Series*
 
 ---
 

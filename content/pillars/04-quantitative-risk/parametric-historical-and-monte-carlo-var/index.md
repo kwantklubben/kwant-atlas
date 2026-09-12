@@ -73,14 +73,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 22 (VaR & ES: parametric, historical, MC, backtesting; 501-day/5th-worst convention) and Ch 23 (EWMA/GARCH volatility & correlation estimation feeding the covariance matrix). *Verified in the corpus (hull_ch19-23).*
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (2004) - Ch 9 (applications in risk management: delta, delta–gamma, heavy-tail MC VaR, importance sampling for tail estimation) and Ch 1–3 (MC foundations, sampling, path generation). *Math-verified in the corpus.*
-- **Kupiec, Paul H.**: *Techniques for Verifying the Accuracy of Risk Measurement Models*, *Journal of Derivatives* 3(2):73–84 (1995) - the POF backtest statistic.
-- **Christoffersen, Peter F.**: *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998) - the independence/conditional-coverage backtest that complements Kupiec on clustering.
-- **BCBS**: *Supervisory Framework for the Use of Backtesting in Conjunction with the Internal Models Approach to Market Risk Capital Requirements* (1996) - the regulatory traffic-light zones grading VaR models.
-- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000) - filtered historical simulation bridging this folder to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|EVT & Fat Tails]].
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* (2004)
+- **Kupiec, Paul H.**: *Techniques for Verifying the Accuracy of Risk Measurement Models*, *Journal of Derivatives* 3(2):73–84 (1995)
+- **Christoffersen, Peter F.**: *Evaluating Interval Forecasts*, *International Economic Review* 39(4):841–862 (1998)
+- **BCBS**: *Supervisory Framework for the Use of Backtesting in Conjunction with the Internal Models Approach to Market Risk Capital Requirements* (1996)
+- **McNeil & Frey**: *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series* (2000)
 
 ---
 

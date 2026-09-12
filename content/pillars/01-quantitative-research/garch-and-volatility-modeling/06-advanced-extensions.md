@@ -79,13 +79,13 @@ The DCC recursion recovers a mean correlation of **0.5916** against a true 0.60 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Engle, Robert F.** (2002): *Dynamic Conditional Correlation: A Simple Class of Multivariate Generalized Autoregressive Conditional Heteroskedasticity Models*, J. Business & Economic Statistics 20(3), 339–350 - DCC.
-- **Bollerslev, Tim** (1990): *Modelling the Coherence in Short-Run Nominal Exchange Rates: A Multivariate Generalized ARCH Model*, Review of Economics and Statistics 72(3) - CCC.
-- **Engle, Robert F. & Kroner, Kenneth F.** (1995): *Multivariate Simultaneous Generalized ARCH*, Econometric Theory 11(1) - BEKK.
+- **Engle, Robert F.** (2002): *Dynamic Conditional Correlation: A Simple Class of Multivariate Generalized Autoregressive Conditional Heteroskedasticity Models*, J. Business & Economic Statistics 20(3), 339–350
+- **Bollerslev, Tim** (1990): *Modelling the Coherence in Short-Run Nominal Exchange Rates: A Multivariate Generalized ARCH Model*, Review of Economics and Statistics 72(3)
+- **Engle, Robert F. & Kroner, Kenneth F.** (1995): *Multivariate Simultaneous Generalized ARCH*, Econometric Theory 11(1)
 - **Tse, Yiu K. & Tsui, Albert K.** (2002): *A Multivariate GARCH Model with Time-Varying Correlations*, J. Business & Economic Statistics 20(3).
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - §10.1 (EWMA covariance), §10.2 (VEC/DVEC/BEKK), §10.4 (CCC/TVC/DCC), §10.7 (portfolio VaR), §10.8 (multivariate-$t$). *The primary verified source for the multivariate material.*
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
 
 ---
 

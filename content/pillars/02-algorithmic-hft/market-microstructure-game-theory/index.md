@@ -159,7 +159,7 @@ Hub signposts - the full analysis lives in [[pillars/02-algorithmic-hft/market-m
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Kyle, Albert S.** - "Continuous auctions and insider trading," *Econometrica* 53(6), 1315–1335 (1985). *The anchor of the whole folder: the strategic insider, the linear price rule, $\lambda$, and the $\Sigma_0/2$ half-information result.*
 - **Glosten, Lawrence R.; Milgrom, Paul R.** - "Bid, ask and transaction prices in a specialist market with heterogeneously informed traders," *Journal of Financial Economics* 14(1), 71–100 (1985). *Adverse selection as a sequential Bayesian game; zero-profit quotes are conditional expectations.*
@@ -170,14 +170,14 @@ Hub signposts - the full analysis lives in [[pillars/02-algorithmic-hft/market-m
 - **Schied, Alexander; Zhang, Tao** - "A market impact game under transient price impact," *Mathematics of Operations Research* 44(1), 102–121 (2019). *The canonical multi-agent execution game; source of the instability threshold.*
 - **Schied, Alexander; Strehle, Elias; Zhang, Tao** - "High-frequency limit of Nash equilibria in a market impact game with transient price impact," *SIAM Journal on Financial Mathematics* 8(1), 589–634 (2018). *When the continuous-time limit of the execution game does (and does not) exist.*
 - **Cordoni, Francesco; Lillo, Fabrizio** - "Instabilities in multi-asset and multi-agent market impact games," *Annals of Operations Research* (2022). *Extends Schied–Zhang to many agents and assets; the scaling of impact with the number of traders is what decides stability.*
-- **Cardaliaguet, Pierre; Lehalle, Charles-Albert** - "Mean field game of controls and an application to trade crowding," *Mathematics and Financial Economics* 12(3) (2018). *The mean-field limit of the execution game - what happens when the crowd is anonymous.*
+- **Cardaliaguet, Pierre; Lehalle, Charles-Albert** - "Mean field game of controls and an application to trade crowding," *Mathematics and Financial Economics* 12(3) (2018). *The mean-field limit of the execution game
 - **Huberman, Gur; Stanzl, Werner** - "Price manipulation and quasi-arbitrage," *Econometrica* 72(4), 1247–1275 (2004). *No-dynamic-arbitrage: the constraint that makes an impact/decay game admissible at all.*
-- **Easley, David; Kiefer, Nicholas M.; O'Hara, Maureen; Paperman, Joseph B.** - "Liquidity, information, and infrequently traded stocks," *Journal of Finance* 51(4), 1405–1436 (1996). *PIN - the first attempt to estimate the informed share that the games take as given.*
+- **Easley, David; Kiefer, Nicholas M.; O'Hara, Maureen; Paperman, Joseph B.** - "Liquidity, information, and infrequently traded stocks," *Journal of Finance* 51(4), 1405–1436 (1996). *PIN
 - **Easley, David; López de Prado, Marcos; O'Hara, Maureen** - "Flow toxicity and liquidity in a high-frequency world," *Review of Financial Studies* 25(5), 1457–1493 (2012). *VPIN: the high-frequency toxicity proxy.*
-- **Andersen, Torben G.; Bondarenko, Oleg** - "VPIN and the flash crash," *Journal of Financial Markets* 17, 1–46 (2014). *The methodological takedown of VPIN - read it before trusting any toxicity number.*
+- **Andersen, Torben G.; Bondarenko, Oleg** - "VPIN and the flash crash," *Journal of Financial Markets* 17, 1–46 (2014). *The methodological takedown of VPIN
 - **Biais, Bruno; Glosten, Lawrence; Spatt, Chester** - "Market microstructure: A survey of microfoundations, empirical results, and policy implications," *Journal of Financial Markets* 8(2), 217–264 (2005). *The map of the whole field.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 5–7. *Corpus verification reports `hasbrouck_ch1-5.md` (Ch 5, GM) and `hasbrouck_ch6-10.md` (Ch 6 PIN, Ch 7 Kyle).*
-- **Foucault, Thierry; Pagano, Marco; Röell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (2013), Ch 3. *Corpus verification report `foucault_ch1-3.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Thierry; Pagano, Marco; Röell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (2013)
 
 ---
 

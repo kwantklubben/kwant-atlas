@@ -141,13 +141,13 @@ We quantify the four failure modes: the proxy bias and the leverage error it ind
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107 - the particle method, the proxy-versus-conditional distinction, and the stability questions. **Guyon, J. & Henry-Labordère, P.** (2013), *Nonlinear Option Pricing* (Chapman & Hall/CRC) - the McKean–Vlasov framework and its well-posedness.
-- **Bergomi, L.**, *Local-stochastic volatility: models and non-models*, Risk - the admissibility condition $\partial P/\partial\lambda_k|_{S,\{O_i\}}=0$, the gauge transformation $\zeta^u\to\varphi^u\zeta^u$ with $\sigma\to\sigma/\sqrt{\varphi^u}$ that makes the forward-variance LSV admissible, and the delta discussion. **Bergomi, L.**, *Stochastic Volatility Modeling* (CRC, 2016) - Ch 1 (usable models, P&L attribution), Ch 12 §12.2.2 (*"most local-stochastic volatility models are not usable models"*), Ch 7 (forward-variance drivers and exact simulation). *Math-verified in the corpus.*
-- **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott 84–108 - the SABR driver and the LSV-LMM construction; **Ren, Y., Madan, D. & Qian, M. Q.** (2007), *Calibrating and pricing with embedded local volatility models*, Risk **20**(9) - the rates-desk form of LSV, and a case where the gauge is fixed by market convention (the LMM volatility structure).
-- **Gatheral, J.**, *The Volatility Surface*, Ch 7 §7.8 (shape is model-generic - the reason fit is not validation) and Ch 8 (digitals and cliquets, where the dynamics show up in the price). **Hull, J. C.**, *Options, Futures, and Other Derivatives*, Ch 20 §20.5 (minimum-variance delta $\Delta_{MV}=\Delta_{BSM}+\mathcal V_{BSM}\partial\mathbb E[\sigma_{imp}]/\partial S$). *Verification report in the corpus.*
-- **Andersen, L.** (2008), *Simple and efficient simulation of the Heston stochastic volatility model*; **Lord, Koekkoek & van Dijk** (2010); **Broadie & Kaya** (2006) - the schemes and the exact transitions that keep the binning input clean. **Jourdain, B. & Sbai, M.** (2015) and **Abergel & Tachet** (2010) - calibration stability and well-posedness for LSV.
+- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107
+- **Bergomi, L.**, *Local-stochastic volatility: models and non-models*, Risk
+- **Hagan, P. S., Kumar, D., Lesniewski, A. & Woodward, D.** (2002), *Managing smile risk*, Wilmott 84–108
+- **Gatheral, J.**, *The Volatility Surface*
+- **Andersen, L.** (2008), *Simple and efficient simulation of the Heston stochastic volatility model*; **Lord, Koekkoek & van Dijk** (2010); **Broadie & Kaya** (2006)
 
 ---
 

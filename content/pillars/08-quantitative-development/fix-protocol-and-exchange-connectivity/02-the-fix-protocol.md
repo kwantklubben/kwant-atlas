@@ -86,11 +86,11 @@ The two failure lines are the whole point. A corrupted checksum is caught by the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **FIX Trading Community**, *FIX 4.4 Protocol Specification, Volume 1 - Message Format* (fixtrading.org) - the normative definition of the header/body/trailer, `BodyLength`, and `CheckSum`, plus the full per-message field tables. *The authoritative reference for this page.*
-- **FIX Trading Community**, *FIX Unified Repository* - the machine-readable XML data dictionary; generate a codec rather than hand-coding tag tables.
-- **OnixS**, *FIX Dictionary & Protocol Reference* - the browsable companion to the specs; useful for looking up a single tag quickly.
+- **FIX Trading Community**, *FIX 4.4 Protocol Specification, Volume 1
+- **FIX Trading Community**, *FIX Unified Repository*
+- **OnixS**, *FIX Dictionary & Protocol Reference*
 
 ---
 

@@ -61,11 +61,11 @@ Two experiments: (a) an absolute view "Equity = 8%" with varying confidence (via
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **He & Litterman (1999)** - the proportionality recipe $\Omega\propto P(\tau\Sigma)P^T$ and the effect-of-views discussion.
-- **Idzorek (2005)** - the 0–100% confidence method that turns a qualitative "how sure" into $\Omega$ while keeping the weight-tilt interpretation clean.
-- **Satchell & Scowcroft (2000)** - relative vs. absolute views and the structure of $P$.
+- **He & Litterman (1999)**
+- **Idzorek (2005)**
+- **Satchell & Scowcroft (2000)**
 
 ---
 

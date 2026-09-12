@@ -79,17 +79,17 @@ Hub signposts - the folder's full failure-mode analysis lives in [[fundamentals-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996) - the accruals anomaly, the balance-sheet accrual measure, and the persistence coefficients $\gamma_1=0.765$, $\gamma_2=0.855$ used throughout this folder. **The empirical anchor of the whole topic; formulas and figures cross-checked against the corpus paper.**
-- **Dechow, Patricia M., Sloan, Richard G. & Sweeney, Amy P.**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995) - the Healy, DeAngelo, Jones, Modified Jones and Industry models of discretionary accruals, with the specification/power comparison that makes Modified Jones the standard. *All model equations verified against the corpus paper.*
-- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**: "Understanding Earnings Quality: A Review of the Proxies, Their Determinants and Their Consequences" (*JAE*, 50(2–3), 344–401, 2010) - the definitive map of every earnings-quality proxy and which question each answers. **Read before choosing any "quality" metric.**
-- **Chan, Louis K. C., Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006) - decomposes accruals into nondiscretionary and discretionary components and shows both predict returns, complicating the pure "manipulation" reading.
-- **Beneish, Messod D.**: "The Detection of Earnings Manipulation" (*FAJ*, 55(5), 24–36, 1999) - the M-score, the multivariate screen; see [[fundamentals-accounting/accounting-quality-and-red-flags/06-advanced-extensions|06 · Advanced Extensions]].
-- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 6(2), 159–178, 1968) - the origin: accounting earnings move stock prices, and unexpected earnings keep moving them. The reason earnings quality *matters to prices* at all.
-- **Schilit, Perler & Engelhart**: *Financial Shenanigans: How to Detect Accounting Gimmicks and Fraud in Financial Reports* (McGraw-Hill, 4th ed., 2020) - the taxonomised catalogue of the games each red flag is designed to catch; the detection bible behind [[fundamentals-accounting/accounting-quality-and-red-flags/04-red-flags-and-shenanigans|04 · Red Flags & Shenanigans]].
-- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987) - the original case for **free cash flow vs. reported earnings** as the whole discipline.
-- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature and Its Implications for Standard Setting" (*Accounting Horizons*, 13(4), 365–383, 1999) - why earnings get managed; the theory under every heuristic red flag.
+- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996)
+- **Dechow, Patricia M., Sloan, Richard G. & Sweeney, Amy P.**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995)
+- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**: "Understanding Earnings Quality: A Review of the Proxies, Their Determinants and Their Consequences" (*JAE*, 50(2–3), 344–401, 2010)
+- **Chan, Louis K. C., Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006)
+- **Beneish, Messod D.**: "The Detection of Earnings Manipulation" (*FAJ*, 55(5), 24–36, 1999)
+- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 6(2), 159–178, 1968)
+- **Schilit, Perler & Engelhart**: *Financial Shenanigans: How to Detect Accounting Gimmicks and Fraud in Financial Reports* (McGraw-Hill, 4th ed., 2020)
+- **O'Glove, Thornton L.**: *Quality of Earnings* (Free Press, 1987)
+- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature and Its Implications for Standard Setting" (*Accounting Horizons*, 13(4), 365–383, 1999)
 
 ---
 

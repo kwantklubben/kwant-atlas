@@ -92,15 +92,15 @@ Read it as the whole folder's cautionary tale. In Part A the target is **pure no
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gu, Kelly & Xiu** (2020), *Empirical Asset Pricing via Machine Learning*, Review of Financial Studies 33(5):2223–2273 - the horse race: gradient-boosted trees are among the best models on the same data deep nets are applied to; the empirical basis for §2.3.
-- **López de Prado**, *Advances in Financial Machine Learning* (2018), **Ch. 1** and the *10 reasons most ML funds fail* - the low-SNR/overfitting framing and the "the bottlenecks are data, not architecture" warning. *Correction of a common mis-citation:* AFML has **no** deep-learning chapters (Ch. 19 = Microstructural Features, Ch. 20 = Multiprocessing), and Ch. 1 explicitly declines to cover deep/recurrent/convolutional nets.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 11** (§11.5: weight decay eq. 11.16, early stopping, input scaling, the nonconvex/multi-minima warnings) - the anti-overfit recipe used in §2.1.
-- **Heaton, Polson & Witte** (2017), *Deep learning for finance: deep portfolios*, Appl. Stochastic Models Bus. Ind. 33(1):3–12 - the finance-DL canonical application and its data requirements.
-- **Zhang, Zohren & Roberts** (2019), *DeepLOB*, IEEE TSP 67(11), arXiv:1808.03668 - the positive case: deep sequence learning that *does* generalise, because the microstructure data is deep and ordered and $N$ is large.
-- **Zhang, Z.** (2020), *Deep Learning for Limit Order Books* / related Oxford-Man work - the extended treatment of LOB sequence learning; read alongside DeepLOB.
-- **Bailey & López de Prado** (2014), *The Deflated Sharpe Ratio* - correcting reported performance for the number of trials (§4.5).
+- **Gu, Kelly & Xiu** (2020), *Empirical Asset Pricing via Machine Learning*, Review of Financial Studies 33(5):2223–2273
+- **López de Prado**, *Advances in Financial Machine Learning* (2018), **Ch. 1** and the *10 reasons most ML funds fail*
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 11** (§11.5: weight decay eq. 11.16, early stopping, input scaling, the nonconvex/multi-minima warnings)
+- **Heaton, Polson & Witte** (2017), *Deep learning for finance: deep portfolios*, Appl. Stochastic Models Bus. Ind. 33(1):3–12
+- **Zhang, Zohren & Roberts** (2019), *DeepLOB*, IEEE TSP 67(11), arXiv:1808.03668
+- **Zhang, Z.** (2020), *Deep Learning for Limit Order Books* / related Oxford-Man work
+- **Bailey & López de Prado** (2014), *The Deflated Sharpe Ratio*
 
 ---
 

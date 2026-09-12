@@ -90,13 +90,13 @@ Read the rotation: the min-variance portfolio **shorts equities** ($-20.6\%$) an
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ang**, *Asset Management* (2014), Ch 12–14 - regime-conditional and factor-timing allocation.
-- **Ang & Bekaert**, "International Asset Allocation with Regime Shifts," *RFS* 15(4):1137–1187, 2002 - regime-switching allocation (the classic reference).
-- **Moskowitz, Ooi & Pedersen**, "Time Series Momentum," *JFE* 104(2):228–250, 2012 - the cross-asset trend/overlay evidence.
-- **Asness, Frazzini & Pedersen**, "Leverage Aversion and Risk Parity," *FAJ* 68(1):47–59, 2012 - why risk-balanced multi-asset portfolios can earn a premium.
-- **Roncalli**, *Introduction to Risk Parity and Budgeting* (2013) - risk budgeting and the all-weather construction in full.
+- **Ang**, *Asset Management* (2014)
+- **Ang & Bekaert**, "International Asset Allocation with Regime Shifts," *RFS* 15(4):1137–1187, 2002
+- **Moskowitz, Ooi & Pedersen**, "Time Series Momentum," *JFE* 104(2):228–250, 2012
+- **Asness, Frazzini & Pedersen**, "Leverage Aversion and Risk Parity," *FAJ* 68(1):47–59, 2012
+- **Roncalli**, *Introduction to Risk Parity and Budgeting* (2013)
 
 ---
 

@@ -94,13 +94,13 @@ The recovered coefficients ($0.765$, $0.857$) match Sloan's pooled estimates (0.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996) - *every equation, coefficient and table figure on this page is taken from and cross-checked against the corpus paper.*
-- **Chan, Louis K. C., Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006) - tests the three competing explanations; finds accruals are *reliably, negatively* related to future returns and that **both** the discretionary and nondiscretionary components matter. The essential follow-up.
-- **Bernard, Victor L. & Thomas, Jacob K.**: "Post-Earnings-Announcement Drift: Delayed Price Response or Risk Premium?" (*JAR*, 27(Supplement), 1–36, 1989) - the drift mechanism Sloan's announcement-window clustering points to.
-- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 6(2), 159–178, 1968) - the origin: unexpected accounting earnings move prices and keep moving them. The anomaly's ancestor.
-- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010) - places accruals among all quality proxies and warns that the measure chosen determines the answer.
+- **Chan, Louis K. C., Jegadeesh, Narasimhan & Lakonishok, Josef**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006)
+- **Bernard, Victor L. & Thomas, Jacob K.**: "Post-Earnings-Announcement Drift: Delayed Price Response or Risk Premium?" (*JAR*, 27(Supplement), 1–36, 1989)
+- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 6(2), 159–178, 1968)
+- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010)
 
 ---
 

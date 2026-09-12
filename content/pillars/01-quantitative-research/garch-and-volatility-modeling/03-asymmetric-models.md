@@ -69,13 +69,13 @@ The GJR model gives **1.48× the variance** after a negative 3σ shock versus a 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Nelson, Daniel B.** (1991): *Conditional Heteroskedasticity in Asset Returns: A New Approach*, Econometrica 59(2), 347–370 - EGARCH. *Verified corpus refs/pillar1.*
-- **Glosten, Jagannathan & Runkle** (1993): *On the Relation between the Expected Value and the Volatility of the Nominal Excess Return on Stocks*, J. Finance 48(5), 1779–1801 - GJR/TGARCH. *Verified corpus refs/pillar1.*
-- **Black, Fischer** (1976): *Studies of Stock Price Volatility Changes* - the leverage effect's first documentation.
-- **Engle, Robert F. & Ng, Victor K.** (1993): *Measuring and Testing the Impact of News on Volatility*, J. Finance 48(5) - the sign-bias test and the news-impact curve.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - §3.7 (EGARCH, g-form and S-Plus form, IBM 37% example), §3.8 (TGARCH/GJR).
+- **Nelson, Daniel B.** (1991): *Conditional Heteroskedasticity in Asset Returns: A New Approach*, Econometrica 59(2), 347–370
+- **Glosten, Jagannathan & Runkle** (1993): *On the Relation between the Expected Value and the Volatility of the Nominal Excess Return on Stocks*, J. Finance 48(5), 1779–1801
+- **Black, Fischer** (1976): *Studies of Stock Price Volatility Changes*
+- **Engle, Robert F. & Ng, Victor K.** (1993): *Measuring and Testing the Impact of News on Volatility*, J. Finance 48(5)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
 
 ---
 

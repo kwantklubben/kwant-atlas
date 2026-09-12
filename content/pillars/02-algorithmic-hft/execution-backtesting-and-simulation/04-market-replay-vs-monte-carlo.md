@@ -80,14 +80,14 @@ The numbers teach the whole lesson. The **single replay** reports a fill ratio o
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018), Ch 13 ("Backtesting on Synthetic Data") and Ch 11–12 - the case for Monte Carlo/synthetic evaluation and the discipline required to make it honest.
-- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010) - a queue model fast enough for Monte Carlo fill simulation; the standard substrate.
-- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013) - the stylized-fact checklist a Monte Carlo generator must satisfy.
-- **Abergel et al.** - *Limit Order Books* (Cambridge, 2016) - agent-based LOB generators for replay-vs-simulation studies.
-- **Glasserman, Paul** - *Monte Carlo Methods in Financial Engineering* (2004) - standard error, antithetic and control variates, and the variance-reduction toolbox.
-- **Almgren, Thum, Hauptmann & Li** - "Direct estimation of equity market impact," *Risk* 18(7) (2005) - the impact parameters a realistic Monte Carlo execution simulation must calibrate.
+- **López de Prado, Marcos** - *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Cont, Stoikov & Talreja** - "A stochastic model for order book dynamics," *Operations Research* 58(3) (2010)
+- **Gould et al.** - "Limit order books," *Quantitative Finance* 13(11) (2013)
+- **Abergel et al.** - *Limit Order Books* (Cambridge, 2016)
+- **Glasserman, Paul** - *Monte Carlo Methods in Financial Engineering* (2004)
+- **Almgren, Thum, Hauptmann & Li** - "Direct estimation of equity market impact," *Risk* 18(7) (2005)
 
 ---
 

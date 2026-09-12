@@ -81,12 +81,12 @@ Part A reproduces Damodaran exactly: operating assets $\approx\text{Rs}\,2002$ m
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Damodaran**, *Investment Valuation*, Ch 12 (closure in valuation: terminal value, stable-growth constraints, liquidation vs multiple exits), Ch 15 (the FCFF/cost-of-capital model, Tube Investments, the better-ROC variant).
-- **Koller et al. (McKinsey)**, *Valuation*, Ch 12–14 - the continuing-value formula $\text{CV}=\text{NOPAT}_{T+1}(1-g/\text{ROIC})/(\text{WACC}-g)$ and ROIC-based continuity checks.
-- **Pinto et al. (CFA Institute)**, *Equity Asset Valuation*, Ch 4–5 - terminal value choices and the enterprise-to-equity bridge.
-- **Penman**, *Financial Statement Analysis and Security Valuation* - why the terminal value should be disciplined by the accounting steady state (book value, ROE).
+- **Damodaran**, *Investment Valuation*
+- **Koller et al. (McKinsey)**, *Valuation*
+- **Pinto et al. (CFA Institute)**, *Equity Asset Valuation*
+- **Penman**, *Financial Statement Analysis and Security Valuation*
 
 ---
 

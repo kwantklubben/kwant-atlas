@@ -89,13 +89,13 @@ Standard library only. Part 1 counts the competitors; Part 2 shows the tick deci
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Grossman & Miller (1988)**, *Liquidity and market structure*, JF 43(3) - the zero-profit/entry condition for liquidity suppliers. *(Primary PDF in corpus.)*
-- **Glosten & Milgrom (1985)**, JFE 14 - the adverse-selection floor that competition cannot cross.
-- **Foucault, Kadan & Kandel (2013)**, *Liquidity cycles and make/take fees*, JF 68(1) - the tick friction as the reason competition does not neutralise fees.
-- **Hasbrouck (2007)**, Ch 12 ("a limit order is a dealer quote by another name") and Ch 13 (depth; the competitive-dealer zero-profit schedule $P(q)=E[X|\text{trade}]$). *Verified in corpus.*
-- **Menkveld (2013)**, JFM 16(4) - the empirical scale of fixed costs and the "new market makers."
+- **Grossman & Miller (1988)**, *Liquidity and market structure*, JF 43(3)
+- **Glosten & Milgrom (1985)**, JFE 14
+- **Foucault, Kadan & Kandel (2013)**, *Liquidity cycles and make/take fees*, JF 68(1)
+- **Hasbrouck (2007)**
+- **Menkveld (2013)**, JFM 16(4)
 
 ---
 

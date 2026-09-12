@@ -62,13 +62,13 @@ Hub signposts - the practice checklist lives in [[pillars/07-machine-learning-al
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018) - **Ch. 7 "Cross-Validation in Finance"** (purging, embargo, PurgedKFold, sklearn bugs) and **Ch. 12 "Backtesting Through Cross-Validation"** (§12.4 CPCV: splits, $\varphi[N,k]$; §12.5 the variance formula). *The formula-authoritative source; every formula in this folder is transcribed from it and numerically reproduced.*
-- **Bailey, Borwein, López de Prado & Zhu**: *The Probability of Backtest Overfitting*, J. Computational Finance 20(4) (2017) - CSCV and the PBO measure (see sibling hub).
-- **Bailey & López de Prado**: *The Deflated Sharpe Ratio*, J. Portfolio Management 40(5) (2014) - corrects reported Sharpe for trials $N$ and non-normality.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - **Ch. 7** (model assessment: $k$-fold CV eq. 7.48, the *wrong-vs-right* CV §7.10.2 where full-data screening yields 3% vs true 50%). *Math-verified in the corpus.*
-- **"Backtest Overfitting in the Machine Learning Era"** (Expert Systems with Applications, 2025) - controlled comparison of walk-forward vs. purged vs. adaptive CPCV on synthetic non-stationary data.
+- **López de Prado, Marcos**: *Advances in Financial Machine Learning* (Wiley, 2018)
+- **Bailey, Borwein, López de Prado & Zhu**: *The Probability of Backtest Overfitting*, J. Computational Finance 20(4) (2017)
+- **Bailey & López de Prado**: *The Deflated Sharpe Ratio*, J. Portfolio Management 40(5) (2014)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **"Backtest Overfitting in the Machine Learning Era"** (Expert Systems with Applications, 2025)
 
 ---
 

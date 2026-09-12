@@ -105,11 +105,11 @@ Read the last three lines: the **forward** loses $8$ when $S_T=55$; the **call**
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 1 §1.1–1.4 (forward payoff $S_T-K$, call/put rights, trader taxonomy) and Ch 5 §5.1–5.7 (cash-and-carry, $F_0=S_0e^{rT}$, forward value $f=(F_0-K)e^{-rT}$). *Verification report in the corpus.*
-- **Shreve**, *Stochastic Calculus for Finance I*, §1.1 (the discrete version of exactly this replication argument: $d<1+r<u$, delta, risk-neutral $\tilde p$). *Math-verified.*
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.1–1.2 (the cost-of-carry dictionary and the generalized formula this forward price feeds into).
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

@@ -70,12 +70,12 @@ The pattern is unmistakable. **Double Kelly** ($c=2$, right at the critical $f_c
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006) - §6 (drawdown distribution for fixed-fraction betting), §7.3 (the quantitative case for fractional Kelly). *Corpus-verified.*
-- **MacLean, Ziemba & Blazenko**: *Growth versus Security in Dynamic Investment Analysis*, Management Science 38(11) (1992) - the formal fractional-Kelly growth/security frontier.
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **MacLean, Ziemba & Blazenko**: *Growth versus Security in Dynamic Investment Analysis*, Management Science 38(11) (1992)
 - **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011) - "bad properties of Kelly" (aggressiveness, drawdown).
-- **Browne, S.**: *The Return on Investment from Proportional Portfolio Strategies and the Optimal Investment Horizon* (1999) - drawdown and risk-control results.
+- **Browne, S.**: *The Return on Investment from Proportional Portfolio Strategies and the Optimal Investment Horizon* (1999)
 
 ---
 

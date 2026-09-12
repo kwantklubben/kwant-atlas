@@ -77,13 +77,13 @@ The three failures, in numbers. **Label switching**: two EM runs, identical like
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Schwarz, Gideon**, "Estimating the Dimension of a Model," *Annals of Statistics* 6(2):461–464, 1978 - BIC, the model-selection penalty used for $K$ here.
-- **Dempster, Laird & Rubin**, "Maximum Likelihood from Incomplete Data via the EM Algorithm," *JRSS-B* 39(1), 1977 - the local-max / multi-start caveat for EM.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* - Ch 14.3.11 (gap statistic for $K$), Ch 2/18 (curse of dimensionality and $p\gg N$: why too many regime features overfit). *Corpus verified.*
-- **Ang & Timmermann**, "Regime Changes and Financial Markets," *ARFE* 4, 2012 - the practical survey: estimated regimes' real effects, and the caution about regime persistence/lag in live use.
-- **López de Prado**, *Advances in Financial Machine Learning* - Ch 7 (purged/embargoed CV), the hygiene that makes look-ahead impossible; see [[pillars/07-machine-learning-altdata/purged-cross-validation-and-backtest-hygiene/index|Purged & Embargoed CV]].
+- **Schwarz, Gideon**, "Estimating the Dimension of a Model," *Annals of Statistics* 6(2):461–464, 1978
+- **Dempster, Laird & Rubin**, "Maximum Likelihood from Incomplete Data via the EM Algorithm," *JRSS-B* 39(1), 1977
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Ang & Timmermann**, "Regime Changes and Financial Markets," *ARFE* 4, 2012
+- **López de Prado**, *Advances in Financial Machine Learning*
 
 ---
 

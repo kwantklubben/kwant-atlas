@@ -91,13 +91,13 @@ Read the table: the **20×** per-core gain is the headline, and it compounds int
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **DPDK documentation** (dpdk.org) - poll-mode drivers, RX/TX rings, burst APIs, hugepages; the primary reference for the software fast path.
-- **Solarflare/Onload & OpenOnload documentation** - TCP/UDP kernel-bypass socket API (EF_VI) and its measured latency/CPU trade-offs.
-- **Rosen, Rami** - *Linux Kernel Networking*; **Benvenuti, Christian** - *Understanding Linux Network Internals* (O'Reilly). *What the bypass stack is bypassing - queue disciplines, NAPI, `sk_buff` - so you know exactly which costs you are removing.*
-- **Databento / Cloudflare low-latency engineering guides** - practitioner-grade OS/NIC tuning (RSS/RFS, IRQ affinity, busy-polling, NUMA-local everything).
-- **Nasdaq TotalView-ITCH 5.0** and exchange colocation specs - what arrives on the wire and under what timing guarantees the stack must operate.
+- **DPDK documentation** (dpdk.org)
+- **Solarflare/Onload & OpenOnload documentation**
+- **Rosen, Rami** - *Linux Kernel Networking*; **Benvenuti, Christian** - *Understanding Linux Network Internals* (O'Reilly). *What the bypass stack is bypassing
+- **Databento / Cloudflare low-latency engineering guides**
+- **Nasdaq TotalView-ITCH 5.0** and exchange colocation specs
 - **Drepper, Ulrich** - *What Every Programmer Should Know About Memory*. *The cache/TLB/PCIe accounting behind the 4.00 ns payload vs ~75 ns overhead figure.*
 
 ---

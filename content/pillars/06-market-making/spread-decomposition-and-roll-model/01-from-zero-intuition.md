@@ -73,10 +73,10 @@ Simulate a pure Roll process and watch the estimator recover the spread you bake
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Roll (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139 - the original estimator, built entirely on this bounce intuition.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 3 - the $p_t=m_t+q_t c$ model and the three empirical features of price changes (near-zero mean, fat tails, negative short-run serial correlation).
+- **Roll (1984)**, *A simple implicit measure of the effective bid-ask spread in an efficient market*, Journal of Finance 39(4), 1127–1139
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
 
 ---
 

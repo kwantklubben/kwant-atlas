@@ -65,12 +65,12 @@ On this synthetic path the regime-aware rule **raises the Sharpe by ~70%** ($0.6
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ang, Andrew & Timmermann, Allan**: *Regime Changes and Financial Markets*, Annual Review of Financial Economics 4, 313–337 (2012) - the economics of regime switches (fat tails, skewness, heteroskedasticity) and portfolio choice under regimes.
-- **Kritzman, Mark, Page, Sébastien & Turkington, David**: *Regime Shifts: Implications for Dynamic Strategies*, Financial Analysts Journal 68(3) (2012) - Markov-switching on macro data driving dynamic asset allocation.
-- **Tsay**, Ch 12 (Gibbs, Metropolis–Hastings, Griddy-Gibbs, FFBS, Markov-switching GARCH-M) and Ch 10 (multivariate volatility / DCC for regime-correlated assets). *Verified: tsay_ch10-12.md.*
-- **Hamilton (1989)** - the estimation-and-inference foundation the whole allocation depends on.
+- **Ang, Andrew & Timmermann, Allan**: *Regime Changes and Financial Markets*, Annual Review of Financial Economics 4, 313–337 (2012)
+- **Kritzman, Mark, Page, Sébastien & Turkington, David**: *Regime Shifts: Implications for Dynamic Strategies*, Financial Analysts Journal 68(3) (2012)
+- **Tsay**
+- **Hamilton (1989)**
 
 ---
 

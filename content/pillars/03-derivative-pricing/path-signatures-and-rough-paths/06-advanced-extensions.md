@@ -92,14 +92,14 @@ We (i) estimate the **expected signature** of 1D Brownian motion by seeded Monte
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Chevyrev, I. & Lyons, T.** (2016), *Characteristic functions of measures on geometric rough paths*, Annals of Probability 44(6) - the expected signature and its law-determining (uniqueness) theorem. *The mathematical anchor of §2.1.*
-- **Chevyrev, I. & Kormilitzin, A.** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788 - §4–8: expected signature, feature engineering, lead-lag and time augmentation, ML pipelines. *Primary applied reference.*
-- **Kiraly, F. & Oberhauser, H.** (2019), *Kernels for sequentially ordered data*, JMLR - the **signature kernel** and its linear-time recursive computation. *The computational enabler of §2.2.*
-- **Lyons, T. J., Ni, H., Zhang, H.** (2019), *Machine Learning Models of Financial Time Series*, arXiv:1905.11666 - **lead-lag signatures for (rough) volatility**, and signature-kernel prediction on financial series. *Primary applied source for §2.4 and §3(3).*
-- **Gatheral, J., Jaisson, T., Rosenbaum, M.** (2018), *Volatility is rough*, Quantitative Finance 18(6) - $H\approx0.1$; the empirical motivation for rough-vol lead-lag signatures.
-- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths* - the geometric-rough-path foundations on which expected signatures and kernels sit. *Math-verified.*
+- **Chevyrev, I. & Lyons, T.** (2016), *Characteristic functions of measures on geometric rough paths*, Annals of Probability 44(6)
+- **Chevyrev, I. & Kormilitzin, A.** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788
+- **Kiraly, F. & Oberhauser, H.** (2019), *Kernels for sequentially ordered data*, JMLR
+- **Lyons, T. J., Ni, H., Zhang, H.** (2019), *Machine Learning Models of Financial Time Series*, arXiv:1905.11666
+- **Gatheral, J., Jaisson, T., Rosenbaum, M.** (2018), *Volatility is rough*, Quantitative Finance 18(6)
+- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*
 
 ---
 

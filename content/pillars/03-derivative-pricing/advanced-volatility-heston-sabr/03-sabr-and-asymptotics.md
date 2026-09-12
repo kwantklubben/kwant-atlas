@@ -156,12 +156,12 @@ We implement the general-$\beta$ Hagan formula, finite-difference its ATM skew a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 7 in full: §7.1 (short expirations, local vs implied skew, the factor-2 lemma, eq. 7.1–7.3), §7.2 (Medvedev–Scaillet 7.4–7.5, the $\rho b(\sigma)/(2\sigma)$ limiter 7.6, **SABR** 7.7 and the small-$\tau$ Taylor form), §7.3 (jumps, $\rho b(\sigma)-2\mu_J$), §7.4 (FPS 7.10), §7.5 (interpolation 7.11), §7.6 (Lewis 7.12 - proof that 7.11 is exact to $O(\eta)$), §7.7 (**Lee's moment formula** and Benaim–Friz tails), §7.8 (summary: shape is model-generic). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 8 §8.2–8.5 (the vol-of-vol expansion, the short-maturity limits 8.35–8.44, and the SABR/Heston specialisations), Ch 9 §9.1–9.2 (ATMF skew as the covariance of spot with implied vol), Ch 5 App. B (the single-cumulant seed, $\mathcal S_T=s/(6\sqrt T)$). *Math-verified.*
-- **Hagan, P. S., Kumar, D., Lesniewski, A., Woodward, D.** (2002), *Managing Smile Risk*, Wilmott Magazine, 84–108 - the SABR model and formula (2.17a). **Medvedev & Scaillet** (2004), *Pricing American options under stochastic volatility and stochastic interest rates* / short-time expansions; **Lewis, A.** (2000), *Option Valuation under Stochastic Volatility*; **Lee, R.** (2004), *The moment formula for implied volatility at extreme strikes*; **Benaim & Friz** (2009) for exact tail behaviour.
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §2 (Greeks) - the vega that defines the calibration weights and the ATM approximations §2.10. *Numerically verified.*
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hagan, P. S., Kumar, D., Lesniewski, A., Woodward, D.** (2002), *Managing Smile Risk*, Wilmott Magazine, 84–108
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

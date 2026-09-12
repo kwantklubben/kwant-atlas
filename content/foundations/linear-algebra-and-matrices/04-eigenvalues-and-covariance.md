@@ -64,12 +64,12 @@ The 3×3 correlation reconstructs exactly and its eigenvalues sum to the trace (
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series*, §9.4 (PCA theory: eqs. 9.14–9.15, proportion of variance; the 5-stock correlation example) and §9.5 (statistical factor model, eqs. 9.16–9.18). *Math-verified in the corpus.*
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, §2.2 (eigen/PC factorization $\Sigma=V\Lambda V'$, eq. 2.32; semidefinite rank reduction). *Verified.*
-- **Strang**, *Introduction to Linear Algebra* (5th ed.), Ch 6 (eigenvalues, diagonalization, spectral theorem, positive definite). *Corpus PDF available.*
-- **Horn & Johnson**, *Matrix Analysis*, Ch 7 (positive semidefinite matrices and their cone).
+- **Tsay**, *Analysis of Financial Time Series*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Strang**, *Introduction to Linear Algebra* (5th ed.)
+- **Horn & Johnson**, *Matrix Analysis*
 
 ---
 

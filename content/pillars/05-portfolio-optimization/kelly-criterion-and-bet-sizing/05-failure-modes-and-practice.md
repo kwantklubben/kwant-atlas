@@ -68,13 +68,13 @@ The two blocks are the folder's two most important "do not do this" results. **(
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §7.3 - the case for fractional Kelly under parameter uncertainty. *Corpus-verified.*
-- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011) - the "good and bad properties" survey, incl. estimation errors and fractional Kelly.
-- **MacLean, Ziemba & Blazenko**: *Growth versus Security in Dynamic Investment Analysis*, Management Science (1992) - the growth/security frontier that motivates de-rating.
-- **Chopra & Ziemba**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice* (JPM 1993) - errors in means dominate, the same estimation-error lesson in the MPT sibling folder.
-- **Bouchaud & Potters**: *Theory of Financial Risk and Derivative Pricing* - fat tails and why normal approximations misprice extreme risk.
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **MacLean, Thorp & Ziemba (eds.)**: *The Kelly Capital Growth Investment Criterion* (2011)
+- **MacLean, Ziemba & Blazenko**: *Growth versus Security in Dynamic Investment Analysis*, Management Science (1992)
+- **Chopra & Ziemba**: *The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice* (JPM 1993)
+- **Bouchaud & Potters**: *Theory of Financial Risk and Derivative Pricing*
 
 ---
 

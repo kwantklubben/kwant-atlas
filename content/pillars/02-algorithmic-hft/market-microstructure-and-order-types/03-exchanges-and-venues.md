@@ -91,13 +91,13 @@ Price the same 1000-share trade across fee models and consolidate a fragmented N
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 1 (network externality vs fragmentation, transparency) and Ch 2 (limit-order markets, floor markets, dealers, crossing networks, block/upstairs market). *Verified in `hasbrouck_ch1-5.md`.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 1–2 (liquidity, price discovery, SEC Rule 605 Dash-5 execution-quality reporting). *Verified in `foucault_ch1-3.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 - **O'Hara & Ye** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011. *The empirical anchor on fragmentation and market quality.*
 - **Degryse, de Jong & van Kervel** - "The impact of dark trading and visible fragmentation on market quality," *Review of Finance* 19(4), 2015. *Dark vs lit fragmentation.*
-- **Menkveld** - "High-frequency trading and the new market makers," *JFM* 16(4), 2013. *Why HFT venues concentrate across fragmented markets - the routing context.*
+- **Menkveld** - "High-frequency trading and the new market makers," *JFM* 16(4), 2013. *Why HFT venues concentrate across fragmented markets
 - **Johnson, Barry** - *Algorithmic Trading & DMA* (2010). *SOR and order-lifecycle mechanics in practice (with regulation: Reg NMS order protection, MiFID II / RTS 6 best execution and algorithmic-trading rules).*
 
 ---

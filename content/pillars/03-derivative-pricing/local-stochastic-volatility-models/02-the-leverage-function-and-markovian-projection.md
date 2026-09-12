@@ -167,13 +167,13 @@ We verify Gyöngy's theorem on the simplest non-trivial process with a fully ana
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, Probability Theory and Related Fields **71**(4), 501–516 - Theorem and the conditional-expectation projection; the source of the leverage identity. (See also **Brunick, G. & Shreve, S.** (2013), *Mimicking an Itô process by a solution of a stochastic differential equation*, for the modern sharpened statement with the "conditional Gaussian" condition.)
-- **Dupire, B.** (1994), *Pricing with a smile*, Risk **7**(1), 18–20 - both local-volatility formulae; **Derman, E. & Kani, I.** (1994), *Riding on a smile*, Risk (February) - the binomial-tree version of the same statement. **Gatheral, J.**, *The Volatility Surface*, Ch 1 (eq. 1.10: the total-variance form used here). *Math-verified in the corpus.*
-- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107 - the leverage function as a solved object, the nonlinearity, and the particle method. **Henry-Labordère, P.** (2009), *Calibration of local stochastic volatility models to market smiles: a Monte-Carlo approach*, Risk (September) - the precursor, and the clearest early statement of the conditional-expectation route.
-- **Bergomi, L.**, *Stochastic Volatility Modeling*, Ch 12 §12.1–12.4 - LSV in the forward-variance language, the ATMF-skew decomposition, and the admissibility discussion; Ch 1 for the "accounting" framing of the pricing function. **Bergomi, L.**, *Local-stochastic volatility: models and non-models*, Risk - the admissibility condition $\partial P/\partial\lambda_k|_{S,\{O_i\}}=0$. *Math-verified in the corpus.*
-- **Lipton, A.** (2002), *The vol smile problem*, Risk (February), 61–65 - the forward-PDE route to the leverage for one-factor models (the practical alternative to particle calibration).
+- **Gyöngy, I.** (1986), *Mimicking the one-dimensional marginal distributions of processes having an Itô differential*, Probability Theory and Related Fields **71**(4), 501–516
+- **Dupire, B.** (1994), *Pricing with a smile*, Risk **7**(1), 18–20
+- **Guyon, J. & Henry-Labordère, P.** (2012), *Being particular about calibration*, Risk **25**(1), 91–107
+- **Bergomi, L.**, *Stochastic Volatility Modeling*
+- **Lipton, A.** (2002), *The vol smile problem*, Risk (February), 61–65
 
 ---
 

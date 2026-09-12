@@ -89,14 +89,14 @@ The filter rejected **Omega Builders** (7% margin, 3.29× leverage - under-earni
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Graham, Benjamin**: *The Intelligent Investor* (2003 annotated ed.), Ch 14–15 - the original threshold-based screen this page modernizes.
-- **Palepu, Krishna & Healy, Paul**: *Business Analysis and Valuation: Using Financial Statements* (Cengage) - the strategy→accounting→financial→prospective workflow that determines *which* metrics to screen on for a given industry.
-- **Fridson, Martin & Alvarez, Fernando**: *Financial Statement Analysis: A Practitioner's Guide* (Wiley) - metric interpretation with honest warnings about where the thresholds mislead.
-- **O'Shaughnessy, James P.**: *What Works on Wall Street* (McGraw-Hill, 4th ed.) - decades of systematic single-metric screen backtests, with turnover and drawdown honesty; the evidence for which metrics endure.
-- **Gray, Wesley R. & Carlisle, Tobias E.**: *Quantitative Value* (Wiley, 2013) - the published methodology closest to this filter-then-rank screen, with full backtest transparency.
-- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013) - the academic case for a gross-profitability gate alongside the value metrics.
+- **Graham, Benjamin**: *The Intelligent Investor* (2003 annotated ed.)
+- **Palepu, Krishna & Healy, Paul**: *Business Analysis and Valuation: Using Financial Statements* (Cengage)
+- **Fridson, Martin & Alvarez, Fernando**: *Financial Statement Analysis: A Practitioner's Guide* (Wiley)
+- **O'Shaughnessy, James P.**: *What Works on Wall Street* (McGraw-Hill, 4th ed.)
+- **Gray, Wesley R. & Carlisle, Tobias E.**: *Quantitative Value* (Wiley, 2013)
+- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013)
 
 ---
 

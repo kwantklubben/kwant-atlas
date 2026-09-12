@@ -66,12 +66,12 @@ All 100 000 items pass through exactly once, in order, with no loss and no dupli
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*, Ch 9–11 (stacks/queues, CAS, lock-free and wait-free structures) and Ch 5 (the ABA problem) - the definitive treatment.
-- **Williams**, *C++ Concurrency in Action*, Ch 7 (lock-free data structures in C++, `std::atomic`, memory ordering, ABA).
-- **Preshing, Jeff** - *An Introduction to Lock-Free Programming* - the clearest free primer on atomics, CAS, and ring buffers.
-- **LMAX**, *The Disruptor* (paper + library) and **Fowler**, *The LMAX Architecture* - why single-writer ring batching is the production design of choice.
+- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*
+- **Williams**, *C++ Concurrency in Action*
+- **Preshing, Jeff** - *An Introduction to Lock-Free Programming*
+- **LMAX**, *The Disruptor* (paper + library) and **Fowler**, *The LMAX Architecture*
 - **Thompson, Martin** - *Mechanical Sympathy* (cache-line effects and false sharing in lock-free structures).
 
 ---

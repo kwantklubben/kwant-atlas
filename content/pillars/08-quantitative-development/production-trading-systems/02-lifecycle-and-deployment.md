@@ -86,13 +86,13 @@ The headline: **the same bug, the same detection speed, a $12.9\times$ differenc
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Davey**, *Building Winning Algorithmic Trading Systems*, Ch 6–9 (walk-forward → paper → live; the gating discipline this page formalises).
-- **Narang**, *Inside the Black Box*, 2nd ed., Ch 5–7 (the production pipeline and the operational apparatus around the alpha model).
-- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016), Ch 8 & 27 - release engineering, canarying, and the error-budget framing of rollout safety.
-- **Humble & Farley**, *Continuous Delivery* (Addison-Wesley, 2010) - blue-green, deployment pipelines, and the principle that deploy and release should be separate events.
-- **NautilusTrader - Official Documentation** (nautilustrader.io) - a real live runtime's separation of configuration, adapters, and risk engine, as the concrete instantiation of "deploy ≠ release".
+- **Davey**, *Building Winning Algorithmic Trading Systems*
+- **Narang**, *Inside the Black Box*, 2nd ed.
+- **Beyer et al.**, *Site Reliability Engineering* (O'Reilly, 2016)
+- **Humble & Farley**, *Continuous Delivery* (Addison-Wesley, 2010)
+- **NautilusTrader - Official Documentation** (nautilustrader.io)
 
 ---
 

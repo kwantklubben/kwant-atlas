@@ -66,12 +66,12 @@ Two lessons in the numbers. First, TF–IDF isolates the *discriminating* terms:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks," *Journal of Finance* 66(1), 2011 - the LM lists and the quantification of generic-dictionary misfit. *Corpus PDF verified.*
-- **Jurafsky, Dan & Martin, James H.**, *Speech and Language Processing* (3rd ed.) - Ch 6 (vector semantics, TF–IDF) and the standard definitions this page uses. *Corpus PDF verified (`refs/pillar7/25_...`).*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning* - Ch 11 (bag-of-words spam classifier) and Ch 18 ($p\gg N$ theory for wide feature matrices). *Verified in the corpus.*
-- **Gentzkow, Kelly & Taddy**, "Text as Data," *JEL* 57(3), 2019 - count-matrix formulation and sparse-feature estimation.
+- **Loughran, Tim & McDonald, Bill**, "When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks," *Journal of Finance* 66(1), 2011
+- **Jurafsky, Dan & Martin, James H.**, *Speech and Language Processing* (3rd ed.)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Gentzkow, Kelly & Taddy**, "Text as Data," *JEL* 57(3), 2019
 
 ---
 

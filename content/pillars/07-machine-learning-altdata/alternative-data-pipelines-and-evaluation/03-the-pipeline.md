@@ -77,12 +77,12 @@ The **naive** join reproduces the *oracle* IC exactly ($+0.0646$): it is trading
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **§2.2.1** (fundamental data reported with a lapse; backfilled/reinstated values; the "indexed by last date in the report" error) and **§2.3** (bars: standard time bars and information-driven tick/volume/dollar/imbalance/run bars - irregular raw data → regularized table). *Corpus PDF verified; the engine of this page.*
-- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019) - end-to-end pipeline engineering: sourcing, cleaning, feature generation.
-- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017) - sourcing and the operational realities of vendor feeds.
-- **Data-sources discipline in-repo:** [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|Data Sources · 05 Failure Modes & Practice]] - the identical PIT/survivorship/restatement logic, developed for fundamentals; this page applies it to alt feeds.
+- **López de Prado**, *Advances in Financial Machine Learning*, **§2.2.1** (fundamental data reported with a lapse; backfilled/reinstated values; the "indexed by last date in the report" error) and **§2.3** (bars: standard time bars and information-driven tick/volume/dollar/imbalance/run bars
+- **Guida, Tony**, *Big Data and Machine Learning in Quantitative Investment* (Wiley, 2019)
+- **Kolanovic & Krishnamachari**, *Big Data and AI Strategies* (J.P. Morgan, 2017)
+- **Data-sources discipline in-repo:** [[fundamentals-accounting/data-sources-and-corporate-data/05-failure-modes-and-practice|Data Sources · 05 Failure Modes & Practice]]
 
 ---
 

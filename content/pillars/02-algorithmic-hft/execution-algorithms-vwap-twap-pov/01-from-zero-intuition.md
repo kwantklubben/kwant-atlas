@@ -63,11 +63,11 @@ Buy $X=10^6$ shares; compare the temporary-impact cost of dumping the whole pare
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Almgren, Robert & Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5–40 (2000). *Where the $\sum n_t^2$ temporary-impact term and the sweep-vs-slice math come from.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 14 (trading-cost decomposition, motivation for splitting) and Ch 15 (order splitting, eq 15.4). *Verified in corpus `hasbrouck_ch11-15.md`.*
-- **Kissell, Glantz & Malamut** - *Optimal Trading Strategies* (2003) - the practitioner's framework for why and how to slice.
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Kissell, Glantz & Malamut** - *Optimal Trading Strategies* (2003)
 
 ---
 

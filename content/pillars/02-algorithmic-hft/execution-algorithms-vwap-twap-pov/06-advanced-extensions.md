@@ -66,7 +66,7 @@ On a rising day, compare a VWAP engine vs a front-loaded (arrival-price) schedul
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Almgren & Chriss** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000). *The arrival-price / IS-optimal schedule that this page's advanced engine implements.*
 - **Bertsimas & Lo** - "Optimal control of execution costs," *J. Financial Markets* 1(1), 1-50 (1998). *The dynamic-programming seed of adaptive execution.*

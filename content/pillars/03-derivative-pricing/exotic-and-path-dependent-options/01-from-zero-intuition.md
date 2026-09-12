@@ -66,11 +66,11 @@ The vanilla MC lands on the BSM closed form (terminal-only: the closed form *is*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 7 (exotic options; the reflection-principle joint density, Thm 7.2.1; running-max state; the "not a dt-term" subtlety that forces lookback boundary conditions).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 3 (exact GBM path simulation §3.2; path-dependent payoffs as the natural MC targets).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, Ch 4 (the closed-form catalog that the intuition in §2 organizes).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

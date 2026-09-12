@@ -94,11 +94,11 @@ Read the (B) block: at $\sigma=2$ the expected exposure is $2.17$ on a mean of $
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025) - Ch 1–3 (what CCR is, why it differs from lending, settlement vs pre-settlement risk, the MPoR) and §3.3 (components of xVA). *Deep-read in the corpus; the five-scenario and normal-distribution numbers above are his, reproduced exactly.*
-- **Pykhtin & Zhu**: *A Guide to Modeling Counterparty Credit Risk* (2007) - the canonical accessible introduction to EE/EPE/PFE.
-- **Hull**: *Options, Futures, and Other Derivatives* - Ch 24 §24.7 (credit risk in derivatives transactions; exposure, netting, collateral, CVA/DVA).
+- **Gregory, Jon**: *The xVA Challenge* (5th ed., 2025)
+- **Pykhtin & Zhu**: *A Guide to Modeling Counterparty Credit Risk* (2007)
+- **Hull**: *Options, Futures, and Other Derivatives*
 
 ---
 

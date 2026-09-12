@@ -68,11 +68,11 @@ Two solid numbers from the run: quoting the **mid** costs the dealer $0.301$ per
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glosten & Milgrom (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders*, JFE 14(1), 71–100 - the sequential-trade model whose symmetric spread is $A-B=\pi(V_H-V_L)$.
-- **Copeland & Galai (1983)**, *Information effects on the bid-ask spread*, J. Finance 38(5), 1457–1469 - the "dealer is short a put and a call" option framing of the same idea.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 5 - the verified statement of the GM model (δ/µ notation, eq. 5.1–5.7, spread formula, wealth-transfer identity).
+- **Glosten & Milgrom (1985)**, *Bid, ask and transaction prices in a specialist market with heterogeneously informed traders*, JFE 14(1), 71–100
+- **Copeland & Galai (1983)**, *Information effects on the bid-ask spread*, J. Finance 38(5), 1457–1469
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
 
 ---
 

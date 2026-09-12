@@ -82,13 +82,13 @@ The model-averaging block: a single deep tree scores $R^2=0.612$; the RF and the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, Ch 8 §8.3–8.4 (MDI, MDA, SFI: definitions, substitution effects, orthogonalisation, clustered importance) - *the primary feature-importance source; PDF read in the corpus.*
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, Ch 10 §10.13 (variable importance, partial dependence), Ch 8 §8.8 (model averaging & stacking, eqs 8.53–8.59), Ch 16 (ensemble learning).
-- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**, "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020 - the evidence that trees and shallow nets beat linear models and that deep models do not dominate on tabular factor data.
-- **Louppe, Gilles**, *Understanding Random Forests: From Theory to Practice* (PhD thesis, arXiv:1407.7502), 2014 - the formal treatment of RF feature-importance bias.
-- **Breiman, Leo**, "Random Forests," *Machine Learning* 45(1), 2001 - the origin paper (OOB error, importance).
+- **López de Prado**, *Advances in Financial Machine Learning*
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*
+- **Gu, Shihao; Kelly, Bryan; Xiu, Dacheng**, "Empirical Asset Pricing via Machine Learning," *RFS* 33(5), 2020
+- **Louppe, Gilles**, *Understanding Random Forests: From Theory to Practice* (PhD thesis, arXiv:1407.7502), 2014
+- **Breiman, Leo**, "Random Forests," *Machine Learning* 45(1), 2001
 
 ---
 

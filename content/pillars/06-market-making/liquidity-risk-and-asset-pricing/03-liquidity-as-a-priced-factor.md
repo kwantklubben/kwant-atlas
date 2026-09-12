@@ -77,12 +77,12 @@ Even in this small synthetic sample, sorting on the *estimated* liquidity beta d
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Pástor & Stambaugh (2003).** *Liquidity risk and expected stock returns.* JPE 111(3), 642–685. The construction (eqs. 6–8), the innovations, the predicted-beta sorts, and the 7.5%/yr spread.
-- **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77(2) - embeds the PS channel as $\beta_3$ (our $\beta_2$) inside a full equilibrium CAPM.
-- **Chordia, Roll & Subrahmanyam (2000).** *Commonality in liquidity.* Journal of Financial Economics 56 - why aggregate liquidity exists to begin with (the factor's foundation).
-- **Hasbrouck.** *Market Microstructure: Foundations*, Ch 5, 11–15 - measuring the per-stock price-impact slopes the factor aggregates.
+- **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77(2)
+- **Chordia, Roll & Subrahmanyam (2000).** *Commonality in liquidity.* Journal of Financial Economics 56
+- **Hasbrouck.** *Market Microstructure: Foundations*
 
 ---
 

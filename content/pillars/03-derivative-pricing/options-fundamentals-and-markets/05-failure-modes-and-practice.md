@@ -93,11 +93,11 @@ The empirical slope $0.7808$ reproduces the theoretical $0.7798$ (Hull's airline
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 3 (basis, minimum-variance ratio eq. 3.1–3.3, hedge effectiveness $=R^2=\rho^2$, stack-and-roll), Ch 2 (margining, CCPs, delivery), Ch 6 §6.2–6.4 (delivery options, wild card, CTD, convexity), Ch 10.7 (option margins), Ch 19 (hedging in practice). *Per-chapter verification report in the corpus.*
-- **Hull**, *Risk Management and Financial Institutions* - the leverage/liquidity failure narratives that complement Ch 3 here. *Corpus available.*
-- **Shreve**, *Stochastic Calculus for Finance I*, §1.1 (the no-arbitrage bracket $d<1+r<u$ that a frictional market can violate), §3.5 (completeness - what "the" price requires).
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Hull**, *Risk Management and Financial Institutions*
+- **Shreve**, *Stochastic Calculus for Finance I*
 
 ---
 

@@ -74,13 +74,13 @@ The entire discipline in one script: rank twelve firms on book-to-market, split 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 1968) - the origin of "accounting earnings move prices"; the empirical foundation of the whole fundamental-information line.
-- **Basu, Sanjoy**: "The Relationship Between Earnings Yield, Market Value and Return for NYSE Common Stocks" (*JFE*, 1983) - the E/P effect.
-- **Fama & French**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992) - size + book-to-market capture the cross-section; the founding result of this page.
-- **Bernard, Victor & Thomas, Jacob**: "Post-Earnings-Announcement Drift" (*JAR*, 1989) - the market under-reacts to the implications of earnings; the under-reaction channel that explains why fundamental data predicts returns.
-- **Graham, Benjamin**: *The Intelligent Investor* - the qualitative ancestor: cheap-and-solid; the quant version is what this folder builds.
+- **Ball, Ray & Brown, Philip**: "An Empirical Evaluation of Accounting Income Numbers" (*JAR*, 1968)
+- **Basu, Sanjoy**: "The Relationship Between Earnings Yield, Market Value and Return for NYSE Common Stocks" (*JFE*, 1983)
+- **Fama & French**: "The Cross-Section of Expected Stock Returns" (*JF*, 1992)
+- **Bernard, Victor & Thomas, Jacob**: "Post-Earnings-Announcement Drift" (*JAR*, 1989)
+- **Graham, Benjamin**: *The Intelligent Investor*
 
 ---
 

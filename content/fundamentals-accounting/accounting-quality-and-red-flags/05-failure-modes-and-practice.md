@@ -85,14 +85,14 @@ Mode 3 is the one to remember: the **$+50$** of fabricated cash revenue moves th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**: "Understanding Earnings Quality: A Review of the Proxies, Their Determinants and Their Consequences" (*JAE*, 50(2–3), 344–401, 2010) - the definitive map of every quality proxy, and the source of failure modes 4 and 5. **The single most important reference on this page.**
-- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996) - the accrual measure whose blind spots this page catalogues, and the reversal property central to mode 1.
-- **Dechow, Sloan & Sweeney**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995) - the low-power and extreme-performance findings behind failure modes 5 and 8.
-- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed., 2020) - the games that exploit each blind spot; particularly strong on the cash-flow and footnote layers that ratios cannot reach.
-- **Chan, Jegadeesh & Lakonishok**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006) - evidence that the nondiscretionary component of accruals *also* predicts returns, which undercuts the naive "high accruals = fraud" reading (mode 8).
-- **Mulford, Charles W. & Comiskey, Eugene E.**: *The Financial Numbers Game* (Wiley, 2002) - how to reverse-engineer aggressive accounting choices back to the underlying economics.
+- **Dechow, Patricia, Ge, Weili & Schrand, Catherine**: "Understanding Earnings Quality: A Review of the Proxies, Their Determinants and Their Consequences" (*JAE*, 50(2–3), 344–401, 2010)
+- **Sloan, Richard G.**: "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*, 71(3), 289–315, 1996)
+- **Dechow, Sloan & Sweeney**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995)
+- **Schilit, Perler & Engelhart**: *Financial Shenanigans* (McGraw-Hill, 4th ed., 2020)
+- **Chan, Jegadeesh & Lakonishok**: "Earnings Quality and Stock Returns" (*JF*, 61(2), 769–806, 2006)
+- **Mulford, Charles W. & Comiskey, Eugene E.**: *The Financial Numbers Game* (Wiley, 2002)
 
 ---
 

@@ -78,11 +78,11 @@ For symmetric barriers under a driftless random walk, the +1/−1 split is near 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018) - **Ch 3 §3.4** (the triple-barrier method, barrier configurations and figure 3.1), **§3.2–3.3** (fixed-horizon labelling and its flaws), **§3.5** (learning side and size, symmetric barriers), **Ch 2 §2.5.2** (CUSUM event sampling, imbalance/dollar bars). *The formula-authoritative source; the configuration taxonomy is quoted directly.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* - Ch 3 / Ch 7 (conditional-volatility models, RiskMetrics EWMA recursion $\sigma_t^2=\lambda\sigma_{t-1}^2+(1-\lambda)r_{t-1}^2$, $\alpha\approx0.94$) - the volatility-target engine used for the barriers.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* - Ch 7 (why the loss/target definition, not the learner, dominates classification performance).
+- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning*
 
 ---
 

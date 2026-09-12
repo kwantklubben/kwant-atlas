@@ -71,12 +71,12 @@ The move from $99\%$ to $99.9\%$ is the whole lesson in one line: **the spread a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Derman, E.**, *Model Risk*, Goldman Sachs QSR Notes (1996) - "Models translate opinions into values", "Uncertainty is fundamental", "A model is only a model…". *Read in full from the corpus PDF.*
-- **Federal Reserve / OCC**, *SR 11-7* (2011) - the definition of model risk and the two causes. *Read in full from the corpus PDF.*
-- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015), Ch 2 (risk measures) and Ch 7 (EVT: POT/GPD quantile). The spine reference for the POT estimator used above.
-- **Embrechts, Klüppelberg & Mikosch**, *Modelling Extremal Events* (1997) - the EVT monograph behind the tail-discrepancy power law.
+- **Federal Reserve / OCC**, *SR 11-7* (2011)
+- **McNeil, Frey & Embrechts**, *Quantitative Risk Management* (2015)
+- **Embrechts, Klüppelberg & Mikosch**, *Modelling Extremal Events* (1997)
 
 ---
 

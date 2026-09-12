@@ -65,12 +65,12 @@ The two lines are the entire research-to-production story in miniature: **reorde
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Astral `uv` / Poetry / conda-lock / Docker** - official docs - the practical baseline for environment pinning ($E$) and reproducible containers. **Priority M.**
-- **López de Prado** - *Advances in Financial Machine Learning*, Ch 1 & 11 - reproducibility discipline and why the research environment must equal the production environment.
-- **NautilusTrader Documentation** (nautilustrader.io) - a production-grade runtime whose config/experiment contract models the research-to-production handoff.
-- **Needham & Simons** - *DuckDB in Action* - the serve-layer query engine shared by research and production pipelines.
+- **Astral `uv` / Poetry / conda-lock / Docker**
+- **López de Prado** - *Advances in Financial Machine Learning*
+- **NautilusTrader Documentation** (nautilustrader.io)
+- **Needham & Simons** - *DuckDB in Action*
 
 ---
 

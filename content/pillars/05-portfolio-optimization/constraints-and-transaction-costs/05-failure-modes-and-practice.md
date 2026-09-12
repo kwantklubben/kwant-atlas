@@ -96,14 +96,14 @@ Four verified readings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed. - the marginal-alpha = marginal-cost rebalancing discipline and its failure modes.
-- **Lobo, Fazel & Boyd (2007)**, Annals of OR 152:341–365 - the convex cost model whose parameters you must estimate honestly.
-- **Almgren & Chriss (2000/01)**, Journal of Risk 3(2) - the impact model behind the "underestimating impact" failure. *Cross-pillar: [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Pillar 2]].*
-- **Clarke, de Silva & Thorley (2002)**, FAJ 58(5):48–66 - the transfer coefficient as the accounting of constraint-induced information loss.
-- **DeMiguel, Garlappi & Uppal (2009)**, RFS 22(5):1915–1953 - the sobering benchmark: sophisticated optimizers must beat $1/N$ *net of costs* to be worth running.
-- **Hasbrouck (2007)**, *Empirical Market Microstructure*, Ch 3 & 9.9 - the empirical spread range (\$0.01–\$0.49 in one stock-month) and the Amihud illiquidity ratio as the calibration warning for any single $c$.
+- **Grinold & Kahn (2000)**, *Active Portfolio Management*, 2nd ed.
+- **Lobo, Fazel & Boyd (2007)**, Annals of OR 152:341–365
+- **Almgren & Chriss (2000/01)**, Journal of Risk 3(2)
+- **Clarke, de Silva & Thorley (2002)**, FAJ 58(5):48–66
+- **DeMiguel, Garlappi & Uppal (2009)**, RFS 22(5):1915–1953
+- **Hasbrouck (2007)**, *Empirical Market Microstructure*
 
 ---
 

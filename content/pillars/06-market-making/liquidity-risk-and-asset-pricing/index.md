@@ -75,14 +75,14 @@ Hub signposts - full analysis in [[pillars/06-market-making/liquidity-risk-and-a
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Amihud (2002).** *Illiquidity and stock returns: cross-section and time-series effects.* Journal of Financial Markets 5(1), 31–56. The ILLIQ measure and the two findings (cross-section premium, time-series market-premium response). *The anchor paper.*
 - **Pástor & Stambaugh (2003).** *Liquidity risk and expected stock returns.* JPE 111(3), 642–685. Aggregate liquidity measure, innovations, and the priced liquidity beta (7.5% annual long-short spread).
 - **Acharya & Pedersen (2005).** *Asset pricing with liquidity risk.* JFE 77(2), 375–410. The liquidity-adjusted CAPM and its three liquidity-risk betas.
 - **Bao, Pan & Wang (2011).** *The illiquidity of corporate bonds.* Journal of Finance 66(3), 911–946. Roll-type $\gamma$ applied to bonds; large, common, crisis-spiking illiquidity.
-- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity: Asset Pricing, Risk, and Crises.* Cambridge University Press. The founders' monograph - the folder capstone.
-- **Hasbrouck.** *Market Microstructure: Foundations*, Ch 1–5, 11–15. Measurement (Roll, ILLIQ, effective spreads) and the price-impact view.
+- **Amihud, Mendelson & Pedersen (2013).** *Market Liquidity: Asset Pricing, Risk, and Crises.* Cambridge University Press. The founders' monograph
+- **Hasbrouck.** *Market Microstructure: Foundations*
 
 ---
 

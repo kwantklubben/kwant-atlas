@@ -95,14 +95,14 @@ Read it. The **mean is 306.5 ns** - a number that would pass any review - while 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Leber, Geib & Litz** (FPL 2011) - read alongside this page for how the original proof-of-concept bounded its own verification risk.
+- **Leber, Geib & Litz** (FPL 2011)
 - **De Schryver (ed.)** - *FPGA Based Accelerators for Financial Applications*, testing/HLS case-study chapters: co-simulation and mixed-precision verification practice.
-- **MacKenzie**, *Trading at the Speed of Light* (2021) - the documented history of latency-arm-race failure economics (including the Knight Capital episode) told accurately.
-- **Aldridge**, *High-Frequency Trading* (2nd ed.) - operational-risk and infrastructure chapters.
-- **Hasbrouck**, *Empirical Market Microstructure* Ch 2 - "many prices at one instant": the microstructure reason a stale quote *is* a different price, i.e. why the tail is real money.
-- **Budish, Cramton & Shim** (2015), "The High-Frequency Trading Arms Race," *QJE* 130(4) - the market-design critique that prices the *social* waste of the arms race this page warns about.
+- **MacKenzie**, *Trading at the Speed of Light* (2021)
+- **Aldridge**, *High-Frequency Trading* (2nd ed.)
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Budish, Cramton & Shim** (2015), "The High-Frequency Trading Arms Race," *QJE* 130(4)
 
 ---
 

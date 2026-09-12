@@ -86,12 +86,12 @@ Both methods give the same \$1,500. The accruals are **−\$700**: depreciation 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 5 (Measurement in the income statement and balance sheet; earnings vs cash flows; eq. 5.1–5.2; Box 5.1 accounting relations). *Deep-read and math-verified.*
-- **Penman**, Ch 10 (Box 10.3: direct and indirect methods).
-- **Sloan (1996)**, "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*) - the accruals anomaly: high-accrual (low-cash) firms underperform; the empirical payoff of exactly this identity.
-- **O'Glove**, *Quality of Earnings* (1987) - the classic case for judging earnings by cash flow.
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Penman**
+- **Sloan (1996)**, "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows About Future Earnings?" (*TAR*)
+- **O'Glove**, *Quality of Earnings* (1987)
 
 ---
 

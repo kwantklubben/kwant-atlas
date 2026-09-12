@@ -102,13 +102,13 @@ Notice what is *absent*: no inventory cost, no order-processing cost, no fixed f
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Glosten, Lawrence R.; Milgrom, Paul R.** - "Bid, ask and transaction prices in a specialist market with heterogeneously informed traders," *Journal of Financial Economics* 14(1), 71–100 (1985). *The origin of everything on this page; the zero-profit conditional-expectation quotes are theirs.*
 - **Copeland, Thomas E.; Galai, Dan** - "Information effects on the bid-ask spread," *Journal of Finance* 38(5), 1457–1469 (1983). *The contemporaneous, independent derivation of the same adverse-selection spread.*
 - **Kyle, Albert S.** - "Continuous auctions and insider trading," *Econometrica* 53(6), 1315–1335 (1985). *The continuous-value counterpart; see page 02.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 5. *The textbook development of the Bayesian specialist; corpus verification `hasbrouck_ch1-5.md`.*
-- **Foucault, Thierry; Pagano, Marco; Röell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (2013), Ch 3. *Corpus verification `foucault_ch1-3.md`; the cleanest treatment of "who loses and who gains".*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Thierry; Pagano, Marco; Röell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (2013)
 
 ---
 

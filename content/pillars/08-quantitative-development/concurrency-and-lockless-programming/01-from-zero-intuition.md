@@ -76,12 +76,12 @@ Read the $f=5\%$ column: going from 16 to 1024 cores buys you just 2x more (9.14
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*, Ch 1–2 (concurrency basics, the shared-memory model) - the conceptual foundation.
-- **Williams**, *C++ Concurrency in Action*, Ch 1 (threads vs processes, why concurrency) and Ch 2 (managing threads).
-- **Bryant & O'Hallaron (CS:APP)**, Ch 12 (concurrent programming) - the systems view of processes, threads, and the memory model.
-- **Amdahl, Gene** - "Validity of the Single Processor Approach to Achieving Large Scale Computing Capabilities" (1967) - the original law.
+- **Herlihy & Shavit**, *The Art of Multiprocessor Programming*
+- **Williams**, *C++ Concurrency in Action*
+- **Bryant & O'Hallaron (CS:APP)**
+- **Amdahl, Gene** - "Validity of the Single Processor Approach to Achieving Large Scale Computing Capabilities" (1967)
 
 ---
 

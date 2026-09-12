@@ -66,10 +66,10 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **Black, Fischer & Litterman, Robert**: *Global Portfolio Optimization*, Financial Analysts Journal 48(5):28–43, 1992. **The origin paper and math-authoritative source for this folder; all formulas verified.** ★ MUST-HAVE
-- **He, Guangliang & Litterman, Robert**: *The Intuition Behind Black–Litterman Model Portfolios*, Goldman Sachs Investment Management, 1999 (SSRN #334304). The accessible worked-intuition note; §3–4 of this folder follow its relative-view / market-interpretation framing. ★ MUST-HAVE
+- **He, Guangliang & Litterman, Robert**: *The Intuition Behind Black–Litterman Model Portfolios*, Goldman Sachs Investment Management, 1999 (SSRN #334304). The accessible worked-intuition note;
 - **Satchell, Stephen & Scowcroft, Alan**: *A Demystification of the Black–Litterman Model*, Journal of Asset Management 1(2):138–150, 2000. Clean derivation of the posterior and its special cases (zero-views, uniform views).
 - **Idzorek, Thomas**: *A Step-by-Step Guide to the Black–Litterman Model*, 2005 (SSRN #3479867). The practitioner cookbook and origin of the 0–100% confidence method for converting $\Omega$.
 

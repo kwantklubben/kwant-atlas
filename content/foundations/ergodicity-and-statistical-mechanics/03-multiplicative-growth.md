@@ -105,12 +105,12 @@ The ensemble mean ($27.11\times$) and the geometric mean / median ($19.35\times$
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.), Ch 1 - return definitions, the geometric vs arithmetic mean (Eq 1.1–1.7), and the empirical fat tails (high excess kurtosis, Table 1.2) that make the drag worse than Gaussian. *Verified in the corpus.*
-- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006), §7.1 - the continuous growth function $g_\infty(f)=r+f(m-r)-\tfrac12s^2f^2$ (eq. 7.2), its log-normal diffusion limit, and $g_\infty(f^*)=(m-r)^2/2s^2+r$. *Corpus-verified.*
-- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*, Ch 15 (Thm 15.3) - GBM and the $\tfrac12\sigma^2$ Itô correction: $S_t=S_0e^{\sigma W_t+(\mu-\frac12\sigma^2)t}$. *Math-verified.*
-- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15 (2019) - the log-growth/volatility-drag reading of multiplicative dynamics.
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed.)
+- **Thorp, Edward O.**: *The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market* (2006)
+- **Shreve, Steven E.**: *Stochastic Calculus for Finance I*
+- **Peters, Ole**: *The Ergodicity Problem in Economics*, Nature Physics 15 (2019)
 
 ---
 

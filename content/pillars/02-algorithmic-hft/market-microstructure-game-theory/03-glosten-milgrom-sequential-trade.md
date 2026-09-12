@@ -102,13 +102,13 @@ Four readings:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glosten, Lawrence R.; Milgrom, Paul R.** - "Bid, ask and transaction prices in a specialist market with heterogeneously informed traders," *Journal of Financial Economics* 14(1), 71–100 (1985). *Sections 2–3 give the recursion and the zero-profit quotes; §4 discusses the price process and its martingale property.*
-- **Easley, David; O'Hara, Maureen** - "Price, trade size, and information in securities markets," *Journal of Financial Economics* 19(1), 69–90 (1987). *Adds trade size to the sequential game - the immediate generalisation of the model above.*
+- **Glosten, Lawrence R.; Milgrom, Paul R.** - "Bid, ask and transaction prices in a specialist market with heterogeneously informed traders," *Journal of Financial Economics* 14(1), 71–100 (1985). *Sections 2–3 give the recursion and the zero-profit quotes;
+- **Easley, David; O'Hara, Maureen** - "Price, trade size, and information in securities markets," *Journal of Financial Economics* 19(1), 69–90 (1987). *Adds trade size to the sequential game
 - **Glosten, Lawrence R.** - "Is the electronic open limit order book inevitable?" *Journal of Finance* 49(4), 1127–1161 (1994). *The sequential-trade logic taken to the limit order book, where the "quotes" become the whole schedule.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 5 (the Bayesian specialist; the recursion above is his §5.2). *Corpus verification `hasbrouck_ch1-5.md`.*
-- **Foucault, Thierry; Pagano, Marco; Röell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (2013), Ch 3. *Corpus verification `foucault_ch1-3.md`; §3.2 has the cleanest statement of the martingale property.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
+- **Foucault, Thierry; Pagano, Marco; Röell, Ailsa** - *Market Liquidity: Theory, Evidence, and Policy* (2013)
 - **Biais, Bruno; Glosten, Lawrence; Spatt, Chester** - "Market microstructure: A survey of microfoundations, empirical results, and policy implications," *Journal of Financial Markets* 8(2), 217–264 (2005). *Where this model sits in the full taxonomy.*
 
 ---

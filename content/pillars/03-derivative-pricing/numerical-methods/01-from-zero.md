@@ -85,12 +85,12 @@ Read the errors: the tree's error falls roughly as $1/n$ ($0.0399 \to 0.0100 \to
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Duffy**, *Finite Difference Methods in Financial Engineering*, Ch 6 (divided differences, one-step schemes, Padé, Richardson extrapolation), Ch 8 (consistency/stability/convergence definitions), Ch 30 (choosing the right scheme).
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, Ch 1 §1.1 (estimator, standard error, dimension-free rate), Ch 3 §3.2 (GBM exact transitions, path-dependent payoffs).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 21 §21.1–21.4 (binomial and trinomial trees, explicit FDM ≡ trinomial), §21.6 (Monte Carlo).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §4.1 (CRR: European put $4.4496$ vs BSM $4.4494$), §4.5 (Boyle trinomial: $13.1752$ vs BSM $13.1744$).
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*
+- **Hull**, *Options, Futures, and Other Derivatives*
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

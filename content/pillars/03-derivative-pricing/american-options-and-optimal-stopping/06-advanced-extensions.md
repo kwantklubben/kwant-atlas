@@ -98,12 +98,12 @@ The LSM rule lands $0.044$ **below** the tree value (the price of a slightly sub
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, **Ch 8** - §8.1–8.2 (problem, parametric low/high bias), §8.3 random trees, §8.4 partitioning, §8.5 stochastic mesh (weights 8.36–8.45), §8.6 regression DP vs LSM 8.52 and the regression/mesh-weight identity 8.54–8.56, §8.7 duality 8.58–8.69. *Math-verified in the corpus.*
+- **Glasserman**, *Monte Carlo Methods in Financial Engineering*, **Ch 8**
 - **Longstaff, F. & Schwartz, E.** (2001), *Valuing American options by simulation: a simple least-squares approach*, RFS 14(1).
-- **Rogers, L.C.G.** (2002) and **Haugh, M. & Kogan, L.** (2004) - the duality upper bound.
-- **Broadie, M. & Glasserman, P.** (1997, 2004) - random trees and stochastic mesh. **Andersen, L. & Broadie, M.** (2004) - primal-dual.
+- **Rogers, L.C.G.** (2002) and **Haugh, M. & Kogan, L.** (2004)
+- **Broadie, M. & Glasserman, P.** (1997, 2004)
 
 ---
 

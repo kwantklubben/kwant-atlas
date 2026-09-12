@@ -118,14 +118,14 @@ Three verifications land at once. (a) The copula value $C(0.5,0.5)=0.3734$ sits 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Sklar, A. (1959)**, *Fonctions de répartition à n dimensions et leurs marges* - the original decomposition theorem.
-- **McNeil, Frey & Embrechts (2015)**, *Quantitative Risk Management* - Ch 7 §7.1 (Definition 7.1, Sklar Thm 7.3, invariance 7.7, Fréchet 7.8, fundamental/implicit/explicit copulas, Algorithms 7.10–7.12) and §7.2.3–7.2.4 (Kendall 7.28, Spearman 7.33, dependence measures). *Formula-verified in the corpus.*
-- **Nelsen, R. B. (2006)**, *An Introduction to Copulas*, 2nd ed. - Ch 2–4: the definitive treatment of copula properties, the Fréchet bounds and Archimedean construction.
-- **Joe, H. (1997)**, *Multivariate Models and Dependence Concepts* - the dependence-measure and tail-dependence definitions.
-- **Schweizer, B. & Wolff, E. F. (1981)**, *On nonparametric measures of dependence for random variables* - the rank-correlation/copula equivalence.
-- **Nelsen (2006)** and **Embrechts, McNeil & Straumann (2002)** - the correlation-fallacy literature.
+- **Sklar, A. (1959)**, *Fonctions de répartition à n dimensions et leurs marges*
+- **McNeil, Frey & Embrechts (2015)**, *Quantitative Risk Management*
+- **Nelsen, R. B. (2006)**, *An Introduction to Copulas*, 2nd ed.
+- **Joe, H. (1997)**, *Multivariate Models and Dependence Concepts*
+- **Schweizer, B. & Wolff, E. F. (1981)**, *On nonparametric measures of dependence for random variables*
+- **Nelsen (2006)** and **Embrechts, McNeil & Straumann (2002)**
 
 ---
 

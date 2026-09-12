@@ -101,14 +101,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.) - Ch 19 (the Greek letters; verified: $\Theta+ rS\Delta+\tfrac12\sigma^2S^2\Gamma=r\Pi$ eq. 19.4, $\Delta$-neutral P&L $\approx\Theta\Delta t+\tfrac12\Gamma(\Delta S)^2$ eq. 19.3, Greeks of forwards/futures eq. 19.5/19.6) and Ch 22 §22.5 (the linear and quadratic delta–gamma VaR models, eq. 22.6–22.8; duration/cash-flow mapping). *Numerically verified in the corpus (`hull_ch19-23.md`).*
-- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006) - §2 (the complete first/second/third-order Greek set with the per-point/per-day scaling conventions), §2.3.3 (vanna, volga), §2.15 (theta, gamma–theta). *The formula-authoritative lookup source; re-verified here.*
-- **J.P. Morgan / RiskMetrics**: *RiskMetrics - Technical Document* (4th ed., 1996) - the canonical delta-normal framework: risk-factor mapping, EWMA covariance, and the delta-gamma methodology for options. *Free via MSCI.*
-- **Alexander, Carol**: *Market Risk Analysis, Vol. III (Pricing, Hedging and Trading Financial Instruments)* and *Vol. IV (Value at Risk Models)* (2008, Wiley) - the definitive treatment of mapping portfolios to primary risk factors and of delta-normal / delta-gamma VaR on the mapped factors.
-- **Dowd, Kevin**: *Measuring Market Risk* (2nd ed., 2005) - the clearest self-contained derivation of parametric delta-normal and delta-gamma VaR including the Cornish–Fisher expansion.
-- **Fisher, R. A. & Cornish, E. A.**: *Moments and Cumulants in the Specification of Distributions*, *Biometrika* **30**(3–4):262–291 (1938) - the quantile expansion used for the non-normal delta-gamma VaR.
+- **Hull, John C.**: *Options, Futures, and Other Derivatives* (11th ed.)
+- **Haug, Espen Gaarder**: *The Complete Guide to Option Pricing Formulas* (2nd ed., 2006)
+- **J.P. Morgan / RiskMetrics**: *RiskMetrics
+- **Alexander, Carol**: *Market Risk Analysis, Vol. III (Pricing, Hedging and Trading Financial Instruments)* and *Vol. IV (Value at Risk Models)* (2008, Wiley)
+- **Dowd, Kevin**: *Measuring Market Risk* (2nd ed., 2005)
+- **Fisher, R. A. & Cornish, E. A.**: *Moments and Cumulants in the Specification of Distributions*, *Biometrika* **30**(3–4):262–291 (1938)
 
 ---
 

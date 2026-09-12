@@ -82,12 +82,12 @@ The filter cuts the error by **59%** versus the raw price, with a steady-state g
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Tsay**, *Analysis of Financial Time Series* (3rd ed.), Ch 1 (returns, noise, and why prices are a signal-plus-noise problem) and Ch 11 §11.1 (local-level model, filtering definitions). *Corpus-verified.*
-- **Welch & Bishop**, *An Introduction to the Kalman Filter* (UNC TR 95-041) - the clearest "blend two Gaussians by their variances" derivation of the gain.
-- **Kalman (1960)**, *A New Approach to Linear Filtering and Prediction Problems* - the original, for the framing.
-- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*, Ch 2.1 - the formal filtering/prediction/smoothing definitions.
+- **Tsay**, *Analysis of Financial Time Series* (3rd ed.)
+- **Welch & Bishop**, *An Introduction to the Kalman Filter* (UNC TR 95-041)
+- **Kalman (1960)**, *A New Approach to Linear Filtering and Prediction Problems*
+- **Durbin & Koopman**, *Time Series Analysis by State Space Methods*
 
 ---
 

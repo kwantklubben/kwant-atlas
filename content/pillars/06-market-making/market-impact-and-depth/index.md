@@ -95,16 +95,16 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *The anchor. Primary PDF in corpus (`40_Kyle_1985_...`); model verified via Hasbrouck Ch 7.*
+- **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *The anchor. Primary PDF in corpus (`40_Kyle_1985_...`); model verified via Hasbrouck
 - **Almgren, R. & Chriss, N. (2000)**, *Optimal execution of portfolio transactions*, Journal of Risk 3(2), 5–39. *The temporary/permanent split and the efficient frontier. Primary PDF in corpus.*
 - **Almgren, R., Thum, C., Hauptmann, H. & Li, H. (2005)**, *Direct estimation of equity market impact*, Risk 18(7), 57–62. *Empirical $\gamma,\eta$ and the $3/5$ exponent. Primary PDF in corpus.*
 - **Bouchaud, J.-P., Farmer, J. D. & Lillo, F. (2009)**, *How markets slowly digest changes in supply and demand*, in *Handbook of Financial Markets*. *The econophysics review: impact concavity, order-flow long memory, propagation. Primary PDF in corpus.*
 - **Gatheral, J. (2010)**, *No-dynamic-arbitrage and market impact*, Quantitative Finance 10(7), 749–759. *The $\gamma+\delta\ge1$ constraint. Primary PDF in corpus.*
 - **Gatheral, J. & Schied, A. (2013)**, *Dynamical models of market impact and algorithms for order execution*, in *Handbook on Systemic Risk*. *Rigorous transient-impact synthesis. Primary PDF in corpus.*
 - **Cont, R., Kukanov, A. & Stoikov, S. (2014)**, *The price impact of order book events*, Journal of Financial Econometrics 12(1), 47–88. *OFI and impact $\propto1/$depth. Primary PDF in corpus.*
-- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP. *Ch 7 (Kyle), Ch 8 (generalized Roll $\lambda$), Ch 9 (multivariate, §9.9 impact proxies). Deep-read verified in corpus.*
+- **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP. *Ch 7 (Kyle)
 
 ---
 

@@ -126,12 +126,12 @@ At $n=4096$ in $d=4$, **scrambled Sobol' beats plain Monte Carlo by $418\times$*
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering* - Ch 5 (quasi-Monte Carlo: discrepancy, Koksma–Hlawka, Halton/Sobol'/lattices, randomized QMC), Ch 6 (Euler/Milstein, strong vs weak order, MSE balancing, Brownian interpolation for barriers), Ch 7 (pathwise and likelihood-ratio sensitivities), Ch 8 (American by simulation, regression/LSM, stochastic mesh, duality bounds), Ch 9 (risk management: VaR, delta-gamma, importance sampling, credit risk). *The primary source; math-verified in the corpus.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* - Ch 11 (state-space models and the Kalman filter, eqs. 11.26–11.27, 11.64; ML via prediction-error decomposition), Ch 12 (MCMC: Gibbs, Metropolis–Hastings, griddy Gibbs, FFBS). *Verified in the corpus.*
-- **Duffy**, *Finite Difference Methods in Financial Engineering* - Ch 19–21 (ADI, operator splitting, IMEX for multidimensional problems), Ch 22–25 (Heston, Asian, multi-asset, fixed-income FDM). *Verified in the corpus.*
-- **Robert, C. P. & Casella, G.**: *Monte Carlo Statistical Methods* - MCMC theory and diagnostics.
+- **Glasserman, Paul**: *Monte Carlo Methods in Financial Engineering*
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series*
+- **Duffy**, *Finite Difference Methods in Financial Engineering*
+- **Robert, C. P. & Casella, G.**: *Monte Carlo Statistical Methods*
 
 ---
 

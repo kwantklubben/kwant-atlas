@@ -78,12 +78,12 @@ The single most convincing way to *see* why capital matters: take a bank, hit it
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hull, John C.** - *Risk Management and Financial Institutions* (5th ed., 2018). The Basel I/II/III chapters: the clearest narrative of *why* the rules exist and how they evolved (read alongside the primary BCBS texts). *The recommended entry text.*
+- **Hull, John C.** - *Risk Management and Financial Institutions* (5
 - **BCBS** - *Basel III: A Global Regulatory Framework for More Resilient Banks and Banking Systems* (2010, BIS d189). The minimum ratios and buffer stack, in the regulators' own words. *Read from the corpus PDF.*
-- **BCBS** - *Basel II: International Convergence of Capital Measurement and Capital Standards* (2006). The three-pillar architecture and the risk-weight grid. *Read from the corpus PDF.*
-- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.), Ch 24 (credit ratings, recovery rates ~40%, the Merton/Vasicek credit model). *Verified per chapter in the corpus.*
+- **BCBS** - *Basel II: International Convergence of Capital Measurement and Capital Standards* (2
+- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.)
 
 ---
 

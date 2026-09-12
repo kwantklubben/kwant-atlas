@@ -59,12 +59,12 @@ This is the audit trail every quant data store should keep: the block hash is th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado** - *Advances in Financial Machine Learning*, Ch 1 - point-in-time correctness and why versioned, immutable data is the structural fix for look-ahead leakage.
-- **Needham & Simons** - *DuckDB in Action* - as-of/point-in-time querying of versioned data at the serve layer.
-- **DVC / Delta Lake / Iceberg** - official docs - content-addressable versioning and manifest-based lineage for data pipelines.
-- **Git** - official docs - the canonical content-addressed object store; the conceptual model for hashing as identity.
+- **López de Prado** - *Advances in Financial Machine Learning*
+- **Needham & Simons** - *DuckDB in Action*
+- **DVC / Delta Lake / Iceberg**
+- **Git**
 
 ---
 

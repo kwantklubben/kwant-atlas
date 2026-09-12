@@ -92,12 +92,12 @@ Stdlib only. Estimates the market model in the estimation window, computes the e
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Brown & Warner (1985)**, *Using Daily Stock Returns: The Case of Event Studies*, JFE 14(1) - the estimation-window/event-window design, eq. 4 (market model excess return), eq. 5 (t-stat), non-synchronous trading §2.2. *Verified refs/50, read in full.*
-- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance Ch. 1 - return decomposition (eq. 1–2), cross-sectional mean (eq. 3), the role of event-window length, short vs long horizon. *Verified refs/52, read in full.*
-- **MacKinlay (1997)**, *Event Studies in Economics and Finance*, JEL 35(1) - the canonical survey of the methodology. *Verified refs/51.*
-- **Sharpe (1964)**, *Capital Asset Prices*, J. Finance 19(3) - the single-index / market model origin. *Cited in MacKinlay (1997).*
+- **Brown & Warner (1985)**, *Using Daily Stock Returns: The Case of Event Studies*, JFE 14(1)
+- **Kothari & Warner (2007)**, *Econometrics of Event Studies*, Handbook of Corporate Finance
+- **MacKinlay (1997)**, *Event Studies in Economics and Finance*, JEL 35(1)
+- **Sharpe (1964)**, *Capital Asset Prices*, J. Finance 19(3)
 
 ---
 

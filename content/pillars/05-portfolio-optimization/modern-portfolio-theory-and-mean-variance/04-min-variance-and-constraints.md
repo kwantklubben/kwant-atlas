@@ -57,12 +57,12 @@ Read the table: from $R^*=0.08$ to $0.10$ the constraint never binds (min-var is
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4) (1972), §II - the closed-form min-var portfolio (eq. 14) and the frontier with a budget constraint.
-- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1) (1952) and *Portfolio Selection* (1959) - the "critical line" algorithm for the *constrained* efficient set (corner solutions), which this page's long-only table reproduces in miniature.
-- **Best & Grauer**, *On the Sensitivity of Mean–Variance-Efficient Portfolios…*, RFS 4(2) (1991) - why the *minimal-variance* direction (covariance-only) is far more stable than return-driven optima.
-- **Boyd & Vandenberghe**, *Convex Optimization*, Ch 4–5 - the QP/SOCP machinery for box- and linear-constrained portfolio problems (reference).
+- **Merton, Robert C.**: *An Analytic Derivation of the Efficient Portfolio Frontier*, JFQA 7(4) (1972)
+- **Markowitz, Harry**: *Portfolio Selection*, Journal of Finance 7(1) (1952) and *Portfolio Selection* (1959)
+- **Best & Grauer**, *On the Sensitivity of Mean–Variance-Efficient Portfolios…*, RFS 4(2) (1991)
+- **Boyd & Vandenberghe**, *Convex Optimization*
 
 ---
 

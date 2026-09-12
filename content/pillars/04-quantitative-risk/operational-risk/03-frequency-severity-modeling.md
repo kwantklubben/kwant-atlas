@@ -103,12 +103,12 @@ The fit recovers the true lognormal (mu≈10, sigma≈0.8) from 300 noisy events
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Panjer, *Operational Risk: Modeling Analytics*** (2006), Ch 2–4 - frequency (Poisson, negative binomial) and severity families (lognormal, Pareto, Burr, GPD) with fitting and diagnostics.
-- **Embrechts, Klüppelberg & Mikosch, *Modelling Extremal Events*** (1997) - the heavy-tail theory; §6.4–6.5 Hill and related tail estimators.
-- **Hill, Bruce M., *A Simple General Approach to Inference About the Tail of a Distribution***, *Annals of Statistics* 3(5):1163–1174 (1975) - the Hill estimator, original source (in the corpus).
-- **McNeil, Frey & Embrechts, *Quantitative Risk Management*** (2015), Ch 2 & Ch 7 - distribution fitting and EVT-based tail estimation. *Corpus-verified.*
+- **Panjer, *Operational Risk: Modeling Analytics*** (2006)
+- **Embrechts, Klüppelberg & Mikosch, *Modelling Extremal Events*** (1997)
+- **Hill, Bruce M., *A Simple General Approach to Inference About the Tail of a Distribution***, *Annals of Statistics* 3(5):1163–1174 (1975)
+- **McNeil, Frey & Embrechts, *Quantitative Risk Management*** (2015)
 
 ---
 

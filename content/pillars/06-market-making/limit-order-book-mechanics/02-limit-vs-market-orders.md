@@ -93,12 +93,12 @@ The last row shows the second mechanism detail: at 2,500 shares the book only ha
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck**, *Empirical Market Microstructure*, Ch 2 §2.1 (limit order markets, priority, walking the book, order qualifiers: TIF/IOC/AON/hidden/reserve) - *verified in the corpus*.
-- **Foucault, Pagano & Röell**, *Market Liquidity*, Ch 2 (quoted vs weighted-average vs effective vs realized spread; eqs 2.1–2.6; price impact $\Delta m=\lambda q+\varepsilon$, depth $1/\lambda$, eq 2.8) - *verified in the corpus*.
-- **Harris, Larry**, *Trading and Exchanges* (2003) - the practitioner's taxonomy of order types and the cost of immediacy.
-- **Almgren & Chriss (2000)**, *Optimal execution of portfolio transactions* - how to trade a large order without paying the convex walk (bridge to [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss|Optimal Execution & Almgren–Chriss]]).
+- **Hasbrouck**, *Empirical Market Microstructure*
+- **Foucault, Pagano & Röell**, *Market Liquidity*
+- **Harris, Larry**, *Trading and Exchanges* (2003)
+- **Almgren & Chriss (2000)**, *Optimal execution of portfolio transactions*
 
 ---
 

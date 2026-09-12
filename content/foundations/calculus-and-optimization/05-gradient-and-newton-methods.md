@@ -110,12 +110,12 @@ Stdlib only. Part (A) runs gradient descent on a coupled quadratic with conditio
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Boyd & Vandenberghe**: *Convex Optimization* - §9.1.2 (strong convexity, eq. 9.7, and the inequalities 9.8–9.13), §9.2 (descent methods, line search), §9.3 (gradient descent: convergence analysis, eqs. 9.18–9.19, the role of the condition number, examples), §9.4 (steepest descent and the choice of norm), §9.5 (Newton's method: the Newton step, affine invariance, the Newton decrement eqs. 9.29–9.30, damped Newton and the quadratic-convergence phase). *The primary source; all equations verified at glyph level.*
-- **Nocedal & Wright**: *Numerical Optimization* (2nd ed.) - line-search and trust-region methods, quasi-Newton/BFGS, the convergence theory behind §9.5. *(Standard reference.)*
-- **Simon & Blume**: *Mathematics for Economists* - Ch 17.2–17.4 (first-order conditions, sufficient and necessary second-order conditions, global maxima of concave functions) - the *characterisation* of the point these algorithms seek.
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* - §3.4 (fitting ridge/lasso by known algorithms), §4.4 (Newton–Raphson and IRLS for logistic regression: `β^new = (XᵀWX)^{-1}XᵀWz`, eqs. 4.26–4.28 - Newton applied to a real statistical objective), §10.10 (gradient boosting: fit the negative gradient / pseudo-residuals, Table 10.2). *Verified in the corpus; the ML bridge.*
+- **Boyd & Vandenberghe**: *Convex Optimization*
+- **Nocedal & Wright**: *Numerical Optimization* (2nd ed.)
+- **Simon & Blume**: *Mathematics for Economists*
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning*
 
 ---
 

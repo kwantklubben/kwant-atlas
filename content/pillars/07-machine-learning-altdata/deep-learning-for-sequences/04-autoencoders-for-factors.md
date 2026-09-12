@@ -82,14 +82,14 @@ Read it as the theorem verified. The trained autoencoder's reconstruction error 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 14 "Autoencoders"** - undercomplete, sparse, denoising, contractive, and variational autoencoders; the reconstruction-loss framing.
-- **Baldi, P. & Hornik, K.** (1989), *Neural Networks and Principal Component Analysis: Learning from Examples Without Local Minima*, Neural Networks 2(1):53–58 - the linear-AE = PCA theorem verified in §3.
-- **Eckart, C. & Young, G.** (1936), *The Approximation of One Matrix by Another of Lower Rank* - the optimality result behind the PCA baseline.
-- **Heaton, J.B., Polson, N.G. & Witte, J.H.** (2017), *Deep learning for finance: deep portfolios*, Applied Stochastic Models in Business and Industry 33(1):3–12 - autoencoders/deep nets for factor construction and portfolio weights; the finance-DL canonical application.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 14.5** (PCA as the best rank-$q$ linear manifold, model eq. 14.49, objective eq. 14.50, SVD eq. 14.54) - the classical statement of the same optimum. *Math-verified in the corpus.*
-- **Hinton, G. & Salakhutdinov, R.** (2006), *Reducing the Dimensionality of Data with Neural Networks*, Science - the result that made nonlinear autoencoders famous.
+- **Goodfellow, Bengio & Courville**, *Deep Learning*, **Ch. 14 "Autoencoders"**
+- **Baldi, P. & Hornik, K.** (1989), *Neural Networks and Principal Component Analysis: Learning from Examples Without Local Minima*, Neural Networks 2(1):53–58
+- **Eckart, C. & Young, G.** (1936), *The Approximation of One Matrix by Another of Lower Rank*
+- **Heaton, J.B., Polson, N.G. & Witte, J.H.** (2017), *Deep learning for finance: deep portfolios*, Applied Stochastic Models in Business and Industry 33(1):3–12
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 14.5** (PCA as the best rank-$q$ linear manifold, model eq. 14.49, objective eq. 14.50, SVD eq. 14.54)
+- **Hinton, G. & Salakhutdinov, R.** (2006), *Reducing the Dimensionality of Data with Neural Networks*, Science
 
 ---
 

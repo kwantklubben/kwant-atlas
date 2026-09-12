@@ -100,11 +100,11 @@ The Fourier integrator reproduces the Black–Scholes closed form to $\sim10^{-1
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 2 (Heston SDE/PDE, Riccati system 2.11, C/D 2.12, CF 2.15, Milstein 2.18), Ch 3 §3.4 (Heston implied variance, calibration), Ch 5 (SVJ/SVJJ, Lewis call formula 5.6, skew 5.8/5.10), Ch 7 §7.2 (SABR). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 4 (power payoffs, forward variances), Ch 5 (variance swaps), Ch 6 (Heston in forward-variance form), Ch 7 (forward-variance / multi-factor models, 7.10–7.40). *Math-verified.*
-- **Hagan, Kumar, Lesniewski, Woodward** (2002) SABR; **Lewis** (2000) small-$\eta$ and Fourier pricing; **Medvedev–Scaillet** (2004); **Duffie–Pan–Singleton** (2000) affine models; **Kahl–Jäckel** (2005) branch cuts. **Rough volatility:** Gatheral–Jaisson–Rosenbaum (2018) - forward pointer (beyond the verified corpus).
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Hagan, Kumar, Lesniewski, Woodward** (2002) SABR; **Lewis** (2000) small-$\eta$ and Fourier pricing; **Medvedev–Scaillet** (2004); **Duffie–Pan–Singleton** (2000) affine models; **Kahl–Jäckel** (2005) branch cuts. **Rough volatility:** Gatheral–Jaisson–Rosenbaum (2018)
 
 ---
 

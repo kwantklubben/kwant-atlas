@@ -98,14 +98,14 @@ The output is exactly the paper's story, reproduced on simulated data. **Jones r
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Dechow, Patricia M., Sloan, Richard G. & Sweeney, Amy P.**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995) - the model family (Healy, DeAngelo, Jones, Modified Jones, Industry), the specification/power design, and the conclusion that Modified Jones has the most power. *All model equations and findings on this page verified against the corpus paper.*
-- **Jones, Jennifer J.**: "Earnings Management During Import Relief Investigations" (*JAR*, 29(2), 193–228, 1991) - the original Jones model this page builds on.
-- **Healy, Paul M.**: "The Effect of Bonus Schemes on Accounting Decisions" (*JAE*, 7, 85–107, 1985) - the constant-accruals benchmark and the bonus-plan incentive story.
-- **DeAngelo, Linda E.**: "Accounting Numbers as Market Valuation Substitutes…" (*JAR*, 24(2), 400–420, 1986) - the random-walk (last-period-accruals) benchmark.
-- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature…" (*Accounting Horizons*, 13(4), 365–383, 1999) - the organising survey: *why* earnings get managed and what incentives drive it.
-- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010) - places discretionary accruals among all quality proxies and warns that the proxy chosen determines the conclusion.
+- **Dechow, Patricia M., Sloan, Richard G. & Sweeney, Amy P.**: "Detecting Earnings Management" (*TAR*, 70(2), 193–225, 1995)
+- **Jones, Jennifer J.**: "Earnings Management During Import Relief Investigations" (*JAR*, 29(2), 193–228, 1991)
+- **Healy, Paul M.**: "The Effect of Bonus Schemes on Accounting Decisions" (*JAE*, 7, 85–107, 1985)
+- **DeAngelo, Linda E.**: "Accounting Numbers as Market Valuation Substitutes…" (*JAR*, 24(2), 400–420, 1986)
+- **Healy, Paul M. & Wahlen, James M.**: "A Review of the Earnings Management Literature…" (*Accounting Horizons*, 13(4), 365–383, 1999)
+- **Dechow, Ge & Schrand**: "Understanding Earnings Quality…" (*JAE*, 2010)
 
 ---
 

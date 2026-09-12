@@ -72,14 +72,14 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/04-quantit
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Artzner, Delbaen, Eber & Heath** - *Coherent Measures of Risk*, *Mathematical Finance* **9**(3):203–228 (1999). Defines the four coherence axioms (Def. 2.4), proves VaR fails subadditivity (§3.3 with the digital-option and normal-distribution remarks), and proposes **tail conditional expectation** (§5.1) - the primary source for this folder. *Read in full from the corpus PDF.*
+- **Artzner, Delbaen, Eber & Heath** - *Coherent Measures of Risk*, *Mathematical Finance* **9**(3):203–228 (1999). Defines the four coherence axioms (Def. 2.4), proves VaR fails subadditivity (§3.3 with the digital-option and normal-distribution remarks), and proposes **tail conditional expectation** (§5.1)
 - **Rockafellar & Uryasev** - *Optimization of Conditional Value-at-Risk*, *Journal of Risk* **2**(3):21–41 (2000). Introduces the convex function $F_\alpha(x,\zeta)=\zeta+\frac{1}{1-\alpha}\mathbb{E}[(L-\zeta)^+]$ whose minimum is CVaR and whose minimiser is VaR (Thms 1–2), reducing CVaR optimisation to linear programming. *Read in full from the corpus PDF.*
 - **Acerbi & Tasche** - *On the Coherence of Expected Shortfall*, *J. Banking & Finance* **26**(7):1487–1503 (2002). ES is coherent under general (non-normal) distributions; the formal justification for Basel's shift to ES.
-- **McNeil & Frey** - *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series: An Extreme Value Approach*, *J. Empirical Finance* **7**(3–4):271–300 (2000). Conditional/dynamic VaR-ES via GARCH + EVT - the estimation-side companion (bridges to [[pillars/04-quantitative-risk/extreme-value-theory-and-fat-tails/index|Extreme Value Theory]]).
-- **Hull** - *Options, Futures, and Other Derivatives*, Ch 22 (VaR & ES: normal ES eq. 22.1, $\sqrt{N}$ scaling, the 1996/Basel numbers) and *Risk Management and Financial Institutions*, Ch 11–13. *Numerically verified in the corpus.*
-- **McNeil, Frey & Embrechts** - *Quantitative Risk Management* (2015), Ch 2 (risk measures), Ch 6–8 (VaR/ES estimation, EVT). The spine textbook of Pillar 4.
+- **McNeil & Frey** - *Estimation of Tail-Related Risk Measures for Heteroscedastic Financial Time Series: An Extreme Value Approach*, *J. Empirical Finance* **7**(3–4):271–300 (2000). Conditional/dynamic VaR-ES via GARCH + EVT
+- **Hull** - *Options, Futures, and Other Derivatives*
+- **McNeil, Frey & Embrechts** - *Quantitative Risk Management* (2015)
 
 ---
 

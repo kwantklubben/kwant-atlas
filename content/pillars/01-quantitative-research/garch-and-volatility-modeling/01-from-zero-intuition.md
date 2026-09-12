@@ -80,12 +80,12 @@ Read the two columns: **ACF of returns hovers around zero** (no predictability o
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Mandelbrot, Benoît** (1963): *The Variation of Certain Speculative Prices*, J. Business 36(4) - the original documentation of volatility clustering and fat tails.
-- **Engle, Robert F.** (1982): *Autoregressive Conditional Heteroscedasticity…*, Econometrica 50(4) - defines conditional variance as the modeling target (Nobel 2003). *Verified corpus refs/pillar1.*
-- **Cont, Rama** (2001): *Empirical Properties of Asset Returns: Stylized Facts and Statistical Issues*, Quantitative Finance 1(2) - the canonical catalogue of the stylized facts used above.
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - §3.1 (volatility stylized facts), §1.2 (conditional vs marginal distributions).
+- **Mandelbrot, Benoît** (1963): *The Variation of Certain Speculative Prices*, J. Business 36(4)
+- **Engle, Robert F.** (1982): *Autoregressive Conditional Heteroscedasticity…*, Econometrica 50(4)
+- **Cont, Rama** (2001): *Empirical Properties of Asset Returns: Stylized Facts and Statistical Issues*, Quantitative Finance 1(2)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
 
 ---
 

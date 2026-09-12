@@ -69,12 +69,12 @@ Three verified facts from AC §2: **(i)** the frontier is convex; **(ii)** each 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000), §2.1 (definition of the frontier), §2.2 (explicit strategies, eqs 16-18), §2.3 (half-life and the $\kappa T$ regimes), §2.4 (structure, Fig. 1-2), §3.1 (utility and the Arrow-Pratt identification of $\lambda$).
-- **Gueant, Olivier** - *The Financial Mathematics of Market Liquidity* (2016), Ch 1-2. *Frontier and its convexity in a modern, general setting.*
-- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015), Ch 6. *Mean-variance execution and the frontier.*
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 15. *Empirical sizes: cost scales linearly, risk scales with $\sqrt T$.*
+- **Almgren, Robert; Chriss, Neil** - "Optimal execution of portfolio transactions," *Journal of Risk* 3(2), 5-40 (2000)
+- **Gueant, Olivier** - *The Financial Mathematics of Market Liquidity* (2016)
+- **Cartea, A.; Jaimungal, S.; Penalva, J.** - *Algorithmic and High-Frequency Trading* (2015)
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 
 ---
 

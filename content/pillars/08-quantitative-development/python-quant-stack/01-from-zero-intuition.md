@@ -76,11 +76,11 @@ The log-returns identity holds to floating-point precision (final equity *equals
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **McKinney**, *Python for Data Analysis* (3rd ed., 2022) - Ch 1–5 (getting started, NumPy, pandas fundamentals); the whole book is the stack's tour.
-- **Hilpisch**, *Python for Algorithmic Trading* (2020) - ch. on vectorized backtesting: the `exp(cumsum(log1p))` equity chain in context.
-- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020) - ch. 2 (profiling), ch. 4 (Cython/Numba), the mental model of where Python spends time.
+- **McKinney**, *Python for Data Analysis* (3rd ed., 2022)
+- **Hilpisch**, *Python for Algorithmic Trading* (2020)
+- **Gorelick & Ozsvald**, *High Performance Python* (2nd ed., 2020)
 
 ---
 

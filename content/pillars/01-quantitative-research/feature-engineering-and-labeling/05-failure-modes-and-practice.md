@@ -83,12 +83,12 @@ Read the two results as the folder's two silent killers. **(A)** Five hundred la
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018) - **Ch 7** (Cross-Validation in Finance: leakage, the purging/embargo solution, purged $k$-fold CV), **Ch 4** (overlapping outcomes, concurrency, average uniqueness, sequential bootstrap, time decay), **Ch 3 §3.9** (dropping under-populated labels), **Ch 2** (point-in-time data structures). *The formula-authoritative source; the concurrency/uniqueness definitions are reproduced.*
-- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014) - the selection-bias correction that must follow any tuning of $h/pt/sl$ (see [[pillars/01-quantitative-research/backtesting-hygiene/04-deflated-sharpe-ratio|04 · Deflated Sharpe]]).
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* - §7.10.2 (the wrong-vs-right cross-validation example: screening outside the folds gives CV error 3% vs a true 50%) - the canonical demonstration that preprocessing leakage inverts model-selection conclusions.
-- **Arnott, R., Harvey, C. R. & Markowitz, H.** (2019): *A Backtesting Protocol in the Era of Machine Learning* - the point-in-time, pre-registration, and multiple-testing discipline that feature/label construction must feed.
+- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018)
+- **Bailey, D. H. & López de Prado, M.**: *The Deflated Sharpe Ratio* (2014)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning*
+- **Arnott, R., Harvey, C. R. & Markowitz, H.** (2019): *A Backtesting Protocol in the Era of Machine Learning*
 
 ---
 

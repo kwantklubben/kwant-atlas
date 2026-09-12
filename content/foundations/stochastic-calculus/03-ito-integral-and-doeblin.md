@@ -78,11 +78,11 @@ Three stdlib checks: (a) the Itô integral with $\Delta\equiv1$ equals $W(T)$, m
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II*, Ch 4 (construction §4.2–4.3, Itô–Doeblin Thm 4.4.1/4.4.6, product rule Cor 4.6.3, GBM Ex 4.4.8, Vasicek/CIR Ex 4.4.10/11).
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 14–15 (Itô integral, Itô's formula, GBM, QV; $\int B\,dB$ worked example).
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 4 (Wiener process, Itô stochastic integral, multiplication table, multidimensional/correlated Itô).
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Björk**, *Arbitrage Theory in Continuous Time*
 
 ---
 

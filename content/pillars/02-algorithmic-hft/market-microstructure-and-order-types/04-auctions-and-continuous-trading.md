@@ -74,11 +74,11 @@ Build a supply/demand schedule, find the volume-maximizing uniform clearing pric
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 2 (single-price double-sided auctions, maximizing feasible volume, random stopping times, early deadlines, "mark the close" risk; Euronext fixings, TSE, NYSE open/close). *Verified in `hasbrouck_ch1-5.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Budish, Cramton & Shim** - "The High-Frequency Trading Arms Race: Frequent Batch Auctions as a Market Design Response," *QJE* 130(4), 2015. *The modern market-design argument for batch auctions over continuous matching.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 1–2 (price discovery; why openings/closings are auctions). *Verified in `foucault_ch1-3.md`.*
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 - **Harris, Larry** - *Trading and Exchanges* (2003). *The practitioner treatment of call auctions, openings, and closings.*
 
 ---

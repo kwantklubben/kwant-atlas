@@ -77,11 +77,11 @@ A single path (walk-forward, plain CV) has variance $1.0$ - the *largest* possib
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7 & 12** (§7.3–7.4 leakage & purge/embargo; §12.5 the CPCV variance formula and backtest-overfitting rationale).
-- **Bailey, Borwein, López de Prado & Zhu**, *The Probability of Backtest Overfitting*, J. Comp. Finance 20(4) (2017) - PBO/CSCV for the selection-bias failure.
-- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7** - the bias–variance framing (§7.2–7.3) that explains why purging is a tradeoff.
+- **López de Prado**, *Advances in Financial Machine Learning*, **Ch. 7 & 12** (§7.3–7.4 leakage & purge/embargo;
+- **Bailey, Borwein, López de Prado & Zhu**, *The Probability of Backtest Overfitting*, J. Comp. Finance 20(4) (2017)
+- **Hastie, Tibshirani & Friedman**, *The Elements of Statistical Learning*, **Ch. 7**
 
 ---
 

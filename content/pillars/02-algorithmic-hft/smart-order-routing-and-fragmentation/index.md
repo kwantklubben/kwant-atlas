@@ -87,13 +87,13 @@ Hub signposts - the full analysis is in [[pillars/02-algorithmic-hft/smart-order
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007), Ch 1 (multiple simultaneous prices, liquidity as network externality, fragmentation vs consolidation) and Ch 10 (multiple prices/venues: cointegration, VECM, information shares). *Primary corpus source, verified in `hasbrouck_ch1-5.md` and `hasbrouck_ch6-10.md`.*
+- **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 459–474 (2011). *The empirical anchor; extracted in `corpus/titles/refs/pillar2/25_OHara_2011_fragmentation.pdf`.*
 - **Colliard, Jean-Edouard & Foucault, Thierry** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 3389–3421 (2012). *Make/take fees and the cum-fee spread; extracted from `corpus/titles/refs/53_Colliard_2012_...pdf`.*
 - **Biais, Bruno; Glosten, Lawrence & Spatt, Chester** - "Market microstructure: A survey of microfoundations, empirical results, and policy implications," *JFM* 8(2), 217–264 (2005). *Benefits and costs of fragmentation, quote matching, cross-market priority; `corpus/titles/refs/13_Biais_2005_...pdf`.*
-- **Foucault, Pagano & Röell** - *Market Liquidity* (2013), Ch 2 (effective/realized spreads - the measures of routing cost). *Verified in `foucault_ch1-3.md`.*
+- **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 
 ---
 

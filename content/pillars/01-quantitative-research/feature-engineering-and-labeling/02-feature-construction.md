@@ -83,12 +83,12 @@ The linear basis explains 33% of the variance; the spline basis explains **92%**
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 2 §2.5–2.6 (basis expansion eq. 2.43, additive models eq. 2.17), Ch 5 (spline bases eq. 5.3, natural/smoothing splines, effective df eq. 5.16), Ch 14 §14.5 (PCA as best rank-$q$ manifold eq. 14.49–14.50, SVD eq. 14.54). *Math-verified in the corpus.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 9 §9.1–9.6 (factor models eq. 9.1–9.4; PCA variance share; BARRA two-step WLS eq. 9.7–9.8; Fama–French hedge portfolios; APCA for $k>T$). *Math-verified in the corpus.*
-- **López de Prado, M.**: *Advances in Financial Machine Learning*, Ch 2 (financial data structures: tick/volume/dollar/imbalance bars, CUSUM event sampling), Ch 17–19 (structural-break, entropy and microstructural features).
-- **Hall, P. & Horowitz, J.** (2007): *Methodology and convergence rates for functional linear regression* - the theory behind using spline bases to represent nonlinear feature effects.
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **López de Prado, M.**: *Advances in Financial Machine Learning*
+- **Hall, P. & Horowitz, J.** (2007): *Methodology and convergence rates for functional linear regression*
 
 ---
 

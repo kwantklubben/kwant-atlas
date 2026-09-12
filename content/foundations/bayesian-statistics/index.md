@@ -84,17 +84,17 @@ Hub signposts - the folder's failure analysis lives on the sub-pages. In one lin
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gelman, Carlin, Stern, Dunson, Vehtari & Rubin**: *Bayesian Data Analysis* (3rd ed., 2013) - the Bayesian canon ("BDA3"): Ch 1–2 (probability & inference), Ch 3 (single-parameter models), Ch 5 (hierarchical models), Ch 10–12 (MCMC, Gibbs, convergence, $\hat R$). *The reference text for the Atlas; the source under Black–Litterman, shrinkage, and regime work.*
-- **McElreath, Richard**: *Statistical Rethinking* (2nd ed., 2020) - the conceptual, code-first on-ramp; model *building* over machinery. The best first Bayesian book for members new to the framework.
-- **Hoff, Peter D.**: *A First Course in Bayesian Statistical Methods* (2009) - conjugate models, Gibbs/Metropolis computation, and hierarchical/regression models in one clean course; the practical middle text.
-- **Robert, C. P. & Casella, G.**: *Monte Carlo Statistical Methods* (2nd ed., 2004) - the authoritative treatment of the MCMC machinery (importance sampling, Metropolis–Hastings, Gibbs) that every applied Bayesian model runs on. *The primary source for §05.*
-- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010) - Ch 12 (Markov Chain Monte Carlo: Gibbs §12.2, Bayesian inference §12.3, Metropolis–Hastings §12.4, Griddy Gibbs §12.4.3, FFBS §12.8). *Primary MCMC source, math-verified in the corpus.*
-- **Casella, G. & Berger, R. L.**: *Statistical Inference* (2nd ed., 2002) - Ch 7 §7.2.3 (Bayes estimators, conjugacy Def 7.2.2), Ch 4 §4.4 (hierarchical models & mixtures), Ch 9 §9.2.4 (Bayesian intervals). *PDF in the corpus.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009) - Ch 3 §3.4 (ridge/lasso as penalized regression), Ch 8 §8.3 (Bayesian methods, posterior/priors/MAP), §8.6 (MCMC/Gibbs), Ch 17 §17.3 (graphical lasso). *Math-verified in the corpus.*
-- **MacKay, D. J. C.**: *Information Theory, Inference, and Learning Algorithms* (2003) - the free text fusing information theory with Bayesian inference and practical MCMC; bridges this folder to information theory.
-- **Berger, J. O.**: *Statistical Decision Theory and Bayesian Analysis* (2nd ed., 1985) and **Robert, C. P.**: *The Bayesian Choice* (2nd ed., 2001) - the rigorous decision-theoretic treatments (loss, admissibility, prior robustness) beneath the applied books.
+- **Gelman, Carlin, Stern, Dunson, Vehtari & Rubin**: *Bayesian Data Analysis* (3rd ed., 2013)
+- **McElreath, Richard**: *Statistical Rethinking* (2nd ed., 2020)
+- **Hoff, Peter D.**: *A First Course in Bayesian Statistical Methods* (2009)
+- **Robert, C. P. & Casella, G.**: *Monte Carlo Statistical Methods* (2nd ed., 2004)
+- **Tsay, Ruey S.**: *Analysis of Financial Time Series* (3rd ed., 2010)
+- **Casella, G. & Berger, R. L.**: *Statistical Inference* (2nd ed., 2002)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* (2nd ed., 2009)
+- **MacKay, D. J. C.**: *Information Theory, Inference, and Learning Algorithms* (2003)
+- **Berger, J. O.**: *Statistical Decision Theory and Bayesian Analysis* (2nd ed., 1985) and **Robert, C. P.**: *The Bayesian Choice* (2nd ed., 2001)
 
 ---
 

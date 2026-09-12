@@ -79,11 +79,11 @@ The lesson is printed in the last two columns: **execution/delivery supplies 42%
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **BCBS, *Basel II*** (2006), Annex 8 (business-line mapping) and Annex 9 (detailed loss-event classification) - *the taxonomy itself; all event types above transcribed and verified against this source.*
-- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424), §5–§6 - minimum standards for loss-data identification, collection and treatment (10-year window, de minimis thresholds, data-quality criteria).
-- **Hull, *Risk Management and Financial Institutions*** (5th ed., 2018), op-risk chapter - readable mapping of event types to real-world cases.
+- **BCBS, *Basel III: Finalising post-crisis reforms*** (2017, d424)
+- **Hull, *Risk Management and Financial Institutions*** (5th ed., 2018), op-risk chapter
 
 ---
 

@@ -73,11 +73,11 @@ Read the table as the method's shape. The primary bets on everything, with preci
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018) - **Ch 3 §3.5** (learning side and size), **§3.6 Meta-Labeling** (Snippets 3.6–3.7: expanding `getEvents`/`getBins` with `side`), **§3.7 How to Use Meta-Labeling** (confusion matrix, precision/recall/F1, the four reasons), **§3.8 The Quantamental Way**, **Ch 10** (bet sizing from predicted probabilities). *The formula-authoritative source; the confusion-matrix framing is reproduced.*
-- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning* - Ch 4 (linear methods for classification: logistic regression, the confusion matrix) and Ch 7 (the classification-score vocabulary: precision/recall/F1).
-- **Gu, Kelly & Xiu** (2020): *Empirical Asset Pricing via Machine Learning* - evidence that combining a simple signal with an ML layer (the meta-labeling pattern) is where most of the out-of-sample gain lives.
+- **López de Prado, M.**: *Advances in Financial Machine Learning* (2018)
+- **Hastie, Tibshirani & Friedman**: *The Elements of Statistical Learning*
+- **Gu, Kelly & Xiu** (2020): *Empirical Asset Pricing via Machine Learning*
 
 ---
 

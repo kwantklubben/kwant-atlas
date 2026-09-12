@@ -98,12 +98,12 @@ With two assets the state-price vector lives on a one-dimensional segment ($0<\z
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Shreve**, *Stochastic Calculus for Finance II* - §5.4.1–5.4.4 (multidim Girsanov, MRT, market-price-of-risk equations eq. 5.4.18, arbitrage Def 5.4.6 and Ex 5.4.4, FT1 Thm 5.4.7, FT2 Thm 5.4.9), §5.7 (the three-case summary). *Math-verified in the corpus.*
-- **Björk**, *Arbitrage Theory in Continuous Time*, Ch 3 - payoff matrix $D^Z$ (eq 3.4), no-arbitrage via Farkas' lemma, equivalent measures (Def 3.5), martingale measure (Def 3.7), martingale pricing and completeness (Prop 3.15), stochastic discount factor (Prop 3.18). *Math-verified.*
-- **Shreve**, *Stochastic Calculus for Finance I*, Ch 3 - the binomial model is **complete**: every simple European claim is hedgeable and the risk-neutral value is unique (§3.5).
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 13 (the discrete, constructive version of completeness) and Ch 15/18.
+- **Shreve**, *Stochastic Calculus for Finance II*
+- **Björk**, *Arbitrage Theory in Continuous Time*
+- **Shreve**, *Stochastic Calculus for Finance I*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

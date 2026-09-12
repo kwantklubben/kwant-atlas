@@ -72,12 +72,12 @@ Read the output two ways. **Direction:** the fatal shock is dominated by equity 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14) - reverse stress testing as a supervisory expectation, after CRMPG III (2008). *Verified: the recommendation appears in the 2009 Principles.*
-- **Schuermann**, *Stress Testing Banks*, *IJCB* (2014) - survey of how supervisors use reverse/macro stress to set capital; CCAR's severely-adverse calibration.
-- **Hull**, *OFOD*, Ch 22 - the linear factor mapping the closed form runs through.
-- **McNeil, Frey & Embrechts**, *QRM*, Ch 13 - stress testing as distinct from risk-measure optimization; the optimization framing of reverse stress.
+- **BCBS**, *Principles for Sound Stress Testing Practices and Supervision* (2009, CN14)
+- **Schuermann**, *Stress Testing Banks*, *IJCB* (2014)
+- **Hull**, *OFOD*
+- **McNeil, Frey & Embrechts**, *QRM*
 
 ---
 

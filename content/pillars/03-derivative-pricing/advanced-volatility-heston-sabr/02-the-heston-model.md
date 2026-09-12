@@ -148,13 +148,13 @@ We implement $\varphi_T$ and the Lewis pricer, then run the four checks: (a) the
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 2 in full (SV SDEs 1.1–1.2, valuation equation 1.3, Heston PDE 2.3, ansatz 2.5, $P_j$ PDE 2.6, Fourier ODEs 2.9–2.10, Riccati 2.11, $C,D$ 2.12, $P_j$ integral 2.13, alternative form/branch cuts 2.14, CF 2.15, Euler/Milstein/exact schemes 2.17–2.19, why Heston is popular) and Ch 3 §3.4 (Heston implied variance 3.17, ATM term structure 3.18, skew 3.19, calibration recipe). *Math-verified in the corpus.*
-- **Heston, Steven L.** (1993), *A closed-form solution for option prices with stochastic volatility with applications to bond and currency options*, Review of Financial Studies 6(2), 327–343 - the original.
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 6 (Heston re-read as a one-factor forward-variance model: 6.1–6.5, Feller-adjacent structure, vol-of-vol 6.9, skew 6.16–6.20, and the four structural criticisms) and Ch 1 (what makes a model *usable*). *Math-verified.*
-- **Cox–Ingersoll–Ross (1985)** and **Duffie–Pan–Singleton (2000)** (affine jump-diffusions - the general class Heston sits in); **Broadie–Kaya (2006)** (exact simulation); **Andersen (2008)** (efficient simulation); **Kahl–Jäckel (2005)** (the complex-log branch-cut problem); **Lord–Koekkoek–van Dijk (2010)** (discretisation schemes compared).
-- **Haug**, *The Complete Guide to Option Pricing Formulas*, §1.1–1.9 - the generalized BSM/parity backstop used in checks (b) and (c). *Numerically verified.*
+- **Gatheral**, *The Volatility Surface*
+- **Heston, Steven L.** (1993), *A closed-form solution for option prices with stochastic volatility with applications to bond and currency options*, Review of Financial Studies 6(2), 327–343
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Cox–Ingersoll–Ross (1985)** and **Duffie–Pan–Singleton (2000)** (affine jump-diffusions
+- **Haug**, *The Complete Guide to Option Pricing Formulas*
 
 ---
 

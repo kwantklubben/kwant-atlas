@@ -94,14 +94,14 @@ We (i) build the log-signature to level 3 by the tensor-algebra series from the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Lyons, Terry J.** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2) - the signature group, group-likeness, the log-signature and its Lie-algebra structure; the uniqueness result. *Primary math-verified source.*
-- **Hambly, B. & Lyons, T.** (2010), *Uniqueness for the signature of a path of bounded variation and the reduced path group*, Annals of Mathematics 171(1), 109–167 - injectivity of the signature on the reduced path group. *The sharp bounded-variation uniqueness.*
-- **Boedihardjo, H., Geng, X., Lyons, T., Yang, D.** (2016), *The signature of a rough path: uniqueness*, Advances in Mathematics 293, 720–737 - uniqueness for rough paths beyond bounded variation.
-- **Reutenauer, C.** (1993), *Free Lie Algebras* (Oxford) - Lyndon words, the bracket basis, Witt's formula, primitives of the tensor algebra. *Math reference for §2.2.*
-- **Chevyrev & Kormilitzin** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788 - §4–5: the log-signature as feature compression; the dimension counts. *Primary applied reference.*
-- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*, Ch 7–9 - the group of rough paths and the log in the free Lie algebra. *Math-verified.*
+- **Lyons, Terry J.** (1998), *Differential equations driven by rough signals*, Rev. Mat. Iberoamericana 14(2)
+- **Hambly, B. & Lyons, T.** (2010), *Uniqueness for the signature of a path of bounded variation and the reduced path group*, Annals of Mathematics 171(1), 109–167
+- **Boedihardjo, H., Geng, X., Lyons, T., Yang, D.** (2016), *The signature of a rough path: uniqueness*, Advances in Mathematics 293, 720–737
+- **Reutenauer, C.** (1993), *Free Lie Algebras* (Oxford)
+- **Chevyrev & Kormilitzin** (2016), *A Primer on the Signature Method in Machine Learning*, arXiv:1603.03788
+- **Friz & Victoir** (2010), *Multidimensional Stochastic Processes as Rough Paths*
 
 ---
 

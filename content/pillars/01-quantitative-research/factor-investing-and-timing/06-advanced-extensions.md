@@ -97,15 +97,15 @@ This is the whole warning in three lines. The factor has **zero** predictable ti
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ilmanen, Antti**, *Expected Returns* (2011), Ch 1 §1.3 and Part III - forward-looking valuation indicators; time-varying expected returns; tactical beta timing; the crowding cycle. *Verified against the corpus book.*
-- **Asness, Clifford; Moskowitz, Tobias & Pedersen, Lasse Heje**, "Value and Momentum Everywhere" (*JF*, 2013) - value and momentum as pervasive, negatively correlated style premia across asset classes; the foundation for factor-timing signals built on valuation spreads and trends. Corpus paper *15_asness_2013*.
-- **Moskowitz, Ooi & Pedersen**, "Time Series Momentum" (*JFE*, 2012) - trend on the asset itself as a robust predictor over multi-month horizons. Corpus paper *14_moskowitz_2012*.
-- **Barroso, Pedro & Santa-Clara, Pedro**, "Momentum Has Its Moments" (*JFE*, 2015) - momentum's crashes are volatility events; volatility-scaling the exposure nearly doubles momentum's Sharpe. Corpus paper *17_Barroso_2015*.
-- **Daniel, Kent & Moskowitz, Tobias**, "Momentum Crashes" (*JFE*, 2016) - the conditional (regime) structure of momentum crashes; when the static factor is most dangerous. Corpus paper *16_daniel_2016*.
-- **Cochrane, John H.**, "Presidential Address: Discount Rates" (*JF*, 2011) §I - the time-series predictability of returns from dividend/valuation ratios; the regression $R^e_{t\to t+k}=a+b\,D_t/P_t$ with $R^2$ rising from 0.09 (1 yr) to 0.28 (5 yr). *Verified against the corpus paper.*
-- **Bailey, Borwein, López de Prado & Zhu** (*Notices of the AMS*, 2014) - the search inflation that makes fitted timing signals look real. Corpus paper *42_bailey_2014*.
+- **Ilmanen, Antti**, *Expected Returns* (2011)
+- **Asness, Clifford; Moskowitz, Tobias & Pedersen, Lasse Heje**, "Value and Momentum Everywhere" (*JF*, 2013)
+- **Moskowitz, Ooi & Pedersen**, "Time Series Momentum" (*JFE*, 2012)
+- **Barroso, Pedro & Santa-Clara, Pedro**, "Momentum Has Its Moments" (*JFE*, 2015)
+- **Daniel, Kent & Moskowitz, Tobias**, "Momentum Crashes" (*JFE*, 2016)
+- **Cochrane, John H.**, "Presidential Address: Discount Rates" (*JF*, 2011) §I
+- **Bailey, Borwein, López de Prado & Zhu** (*Notices of the AMS*, 2014)
 
 ---
 

@@ -72,14 +72,14 @@ Standard library. Computes all four constraints and shows the floor biting.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **BCBS** - *Basel III: The Liquidity Coverage Ratio and Liquidity Risk Monitoring Tools* (January 2013, BIS **d238**). $\mathrm{LCR}=\mathrm{HQLA}/\text{30-day net outflows}\ge100\%$, HQLA tiers, the inflow cap. *Read from the corpus PDF.*
 - **BCBS** - *Basel III: The Net Stable Funding Ratio* (October 2014, BIS **d295**). $\mathrm{NSFR}=\mathrm{ASF}/\mathrm{RSF}\ge100\%$, one-year horizon, ASF/RSF weights. *Read from the corpus PDF.*
 - **BCBS** - *Basel III: A Global Regulatory Framework* (2010, d189). The $3\%$ Tier 1 leverage ratio (parallel-run specification) and its rationale. *Read from the corpus PDF.*
 - **BCBS** - *Basel III: Finalising Post-Crisis Reforms* (2017, d424). The revised leverage exposure measure and the output floor with its $50\%\to72.5\%$ phase-in. *Read from the corpus PDF.*
-- **Brunnermeier & Pedersen** - *Market Liquidity and Funding Liquidity*, *RFS* **22**(6):2201–2238 (2009). The funding-liquidity spiral that motivated the LCR/NSFR; see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/index|Liquidity Risk & Funding]].
-- **Hull, John C.** - *Risk Management and Financial Institutions* (5th ed., 2018). The liquidity-risk and leverage chapters: LCR/NSFR mechanics and the leverage backstop. *Recommended textbook map.*
+- **Brunnermeier & Pedersen** - *Market Liquidity and Funding Liquidity*, *RFS* **22**(6):2201–2238 (2
+- **Hull, John C.** - *Risk Management and Financial Institutions* (5
 
 ---
 

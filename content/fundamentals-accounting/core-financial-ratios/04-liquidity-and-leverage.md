@@ -73,13 +73,13 @@ Stdlib only. Computes all six liquidity/leverage ratios plus Penman's FLEV/OLLEV
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 9 (FLEV, OLLEV, the leverage decomposition) and Ch 11 (the leverage effect sign). *All identities verified against the corpus text.*
-- **Brealey, Myers & Allen**, *Principles of Corporate Finance* - the M&M/capital-structure theory under the leverage ratios.
-- **Myers & Majluf**, "Corporate Financing and Investment Decisions…" (*JFE*, 1984) - pecking order: why debt vs. equity choices signal information.
-- **Jensen**, "Agency Costs of Free Cash Flow…" (*AER*, 1986) - why *coverage* and free-cash-flow measures matter for overinvestment.
-- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide* - the credit-lens interpretation of coverage and liquidity in live decisions.
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Brealey, Myers & Allen**, *Principles of Corporate Finance*
+- **Myers & Majluf**, "Corporate Financing and Investment Decisions…" (*JFE*, 1984)
+- **Jensen**, "Agency Costs of Free Cash Flow…" (*AER*, 1986)
+- **Fridson & Alvarez**, *Financial Statement Analysis: A Practitioner's Guide*
 
 ---
 

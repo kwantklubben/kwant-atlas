@@ -129,13 +129,13 @@ We verify the two structural facts that make forward-variance models desk-usable
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Gatheral**, *The Volatility Surface*, Ch 5 in full (jump-diffusion SDE 5.1, valuation equations 5.2–5.3, Lévy–Khintchine 5.4, Merton CF 5.5, **Lewis call formula 5.6**, implied vol from CF 5.7, ATM skew 5.8/5.10, SVJ factorisation, SVJJ 5.11 with $I(u,T)$ and $p_\pm$, empirical fits Table 5.4 and the SVJ SPX fit Table 5.5, "no replicating hedge" §5.1), Ch 6 (default risk as a skew driver: Merton jump-to-ruin, CreditGrades), Ch 10 (cliquet valuations; the LV/SV table). *Math-verified in the corpus.*
-- **Bergomi**, *Stochastic Volatility Modeling*, Ch 5 (variance swaps: replication 5.28–5.31, discrete strikes 5.3–5.4, dividends 5.44–5.47, rate vol 5.54–5.55, weighted VS 5.56–5.58, **timer options** 5.67–5.76, Gram–Charlier App. B), Ch 7 in full (pricing equation 7.4, break-even covariances 7.2/7.27, Markov representation 7.9–7.13, exact simulation 7.15–7.18, vol-of-vol/correlations 7.19–7.26, **two-factor model 7.28–7.39, benchmark 7.40, VS swaption approximation 7.41**, VIX/realized-variance §7.6–7.7, rank-of-covariance caveat §7.3.3), Ch 10 (**what causes equity smiles**: Student-$t$ one-day returns 10.1–10.7, the $1/T$ one-day-smile contribution 10.10, daily cliquets 10.2, jumps as a reserve policy App. A: P&L 10.12, reserve 10.14, jump pricing equation 10.18, Lévy–Khintchine 10.29), Ch 12 (**LSV**: 12.1–12.4 and the "not usable models" warning §12.2.2). *Math-verified.*
-- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough* - the $H\approx0.1$ empirical finding and the rough-vol programme. **Bayer, Friz & Gatheral** (2016) on pricing under rough vol; **El Euch & Rosenbaum** (2019) on the rough Heston Markovian lift. *Forward pointers beyond the verified corpus of this folder.*
+- **Gatheral**, *The Volatility Surface*
+- **Bergomi**, *Stochastic Volatility Modeling*
+- **Gatheral, Jaisson & Rosenbaum** (2018), *Volatility is rough*
 - **Hagan et al.** (2002) for SABR ([[pillars/03-derivative-pricing/advanced-volatility-heston-sabr/03-sabr-and-asymptotics|03]]); **Duffie–Pan–Singleton** (2000) for the affine class; **Matytsin** (1999) for SVJJ; **Andersen–Andreasen** (2000) and **Bakshi–Cao–Chen** (1997) for the empirical jump fits cited by Gatheral Table 5.4.
-- **Hull**, *Options, Futures, and Other Derivatives*, Ch 20 §20.7–20.8 (model as interpolation tool; the single-large-jump "frown"), Ch 23 (volatility term structure). *Verification report in the corpus.*
+- **Hull**, *Options, Futures, and Other Derivatives*
 
 ---
 

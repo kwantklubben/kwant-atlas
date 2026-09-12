@@ -76,13 +76,13 @@ Stdlib only. Each block is a concrete, exploitable or dangerous effect.
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **BCBS** - *Basel III: Finalising Post-Crisis Reforms* (2017, d424). The policy responses to these exact failures: constrained IRB use, the revised output floor, and the leverage backstop. *Read from the corpus PDF.*
 - **BCBS** - *Basel III: A Global Regulatory Framework* (2010, d189). Introduces the capital conservation and countercyclical buffers explicitly to fight procyclicality. *Read from the corpus PDF.*
-- **Brunnermeier, Markus K.** - *Deciphering the Liquidity and Credit Crunch 2007–2008*, *J. Economic Perspectives* **23**(1):77–100 (2009). The canonical narrative of how leverage, procyclical haircuts, and funding runs propagated - the crisis these failure modes produced. *Read from the corpus PDF.*
-- **Hull, John C.** - *Risk Management and Financial Institutions* (5th ed., 2018). The regulation chapter's treatment of arbitrage, procyclicality, and the post-crisis fixes. *Recommended textbook map.*
-- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.), Ch 24 (default correlation, the Vasicek one-factor link between portfolio credit risk and regulatory capital). *Verified in the corpus.*
+- **Brunnermeier, Markus K.** - *Deciphering the Liquidity and Credit Crunch 2007–2008*, *J. Economic Perspectives* **23**(1):77–100 (2
+- **Hull, John C.** - *Risk Management and Financial Institutions* (5
+- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.)
 
 ---
 

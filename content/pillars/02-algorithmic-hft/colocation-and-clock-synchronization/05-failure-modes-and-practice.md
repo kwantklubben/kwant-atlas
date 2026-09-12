@@ -62,13 +62,13 @@ The shock is Experiment A: a mere **0.3 µs** of clock skew inverts the reconstr
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Budish, Cramton & Shim (2015)** - §3 (direct-feed vs regulatory-feed timestamp accuracy; the data-integrity cost of clock disagreement) and §5–§6 (the arms-race waste and its remedy).
-- **O'Hara, Maureen (2015)** - the colocation/timestamp institutional detail and the 23%/38% cancel statistics (microstructure *depends on* trustworthy event order).
-- **Menkveld (2013)** - measured HFT latency bounds; a concrete anchor for what "achievable" looks like (≤1.67 ms inter-message).
-- **Hendershott et al. (2014)**, *Price Pressures* - the inventory/price-pressure economics that a latencies-lost trade must out-earn ($100k shock → 0.28%, half-life 0.92 days).
-- **Hasbrouck** - *Empirical Market Microstructure*, Ch 14 (trading costs) - the cost side of any speed investment.
+- **Budish, Cramton & Shim (2015)**
+- **O'Hara, Maureen (2015)**
+- **Menkveld (2013)**
+- **Hendershott et al. (2014)**, *Price Pressures*
+- **Hasbrouck** - *Empirical Market Microstructure*
 
 ---
 

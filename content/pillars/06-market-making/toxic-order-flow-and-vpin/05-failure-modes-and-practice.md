@@ -63,11 +63,11 @@ The same toxic tape reads 0.26, 0.30, or 0.39 purely depending on $V$. A trader 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Andersen, T. G. & Bondarenko, O. (2014)**, *VPIN and the flash crash*, J. Financial Markets 17, 1–46 - the essential critique: VPIN is dominated by volume/volatility; the flash-crash prediction does not hold up. *Primary PDF: `35_Andersen_2014...` in corpus.*
-- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5) - the original VPIN claim, and their own caveat that VPIN's *position in its distribution*, not its level, is what matters. *Primary PDF in corpus.*
-- **Hasbrouck (2007)**, Ch 6 - the $\alpha\mu$ identification ridge that limits how much PIN can be trusted. *Math-verified.*
+- **Andersen, T. G. & Bondarenko, O. (2014)**, *VPIN and the flash crash*, J. Financial Markets 17, 1–46
+- **Easley, López de Prado & O'Hara (2012)**, *Flow toxicity and liquidity in a high-frequency world*, RFS 25(5)
+- **Hasbrouck (2007)**
 
 ---
 

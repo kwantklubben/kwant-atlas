@@ -82,13 +82,13 @@ Read the results:
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Damodaran**, *Investment Valuation*, Ch 17 (PE), Ch 18 (PBV), Ch 19 (EV/EBITDA and value multiples), plus the Part on "relative valuation vs DCF" - including the companion-variable framework and the full derivation of each multiple from the stable-growth model.
-- **Pinto et al. (CFA Institute)**, *Equity Asset Valuation* - the standard practitioner treatment of multiples, peer selection, and the DCF-vs-comps cross-check.
-- **Graham & Dodd**, *Security Analysis* - the earliest systematic use of earnings multiples against asset-value and earnings-power floors.
-- **Koller et al. (McKinsey)**, *Valuation*, Ch 16–18 - multiples used *after* a DCF, as a sanity check rather than a primary method.
-- **Green & Hand & Zhang (2017)**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns", *RFS* - the empirical map from valuation multiples/characteristics to returns (the bridge to [[pillars/01-quantitative-research/fundamental-multi-factor-models/index|Fundamental Multi-Factor Models]]).
+- **Damodaran**, *Investment Valuation*
+- **Pinto et al. (CFA Institute)**, *Equity Asset Valuation*
+- **Graham & Dodd**, *Security Analysis*
+- **Koller et al. (McKinsey)**, *Valuation*
+- **Green & Hand & Zhang (2017)**, "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns", *RFS*
 
 ---
 

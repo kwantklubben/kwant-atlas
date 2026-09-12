@@ -93,12 +93,12 @@ The simulated P&L std matches $\lvert I\rvert\sigma\sqrt\tau$ to three decimals 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1) - the reservation price $r(I)=\bar S-\gamma\sigma^2I\tau$ derived from the inventory-variance cost.
-- **Stoll (1978)**, *The supply of dealer services in securities markets*, JFE 3(2), 113–124 - the holding-cost function and why the inventory-variance term sets the spread.
-- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3), §2 - the frozen-inventory value function whose variance penalty produces this cost.
-- **Garman (1976)**, *Market microstructure*, JFE 3(3) - the first model in which unbounded inventory risk can bankrupt the market maker.
+- **Ho & Stoll (1981)**, *Optimal dealer pricing under transactions and return uncertainty*, JFE 9(1)
+- **Stoll (1978)**, *The supply of dealer services in securities markets*, JFE 3(2), 113–124
+- **Avellaneda & Stoikov (2008)**, *High-frequency trading in a limit order book*, Quantitative Finance 8(3)
+- **Garman (1976)**, *Market microstructure*, JFE 3(3)
 
 ---
 

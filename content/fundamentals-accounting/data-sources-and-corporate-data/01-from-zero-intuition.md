@@ -94,13 +94,13 @@ The lesson is not that 5.93 points is enormous - it is that the *same firm, the 
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **SEC**, *EDGAR APIs* documentation - the primary spec for the L0 layer this page describes; verified against the local data-access notes (`Data_SEC_EDGAR_access.txt`).
-- **XBRL US / XBRL International** taxonomies - the concept dictionary that turns a filing into a canonical field.
-- **Ittelson**, *Financial Statements: A Step-by-Step Guide* - the plain-English route to the statements whose numbers the filings contain.
-- **Penman**, *Financial Statement Analysis and Security Valuation*, Ch 7 (reformulation) - why the *stock* a flow is measured against must be defined precisely; the same discipline applied to extraction.
-- **Sloan, Richard** (*TAR*, 1996) - as-reported earnings vs. subsequent restatements differ *economically*; the empirical reason restatement gaps matter.
+- **SEC**, *EDGAR APIs* documentation
+- **XBRL US / XBRL International** taxonomies
+- **Ittelson**, *Financial Statements: A Step-by-Step Guide*
+- **Penman**, *Financial Statement Analysis and Security Valuation*
+- **Sloan, Richard** (*TAR*, 1996)
 
 ---
 

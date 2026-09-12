@@ -79,16 +79,16 @@ Read the two layers: the **composite ranks Zeta Steel #2** purely because of its
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
-- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000) - the F-score; *all nine signals verified against the corpus paper.*
-- **Greenblatt, Joel**: *The Little Book That Beats the Market* (Wiley, 2005; *Revisited* 2010) - the magic formula (ROIC + earnings yield); the simplest published quantamental screen.
-- **Gray, Wesley R. & Carlisle, Tobias E.**: *Quantitative Value* (Wiley, 2013) - the full value+quality+earnings-quality methodology with backtest transparency.
-- **Fama, Eugene & French, Kenneth**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015) - profitability (RMW) and investment (CMA): the factor-model seat of accounting fundamentals.
-- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013) - gross profitability as a powerful, value-orthogonal predictor.
-- **Hou, Xue & Zhang**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015) - the q-factor model (investment + ROE) that unifies most anomalies.
-- **Green, Hand & Zhang**: "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017) - which of 94 characteristics survive; the antidote to overfitting.
-- **O'Shaughnessy, James P.**: *What Works on Wall Street* (McGraw-Hill, 4th ed.) - long-horizon backtests of single-factor screens.
+- **Piotroski, Joseph D.**: "Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers" (*JAR*, 2000)
+- **Greenblatt, Joel**: *The Little Book That Beats the Market* (Wiley, 2005; *Revisited* 2010)
+- **Gray, Wesley R. & Carlisle, Tobias E.**: *Quantitative Value* (Wiley, 2013)
+- **Fama, Eugene & French, Kenneth**: "A Five-Factor Asset Pricing Model" (*JFE*, 2015)
+- **Novy-Marx, Robert**: "The Other Side of Value: The Gross Profitability Premium" (*JFE*, 2013)
+- **Hou, Xue & Zhang**: "Digesting Anomalies: An Investment Approach" (*RFS*, 2015)
+- **Green, Hand & Zhang**: "The Characteristics That Provide Independent Information About Average U.S. Monthly Stock Returns" (*RFS*, 2017)
+- **O'Shaughnessy, James P.**: *What Works on Wall Street* (McGraw-Hill, 4th ed.)
 
 ---
 

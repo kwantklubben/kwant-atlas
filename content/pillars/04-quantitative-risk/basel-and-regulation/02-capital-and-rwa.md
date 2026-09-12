@@ -67,12 +67,12 @@ Standard library. This constructs a bank's RWA from a balance sheet, computes th
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **BCBS** - *Basel III: A Global Regulatory Framework* (2010, d189). The capital-quality ladder, the $4.5/6/8\%$ minima, and the buffer stack, in the primary text. *Read from the corpus PDF.*
 - **BCBS** - *Basel III: Finalising Post-Crisis Reforms* (2017, d424). The revised RWA definitions and the $72.5\%$ output floor that constrains how far the denominator may be modelled down. *Read from the corpus PDF.*
-- **Hull, John C.** - *Risk Management and Financial Institutions* (5th ed., 2018). The Basel capital-ratio chapters: tier structure, RWA categories, buffers. *Recommended textbook map.*
-- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.), Ch 24 (credit ratings, recovery ~40%, default correlation, the Vasicek one-factor capital formula). *Verified in the corpus.*
+- **Hull, John C.** - *Risk Management and Financial Institutions* (5
+- **Hull, John C.** - *Options, Futures, and Other Derivatives* (11th ed.)
 
 ---
 

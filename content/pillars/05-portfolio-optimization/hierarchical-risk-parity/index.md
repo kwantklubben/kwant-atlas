@@ -76,13 +76,13 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/05-portfol
 
 ---
 
-### 5. Canonical Literature & Study References
+### 5. References
 
 - **López de Prado, Marcos** (2016). "Building Diversified Portfolios that Outperform Out of Sample." *Journal of Portfolio Management* 42(4):59–69. *The HRP paper: correlation distance, tree clustering, quasi-diagonalization, recursive bisection, and the out-of-sample comparison against MVO and inverse-variance. The primary source this folder is transcribed from.*
-- **López de Prado, Marcos** (2018). *Advances in Financial Machine Learning*, Wiley, Ch. 16–17. *The book-length exposition: HRP, the Hierarchical Equal Risk Contribution (HERC) extension, clustering mechanics and the information-theoretic view. Cross-pillar: also central to Pillar 7 (ML).*
-- **Raffinot, Thomas** (2017/18). "Hierarchical Clustering-Based Asset Allocation." *Journal of Portfolio Management* 44(2):89–99. *HACA/HERC - graph-partitioning and hierarchical-ERC alternatives to HRP; the natural next step.*
-- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.), §14.3.12 (eqs. 14.41 single, 14.42 complete, 14.43 group-average), dendrograms & cophenetic correlation. *The applied-statistics canon for the clustering step; corpus-verified.*
-- **Maillard, Roncalli & Teïletche** (2010). "The Properties of Equally Weighted Risk Contribution Portfolios." *J. Portfolio Management* 36(4):60–70. *The ERC benchmark HRP is *not* (see [[pillars/05-portfolio-optimization/risk-parity-and-equal-risk-contribution/index|Risk Parity & ERC]]).*
+- **López de Prado, Marcos** (2018). *Advances in Financial Machine Learning*, Wiley
+- **Raffinot, Thomas** (2017/18). "Hierarchical Clustering-Based Asset Allocation." *Journal of Portfolio Management* 44(2):89–99. *HACA/HERC
+- **Hastie, Tibshirani & Friedman** (2009). *The Elements of Statistical Learning* (2nd ed.)
+- **Maillard, Roncalli & Teïletche** (2010). "The Properties of Equally Weighted Risk Contribution Portfolios." *J. Portfolio Management* 36(4):60–70. *The ERC benchmark HRP is *not* (
 
 ---
 
