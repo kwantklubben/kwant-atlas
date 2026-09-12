@@ -17,7 +17,7 @@ This page builds the *why* of production trading systems with **no live-trading 
 
 Start with the dumbest question: *I have a strategy that made 40% in the backtest. Why is that not enough to trade it?* Because the backtest is a statement about a **number**, and going live requires a statement about a **machine**. The machine has to receive market data, decide, place orders, track its own position, pay for its trades, recover from a dropped connection at 09:31 on a volatile open, and - crucially - *stop itself* when it turns out to be wrong. None of that is in the backtest, and all of it can lose more money in an afternoon than the strategy makes in a year.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **The backtest is a *conditional* statement.** "Given perfect data, instant and complete fills, zero operational risk, and a strategy that never misfires, this earns 40%." Production removes every one of those conditions at once. The realistic question is not "does the edge exist?" but "**is the edge larger than the sum of everything that will go wrong?**"
 

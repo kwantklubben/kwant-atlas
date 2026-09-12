@@ -20,7 +20,7 @@ Start with the dumbest question: *if I have an edge, should I bet as much as I c
 
 But **betting everything is certain death.** One loss out of a long enough run and you have a zero bankroll that never recovers - and with $p=0.55$ you *will* eventually hit a loss. Expected wealth loves this; you do not. The resolution is to maximise not $\mathbb{E}[W]$ but $\mathbb{E}[\ln W]$ - the growth rate that your *own single path through time* actually compounds at.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Bet zero and you never grow - bet too much and volatility eats you.** Compounding is geometric: $W_n=W_0(1+f)^S(1-f)^F$, so the per-round growth rate is $g(f)=p\ln(1+f)+q\ln(1-f)$, which is **concave** - it goes *up* then *down*, and past a critical fraction it turns *negative* even though the edge is positive. There is a middle sweet spot.
 2. **The growth rate is the only number that survives compounding.** $E[W]$ is an average *across parallel worlds*; $g(f)$ is the average *along your one real path*. For multiplicative wealth these differ - the entire lesson of [[foundations/ergodicity-and-statistical-mechanics/index|Ergodicity & Statistical Mechanics]].

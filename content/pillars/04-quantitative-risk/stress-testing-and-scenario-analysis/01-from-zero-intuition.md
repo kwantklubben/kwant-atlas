@@ -24,7 +24,7 @@ Start with the dumbest question: *if VaR says we lose at most $X with 99\% confi
 
 The 2008 crisis is the canonical demonstration: pre-crisis, firms ran "severe" scenarios that produced losses of no more than a quarter's worth of earnings (BIS, *Principles for Sound Stress Testing*, 2009); the realized GFC loss in many books was many multiples of that. **The scenarios were the wrong ones, not the VaR model.** Stress testing exists to force the firm to *look at the tail it did not assign a probability to*.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Stress is deterministic, VaR is probabilistic.** A scenario is just a vector of shocks $(\Delta F_1,\dots,\Delta F_K)$ you *choose* - no likelihood, no sampling. The P&L under it is a deterministic weighted sum. This is a feature, not a flaw: it lets you study exactly the event you fear, at whatever severity you fear.
 2. **The point is survival, not a number.** VaR/ES feed limits and capital models. A stress test answers the existential question: *does this shock wipe out capital? trigger margin calls? force a fire-sale?* That is why regulators (CCAR/DFAST, EBA, FRTB stressed ES) build capital around *stressed* losses.

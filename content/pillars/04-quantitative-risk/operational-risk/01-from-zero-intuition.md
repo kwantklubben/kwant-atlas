@@ -17,7 +17,7 @@ This page builds the *why* of operational risk with **no prior risk knowledge ne
 
 Start with the dumbest question: *why does a bank need a whole discipline for "things that go wrong"?* Because every other risk can be *offset* in a market: if you are long the stock, you sell it or buy a put; if you hold a loan, you buy a CDS. But there is no liquid market in "our settlement system crashes" or "a trader fakes positions." Operational risk is the **residual, non-hedgeable** layer, and the only tool you have to survive it is **capital set aside against its tail**. So the whole subject reduces to: *how much capital do you need so that, in a bad year, the losses that show up are survivable?*
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Operational losses are random in *two* ways.** In any year the number of loss events is uncertain, and so is the size of each event. "About 20 events, each around €30k, but occasionally one hits €500k" - that double randomness is the *frequency–severity* decomposition, and it is the foundation of every model that follows.
 

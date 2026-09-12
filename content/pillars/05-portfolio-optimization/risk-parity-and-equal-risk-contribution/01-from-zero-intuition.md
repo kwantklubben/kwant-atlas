@@ -17,7 +17,7 @@ This page builds the *why* of risk parity with **no prior knowledge of portfolio
 
 Start with the dumbest question: *is a 60/40 stock/bond portfolio "balanced"?* A typical equity index has an annualized volatility near 15%; a long government-bond index near 5%. One dollar of stock produces about *three times* the wiggle of one dollar of bonds. So in a portfolio that is 60% stocks and 40% bonds, the stocks supply roughly $0.60\times3=1.8$ units of wiggle and the bonds $0.40\times1=0.6$, meaning **stocks dominate the portfolio's ups and downs.** When a big loss hits, ~9 in 10 dollars of that loss look just like a stock-market loss. Qian (2005) states it as a table of eggs: with $15\%$ stock vol and $5\%$ bond vol, a "60/40" portfolio holds the equivalent of **58 eggs, of which 54 (≈93%) come from the stock basket** - at most *six* of the "diversification" eggs are actually doing any diversification.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Risk is what actually hurts you, dollars are not.** A portfolio can look diversified by capital but be a single bet by risk. The amount of risk an asset *contributes* is the product of how much you hold and how much that holding moves the *whole portfolio* - not how volatile the asset is in isolation.
 2. **Equal capital ≠ equal risk; equal risk ≠ equal capital.** Because most investors are more familiar with equal *dollars* ($1/N$, or 60/40), the discipline of *risk* allocation feels inverted: the safest asset class usually ends up with a *larger* capital weight, not a smaller one.

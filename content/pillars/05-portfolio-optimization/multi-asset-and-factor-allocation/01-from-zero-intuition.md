@@ -24,7 +24,7 @@ $$
 
 For an equal-weight four-asset portfolio of equities, bonds, commodities and credit, the average leg wobbles $11.5\%$ but the portfolio only wobbles $7.9\%$ - a $\mathrm{DR}=1.46$. The $3.6$ percentage points of "wobble" that vanished were *paid for* by owning things that move differently.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Diversification is a correlation property, not a count.** Owning ten assets that all fall together is one bet. The relevant question is not "how many names?" but "how many *independent* sources?" - measured by the effective number of bets, not the number of tickers.
 2. **Labels lie; factors are the truth.** When you hold a global equity fund and an emerging-market equity fund, you own one bet (a market factor) twice. When you hold a value fund and a momentum fund, you own two genuinely different bets that often move in *opposite* directions. *Allocation across factors decorrelates far more than allocation across labels* - the factor portfolio's $\mathrm{DR}=1.98$ versus $1.46$ for the asset portfolio (page 03).

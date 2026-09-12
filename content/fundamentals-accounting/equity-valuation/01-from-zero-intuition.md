@@ -18,7 +18,7 @@ This page builds the *why* of equity valuation with **no prior knowledge needed*
 
 Start with the dumbest question: *why is a share worth anything at all?* Not because someone else might pay more for it tomorrow - that is a bet on a greater fool. It is worth something because owning it entitles you to a share of the cash the business will generate: dividends, buybacks, or the proceeds of a sale. Strip the ticket-tape away and **a stock is a claim on cash flows that have not happened yet.**
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Value is about the future, not the past.** A firm with beautiful historical earnings and no prospect of future cash is worth little; a firm with losses today but a dominant, cash-generating future can be worth a fortune. Accounting measures *what happened*; valuation measures *what is expected*.
 

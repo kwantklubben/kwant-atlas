@@ -17,7 +17,7 @@ This page builds the *why* of fundamental data with **no prior knowledge needed*
 
 Start with the dumbest question: *where does "FY2022 revenue = 1000" actually live?* It is not in a database in the sky. It is a number typed into a **10-K** filed with the SEC, tagged with an **XBRL** element name, stored in EDGAR, and then copied - with each provider's own adjustments - into Sharadar, Compustat, Bloomberg, Yahoo. Every one of those copies can differ, and the *original* is always the filing.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **There is a chain, and it starts at the regulator.** Company types numbers into a filing → files it with the SEC → EDGAR stores it (raw HTML plus XBRL-tagged facts) → commercial vendors standardize and resell it. Going *upstream* buys you fidelity and costs you effort; going *downstream* buys you convenience and costs you control. (The Corpus's `data-sources-and-corporate-data` section is explicit: EDGAR is the club's primary raw input.)
 

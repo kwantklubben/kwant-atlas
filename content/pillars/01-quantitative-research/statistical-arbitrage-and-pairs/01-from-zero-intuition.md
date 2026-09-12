@@ -18,7 +18,7 @@ This page builds the *why* of pairs trading with **no prior knowledge needed**. 
 
 Start with the dumbest question: *why would two stocks move together at all?* Because they share the same nonstationary drivers - the market factor, their sector, commodity input costs, the rate level. If Chevron and ExxonMobil both load on the same "oil beta," then a portfolio that is long one and short a scaled amount of the other has **cancelled the oil exposure** and holds only their idiosyncratic difference. Buy the cheap one, sell the expensive one, wait for the difference to close.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Prices are nonstationary; the right object is stationary.** Individual prices wander (unit root, $I(1)$). A single price has no "mean" to revert to, so trading a price is a bet on direction. But a *linear combination* $\beta_1 y_t + \beta_2 x_t$ can cancel the common random walk and leave a **stationary** residual that oscillates around a fixed level. That combination - the **cointegrating vector** - is the tradable object.
 

@@ -23,7 +23,7 @@ This page builds the second answer from nothing, and shows precisely *when it br
 
 The mental model to hold: **a portfolio is a machine with a handful of input dials.** The dials are the **risk factors** ($S$, $y$, $\sigma$, spreads, FX...). The sensitivities are the **gear ratios** from dial turns to money. Risk management is the art of knowing the gear ratios, and of knowing that gear ratios change when the dial turns far.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **A sensitivity is a derivative, and a derivative is a local exchange rate.** "Delta $=0.6$" means: *for a small move in the share price, I gain $60$ cents per \$1 of move.* It is a rate, not a prediction - it says nothing about which way the price will go.
 2. **Sensitivities add across positions but not across factors.** If desk A has delta $100$ and desk B has delta $-40$, the firm has delta $60$ - simple addition. But the *risk* is not the sum of the parts, because factors move together and correlate. That coupling lives in a covariance matrix, not in the sensitivities.

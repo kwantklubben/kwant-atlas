@@ -17,7 +17,7 @@ This page builds the *why* of quantitative fundamental investing with **no prior
 
 Start with the absurd question a factor answers: *why would one pile of accounting numbers predict the future returns of a whole market?* It sounds like it shouldn't - but it does, and it has for a century. Benjamin Graham's whole tradition was "buy what's cheap *and* solid," but he did it by judgment. The quantitative revolution asked the mechanical version: can we write the rule as *"sort every stock on book-to-market, buy the cheapest tenth, sell the dearest tenth, repeat every year"* - and does that rule beat just owning the market? The answer from Fama–French 1992 is **yes**, and that is where this subject starts.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **A factor is a sort, not a formula.** You never invest "in the B/M ratio." You rank the entire universe on B/M and hold the cheap side against the expensive side. The *sort* is the strategy; the accounting number is just the axis. This is why every factor in this folder is built the same way: **rank → split into portfolios → compare realized returns.** Learn that skeleton and every factor, from value to the F-score, is the same machine with a different axis.
 

@@ -16,7 +16,7 @@ tags:
 
 This page builds the *why* of interest-rate modelling with **no prior fixed-income knowledge needed**. The objective is one idea: **in fixed income the risk-free rate is not a constant - it is the thing you are trying to price derivatives on, and it varies across time and across maturities.** Every model in this folder is an answer to the question "how do I describe the whole continuum of rates, and how do I price a claim whose payoff depends on one of them?"
 
-Start with the dumbest question: *why is there a "term structure" at all?* A dollar paid today is worth more than a dollar paid in a year, but the compensation per year is not flat - lending for 1 month pays a different (annualised) rate than lending for 30 years. The set of rates for all maturities is the **term structure of interest rates**, a.k.a. the **yield curve** or **zero curve**. Three steps, three "aha"s:
+Start with the dumbest question: *why is there a "term structure" at all?* A dollar paid today is worth more than a dollar paid in a year, but the compensation per year is not flat - lending for 1 month pays a different (annualised) rate than lending for 30 years. The set of rates for all maturities is the **term structure of interest rates**, a.k.a. the **yield curve** or **zero curve**. Three steps:
 
 1. **The fundamental building block is a zero-coupon bond (ZCB).** $P(t,T)$ is the price at $t$ of a risk-free promise to pay 1 at $T$. *Everything* - coupon bonds, swaps, caps, swaptions - is a static portfolio of ZCBs (a coupon bond is $\sum c_i P(t,T_i)$; a floating-rate note is worth par). Learn to price $P(t,T)$ and you can price all of fixed income.
 

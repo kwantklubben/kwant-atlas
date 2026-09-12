@@ -18,7 +18,7 @@ This page builds the *why* of counterparty credit risk and xVA with **no prior d
 
 Start with the dumbest question: *why is counterparty risk different for a derivative than for a loan?* When you lend \$100, the most you can lose is the \$100, and you know that number today. When you enter a 10-year interest-rate swap, the amount your counterparty might owe you is **unknown today and changes every day** as rates move. Either of you can be owed money at any point in the swap's life. This is the defining feature of **counterparty credit risk (CCR)**: exposure is *uncertain* and *symmetric* (Gregory Ch 3.1). Unlike lending risk, both parties carry it.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Exposure is a function of the *future* value of the derivative.** Define $V(t)$ = the value of your portfolio at time $t$. If your counterparty defaults at $t$ and $V(t)>0$, you lose (roughly) $V(t)$ - that is your **positive exposure**. If $V(t)<0$, *you* owe *them*; their default doesn't hurt you (the claim dies with them - which is your own-default "benefit", the seed of DVA). So exposure is asymmetric around the current value, even though $V(t)$ itself is symmetric.
 

@@ -21,7 +21,7 @@ The practical objective of this page: state the factor model of returns, show ho
 
 Why it is more diversified: **factors are relatively uncorrelated across the block**. Momentum and value are (mildly) negatively correlated - they are *different* bets. The TSM (equity-market) bets embedded in a US equity fund and an EM equity fund are the *same* bet twice. Allocating across the labels inherits the market factor's dominance; allocating across the factors removes it.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **The label is a container, not a bet.** A "value equity fund" and a "momentum equity fund" are both mostly one market factor with a small tilt. The tilt is the bet; the market is the container.
 2. **Factors are the orthogonalised building blocks.** After removing the shared market component, the residual factor premia have low mutual correlations, so a factor-equal-weight portfolio diversifies *much* better than an asset-equal-weight one.

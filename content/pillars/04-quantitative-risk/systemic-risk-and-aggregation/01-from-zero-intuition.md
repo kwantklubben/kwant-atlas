@@ -23,7 +23,7 @@ Start with the dumbest question: *why isn't the financial system just a sum of b
 
 The *individual* banks look identical. The *systems* behave completely differently. That is the first "aha": **default contagion is a network phenomenon, not a firm phenomenon.**
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Interconnectedness is not always bad - it is a phase transition.** In a sparse network a failure concentrates and wipes out several neighbours; in a very dense network each exposure is small and the loss is absorbed. The danger zone is the *middle* - this is the "robust-yet-fragile" result (Allen–Gale 2000; Gai–Kapadia 2010) that the §3 experiment reproduces.
 2. **Tail correlation is what you can't measure.** Losses from different banks / different risk types are only *strongly* correlated in the extreme tail - exactly where you have almost no data. The whole aggregation problem is: the quantity that matters most is the one you cannot estimate.

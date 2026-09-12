@@ -18,7 +18,7 @@ This page builds the *why* of low-latency Linux & networking with **no prior sys
 
 Start with the dumbest question: *why is latency a problem at all?* A computer's CPU is staggeringly fast - a 3 GHz core executes a billion instructions a second. But the data it needs is *elsewhere*: on the wire, in the NIC, in kernel memory, in a buffer you have to copy out of. Every hop from the wire to your application code is a **transfer of ownership** that costs time, and Linux has layered *safety and fairness* on top of every hop. The result: a packet takes ~10–25 µs and multiple microseconds of *randomness* (jitter) to cross the OS.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **A fast mean is not fast.** When two engines race to trade the same quote, the loser is decided by the *tail* - the rare slow packet - not the average. One 100 µs stall loses the trade even if the other 99,999 packets arrived in 8 µs. So the discipline is about **removing variance, not just lowering the mean**.
 2. **The kernel is doing the wrong thing for you.** Linux tuned the network path for throughput and fairness: it *interrupts* the CPU on packet arrival, switches into kernel mode, copies the packet, runs protocol layers, copies again, and wakes your thread. Every one of those steps is a *context* that costs microseconds and injects randomness. A low-latency host deletes the ones it can.

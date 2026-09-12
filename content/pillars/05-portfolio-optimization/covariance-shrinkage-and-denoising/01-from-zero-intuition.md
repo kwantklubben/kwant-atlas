@@ -19,7 +19,7 @@ Start with the dumbest question: *why not just compute the covariance from the r
 
 Now add the crucial second fact: **the optimizer reads the covariance as truth.** Markowitz's solution is $w\propto\Sigma^{-1}\mu$. Mathematically, $\Sigma^{-1}$ gives *most* weight to the *least* variable directions - the small eigenvalues of $\Sigma$. But small sample eigenvalues are exactly the ones biased **downward** by estimation error (and large ones biased **upward**). So the optimizer concentrates the portfolio on the directions the data got most wrong. Michaud called this **error maximization**: the portfolio looks brilliant in-sample and is fragile out-of-sample.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **"Unbiased" does not mean "accurate."** $\mathbb{E}[S]=\Sigma$ is true, and useless. What matters is the *dispersion* of $S$ around $\Sigma$, and that dispersion scales like $1/\sqrt T$ while the number of parameters scales like $N^2$.
 

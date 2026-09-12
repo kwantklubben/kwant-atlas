@@ -18,7 +18,7 @@ This page builds the *why* of market impact with **no prior microstructure knowl
 
 Start with the dumbest question: *why should the price move at all just because I buy?* A stock's price is supposed to reflect information about its future cash flows. You, a fund manager buying a million shares to rebalance, add no information. Yet the price rises. Why?
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Immediacy is a service, and services cost money.** Somebody must hold the shares you are dumping, or give up the shares you want, *right now*. In an orderly market that counterparty is a market maker or a patient seller who demands a better price to transact urgently. The gap between the price "before you arrive" and the price you actually pay is the **cost of immediacy**. That gap is *market impact*.
 

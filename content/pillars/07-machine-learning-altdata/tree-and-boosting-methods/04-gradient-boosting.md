@@ -17,7 +17,7 @@ tags:
 
 Bagging fits many trees **in parallel** on resampled data and *averages* them - it fights **variance**. Boosting fits trees **sequentially**, each one trained to correct the *errors of the model so far*, and *adds* them - it fights **bias**. Where bagging says "ask many independent experts and vote", boosting says "each new expert studies the residual mistakes of the committee and fixes them". Gradient boosting is the modern, loss-agnostic form of that idea, and XGBoost/LightGBM/CatBoost are its industrial implementations - the actual winners in tabular financial ML.
 
-The objective is one "aha": **fitting the negative gradient of a loss is just "fit the residual" generalised to any differentiable loss** - squared error, log-loss, ranking, quantile. Squared-error boosting literally fits regression trees to the residuals; classification boosting fits them to the pseudo-residuals of the logistic deviance.
+The objective is one idea: **fitting the negative gradient of a loss is just "fit the residual" generalised to any differentiable loss** - squared error, log-loss, ranking, quantile. Squared-error boosting literally fits regression trees to the residuals; classification boosting fits them to the pseudo-residuals of the logistic deviance.
 
 ---
 

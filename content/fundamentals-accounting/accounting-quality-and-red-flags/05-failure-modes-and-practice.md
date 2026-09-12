@@ -54,7 +54,7 @@ $$
 \text{CFO}\uparrow \text{ by the acquired firm's cash flows}, \qquad \text{NI}\uparrow \text{ by the acquired firm's earnings}, \qquad \frac{\text{CFO}}{\text{NI}} \text{ reads as "improving quality"}
 $$
 
-even when the acquirer's own operations are deteriorating. The same logic applies to \(\Delta CA\), goodwill, and any balance-sheet stock after a material transaction. The practice rule is mechanical: **flag the year a material acquisition or divestiture occurred, and never read a quality trend straight through it.**
+even when the acquirer's own operations are deteriorating. The same logic applies to $\Delta CA$, goodwill, and any balance-sheet stock after a material transaction. The practice rule is mechanical: **flag the year a material acquisition or divestiture occurred, and never read a quality trend straight through it.**
 
 **Composite scores reward improvement, not level.** A binary signal like $\Delta\text{ROA}>0$ is *scale-free* - it cannot tell whether the firm went from $+15\%$ to $+16\%$ or from $-15\%$ to $-2\%$. Both score 1. Any composite built from directional signals inherits this and will rank a deeply distressed firm that is merely *deteriorating less slowly* alongside a genuinely strong one.
 

@@ -19,7 +19,7 @@ This page builds the *why* of accounting quality with **no prior knowledge neede
 
 Start with the dumbest possible question: *the income statement says $100M of profit - where is the money?* Sometimes it is in the bank, in which case earnings and cash agree. Sometimes it is in the **accounts receivable** line (customers owe it), or in **inventory** (goods are sitting in a warehouse), or it never existed at all because a manager booked revenue on a shipment the customer will return. The income statement *recognises* profit when it is *earned* under the rules; the cash-flow statement *records* profit when it is *collected*. The word in the middle is **accrual**, and the whole discipline is about it.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Accruals exist for a good reason.** If a firm sells goods in December on 60-day terms, GAAP says recognise the revenue in December - matching the sale to the effort that produced it. Without accruals, income statements would be lumpy, misleading nonsense. Accrual accounting is not the problem; it is *unavoidably discretionary at the edges*, and that discretion is what quality measures police.
 

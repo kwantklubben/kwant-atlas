@@ -18,7 +18,7 @@ A regression model is just a rule for turning a feature vector $x$ into a predic
 
 Start with the dumbest question: *why would we ever want a different rule?* Because financial relationships are **conditional and thresholded**. High volatility *amplifies* momentum up to a point, then momentum crashes. Cheap value stocks pay only when earnings quality is high. A linear model $y = \beta_0 + \sum_j \beta_j x_j$ has a single slope per factor; it cannot say "the effect of $x_1$ flips sign when $x_2>0$." A tree can: it splits on $x_2$ first, then learns a *different* rule for $x_1$ in each branch.
 
-The page's objective is one "aha": **a tree is piecewise-constant approximation of a conditional expectation - it discovers both thresholds and interactions by itself, with no assumption about the functional form.**
+The page's objective is one idea: **a tree is piecewise-constant approximation of a conditional expectation - it discovers both thresholds and interactions by itself, with no assumption about the functional form.**
 
 Three more intuitions that carry the whole folder:
 

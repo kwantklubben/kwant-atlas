@@ -21,7 +21,7 @@ $$
 \text{Var}(w'R)=w'\Sigma w,
 $$
 
-a **quadratic form**. The matrix $\Sigma$ is not a table of numbers to look up one at a time - it is a *rule* that takes any weight vector $w$ and returns its variance. Three steps, three "aha"s:
+a **quadratic form**. The matrix $\Sigma$ is not a table of numbers to look up one at a time - it is a *rule* that takes any weight vector $w$ and returns its variance. Three steps:
 
 1. **A matrix acts on a direction like a stretch factor.** If $Aq=\lambda q$ (the direction $q$ is an *eigenvector*), then $A$ just scales that direction by $\lambda$. Everything $A$ does decomposes into independent stretchings along its eigenvectors - there is no mixing across them.
 2. **Variance concentrates along a few directions.** A covariance matrix is symmetric, so the spectral theorem guarantees its eigenvectors are orthonormal and its eigenvalues are the variances along those directions. For a book of correlated assets, one direction (the "market") usually carries most of the total variance - this is *why* factor models and PCA work at all.

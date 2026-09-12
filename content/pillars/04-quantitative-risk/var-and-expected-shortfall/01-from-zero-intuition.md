@@ -13,11 +13,11 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-This page builds the *why* of VaR and Expected Shortfall with **no prior risk-management knowledge needed**. The objective is one idea: **VaR tells you where the tail begins; ES tells you how bad the tail is.** A risk number that stops at a quantile is a number that a clever portfolio can game.
+This page builds the *why* of VaR and Expected Shortfall with **no prior risk-management knowledge needed**. The objective is one idea: **VaR tells you where the tail begins; ES tells you how bad the tail is.** VaR reports a single quantile and says nothing about how severe the losses beyond it can be; a portfolio built to satisfy only VaR can therefore hide extreme tail risk, which is exactly what Expected Shortfall captures.
 
 Start with the manager's sentence everyone has heard: *"Our 1-day $99\%$ VaR is $ $\$5 million."* Unpack it literally: over the next day, the loss will exceed \5m only about $1$ day in $100$. It says **nothing** about what happens on that one day. Do you lose \$5{,}000{,}001 - or \$100 million and the firm? VaR is deliberately silent, because it is a *quantile*, not an average.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **VaR is a percentile, not a severity.** Line up 100 simulated tomorrows, order them worst-to-best, and read off the loss at rank $99$ (for $99\%$ VaR). Everything worse than that line is *discarded*. That discard is exactly what makes VaR fragile.
 

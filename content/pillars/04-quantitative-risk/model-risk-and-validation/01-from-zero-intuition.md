@@ -21,7 +21,7 @@ Start with the dumbest honest question: *if I have a risk model, what can go wro
 2. **Models are what you build when you cannot see the future.** Derman's observation: in physics the variables (mass, time) exist whether or not humans do; in finance the variables (expected return, volatility) are *human expectations* - hidden variables inferred, not observed. You are always extrapolating from a proxy.
 3. **The failure is not symmetric with useful effort.** Most modelling effort goes into precision (more factors, faster calibration); most model risk sits in *assumption* error (wrong functional form, wrong window, wrong dependence). Precise answers to the wrong question are the signature of a model-risk event.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Same data, different defensible models, materially different numbers.** Feed one realistic (fat-tailed) sample to three textbook-defensible VaR estimators - parametric-normal, historical, and peaks-over-threshold EVT - and watch the $99.9\%$ number differ by up to $40\%$. Nobody made a mistake. That gap *is* model risk.
 2. **Model risk lives in the tail.** The three estimators agree closely at the $95\%$ quantile and diverge wildly at $99.9\%$, because that is where no estimator has data and every estimator substitutes an *assumption* for evidence.

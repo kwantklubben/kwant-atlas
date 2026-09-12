@@ -18,7 +18,7 @@ This page builds the *why* of the limit order book with **no prior knowledge nee
 
 Start with the dumbest question: *why does a market need a "book" at all?* Two strangers want to trade the same stock - one wants to own it, one wants cash. If they meet by chance, they trade at a price they haggle. But millions of such wishes arrive every second, and haggling each one is impossible. So the exchange does something clever: it asks everyone to post their terms *in advance* and in public. "I will buy up to 300 shares at \$100.00 or better." "I will sell up to 400 shares at \$100.00 or better." These standing offers are **limit orders**, and the list of all un-executed ones is the **limit order book**.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Price is where the two lists meet.** If a buyer is willing to pay \$100.05 and a seller is willing to accept \$100.00, a trade happens - and it happens at the *older* order's price. Price is not decreed; it is the overlapping region of two sorted lists. The gap between the highest unfilled buy and the lowest unfilled sell is the **spread**, and it exists only because the two lists have not yet overlapped.
 

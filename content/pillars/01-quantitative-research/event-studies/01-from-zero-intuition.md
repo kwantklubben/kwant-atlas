@@ -18,7 +18,7 @@ This page builds the *why* of event studies with **no prior event-study knowledg
 
 Start with the dumbest question: *why can't we just read the +2% jump on the announcement date?* Because on any given day a stock also moves for the market (the whole index rose or fell), for its sector, for general news, and for plain noise. A stock can gain 2% on the announcement day for *no* event reason at all - because the market rallied 1.5% that day. So the event's true contribution is the **residual**: observed return *minus* the return the stock "should" have earned given everything *other* than the event.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Expected return = the "no-event" counterfactual.** Define a *normal* (expected) return - what the stock would earn if the event had not happened. The simplest version (Brown & Warner's **mean-adjusted** model) uses the stock's own average daily return in a quiet *estimation window* before the event. Abnormal return = observed − that average.
 

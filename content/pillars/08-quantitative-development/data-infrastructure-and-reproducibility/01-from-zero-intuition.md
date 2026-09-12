@@ -18,7 +18,7 @@ This page builds the *why* of data infrastructure and reproducibility with **no 
 
 Start with the dumbest question: *why does reproducibility even matter?* A strategy has an edge only if it is *true*. If your pipeline silently produced slightly different data on Monday than on Tuesday - a different seed, a different library version, a different rounding - then a backtest that "works" may be reproducing your *bug*, not a real edge. The entire discipline of this folder is to make the difference between "the run that discovered the edge" and "the run that proves it" equal to **exactly nothing**.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **"It ran yesterday" is not evidence.** The default state of any software system is *drift* - a dependency upgrades, a data vendor restates a field, a float rounds differently on a new CPU. Evidence means the run can be *re-executed today* and compared byte-for-byte against the original. A checksum is the cheapest such comparison.
 

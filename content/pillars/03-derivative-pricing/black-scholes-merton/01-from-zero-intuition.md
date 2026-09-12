@@ -17,7 +17,7 @@ This page builds the *why* of Black–Scholes–Merton with **no prior derivativ
 
 Start with the dumbest question: *why does an option have a price at all?* A stock has a price because it pays future cash flows. An option is just a *contract* - a bet written as $\max(S_T-K,0)$ for a call. Its value comes from a different mechanism: you can **manufacture** that payoff by trading. If the manufacturing cost is knowable, then the option must trade at that cost, or someone can lock in a risk-free profit by selling the option and manufacturing the payoff cheaply (or vice-versa).
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **The stock's expected drift is irrelevant.** The stock moves as $dS=\mu S\,dt+\sigma S\,dW$. The *probability* of ending in the money depends on $\mu$. But because we replicate by holding a delta-share position, the option's *price* cancels $\mu$ entirely. You never need to forecast the direction - you only need the *size of the wiggles* $\sigma$.
 

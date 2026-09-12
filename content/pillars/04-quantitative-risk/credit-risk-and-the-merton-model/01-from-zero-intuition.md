@@ -8,7 +8,7 @@ tags:
   - default
 ---
 
-**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, expectation) and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (a call \(=\max(S-K,0)\) can be priced from no-arbitrage alone).
+**Basic Prerequisites:** [[foundations/probability-and-measure-theory/index|Probability & Measure Theory]] (CDFs, expectation) and [[pillars/03-derivative-pricing/black-scholes-merton/index|Black–Scholes–Merton]] (a call $=\max(S-K,0)$ can be priced from no-arbitrage alone).
 
 ---
 

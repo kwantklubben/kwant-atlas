@@ -24,7 +24,7 @@ Start with the dumbest question: *my C++ is already tuned, my cores are pinned, 
 
 An FPGA attacks all three at once: there is **no memory hierarchy to traverse** (state lives in flip-flops and on-chip BRAM that you *place*), there is **no OS** (nothing pre-empts a wire), and every path has a **fixed, designed latency** you can state in a datasheet.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Latency is a budget you spend, not a number you minimise.** You have (say) 1,000 ns before a competitor's order beats yours. Every stage - NIC, stack, parse, decide, serialize, transmit - draws from the same account. Optimising one stage while another dominates is the classic mistake.
 2. **Speed buys wins saturating, not linearly.** At equal jitter, a 20 ns gap wins 68% of races and a 100 ns gap wins 99%. The race is a cliff, which is why firms pay absurd sums for the last 100 ns - and why paying for 100 ns you don't need is pure waste.

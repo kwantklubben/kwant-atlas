@@ -17,7 +17,7 @@ This page builds the *why* of financial ratios with **no prior knowledge needed*
 
 Start with the dumbest question: *why do we need ratios at all?* A $1M profit tells you nothing by itself. Is it a good result? It depends - profit against what base? Against $5M of invested capital it is superb; against $1B it is a rounding error. The statements answer "how much," the **ratio answers "how well"** - and "how well" is what separates a great business from a busy one.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Every ratio is a flow over a stock.** Profit (a flow, earned over the period) ÷ book equity (a stock, the capital at a point in time) = ROE. Sales ÷ total assets = asset turnover. Debt ÷ equity = leverage. There are only two ingredients; the *names* are the catalog, the *ratio itself* is the single habit of matching a flow to the stock that produced it. (Penman Ch 5 opens exactly here.)
 

@@ -24,7 +24,7 @@ Start with the dumbest question: *two positions, each with the same loss distrib
 
 Same two marginals. Same dollars. The $95\%$ VaR of the book goes from **$0$ to $1.64$** depending on which of these is true. That gap is the whole subject.
 
-> **Three steps, three "aha"s.**
+> **Three steps.**
 > 1. **Marginals are not enough.** Knowing each position's loss distribution leaves the portfolio loss distribution undetermined. Dependence is *additional* information.
 > 2. **Dependence is a function of the ranks, not the levels.** What matters is not how *big* each loss is but how their *percentiles* line up. This is why rank correlation, not Pearson correlation, is the natural measure, and why a copula - a function on the unit square of percentiles - is the right object.
 > 3. **Diversification is a copula statement.** "Diversification reduces risk" is true for the independence copula and false for the comonotone one. There is no diversification number that holds for all dependence structures with the same marginals - only a *range* (the Fréchet bounds).

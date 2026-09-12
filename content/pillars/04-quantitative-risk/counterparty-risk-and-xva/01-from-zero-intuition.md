@@ -17,7 +17,7 @@ This page builds the *why* of counterparty credit risk and xVA with **no prior r
 
 Start with the dumbest question: *a swap is signed at zero value for both sides - where does the risk come from?* Tomorrow the market moves. If the move is in your favour, you are **in the money (ITM)** - the counterparty owes you, and if they go bankrupt right now you have a claim in the bankruptcy queue. If the move is against you, **you** owe them, and their bankruptcy *frees you from paying*. That is the whole asymmetry: **exposure is positive or negative depending on the market, and only the positive states hurt you.**
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Exposure is conditional and one-sided.** Your loss on default is $\max(V,0)$ - the *positive* part of the portfolio value. A negative value is not a loss; it is a liability you simply stop paying. So the risk lives entirely in the in-the-money states.
 

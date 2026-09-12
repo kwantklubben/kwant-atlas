@@ -23,7 +23,7 @@ Start with the dumbest question: *why isn't everything traded on a stock exchang
 
 For these, **there is no continuous market, only a search for a counterparty**, and someone must be willing to be the counterparty *now*. That someone is a **dealer** - typically a dealer bank - who quotes a price, takes the position onto its balance sheet, and earns the **bid-ask spread** for providing immediacy.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Standardization is what makes an exchange possible.** Exchanges need *fungibility* (every unit identical) and *volume*. Customized contracts have neither, so they cannot be centrally matched. They trade **bilaterally**: one buyer, one seller, one negotiated price.
 

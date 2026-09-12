@@ -21,7 +21,7 @@ P(X<-6\sigma)=\Phi(-6)\approx 1.0\times 10^{-9},
 $$
 roughly once in a billion trading days (single-sided) - on the order of 4 million years at 250 trading days/yr. Real equity markets saw multiple $-6\sigma$ days in the twentieth century alone. Something is structurally wrong with the normal as a *tail* model even if it is a fine *center* model.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **The CLT governs *averages*, not *extremes*.** Sums of i.i.d. finite-variance variables converge to a normal - that's why portfolio *means* look Gaussian. But the *maximum* of $n$ variables converges to a completely different set of laws. Risk management is about the maximum drawdown, the worst day, the tail of the loss distribution - extremes, not averages. Different question, different mathematics.
 

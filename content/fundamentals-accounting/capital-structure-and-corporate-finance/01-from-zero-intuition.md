@@ -18,7 +18,7 @@ This page builds the *why* of capital structure with **no prior knowledge needed
 
 Start with the dumbest question: *why does a firm have a "capital structure" at all?* Because the accounting equation forces it: assets = liabilities + equity. To own a productive asset you must fund it - with **debt** (a promise to pay interest and principal, with legal priority) or **equity** (a residual ownership claim). The *mix* of those two funding sources is the capital structure. The whole question of corporate finance is: **does that mix itself change the value of the pie, or only how the risk is shared?**
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Debt is a priority claim, equity is a residual claim.** A lender gets paid *first* from operating cash flow - interest before anything else - and in liquidation is entitled to its principal ahead of everyone else. Equity gets whatever is *left* after every creditor (and every preference) is paid. "Residual" is not a metaphor: it is the strict legal and economic ordering. This single fact explains why equity is riskier than debt, why it must offer a higher expected return, and why [[fundamentals-accounting/capital-structure-and-corporate-finance/03-debt-equity-and-seniority|03 · Seniority]] is a whole page.
 

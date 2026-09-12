@@ -18,7 +18,7 @@ This page builds the *why* of queue position and fill probability with **no prio
 
 Start with the dumbest question: *I posted a buy limit order at the best bid. There are trades printing at the bid. Why am I not filled?* Because the exchange matches by **price, then by time**. Everyone who arrived at that price before you is *ahead* of you, and the matching engine consumes the front of the queue first. A trade of 2,000 shares when 8,000 shares are ahead of you fills *other people*, not you.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **You are in a line, not at a price.** Posting at the touch earns you a *position in a queue*. If 50 orders are ahead of you, you need 50 orders' worth of trades (or cancellations) to clear before your turn. The price you posted at is a *selector* for which queue you join - the queue itself is what determines when (or whether) you fill.
 

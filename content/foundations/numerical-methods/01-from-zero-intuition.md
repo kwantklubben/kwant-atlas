@@ -17,7 +17,7 @@ This page builds the *why* of numerical methods with **no prior numerical knowle
 
 Start with the dumbest question: *why not just use the formula?* Because most of the time there is none. There is no closed form for $\int e^{-x^2}dx$, for the root of $x=\cos x$, for the eigenvalues of a $200\times200$ matrix, or for the solution of a free-boundary PDE. The formula book ends precisely where real problems begin. So instead of an exact answer we manufacture an **approximate one whose error we can bound**.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Approximation is unavoidable - so measure it.** A computer cannot store $\pi$; it stores $\pi$ to ~16 digits. Every operation inherits that limit. The goal is never zero error; it is an error *small enough for the decision at hand*, provably.
 

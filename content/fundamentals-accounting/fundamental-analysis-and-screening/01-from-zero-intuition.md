@@ -17,7 +17,7 @@ This page builds the *why* of fundamental investing with **no prior knowledge ne
 
 Start with the dumbest question: *what does owning a stock actually mean?* It means you own a fraction of a real company - its factories, its customers, its earnings. If the company earns money, you eventually get some of it. So a stock is not a lottery ticket; it is a claim on a business. That sounds trivially obvious and it is *the entire discipline*. Everything else is method.
 
-Three steps, three "aha"s:
+Three steps:
 
 1. **Price and value are two different things.** The market quotes a **price** every second; that price moves on fear, fashion, and flows. The **value** of the business moves on earnings, assets, and prospects. Benjamin Graham personified the price as "Mr. Market," a manic-depressive business partner who offers to buy or sell at a different price every day - and whom you are free to ignore. When Mr. Market's price is *below* your estimate of value, you buy; when it is *above*, you sell or wait. His mood is an opportunity, not an instruction.
 

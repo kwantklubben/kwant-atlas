@@ -18,7 +18,7 @@ This page builds the *why* of Hierarchical Risk Parity with **no prior portfolio
 
 Start with the dumbest question: *why not just compute the mathematically optimal portfolio?* Because the "optimal" portfolio is optimal with respect to a covariance matrix you had to **estimate**, and the standard mean–variance answer $w\propto\Sigma^{-1}\mathbf 1$ is exquisitely sensitive to that estimate's errors. You are not optimizing over reality; you are optimizing over your *uncertainty*, and you win that game by taking the most extreme positions on the numbers you know least reliably.
 
-HRP takes a different route: **hesitate to measure, but measure likeness well.** Three steps, three "aha"s:
+HRP takes a different route: **hesitate to measure, but measure likeness well.** Three steps:
 
 1. **Likeness is a distance.** Two assets that move together should be *close*. Convert the correlation $\rho$ into a true metric distance $d=\sqrt{\tfrac12(1-\rho)}$: perfectly correlated assets are distance $0$, uncorrelated ones distance $0.707$, and perfectly anti-correlated ones distance $1$. Now the universe is a cloud of points and we can use *geometry*, not linear algebra.
 
