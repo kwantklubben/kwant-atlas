@@ -73,7 +73,7 @@ Route a 1,000-share buy across fragmented venues by (a) raw quoted price and (b)
 
 - **Johnson, Barry** - *Algorithmic Trading & DMA* (2010). *The most concrete practitioner treatment of smart order types, order lifecycle, and routing mechanics.*
 - **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
-- **Colliard, Jean-Edouard & Foucault, Thierry** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 2012. *Why the take fee belongs in the ranking: the cum-fee price is what the taker pays; `corpus/titles/refs/53_Colliard_2012_...pdf`.*
+- **Colliard, Jean-Edouard & Foucault, Thierry** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 2012.
 - **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 
 ---

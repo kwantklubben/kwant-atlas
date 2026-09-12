@@ -83,7 +83,7 @@ Consolidate venue top-of-books into the NBBO, measure the cost of a stale single
 
 - **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
 - **Hasbrouck, Joel** - "One security, many markets: Determining the contributions to price discovery," *JF* 50(4), 1995. *The origin of the information-share measure used above.*
-- **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011. *Effective-spread reduction 0.29 cents, ~7 s speed differences, TRF-based fragmentation proxy; `corpus/titles/refs/pillar2/25_OHara_2011_fragmentation.pdf`.*
+- **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011.
 - **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 
 ---

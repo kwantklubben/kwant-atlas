@@ -71,8 +71,8 @@ Show that no single venue can absorb the order, and that a router sourcing acros
 ### 5. References
 
 - **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
-- **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011. *The empirical anchor on whether fragmentation helps or hurts; found in `corpus/titles/refs/pillar2/25_OHara_2011_fragmentation.pdf`.*
-- **Biais, Glosten & Spatt** - "Market microstructure: A survey," *JFM* 8(2), 2005. *The benefits and costs of fragmentation, quote matching, and the Glosten (1998) aggregate-depth result; `corpus/titles/refs/13_Biais_2005_...pdf`.*
+- **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011.
+- **Biais, Glosten & Spatt** - "Market microstructure: A survey," *JFM* 8(2), 2005.
 - **Harris, Larry** - *Trading and Exchanges* (2003). *The accessible map of venue competition and order routing for a zero-knowledge reader.*
 
 ---

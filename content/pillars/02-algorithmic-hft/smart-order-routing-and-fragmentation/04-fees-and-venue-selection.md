@@ -76,10 +76,10 @@ Compute all-in cost across venues, the cum-fee spread, and the split invariance.
 
 ### 5. References
 
-- **Colliard, Jean-Edouard & Foucault, Thierry** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 3389–3421 (2012). *Cum-fee spread, the make/take invariance, the NYSE Arca 30c/21c/9c example, and the SEC take-fee cap; `corpus/titles/refs/53_Colliard_2012_trading_fees_and_efficiency_in_limit.pdf`.*
+- **Colliard, Jean-Edouard & Foucault, Thierry** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 3389–3421 (2012).
 - **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
-- **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011. *Fee competition across venues lowers effective spreads by 0.29 cents in the fragmented sample; `corpus/titles/refs/pillar2/25_OHara_2011_fragmentation.pdf`.*
-- **Biais, Glosten & Spatt** - "Market microstructure: A survey," *JFM* 8(2), 2005. *Fragmentation, competition among venues, and the consolidation trade-off; `corpus/titles/refs/13_Biais_2005_...pdf`.*
+- **O'Hara, Maureen & Ye, Mao** - "Is market fragmentation harming market quality?" *JFE* 100(3), 2011.
+- **Biais, Glosten & Spatt** - "Market microstructure: A survey," *JFM* 8(2), 2005.
 
 ---
 

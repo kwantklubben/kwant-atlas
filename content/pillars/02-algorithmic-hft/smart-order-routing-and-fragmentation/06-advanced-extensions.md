@@ -79,7 +79,7 @@ Show that adding $\sigma\sqrt{L}$ flips the optimal venue, and compute the cross
 ### 5. References
 
 - **Hasbrouck, Joel** - *Empirical Market Microstructure* (2007)
-- **Easley, López de Prado & O'Hara** - "Flow toxicity and liquidity in a high-frequency world," *RFS* 25(5), 2012 (VPIN); and "The microstructure of the flash crash," *JPM*, 2011. *The toxicity measure $\theta_i$; `corpus/titles/refs/33Easley2012_flow_toxicity_and_liquidity_in.pdf`.*
+- **Easley, López de Prado & O'Hara** - "Flow toxicity and liquidity in a high-frequency world," *RFS* 25(5), 2012 (VPIN); and "The microstructure of the flash crash," *JPM*, 2011.
 - **Biais, Foucault & Moinas** - "Equilibrium fast trading," *JFE* 116(2), 2015. *The economics of the latency term.*
 - **Colliard & Foucault** - "Trading fees and efficiency in limit order markets," *RFS* 25(11), 2012, and **Foucault, Pagano & Röell** - *Market Liquidity* (2013)
 
