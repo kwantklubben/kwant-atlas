@@ -32,7 +32,7 @@ This folder is the **hub**. It (a) gives you the **fast screen-criteria lookup t
 
 | # | Criterion | Inequality | Graham's threshold |
 |---|---|---|---|
-| 1 | Adequate size | $S \ge 100$ | $\ge $ \$100M sales (industrial); \ge \$50M assets (utility) |
+| 1 | Adequate size | $S \ge 100$ | $\ge $ \$100M sales (industrial); ≥ \$50M assets (utility) |
 | 2a | Financial condition | $\dfrac{CA}{CL} \ge 2$ | current ratio at least 2-to-1 |
 | 2b | Financial condition | $LTD \le WC$ | long-term debt $\le$ net current assets |
 | 3 | Earnings stability | $\#\{\text{profitable yrs}\}_{10} = 10$ | some earnings each of the past 10 years |

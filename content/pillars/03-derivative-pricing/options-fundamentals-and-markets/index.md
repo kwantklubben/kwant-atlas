@@ -69,7 +69,7 @@ The reason this is a *separate topic* and not a preface is that the four instrum
 - **Contract multiplier.** Equity/index options: $100\times$ premium per contract; index options are $100\times$ the index (Hull Ch 10.3).
 - **Moneyness.** In-the-money / at-the-money / out-of-the-money by $S$ vs $K$; option value $=$ **intrinsic value $+$ time value** (Hull Ch 10.4).
 - **European vs American.** European: exercise only at $T$. American: any time $\le T$ - a *free option on the option*, hence $\ge$ the European value (Hull Ch 10.1).
-- **Exchange-traded vs OTC.** Exchange = standardised, cleared, margined; OTC = bespoke, bilateral/CCP, ISDA + CSA. Dec-2019 scale: OTC notional $\approx$ $$\$558.5T vs exchange \approx\$96.5T (Hull Ch 1).
+- **Exchange-traded vs OTC.** Exchange = standardised, cleared, margined; OTC = bespoke, bilateral/CCP, ISDA + CSA. Dec-2019 scale: OTC notional $\approx$ $$\$558.5T vs exchange ≈\$96.5T (Hull Ch 1).
 
 ---
 

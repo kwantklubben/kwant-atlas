@@ -42,7 +42,7 @@ This folder is the **execution-backtesting-and-simulation topic-folder** for Pil
 | Latency pick-off | $\mathbb{P}\approx 1-e^{-\rho\ell}$ | $0.05$ ms $\to0.0488$; $10$ ms $\to1.0000$ |
 | Implementation shortfall (Perold) | $\text{IS}=\underbrace{(n_1-n_0)'(p-\pi_0)}_{\text{execution}}+\underbrace{(v-n_1)'(\pi_1-\pi_0)}_{\text{opportunity}}$ | Hasbrouck Ch 14, eq 14.1 |
 | Effective vs realized cost | $p_t-m_t=(p_t-m_{t+5})+(m_{t+5}-m_t)$ | impact $=m_{t+5}-m_t$ |
-| AC expected cost / impact | $E[x]=\tfrac12\gamma X^2+\varepsilon\textstyle\sum|n_k|+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | temp. impact $\eta X^2/T$: $ $\$25{,}000\!\to\!\1{,}250 |
+| AC expected cost / impact | $E[x]=\tfrac12\gamma X^2+\varepsilon\textstyle\sum|n_k|+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | temp. impact $\eta X^2/T$: \$25,000 → \$1,250 |
 | Square-root impact law (idealized) | $\Delta P\approx Y\,\sigma\,(Q/V)^{\alpha}$ with $\alpha=\tfrac12$ | toy ln-ln fit exponent $0.4922$, $R^2{=}0.9401$ |
 | Realized-impact exponent (empirical, Almgren et al. 2005) | $\Delta P\approx Y\,\sigma\,(Q/V)^{\alpha}$ with $\alpha\approx0.6$ | the *empirical* exponent is steeper than the idealized $\tfrac12$ - see [[pillars/06-market-making/market-impact-and-depth/index\|Market Impact & Depth]] |
 | Market replay estimate | one path $f(\omega_{\text{recorded}})$ | replay $1.0000$ vs MC mean $0.6384$ CI $[0.6259,0.6509]$ |

@@ -28,7 +28,7 @@ This folder is the **optimal-execution topic-folder** for Pillar 2. It is a *hub
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Notation.** $X$ = initial position to liquidate (units); $T$ = horizon; $N$ = number of trading intervals of length $\tau=T/N$; $t_k=k\tau$; $x_k$ = units still held at $t_k$ (so $x_0=X$, $x_N=0$); $n_k=x_{k-1}-x_k$ = units sold in interval $k$; $S_0$ = initial price; $\sigma$ = volatility ($ $\$/share/\sqrt{\text{day}}$); $\gamma$ = **permanent** impact coefficient ($\$/share/$share); $\eta$ = **temporary** impact coefficient ($($ $\$/\text{share})/(\text{share}/\text{day})); \varepsilon$ = fixed cost per share (half-spread + fees); $\lambda$ = risk-aversion ($1/\$).
+**Notation.** $X$ = initial position to liquidate (units); $T$ = horizon; $N$ = number of trading intervals of length $\tau=T/N$; $t_k=k\tau$; $x_k$ = units still held at $t_k$ (so $x_0=X$, $x_N=0$); $n_k=x_{k-1}-x_k$ = units sold in interval $k$; $S_0$ = initial price; $\sigma$ = volatility (\$/share/√day); $\gamma$ = **permanent** impact coefficient (\$/share/\$share); $\eta$ = **temporary** impact coefficient ((\$/share)/(share/day)); $\varepsilon$ = fixed cost per share (half-spread + fees); $\lambda$ = risk-aversion (1/\$).
 
 **Price dynamics (AC eqs 1-2).** Arithmetic random walk with permanent impact $g$, plus a temporary impact $h$ paid only on the shares traded:
 

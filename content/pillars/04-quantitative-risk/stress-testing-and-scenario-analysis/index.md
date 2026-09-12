@@ -35,7 +35,7 @@ Why bother, if we already have VaR/ES? Because **probability is the wrong ruler 
 | Normal 1-day 99% VaR (single asset) | $2.326\,\sigma$ | $2.326\times0.015=3.49\%$ |
 | Normal ES @ $100(1-\alpha)\%$ | $\mu+\dfrac{\sigma\,\phi(z_\alpha)}{1-\alpha}$ | 99% $\Rightarrow$ ES $=2.665\,\sigma$ vs VaR $2.326\,\sigma$ |
 | Reverse stress test (min shock to breach) | $\min z^T\Sigma^{-1}z$ s.t. $\beta^T z\le -C\;\Rightarrow\;z^*=-\dfrac{C}{\beta^T\Sigma\beta}\Sigma\beta$ | normal corr: $1.866\,\sigma$; stressed corr: $1.283\,\sigma$ |
-| Min breach magnitude | $\sqrt{z^{*T}\Sigma^{-1}z^*}=\dfrac{C}{\sqrt{\beta^T\Sigma\beta}}$ | $30\text{M}$\$/\sqrt{258.6}=1.866\,\sigma |
+| Min breach magnitude | $\sqrt{z^{*T}\Sigma^{-1}z^*}=\dfrac{C}{\sqrt{\beta^T\Sigma\beta}}$ | $30\text{M}$\$/√258.6 = 1.866 σ |
 | FRTB stressed ES (capital measure) | $\mathrm{ES}=\mathrm{ES}_{R,S}\times\dfrac{\mathrm{ES}_{F,C}}{\mathrm{ES}_{R,C}}\ge\mathrm{ES}_{R,S}$ | $100\times\tfrac{120}{90}=133.3$, ratio floored at 1 |
 | 1-yr 99% VaR, 2-asset $\rho$ | $2.326\sqrt{w_1^2\sigma_1^2+w_2^2\sigma_2^2+2\rho w_1w_2\sigma_1\sigma_2}$ | $\rho{=}.3{:}\,37.51\%$, $\rho{=}.9{:}\,45.34\%$ |
 

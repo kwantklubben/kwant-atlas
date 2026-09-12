@@ -35,11 +35,11 @@ Any reported climate metric $m$ is a function $m=m(\mathcal B;\mathcal R;\mathca
 
 | Axis | Defensible range | Swing in the reported number | Verified (§) |
 |---|---|---|---|
-| **Boundary** (Scope 1+2 vs 1+2+3), same firm/year | both standards-compliant | intensity $16.0\to216.0$ tCO2e per $ $\$1m = **13.5\times$** | 01 §3 |
+| **Boundary** (Scope 1+2 vs 1+2+3), same firm/year | both standards-compliant | intensity $16.0\to216.0$ tCO2e per $ $\$1m = **13.5×** | 01 §3 |
 | **Boundary** in temperature alignment | same holdings | $\mathrm{ITR}=1.98^\circ$C $\to$ beyond the $3.2^\circ$C benchmark | 05 §3(B) |
 | **Rater** (weights + indicator choice) | three mainstream methodologies | mean rank correlation **$+0.439$**; largest rank move **$5.5$** places; top-5 overlap **$3/5$** | 04 §3(A), 05 §3(A) |
 | **Vintage** (retroactive restatement) | one historical revision | **$1$ of $5$** top-5 names changes | 05 §3(A) |
-| **Economic parameter** (pass-through $\lambda$) | $\lambda\in[0,0.8]$ | $ $\$30/t shock: -15.33\%\to-3.07\%$ = **$5.0\times$** | hub §3 |
+| **Economic parameter** (pass-through $\lambda$) | $\lambda\in[0,0.8]$ | $ $\$30/t shock: $-15.33\%\to-3.07\%$ = **$5.0\times$** | hub §3 |
 | **Economic parameter** (damage $\theta$) | disclosure-dependent | physical loss is **linear in $\theta$** - the parameter *is* the answer | 02 §3(B) |
 | **Scenario count** $N$ | 6 archetypes, $p_{\max}=0.20$ | confidence ceiling $\alpha\le1-p_{\max}=0.80$ | 03 §3 |
 

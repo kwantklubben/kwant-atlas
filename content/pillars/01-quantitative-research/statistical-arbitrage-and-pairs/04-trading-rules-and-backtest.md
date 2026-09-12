@@ -17,7 +17,7 @@ tags:
 
 Once a pair and its hedge ratio are fixed, the strategy is a **rule on the spread**: open when the spread is far from equilibrium, close when it returns. The whole art is in two numbers - the *entry threshold* and the *exit threshold* - expressed in **standard deviations of the spread** so that the same constants work across every pair. This page gives the rule, the exact P&L identity of a dollar-neutral pair, and a **closed-form backtest** you can run and audit.
 
-The standard deviation is the natural unit because the OU spread is Gaussian in equilibrium: a \$2\sigma$ excursion is expected to recur with a known frequency, and the *time* it takes to revert is governed by the half-life. Entry, exit and stop must all be consistent with $\tau_{1/2}$: entering a $2\sigma$ move in a spread with a 250-day half-life is not a trade, it is a position.
+The standard deviation is the natural unit because the OU spread is Gaussian in equilibrium: a $2\sigma$ excursion is expected to recur with a known frequency, and the *time* it takes to revert is governed by the half-life. Entry, exit and stop must all be consistent with $\tau_{1/2}$: entering a $2\sigma$ move in a spread with a 250-day half-life is not a trade, it is a position.
 
 ---
 

@@ -30,12 +30,12 @@ This folder is a *hub*: it (a) gives the **fast metric lookup and the carbon-exp
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Quick-Reference Lookup (job #1).** Notation: $w_i$ portfolio weight, $R_i$ firm revenue, $E_i$ firm emissions (tCO2e), $M_i$ a valuation multiple (firm value / profit), $\Delta p$ a carbon-price step ($ $\$/tCO2e), \lambda the carbon-cost pass-through rate, $\mathrm{EF}$ the emission factor per unit of fuel, $p^*$ a break-even carbon price.
+**Quick-Reference Lookup (job #1).** Notation: $w_i$ portfolio weight, $R_i$ firm revenue, $E_i$ firm emissions (tCO2e), $M_i$ a valuation multiple (firm value / profit), $\Delta p$ a carbon-price step ($ $\$/tCO2e), λ the carbon-cost pass-through rate, $\mathrm{EF}$ the emission factor per unit of fuel, $p^*$ a break-even carbon price.
 
 | Quantity | Formula | Verified check (§3) |
 |---|---|---|
 | **WACI** (TCFD weighted average carbon intensity) | $\mathrm{WACI}=\displaystyle\sum_i w_i\,\frac{E_i}{R_i}$ | $815.0$ tCO2e per \$1m revenue (§3) |
-| **Carbon-price P&L** (first-order flow-through) | $\dfrac{\Delta V}{V}=-\displaystyle\sum_i w_i\,(1-\lambda_i)\,M_i\,\frac{E_i}{R_i}\,\frac{\Delta p}{10^6}$ | $+ $ \$30/t, \lambda=0.30\Rightarrow-10.73\%$ (§3) |
+| **Carbon-price P&L** (first-order flow-through) | $\dfrac{\Delta V}{V}=-\displaystyle\sum_i w_i\,(1-\lambda_i)\,M_i\,\frac{E_i}{R_i}\,\frac{\Delta p}{10^6}$ | $+ $ \$30/t, $\lambda=0.30\Rightarrow-10.73\%$ (§3) |
 | **Pass-through sensitivity** | multiplier $(1-\lambda)$ | $\lambda=0\Rightarrow-15.33\%$, $\lambda=0.8\Rightarrow-3.07\%$ (§3) |
 | **Weighted-average multiple** | $\bar M=\sum_i w_i M_i$ | $10.85\times$ (§3) |
 | **Implied temperature rise** (benchmark-pathway interpolation) | $\mathrm{ITR}=T_{\text{lo}}+(T_{\text{hi}}-T_{\text{lo}})\dfrac{C-C_{\text{lo}}}{C_{\text{hi}}-C_{\text{lo}}}$ | $C=19{,}020\Rightarrow 1.98^\circ$C (04 §3) |

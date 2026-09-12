@@ -33,7 +33,7 @@ The reason this is a *fundamentals* topic and not fine print: two contracts with
 | Clearing | Central counterparty (CCP) | Bilateral, or a CCP with margin |
 | Margin | Initial + daily variation, marked to market | Collateral under an ISDA credit-support annex (CSA) |
 | Cash flows | Realised **daily**; variation margin does not earn interest | Realised at maturity (or on margin calls, which do earn interest) |
-| Scale (Dec 2019) | $\approx$ \$96.5T notional | \approx\$558.5T notional (gross market value $\approx$\$11.6T) |
+| Scale (Dec 2019) | $\approx$ \$96.5T notional | ≈\$558.5T notional (gross market value $\approx$\$11.6T) |
 
 #### 2.2 Contract specification - what gets pinned down (Hull Ch 2.1)
 
