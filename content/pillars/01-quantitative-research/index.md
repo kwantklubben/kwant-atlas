@@ -6,7 +6,6 @@ tags:
   - statistical-arbitrage
 ---
 
-> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
 
 # Quantitative Research (Alpha Generation)
 

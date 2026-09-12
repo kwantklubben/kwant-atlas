@@ -101,4 +101,3 @@ Hub signposts - the folder's full failure-mode analysis lives in [[pillars/04-qu
 
 **Beginner:** start at [[pillars/04-quantitative-risk/climate-and-esg-risk/01-from-zero-intuition|01]] · **Practitioner:** start at [[pillars/04-quantitative-risk/climate-and-esg-risk/05-failure-modes-and-practice|05]]
 
-> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.

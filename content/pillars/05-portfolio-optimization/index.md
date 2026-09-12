@@ -9,7 +9,6 @@ tags:
   - index-hub
 ---
 
-> 🔎 **Looking something up?** Jump to the [[glossary|Glossary]] for a term/symbol, or the [[diagnostics|Diagnostic Index]] for a symptom → cause → fix.
 
 # Portfolio Construction and Optimization
 
