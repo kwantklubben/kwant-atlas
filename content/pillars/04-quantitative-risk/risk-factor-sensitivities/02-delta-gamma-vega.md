@@ -29,7 +29,7 @@ The two relations to internalise:
 
 - **Gamma–theta (the carry identity).** A delta-hedged option earns $\tfrac12\Gamma(\Delta S)^2$ when the market moves and pays $\Theta\,\Delta t$ for the passage of time; risk-neutrally they cancel exactly:
 $$
-\tfrac12\Gamma S^2\sigma^2=-\Theta_{\text{driftless}}\qquad(\text{Haug §2.15}).
+\tfrac12\Gamma S^2\sigma^2=-\Theta_{\text{driftless}}\qquad(\text{Haug \S 2.15}).
 $$
 Being long gamma is being long **realised variance** and short **implied variance**. This single sentence is the P&L of every option desk.
 - **Delta-neutral P&L (Hull eq. 19.3).** $\Delta\Pi\approx\Theta\,\Delta t+\tfrac12\Gamma(\Delta S)^2$ - the local expansion that every risk report is built on.

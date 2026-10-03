@@ -72,7 +72,7 @@ Simulate the arithmetic random walk with permanent + temporary impact, execute a
 
 The Monte Carlo reproduces the closed forms to within sampling error ($O(1/\sqrt{n_{\text{paths}}})$; Hasbrouck's Ch 14-15 formulas are confirmed as descriptors of the realized shortfall).
 
-**Decomposition check.** The $\varepsilon X= $ \$20{,}000 fixed cost and \tfrac12\gamma X^2= \$125{,}000 permanent impact account for \$145,000 of the \$644,500; the remaining \$499,500 is temporary impact $\frac{\tilde\eta}{\tau}\sum n_k^2=\tilde\eta X^2/T$ - the part a schedule can actually reduce.
+**Decomposition check.** The $\varepsilon X= $ \$20,000 fixed cost and \tfrac12\gamma X^2= \$125,000 permanent impact account for \$145,000 of the \$644,500; the remaining \$499,500 is temporary impact $\frac{\tilde\eta}{\tau}\sum n_k^2=\tilde\eta X^2/T$ - the part a schedule can actually reduce.
 
 ---
 

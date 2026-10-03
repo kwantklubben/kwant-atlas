@@ -57,7 +57,7 @@ Quantify the trade-through, the pick-off, and the fee misroute. Standard library
 
 
 
-**Read the numbers.** (1) The stale router locks onto venue L at 100.010 and fills 1,000 shares at 100.050 after the move - **$30** worse than the fresh NBBO (100.020 on venue D), and a textbook trade-through of D's protected quote. (2) Pick-off loss scales as $\sqrt{L}$: going from 0.05 ms to 50 ms of staleness raises the loss from **$4.47 to $141.42** on a single 1,000-share quote - ×31.6 for a ×1,000 latency, the unmistakable Brownian signature. (3) The fee-blind router picks the venue displaying 99.996 and pays an all-in 100.0110 versus 100.0040 - **$7.00** burned on 1,000 shares by optimizing the wrong number.
+**Read the numbers.** (1) The stale router locks onto venue L at 100.010 and fills 1,000 shares at 100.050 after the move - **\$30** worse than the fresh NBBO (100.020 on venue D), and a textbook trade-through of D's protected quote. (2) Pick-off loss scales as $\sqrt{L}$: going from 0.05 ms to 50 ms of staleness raises the loss from **\$4.47 to \$141.42** on a single 1,000-share quote - ×31.6 for a ×1,000 latency, the unmistakable Brownian signature. (3) The fee-blind router picks the venue displaying 99.996 and pays an all-in 100.0110 versus 100.0040 - **\$7.00** burned on 1,000 shares by optimizing the wrong number.
 
 ---
 

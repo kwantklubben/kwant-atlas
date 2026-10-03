@@ -42,7 +42,7 @@ This folder is Pillar 5's **HRP topic-folder** and it is a *hub*: (a) it gives t
 | Correlation | $\rho_{ij}=\dfrac{\sigma_{ij}}{\sqrt{\sigma_{ii}\,\sigma_{jj}}}$ | - |
 | **Correlation distance** | $\boxed{\,d_{ij}=\sqrt{\tfrac12\bigl(1-\rho_{ij}\bigr)}\,}$ | EQ1–EQ3 ($\rho{=}0.60$) → $d{=}0.4472$; EQ1–BD1 ($\rho{=}0.05$) → $d{=}0.6892$ |
 | Euclidean embedding | $d_{ij}=\bigl\|\tfrac{x_i}{\|x_i\|}-\tfrac{x_j}{\|x_j\|}\bigr\|/2$ | identical assets ($\rho{=}1$) → $d{=}0$ |
-| **Lance–Williams update** | $d(u,k)=\alpha_i d(i,k)+\alpha_j d(j,k)+\beta\,d(i,j)+\gamma\,|d(i,k)-d(j,k)|$ | general agglomeration recurrence |
+| **Lance–Williams update** | $d(u,k)=\alpha_i d(i,k)+\alpha_j d(j,k)+\beta\,d(i,j)+\gamma\,\vert d(i,k)-d(j,k)\vert $ | general agglomeration recurrence |
 | - single linkage | $(\alpha_i,\alpha_j,\beta,\gamma)=(\tfrac12,\tfrac12,0,-\tfrac12)\Rightarrow \min$ | U5 heights $[.2236,.2236,.3873,.6708]$ |
 | - complete linkage | $(\tfrac12,\tfrac12,0,+\tfrac12)\Rightarrow \max$ | U5 heights $[.2236,.2236,.6708,.7071]$ |
 | - average linkage (UPGMA) | $\alpha_i=\dfrac{n_i}{n_i+n_j},\ \alpha_j=\dfrac{n_j}{n_i+n_j},\ \beta=\gamma=0$ | U5 heights $[.2236,.2236,.5472,.6769]$ |

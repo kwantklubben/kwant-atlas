@@ -75,7 +75,7 @@ A three-asset book exposed to two common factors is decomposed into systematic a
 
 
 
-**Read the decomposition.** The book's \$240{,}000 of notional collapses to **two dollar-betas** - \$194{,}000 on factor 1 and \$60{,}000 on factor 2. The Euler allocation adds *exactly* to the \$2{,}282.44 portfolio volatility - the printed **SUM** line is the numerical verification of Euler's theorem. It says something the raw exposures do not: **factor 1 alone is $77.6\%$ of the risk** - more than its exposure share would suggest, because it is the factor every asset is loaded on and it is correlated with factor 2. Meanwhile the three specific risks together are only $12.6\%$ of variance ($R^2=0.874$): **a factor model sees $87\%$ of this book's risk, and the remaining $13\%$ cannot be hedged with factor instruments at all** - it diversifies away only by trading the individual names.
+**Read the decomposition.** The book's \$240,000 of notional collapses to **two dollar-betas** - \$194,000 on factor 1 and \$60,000 on factor 2. The Euler allocation adds *exactly* to the \$2,282.44 portfolio volatility - the printed **SUM** line is the numerical verification of Euler's theorem. It says something the raw exposures do not: **factor 1 alone is $77.6\%$ of the risk** - more than its exposure share would suggest, because it is the factor every asset is loaded on and it is correlated with factor 2. Meanwhile the three specific risks together are only $12.6\%$ of variance ($R^2=0.874$): **a factor model sees $87\%$ of this book's risk, and the remaining $13\%$ cannot be hedged with factor instruments at all** - it diversifies away only by trading the individual names.
 
 ---
 

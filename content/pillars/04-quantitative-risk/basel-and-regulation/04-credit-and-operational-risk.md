@@ -56,7 +56,7 @@ $$
 $$
 The **Business Indicator Component** scales the **Business Indicator** $BI$ by marginal coefficients $\alpha_i$:
 $$
-\mathrm{BIC}=\begin{cases}0.12\,BI, & BI\le €1\,\text{bn}\\[2pt] 0.12\cdot1+0.15\,(BI-1), & 1<BI\le €30\,\text{bn (€bn)}\\[2pt] 0.12\cdot1+0.15\cdot29+0.18\,(BI-30), & BI>€30\,\text{bn (€bn)}\end{cases}
+\mathrm{BIC}=\begin{cases}0.12\,BI, & BI\le \text{EUR }1\,\text{bn}\\[2pt] 0.12\cdot1+0.15\,(BI-1), & 1<BI\le \text{EUR }30\,\text{bn}\\[2pt] 0.12\cdot1+0.15\cdot29+0.18\,(BI-30), & BI>\text{EUR }30\,\text{bn}\end{cases}
 $$
 The **Internal Loss Multiplier** folds in the bank's own loss history through the Loss Component $LC=15\times$ average annual losses:
 $$
@@ -79,7 +79,7 @@ Standard library (normal CDF from `math.erf`, inverse from a rational approximat
 
 
 
-(The €35bn row reproduces the regulator's own worked example - $\mathrm{BIC}=0.12+29\times0.15+5\times0.18=€5.37\text{bn}$ - a direct check that the bucket arithmetic is right.)
+(The €35bn row reproduces the regulator's own worked example - $\mathrm{BIC}=0.12+29\times0.15+5\times0.18=\text{EUR }5.37\text{bn}$ - a direct check that the bucket arithmetic is right.)
 
 **What the numbers say.** (i) IRB is *not* uniformly cheaper: at PD 0.03% it yields a 14.4% RW but at PD 5% a 149.9% RW, so it is more risk-sensitive than SA in both directions. (ii) For a typical 1%-PD corporate the IRB RW (92.3%) is close to the flat SA 100%, which is why the arbitrage was never about plain corporates but about the *tails* and about low-PD assets. (iii) The SMA makes op-risk capital *increase with the bank's own losses* - an elegant self-punishing design that removed the AMA's incentive to under-model.
 

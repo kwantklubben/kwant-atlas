@@ -99,7 +99,7 @@ Simulate a Glosten–Harris/Huang–Stoll tape (trade prints at $m_t+q_tc$, then
 
 
 
-The regression cleanly separates the transitory (order-processing) half-spread $c= $ \$0.02 from the permanent (adverse-selection) half-spread \lambda= \$0.015. Almost 43% of the maker's half-spread is expected to be given back to informed flow - exactly the kind of number a quoting desk needs.
+The regression cleanly separates the transitory (order-processing) half-spread $c=$ \$0.02 from the permanent (adverse-selection) half-spread $\lambda=$ \$0.015. Almost 43% of the maker's half-spread is expected to be given back to informed flow - exactly the kind of number a quoting desk needs.
 
 ---
 

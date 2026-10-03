@@ -104,7 +104,7 @@ We solve the indifference conditions (2.4)–(2.5) **numerically by bisection** 
 
 
 
-The numerically-solved indifference prices match eqs. (2.6)–(2.7) to machine precision, and their mean is the reservation price $r=s-q\gamma\sigma^2\tau$. At $q=+4$ the dealer values a share at $ $\$98.40, \1.60 below the \$100 mid - he is long and wants out.
+The numerically-solved indifference prices match eqs. (2.6)–(2.7) to machine precision, and their mean is the reservation price $r=s-q\gamma\sigma^2\tau$. At $q=+4$ the dealer values a share at \$98.40, \$1.60 below the \$100 mid - he is long and wants out.
 
 ---
 

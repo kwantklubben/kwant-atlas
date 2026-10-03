@@ -22,7 +22,7 @@ Four steps, four "aha"s:
 
 1. **Two risks, one cash flow.** *Physical risk* is damage to assets and supply chains (acute: storm, flood, wildfire; chronic: heat, drought, sea level). *Transition risk* is the cost of changing the economy (carbon prices, technology substitution, consumer and investor preferences). Both land in the same place - earnings - which is why a single valuation channel can hold both.
 
-2. **Carbon is a cost per unit of output, not a return per unit of price.** Raise a carbon price by \$50/t and a firm emitting $4$ kg of CO2 per $ $\$1 of revenue takes a \0.20 hit per \$1 of revenue. That is a **margin** event, and margins are what shareholders own. It is why the canonical exposure metric - weighted average carbon intensity - is emissions *divided by revenue*.
+2. **Carbon is a cost per unit of output, not a return per unit of price.** Raise a carbon price by \$50/t and a firm emitting $4$ kg of CO2 per \$1 of revenue takes a \$0.20 hit per \$1 of revenue. That is a **margin** event, and margins are what shareholders own. It is why the canonical exposure metric - weighted average carbon intensity - is emissions *divided by revenue*.
 
 3. **The horizon kills the standard machinery.** A one-day $99\%$ VaR of an equity book asks about *tomorrow*; climate damage and policy arrive over **decades**. The annualised equivalent of a $30$-year $30\%$ loss is about $-0.0047\%$ per day - roughly $1000\times$ smaller than the daily VaR it must compete with (§3, panel A). No historical-simulation engine will ever flag it. The fix is not a better estimator; it is a *different instrument*: scenarios.
 
@@ -38,7 +38,7 @@ $$
 $$
 which is the number a daily risk report *would* have to show if climate risk were a diffusion. Because $d$ scales like $-L/(252T)$ for small $L$, it decays as $1/T$: **the longer the true horizon, the smaller the daily signature - the opposite of comfort.** Comparing it to a normal $99\%$ VaR, $\mathrm{VaR}_\alpha=\sigma z_\alpha$ with $z_{0.99}=2.326348$, gives the "invisibility ratio" of §3.
 
-**Carbon cost as a margin identity.** For a firm with emissions intensity $I_i=E_i/R_i$ (tCO2e per $ $\$1 of revenue), a carbon price step \Delta p$ ($ \$/tCO2e) and pass-through \lambda\in[0,1]:
+**Carbon cost as a margin identity.** For a firm with emissions intensity $I_i=E_i/R_i$ (tCO2e per \$1 of revenue), a carbon price step $\Delta p$ (\$/tCO2e) and pass-through $\lambda\in[0,1]$:
 $$
 \boxed{\ \frac{\Delta(\text{cost})}{R_i}=(1-\lambda)\,I_i\,\Delta p\ \ (\text{a fraction of revenue}),\qquad \frac{\Delta V_i}{V_i}\approx-(1-\lambda)\,M_i\,I_i\,\frac{\Delta p}{10^6}\ }
 $$

@@ -62,7 +62,7 @@ This runs on the **standard library only**. It reproduces Damodaran's Illustrati
 
 
 
-Both routes give equity $\approx$ \$1073 (Damodaran rounds to 1073$ and $1873$; the residual $0.54$ is his rounding of $\text{WACC}=9.94\%$). Discount equity flows at the cost of capital and you over-value equity by $\$175; discount firm flows at the cost of equity and you under-value by \$261. **Consistency is not a convention - it is the model.**
+Both routes give equity $\approx$ \$1073 (Damodaran rounds to \$1073 and \$1873; the residual $0.54$ is his rounding of $\text{WACC}=9.94\%$). Discount equity flows at the cost of capital and you over-value equity by \$175; discount firm flows at the cost of equity and you under-value by \$261. **Consistency is not a convention - it is the model.**
 
 ---
 

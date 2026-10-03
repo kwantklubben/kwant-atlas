@@ -36,7 +36,7 @@ All formulas below are transcribed from Shreve Vol II (Ch 3–5), Shreve Vol I (
 | BM martingale | $\mathbb E[W(t)\mid\mathcal F(s)]=W(s)$ | Shreve II 3.3.4 |
 | QV of BM | $[W,W](T)=T\ \Rightarrow\ (dW)^2=dt$ | Shreve II 3.4 |
 | Exp. martingale | $Z(t)=e^{\sigma W(t)-\tfrac12\sigma^2t}$ | Shreve II 3.6.1 |
-| First-passage | $\mathbb E e^{-\alpha\tau_m}=e^{-|m|\sqrt{2\alpha}}$ | Shreve II 3.6.2 |
+| First-passage | $\mathbb E e^{-\alpha\tau_m}=e^{-\vert m\vert \sqrt{2\alpha}}$ | Shreve II 3.6.2 |
 
 **Itô integral** - $I(t)=\int_0^t\Delta(u)\,dW(u)$, built for simple adapted $\Delta$ then extended to $\mathbb E\int_0^T\Delta^2\,du<\infty$. It is a **martingale**, mean $0$, with **Itô isometry** $\mathbb E[I^2]=\int_0^t\mathbb E[\Delta^2]du$ and **quadratic variation** $[I,I](t)=\int_0^t\Delta^2du$ (Shreve II Thm 4.2.1–4.2.3).
 

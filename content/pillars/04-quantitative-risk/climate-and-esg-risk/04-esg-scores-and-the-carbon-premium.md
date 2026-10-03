@@ -51,7 +51,7 @@ $$
 
 #### 2.2 Implied temperature rise by benchmark-pathway interpolation
 
-Let a portfolio have cumulative emissions intensity $C$ (tCO2e per $ $\$1m of revenue over the horizon), and let \{(T_j,C_j)\}_{j=1}^m$ be a table of benchmark pathways with increasing temperature outcomes and increasing cumulative intensities. The ITR is the piecewise-linear interpolation
+Let a portfolio have cumulative emissions intensity $C$ (tCO2e per \$1m of revenue over the horizon), and let \{(T_j,C_j)\}_{j=1}^m$ be a table of benchmark pathways with increasing temperature outcomes and increasing cumulative intensities. The ITR is the piecewise-linear interpolation
 
 $$
 \boxed{\ \mathrm{ITR}(C)=T_j+(T_{j+1}-T_j)\frac{C-C_j}{C_{j+1}-C_j}\quad\text{for }C\in[C_j,C_{j+1}],\qquad \mathrm{ITR}=T_1\ \text{for }C\le C_1\ }

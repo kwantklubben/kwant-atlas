@@ -61,7 +61,7 @@ $B$ are the **factor loadings**, $\Lambda$ the factor covariance, $\Psi$ the **s
 | Sample $S$ | $\lambda_i$ | none | - |
 | Linear shrinkage | $\delta\mu+(1-\delta)\lambda_i$ | prior $F$ | $\delta^*$ (data-driven) |
 | RMT clipping | $\lambda_i$ (signal), $\bar\lambda$ (bulk) | noise band | $\lambda_+$ (theory) |
-| **Nonlinear shrinkage** | $\lambda_i/|1-c-c\lambda_i\breve m_F|^2$ | rotation-equivariance | none (oracle) |
+| **Nonlinear shrinkage** | $\lambda_i/\vert 1-c-c\lambda_i\breve m_F\vert ^2$ | rotation-equivariance | none (oracle) |
 | **Factor model** | rank-$K$ + diagonal | economic factors | $K$ |
 
 ---

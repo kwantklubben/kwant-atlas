@@ -103,7 +103,7 @@ Simulate a two-trade portfolio, measure the *netting benefit* and the *collatera
 
 
 
-Points to read: (i) netting captures **62%** of the gross exposure but leaves **$9.0$** of EPE - netting is neither free nor complete; (ii) a *perfect* zero-threshold CSA still leaves **13%** of the uncollateralised EPE, because the 10-day MPoR is a real unhedged window; (iii) SA-CCR's $\alpha$ and the multiplier turn a $ $\$10m IR swap into an EAD of **\362,854** unmargined / **\108,856** margined - versus CEM's \$150,000 (Gregory §13.4.2, §13.5.1), which is why SA-CCR replaced CEM. *(Note: Gregory's worked text prints `$249,182` for the product $10\text{m}\times0.5\%\times5.18$; the arithmetic is **259,182**, as the book itself uses two paragraphs later - a typo in the source.)*
+Points to read: (i) netting captures **62%** of the gross exposure but leaves **$9.0$** of EPE - netting is neither free nor complete; (ii) a *perfect* zero-threshold CSA still leaves **13%** of the uncollateralised EPE, because the 10-day MPoR is a real unhedged window; (iii) SA-CCR's $\alpha$ and the multiplier turn a \$10m IR swap into an EAD of **\$362,854** unmargined / **\$108,856** margined - versus CEM's \$150,000 (Gregory §13.4.2, §13.5.1), which is why SA-CCR replaced CEM. *(Note: Gregory's worked text prints `$249,182` for the product $10\text{m}\times0.5\%\times5.18$; the arithmetic is **259,182**, as the book itself uses two paragraphs later - a typo in the source.)*
 
 ---
 
@@ -113,7 +113,7 @@ Points to read: (i) netting captures **62%** of the gross exposure but leaves **
 2. **MPoR under-estimation.** The MPoR is a *model parameter*, not a literal close-out time. It absorbs delayed default declaration, portfolio liquidation, disputes, and *higher post-default volatility* - doubling volatility is roughly equivalent to **quadrupling** the MPoR (Gregory §9.1.2). The regulatory floor is 10 days bilateral / 5 days cleared, but illiquid or hard-to-replace books require ≥20 days.
 3. **Collateral spikes.** A settled cash flow inside the MPoR is uncollateralised and **not** covered by variation margin, producing a transient exposure spike - a dominant residual EPE even under full initial margin (Gregory §7.3.6, §15.6.6).
 4. **Wrong-way collateral.** Posting one's own bonds/equity as margin, or a cross-currency swap collateralised in one of the two currencies, makes the collateral itself correlated with the exposure - margin that evaporates exactly when it is needed (§17.6.6).
-5. **Rating triggers & cliff-edge.** Threshold linked to a credit rating means a *downgrade* can trigger a large margin call (AIG: $$\$20bn on a downgrade); Basel gives **no** capital benefit for rating triggers and the LCR requires pre-funding of the outflows.
+5. **Rating triggers & cliff-edge.** Threshold linked to a credit rating means a *downgrade* can trigger a large margin call (AIG: \$20bn on a downgrade); Basel gives **no** capital benefit for rating triggers and the LCR requires pre-funding of the outflows.
 6. **SA-CCR is a floor, not a model.** Using it as if it were risk-sensitive over-capitalises well-hedged books; two offsetting same-bucket swaps give zero EAD, while FX triangles (USD/EUR, GBP/USD, EUR/GBP) generate capital on *all three legs* (Gregory §13.5.1) - counter-intuitive artefacts of the asset-class bucketing.
 
 ---

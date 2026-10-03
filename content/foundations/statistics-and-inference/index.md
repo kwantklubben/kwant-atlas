@@ -51,7 +51,7 @@ This page is a *hub*: it (a) gives the **fast estimator/test lookup** below (job
 |---|---|---|
 | LLN (SLLN) | $\bar X_n=\frac1n\sum X_i\to\mu$ a.s. | running mean of Exp(1): 1.108→1.0105→0.9968 |
 | **CLT (Lindeberg–Lévy)** | $\dfrac{\bar X_n-\mu}{\sigma/\sqrt n}\Rightarrow N(0,1)$; standard error $=\sigma/\sqrt n$ | sd(mean)=0.3167 vs $1/\sqrt{10}=0.3162$; halving error costs 4× data |
-| Rate | $O(n^{-1/2})$, **independent of dimension** (why Monte Carlo wins in high dim) | (D) $\sup|F_n-\Phi|$: 0.133($n{=}1$)→0.037($n{=}16$)→0.010($n{=}256$) |
+| Rate | $O(n^{-1/2})$, **independent of dimension** (why Monte Carlo wins in high dim) | (D) $\sup\vert F_n-\Phi\vert $: 0.133($n{=}1$)→0.037($n{=}16$)→0.010($n{=}256$) |
 | Sample variance | $(n-1)S^2/\sigma^2\sim\chi^2_{n-1}$ | mean $=10.999$ (theory 11), Var $=22.03$ (theory 22) |
 | Student-$t$ | $(\bar X-\mu)/(S/\sqrt n)\sim t_{n-1}$ (normal data) | $P(|t|>1.96)=0.1217$ at $n{=}5$ vs normal 0.0500 |
 

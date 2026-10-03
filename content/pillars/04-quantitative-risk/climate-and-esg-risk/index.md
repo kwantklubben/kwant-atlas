@@ -30,7 +30,7 @@ This folder is a *hub*: it (a) gives the **fast metric lookup and the carbon-exp
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Quick-Reference Lookup (job #1).** Notation: $w_i$ portfolio weight, $R_i$ firm revenue, $E_i$ firm emissions (tCO2e), $M_i$ a valuation multiple (firm value / profit), $\Delta p$ a carbon-price step ($ $\$/tCO2e), λ the carbon-cost pass-through rate, $\mathrm{EF}$ the emission factor per unit of fuel, $p^*$ a break-even carbon price.
+**Quick-Reference Lookup (job #1).** Notation: $w_i$ portfolio weight, $R_i$ firm revenue, $E_i$ firm emissions (tCO2e), $M_i$ a valuation multiple (firm value / profit), $\Delta p$ a carbon-price step (\$/tCO2e), λ the carbon-cost pass-through rate, $\mathrm{EF}$ the emission factor per unit of fuel, $p^*$ a break-even carbon price.
 
 | Quantity | Formula | Verified check (§3) |
 |---|---|---|
@@ -47,7 +47,7 @@ This folder is a *hub*: it (a) gives the **fast metric lookup and the carbon-exp
 
 **Two axioms of the whole subject.** First, **carbon is a cost that scales with output, not a return that scales with price** - so its portfolio signature is a *level shift* in margins (the boxed P&L identity above), which is why a carbon price is a slow, compounding hit that no daily VaR sees. Second, **the loss distribution is chosen, not measured**: NGFS, the Bank of England's CBES and PACTA all convert *narratives* into numbers, and every downstream risk number inherits that modelling choice ([[pillars/04-quantitative-risk/climate-and-esg-risk/03-climate-scenarios-and-stress-testing|03 · Climate Scenarios & Stress Testing]]).
 
-**Scope accounting defines the number.** The Greenhouse Gas Protocol splits emissions into **Scope 1** (direct combustion), **Scope 2** (purchased energy) and **Scope 3** (value-chain, upstream and downstream). The TCFD recommends Scope 1+2 and (separately) Scope 3; the Partnership for Carbon Accounting Financials (PCAF) standardises how to attribute them to a portfolio. The scope boundary is not a detail - for the same firm it changes the headline intensity by more than an order of magnitude ([[pillars/04-quantitative-risk/climate-and-esg-risk/01-from-zero-intuition|01 · §3]]: $16.0\to216.0$ tCO2e per $$\$1m).
+**Scope accounting defines the number.** The Greenhouse Gas Protocol splits emissions into **Scope 1** (direct combustion), **Scope 2** (purchased energy) and **Scope 3** (value-chain, upstream and downstream). The TCFD recommends Scope 1+2 and (separately) Scope 3; the Partnership for Carbon Accounting Financials (PCAF) standardises how to attribute them to a portfolio. The scope boundary is not a detail - for the same firm it changes the headline intensity by more than an order of magnitude ([[pillars/04-quantitative-risk/climate-and-esg-risk/01-from-zero-intuition|01 · §3]]: $16.0\to216.0$ tCO2e per \$1m).
 
 **Carbon pricing, two prices with one purpose.** An *explicit* price is charged (emissions trading systems, carbon taxes); a *shadow* (internal) carbon price is charged only inside project appraisal, to make long-lived investment decisions robust to a future explicit price. The canonical external corridor is the **High-Level Commission on Carbon Prices** (Stern & Stiglitz, 2017): \$40–\$80/tCO2e by 2020 rising to \$50–\$100/tCO2e by 2030, consistent with the Paris temperature objective. A carbon price becomes *stranded-asset* risk when the cost per unit of output exceeds the asset's break-even margin, $p^*=m/\mathrm{EF}$.
 

@@ -29,9 +29,9 @@ The three failures, in one line each:
 
 | Term | Scaling in $T$ | Source |
 |---|---|---|
-| Market VaR (i.i.d.) | $\\sqrt T$ | $\mathrm{VaR}_T=\mathrm{VaR}_1\sqrt T$ (Hull §22.4) |
-| Timing risk over the schedule | $\\sqrt T$ | price moves while you work the order |
-| Impact cost of a rate-limited schedule | $\\sim T$ (linear-impact) | spreading $Q$ over $T$ days at $\alpha\cdot\text{ADV}$/day |
+| Market VaR (i.i.d.) | $\sqrt T$ | $\mathrm{VaR}_T=\mathrm{VaR}_1\sqrt T$ (Hull §22.4) |
+| Timing risk over the schedule | $\sqrt T$ | price moves while you work the order |
+| Impact cost of a rate-limited schedule | $\sim T$ (linear-impact) | spreading $Q$ over $T$ days at $\alpha\cdot\text{ADV}$/day |
 
 So the **ratio of total cost to a naive 1-day VaR grows like $\sqrt T$** from the risk term and can grow like $T$ from the schedule term: at $T=16$ days the linear-impact schedule cost is **$16/4=4\times$** the market-risk term per the $\sqrt T$ scaling. **Ignoring the horizon is not a small correction; it is a factor.**
 

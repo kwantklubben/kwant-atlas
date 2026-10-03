@@ -48,7 +48,7 @@ so the model loses money once $pJ$ exceeds the AS half-spread. There is **no kno
 
 ### 3. Computational Implementation - the adverse-selection failure
 
-We add *informed* flow to the [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/04-inventory-and-risk-aversion|04]] simulation: after a passive fill, with probability $p_{\text{tox}}$ the mid-price jumps adversely by $ $\$2 (a pick-off). The AS strategy prices **no** compensation for this, so its P&L should bleed as p_{\text{tox}}$ rises.
+We add *informed* flow to the [[pillars/06-market-making/avellaneda-stoikov-and-optimal-quoting/04-inventory-and-risk-aversion|04]] simulation: after a passive fill, with probability $p_{\text{tox}}$ the mid-price jumps adversely by \$2 (a pick-off). The AS strategy prices **no** compensation for this, so its P&L should bleed as $p_{\text{tox}}$ rises.
 
 
 

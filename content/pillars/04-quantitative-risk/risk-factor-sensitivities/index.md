@@ -37,14 +37,14 @@ The practical objective of this page is the **lookup table** (job #1 of this pil
 | Sensitivity | Definition | Units / market convention | Verified check (§3) |
 |---|---|---|---|
 | **Delta** $\Delta$ | $\partial V/\partial S$ | shares of underlying (raw) | Haug call $\Delta=0.503105$ |
-| **Gamma** $\Gamma$ | $\partial^2 V/\partial S^2$ | $\Delta$-change per $ $\$1 move in S$ | $0.026794$ |
+| **Gamma** $\Gamma$ | $\partial^2 V/\partial S^2$ | $\Delta$-change per \$1 move in S$ | $0.026794$ |
 | **Vega** $\nu$ | $\partial V/\partial\sigma$ | **per 1 vol point** $=$ raw$/100$ | $0.192999$ |
 | **Theta** $\Theta$ | $-\partial V/\partial T$ | **per day** $=$ raw$/365$ | $-0.036989$ |
 | **Rho** $\rho$ | $\partial V/\partial r$ | **per 1 rate point** $=$ raw$/100$ | $0.109656$ |
 | **DV01** (BPV) | $-\dfrac{\partial V}{\partial y}\times10^{-4}$ | currency per basis point | 5y bond $0.045769$ · 10y $0.085147$ |
 | **Key-rate duration** $KRD_i$ | $-\dfrac{\partial V}{\partial y_i}\times10^{-4}$ | currency per bp at curve node $i$ | ladder sums to DV01 exactly |
 | **Factor exposure** $b_k$ | $(\beta^\top w)_k$ | currency per unit of factor $k$ | $[194{,}000,\;60{,}000]$ |
-| **Delta-normal VaR** | $z_\alpha\,|\delta|\,\sigma\,S\sqrt h$ | currency (linear P&L) | $175.1914$ |
+| **Delta-normal VaR** | $z_\alpha\,\vert \delta\vert \,\sigma\,S\sqrt h$ | currency (linear P&L) | $175.1914$ |
 | **Delta-gamma VaR** | Cornish–Fisher on $aZ+bZ^2$ | currency (quadratic P&L) | $163.4461$ (MC $163.1099$) |
 
 > **Critical scaling caveat (inherited from Pillar 3).** Raw derivatives are per *unit*; screen values quote Vega/Rho **per 1 point** ($=$ raw$/100$), Theta **per day** ($=$ raw$/365$). A risk system that mixes raw and per-point units mis-sizes every limit by $100\times$ or $365\times$. Every table in this folder states its convention in the header.

@@ -57,7 +57,7 @@ $$
 \boxed{\;c=\sqrt{-\gamma_1},\qquad \sigma_u^2=\gamma_0+2\gamma_1,\qquad \text{quoted spread}=2c=2\sqrt{-\gamma_1}.\;}
 $$
 
-**Why this matters.** The spread $2c$ is *estimable from trade prices alone* - a pure microstructure signal hidden inside an otherwise near-random-walk price series. Empirically (Hasbrouck Ch 3, PCO Oct 2003) $\hat\gamma_1=-0.0000294$ gives $c= $ \$0.017, spread \0.034, close to the observed time-weighted NYSE average of \$0.032 - a striking confirmation.
+**Why this matters.** The spread $2c$ is *estimable from trade prices alone* - a pure microstructure signal hidden inside an otherwise near-random-walk price series. Empirically (Hasbrouck Ch 3, PCO Oct 2003) $\hat\gamma_1=-0.0000294$ gives $c= $ \$0.017, spread \$0.034, close to the observed time-weighted NYSE average of \$0.032 - a striking confirmation.
 
 **The same spread, from information (Foucault Ch 1; Hasbrouck Ch 5).** The Roll $c$ is a cost of *waiting*; the Glosten–Milgrom spread is a cost of *being picked off*. With informed arrival proportion $\mu$ and value dispersion $(V_H-V_L)$, the symmetric-prior spread is $A-B=(V_H-V_L)\,\mu$ - the model-free intuition that **more adverse selection widens the spread.** Both costs coexist: the quoted spread pays for order processing, inventory, *and* adverse selection at once.
 

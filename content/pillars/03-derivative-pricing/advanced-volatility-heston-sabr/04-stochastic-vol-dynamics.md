@@ -21,7 +21,7 @@ Two questions, answerable by two different objects:
 
 | question | object | what it measures |
 |---|---|---|
-| **Statics** - what is today's shape? | skew level $\partial_k\sigma^2_{BS}\big|_0=\frac{\rho\eta}{2}\beta(v_0)$ (+ jumps) | the spot/vol covariance, *model-independently* |
+| **Statics** - what is today's shape? | skew level $\partial_k\sigma^2_{BS}\big\vert_0=\frac{\rho\eta}{2}\beta(v_0)$ (+ jumps) | the spot/vol covariance, *model-independently* |
 | **Dynamics** - how does the surface move? | **skew stickiness ratio** $R_T$ and the **vol-of-vol term structure** $\nu_T(t)$ | how implied vol co-moves with spot, and how vol-of-vol decays with maturity |
 
 Everything in this folder that a *practitioner* cares about lives in the second row. Three concrete claims drive the page:

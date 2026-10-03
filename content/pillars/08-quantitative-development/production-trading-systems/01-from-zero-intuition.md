@@ -85,7 +85,7 @@ Read it as the two-sided tax on going live: **costs scale linearly with turnover
 1. **Optimising the wrong objective.** Maximising backtest Sharpe selects, all else equal, for *higher turnover* - which is precisely the direction that raises the cost tax. Production teams therefore optimise a different functional: net Sharpe, subject to bounded worst-case loss.
 2. **Assuming the model gap is small.** The live-vs-backtest divergence is not noise; it is systematic (costs, latency, partial fills, regime). A −4% net return at 300× turnover is not "the strategy underperforming," it is the tax doing what the arithmetic says it must.
 3. **Ignoring the operational term entirely.** Backtests assign zero probability to "the process crashed mid-open." The empirical base rate of serious production incidents is high enough that a firm trading the same strategy for a decade will experience one; the only question is how much it costs when it happens (see [[pillars/08-quantitative-development/production-trading-systems/05-failure-modes-and-practice|05 · Failure Modes]]).
-4. **Confusing *edge* with *capacity*.** A strategy that only works at $1M of capital is not broken; it is capacity-limited. Production sizing must respect this, or the cost term ($\propto$ size relative to available liquidity) silently grows until $\mu_{\text{net}}<0$.
+4. **Confusing *edge* with *capacity*.** A strategy that only works at \$1M of capital is not broken; it is capacity-limited. Production sizing must respect this, or the cost term ($\propto$ size relative to available liquidity) silently grows until $\mu_{\text{net}}<0$.
 
 ---
 

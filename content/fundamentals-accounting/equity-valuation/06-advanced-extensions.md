@@ -67,7 +67,7 @@ Read the results:
 
 - **The fundamentals-implied P/E is $8.40$**, not some market-average $15$–$20$. A firm with $40\%$ payout, $5\%$ growth and a $10\%$ cost of equity *should* trade at $\approx8.4\times$; a P/E of $14.5$ for that firm would embed either faster growth or lower risk.
 - **The two comps disagree by $70\%$** (\$58.00 vs \$34.25). This is not a bug - different multiples capture different fundamentals (earnings vs operating cash), and a small, mismatched peer set can't resolve which is right. Relative valuation is only as good as the peer set.
-- **The Monte Carlo reframes the "value"**: median \$11.31 but a $5$–$95$ band of $ $\$6.48–\21.08. **The range is three times wide around the median** - a \$11.29 point estimate is a fiction; the honest output is "roughly \$6–\$21, central $\approx$\$11".
+- **The Monte Carlo reframes the "value"**: median \$11.31 but a $5$–$95$ band of \$6.48–\$21.08. **The range is three times wide around the median** - a \$11.29 point estimate is a fiction; the honest output is "roughly \$6–\$21, central $\approx$\$11".
 
 ---
 

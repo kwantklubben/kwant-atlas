@@ -92,7 +92,7 @@ The strongest possible check: build the exact quadratic $U$ and minimize it by l
 
 The closed form and the exact discrete minimizer agree to **2 shares in 1,000,000** (the residual is the $O(\tau)$ difference between $\kappa$ and the discrete $\tilde\kappa$), and the objective values match to 10 significant figures. This is the statement "the AC formula solves the AC problem," verified numerically.
 
-**HJB check.** With $\eta=2.5\times10^{-6}$, $\varepsilon=0.02$, the ansatz $V(t,x)=\varepsilon x+\eta x^2/(T-t)$ satisfies $-V_t=(V_x-\varepsilon)^2/(4\eta)$ with maximum relative residual $8.94\times10^{-10}$ and gives $V(0,X)= $\$520{,}000=\varepsilon X+\eta X^2/T - the risk-neutral TWAP cost.
+**HJB check.** With $\eta=2.5\times10^{-6}$, $\varepsilon=0.02$, the ansatz $V(t,x)=\varepsilon x+\eta x^2/(T-t)$ satisfies $-V_t=(V_x-\varepsilon)^2/(4\eta)$ with maximum relative residual $8.94\times10^{-10}$ and gives $V(0,X)=\varepsilon X+\eta X^2/T=$ \$520,000 - the risk-neutral TWAP cost.
 
 ---
 
@@ -102,7 +102,7 @@ The closed form and the exact discrete minimizer agree to **2 shares in 1,000,00
 2. **Mean-variance is not expected utility.** $E+\lambda V$ equals quadratic utility only up to second order; for non-Gaussian (fat-tailed, jump) shortfall the objective mis-specifies risk. AC handle this with the L-VaR construction (§3.2), which replaces variance with a quantile.
 3. **Static ≠ adaptive.** Time-homogeneity holds *only* because the price has no serial correlation or drift. With drift, momentum, or mean reversion, the optimal strategy is genuinely dynamic and the static curve is stale (AC §4; Hasbrouck Ch 15 gives the drift-corrected $s_t^\star$).
 4. **$\kappa$ inherits every parameter error.** $\kappa=\sqrt{\lambda\sigma^2/\eta}$: urgency scales as $\sqrt\lambda$, $\sigma$, and $1/\sqrt\eta$. A 4x error in the risk aversion mis-sets the half-life by 2x. See [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/05-failure-modes-and-practice|05 - Failure Modes]].
-5. **The objective is dimensioned loosely.** $E$ is in dollars, $V$ in dollars$^2$, so $\lambda$ carries units $1/$ \$. Quoting a \lambda$ without its units (or in the wrong currency scale) silently rescales the entire schedule.
+5. **The objective is dimensioned loosely.** $E$ is in dollars, $V$ in dollars$^2$, so $\lambda$ carries units of 1/\$. Quoting a $\lambda$ without its units (or in the wrong currency scale) silently rescales the entire schedule.
 
 ---
 

@@ -13,7 +13,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-If you place symmetric quotes at the bid and ask ($\pm \$0.02$ from the mid-price), a random barrage of market orders will cause your inventory to fluctuate. If several buyers hit your ask, you are suddenly short $-5{,}000$ shares. If the market starts trending upwards, your short position will bleed capital.
+If you place symmetric quotes at the bid and ask ($\pm \$0.02$ from the mid-price), a random barrage of market orders will cause your inventory to fluctuate. If several buyers hit your ask, you are suddenly short $-5,000$ shares. If the market starts trending upwards, your short position will bleed capital.
 
 The **Avellaneda & Stoikov (2008)** model is the canonical mathematical framework that solves optimal high-frequency quoting. When inventory builds up, the market maker skews their quotes: shading their **reservation price** downwards to discourage further buys and aggressively incentivize sellers to take them back to flat inventory.
 

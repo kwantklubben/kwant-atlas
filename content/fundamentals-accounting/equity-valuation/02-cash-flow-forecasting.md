@@ -40,8 +40,11 @@ $$
 Note the design: FCFF starts *above* the interest line and **excludes interest tax shields** - those are already captured in the after-tax cost of debt inside WACC. Including them again would double-count.
 
 > **The $\Delta\text{NWC}$ formula.** Working capital enters *only* as a **change**, and only for *non-cash* items:
-> $$\Delta\text{NWC}=\big[(\text{Receivables}+\text{Inventory}+\text{Other CA})-(\text{Payables}+\text{Accruals})\big]_{t}-\big[\cdots\big]_{t-1}.
-$$
+>
+> $$
+> \Delta\text{NWC}=\big[(\text{Receivables}+\text{Inventory}+\text{Other CA})-(\text{Payables}+\text{Accruals})\big]_{t}-\big[\cdots\big]_{t-1}.
+> $$
+>
 > Cash and short-term debt are excluded. Growing firms *absorb* cash as $\Delta\text{NWC}>0$, which is why fast growth often shows negative FCFE.
 
 #### 2.2 The fixed-financing (δ) shortcut for FCFE

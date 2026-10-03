@@ -36,7 +36,7 @@ Two limits are worth holding in mind:
 
 The stationary component is *decreasing* in $\gamma$ - a dealer who cares **more** about inventory quotes tighter in this component to trade out faster (a volume/edge trade-off), which partly offsets the elsewhere-increasing inventory-risk term $\gamma\sigma^2(T-t)$. The paper's tables show exactly this: spread $1.33$ at $\gamma=0.01$, $1.29$ at $\gamma=0.1$, $1.15$ at $\gamma=0.5$.
 
-**The skew per unit inventory** is $2\theta_2$ in the $\theta$ language - concretely, moving inventory by one lot shifts the reservation price by $\gamma\sigma^2(T-t)$. With the paper's simulation parameters ($\gamma=0.1,\sigma=2,\tau=1$) that is $ $\$0.40 per lot, so a +10$ lot position shades the quotes $\$4 down.
+**The skew per unit inventory** is $2\theta_2$ in the $\theta$ language - concretely, moving inventory by one lot shifts the reservation price by $\gamma\sigma^2(T-t)$. With the paper's simulation parameters ($\gamma=0.1,\sigma=2,\tau=1$) that is \$0.40 per lot, so a +10$ lot position shades the quotes $\$4 down.
 
 **Why variance is the right metric.** Under CARA utility $\mathbb{E}[-\exp(-\gamma W)]$, a smaller P&L variance is worth more than a larger mean whenever dispersion is high - a mean–variance proxy is $\mathbb{E}[W]-\tfrac{\gamma}{2}\mathrm{Var}[W]$. The AS strategy deliberately trades a small amount of mean for a large reduction in variance, which is the *correct* trade for a risk-averse dealer.
 

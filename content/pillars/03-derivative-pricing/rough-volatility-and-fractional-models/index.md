@@ -33,7 +33,7 @@ Why this matters on a desk: the **short-dated skew** is where Markovian SV model
 
 | Quantity | Formula | Verified check |
 |---|---|---|
-| **fBm covariance** (MVN 1968) | $\mathbb E[W^H_tW^H_s]=\frac12(|t|^{2H}+|s|^{2H}-|t-s|^{2H})$ | $H{=}\tfrac12\Rightarrow$ BM; $H{<}\tfrac12$ anti-persistent |
+| **fBm covariance** (MVN 1968) | $\mathbb E[W^H_tW^H_s]=\frac12(\vert t\vert ^{2H}+\vert s\vert ^{2H}-\vert t-s\vert ^{2H})$ | $H{=}\tfrac12\Rightarrow$ BM; $H{<}\tfrac12$ anti-persistent |
 | **fBm increment variance** | $\mathbb E[(W^H_{t+\Delta}-W^H_t)^2]=\Delta^{2H}$ | H=0.14: ratio $0.9989$–$1.0148$ over 8 lags |
 | **Increment autocorrelation** | $\rho_1=\frac12(2^{2H}-2)$ | H=0.14: $\mathbf{-0.393}$; H=0.50: $0$; H=0.90: $+0.741$ |
 | **RFSV scaling** (GJR 3.6) | $\mathbb E[(\ln\sigma_{t+\Delta}-\ln\sigma_t)^2]=\nu^2\Delta^{2H}$ | variogram OLS recovers $H{=}0.140$ from $H_{\text{true}}{=}0.14$ |

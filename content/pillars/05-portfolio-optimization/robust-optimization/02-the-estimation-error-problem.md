@@ -84,7 +84,7 @@ Three verified findings:
 1. **Ignoring the estimator's sampling distribution.** People treat $\hat\mu$ as data, not as a draw. The correct object is a *distribution* over $\mu$; every robust method is an explicit model of that distribution (§03's uncertainty sets *are* confidence regions).
 2. **Spending robustness on the wrong input.** Covariance regularization is popular because $\hat\Sigma$ is visibly ill-conditioned, but the certainty-equivalent loss is dominated by the **mean**. Shrinking only $\Sigma$ leaves the main leak open.
 3. **"More data will fix it."** DeMiguel, Garlappi & Uppal (2009) show that even $14$ sophisticated optimizers fail to beat $1/N$ out of sample across seven datasets, needing on the order of $3{,}000$–$6{,}000$ months of data to win - *decades* of history the market does not provide. Time is not the remedy; **regularization is.**
-4. **\$N \gtrsim T$ catastrophic conditioning.** When assets approach periods, $\hat\Sigma$ becomes singular or near-singular and $\hat\Sigma^{-1}$ explodes. The first-principles fix is to *impose structure* (shrinkage toward a factor/diagonal target), not to drop assets one by one.
+4. **$N \gtrsim T$ catastrophic conditioning.** When assets approach periods, $\hat\Sigma$ becomes singular or near-singular and $\hat\Sigma^{-1}$ explodes. The first-principles fix is to *impose structure* (shrinkage toward a factor/diagonal target), not to drop assets one by one.
 
 ---
 
