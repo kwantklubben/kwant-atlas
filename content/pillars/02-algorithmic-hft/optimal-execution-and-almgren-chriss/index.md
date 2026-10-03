@@ -22,7 +22,7 @@ This folder is the **optimal-execution topic-folder** for Pillar 2. It is a *hub
 
 **Scope note (vs the sibling folder).** This folder is the *scheduling* view - how to trade a given order. For *why* the price moves and how to measure it, see [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]] (Kyle's $\lambda$, square-root law, transient impact). The two meet at the impact-parameter calibration $\eta,\gamma$.
 
-*Primary verified sources:* Almgren & Chriss (2000); Almgren (2003); Obizhaeva & Wang (2013); Gatheral (2010, 2013); Cont, Kukanov & Stoikov (2014); Bertsimas & Lo (1998); Hasbrouck, *Empirical Market Microstructure* Ch 14-15 (verification report `hasbrouck_ch11-15.md` in the corpus); Cartea–Jaimungal–Penalva (2015); Gueant (2016). All numbers below were **re-executed and reproduced** (see §3).
+*Primary verified sources:* Almgren & Chriss (2000); Almgren (2003); Obizhaeva & Wang (2013); Gatheral (2010, 2013); Cont, Kukanov & Stoikov (2014); Bertsimas & Lo (1998); Hasbrouck, *Empirical Market Microstructure* Ch 14-15; Cartea–Jaimungal–Penalva (2015); Gueant (2016). All numbers below were **re-executed and reproduced** (see §3).
 
 ---
 

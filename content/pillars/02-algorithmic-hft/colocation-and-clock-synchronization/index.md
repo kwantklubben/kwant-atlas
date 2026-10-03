@@ -20,7 +20,7 @@ This folder is the **colocation-and-clock-synchronization topic-folder** for Pil
 
 > **The one-sentence essence.** "Total tick-to-trade latency is the sum of *propagation* (light through air or fiber), *network/stack*, and *machining* (matching-engine) delays - colocation shrinks the propagation term to sub-microsecond and the entire cross-venue latency arbitrage is a race priced by the ~4 ms it takes light to cross Chicago–New York; clock synchronization is the discipline that keeps your timestamps telling the truth when clocks drift by parts-per-million."
 
-*Primary verified sources:* Budish, Cramton & Shim (2015, QJE) - the arms-race/batch-auction critique; Menkveld (2013) - HFT as new market makers; O'Hara (2015) - high-frequency market microstructure (colo/fiber/microwave numbers); Hendershott et al. (2014, Price Pressures) - the intermediation cost latency must survive; MacKenzie (2021) *Trading at the Speed of Light*; Hasbrouck, *Empirical Market Microstructure* Ch 1–2 & 14 (verification `hasbrouck_ch1-5.md`, `hasbrouck_ch11-15.md`). All numbers below were **recomputed and reproduced** with the code in §3.
+*Primary verified sources:* Budish, Cramton & Shim (2015, QJE) - the arms-race/batch-auction critique; Menkveld (2013) - HFT as new market makers; O'Hara (2015) - high-frequency market microstructure (colo/fiber/microwave numbers); Hendershott et al. (2014, Price Pressures) - the intermediation cost latency must survive; MacKenzie (2021) *Trading at the Speed of Light*; Hasbrouck, *Empirical Market Microstructure* Ch 1–2 & 14. All numbers below were **recomputed and reproduced** with the code in §3.
 
 ---
 

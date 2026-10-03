@@ -46,10 +46,10 @@ jobs:
         run: npx quartz build
 
       - name: Check wikilinks resolve
-        run: python3 corpus/tools/check_links.py
+        run: python3 tools/check_links.py
 
       - name: Check every formula renders
-        run: node corpus/tools/check_math.mjs
+        run: node tools/check_math.mjs
 
       - name: Check the visualizer is not stale
-        run: python3 corpus/tools/build_visualizer.py --check
+        run: python3 tools/build_visualizer.py --check

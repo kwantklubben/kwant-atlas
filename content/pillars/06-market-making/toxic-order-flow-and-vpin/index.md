@@ -59,7 +59,7 @@ $$
 | Bulk buy-volume in bucket $\tau$ | $V_\tau^B=\sum_{i} Z\!\left(\dfrac{\Delta P_i}{\sigma_{\Delta P}}\right)$, $\;Z=\Phi$ standard-normal CDF |
 | Bulk sell-volume | $V_\tau^S=V-V_\tau^B$ |
 
-**Fast lookup (job #1):** PIN and VPIN are the *same* object - the informed fraction of flow - estimated on two clocks (trade-count vs volume). The formulas above are transcribed from Hasbrouck Ch 6 (verified in `hasbrouck_ch6-10.md`) and ELO 2012 eq. 9 + Appendix A (verified from the primary PDF); the numbers below were **re-executed and reproduced exactly**.
+**Fast lookup (job #1):** PIN and VPIN are the *same* object - the informed fraction of flow - estimated on two clocks (trade-count vs volume). The formulas above are transcribed from Hasbrouck Ch 6 and ELO 2012 eq. 9 + Appendix A (verified from the primary PDF); the numbers below were **re-executed and reproduced exactly**.
 
 ---
 
