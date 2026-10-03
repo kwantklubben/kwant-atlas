@@ -10,13 +10,12 @@ name: Fence check (deep, report only)
 #   * It cannot tell a WRONG result from a machine-dependent TIMING benchmark -- pages whose
 #     fence header reads ms/us/ns-op/x are legitimately not byte-stable (Pillar 8 is full of
 #     them). Gating on it would fail on every such page.
-# So: weekly + manual, report-only, output uploaded as an artifact for a human to classify.
+# So: manual only (Actions tab -> Run workflow), report-only, output uploaded as an artifact
+# for a human to classify. It used to run weekly; nobody read the reports, so it no longer does.
 #
 # FENCE_TIMEOUT bounds each block; a slow block reports TIMEOUT rather than hanging the run.
 
 on:
-  schedule:
-    - cron: "0 6 * * 1" # Mondays 06:00 UTC
   workflow_dispatch:
 
 permissions:
