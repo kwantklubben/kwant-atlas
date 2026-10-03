@@ -119,7 +119,7 @@ Hub signposts - the folder's failure-mode analysis lives in [[pillars/06-market-
 - **Copeland, T. E. & Galai, D. (1983)**, *Information effects on the bid-ask spread*, Journal of Finance 38(5), 1457–1469. *"Short a put and a call" intuition; primary PDF in corpus.*
 - **Kyle, A. S. (1985)**, *Continuous auctions and insider trading*, Econometrica 53(6), 1315–1335. *The strategic-information counterpart. Primary PDF in corpus.*
 - **Hasbrouck, J. (2007)**, *Empirical Market Microstructure*, OUP. *Ch 5 (GM)
-- **Foucault, T., Pagano, M. & Röell, A. (2013)**, *Market Liquidity*, OUP. *Ch 3 (adverse selection, eqs 3.5–3.37). Verified in corpus (`foucault_ch1-3.md`).*
+- **Foucault, T., Pagano, M. & Röell, A. (2013)**, *Market Liquidity*, OUP. *Ch 3 (adverse selection, eqs 3.5–3.37).*
 - **Glosten, L. R. & Harris, L. E. (1988)**, *Estimating the components of the bid/ask spread*, JFE 21(1), 123–142. *The transitory/permanent split. Primary PDF in corpus.*
 - **Easley, D., Kiefer, N. & O'Hara, M. (1997)**, *The information content of the trading process*, JFE 44(1), 159–186. *PIN. Primary PDF in corpus.*
 

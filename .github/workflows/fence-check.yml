@@ -35,7 +35,7 @@ jobs:
       - name: Python output-fence check (report only)
         env:
           FENCE_TIMEOUT: "30"
-        run: python3 corpus/audit/tools/fencecheck_strict.py | tee fencecheck.txt
+        run: python3 tools/fencecheck.py | tee fencecheck.txt
 
       - name: Summary
         if: always()

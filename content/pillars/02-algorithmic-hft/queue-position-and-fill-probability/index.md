@@ -22,7 +22,7 @@ This folder is the **queue-and-fill topic-folder** for Pillar 2. It is a *hub*: 
 
 **Scope note (vs the siblings).** This folder is the *micro-event* view - will *this* order fill, and when. For the *aggregate* view of price movement see [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Optimal Execution & Almgren–Chriss]] (scheduling a block) and [[pillars/06-market-making/market-impact-and-depth/index|Market Impact & Depth]] (how fills move the price). The three meet at the **order-flow-imbalance** variable.
 
-*Primary verified sources:* Cont, Stoikov & Talreja (2010); Cont & Kukanov (2017); Cont, Kukanov & Stoikov (2014); Gould et al. (2013); Lo, MacKinlay & Zhang (2002); Rosu (2009); Foucault, Pagano & Roell, *Market Liquidity* Ch 4–6 (corpus verification `foucault_ch4-6.md`); Hasbrouck, *Empirical Market Microstructure* Ch 6–10 (corpus verification `hasbrouck_ch6-10.md`). All numbers below were **re-executed and reproduced** (see §3).
+*Primary verified sources:* Cont, Stoikov & Talreja (2010); Cont & Kukanov (2017); Cont, Kukanov & Stoikov (2014); Gould et al. (2013); Lo, MacKinlay & Zhang (2002); Rosu (2009); Foucault, Pagano & Roell, *Market Liquidity* Ch 4–6; Hasbrouck, *Empirical Market Microstructure* Ch 6–10. All numbers below were **re-executed and reproduced** (see §3).
 
 ---
 

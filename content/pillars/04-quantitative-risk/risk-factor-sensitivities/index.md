@@ -30,7 +30,7 @@ The practical objective of this page is the **lookup table** (job #1 of this pil
 
 ### 2. Mathematical Ground Truth & the Sensitivity Lookup
 
-**Quick-Reference Lookup (job #1).** All formulas are transcribed from Hull Ch 19 (Greeks, verified) and Ch 22 (delta-normal, delta–gamma, duration mapping, verified in `corpus/verified/hull_ch19-23.md`), cross-checked against Haug §2 (the formula-authoritative Greeks) and RiskMetrics (1996). The numbers in the check column were **re-executed and reproduced exactly** from the reference implementation in §3 on the shared test book (Haug option $S{=}98,X{=}100,T{=}.25,r{=}10\%,b{=}5\%,\sigma{=}30\%$; book $=$ long 100 calls $S{=}100,X{=}100,T{=}.5,r{=}b{=}5\%,\sigma{=}20\%$ $+$ short 50 puts $S{=}100,X{=}95,T{=}.25,\sigma{=}25\%$; bond book $=$ a 5y and a 10y 5\%-coupon bond on a flat 4\% zero curve).
+**Quick-Reference Lookup (job #1).** All formulas are transcribed from Hull Ch 19 (Greeks, verified) and Ch 22 (delta-normal, delta–gamma, duration mapping, verified), cross-checked against Haug §2 (the formula-authoritative Greeks) and RiskMetrics (1996). The numbers in the check column were **re-executed and reproduced exactly** from the reference implementation in §3 on the shared test book (Haug option $S{=}98,X{=}100,T{=}.25,r{=}10\%,b{=}5\%,\sigma{=}30\%$; book $=$ long 100 calls $S{=}100,X{=}100,T{=}.5,r{=}b{=}5\%,\sigma{=}20\%$ $+$ short 50 puts $S{=}100,X{=}95,T{=}.25,\sigma{=}25\%$; bond book $=$ a 5y and a 10y 5\%-coupon bond on a flat 4\% zero curve).
 
 **Notation:** $V$ portfolio value, $S$ spot, $\sigma$ volatility, $T$ time to expiry, $r$ rate, $y_i$ the zero rate at curve node $i$, $w$ position vector, $\beta$ factor-loading matrix, $z_\alpha=\Phi^{-1}(\alpha)$.
 

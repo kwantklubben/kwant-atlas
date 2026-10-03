@@ -23,7 +23,7 @@ This folder is the **market-impact & depth** topic-folder for Pillar 6. It is a 
 
 **Scope note.** Pillar 2 covers *optimal execution* (how to schedule a trade given an impact model). This folder is the **microstructure/impact-model view**: what *causes* the price to move and how to *measure* it. The two meet at [[pillars/02-algorithmic-hft/optimal-execution-and-almgren-chriss/index|Almgren–Chriss]].
 
-*Primary verified sources:* Hasbrouck, *Empirical Market Microstructure* (Ch 7, Kyle; Ch 8, generalized Roll; Ch 9, multivariate; §9.9, impact proxies) - the deep-read verification reports `hasbrouck_ch6-10.md` / `hasbrouck_ch1-5.md` in the corpus - cross-checked against the primary papers (Kyle 1985; Almgren & Chriss 2000; Almgren et al. 2005; Bouchaud, Farmer & Lillo 2009; Gatheral 2010, 2013; Cont, Kukanov & Stoikov 2014).
+*Primary verified sources:* Hasbrouck, *Empirical Market Microstructure* (Ch 7, Kyle; Ch 8, generalized Roll; Ch 9, multivariate; §9.9, impact proxies) - cross-checked against the primary papers (Kyle 1985; Almgren & Chriss 2000; Almgren et al. 2005; Bouchaud, Farmer & Lillo 2009; Gatheral 2010, 2013; Cont, Kukanov & Stoikov 2014).
 
 ---
 
