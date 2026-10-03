@@ -71,7 +71,7 @@ Standard library only. Each simulated fill earns a half-spread, receives a rebat
 
 - Net P&L $= + $ \$0.0050/share with the rebate, + \$0.0030 without - the rebate is **40%** of net.
 - The simulated adverse-selection term is $-0.005979$ vs the analytic $\lambda=\delta=0.006$ - a **0.4%** sampling gap over $5\times10^5$ draws, i.e. the decomposition is tight.
-- The **headline** spread is $2h= $ \$0.020; the true take is \0.0050 - the spread **overstates** the maker's margin by 4×.
+- The **headline** spread is $2h= $ \$0.020; the true take is \$0.0050 - the spread **overstates** the maker's margin by 4×.
 
 ---
 

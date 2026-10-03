@@ -77,7 +77,7 @@ We price two coupon bonds off a flat $4\%$ zero curve, compute modified duration
 
 1. **The ladder is the risk.** The book's DV01 is $0.130916$, but it is *not* spread evenly: the 5-year bond's final coupon/principal node carries $0.043467$ ($33\%$ of the total) and the 10-year's carries $0.068206$ ($52\%$). The **intermediate nodes carry almost nothing** ($\approx0.003$ each). A parallel-shift hedge is therefore a poor hedge against almost any actual curve move - the classic pain trade of a coupon-bond book.
 2. **The summation identity holds to machine precision** ($\text{diff}=1.42\times10^{-14}$). This is the check that a risk system's curve parameterisation and its bump are mutually consistent.
-3. **Convexity is a real correction, not trivia.** On a $+100$bp parallel move, duration alone predicts $-13.09$ against an actual $-12.56$ - a $ $\$0.53 error on a \212.56 book ($+4.2\%$ of the loss). At $+200$bp the error is $ $\$2.05 (8.5\%$). The sign is favourable (long convexity cushions a selloff) and it is *symmetric* - the same convexity term helps on a rally, which is exactly what makes convexity a priced asset.
+3. **Convexity is a real correction, not trivia.** On a $+100$bp parallel move, duration alone predicts $-13.09$ against an actual $-12.56$ - a \$0.53 error on a \$212.56 book ($+4.2\%$ of the loss). At $+200$bp the error is \$2.05 (8.5\%$). The sign is favourable (long convexity cushions a selloff) and it is *symmetric* - the same convexity term helps on a rally, which is exactly what makes convexity a priced asset.
 
 ---
 

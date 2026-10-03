@@ -75,7 +75,7 @@ Stdlib only. Each block quantifies one failure (the queue ahead is 11,500 shares
 
 
 
-Read across the four. **F1:** the naive rule books **800** shares where FIFO fills **234** - a $3.4\times$ overstatement of a passive strategy's inventory. **F2:** latency converts into a near-linear pick-off tax, $4.9\%$ of fills at $0.05$ ms rising to **every** fill at $10$ ms. **F3:** using the whole day's flow to decide a fill made at the cancel time inflates $P(\text{fill})$ from $0.3301$ to $1.0000$ - a $3\times$ phantom-fill multiplier hidden inside a "replay." **F4:** ignoring your own impact drops a **\$25{,}000** cost on a one-day 100k-share liquidation (\$1{,}250 spread over 20 days) - the term that decides whether a large metaorder is profitable at all.
+Read across the four. **F1:** the naive rule books **800** shares where FIFO fills **234** - a $3.4\times$ overstatement of a passive strategy's inventory. **F2:** latency converts into a near-linear pick-off tax, $4.9\%$ of fills at $0.05$ ms rising to **every** fill at $10$ ms. **F3:** using the whole day's flow to decide a fill made at the cancel time inflates $P(\text{fill})$ from $0.3301$ to $1.0000$ - a $3\times$ phantom-fill multiplier hidden inside a "replay." **F4:** ignoring your own impact drops a **\$25,000** cost on a one-day 100k-share liquidation (\$1,250 spread over 20 days) - the term that decides whether a large metaorder is profitable at all.
 
 ---
 
@@ -84,7 +84,7 @@ Read across the four. **F1:** the naive rule books **800** shares where FIFO fil
 1. **Optimistic fill accounting.** Booking "a trade printed" as "I filled" violates $\xi\ge x$; measured **$3.4\times$** overbooking. *Fix:* model cumulative outflow (trades $+$ cancels) against queue position, and record *quantity*, not a binary.
 2. **Latency omission / stale-quote pick-off.** $P(\text{adverse fill})$ rises from $0.0488$ to $1.0000$ as latency goes $0.05\!\to\!10$ ms; each fill carries an expected loss up to a full tick. *Fix:* model latency explicitly and include cancel-ahead logic ([[pillars/02-algorithmic-hft/low-latency-systems-architecture|Low-Latency Systems Architecture]]).
 3. **Look-ahead in replay.** Whole-day flow used for a short-lived quote inflated $P(\text{fill})$ from $0.3301$ to $1.0000$. *Fix:* strict causal ordering - an event may only affect decisions at or after its timestamp.
-4. **Ignored self-impact.** A size-blind backtest omits the $\eta X^2/T$ cost (\$25{,}000 on 1-day 100k shares); it can exceed the alpha entirely. *Fix:* calibrate Almgren (2005) impact and charge it per leg.
+4. **Ignored self-impact.** A size-blind backtest omits the $\eta X^2/T$ cost (\$25,000 on 1-day 100k shares); it can exceed the alpha entirely. *Fix:* calibrate Almgren (2005) impact and charge it per leg.
 5. **Ignored adverse selection.** $\mathbb E[\Delta M\mid\text{filled}]<0$: even a correct fill model that stops at the fill overstates edge by the adverse-selection drift. *Fix:* price the conditional drift into the fill's P&L.
 6. **Phantom-liquidity cascades.** The queue ahead vanishes *simultaneously* when a sweep arrives (correlated cancels); a constant cancel rate mis-models fills in exactly the fast, volatile books where execution matters. *Fix:* make cancel intensity state- and event-dependent.
 7. **Calibration and benchmark drift.** Calibrating impact/fill parameters on one regime and evaluating on the same data is in-sample optimism; benchmarks (VWAP vs arrival vs close) change the verdict. *Fix:* out-of-sample calibration and a fixed, pre-declared benchmark.

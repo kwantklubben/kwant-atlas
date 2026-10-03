@@ -1,89 +1,118 @@
 // corpus/tools/check_math.mjs — gate: every math span must render under the site's KaTeX.
 //
-// Background: display equations only render when both `$$` delimiters sit on their
-// own lines. A single-line `$$a=b$$` silently renders INLINE, and a `$` inside math
-// (e.g. `\approx\$96.5`) makes remark-math end the span early, leaving a dangling
-// backslash that KaTeX rejects — which the reader sees as raw red error text.
+// Parses each page with the same stack the site uses (remark-parse + remark-gfm +
+// remark-math), so it sees math exactly where the site does. The previous version
+// found `$…$` with regexes and therefore missed the failures that matter most:
 //
-// Usage:  node corpus/tools/check_math.mjs [--quiet]
-// Exit 0 = clean, 1 = spans failed to render.
+//   * a `|` inside math in a TABLE row: GFM splits the cell there first, so the
+//     formula is cut in two and both halves print as raw LaTeX;
+//   * a currency `$` next to math, which pairs with the wrong delimiter;
+//   * `\\` in a display block outside an environment (aligned, cases, …): KaTeX
+//     renders it as NOTHING, silently joining the lines;
+//   * a non-ASCII character KaTeX cannot typeset (€, µ, §): rendered as a blank;
+//   * `\\` in inline math: double-escaped LaTeX. `\\%` even comments out the rest.
+//
+// Reported per source line. Usage:  node corpus/tools/check_math.mjs [--quiet]
+// Exit 0 = clean, 1 = something will render wrong.
 
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import katex from "katex";
+import fs from "node:fs"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+import katex from "katex"
+import { unified } from "unified"
+import remarkParse from "remark-parse"
+import remarkGfm from "remark-gfm"
+import remarkMath from "remark-math"
+import { visit } from "unist-util-visit"
 
-const HERE = path.dirname(fileURLToPath(import.meta.url));
-const CONTENT = path.resolve(HERE, "../../content");
-const quiet = process.argv.includes("--quiet");
+const HERE = path.dirname(fileURLToPath(import.meta.url))
+const CONTENT = path.resolve(HERE, "../../content")
+const quiet = process.argv.includes("--quiet")
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-    const p = path.join(dir, e.name);
+    const p = path.join(dir, e.name)
     if (e.isDirectory()) {
-      if (e.name === "_legacy") continue; // retired notes are not published
-      walk(p, out);
-    } else if (e.name.endsWith(".md")) out.push(p);
+      if (e.name === "_legacy") continue // retired notes are not published
+      walk(p, out)
+    } else if (e.name.endsWith(".md")) out.push(p)
   }
-  return out;
+  return out
 }
 
-// fence contents are code, never math
-function maskFences(text) {
-  let inFence = false;
-  return text
-    .split("\n")
-    .map((l) => {
-      if (l.trimStart().startsWith("```")) return ((inFence = !inFence), "");
-      return inFence ? "" : l;
-    })
-    .join("\n");
-}
+const parser = unified().use(remarkParse).use(remarkGfm).use(remarkMath)
 
-const problems = [];
-let checked = 0;
+// LaTeX left in ordinary text means a math span was broken apart before KaTeX
+// saw it. A `$` directly followed by a backslash command, or a bare \frac-style
+// command, never occurs in prose.
+const STRAY =
+  /\$\\[A-Za-z]|\\(?:frac|sum|int|mathbb|mathbf|mathcal|sqrt|sigma|alpha|beta|lambda|varepsilon|partial|left|right|text|hat|bar|tfrac|dfrac)\b/
+
+const problems = []
+let checked = 0
 
 for (const file of walk(CONTENT)) {
-  const text = maskFences(fs.readFileSync(file, "utf8"));
-  const rel = path.relative(CONTENT, file).replace(/\\/g, "/");
-  const lineOf = (i) => text.slice(0, i).split("\n").length;
+  const text = fs
+    .readFileSync(file, "utf8")
+    .replace(/^---\n[\s\S]*?\n---\n/, (fm) => fm.replace(/[^\n]/g, " ")) // blank the frontmatter but keep line numbers
+  const rel = path.relative(CONTENT, file).replace(/\\/g, "/")
+  const tree = parser.parse(text)
 
-  const spans = [];
-  let m;
-  const displayRe = /\$\$([\s\S]*?)\$\$/g;
-  while ((m = displayRe.exec(text))) spans.push([m.index, m[1], true]);
-  const rest = text.replace(/\$\$[\s\S]*?\$\$/g, (s) => " ".repeat(s.length));
-  const inlineRe = /(?<![\\$])\$([^$\n]+?)\$/g;
-  while ((m = inlineRe.exec(rest))) spans.push([m.index, m[1], false]);
-
-  for (const [idx, body, display] of spans) {
-    const src = body.trim();
-    if (!src) continue;
-    checked++;
-    try {
-      katex.renderToString(src, { displayMode: display, throwOnError: true, strict: false });
-    } catch (e) {
+  visit(tree, (node, _i, parent) => {
+    const line = node.position?.start.line ?? 0
+    const where = `${rel}:${line}`
+    if (node.type === "math" || node.type === "inlineMath") {
+      const display = node.type === "math"
+      const src = node.value.trim()
+      if (!src) return
+      checked++
+      const warnings = []
+      try {
+        katex.renderToString(src, {
+          displayMode: display,
+          throwOnError: true,
+          strict: (code, msg) => (warnings.push(`${code}: ${msg}`), "ignore"),
+        })
+      } catch (e) {
+        warnings.push(String(e.message))
+      }
+      // `\\` in INLINE math outside an environment is a line break KaTeX drops,
+      // and `\\%` is worse: a break followed by a comment that silently deletes
+      // the rest of the formula. Both come from double-escaping, never intent.
+      if (!display && /(?<!\\)\\\\/.test(src) && !/\\begin\{/.test(src))
+        warnings.push("double backslash in inline math (double-escaped LaTeX?)")
+      for (const w of new Set(warnings.map((w) => w.replace(/ at position.*$/s, "")))) {
+        problems.push({
+          where,
+          kind: w
+            .replace(/ at position.*$/s, "")
+            .replace(/\s+/g, " ")
+            .slice(0, 100),
+          src: src.replace(/\s+/g, " ").slice(0, 100),
+        })
+      }
+    } else if (node.type === "text" && parent?.type !== "inlineCode" && STRAY.test(node.value)) {
       problems.push({
-        loc: `${rel}:${lineOf(idx)}`,
-        display,
-        msg: String(e.message).replace(/\s+/g, " ").slice(0, 90),
-        src: src.replace(/\s+/g, " ").slice(0, 90),
-      });
+        where,
+        kind: "LaTeX printed as text (math span broken: `|` in a table, or a stray `$`)",
+        src: node.value.replace(/\s+/g, " ").slice(0, 100),
+      })
     }
-  }
+  })
 }
 
 if (problems.length === 0) {
-  console.log(`check_math: OK — ${checked} math spans all render`);
-  process.exit(0);
+  console.log(`check_math: OK — ${checked} math spans all render`)
+  process.exit(0)
 }
 
-console.log(`check_math: ${problems.length} of ${checked} math spans FAIL to render\n`);
-const byMsg = {};
-for (const p of problems) (byMsg[p.msg] ||= []).push(p);
-for (const [msg, items] of Object.entries(byMsg).sort((a, b) => b[1].length - a[1].length)) {
-  console.log(`[${items.length}] ${msg}`);
-  if (!quiet) for (const it of items.slice(0, 8)) console.log(`     ${it.loc}  ${it.display ? "display" : "inline "}  ${JSON.stringify(it.src)}`);
-  if (!quiet && items.length > 8) console.log(`     ... +${items.length - 8} more`);
+console.log(`check_math: ${problems.length} problem(s) in ${checked} math spans\n`)
+const byKind = {}
+for (const p of problems) (byKind[p.kind] ||= []).push(p)
+for (const [kind, items] of Object.entries(byKind).sort((a, b) => b[1].length - a[1].length)) {
+  console.log(`[${items.length}] ${kind}`)
+  const shown = quiet ? 0 : 50
+  for (const it of items.slice(0, shown)) console.log(`     ${it.where}  ${JSON.stringify(it.src)}`)
+  if (items.length > shown) console.log(`     ... +${items.length - shown} more`)
 }
-process.exit(1);
+process.exit(1)

@@ -52,7 +52,7 @@ Pass-through is the crux and it is *heterogeneous*: a regulated utility with a c
 
 #### 2.3 Stranded assets: the break-even carbon price
 
-For asset $i$ with a break-even net margin $m_i$ ($ $\$/unit of fuel) and an emission factor \mathrm{EF} (tCO2e per unit of fuel), the carbon cost per unit is $\mathrm{EF}\cdot p$. The asset is **uneconomic** when
+For asset $i$ with a break-even net margin $m_i$ (\$/unit of fuel) and an emission factor \mathrm{EF} (tCO2e per unit of fuel), the carbon cost per unit is $\mathrm{EF}\cdot p$. The asset is **uneconomic** when
 $$
 \boxed{\ p^*=\frac{m_i}{\mathrm{EF}}\quad\text{equivalently}\quad \mathrm{EF}\cdot p>m_i\ }
 $$
@@ -81,7 +81,7 @@ Panel (A) integrates a reserve cost curve into a stranded fraction at four carbo
 
 
 
-Two readings. First, the stranded fraction is **violently convex in the carbon price**: $0\%\to14.4\%\to64.4\%\to92.2\%$ across $ $\$0\to\150/t. A portfolio's "stranding risk" is therefore not a number but a *curve*, and reporting a single point on it is a hidden assumption about the policy path. Second, the physical drag at $+3^\circ$C ($5.40\%$) is the same order as the transition hit - **the two families are comparable in magnitude, and in a hot-house scenario you pay the physical one instead of the transition one, not instead of both.**
+Two readings. First, the stranded fraction is **violently convex in the carbon price**: $0\%\to14.4\%\to64.4\%\to92.2\%$ across \$0\to\$150/t. A portfolio's "stranding risk" is therefore not a number but a *curve*, and reporting a single point on it is a hidden assumption about the policy path. Second, the physical drag at $+3^\circ$C ($5.40\%$) is the same order as the transition hit - **the two families are comparable in magnitude, and in a hot-house scenario you pay the physical one instead of the transition one, not instead of both.**
 
 Cross-check against the earlier identity: at $p= $ \$100/t the threshold is \mathrm{EF}\cdot p=0.43\times100= \$43/bbl, so \$43 separates economic from stranded reserves - which is exactly the $64.4\%$ cut in the table.
 

@@ -66,11 +66,11 @@ $$
 
 | Statement | Key identity | Verified check |
 |---|---|---|
-| Balance sheet | $A = L+E$ | $ $\$15,800 = \5,000 + \$10,800 ✓ |
-| Income stmt | $\text{NI}=\text{Rev}-\text{Exp}$ | $ $\$800 = \7,000 -\$6,200 ✓ |
-| Cash flow | $\text{CFO}+\text{CFI}+\text{CFF}=\Delta\text{Cash}$ | $1{,}500-6{,}000+15{,}000= $\$10{,}500 ✓ |
-| Articulation | $\Delta\text{cash}=\text{CFO}+\text{CFI}+\text{CFF}$ | ending cash $ $\$10,500 = beginning 0 $+ $\$10,500 ✓ |
-| Accrual bridge | $\text{Earnings}=\text{CFO}+\text{Accruals}$ | $ $\$800 = \1,500 +$ (−$\$700) ✓ |
+| Balance sheet | $A = L+E$ | \$15,800 = \$5,000 + \$10,800 ✓ |
+| Income stmt | $\text{NI}=\text{Rev}-\text{Exp}$ | \$800 = \$7,000 -\$6,200 ✓ |
+| Cash flow | $\text{CFO}+\text{CFI}+\text{CFF}=\Delta\text{Cash}$ | $1{,}500-6{,}000+15{,}000= $\$10,500 ✓ |
+| Articulation | $\Delta\text{cash}=\text{CFO}+\text{CFI}+\text{CFF}$ | ending cash \$10,500 = beginning 0 $+ $\$10,500 ✓ |
+| Accrual bridge | $\text{Earnings}=\text{CFO}+\text{Accruals}$ | \$800 = \$1,500 +$ (−$\$700) ✓ |
 
 ---
 

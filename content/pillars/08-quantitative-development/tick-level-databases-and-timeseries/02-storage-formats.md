@@ -53,7 +53,10 @@ $$
 with a metadata overhead of only
 
 $$
-\text{overhead} = \frac{16\,\lvert\text{cols}\rvert}{R\,s}\ \text{fraction of the day's bytes}$$ (equivalently $\frac{16\lvert\text{cols}\rvert G}{R_{\text{day}}s}$, with $G=R_{\text{day}}/R$ groups).
+\text{overhead} = \frac{16\,\lvert\text{cols}\rvert}{R\,s}\ \text{fraction of the day's bytes}
+$$
+
+(equivalently $\frac{16\lvert\text{cols}\rvert G}{R_{\text{day}}s}$, with $G=R_{\text{day}}/R$ groups).
 
 This is why a *sorted* table is cheap to filter: sorting co-locates values, so each group's $[min,max]$ band is narrow and few groups are needed.
 

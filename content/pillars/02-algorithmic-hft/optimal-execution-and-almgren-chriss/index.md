@@ -69,8 +69,8 @@ with the continuous-time urgency $\kappa=\sqrt{\lambda\sigma^2/\eta}$ (AC eq 19:
 | Trajectory | $x_t=X\dfrac{\sinh(\kappa(T-t))}{\sinh(\kappa T)}$ | $x(1\text{d}){=}545{,}055$, $x(2.5\text{d}){=}212{,}003$ of $10^6$ |
 | Risk-neutral limit | $\lambda\to0 \Rightarrow \kappa\to0,\; x_t=X(1-t/T)$ | TWAP |
 | Infinitely risk-averse | $\lambda\to\infty \Rightarrow$ liquidate at $t=0$ | block |
-| Expected cost | $\tfrac12\gamma X^2+\varepsilon X+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | TWAP $E= $ \$644{,}500; AC E= \$921{,}572 |
-| Cost variance | $\sigma^2\sum\tau x_k^2$ | TWAP sd $= $ \$1{,}222{,}765; AC sd = \$850{,}375 |
+| Expected cost | $\tfrac12\gamma X^2+\varepsilon X+\tfrac{\tilde\eta}{\tau}\sum n_k^2$ | TWAP $E= $ \$644,500; AC E= \$921,572 |
+| Cost variance | $\sigma^2\sum\tau x_k^2$ | TWAP sd $= $ \$1,222,765; AC sd = \$850,375 |
 | Efficient frontier | $E$ convex, increasing in $V$; selected by tangent slope $-\lambda$ | tangency error $0.00\%$ at $\lambda{=}10^{-6}$ |
 | TWAP-horizon optimum | $T^\star=\sqrt3\,\theta$ | $\theta{=}1.664 \Rightarrow T^\star{=}2.883$ d |
 | Implementation shortfall | $IS=$ execution cost $+$ opportunity cost (Perold 1988) | MC mean matches theory to $0.12\%$ |

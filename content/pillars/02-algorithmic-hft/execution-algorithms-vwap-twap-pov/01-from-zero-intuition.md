@@ -30,7 +30,9 @@ Three truths, three "aha"s:
 
 **The impact non-linearity (Almgren–Chriss temporary impact).** In the AC model the temporary impact paid on a block traded at rate $v$ is linear:
 $$
-h(v) = \varepsilon + \frac{\eta}{\tau}\,v \quad\text{(per share)},$$ so the *total* cost of trading $n$ shares in one interval is $n\\cdot h(n/\\tau)$ - and the key fact is that this **grows quadratically in the slice size**. The temporary-impact contribution to expected cost is
+h(v) = \varepsilon + \frac{\eta}{\tau}\,v \quad\text{(per share)},
+$$
+so the *total* cost of trading $n$ shares in one interval is $n\cdot h(n/\tau)$ - and the key fact is that this **grows quadratically in the slice size**. The temporary-impact contribution to expected cost is
 $$
 \frac{\tilde\eta}{\tau}\sum_{t=1}^N n_t^2, \qquad \text{so if you split into } N \text{ equal slices, it becomes } \frac{\tilde\eta}{\tau}\,\frac{X^2}{N}.
 $$
@@ -51,7 +53,7 @@ Buy $X=10^6$ shares; compare the temporary-impact cost of dumping the whole pare
 
 
 
-**Read the number.** The fixed $\varepsilon X = $ \$20{,}000 cost is identical in both - it is schedule-independent. The rest is the quadratic term, and it collapses by a factor of 50$ because the temporary-impact cost scales as $\\sum n_t^2$. Sweeping a $5\\text{-}day$ parent order in one shot would cost the desk ~$2500$ bps of pure impact *before any price drift*; slicing brings it under $100$ bps. This is why the practice exists.
+**Read the number.** The fixed $\varepsilon X =$ \$20,000 cost is identical in both - it is schedule-independent. The rest is the quadratic term, and it collapses by a factor of $50$ because the temporary-impact cost scales as $\sum n_t^2$. Sweeping a 5-day parent order in one shot would cost the desk ~$2500$ bps of pure impact *before any price drift*; slicing brings it under $100$ bps. This is why the practice exists.
 
 ---
 

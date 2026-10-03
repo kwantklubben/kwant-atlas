@@ -77,7 +77,7 @@ This is the reason §3 exposes the carry $b$ as an explicit function argument. F
 
 #### 2.5 Day-count and quote conventions (Hull Ch 6.1)
 
-Interest accrues under a **day-count convention**: Actual/Actual (US Treasuries), $30/360$ (US corporates), Actual/360 (US money market); Actual/365 in Australia/Canada/NZ. Bonds quote a **clean price**; the cash paid is the **dirty price** $=$ clean price $+$ accrued interest. Rate futures are quoted as $100-R$ with a fixed $ $\$/\text{bp} value: \25 per bp for a \$1M three-month contract, \$41.67 per bp for a \$5M one-month SOFR (Hull Ch 6.3).
+Interest accrues under a **day-count convention**: Actual/Actual (US Treasuries), $30/360$ (US corporates), Actual/360 (US money market); Actual/365 in Australia/Canada/NZ. Bonds quote a **clean price**; the cash paid is the **dirty price** $=$ clean price $+$ accrued interest. Rate futures are quoted as $100-R$ with a fixed dollar value per basis point: \$25 per bp for a \$1M three-month contract, \$41.67 per bp for a \$5M one-month SOFR (Hull Ch 6.3).
 
 ---
 
@@ -87,7 +87,7 @@ Standard library only. This turns the specification, margin and day-count rules 
 
 
 
-The naked-call number decomposes cleanly: $100\times5$ premium $+20\%\times100\times55= $ \$1{,}100 of stock cover, minus zero OTM discount = \$1{,}600; the $10\%$ floor is $ $\$1{,}050, so the 20\%$ branch binds. **The margin is not a fee - it is collateral, and its size is set by the exchange to cover a plausible one-day move.**
+The naked-call number decomposes cleanly: $100\times5$ premium $+20\%\times100\times55= $ \$1,100 of stock cover, minus zero OTM discount = \$1,600; the $10\%$ floor is \$1,050, so the 20\%$ branch binds. **The margin is not a fee - it is collateral, and its size is set by the exchange to cover a plausible one-day move.**
 
 ---
 
@@ -95,7 +95,7 @@ The naked-call number decomposes cleanly: $100\times5$ premium $+20\%\times100\t
 
 1. **Wrong carry $b$.** The single most common pricing bug: using $b=r$ for an index (should be $r-q$), for futures ($0$), or for FX ($r-r_f$). The error is a multiplicative factor $e^{(b_{\text{wrong}}-b_{\text{right}})T}$ on the forward leg.
 2. **Futures $\ne$ forward when rates are stochastic.** Equal only when $r$ is constant (Hull §5.8); otherwise futures are slightly higher/lower, and for **interest-rate** futures the difference is the convexity adjustment (Hull Ch 6.3). Treating them as identical silently misprices long-dated rate hedges.
-3. **Margin vs premium confusion.** Buying an option is a *cash* outflow of the full premium ($$\$325); writing one is *collateral* (\$1{,}600) plus a contingent liability. Conflating the two wrecks both the cash-flow model and the risk model.
+3. **Margin vs premium confusion.** Buying an option is a *cash* outflow of the full premium (\$325); writing one is *collateral* (\$1,600) plus a contingent liability. Conflating the two wrecks both the cash-flow model and the risk model.
 4. **Ignoring settlement-timing differences.** Futures variation margin earns no interest; OTC/CCP variation margin does. Over long horizons this timing difference is exactly what separates forward and futures prices.
 5. **Day-count sloppiness.** Actual/360 vs Actual/365 changes the accrued interest of a rate instrument by a factor of $\approx 365/360$ - small per trade, material across a book.
 6. **Assuming standardisation is universal.** Only exchange contracts are standard; the OTC market (the larger one, $\approx$\$558.5T notional) negotiates every term, so "the" market price may not exist - only a dealer quote with a bid/ask.

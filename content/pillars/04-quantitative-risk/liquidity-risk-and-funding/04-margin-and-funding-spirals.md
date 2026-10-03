@@ -48,7 +48,7 @@ so $m$ rises with $\sigma$ and with the *lengthening liquidation delay* $\Delta 
 $$
 S_{\text{total}}=S_0\sum_{k\ge0}(L\kappa)^k=\frac{S_0}{1-L\kappa},\qquad L\kappa<1.
 $$
-The **amplification factor is $1/(1-L\kappa)$**. It is benign at $L\kappa=0.1$ ($\times1.1$) and explosive as $L\kappa\to1$: at $L\kappa=0.5$ the initial $ $\$10M sale becomes \20M; at L\kappa\ge1$ the series **diverges** - deleveraging cannot keep up with the price impact it creates. This is the formal statement of "the spiral has no fixed point."
+The **amplification factor is $1/(1-L\kappa)$**. It is benign at $L\kappa=0.1$ ($\times1.1$) and explosive as $L\kappa\to1$: at $L\kappa=0.5$ the initial \$10M sale becomes \$20M; at L\kappa\ge1$ the series **diverges** - deleveraging cannot keep up with the price impact it creates. This is the formal statement of "the spiral has no fixed point."
 
 **2.4 The loss spiral across agents (fire-sale externality preview).** When *many* agents share the same collateral and margin rules, each agent's $\kappa$ depends on the *aggregate* sale $S_{\text{agg}}$, not its own. Private optimisation uses $\kappa S_i$; the social cost uses $\kappa S_{\text{agg}}$. Because $S_{\text{agg}}>S_i$, the private cost is systematically too low - a pecuniary externality (see [[pillars/04-quantitative-risk/liquidity-risk-and-funding/05-failure-modes-and-practice|05 · Failure Modes]]).
 
@@ -65,7 +65,7 @@ The LCR forces enough high-quality liquid assets to survive 30 days of stress ou
 
 ### 3. Computational Implementation - a deterministic margin-spiral simulation
 
-We run the recurrence of §2.1–2.3 on a $$\$50M book funded at 5× leverage. Each round: the broker hikes the haircut (margin spiral), the constraint binds, the shortfall is sold, and the sale's market impact feeds back as a mark-to-market loss (loss spiral). Stdlib only; fully deterministic.
+We run the recurrence of §2.1–2.3 on a \$50M book funded at 5× leverage. Each round: the broker hikes the haircut (margin spiral), the constraint binds, the shortfall is sold, and the sale's market impact feeds back as a mark-to-market loss (loss spiral). Stdlib only; fully deterministic.
 
 
 

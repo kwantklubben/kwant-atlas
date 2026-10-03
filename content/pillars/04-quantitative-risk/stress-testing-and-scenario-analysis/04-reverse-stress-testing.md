@@ -55,7 +55,7 @@ So the **fatal scenario is a scalar multiple of $\Sigma\beta$** - the "worst dir
 
 ### 3. Computational Implementation - analytic reverse stress test
 
-Stdlib only. Three factors (equity, credit, rates) with sensitivities in M$$\$ per 1σ and a $30M capital line. The optimal fatal shock and its distance to ruin are computed in closed form - first under normal correlations, then under stressed correlations (→0.8).
+Stdlib only. Three factors (equity, credit, rates) with sensitivities in \$M per 1σ and a $30M capital line. The optimal fatal shock and its distance to ruin are computed in closed form - first under normal correlations, then under stressed correlations (→0.8).
 
 
 

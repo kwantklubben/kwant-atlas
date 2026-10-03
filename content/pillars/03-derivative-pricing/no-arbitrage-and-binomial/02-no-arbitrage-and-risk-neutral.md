@@ -33,7 +33,7 @@ The practical objective: be able to move freely between "expected payoff", "mart
 With $\tilde p,\tilde q$ from [[pillars/03-derivative-pricing/no-arbitrage-and-binomial/01-from-zero|01]], the one-step recursion $V_k=\frac{1}{1+r}[\tilde pV_{k+1}(H)+\tilde qV_{k+1}(T)]$ rearranges to
 
 $$
-V_k=(1+r)^k\,\widetilde{\mathbb E}\!\left[\frac{V_m}{(1+r)^m}\,\Big|\,F_k\right]\qquad\text{(risk-neutral valuation, Shreve §3.4)}
+V_k=(1+r)^k\,\widetilde{\mathbb E}\!\left[\frac{V_m}{(1+r)^m}\,\Big|\,F_k\right]\qquad\text{(risk-neutral valuation, Shreve \S 3.4)}
 $$
 
 and in particular, applied to the stock itself,

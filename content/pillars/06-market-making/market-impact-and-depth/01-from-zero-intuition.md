@@ -74,7 +74,7 @@ The smallest useful experiment: a book with a given $\lambda$, a series of trade
 
 
 
-Read the last line: the price change equals $\lambda$ times the *net* signed flow, and a single 5-unit buy moves the price by $0.50\times5= $ $$\$2.50. **Depth =1/\lambda=2$ units means two units of net buying is exactly a dollar of price.** That is the whole vocabulary of this folder in one experiment.
+Read the last line: the price change equals $\lambda$ times the *net* signed flow, and a single 5-unit buy moves the price by $0.50\times5=$ \$2.50. **Depth $=1/\lambda=2$ units means two units of net buying is exactly a dollar of price.** That is the whole vocabulary of this folder in one experiment.
 
 ---
 

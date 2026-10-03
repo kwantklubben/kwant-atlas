@@ -50,7 +50,7 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 | **Log-signature / Lévy area, lev 2** | $\ell^{ij}=S^{ij}-\tfrac12S^iS^j=\tfrac12(S^{ij}-S^{ji})$ (antisymmetric) | $L^{12}{=}{-}0.5,\ L^{21}{=}{+}0.5,\ L^{ij}{+}L^{ji}=0$ |
 | **Reparametrisation invariance** | $S(X\circ\varphi)=S(X)$ for any monotone $\varphi$ | lev-2 err **$0$**; lev-3 $\sim1\times10^{-14}$ |
 | **Lyons uniqueness** | $S(X)=S(Y)\Rightarrow X,Y$ differ by reparametrisation / tree-like path | two non-reparametrised paths $\Rightarrow$ areas $+4.5$ vs $-4.5$ |
-| **Brownian quadratic variation** | $\sum_k|\Delta B_{t_k}|^2\to T$ | grid $16000$: $0.9935$ (with $T=1$) |
+| **Brownian quadratic variation** | $\sum_k\vert \Delta B_{t_k}\vert ^2\to T$ | grid $16000$: $0.9935$ (with $T=1$) |
 | **Brownian $p$-variation** | finite iff $p\ge2$ (infinite for $p<2$) | $p{=}1$: $35.9\to100.9$ (diverges); $p{=}3$: $0.0365\to0.0124$ ($\to0$) |
 | **Lead-lag area $=$ realized variance** | $\mathrm{Area}=\tfrac12\sum_k\Delta X_k^2$ | $A=15.172146$, diff $1.4\times10^{-14}$ |
 | **Time augmentation** | 1D signature $\equiv$ endpoint; $(t,X_t)$ restores area | same-endpoint paths: $S^{11}{=}2.0$ both; areas $-0.667$ vs $+0.667$ |

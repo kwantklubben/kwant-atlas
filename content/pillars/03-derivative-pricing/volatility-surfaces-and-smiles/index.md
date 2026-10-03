@@ -42,8 +42,8 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 | Implied var = gamma-weighted avg of local var (eq 2.32/3.5) | $\sigma_{BS}^2=\dfrac{\mathbb{E}\!\left[\int_0^T\!e^{-rt}S_t^2\Gamma_{BS}\sigma_L^2\,dt\right]}{\mathbb{E}\!\left[\int_0^T\!e^{-rt}S_t^2\Gamma_{BS}\,dt\right]}$ | the structural bridge LV↔IV |
 | ATMF skew ≈ path-average of local skew (eq 3.11/2.48) | $\mathcal S_T=\frac{1}{T}\!\int_0^T\!\frac{t}{T}\alpha(t)dt$; constant $\alpha\Rightarrow\mathcal S_T=\alpha/2$ | implied skew is **half** the local skew |
 | **Skew stickiness ratio** (eq 2.61/2.64) | $R_T=\dfrac{1}{\mathcal S_T}\dfrac{d\hat\sigma_{F_TT}}{d\ln S_0}=1+\dfrac1T\!\int_0^T\!\dfrac{\mathcal S_t}{\mathcal S_T}dt$ | decaying equity skew → $R_T\!\to\!3$; constant skew → $R_T=2$ |
-| Heston short-dated variance skew (eq 3.19/7.3) | $\partial_k\sigma_{BS}^2\big|_{k=0}\to\dfrac{\rho\eta}{2}$ | computed $-0.1388$ vs $\rho\eta/2=-0.1389$ |
-| Jump compensator skew (eq 5.10) | $\partial_k\sigma_{BS}^2\big|_{k=0}\approx-2\mu_J$ | additive with SV at $\tau\to0$ |
+| Heston short-dated variance skew (eq 3.19/7.3) | $\partial_k\sigma_{BS}^2\big\vert_{k=0}\to\dfrac{\rho\eta}{2}$ | computed $-0.1388$ vs $\rho\eta/2=-0.1389$ |
+| Jump compensator skew (eq 5.10) | $\partial_k\sigma_{BS}^2\big\vert_{k=0}\approx-2\mu_J$ | additive with SV at $\tau\to0$ |
 | Rough/vol-of-vol benchmark (Bergomi eq 7.40) | $\nu_T(t)=\sigma_0\!\left(\dfrac{\tau_0}{T-t}\right)^{\alpha}$, $\alpha\approx0.4$ | power-law vol-of-vol term structure |
 
 > **Critical caveat (flagged in the corpus).** Gatheral's printed ATM term-structure formula (3.18), built from the *unconditional* expected-variance path, returns the long-run mean $\bar v$ as $T\to0$, **not** the current instantaneous variance $v_0$. The physical short-dated limit is $v_0$; treat (3.18)'s literal $T\to0$ value accordingly (verified numerically: it returns $0.0354=\bar v$, not $0.0174=v_0$).

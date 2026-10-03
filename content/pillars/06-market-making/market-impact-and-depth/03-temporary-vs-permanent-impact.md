@@ -84,7 +84,7 @@ One sell of $X=-10^6$ shares, executed at four speeds (10, 25, 100, 500 child or
 
 
 Read the table:
-- **Permanent impact is constant at $-2.0000$** across a fifty-fold speed range - the per-share permanent impact $\gamma X=2\times10^{-6}\times(-10^6)=-$ \$2 (in total dollars, \tfrac12\gamma X^2=-\$1\text{M}), schedule-independent.
+- **Permanent impact is constant at $-2.0000$** across a fifty-fold speed range - the per-share permanent impact $\gamma X=2\times10^{-6}\times(-10^6)=-$\$2 (in total dollars, $\tfrac12\gamma X^2=-$\$1M), schedule-independent.
 - **Peak (adverse) impact falls from $-7.21$ to $-2.16$** as execution slows: the temporary component $\to0$, and the peak converges on the permanent level.
 - **Realized VWAP impact** is always *between* the two ($-4.41$ down to $-1.16$): it is what you actually pay, and it is the quantity your execution schedule controls.
 

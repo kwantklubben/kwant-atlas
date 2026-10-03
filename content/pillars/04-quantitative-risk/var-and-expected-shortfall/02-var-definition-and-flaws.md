@@ -57,7 +57,7 @@ and $\sigma_{X+Y}\le\sigma_X+\sigma_Y$ (standard deviation is subadditive) so Va
 
 #### 2.4 Two more first-principles failures (Artzner §3.3)
 
-- **Concentration blindness (credit).** With zero base rate, $2\%$ bond spreads, $1\%$ independent default probability, the $5\%$ VaR of a $ $\$1m single-name position is -\$20{,}000 (apparently riskless). Spreading across $100$ names makes $\mathbb{P}(\ge2\text{ defaults})>0.18$, so the same money has a $>5\%$ chance of negative net worth: **diversification increased the VaR.** Meanwhile the pile-up in one name went undetected.
+- **Concentration blindness (credit).** With zero base rate, $2\%$ bond spreads, $1\%$ independent default probability, the $5\%$ VaR of a \$1m single-name position is -\$20,000 (apparently riskless). Spreading across $100$ names makes $\mathbb{P}(\ge2\text{ defaults})>0.18$, so the same money has a $>5\%$ chance of negative net worth: **diversification increased the VaR.** Meanwhile the pile-up in one name went undetected.
 - **Bad risk allocation.** VaR can prefer a Pareto-dominated allocation of risks across two agents (Artzner's $3$-state example): a capital level "found sufficient" for $X$ is "more than sufficient" after a risk exchange that all risk-averse agents dislike - VaR does not encourage sensible risk sharing.
 
 ---

@@ -37,13 +37,13 @@ This folder is the *hub*: it (a) gives the **fast formula lookup** below, and (b
 |---|---|---|
 | **Quoted spread** (absolute / relative) | $S=a-b,\quad s=\dfrac{a-b}{m},\quad m=\dfrac{a+b}{2}$ | Foucault eq. (2.1) |
 | **Price impact (linear)** | $\Delta p=\lambda q,\qquad 1/\lambda=D$ = depth | Foucault eq. (2.8); Hasbrouck Ch 7 |
-| **Impact half-move (VWAP)** | $\text{LC}_{\text{impact}}=\dfrac{Q^2}{2D}=\dfrac{\lambda Q^2}{2}$ | $Q{=}10^5,D{=}2{\times}10^5\Rightarrow $\$25{,}000 |
-| **Exogenous spread cost** | $\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right)$ | $V{=}10^7,S{=}20\text{bp}\Rightarrow$\$15{,}816 |
-| **Liquidity-adjusted VaR** | $\mathrm{LVaR}_\alpha=\mathrm{VaR}_\alpha+\text{LC}_{\text{exog}}+\text{LC}_{\text{impact}}$ | $465{,}270+15{,}816+25{,}000= $\$506{,}085 |
+| **Impact half-move (VWAP)** | $\text{LC}_{\text{impact}}=\dfrac{Q^2}{2D}=\dfrac{\lambda Q^2}{2}$ | $Q{=}10^5,D{=}2{\times}10^5\Rightarrow $\$25,000 |
+| **Exogenous spread cost** | $\text{LC}_{\text{exog}}=\tfrac12 V\left(S+z_\alpha\sigma_S\right)$ | $V{=}10^7,S{=}20\text{bp}\Rightarrow$\$15,816 |
+| **Liquidity-adjusted VaR** | $\mathrm{LVaR}_\alpha=\mathrm{VaR}_\alpha+\text{LC}_{\text{exog}}+\text{LC}_{\text{impact}}$ | $465{,}270+15{,}816+25{,}000= $\$506,085 |
 | **Liquidation horizon** | $T_{\text{liq}}=\dfrac{Q}{\text{ADV}\cdot\alpha}$ ($\alpha$ = participation cap) | $10^5/(2{\times}10^6{\cdot}0.2)=0.25$ day |
 | **Horizon scaling (i.i.d.)** | $\mathrm{VaR}_T=\mathrm{VaR}_1\sqrt{T}$ | $T{=}10\Rightarrow\times3.162$ |
 | **Margin constraint** | $P\le \dfrac{N}{m}\quad\Longleftrightarrow\quad L=\dfrac{P}{N}\le\dfrac1m$ | $m{=}20\%\Rightarrow L\le5\times$ |
-| **Amihud illiquidity** | $I=\dfrac{|r_t|}{\text{Vol}_t}$ | small cap $4\times10^{-7}$ vs mega $2.5\times10^{-10}$ |
+| **Amihud illiquidity** | $I=\dfrac{\vert r_t\vert }{\text{Vol}_t}$ | small cap $4\times10^{-7}$ vs mega $2.5\times10^{-10}$ |
 | **Roll spread estimator** | $S_R=2\sqrt{-\operatorname{cov}(\Delta p_{t+1},\Delta p_t)}$ | Foucault eq. (2.18); Hasbrouck Ch 3 |
 | **Gross-return premium** | $R\simeq r+\dfrac{s}{h}$ ($h$ = holding period) | Foucault eq. (9.6) |
 | **Spiral amplification** | $S_{\text{total}}=\dfrac{S_0}{1-k},\quad k=L\kappa$ | $k{=}0.5\Rightarrow\times2$; diverges as $k\to1$ |
@@ -73,7 +73,7 @@ Standard library only. This reproduces every verified number above (all six expe
 
 
 
-> **The point of the check.** The two liquidation costs together add \$40{,}816 - $8.77\%$ - to a VaR that a standard risk engine would report as the whole story. On an illiquid book the impact term dominates and can exceed the market-risk term outright.
+> **The point of the check.** The two liquidation costs together add \$40,816 - $8.77\%$ - to a VaR that a standard risk engine would report as the whole story. On an illiquid book the impact term dominates and can exceed the market-risk term outright.
 
 ---
 

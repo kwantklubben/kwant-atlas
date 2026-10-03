@@ -52,7 +52,7 @@ Simulate (1) the forced concession of a deterministic TWAP, (2) the tracking-err
 
 
 
-**Read the numbers.** (1) A sniper forcing just $$$$\$ \$0.02 of extra concession per share (2 cents!) on a deterministic TWAP costs the parent a clean 2{,}000 / 2$ bps - pure transfer to the adversary, avoided by randomization. (2) On an open-announcement day the schedule puts only $5.26\\%$ of size at the open when $12.57\\%$ of the volume landed there - a tracking-error blow-up to $0.0762$ that forces a close dump. (3) Being slow on an informed buy costs $148{,}000$, or **370 bps** - an order of magnitude worse than any impact the schedule was built to avoid. The schedule won the impact battle and lost the information war.
+**Read the numbers.** (1) A sniper forcing just \$0.02 of extra concession per share (2 cents!) on a deterministic TWAP costs the parent a clean \$2,000 (2 bps) - pure transfer to the adversary, avoided by randomization. (2) On an open-announcement day the schedule puts only $5.26\%$ of size at the open when $12.57\%$ of the volume landed there - a tracking-error blow-up to $0.0762$ that forces a close dump. (3) Being slow on an informed buy costs $148,000$, or **370 bps** - an order of magnitude worse than any impact the schedule was built to avoid. The schedule won the impact battle and lost the information war.
 
 ---
 

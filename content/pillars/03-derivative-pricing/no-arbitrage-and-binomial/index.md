@@ -34,7 +34,7 @@ This folder is the *hub* of that topic. It gives (a) the **fast formula lookup**
 | **Risk-neutral probabilities** (Shreve 1.8) | $\tilde p=\dfrac{1+r-d}{u-d},\quad \tilde q=\dfrac{u-1-r}{u-d}$ | $\tilde p=\tilde q=0.5$, $\tilde p+\tilde q=1$ |
 | **Replicating delta** (Shreve 1.6) | $\Delta_0=\dfrac{f_u-f_d}{S_0(u-d)}$ | put $K{=}5$: $\Delta_0=-0.5000$, bond $=3.2000$ |
 | **One-period price** (Shreve 1.9) | $V_0=\dfrac{1}{1+r}\left[\tilde p f_u+\tilde q f_d\right]$ | $V_0=1.2000$; replication both states $=0.0000/3.0000$ ✓ |
-| **Multiperiod RN valuation** (Shreve §3.4) | $V_k=(1+r)^k\,\widetilde{\mathbb E}\!\left[\dfrac{V_m}{(1+r)^m}\,\Big|\,F_k\right]$ | discounted stock: $\widetilde{\mathbb E}[S_1/(1{+}r)]=4.000000=S_0$ |
+| **Multiperiod RN valuation** (Shreve §3.4) | $V_k=(1+r)^k\,\widetilde{\mathbb E}\!\left[\dfrac{V_m}{(1+r)^m}\,\Big\vert\,F_k\right]$ | discounted stock: $\widetilde{\mathbb E}[S_1/(1{+}r)]=4.000000=S_0$ |
 | **State price** (Arrow–Debreu) | $\zeta(\omega)=\dfrac{\widetilde{\mathbb P}(\omega)}{1+r}$ | $\zeta(H)=\zeta(T)=0.4$, $\sum\zeta=0.8=\frac{1}{1+r}$ |
 | **State-price valuation** | $V_0=\sum_\omega \zeta(\omega)V_1(\omega)=\mathbb E^{\mathbb P}[\zeta\,V_1]$ | $1.2000$ for **any** physical $p$ (checked $p=0.5,0.6,0.9$) |
 | **CRR up/down** (CRR 1979; Hull 13.15/13.16) | $u=e^{\sigma\sqrt{\Delta t}},\quad d=\dfrac1u=e^{-\sigma\sqrt{\Delta t}}$ | $n{=}100$, $T{=}0.5$: $u=1.021440$, $d=0.979010$ |

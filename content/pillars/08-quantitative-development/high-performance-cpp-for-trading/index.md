@@ -64,7 +64,7 @@ $$
 \text{in-flight work} = \text{arrival rate} \times \text{latency},\qquad \text{ceiling} = \frac{1}{t_{\text{work}}}.
 $$
 
-A 2.00 µs tick-to-trade budget gives a *pipelined* ceiling of $1/2.00\,\text{µs} = 500{,}000$ msg/s - but a single **reaction** still pays the full 2.00 µs of decay.
+A 2.00 µs tick-to-trade budget gives a *pipelined* ceiling of $1/2.00\,\mu\text{s} = 500{,}000$ msg/s - but a single **reaction** still pays the full 2.00 µs of decay.
 
 **Alpha decay model** (why every microsecond counts): if short-horizon edge halves every $h$ microseconds, the fraction surviving $t$ µs of reaction delay is
 

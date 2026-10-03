@@ -14,7 +14,7 @@ tags:
 
 ### 1. Intuition & Practical Objective
 
-The local-volatility model keeps the single-Brownian-driver world of BSM but lets volatility be a *function of spot and time*: $dS_t = (r-q)S_t\\,dt + \\sigma(t,S_t)\\,S_t\\,dW_t$. Its defining promise (Dupire 1994; Derman–Kani 1994): **given all European prices, there is a unique local-volatility function that reproduces them.** So local vol is the *simplest "market model"* - exactly calibratable to any arbitrage-free smile (Bergomi Ch 2 calls it exactly this).
+The local-volatility model keeps the single-Brownian-driver world of BSM but lets volatility be a *function of spot and time*: $dS_t = (r-q)S_t\,dt + \sigma(t,S_t)\,S_t\,dW_t$. Its defining promise (Dupire 1994; Derman–Kani 1994): **given all European prices, there is a unique local-volatility function that reproduces them.** So local vol is the *simplest "market model"* - exactly calibratable to any arbitrage-free smile (Bergomi Ch 2 calls it exactly this).
 
 The practical objective of this page: **turn a market smile into a local-vol surface, and verify the surface really reproduces the smile.** That round-trip is the whole job. You will see the two directions:
 
@@ -27,28 +27,28 @@ The practical objective of this page: **turn a market smile into a local-vol sur
 
 ### 2. Mathematical Ground Truth & Derivations
 
-**Dupire in strike/maturity space.** For market call prices $C(K,T)$ the risk-neutral density is $\\partial^2C/\\partial K^2$ (Breeden–Litzenberger), and the local variance is (Bergomi eq 2.3; Gatheral eq 1.4):
+**Dupire in strike/maturity space.** For market call prices $C(K,T)$ the risk-neutral density is $\partial^2C/\partial K^2$ (Breeden–Litzenberger), and the local variance is (Bergomi eq 2.3; Gatheral eq 1.4):
 
 $$
-\\boxed{\\;\\sigma_{\\text{loc}}^2(K,T) = \\frac{2\\Big(\\frac{\\partial C}{\\partial T}+qC+(r-q)K\\frac{\\partial C}{\\partial K}\\Big)}{K^2\\frac{\\partial^2 C}{\\partial K^2}}\\;}.
+\boxed{\;\sigma_{\text{loc}}^2(K,T) = \frac{2\Big(\frac{\partial C}{\partial T}+qC+(r-q)K\frac{\partial C}{\partial K}\Big)}{K^2\frac{\partial^2 C}{\partial K^2}}\;}.
 $$
 
 Equivalently, local variance is the risk-neutral expectation of instantaneous variance **conditional on the final spot equalling the strike** (Gatheral eq 1.12; Gyöngy's theorem, Bergomi eq 2.6):
 
 $$
-\\sigma^2(K,T,S_0) = \\mathbb{E}[v_T \\mid S_T = K].
+\sigma^2(K,T,S_0) = \mathbb{E}[v_T \mid S_T = K].
 $$
 
-**The practitioner form - from implied total variance (Gatheral eq 1.10).** Set log-moneyness $y=\\ln(K/F_T)$ and total implied variance $w(y,T)=\\sigma^2_{\\text{BS}}(K,T)\\,T$. Then, with subscripts denoting partials in $y$,
+**The practitioner form - from implied total variance (Gatheral eq 1.10).** Set log-moneyness $y=\ln(K/F_T)$ and total implied variance $w(y,T)=\sigma^2_{\text{BS}}(K,T)\,T$. Then, with subscripts denoting partials in $y$,
 
 $$
-\\boxed{\\;v_L(y,T) = \\frac{\\dfrac{\\partial w}{\\partial T}}
-{1 - \\dfrac{y}{w}w_y + \\dfrac14\\Big(-\\dfrac14-\\dfrac1w+\\dfrac{y^2}{w^2}\\Big)w_y^2 + \\dfrac12 w_{yy}}\\;}.
+\boxed{\;v_L(y,T) = \frac{\dfrac{\partial w}{\partial T}}
+{1 - \dfrac{y}{w}w_y + \dfrac14\Big(-\dfrac14-\dfrac1w+\dfrac{y^2}{w^2}\Big)w_y^2 + \dfrac12 w_{yy}}\;}.
 $$
 
-The numerator is a **calendar spread** (vol rising in time); the denominator's $\\frac12 w_{yy}$ term is the **butterfly** (convexity in strike). The no-arbitrage conditions map onto these: strike arbitrage ⇔ $\\partial^2C/\\partial K^2<0$ (butterfly); maturity arbitrage ⇔ total implied variance $w$ increasing in $T$ at fixed moneyness (Bergomi eq 2.14–2.15).
+The numerator is a **calendar spread** (vol rising in time); the denominator's $\frac12 w_{yy}$ term is the **butterfly** (convexity in strike). The no-arbitrage conditions map onto these: strike arbitrage ⇔ $\partial^2C/\partial K^2<0$ (butterfly); maturity arbitrage ⇔ total implied variance $w$ increasing in $T$ at fixed moneyness (Bergomi eq 2.14–2.15).
 
-**Key scalings (Bergomi Ch 2, eqs 2.48–2.53).** For a local vol $\\sigma(t,S)=\\sigma(t)+\\alpha(t)x+\\tfrac12\\beta(t)x^2$ in $x=\\ln(S/F_t)$: the *implied* ATMF skew is $\\frac12$ the local skew (constant $\\alpha$ ⇒ $\\mathcal S_T=\\alpha/2$), and implied curvature $\\frac13$ the local curvature. And for a power-law-decaying local skew $\\alpha\\propto t^{-\\gamma}$, the implied skew decays with the *same* exponent $\\gamma$ (equity: $\\gamma\\approx\\tfrac12$).
+**Key scalings (Bergomi Ch 2, eqs 2.48–2.53).** For a local vol $\sigma(t,S)=\sigma(t)+\alpha(t)x+\tfrac12\beta(t)x^2$ in $x=\ln(S/F_t)$: the *implied* ATMF skew is $\frac12$ the local skew (constant $\alpha$ ⇒ $\mathcal S_T=\alpha/2$), and implied curvature $\frac13$ the local curvature. And for a power-law-decaying local skew $\alpha\propto t^{-\gamma}$, the implied skew decays with the *same* exponent $\gamma$ (equity: $\gamma\approx\tfrac12$).
 
 ---
 
@@ -65,7 +65,7 @@ The round-trip closes: options priced under the *calibrated* local vol come back
 ### 4. Failure Modes & First-Principles Breakdowns
 
 1. **Ill-posedness of the inversion.** Local vol requires *second derivatives* of prices ($w_{yy}$); differentiating noisy data amplifies bid/ask noise by ~$1/dy^2$. Tiny smile noise produces huge local-vol spikes or *negative* local variance (which must be clipped/regulated) - see [[pillars/03-derivative-pricing/calibration-and-market-practice/05-failure-modes-and-practice|05 · Failure Modes]] for the numbers.
-2. **One-factor dynamics.** All implied vols are perfectly correlated with each other and with spot; the model cannot represent independent vol-of-vol moves or a term structure of vol-of-vol (Bergomi Ch 2, Ch 6: Heston's `$\nu_T(t)\\propto(1-e^{-kT})/(kT)$`). This makes it wrong for forward-smile and vol-of-vol products.
+2. **One-factor dynamics.** All implied vols are perfectly correlated with each other and with spot; the model cannot represent independent vol-of-vol moves or a term structure of vol-of-vol (Bergomi Ch 2, Ch 6: Heston's `$\nu_T(t)\propto(1-e^{-kT})/(kT)$`). This makes it wrong for forward-smile and vol-of-vol products.
 3. **The forward skew is dictated by today's smile.** Local vol implies future skews that are flatter than today's; a desk selling forward-skew products (cliquets) with LV systematically misprices them (Bergomi Ch 2.6; Gatheral Ch 8: LV forward surfaces are flat relative to today's, SV's look like today's).
 4. **Not enough to fit vanillas.** Matching all European prices does not fix the *dynamics*; two models with the same smile can price exotics differently (Gatheral Ch 4: LV vs SV agree on Europeans, differ on exotics).
 

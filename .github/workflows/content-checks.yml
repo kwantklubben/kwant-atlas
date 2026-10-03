@@ -8,6 +8,7 @@ name: Content checks
 #   1. the site builds                  -- a bad title/backslash in YAML frontmatter breaks it
 #   2. every wikilink resolves          -- catches dangling links and dead _legacy pointers
 #   3. the visualizer is not stale      -- node paths/edges are generated from the content tree
+#   4. every formula renders            -- KaTeX errors, `|` inside table math, stray `$`, € / µ
 #
 # Pinned to one Python version so the sibling fence-check report stays comparable across runs.
 
@@ -46,6 +47,9 @@ jobs:
 
       - name: Check wikilinks resolve
         run: python3 corpus/tools/check_links.py
+
+      - name: Check every formula renders
+        run: node corpus/tools/check_math.mjs
 
       - name: Check the visualizer is not stale
         run: python3 corpus/tools/build_visualizer.py --check

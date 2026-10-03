@@ -41,7 +41,7 @@ This folder is the topic-hub for **feature engineering & target labeling** in Kw
 | Fractional weights | $w_0=1,\ w_k=-w_{k-1}\frac{d-k+1}{k}$ | $d{=}1\Rightarrow w=\{1,-1,0,\dots\}$ |
 | Fixed-width window (FFD) | drop $w_k$ once $|w_k|<\tau$; width $\ell^*=\min\{\ell:|w_\ell|<\tau\}$ | $d{=}0.3$: DF $t=-6.46$ |
 | Min differencing order | $d^*=\min\{d:\ \text{ADF/DF}(X^{(d)})\ \text{rejects the unit root}\}$ | $d^*=0.3$ here; memory corr $0.96$ at $d{=}0.2$ vs $0.03$ at $d{=}1$ |
-| Sample weight | $w_i\propto \bar u_i \cdot$ time-decay $|\text{sgn}| \cdot$ attribution | used to debias non-IID draws |
+| Sample weight | $w_i\propto \bar u_i \cdot$ time-decay $\vert \text{sgn}\vert  \cdot$ attribution | used to debias non-IID draws |
 
 > **Critical caveat (López de Prado §3.4, §19.6).** The barriers **must** use an *ex-ante* volatility estimate (available at $t_{i,0}$). Using a full-sample or forward-looking $\sigma$ injects the future into the label - see [[pillars/01-quantitative-research/feature-engineering-and-labeling/05-failure-modes-and-practice|05 · Failure Modes]]. Likewise, the right-hand side of every feature row must be computable from data $\le t$; the label may look forward (that is its job), the *features* may not.
 

@@ -41,19 +41,19 @@ This folder is a *hub*: (a) the fast formula lookup below, and (b) six sub-pages
 | Quantity | Formula | Verified check |
 |---|---|---|
 | **LSV SDE** | $dS_t=(r-q)S_t\,dt+\sigma(t,S_t)\sqrt{v_t}\,S_t\,dW^S_t,\qquad dv_t=-\lambda(v_t-\bar v)dt+\eta\sqrt{v_t}\,dW^v_t,\qquad dW^S dW^v=\rho\,dt$ | - (driver is any SV / forward-variance model) |
-| **Gyöngy's Markovian projection** (1986) | for $dX_t=\mu_t dt+\alpha_t dW_t$ there is a Markov diffusion $Y$ with the same one-dimensional marginals and $\bar\alpha^2(t,y)=\mathbb E[\alpha_t^2\,|\,X_t=y]$ | toy 2-state vol: FP residual rel. err $\le8.8\times10^{-5}$ (float/FD noise) |
+| **Gyöngy's Markovian projection** (1986) | for $dX_t=\mu_t dt+\alpha_t dW_t$ there is a Markov diffusion $Y$ with the same one-dimensional marginals and $\bar\alpha^2(t,y)=\mathbb E[\alpha_t^2\,\vert \,X_t=y]$ | toy 2-state vol: FP residual rel. err $\le8.8\times10^{-5}$ (float/FD noise) |
 | **Dupire local variance, total-variance form** (1994) | $\sigma^2_{loc}=\dfrac{\partial_T w}{1-\frac{k}{w}\partial_k w+\frac14\!\left(-\frac14-\frac{1}{w}+\frac{k^2}{w^2}\right)(\partial_k w)^2+\frac12\partial^2_k w}$ | flat $20\%$ surface $\Rightarrow0.040000000$ exactly, at $k=\pm0.2,0$ |
 | **Dupire local variance, price form** | $\sigma^2_{loc}(K,T)=\dfrac{\partial_T C(K,T)}{\frac12 K^2\,\partial^2_{KK}C(K,T)}$ | agrees with the total-variance form to $\le3\times10^{-5}$ relative on the Heston surface |
 | **T→0 limit of Dupire** | $\sigma^2_{loc}(0,S_0)=v_0$ | Heston: $0.017478$ (price form) at $T{=}0.02$ vs $v_0=0.0174$ |
-| **The leverage function** (Gyöngy / Guyon–Henry-Labordère) | $\boxed{\;\sigma^2(t,S)=\dfrac{\sigma^2_{loc}(t,S)}{\mathbb E[v_t\,|\,S_t=S]}=\dfrac{\sigma^2_{loc}(t,S)}{m(t,S)}\;}$ | $t{=}0$: $\mathbb E[v_0|S_0]=v_0$, so $\sigma(0,S_0)=\sigma_{loc}(0,S_0)/\sqrt{v_0}$ |
-| **LSV local-variance identity** | $\sigma^2_{loc}(t,S)=\sigma(t,S)^2\,\mathbb E[v_t\,|\,S_t=S]$ | two different drivers, same target: product $=0.040000$ in every row |
+| **The leverage function** (Gyöngy / Guyon–Henry-Labordère) | $\boxed{\;\sigma^2(t,S)=\dfrac{\sigma^2_{loc}(t,S)}{\mathbb E[v_t\,\vert \,S_t=S]}=\dfrac{\sigma^2_{loc}(t,S)}{m(t,S)}\;}$ | $t{=}0$: $\mathbb E[v_0\vert S_0]=v_0$, so $\sigma(0,S_0)=\sigma_{loc}(0,S_0)/\sqrt{v_0}$ |
+| **LSV local-variance identity** | $\sigma^2_{loc}(t,S)=\sigma(t,S)^2\,\mathbb E[v_t\,\vert \,S_t=S]$ | two different drivers, same target: product $=0.040000$ in every row |
 | **Leverage at $t{=}0$, flat-$20\%$ target, Heston driver** | $\sigma(0,S_0)=0.20/\sqrt{0.0174}$ | $1.51620$ (and $\sigma^2\!\cdot\!\xi_0^0=0.040000$) |
 | **Leverage at $t{=}0$, Heston target on a Heston driver** | $\approx1$ (nothing to bend) | $1.00197$ |
 | **LV limit** (vol-of-vol $\to0$) | $m(t,S)=\xi_0^t$ known $\Rightarrow\sigma(t)=\sigma_{loc}(t)/\sqrt{\xi_0^t}$ and the model *is* local vol | $\sigma=1.51620/1.23746/1.14301/1.06335$ at $t=0,0.5,1,5$ with $\sigma^2\xi_0^t=0.040000$ |
 | **SV limit** (target $=$ driver's own smile) | $\sigma\equiv1$ | toy McKean–Vlasov iteration converges to $\|\sigma-1\|_\infty=3.7\times10^{-4}$ |
 | **Projected 1-D Fokker–Planck** | $\partial_t\rho=\tfrac12\partial^2_{yy}\!\left(\sigma^2_{loc}(t,y)\,\rho\right)$, $\sigma^2_{loc}=\sigma^2 m$ | marginal of the 2-state FP solve $=$ projected 1-D solve to $4.6\times10^{-15}$ ($L^1$) |
-| **McKean–Vlasov fixed point** | $\sigma^2_{n+1}=\sigma^2_{loc}/m_n$, $m_n=\mathbb E_n[v_t|S_t=S]$ under $\sigma_n$ | particle method, flat-$20\%$ target: RMS $1.228\to0.421\to0.233$ vol pts |
-| **Binning standard error** | $\mathrm{SE}(m)\simeq\sqrt{\mathrm{Var}(v_t\,|\,S_t)/n_{bin}}$, and $\delta\ln\sigma=-\tfrac12\delta\ln m$ | CIR $\mathrm{Var}(v_1)=0.001467$ (analytic) vs $0.001471$ (MC); $5000$/bin $\Rightarrow0.9\%$ leverage error |
+| **McKean–Vlasov fixed point** | $\sigma^2_{n+1}=\sigma^2_{loc}/m_n$, $m_n=\mathbb E_n[v_t\vert S_t=S]$ under $\sigma_n$ | particle method, flat-$20\%$ target: RMS $1.228\to0.421\to0.233$ vol pts |
+| **Binning standard error** | $\mathrm{SE}(m)\simeq\sqrt{\mathrm{Var}(v_t\,\vert \,S_t)/n_{bin}}$, and $\delta\ln\sigma=-\tfrac12\delta\ln m$ | CIR $\mathrm{Var}(v_1)=0.001467$ (analytic) vs $0.001471$ (MC); $5000$/bin $\Rightarrow0.9\%$ leverage error |
 | **Conditional-variance dispersion (Heston-LSV, $t{=}1$)** | $m(1,S)$ across moneyness | $0.1725$ (crash wing) down to $0.00975$ (upside): a factor $17.7$, so $1/\sqrt{\cdot}$ spans $4.2$ |
 | **Usable-LSV gauge** | $\zeta^u\to\varphi^u\zeta^u$ together with $\sigma(u,S)\to\sigma(u,S)/\sqrt{\varphi^u}$ leaves $\sigma(t,S)^2\zeta^t$ invariant | invariant to $10^{-15}$ for $\varphi=0.25,2,4$ |
 | **LSV with jumps (LSVJ)** | the Dupire local variance of a jump-diffusion is **not** $\sigma^2_{diff}+\lambda_J\mathbb E[(e^J-1)^2]$ | no-jump control returns $0.022500$ exactly; with jumps $0.024213$ at $T{=}0.005$ vs QV rate $0.035633$ |

@@ -77,7 +77,7 @@ Panel (A) splits a portfolio ES into market and transition contributions for thr
 
 **Panel (A).** The contributions sum to the portfolio ES to machine precision ($6.9\times10^{-18}$ for the carbon-heavy book) - the additivity that makes a climate risk *budget* possible. The carbon-heavy book carries $27.6\%$ of its ES from the transition factor despite being only $20\%$ emissions-adjacent in construction; the green-tilted book shows a **negative** transition contribution ($-1.5\%$) and a *lower* total ES ($0.025233$) than the market-only book ($0.025716$) - the hedging result of §2.1, made numeric. Note the green book's market contribution *exceeds* total ES ($101.5\%$): the parts are additive, but an individual contribution may exceed the whole when another contribution is negative - a fact worth stating before someone reports a "negative risk budget" as an error.
 
-**Panel (B).** The carbon liability is concave-in-$\mathrm{DD}$ and convex-in-$\mathrm{PD}$: each $ $\$5 increment of capitalised carbon cost raises PD by 7.2$, $8.8$, $9.8$ points - increasing increments from a linear exposure. A transition scenario therefore converts into credit losses **faster than proportionally**, which is why supervisory exercises report both a market-risk and a credit-risk leg of the same scenario.
+**Panel (B).** The carbon liability is concave-in-$\mathrm{DD}$ and convex-in-$\mathrm{PD}$: each \$5 increment of capitalised carbon cost raises PD by 7.2$, $8.8$, $9.8$ points - increasing increments from a linear exposure. A transition scenario therefore converts into credit losses **faster than proportionally**, which is why supervisory exercises report both a market-risk and a credit-risk leg of the same scenario.
 
 ---
 

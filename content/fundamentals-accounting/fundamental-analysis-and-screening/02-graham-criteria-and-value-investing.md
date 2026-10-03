@@ -65,7 +65,7 @@ Runs on the **standard library only**. It evaluates "Deep Value Co" against Grah
 
 
 
-The three answers *disagree*, and that is the lesson: the stock **passes the enterprising multiple caps** (P/E 7.5, P/B 1.29) but is **not a net-net** (price $$\$9.00 equals NCAV, above the two-thirds floor of \$6.00), while **EPV of \$18/share** says the *business* - no growth assumed - is worth twice the price. A mechanical net-net screen would reject it; an earnings-power analysis would flag it as cheap. Graham's mature view (Greenwald's "three buckets") is exactly this: **asset value, earnings power, and franchise value are separate estimates, and you take the most conservative one that applies.**
+The three answers *disagree*, and that is the lesson: the stock **passes the enterprising multiple caps** (P/E 7.5, P/B 1.29) but is **not a net-net** (price \$9.00 equals NCAV, above the two-thirds floor of \$6.00), while **EPV of \$18/share** says the *business* - no growth assumed - is worth twice the price. A mechanical net-net screen would reject it; an earnings-power analysis would flag it as cheap. Graham's mature view (Greenwald's "three buckets") is exactly this: **asset value, earnings power, and franchise value are separate estimates, and you take the most conservative one that applies.**
 
 ---
 

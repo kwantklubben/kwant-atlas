@@ -55,7 +55,7 @@ Sweep $\lambda$, compute each optimal trajectory, evaluate $(E,V)$, verify conve
 
 
 
-Three verified facts from AC §2: **(i)** the frontier is convex; **(ii)** each $\lambda$ selects the tangent point exactly; **(iii)** $\lambda=0$ reproduces TWAP ($E= $ \$644{,}500, sd = \$1{,}222{,}765). Note how cheap the first risk reduction is - moving from $\lambda=0$ to $\lambda=10^{-7}$ cuts the standard deviation by \$67k for only \7.7k of extra expected cost. This is AC's point that the naïve (TWAP) strategy is *never* efficient: a small cost buys a large variance reduction.
+Three verified facts from AC §2: **(i)** the frontier is convex; **(ii)** each $\lambda$ selects the tangent point exactly; **(iii)** $\lambda=0$ reproduces TWAP ($E= $ \$644,500, sd = \$1,222,765). Note how cheap the first risk reduction is - moving from $\lambda=0$ to $\lambda=10^{-7}$ cuts the standard deviation by \$67k for only \$7.7k of extra expected cost. This is AC's point that the naïve (TWAP) strategy is *never* efficient: a small cost buys a large variance reduction.
 
 ---
 
